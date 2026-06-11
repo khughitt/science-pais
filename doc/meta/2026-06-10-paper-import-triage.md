@@ -146,3 +146,26 @@ No DOI collisions with existing summaries (all new). Source filenames recorded f
 - s41591-022-01810-6.pdf → primary home: pais [pais-umbrella]
 - TheroleofEpstein-Barrvirusinautoimmuneandautoinflammatorydiseases.pdf → primary home: immunity [infection-autoimmunity-ebv]
 - viruses-15-00782-v2.pdf → primary home: immunity [infection-autoimmunity]
+
+
+---
+
+## Final disposition (2026-06-11)
+
+- **93 papers summarized** into project entities:
+  - health-post-acute-infection: 59 paper entities (58 unique PDFs; the Xie COVID-vs-influenza paper was downloaded twice — `PIIS1473309923006849.pdf` + `Xie et al. 2023 ...` — and collapsed to a single `Xie2024` entity).
+  - health-immunity: 34 (Schluter2025 pilot + 33 batch).
+  - health-meta: Jukarainen2022 (doc/papers, layout v2).
+  - cancer-meta: Li2026 (virus-associated hematological malignancy immune escape).
+- **Synthesis:** PAIS = 5 topics, 8 questions, 4 interlocking hypotheses. immunity = 4 topics, 6 questions, 3 hypotheses (+ closed seed task t001).
+- **Quarantined (kept in ~/downloads):** 4 within-host viral-dynamics ODE-model papers — Perevaryukha (Biophysics 2021), Wang (Physica D 2007), Xie (Appl Math Model 2010), Wang/Hu/Liao (JMAA 2014). Distinct methodological cluster (mathematical immunology); not summarized pending a decision on whether they belong here as modeling seed material.
+- **Cleanup:** 97 redundant download originals deleted after confirming project copies exist (including the exact dup `research.1097-1.pdf` and the Xie duplicate pair). PDFs live in each project's gitignored `papers/pdfs/`.
+
+## Commons promotion — PENDING (tooling gap)
+
+`science commons promote paper` only scans the v2 `doc/papers/` layout and cannot see v3 `entities/papers/`, so these bridge papers could not be promoted (filed: fb-2026-06-11-005). Cross-project connections were instead captured via `related:` refs on the new synthesis topics. Bridge papers to promote once tooling supports v3:
+
+- immunity: Schluter2025, Borghol2024, Johnson2023, Laderach2026, Pinho2023, Sundaresan2023, Bhattacharjee2025
+- post-acute-infection: Choutka2022, Komaroff2025, Klein2023, Rojas2022, Sharma2023
+
+Tracked as tasks immunity:t003 and post-acute-infection:t003.
