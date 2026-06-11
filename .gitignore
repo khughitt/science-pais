@@ -1,0 +1,32 @@
+# Secrets
+.env
+
+# Large files
+papers/pdfs/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+.mypy_cache/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Worktrees
+.worktrees/
+
+# Managed artifact rollback backups
+*.pre-update*.bak
+
+# OS
+.DS_Store
+
+# Research data payloads (keep descriptors / .gitkeep)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+results/*
+!results/.gitkeep

@@ -1,0 +1,13 @@
+[project]
+name = "health-post-acute-infection-sciences"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "science",
+]
+
+[tool.uv.sources]
+science = { path = "../../../science/science", editable = true }

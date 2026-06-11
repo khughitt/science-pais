@@ -1,0 +1,41 @@
+name: health-post-acute-infection
+id: post-acute-infection
+role: process
+created: '2026-06-10'
+last_modified: '2026-06-10'
+summary: Process project for post-acute infection syndromes (PAIS) in the ~/d/health/
+  family. It studies long COVID, ME/CFS, post-treatment Lyme disease syndrome,
+  post-dengue and post-Q-fever fatigue, post-SARS syndrome, and related conditions
+  as failed recovery of immune and physiological homeostasis after acute infection.
+  It treats these syndromes as a shared failure mode — persistent immune activation,
+  antigen/pathogen persistence, autoimmunity, dysautonomia, and metabolic
+  dysfunction — and connects them to the immune-homeostasis frame in health-immunity
+  and the multiscale-homeostasis frame in health-meta.
+status: active
+profile: research
+layout_version: 3
+tags:
+- health
+- post-acute-infection-syndrome
+- long-covid
+- me-cfs
+- post-viral
+- post-infectious-fatigue
+- immune-dysregulation
+- antigen-persistence
+- dysautonomia
+data_sources: []
+ontologies:
+- biology
+knowledge_profiles:
+  local: local
+aspects:
+- hypothesis-testing
+- computational-analysis
+peers:
+- id: immunity
+  path: ~/d/health/processes/immunity
+- id: health-meta
+  path: ~/d/health/meta
+- id: pan-disease
+  path: ~/d/health/comparisons/pan-disease
