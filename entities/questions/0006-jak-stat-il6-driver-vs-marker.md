@@ -1,0 +1,54 @@
+---
+id: question:0006-jak-stat-il6-driver-vs-marker
+type: question
+title: Is persistent JAK-STAT/IL-6 signaling a proximal driver of post-acute chronicity
+  (reversible by inhibition) or a downstream marker, and is the axis shared beyond
+  SARS-CoV-2?
+status: active
+ontology_terms:
+- JAK-STAT
+- IL-6
+- inflammation
+- therapeutics
+datasets: []
+source_refs:
+- cite:Aid2025
+- cite:Ganesh2022
+related:
+- topic:long-covid-immune-dysregulation
+created: '2026-06-11'
+updated: '2026-06-11'
+---
+
+# Is persistent JAK-STAT/IL-6 signaling a proximal driver of post-acute chronicity (reversible by inhibition) or a downstream marker, and is the axis shared beyond SARS-CoV-2?
+
+## Summary
+
+Persistent JAK-STAT/IL-6 signaling is one of the most reproducible inflammatory signatures in long COVID (Aid2025; IL-6 elevated in 61% of PASC in Ganesh2022). This question asks whether that signaling is a *proximal driver* of post-acute chronicity — whose pharmacological inhibition resolves symptoms — or a downstream *marker* of an upstream lesion, and whether the axis is shared across PAIS beyond SARS-CoV-2.
+
+## Why It Matters
+
+- Decides whether JAK inhibitors / IL-6 blockade are a rational PAIS therapeutic class; a JAK1-inhibitor trial (NCT06597396) is the direct test for long COVID.
+- If unanswered, anti-cytokine trials may target an epiphenomenon, and cross-PAIS therapeutic transfer (to ME/CFS, post-Q-fever) cannot be justified.
+
+## Current Evidence
+
+- Supporting: Aid2025 shows persistent JAK-STAT/IL-6/IFN/complement activation >180 days with no circulating virus and frames it as a failed negative-feedback loop and a therapeutic target; Ganesh2022 finds durable IL-6 elevation (often discordant with CRP/ESR).
+- Conflicting / gaps: causal direction is untested (driver vs marker); bulk assays cannot identify the cell source (Aid2025); no cross-PAIS pathway-level comparison exists, so generalizability beyond SARS-CoV-2 is unknown; Ryan2022's IFN-I *suppression* signal complicates a simple "persistent activation" picture.
+
+## Thoughts
+
+- Best current interpretation: JAK-STAT/IL-6 is at minimum a robust state marker and a plausible proximal node; the feedback-failure framing (Aid2025) makes it a credible driver candidate, pending the inhibitor trial.
+- Major uncertainty: which cell population sustains the signal, and whether inhibition reverses symptoms or merely suppresses a marker while the upstream lesion (antigen, autoimmunity) persists.
+
+## Connections to Project
+
+- Related hypotheses: `hypothesis:0003-immune-exhaustion-feedback`, `hypothesis:0001-shared-dysregulated-attractor`.
+- Required data or analyses: results of JAK1-inhibitor RCT with symptom + pathway co-endpoints; single-cell profiling to localize the IL-6/JAK-STAT source; cross-PAIS pathway-activity comparison.
+- Priority level: P1 — a near-term, directly testable driver-vs-marker question with a registered trial.
+
+## Related
+
+- Topic notes: `topic:long-covid-immune-dysregulation`, `topic:shared-failure-mode-across-pais`.
+- Article notes: Aid2025, Ganesh2022, Ryan2022, Talla2023.
+- Methods/Datasets: NCT06597396 (JAK1 inhibitor); Olink/SomaScan proteomic cohorts.
