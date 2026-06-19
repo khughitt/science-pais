@@ -1,0 +1,61 @@
+digraph t014 {
+  rankdir=LR;
+  node [fontname="Helvetica",fontsize=10];
+  edge [color="#555555"];
+  "acute_infection_severity" [label="Acute
+severity",fillcolor="#c7e9c0",style=filled];
+  "cardiometabolic_comorbidity" [label="Cardiometabolic
+comorbidity",fillcolor="#ffd1a3",style=filled];
+  "chronological_age" [label="Age",fillcolor="#ffe08a",style=filled,shape=box];
+  "clinic_attendance" [label="Clinic
+attendance",fillcolor="#cbb3e6",style="filled,bold",shape=hexagon];
+  "hormone_therapy" [label="Hormone therapy",fillcolor="#c7e9c0",style=filled];
+  "immune_dysregulation" [label="Immune
+dysregulation",fillcolor="#c7e9c0",style=filled];
+  "menopausal_transition_reproductive_stage" [label="Menopausal
+transition",fillcolor="#1f77b4",fontcolor=white,style="filled,bold",shape=box];
+  "menopause_pais_symptom_overlap" [label="Symptom
+overlap",fillcolor="#e0e0e0",style=filled,shape=note];
+  "pais_outcome" [label="PAIS
+outcome",fillcolor="#d62728",fontcolor=white,style="filled,bold",shape=box];
+  "pregnancy_history" [label="Pregnancy hx",fillcolor="#dff0f7",style=filled];
+  "sex_assigned_at_birth" [label="Sex at birth",fillcolor="#ffe08a",style=filled,shape=box];
+  "sex_hormone_levels" [label="Sex hormones",fillcolor="#c7e9c0",style=filled];
+  "thromboinflammation_and_endothelial_dysfunction" [label="Thrombo-
+inflammation",fillcolor="#c7e9c0",style=filled];
+  "unmeasured_shared_confounders" [label="Unmeasured
+confounders (U)",fillcolor=white,style="filled,dashed",shape=ellipse];
+  "chronological_age" -> "menopausal_transition_reproductive_stage" ;
+  "chronological_age" -> "cardiometabolic_comorbidity" ;
+  "chronological_age" -> "immune_dysregulation" ;
+  "chronological_age" -> "acute_infection_severity" ;
+  "chronological_age" -> "pais_outcome" ;
+  "sex_assigned_at_birth" -> "menopausal_transition_reproductive_stage" ;
+  "sex_assigned_at_birth" -> "sex_hormone_levels" ;
+  "sex_assigned_at_birth" -> "immune_dysregulation" ;
+  "sex_assigned_at_birth" -> "pais_outcome" ;
+  "menopausal_transition_reproductive_stage" -> "sex_hormone_levels" ;
+  "menopausal_transition_reproductive_stage" -> "hormone_therapy" ;
+  "menopausal_transition_reproductive_stage" -> "menopause_pais_symptom_overlap" ;
+  "sex_hormone_levels" -> "immune_dysregulation" ;
+  "sex_hormone_levels" -> "thromboinflammation_and_endothelial_dysfunction" ;
+  "sex_hormone_levels" -> "cardiometabolic_comorbidity" ;
+  "hormone_therapy" -> "sex_hormone_levels" ;
+  "menopause_pais_symptom_overlap" -> "hormone_therapy" ;
+  "pregnancy_history" -> "sex_hormone_levels" ;
+  "pregnancy_history" -> "immune_dysregulation" ;
+  "cardiometabolic_comorbidity" -> "thromboinflammation_and_endothelial_dysfunction" ;
+  "cardiometabolic_comorbidity" -> "acute_infection_severity" ;
+  "cardiometabolic_comorbidity" -> "pais_outcome" ;
+  "immune_dysregulation" -> "acute_infection_severity" ;
+  "immune_dysregulation" -> "pais_outcome" ;
+  "acute_infection_severity" -> "thromboinflammation_and_endothelial_dysfunction" ;
+  "acute_infection_severity" -> "pais_outcome" ;
+  "thromboinflammation_and_endothelial_dysfunction" -> "pais_outcome" ;
+  "menopause_pais_symptom_overlap" -> "clinic_attendance" ;
+  "pais_outcome" -> "clinic_attendance" ;
+  "unmeasured_shared_confounders" -> "menopausal_transition_reproductive_stage" [style=dashed,color="#aa0000"];
+  "unmeasured_shared_confounders" -> "pais_outcome" [style=dashed,color="#aa0000"];
+  label="t014: total effect of menopausal transition on PAIS (sketch)\nblue=treatment red=outcome yellow=confounder(adjust) green=mediator(do-not-adjust) purple=collider(do-not-condition) dashed=latent";
+  labelloc=b; fontsize=9;
+}

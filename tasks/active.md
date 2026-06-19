@@ -107,7 +107,7 @@ Compare long COVID, PTLD, post-dengue fatigue, and other PAIS evidence to test w
 
 ## [t014] Build causal DAG for sex hormones menopause and PAIS risk
 - priority: P2
-- status: proposed
+- status: in_progress
 - aspects: []
 - related: [question:0007-mechanism-of-female-predominance-in-pais, topic:menopause-sex-hormones-and-pais-risk]
 - group: causal-disentanglement
@@ -118,6 +118,7 @@ Model sex assigned at birth, age, menopausal transition, estradiol/progesterone/
 ### Notes
 
 - 2026-06-19: Per 2026-06-19 review: t014 already lists healthcare-seeking/reporting as a node; make it explicit that clinic-attendance / healthcare-seeking is a COLLIDER on the menopause-symptom -> clinic-sample -> PAIS path (Stewart2024-type post-COVID-clinic samples condition on it), and predeclare it do-not-condition. Conditioning on clinic attendance can manufacture a spurious menopause-PAIS association.
+- 2026-06-19: DAG built: entities/patches/menopause-pais-causal-dag.md (13 vars, 31 scic:causes edges) + 14 concept entities + doc/inquiries/ doc + results/2026-06-19-t014-menopause-pais-dag/dag.{dot,svg,png}. Primary estimand LOCKED: total effect of menopausal transition -> PAIS (adjust age + baseline comorbidity; mediators=hormones/immune/thrombo/acute-severity left unadjusted; collider=clinic attendance, do-not-condition). Open issue for critique: unmeasured-confounder back-door => effect not identifiable by adjustment alone. Next: /science:critique-approach menopause-pais-causal-dag.
 
 ## [t015] Search hormone-measured long-COVID cohorts
 - priority: P2
@@ -192,3 +193,11 @@ h0005 currently carries its reasoning as a prose 'Proposition Bundle' (unmigrate
 ### Notes
 
 - 2026-06-19: Design doc revised to v2 (2026-06-19) after review against the June 8 epistemic-edges facet. Framing change for this migration: P-reverse is an ordinary second relational proposition (multi-edge), roled 'rival' on its cito:discusses membership *relative to h0005* — NOT a new causal-edge label. Confounder/collider cautions from t014 are DERIVED from patch topology + query (epistemic-edges §2.1), so do not author them as edge roles. The only thing this migration exercises that is new is membership_role on the bundle edge (core|rival|background).
+
+## [t022] Build project knowledge graph (graph.trig) to unlock attention-sampling and cross-entity analysis
+- priority: P2
+- status: proposed
+- aspects: []
+- created: 2026-06-19
+
+graph.trig does not yet exist; science graph attention-sample and graph-backed review loops are unavailable. With 95 synced entities (72 papers, 8 topics, 5 hypotheses, 13 questions) the graph's value is now material. Run /science:create-graph. Surfaced by entities/meta/0001-next-steps-2026-06-19.md.
