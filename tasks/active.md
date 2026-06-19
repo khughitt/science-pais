@@ -117,7 +117,7 @@ Find longitudinal or well-controlled long-COVID/PASC cohorts with estradiol, pro
 
 ## [t016] Define estimands for reproductive-stage PAIS causal analyses
 - priority: P2
-- status: proposed
+- status: in_progress
 - aspects: []
 - related: [question:0013-reproductive-stage-failed-immune-recovery-after-infection, hypothesis:0005-reproductive-stage-immune-homeostatic-margin, topic:menopause-sex-hormones-and-pais-risk]
 - group: causal-disentanglement
