@@ -159,11 +159,22 @@ Causal DAG (sketch) for **task t014**, operationalizing
 
 **Primary estimand (locked):** the *total effect* of **menopausal transition
 (reproductive stage)** on the **PAIS outcome** (failed post-infectious recovery).
-Adjust **age**, **sex assigned at birth** (population restriction), and
-**baseline cardiometabolic comorbidity**; leave **sex hormones, immune
-dysregulation, thromboinflammation/endothelial dysfunction, and acute infection
-severity** unadjusted as mediators. Never condition on **clinic attendance**
-(collider).
+Adjust **age** only; **sex assigned at birth** is handled by population restriction
+(natal females). Leave **sex hormones, immune dysregulation,
+thromboinflammation/endothelial dysfunction, and acute infection severity**
+unadjusted as mediators. Never condition on **clinic attendance** (collider).
+
+> **Corrected by `/science:critique-approach` (2026-06-19).** An earlier draft of
+> this summary also adjusted **baseline cardiometabolic comorbidity**. pgmpy
+> back-door analysis showed comorbidity is **not** a confounder of the *total*
+> effect (it is not a parent of menopausal transition), so adjusting it
+> over-adjusts a mediator descendant (M-bias risk). The unique minimal sufficient
+> set is **`{age}`** under natal-female restriction. Baseline comorbidity is
+> retained only as a **sensitivity arm** contingent on a future
+> `comorbidity → menopause-timing` edge (DAG v2, t023). See
+> `doc/inquiries/menopause-pais-causal-dag-critique.md`. The frontmatter
+> `flow_edges` and the `comorbidity-time-split` assumption are unchanged and
+> already consistent with this correction.
 
 This matches h0005's organizing conjecture: menopause is **not** posited as a
 direct cause of PAIS, but as a threshold-shifter acting *through* hormone-driven
@@ -178,7 +189,7 @@ immune, endothelial, and autonomic pathways.
 | Sex hormone levels | Mediator (first line) | Do not adjust (total effect) |
 | Hormone therapy | Mediator + confounded-by-indication intervention | Separate target-trial estimand (t019) |
 | Pregnancy history | Competing reproductive-stage exposure | Covariate / separate exposure |
-| Cardiometabolic comorbidity | Confounder (baseline) **and** mediator (incident) | Time-split; adjust baseline only |
+| Cardiometabolic comorbidity | Mediator (incident) of total effect; would be a confounder only **if** a `comorbidity → menopause-timing` edge existed | **Not adjusted** for the total effect (critique: over-adjustment); baseline comorbidity only as a sensitivity arm (DAG v2, t023) |
 | Immune dysregulation | Mediator | Do not adjust (total effect) |
 | Thromboinflammation / endothelial dysfunction | Mediator | Do not adjust (total effect) |
 | Acute infection severity | Mediator | Do not adjust (total effect); condition only for direct effect |

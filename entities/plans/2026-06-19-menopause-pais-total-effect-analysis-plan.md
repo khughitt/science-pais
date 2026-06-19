@@ -32,11 +32,15 @@ causal DAG (`inquiry:menopause-pais-causal-dag`) into a pre-registerable
 observational analysis, incorporating every correction surfaced by the
 adversarial critique (`doc/inquiries/menopause-pais-causal-dag-critique.md`).
 
-It is a **design-stage** plan: no dataset is yet in hand. t015 (hormone-measured
-cohort search) has not run, so the readiness verdict below is **not-ready** —
-the *analytic* design is locked and pre-registerable, but execution is gated on
-identifying an admissible cohort. The blocking checks map to existing tasks
-(t015 / t017 / t008 / t020), not new duplicates.
+It is a **design-stage** plan. The analytic design is locked, and as of the
+2026-06-19 updates the **cohort-identification gate is resolved**: t015 identified
+**UK Biobank** as the admissible primary vehicle (population-based, low-collider,
+pre-infection baseline, questionnaire menopause staging) — see the addendum to
+*Blocking Checks* below. The readiness verdict remains **not-ready** for a narrower
+reason: the analysis is not yet pre-registerable because UKB data is not in hand
+and two design artifacts are still open — **t017** (the U-proxy measurement schema
+against UKB fields) and **t020** (the questionnaire-staging misclassification
+model). The remaining blocking checks map to existing tasks, not new duplicates.
 
 ## Analysis Question
 
@@ -254,10 +258,15 @@ read from the materialized graph rather than re-authored by hand.
 
 ## Readiness Decision
 
-**not-ready** — the analytic design is locked, internally consistent with the
-critiqued DAG, and pre-registerable as a template, but **no admissible dataset
-exists yet**. Readiness is gated entirely on data acquisition and the
-collider/reverse-causation admissibility gates, all of which are tracked tasks.
+**not-ready** — the analytic design is locked and internally consistent with the
+critiqued DAG. As of 2026-06-19 the cohort-identification and pre-infection-baseline
+gates are **resolved** (t015 → UK Biobank), so the original "no admissible dataset
+exists" blocker no longer applies. The verdict stays **not-ready** for the narrower
+reason that the analysis is not yet pre-registerable: UKB data is not in hand, and
+the U-proxy measurement schema (**t017**) and questionnaire-staging misclassification
+model (**t020**) remain open. When those two lock and access is in hand, the plan
+becomes `ready-with-caveats` (carrying the limitations below) and
+`/science:pre-register` is runnable.
 
 ## Blocking Checks Before Pre-Registration
 

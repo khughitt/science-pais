@@ -52,8 +52,11 @@ exercising the causal-inference + literature tooling.
    association. This drives a hard sample-admissibility gate, not a covariate.
 
 4. **Case definitions dominate cross-study variation (t002/t024).** Of 35 primary
-   cohort studies, only **9** use a named standard definition (22 author-defined);
-   **PEM is ascertained in just 3/71 papers**; time thresholds scatter ≥4wk→≥6mo;
+   cohort studies, only **9** use a named standard definition (17 author-defined,
+   18 incl. the mixed RECOVER+author row; the all-corpus author-defined count is 22);
+   **PEM is a *required* criterion in just 3/71 papers** (the TSV codes
+   `pem_required` — a study may measure PEM without requiring it); time thresholds
+   scatter ≥4wk→≥6mo;
    **20/35 primary studies are high clinic-collider risk** (only 3 low, all
    male/registry). Recommended t016 outcome: **WHO-2021 ≥3mo + RECOVER PASC-index
    PEM weighting**, run under a 3-definition sensitivity axis.

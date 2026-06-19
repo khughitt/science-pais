@@ -167,7 +167,11 @@ h0005 currently carries its reasoning as a prose 'Proposition Bundle' (unmigrate
 - aspects: []
 - created: 2026-06-19
 
-Critique (2026-06-19) identified missing structure: add comorbidity->menopause-timing edge (would make baseline comorbidity a true confounder; test both adjustment sets), a hospitalization/acute-care ascertainment collider (severe acute -> hospital -> cohort entry), and a calendar-period/variant/vaccination-era node confounding mediator paths. Keep reverse causation (PAIS->reproductive axis, t021) as a separate acyclic inquiry with exposure fixed at pre-infection stage. Relates: hypothesis:0005, task:t016, task:t021, patch-definition:menopause-pais-causal-dag.
+Build v2 of the t014 menopause-PAIS causal DAG with the structure the critique flagged as missing.
+
+PREREQUISITE STRUCTURAL FIX (review 2026-06-19): the current graph has a single cardiometabolic-comorbidity node with menopause -> sex-hormones -> comorbidity. Naively adding the recommended comorbidity -> menopause-timing edge to that same node creates a CYCLE. v2 must first SPLIT the node into baseline (pre-infection) comorbidity and menopause-incident comorbidity: baseline-comorbidity -> menopause-timing (makes baseline comorbidity a true confounder -> adjust) while incident comorbidity stays a downstream mediator (menopause/hormones -> incident-comorbidity -> PAIS). Only after the split is acyclic should the new edges be added.
+
+Then add: the baseline-comorbidity -> menopause-timing edge (test both {age} and {age, baseline-comorbidity} adjustment sets), a hospitalization/acute-care ascertainment collider (severe acute -> hospital -> cohort entry), and a calendar-period/variant/vaccination-era node confounding mediator paths. Keep reverse causation (PAIS -> reproductive axis, t021) as a separate acyclic inquiry with exposure fixed at pre-infection stage. Relates: hypothesis:0005, task:t016, task:t021, patch-definition:menopause-pais-causal-dag.
 
 ## [t025] Compare PEM-positive vs PEM-negative PASC molecular signatures
 - priority: P2

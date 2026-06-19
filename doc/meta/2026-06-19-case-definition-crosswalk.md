@@ -51,7 +51,10 @@ which itself bounds any cross-*pathogen* synthesis (t001).
 ## Finding 1 — definitional heterogeneity is the rule, named standards the exception
 
 Among the **35 primary studies**, only **9 use a named standard case definition**;
-the rest are **author-defined (22)**, self-report/symptom-based, or none-stated.
+the rest are **author-defined (17; 18 incl. the one RECOVER-index+author row)**,
+self-report/symptom-based (6), or none-stated (3). (The all-corpus
+`author-defined` count is 22 — the extra 4–5 are review/MA rows; the table below
+is the all-71 tally, not the primary-subset.)
 
 | Case definition used (all 71) | n |
 |---|---|
@@ -86,8 +89,10 @@ a cohort with symptom-level PEM data (RECOVER/IMPACC raw, not these summaries).
 
 Of the **35 primary studies, 20 are high clinic-collider risk** (recruited via
 post-COVID / specialty clinics or symptomatic care-seeking — conditioning on the
-`clinic_attendance` collider from the t014 DAG), **13 medium**, and only **3 low**.
-`Stewart2024` is confirmed as the collider exemplar (3 NHS post-COVID clinics, no
+`clinic_attendance` collider from the t014 DAG), **12 medium**, and only **3 low**
+(20+12+3 = 35; the all-71 TSV carries 36 non-NA collider scores — the extra one is
+`Zeng2023`, a meta-analysis scored `medium`, which sits outside the primary-study
+set). `Stewart2024` is confirmed as the collider exemplar (3 NHS post-COVID clinics, no
 control group). The three low-collider primaries are all registry/EHR designs:
 `Cai2024`, `Xie2024` (VA), and `Zheng2026` (FinnGen).
 
