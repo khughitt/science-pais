@@ -309,10 +309,17 @@ Note the ~decade baseline→infection gap and that the long-COVID outcome must b
 researcher-engineered (questionnaire + GP/HES codes) under the t002 multi-definition
 sensitivity axis. Nearest precedent: `paper:AlcaldeHerraiz2025` (UKB SHBG→long COVID).
 
+The UKB **data-field basket** (menopause/HRT, age, U-proxies, COVID+HES/GP linkage,
+engineered 3-definition long-COVID outcome) and **access plan** are now drafted in
+`doc/methods/2026-06-19-ukb-data-field-specification.md` (t027) — this resolves the
+*vehicle-field* uncertainty but adds an explicit **access gate** (UKB AMS
+application not yet submitted; provisioning is weeks-to-months) that runs in
+parallel with the design gates below.
+
 Remaining gates are now **t017** (U-proxy measurement schema against UKB fields) and
 **t020** (STRAW+10/age-band questionnaire-staging misclassification model). Once those
-lock, run `/science:pre-register` to fix the confirmatory criteria above, then
-`/science:plan-pipeline` for execution orchestration.
+lock and a UKB access decision is in hand, run `/science:pre-register` to fix the
+confirmatory criteria above, then `/science:plan-pipeline` for execution orchestration.
 
 ## Feedback Reflection
 

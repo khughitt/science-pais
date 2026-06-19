@@ -188,11 +188,3 @@ Search for or commission a within-cohort (e.g. RECOVER, IMPACC) proteomic/metabo
 - created: 2026-06-19
 
 Assess whether t001/t016 should pre-commit to PC-COS core domains (fatigue, breathlessness, cognitive impairment, QoL) as dimensional outcomes alongside the binary PAIS case variable, enabling continuous cross-study comparison. Follows topic:pais-case-definition-heterogeneity (t002).
-
-## [t027] Draft UK Biobank data-field specification for the menopause-PAIS analysis
-- priority: P1
-- status: proposed
-- aspects: []
-- created: 2026-06-19
-
-Convert the t015 finding (UK Biobank = primary t016 vehicle) into a concrete UKB data spec + access plan. Enumerate fields: menopause/reproductive (2724 had menopause, 3581 age at menopause, 2814 ever-HRT, 3536 age started HRT, 2714 menarche), sex-hormone (30850 testosterone, 30830 SHBG; note 30800 oestradiol censored at 175 pmol/L floor -> exclude as continuous postmenopausal exposure), age, SES/Townsend + U-proxies, COVID test/serology + GP/HES linkage for an engineered long-COVID outcome under the t002 WHO>=3mo + multi-definition sensitivity axis. Specify the natal-female restriction, {age}-only adjustment, E-value bounding, and triangulation arms (All of Us/Lifelines). Feeds t017 (measurement schema) and t020 (questionnaire-staging misclassification), then /science:pre-register. Ref doc/searches/2026-06-19-hormone-menopause-pais-cohorts.md.
