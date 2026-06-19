@@ -269,7 +269,19 @@ These gate the pre-registration; each maps to an existing task (no duplicates):
 | Confirm the cohort has **pre-infection baseline** + reproductive stage stageable *at infection* | reverse-causation exclusion | **t008**, t015 |
 | Finalize the minimum measurement schema incl. **U-proxy battery** (SES, EBV, autoimmune hx) | back-door partial closure | **t017** |
 | Lock the **STRAW+10 exposure-window operationalization** + age-band fallback misclassification model | exposure definition | **t020** |
-| Declare the single **PAIS case definition** for the outcome | outcome definition | t017, t002 |
+| Declare the single **PAIS case definition** for the outcome | outcome definition | ✅ **t002** (resolved); t017 |
+
+**Outcome case-definition — resolved by t002** (`topic:pais-case-definition-heterogeneity`):
+adopt **WHO 2021 ≥3-month** as the primary outcome, operationalized with a
+PEM-weighted instrument (RECOVER PASC index ≥12 or nearest available). Run the
+analysis under three pre-committed definition operationalizations as a sensitivity
+axis (folding into the Sensitivity Arbitration block): (1) WHO binary only (most
+inclusive), (2) PASC index ≥12 (most PEM-sensitive), (3) WHO + functional-impairment
+gate (SF-36 T<45). An effect stable across all three is *definition-stable*; an
+effect present only under (1) likely reflects PEM-negative prolonged recovery rather
+than attractor entry — which **changes the interpretation for h0005**. This closes
+the outcome-definition blocking check at the design level; t017 only needs to ensure
+the chosen cohort carries symptom-level data to compute all three.
 
 Once t015 returns an admissible cohort and t017/t020 lock the schema and exposure
 window, run `/science:pre-register` to lock the confirmatory criteria above, then

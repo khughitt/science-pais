@@ -7,14 +7,6 @@
 
 Assemble immune/proteomic signatures across long COVID, ME/CFS, PTLDS, post-dengue to test whether they converge on a shared dysregulated state vs trigger-specific mechanisms. See hypothesis:0001-shared-dysregulated-attractor, question:0001-shared-molecular-signature-across-triggers.
 
-## [t002] Resolve PAIS case-definition heterogeneity for cross-study synthesis
-- priority: P2
-- status: proposed
-- aspects: []
-- created: 2026-06-11
-
-Catalogue case definitions used across the imported cohorts (WHO/CDC long COVID; Fukuda/CCC/ICC ME/CFS) and assess how much cross-study variation is definitional vs biological. Prerequisite for quantitative synthesis.
-
 ## [t003] Promote PAIS<->immunity bridge papers to commons once v3 entities/papers promotion is supported
 - priority: P3
 - status: proposed
@@ -186,3 +178,27 @@ h0005 currently carries its reasoning as a prose 'Proposition Bundle' (unmigrate
 - created: 2026-06-19
 
 Critique (2026-06-19) identified missing structure: add comorbidity->menopause-timing edge (would make baseline comorbidity a true confounder; test both adjustment sets), a hospitalization/acute-care ascertainment collider (severe acute -> hospital -> cohort entry), and a calendar-period/variant/vaccination-era node confounding mediator paths. Keep reverse causation (PAIS->reproductive axis, t021) as a separate acyclic inquiry with exposure fixed at pre-infection stage. Relates: hypothesis:0005, task:t016, task:t021, patch-definition:menopause-pais-causal-dag.
+
+## [t024] Crosswalk-audit case definitions of imported PAIS cohort papers
+- priority: P2
+- status: proposed
+- aspects: []
+- created: 2026-06-19
+
+Systematically extract the case definition used in each paper entity under entities/papers/ and annotate (a) PEM required? (b) time threshold (c) functional-impairment threshold (d) clinic- vs population-recruited. Produces the admissibility metadata t001 needs before quantitative cross-study synthesis can run, and the sampling-frame flag t016 needs for collider exclusion. Follows topic:pais-case-definition-heterogeneity (t002).
+
+## [t025] Compare PEM-positive vs PEM-negative PASC molecular signatures
+- priority: P2
+- status: proposed
+- aspects: []
+- created: 2026-06-19
+
+Search for or commission a within-cohort (e.g. RECOVER, IMPACC) proteomic/metabolomic comparison of PEM-positive vs PEM-negative PASC. Single most informative test of the PEM-requirement harmonization policy; addresses question:0015. Data-gated like t015/t005.
+
+## [t026] Evaluate PC-COS core-outcome-set adoption for PAIS analyses
+- priority: P3
+- status: proposed
+- aspects: []
+- created: 2026-06-19
+
+Assess whether t001/t016 should pre-commit to PC-COS core domains (fatigue, breathlessness, cognitive impairment, QoL) as dimensional outcomes alongside the binary PAIS case variable, enabling continuous cross-study comparison. Follows topic:pais-case-definition-heterogeneity (t002).
