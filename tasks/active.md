@@ -105,21 +105,6 @@ Long COVID / ME-CFS / PTLDS as distinct disease labels possibly sharing post-inf
 
 Compare long COVID, PTLD, post-dengue fatigue, and other PAIS evidence to test whether female excess is stronger in post-acute persistence than in acute infection severity, and whether depression/neuropsychiatric outcomes dissociate from somatic fatigue.
 
-## [t014] Build causal DAG for sex hormones menopause and PAIS risk
-- priority: P2
-- status: in_progress
-- aspects: []
-- related: [question:0007-mechanism-of-female-predominance-in-pais, topic:menopause-sex-hormones-and-pais-risk]
-- group: causal-disentanglement
-- created: 2026-06-19
-
-Model sex assigned at birth, age, menopausal transition, estradiol/progesterone/testosterone, hormone therapy, pregnancy, cardiovascular/metabolic comorbidity, immune dysregulation, thromboinflammation, symptom overlap, healthcare seeking/reporting, acute severity, and PAIS outcome. Predeclare whether menopause is confounder, mediator, effect modifier, competing diagnosis, or downstream consequence for each estimand.
-
-### Notes
-
-- 2026-06-19: Per 2026-06-19 review: t014 already lists healthcare-seeking/reporting as a node; make it explicit that clinic-attendance / healthcare-seeking is a COLLIDER on the menopause-symptom -> clinic-sample -> PAIS path (Stewart2024-type post-COVID-clinic samples condition on it), and predeclare it do-not-condition. Conditioning on clinic attendance can manufacture a spurious menopause-PAIS association.
-- 2026-06-19: DAG built: entities/patches/menopause-pais-causal-dag.md (13 vars, 31 scic:causes edges) + 14 concept entities + doc/inquiries/ doc + results/2026-06-19-t014-menopause-pais-dag/dag.{dot,svg,png}. Primary estimand LOCKED: total effect of menopausal transition -> PAIS (adjust age + baseline comorbidity; mediators=hormones/immune/thrombo/acute-severity left unadjusted; collider=clinic attendance, do-not-condition). Open issue for critique: unmeasured-confounder back-door => effect not identifiable by adjustment alone. Next: /science:critique-approach menopause-pais-causal-dag.
-
 ## [t015] Search hormone-measured long-COVID cohorts
 - priority: P2
 - status: proposed
@@ -201,3 +186,11 @@ h0005 currently carries its reasoning as a prose 'Proposition Bundle' (unmigrate
 - created: 2026-06-19
 
 graph.trig does not yet exist; science graph attention-sample and graph-backed review loops are unavailable. With 95 synced entities (72 papers, 8 topics, 5 hypotheses, 13 questions) the graph's value is now material. Run /science:create-graph. Surfaced by entities/meta/0001-next-steps-2026-06-19.md.
+
+## [t023] Build v2 of the t014 menopause-PAIS DAG before specification
+- priority: P3
+- status: proposed
+- aspects: []
+- created: 2026-06-19
+
+Critique (2026-06-19) identified missing structure: add comorbidity->menopause-timing edge (would make baseline comorbidity a true confounder; test both adjustment sets), a hospitalization/acute-care ascertainment collider (severe acute -> hospital -> cohort entry), and a calendar-period/variant/vaccination-era node confounding mediator paths. Keep reverse causation (PAIS->reproductive axis, t021) as a separate acyclic inquiry with exposure fixed at pre-infection stage. Relates: hypothesis:0005, task:t016, task:t021, patch-definition:menopause-pais-causal-dag.

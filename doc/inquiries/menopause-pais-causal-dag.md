@@ -26,11 +26,22 @@ edges) and materializes into the `inquiry/menopause-pais-causal-dag` named graph
 **PAIS outcome** (failed post-infectious recovery), in a **natal-female**
 target population.
 
-- **Adjust (confounders):** chronological age, baseline cardiometabolic
-  comorbidity. (Sex assigned at birth is handled by population restriction.)
+- **Adjust (confounders):** chronological age. (Sex assigned at birth is handled
+  by population restriction to natal females.)
+  > **Corrected by critique (2026-06-19):** the original draft also adjusted
+  > baseline cardiometabolic comorbidity. pgmpy back-door analysis shows
+  > comorbidity is **not** a confounder of the *total* effect in this DAG (it is
+  > not a cause of menopausal transition); adjusting it over-adjusts a mediator
+  > descendant. The unique minimal sufficient set is **`{age}`** under
+  > natal-female restriction. Baseline comorbidity is retained only as a
+  > *sensitivity arm* contingent on a `comorbidity → menopause-timing` edge.
+  > See `menopause-pais-causal-dag-critique.md`.
 - **Do NOT adjust (mediators):** sex hormone levels, immune dysregulation,
   thromboinflammation/endothelial dysfunction, acute infection severity.
 - **Never condition (collider):** clinic attendance.
+- **Identifiability:** **not identifiable by adjustment alone** while unmeasured
+  shared confounders (U) are latent — requires measured proxies for U and/or
+  E-value bounding (see critique).
 
 This encodes h0005's conjecture that menopause is not a direct cause of PAIS but
 a threshold-shifter acting *through* hormone-driven immune, endothelial, and
