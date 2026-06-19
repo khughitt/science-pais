@@ -1,0 +1,72 @@
+citekey	condition	study_type	uses_case_definition	case_definition	pem_required	time_threshold	functional_impairment_required	recruitment_frame	clinic_collider_risk	t001_admissible	notes
+Adler2024	PTLDS	narrative-review	NA	NA	NA	NA	NA	NA	NA	no	Narrative review; cites IDSA-defined PTLDS cohorts but enrolls none
+Cai2024	long-COVID/PASC	cohort-retrospective	yes	author-defined	no	other(80-outcome EHR index)	no	registry/biobank	low	yes	VA EHR cohort; pre-vaccine ancestral; ICD-based; ~90% male
+Costeira2021	long-COVID/PASC	cross-sectional	no	self-report/symptom-based	NA	NA	no	online/community	medium	no	Acute-COVID app study; symptom-predicted infection; not a PAIS outcome
+Ganesh2022	long-COVID/PASC	cohort-retrospective	yes	NASEM-2024	unclear	other(median 148d)	no	post-COVID-clinic	high	maybe	Mayo post-COVID clinic = collider; no controls; IL-6 biomarker
+Huang2025	long-COVID/PASC	systematic-review/MA	NA	WHO-2021	NA	≥12wk/≥3mo	NA	mixed	NA	no	Meta-analysis; WHO PACS inclusion but conflated 4/8/12wk thresholds
+Komaroff2023	cross-PAIS	narrative-review	NA	IOM/SEID-2015	yes	≥6mo	yes	NA	NA	no	Review ME/CFS vs LC; NAM def; no cohort
+Morroy2016	post-Q-fever	systematic-review/MA	NA	author-defined	no	≥6mo	yes	mixed	NA	no	SR; Dutch RIVM QFS guideline def; no uniform def across studies
+Patrascu2025	long-COVID/PASC	narrative-review	NA	none-stated	NA	NA	NA	NA	NA	no	Narrative biomarker review; no cohort; heterogeneous source defs
+Rojas2022	long-COVID/PASC	cross-sectional	yes	WHO-2021	no	≥4wk	no	post-COVID-clinic	high	maybe	Post-COVID clinic Bogota; pre-pandemic controls only; autoantibody array
+Sharma2023	long-COVID/PASC	narrative-review	NA	author-defined	NA	other(3-15mo)	NA	registry/biobank	NA	no	Commentary on EHR cohorts; no original data; ICD-based
+Talla2023	long-COVID/PASC	cohort-prospective	yes	self-report/symptom-based	no	≥8wk	no	online/community	medium	yes	Olink proteomics; ≥60d PSO; mild disease; validated in INCOV
+Xie2024	long-COVID/PASC	cohort-retrospective	yes	author-defined	no	other(94-outcome EHR index)	no	hospital/inpatient	low	yes	VA hospitalized COVID vs influenza; ICD-based; ~95% male
+Aid2025	long-COVID/PASC	cohort-prospective	yes	RECOVER-PASC-index+author-defined	no	≥6mo	no	mixed	high	yes	Two cohorts; LC vs convalescent controls; multi-omic; small skewed n
+CerviaHasler2024	long-COVID/PASC	cohort-prospective	yes	WHO-2021	no	≥8wk	no	hospital/inpatient	high	yes	WHO def (≥2mo at 6mo); hospital-enrolled; serum proteomics; no baseline
+Cruz2025	long-COVID/PASC	cohort-prospective	yes	author-defined	no	≥8wk	no	hospital/inpatient	high	yes	Hospitalized pneumonia cohort; unvaccinated 2020 wave; severity confound
+George2022	long-COVID/PASC	cohort-prospective	yes	author-defined	no	≥12wk/≥3mo	no	hospital/inpatient	high	yes	Post-COVID interstitial lung; radiographic/functional def; not symptom-based
+Humphreys2025	long-COVID/PASC	systematic-review/MA	no	NA	NA	NA	NA	NA	NA	no	PRISMA-ScR scoping review menopause+long-COVID; no primary cohort
+Komaroff2025	cross-PAIS	narrative-review	no	NA	NA	NA	NA	NA	NA	no	Commentary on PAIS/IACI taxonomy; no original data
+Newson2021	long-COVID/PASC	cross-sectional	yes	self-report/symptom-based	no	≥6mo	no	online/community	high	no	Conference abstract; social-media survey n=460; no controls; no biology
+Peluso2024b	long-COVID/PASC	narrative-review	no	NA	NA	NA	NA	NA	NA	no	Review; anchors WHO-2021 + NASEM-2024 defs; no primary cohort
+Ryan2022	long-COVID/PASC	cohort-prospective	yes	author-defined	no	≥6mo	no	hospital/inpatient	high	maybe	LC by clinic referral, not standardized criteria; strong immune data
+Skevaki2025	long-COVID/PASC	narrative-review	no	NA	NA	NA	NA	NA	NA	no	Review; lists >8 case definitions; no primary cohort
+Trautmann2025	cross-PAIS	narrative-review	no	NA	NA	NA	NA	NA	NA	no	Single-author theoretical review; no original data
+Zeng2023	long-COVID/PASC	systematic-review/MA	yes	self-report/symptom-based	no	≥4wk	no	mixed	medium	no	151 studies/1.28M; ≥4wk inclusion; heterogeneous defs; pooled MA
+Averyanova2022	long-COVID/PASC	narrative-review	no	NA	NA	NA	NA	NA	NA	no	Narrative immunology review sex hormones/MHT; no PAIS cohort
+Che2025	ME/CFS	cohort-prospective	yes	Fukuda-1994+CCC-2003	yes	not-stated	unclear	specialty-clinic	high	yes	Multi-omics case-control with CPET-provoked PEM; 13-site clinic-recruited
+Esseffar2025	long-COVID/PASC	cohort-retrospective	no	self-report/symptom-based	NA	other(recovery-days)	no	online/community	medium	no	Acute COVID severity in 50 menopausal women; not long-COVID outcome
+Gusinow2026	long-COVID/PASC	cohort-prospective	no	author-defined	no	≥6mo	no	hospital/inpatient	high	maybe	LTA data-driven states, no formal case def; 75% hospitalised
+Iqbal2025	long-COVID/PASC	narrative-review	no	NA	NA	NA	NA	NA	NA	no	Narrative review gut dysbiosis; no original cohort
+Limongelli2026	other(post-vaccine SFN)	cohort-prospective	yes	author-defined	no	≥12wk/≥3mo	no	specialty-clinic	high	maybe	Post-vaccine SFN cohort, no asymptomatic-vaccinated control
+Nicolai2023	long-COVID/PASC	narrative-review	no	NA	NA	NA	NA	NA	NA	no	Thromboinflammation review; no primary cohort
+Peluso2024	long-COVID/PASC	cohort-prospective	yes	author-defined	unclear	≥12wk/≥3mo	no	mixed	medium	yes	Antigen-persistence cohort (LIINC) + pre-pandemic controls; RNA-confirmed
+Salvucci2023	long-COVID/PASC	case-series	yes	author-defined	NA	≥6mo	no	specialty-clinic	high	maybe	Retrospective n=14 antihistamine series; clinical MCA attribution, no biomarker
+Stahlberg2025	long-COVID/PASC	cross-sectional	yes	WHO-2021	no	≥12wk/≥3mo	yes	post-COVID-clinic	high	yes	WHO PACS, EndoPAT+NT-proBNP; tertiary referral, non-hospitalised acute
+Ursini2023	other(post-COVID IRD)	cohort-retrospective	yes	author-defined	no	≥4wk	no	specialty-clinic	high	no	New-onset IRD ≤4wk post-infection/vaccine; excludes long-COVID/PACS
+Zhang2022	long-COVID/PASC	cohort-retrospective	yes	author-defined	no	other(30-180d)	no	registry/biobank	medium	yes	EHR-based PASC subphenotyping; ICD-10 incident dx, not symptom-based
+Bai2023	cross-PAIS	systematic-review/MA	NA	NA	NA	NA	NA	NA	NA	no	PTLDS vs ME/CFS symptom-overlap review; heterogeneous; no biomarker data
+Choutka2022	cross-PAIS	narrative-review	NA	NA	NA	NA	NA	NA	NA	no	Foundational PAIS framing review; multi-pathogen; no original cohort
+Fedorchenko2023	long-COVID/PASC	narrative-review	NA	NA	NA	NA	NA	NA	NA	no	Long COVID in rheumatic-disease pts; narrative; heterogeneous LC defs
+Hanson2023	ME/CFS	narrative-review	NA	NA	NA	NA	NA	NA	NA	no	Enterovirus-origin perspective; warns against Fukuda vs IOM conflation
+Kalimuddin2022	cross-PAIS	cohort-prospective	yes	author-defined	unclear	≥12wk/≥3mo	yes	hospital/inpatient	medium	no	Post-dengue/post-ARI sequelae; SF-12 MCS; self-report; no biomarkers
+McClune2025	PTLDS	animal	NA	NA	NA	NA	NA	NA	NA	no	Mouse pPG-Bb persistence + human synovial fluid; no PTLDS patient cohort
+Oronsky2021	long-COVID/PASC	narrative-review	NA	NA	NA	NA	NA	NA	NA	no	Coins PPCS; SIRS-CARS-PICS hypothesis; COI; no data
+Peppercorn2023	long-COVID/PASC	case-control	yes	WHO-2021	unclear	other(~1yr)	NA	online/community	high	maybe	PBMC proteomics n=6 selected for ME/CFS-like phenotype; tiny, no FDR
+Sandoval2025	cross-PAIS	cross-sectional	yes	self-report/symptom-based	unclear	not-stated	NA	online/community	high	no	EFA self-reported neurocognitive symptoms; PASC self-diagnosed; no biology
+Stewart2021	long-COVID/PASC	narrative-review	NA	NA	NA	NA	NA	NA	NA	no	Commentary on female predominance/sex hormones; no data
+Vreeman2025	long-COVID/PASC	narrative-review	NA	NA	NA	NA	NA	NA	NA	no	Post-COVID pulmonary fibrosis; no PCPF consensus definition
+Zheng2026	cross-PAIS	cohort-retrospective	yes	author-defined	NA	other(1/5/15yr)	no	registry/biobank	low	no	FinnGen DWAS long-flu+long-COVID; ICD-coded; no biospecimens
+Bateman2023	ME/CFS	narrative-review	no	NA	NA	NA	NA	NA	NA	no	Textbook chapter; surveys Fukuda/CCC/NAM defs; no original cohort
+Ciaffi2023	long-COVID/PASC	systematic-review/MA	yes	author-defined	NA	≥4wk	no	mixed	NA	no	PRISMA SR 54 studies; post-acute=joint pain ≥4wk; no own cohort
+Finsterer2022	long-COVID/PASC	narrative-review	no	NA	NA	other(>12wk)	NA	NA	NA	no	Letter; proposes acute/subacute/post-COVID phasing; no data
+Hertanti2025	post-dengue	systematic-review/MA	yes	author-defined	NA	other(2wk-6mo+)	no	mixed	NA	no	Meta-analysis 40 studies; PIF=fatigue 2wk-6mo+; no own cohort
+Kawai2025	cross-PAIS	systematic-review/MA	no	NA	NA	NA	NA	mixed	NA	no	SR/MA viral infection→CVD; cardiovascular endpoints, not PAIS
+Mishra2020	long-COVID/PASC	cohort-retrospective	no	none-stated	unclear	≥8wk	no	hospital/inpatient	high	maybe	Retrospective inpatient; residual symptoms 8-12wk, no long-COVID def
+Ozonoff2024	long-COVID/PASC	cohort-prospective	yes	author-defined	no	≥12wk/≥3mo	yes	hospital/inpatient	medium	yes	IMPACC hospitalized cohort; LCMM PRO phenotypes + acute immunophenotyping
+Rahmati2025	long-COVID/PASC	systematic-review/MA	yes	author-defined	no	other(≥3yr)	no	hospital/inpatient	NA	no	SR/MA 11 studies at 3yr; mostly hospitalized, 87% male
+Seo2025	long-COVID/PASC	systematic-review/MA	yes	WHO-2021	NA	≥12wk/≥3mo	NA	mixed	NA	no	PRISMA-ScR therapeutics review; WHO PASC def; inconsistent primaries
+Stewart2024	long-COVID/PASC	cross-sectional	no	none-stated	unclear	not-stated	no	post-COVID-clinic	high	maybe	t014 collider exemplar: 3 NHS post-COVID clinics, no control group
+Wang2026	long-COVID/PASC	cohort-prospective	no	none-stated	unclear	not-stated	no	registry/biobank	medium	maybe	arXiv preprint; RECOVER women cohort + wearables; no stated case def
+Zhu2023	long-COVID/PASC	mechanistic/basic	no	NA	NA	NA	NA	hospital/inpatient	NA	no	Acute COVID flow-cytometry ML; no post-acute follow-up; PAIS inferred
+Bekaryssova2022	long-COVID/PASC	narrative-review	no	NA	NA	NA	NA	NA	NA	no	ReA narrative review; case reports only, no cohort, no validated def
+Conde2026	post-dengue	systematic-review/MA	yes	self-report/symptom-based	unclear	other(≥1wk)	no	mixed	NA	no	SR/MA 9 studies; validated fatigue questionnaires; no primary cohort
+Gandhi2023	long-COVID/PASC	narrative-review	no	NA	NA	NA	NA	NA	NA	no	Editorial Comment on VA cohort; no primary data
+Hoel2026	ME/CFS	case-control	yes	CCC-2003	yes	not-stated	unclear	registry/biobank	medium	yes	Serum proteomics n=50; CCC; trial-biobank sourced patients
+Klein2023	long-COVID/PASC	cross-sectional	yes	self-report/symptom-based	no	≥6mo	unclear	post-COVID-clinic	high	yes	Immune profiling AUC0.94; clinic/advocacy recruited, no standard def
+Moldofsky2011	post-SARS	case-control	no	author-defined	unclear	≥6mo	yes	specialty-clinic	high	maybe	n=22 WSIB-referred severity-biased HCWs; PSG; no standard definition
+Parotto2023	long-COVID/PASC	narrative-review	no	WHO-2021	NA	≥12wk/≥3mo	NA	hospital/inpatient	NA	no	Narrative review critical-illness PASC; cites WHO definition
+Rebman2026	PTLDS	cohort-prospective	yes	author-defined	NA	not-stated	NA	specialty-clinic	medium	maybe	SLICE early-Lyme cohort (EM rash); analyzes acute, not PTLDS outcomes
+Shah2025	long-COVID/PASC	cohort-prospective	yes	RECOVER-PASC-index	no	≥6mo	no	mixed	medium	yes	RECOVER n=12,276; symptom index; binary menopause variable
+Sun2025	post-sepsis/PICS	case-control	yes	author-defined	NA	not-stated	NA	hospital/inpatient	medium	maybe	scRNA-seq n=16 elderly; PICS clinical criteria; +mouse validation
+Wester2024	PTLDS	narrative-review	yes	IDSA-PTLDS	no	≥6mo	yes	NA	NA	no	Narrative review; cites IDSA PTLDS definition; no primary cohort

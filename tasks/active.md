@@ -107,6 +107,8 @@ Compare long COVID, PTLD, post-dengue fatigue, and other PAIS evidence to test w
 
 Find longitudinal or well-controlled long-COVID/PASC cohorts with estradiol, progesterone, testosterone, FSH/LH, menopausal status, HRT route/dose, immune markers, endothelial/vascular markers, and symptom trajectories.
 
+UPDATE (t024 crosswalk, 2026-06-19): the imported corpus contains ZERO admissible cohort meeting the t016 gates (population/registry-based + low clinic-collider + natal-female-analysable + hormone/menopause staging). Low-collider admissibles (Cai2024/Xie2024 VA, Zheng2026 FinnGen) are ~90-95% male or lack biospecimens; female-inclusive ones (Shah2025/Wang2026 RECOVER) are medium-collider with binary menopause variables (t020 concern). Hard search spec: population/registry-based (NOT post-COVID clinic) + female-inclusive + estradiol/FSH or STRAW+10 menopausal staging.
+
 ## [t016] Define estimands for reproductive-stage PAIS causal analyses
 - priority: P2
 - status: in_progress
@@ -178,14 +180,6 @@ h0005 currently carries its reasoning as a prose 'Proposition Bundle' (unmigrate
 - created: 2026-06-19
 
 Critique (2026-06-19) identified missing structure: add comorbidity->menopause-timing edge (would make baseline comorbidity a true confounder; test both adjustment sets), a hospitalization/acute-care ascertainment collider (severe acute -> hospital -> cohort entry), and a calendar-period/variant/vaccination-era node confounding mediator paths. Keep reverse causation (PAIS->reproductive axis, t021) as a separate acyclic inquiry with exposure fixed at pre-infection stage. Relates: hypothesis:0005, task:t016, task:t021, patch-definition:menopause-pais-causal-dag.
-
-## [t024] Crosswalk-audit case definitions of imported PAIS cohort papers
-- priority: P2
-- status: proposed
-- aspects: []
-- created: 2026-06-19
-
-Systematically extract the case definition used in each paper entity under entities/papers/ and annotate (a) PEM required? (b) time threshold (c) functional-impairment threshold (d) clinic- vs population-recruited. Produces the admissibility metadata t001 needs before quantitative cross-study synthesis can run, and the sampling-frame flag t016 needs for collider exclusion. Follows topic:pais-case-definition-heterogeneity (t002).
 
 ## [t025] Compare PEM-positive vs PEM-negative PASC molecular signatures
 - priority: P2
