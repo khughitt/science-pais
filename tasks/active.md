@@ -179,14 +179,6 @@ h0005 currently carries its reasoning as a prose 'Proposition Bundle' (unmigrate
 
 - 2026-06-19: Design doc revised to v2 (2026-06-19) after review against the June 8 epistemic-edges facet. Framing change for this migration: P-reverse is an ordinary second relational proposition (multi-edge), roled 'rival' on its cito:discusses membership *relative to h0005* — NOT a new causal-edge label. Confounder/collider cautions from t014 are DERIVED from patch topology + query (epistemic-edges §2.1), so do not author them as edge roles. The only thing this migration exercises that is new is membership_role on the bundle edge (core|rival|background).
 
-## [t022] Build project knowledge graph (graph.trig) to unlock attention-sampling and cross-entity analysis
-- priority: P2
-- status: proposed
-- aspects: []
-- created: 2026-06-19
-
-graph.trig does not yet exist; science graph attention-sample and graph-backed review loops are unavailable. With 95 synced entities (72 papers, 8 topics, 5 hypotheses, 13 questions) the graph's value is now material. Run /science:create-graph. Surfaced by entities/meta/0001-next-steps-2026-06-19.md.
-
 ## [t023] Build v2 of the t014 menopause-PAIS DAG before specification
 - priority: P3
 - status: proposed
