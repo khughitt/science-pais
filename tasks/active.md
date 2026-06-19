@@ -97,18 +97,6 @@ Long COVID / ME-CFS / PTLDS as distinct disease labels possibly sharing post-inf
 
 Compare long COVID, PTLD, post-dengue fatigue, and other PAIS evidence to test whether female excess is stronger in post-acute persistence than in acute infection severity, and whether depression/neuropsychiatric outcomes dissociate from somatic fatigue.
 
-## [t015] Search hormone-measured long-COVID cohorts
-- priority: P2
-- status: proposed
-- aspects: []
-- related: [question:0007-mechanism-of-female-predominance-in-pais, topic:menopause-sex-hormones-and-pais-risk]
-- group: literature-search
-- created: 2026-06-19
-
-Find longitudinal or well-controlled long-COVID/PASC cohorts with estradiol, progesterone, testosterone, FSH/LH, menopausal status, HRT route/dose, immune markers, endothelial/vascular markers, and symptom trajectories.
-
-UPDATE (t024 crosswalk, 2026-06-19): the imported corpus contains ZERO admissible cohort meeting the t016 gates (population/registry-based + low clinic-collider + natal-female-analysable + hormone/menopause staging). Low-collider admissibles (Cai2024/Xie2024 VA, Zheng2026 FinnGen) are ~90-95% male or lack biospecimens; female-inclusive ones (Shah2025/Wang2026 RECOVER) are medium-collider with binary menopause variables (t020 concern). Hard search spec: population/registry-based (NOT post-COVID clinic) + female-inclusive + estradiol/FSH or STRAW+10 menopausal staging.
-
 ## [t016] Define estimands for reproductive-stage PAIS causal analyses
 - priority: P2
 - status: in_progress
@@ -196,3 +184,11 @@ Search for or commission a within-cohort (e.g. RECOVER, IMPACC) proteomic/metabo
 - created: 2026-06-19
 
 Assess whether t001/t016 should pre-commit to PC-COS core domains (fatigue, breathlessness, cognitive impairment, QoL) as dimensional outcomes alongside the binary PAIS case variable, enabling continuous cross-study comparison. Follows topic:pais-case-definition-heterogeneity (t002).
+
+## [t027] Draft UK Biobank data-field specification for the menopause-PAIS analysis
+- priority: P1
+- status: proposed
+- aspects: []
+- created: 2026-06-19
+
+Convert the t015 finding (UK Biobank = primary t016 vehicle) into a concrete UKB data spec + access plan. Enumerate fields: menopause/reproductive (2724 had menopause, 3581 age at menopause, 2814 ever-HRT, 3536 age started HRT, 2714 menarche), sex-hormone (30850 testosterone, 30830 SHBG; note 30800 oestradiol censored at 175 pmol/L floor -> exclude as continuous postmenopausal exposure), age, SES/Townsend + U-proxies, COVID test/serology + GP/HES linkage for an engineered long-COVID outcome under the t002 WHO>=3mo + multi-definition sensitivity axis. Specify the natal-female restriction, {age}-only adjustment, E-value bounding, and triangulation arms (All of Us/Lifelines). Feeds t017 (measurement schema) and t020 (questionnaire-staging misclassification), then /science:pre-register. Ref doc/searches/2026-06-19-hormone-menopause-pais-cohorts.md.

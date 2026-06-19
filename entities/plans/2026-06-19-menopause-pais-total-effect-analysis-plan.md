@@ -265,8 +265,8 @@ These gate the pre-registration; each maps to an existing task (no duplicates):
 
 | Blocking check | Vehicle-admissibility gate | Task |
 |---|---|---|
-| Identify ≥1 **population-based** (non-clinic) hormone-measured PAIS cohort | clinic-collider exclusion | **t015** |
-| Confirm the cohort has **pre-infection baseline** + reproductive stage stageable *at infection* | reverse-causation exclusion | **t008**, t015 |
+| Identify ≥1 **population-based** (non-clinic) hormone-measured PAIS cohort | clinic-collider exclusion | ✅ **t015** (UK Biobank) |
+| Confirm the cohort has **pre-infection baseline** + reproductive stage stageable *at infection* | reverse-causation exclusion | ✅ **t015** (UKB 2006–2010 baseline) |
 | Finalize the minimum measurement schema incl. **U-proxy battery** (SES, EBV, autoimmune hx) | back-door partial closure | **t017** |
 | Lock the **STRAW+10 exposure-window operationalization** + age-band fallback misclassification model | exposure definition | **t020** |
 | Declare the single **PAIS case definition** for the outcome | outcome definition | ✅ **t002** (resolved); t017 |
@@ -283,8 +283,26 @@ than attractor entry — which **changes the interpretation for h0005**. This cl
 the outcome-definition blocking check at the design level; t017 only needs to ensure
 the chosen cohort carries symptom-level data to compute all three.
 
-Once t015 returns an admissible cohort and t017/t020 lock the schema and exposure
-window, run `/science:pre-register` to lock the confirmatory criteria above, then
+**Vehicle resolved by t015** (`doc/searches/2026-06-19-hormone-menopause-pais-cohorts.md`):
+**UK Biobank** is the primary vehicle — the only population-based, low-collider,
+pre-infection-baseline (2006–2010) resource with female-inclusive,
+questionnaire-staged menopause data (age at natural/surgical menopause + HRT) and
+linked COVID/long-COVID outcomes. **Decisive measurement constraint:** baseline
+**oestradiol is censored** by a 175 pmol/L assay floor and is unusable for
+postmenopausal staging — so the treatment node is operationalized as
+**questionnaire reproductive stage** (± usable baseline testosterone/SHBG), which
+*confirms* the DAG's choice of reproductive stage (not serum estradiol) as the
+treatment and routes the exposure-measurement burden to t020's misclassification
+model. Triangulation/replication arms: **All of Us** (US, survey+EHR menopause),
+**Lifelines** and **Generation Scotland** (population, questionnaire menopause, no
+baseline assays); ONS-CIS and N3C are low-exposure triangulation only.
+Note the ~decade baseline→infection gap and that the long-COVID outcome must be
+researcher-engineered (questionnaire + GP/HES codes) under the t002 multi-definition
+sensitivity axis. Nearest precedent: `paper:AlcaldeHerraiz2025` (UKB SHBG→long COVID).
+
+Remaining gates are now **t017** (U-proxy measurement schema against UKB fields) and
+**t020** (STRAW+10/age-band questionnaire-staging misclassification model). Once those
+lock, run `/science:pre-register` to fix the confirmatory criteria above, then
 `/science:plan-pipeline` for execution orchestration.
 
 ## Feedback Reflection
