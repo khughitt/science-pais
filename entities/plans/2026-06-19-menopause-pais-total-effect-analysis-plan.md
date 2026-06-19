@@ -278,9 +278,9 @@ These gate the pre-registration; each maps to an existing task (no duplicates):
 | Confirm the cohort has **pre-infection baseline** + reproductive stage stageable *at infection* | reverse-causation exclusion | ✅ **t015** (UKB 2006–2010 baseline) |
 | Finalize the minimum measurement schema incl. **U-proxy battery** (SES, EBV, autoimmune hx) | back-door partial closure | **t017** |
 | Lock the **STRAW+10 exposure-window operationalization** + age-band fallback misclassification model | exposure definition | **t020** |
-| Declare the single **PAIS case definition** for the outcome | outcome definition | ✅ **t002** (resolved); t017 |
+| Declare the single **PAIS case definition** for the outcome | outcome definition | ⚠️ **concept** resolved (t002); **UKB operationalization** open (t017) |
 
-**Outcome case-definition — resolved by t002** (`topic:pais-case-definition-heterogeneity`):
+**Outcome case-definition — concept resolved by t002** (`topic:pais-case-definition-heterogeneity`):
 adopt **WHO 2021 ≥3-month** as the primary outcome, operationalized with a
 PEM-weighted instrument (RECOVER PASC index ≥12 or nearest available). Run the
 analysis under three pre-committed definition operationalizations as a sensitivity
@@ -288,9 +288,17 @@ axis (folding into the Sensitivity Arbitration block): (1) WHO binary only (most
 inclusive), (2) PASC index ≥12 (most PEM-sensitive), (3) WHO + functional-impairment
 gate (SF-36 T<45). An effect stable across all three is *definition-stable*; an
 effect present only under (1) likely reflects PEM-negative prolonged recovery rather
-than attractor entry — which **changes the interpretation for h0005**. This closes
-the outcome-definition blocking check at the design level; t017 only needs to ensure
-the chosen cohort carries symptom-level data to compute all three.
+than attractor entry — which **changes the interpretation for h0005**.
+
+This resolves the case-definition *concept*, but the **UKB operationalization
+remains an open t017 measurement-schema gate, not a closed check**: per the t027
+data-field spec (`doc/methods/2026-06-19-ukb-data-field-specification.md` §5.2), UKB
+carries **no symptom-level PASC instrument** (definition 2 can only be approximated
+from coded fatigue/PEM terms) and the **functional-impairment-gate fields
+(definition 3) are unconfirmed**. So t017 must (a) verify which of the three
+definitions UKB can actually compute from linked codes and (b) decide how to handle
+the PEM-sensitivity shortfall — it cannot simply assume the cohort carries
+symptom-level data.
 
 **Vehicle resolved by t015** (`doc/searches/2026-06-19-hormone-menopause-pais-cohorts.md`):
 **UK Biobank** is the primary vehicle — the only population-based, low-collider,

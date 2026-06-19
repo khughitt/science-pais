@@ -137,8 +137,10 @@ is the single largest measurement threat and is t020's core problem:
 | SHBG | **30830** | Usable | Free-androgen context; **nearest-precedent analyte** (Alcalde-Herraiz2025) |
 | Oestradiol | **30800** | ⚠️ **censored** — assay floor **175 pmol/L**, ~¾ of (post)menopausal women below limit of detection (Tin Tin 2021) | **Do NOT use as a continuous postmenopausal exposure.** At most a coarse above/below-floor indicator; documented dead-end, retained only to show why questionnaire staging is used |
 
-Baseline assays were measured **once** (2006–2010), so they share the same
-decade-gap projection problem as the questionnaire items — they characterize the
+Sex-hormone assays were measured **mostly at baseline** (2006–2010), with a small
+repeat-assessment subset (~2012–2013; testosterone and SHBG each carry two defined
+instances) — but **none is an infection-time assay**, so they share the same
+decade-gap projection problem as the questionnaire items: they characterize the
 *baseline* hormonal milieu, not the milieu at infection.
 
 ---
@@ -175,7 +177,7 @@ primary, run across a 3-definition sensitivity axis).
 
 | Source | Field / linkage | Use |
 |---|---|---|
-| PHE/UKHSA COVID-19 test results | **Category 100090** (`covid19_result_*`) **[confirm at application]** | Primary positive-test date = **time origin**; also pillar/origin flags |
+| PHE/UKHSA COVID-19 test results | **Field 40100** (grants the `covid19_result_england/scotland/wales` record tables) **[confirm at application]** | Primary positive-test date = **time origin**; also pillar/origin flags. (Note: category `100090` is *Diet by 24-hour recall* — not COVID; the test-result basket is field `40100`.) |
 | Hospital inpatient (HES/PEDW/SMR) COVID episodes | ICD-10 **U07.1 / U07.2** | Severity + ascertainment where untested |
 | Primary-care COVID codes | GP linkage (CTV3/Read v2) **[confirm — partial coverage ~45%]** | Community-managed infection capture |
 | Death registry | **40000 / 40001–40002** (U07.1/U07.2) | Competing-risk / censoring |
