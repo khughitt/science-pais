@@ -35,6 +35,8 @@ aspects:
 peers:
 - id: immunity
   path: ~/d/health/processes/immunity
+- id: cycles
+  path: ~/d/health/processes/cycles
 - id: health-meta
   path: ~/d/health/meta
 - id: pan-disease

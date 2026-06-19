@@ -17,6 +17,10 @@ __pycache__/
 # Worktrees
 .worktrees/
 
+# Science CLI lock files
+**/.references.bib.lock
+**/.tasks.lock
+
 # Managed artifact rollback backups
 *.pre-update*.bak
 

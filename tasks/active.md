@@ -94,3 +94,101 @@ Perevaryukha (Biophysics 2021), Wang (Physica D 2007), Xie (Appl Math Model 2010
 - created: 2026-06-11
 
 Long COVID / ME-CFS / PTLDS as distinct disease labels possibly sharing post-infectious biology. Coordinate with ~/d/health/comparisons/pan-disease.
+
+## [t013] Compare female excess across acute and post-acute infection outcomes
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [question:0007-mechanism-of-female-predominance-in-pais, topic:menopause-sex-hormones-and-pais-risk, topic:shared-failure-mode-across-pais]
+- group: cross-pais-comparison
+- created: 2026-06-19
+
+Compare long COVID, PTLD, post-dengue fatigue, and other PAIS evidence to test whether female excess is stronger in post-acute persistence than in acute infection severity, and whether depression/neuropsychiatric outcomes dissociate from somatic fatigue.
+
+## [t014] Build causal DAG for sex hormones menopause and PAIS risk
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [question:0007-mechanism-of-female-predominance-in-pais, topic:menopause-sex-hormones-and-pais-risk]
+- group: causal-disentanglement
+- created: 2026-06-19
+
+Model sex assigned at birth, age, menopausal transition, estradiol/progesterone/testosterone, hormone therapy, pregnancy, cardiovascular/metabolic comorbidity, immune dysregulation, thromboinflammation, symptom overlap, healthcare seeking/reporting, acute severity, and PAIS outcome. Predeclare whether menopause is confounder, mediator, effect modifier, competing diagnosis, or downstream consequence for each estimand.
+
+### Notes
+
+- 2026-06-19: Per 2026-06-19 review: t014 already lists healthcare-seeking/reporting as a node; make it explicit that clinic-attendance / healthcare-seeking is a COLLIDER on the menopause-symptom -> clinic-sample -> PAIS path (Stewart2024-type post-COVID-clinic samples condition on it), and predeclare it do-not-condition. Conditioning on clinic attendance can manufacture a spurious menopause-PAIS association.
+
+## [t015] Search hormone-measured long-COVID cohorts
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [question:0007-mechanism-of-female-predominance-in-pais, topic:menopause-sex-hormones-and-pais-risk]
+- group: literature-search
+- created: 2026-06-19
+
+Find longitudinal or well-controlled long-COVID/PASC cohorts with estradiol, progesterone, testosterone, FSH/LH, menopausal status, HRT route/dose, immune markers, endothelial/vascular markers, and symptom trajectories.
+
+## [t016] Define estimands for reproductive-stage PAIS causal analyses
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [question:0013-reproductive-stage-failed-immune-recovery-after-infection, hypothesis:0005-reproductive-stage-immune-homeostatic-margin, topic:menopause-sex-hormones-and-pais-risk]
+- group: causal-disentanglement
+- created: 2026-06-19
+
+For each planned PAIS sex/hormone analysis, predeclare whether reproductive stage is treated as confounder, mediator, effect modifier, competing diagnosis, or downstream consequence. Specify target population, exposure window, outcome domain, adjustment set, and variables that should not be adjusted away for each estimand.
+
+## [t017] Build minimum measurement schema for sex hormone PAIS cohorts
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [question:0013-reproductive-stage-failed-immune-recovery-after-infection, hypothesis:0005-reproductive-stage-immune-homeostatic-margin, task:t015]
+- group: causal-disentanglement
+- created: 2026-06-19
+
+Define the minimum cohort metadata and biomarker schema needed to test reproductive-stage PAIS questions: sex assigned at birth, age, menopausal status, menstrual status, pregnancy/postpartum status, hormone therapy route/dose/timing, estradiol/progesterone/testosterone/FSH/LH where available, acute severity, vaccination/reinfection, comorbidity, immune/endothelial/autonomic markers, symptom domains, and ascertainment proxies.
+
+## [t018] Compare female and reproductive-stage excess across PAIS subphenotypes
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [question:0007-mechanism-of-female-predominance-in-pais, question:0013-reproductive-stage-failed-immune-recovery-after-infection, hypothesis:0005-reproductive-stage-immune-homeostatic-margin, task:t013]
+- group: causal-disentanglement
+- created: 2026-06-19
+
+Split PAIS outcomes into somatic fatigue/PEM, dysautonomia, vascular-thromboinflammatory, cognitive, pain, mood/depression, and recovery-time phenotypes. Test whether female or reproductive-stage excess is concentrated in specific subphenotypes rather than uniform across all post-infectious symptoms.
+
+## [t019] Audit hormone therapy evidence for PAIS causal inference
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [question:0013-reproductive-stage-failed-immune-recovery-after-infection, hypothesis:0005-reproductive-stage-immune-homeostatic-margin, topic:menopause-sex-hormones-and-pais-risk]
+- group: causal-disentanglement
+- created: 2026-06-19
+
+Separate hormone therapy evidence by acute infection outcome versus post-acute persistence, route, dose, timing, indication, comorbidity, and healthy-user bias. Decide which findings can inform causal PAIS hypotheses and which should remain clinical-screening or symptom-management context only.
+
+## [t020] Operationalize perimenopause-vs-menopause exposure window for PAIS analyses
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [question:0013-reproductive-stage-failed-immune-recovery-after-infection]
+- group: causal-disentanglement
+- created: 2026-06-19
+
+Question 0013 names binary-menopause-vs-perimenopause as the major remaining uncertainty, but no current task operationalizes the at-risk exposure window. Specify a reproducible operationalization (e.g. STRAW+10 staging; FSH/AMH/cycle-history criteria; age-band fallbacks and their misclassification) for use in t016 estimands and t017 measurement schema. Binary menopause variables (as in Shah2025/Mishra2020) may misclassify the biologically relevant window.
+
+## [t021] Promote h0005 prose Proposition Bundle to first-class proposition + evidence-line entities
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [hypothesis:0005-reproductive-stage-immune-homeostatic-margin]
+- group: causal-disentanglement
+- created: 2026-06-19
+
+h0005 currently carries its reasoning as a prose 'Proposition Bundle' (unmigrated style); cycles already uses first-class proposition + evidence-line entities. Promote each bundle item to a neutral, directional proposition with its own support/dispute evidence-lines. Include BOTH causal directions as separate propositions: P-forward (reproductive-stage transition affects post-infectious recovery threshold) and P-reverse (infection/PAIS perturbs the reproductive axis/timing), each evaluated on its own evidence. This is the test bed for the contextual structural-role design (~/d/science/docs/plans/2026-06-19-contextual-structural-roles-design.md) and connects to the t014 DAG (confounder/collider cautions).
+
+### Notes
+
+- 2026-06-19: Design doc revised to v2 (2026-06-19) after review against the June 8 epistemic-edges facet. Framing change for this migration: P-reverse is an ordinary second relational proposition (multi-edge), roled 'rival' on its cito:discusses membership *relative to h0005* — NOT a new causal-edge label. Confounder/collider cautions from t014 are DERIVED from patch topology + query (epistemic-edges §2.1), so do not author them as edge roles. The only thing this migration exercises that is new is membership_role on the bundle edge (core|rival|background).
