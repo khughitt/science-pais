@@ -168,7 +168,7 @@ Decide, in specs/scope-boundaries.md + a core/decisions.md entry, whether the 's
 
 ## [t035] Public-data pathway-level cross-trigger transcriptomic reanalysis (GSE14577 + GSE130353) for q0001
 - priority: P3
-- status: proposed
+- status: active
 - aspects: []
 - created: 2026-06-20
 
@@ -177,6 +177,9 @@ Reproducible alternative to the declined Galbraith2011 private-array reanalysis.
 ### Notes
 
 - 2026-06-20: Prerequisite when started: create formal mixin-dataset-1.0 entities + Frictionless datapackages for GSE14577 and GSE130353 once downloaded (commons-readiness gate). Registry note staged at doc/datasets/2026-06-20-public-cross-trigger-geo-sets.md. Both are commons-promotion candidates after the gate is met.
+- 2026-06-20: 2026-06-20: user authorized crossing the seed-stage scope boundary for THIS bounded, public, reproducible reanalysis only (not a general lift of the seed-stage hold). Proceeding plan-first: analysis plan + pre-registration -> data acquisition -> pathway-level pipeline with wired data-QA.
+- 2026-06-20: Analysis plan written: entities/plans/2026-06-20-cross-trigger-pathway-overlap-analysis-plan.md (verdict: ready-with-caveats). Data fitness CONFIRMED via plan-analysis: GSE14577 = 7 HC + 8 PI-CFS, male-only, log2 U133A/B PBMC (data in family.soft.gz; series_matrix 404s); GSE130353 = HC/CFS/QFS/QS 10 each, isolated monocytes, MMSEQ gene estimates in per-sample suppl files (NOT counts -> continuous limma). Design: per-dataset limma -> GSEA -> direction-concordant pathway overlap (PI-CFS-vs-HC x QFS-vs-HC) with a pre-committed QS (seropositive-recovered) negative-control veto for fatigue-specificity. Next: light pre-registration of the arbitration rule, then plan-pipeline.
+- 2026-06-20: Plan file renamed to entities/plans/0002-cross-trigger-pathway-overlap-analysis-plan.md (id plan:0002-...) to satisfy entity numbering (date-prefix collided on year 2026 with the menopause plan).
 
 ## [t036] Acquire hormone-panel triangulation cohorts (All of Us, Lifelines, Generation Scotland) to positively test H0005 (M1)
 - priority: P3
