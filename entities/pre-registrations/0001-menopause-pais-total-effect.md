@@ -209,6 +209,33 @@ This analysis **cannot**, even executed perfectly:
 5. Escape **decade-gap exposure misclassification** (t020 QBA bounds, not removes, it).
 6. Generalize beyond UKB's **healthy-volunteer, >90% White, questionnaire-responding**
    subset without the IPW + triangulation arms.
+7. Escape **left-truncation / survival-to-2020 selection** (added by bias audit
+   `report:0001-bias-audit-menopause-pais-total-effect`). Every analyzed woman must
+   have survived from the 2006–2010 baseline to her 2020–2022 infection (age ≈ 52–83).
+   Because **earlier age at menopause is associated with higher all-cause/CV
+   mortality**, the earliest-menopause-timing stratum — the high-risk end of the
+   *exposure* — is differentially depleted *before* the time origin (a
+   competing-prior-event / depletion-of-susceptibles structure, distinct from the
+   post-infection competing-risk censoring already handled). Expected to bias the
+   timing→long-COVID estimate **toward the null**, though the direction is not
+   guaranteed. Add a competing-prior-event / age-at-menopause-survival sensitivity at
+   execution; report the bias direction.
+8. Fully de-select on **questionnaire-response propensity** (added by bias audit).
+   The response IPW is built from **baseline** predictors, but propensity to complete
+   the 2022–2023 questionnaire plausibly depends on *post-baseline* health (including
+   incipient long-COVID). Baseline IPW cannot reweight on a 2022 health state, so the
+   Route-A estimate is "in responders"; Route-B (HES-PACS) carries the de-selecting
+   triangulation weight, not the IPW alone.
+
+**Vehicle-scope concession (bias audit, anchoring finding).** UKB is the primary
+vehicle for the reproductive-**timing** estimand, but it **cannot answer q0013's
+motivating peri-window sub-question** — the cohort aged out of the premenopausal/peri
+window before the pandemic (Feasibility §). The stage→timing reframe is therefore an
+honest scope concession, not a silent substitution; the peri/at-risk-window contrast
+is owned by the younger triangulation cohorts. When the feasible outcome definitions
+or exposure scales disagree, the governing order is **def-1 (WHO ≥90d) over def-2
+(approximation)** and **tertile-contrast over per-SD** before any `/science:discuss`
+escalation — so the escalation clause is not an open forking path.
 
 ---
 
@@ -270,9 +297,15 @@ reports for this committed pre-reg (defined once here; referenced there).
   categories (COVID-test field 40100; HES; GP; death; Health & Well-Being
   questionnaire; Category-1307 serology; vaccination linkage) delivered to a UKB RAP /
   approved environment.
-- **G2 — Field IDs confirmed live.** Questionnaire item IDs (WHO-Delphi), EBV-subsample
-  N (Category 1307), vaccination-linkage category confirmed on the Showcase (COVID-test
-  field 40100 already verified).
+- **G2 — Field IDs confirmed live + out-of-corpus feasibility check.** Questionnaire
+  item IDs (WHO-Delphi), EBV-subsample N (Category 1307), vaccination-linkage category
+  confirmed on the Showcase (COVID-test field 40100 already verified). **Plus (bias
+  audit `report:0001-...`):** because all feasibility/effective-n/SHBG claims currently
+  rest on the single precedent `AlcaldeHerraiz2025`, the effective-n and selection
+  profile must be cross-read against **≥1 second UKB long-COVID cohort** before the AMS
+  basket is finalized — the live-Showcase confirmation + this second read together are
+  the named out-of-corpus check that lifts the feasibility claims from "single-source"
+  to "confirmed."
 - **G3 — Power floor met.** Female-case count for the **timing** exposure clears 80%
   power at RR 1.3 (α 0.05) after natal-female restriction ∧ valid menopause-timing ∧
   questionnaire-response ∧ positive-PCR. (The pre/peri stratum is *not* required to

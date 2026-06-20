@@ -181,3 +181,4 @@ Data-gated: pre-registration:menopause-pais-total-effect is committed but execut
 ### Notes
 
 - 2026-06-19: Corrected pre-reg path: entities/pre-registrations/0001-menopause-pais-total-effect.md (committed 2026-06-19, mode: data-gated).
+- 2026-06-19: Bias audit (report:0001-bias-audit-menopause-pais-total-effect) folded 3 pre-execution mitigations into the pre-reg: (1) added left-truncation/survival-to-2020 limitation + competing-prior-event sensitivity; (2) added post-baseline response-propensity limitation (Route-B carries de-selection weight, not baseline IPW alone); (3) named the vehicle-scope concession (UKB cannot answer q0013 peri window) + locked def-1>def-2 / tertile>per-SD arbitration order. G2 now requires out-of-corpus cross-read of a 2nd UKB long-COVID cohort before AMS basket finalization. Verdict = self-audit (internally consistent), NOT externally validated; independent review still owed.
