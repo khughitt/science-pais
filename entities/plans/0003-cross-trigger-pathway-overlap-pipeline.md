@@ -83,8 +83,9 @@ code/
       r-bioc.yaml                 NEW  conda: r-base, bioconductor-limma, -fgsea, -msigdbr,
                                        -org.Hs.eg.db, -annotationdbi, hgu133a.db, hgu133b.db
                                        (exact =version pins — NES is version-sensitive)
-      py.yaml                     NEW  conda: python, pandas, pyarrow, numpy, scipy, pyyaml
-      conda-lock.yml              NEW  generated lockfile (WP0 artifact; determinism precondition)
+      py.yaml                     NEW  conda: python, pandas, pyarrow, numpy, scipy, pyyaml, frictionless
+      py.conda-lock.yml           NEW  generated per-env lockfile (WP0 artifact; determinism precondition)
+      r-bioc.conda-lock.yml       NEW  generated per-env lockfile (WP0 artifact; determinism precondition)
   scripts/
     g1_acquire.py                 MODIFY  split into rule-callable modules (keep as the seed)
     parse_gse14577.py             NEW  SOFT → per-platform probe×sample matrices + metadata
@@ -214,13 +215,17 @@ prepare_genesets (pinned MSigDB) ───────────────�
 - **Reason:** platform (microarray vs MMSEQ) × compartment (PBMC vs monocyte) confounds make a merged
   matrix indefensible; already locked in `plan:0002` (strategy-1 within-dataset → aggregate).
 
-### Key decision 7: MSigDB via pinned `msigdbr` release, hash recorded
-- **Chosen approach:** `prepare_genesets.R` pins `msigdbr` to the release in config (default
-  `2024.1.Hs`), applies the size filter, and writes the gene-set list + a recorded release hash as a
-  build artifact.
-- **Rejected alternative:** live MSigDB download at run time.
-- **Reason:** reproducibility — the overlap denominator must not drift between runs; the pin + hash
-  make the universe a fixed, audited input.
+### Key decision 7: MSigDB 2024.1.Hs pinned by GMT hash, decoupled from the `msigdbr` package version
+- **Chosen approach:** `prepare_genesets.R` obtains the **2024.1.Hs** collections as **pinned, hashed
+  GMT inputs** (Hallmark, C2:CP:REACTOME, C5:GO:BP), applies the `15 ≤ |set| ≤ 500` filter, and records
+  the GMT hash as a build artifact; it asserts the loaded release == `2024.1.Hs`. The conda `r-msigdbr`
+  (26.1.0 in the locked env) is a **collection helper only**, not the data source.
+- **Rejected alternative:** take 2024.1.Hs from the conda `r-msigdbr` package's bundled data.
+- **Reason (WP0 coherence finding):** the `r-msigdbr` that bundles 2024.1.Hs is **24.1.0**, built for
+  R 4.3 — it does **not** co-solve with the R 4.5 annotation `.db`s (`hgu133a/b.db`) in one env. So the
+  data version cannot ride on the package version. Pinning the universe by **GMT hash** (which the pre-reg
+  already requires — "exact release hash recorded at ingest") is both reproducible and decoupled from the
+  package-availability matrix.
 
 ### Key decision 8: GSE14577 uses deposited log2; CEL re-RMA and MMSEQ `sd`-weighting are optional rules
 - **Chosen approach:** the primary path uses the deposited GSE14577 log2 intensities and unweighted

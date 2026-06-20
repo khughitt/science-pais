@@ -1,0 +1,186 @@
+# =============================================================================
+# config.yaml — cross-trigger pathway-overlap pipeline (t035)
+#
+# SINGLE encoding of the locked parameters. Every value here MIRRORS a lock in
+# pre-registration:0002-cross-trigger-pathway-overlap (cited inline as
+# `# pre-reg:0002 <section>`). This file ORIGINATES nothing: changing any value
+# below requires a pre-reg amendment, not a runtime edit (plan:0003 KD4).
+#
+# Source of truth: entities/pre-registrations/0002-cross-trigger-pathway-overlap.md
+# Orchestration:   entities/plans/0003-cross-trigger-pathway-overlap-pipeline.md
+# =============================================================================
+
+# ----------------------------------------------------------------- paths -----
+paths:
+  raw: "data/raw"
+  processed: "data/processed"
+  results: "results"
+
+# -------------------------------------------------- acquisition (G1) ---------
+# pre-reg:0002 G1 — acquisition + integrity; SHA-256 per file recorded in the
+# datapackage. Hashes are the LOCKED integrity targets (data/processed/
+# acquisition_manifest.json holds the full per-member manifest).
+acquisition:
+  gse14577:
+    soft:
+      url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE14nnn/GSE14577/soft/GSE14577_family.soft.gz"
+      sha256: "a4ca33e1afe9658764e60e124c8af8477bac6ed0f69cce8780681fbca2917180"
+      bytes: 15613533
+  gse130353:
+    raw_tar:
+      url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE130nnn/GSE130353/suppl/GSE130353_RAW.tar"
+      sha256: "98e6b07b389a922be6b57e564ad300353aac3cacddbccda35a1d84aa50467a4f"
+      bytes: 99471360
+      n_members: 40
+    soft:
+      url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE130nnn/GSE130353/soft/GSE130353_family.soft.gz"
+      sha256: "dcb09ba0824d23bcbc2ca8a768da9ffe0588096d2a88b6ebf763a3b51f789064"
+      bytes: 4462
+  # On a legitimate upstream re-deposit, the hash mismatch HALTS the pipeline.
+  # Recovery is a deliberate, logged act (re-verify provenance, then amend the
+  # hash) — never an auto-accept. (plan:0003 review finding 6; WP1.)
+
+# --------------------------------------------------- datasets / groups -------
+# pre-reg:0002 G4 — groups 10/10/10/10 (GSE130353) from authoritative SOFT
+# `subject status`, NOT filename prefixes (QS coded "PQ"; CFS titles carry
+# CSF/FCS typos). GSE14577: 8 PI-CFS + 7 HC, male-only, U133A+B per patient.
+datasets:
+  gse14577:
+    platforms: ["GPL96", "GPL97"]   # U133A / U133B
+    groups: ["PI-CFS", "HC"]
+    independent_unit: "patient"      # 1 patient = chip A (GPL96) + chip B (GPL97)
+  gse130353:
+    groups: ["HC", "CFS", "QFS", "QS"]
+    group_counts: {HC: 10, CFS: 10, QFS: 10, QS: 10}
+    estimate_column: "log_mu"        # pre-reg:0002 G2 — natural-log MMSEQ posterior mean
+    feature_id_namespace: "ensembl_gene_id"   # ENSG, release 68
+    # DESeq2/edgeR INADMISSIBLE — estimate is log_mu, not counts (G2 lock).
+
+# ---------------------------------------------- gene-set universe ------------
+# pre-reg:0002 Metric Selection Rationale — pinned universe + size filter.
+genesets:
+  msigdb_release: "2024.1.Hs"        # release pinned; hash recorded at ingest
+  species: "Homo sapiens"
+  size_filter: {min: 15, max: 500}   # fgsea minSize / maxSize
+  databases:                          # primary + the two DB sensitivities (S3)
+    hallmark:  {collection: "H",            subcollection: "",            role: "primary"}
+    reactome:  {collection: "C2",           subcollection: "CP:REACTOME", role: "sensitivity"}
+    gobp:      {collection: "C5",           subcollection: "GO:BP",       role: "sensitivity"}
+  primary_db: "hallmark"
+
+# ------------------------------------------------------ contrasts ------------
+# pre-reg:0002 — 5 limma contrasts; C1 primary + S1/S2/S4 sensitivities.
+contrasts:
+  pi_cfs_vs_hc: {dataset: gse14577,  case: "PI-CFS", control: "HC"}
+  qfs_vs_hc:    {dataset: gse130353, case: "QFS",    control: "HC"}
+  cfs_vs_hc:    {dataset: gse130353, case: "CFS",    control: "HC"}
+  qfs_vs_qs:    {dataset: gse130353, case: "QFS",    control: "QS"}   # S1 specificity backbone
+  qs_vs_hc:     {dataset: gse130353, case: "QS",     control: "HC"}   # S2 exposure check
+
+# ----------------------------------------------- concordance pairs -----------
+# pre-reg:0002 — ρ rank-concordance pairs. primary×Hallmark = confirmatory C1;
+# primary×{Reactome,GOBP} = S3; S4 pair = second-fatigue sensitivity. Each
+# (pair × DB) cell carries its own permutation null. (plan:0003 KD2.)
+concordance_pairs:
+  primary: {x: "pi_cfs_vs_hc", y: "qfs_vs_hc"}   # C1 on Hallmark
+  s4:      {x: "pi_cfs_vs_hc", y: "cfs_vs_hc"}    # S4 second fatigue contrast
+
+# ------------------------------------------ permutation null (significance) ---
+# pre-reg:0002 Metric Selection Rationale — sample-label permutation null;
+# permute ONLY the two groups defining each contrast, independently per arm.
+permutation:
+  B: 2000                            # B >= 2000, or exhaustive where feasible
+  exhaustive_gse14577: false         # C(15,8)=6435 exhaustible — robustness toggle (Open Q)
+  one_sided: true                    # p_perm = fraction of permuted ρ >= observed
+  label_pools:                       # locked exact pools (pre-reg:0002)
+    pi_cfs_vs_hc: {n: 15, case: 8, control: 7}    # C(15,8)=6435
+    qfs_vs_hc:    {n: 20, case: 10, control: 10}  # CFS+QS held out
+    cfs_vs_hc:    {n: 20, case: 10, control: 10}
+    qfs_vs_qs:    {n: 20, case: 10, control: 10}
+    qs_vs_hc:     {n: 20, case: 10, control: 10}
+
+# ----------------------------------------- specificity thresholds (S1/S2) ----
+# pre-reg:0002 Specificity metric — fully thresholded; nominal fgsea p (NOT FDR),
+# justified by the small pre-nominated set + n=10 power floor.
+specificity:
+  nominal_p: 0.05                    # S1/S2-positive iff same-sign NES AND fgsea p < nominal_p
+  # S1-positive ≡ same-sign-NES-as-QFS-vs-HC ∧ p<0.05 in QFS-vs-QS
+  # S2-positive ≡ same-sign-NES-as-QFS-vs-HC ∧ p<0.05 in QS-vs-HC
+  # per-set class: fatigue-specific = S1+ ∧ ¬S2+ ; exposure_sequela = S2+ ; else unresolved
+
+# ---------------------------------------------- verdict thresholds -----------
+verdict:
+  p_perm_alpha: 0.05                 # pre-reg:0002 Decision Criteria
+  compartment_marker_fraction: 0.50  # compartment_confounded iff >=50% of concordance-carrying sets are markers
+  db_robustness_min_dbs: 2           # theme robust iff fatigue-specific in >=2 DBs, SAME theme-NES sign
+  # Verdict resolution order (locked — first match wins; pre-reg:0002):
+  resolution_order:
+    - model_inadequate_or_batch_confounded   # 1. admissibility (limma diag / PCA batch)
+    - null_nonarbitrating                     # 2. p_perm >= alpha
+    - compartment_confounded                  # 3. >=50% concordance-carrying sets are markers
+    - exposure_confounded                     # 4. no fatigue-specific theme & >=1 exposure_sequela
+    - shared_suggestive                       # 5. >=1 fatigue-specific theme w/ direction-consistent DB-robustness
+    - fragile                                 # 6. fatigue-specific theme but none DB-robust
+    - exposure_confounded_residual            # 7. p_perm<alpha but all themes unresolved-specificity
+
+# --------------------------------- LOCKED keyword→theme map (verbatim) --------
+# pre-reg:0002 "Locked theme map" — raw PCRE alternation strings, compiled
+# VERBATIM, case-insensitive (re.IGNORECASE / R perl=TRUE, ignore.case=TRUE),
+# matched against the MSigDB set name uppercased with the collection prefix
+# (HALLMARK_/REACTOME_/GOBP_) stripped. First match wins, in THIS order.
+theme_map:
+  - {precedence: 1, theme: "mitochondrial/OXPHOS", regex: 'OXIDATIVE_PHOSPHORYLATION|OXPHOS|MITOCHOND|RESPIRATORY_ELECTRON|ELECTRON_TRANSPORT|RESPIRATORY_CHAIN|\bTCA_CYCLE\b|CITRIC_ACID|ATP_SYNTH|\bCOMPLEX_I\b|FATTY_ACID_BETA_OXID'}
+  - {precedence: 2, theme: "oxidative-stress",      regex: 'REACTIVE_OXYGEN|OXIDATIVE_STRESS|\bROS\b|GLUTATHIONE|\bNRF2\b|NFE2L2|PEROXID|\bREDOX\b|SUPEROXIDE|ANTIOXIDANT|DETOXIF'}
+  - {precedence: 3, theme: "apoptosis",             regex: 'APOPTOSI|PROGRAMMED_CELL_DEATH|CASPASE|NECROPTOSI|PYROPTOSI|\bBCL2\b|INTRINSIC_APOPTOTIC|EXTRINSIC_APOPTOTIC|DEATH_RECEPTOR'}
+  - {precedence: 4, theme: "innate/IFN",            regex: 'INTERFERON|\bIFN\b|INNATE|INFLAMMAT|\bTNFA?\b|\bNFKB\b|NF_KB|TOLL|\bTLR\b|COMPLEMENT|\bIL6\b|JAK_STAT|CYTOKINE|CHEMOKINE|NEUTROPHIL|MONOCYTE|MACROPHAGE|MYELOID|INFLAMMASOME|RIG_I|NOD_LIKE'}
+  - {precedence: 5, theme: "adaptive/T-cell",       regex: '\bT_CELL|\bTCR\b|\bCD8\b|\bCD4\b|\bTH1\b|\bTH2\b|\bTH17\b|REGULATORY_T|LYMPHOCYTE|ADAPTIVE_IMMUN|ANTIGEN_PROCESS|\bMHC\b|\bHLA\b|IL2_STAT5|ALLOGRAFT_REJECTION|\bB_CELL|IMMUNOGLOBULIN|GERMINAL_CENTER'}
+  - {precedence: 6, theme: "other",                 regex: '.*'}   # no match above — ineligible to carry a verdict theme
+
+# pre-reg:0002 "Locked cell-type-marker set" — compartment_confounded check.
+compartment_marker_regex: 'MONOCYTE|MACROPHAGE|MYELOID|NEUTROPHIL|GRANULOCYTE|DENDRITIC|\bPBMC\b|LEUKOCYTE|MARKER_|_CELL_SURFACE|CELL_TYPE'
+
+# ----------------------------- verdict-affecting preprocessing (3rd amend) ----
+# pre-reg:0002 "Locked input preprocessing & NA handling" (3rd amendment).
+# These ALTER the NES ranking; the pre-reg OWNS them, config only mirrors.
+preprocessing:
+  near_zero_filter:                  # GSE130353 only — contrast-blind PROCEDURE, not a constant
+    method: "pooled_kde_antimode"    # τ := antimode of pooled group-blind per-gene median log_mu density
+    kde_bandwidth: "silverman"
+    min_donors: 10                   # retain gene iff log_mu > τ in >= min_donors donors (one full group)
+    bimodality:                      # HALT (build-fatal) if the density is not clearly bimodal
+      require_interior_antimode: true
+      min_mode_separation: 3.0       # natural-log units between the two highest modes
+      min_antimode_mass_fraction: 0.02
+    # NOTE: supersedes the briefly-drafted fixed τ = -7.0 (assumed unmeasured bimodality).
+  u133_dual_chip_combine: "mean_of_platform_collapsed_log2"   # GSE14577 genes on both GPL96 & GPL97
+  probe_collapse: "median"           # probe→gene within platform
+  na_nes_handling: "absent"          # NA NES → excluded pairwise from ρ; never concordance-carrying/S1/S2+
+
+# ------------------------------------------------ G3 harmonization ----------
+# pre-reg:0002 G3 — non-empty harmonized universe required; coverage LOGGED.
+harmonization:
+  canonical_axis: "ensembl_gene_id"
+  hallmark_coverage_warn: 0.90       # distribution-severity warning below this; build-fatal ONLY if mapped set empty
+
+# --------------------------------- R↔Python intermediate contract (3rd amend) -
+# pre-reg:0002 3rd amendment — fixed schema, NA encoded as NA never 0.
+io_contract:
+  table_format: "tsv"                # py side reads via pandas; NA as empty/"NA"
+  nes_columns: ["gene_set", "db", "contrast", "NES", "pval", "padj", "size"]
+  perm_columns: ["pair", "db", "rho_obs", "p_perm", "B"]
+  na_token: "NA"
+
+# ------------------------------------------------- determinism (KD10) --------
+# plan:0003 KD10 — byte-identical verdict.json is engineered.
+determinism:
+  seed: 1729
+  r_rng_kind: "L'Ecuyer-CMRG"        # BiocParallel bpparam(RNGseed=seed) substreams
+  float_precision: 6                 # fixed decimals in serialized verdict.json
+  json_sort_keys: true
+  # verdict.json carries NO timestamps/host/path; provenance → results/run_metadata.json sidecar.
+
+# ----------------------------------------- optional off-primary robustness ---
+# plan:0003 KD8 — default OFF; the confirmatory C1 label ALWAYS uses these OFF.
+robustness_toggles:
+  rma_from_cel: false                # deferred-CEL re-normalization (exploratory)
+  sd_precision_weights: false        # MMSEQ sd as limma weights (sensitivity)

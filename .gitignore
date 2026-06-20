@@ -34,3 +34,7 @@ data/processed/*
 !data/processed/.gitkeep
 results/*
 !results/.gitkeep
+
+# Snakemake run cache/logs (workflow outputs live under data/ & results/, gitignored)
+.snakemake/
+code/workflows/.snakemake/

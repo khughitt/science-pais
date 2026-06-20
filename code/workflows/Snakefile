@@ -1,0 +1,50 @@
+# =============================================================================
+# Snakefile — cross-trigger pathway-overlap pipeline (t035)
+#
+# Thin orchestrator: includes rules/*.smk and defines `rule all`. All locked
+# parameters live in config.yaml (which mirrors pre-registration:0002); rules
+# read them, nothing is hard-coded here.
+#
+# Design:  entities/plans/0003-cross-trigger-pathway-overlap-pipeline.md
+# Pre-reg: entities/pre-registrations/0002-cross-trigger-pathway-overlap.md
+#
+# WP0 status: SKELETON. Rule I/O is fully wired so `snakemake -n` resolves the
+# complete DAG raw → results/verdict.json. Rule bodies are stubs that exit 1
+# (fail-early) until their work package implements them.
+# =============================================================================
+from pathlib import Path
+
+configfile: "config.yaml"
+
+RAW = config["paths"]["raw"]
+PROC = config["paths"]["processed"]
+RES = config["paths"]["results"]
+
+# --- config-derived enumerations (single source: config.yaml) ----------------
+CONTRASTS = list(config["contrasts"].keys())                 # 5
+DBS = list(config["genesets"]["databases"].keys())           # hallmark, reactome, gobp
+PRIMARY_DB = config["genesets"]["primary_db"]
+PAIRS = list(config["concordance_pairs"].keys())             # primary, s4
+DATASETS = list(config["datasets"].keys())                   # gse14577, gse130353
+
+# constrain wildcards to the locked vocabularies (no accidental fan-out)
+wildcard_constraints:
+    contrast="|".join(CONTRASTS),
+    db="|".join(DBS),
+    pair="|".join(PAIRS),
+    dataset="|".join(DATASETS),
+
+include: "rules/common.smk"
+include: "rules/acquire.smk"
+include: "rules/qa.smk"
+include: "rules/harmonize.smk"
+include: "rules/prepare.smk"
+include: "rules/enrich.smk"
+include: "rules/verdict.smk"
+
+# --- terminal target ---------------------------------------------------------
+rule all:
+    input:
+        f"{RES}/verdict.json",
+        f"{RES}/results.md",
+        f"{PROC}/datapackage.json",

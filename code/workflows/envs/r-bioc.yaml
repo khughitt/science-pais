@@ -1,0 +1,33 @@
+# R/Bioconductor env for limma DE + fgsea enrichment + gene-set prep.
+# Versions are PINNED because limma's eBayes and fgsea's NES are algorithm-
+# version-sensitive — a release bump can shift NES → a different verdict label
+# (plan:0003 WP0 / review finding 3). These exact versions were resolved by an
+# empirical co-solve (conda-forge + bioconda) and pinned; envs/r-bioc.conda-lock.yml
+# is the byte-level reproducibility artifact. Bioconductor 3.22 / R 4.5 stack.
+#
+# COHERENCE FINDING (former Open Q2, made concrete at WP0 lock):
+#   The conda `r-msigdbr` that bundles MSigDB *2024.1.Hs* is 24.1.0, built for
+#   R 4.3 — it does NOT co-solve with the R 4.5 annotation .db packages
+#   (hgu133a/b.db 3.13.0). So the pinned 2024.1.Hs *universe* CANNOT come from
+#   this package's bundled data in a coherent env. Resolution (WP4): obtain the
+#   2024.1.Hs collection as a PINNED, HASHED GMT (the pre-reg already requires
+#   "exact release hash recorded at ingest"), decoupling the data version from
+#   the package version. r-msigdbr below (26.1.0) is kept only as a collection
+#   helper; prepare_genesets.R asserts the loaded release == 2024.1.Hs by GMT hash.
+name: ctpo-r-bioc
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-base=4.5.3
+  - bioconductor-limma=3.66.0
+  - bioconductor-fgsea=1.36.2
+  - bioconductor-org.hs.eg.db=3.22.0
+  - bioconductor-annotationdbi=1.72.0
+  - bioconductor-hgu133a.db=3.13.0
+  - bioconductor-hgu133b.db=3.13.0
+  - bioconductor-biocparallel=1.44.0   # L'Ecuyer-CMRG permutation substreams
+  - r-msigdbr=26.1.0                    # collection helper ONLY; 2024.1.Hs via hashed GMT (see note)
+  - r-data.table=1.17.8
+  - r-jsonlite=2.0.0
+  - r-matrixstats=1.5.0
