@@ -33,6 +33,8 @@ related:
 - topic:mecfs-long-covid-convergence
 - topic:biomarkers-and-objective-endpoints
 - hypothesis:0001-shared-dysregulated-attractor
+- hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
+- question:0016-oxidative-stress-upstream-driver-of-bioenergetic
 created: '2026-06-11'
 updated: '2026-06-20'
 ---

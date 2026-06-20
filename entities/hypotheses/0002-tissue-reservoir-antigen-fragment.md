@@ -13,6 +13,7 @@ related:
 - topic:antigen-pathogen-persistence
 - topic:shared-failure-mode-across-pais
 - question:0002-antigen-clearance-rescues-symptoms
+- discussion:0003-antigen-persistence-treatable-vs-fixed
 - immunity:research-question:immune-homeostasis-and-dysregulation
 created: '2026-06-11'
 updated: '2026-06-11'

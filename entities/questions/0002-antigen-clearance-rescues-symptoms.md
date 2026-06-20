@@ -17,6 +17,7 @@ source_refs:
 - cite:Skevaki2025
 related:
 - topic:antigen-pathogen-persistence
+- discussion:0003-antigen-persistence-treatable-vs-fixed
 created: '2026-06-11'
 updated: '2026-06-11'
 ---
