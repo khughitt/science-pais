@@ -97,6 +97,30 @@ amendments:
       procedure change is a strengthening: a contrast-blind data-adaptive rule is both outcome-blind and
       robust to the actual distribution, and the halt-if-not-bimodal guard refuses to auto-threshold a
       distribution that does not justify it.
+  - date: "2026-06-20"
+    ratified_by: "user decision 2026-06-20 (WP3/WP4 implementation; pre-enrichment)"
+    type: "pre-data tightening (not a fresh pre-registration; verdict-affecting annotation policy pulled into the pre-reg, none loosened)"
+    change: >
+      The multi-mapping policy for symbol/probe→Ensembl resolution was drafted only in config
+      (harmonization.multimap_policy = "first", with a fail-early guard), not here. It is
+      verdict-affecting: when AnnotationDbi returns more than one Ensembl id for a key, "first" fixes a
+      single id, which determines **gene-set membership** (the overlap denominator the NES ranking is
+      computed over) and the **probe→gene median-collapse grouping**. Locked: the policy is **"first"**
+      (the deterministic AnnotationDbi default), applied **identically** to (a) the U133 probe→Ensembl
+      map (hgu133a/b.db, GSE14577), (b) the Hallmark coverage-reference symbol→Ensembl map, and (c) the
+      per-DB Hallmark/Reactome/GO:BP symbol→Ensembl maps in gene-set prep (org.Hs.eg.db). Any other value
+      **HALTs (fail-early)** until implemented and recorded here. Although G3 harmonization and WP4
+      preprocessing/gene-set prep have now executed under this policy, those steps are **contrast-blind**
+      and no DE/fgsea/concordance/verdict has been computed — so the policy is fixed before any
+      outcome-bearing analysis.
+    rationale: >
+      An annotation-collapse choice that lives only in config has no committed/amendment provenance yet
+      silently shapes the gene universe and set membership that every NES and the overlap denominator are
+      computed over — the same config-only latitude the 3rd amendment closed for the other preprocessing
+      locks. Pinning it here, identical across every symbol/probe→Ensembl map, removes that latitude.
+      "first" is chosen as the deterministic AnnotationDbi default (reproducible, no random tie-break);
+      the alternative — emit all mappings and collapse under a separate documented rule — was rejected as
+      added complexity with no expected change to the coarse theme-level verdict.
 created: "2026-06-20"
 updated: "2026-06-20"
 ---
@@ -328,6 +352,13 @@ Even executed perfectly, this analysis cannot:
     **NA encoded as empty/`NA`, never `0`**); permutation outputs carry `{pair, db, rho_obs, p_perm, B}`.
     Spearman ρ and all set-level classes are computed from these columns only, so the parse, the join
     key (`gene_set` exact-match within a `db`), and the NA rule above are unambiguous.
+  - **Symbol/probe→Ensembl multi-mapping policy, locked (4th amendment).** When AnnotationDbi returns
+    more than one Ensembl id for a key, take the **first** (the deterministic AnnotationDbi default).
+    Applied **identically** to the U133 probe→Ensembl map (hgu133a/b.db), the Hallmark coverage
+    reference, and the per-DB Hallmark/Reactome/GO:BP symbol→Ensembl maps (org.Hs.eg.db). This fixes one
+    id per probe/symbol and so determines gene-set membership (the overlap denominator) and the
+    probe→gene collapse grouping; any other value HALTs (fail-early). It is outcome-blind (no contrast
+    labels enter the lookup).
 - **Specificity metric (locked, fully thresholded): direct QFS-vs-QS presence contrast.** "Signal"
   is **not** left to interpretation. For every gene-set that is **primary-concordant** (same-sign NES
   in *both* PI-CFS-vs-HC and QFS-vs-HC), evaluate two **presence predicates** using the *same* pinned

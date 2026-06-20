@@ -87,11 +87,15 @@ for (k in seq_along(gmts)) {
   release_lines <- c(release_lines, sprintf("%s_sha256\t%s", db, observed_sha))
 
   sets_sym <- read_gmt(gmts[k])
-  # symbols → Ensembl (locked multimap=first), de-dup within set, size filter
+  # symbols → Ensembl (locked multimap=first): build ONE map over all distinct
+  # symbols in the DB, then index per set. multiVals="first" is a pure per-key
+  # function, so this is identical to a per-set mapIds but ~1000x fewer calls.
+  all_syms <- unique(unlist(sets_sym, use.names = FALSE))
+  sym2ens <- suppressMessages(suppressWarnings(
+    mapIds(org.Hs.eg.db, keys = all_syms, column = "ENSEMBL",
+           keytype = "SYMBOL", multiVals = multimap)))
   sets_ens <- lapply(sets_sym, function(syms) {
-    ens <- suppressMessages(suppressWarnings(
-      mapIds(org.Hs.eg.db, keys = unique(syms), column = "ENSEMBL",
-             keytype = "SYMBOL", multiVals = multimap)))
+    ens <- sym2ens[unique(syms)]
     unique(ens[!is.na(ens) & nzchar(ens)])
   })
   sizes <- vapply(sets_ens, length, integer(1))

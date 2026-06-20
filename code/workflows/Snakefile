@@ -57,6 +57,10 @@ VERIFY_TARGETS = {
                        "sha256": config["acquisition"]["gse130353"]["soft"]["sha256"]},
     "hallmark_gmt": {"file": f"{RAW}/genesets/hallmark.{_RELEASE}.symbols.gmt",
                      "sha256": config["genesets"]["gmt_sources"]["hallmark"]["sha256"]},
+    "reactome_gmt": {"file": f"{RAW}/genesets/reactome.{_RELEASE}.symbols.gmt",
+                     "sha256": config["genesets"]["gmt_sources"]["reactome"]["sha256"]},
+    "gobp_gmt": {"file": f"{RAW}/genesets/gobp.{_RELEASE}.symbols.gmt",
+                 "sha256": config["genesets"]["gmt_sources"]["gobp"]["sha256"]},
 }
 
 # constrain wildcards to the locked vocabularies (no accidental fan-out)

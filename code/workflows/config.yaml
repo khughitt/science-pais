@@ -109,10 +109,10 @@ genesets:
       sha256: "ee2463540042078bfa3f67828e1e223bb354446d9fbb4d22845866835ba5c772"  # ingested 2026-06-20 (50 sets)
     reactome:
       url: "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/c2.cp.reactome.v2024.1.Hs.symbols.gmt"
-      sha256: ""                      # TBD-at-ingest (HALT until set)
+      sha256: "9ea1b5e656597daf423e41c5ebcaa9892bfedf3292fff768605d7b0d5e5e9703"  # ingested 2026-06-20 (1736 sets)
     gobp:
       url: "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/c5.go.bp.v2024.1.Hs.symbols.gmt"
-      sha256: ""                      # TBD-at-ingest (HALT until set)
+      sha256: "71df041c352cc810c11847db328bb94925c5448a009f310d224f2e8baa60b792"  # ingested 2026-06-20 (7608 sets)
 
 # ------------------------------------------------------ contrasts ------------
 # pre-reg:0002 — 5 limma contrasts; C1 primary + S1/S2/S4 sensitivities.
@@ -207,13 +207,14 @@ preprocessing:
 harmonization:
   canonical_axis: "ensembl_gene_id"
   hallmark_coverage_warn: 0.90       # distribution-severity warning below this; build-fatal ONLY if mapped set empty
-  # Multi-mapping policy (VERDICT-RELEVANT — locked, applied identically to the
-  # U133 probe→Ensembl map AND the Hallmark symbol→Ensembl map). "first" takes
-  # the first Ensembl id AnnotationDbi returns for a many-valued key (the
-  # deterministic AnnotationDbi default), fixing one id per probe/symbol. This
-  # affects gene-set membership and probe→gene collapse; a change here is a
-  # methodological change. Only "first" is implemented — any other value HALTs
-  # (fail-early) until implemented + a pre-reg note is recorded.
+  # Multi-mapping policy (VERDICT-RELEVANT — pre-reg:0002 4th amendment). Applied
+  # IDENTICALLY to the U133 probe→Ensembl map, the Hallmark coverage reference,
+  # AND the per-DB Hallmark/Reactome/GO:BP symbol→Ensembl maps (prepare_genesets).
+  # "first" takes the first Ensembl id AnnotationDbi returns for a many-valued key
+  # (the deterministic AnnotationDbi default), fixing one id per probe/symbol —
+  # this determines gene-set membership (the overlap denominator) and probe→gene
+  # collapse. Only "first" is implemented — any other value HALTs (fail-early)
+  # until implemented + the pre-reg amendment is updated.
   multimap_policy: "first"
 
 # --------------------------------- R↔Python intermediate contract (3rd amend) -

@@ -101,7 +101,7 @@ rule prepare_genesets:
             f"{RAW}/genesets/{{db}}.{config['genesets']['msigdb_release']}.symbols.gmt",
             db=DBS,
         ),
-        verify=f"{PROC}/verify/hallmark_gmt.sha256.pass",   # hash-gated (finding 2)
+        verify=expand(f"{PROC}/verify/{{db}}_gmt.sha256.pass", db=DBS),  # hash-gated (finding 2)
         theme_spec=f"{PROC}/genesets/theme_spec.json",
         script=f"{SCRIPTS}/prepare_genesets.R",
     output:
