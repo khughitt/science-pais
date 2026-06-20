@@ -44,14 +44,31 @@ PRIMARY_DB = config["genesets"]["primary_db"]
 PAIRS = list(config["concordance_pairs"].keys())             # primary, s4
 DATASETS = list(config["datasets"].keys())                   # gse14577, gse130353
 
+# Files whose LOCKED sha256 must be (re)verified before consumption, even if the
+# payload was provisioned outside Snakemake (so the download rule never ran).
+# Consumers depend on the `<name>.sha256.pass` sentinel. (review finding 2.)
+_RELEASE = config["genesets"]["msigdb_release"]
+VERIFY_TARGETS = {
+    "gse14577_soft": {"file": f"{RAW}/GSE14577_family.soft.gz",
+                      "sha256": config["acquisition"]["gse14577"]["soft"]["sha256"]},
+    "gse130353_tar": {"file": f"{RAW}/GSE130353_RAW.tar",
+                      "sha256": config["acquisition"]["gse130353"]["raw_tar"]["sha256"]},
+    "gse130353_soft": {"file": f"{RAW}/GSE130353_family.soft.gz",
+                       "sha256": config["acquisition"]["gse130353"]["soft"]["sha256"]},
+    "hallmark_gmt": {"file": f"{RAW}/genesets/hallmark.{_RELEASE}.symbols.gmt",
+                     "sha256": config["genesets"]["gmt_sources"]["hallmark"]["sha256"]},
+}
+
 # constrain wildcards to the locked vocabularies (no accidental fan-out)
 wildcard_constraints:
     contrast="|".join(CONTRASTS),
     db="|".join(DBS),
     pair="|".join(PAIRS),
     dataset="|".join(DATASETS),
+    vname="|".join(VERIFY_TARGETS),
 
 include: "rules/common.smk"
+include: "rules/verify.smk"
 include: "rules/acquire.smk"
 include: "rules/qa.smk"
 include: "rules/harmonize.smk"

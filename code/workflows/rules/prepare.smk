@@ -46,6 +46,11 @@ rule prepare_gse130353:
 # config sha256; an empty/mismatched hash HALTS (fail-early). prepare_genesets
 # then maps symbols→Ensembl, applies the size filter, and asserts the release.
 rule download_genesets:
+    input:
+        # ancient(): GMT is content-addressed by a LOCKED sha256 — a fetch_url.py
+        # edit can't change the verified bytes (see acquire.smk downloads).
+        script=ancient(f"{SCRIPTS}/fetch_url.py"),
+        srclib=ancient(f"{SCRIPTS}/acquire_common.py"),
     output:
         gmt=f"{RAW}/genesets/{{db}}.{config['genesets']['msigdb_release']}.symbols.gmt",
     params:
@@ -56,7 +61,9 @@ rule download_genesets:
     conda:
         "../envs/py.yaml"
     shell:
-        stub("prepare/download_genesets (curl + sha256 verify; HALT on empty/mismatch)")
+        # empty sha256 (reactome/gobp TBD-at-ingest) -> fetch_url.py HALTs.
+        "python {input.script} --url {params.url} --sha256 {params.sha256} "
+        "--out {output.gmt} > {log} 2>&1"
 
 rule prepare_genesets:
     input:

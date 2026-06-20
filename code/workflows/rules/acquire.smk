@@ -68,6 +68,7 @@ rule download_gse130353_soft:
 rule parse_gse14577:
     input:
         soft=f"{RAW}/GSE14577_family.soft.gz",
+        verify=f"{PROC}/verify/gse14577_soft.sha256.pass",   # hash-gated (finding 2)
         script=f"{SCRIPTS}/parse_gse14577.py",
         srclib=f"{SCRIPTS}/acquire_common.py",
     output:
@@ -89,6 +90,8 @@ rule extract_gse130353:
     input:
         tar=f"{RAW}/GSE130353_RAW.tar",
         soft=f"{RAW}/GSE130353_family.soft.gz",
+        verify_tar=f"{PROC}/verify/gse130353_tar.sha256.pass",    # hash-gated (finding 2)
+        verify_soft=f"{PROC}/verify/gse130353_soft.sha256.pass",
         script=f"{SCRIPTS}/extract_gse130353.py",
         srclib=f"{SCRIPTS}/acquire_common.py",
     output:
@@ -115,6 +118,9 @@ rule emit_datapackage:
         soft130353=f"{RAW}/GSE130353_family.soft.gz",
         contract14577=f"{PROC}/GSE14577/parse_contract.json",
         contract130353=f"{PROC}/GSE130353/parse_contract.json",
+        verify14577=f"{PROC}/verify/gse14577_soft.sha256.pass",   # hash-gated (finding 2)
+        verify_tar=f"{PROC}/verify/gse130353_tar.sha256.pass",
+        verify_soft=f"{PROC}/verify/gse130353_soft.sha256.pass",
         script=f"{SCRIPTS}/emit_datapackage.py",
         srclib=f"{SCRIPTS}/acquire_common.py",
     output:
