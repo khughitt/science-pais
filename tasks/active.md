@@ -168,3 +168,16 @@ Search for or commission a within-cohort (e.g. RECOVER, IMPACC) proteomic/metabo
 - created: 2026-06-19
 
 Assess whether t001/t016 should pre-commit to PC-COS core domains (fatigue, breathlessness, cognitive impairment, QoL) as dimensional outcomes alongside the binary PAIS case variable, enabling continuous cross-study comparison. Follows topic:pais-case-definition-heterogeneity (t002).
+
+## [t028] Execute the pre-registered menopause→PAIS total-effect analysis once UKB data is provisioned
+- priority: P2
+- status: blocked
+- aspects: []
+- blocked-by: [pre-registration:0001-menopause-pais-total-effect]
+- created: 2026-06-19
+
+Data-gated: pre-registration:menopause-pais-total-effect is committed but execution is blocked on the Vehicle-Admissibility Gate (G1 access provisioned, G2 field IDs confirmed, G3 power floor met, G4-G6 sampling/timing/outcome). Standing verdict [?] inconclusive-for-coverage; no bears_on update on h0005 until a provisioned UKB vehicle clears all G-gates. Activate on UKB AMS approval. Primary confirmatory = reproductive-timing exposure -> WHO>=90d long-COVID RR (Route A questionnaire), {age}-adjusted, natal-female. Ref doc/meta/pre-registration-menopause-pais-total-effect.md.
+
+### Notes
+
+- 2026-06-19: Corrected pre-reg path: entities/pre-registrations/0001-menopause-pais-total-effect.md (committed 2026-06-19, mode: data-gated).

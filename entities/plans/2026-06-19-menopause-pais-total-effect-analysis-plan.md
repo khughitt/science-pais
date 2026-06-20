@@ -42,8 +42,20 @@ the exposure operationalization + misclassification model (**t020**), and the U-
 / outcome measurement schema (**t017**). The plan is therefore **`ready-with-caveats`**:
 methodologically pre-registerable now, but **not yet executable** because **UKB data
 is not in hand** (the AMS access gate) and a handful of field IDs await live
-confirmation at application. The next command is `/science:pre-register`, with the
-AMS application running in parallel.
+confirmation at application.
+
+**Pre-registration committed (2026-06-19):**
+`entities/pre-registrations/0001-menopause-pais-total-effect.md` (`mode: data-gated`).
+Its feasibility check surfaced a load-bearing correction: UKB participants are
+**≈ 52–83 at infection**, so essentially all natal females are **postmenopausal at
+infection** — the pre/peri-vs-post-at-infection contrast is **structurally
+near-unavailable in UKB**. The confirmatory exposure is therefore demoted to
+reproductive-stage **timing** (age-at-menopause / time-since-menopause), with the
+pre/peri contrast routed to younger triangulation cohorts (All of Us / Lifelines) and
+treated as exploratory in UKB. The primary metric is committed as **RR (log-binomial)**
+on the cross-sectional Route-A questionnaire outcome. Execution is tracked by the
+`status: blocked` task **t028**, gated on the pre-reg's Vehicle-Admissibility Gate
+(G1–G6); the UKB AMS application runs in parallel.
 
 ## Analysis Question
 
