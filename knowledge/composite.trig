@@ -40228,6 +40228,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/56b866423cc515fa> ;
         sci:bearsOnTarget <http://example.org/project/paper/kalimuddin2022> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/0c9607ba74647d4c> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source/entities_questions_0007-mechanism-of-female-predominance-in-pais.md> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/0dc7d638bc7198fe> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/03ac508486a19ca9> ;
         sci:bearsOnTarget <http://example.org/project/paper/fedorchenko2023> ;
@@ -40260,6 +40264,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/e4150e4e1a95e088> ;
         sci:bearsOnTarget <http://example.org/project/paper/sun2025> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/128f14007bd0a264> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/task/t018> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/13619741aa53ac3d> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/6565de19445425e8> ;
         sci:bearsOnTarget <http://example.org/project/paper/averyanova2022> ;
@@ -40283,6 +40291,10 @@
     <http://example.org/project/bears-on-edge/1bc917065801f459> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/dd602b80c4f590d4> ;
         sci:bearsOnTarget <http://example.org/project/paper/komaroff2025> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/1bd729a65d639713> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/task/t027> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/1de4342ae35f187d> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/d60cbddb03e66959> ;
@@ -40316,6 +40328,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/c537af7572ff0ccd> ;
         sci:bearsOnTarget <http://example.org/project/pre-registration/0001-menopause-pais-total-effect> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/2766557203579bed> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source/entities_reports_0001-bias-audit-menopause-pais-total-effect.md> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/2814d48dcb226596> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_hypotheses_0001-shared-dysregulated-attractor.md> ;
         sci:bearsOnTarget <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor> ;
@@ -40328,9 +40344,17 @@
         sci:bearsOnSource <http://example.org/project/source/entities_questions_0008-formalize-vicious-cycle-attractor-model.md> ;
         sci:bearsOnTarget <http://example.org/project/question/0008-formalize-vicious-cycle-attractor-model> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/3137c2b7691fdb22> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/77e5750bf393151a> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/32b3dbc24c0342df> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/task/t018> ;
         sci:bearsOnTarget <http://example.org/project/question/0013-reproductive-stage-failed-immune-recovery-after-infection> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/32dd1ce33700f505> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/task/t021> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/3325e19e5d4329dc> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/7184196e6ece5bd6> ;
@@ -40339,6 +40363,10 @@
     <http://example.org/project/bears-on-edge/3407affe621f925f> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/f79f01eb0aafca29> ;
         sci:bearsOnTarget <http://example.org/project/paper/komaroff2023> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/354e87a22111d95d> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source/entities_questions_0013-reproductive-stage-failed-immune-recovery-after-infection.md> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/358f13249f55efc8> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/0836507b3f6a39cd> ;
@@ -40375,6 +40403,10 @@
     <http://example.org/project/bears-on-edge/3b11f46da49e4c65> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/dbbf774ccd6b5a95> ;
         sci:bearsOnTarget <http://example.org/project/topic/pais-case-definition-heterogeneity> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/3b14d87100345139> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/d19dbe960bf238e1> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/3bd5168916f64ec0> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/2479b4da5de01aff> ;
@@ -40448,6 +40480,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/aa3f085ad2b30d61> ;
         sci:bearsOnTarget <http://example.org/project/paper/rebman2026> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/506f51bfdab9db92> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/task/t020> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/51932b9d38a5dc3b> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/f2213317d6dd42d2> ;
         sci:bearsOnTarget <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor> ;
@@ -40508,6 +40544,10 @@
         sci:bearsOnSource <http://example.org/project/source/entities_questions_0001-shared-molecular-signature-across-triggers.md> ;
         sci:bearsOnTarget <http://example.org/project/question/0001-shared-molecular-signature-across-triggers> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/6e769b9bb0d6d4aa> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/6ea379ba63feb729> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_research-question.md> ;
         sci:bearsOnTarget <http://example.org/project/research-question/post-acute-infection-syndromes> ;
@@ -40560,6 +40600,10 @@
         sci:bearsOnSource <http://example.org/project/task/t019> ;
         sci:bearsOnTarget <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/7eb197d18e980b62> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/pre-registration/0001-menopause-pais-total-effect> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/818c04a809249609> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/8cb41b49919e6249> ;
         sci:bearsOnTarget <http://example.org/project/paper/ganesh2022> ;
@@ -40608,9 +40652,21 @@
         sci:bearsOnSource <http://example.org/project/task/t020> ;
         sci:bearsOnTarget <http://example.org/project/question/0013-reproductive-stage-failed-immune-recovery-after-infection> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/932cf06f17908984> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/task/t015> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/9409ff8094226b5c> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/task/t014> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/94682a4830f20dbe> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/e09a1e9d4f7b11e7> ;
         sci:bearsOnTarget <http://example.org/project/paper/seo2025> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/946c89ed82a26494> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/39a6d2537a67322a> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/97294eaab205e0fe> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/44f8221f52fe4a11> ;
@@ -40623,6 +40679,10 @@
     <http://example.org/project/bears-on-edge/98d28468b58345cd> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/23917b1f6a8f9aed> ;
         sci:bearsOnTarget <http://example.org/project/question/0014-which-pais-case-definition-is-most-biologically-coherent> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/9b9fd0ea6d730b22> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/question/0013-reproductive-stage-failed-immune-recovery-after-infection> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/9d5ff1c98f58ec5a> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/e1970032d341a9ec> ;
@@ -40696,6 +40756,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/b2aaaeb9a3dff2e0> ;
         sci:bearsOnTarget <http://example.org/project/paper/aid2025> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/af20e5b9f4412f63> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/03aa3018998594d5> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/af7f8728777a0c4f> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/21f13fba18560bba> ;
         sci:bearsOnTarget <http://example.org/project/paper/morroy2016> ;
@@ -40724,6 +40788,10 @@
         sci:bearsOnSource <http://example.org/project/task/t016> ;
         sci:bearsOnTarget <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/bbbe721a5486e5ed> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source/entities_discussions_0001-menopause-timing-pais-rival-models.md> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/bc324276a32c9d99> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/1824c33d46938cb9> ;
         sci:bearsOnTarget <http://example.org/project/paper/ciaffi2023> ;
@@ -40740,6 +40808,10 @@
         sci:bearsOnSource <http://example.org/project/task/t016> ;
         sci:bearsOnTarget <http://example.org/project/report/0001-bias-audit-menopause-pais-total-effect> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/c0c41ed34d2ea59e> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/question/0007-mechanism-of-female-predominance-in-pais> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/c17b1a3bd221f508> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_questions_0014-which-pais-case-definition-is-most-biologically-coherent.md> ;
         sci:bearsOnTarget <http://example.org/project/question/0014-which-pais-case-definition-is-most-biologically-coherent> ;
@@ -40747,6 +40819,10 @@
     <http://example.org/project/bears-on-edge/c21f721d6436afa2> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/640c24e19a58d948> ;
         sci:bearsOnTarget <http://example.org/project/paper/cai2024> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/c31cdbd8b67ea6fa> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/c537af7572ff0ccd> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/c3fb25e3ba9c850a> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/fc5d7d0f2e0b100e> ;
@@ -40780,9 +40856,17 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/6877d9299336c483> ;
         sci:bearsOnTarget <http://example.org/project/paper/bekaryssova2022> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/d4214e036d983759> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/task/t016> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/d72c760530216696> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/8e79a7d0c796471b> ;
         sci:bearsOnTarget <http://example.org/project/paper/pollack2023> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/d81787901274548c> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/report/0001-bias-audit-menopause-pais-total-effect> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/d92b02fb010e29b6> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/5ef2eb77e6c47cea> ;
@@ -40796,6 +40880,14 @@
         sci:bearsOnSource <http://example.org/project/source/entities_questions_0015-does-pem-requirement-improve-cross-study-comparability.md> ;
         sci:bearsOnTarget <http://example.org/project/question/0015-does-pem-requirement-improve-cross-study-comparability> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/de4fd6a1240c1958> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/task/t017> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/deeec0605e6fba8b> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/task/t013> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/df5bc127ed7334b1> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/bc5c0e2242cb28af> ;
         sci:bearsOnTarget <http://example.org/project/paper/stahlberg2025> ;
@@ -40803,6 +40895,10 @@
     <http://example.org/project/bears-on-edge/e0ce82537c954545> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/972cc173ea4ed06d> ;
         sci:bearsOnTarget <http://example.org/project/question/0011-mitochondrial-basis-of-pem> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/e0ff8258b85cc6c5> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/task/t019> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/e1235cc3c7fd7ac2> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/task/t013> ;
@@ -40848,6 +40944,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/91af19c597d668ea> ;
         sci:bearsOnTarget <http://example.org/project/paper/newson2021> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/f0e9f6814f8ca80e> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source/entities_hypotheses_0005-reproductive-stage-immune-homeostatic-margin.md> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/f1223b23ab74c482> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_hypotheses_0004-acute-severity-threshold.md> ;
         sci:bearsOnTarget <http://example.org/project/hypothesis/0004-acute-severity-threshold> ;
@@ -40875,6 +40975,10 @@
     <http://example.org/project/bears-on-edge/fd28501e9c82ed8e> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/e13cd166c6fcf3e8> ;
         sci:bearsOnTarget <http://example.org/project/paper/huang2025> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/fee00da3b4538849> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/05d091f70587e0c8> ;
+        sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
         a sci:BearsOnEdge .
     <http://example.org/project/book/iom2015mecfs> sci:doi "10.17226/19012" ;
         sci:profile "core" ;
@@ -41057,6 +41161,25 @@
         skos:related <http://example.org/project/patch-definition/menopause-pais-causal-dag> ;
         prov:wasDerivedFrom <http://example.org/project/source/entities_concepts_unmeasured-shared-confounders.md> ;
         schema:identifier "concept:unmeasured-shared-confounders" .
+    <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> sci:freshnessState "fresh" ;
+        sci:inPatch <http://example.org/project/patch-definition/menopause-pais-causal-dag> ;
+        sci:profile "core" ;
+        sci:projectStatus "active" ;
+        sci:scope "project" ;
+        a sci:Discussion ;
+        skos:prefLabel "Rival models for the menopause-timing↔long-COVID association (h0005 vs aging / selection / SES)" ;
+        skos:related <http://example.org/project/paper/alcaldeherraiz2025>,
+            <http://example.org/project/paper/shah2025>,
+            <http://example.org/project/patch-definition/menopause-pais-causal-dag>,
+            <http://example.org/project/task/t016>,
+            <http://example.org/project/topic/menopause-sex-hormones-and-pais-risk> ;
+        prov:wasDerivedFrom <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin>,
+            <http://example.org/project/pre-registration/0001-menopause-pais-total-effect>,
+            <http://example.org/project/question/0007-mechanism-of-female-predominance-in-pais>,
+            <http://example.org/project/question/0013-reproductive-stage-failed-immune-recovery-after-infection>,
+            <http://example.org/project/report/0001-bias-audit-menopause-pais-total-effect>,
+            <http://example.org/project/source/entities_discussions_0001-menopause-timing-pais-rival-models.md> ;
+        schema:identifier "discussion:0001-menopause-timing-pais-rival-models" .
     <http://example.org/project/external/term/ACE2%20downregulation> sci:profile "external" ;
         a sci:ExternalTerm ;
         schema:identifier "ACE2 downregulation" .
@@ -42279,10 +42402,10 @@
         a sci:ExternalTerm ;
         schema:identifier "women health" .
     <http://example.org/project/graph_revision> a prov:Entity ;
-        schema:dateModified "2026-06-20T01:30:11+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        schema:dateModified "2026-06-20T01:59:19+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
         schema:name "graph-revision" ;
-        schema:sha256 "e5ee289e3969c144adad9dc81edb640447ad717124084df680b536c97bba46e9" ;
-        schema:text "{\"AGENTS.md\":{\"mtime_ns\":1781147493660692515,\"sha256\":\"4c3130728a42829e832bda9dd828e6b4ffb0c2728e1139c3fa364d800479e952\"},\"CLAUDE.md\":{\"mtime_ns\":1781147463250691381,\"sha256\":\"336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49\"},\"RESEARCH_PLAN.md\":{\"mtime_ns\":1781147663204698837,\"sha256\":\"f0f899d877fc4aabd7b61ee78ae1ff175565dc5b50cb2363393fd2572e31bccb\"},\"code/notebooks/.gitkeep\":{\"mtime_ns\":1781147422769689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/notebooks/pyproject.toml\":{\"mtime_ns\":1781899798260793972,\"sha256\":\"2b42c8d904796817391a5bb60258cd5452a93af6de07cca8c15eab3f0e2453bf\"},\"code/notebooks/uv.lock\":{\"mtime_ns\":1781899809390092264,\"sha256\":\"52f03631f51792685609210bb7470a2fd43ff392aa9c900aec584b920f47ea2b\"},\"code/notebooks/viz.py\":{\"mtime_ns\":1781899798260692922,\"sha256\":\"901607854b5774ae8cb94e8ba7b6035105876bb9bd5f81a9a60fae9904761d94\"},\"code/scripts/.gitkeep\":{\"mtime_ns\":1781147422770689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/workflows/.gitkeep\":{\"mtime_ns\":1781147422772689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/datasets/.gitkeep\":{\"mtime_ns\":1781147422777689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/discussions/.gitkeep\":{\"mtime_ns\":1781147422779689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/inquiries/assets/menopause-pais-causal-dag.dot\":{\"mtime_ns\":1781900821463030269,\"sha256\":\"ad0939175ed2458f6f1976cb9896e130ca2e023f47e9962cda2ae2df8c153689\"},\"doc/inquiries/assets/menopause-pais-causal-dag.png\":{\"mtime_ns\":1781900821465160995,\"sha256\":\"25c38998c3355e7cfaea579527100aaada2d7a5df62a2357052e93a461b8e42d\"},\"doc/inquiries/menopause-pais-causal-dag-critique.md\":{\"mtime_ns\":1781901080541022218,\"sha256\":\"7c2f7dfe9f2ff20c2a31cede43abd0fb7c1fc7509cb857672ace07887146bca0\"},\"doc/inquiries/menopause-pais-causal-dag.md\":{\"mtime_ns\":1781901110569020564,\"sha256\":\"eaeb0f70cc0ce66203e917bc0837b2c0fab962179054bf267846d56d3899a5e0\"},\"doc/interpretations/.gitkeep\":{\"mtime_ns\":1781147422781689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/.gitkeep\":{\"mtime_ns\":1781147422782689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/2026-06-10-paper-import-manifest.tsv\":{\"mtime_ns\":1781147861348775000,\"sha256\":\"25ffe958f9e64ed9ef78a963e5e2d09a6098db15d60c5fa9115c5b28739a9bf3\"},\"doc/meta/2026-06-10-paper-import-triage.md\":{\"mtime_ns\":1781178906449863902,\"sha256\":\"e8697526d18ff80865f4454867677dc58fd8ce4cf99566a86d592bab47e0821c\"},\"doc/meta/2026-06-19-case-definition-crosswalk.md\":{\"mtime_ns\":1781908160682632072,\"sha256\":\"1b6158fd460173b17d748e70a7f8a2555ce5ada4e79a2102f4c574aa474f96cf\"},\"doc/meta/2026-06-19-case-definition-crosswalk.tsv\":{\"mtime_ns\":1781904882273812727,\"sha256\":\"c8c92a6cd5ea7e0dcc7e01df65b064165ed9f80dfbc5df28cfc7c964ad75920b\"},\"doc/meta/2026-06-19-session-summary.md\":{\"mtime_ns\":1781908295325624653,\"sha256\":\"38a7bcff01dd71cb267ebd8dcc56b3ecb34930bd588464f0eaf9ebb447a3f440\"},\"doc/methods/.gitkeep\":{\"mtime_ns\":1781147422784689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/methods/2026-06-19-reproductive-stage-exposure-operationalization.md\":{\"mtime_ns\":1781915459400229882,\"sha256\":\"c0d051de08993883bc4a9ed4a377476cd84381c1197669e886edbd2d4d8d369e\"},\"doc/methods/2026-06-19-ukb-data-field-specification.md\":{\"mtime_ns\":1781917171159135557,\"sha256\":\"b37c132a4cba3b2432bc11267d06b0810840a8d2a034790a237a30b1844dd952\"},\"doc/methods/2026-06-19-ukb-outcome-and-uproxy-measurement-schema.md\":{\"mtime_ns\":1781917126725138005,\"sha256\":\"91db9cf7257f66eaa2613d8f1f311fca2be2631d36cd072549efad1d276c6fa9\"},\"doc/plans/.gitkeep\":{\"mtime_ns\":1781147422786689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/reports/.gitkeep\":{\"mtime_ns\":1781147422788689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/searches/.gitkeep\":{\"mtime_ns\":1781147422790689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/searches/2026-06-19-hormone-menopause-pais-cohorts.json\":{\"mtime_ns\":1781906373409730559,\"sha256\":\"2d5cb054fb5c6833c3b47b7fe8bfe60b9c0b9138025a221b3edd2776e855d7ad\"},\"doc/searches/2026-06-19-hormone-menopause-pais-cohorts.md\":{\"mtime_ns\":1781906335903732625,\"sha256\":\"8e0f26e57f7999d84c9578a3da554d3189566eba1a442b38b8531304ab7f5a39\"},\"doc/themes/.gitkeep\":{\"mtime_ns\":1781147422791689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"knowledge/sources/local/.gitkeep\":{\"mtime_ns\":1781147422800689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"science.yaml\":{\"mtime_ns\":1781873358768892131,\"sha256\":\"1e8eb738a3fd847e76146f2e89de197bd7294abf2a3219484ddbe14671b0e956\"},\"specs/scope-boundaries.md\":{\"mtime_ns\":1781147514943693308,\"sha256\":\"862c3e8aa795a39dbec239d3830652d82a661156f4857097b31a225efe821b81\"},\"tasks/.tasks.lock\":{\"mtime_ns\":1781918841936043490,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"tasks/active.md\":{\"mtime_ns\":1781919011169034781,\"sha256\":\"aa09a05d2349f94c7228fbcf1b9f2aa9f71968fc96bd0284fc0d45e6378a0aea\"},\"tasks/done/2026-06.md\":{\"mtime_ns\":1781917362767531071,\"sha256\":\"6cca83efc5f36c194baa33fed78ba81f92f68dede8119bad99d741b61eb031b0\"}}" .
+        schema:sha256 "3be6f8a3c216f75d363c895368b7d7d77aaa33dd7c9d473b5af4038176d19da5" ;
+        schema:text "{\"AGENTS.md\":{\"mtime_ns\":1781147493660692515,\"sha256\":\"4c3130728a42829e832bda9dd828e6b4ffb0c2728e1139c3fa364d800479e952\"},\"CLAUDE.md\":{\"mtime_ns\":1781147463250691381,\"sha256\":\"336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49\"},\"RESEARCH_PLAN.md\":{\"mtime_ns\":1781147663204698837,\"sha256\":\"f0f899d877fc4aabd7b61ee78ae1ff175565dc5b50cb2363393fd2572e31bccb\"},\"code/notebooks/.gitkeep\":{\"mtime_ns\":1781147422769689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/notebooks/pyproject.toml\":{\"mtime_ns\":1781899798260793972,\"sha256\":\"2b42c8d904796817391a5bb60258cd5452a93af6de07cca8c15eab3f0e2453bf\"},\"code/notebooks/uv.lock\":{\"mtime_ns\":1781899809390092264,\"sha256\":\"52f03631f51792685609210bb7470a2fd43ff392aa9c900aec584b920f47ea2b\"},\"code/notebooks/viz.py\":{\"mtime_ns\":1781899798260692922,\"sha256\":\"901607854b5774ae8cb94e8ba7b6035105876bb9bd5f81a9a60fae9904761d94\"},\"code/scripts/.gitkeep\":{\"mtime_ns\":1781147422770689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/workflows/.gitkeep\":{\"mtime_ns\":1781147422772689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/datasets/.gitkeep\":{\"mtime_ns\":1781147422777689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/discussions/.gitkeep\":{\"mtime_ns\":1781147422779689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/inquiries/assets/menopause-pais-causal-dag.dot\":{\"mtime_ns\":1781900821463030269,\"sha256\":\"ad0939175ed2458f6f1976cb9896e130ca2e023f47e9962cda2ae2df8c153689\"},\"doc/inquiries/assets/menopause-pais-causal-dag.png\":{\"mtime_ns\":1781900821465160995,\"sha256\":\"25c38998c3355e7cfaea579527100aaada2d7a5df62a2357052e93a461b8e42d\"},\"doc/inquiries/menopause-pais-causal-dag-critique.md\":{\"mtime_ns\":1781901080541022218,\"sha256\":\"7c2f7dfe9f2ff20c2a31cede43abd0fb7c1fc7509cb857672ace07887146bca0\"},\"doc/inquiries/menopause-pais-causal-dag.md\":{\"mtime_ns\":1781901110569020564,\"sha256\":\"eaeb0f70cc0ce66203e917bc0837b2c0fab962179054bf267846d56d3899a5e0\"},\"doc/interpretations/.gitkeep\":{\"mtime_ns\":1781147422781689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/.gitkeep\":{\"mtime_ns\":1781147422782689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/2026-06-10-paper-import-manifest.tsv\":{\"mtime_ns\":1781147861348775000,\"sha256\":\"25ffe958f9e64ed9ef78a963e5e2d09a6098db15d60c5fa9115c5b28739a9bf3\"},\"doc/meta/2026-06-10-paper-import-triage.md\":{\"mtime_ns\":1781178906449863902,\"sha256\":\"e8697526d18ff80865f4454867677dc58fd8ce4cf99566a86d592bab47e0821c\"},\"doc/meta/2026-06-19-case-definition-crosswalk.md\":{\"mtime_ns\":1781908160682632072,\"sha256\":\"1b6158fd460173b17d748e70a7f8a2555ce5ada4e79a2102f4c574aa474f96cf\"},\"doc/meta/2026-06-19-case-definition-crosswalk.tsv\":{\"mtime_ns\":1781904882273812727,\"sha256\":\"c8c92a6cd5ea7e0dcc7e01df65b064165ed9f80dfbc5df28cfc7c964ad75920b\"},\"doc/meta/2026-06-19-session-summary.md\":{\"mtime_ns\":1781908295325624653,\"sha256\":\"38a7bcff01dd71cb267ebd8dcc56b3ecb34930bd588464f0eaf9ebb447a3f440\"},\"doc/methods/.gitkeep\":{\"mtime_ns\":1781147422784689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/methods/2026-06-19-reproductive-stage-exposure-operationalization.md\":{\"mtime_ns\":1781915459400229882,\"sha256\":\"c0d051de08993883bc4a9ed4a377476cd84381c1197669e886edbd2d4d8d369e\"},\"doc/methods/2026-06-19-ukb-data-field-specification.md\":{\"mtime_ns\":1781917171159135557,\"sha256\":\"b37c132a4cba3b2432bc11267d06b0810840a8d2a034790a237a30b1844dd952\"},\"doc/methods/2026-06-19-ukb-outcome-and-uproxy-measurement-schema.md\":{\"mtime_ns\":1781917126725138005,\"sha256\":\"91db9cf7257f66eaa2613d8f1f311fca2be2631d36cd072549efad1d276c6fa9\"},\"doc/plans/.gitkeep\":{\"mtime_ns\":1781147422786689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/reports/.gitkeep\":{\"mtime_ns\":1781147422788689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/searches/.gitkeep\":{\"mtime_ns\":1781147422790689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/searches/2026-06-19-hormone-menopause-pais-cohorts.json\":{\"mtime_ns\":1781906373409730559,\"sha256\":\"2d5cb054fb5c6833c3b47b7fe8bfe60b9c0b9138025a221b3edd2776e855d7ad\"},\"doc/searches/2026-06-19-hormone-menopause-pais-cohorts.md\":{\"mtime_ns\":1781906335903732625,\"sha256\":\"8e0f26e57f7999d84c9578a3da554d3189566eba1a442b38b8531304ab7f5a39\"},\"doc/themes/.gitkeep\":{\"mtime_ns\":1781147422791689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"knowledge/sources/local/.gitkeep\":{\"mtime_ns\":1781147422800689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"science.yaml\":{\"mtime_ns\":1781873358768892131,\"sha256\":\"1e8eb738a3fd847e76146f2e89de197bd7294abf2a3219484ddbe14671b0e956\"},\"specs/scope-boundaries.md\":{\"mtime_ns\":1781147514943693308,\"sha256\":\"862c3e8aa795a39dbec239d3830652d82a661156f4857097b31a225efe821b81\"},\"tasks/.tasks.lock\":{\"mtime_ns\":1781920737134939056,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"tasks/active.md\":{\"mtime_ns\":1781920759391309746,\"sha256\":\"ffdc6752577c145fe3ff2ae178428f27049ffb3b971629b89e830c2110fc3471\"},\"tasks/done/2026-06.md\":{\"mtime_ns\":1781917362767531071,\"sha256\":\"6cca83efc5f36c194baa33fed78ba81f92f68dede8119bad99d741b61eb031b0\"}}" .
     <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor> sci:freshnessState "fresh" ;
         sci:profile "core" ;
         sci:projectStatus "proposed" ;
@@ -42329,7 +42452,8 @@
             <http://example.org/project/topic/shared-failure-mode-across-pais> ;
         prov:wasDerivedFrom <http://example.org/project/source/entities_hypotheses_0004-acute-severity-threshold.md> ;
         schema:identifier "hypothesis:0004-acute-severity-threshold" .
-    <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin> sci:freshnessState "fresh" ;
+    <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        sci:freshnessState "fresh" ;
         sci:inPatch <http://example.org/project/patch-definition/menopause-pais-causal-dag> ;
         sci:profile "core" ;
         sci:projectStatus "proposed" ;
@@ -43621,6 +43745,7 @@
             <http://example.org/project/concept/sex-hormone-levels>,
             <http://example.org/project/concept/thromboinflammation-and-endothelial-dysfunction>,
             <http://example.org/project/concept/unmeasured-shared-confounders>,
+            <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
             <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin>,
             <http://example.org/project/inquiry/menopause-pais-causal-dag/assumption/clinic-collider>,
             <http://example.org/project/inquiry/menopause-pais-causal-dag/assumption/comorbidity-time-split>,
@@ -43781,6 +43906,15 @@
         sci:patch <http://example.org/project/patch-definition/menopause-pais-causal-dag> ;
         sci:policyVersion "local-closure-v1" ;
         a sci:PatchMembership .
+    <http://example.org/project/patch-membership/9abf5af0bd38b061> sci:derivationDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:derivationPredicate sci:bearsOn ;
+        sci:derivationReason "closure" ;
+        sci:member <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        sci:memberKind "discussion" ;
+        sci:memberRole "member" ;
+        sci:patch <http://example.org/project/patch-definition/menopause-pais-causal-dag> ;
+        sci:policyVersion "local-closure-v1" ;
+        a sci:PatchMembership .
     <http://example.org/project/patch-membership/9b7cb40d6e2fdd45> sci:derivationDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:derivationPredicate sci:bearsOn ;
         sci:derivationReason "closure" ;
@@ -43879,7 +44013,8 @@
             <http://example.org/project/task/t027> ;
         prov:wasDerivedFrom <http://example.org/project/source/entities_plans_2026-06-19-menopause-pais-total-effect-analysis-plan.md> ;
         schema:identifier "plan:2026-06-19-menopause-pais-total-effect-analysis-plan" .
-    <http://example.org/project/pre-registration/0001-menopause-pais-total-effect> sci:bearsOn <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin>,
+    <http://example.org/project/pre-registration/0001-menopause-pais-total-effect> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin>,
             <http://example.org/project/question/0013-reproductive-stage-failed-immune-recovery-after-infection>,
             <http://example.org/project/report/0001-bias-audit-menopause-pais-total-effect> ;
         sci:inPatch <http://example.org/project/patch-definition/menopause-pais-causal-dag> ;
@@ -43982,6 +44117,7 @@
             <http://example.org/project/external/term/immune%20regulation>,
             <http://example.org/project/external/term/post-infectious%20fatigue>,
             <http://example.org/project/external/term/sex%20differences> ;
+        sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
         sci:freshnessState "needs-review" ;
         sci:profile "core" ;
         sci:projectStatus "active" ;
@@ -44082,6 +44218,7 @@
             <http://example.org/project/external/term/post-acute%20infection%20syndromes>,
             <http://example.org/project/external/term/reproductive%20stage>,
             <http://example.org/project/external/term/sex%20hormones> ;
+        sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
         sci:freshnessState "fresh" ;
         sci:profile "core" ;
         sci:projectStatus "active" ;
@@ -44134,7 +44271,8 @@
             <http://example.org/project/topic/pais-case-definition-heterogeneity> ;
         prov:wasDerivedFrom <http://example.org/project/source/entities_questions_0015-does-pem-requirement-improve-cross-study-comparability.md> ;
         schema:identifier "question:0015-does-pem-requirement-improve-cross-study-comparability" .
-    <http://example.org/project/report/0001-bias-audit-menopause-pais-total-effect> sci:freshnessState "fresh" ;
+    <http://example.org/project/report/0001-bias-audit-menopause-pais-total-effect> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        sci:freshnessState "fresh" ;
         sci:profile "core" ;
         sci:projectStatus "proposed" ;
         sci:scope "project" ;
@@ -44159,6 +44297,9 @@
         skos:prefLabel "Why do some people fail to recover after acute infection, and what shared mechanisms link the post-acute infection syndromes?" ;
         prov:wasDerivedFrom <http://example.org/project/source/entities_research-question.md> ;
         schema:identifier "research-question:post-acute-infection-syndromes" .
+    <http://example.org/project/source-change/4900e516827d00e5> sci:observedOn "2026-06-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "73eb2d7bbc6576b6c748959b5be8ef776c3fa04373660f208cbef7c19dafcfe7" .
     <http://example.org/project/source-change/71f3c851944ccbdb> sci:observedOn "2026-06-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "802a6d60d4cdb8b93fda64055aceb14634db756d722fde2cc230ceb48e343d1e" .
@@ -44169,7 +44310,8 @@
         sci:sourcePath "entities/papers/Klein2023.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "77ff2fd37fb01435ff68a048d9fa37d12d55e2d43db42ff006359d4dbae721a3" .
-    <http://example.org/project/source-snapshot/03aa3018998594d5> sci:bearsOn <http://example.org/project/question/0013-reproductive-stage-failed-immune-recovery-after-infection> ;
+    <http://example.org/project/source-snapshot/03aa3018998594d5> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/question/0013-reproductive-stage-failed-immune-recovery-after-infection> ;
         sci:sourcePath "entities/questions/0013-reproductive-stage-failed-immune-recovery-after-infection.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "36f76fcd4ed6c6dd3d401a1956d3d2d78ecd9cf6b2154d122f04e6dd86b42f81" .
@@ -44181,7 +44323,8 @@
         sci:sourcePath "entities/papers/Esseffar2025.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "b21d988774a331f3b109a648c63e3da3c76dc462f0c587b4aa8802bb5ec3ae66" .
-    <http://example.org/project/source-snapshot/05d091f70587e0c8> sci:bearsOn <http://example.org/project/question/0007-mechanism-of-female-predominance-in-pais> ;
+    <http://example.org/project/source-snapshot/05d091f70587e0c8> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/question/0007-mechanism-of-female-predominance-in-pais> ;
         sci:sourcePath "entities/questions/0007-mechanism-of-female-predominance-in-pais.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "6ace637ec7554b7bd69c8d9ea89440b33b132917f351dd6b6a3a512650077d7f" .
@@ -44285,6 +44428,11 @@
         sci:sourcePath "entities/concepts/clinic-attendance.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "6d605d157515655289038cdd2b25164f53b6a35a50904055e3861b5a1efcc02b" .
+    <http://example.org/project/source-snapshot/39a6d2537a67322a> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        sci:latestSourceChange <http://example.org/project/source-change/4900e516827d00e5> ;
+        sci:sourcePath "entities/discussions/0001-menopause-timing-pais-rival-models.md" ;
+        a sci:SourceSnapshot ;
+        schema:sha256 "73eb2d7bbc6576b6c748959b5be8ef776c3fa04373660f208cbef7c19dafcfe7" .
     <http://example.org/project/source-snapshot/3fa1b8431161c943> sci:bearsOn <http://example.org/project/paper/peluso2024b> ;
         sci:sourcePath "entities/papers/Peluso2024b.md" ;
         a sci:SourceSnapshot ;
@@ -44378,7 +44526,8 @@
         sci:sourcePath "entities/papers/Wester2024.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "961eb5decb02ccb2ba53215c6d3b04afe9c933e381340b1bbbbbe9e10a1e8df3" .
-    <http://example.org/project/source-snapshot/77e5750bf393151a> sci:bearsOn <http://example.org/project/report/0001-bias-audit-menopause-pais-total-effect> ;
+    <http://example.org/project/source-snapshot/77e5750bf393151a> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/report/0001-bias-audit-menopause-pais-total-effect> ;
         sci:sourcePath "entities/reports/0001-bias-audit-menopause-pais-total-effect.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "aa916bef96789493eb9577a829e626a9658c1de04ac643ae958b98869e471bb2" .
@@ -44526,7 +44675,8 @@
         sci:sourcePath "entities/questions/0005-latent-to-overt-autoimmunity-conversion.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "40da99e7739aac8f24a33ea4654beb4c13ce06be52b5b16a7928fc81dc540451" .
-    <http://example.org/project/source-snapshot/c537af7572ff0ccd> sci:bearsOn <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin>,
+    <http://example.org/project/source-snapshot/c537af7572ff0ccd> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin>,
             <http://example.org/project/pre-registration/0001-menopause-pais-total-effect>,
             <http://example.org/project/question/0013-reproductive-stage-failed-immune-recovery-after-infection>,
             <http://example.org/project/report/0001-bias-audit-menopause-pais-total-effect> ;
@@ -44546,7 +44696,8 @@
         sci:sourcePath "entities/questions/0008-formalize-vicious-cycle-attractor-model.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "e333aea7197afcbab9d494a8ddde0e84495890b5571433961b0772cc2182bdc5" .
-    <http://example.org/project/source-snapshot/d19dbe960bf238e1> sci:bearsOn <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin> ;
+    <http://example.org/project/source-snapshot/d19dbe960bf238e1> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin> ;
         sci:sourcePath "entities/hypotheses/0005-reproductive-stage-immune-homeostatic-margin.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "e3195c67a6a4b729a5bd2bd7b239e614cac0e7bc694123b5a1b69cc9e0517cb7" .
@@ -44682,6 +44833,9 @@
         schema:identifier "entities/concepts/thromboinflammation-and-endothelial-dysfunction.md" .
     <http://example.org/project/source/entities_concepts_unmeasured-shared-confounders.md> a prov:Entity ;
         schema:identifier "entities/concepts/unmeasured-shared-confounders.md" .
+    <http://example.org/project/source/entities_discussions_0001-menopause-timing-pais-rival-models.md> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        a prov:Entity ;
+        schema:identifier "entities/discussions/0001-menopause-timing-pais-rival-models.md" .
     <http://example.org/project/source/entities_hypotheses_0001-shared-dysregulated-attractor.md> sci:bearsOn <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor> ;
         a prov:Entity ;
         schema:identifier "entities/hypotheses/0001-shared-dysregulated-attractor.md" .
@@ -44694,7 +44848,8 @@
     <http://example.org/project/source/entities_hypotheses_0004-acute-severity-threshold.md> sci:bearsOn <http://example.org/project/hypothesis/0004-acute-severity-threshold> ;
         a prov:Entity ;
         schema:identifier "entities/hypotheses/0004-acute-severity-threshold.md" .
-    <http://example.org/project/source/entities_hypotheses_0005-reproductive-stage-immune-homeostatic-margin.md> sci:bearsOn <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin> ;
+    <http://example.org/project/source/entities_hypotheses_0005-reproductive-stage-immune-homeostatic-margin.md> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin> ;
         a prov:Entity ;
         schema:identifier "entities/hypotheses/0005-reproductive-stage-immune-homeostatic-margin.md" .
     <http://example.org/project/source/entities_papers_adler2024.md> a prov:Entity ;
@@ -44868,7 +45023,8 @@
     <http://example.org/project/source/entities_questions_0006-jak-stat-il6-driver-vs-marker.md> sci:bearsOn <http://example.org/project/question/0006-jak-stat-il6-driver-vs-marker> ;
         a prov:Entity ;
         schema:identifier "entities/questions/0006-jak-stat-il6-driver-vs-marker.md" .
-    <http://example.org/project/source/entities_questions_0007-mechanism-of-female-predominance-in-pais.md> sci:bearsOn <http://example.org/project/question/0007-mechanism-of-female-predominance-in-pais> ;
+    <http://example.org/project/source/entities_questions_0007-mechanism-of-female-predominance-in-pais.md> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/question/0007-mechanism-of-female-predominance-in-pais> ;
         a prov:Entity ;
         schema:identifier "entities/questions/0007-mechanism-of-female-predominance-in-pais.md" .
     <http://example.org/project/source/entities_questions_0008-formalize-vicious-cycle-attractor-model.md> sci:bearsOn <http://example.org/project/question/0008-formalize-vicious-cycle-attractor-model> ;
@@ -44886,7 +45042,8 @@
     <http://example.org/project/source/entities_questions_0012-prevention-vaccination-antiviral-reduces-pais.md> sci:bearsOn <http://example.org/project/question/0012-prevention-vaccination-antiviral-reduces-pais> ;
         a prov:Entity ;
         schema:identifier "entities/questions/0012-prevention-vaccination-antiviral-reduces-pais.md" .
-    <http://example.org/project/source/entities_questions_0013-reproductive-stage-failed-immune-recovery-after-infection.md> sci:bearsOn <http://example.org/project/question/0013-reproductive-stage-failed-immune-recovery-after-infection> ;
+    <http://example.org/project/source/entities_questions_0013-reproductive-stage-failed-immune-recovery-after-infection.md> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/question/0013-reproductive-stage-failed-immune-recovery-after-infection> ;
         a prov:Entity ;
         schema:identifier "entities/questions/0013-reproductive-stage-failed-immune-recovery-after-infection.md" .
     <http://example.org/project/source/entities_questions_0014-which-pais-case-definition-is-most-biologically-coherent.md> sci:bearsOn <http://example.org/project/question/0014-which-pais-case-definition-is-most-biologically-coherent> ;
@@ -44895,7 +45052,8 @@
     <http://example.org/project/source/entities_questions_0015-does-pem-requirement-improve-cross-study-comparability.md> sci:bearsOn <http://example.org/project/question/0015-does-pem-requirement-improve-cross-study-comparability> ;
         a prov:Entity ;
         schema:identifier "entities/questions/0015-does-pem-requirement-improve-cross-study-comparability.md" .
-    <http://example.org/project/source/entities_reports_0001-bias-audit-menopause-pais-total-effect.md> sci:bearsOn <http://example.org/project/report/0001-bias-audit-menopause-pais-total-effect> ;
+    <http://example.org/project/source/entities_reports_0001-bias-audit-menopause-pais-total-effect.md> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/report/0001-bias-audit-menopause-pais-total-effect> ;
         a prov:Entity ;
         schema:identifier "entities/reports/0001-bias-audit-menopause-pais-total-effect.md" .
     <http://example.org/project/source/entities_research-question.md> sci:bearsOn <http://example.org/project/research-question/post-acute-infection-syndromes> ;
@@ -45009,7 +45167,8 @@
         skos:prefLabel "Flag the PAIS family to pan-disease as a disease-label-vs-biology test case" ;
         prov:wasDerivedFrom <http://example.org/project/source/tasks_active.md> ;
         schema:identifier "task:t012" .
-    <http://example.org/project/task/t013> sci:bearsOn <http://example.org/project/question/0007-mechanism-of-female-predominance-in-pais> ;
+    <http://example.org/project/task/t013> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/question/0007-mechanism-of-female-predominance-in-pais> ;
         sci:profile "core" ;
         sci:projectStatus "proposed" ;
         sci:scope "project" ;
@@ -45020,7 +45179,8 @@
             <http://example.org/project/topic/shared-failure-mode-across-pais> ;
         prov:wasDerivedFrom <http://example.org/project/source/tasks_active.md> ;
         schema:identifier "task:t013" .
-    <http://example.org/project/task/t014> sci:bearsOn <http://example.org/project/question/0007-mechanism-of-female-predominance-in-pais> ;
+    <http://example.org/project/task/t014> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/question/0007-mechanism-of-female-predominance-in-pais> ;
         sci:profile "core" ;
         sci:projectStatus "done" ;
         sci:scope "project" ;
@@ -45030,7 +45190,8 @@
         skos:related <http://example.org/project/topic/menopause-sex-hormones-and-pais-risk> ;
         prov:wasDerivedFrom <http://example.org/project/source/tasks_done_2026-06.md> ;
         schema:identifier "task:t014" .
-    <http://example.org/project/task/t015> sci:bearsOn <http://example.org/project/question/0007-mechanism-of-female-predominance-in-pais> ;
+    <http://example.org/project/task/t015> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/question/0007-mechanism-of-female-predominance-in-pais> ;
         sci:profile "core" ;
         sci:projectStatus "done" ;
         sci:scope "project" ;
@@ -45040,7 +45201,8 @@
         skos:related <http://example.org/project/topic/menopause-sex-hormones-and-pais-risk> ;
         prov:wasDerivedFrom <http://example.org/project/source/tasks_done_2026-06.md> ;
         schema:identifier "task:t015" .
-    <http://example.org/project/task/t016> sci:bearsOn <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin>,
+    <http://example.org/project/task/t016> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin>,
             <http://example.org/project/question/0013-reproductive-stage-failed-immune-recovery-after-infection>,
             <http://example.org/project/report/0001-bias-audit-menopause-pais-total-effect> ;
         sci:inPatch <http://example.org/project/patch-definition/menopause-pais-causal-dag> ;
@@ -45054,7 +45216,8 @@
         skos:related <http://example.org/project/topic/menopause-sex-hormones-and-pais-risk> ;
         prov:wasDerivedFrom <http://example.org/project/source/tasks_active.md> ;
         schema:identifier "task:t016" .
-    <http://example.org/project/task/t017> sci:bearsOn <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin>,
+    <http://example.org/project/task/t017> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin>,
             <http://example.org/project/question/0013-reproductive-stage-failed-immune-recovery-after-infection>,
             <http://example.org/project/report/0001-bias-audit-menopause-pais-total-effect> ;
         sci:inPatch <http://example.org/project/patch-definition/menopause-pais-causal-dag> ;
@@ -45068,7 +45231,8 @@
         skos:related <http://example.org/project/task/t015> ;
         prov:wasDerivedFrom <http://example.org/project/source/tasks_done_2026-06.md> ;
         schema:identifier "task:t017" .
-    <http://example.org/project/task/t018> sci:bearsOn <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin>,
+    <http://example.org/project/task/t018> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin>,
             <http://example.org/project/question/0007-mechanism-of-female-predominance-in-pais>,
             <http://example.org/project/question/0013-reproductive-stage-failed-immune-recovery-after-infection> ;
         sci:inPatch <http://example.org/project/patch-definition/menopause-pais-causal-dag> ;
@@ -45083,7 +45247,8 @@
         skos:related <http://example.org/project/task/t013> ;
         prov:wasDerivedFrom <http://example.org/project/source/tasks_active.md> ;
         schema:identifier "task:t018" .
-    <http://example.org/project/task/t019> sci:bearsOn <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin>,
+    <http://example.org/project/task/t019> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin>,
             <http://example.org/project/question/0013-reproductive-stage-failed-immune-recovery-after-infection> ;
         sci:inPatch <http://example.org/project/patch-definition/menopause-pais-causal-dag> ;
         sci:profile "core" ;
@@ -45096,7 +45261,8 @@
         skos:related <http://example.org/project/topic/menopause-sex-hormones-and-pais-risk> ;
         prov:wasDerivedFrom <http://example.org/project/source/tasks_active.md> ;
         schema:identifier "task:t019" .
-    <http://example.org/project/task/t020> sci:bearsOn <http://example.org/project/question/0013-reproductive-stage-failed-immune-recovery-after-infection>,
+    <http://example.org/project/task/t020> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/question/0013-reproductive-stage-failed-immune-recovery-after-infection>,
             <http://example.org/project/report/0001-bias-audit-menopause-pais-total-effect> ;
         sci:profile "core" ;
         sci:projectStatus "done" ;
@@ -45106,7 +45272,8 @@
         skos:prefLabel "Operationalize perimenopause-vs-menopause exposure window for PAIS analyses" ;
         prov:wasDerivedFrom <http://example.org/project/source/tasks_done_2026-06.md> ;
         schema:identifier "task:t020" .
-    <http://example.org/project/task/t021> sci:bearsOn <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin> ;
+    <http://example.org/project/task/t021> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin> ;
         sci:inPatch <http://example.org/project/patch-definition/menopause-pais-causal-dag> ;
         sci:profile "core" ;
         sci:projectStatus "proposed" ;
@@ -45151,7 +45318,8 @@
         skos:prefLabel "Evaluate PC-COS core-outcome-set adoption for PAIS analyses" ;
         prov:wasDerivedFrom <http://example.org/project/source/tasks_active.md> ;
         schema:identifier "task:t026" .
-    <http://example.org/project/task/t027> sci:bearsOn <http://example.org/project/report/0001-bias-audit-menopause-pais-total-effect> ;
+    <http://example.org/project/task/t027> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
+            <http://example.org/project/report/0001-bias-audit-menopause-pais-total-effect> ;
         sci:profile "core" ;
         sci:projectStatus "done" ;
         sci:scope "project" ;
@@ -45159,7 +45327,8 @@
         skos:prefLabel "Draft UK Biobank data-field specification for the menopause-PAIS analysis" ;
         prov:wasDerivedFrom <http://example.org/project/source/tasks_done_2026-06.md> ;
         schema:identifier "task:t027" .
-    <http://example.org/project/task/t028> sci:blockedBy <http://example.org/project/pre-registration/0001-menopause-pais-total-effect> ;
+    <http://example.org/project/task/t028> sci:blockedBy <http://example.org/project/pre-registration/0001-menopause-pais-total-effect>,
+            <http://example.org/project/task/t029> ;
         sci:profile "core" ;
         sci:projectStatus "blocked" ;
         sci:scope "project" ;
@@ -45167,6 +45336,16 @@
         skos:prefLabel "Execute the pre-registered menopause→PAIS total-effect analysis once UKB data is provisioned" ;
         prov:wasDerivedFrom <http://example.org/project/source/tasks_active.md> ;
         schema:identifier "task:t028" .
+    <http://example.org/project/task/t029> sci:profile "core" ;
+        sci:projectStatus "proposed" ;
+        sci:scope "project" ;
+        a sci:Task ;
+        skos:prefLabel "Independent review + 2nd UKB long-COVID precedent cross-read for the menopause-PAIS pre-registration" ;
+        skos:related <http://example.org/project/pre-registration/0001-menopause-pais-total-effect>,
+            <http://example.org/project/report/0001-bias-audit-menopause-pais-total-effect>,
+            <http://example.org/project/task/t028> ;
+        prov:wasDerivedFrom <http://example.org/project/source/tasks_active.md> ;
+        schema:identifier "task:t029" .
     <http://example.org/project/topic/antigen-pathogen-persistence> sci:about <http://example.org/project/external/term/TLR2>,
             <http://example.org/project/external/term/antigen%20persistence>,
             <http://example.org/project/external/term/chronic%20immune%20activation>,
@@ -45339,8 +45518,8 @@
 
 <http://example.org/project/graph/provenance> {
     <http://example.org/project/graph_revision> a prov:Entity ;
-        schema:dateModified "2026-06-20T01:30:11+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        schema:dateModified "2026-06-20T01:59:19+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
         schema:name "graph-revision" ;
-        schema:sha256 "425b4be1b885414bbb764f820826d10145b6bb2acc05d0a9441e0ed332ce0c01" ;
-        schema:text "{\"AGENTS.md\":{\"mtime_ns\":1781147493660692515,\"sha256\":\"4c3130728a42829e832bda9dd828e6b4ffb0c2728e1139c3fa364d800479e952\"},\"CLAUDE.md\":{\"mtime_ns\":1781147463250691381,\"sha256\":\"336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49\"},\"RESEARCH_PLAN.md\":{\"mtime_ns\":1781147663204698837,\"sha256\":\"f0f899d877fc4aabd7b61ee78ae1ff175565dc5b50cb2363393fd2572e31bccb\"},\"code/notebooks/.gitkeep\":{\"mtime_ns\":1781147422769689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/notebooks/pyproject.toml\":{\"mtime_ns\":1781899798260793972,\"sha256\":\"2b42c8d904796817391a5bb60258cd5452a93af6de07cca8c15eab3f0e2453bf\"},\"code/notebooks/uv.lock\":{\"mtime_ns\":1781899809390092264,\"sha256\":\"52f03631f51792685609210bb7470a2fd43ff392aa9c900aec584b920f47ea2b\"},\"code/notebooks/viz.py\":{\"mtime_ns\":1781899798260692922,\"sha256\":\"901607854b5774ae8cb94e8ba7b6035105876bb9bd5f81a9a60fae9904761d94\"},\"code/scripts/.gitkeep\":{\"mtime_ns\":1781147422770689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/workflows/.gitkeep\":{\"mtime_ns\":1781147422772689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/datasets/.gitkeep\":{\"mtime_ns\":1781147422777689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/discussions/.gitkeep\":{\"mtime_ns\":1781147422779689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/inquiries/assets/menopause-pais-causal-dag.dot\":{\"mtime_ns\":1781900821463030269,\"sha256\":\"ad0939175ed2458f6f1976cb9896e130ca2e023f47e9962cda2ae2df8c153689\"},\"doc/inquiries/assets/menopause-pais-causal-dag.png\":{\"mtime_ns\":1781900821465160995,\"sha256\":\"25c38998c3355e7cfaea579527100aaada2d7a5df62a2357052e93a461b8e42d\"},\"doc/inquiries/menopause-pais-causal-dag-critique.md\":{\"mtime_ns\":1781901080541022218,\"sha256\":\"7c2f7dfe9f2ff20c2a31cede43abd0fb7c1fc7509cb857672ace07887146bca0\"},\"doc/inquiries/menopause-pais-causal-dag.md\":{\"mtime_ns\":1781901110569020564,\"sha256\":\"eaeb0f70cc0ce66203e917bc0837b2c0fab962179054bf267846d56d3899a5e0\"},\"doc/interpretations/.gitkeep\":{\"mtime_ns\":1781147422781689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/.gitkeep\":{\"mtime_ns\":1781147422782689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/2026-06-10-paper-import-manifest.tsv\":{\"mtime_ns\":1781147861348775000,\"sha256\":\"25ffe958f9e64ed9ef78a963e5e2d09a6098db15d60c5fa9115c5b28739a9bf3\"},\"doc/meta/2026-06-10-paper-import-triage.md\":{\"mtime_ns\":1781178906449863902,\"sha256\":\"e8697526d18ff80865f4454867677dc58fd8ce4cf99566a86d592bab47e0821c\"},\"doc/meta/2026-06-19-case-definition-crosswalk.md\":{\"mtime_ns\":1781908160682632072,\"sha256\":\"1b6158fd460173b17d748e70a7f8a2555ce5ada4e79a2102f4c574aa474f96cf\"},\"doc/meta/2026-06-19-case-definition-crosswalk.tsv\":{\"mtime_ns\":1781904882273812727,\"sha256\":\"c8c92a6cd5ea7e0dcc7e01df65b064165ed9f80dfbc5df28cfc7c964ad75920b\"},\"doc/meta/2026-06-19-session-summary.md\":{\"mtime_ns\":1781908295325624653,\"sha256\":\"38a7bcff01dd71cb267ebd8dcc56b3ecb34930bd588464f0eaf9ebb447a3f440\"},\"doc/methods/.gitkeep\":{\"mtime_ns\":1781147422784689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/methods/2026-06-19-reproductive-stage-exposure-operationalization.md\":{\"mtime_ns\":1781915459400229882,\"sha256\":\"c0d051de08993883bc4a9ed4a377476cd84381c1197669e886edbd2d4d8d369e\"},\"doc/methods/2026-06-19-ukb-data-field-specification.md\":{\"mtime_ns\":1781917171159135557,\"sha256\":\"b37c132a4cba3b2432bc11267d06b0810840a8d2a034790a237a30b1844dd952\"},\"doc/methods/2026-06-19-ukb-outcome-and-uproxy-measurement-schema.md\":{\"mtime_ns\":1781917126725138005,\"sha256\":\"91db9cf7257f66eaa2613d8f1f311fca2be2631d36cd072549efad1d276c6fa9\"},\"doc/plans/.gitkeep\":{\"mtime_ns\":1781147422786689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/reports/.gitkeep\":{\"mtime_ns\":1781147422788689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/searches/.gitkeep\":{\"mtime_ns\":1781147422790689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/searches/2026-06-19-hormone-menopause-pais-cohorts.json\":{\"mtime_ns\":1781906373409730559,\"sha256\":\"2d5cb054fb5c6833c3b47b7fe8bfe60b9c0b9138025a221b3edd2776e855d7ad\"},\"doc/searches/2026-06-19-hormone-menopause-pais-cohorts.md\":{\"mtime_ns\":1781906335903732625,\"sha256\":\"8e0f26e57f7999d84c9578a3da554d3189566eba1a442b38b8531304ab7f5a39\"},\"doc/themes/.gitkeep\":{\"mtime_ns\":1781147422791689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"knowledge/sources/local/.gitkeep\":{\"mtime_ns\":1781147422800689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"science.yaml\":{\"mtime_ns\":1781873358768892131,\"sha256\":\"1e8eb738a3fd847e76146f2e89de197bd7294abf2a3219484ddbe14671b0e956\"},\"specs/scope-boundaries.md\":{\"mtime_ns\":1781147514943693308,\"sha256\":\"862c3e8aa795a39dbec239d3830652d82a661156f4857097b31a225efe821b81\"},\"tasks/.tasks.lock\":{\"mtime_ns\":1781918841936043490,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"tasks/active.md\":{\"mtime_ns\":1781919011169034781,\"sha256\":\"aa09a05d2349f94c7228fbcf1b9f2aa9f71968fc96bd0284fc0d45e6378a0aea\"},\"tasks/done/2026-06.md\":{\"mtime_ns\":1781917362767531071,\"sha256\":\"6cca83efc5f36c194baa33fed78ba81f92f68dede8119bad99d741b61eb031b0\"}}" .
+        schema:sha256 "06d9b73a922a9856e0610a198493df496bc1cdfe531ea22828b1b1289d9e382c" ;
+        schema:text "{\"AGENTS.md\":{\"mtime_ns\":1781147493660692515,\"sha256\":\"4c3130728a42829e832bda9dd828e6b4ffb0c2728e1139c3fa364d800479e952\"},\"CLAUDE.md\":{\"mtime_ns\":1781147463250691381,\"sha256\":\"336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49\"},\"RESEARCH_PLAN.md\":{\"mtime_ns\":1781147663204698837,\"sha256\":\"f0f899d877fc4aabd7b61ee78ae1ff175565dc5b50cb2363393fd2572e31bccb\"},\"code/notebooks/.gitkeep\":{\"mtime_ns\":1781147422769689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/notebooks/pyproject.toml\":{\"mtime_ns\":1781899798260793972,\"sha256\":\"2b42c8d904796817391a5bb60258cd5452a93af6de07cca8c15eab3f0e2453bf\"},\"code/notebooks/uv.lock\":{\"mtime_ns\":1781899809390092264,\"sha256\":\"52f03631f51792685609210bb7470a2fd43ff392aa9c900aec584b920f47ea2b\"},\"code/notebooks/viz.py\":{\"mtime_ns\":1781899798260692922,\"sha256\":\"901607854b5774ae8cb94e8ba7b6035105876bb9bd5f81a9a60fae9904761d94\"},\"code/scripts/.gitkeep\":{\"mtime_ns\":1781147422770689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/workflows/.gitkeep\":{\"mtime_ns\":1781147422772689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/datasets/.gitkeep\":{\"mtime_ns\":1781147422777689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/discussions/.gitkeep\":{\"mtime_ns\":1781147422779689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/inquiries/assets/menopause-pais-causal-dag.dot\":{\"mtime_ns\":1781900821463030269,\"sha256\":\"ad0939175ed2458f6f1976cb9896e130ca2e023f47e9962cda2ae2df8c153689\"},\"doc/inquiries/assets/menopause-pais-causal-dag.png\":{\"mtime_ns\":1781900821465160995,\"sha256\":\"25c38998c3355e7cfaea579527100aaada2d7a5df62a2357052e93a461b8e42d\"},\"doc/inquiries/menopause-pais-causal-dag-critique.md\":{\"mtime_ns\":1781901080541022218,\"sha256\":\"7c2f7dfe9f2ff20c2a31cede43abd0fb7c1fc7509cb857672ace07887146bca0\"},\"doc/inquiries/menopause-pais-causal-dag.md\":{\"mtime_ns\":1781901110569020564,\"sha256\":\"eaeb0f70cc0ce66203e917bc0837b2c0fab962179054bf267846d56d3899a5e0\"},\"doc/interpretations/.gitkeep\":{\"mtime_ns\":1781147422781689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/.gitkeep\":{\"mtime_ns\":1781147422782689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/2026-06-10-paper-import-manifest.tsv\":{\"mtime_ns\":1781147861348775000,\"sha256\":\"25ffe958f9e64ed9ef78a963e5e2d09a6098db15d60c5fa9115c5b28739a9bf3\"},\"doc/meta/2026-06-10-paper-import-triage.md\":{\"mtime_ns\":1781178906449863902,\"sha256\":\"e8697526d18ff80865f4454867677dc58fd8ce4cf99566a86d592bab47e0821c\"},\"doc/meta/2026-06-19-case-definition-crosswalk.md\":{\"mtime_ns\":1781908160682632072,\"sha256\":\"1b6158fd460173b17d748e70a7f8a2555ce5ada4e79a2102f4c574aa474f96cf\"},\"doc/meta/2026-06-19-case-definition-crosswalk.tsv\":{\"mtime_ns\":1781904882273812727,\"sha256\":\"c8c92a6cd5ea7e0dcc7e01df65b064165ed9f80dfbc5df28cfc7c964ad75920b\"},\"doc/meta/2026-06-19-session-summary.md\":{\"mtime_ns\":1781908295325624653,\"sha256\":\"38a7bcff01dd71cb267ebd8dcc56b3ecb34930bd588464f0eaf9ebb447a3f440\"},\"doc/methods/.gitkeep\":{\"mtime_ns\":1781147422784689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/methods/2026-06-19-reproductive-stage-exposure-operationalization.md\":{\"mtime_ns\":1781915459400229882,\"sha256\":\"c0d051de08993883bc4a9ed4a377476cd84381c1197669e886edbd2d4d8d369e\"},\"doc/methods/2026-06-19-ukb-data-field-specification.md\":{\"mtime_ns\":1781917171159135557,\"sha256\":\"b37c132a4cba3b2432bc11267d06b0810840a8d2a034790a237a30b1844dd952\"},\"doc/methods/2026-06-19-ukb-outcome-and-uproxy-measurement-schema.md\":{\"mtime_ns\":1781917126725138005,\"sha256\":\"91db9cf7257f66eaa2613d8f1f311fca2be2631d36cd072549efad1d276c6fa9\"},\"doc/plans/.gitkeep\":{\"mtime_ns\":1781147422786689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/reports/.gitkeep\":{\"mtime_ns\":1781147422788689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/searches/.gitkeep\":{\"mtime_ns\":1781147422790689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/searches/2026-06-19-hormone-menopause-pais-cohorts.json\":{\"mtime_ns\":1781906373409730559,\"sha256\":\"2d5cb054fb5c6833c3b47b7fe8bfe60b9c0b9138025a221b3edd2776e855d7ad\"},\"doc/searches/2026-06-19-hormone-menopause-pais-cohorts.md\":{\"mtime_ns\":1781906335903732625,\"sha256\":\"8e0f26e57f7999d84c9578a3da554d3189566eba1a442b38b8531304ab7f5a39\"},\"doc/themes/.gitkeep\":{\"mtime_ns\":1781147422791689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"knowledge/sources/local/.gitkeep\":{\"mtime_ns\":1781147422800689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"science.yaml\":{\"mtime_ns\":1781873358768892131,\"sha256\":\"1e8eb738a3fd847e76146f2e89de197bd7294abf2a3219484ddbe14671b0e956\"},\"specs/scope-boundaries.md\":{\"mtime_ns\":1781147514943693308,\"sha256\":\"862c3e8aa795a39dbec239d3830652d82a661156f4857097b31a225efe821b81\"},\"tasks/.tasks.lock\":{\"mtime_ns\":1781920737134939056,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"tasks/active.md\":{\"mtime_ns\":1781920759391309746,\"sha256\":\"ffdc6752577c145fe3ff2ae178428f27049ffb3b971629b89e830c2110fc3471\"},\"tasks/done/2026-06.md\":{\"mtime_ns\":1781917362767531071,\"sha256\":\"6cca83efc5f36c194baa33fed78ba81f92f68dede8119bad99d741b61eb031b0\"}}" .
 }
