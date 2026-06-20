@@ -37,10 +37,11 @@ It is a **design-stage** plan. The analytic design is locked, and as of the
 **UK Biobank** as the admissible primary vehicle (population-based, low-collider,
 pre-infection baseline, questionnaire menopause staging) — see the addendum to
 *Blocking Checks* below. The readiness verdict remains **not-ready** for a narrower
-reason: the analysis is not yet pre-registerable because UKB data is not in hand
-and two design artifacts are still open — **t017** (the U-proxy measurement schema
-against UKB fields) and **t020** (the questionnaire-staging misclassification
-model). The remaining blocking checks map to existing tasks, not new duplicates.
+reason: the analysis is not yet pre-registerable because UKB data is not in hand and
+the **U-proxy / outcome measurement schema (t017)** is still open. The exposure-side
+gate **t020** is now design-resolved
+(`doc/methods/2026-06-19-reproductive-stage-exposure-operationalization.md`). The
+remaining blocking checks map to existing tasks, not new duplicates.
 
 ## Analysis Question
 
@@ -98,11 +99,18 @@ Provenance must reach `datapackage.json` grade before execution (frictionless).
 
 ## Preprocessing / Normalization Checks
 
-- **Reproductive-stage operationalization (t020):** STRAW+10 staging from
-  FSH/AMH/cycle history where available; pre-registered age-band fallback with an
-  explicit misclassification model when biomarkers are absent. Binary
-  menopause-vs-not (Shah2025/Mishra2020 style) is a **sensitivity operationalization
-  only** — it misclassifies the perimenopausal at-risk window.
+- **Reproductive-stage operationalization (t020 — now specified):** UKB **cannot**
+  apply STRAW+10 directly (no prospective cycle data; **no FSH/AMH** in the panel;
+  oestradiol floor-censored), so the exposure is a **projected reproductive stage at
+  infection** — a decision-tree derivation from baseline questionnaire + age, with a
+  per-woman forward-projection survival model and an explicit misclassification model
+  + quantitative bias analysis. Three pre-committed tiers: (1) projected ordinal
+  stage [primary], (2) probabilistic latent stage [honest interval], (3) binary
+  post-vs-not [negative-control operationalization only — it misclassifies the
+  perimenopausal at-risk window]. The pre-baseline (2006–2010) design converts most
+  of the menopause↔PAIS symptom-overlap threat from *differential* to
+  *non-differential* misclassification. Full spec:
+  `doc/methods/2026-06-19-reproductive-stage-exposure-operationalization.md`.
 - **Comorbidity time-split:** split into pre-infection *baseline* (candidate
   confounder) vs menopause-incident (mediator). A single untimed comorbidity
   variable is inadmissible for the sensitivity arm.
@@ -263,10 +271,11 @@ critiqued DAG. As of 2026-06-19 the cohort-identification and pre-infection-base
 gates are **resolved** (t015 → UK Biobank), so the original "no admissible dataset
 exists" blocker no longer applies. The verdict stays **not-ready** for the narrower
 reason that the analysis is not yet pre-registerable: UKB data is not in hand, and
-the U-proxy measurement schema (**t017**) and questionnaire-staging misclassification
-model (**t020**) remain open. When those two lock and access is in hand, the plan
-becomes `ready-with-caveats` (carrying the limitations below) and
-`/science:pre-register` is runnable.
+the **U-proxy / UKB-outcome measurement schema (t017)** remains open. The exposure-side
+gate (**t020**, reproductive-stage operationalization + misclassification model) is now
+design-resolved. When t017 locks and access is in hand, the plan becomes
+`ready-with-caveats` (carrying the limitations below) and `/science:pre-register` is
+runnable.
 
 ## Blocking Checks Before Pre-Registration
 
@@ -277,7 +286,7 @@ These gate the pre-registration; each maps to an existing task (no duplicates):
 | Identify ≥1 **population-based** (non-clinic) hormone-measured PAIS cohort | clinic-collider exclusion | ✅ **t015** (UK Biobank) |
 | Confirm the cohort has **pre-infection baseline** + reproductive stage stageable *at infection* | reverse-causation exclusion | ✅ **t015** (UKB 2006–2010 baseline) |
 | Finalize the minimum measurement schema incl. **U-proxy battery** (SES, EBV, autoimmune hx) | back-door partial closure | **t017** |
-| Lock the **STRAW+10 exposure-window operationalization** + age-band fallback misclassification model | exposure definition | **t020** |
+| Lock the **reproductive-stage exposure operationalization** (projected stage + misclassification model/QBA; STRAW+10 not directly applicable in UKB) | exposure definition | ✅ **t020** (design-resolved; internal validation deferred to input-QA) |
 | Declare the single **PAIS case definition** for the outcome | outcome definition | ⚠️ **concept** resolved (t002); **UKB operationalization** open (t017) |
 
 **Outcome case-definition — concept resolved by t002** (`topic:pais-case-definition-heterogeneity`):
@@ -324,10 +333,13 @@ engineered 3-definition long-COVID outcome) and **access plan** are now drafted 
 application not yet submitted; provisioning is weeks-to-months) that runs in
 parallel with the design gates below.
 
-Remaining gates are now **t017** (U-proxy measurement schema against UKB fields) and
-**t020** (STRAW+10/age-band questionnaire-staging misclassification model). Once those
-lock and a UKB access decision is in hand, run `/science:pre-register` to fix the
-confirmatory criteria above, then `/science:plan-pipeline` for execution orchestration.
+The remaining **design** gate is now **t017** (U-proxy + UKB-outcome measurement
+schema against UKB fields); the exposure gate **t020** is design-resolved
+(`doc/methods/2026-06-19-reproductive-stage-exposure-operationalization.md` —
+projected reproductive stage + misclassification model/QBA, its internal
+repeat-assessment validation deferred to input-QA). Once t017 locks and a UKB access
+decision is in hand, run `/science:pre-register` to fix the confirmatory criteria
+above, then `/science:plan-pipeline` for execution orchestration.
 
 ## Feedback Reflection
 

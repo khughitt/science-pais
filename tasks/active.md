@@ -137,16 +137,6 @@ Split PAIS outcomes into somatic fatigue/PEM, dysautonomia, vascular-thromboinfl
 
 Separate hormone therapy evidence by acute infection outcome versus post-acute persistence, route, dose, timing, indication, comorbidity, and healthy-user bias. Decide which findings can inform causal PAIS hypotheses and which should remain clinical-screening or symptom-management context only.
 
-## [t020] Operationalize perimenopause-vs-menopause exposure window for PAIS analyses
-- priority: P2
-- status: proposed
-- aspects: []
-- related: [question:0013-reproductive-stage-failed-immune-recovery-after-infection]
-- group: causal-disentanglement
-- created: 2026-06-19
-
-Question 0013 names binary-menopause-vs-perimenopause as the major remaining uncertainty, but no current task operationalizes the at-risk exposure window. Specify a reproducible operationalization (e.g. STRAW+10 staging; FSH/AMH/cycle-history criteria; age-band fallbacks and their misclassification) for use in t016 estimands and t017 measurement schema. Binary menopause variables (as in Shah2025/Mishra2020) may misclassify the biologically relevant window.
-
 ## [t021] Promote h0005 prose Proposition Bundle to first-class proposition + evidence-line entities
 - priority: P2
 - status: proposed
