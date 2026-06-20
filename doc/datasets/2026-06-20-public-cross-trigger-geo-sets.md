@@ -1,8 +1,10 @@
 # Public cross-trigger post-infective-fatigue expression datasets — registry note
 
 **Status:** **provisioned (2026-06-20, G1/G2/G4 cleared)** — payloads downloaded, hashed, and
-parse-contract-verified; the formal `mixin-dataset-1.0` entities + Frictionless datapackages are still
-deferred to the reproducible-workflow phase (commons-readiness gate in
+parse-contract-verified. Provenance artifacts split (per `plan:0003` review, 2026-06-20): a **minimal
+Frictionless `datapackage.json`** (resource list + per-file SHA-256 + source URL) is produced by the
+acquisition rule (`plan:0003` WP1) and is the artifact `pre-registration:0002` G1 names; the **formal
+`mixin-dataset-1.0` commons entity** remains deferred to commons-promotion (readiness gate in
 `~/d/science/docs/process/pipeline-audit-and-refactor.md`). This is a lightweight registry note, **not**
 a validated dataset entity. Tracked for **t035** / `pre-registration:0002-cross-trigger-pathway-overlap`.
 
