@@ -107,16 +107,6 @@ Compare long COVID, PTLD, post-dengue fatigue, and other PAIS evidence to test w
 
 For each planned PAIS sex/hormone analysis, predeclare whether reproductive stage is treated as confounder, mediator, effect modifier, competing diagnosis, or downstream consequence. Specify target population, exposure window, outcome domain, adjustment set, and variables that should not be adjusted away for each estimand.
 
-## [t017] Build minimum measurement schema for sex hormone PAIS cohorts
-- priority: P2
-- status: proposed
-- aspects: []
-- related: [question:0013-reproductive-stage-failed-immune-recovery-after-infection, hypothesis:0005-reproductive-stage-immune-homeostatic-margin, task:t015]
-- group: causal-disentanglement
-- created: 2026-06-19
-
-Define the minimum cohort metadata and biomarker schema needed to test reproductive-stage PAIS questions: sex assigned at birth, age, menopausal status, menstrual status, pregnancy/postpartum status, hormone therapy route/dose/timing, estradiol/progesterone/testosterone/FSH/LH where available, acute severity, vaccination/reinfection, comorbidity, immune/endothelial/autonomic markers, symptom domains, and ascertainment proxies.
-
 ## [t018] Compare female and reproductive-stage excess across PAIS subphenotypes
 - priority: P2
 - status: proposed

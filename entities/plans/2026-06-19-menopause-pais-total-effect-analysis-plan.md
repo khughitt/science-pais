@@ -13,7 +13,9 @@ related:
   - task:t015
   - task:t017
   - task:t020
-status: not-ready
+  - task:t027
+  - paper:AlcaldeHerraiz2025
+status: ready-with-caveats
 skills_loaded:
   - id: statistics-bias-vs-variance-decomposition
     reason: confounding (latent U) is the dominant error term and cannot be shrunk by sample size — must be separated from sampling variance explicitly
@@ -32,16 +34,16 @@ causal DAG (`inquiry:menopause-pais-causal-dag`) into a pre-registerable
 observational analysis, incorporating every correction surfaced by the
 adversarial critique (`doc/inquiries/menopause-pais-causal-dag-critique.md`).
 
-It is a **design-stage** plan. The analytic design is locked, and as of the
-2026-06-19 updates the **cohort-identification gate is resolved**: t015 identified
-**UK Biobank** as the admissible primary vehicle (population-based, low-collider,
-pre-infection baseline, questionnaire menopause staging) — see the addendum to
-*Blocking Checks* below. The readiness verdict remains **not-ready** for a narrower
-reason: the analysis is not yet pre-registerable because UKB data is not in hand and
-the **U-proxy / outcome measurement schema (t017)** is still open. The exposure-side
-gate **t020** is now design-resolved
-(`doc/methods/2026-06-19-reproductive-stage-exposure-operationalization.md`). The
-remaining blocking checks map to existing tasks, not new duplicates.
+It began as a **design-stage** plan and is now **design-complete**. The analytic
+design is locked, and as of the 2026-06-19 updates **all design gates are resolved**:
+the cohort/baseline vehicle (**t015** → UK Biobank — population-based, low-collider,
+pre-infection baseline, questionnaire menopause staging), the field basket (**t027**),
+the exposure operationalization + misclassification model (**t020**), and the U-proxy
+/ outcome measurement schema (**t017**). The plan is therefore **`ready-with-caveats`**:
+methodologically pre-registerable now, but **not yet executable** because **UKB data
+is not in hand** (the AMS access gate) and a handful of field IDs await live
+confirmation at application. The next command is `/science:pre-register`, with the
+AMS application running in parallel.
 
 ## Analysis Question
 
@@ -266,16 +268,35 @@ read from the materialized graph rather than re-authored by hand.
 
 ## Readiness Decision
 
-**not-ready** — the analytic design is locked and internally consistent with the
-critiqued DAG. As of 2026-06-19 the cohort-identification and pre-infection-baseline
-gates are **resolved** (t015 → UK Biobank), so the original "no admissible dataset
-exists" blocker no longer applies. The verdict stays **not-ready** for the narrower
-reason that the analysis is not yet pre-registerable: UKB data is not in hand, and
-the **U-proxy / UKB-outcome measurement schema (t017)** remains open. The exposure-side
-gate (**t020**, reproductive-stage operationalization + misclassification model) is now
-design-resolved. When t017 locks and access is in hand, the plan becomes
-`ready-with-caveats` (carrying the limitations below) and `/science:pre-register` is
-runnable.
+**not-ready (to execute) — but design-ready.** The analytic design is locked and
+internally consistent with the critiqued DAG. As of 2026-06-19 **all design gates are
+resolved**: cohort/baseline (t015 → UK Biobank), field basket (t027), exposure
+operationalization + misclassification (t020), and U-proxy/outcome measurement schema
+(t017). The original "no admissible dataset exists" and "measurement undefined"
+blockers no longer apply. The verdict stays **not-ready** for the single remaining
+reason that it is not yet *executable*: **UKB data is not in hand** (the AMS access
+gate) and several field IDs (questionnaire items, EBV-subsample N, vaccination
+linkage) await live confirmation at application. The plan is now
+`ready-with-caveats` on the **design** axis — `/science:pre-register` is runnable to
+fix the confirmatory criteria, with the AMS application proceeding in parallel.
+
+## Known Limitations To Carry Forward
+
+These are accepted into the pre-registration as caveats, not blockers:
+
+1. **Access gate (execution-blocking, not design-blocking):** UKB data requires an
+   approved AMS application (weeks–months); the analysis cannot run until provisioned.
+2. **Field-ID confirmation:** questionnaire item IDs (Health & Well-Being / WHO-Delphi),
+   EBV-subsample N (Category 1307), and vaccination-linkage category are confirmed at
+   application against the live Showcase (the COVID-test field 40100 is already verified).
+3. **Exposure misclassification:** decade-gap forward-projection of reproductive stage,
+   worst in the peri window; carried as the t020 QBA, not eliminable.
+4. **Outcome:** def-2 (PEM-weighted) is a UKB approximation and def-3 (SF-36 functional
+   gate) is substituted-or-dropped (t017 §2); PEM-stratified claims remain under-served.
+5. **Response selection:** the questionnaire outcome conditions on survey response
+   (handled by IPW + Route-B triangulation, not removed).
+6. **Partial identification:** even the full U-proxy battery does not point-identify the
+   total effect; the E-value bound is load-bearing.
 
 ## Blocking Checks Before Pre-Registration
 
@@ -285,29 +306,37 @@ These gate the pre-registration; each maps to an existing task (no duplicates):
 |---|---|---|
 | Identify ≥1 **population-based** (non-clinic) hormone-measured PAIS cohort | clinic-collider exclusion | ✅ **t015** (UK Biobank) |
 | Confirm the cohort has **pre-infection baseline** + reproductive stage stageable *at infection* | reverse-causation exclusion | ✅ **t015** (UKB 2006–2010 baseline) |
-| Finalize the minimum measurement schema incl. **U-proxy battery** (SES, EBV, autoimmune hx) | back-door partial closure | **t017** |
+| Finalize the minimum measurement schema incl. **U-proxy battery** (SES, EBV-subsample, autoimmune hx) + UKB outcome | back-door partial closure + outcome | ✅ **t017** (design-resolved; field IDs await application) |
 | Lock the **reproductive-stage exposure operationalization** (projected stage + misclassification model/QBA; STRAW+10 not directly applicable in UKB) | exposure definition | ✅ **t020** (design-resolved; internal validation deferred to input-QA) |
-| Declare the single **PAIS case definition** for the outcome | outcome definition | ⚠️ **concept** resolved (t002); **UKB operationalization** open (t017) |
+| Declare the single **PAIS case definition** for the outcome | outcome definition | ✅ **t002** concept + **t017** UKB operationalization (feasibility verdicts) |
 
-**Outcome case-definition — concept resolved by t002** (`topic:pais-case-definition-heterogeneity`):
-adopt **WHO 2021 ≥3-month** as the primary outcome, operationalized with a
-PEM-weighted instrument (RECOVER PASC index ≥12 or nearest available). Run the
-analysis under three pre-committed definition operationalizations as a sensitivity
-axis (folding into the Sensitivity Arbitration block): (1) WHO binary only (most
-inclusive), (2) PASC index ≥12 (most PEM-sensitive), (3) WHO + functional-impairment
-gate (SF-36 T<45). An effect stable across all three is *definition-stable*; an
-effect present only under (1) likely reflects PEM-negative prolonged recovery rather
-than attractor entry — which **changes the interpretation for h0005**.
+**Outcome case-definition — concept resolved by t002** (`topic:pais-case-definition-heterogeneity`),
+**UKB operationalization resolved by t017** (`doc/methods/2026-06-19-ukb-outcome-and-uproxy-measurement-schema.md`):
+adopt **WHO 2021 ≥3-month** as the primary outcome. The three-definition sensitivity
+axis is retained but carries **t017 feasibility verdicts** (a definition is only run
+if UKB can compute it): (1) **WHO ≥3-month** — ✅ feasible via the symptom-level
+**Health & Well-Being questionnaire** (WHO-Delphi 45-item, ≥1 symptom ≥90d); (2)
+**PEM-weighted** — ⚠️ **approximation only** (no PASC-index/PEM instrument in UKB);
+(3) **WHO + functional-impairment gate (SF-36 T<45)** — ❌ **not computable in UKB
+(no SF-36 at the LC window)** → **substitute an available functional proxy or drop
+the arm**. An effect stable across the *feasible* definitions is *definition-stable*;
+an effect present only under (1) likely reflects PEM-negative prolonged recovery —
+which **changes the interpretation for h0005**.
 
-This resolves the case-definition *concept*, but the **UKB operationalization
-remains an open t017 measurement-schema gate, not a closed check**: per the t027
-data-field spec (`doc/methods/2026-06-19-ukb-data-field-specification.md` §5.2), UKB
-carries **no symptom-level PASC instrument** (definition 2 can only be approximated
-from coded fatigue/PEM terms) and the **functional-impairment-gate fields
-(definition 3) are unconfirmed**. So t017 must (a) verify which of the three
-definitions UKB can actually compute from linked codes and (b) decide how to handle
-the PEM-sensitivity shortfall — it cannot simply assume the cohort carries
-symptom-level data.
+**Outcome-route + selection (t017).** The outcome is built from **two
+differently-selected routes** — Route A (symptom questionnaire; primary; conditions
+on questionnaire response ≈201k/500k) and Route B (HES-coded PACS; hospitalization-biased;
+triangulation). The **questionnaire-response selection** is a new admissibility node
+(restriction + inverse-probability-of-response weighting + Route-B triangulation),
+joining the clinic-collider and exposure-timing gates in the Sensitivity Arbitration
+discipline. Time origin = first PCR-positive (**field 40100**, verified).
+
+t017 closed this by checking each definition against what UKB **actually carries**
+(not assuming): UKB **does** have a symptom-level WHO-Delphi instrument (correcting an
+earlier t027 overstatement), so def-1 is feasible; def-2 is an approximation (no
+PASC-index/PEM instrument); def-3 (SF-36 T<45) is **not computable** and is
+substituted-or-dropped. The case-definition gate is therefore resolved at both the
+*concept* (t002) and *UKB-operationalization* (t017) levels.
 
 **Vehicle resolved by t015** (`doc/searches/2026-06-19-hormone-menopause-pais-cohorts.md`):
 **UK Biobank** is the primary vehicle — the only population-based, low-collider,
@@ -333,13 +362,16 @@ engineered 3-definition long-COVID outcome) and **access plan** are now drafted 
 application not yet submitted; provisioning is weeks-to-months) that runs in
 parallel with the design gates below.
 
-The remaining **design** gate is now **t017** (U-proxy + UKB-outcome measurement
-schema against UKB fields); the exposure gate **t020** is design-resolved
+**All design gates are now closed:** the exposure gate **t020**
 (`doc/methods/2026-06-19-reproductive-stage-exposure-operationalization.md` —
-projected reproductive stage + misclassification model/QBA, its internal
-repeat-assessment validation deferred to input-QA). Once t017 locks and a UKB access
-decision is in hand, run `/science:pre-register` to fix the confirmatory criteria
-above, then `/science:plan-pipeline` for execution orchestration.
+projected reproductive stage + misclassification model/QBA) and the U-proxy/outcome
+gate **t017**
+(`doc/methods/2026-06-19-ukb-outcome-and-uproxy-measurement-schema.md` — A/B outcome
+routes, feasibility-verdicted definition axis, response-selection handling, EBV
+subsample arm). Both defer only their *internal-validation* steps to input-QA (they
+need provisioned data). Run **`/science:pre-register`** now to fix the confirmatory
+criteria above; the UKB AMS access application runs in parallel; then
+`/science:plan-pipeline` for execution orchestration once data is provisioned.
 
 ## Feedback Reflection
 

@@ -177,7 +177,7 @@ primary, run across a 3-definition sensitivity axis).
 
 | Source | Field / linkage | Use |
 |---|---|---|
-| PHE/UKHSA COVID-19 test results | **Field 40100** (grants the `covid19_result_england/scotland/wales` record tables) **[confirm at application]** | Primary positive-test date = **time origin**; also pillar/origin flags. (Note: category `100090` is *Diet by 24-hour recall* — not COVID; the test-result basket is field `40100`.) |
+| PHE/UKHSA COVID-19 test results | **Field 40100** — *"Records of COVID-19 test results"* ✅ **verified on Showcase** (275,101 records, Mar 2020–Jun 2023; grants the `covid19_result_england/scotland/wales` tables = the PHE SGSS linkage used by AlcaldeHerraiz2025) | Primary positive-test date = **time origin**. (The earlier `Category 100090` pointer was wrong — that is *Diet by 24-hour recall*.) |
 | Hospital inpatient (HES/PEDW/SMR) COVID episodes | ICD-10 **U07.1 / U07.2** | Severity + ascertainment where untested |
 | Primary-care COVID codes | GP linkage (CTV3/Read v2) **[confirm — partial coverage ~45%]** | Community-managed infection capture |
 | Death registry | **40000 / 40001–40002** (U07.1/U07.2) | Competing-risk / censoring |
@@ -194,25 +194,33 @@ primary, run across a 3-definition sensitivity axis).
 Engineer **three** pre-committed operationalizations (matching the t016 plan, so the
 verdict carries a definition-stability check):
 
-| # | Operationalization | UKB construction |
-|---|---|---|
-| 1 | **WHO 2021 ≥3-month** (primary, most inclusive) | New/persistent symptoms ≥12 wk post-infection from GP/HES codes + the UKB long-COVID/U09.9 code where present |
-| 2 | **PEM-weighted (RECOVER PASC-index analogue)** | Symptom-cluster proxy from coded fatigue/PEM/cognitive/dysautonomia terms — **structurally limited in UKB** (no symptom-level PASC instrument); flag as best-available, not equivalent |
-| 3 | **WHO + functional-impairment gate** | Definition 1 + a disability/functional proxy (e.g. new incapacity/employment-change codes) **[confirm available fields]** |
+> **Superseded by t017** (`doc/methods/2026-06-19-ukb-outcome-and-uproxy-measurement-schema.md`).
+> The precedent (AlcaldeHerraiz2025) shows UKB **does** have a symptom-level
+> instrument — the WHO-Delphi **Health & Well-Being questionnaire** — so the
+> outcome is built primarily from that (Route A), with HES-coded PACS as
+> triangulation (Route B). The feasibility verdicts below are corrected in t017 §2;
+> the table here is retained for context only.
 
-- **U09.9** ("Post COVID-19 condition") ICD-10 code and the UKB-specific long-COVID
-  algorithm are the backbone of definition 1; coverage is partial and clinician-coding-dependent
-  (an outcome-misclassification source — record it).
+| # | Operationalization | UKB construction | t017 feasibility |
+|---|---|---|---|
+| 1 | **WHO 2021 ≥3-month** (primary) | ≥1 WHO-Delphi symptom ≥90d post-PCR from the **Health & Well-Being questionnaire** (Route A); HES/U09.9 as Route-B triangulation | ✅ feasible |
+| 2 | **PEM-weighted (RECOVER PASC-index analogue)** | symptom-count/fatigue-weighted proxy from the questionnaire — **no PASC-index/PEM instrument in UKB** | ⚠️ approximation only |
+| 3 | **WHO + functional-impairment gate** | **SF-36 T<45 is not in UKB** → substitute an available functional proxy or drop the arm | ❌ not feasible as specified |
+
+- **U09.9** ("Post COVID-19 condition") ICD-10 code anchors the Route-B coded outcome
+  but was **not** used by the precedent (which relied on the questionnaire); coverage
+  is partial and clinician-coding-dependent (an outcome-misclassification source).
 - **Outcome model:** time-to-resolution (Cox/Weibull) where longitudinal codes
   permit, else PAIS-present-at-fixed-follow-up (log-binomial), per the t016 plan.
 - A long-COVID signal **present only under definition 1** likely reflects
   PEM-negative prolonged recovery (changes the h0005 interpretation) — this is the
   definition-stability test, not a robustness footnote.
 
-> **Caveat carried forward:** UKB's coded outcome is **less PEM-sensitive** than a
-> symptom-level cohort (RECOVER/IMPACC raw). The t002 finding that PEM is captured
-> in almost no resource applies here too — definition 2 is an approximation, and
-> any PEM-stratified claim (q0015/t025) cannot be fully served by UKB alone.
+> **Caveat carried forward (refined by t017):** UKB **does** carry a symptom-level
+> WHO-Delphi instrument (Health & Well-Being questionnaire), so def-1 is
+> symptom-level — but it is **not PEM-specific** (no PASC-index, no CPET/PEM item),
+> so def-2 remains an approximation and any PEM-stratified claim (q0015/t025) cannot
+> be fully served by UKB alone (consistent with the t002 finding).
 
 ---
 
