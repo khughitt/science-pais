@@ -36,8 +36,52 @@ amendments:
       long-COVID/COVID risk and mortality; sensitivity-only placement was an
       identification gap the bias audit missed. Reviewer ratified Q1 with the
       coding/wording modification above.
+  - date: "2026-06-20"
+    ratified_by: "task:t029 (independent out-of-author second pass; report:0002-t029-second-pass-menopause-pais-pre-registration-review)"
+    type: "pre-data amendment (not a fresh pre-registration)"
+    change: >
+      Out-of-author second-pass corrections (A1–A3 + G6 + IMD), all pre-data:
+      (A1) PEM-weighted arm re-described as a PESE/fatigue-weighted questionnaire
+      proxy — UKB DOES carry a post-exertional-symptom item; the prior "no PEM-specific
+      signal" wording overstated the gap. Still sensitivity-only, not RECOVER-equivalent.
+      (A2) Add UKB field 3882 (age at bilateral oophorectomy) to the t027 basket
+      [confirm at application]; required for the surgical age-at-surgery gradient and
+      for clean pre-infection surgical exclusion.
+      (A3) Downgrade "HRT-active-at-infection" to "baseline HRT status / unknown at
+      infection": baseline fields 2814/3536/3546 do not reach the 2020–2022 infection
+      window; an HRT-on-at-infection tag needs GP/prescription linkage or it is dropped.
+      (G6) State def-3 (SF-36 functional gate) is FORMALLY DROPPED for this pre-reg,
+      not left as a live "substitute-or-drop" option post-lock.
+      (IMD) Resolve the unspecified deprivation field: use Townsend (189) only, or add a
+      named IMD field/derivation [confirm at application] — no bare "IMD" reference.
+    rationale: >
+      Out-of-author review (report:0002) closing the bias-audit author-independence
+      finding for the outcome/exposure/feasibility surface. These are corrections and
+      tightenings, not criterion loosenings; raised by an independent reviewer, so they
+      carry the out-of-author provenance the audit demanded.
+  - date: "2026-06-20"
+    ratified_by: "task:t029 second pass + user decision 2026-06-20"
+    type: "G2 corpus-independence disposition (verdict-confidence, not a criterion change)"
+    change: >
+      SHBG/sex-hormone prior DOWNGRADED to explicit single-source background. The
+      out-of-corpus second-precedent search (report:0002) found only Gao et al. (JAMA
+      2024) as a genuinely author-independent UKB precedent — it weakly corroborates
+      questionnaire feasibility + the healthy-volunteer/survival-to-2020 selection
+      profile, but is hospitalization-conditioned (unusable for effective-n) and tests
+      no hormones. Wang et al. and the Prieto-Alhambra preprint share the AlcaldeHerraiz
+      author network and are NOT corpus-independent. Net: questionnaire feasibility/
+      selection weakly corroborated out-of-corpus; effective-n and the SHBG-protection
+      signal remain SINGLE-SOURCE (AlcaldeHerraiz2025) and are labelled as such. G2's
+      out-of-corpus prong is dispositioned by this recorded downgrade (not by finding an
+      independent SHBG precedent); an opportunistic non-UKB SHBG/long-COVID search is
+      tracked separately and would strengthen, not gate.
+    rationale: >
+      SHBG is on the M1-confirm side (mediator-specific), which UKB can barely confirm
+      regardless (oestradiol censored, no FSH/AMH); it is not load-bearing for the
+      primary {age, smoking} total-effect estimand. Honest single-source labelling
+      preserves the primary while closing the coherence gap left by the open G2 prong.
 created: "2026-06-19"
-updated: "2026-06-19"
+updated: "2026-06-20"
 ---
 
 # Pre-registration: total effect of reproductive-stage timing on long COVID in UK Biobank (menopause→PAIS)
@@ -87,6 +131,26 @@ evidence).
 >   with a pleiotropy-/selection-robust guardrail battery — **triangulation only, not
 >   confirmatory/co-primary**.
 
+> **Amendment 2 APPLIED — t029 out-of-author second pass (2026-06-20).**
+> Source: `report:0002-t029-second-pass-menopause-pais-pre-registration-review`.
+> - **A1 (applied):** PEM-weighted arm re-described as a **PESE/fatigue-weighted
+>   questionnaire proxy** (UKB *does* carry a post-exertional-symptom item) — sensitivity
+>   only, not RECOVER-equivalent. See Limitation #3.
+> - **A2 (applied):** field **3882** (age at bilateral oophorectomy) added to the t027
+>   basket `[confirm at application]` — needed for the surgical age-at-surgery gradient.
+> - **A3 (applied):** **HRT-active-at-infection downgraded** to "baseline HRT status /
+>   unknown at infection" (baseline fields 2814/3536/3546 don't reach 2020; needs GP
+>   linkage or it's dropped). The surgical HRT-stratification signature inherits this.
+> - **G6 (tightened):** def-3 (SF-36 functional gate) is **formally dropped**, not a live
+>   post-lock substitute-or-drop option.
+> - **IMD (resolved):** Townsend (189) only, or a *named* deprivation field/derivation
+>   `[confirm at application]` — no bare "IMD".
+> - **G2 corpus-independence disposition:** SHBG/sex-hormone prior **downgraded to explicit
+>   single-source background**; questionnaire feasibility/selection weakly corroborated
+>   out-of-corpus (Gao 2024, independent), effective-n + SHBG remain single-source. The two
+>   nominal "second precedents" (Wang; Prieto-Alhambra preprint) share the AlcaldeHerraiz
+>   author network and are **not** corpus-independent. See G2 below.
+
 ---
 
 ## Hypotheses Under Test
@@ -127,7 +191,10 @@ Checked against the nearest precedent (`paper:AlcaldeHerraiz2025`, UKB long-COVI
   cohort = 8,668 (positive PCR ∧ questionnaire), 2,751 cases. Natal-female restriction
   → ~4,000–4,500 women; female long-COVID rate is higher, so ~1,200–1,600 female
   cases — adequate for a **timing** exposure across the (post) cohort, but the
-  **pre/peri cell ≈ 0**, confirming the reframe above.
+  **pre/peri cell ≈ 0**, confirming the reframe above. *(These effective-n figures
+  remain **single-source** — `AlcaldeHerraiz2025`; the out-of-corpus cross-read found no
+  independent UKB precedent that re-confirms the denominator, only the questionnaire
+  route + selection profile, per G2/`report:0002`. Confirm exactly on provisioning.)*
 
 **Design fix applied here (not deferred to post-data):** the **primary confirmatory
 contrast is the reproductive-timing exposure**; the stage-at-infection ordinal is
@@ -145,8 +212,10 @@ because the artifacts were inspected before thresholds were locked.
   tertile (equivalently ≈ RR 1.10–1.15 per SD of the continuous timing exposure — to
   be fixed to one scale at provisioning, not both).
 - **Why:** h0005's homeostatic-margin conjecture + the precedent's female-specific
-  SHBG protection signal (AlcaldeHerraiz2025) + the hormone-immune/endothelial
-  mechanisms reviewed under `topic:menopause-sex-hormones-and-pais-risk`. The effect
+  SHBG protection signal (AlcaldeHerraiz2025 — **single-source**; no independent UKB
+  precedent re-tests it, per G2/`report:0002`, so this prior is background, not
+  corroborated) + the hormone-immune/endothelial mechanisms reviewed under
+  `topic:menopause-sex-hormones-and-pais-risk`. The effect
   is expected to be **modest** and **partially confounded** (U latent), hence the
   E-value discipline below.
 - **Direction is the primary commitment; magnitude is secondary** given the
@@ -246,10 +315,15 @@ This analysis **cannot**, even executed perfectly:
    load-bearing.
 2. Resolve the **pre/peri-vs-post** contrast in UKB (cohort aged out — Feasibility);
    that requires younger cohorts.
-3. Deliver a **PEM-specific** verdict — UKB has WHO-symptom-level data but no
-   PASC-index/PEM instrument (def-2 is an approximation; q0015/t025 under-served).
-4. Compute the **SF-36 functional-gate** definition — not in UKB; **not pre-registered
-   as computable** (a named substitute would be required to add it; none committed here).
+3. Deliver a **PEM-specific** verdict — UKB has WHO-symptom-level data and a
+   **post-exertional-symptom (PESE) questionnaire item** with duration/impact fields, but
+   **no RECOVER PASC index, no CPET, and no validated PEM instrument**. def-2 is therefore a
+   **PESE/fatigue-weighted questionnaire proxy** (sensitivity-only, *not* RECOVER-equivalent;
+   q0015/t025 under-served) — corrected from the prior "no PEM-specific signal" wording per
+   A1 (report:0002).
+4. Compute the **SF-36 functional-gate** definition (def-3) — not in UKB; **formally dropped
+   for this pre-reg** (G6), not held open as a post-lock substitute-or-drop option. Adding it
+   later would require a *named* UKB functional proxy and a new amendment.
 5. Escape **decade-gap exposure misclassification** (t020 QBA bounds, not removes, it).
 6. Generalize beyond UKB's **healthy-volunteer, >90% White, questionnaire-responding**
    subset without the IPW + triangulation arms.
@@ -363,14 +437,22 @@ reports for this committed pre-reg (defined once here; referenced there).
   questionnaire; Category-1307 serology; vaccination linkage) delivered to a UKB RAP /
   approved environment.
 - **G2 — Field IDs confirmed live + out-of-corpus feasibility check.** Questionnaire
-  item IDs (WHO-Delphi), EBV-subsample N (Category 1307), vaccination-linkage category
-  confirmed on the Showcase (COVID-test field 40100 already verified). **Plus (bias
-  audit `report:0001-...`):** because all feasibility/effective-n/SHBG claims currently
-  rest on the single precedent `AlcaldeHerraiz2025`, the effective-n and selection
-  profile must be cross-read against **≥1 second UKB long-COVID cohort** before the AMS
-  basket is finalized — the live-Showcase confirmation + this second read together are
-  the named out-of-corpus check that lifts the feasibility claims from "single-source"
-  to "confirmed."
+  item IDs (WHO-Delphi), EBV-subsample N (Category 1307), vaccination-linkage category,
+  **and field 3882 (age at bilateral oophorectomy, added per A2)** confirmed on the
+  Showcase (COVID-test field 40100 already verified). **Out-of-corpus prong — DISPOSITIONED
+  (`report:0002`, 2026-06-20):** the second-precedent cross-read found only **Gao et al.
+  (JAMA 2024)** as a genuinely author-independent UKB precedent — it weakly corroborates
+  questionnaire feasibility + the healthy-volunteer/survival-to-2020 selection profile, but
+  is hospitalization-conditioned (unusable for effective-n) and tests no hormones. The two
+  other candidates (Wang; Prieto-Alhambra preprint) **share the AlcaldeHerraiz author
+  network** and are not corpus-independent. Disposition: **questionnaire feasibility/
+  selection = weakly corroborated out-of-corpus; effective-n + the SHBG-protection signal =
+  remain SINGLE-SOURCE (`AlcaldeHerraiz2025`) and are labelled as such.** The SHBG prior is
+  **downgraded to single-source background** (it is mediator-specific / M1-confirm-side, not
+  load-bearing for the primary {age, smoking} total effect). G2's out-of-corpus prong is
+  satisfied by this **recorded downgrade**, not by finding an independent SHBG precedent; an
+  opportunistic non-UKB SHBG/long-COVID search (tracked separately) would strengthen, not
+  gate. Live-Showcase field confirmation at application still required.
 - **G3 — Power floor met.** Female-case count for the **timing** exposure clears 80%
   power at RR 1.3 (α 0.05) after natal-female restriction ∧ valid menopause-timing ∧
   questionnaire-response ∧ positive-PCR. (The pre/peri stratum is *not* required to
@@ -380,9 +462,10 @@ reports for this committed pre-reg (defined once here; referenced there).
   by restriction + IPW; Route-B available for triangulation.
 - **G5 — Exposure-timing integrity.** Reproductive-timing exposure derivable from the
   **pre-infection (2006–2010) baseline**; post-hoc-staged records quarantined.
-- **G6 — Outcome computability.** Def-1 (WHO ≥90d, Route A) computable; def-2 proxy
-  constructable; def-3 either substituted with a *named* UKB functional proxy or
-  formally dropped (not silently assumed).
+- **G6 — Outcome computability.** Def-1 (WHO ≥90d, Route A) computable; def-2
+  (PESE/fatigue-weighted) proxy constructable; **def-3 (SF-36 functional gate) is
+  formally DROPPED** for this pre-reg (not held open as a substitute-or-drop option) —
+  re-adding it requires a named UKB functional proxy and a new amendment.
 
 A **spent** vehicle that fails any G-gate does not qualify; the standing verdict
 remains `[?]` until one does. Tracked by a `status: blocked` task whose blocker is

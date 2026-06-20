@@ -94,9 +94,10 @@ deliverable and are only sketched here.
 | Had menopause | **2724** | Baseline menopausal status (Yes/No/Not sure – had hysterectomy/Not sure – other) |
 | Age at menopause (last menstrual period) | **3581** | Anchors natural-menopause timing; censoring for surgical menopause |
 | Bilateral oophorectomy / had hysterectomy | **2834 / 3591** | **[confirm at application]** surgical-menopause flag — critical: surgical menopause breaks the age↔stage mapping and must be a separate stratum |
+| Age at bilateral oophorectomy | **3882** | **[confirm at application]** — added per t029 amendment A2 (`report:0002`): required for the surgical age-at-surgery gradient (pre- vs post-FMP oophorectomy) and for clean pre-infection surgical exclusion. 2834 alone gives the flag, not the timing. |
 | Ever used HRT | **2814** | HRT is a **mediator + confounded-by-indication** node — recorded, **not** adjusted (see §7) |
 | Age started HRT | **3536** | HRT timing relative to infection |
-| Age last used HRT | **3546** | **[confirm at application]** HRT exposure window vs infection date |
+| Age last used HRT | **3546** | **[confirm at application]** HRT exposure window vs infection date. **Amendment A3 (`report:0002`):** these three baseline HRT fields establish ever-use / start / last-use **at the 2006–2010 assessment**, *not* HRT status at 2020–2022 infection. Any "HRT-active-at-infection" tag (incl. the surgical HRT-stratification arm) therefore needs **GP/prescription linkage**, or is downgraded to "baseline HRT status / unknown at infection." |
 | Age at menarche | **2714** | Reproductive-span covariate; t020 staging input |
 | Number of live births / parity | **2734** | Pregnancy-history node (competing reproductive exposure) |
 | Ever used oral contraceptive pill | **2784** | Exogenous-hormone history; staging nuisance |

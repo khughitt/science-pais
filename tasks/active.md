@@ -178,21 +178,16 @@ Assess whether t001/t016 should pre-commit to PC-COS core domains (fatigue, brea
 - priority: P2
 - status: blocked
 - aspects: []
-- blocked-by: [pre-registration:0001-menopause-pais-total-effect, task:t029]
+- blocked-by: [pre-registration:0001-menopause-pais-total-effect, task:t032]
 - created: 2026-06-19
 
 Data-gated: pre-registration:0001-menopause-pais-total-effect is committed but execution is blocked on the Vehicle-Admissibility Gate (G1 access provisioned, G2 field IDs confirmed, G3 power floor met, G4-G6 sampling/timing/outcome). Standing verdict [?] inconclusive-for-coverage; no bears_on update on h0005 until a provisioned UKB vehicle clears all G-gates. Activate on UKB AMS approval. Primary confirmatory = reproductive-timing exposure -> WHO>=90d long-COVID RR (Route A questionnaire), {age}-adjusted, natal-female. Ref entities/pre-registrations/0001-menopause-pais-total-effect.md.
 
-## [t029] Independent review + 2nd UKB long-COVID precedent cross-read for the menopause-PAIS pre-registration
-- priority: P1
-- status: in_progress
+## [t032] G2 corpus-independence gate: SHBG/sex-hormone prior is single-source (AlcaldeHerraiz2025)
+- priority: P2
+- status: proposed
 - aspects: []
-- related: [report:0001-bias-audit-menopause-pais-total-effect, pre-registration:0001-menopause-pais-total-effect, task:t028, task:t023]
-- created: 2026-06-19
+- related: [pre-registration:0001-menopause-pais-total-effect, report:0002-t029-second-pass-menopause-pais-pre-registration-review, task:t028]
+- created: 2026-06-20
 
-Closes the two HIGH-severity findings from report:0001-bias-audit-menopause-pais-total-effect (author-independence self-audit + single-precedent corpus closure). Two deliverables, both pre-execution: (1) Out-of-author review of pre-registration:0001-menopause-pais-total-effect by a reviewer with no authorship stake (human domain expert or fresh agent), after a cooling-off period — the current verdict is 'self-audit (internally consistent)', NOT externally validated. (2) Cross-read >=1 second UKB long-COVID cohort paper (beyond AlcaldeHerraiz2025) to independently confirm effective-n, selection profile, and the SHBG/sex-hormone direction signal, so the feasibility claims no longer rest on a single source. This is the G2-gate out-of-corpus check (see pre-reg). Must complete before the UKB AMS basket is finalized / before t028 execution.
-
-### Notes
-
-- 2026-06-19: Reviewer input prepared: doc/methods/2026-06-19-confounder-open-questions-and-staged-amendment.md. FIRST reviewer action = rule on a STAGED adjustment-set amendment (Q1: add smoking to primary set, {age}->{age,smoking}; pre-data, staged not self-applied to preserve out-of-author provenance). Also adjudicate Q2 (BMI role: confounder vs mediator), Q3 (do autoimmune-POI/frailty/parity belong in primary set?), Q4 (add MR triangulation arm? pleiotropy-robust). On ratification, Q1 becomes an amendments: record on pre-reg:0001; Q2/Q4 route to t023 (DAG v2). These join the two original t029 deliverables (out-of-author pre-reg review + 2nd UKB precedent cross-read).
-- 2026-06-19: DELIVERED (2026-06-19): identification/adjustment-set review — Q1 ratified (smoking->primary measured set, applied as amendment), Q2/Q3 routed to DAG v2, Q4 MR added as triangulation; 2 reviewer findings (terminology 'primary measured' not 'minimal-sufficient'; smoking baseline!=pre-FMP coding) folded into pre-reg:0001. STILL PENDING for t029 closure: (a) full out-of-author review of the rest of the pre-reg (feasibility/outcome/exposure), (b) the 2nd UKB long-COVID precedent cross-read (effective-n / selection / SHBG signal) per the G2 out-of-corpus check.
+Carries the G2 out-of-corpus disposition recorded in report:0002 (t029 second pass) and pre-reg:0001 amendment 2. The out-of-corpus second-precedent search found only Gao et al. (JAMA 2024) as a genuinely author-independent UKB precedent (weakly corroborates questionnaire feasibility + survival-to-2020/healthy-volunteer selection; hospitalization-conditioned so unusable for effective-n; tests no hormones). Wang et al. and the Prieto-Alhambra preprint share the AlcaldeHerraiz author network -> NOT corpus-independent. DISPOSITION: questionnaire feasibility/selection weakly corroborated out-of-corpus; effective-n + SHBG-protection signal remain SINGLE-SOURCE and are labelled as such; SHBG prior downgraded to single-source background (mediator-specific / M1-confirm-side, not load-bearing for the primary {age,smoking} total effect). OPEN/OPPORTUNISTIC: find a non-UKB SHBG-or-sex-hormone x long-COVID precedent (RECOVER, German NAPKON, All of Us, Lifelines) that would UPGRADE the SHBG prior from single-source background; would strengthen, not gate. At application: confirm this disposition stands when the AMS basket is finalized. Blocks t028 (soft: t028 is data-gated regardless).

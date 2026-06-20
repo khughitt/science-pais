@@ -129,7 +129,7 @@ t016 E-value is benchmarked against.
 
 | Latent-U component | UKB field(s) | Timing | Coding |
 |---|---|---|---|
-| SES — deprivation | Townsend **189** + IMD | baseline (area-level, fixed) | continuous + categorized; flag area-level temporal drift |
+| SES — deprivation | Townsend **189** (locked); IMD only via a **named** country-specific index-of-multiple-deprivation field **[confirm at application]** | baseline (area-level, fixed) | continuous + categorized; flag area-level temporal drift. **Amendment IMD (`report:0002`):** "IMD" is not a bare UKB field — use Townsend 189 as the primary deprivation measure; add a specific IMD field/derivation only if confirmed live, else drop the bare reference. |
 | SES — education | **6138** | baseline | years-of-ed / degree flag |
 | SES — income | **738** | baseline | self-report band; high "prefer not to answer" → missing |
 | Ethnicity | **21000** | baseline | White / non-White (precedent); finer if N allows |
