@@ -17,6 +17,9 @@ related:
   - paper:Peppercorn2023
   - paper:Hanson2023
   - paper:Cruz2025
+  - paper:Shankar2025
+  - paper:Sommen2026
+  - paper:Chowdhury2026
 created: "2026-06-20"
 updated: "2026-06-20"
 ---
@@ -57,6 +60,29 @@ other post-infectious ME/CFS). The "convergent domains, unproven shared molecule
 therefore holds and tightens: convergence is real at the clinical and physiological levels and
 weak-to-absent at the shared-analyte level.
 
+**Update (2026-06-20 PDF-ingestion batch).** A batch of full-text reads adds three genuine
+*within-study* head-to-head designs — but all are **long COVID vs ME/CFS** (two fatigue
+phenotypes, both commonly post-viral), not the ≥3-distinct-infectious-trigger test h0001
+actually demands, so they sharpen the LC↔ME/CFS half of the question without closing it:
+- **Shankar2025** (PNAS, Stanford/M. Davis) — the strongest *positive* within-study cross-condition
+  molecular result in the corpus: ME/CFS (n=27), long COVID (n=20) and HC (n=25) run through one
+  pipeline show a **shared mitochondrial/oxidative-stress signature** (elevated lymphocyte ROS,
+  reduced mitochondrial ATP, lower SOD2, GPX4 up, female ROS-driven T-cell hyperproliferation). This
+  is convergence at the **pathway** level (oxidative stress), consistent with the standing read that
+  the signal lives in pathways not individual analytes.
+- **Sommen2026** (CyTOF + ML, Norwegian LoTECA adolescents) — long COVID and *non-COVID* post-infective
+  fatigue share an **identical terminal-NK signature** with **no LC-unique immune alteration**; a
+  shared fatigue signature that is explicitly trigger-agnostic (supports convergence, but again at the
+  phenotype level, not across distinct infections).
+- **Chowdhury2026** (DIA-MS plasma proteomics) — a cautionary near-**null**: the 3-month plasma proteome
+  separates infected from uninfected but distinguishes PCC from uncomplicated recovery by only **2
+  proteins** (VNN1, CST3). A *post-infection* signature exists; a *PCC-specific* analyte signature does
+  not, at this timepoint — reinforcing that the decisive contrast is failed-vs-full recovery, not
+  infected-vs-uninfected.
+Net: pathway-level convergence (oxidative stress, mitochondrial, NK) gains genuine within-study
+support for LC↔ME/CFS, while a recovery-discriminating *specific-analyte* signature and the ≥3-trigger
+test both remain unmet.
+
 ## Critical Analysis
 
 ### Signature matrix (axis × trigger)
@@ -74,7 +100,10 @@ assembled from a separate single-trigger study; "no-data" = no usable omics foun
 | Autoantibodies (GPCR/functional) | supported (deSa2026, causal) | supported (Liu2026, incl. post-COVID) | no-data | no-data | no-data |
 | Microclots/thromboinflammation | supported (Nicolai2023) | mixed | no-data | no-data | no-data |
 | Tryptophan-kynurenine | supported | mixed (Che2025) | no-data | no-data | no-data |
-| Mitochondrial/metabolic | supported (Molnar2024) | supported (Walitt2024, Liu2026) | no-data | no-data | no-data |
+| Mitochondrial/metabolic | **shared LC↔ME/CFS (Shankar2025 h2h, +)** | **shared (Shankar2025 h2h)**; supported (Walitt2024, Liu2026) | no-data | no-data | no-data |
+| Oxidative stress (lymphocyte ROS) | **shared LC↔ME/CFS (Shankar2025 h2h, +)** | **shared (Shankar2025 h2h, +)** | no-data | no-data | no-data |
+| NK terminal differentiation | **shared w/ non-COVID fatigue (Sommen2026 h2h)** | shared (Sommen2026, fatigue-general) | no-data | no-data | no-data |
+| Plasma proteome (PCC-specific) | **only 2 proteins vs recovered (Chowdhury2026, near-null)** | no-data | no-data | no-data | no-data |
 | Neuroinflammation (TSPO PET) | mixed | **absent — no TSPO (Raijmakers2021 h2h)** | no-data | no-data | **absent — no TSPO (Raijmakers2021 h2h)** |
 
 ### The provenance problem (the load-bearing point)
@@ -85,16 +114,23 @@ and after the 2026-06-20 deep read they **uniformly fail to demonstrate a shared
 molecular signature**:
 
 - **Galbraith2011** (Dubbo: EBV / Ross River virus / Q-fever post-infective fatigue) — the
-  closest existing head-to-head transcriptomic test of h0001. **Read 2026-06-20 (abstract;
-  full text 403-blocked) — this overturns the cell previously recorded here.** Despite robust
-  *clinical* convergence across the three triggers, qPCR confirmed that **none of the
-  differentially expressed genes were consistent across all three infection cohorts** in bulk
-  whole blood — a head-to-head **negative at the transcript level**, not the "partial shared
-  transcripts → supports" reading I had assumed before reading it. It does **not refute** h0001
-  (per-group N≈6 is underpowered; bulk blood averages over cell types; convergence may live at
-  pathway / cell-type / non-transcriptomic levels), but it removes the one cell that appeared to
-  *support* a shared molecular signature and **constrains h0001 to pathway-level or
-  cell-type-resolved convergence**. See `paper:Galbraith2011`.
+  closest existing head-to-head transcriptomic test of h0001. **Full text now read 2026-06-20
+  (user-supplied PDF; supersedes the abstract-only read).** Design: 18 PIFS cases + 18 matched
+  controls, **PBMCs** (Illumina Sentrix HumanRef-8 v2 BeadChip, 22,184 probes) — **a correction
+  to the earlier "bulk whole blood" framing recorded here: granulocytes are excluded, so the
+  signal is lymphocyte/monocyte-restricted.** Per-trigger N is very small (paired analysis: 3
+  EBV / 4 RRV / 5 Q-fever). Despite robust *clinical* convergence across the three triggers, the
+  primary cross-infection-consistency analysis and qPCR (33/45 genes technically confirmed) found
+  that **none of the differentially expressed genes were consistent across all three infection
+  cohorts**; the paper's own words: *"no genes were consistently associated with the illness."*
+  Only **CYBA** reached adjusted significance in 2 of 3 cohorts (EBV + Q-fever, not RRV). A
+  head-to-head **negative at the transcript level**, not the "partial shared transcripts →
+  supports" reading assumed before reading it. It does **not refute** h0001 (tiny per-trigger N;
+  PBMC averages over cell types; convergence may live at pathway / cell-type / non-transcriptomic
+  levels), but it removes the one cell that appeared to *support* a shared molecular signature and
+  **constrains h0001 to pathway-level or cell-type-resolved convergence**. **No GEO/ArrayExpress
+  deposit exists** (confirmed in full text); raw arrays require author contact (B. Cameron, UNSW,
+  b.cameron@unsw.edu.au) — this is the t033 reanalysis residual. See `paper:Galbraith2011`.
 - **Raijmakers2021** (TSPO PET in ME/CFS *and* QFS) — a shared **negative**: no
   neuroinflammation in either. A shared absence is consistent with convergence but does not
   *demonstrate* a shared positive mechanism — weak/ambiguous for h0001.
@@ -117,12 +153,12 @@ breadth, independent of which way the LC/ME/CFS evidence points.
 - **Decisive (still absent):** one harmonized, controlled multi-omics study across ≥3
   triggers (SARS-CoV-2, Borrelia, dengue/EBV) with **full-recovery controls**, compared at
   **pathway level** not analyte level. This answers q0001 directly; nothing else does.
-- **Cheapest real movement now (partially done 2026-06-20):** the **Galbraith2011** abstract
-  is read (verdict: no genes consistent across the three triggers in bulk blood), but full
-  text is 403-blocked and **no GEO/ArrayExpress deposit was found**. The remaining cheap
-  movement is full-text retrieval + author contact (A. Lloyd, UNSW) for the microarray data,
-  then a pathway-level / cell-type-deconvolution reanalysis to test whether the gene-level
-  null survives at pathway level. Tracked in t033.
+- **Galbraith2011 full text now read (2026-06-20):** verdict confirmed — no genes consistent
+  across the three triggers; sample is **PBMCs** (Illumina HumanRef-8 v2), not bulk blood;
+  **no GEO/ArrayExpress deposit exists** (confirmed in full text). The remaining cheap movement
+  is author contact (B. Cameron, UNSW, b.cameron@unsw.edu.au) for the raw arrays, then a
+  pathway-level / cell-type-deconvolution reanalysis to test whether the gene-level null
+  survives at pathway level. Tracked in t033.
 - **Gap-closing search:** targeted hunt for post-dengue and QFS omics; if empty, record it
   as a *structural* evidence gap limiting h0001's testability (not as evidence against).
 - **Corpus-wide:** an axis×trigger **provenance overlay** (head-to-head vs assembled) so the

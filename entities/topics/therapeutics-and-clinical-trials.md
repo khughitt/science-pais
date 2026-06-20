@@ -27,6 +27,9 @@ source_refs:
 - cite:Fluge2019
 - cite:Stein2025
 - cite:Zeraatkar2024
+- cite:Bramante2026
+- cite:Peluso2026
+- cite:Bhattacharjee2026
 created: '2026-06-20'
 updated: '2026-06-20'
 ---
@@ -69,18 +72,36 @@ its results, reported in 2025, were likewise negative. Two null NMV/r RCTs in pr
 mostly-vaccinated long COVID **constrain — but do not refute** — the antigen-persistence
 treatment hypothesis (`question:0002`): a 5-day-style short course in long-duration disease may
 simply be the wrong dose/duration, or persistence may not be the operative driver in these
-cohorts. Endpoint: subjective PROs throughout.
+cohorts. Endpoint: subjective PROs throughout. The mechanistic case tightened in 2026:
+**Bhattacharjee2026** (immunologic substudy of the PAX-LC NMV/r RCT, n=82) found NMV/r changed
+**neither circulating Spike antigen, anti-Spike antibodies, nor PBMC subsets**; the only independent
+correlate of symptom improvement (in *both* arms) was a fall in RANTES/CCL5 — pointing at the
+CCL5–CCR5 axis, not antigen clearance. A null trial that also moves no antigen/immune markers is
+harder to dismiss as merely underdosed. The complementary **direct antigen-clearance** test is also
+null: **Peluso2026** (outSMART-LC, n=36) gave a single infusion of the long-acting anti-RBD monoclonal
+antibody **AER002** with no benefit on PROMIS-29 or any pre-specified endpoint (caveats: no plasma
+antigen-clearance assay was run, and baseline tissue antigen was scarce — gut-biopsy SARS-CoV-2 RNA in
+only 1/17). Two independent anti-antigen strategies (protease inhibitor + neutralizing mAb) thus fail
+in established long COVID — constraining, without refuting, the antigen-as-reversible-target hypothesis
+(`question:0002`).
 
 **Antivirals / metabolic agents — testing *prevention* by reducing acute burden.** The one
 robustly positive RCT is metabolic, not antiviral: Bramante2023 (COVID-OUT) found outpatient
 **metformin** during acute COVID reduced provider-diagnosed long COVID (HR ≈0.59, ~41%
-relative risk reduction; HR ≈0.37 if started within 3 days), while ivermectin and fluvoxamine
-were null. Yotsuyanagi2024 (SCORPIO-SR) reports a pre-specified prevention subanalysis of the
+relative risk reduction; HR ≈0.37 if started <4 days from onset), while ivermectin and fluvoxamine
+were null. This was **partially replicated** by **Bramante2026** (ACTIV-6, n=2983, JN.1 era, 83%
+pre-immune): the *primary* symptom-based PASC endpoint at day 180 was **not met** (risk difference
+−0.8 pp; posterior probability of efficacy 0.83, below the 0.975 bar), but the *secondary*
+clinician-diagnosed long-COVID endpoint **was** significant (RR ≈0.50, 95% CrI 0.16–0.995) — same
+direction as COVID-OUT but attenuated, plausibly because of lower baseline risk, high pre-immunity, and
+a milder variant rather than a true null. The replication is therefore **outcome-dependent**: it holds
+for the (weak) clinician-label endpoint and fails for the symptom-based endpoint — itself a lesson about
+endpoint choice. Yotsuyanagi2024 (SCORPIO-SR) reports a **post hoc** prevention subanalysis of the
 3CLpro inhibitor ensitrelvir: point-estimate risk reductions for post-COVID symptoms but all
 confidence intervals crossed zero (non-significant, exploratory). Together these populate
-`question:0012` (does reducing acute viral/inflammatory burden prevent PAIS?) with one positive
-(metabolic) and one non-significant (antiviral) prevention signal. Endpoint caveat: COVID-OUT's
-outcome is a provider-diagnosed label by self-report — methodologically weak.
+`question:0012` (does reducing acute viral/inflammatory burden prevent PAIS?) with a partially-replicated
+metabolic signal and a non-significant antiviral one. Endpoint caveat: both metformin trials' positive
+arms rest on provider-/clinician-diagnosed labels by self-report — methodologically weak.
 
 **B-cell depletion / autoantibody removal — testing autoimmunity.** Fluge2019 (RituxME; N=151,
 Canadian Consensus Criteria ME/CFS) is the definitive **negative** rituximab RCT (≈26% vs ≈35%
@@ -104,7 +125,7 @@ with a registered RCT pending; vagal/neuromodulation is at pilot stage. For post
 malaise, **pacing** (energy management) is the leading non-pharmacologic strategy and is now
 standard of care, while **graded exercise therapy** is contested — the PACE trial's recovery
 claims were challenged on reanalysis, and post-2021 NICE guidance holds that PEM contraindicates
-incremental GET. (This pacing-vs-GET stance is a candidate `core/decisions.md` entry.)
+incremental GET. (This pacing-vs-GET stance is recorded as decision **D-002** in `core/decisions.md`: pacing is the default activity-management frame and incremental GET is contraindicated wherever PEM is present.)
 
 ## Current State of Knowledge
 

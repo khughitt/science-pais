@@ -23,6 +23,12 @@ source_refs:
 - cite:Wang2023
 - cite:Joseph2023
 - cite:Keller2014
+- cite:Scheibenbogen2024
+- cite:Syed2025
+- cite:Baraniuk2025
+- cite:Shankar2025
+- cite:Saito2024
+- cite:Huang2024
 related:
 - topic:mecfs-long-covid-convergence
 - topic:biomarkers-and-objective-endpoints
@@ -47,6 +53,7 @@ Post-exertional malaise (PEM) — a delayed, disproportionate worsening of sympt
 - Supporting: Che2025 directly probes the provoked state with a standardized cardiopulmonary exercise challenge plus pre/post multi-omics, finding a heightened innate-immune response coupled to secondary metabolic and mitochondrial failures forming a self-reinforcing loop manifesting as fatigue and PEM — the most mechanistically explicit bioenergetic-PEM model in the project's literature. Bateman2023 (clinical/neurobiology review) establishes impaired energy production and PEM as defining ME/CFS features and frames ME/CFS as commonly post-infectious, situating the bioenergetic lesion within the PAIS frame.
 - Conflicting / cautionary: Hanson2023 argues classical ME/CFS is enterovirus-specific and explicitly cautions against conflating post-COVID illness with classical ME/CFS — directly challenging the "shared across PAIS" half of this question and warning that an apparently common PEM bioenergetic signature could mask trigger-specific biology. Mitochondrial-dysfunction findings in ME/CFS have historically been inconsistent across studies and assays.
 - **Direction-of-effect discordance (added 2026-06-20, from the t005 reading pass):** the literature does not agree on which *way* the resting bioenergetic lesion points (see the dedicated sub-question below). Naviaux2016 reports a resting *hypometabolic* "dauer" state (≈80% of diagnostic metabolites decreased); Missailidis et al. 2020 and Peppercorn2023 instead report *compensatory respiratory hyperactivation*/inefficiency (e.g. isolated Complex V inefficiency with elevated respiration); while Germain2022 and Walitt2024 find **no global resting hypometabolism / no basal mitochondrial dysfunction** at all, with the deficit appearing only in the *provoked* (post-exertional) state. Appelman2024 (long-COVID muscle) shows reduced OXPHOS at baseline that *worsens* after PEM with a selective post-exertional fall in succinate-dehydrogenase activity, and Wang2023 supplies a candidate primary molecular lesion (ER-stress-induced WASF3 blocking respiratory-supercomplex assembly → ~50% lower Complex IV → glycolytic shift).
+- **New compartment + oxidative-stress evidence (2026-06-20 PDF batch):** the bioenergetic lesion is now documented across additional compartments. **Muscle:** Scheibenbogen2024 frames ME/CFS as an "acquired ischemic mitochondrial myopathy" (hypoperfusion → Na⁺/Ca²⁺ overload → mitochondrial damage), extending the Appelman2024 muscle finding into a vascular-bioenergetic vicious-cycle model. **CNS:** Baraniuk2025 finds a CSF serine-folate one-carbon block with a *blunted/inverted* metabolite response to submaximal exercise — a central-compartment correlate of provoked metabolic incompetence. **Mechanism review:** Syed2025 (NIH/Hwang lab, the WASF3 group) surveys the evidence and explicitly declines to settle primary-vs-secondary, while endorsing the *provoked* direction as the basis of PEM. **Oxidative-stress axis:** Shankar2025 (PNAS, within-study LC vs ME/CFS head-to-head) adds elevated lymphocyte ROS + reduced mitochondrial ATP + lower SOD2 as a *shared* mechanism, and Saito2024 reports reduced plasma ATP in LC-with-CFS; Huang2024 (UK Biobank NMR, n=1,194) adds a lipoprotein-dominant, sex-specific energy-metabolism signature. None of these resolves the resting set-point discordance below, but they broaden the *provoked/tissue* pole (muscle + CNS) and add oxidative stress as a candidate upstream driver of the mitochondrial deficit.
 
 ## Thoughts
 
