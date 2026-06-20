@@ -12,6 +12,8 @@ related:
   - paper:Patterson2024
   - paper:Raijmakers2021
   - paper:Walitt2024
+  - paper:Joseph2023
+  - paper:Liu2026
   - paper:Peppercorn2023
   - paper:Hanson2023
   - paper:Cruz2025
@@ -42,6 +44,19 @@ neither confirmed nor refuted by molecular data; it remains a domain-level regul
 awaiting a molecule-level test. This is consistent with the cautions already standing in
 q0001 and h0001's *Current Uncertainty*, now sharpened by an explicit provenance audit.
 
+**Update (2026-06-20 deep-read pass).** After reading the head-to-head papers in full, the
+three existing head-to-head *molecular* designs — Galbraith2011 (no genes consistent across
+EBV/RRV/Q-fever in bulk blood), Raijmakers2021 (shared TSPO-negative across CFS/QFS), and
+Patterson2024 (cytokine-hub classifier *separates* long COVID from chronic Lyme) — **all point
+away from a shared *positive* molecular signature** (this is a directional sharpening, not a
+refutation; each is power- or design-limited). Meanwhile the strongest surviving cross-trigger
+convergence sits at the **physiological / functional** level, not the bulk-omics level:
+Joseph2023 (invasive CPET: preload failure + impaired peripheral O₂ extraction in *both* ME/CFS
+and PASC) and Liu2026 (patient IgG disrupting cellular energetics across *both* post-COVID and
+other post-infectious ME/CFS). The "convergent domains, unproven shared molecules" verdict
+therefore holds and tightens: convergence is real at the clinical and physiological levels and
+weak-to-absent at the shared-analyte level.
+
 ## Critical Analysis
 
 ### Signature matrix (axis × trigger)
@@ -52,8 +67,8 @@ assembled from a separate single-trigger study; "no-data" = no usable omics foun
 | Axis \ Trigger | Long COVID | ME/CFS | PTLDS | Post-dengue | QFS |
 |---|---|---|---|---|---|
 | T-cell exhaustion/activation | supported | supported | supported (Girgis2025) | no-data | no-data |
-| Cytokine (IL-1/6/TNF) | supported (Talla2023) | supported (Broderick2012) | **distinguishable vs LC (Patterson2024 h2h)** | no-data | **shared transcripts across EBV/RRV/Q-fever (Galbraith2011 h2h)** |
-| IFN signature | supported (Talla2023) | supported (Walitt2024) | mixed | no-data | **mixed (Galbraith2011 h2h)** |
+| Cytokine (IL-1/6/TNF) | supported (Talla2023) | supported (Broderick2012) | **distinguishable vs LC (Patterson2024 h2h)** | no-data | **no genes shared across EBV/RRV/Q-fever (Galbraith2011 h2h, negative)** |
+| IFN signature | supported (Talla2023) | supported (Walitt2024) | mixed | no-data | **no consistent cross-trigger transcript (Galbraith2011 h2h)** |
 | Complement | supported (CerviaHasler2024) | no-data | no-data | no-data | no-data |
 | EBV/herpesvirus reactivation | supported (Klein2023) | supported (Hanson2023) | no-data | no-data | absent-by-design (Melenotte2019) |
 | Autoantibodies (GPCR/functional) | supported (deSa2026, causal) | supported (Liu2026, incl. post-COVID) | no-data | no-data | no-data |
@@ -65,12 +80,21 @@ assembled from a separate single-trigger study; "no-data" = no usable omics foun
 ### The provenance problem (the load-bearing point)
 
 The matrix looks convergent, but almost every "supported" cell is single-trigger. The
-**head-to-head** cells — the only ones that can adjudicate shared-vs-specific — are sparse
-and **split in direction**:
+**head-to-head** cells — the only ones that can adjudicate shared-vs-specific — are sparse,
+and after the 2026-06-20 deep read they **uniformly fail to demonstrate a shared *positive*
+molecular signature**:
 
-- **Galbraith2011** (Dubbo: EBV / Ross River virus / Q-fever post-infective fatigue) —
-  *partial* shared peripheral-blood transcripts across three triggers → **supports** shared
-  biology. This is the single closest existing test of h0001 and should be read in full.
+- **Galbraith2011** (Dubbo: EBV / Ross River virus / Q-fever post-infective fatigue) — the
+  closest existing head-to-head transcriptomic test of h0001. **Read 2026-06-20 (abstract;
+  full text 403-blocked) — this overturns the cell previously recorded here.** Despite robust
+  *clinical* convergence across the three triggers, qPCR confirmed that **none of the
+  differentially expressed genes were consistent across all three infection cohorts** in bulk
+  whole blood — a head-to-head **negative at the transcript level**, not the "partial shared
+  transcripts → supports" reading I had assumed before reading it. It does **not refute** h0001
+  (per-group N≈6 is underpowered; bulk blood averages over cell types; convergence may live at
+  pathway / cell-type / non-transcriptomic levels), but it removes the one cell that appeared to
+  *support* a shared molecular signature and **constrains h0001 to pathway-level or
+  cell-type-resolved convergence**. See `paper:Galbraith2011`.
 - **Raijmakers2021** (TSPO PET in ME/CFS *and* QFS) — a shared **negative**: no
   neuroinflammation in either. A shared absence is consistent with convergence but does not
   *demonstrate* a shared positive mechanism — weak/ambiguous for h0001.
@@ -93,8 +117,12 @@ breadth, independent of which way the LC/ME/CFS evidence points.
 - **Decisive (still absent):** one harmonized, controlled multi-omics study across ≥3
   triggers (SARS-CoV-2, Borrelia, dengue/EBV) with **full-recovery controls**, compared at
   **pathway level** not analyte level. This answers q0001 directly; nothing else does.
-- **Cheapest real movement now:** read **Galbraith2011** in full (and check for reusable
-  GEO data) — the nearest existing head-to-head transcriptomic test.
+- **Cheapest real movement now (partially done 2026-06-20):** the **Galbraith2011** abstract
+  is read (verdict: no genes consistent across the three triggers in bulk blood), but full
+  text is 403-blocked and **no GEO/ArrayExpress deposit was found**. The remaining cheap
+  movement is full-text retrieval + author contact (A. Lloyd, UNSW) for the microarray data,
+  then a pathway-level / cell-type-deconvolution reanalysis to test whether the gene-level
+  null survives at pathway level. Tracked in t033.
 - **Gap-closing search:** targeted hunt for post-dengue and QFS omics; if empty, record it
   as a *structural* evidence gap limiting h0001's testability (not as evidence against).
 - **Corpus-wide:** an axis×trigger **provenance overlay** (head-to-head vs assembled) so the
@@ -102,8 +130,11 @@ breadth, independent of which way the LC/ME/CFS evidence points.
 
 ## Prioritized Follow-Ups
 
-1. Read Galbraith2011, Patterson2024, Walitt2024 (closest head-to-head + strongest disputer
-   + deepest ME/CFS phenotyping); populate their stubs.
+1. ~~Read Galbraith2011, Patterson2024, Walitt2024 (closest head-to-head + strongest disputer
+   + deepest ME/CFS phenotyping); populate their stubs.~~ **Done 2026-06-20** — stubs populated
+   (`paper:Galbraith2011`, `paper:Patterson2024`, `paper:Walitt2024`, plus the wider t001/t005
+   batch). Headline correction: Galbraith2011 is a head-to-head **negative** at gene level, not
+   a supporter. Residual = Galbraith full text + microarray reanalysis (t033).
 2. New search task: post-dengue / QFS / post-SARS molecular signatures — confirm the gap or
    fill it.
 3. Decide in `specs/scope-boundaries.md` whether post-chikungunya *arthritis*-phenotype data
