@@ -7,6 +7,24 @@ def contrast_dataset(contrast):
     """Dataset that owns a given contrast (from config)."""
     return config["contrasts"][contrast]["dataset"]
 
+# limma sheet schema per dataset: which sheet column matches the expr-matrix
+# sample columns, and which carries the group label. GSE14577's expr matrix is
+# per-PATIENT (U133A∪B combined) so its sample key is `patient_key` (the sheet
+# has one row per chip → limma_de.R dedupes to patient level); GSE130353's expr
+# columns are GSM accessions.
+DE_SHEET_COLS = {
+    "gse14577":  {"sample": "patient_key", "group": "group"},
+    "gse130353": {"sample": "accession",   "group": "group"},
+}
+
+def de_param(wildcards, key):
+    """Contrast spec field (case / control / dataset) from config."""
+    return config["contrasts"][wildcards.contrast][key]
+
+def de_sheet_col(wildcards, which):
+    """Sample/group sheet column for the contrast's dataset (DE_SHEET_COLS)."""
+    return DE_SHEET_COLS[contrast_dataset(wildcards.contrast)][which]
+
 def stub(label):
     """WP0 skeleton rule body: fail loudly on a real run (no silent placeholder
     outputs); `snakemake -n` still resolves the DAG. Replaced per work package."""
