@@ -23,6 +23,7 @@ related:
   - paper:Raijmakers2025
   - paper:Wu2017
   - paper:Raijmakers2019
+  - paper:Gow2009
   - task:t033
 created: "2026-06-20"
 updated: "2026-06-20"
@@ -167,8 +168,12 @@ molecular signature**:
   PBMC averages over cell types; convergence may live at pathway / cell-type / non-transcriptomic
   levels), but it removes the one cell that appeared to *support* a shared molecular signature and
   **constrains h0001 to pathway-level or cell-type-resolved convergence**. **No GEO/ArrayExpress
-  deposit exists** (confirmed in full text); raw arrays require author contact (B. Cameron, UNSW,
-  b.cameron@unsw.edu.au) — this is the t033 reanalysis residual. See `paper:Galbraith2011`.
+  deposit exists** (confirmed in full text). The raw arrays would require author contact, but the
+  project has **declined that route on reproducibility grounds** (2026-06-20 decision): privately
+  held, ~15-year-old data that an author must hand over fails the project's reproducible-understanding
+  standard, and author data-sharing for old datasets is unreliable. The Galbraith arrays are therefore
+  treated as **`[INACCESSIBLE]` / blocked**, and the reanalysis pivots to *public* post-infective-fatigue
+  transcriptomes (see Evidence Needed: GSE14577 + GSE130353). See `paper:Galbraith2011`.
 - **Raijmakers2021** (TSPO PET in ME/CFS *and* QFS) — a shared **negative**: no
   neuroinflammation in either. A shared absence is consistent with convergence but does not
   *demonstrate* a shared positive mechanism — weak/ambiguous for h0001.
@@ -222,14 +227,26 @@ breadth — it should be carried as a structural limitation, not read as evidenc
 - **Decisive (still absent):** one harmonized, controlled multi-omics study across ≥3
   triggers (SARS-CoV-2, Borrelia, dengue/EBV) with **full-recovery controls**, compared at
   **pathway level** not analyte level. This answers q0001 directly; nothing else does.
-- **Galbraith2011 full text now read (2026-06-20):** verdict confirmed — no genes consistent
+- **Galbraith2011 full text read (2026-06-20):** verdict confirmed — no genes consistent
   across the three triggers; sample is **PBMCs** (Illumina HumanRef-8 v2), not bulk blood;
-  **no GEO/ArrayExpress deposit exists** (confirmed in full text). The remaining cheap movement
-  is author contact (B. Cameron, UNSW, b.cameron@unsw.edu.au) for the raw arrays, then a
-  pathway-level / cell-type-deconvolution reanalysis to test whether the gene-level null
-  survives at pathway level. Tracked in t033.
+  **no GEO/ArrayExpress deposit exists** (confirmed in full text). The raw arrays exist only as
+  author-held data, and the project has **declined to request them** (2026-06-20 reproducibility
+  decision) — they are treated as `[INACCESSIBLE]`. Conclusions must not depend on private data.
+- **Public-data reanalysis path (replaces the Galbraith author-contact residual):** instead of
+  chasing private arrays, run a **pathway-level cross-trigger reanalysis on PUBLIC post-infective-
+  fatigue transcriptomes**:
+  - **GSE14577** (`paper:Gow2009`, *BMC Med Genomics* 2009) — post-infectious CFS PBMC, Affymetrix
+    U133A/B, n=8 PI-CFS + 7 HC (Fukuda criteria; **male-only**; no stated FDR — treat as
+    *exploratory*, low cross-study concordance per the paper itself).
+  - **GSE130353** (`paper:Raijmakers2019`) — QFS + CFS + asymptomatic-seropositive + healthy
+    monocyte RNA-seq.
+  Both are PBMC/monocyte expression sets across *different* post-infective triggers (post-viral
+  CFS vs Q-fever/idiopathic), enabling a reproducible **pathway/gene-set overlap** test of h0001
+  that anyone can rerun. Caveat: small, platform-heterogeneous (microarray vs RNA-seq), and sex-
+  skewed — this is hypothesis-generating, not a substitute for the decisive harmonized ≥3-trigger
+  study. Tracked as a new (post-seed-stage) reanalysis task; see t035.
 - **Gap-closing search:** targeted hunt for post-dengue and QFS omics; if empty, record it
-  as a *structural* evidence gap limiting h0001's testability (not as evidence against).
+  as a *structural* evidence gap limiting h0001's testability (not as evidence against). **Done (t033).**
 - **Corpus-wide:** an axis×trigger **provenance overlay** (head-to-head vs assembled) so the
   shared-attractor claim is never read off a matrix of single-trigger studies again.
 
@@ -239,7 +256,9 @@ breadth — it should be carried as a structural limitation, not read as evidenc
    + deepest ME/CFS phenotyping); populate their stubs.~~ **Done 2026-06-20** — stubs populated
    (`paper:Galbraith2011`, `paper:Patterson2024`, `paper:Walitt2024`, plus the wider t001/t005
    batch). Headline correction: Galbraith2011 is a head-to-head **negative** at gene level, not
-   a supporter. Residual = Galbraith full text + microarray reanalysis (t033).
+   a supporter. Galbraith full text read; its arrays are unpublished + author-held →
+   **declined as `[INACCESSIBLE]`** (reproducibility), reanalysis re-pointed to public GSE14577 +
+   GSE130353 (t035). t033 closed.
 2. ~~New search task: post-dengue / QFS / post-SARS molecular signatures — confirm the gap or
    fill it.~~ **Done 2026-06-20 (t033)** — see the coverage section above and
    `doc/searches/2026-06-20-post-dengue-qfs-postsars-omics-gap.md`. Verdict: post-dengue =
