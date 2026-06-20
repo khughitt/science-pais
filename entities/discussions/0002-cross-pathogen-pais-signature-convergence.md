@@ -20,6 +20,10 @@ related:
   - paper:Shankar2025
   - paper:Sommen2026
   - paper:Chowdhury2026
+  - paper:Raijmakers2025
+  - paper:Wu2017
+  - paper:Raijmakers2019
+  - task:t033
 created: "2026-06-20"
 updated: "2026-06-20"
 ---
@@ -93,14 +97,14 @@ assembled from a separate single-trigger study; "no-data" = no usable omics foun
 | Axis \ Trigger | Long COVID | ME/CFS | PTLDS | Post-dengue | QFS |
 |---|---|---|---|---|---|
 | T-cell exhaustion/activation | supported | supported | supported (Girgis2025) | no-data | no-data |
-| Cytokine (IL-1/6/TNF) | supported (Talla2023) | supported (Broderick2012) | **distinguishable vs LC (Patterson2024 h2h)** | no-data | **no genes shared across EBV/RRV/Q-fever (Galbraith2011 h2h, negative)** |
+| Cytokine (IL-1/6/TNF) | supported (Talla2023) | supported (Broderick2012) | **distinguishable vs LC (Patterson2024 h2h)** | no-data | supported — IFN-γ/CXCL10 + cytokine profiles (Keijmel2016, Raijmakers2018, Raijmakers2019b); **no genes shared across EBV/RRV/Q-fever (Galbraith2011 h2h, negative)** |
 | IFN signature | supported (Talla2023) | supported (Walitt2024) | mixed | no-data | **no consistent cross-trigger transcript (Galbraith2011 h2h)** |
 | Complement | supported (CerviaHasler2024) | no-data | no-data | no-data | no-data |
 | EBV/herpesvirus reactivation | supported (Klein2023) | supported (Hanson2023) | no-data | no-data | absent-by-design (Melenotte2019) |
 | Autoantibodies (GPCR/functional) | supported (deSa2026, causal) | supported (Liu2026, incl. post-COVID) | no-data | no-data | no-data |
 | Microclots/thromboinflammation | supported (Nicolai2023) | mixed | no-data | no-data | no-data |
 | Tryptophan-kynurenine | supported | mixed (Che2025) | no-data | no-data | no-data |
-| Mitochondrial/metabolic | **shared LC↔ME/CFS (Shankar2025 h2h, +)** | **shared (Shankar2025 h2h)**; supported (Walitt2024, Liu2026) | no-data | no-data | no-data |
+| Mitochondrial/metabolic | **shared LC↔ME/CFS (Shankar2025 h2h, +)** | **shared (Shankar2025 h2h)**; supported (Walitt2024, Liu2026); **mito-peptide shared w/ QFS (Raijmakers2019 h2h)** | no-data | no-data | **mito-peptide humanin/MOTS-c, QFS↔CFS h2h (Raijmakers2019)** |
 | Oxidative stress (lymphocyte ROS) | **shared LC↔ME/CFS (Shankar2025 h2h, +)** | **shared (Shankar2025 h2h, +)** | no-data | no-data | no-data |
 | NK terminal differentiation | **shared w/ non-COVID fatigue (Sommen2026 h2h)** | shared (Sommen2026, fatigue-general) | no-data | no-data | no-data |
 | Plasma proteome (PCC-specific) | **only 2 proteins vs recovered (Chowdhury2026, near-null)** | no-data | no-data | no-data | no-data |
@@ -141,12 +145,40 @@ molecular signature**:
 
 ### Coverage gaps that bound testability
 
-`hypothesis:0001` names post-dengue and post-Q-fever among its triggers, but **post-dengue
-omics are essentially absent** (only fatigue epidemiology — Conde2026) and **QFS molecular
-data exist only inside Galbraith2011 + the negative Raijmakers2021**. Post-SARS(2003) is
-also a molecular blank. So for *two-to-three of h0001's own named triggers the decisive
-data do not exist* — h0001 is currently untestable at molecule level across its full claimed
-breadth, independent of which way the LC/ME/CFS evidence points.
+`hypothesis:0001` names post-dengue and post-Q-fever among its triggers. A dedicated
+gap-confirmation search (**2026-06-20, t033** →
+`doc/searches/2026-06-20-post-dengue-qfs-postsars-omics-gap.md`) resolved each thin
+trigger's status:
+
+- **Post-dengue fatigue omics — confirmed TRUE vacuum.** Across OpenAlex + three PubMed
+  boolean variants, **zero** human studies report molecular/omics data in a post-acute /
+  chronic-fatigue dengue phenotype. What exists is acute-severity omics, persistent-infection
+  *cell-culture* models (Wei2018/2020), post-dengue **autoimmune case reports** (transverse
+  myelitis, necrotizing myopathy), and one cross-pathogen antibody **review** (Sun2025,
+  DOI 10.3390/ijms26051898 — DHF↔LC pathogenic antibodies, claim-level only). A genuine
+  evidence vacuum, not a search miss.
+- **Post-SARS (SARS-CoV-1, 2003) — near-empty, single datapoint.** Exactly one survivor
+  molecular study exists: **Wu2017** (`paper:Wu2017`, *Sci Rep*) — a 12-year plasma
+  lipid-metabolome follow-up showing altered lipid metabolism. Phenotype = metabolic
+  sequelae, **not** fatigue-defined. The post-SARS cell moves from blank to a single
+  metabolic datapoint with a phenotype caveat.
+- **QFS — partly closed (single-group).** Materially better than this discussion previously
+  recorded: beyond Galbraith2011 + the negative Raijmakers2021, a coherent Nijmegen/Radboud
+  cluster covers **cytokine/IFN-γ** (Keijmel2016, Raijmakers2018, Raijmakers2019b), a
+  **mitochondrial-peptide QFS↔CFS head-to-head** (`paper:Raijmakers2019`, humanin/MOTS-c —
+  a rare bacterial-trigger-vs-idiopathic-CFS metabolic comparison, linking QFS to the
+  bioenergetic axis of `question:0011`), and a monocyte trained-immunity transcriptome
+  (Raijmakers2019c), now topped by a 2025 cross-PIFS immunological **meta-analysis**
+  (`paper:Raijmakers2025`, *EBioMedicine*) spanning QFS/EBV/Lyme/Long COVID. Caveats:
+  near-total single-group provenance, no untargeted proteomics/metabolomics, and the
+  transcriptome study follows an *acute* Q-fever cohort rather than QFS-fatigue-stratified.
+
+Net: for **post-dengue and post-SARS — two of h0001's own named triggers — usable molecular
+substrate is essentially absent**, so the cross-pathogen claim is *structurally untestable*
+for them independent of the ≥3-trigger study. QFS is the one thin trigger with a real (if
+single-group) molecular handle, and Raijmakers2025 is the closest existing cross-PIFS
+immunological synthesis to mine. The absence itself is a finding that bounds h0001's
+breadth — it should be carried as a structural limitation, not read as evidence against.
 
 ## Evidence Needed
 
@@ -171,8 +203,12 @@ breadth, independent of which way the LC/ME/CFS evidence points.
    (`paper:Galbraith2011`, `paper:Patterson2024`, `paper:Walitt2024`, plus the wider t001/t005
    batch). Headline correction: Galbraith2011 is a head-to-head **negative** at gene level, not
    a supporter. Residual = Galbraith full text + microarray reanalysis (t033).
-2. New search task: post-dengue / QFS / post-SARS molecular signatures — confirm the gap or
-   fill it.
+2. ~~New search task: post-dengue / QFS / post-SARS molecular signatures — confirm the gap or
+   fill it.~~ **Done 2026-06-20 (t033)** — see the coverage section above and
+   `doc/searches/2026-06-20-post-dengue-qfs-postsars-omics-gap.md`. Verdict: post-dengue =
+   true vacuum; post-SARS = single metabolic datapoint (Wu2017); QFS = partly closed
+   (single-group Nijmegen cluster + Raijmakers2025 meta-analysis). Residual: read
+   Raijmakers2025 in full to extract its shared-vs-trigger-specific immune analytes.
 3. Decide in `specs/scope-boundaries.md` whether post-chikungunya *arthritis*-phenotype data
    (Ramundo2025, Chang2024) are in-scope for the fatigue-PAIS attractor.
 4. Fold the provenance distinction into q0001 and h0001 (done in this pass for q0001).

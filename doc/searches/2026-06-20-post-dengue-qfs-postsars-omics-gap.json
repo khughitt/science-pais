@@ -1,0 +1,40 @@
+{
+  "id": "doc:search-post-dengue-qfs-postsars-omics-gap-2026-06-20",
+  "date": "2026-06-20",
+  "focus": "Gap-confirming hunt for molecular/omics studies in post-dengue fatigue, Q-fever fatigue syndrome (QFS), and post-SARS (SARS-CoV-1) syndrome; follow-up to 2026-06-20 cross-pathogen sweep (task t033 part a).",
+  "related": [
+    "task:t033",
+    "question:0001-shared-molecular-signature-across-triggers",
+    "discussion:0002-cross-pathogen-pais-signature-convergence",
+    "hypothesis:0001-shared-dysregulated-attractor"
+  ],
+  "sources": [
+    {"name": "PubMed E-utilities", "role": "primary-boolean", "queries": 7},
+    {"name": "OpenAlex works", "role": "broad-relevance-corroboration", "queries": 3}
+  ],
+  "query_counts": {
+    "pubmed_post_dengue_boolean": 5,
+    "pubmed_post_dengue_convalescent_broad": 11,
+    "pubmed_qfs_boolean": 23,
+    "pubmed_post_sars_boolean": 56,
+    "pubmed_raijmakers_author_audit": 18,
+    "openalex_post_dengue": 11,
+    "openalex_qfs": 10,
+    "openalex_post_sars": 119
+  },
+  "ranked_results": [
+    {"rank": 1, "citekey": "Raijmakers2025", "title": "Immunological associations in post-infective fatigue syndromes including Long COVID: a systematic review and meta-analysis", "first_author": "Raijmakers", "year": 2025, "doi": "10.1016/j.ebiom.2025.105970", "pmid": "41151241", "venue": "EBioMedicine", "trigger": "cross-trigger (QFS/EBV/Lyme/Long COVID)", "design": "systematic-review-meta-analysis", "tier": "Core now", "in_corpus": false},
+    {"rank": 2, "citekey": "Wu2017", "title": "Altered Lipid Metabolism in Recovered SARS Patients Twelve Years after Infection", "first_author": "Wu", "year": 2017, "doi": "10.1038/s41598-017-09536-z", "pmid": "28831119", "venue": "Scientific Reports", "trigger": "post-SARS-CoV-1", "design": "single-trigger metabolomic/lipidomic", "tier": "Core now", "in_corpus": false},
+    {"rank": 3, "citekey": "Raijmakers2019", "title": "A possible role for mitochondrial-derived peptides humanin and MOTS-c in patients with Q fever fatigue syndrome and chronic fatigue syndrome", "first_author": "Raijmakers", "year": 2019, "doi": "10.1186/s12967-019-1906-3", "pmid": "31088495", "venue": "Journal of Translational Medicine", "trigger": "QFS + CFS", "design": "head-to-head metabolic/mitochondrial", "tier": "Core now", "in_corpus": false},
+    {"rank": 4, "citekey": "Raijmakers2019b", "title": "Cytokine profiles in patients with Q fever fatigue syndrome", "first_author": "Raijmakers", "year": 2019, "doi": "10.1016/j.jinf.2019.01.006", "pmid": "30684502", "venue": "Journal of Infection", "trigger": "QFS", "design": "single-trigger cytokine", "tier": "Relevant next", "in_corpus": false},
+    {"rank": 5, "citekey": "Keijmel2016", "title": "Altered interferon-gamma response in patients with Q-fever fatigue syndrome", "first_author": "Keijmel", "year": 2016, "doi": "10.1016/j.jinf.2016.01.004", "pmid": "26820634", "venue": "Journal of Infection", "trigger": "QFS", "design": "single-trigger immune", "tier": "Relevant next", "in_corpus": false},
+    {"rank": 6, "citekey": "Raijmakers2018", "title": "Interferon-gamma and CXCL10 responses related to complaints in patients with Q fever fatigue syndrome", "first_author": "Raijmakers", "year": 2018, "doi": "10.1007/s10096-018-3265-z", "pmid": "29804281", "venue": "European Journal of Clinical Microbiology & Infectious Diseases", "trigger": "QFS", "design": "single-trigger cytokine, symptom-correlated", "tier": "Relevant next", "in_corpus": false},
+    {"rank": 7, "citekey": "Raijmakers2019c", "title": "Long-Lasting Transcriptional Changes in Circulating Monocytes of Acute Q Fever Patients", "first_author": "Raijmakers", "year": 2019, "doi": "10.1093/ofid/ofz296", "pmid": "31363773", "venue": "Open Forum Infectious Diseases", "trigger": "acute Q fever (followed long-term)", "design": "transcriptomic / trained-immunity", "tier": "Relevant next", "in_corpus": false},
+    {"rank": 8, "citekey": null, "title": "Virus-Induced Pathogenic Antibodies: Lessons from Long COVID and Dengue Hemorrhage Fever", "first_author": "Sun", "year": 2025, "doi": "10.3390/ijms26051898", "pmid": "40076527", "venue": "International Journal of Molecular Sciences", "trigger": "dengue (DHF) + Long COVID", "design": "review / convergence-claim", "tier": "Peripheral monitor", "in_corpus": false, "note": "citekey omitted to avoid collision with existing Sun2025 (PICS); cited by DOI only"}
+  ],
+  "gap_verdict": {
+    "post_dengue": "TRUE GAP — zero human post-acute/chronic-fatigue dengue omics; only acute-severity omics, cell-culture persistence models, autoimmune case reports, and one cross-pathogen antibody review.",
+    "post_sars": "NEAR-EMPTY — single survivor omics datapoint (Wu2017 lipid metabolome, 12-yr), phenotype = metabolic sequelae not fatigue-defined.",
+    "qfs": "PARTLY CLOSED — coherent single-group (Nijmegen/Radboud) cluster: cytokine/IFN-gamma, mitochondrial-peptide QFS-vs-CFS head-to-head, monocyte transcriptome, plus 2025 cross-PIFS immunological meta-analysis. Caveats: single-group provenance, no untargeted proteomics/metabolomics."
+  }
+}
