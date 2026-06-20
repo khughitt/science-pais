@@ -192,15 +192,6 @@ Data-gated: pre-registration:menopause-pais-total-effect is committed but execut
 
 Closes the two HIGH-severity findings from report:0001-bias-audit-menopause-pais-total-effect (author-independence self-audit + single-precedent corpus closure). Two deliverables, both pre-execution: (1) Out-of-author review of pre-registration:0001-menopause-pais-total-effect by a reviewer with no authorship stake (human domain expert or fresh agent), after a cooling-off period — the current verdict is 'self-audit (internally consistent)', NOT externally validated. (2) Cross-read >=1 second UKB long-COVID cohort paper (beyond AlcaldeHerraiz2025) to independently confirm effective-n, selection profile, and the SHBG/sex-hormone direction signal, so the feasibility claims no longer rest on a single source. This is the G2-gate out-of-corpus check (see pre-reg). Must complete before the UKB AMS basket is finalized / before t028 execution.
 
-## [t030] Promote surgical menopause to a pre-specified discriminating contrast (M1 vs M2/M4)
-- priority: P1
-- status: proposed
-- aspects: []
-- related: [discussion:0001-menopause-timing-pais-rival-models, pre-registration:0001-menopause-pais-total-effect, task:t020, task:t028]
-- created: 2026-06-19
-
-Pre-execution design decision from the rival-model packet (discussion:0001-menopause-timing-pais-rival-models). The surgical-menopause stratum (bilateral oophorectomy → abrupt, less SES-correlated postmenopause; t020 §3 Step 0) is currently a separate nuisance/set-aside stratum. Decide WHETHER and HOW it moves to a pre-specified DISCRIMINATING contrast: an abrupt hormone-withdrawal quasi-experiment that separates M1 (hormone-timing modifier / h0005) from M2 (chronological aging) and M4 (SES confounding) better than covariate adjustment can, because surgical timing is less age- and less SES-correlated than natural-menopause timing. CONSTRAINT: must PRESERVE the primary natural-menopause-timing estimand — surgical menopause is discriminating/triangulating, NOT a replacement exposure; never pool surgical into the natural-transition dose-response (per t020). Deliverable: a pre-registration amendment/exploratory-arm spec (route via statistics-prereg-amendment-vs-fresh if it touches a locked criterion). Visible input to t029's independent review; does NOT block t029 from starting.
-
 ## [t031] Specify the left-truncation / survival-depletion bias simulation (M3a)
 - priority: P2
 - status: proposed

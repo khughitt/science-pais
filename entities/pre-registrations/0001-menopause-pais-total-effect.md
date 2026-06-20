@@ -272,6 +272,15 @@ axis (def-1 primary, def-2 approximation); ordinal-vs-binary / per-SD-vs-tertile
 - Severity-controlled **direct** effect (additionally conditioning on acute severity).
 - Mediator-specific (SHBG/testosterone) analyses.
 - Triangulation pre/peri contrast in All of Us / Lifelines (separate pre-regs/arms).
+- **Surgical-menopause discriminating contrast** (t030;
+  `doc/methods/2026-06-19-surgical-menopause-discriminating-contrast.md`): bilateral
+  oophorectomy vs natural postmenopause, with the **age-at-surgery gradient**
+  (pre- vs post-FMP oophorectomy) and **HRT-stratification** as the
+  confounding-resistant signatures that separate **M1** (hormone-withdrawal) from
+  **M2** (aging) / **M4** (SES). **Exploratory / triangulating only** — estimated on a
+  separate stratum with surgical cases **excluded from the primary natural-timing
+  estimand**; promotable to a verdict-bearing sensitivity only if surgical *indication*
+  is adequately bounded (reviewer call, t029).
 
 ---
 
