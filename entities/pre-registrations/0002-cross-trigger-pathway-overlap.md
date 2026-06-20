@@ -18,6 +18,32 @@ related:
 commits_to:
   - hypothesis:0001-shared-dysregulated-attractor
   - question:0017-deflationary-alternatives-vs-shared-pathophysiology
+amendments:
+  - date: "2026-06-20"
+    ratified_by: "user code review 2026-06-20 (same-day, pre-data)"
+    type: "pre-data tightening (not a fresh pre-registration; criteria narrowed/specified, none loosened)"
+    change: >
+      Five review findings closed, all making the mechanical verdict truly mechanical or fixing
+      drift — none observed any data (data-gated, nothing run): (HIGH) the QFS-vs-QS / QS-vs-HC
+      specificity leg was not thresholded — now S1-positive ≡ same-sign-NES-as-QFS-vs-HC ∧ nominal
+      fgsea p<0.05 in QFS-vs-QS, S2-positive ≡ same in QS-vs-HC, with mechanical per-set classes
+      (fatigue-specific / exposure_sequela / unresolved-specificity) and a theme roll-up (nominal p,
+      not FDR, justified by the small pre-nominated set + n=10 power floor). (HIGH) the
+      keyword→theme map was named but absent — now an explicit Locked theme map (six case-insensitive
+      regexes + first-match precedence) plus a locked cell-type-marker regex for compartment_confounded.
+      (MED) intro said "G1–G3" while the gate defines G1–G4 — reconciled to G1–G4. (MED) the pre-reg
+      said "tracked by a status:blocked task" while t035 is active — reworded to keep t035 active
+      (G1–G3 are executable now; the gate is dischargeable work, not an external block). (LOW) exact
+      permutation label pools now stated per contrast (PI-CFS/HC only for GSE14577; QFS/HC only for the
+      primary GSE130353 arm; CFS and QS held out), preventing a "permute all four GSE130353 groups
+      together" misread. Also added a locked verdict-resolution order so exactly one label is emitted
+      and the p_perm<0.05-but-all-unresolved-specificity fall-through is explicit.
+    rationale: >
+      The first commit (30edefe) locked the primary (permutation null) and the universe pin but left
+      two verdict-bearing legs — the specificity threshold and the theme map — underspecified, which
+      would have left room for post-hoc calls at interpretation time. Filling them in before any data
+      is observed is the entire point of pre-registration; recording it as an amendment preserves the
+      audit trail that they were specified pre-data via independent review, not back-fitted.
 created: "2026-06-20"
 updated: "2026-06-20"
 ---
@@ -31,8 +57,9 @@ updated: "2026-06-20"
 > still reads "candidate / not yet provisioned"). Until all G-gates clear **and** the analysis
 > runs, the standing verdict is `[?] inconclusive-for-coverage` and there is **no `bears_on`
 > update** on the commitment targets. Committing this document **discharges the plan's fourth
-> blocking check (pre-registration lock)**; the remaining three plan checks are encoded as
-> G1–G3 below.
+> blocking check (pre-registration lock)**; the plan's remaining three checks are encoded as
+> **G1–G3** below, plus a contrast/power-floor admissibility gate **G4** (so the gate defines
+> **G1–G4**).
 
 ## Hypotheses Under Test
 
@@ -97,9 +124,9 @@ and the belief update each licenses on the commitment targets:
 
 | Verdict label | Trigger | Update on `hypothesis:0001` | Update on `question:0017` |
 |---|---|---|---|
-| `shared_suggestive` | p_perm < 0.05 **and** QFS-vs-QS specificity holds **and** a theme recurs across ≥2 gene-set DBs | **Moderate positive** (capped at "suggestive — needs ≥3-trigger test") | **Weakens** finite-repertoire-coincidence null |
-| `fragile` | p_perm < 0.05 but the concordance theme **does not** recur across ≥2 DBs | Near-zero durable update (unstable signal) | No material update |
-| `exposure_confounded` | concordant pathways **fail** QFS-vs-QS specificity and/or reproduce in QS-vs-HC | **Negative** on the interpretation that convergence reflects shared *fatigue* biology | **Strengthens** ascertainment/exposure-sequela account |
+| `shared_suggestive` | p_perm < 0.05 **and** ≥1 primary-concordant theme is **fatigue-specific** (S1-positive ∧ not S2-positive; see *Metric Selection Rationale*) **and** that theme recurs across ≥2 gene-set DBs | **Moderate positive** (capped at "suggestive — needs ≥3-trigger test") | **Weakens** finite-repertoire-coincidence null |
+| `fragile` | p_perm < 0.05 **and** ≥1 fatigue-specific theme, but **no** fatigue-specific theme recurs across ≥2 DBs | Near-zero durable update (unstable signal) | No material update |
+| `exposure_confounded` | p_perm < 0.05 **and no** primary-concordant theme is fatigue-specific, **and** ≥1 concordant theme is **exposure_sequela** (S2-positive) | **Negative** on the interpretation that convergence reflects shared *fatigue* biology | **Strengthens** ascertainment/exposure-sequela account |
 | `compartment_confounded` | concordant pathways dominated by monocyte/PBMC cell-type-marker sets | Negative (artifactual convergence) | Strengthens detection-artifact account |
 | `null_nonarbitrating` | p_perm ≥ 0.05 | Minimal (power/bias ceiling — cannot exclude a real shared signature) | **No** update — explicitly **not** support for the coincidence null |
 | `batch_confounded` / `model_inadequate` | GSE130353 PCA batch-dominated, or limma diagnostics fail | No update (test inadmissible) | No update |
@@ -107,6 +134,29 @@ and the belief update each licenses on the commitment targets:
 **Support** for `hypothesis:0001` therefore requires the *conjunction*: permutation-significant
 concordance **AND** fatigue-specificity (QFS-vs-QS) **AND** DB-robustness. Any single leg failing
 caps the verdict below `shared_suggestive`.
+
+**Verdict resolution order (locked — exactly one label is emitted).** Labels are not mutually
+exclusive by construction, so they are evaluated in this fixed priority and the **first** match is the
+verdict:
+
+1. **`model_inadequate` / `batch_confounded`** — admissibility first: if Hallmark-primary limma
+   diagnostics fail or GSE130353 PCA is batch-dominated (G4), the test is inadmissible; stop.
+2. **`null_nonarbitrating`** — else if **p_perm ≥ 0.05**.
+3. **`compartment_confounded`** — else if the primary-concordant signal is **dominated by
+   monocyte/PBMC cell-type-marker sets** (pre-listed marker collection; ≥50% of the leading-edge
+   concordant sets are markers).
+4. **`exposure_confounded`** — else if **no** primary-concordant theme is fatigue-specific **and** ≥1
+   concordant theme is `exposure_sequela`.
+5. **`shared_suggestive`** — else if ≥1 fatigue-specific theme **recurs across ≥2 DBs**.
+6. **`fragile`** — else if ≥1 fatigue-specific theme but **none** recurs across ≥2 DBs.
+7. **`exposure_confounded` (residual)** — else (p_perm<0.05 but **all** concordant themes are
+   *unresolved-specificity*: no fatigue-specific and no exposure_sequela theme). Rationale: a
+   permutation-significant concordance with **no** demonstrable fatigue specificity at this n does
+   **not** support `hypothesis:0001`; it is reported as specificity-unresolved and carries the same
+   (negative-for-fatigue-specificity) weight, distinguished in prose by an
+   `unresolved_specificity` annotation.
+
+This ordering makes the fall-through explicit and guarantees a single mechanical label.
 
 ## Null Result Plan
 
@@ -162,9 +212,17 @@ Even executed perfectly, this analysis cannot:
 
 - **Primary metric (locked): Spearman ρ of NES across the full shared testable gene-set universe**
   between PI-CFS-vs-HC and QFS-vs-HC, with significance from a **sample-label permutation null**
-  (permute group labels *within each dataset independently*, re-run the entire limma→GSEA→NES→ρ
-  chain; one-sided p_perm = fraction of permuted ρ ≥ observed; **B ≥ 2000**, or **exhaustive** where
-  feasible — C(15,8)=6435 is exhaustible; C(20,10)=184,756 is Monte-Carlo).
+  (permute group labels *within each contrast's own two-group sample pool*, re-run the entire
+  limma→GSEA→NES→ρ chain; one-sided p_perm = fraction of permuted ρ ≥ observed; **B ≥ 2000**, or
+  **exhaustive** where feasible — C(15,8)=6435 is exhaustible; C(20,10)=184,756 is Monte-Carlo).
+- **Exact permutation label pools (locked — to prevent "permute all groups together" misreads).**
+  Each permutation relabels **only the two groups that define that contrast**; samples outside the
+  contrast are **excluded from its pool**, not shuffled in:
+  - **GSE14577 PI-CFS-vs-HC** — permute the **15 PI-CFS/HC** sample labels (8 vs 7); pool = C(15,8) = 6435 (exhaustible).
+  - **GSE130353 QFS-vs-HC** (primary partner) — permute **only the 20 QFS+HC** labels (10 vs 10); CFS and QS samples are held out; pool = C(20,10) = 184,756 (Monte-Carlo, B ≥ 2000).
+  - **S1 QFS-vs-QS** — permute only the **20 QFS+QS** labels. **S2 QS-vs-HC** — permute only the **20 QS+HC** labels. **S4 CFS-vs-HC** — permute only the **20 CFS+HC** labels.
+  The primary-ρ null permutes GSE14577 (15) and GSE130353-QFS/HC (20) pools **independently** of each
+  other; no GSE130353 four-group joint relabeling is performed at any point.
 - **Why this, not Fisher's exact (the change from the prior draft):** the original framing scored
   overlap with **Fisher's exact over FDR-passing gene-sets**. MSigDB sets **share genes**, so Fisher
   treats correlated pathways as independent draws — its independence assumption is violated and it is
@@ -179,17 +237,71 @@ Even executed perfectly, this analysis cannot:
 - **Pinned gene-set universe (locked):** MSigDB **`2024.1.Hs`** (release pinned; exact release hash
   recorded at ingest), **size filter `15 ≤ |set| ≤ 500`** (fgsea minSize/maxSize). Collections:
   **Hallmark (H, 50 sets) = primary/confirmatory**; **Reactome (C2:CP:REACTOME)** and **GO-BP
-  (C5:GO:BP)** = **DB sensitivities**. A **pre-registered keyword→theme map** collapses enriched sets
-  into themes {innate/IFN, oxidative-stress, mitochondrial/OXPHOS, apoptosis, adaptive/T-cell,
-  other}; a theme is "shared" iff ≥1 set in it is direction-concordant in **both** datasets. The
-  keyword→theme table and the pinned release are locked here so the overlap denominator cannot drift
-  post-hoc.
-- **Specificity metric (locked): direct QFS-vs-QS presence contrast** — a concordant pathway counts
-  as fatigue-specific only if it carries **concordant signal in QFS-vs-QS** (fatigue holding
-  *Coxiella* exposure constant). **QS-vs-HC** is reframed as **exposure-confounding evidence** (a
-  "shared" pathway also enriched in QS-vs-HC is positive evidence of an exposure sequela). This
-  replaces the prior "absent-in-QS-vs-HC" veto, which overclaimed specificity from absence-of-evidence
-  at n=10.
+  (C5:GO:BP)** = **DB sensitivities**. The **pre-registered keyword→theme map** that collapses enriched
+  sets into themes is the **Locked theme map** table below (explicit case-insensitive regexes +
+  first-match precedence — not just theme names); a theme is "shared" iff ≥1 set in it is
+  direction-concordant in **both** datasets. The theme map and the pinned release are locked here so
+  the overlap denominator cannot drift post-hoc.
+- **Specificity metric (locked, fully thresholded): direct QFS-vs-QS presence contrast.** "Signal"
+  is **not** left to interpretation. For every gene-set that is **primary-concordant** (same-sign NES
+  in *both* PI-CFS-vs-HC and QFS-vs-HC), evaluate two **presence predicates** using the *same* pinned
+  gene-set universe and fgsea run, against the set's QFS-vs-HC NES direction:
+  - **S1-positive (fatigue presence in QFS-vs-QS)** ≡ in the **QFS-vs-QS** contrast the set has
+    **same-sign NES as its QFS-vs-HC direction** **AND** **nominal fgsea p < 0.05**.
+  - **S2-positive (exposure presence in QS-vs-HC)** ≡ in the **QS-vs-HC** contrast the set has
+    **same-sign NES as its QFS-vs-HC direction** **AND** **nominal fgsea p < 0.05**.
+
+  **Why nominal p, not FDR, and why a sign requirement:** these are **presence tests on a small,
+  pre-nominated set** (the primary-concordant pathways), not a genome-wide screen — at n=10 vs 10 an
+  FDR floor would be empty for the same power reason ORA was demoted, falsely sinking everything to
+  `exposure_confounded`. The **same-sign-NES** requirement is the direction lock that a bare p-value
+  lacks; nominal p<0.05 is the presence floor. (Rank-percentile and effect-size floors were considered
+  and rejected as less standard than fgsea's own p; this choice is locked, not adjudicated post-hoc.)
+
+  **Per-set specificity class (mechanical):**
+  - **fatigue-specific** ≡ **S1-positive AND NOT S2-positive** (present where fatigue differs holding
+    exposure constant; *absent* in exposure-without-fatigue).
+  - **exposure_sequela** ≡ **S2-positive** (present in QS-vs-HC; tracks *Coxiella* exposure) —
+    regardless of S1.
+  - **unresolved-specificity** ≡ neither S1-positive nor S2-positive (no presence either way at this n).
+
+  **Theme roll-up (mechanical):** a primary-concordant **theme** is **fatigue-specific** iff **≥1** of
+  its sets is *fatigue-specific*; it is **exposure_sequela** iff it has **no** fatigue-specific set
+  **and ≥1** *exposure_sequela* set. This replaces the prior "absent-in-QS-vs-HC" veto, which
+  overclaimed specificity from absence-of-evidence at n=10.
+
+### Locked theme map (keyword→theme, pre-registered)
+
+Each gene-set is assigned to **exactly one** theme by matching its **MSigDB set name** (uppercased,
+collection prefix such as `HALLMARK_` / `REACTOME_` / `GOBP_` stripped) against the regexes below,
+evaluated **top-to-bottom; first match wins** (precedence is part of the lock, so a set naming both an
+energy and an immune term resolves deterministically). Regexes are **case-insensitive**, applied with
+`_` as the word join MSigDB uses. Any set matching none falls to **other** and is ineligible to be a
+"shared theme" (it can still enter the ρ rank, but cannot *carry* a verdict theme).
+
+| Precedence | Theme | Regex (matched against the prefix-stripped, uppercased set name) |
+|---|---|---|
+| 1 | **mitochondrial/OXPHOS** | `OXIDATIVE_PHOSPHORYLATION\|OXPHOS\|MITOCHOND\|RESPIRATORY_ELECTRON\|ELECTRON_TRANSPORT\|RESPIRATORY_CHAIN\|\bTCA_CYCLE\b\|CITRIC_ACID\|ATP_SYNTH\|COMPLEX_I\b\|FATTY_ACID_BETA_OXID` |
+| 2 | **oxidative-stress** | `REACTIVE_OXYGEN\|OXIDATIVE_STRESS\|\bROS\b\|GLUTATHIONE\|\bNRF2\b\|NFE2L2\|PEROXID\|\bREDOX\b\|SUPEROXIDE\|ANTIOXIDANT\|DETOXIF` |
+| 3 | **apoptosis** | `APOPTOSI\|PROGRAMMED_CELL_DEATH\|CASPASE\|NECROPTOSI\|PYROPTOSI\|\bBCL2\b\|INTRINSIC_APOPTOTIC\|EXTRINSIC_APOPTOTIC\|DEATH_RECEPTOR` |
+| 4 | **innate/IFN** | `INTERFERON\|\bIFN\b\|INNATE\|INFLAMMAT\|\bTNFA?\b\|\bNFKB\b\|NF_KB\|TOLL\|\bTLR\b\|COMPLEMENT\|\bIL6\b\|JAK_STAT\|CYTOKINE\|CHEMOKINE\|NEUTROPHIL\|MONOCYTE\|MACROPHAGE\|MYELOID\|INFLAMMASOME\|RIG_I\|NOD_LIKE` |
+| 5 | **adaptive/T-cell** | `\bT_CELL\|\bTCR\b\|\bCD8\b\|\bCD4\b\|\bTH1\b\|\bTH2\b\|\bTH17\b\|REGULATORY_T\|LYMPHOCYTE\|ADAPTIVE_IMMUN\|ANTIGEN_PROCESS\|\bMHC\b\|\bHLA\b\|IL2_STAT5\|ALLOGRAFT_REJECTION\|\bB_CELL\|IMMUNOGLOBULIN\|GERMINAL_CENTER` |
+| 6 | **other** | (no match above) — ineligible to carry a verdict theme |
+
+Precedence rationale (locked): the mechanistically specific energy/redox/death themes the hypothesis
+predicts (1–3) outrank the broader immune themes (4–5), so a set such as
+`..._APOPTOTIC_..._MITOCHONDRIAL_...` resolves to **mitochondrial/OXPHOS**, and an oxphos set
+incidentally naming "inflammatory" does not leak into **innate/IFN**. The exact regex strings — not
+just the theme names — are the locked artifact; changing any term is an amendment, not a runtime
+choice.
+
+**Locked cell-type-marker set (for the `compartment_confounded` check, resolution step 3).** A
+gene-set is a **compartment marker** iff its prefix-stripped, uppercased name matches
+`MONOCYTE\|MACROPHAGE\|MYELOID\|NEUTROPHIL\|GRANULOCYTE\|DENDRITIC\|\bPBMC\b\|LEUKOCYTE\|MARKER_|_CELL_SURFACE\|CELL_TYPE`.
+`compartment_confounded` fires when **≥50% of the leading-edge primary-concordant sets** (those
+driving the ρ concordance) are compartment markers by this regex. This is evaluated **before**
+specificity (step 3 precedes steps 4–6) because a marker-dominated concordance is artifactual
+regardless of QFS-vs-QS behaviour.
 
 ## Exploratory vs. Confirmatory
 
@@ -247,4 +359,7 @@ fourth blocking check — *pre-registration lock* — is **discharged by committ
   GSE130353 PCA must **not** be batch-dominated (else `batch_confounded`).
 
 A **spent** vehicle that fails any G-gate does not qualify; the standing verdict remains `[?]` until
-one does. Tracked by a `status: blocked` task (`task:t035`) whose blocker is this gate.
+one does. Tracked by **`task:t035`, kept `active` (not `blocked`)**: unlike a vehicle blocked on an
+external event (e.g. a pending data-access application), G1–G3 are **executable now** — the data is
+public, a download away — so the next action is to *discharge* the gate, not wait on it. The task flips
+to `done` only once an admissible vehicle clears G1–G4 and the analysis runs.
