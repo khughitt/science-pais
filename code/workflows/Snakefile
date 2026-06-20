@@ -12,9 +12,21 @@
 # complete DAG raw → results/verdict.json. Rule bodies are stubs that exit 1
 # (fail-early) until their work package implements them.
 # =============================================================================
+import os
 from pathlib import Path
 
-configfile: "config.yaml"
+# --- invocation contract (invocation-independent) ----------------------------
+# Resolve config next to THIS Snakefile, and pin the working directory to the
+# repo root so data/ & results/ always target ONE tree regardless of where
+# `snakemake` is invoked from (repo root, code/workflows, anywhere). This closes
+# the relative-path ambiguity (plan:0003 review). `.snakemake/` lands at repo
+# root (gitignored). conda:/include: paths stay relative to the Snakefile dir.
+SNAKEFILE_DIR = Path(workflow.basedir).resolve()
+REPO_ROOT = SNAKEFILE_DIR.parent.parent
+
+configfile: str(SNAKEFILE_DIR / "config.yaml")
+
+workdir: str(REPO_ROOT)
 
 RAW = config["paths"]["raw"]
 PROC = config["paths"]["processed"]

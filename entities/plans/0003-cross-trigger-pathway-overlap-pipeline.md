@@ -292,7 +292,11 @@ prepare_genesets (pinned MSigDB) ───────────────�
   — `r-bioc.yaml` carries exact `=version` for `limma`, `fgsea`, `msigdbr`, `org.Hs.eg.db`,
   `hgu133a.db`, `hgu133b.db` (their algorithm versions move NES → the verdict), and a **`conda-lock`
   lockfile is generated and committed as a WP0 artifact**. The byte-identical-`verdict.json` criterion
-  is defined **against this lockfile** (same lock → same result).
+  is defined **against this lockfile** (same lock → same result). **Runner reproducibility:** a
+  `pipeline` dependency group pins the runner (`snakemake==9.23.1`, `conda-lock==4.0.1`) so the workflow
+  runs from the repo env (`uv run --frozen --group pipeline snakemake -s code/workflows/Snakefile
+  --use-conda`). **Invocation contract:** the Snakefile sets `workdir` to the repo root and resolves its
+  own config, so `data/` & `results/` target one tree regardless of the invocation directory.
 
 ### WP1 — Reproducible acquisition rules
 - **Depends on:** WP0.

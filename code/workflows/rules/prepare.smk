@@ -41,17 +41,40 @@ rule prepare_gse130353:
     shell:
         stub("prepare/prepare_gse130353 near-zero KDE-antimode filter")
 
-rule prepare_genesets:
+# KD7 — 2024.1.Hs collections are PINNED, HASHED GMT downloads (decoupled from
+# the conda r-msigdbr version). download_genesets verifies each GMT against its
+# config sha256; an empty/mismatched hash HALTS (fail-early). prepare_genesets
+# then maps symbols→Ensembl, applies the size filter, and asserts the release.
+rule download_genesets:
     output:
-        gmt=expand(f"{PROC}/genesets/{{db}}.rds", db=DBS),
+        gmt=f"{RAW}/genesets/{{db}}.{config['genesets']['msigdb_release']}.symbols.gmt",
+    params:
+        url=lambda wc: config["genesets"]["gmt_sources"][wc.db]["url"],
+        sha256=lambda wc: config["genesets"]["gmt_sources"][wc.db]["sha256"],
+    log:
+        f"{RES}/logs/download_genesets.{{db}}.log"
+    conda:
+        "envs/py.yaml"
+    shell:
+        stub("prepare/download_genesets (curl + sha256 verify; HALT on empty/mismatch)")
+
+rule prepare_genesets:
+    input:
+        gmt=expand(
+            f"{RAW}/genesets/{{db}}.{config['genesets']['msigdb_release']}.symbols.gmt",
+            db=DBS,
+        ),
+    output:
+        rds=expand(f"{PROC}/genesets/{{db}}.rds", db=DBS),
         theme_map=f"{PROC}/genesets/theme_map.tsv",
         release_hash=f"{PROC}/genesets/msigdb_release_hash.txt",
     params:
         release=config["genesets"]["msigdb_release"],
         size_filter=config["genesets"]["size_filter"],
+        id_space=config["genesets"]["gmt_id_space"],
     log:
         f"{RES}/logs/prepare_genesets.log"
     conda:
-        "envs/r-bioc.yaml"   # pinned msigdbr — universe must not drift between runs
+        "envs/r-bioc.yaml"   # symbols→Ensembl map + size filter; universe must not drift
     shell:
         stub("prepare/prepare_genesets (prepare_genesets.R)")

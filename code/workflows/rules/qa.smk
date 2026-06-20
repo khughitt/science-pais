@@ -14,8 +14,11 @@ rule qa_raw_gse14577:
         meta=f"{PROC}/GSE14577/sample_metadata.tsv",
     output:
         sentinel=f"{PROC}/GSE14577/raw.qa.pass",
-        report=f"{RES}/qa/GSE14577_raw.qa_report.md",
     params:
+        # report is NOT a strict output — failed-job cleanup would delete the
+        # very evidence of failure (plan:0003 KD3). The script writes it; only
+        # the sentinel gates the DAG.
+        report=f"{RES}/qa/GSE14577_raw.qa_report.md",
         required_groups=config["datasets"]["gse14577"]["groups"],
     log:
         f"{RES}/logs/qa_raw_gse14577.log"
@@ -31,8 +34,9 @@ rule qa_raw_gse130353:
         contract=f"{PROC}/GSE130353/parse_contract.json",
     output:
         sentinel=f"{PROC}/GSE130353/raw.qa.pass",
-        report=f"{RES}/qa/GSE130353_raw.qa_report.md",
     params:
+        # report is NOT a strict output (see qa_raw_gse14577).
+        report=f"{RES}/qa/GSE130353_raw.qa_report.md",
         required_counts=config["datasets"]["gse130353"]["group_counts"],
     log:
         f"{RES}/logs/qa_raw_gse130353.log"

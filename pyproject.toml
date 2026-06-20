@@ -8,6 +8,14 @@ dependencies = []
 dev = [
     "science",
 ]
+# Workflow runner for the t035 cross-trigger pathway-overlap pipeline
+# (code/workflows/). Pinned so the runner is reproducible from the repo env:
+#   uv run --frozen --group pipeline snakemake -s code/workflows/Snakefile --use-conda -n
+# (per-rule scientific stacks are pinned separately in code/workflows/envs/*.conda-lock.yml)
+pipeline = [
+    "snakemake==9.23.1",
+    "conda-lock==4.0.1",
+]
 
 [tool.uv.sources]
 science = { path = "../../../science/science", editable = true }

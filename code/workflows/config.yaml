@@ -67,6 +67,22 @@ genesets:
     reactome:  {collection: "C2",           subcollection: "CP:REACTOME", role: "sensitivity"}
     gobp:      {collection: "C5",           subcollection: "GO:BP",       role: "sensitivity"}
   primary_db: "hallmark"
+  # KD7 — the 2024.1.Hs universe is obtained as PINNED, HASHED GMTs (decoupled
+  # from the conda r-msigdbr version, which cannot co-solve at 24.1.0). The
+  # download rule verifies each GMT against `sha256`; an EMPTY sha256 HALTS the
+  # rule (fail-early — no unverified passthrough). Fill the hashes at first
+  # ingest; a change to a URL or hash is a pre-reg-relevant provenance edit.
+  gmt_id_space: "symbols"            # MSigDB ships symbols/entrez; map→Ensembl in prepare_genesets
+  gmt_sources:
+    hallmark:
+      url: "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/h.all.v2024.1.Hs.symbols.gmt"
+      sha256: ""                      # TBD-at-ingest (HALT until set)
+    reactome:
+      url: "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/c2.cp.reactome.v2024.1.Hs.symbols.gmt"
+      sha256: ""                      # TBD-at-ingest (HALT until set)
+    gobp:
+      url: "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/c5.go.bp.v2024.1.Hs.symbols.gmt"
+      sha256: ""                      # TBD-at-ingest (HALT until set)
 
 # ------------------------------------------------------ contrasts ------------
 # pre-reg:0002 — 5 limma contrasts; C1 primary + S1/S2/S4 sensitivities.
