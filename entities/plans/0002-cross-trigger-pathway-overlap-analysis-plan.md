@@ -52,14 +52,18 @@ the decisive ≥3-trigger harmonized test (which does not exist).
 
 | Dataset | Trigger | Platform | Compartment | Groups (n) | Scale | Retrieval |
 |---|---|---|---|---|---|---|
-| **GSE14577** (Gow2009) | post-viral CFS (Fukuda) | Affymetrix U133A (GPL96) + U133B (GPL97) | **PBMC** | HC 7, PI-CFS 8 — **all male** | log2 intensities (VALUE ~6–8) | `family.soft.gz` (series_matrix 404s; data lives in SOFT) |
-| **GSE130353** (Raijmakers2019) | post-bacterial QFS + idiopathic CFS | RNA-seq (MMSEQ gene estimates) | **isolated monocytes** | HC 10, CFS 10, QFS 10, **QS (seropositive-recovered) 10** | MMSEQ estimates — **not raw counts** | per-sample `*.gene.mmseq.txt.gz` + `GSE130353_RAW.tar` |
+| **GSE14577** (Gow2009) | post-viral CFS (Fukuda) | Affymetrix U133A (GPL96) + U133B (GPL97) | **PBMC** | HC 7, PI-CFS 8 — **all male** | log2 intensities (VALUE ~6–8) | expression in `family.soft.gz` (series_matrix 404s) |
+| **GSE130353** (Raijmakers2019) | post-bacterial QFS + idiopathic CFS | RNA-seq (MMSEQ gene estimates) | **isolated monocytes** | HC 10, CFS 10, QFS 10, **QS (seropositive-recovered) 10** | MMSEQ estimates — **not raw counts** | expression in per-sample `*.gene.mmseq.txt.gz` (or `GSE130353_RAW.tar`) |
 
-Both are public, downloaded via `science datasets download geo:<id>` into gitignored `data/raw/`.
-Provenance (accession, source paper, platform, retrieval date) registered at
-`doc/datasets/2026-06-20-public-cross-trigger-geo-sets.md`. **Galbraith2011 arrays remain
-`[INACCESSIBLE]`** (private; declined on reproducibility grounds) — this analysis is their public
-substitute.
+**Provenance state (do not overstate).** As of this plan, only the **metadata/structure** files have
+been retrieved into gitignored `data/raw/` (`GSE14577_family.soft.gz`,
+`GSE130353_family.soft.gz`, `GSE130353_series_matrix.txt.gz`) and inspected. The **expression payloads
+are not yet provisioned**: GSE14577's intensity tables sit inside the (downloaded) SOFT but are
+unparsed; GSE130353's 40 per-sample MMSEQ files are *listed in the SOFT* but **not downloaded**. The
+registry (`doc/datasets/2026-06-20-public-cross-trigger-geo-sets.md`) correctly still reads "candidate
+datasets, not yet provisioned." Acquisition + hashing + scale-parse is a **blocking gate** (see
+Readiness Decision), not yet discharged. **Galbraith2011 arrays remain `[INACCESSIBLE]`** (private;
+declined on reproducibility grounds) — this analysis is their public substitute.
 
 ## Required Input Inspection
 
@@ -71,26 +75,38 @@ Confirmed during planning (2026-06-20):
 - **GSE130353**: 40 samples, 10 per group (HC/CFS/QFS/QS); cell type = Monocytes; series-matrix data
   table is **empty** → expression must come from the per-sample MMSEQ supplementary files.
 
-Still to verify **at ingest** (preprocessing gate, not a readiness blocker):
+Still to verify **at acquisition/ingest** — these are **blocking** (see Readiness Decision), not
+optional polish:
 
-1. **MMSEQ unit/scale** — open one `*.gene.mmseq.txt.gz`; confirm which column is the expression
+1. **Acquire + hash the expression payloads** — download GSE14577's SOFT intensity tables (already
+   local, unparsed) and **GSE130353's 40 per-sample MMSEQ files**; record SHA-256 per file in the
+   datapackage. Until this runs, "usable" is *inferred from metadata*, not verified.
+2. **MMSEQ unit/scale** — open one `*.gene.mmseq.txt.gz`; confirm which column is the expression
    estimate and whether it is log-scale posterior mean / FPKM-like. Run the universal scale check
    (min/max/integer-like). MMSEQ ≠ counts → **count-based testing (DESeq2/edgeR) is out of scope**;
-   use continuous limma. (Halt-on if scale is unverifiable.)
-2. **Gene identifier axes** — U133 probes → symbol/Ensembl via GPL96/GPL97 annotation; MMSEQ gene IDs
+   use continuous limma. **Halt-on** if scale is unverifiable.
+3. **Gene identifier axes** — U133 probes → symbol/Ensembl via GPL96/GPL97 annotation; MMSEQ gene IDs
    (resolve to Ensembl/symbol). Harmonize both to a canonical gene id; symbols are display-only.
-3. **Independent-unit check** — GSE14577: collapse the two chips into one record per patient (15
+4. **Independent-unit check** — GSE14577: collapse the two chips into one record per patient (15
    patients, not 30 arrays). GSE130353: one library per donor (40 donors).
-4. **Sex** — GSE130353 metadata does **not** report sex; record as unmeasured (cannot match
+5. **Sex** — GSE130353 metadata does **not** report sex; record as unmeasured (cannot match
    GSE14577's male-only restriction).
 
 ## Preprocessing / Normalization Checks
 
-- **GSE14577**: inherit depositor log2 intensities (state normalization as a limitation; no raw CEL
-  reprocessing). Probe→gene **median collapse** (per microarray-qa); drop multi-gene probes; union
-  U133A+B gene universe per patient. Per-sample log2-median / IQR QC (flag outliers > 1 SD from cohort
-  median). PCA coloured by group + chip; chip is a known structural factor (A vs B cover different
-  genes) — handled by gene-level union, not modelled as batch.
+- **GSE14577**: inherit depositor log2 intensities; **raw CEL reprocessing is deferred deliberately,
+  not by oversight.** Gow2009 deposits raw CELs and its note recommends re-normalization *for
+  cross-cohort harmonization* — but this design never pools GSE14577 expression with GSE130353
+  (comparison is at the pathway-enrichment layer), and the per-contrast statistic is **GSEA on the
+  within-dataset limma-t rank**, which is invariant to monotone per-sample normalization choices (RMA
+  vs MAS5 vs the deposited matrix). So CEL reprocessing is low-value *for this rank-based estimand*.
+  The bound it imposes: any *absolute-scale* or magnitude claim is out of scope, and a single-run RMA
+  re-normalization is held as an **optional robustness check** (not mandatory) should the primary
+  signal hinge on a small number of borderline sets. Probe→gene **median collapse** (per
+  microarray-qa); drop multi-gene probes; union U133A+B gene universe per patient. Per-sample
+  log2-median / IQR QC (flag outliers > 1 SD from cohort median). PCA coloured by group + chip; chip is
+  a known structural factor (A vs B cover different genes) — handled by gene-level union, not modelled
+  as batch.
 - **GSE130353**: assemble per-donor MMSEQ gene matrix; log-transform if not already; filter genes with
   near-zero estimate across most donors (do **not** detection-filter asymmetrically across groups —
   filter on the full cohort, log the mask). PCA coloured by group; no batch metadata available → if
@@ -114,15 +130,27 @@ Still to verify **at ingest** (preprocessing gate, not a readiness blocker):
 ## Estimand and Primary Metric
 
 - **Per-contrast estimand:** moderated-t / NES ranking of pathway enrichment for each of
-  PI-CFS-vs-HC (GSE14577), QFS-vs-HC (GSE130353, primary fatigue), CFS-vs-HC and QS-vs-HC (GSE130353).
-- **Primary metric:** **direction-concordant pathway overlap** between PI-CFS-vs-HC and QFS-vs-HC —
-  count and identity of gene sets significantly enriched (GSEA FDR < 0.05, pre-committed) in **both**
-  with the **same NES sign**, tested against chance by Fisher's exact test on the shared testable-set,
-  with Jaccard reported. **Continuous companion:** Spearman correlation of NES across *all* shared
-  testable pathways (uses the full ranking, not just the FDR-passing tail).
-- **Specificity filter (defines the headline set):** a concordant pathway is **fatigue-specific shared**
-  only if it is **not** reproduced in QS-vs-HC (see arbitration). Pathways shared but also present in
-  QS are labelled `exposure_sequela`.
+  PI-CFS-vs-HC (GSE14577), QFS-vs-HC (GSE130353, primary fatigue), CFS-vs-HC (GSE130353), and the two
+  specificity contrasts **QFS-vs-QS** (fatigue holding *Coxiella* exposure constant) and QS-vs-HC
+  (exposure without fatigue).
+- **Primary metric — NES rank concordance with a permutation null (NOT Fisher).** The verdict-bearing
+  statistic is the **Spearman ρ of NES across the full shared testable gene-set universe** between
+  PI-CFS-vs-HC and QFS-vs-HC. Its significance comes from a **sample-label permutation null**: permute
+  group labels *within each dataset independently*, rerun limma→GSEA→NES vectors→ρ, and compute the
+  one-sided p as the fraction of permuted ρ ≥ observed (B ≥ 2000, or exhaustive where the label space
+  is small — C(15,8)=6435, C(20,10)=184k). This null **preserves gene-set correlation structure** (same
+  sets) and the tested-set size, which a Fisher's-exact test over FDR-passing sets does *not* —
+  MSigDB sets share genes, so Fisher treats correlated pathways as independent draws and is
+  anti-conservative. **Demoted to descriptive only (not verdict-bearing):** the count/identity of
+  FDR<0.05 direction-concordant sets, their Jaccard, and the Fisher statistic — reported for
+  interpretability, never as the "above chance" test.
+- **Specificity (revised — presence, not absence).** Fatigue-specificity is established by the
+  **direct QFS-vs-QS contrast** (both groups *Coxiella*-exposed; the difference is fatigue): a shared
+  pathway counts as fatigue-specific only if it carries **concordant signal in QFS-vs-QS**. The
+  **QS-vs-HC** contrast is reframed as *exposure-confounding evidence* — if a "shared" pathway is also
+  enriched in QS-vs-HC (exposure without fatigue), that is positive evidence it is a *Coxiella*-exposure
+  sequela. "Not reproduced in QS-vs-HC" at n=10 is weak absence-of-evidence and is **no longer** the
+  specificity criterion (it only contributes to the `exposure_confounded` label).
 
 ## Model / Test Assumptions
 
@@ -132,9 +160,19 @@ Still to verify **at ingest** (preprocessing gate, not a readiness blocker):
   empirical-Bayes shrinkage is the small-n mitigation.
 - **Enrichment:** **GSEA (fgsea)** on the full limma-t ranking — preferred over ORA at this n because
   it needs no per-gene significance cutoff (per power-floor: avoid pretending each gene test is
-  standalone). Gene sets: MSigDB **Hallmark** (primary), with **Reactome** and **GO-BP** as
-  measurement sensitivities; restricted a priori to the immune, oxidative-stress, mitochondrial, and
-  apoptosis modules named in t035 plus the unrestricted Hallmark run.
+  standalone).
+- **Gene-set universe (to be locked verbatim in the pre-registration; defaults stated here):**
+  MSigDB **release pinned** (default `2024.1.Hs`; the exact release hash is a pre-reg commitment);
+  **size filter** `15 ≤ |set| ≤ 500` (fgsea minSize/maxSize); collections: **Hallmark (H, 50 sets)** =
+  primary; **Reactome (C2:CP:REACTOME)** and **GO-BP (C5:GO:BP)** = DB sensitivities. The "restricted
+  modules" are not ad hoc: a **pre-registered keyword→theme map** collapses enriched sets into themes
+  {innate/IFN, oxidative-stress, mitochondrial/OXPHOS, apoptosis, adaptive/T-cell, other}; a theme is
+  "shared" iff ≥1 set in it is direction-concordant in both datasets. The keyword→theme table and the
+  pinned release are locked at pre-reg so the overlap denominator cannot drift post-hoc.
+- **Permutation null implementation:** the within-each-dataset label permutation reruns the *entire*
+  limma→GSEA chain (not just a gene shuffle), so the null inherits the real gene–gene and set–set
+  correlation. Use the same pinned gene sets and size filter on every permutation. Report the null
+  histogram of ρ alongside the observed value.
 - **Assumption that could break the comparison:** that pathway-level enrichment is comparable across a
   PBMC microarray contrast and a monocyte RNA-seq contrast. Each contrast is **internally
   cell-type-matched** (cases vs same-compartment HC), so compartment differences are differenced out
@@ -152,8 +190,10 @@ Still to verify **at ingest** (preprocessing gate, not a readiness blocker):
   exclude a real shared signature given platform + compartment + power limits). Verdict ceiling:
   *suggestive, needs the ≥3-trigger test*. Negative ceiling: *unresolved/non-arbitrating*, never
   "evidence against shared biology."
-- Multiplicity: FDR within each contrast (BH across pathways); overlap defined only on FDR-passing
-  sets; the chance baseline (Fisher) accounts for the shared testable-set size.
+- Multiplicity: FDR within each contrast (BH across pathways) for the *descriptive* FDR-passing
+  tallies. The verdict's chance baseline is **not** Fisher but the **sample-label permutation null**
+  on the NES rank-concordance ρ, which calibrates against the actual gene-set correlation and
+  tested-set structure (Fisher over correlated sets is anti-conservative — see Estimand).
 
 ## Bias vs Variance Risks
 
@@ -163,35 +203,50 @@ Still to verify **at ingest** (preprocessing gate, not a readiness blocker):
 | **Platform bias** | microarray vs RNA-seq | nothing | NES-concordance scatter | compare at enrichment level only; never merge matrices |
 | **Compartment bias** | PBMC vs isolated monocyte | nothing | cell-type-marker pathway leakage | within-contrast cell-type matching; scope verdict to "monocyte-inclusive" pathways |
 | **Sex bias** | GSE14577 male-only; GSE130353 sex unknown | nothing | — | unmeasured; carry as limitation; cannot adjust |
-| **Exposure (not fatigue) bias** | past *Coxiella* exposure | nothing | **QS-vs-HC negative control** | veto pathways reproduced in QS (`exposure_sequela`) |
+| **Exposure (not fatigue) bias** | past *Coxiella* exposure | nothing | **QFS-vs-QS** (specificity) + **QS-vs-HC** (exposure-confounding) | require concordant QFS-vs-QS signal; flag QS-vs-HC reproduction as `exposure_sequela` |
+| **Gene-set correlation (test-calibration) bias** | overlapping MSigDB sets | — | permuted-ρ null histogram | sample-label permutation null (not Fisher) — this is calibration, not a variance term |
 | MMSEQ estimate bias | model-based expression vs counts | nothing | scale check at ingest | continuous limma; no count-based inference |
 | Batch (GSE130353) | no batch metadata | nothing | per-cohort PCA | veto if batch dominates biology |
 
-Compute (more permutations/bootstraps) shrinks **none** of the concerning terms — they are bias, not
-variance. Stated explicitly so a narrow GSEA p-value is not misread as strong evidence.
+Most of these are **bias**, not variance — more permutations/bootstraps shrink none of them, so a
+narrow nominal GSEA p must not be read as strong evidence. The **one** thing the permutation null
+*does* fix is test **calibration** under gene-set correlation (the anti-conservative-Fisher problem):
+that is a mis-calibration of the null, not a reduction of sampling variance, and the permutation
+budget B only sharpens the Monte-Carlo estimate of an already-correct null — it does not buy
+independent-unit information.
 
 ## Sensitivity Arbitration (pre-committed)
 
-**Primary:** direction-concordant Hallmark GSEA overlap between PI-CFS-vs-HC and QFS-vs-HC, FDR < 0.05.
+**Primary:** NES rank-concordance ρ between PI-CFS-vs-HC and QFS-vs-HC over the pinned Hallmark
+universe, **significance from the sample-label permutation null** (one-sided p_perm).
 
 **Mandatory sensitivities (verdict stands only if these run):**
-1. **QS negative-control veto** — recompute the shared set after removing pathways with QS-vs-HC NES
-   same-sign and |NES_QS| ≥ 0.5·|NES_QFS|. Headline set = post-veto.
-2. **Gene-set-DB sensitivity** — repeat with Reactome and GO-BP; a pathway *theme* (e.g. oxidative
-   stress, innate/IFN, mitochondrial, apoptosis) must recur across ≥2 DBs to count as robust.
-3. **Enrichment-method sensitivity** — ORA on FDR-passing genes as a cross-check on GSEA.
-4. **Second fatigue contrast** — CFS-vs-HC (idiopathic) within GSE130353: does the GSE14577 overlap
+1. **QFS-vs-QS specificity (presence)** — the shared/concordant pathways must carry concordant signal
+   in the direct QFS-vs-QS contrast (fatigue holding exposure constant). This is the specificity
+   backbone, replacing the old "absent-in-QS" veto.
+2. **QS-vs-HC exposure check** — if concordant pathways are *also* enriched in QS-vs-HC, label
+   `exposure_sequela` (positive evidence of exposure-driven, not fatigue-driven, signal).
+3. **Gene-set-DB sensitivity** — repeat ρ + permutation null with Reactome and GO-BP; a *theme* must
+   recur across ≥2 DBs to count as robust.
+4. **Second fatigue contrast** — CFS-vs-HC (idiopathic) within GSE130353: does the GSE14577 concordance
    hold for QFS only, or also for idiopathic CFS?
 
+**Optional diagnostics (do NOT change the verdict; informative only):**
+- **ORA** on a top-N / effect-size gene universe (not FDR-passing genes, which may be empty at this n
+  for power reasons — an empty ORA must never produce `fragile`).
+- Single-run RMA re-normalization of GSE14577 (the deferred-CEL robustness check).
+
 **Decision table (labels produced mechanically):**
-- `shared_suggestive` — primary overlap exceeds chance (Fisher p < 0.05), survives QS veto, and a
-  pathway theme recurs across ≥2 gene-set DBs. (Ceiling verdict — "suggestive, needs ≥3-trigger test".)
-- `fragile` — overlap exceeds chance but collapses under DB or method sensitivity.
-- `exposure_confounded` — shared set is largely eliminated by the QS veto (signal is *Coxiella*
-  exposure sequela, not fatigue). Directly corroborates Raijmakers2019's caution.
-- `compartment_confounded` — shared pathways are dominated by monocyte/PBMC cell-type-marker sets.
-- `null_nonarbitrating` — no above-chance overlap; **does not** support the coincidence null given the
-  power/bias ceiling — reported as unresolved, feeds q0017 as "existing public data cannot adjudicate".
+- `shared_suggestive` — p_perm < 0.05, QFS-vs-QS specificity holds, and a theme recurs across ≥2
+  gene-set DBs. (Ceiling verdict — "suggestive, needs ≥3-trigger test".)
+- `fragile` — p_perm < 0.05 but the concordance theme **does not** recur across ≥2 DBs (DB-sensitive).
+  *Not* triggered by an empty ORA.
+- `exposure_confounded` — concordant pathways fail QFS-vs-QS specificity and/or are reproduced in
+  QS-vs-HC (signal tracks *Coxiella* exposure, not fatigue). Directly corroborates Raijmakers2019's
+  caution.
+- `compartment_confounded` — concordant pathways are dominated by monocyte/PBMC cell-type-marker sets.
+- `null_nonarbitrating` — p_perm ≥ 0.05; **does not** support the coincidence null given the power/bias
+  ceiling — reported as unresolved, feeds q0017 as "existing public data cannot adjudicate".
 - `batch_confounded` / `model_inadequate` — GSE130353 PCA batch-dominated, or limma diagnostics fail.
 
 Post-hoc analyses (any not listed above) are labelled post-hoc and excluded from the verdict.
@@ -217,17 +272,32 @@ applies to this pipeline's processed matrices too. Flagged, not auto-added.
 
 ## Readiness Decision
 
-**ready-with-caveats.** Both datasets are public, retrieved, and confirmed usable; contrasts are
-well-defined; a built-in specificity control (QS) exists; methods (per-dataset limma → GSEA →
-direction-concordant overlap with QS veto) are specified with a pre-committed arbitration rule. No
-hard blocker remains — the open items (MMSEQ scale verification, gene-id harmonization) are ingest-time
-preprocessing gates, not methodology blockers. The caveats below **bound the claims, not the
-validity**, and are consistent with t035's hypothesis-generating framing.
+**ready-with-caveats** — where "ready" means **the design is methodologically sound and the data is
+structurally confirmed** (group sizes, platforms, compartments, contrasts, and the existence of the
+expression payloads are verified from the SOFT metadata). It does **not** yet mean the expression data
+is provisioned: only metadata/structure files are local, and the GSE130353 MMSEQ payloads are
+unretrieved (see Provenance state). The methods (per-dataset limma → GSEA → NES rank-concordance with a
+permutation null, QFS-vs-QS specificity) are specified with a pre-committed arbitration rule. The
+caveats below **bound the claims, not the validity**, consistent with t035's hypothesis-generating
+framing.
 
-Next step before code: a **light pre-registration** (`/science:pre-register`) locking the arbitration
-rule above (primary contrast, FDR threshold, QS-veto fraction, DB/method sensitivities, verdict
-labels) — important even for an exploratory analysis to prevent post-hoc story selection, then
-`/science:plan-pipeline` for orchestration.
+### Blocking Checks Before Execution
+
+These gate the *run*, not the plan; none is currently discharged:
+
+1. **Acquisition + hash gate** — download GSE14577 intensity tables (parse from local SOFT) and the 40
+   GSE130353 MMSEQ files; record SHA-256 per file; flip the registry from "candidate / not yet
+   provisioned" to provisioned. Until done, "usable" stays *inferred*.
+2. **MMSEQ scale-parse gate** — verify the expression-estimate column and scale (Halt-on if
+   unverifiable); confirm continuous-limma applicability.
+3. **Gene-id harmonization gate** — resolve U133 probes and MMSEQ ids to a shared canonical gene id;
+   record the mapped/unmapped fractions.
+4. **Pre-registration** (`/science:pre-register`) — lock the arbitration rule above: primary =
+   NES-concordance permutation p; pinned MSigDB release + size filter + keyword→theme map; QFS-vs-QS
+   specificity; DB/contrast sensitivities; ORA-as-diagnostic; verdict labels. Required even for an
+   exploratory analysis to prevent post-hoc story selection.
+
+Then `/science:plan-pipeline` for orchestration. (These four are tracked as t035 sub-work.)
 
 ## Known Limitations To Carry Forward
 
@@ -238,13 +308,29 @@ labels) — important even for an exploratory analysis to prevent post-hoc story
    pathways; cell-type-marker leakage is a named veto.
 4. **Sex** — GSE14577 male-only; GSE130353 sex unreported → unmeasured confound, unadjustable.
 5. **MMSEQ estimates ≠ counts** → continuous modelling only; count-based inference out of scope.
-6. **Depositor normalization inherited** (no raw CEL/FASTQ reprocessing) → scale comparability stated
-   as a limitation.
-7. **QS veto is the specificity backbone** — a shared signature that does not survive it is an
-   exposure sequela, not evidence for `hypothesis:0001`.
+6. **Depositor normalization inherited** (raw CEL reprocessing deferred) → defensible because the
+   estimand is a within-dataset GSEA *rank*, invariant to monotone per-sample normalization; the bound
+   is that no absolute-scale/magnitude claim is in scope, and RMA re-normalization is an optional
+   robustness check, not part of the primary.
+7. **Specificity rests on the QFS-vs-QS *presence* contrast**, not on absence-in-QS-vs-HC (which is
+   weak at n=10 and now only contributes the `exposure_sequela` label). A "shared" signature without
+   concordant QFS-vs-QS signal is an exposure sequela, not evidence for `hypothesis:0001`.
+8. **Overlap significance is permutation-calibrated, not Fisher** — Fisher/Jaccard over correlated
+   MSigDB sets are descriptive only; the anti-conservative independence assumption is not used for the
+   verdict.
 
 ## Feedback Reflection
 
 The plan-analysis template and the expression + statistics leaves fit this cross-platform, cross-
-compartment, tiny-n case well; the sensitivity-arbitration leaf was decisive for turning the QS group
-into a pre-committed veto rather than a post-hoc caveat. No friction worth a feedback item.
+compartment, tiny-n case well; the sensitivity-arbitration leaf was decisive for structuring the QS
+group into a pre-committed specificity rule. **Revised 2026-06-20 after user code review** (six
+findings): the original draft (a) used Fisher's exact over correlated MSigDB sets as the verdict test
+(anti-conservative) — replaced by a sample-label permutation null on NES rank-concordance; (b) rested
+specificity on absence-in-QS-vs-HC — replaced by the direct QFS-vs-QS presence contrast; (c) overstated
+provenance ("downloaded/confirmed usable") when only metadata files were retrieved — added an
+acquisition+hash blocking gate; (d) under-justified the deferred-CEL choice — now tied to GSEA rank
+invariance; (e) left the gene-set universe unpinned — now a locked pre-reg parameter; (f) made ORA a
+mandatory sensitivity that could falsely fire `fragile` — demoted to optional diagnostic. The lesson
+worth carrying: at tiny n with correlated gene sets, the *calibration of the overlap null* is the
+load-bearing methodological choice, and a "count of shared significant sets" framing invites an
+independence assumption that does not hold.
