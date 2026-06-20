@@ -68,8 +68,9 @@ code/
     config.yaml                   NEW  SINGLE encoding of the locked pre-reg params (release pin,
                                        size filter, keyword→theme map, marker regex, B, seed,
                                        thresholds, verdict resolution order, near-zero log_mu filter
-                                       τ/min_donors, U133A∪B combine rule, hallmark_coverage_warn,
-                                       RNG kind + float precision for determinism)
+                                       (KDE-antimode procedure params + min_donors), U133A∪B combine
+                                       rule, NA-NES rule, hallmark_coverage_warn, pinned package
+                                       lockfile ref, RNG kind + float precision for determinism)
     rules/
       acquire.smk                 NEW  download(+checksum), parse_gse14577, extract_gse130353,
                                        emit_datapackage (minimal Frictionless descriptor)
@@ -81,7 +82,9 @@ code/
     envs/
       r-bioc.yaml                 NEW  conda: r-base, bioconductor-limma, -fgsea, -msigdbr,
                                        -org.Hs.eg.db, -annotationdbi, hgu133a.db, hgu133b.db
+                                       (exact =version pins — NES is version-sensitive)
       py.yaml                     NEW  conda: python, pandas, pyarrow, numpy, scipy, pyyaml
+      conda-lock.yml              NEW  generated lockfile (WP0 artifact; determinism precondition)
   scripts/
     g1_acquire.py                 MODIFY  split into rule-callable modules (keep as the seed)
     parse_gse14577.py             NEW  SOFT → per-platform probe×sample matrices + metadata
@@ -190,7 +193,10 @@ prepare_genesets (pinned MSigDB) ───────────────�
   **nothing verdict-affecting is chosen during a run** (see Key decisions 9–10).
 - **Rejected alternative:** thresholds/regexes embedded per-script.
 - **Reason:** the pre-reg is the lock; a single config mirroring it prevents drift and makes any future
-  change a visible, reviewable diff that must be reconciled with a pre-reg amendment.
+  change a visible, reviewable diff that must be reconciled with a pre-reg amendment. The near-zero
+  filter, U133A∪B combine, and NA-NES rule are **owned by `pre-registration:0002` (3rd amendment)**;
+  config mirrors them (KDE bandwidth rule + `min_donors` + bimodality-test parameters), it does not
+  originate them.
 
 ### Key decision 5: canonical gene axis = Ensembl gene ID (G3)
 - **Chosen approach:** harmonize both sides to **Ensembl gene IDs**. GSE130353 `feature_id` is already
@@ -225,28 +231,33 @@ prepare_genesets (pinned MSigDB) ───────────────�
   largely insensitive to mild precision-weighting; the pre-reg bounds claims accordingly and holds
   these as optional sensitivities, so they must not gate the primary verdict.
 
-### Key decision 9: verdict-affecting preprocessing is locked in config, by contrast-blind rule (not picked at runtime)
-- **Chosen approach:** the two preprocessing choices that alter ranked gene lists — and therefore
-  fgsea/NES and the verdict — are **pre-committed in `config.yaml` now**, each as a rule that is **blind
-  to the contrast/group labels** so it cannot leak group differences into the ranking:
-  - **Near-zero `log_mu` filter (GSE130353).** Retain gene *g* iff `#{donors : log_mu(g) > τ} ≥
-    min_donors`, with `τ = -7.0` (natural-log) and `min_donors = 10`, computed on the **pooled 40-donor
-    cohort, contrast-blind**. Rationale (pre-data, structural): the unexpressed mode sits at
-    `log_mu ≈ −14`; `τ = −7.0` is a fixed floor well above it (`exp(−7) ≈ 9×10⁻⁴` of the expressed
-    scale), and `min_donors = 10` = one full group, so a gene expressed in **any single** group survives
-    (no bias toward cross-group-shared genes). A WP3/WP4 **structural-QA** check confirms the global
-    `log_mu` density is bimodal with its antimode **below** `τ`; if the antimode is above `τ`, that is a
-    surfaced distribution-severity warning — **not** a license to retune `τ` mid-run.
-  - **U133A∪B dual-chip combine (GSE14577).** For a gene mapping from both GPL96 and GPL97, the
-    per-patient value = **mean of the two platform-level median-collapsed log2 values**; single-chip
-    genes pass through. The count of dual-chip genes is logged in `cohort_audit.json`.
-- **Rejected alternative:** "pick `τ` from the per-gene distribution at WP4" / "decide the combine rule
-  during preprocessing" — choosing a ranked-list-altering parameter *after seeing the run* is exactly the
-  post-hoc latitude pre-registration exists to remove; even a group-blind marginal can drift if it is
-  selected rather than pre-committed.
-- **Reason:** these are the only two preprocessing knobs that move the NES ranking; fixing them as
-  blind rules with concrete values keeps the verdict a function of the data alone, and any future change
-  is a visible config diff requiring a pre-reg amendment.
+### Key decision 9: verdict-affecting preprocessing is pre-reg-locked as contrast-blind rules (not picked at runtime)
+- **Chosen approach:** every choice that alters ranked gene lists — and therefore fgsea/NES and the
+  verdict — is **locked in `pre-registration:0002` (3rd amendment)**, with `config.yaml` mirroring it.
+  Each is **blind to contrast/group labels** so it cannot leak group differences into the ranking:
+  - **Near-zero `log_mu` filter (GSE130353) — a contrast-blind *procedure*, not a constant.** `τ` is the
+    **antimode of the pooled, group-blind per-gene `log_mu` density** (fixed-method KDE, Silverman
+    bandwidth; lowest-density point between the unexpressed mode near `−14` and the expressed mode);
+    retain gene *g* iff `#{donors : log_mu(g) > τ} ≥ min_donors` with `min_donors = 10` (one full group).
+    **Halt-if-not-bimodal:** if the pooled density lacks a clear interior antimode (per the fixed
+    separation/mass test), the QA checkpoint is **structural / build-fatal** — the run halts and a
+    pre-reg amendment is required; it does **not** silently fall back to any fixed `τ`. *(This supersedes
+    the fixed `τ = −7.0` of the previous draft, which assumed a bimodality not yet measured by the
+    bounded G2 smoke check.)*
+  - **U133A∪B dual-chip combine (GSE14577).** A gene on both GPL96 and GPL97 → **mean of the two
+    platform-level median-collapsed log2 values** per patient; single-chip genes pass through; dual-chip
+    count logged in `cohort_audit.json`.
+  - **NA / undefined NES handling.** A set with NA NES in a contrast is **absent** downstream: excluded
+    pairwise from ρ, never concordance-carrying, never S1/S2-positive; dropped counts reported. (Locked
+    in the pre-reg; the verdict scripts implement it, they do not redefine it.)
+- **Rejected alternative (a):** a fixed `τ = −7.0` — brittle to the unverified `−14`/antimode assumption;
+  if wrong, it silently corrupts the ranking. The procedural antimode is outcome-blind **and** robust.
+- **Rejected alternative (b):** "pick `τ`/the combine rule/the NA rule during the run" — choosing a
+  ranked-list-altering parameter *after seeing the run* is exactly the post-hoc latitude pre-registration
+  removes; even a group-blind marginal can drift if it is selected rather than pre-committed.
+- **Reason:** these are the knobs that move the NES ranking and verdict eligibility; locking them in the
+  **pre-reg** (the artifact with the amendment audit trail), not just config, keeps the verdict a function
+  of the data alone and prevents config/code from becoming the de facto pre-registration.
 
 ### Key decision 10: explicit determinism contract for byte-identical `verdict.json`
 - **Chosen approach:** reproducibility is engineered, not hoped for. (1) **RNG:** a single master `seed`
@@ -272,7 +283,11 @@ prepare_genesets (pinned MSigDB) ───────────────�
 - **Entry point:** `code/workflows/Snakefile`, `config.yaml`, `envs/*.yaml`.
 - **Definition of done:** `snakemake -n` resolves a complete DAG from raw inputs to `results/verdict.json`;
   `config.yaml` contains **every** locked pre-reg parameter with an inline `# pre-registration:0002`
-  provenance comment; `snakemake --lint` clean; conda envs solve.
+  provenance comment; `snakemake --lint` clean; conda envs solve. **Analysis packages are version-pinned**
+  — `r-bioc.yaml` carries exact `=version` for `limma`, `fgsea`, `msigdbr`, `org.Hs.eg.db`,
+  `hgu133a.db`, `hgu133b.db` (their algorithm versions move NES → the verdict), and a **`conda-lock`
+  lockfile is generated and committed as a WP0 artifact**. The byte-identical-`verdict.json` criterion
+  is defined **against this lockfile** (same lock → same result).
 
 ### WP1 — Reproducible acquisition rules
 - **Depends on:** WP0.
@@ -310,11 +325,13 @@ prepare_genesets (pinned MSigDB) ───────────────�
 - **Depends on:** WP3.
 - **Entry point:** `rules/prepare.smk`, `collapse_probes.R`, `prepare_genesets.R`.
 - **Definition of done:** GSE14577 probe→gene **median collapse** with U133A∪B combined per patient
-  (15 patients, not 30 arrays) using the **locked dual-chip combine rule** (Key decision 9; mean of
-  platform-level collapsed log2); GSE130353 near-zero `log_mu` filter applied with the **locked
-  contrast-blind rule** (`τ = −7.0`, `min_donors = 10`, pooled 40-donor cohort — Key decision 9; **values
-  read from config, not chosen here**), plus the structural-QA antimode-below-`τ` confirmation; the mask
-  is logged. `prepare_genesets.R` emits the pinned, size-filtered gene-set list + the joined
+  (15 patients, not 30 arrays) using the **locked dual-chip combine rule** (Key decision 9 / pre-reg;
+  mean of platform-level collapsed log2); GSE130353 near-zero `log_mu` filter applied with the **locked
+  contrast-blind procedure** (`τ` = pooled group-blind KDE antimode, `min_donors = 10` — Key decision 9 /
+  pre-reg 3rd amendment; **procedure read from config, τ derived from the pooled density, not chosen by
+  hand**). The bimodality test is a **structural / build-fatal** QA check: if the pooled density has no
+  clear interior antimode the rule **halts** (amendment required) — it never falls back to a fixed `τ`.
+  The retained/dropped mask and the derived `τ` are logged. `prepare_genesets.R` emits the pinned, size-filtered gene-set list + the joined
   keyword→theme assignment; a `cohort_audit.json` per dataset records every raw→filtered count and
   decision.
 
@@ -343,11 +360,12 @@ prepare_genesets (pinned MSigDB) ───────────────�
 - **Entry point:** `rules/verdict.smk` (`specificity`, `theme_rollup`, `db_robustness`, `compartment`).
 - **Definition of done:** `specificity.py` computes per-set **S1/S2** classes (same-sign-NES ∧ nominal
   fgsea p<0.05) → `fatigue-specific`/`exposure_sequela`/`unresolved`; `theme_rollup.py` applies the
-  **strict-dominance** rule (`#fatigue-specific > #exposure_sequela`); `db_robustness` consumes the
-  **per-DB ρ + `p_perm`** (the three `primary × DB` cells from WP6) and the per-DB theme classes, and
-  enforces **sign-consistent** theme recurrence in ≥2 of {Hallmark, Reactome, GO-BP} (a theme counts only
-  in DBs whose primary ρ is itself directionally consistent); `compartment` applies the locked marker
-  regex to the **concordance-carrying set** (≥50% rule). Each reads its definition from config.
+  **strict-dominance** rule (`#fatigue-specific > #exposure_sequela`); `db_robustness` applies the
+  **pre-reg rule verbatim** — a theme is robust iff it is fatigue-specific in **≥2 of {Hallmark, Reactome,
+  GO-BP} with the SAME theme-level NES sign** (theme direction = sign of the largest-|NES| fatigue-specific
+  concordance-carrying set). It does **not** add any per-DB ρ-direction gate beyond the pre-reg
+  (`pre-registration:0002` *Specificity metric* / DB-robustness lock); `compartment` applies the locked
+  marker regex to the **concordance-carrying set** (≥50% rule). Each reads its definition from config.
 
 ### WP8 — Mechanical verdict + report
 - **Depends on:** WP6, WP7.
@@ -364,15 +382,15 @@ prepare_genesets (pinned MSigDB) ───────────────�
    rank estimand, but document it and decide whether to convert to log2 for human-readable diagnostics
    only. *Lean: keep natural-log internally; convert for display.* (Display-only — does not affect the
    verdict, so not a config lock.)
-2. **`org.Hs.eg.db`/annotation versions vs MSigDB release.** Pin all annotation `.db` packages in the
-   conda env so probe→Ensembl and the gene-set universe come from a coherent build; record versions.
-3. **Exhaustive vs Monte-Carlo permutation for the GSE14577 arm.** `C(15,8)=6435` is exhaustible but
+2. **Exhaustive vs Monte-Carlo permutation for the GSE14577 arm.** `C(15,8)=6435` is exhaustible but
    the ρ null is *paired* with the Monte-Carlo GSE130353 arm; default to `B=2000` paired draws, note
    the exhaustive option as a robustness toggle.
 
-*(Resolved into locks, formerly open: the near-zero `log_mu` filter threshold and the U133A∪B combine
-rule are now pre-committed in `config.yaml` under Key decision 9 — they alter the NES ranking and so
-cannot be left open; see the Architecture note on `config.yaml`.)*
+*(Resolved into locks, formerly open — all because they alter the NES ranking, verdict eligibility, or
+reproducibility, so none may be left open: (a) the near-zero `log_mu` filter is now a contrast-blind
+KDE-antimode **procedure** with a build-fatal bimodality guard, and (b) the U133A∪B combine rule and
+(c) the NA-NES rule are all locked in `pre-registration:0002` (3rd amendment), config mirroring;
+(d) annotation/MSigDB version coherence is closed by the WP0 **version-pin + `conda-lock`** requirement.)*
 
 ## Non-Goals
 
@@ -392,9 +410,10 @@ cannot be left open; see the Architecture note on `config.yaml`.)*
 - [ ] Acquisition is a rule with **checksum verification** against the locked SHA-256s; the one-off
       `curl` is retired; payloads stay gitignored; a **minimal Frictionless `datapackage.json`**
       (resources + SHA-256 + source URL) is emitted, discharging G1.
-- [ ] **No verdict-affecting parameter is chosen at runtime**: the near-zero `log_mu` filter
-      (`τ=−7.0`, `min_donors=10`, contrast-blind), the U133A∪B combine rule, and the G3 coverage warn
-      threshold are all in `config.yaml`; WP4 reads them rather than picking from the distribution.
+- [ ] **No verdict-affecting parameter is chosen at runtime**: the near-zero `log_mu` filter (`τ` =
+      pooled group-blind KDE antimode + `min_donors=10`, with a build-fatal bimodality guard), the
+      U133A∪B combine rule, and the NA-NES rule are **owned by `pre-registration:0002` (3rd amendment)**
+      and mirrored in `config.yaml`; WP4 derives `τ` from the pooled density rather than hand-picking it.
 - [ ] Every processed substrate has a **structural (build-fatal) + distribution (surfaced)** QA
       checkpoint with a `*.qa.pass` sentinel; a corrupted fixture halts the DAG; `qa_report.md` is
       never the strict rule's declared output.
@@ -403,9 +422,10 @@ cannot be left open; see the Architecture note on `config.yaml`.)*
       and reproducible, and is computed **per `(concordance-pair × DB)` cell** — C1 (`primary×Hallmark`),
       S3 (`primary×{Reactome,GO-BP}`), and S4 (`PI-CFS×CFS × {3 DBs}`) each carry their own ρ + `p_perm`;
       the verdict is emitted by the **locked resolution order** as exactly one label.
-- [ ] Re-running `--use-conda` from clean produces a byte-identical `verdict.json` under the fixed seed,
-      via the **determinism contract** (Key decision 10): `L'Ecuyer-CMRG` substreams under `BiocParallel`,
-      stable table ordering, and sorted-key/fixed-precision/timestamp-free serialization.
+- [ ] Re-running `--use-conda` from the **committed `conda-lock`** produces a byte-identical
+      `verdict.json` under the fixed seed, via the **determinism contract** (Key decision 10):
+      version-pinned analysis packages, `L'Ecuyer-CMRG` substreams under `BiocParallel`, stable table
+      ordering, and sorted-key/fixed-precision/timestamp-free serialization.
 - [ ] A results markdown lands in `results/` and is wired to `q0001`/`h0001`/`q0017`.
 
 ## Notes on reusable infrastructure

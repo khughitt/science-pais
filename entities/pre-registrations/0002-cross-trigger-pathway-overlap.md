@@ -68,6 +68,35 @@ amendments:
       regex, a gene-level term standing in for a set-level rule, a direction-blind robustness check, and
       an under-specified mixed-theme roll-up each still left an interpretation-time judgment call. All
       four are closed pre-data, preserving the no-HARKing audit trail.
+  - date: "2026-06-20"
+    ratified_by: "pipeline review of plan:0003 (/science:review-pipeline) 2026-06-20 (same-day, pre-data)"
+    type: "pre-data tightening (not a fresh pre-registration; verdict-affecting input-handling rules pulled into the pre-reg, none loosened)"
+    change: >
+      The pipeline-design review (plan:0003) surfaced that several verdict-affecting input-handling
+      choices had been drafted only in the pipeline plan/config, not here — leaving the config/code to
+      act as the de facto pre-registration. Pulled four such locks into this document, all decided
+      pre-data (data-gated, nothing run beyond the G1/G2 scale smoke check): (1) **Near-zero expression
+      filter (GSE130353)** is now a locked **contrast-blind procedure**, not a guessed constant — τ is
+      the antimode of the pooled, group-blind per-gene log_mu density estimated by a fixed method, and a
+      gene is retained iff log_mu > τ in ≥10 donors (one full group, so a gene expressed in any single
+      group survives); if the pooled density is **not clearly bimodal**, the pipeline **HALTS** (an
+      unjustified automated threshold must not be applied silently) rather than falling back to a fixed
+      cut. (2) **U133A∪B dual-chip combine (GSE14577)** = mean of the two platform-level median-collapsed
+      log2 values per patient; single-platform genes pass through. (3) **NA / undefined NES handling**:
+      a set with NA NES in a contrast is treated as absent — excluded pairwise from ρ, cannot be
+      concordance-carrying, cannot be S1/S2-positive; dropped counts reported. (4) **R↔Python intermediate
+      table contract**: a fixed NES/permutation schema with explicit NA encoding, so the parse/join is
+      unambiguous. This amendment **supersedes the earlier fixed τ = −7.0** that briefly appeared in the
+      pipeline plan; that constant rested on an unverified bimodality assumption and is replaced by the
+      procedure above.
+    rationale: >
+      A threshold or NA rule that lives only in config has no committed/amendment provenance and can be
+      retuned once results are visible — exactly the latitude pre-registration removes. These four all
+      alter the GSEA ranking or verdict eligibility, so they belong here, locked pre-data, with the
+      audit trail showing they were fixed before any DE/fgsea/concordance was computed. The fixed-τ→
+      procedure change is a strengthening: a contrast-blind data-adaptive rule is both outcome-blind and
+      robust to the actual distribution, and the halt-if-not-bimodal guard refuses to auto-threshold a
+      distribution that does not justify it.
 created: "2026-06-20"
 updated: "2026-06-20"
 ---
@@ -269,6 +298,36 @@ Even executed perfectly, this analysis cannot:
   **strict-dominance roll-up**, and **direction-consistent DB-robustness** definitions in the
   *Specificity metric* block (not by a loose "≥1 concordant set" rule). The theme map and the pinned
   release are locked here so the overlap denominator cannot drift post-hoc.
+- **Locked input preprocessing & NA handling (pre-data, verdict-affecting — 3rd amendment).** These
+  alter the GSEA ranking or verdict eligibility, so they are fixed here, not delegated to config:
+  - **Near-zero expression filter (GSE130353), contrast-blind procedure — NOT a fixed constant.**
+    Compute the **pooled, group-blind** per-gene summary (median `log_mu` across all 40 donors) and
+    estimate the antimode of its density by a **fixed method** (Gaussian KDE, Silverman bandwidth;
+    `τ` = the lowest-density point between the two highest modes — the unexpressed mode near
+    `log_mu ≈ −14` and the expressed mode). **Retain gene *g* iff `#{donors : log_mu(g) > τ} ≥ 10`**
+    (one full group, so a gene expressed in any single group survives — no bias toward cross-group-shared
+    genes). The procedure never sees contrast/group labels. **Halt rule:** if the pooled density is
+    **not clearly bimodal** (no interior antimode, or the two modes are not separated, or the antimode
+    splits less than a fixed mass fraction), the pipeline **HALTS (structural)** and requires a recorded
+    amendment — it must **not** silently fall back to a fixed `τ`. *(This supersedes the fixed `τ = −7.0`
+    that briefly appeared in the pipeline plan; that constant assumed a bimodality not yet measured.)*
+    GSE14577 array data inherits deposited log2 values; no additional near-zero filter is applied to it.
+  - **U133A∪B dual-chip combine (GSE14577), locked.** After probe→Ensembl harmonization and
+    within-platform median collapse, a gene present on **both** GPL96 and GPL97 takes the **mean of its
+    two platform-level collapsed log2 values** per patient (15 patients, not 30 arrays); single-platform
+    genes pass through unchanged. The count of dual-chip genes is logged.
+  - **NA / undefined NES handling, locked.** A gene-set whose fgsea **NES is NA/undefined** in a given
+    contrast (too few of its genes survive into that contrast's ranked universe) is treated as **absent**
+    for every downstream rule: **excluded pairwise** from the Spearman ρ of any pair in which either
+    contrast's NES is NA; **cannot** be a concordance-carrying set; **cannot** be S1- or S2-positive. The
+    per-`(contrast × DB)` count of NA-dropped sets is reported. (An empty concordance-carrying set →
+    `compartment_confounded` cannot fire, as already locked, and the set contributes nothing to the
+    strict-dominance roll-up.)
+  - **R↔Python intermediate table contract, locked.** NES tables crossing the R→Python boundary carry
+    columns `{gene_set, db, contrast, NES, pval, padj, size}` (one row per `gene_set × contrast × DB`,
+    **NA encoded as empty/`NA`, never `0`**); permutation outputs carry `{pair, db, rho_obs, p_perm, B}`.
+    Spearman ρ and all set-level classes are computed from these columns only, so the parse, the join
+    key (`gene_set` exact-match within a `db`), and the NA rule above are unambiguous.
 - **Specificity metric (locked, fully thresholded): direct QFS-vs-QS presence contrast.** "Signal"
   is **not** left to interpretation. For every gene-set that is **primary-concordant** (same-sign NES
   in *both* PI-CFS-vs-HC and QFS-vs-HC), evaluate two **presence predicates** using the *same* pinned
