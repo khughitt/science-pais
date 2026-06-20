@@ -1,12 +1,4 @@
 <!-- Task queue. Use /science:tasks to manage. -->
-## [t001] Test the shared-attractor hypothesis: cross-pathogen PAIS signature comparison
-- priority: P2
-- status: proposed
-- aspects: []
-- created: 2026-06-11
-
-Assemble immune/proteomic signatures across long COVID, ME/CFS, PTLDS, post-dengue to test whether they converge on a shared dysregulated state vs trigger-specific mechanisms. See hypothesis:0001-shared-dysregulated-attractor, question:0001-shared-molecular-signature-across-triggers.
-
 ## [t003] Promote PAIS<->immunity bridge papers to commons once v3 entities/papers promotion is supported
 - priority: P3
 - status: proposed
@@ -14,22 +6,6 @@ Assemble immune/proteomic signatures across long COVID, ME/CFS, PTLDS, post-deng
 - created: 2026-06-11
 
 Blocked by tooling gap (fb-2026-06-11-005). Bridge papers: Choutka2022, Komaroff2025, Klein2023, Rojas2022, Sharma2023.
-
-## [t004] [lit-search] Therapeutics & clinical-trial landscape for long COVID and ME/CFS
-- priority: P2
-- status: proposed
-- aspects: []
-- created: 2026-06-11
-
-Gap: corpus is thin on treatment. Future /science:search-literature: antivirals (Paxlovid/ensitrelvir trials), immunomodulators, anticoagulation, autoantibody-targeting (BC007 aptamer), low-dose naltrexone, vagal/neuromodulation. Relates to topic:biomarkers-and-objective-endpoints (endpoints needed for trials).
-
-## [t005] [lit-search] Mitochondrial / bioenergetic dysfunction and post-exertional malaise
-- priority: P2
-- status: proposed
-- aspects: []
-- created: 2026-06-11
-
-Gap: PEM mechanism barely covered yet central to ME/CFS. Search: skeletal-muscle bioenergetics, mitochondrial dysfunction, two-day CPET, metabolomics of PEM. Relates to question (mitochondrial-basis-of-pem), topic:mecfs-long-covid-convergence.
 
 ## [t006] [lit-search] Functional autoantibody (GPCR: beta-adrenergic/muscarinic) literature
 - priority: P3
@@ -191,3 +167,12 @@ Data-gated: pre-registration:0001-menopause-pais-total-effect is committed but e
 - created: 2026-06-20
 
 Carries the G2 out-of-corpus disposition recorded in report:0002 (t029 second pass) and pre-reg:0001 amendment 2. The out-of-corpus second-precedent search found only Gao et al. (JAMA 2024) as a genuinely author-independent UKB precedent (weakly corroborates questionnaire feasibility + survival-to-2020/healthy-volunteer selection; hospitalization-conditioned so unusable for effective-n; tests no hormones). Wang et al. and the Prieto-Alhambra preprint share the AlcaldeHerraiz author network -> NOT corpus-independent. DISPOSITION: questionnaire feasibility/selection weakly corroborated out-of-corpus; effective-n + SHBG-protection signal remain SINGLE-SOURCE and are labelled as such; SHBG prior downgraded to single-source background (mediator-specific / M1-confirm-side, not load-bearing for the primary {age,smoking} total effect). OPEN/OPPORTUNISTIC: find a non-UKB SHBG-or-sex-hormone x long-COVID precedent (RECOVER, German NAPKON, All of Us, Lifelines) that would UPGRADE the SHBG prior from single-source background; would strengthen, not gate. At application: confirm this disposition stands when the AMS basket is finalized. Blocks t028 (soft: t028 is data-gated regardless).
+
+## [t033] [lit-search] Post-dengue / Q-fever / post-SARS molecular signatures + Galbraith2011 head-to-head deep-read
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [discussion:0002-cross-pathogen-pais-signature-convergence, hypothesis:0001-shared-dysregulated-attractor, question:0001-shared-molecular-signature-across-triggers]
+- created: 2026-06-20
+
+Closes the decisive head-to-head evidence gap surfaced by t001 (discussion:0002). h0001 (shared-attractor) names post-dengue and post-Q-fever among its triggers, but the 2026-06-20 search found NO usable omics for post-dengue, QFS, or post-SARS(2003) -- only fatigue epidemiology (Conde2026) and a single negative TSPO study (Raijmakers2021). (1) Targeted hunt for proteomic/transcriptomic/metabolomic signatures in post-dengue, QFS, post-SARS, post-Ebola/chikungunya fatigue; if empty, RECORD as a structural evidence gap limiting h0001 testability (not as evidence against). (2) Deep-read Galbraith2011 (Dubbo EBV/Ross-River/Q-fever) -- the closest existing genuine cross-trigger transcriptomic comparison -- and check for reusable GEO data; populate its stub. (3) Read Patterson2024 (strongest disputer; assess ML overfitting) + Walitt2024. Feeds question:0001, hypothesis:0001, discussion:0002.

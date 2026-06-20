@@ -14,11 +14,16 @@ source_refs:
 - cite:Klein2023
 - cite:Komaroff2023
 - cite:Peppercorn2023
+- cite:Galbraith2011
+- cite:Patterson2024
+- cite:Raijmakers2021
 related:
 - topic:shared-failure-mode-across-pais
 - topic:mecfs-long-covid-convergence
+- discussion:0002-cross-pathogen-pais-signature-convergence
+- hypothesis:0001-shared-dysregulated-attractor
 created: '2026-06-11'
-updated: '2026-06-11'
+updated: '2026-06-20'
 ---
 
 # Is there a molecular signature that is both shared across PAIS triggers (SARS-CoV-2, Borrelia, EBV, dengue) and specific to failed recovery versus full recovery?
@@ -36,6 +41,7 @@ The project's central claim is that distinct infectious triggers converge on a s
 
 - Supporting (shared biology): Peppercorn2023 finds overlapping immune+mitochondrial PBMC proteomes between long COVID and ME/CFS despite very different durations; Klein2023 builds a high-AUC long-COVID signature (low cortisol, non-conventional monocytes, EBV markers) that is a candidate panel to test cross-trigger; Komaroff2023 documents shared abnormalities across seven domains.
 - Conflicting / cautionary: Peppercorn2023 also finds direction-of-effect *discordances* (HLA-E, S100A4 opposite between LC and ME/CFS); Cruz2025 shows even within SARS-CoV-2 the immune signature is not unitary; Hanson2023 argues classical ME/CFS is enterovirus-specific.
+- **Provenance audit (2026-06-20 cross-pathogen search → `discussion:0002`):** the apparent convergence is almost entirely **assembled from separate single-trigger studies**. The few genuine **head-to-head** designs are sparse and split: Galbraith2011 (Dubbo EBV/Ross-River/Q-fever) finds *partial shared* transcripts (supports); Raijmakers2021 finds a shared *negative* (no neuroinflammation in ME/CFS or QFS — ambiguous); Patterson2024 *separates* long COVID from chronic Lyme by cytokine hubs (disputes). **No study runs harmonized multi-omics across ≥3 triggers with full-recovery controls** — the decisive test does not yet exist. Post-dengue and QFS omics are essentially absent, so the question is currently *unanswerable* for several of the project's own named triggers.
 
 ## Thoughts
 
