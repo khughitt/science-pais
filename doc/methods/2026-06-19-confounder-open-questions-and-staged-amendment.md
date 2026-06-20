@@ -28,24 +28,45 @@ same-author criterion changes should not be treated as validated. The reviewer
 > the adjustment set now is *pre-data* and carries no HARKing cost. But self-applying a
 > criterion change reproduces the **author-independence** problem
 > (`report:0001-bias-audit-...`). With the reviewer ready, the clean route is to let the
-> criterion change acquire **out-of-author provenance**. Nothing here is yet applied to
-> the locked pre-reg.
+> criterion change acquire **out-of-author provenance**.
+
+> **REVIEWER RESOLUTION — t029 independent review, 2026-06-19 (applied to pre-reg:0001).**
+> - **Q1 RATIFIED** with coding/wording modification → smoking moved to the **primary
+>   measured adjustment set** `{age, smoking}`; pre-data amendment, not a fresh pre-reg;
+>   E-value/U-proxy redefined vs the new set.
+> - **Q2 default RATIFIED** → BMI stays out of primary, carried as sensitivity, role to DAG v2.
+> - **Q3** → autoimmune-POI, frailty, parity **not** added to primary (routed to
+>   stratum/selection-model/DAG-v2 respectively).
+> - **Q4 RATIFIED** → MR added as **triangulation only**, with a strengthened
+>   pleiotropy-/selection-robust guardrail battery.
+> - **Two reviewer findings folded in below:** (i) do **not** call `{age, smoking}`
+>   "minimal-sufficient" while U is latent — it is the *primary measured* set; (ii) tighten
+>   the smoking temporal wording (baseline smoking is pre-infection but **not** always
+>   pre-FMP).
 
 ---
 
 ## Q1 — STAGED AMENDMENT: add **smoking** to the primary adjustment set
 
-**Proposed change:** primary adjustment set **`{age}` → `{age, smoking}`** (field 20116,
-baseline; never-/previous-/current, with pack-years where available).
+**Change (RATIFIED, modified):** primary adjustment set **`{age}` → `{age, smoking}`**,
+named the **primary measured adjustment set**. **Smoking coding (reviewer modification):**
+**baseline smoking history — never/former/current plus pack-years or duration where
+available** (fields 20116 + 20161/2887/etc., confirm at application) — *not* field 20116
+alone. **Temporal note (reviewer):** baseline smoking is pre-infection but **not always
+pre-FMP** (women already postmenopausal at UKB baseline), so it enters as a **measured
+confounder**, not a clean pre-menopause exposure.
 
-**Rationale.** Smoking is an **unambiguous pre-menopause common cause**: smoking →
-**earlier** menopause **and** → worse COVID/long-COVID **and** → higher mortality (so it
-also drives the M3a left-truncation). Conditioning on age does **not** block this
-back-door. Smoking is **measured**, yet the committed design relegates it to the
-"U-proxy adjustment arm" sensitivity while claiming `{age}` is *minimal sufficient*.
-For a measured confounder that is defensibly *the* strongest determinant of
-age-at-menopause besides age itself, sensitivity-only placement is hard to justify; the
-principled minimal set is `{age, smoking}`.
+**Rationale.** Smoking is a **measured strong common cause**: smoking → **earlier**
+menopause **and** → worse COVID/long-COVID **and** → higher mortality (so it also drives
+the M3a left-truncation). Conditioning on age does **not** block this back-door, yet the
+committed design relegated smoking to the "U-proxy adjustment arm" sensitivity. For a
+measured confounder that is defensibly *the* strongest determinant of age-at-menopause
+besides age itself, sensitivity-only placement is too weak; it belongs in the primary
+measured set. **Terminology (reviewer finding):** the result is the **primary measured
+adjustment set** `{age, smoking}` — **not** "minimal-sufficient." Per the DAG critique
+(`doc/inquiries/menopause-pais-causal-dag-critique.md`), **no valid sufficient adjustment
+set exists while U is latent**; calling any measured set "minimal-sufficient" overstates
+identification.
 
 **Reviewer asks:**
 - (a) Ratify, modify, or reject moving smoking into the **primary** set.
@@ -83,8 +104,10 @@ total-effect set; carry **baseline** BMI as a sensitivity covariate only; let **
 
 ---
 
-## Q3 — SUFFICIENCY CHECK: is `{age, smoking}` now minimal-sufficient, or do these also belong?
+## Q3 — SUFFICIENCY CHECK: is the primary measured set complete, or do these also belong?
 
+(Reading "sufficient" loosely — strictly, no sufficient set exists while U is latent; the
+question is which *measured* confounders belong in the primary set vs the sensitivity arm.)
 Other **measured** candidates that the `{age}`-minimal claim may have wrongly folded
 into latent U:
 
@@ -142,13 +165,14 @@ primary identification the reviewer is asked to ratify here.
 
 ## Summary of reviewer actions
 
-| # | Item | Type | Default proposal |
+| # | Item | Type | Reviewer ruling (t029, 2026-06-19) |
 |---|---|---|---|
-| Q1 | Smoking → primary set | **staged amendment** | ratify `{age}`→`{age, smoking}` |
-| Q2 | BMI role | open role question | keep out of primary; defer to DAG v2 |
-| Q3 | Sufficiency (autoimmune-POI / frailty / parity) | open question | reviewer adjudicates primary vs sensitivity vs U |
-| Q4 | MR triangulation arm | new strategy | add as pleiotropy-robust triangulation arm |
+| Q1 | Smoking → primary set | staged amendment | **RATIFIED (modified coding)** → `{age}`→`{age, smoking}` *primary measured* set; applied to pre-reg |
+| Q2 | BMI role | open role question | **default RATIFIED** → out of primary; sensitivity (baseline, timing-split); role to DAG v2 |
+| Q3 | autoimmune-POI / frailty / parity | open question | **not promoted** → POI = etiologic stratum/quarantine; frailty = selection model; parity = staging + DAG-v2 |
+| Q4 | MR triangulation arm | new strategy | **RATIFIED** → triangulation only, strengthened pleiotropy-/selection-robust guardrails |
 
-Nothing here is applied to `pre-registration:0001` until the reviewer rules. On
-ratification, Q1 (and any Q3 additions) become an `amendments:` record on the pre-reg;
-Q2/Q4 flow into DAG v2 (t023) and/or a triangulation-arm spec.
+**Applied:** Q1 is now an `amendments:` record on `pre-registration:0001`; Q4 is added
+under its Exploratory arms. Q2/Q3 route to **DAG v2 (t023)** plus sensitivities. Reviewer
+findings on terminology ("primary measured", not "minimal-sufficient") and smoking
+temporal coding are folded into Q1 above and the pre-reg.

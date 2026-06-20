@@ -19,6 +19,23 @@ related:
 commits_to:
   - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
   - question:0013-reproductive-stage-failed-immune-recovery-after-infection
+amendments:
+  - date: "2026-06-19"
+    ratified_by: "task:t029 (independent out-of-author review)"
+    type: "pre-data amendment (not a fresh pre-registration)"
+    change: >
+      Primary adjustment set {age} → {age, smoking}, named the PRIMARY MEASURED
+      adjustment set (NOT 'minimal-sufficient': no valid sufficient set exists while
+      U is latent — see DAG critique). Smoking = baseline smoking history
+      (never/former/current + pack-years/duration where available); baseline smoking is
+      pre-infection but not necessarily pre-FMP, so it is a measured confounder, not a
+      clean pre-menopause exposure. E-value benchmark and U-proxy arm redefined relative
+      to the new primary set (U = unmeasured confounding BEYOND {age, smoking}).
+    rationale: >
+      Smoking is a measured strong common cause of earlier menopause and of
+      long-COVID/COVID risk and mortality; sensitivity-only placement was an
+      identification gap the bias audit missed. Reviewer ratified Q1 with the
+      coding/wording modification above.
 created: "2026-06-19"
 updated: "2026-06-19"
 ---
@@ -28,8 +45,9 @@ updated: "2026-06-19"
 **Target class.** Mixed, primarily **epistemic**. The epistemic commitment is an
 interpretation rule for `h0005` (and the question `q0013` it answers): how to update
 belief about reproductive-stage-as-immune-homeostatic-margin given the observed
-effect. The operational portion is "run the {age}-adjusted total-effect analysis on
-UK Biobank exactly as the three design artifacts specify." `q0007` (male-vs-female
+effect. The operational portion is "run the **{age, smoking}**-adjusted total-effect
+analysis (primary measured adjustment set; amendment Q1) on UK Biobank exactly as the
+three design artifacts specify." `q0007` (male-vs-female
 predominance) is a **different estimand** and is navigation context only — **not** a
 commitment target.
 
@@ -48,16 +66,26 @@ evidence).
 - Vehicle / field basket / access: `doc/methods/2026-06-19-ukb-data-field-specification.md` (t027)
 - Estimand / adjustment / arbitration: the t016 analysis plan (`spec` above)
 
-> **Proposed amendment PENDING independent-review ratification (NOT yet applied).**
-> A post-audit identification check
-> (`doc/methods/2026-06-19-confounder-open-questions-and-staged-amendment.md`) stages a
-> change to the **primary adjustment set** — add **smoking** (measured strong confounder
-> of age-at-menopause), i.e. `{age}` → `{age, smoking}` — plus open role questions on
-> **BMI**, **autoimmune-POI/frailty/parity**, and a proposed **Mendelian-randomization
-> triangulation arm**. These are **staged, not self-applied**, to give the criterion
-> change out-of-author provenance (per the bias audit's author-independence finding). The
-> locked criterion below stands **until t029's reviewer ratifies**; on ratification this
-> becomes an `amendments:` record.
+> **Amendment APPLIED — ratified by t029 independent review (2026-06-19).**
+> Source: `doc/methods/2026-06-19-confounder-open-questions-and-staged-amendment.md`.
+> - **Q1 (applied):** primary adjustment set **`{age}` → `{age, smoking}`**, the
+>   **primary measured adjustment set** (deliberately *not* "minimal-sufficient" — no
+>   valid sufficient set exists while U is latent; see
+>   `doc/inquiries/menopause-pais-causal-dag-critique.md`). Smoking = **baseline smoking
+>   history (never/former/current + pack-years/duration where available)**; baseline
+>   smoking is pre-infection but **not necessarily pre-FMP**, so it is a measured
+>   confounder, not a clean pre-menopause exposure. E-value/U-proxy redefined vs the new
+>   set (below).
+> - **Q2 (deferred to DAG v2 / t023):** BMI stays **out** of the primary set — ambiguous
+>   confounder-vs-mediator role; carried as a **sensitivity** covariate (baseline,
+>   timing-split where possible); role fixed in DAG v2.
+> - **Q3 (not promoted):** autoimmune-POI → confirmed-POI **quarantined/stratified** as a
+>   distinct etiologic stratum (generic autoimmune-hx stays U-proxy); **frailty** →
+>   selection/sensitivity model only; **parity** → staging input + DAG-v2 candidate, not
+>   primary (avoids drifting to a reproductive-life-course estimand).
+> - **Q4 (added):** **Mendelian-randomization triangulation arm** added under Exploratory
+>   with a pleiotropy-/selection-robust guardrail battery — **triangulation only, not
+>   confirmatory/co-primary**.
 
 ---
 
@@ -130,16 +158,18 @@ because the artifacts were inspected before thresholds were locked.
 
 Epistemic framing — each result class moves belief on h0005 by a stated amount/direction
 (not a kill-switch). Thresholds are on the **primary confirmatory** estimate (RR of
-WHO ≥90-day long-COVID per reproductive-timing exposure, {age}-adjusted, natal-female,
-UKB), read jointly with its mandatory sensitivities.
+WHO ≥90-day long-COVID per reproductive-timing exposure, **{age, smoking}**-adjusted
+[primary measured adjustment set], natal-female, UKB), read jointly with its mandatory
+sensitivities.
 
 **Moves belief TOWARD h0005 (`supports_threshold_shift`):**
 - Primary RR away from null in the predicted direction (earliest-vs-latest tertile RR
   ≥ ~1.3, 95% CI excludes 1), **AND**
 - **E-value** for the estimate (and the near-null CI limit) **exceeds** the
-  measured-proxy benchmark (the strength of SES/comorbidity/behaviour associations),
-  **AND**
-- the **U-proxy adjustment arm** does not collapse it toward the null, **AND**
+  measured-proxy benchmark — the strength of associations for proxies **beyond the
+  primary {age, smoking} set** (SES/comorbidity/remaining-behaviour) — **AND**
+- the **U-proxy adjustment arm** (adding those beyond-{age, smoking} proxies) does not
+  collapse it toward the null, **AND**
 - it is **definition-stable** across the *feasible* outcome definitions (def-1 primary
   + def-2 approximation), **AND**
 - it **survives** response-selection IPW and is **directionally concordant** with the
@@ -209,8 +239,11 @@ the floor — otherwise it is `underpowered`, never `null_meaningful`.
 ## Known Limitations
 
 This analysis **cannot**, even executed perfectly:
-1. **Point-identify** the total effect — U (SES, prior EBV, genetic/HLA, behaviour)
-   stays partly latent; the E-value bound is load-bearing.
+1. **Point-identify** the total effect — even with {age, smoking} measured, U (SES,
+   prior EBV, genetic/HLA, residual behaviour beyond smoking) stays partly latent, so
+   **no valid sufficient adjustment set exists** (per the DAG critique); {age, smoking}
+   is the *primary measured* set, not a sufficient one, and the E-value bound is
+   load-bearing.
 2. Resolve the **pre/peri-vs-post** contrast in UKB (cohort aged out — Feasibility);
    that requires younger cohorts.
 3. Deliver a **PEM-specific** verdict — UKB has WHO-symptom-level data but no
@@ -270,13 +303,16 @@ escalation — so the escalation clause is not an open forking path.
 
 **Confirmatory (1 primary test):**
 - Reproductive-timing exposure (age-at-menopause / time-since-menopause) → WHO ≥90-day
-  long-COVID RR, {age-at-infection}-adjusted, natal-female, UKB, Route A.
+  long-COVID RR, **{age-at-infection, smoking}**-adjusted (primary measured set;
+  amendment Q1), natal-female, UKB, Route A.
 
 **Pre-specified mandatory sensitivities (robustness, not discovery — do not multiply-correct as independent tests):**
-E-value bound; U-proxy adjustment arm (+EBV on the ~9.6k Category-1307 subsample,
-reported with its own power floor); response-selection IPW; Route-B (HES-PACS)
-triangulation; estimand-split {age} vs {age, baseline comorbidity}; outcome-definition
-axis (def-1 primary, def-2 approximation); ordinal-vs-binary / per-SD-vs-tertile.
+E-value bound; U-proxy adjustment arm (proxies beyond {age, smoking}, +EBV on the ~9.6k
+Category-1307 subsample, reported with its own power floor); response-selection IPW;
+Route-B (HES-PACS) triangulation; estimand-split **{age, smoking}** vs
+**{age, smoking, baseline comorbidity}**; BMI sensitivity (baseline, timing-split where
+possible — role deferred to DAG v2 per Q2); outcome-definition axis (def-1 primary,
+def-2 approximation); ordinal-vs-binary / per-SD-vs-tertile.
 
 **Exploratory (explicitly labelled, hypothesis-generating):**
 - Stage-at-infection ordinal (pre/peri/post) contrast in UKB (peri ≈ underpowered).
@@ -292,6 +328,15 @@ axis (def-1 primary, def-2 approximation); ordinal-vs-binary / per-SD-vs-tertile
   separate stratum with surgical cases **excluded from the primary natural-timing
   estimand**; promotable to a verdict-bearing sensitivity only if surgical *indication*
   is adequately bounded (reviewer call, t029).
+- **Mendelian-randomization triangulation arm** (Q4; ratified t029): MR of
+  genetically-instrumented **age-at-natural-menopause (ANM) → long-COVID**, exogenous to
+  SES/smoking/survival and so attacking M2/M4/M3a jointly. **Triangulation only — not
+  confirmatory or co-primary.** Pre-committed guardrails: prefer **external ANM
+  instruments**; ancestry/PC handling; **sample-overlap disclosure**; clumping;
+  **Steiger directionality**; heterogeneity tests; leave-one-out; **MR-Egger**, weighted
+  median/mode; and a **pleiotropy-focused analysis excluding or separately reporting
+  immune / DNA-repair / MHC-adjacent instrument subsets**. The DNA-repair/immune-gene
+  overlap is grounds to **down-weight** the MR verdict, not to drop the arm.
 
 ---
 
@@ -300,9 +345,9 @@ axis (def-1 primary, def-2 approximation); ordinal-vs-binary / per-SD-vs-tertile
 | Category | Count | Correction |
 |---|---|---|
 | Confirmatory tests | 1 | none needed (single primary); verdict rests on it + mandatory sensitivities |
-| Pre-specified sensitivities | ~8 | interpreted as robustness/arbitration, not multiplicity |
-| Exploratory tests | ~5+ | none (exploratory — reported with exploratory weight) |
-| **Total** | **~14** | confirmatory verdict is multiplicity-free; sensitivities/exploratory carry their own (reduced) evidential weight |
+| Pre-specified sensitivities | ~9 | interpreted as robustness/arbitration, not multiplicity (adds BMI sensitivity per Q2) |
+| Exploratory tests | ~6+ | none (exploratory — reported with exploratory weight; adds MR triangulation per Q4) |
+| **Total** | **~16** | confirmatory verdict is multiplicity-free; sensitivities/exploratory carry their own (reduced) evidential weight |
 
 ---
 
