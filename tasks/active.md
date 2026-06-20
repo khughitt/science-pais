@@ -186,7 +186,7 @@ Data-gated: pre-registration:0001-menopause-pais-total-effect is committed but e
 - priority: P1
 - status: proposed
 - aspects: []
-- related: [doc:confounder-open-questions-and-staged-amendment-2026-06-19, task:t023]
+- related: [report:0001-bias-audit-menopause-pais-total-effect, pre-registration:0001-menopause-pais-total-effect, task:t028, task:t023]
 - created: 2026-06-19
 
 Closes the two HIGH-severity findings from report:0001-bias-audit-menopause-pais-total-effect (author-independence self-audit + single-precedent corpus closure). Two deliverables, both pre-execution: (1) Out-of-author review of pre-registration:0001-menopause-pais-total-effect by a reviewer with no authorship stake (human domain expert or fresh agent), after a cooling-off period — the current verdict is 'self-audit (internally consistent)', NOT externally validated. (2) Cross-read >=1 second UKB long-COVID cohort paper (beyond AlcaldeHerraiz2025) to independently confirm effective-n, selection profile, and the SHBG/sex-hormone direction signal, so the feasibility claims no longer rest on a single source. This is the G2-gate out-of-corpus check (see pre-reg). Must complete before the UKB AMS basket is finalized / before t028 execution.
