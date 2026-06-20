@@ -23,6 +23,10 @@ from pathlib import Path
 # root (gitignored). conda:/include: paths stay relative to the Snakefile dir.
 SNAKEFILE_DIR = Path(workflow.basedir).resolve()
 REPO_ROOT = SNAKEFILE_DIR.parent.parent
+# Acquisition/analysis scripts live at code/scripts (sibling of code/workflows).
+# Absolute so `python {SCRIPTS}/x.py` is invocation-independent and sibling
+# imports (e.g. acquire_common) resolve via sys.path[0].
+SCRIPTS = str(SNAKEFILE_DIR.parent / "scripts")
 
 configfile: str(SNAKEFILE_DIR / "config.yaml")
 

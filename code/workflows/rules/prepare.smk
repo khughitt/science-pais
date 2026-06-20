@@ -19,7 +19,7 @@ rule prepare_gse14577:
     log:
         f"{RES}/logs/prepare_gse14577.log"
     conda:
-        "envs/r-bioc.yaml"
+        "../envs/r-bioc.yaml"
     shell:
         stub("prepare/prepare_gse14577 (collapse_probes.R)")
 
@@ -37,7 +37,7 @@ rule prepare_gse130353:
     log:
         f"{RES}/logs/prepare_gse130353.log"
     conda:
-        "envs/py.yaml"
+        "../envs/py.yaml"
     shell:
         stub("prepare/prepare_gse130353 near-zero KDE-antimode filter")
 
@@ -54,7 +54,7 @@ rule download_genesets:
     log:
         f"{RES}/logs/download_genesets.{{db}}.log"
     conda:
-        "envs/py.yaml"
+        "../envs/py.yaml"
     shell:
         stub("prepare/download_genesets (curl + sha256 verify; HALT on empty/mismatch)")
 
@@ -75,6 +75,6 @@ rule prepare_genesets:
     log:
         f"{RES}/logs/prepare_genesets.log"
     conda:
-        "envs/r-bioc.yaml"   # symbols→Ensembl map + size filter; universe must not drift
+        "../envs/r-bioc.yaml"   # symbols→Ensembl map + size filter; universe must not drift
     shell:
         stub("prepare/prepare_genesets (prepare_genesets.R)")

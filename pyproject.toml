@@ -19,3 +19,9 @@ pipeline = [
 
 [tool.uv.sources]
 science = { path = "../../../science/science", editable = true }
+
+# code/scripts/ holds rule-callable CLI scripts that import sibling modules
+# (e.g. acquire_common). At runtime the script's own dir is on sys.path[0];
+# declare it as an import root so static analysis resolves the same way.
+[tool.pyright]
+extraPaths = ["code/scripts"]

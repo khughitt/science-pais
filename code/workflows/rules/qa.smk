@@ -23,7 +23,7 @@ rule qa_raw_gse14577:
     log:
         f"{RES}/logs/qa_raw_gse14577.log"
     conda:
-        "envs/py.yaml"
+        "../envs/py.yaml"
     shell:
         stub("qa/qa_raw_gse14577 (qa_checkpoint.py)")
 
@@ -41,6 +41,6 @@ rule qa_raw_gse130353:
     log:
         f"{RES}/logs/qa_raw_gse130353.log"
     conda:
-        "envs/py.yaml"
+        "../envs/py.yaml"
     shell:
         stub("qa/qa_raw_gse130353 (qa_checkpoint.py)")

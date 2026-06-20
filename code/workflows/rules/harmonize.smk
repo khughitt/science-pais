@@ -20,7 +20,7 @@ rule harmonize_gse14577:
     log:
         f"{RES}/logs/harmonize_gse14577.log"
     conda:
-        "envs/r-bioc.yaml"   # hgu133a.db / hgu133b.db probe→Ensembl mapping
+        "../envs/r-bioc.yaml"   # hgu133a.db / hgu133b.db probe→Ensembl mapping
     shell:
         stub("harmonize/harmonize_gse14577 (harmonize_geneids.py)")
 
@@ -38,6 +38,6 @@ rule harmonize_gse130353:
     log:
         f"{RES}/logs/harmonize_gse130353.log"
     conda:
-        "envs/py.yaml"   # MMSEQ feature_id already ENSG (rel68) → lift to current
+        "../envs/py.yaml"   # MMSEQ feature_id already ENSG (rel68) → lift to current
     shell:
         stub("harmonize/harmonize_gse130353 (harmonize_geneids.py)")

@@ -20,7 +20,7 @@ rule concordance:
     log:
         f"{RES}/logs/concordance.{{pair}}.{{db}}.log"
     conda:
-        "envs/py.yaml"
+        "../envs/py.yaml"
     shell:
         stub("verdict/concordance (scipy spearmanr)")
 
@@ -44,7 +44,7 @@ rule permutation_null:
     log:
         f"{RES}/logs/permutation_null.{{pair}}.{{db}}.log"
     conda:
-        "envs/r-bioc.yaml"
+        "../envs/r-bioc.yaml"
     shell:
         stub("verdict/permutation_null (permutation_null.R, HEAVY, BiocParallel)")
 
@@ -61,7 +61,7 @@ rule specificity:
     log:
         f"{RES}/logs/specificity.{{db}}.log"
     conda:
-        "envs/py.yaml"
+        "../envs/py.yaml"
     shell:
         stub("verdict/specificity (specificity.py)")
 
@@ -78,7 +78,7 @@ rule theme_rollup:
     log:
         f"{RES}/logs/theme_rollup.{{db}}.log"
     conda:
-        "envs/py.yaml"
+        "../envs/py.yaml"
     shell:
         stub("verdict/theme_rollup strict-dominance (theme_rollup.py)")
 
@@ -94,7 +94,7 @@ rule db_robustness:
     log:
         f"{RES}/logs/db_robustness.log"
     conda:
-        "envs/py.yaml"
+        "../envs/py.yaml"
     shell:
         stub("verdict/db_robustness theme-sign-only >=2 DBs (theme_rollup.py)")
 
@@ -111,7 +111,7 @@ rule compartment:
     log:
         f"{RES}/logs/compartment.log"
     conda:
-        "envs/py.yaml"
+        "../envs/py.yaml"
     shell:
         stub("verdict/compartment 50%-marker on concordance-carrying set")
 
@@ -141,6 +141,6 @@ rule verdict:
     log:
         f"{RES}/logs/verdict.log"
     conda:
-        "envs/py.yaml"
+        "../envs/py.yaml"
     shell:
         stub("verdict/verdict locked resolution order → 1 label (verdict.py)")

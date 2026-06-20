@@ -17,7 +17,7 @@ rule limma_de:
     log:
         f"{RES}/logs/limma_de.{{contrast}}.log"
     conda:
-        "envs/r-bioc.yaml"
+        "../envs/r-bioc.yaml"
     shell:
         stub("enrich/limma_de (limma_de.R)")
 
@@ -34,6 +34,6 @@ rule fgsea_enrich:
     log:
         f"{RES}/logs/fgsea_enrich.{{contrast}}.{{db}}.log"
     conda:
-        "envs/r-bioc.yaml"
+        "../envs/r-bioc.yaml"
     shell:
         stub("enrich/fgsea_enrich (fgsea_enrich.R)")
