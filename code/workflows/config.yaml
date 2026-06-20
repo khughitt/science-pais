@@ -56,6 +56,36 @@ datasets:
     feature_id_namespace: "ensembl_gene_id"   # ENSG, release 68
     # DESeq2/edgeR INADMISSIBLE — estimate is log_mu, not counts (G2 lock).
 
+# --------------------------------------------- raw QA checkpoints (WP2) -------
+# t037 two-severity. STRUCTURAL checks are build-fatal (the *.qa.pass sentinel is
+# withheld on failure → the DAG halts); DISTRIBUTION checks are surfaced in the
+# qa_report.md only. These are OPERATIONAL integrity gates (catch parse damage /
+# corruption), NOT verdict-affecting science — so they live in config, not the
+# pre-reg. Expected dims are the LOCKED G1-observed counts (parity-verified WP1).
+qa:
+  gse14577:
+    gene_id_column: "ID_REF"           # structural: present as first matrix column
+    required_groups: ["PI-CFS", "HC"]  # structural: both group codes in metadata
+    chips_per_patient: 2               # structural: chip A (GPL96) + chip B (GPL97)
+    platforms:                         # structural: exact G1-observed dims
+      GPL96: {n_probes: 22283, n_samples: 15}
+      GPL97: {n_probes: 22645, n_samples: 15}
+    distribution:                      # surfaced-only log2-intensity sanity bounds
+      log2_min_floor: 0.0
+      log2_max_ceiling: 16.0
+      max_pct_missing: 5.0
+  gse130353:
+    required_group_counts: {HC: 10, CFS: 10, QFS: 10, QS: 10}  # structural (G4)
+    n_members: 40                      # structural: tar members extracted
+    n_donors: 40                       # structural: distinct donors
+    estimate_column: "log_mu"          # structural: MMSEQ estimate column present (G2)
+    feature_id_namespace: "ensembl_gene_id"
+    require_all_members_present: true  # structural: every SOFT sample → a tar member
+    require_g2_pass: true              # structural: contract G2 verdict == PASS
+    distribution:                      # surfaced-only continuous-scale sanity
+      min_feature_universe: 10000      # ~56625 expected
+      max_pct_integer: 1.0             # log_mu is continuous, not integer counts
+
 # ---------------------------------------------- gene-set universe ------------
 # pre-reg:0002 Metric Selection Rationale — pinned universe + size filter.
 genesets:

@@ -28,7 +28,8 @@ REPO_ROOT = SNAKEFILE_DIR.parent.parent
 # imports (e.g. acquire_common) resolve via sys.path[0].
 SCRIPTS = str(SNAKEFILE_DIR.parent / "scripts")
 
-configfile: str(SNAKEFILE_DIR / "config.yaml")
+CONFIGFILE = str(SNAKEFILE_DIR / "config.yaml")
+configfile: CONFIGFILE
 
 workdir: str(REPO_ROOT)
 
