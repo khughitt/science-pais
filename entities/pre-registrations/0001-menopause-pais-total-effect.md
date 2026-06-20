@@ -48,6 +48,17 @@ evidence).
 - Vehicle / field basket / access: `doc/methods/2026-06-19-ukb-data-field-specification.md` (t027)
 - Estimand / adjustment / arbitration: the t016 analysis plan (`spec` above)
 
+> **Proposed amendment PENDING independent-review ratification (NOT yet applied).**
+> A post-audit identification check
+> (`doc/methods/2026-06-19-confounder-open-questions-and-staged-amendment.md`) stages a
+> change to the **primary adjustment set** — add **smoking** (measured strong confounder
+> of age-at-menopause), i.e. `{age}` → `{age, smoking}` — plus open role questions on
+> **BMI**, **autoimmune-POI/frailty/parity**, and a proposed **Mendelian-randomization
+> triangulation arm**. These are **staged, not self-applied**, to give the criterion
+> change out-of-author provenance (per the bias audit's author-independence finding). The
+> locked criterion below stands **until t029's reviewer ratifies**; on ratification this
+> becomes an `amendments:` record.
+
 ---
 
 ## Hypotheses Under Test

@@ -142,7 +142,7 @@ h0005 currently carries its reasoning as a prose 'Proposition Bundle' (unmigrate
 - 2026-06-19: Design doc revised to v2 (2026-06-19) after review against the June 8 epistemic-edges facet. Framing change for this migration: P-reverse is an ordinary second relational proposition (multi-edge), roled 'rival' on its cito:discusses membership *relative to h0005* — NOT a new causal-edge label. Confounder/collider cautions from t014 are DERIVED from patch topology + query (epistemic-edges §2.1), so do not author them as edge roles. The only thing this migration exercises that is new is membership_role on the bundle edge (core|rival|background).
 
 ## [t023] Build v2 of the t014 menopause-PAIS DAG before specification
-- priority: P3
+- priority: P2
 - status: proposed
 - aspects: []
 - created: 2026-06-19
@@ -152,6 +152,10 @@ Build v2 of the t014 menopause-PAIS causal DAG with the structure the critique f
 PREREQUISITE STRUCTURAL FIX (review 2026-06-19): the current graph has a single cardiometabolic-comorbidity node with menopause -> sex-hormones -> comorbidity. Naively adding the recommended comorbidity -> menopause-timing edge to that same node creates a CYCLE. v2 must first SPLIT the node into baseline (pre-infection) comorbidity and menopause-incident comorbidity: baseline-comorbidity -> menopause-timing (makes baseline comorbidity a true confounder -> adjust) while incident comorbidity stays a downstream mediator (menopause/hormones -> incident-comorbidity -> PAIS). Only after the split is acyclic should the new edges be added.
 
 Then add: the baseline-comorbidity -> menopause-timing edge (test both {age} and {age, baseline-comorbidity} adjustment sets), a hospitalization/acute-care ascertainment collider (severe acute -> hospital -> cohort entry), and a calendar-period/variant/vaccination-era node confounding mediator paths. Keep reverse causation (PAIS -> reproductive axis, t021) as a separate acyclic inquiry with exposure fixed at pre-infection stage. Relates: hypothesis:0005, task:t016, task:t021, patch-definition:menopause-pais-causal-dag.
+
+### Notes
+
+- 2026-06-19: Candidate confounder/mediator/alternative set to incorporate in DAG v2 (from the 2026-06-19 confounder review; see doc/methods/2026-06-19-confounder-open-questions-and-staged-amendment.md). CONFOUNDERS (common cause of menopause-timing AND LC; may break {age}-minimal-sufficient): smoking (measured; staged for primary set via t029), BMI/adiposity (ambiguous: confounder vs M1-mediator vs collider — adjudicate role + timing), autoimmune POI / autoimmune common cause, biological frailty / subclinical pre-infection ill-health (non-SES), parity (dual role: staging input AND possible confounder). NEW IDENTIFICATION ARM: Mendelian randomization of genetically-instrumented age-at-menopause -> LC (exogenous to SES/smoking/survival; pleiotropy caveat — menopause loci overlap DNA-repair/immune genes). MEDIATORS (direct-effect/mechanism only, do NOT adjust in total effect): visceral-fat/metabolic shift, estrobolome/gut-microbiome, vasomotor-symptoms/sleep -> autonomic-inflammatory (also a symptom-overlap ascertainment confounder — dual role), iron-status reversal (menstrual loss -> post-menopausal repletion). STRUCTURAL ALTERNATIVES: shielding-behaviour -> infection-timing/variant-era confounding; testing-into-denominator selection (distinct from questionnaire-response M3b); HRT healthy-user / no-open-collider check. Q2/Q4 from the reviewer doc flow here after t029.
 
 ## [t025] Compare PEM-positive vs PEM-negative PASC molecular signatures
 - priority: P2
@@ -182,7 +186,11 @@ Data-gated: pre-registration:0001-menopause-pais-total-effect is committed but e
 - priority: P1
 - status: proposed
 - aspects: []
-- related: [report:0001-bias-audit-menopause-pais-total-effect, pre-registration:0001-menopause-pais-total-effect, task:t028]
+- related: [doc:confounder-open-questions-and-staged-amendment-2026-06-19, task:t023]
 - created: 2026-06-19
 
 Closes the two HIGH-severity findings from report:0001-bias-audit-menopause-pais-total-effect (author-independence self-audit + single-precedent corpus closure). Two deliverables, both pre-execution: (1) Out-of-author review of pre-registration:0001-menopause-pais-total-effect by a reviewer with no authorship stake (human domain expert or fresh agent), after a cooling-off period — the current verdict is 'self-audit (internally consistent)', NOT externally validated. (2) Cross-read >=1 second UKB long-COVID cohort paper (beyond AlcaldeHerraiz2025) to independently confirm effective-n, selection profile, and the SHBG/sex-hormone direction signal, so the feasibility claims no longer rest on a single source. This is the G2-gate out-of-corpus check (see pre-reg). Must complete before the UKB AMS basket is finalized / before t028 execution.
+
+### Notes
+
+- 2026-06-19: Reviewer input prepared: doc/methods/2026-06-19-confounder-open-questions-and-staged-amendment.md. FIRST reviewer action = rule on a STAGED adjustment-set amendment (Q1: add smoking to primary set, {age}->{age,smoking}; pre-data, staged not self-applied to preserve out-of-author provenance). Also adjudicate Q2 (BMI role: confounder vs mediator), Q3 (do autoimmune-POI/frailty/parity belong in primary set?), Q4 (add MR triangulation arm? pleiotropy-robust). On ratification, Q1 becomes an amendments: record on pre-reg:0001; Q2/Q4 route to t023 (DAG v2). These join the two original t029 deliverables (out-of-author pre-reg review + 2nd UKB precedent cross-read).
