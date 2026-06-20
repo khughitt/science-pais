@@ -173,7 +173,7 @@ Assess whether t001/t016 should pre-commit to PC-COS core domains (fatigue, brea
 - priority: P2
 - status: blocked
 - aspects: []
-- blocked-by: [pre-registration:0001-menopause-pais-total-effect, task:t029]
+- blocked-by: [pre-registration:0001-menopause-pais-total-effect, task:t029, task:t030, task:t031]
 - created: 2026-06-19
 
 Data-gated: pre-registration:menopause-pais-total-effect is committed but execution is blocked on the Vehicle-Admissibility Gate (G1 access provisioned, G2 field IDs confirmed, G3 power floor met, G4-G6 sampling/timing/outcome). Standing verdict [?] inconclusive-for-coverage; no bears_on update on h0005 until a provisioned UKB vehicle clears all G-gates. Activate on UKB AMS approval. Primary confirmatory = reproductive-timing exposure -> WHO>=90d long-COVID RR (Route A questionnaire), {age}-adjusted, natal-female. Ref doc/meta/pre-registration-menopause-pais-total-effect.md.
@@ -191,3 +191,21 @@ Data-gated: pre-registration:menopause-pais-total-effect is committed but execut
 - created: 2026-06-19
 
 Closes the two HIGH-severity findings from report:0001-bias-audit-menopause-pais-total-effect (author-independence self-audit + single-precedent corpus closure). Two deliverables, both pre-execution: (1) Out-of-author review of pre-registration:0001-menopause-pais-total-effect by a reviewer with no authorship stake (human domain expert or fresh agent), after a cooling-off period — the current verdict is 'self-audit (internally consistent)', NOT externally validated. (2) Cross-read >=1 second UKB long-COVID cohort paper (beyond AlcaldeHerraiz2025) to independently confirm effective-n, selection profile, and the SHBG/sex-hormone direction signal, so the feasibility claims no longer rest on a single source. This is the G2-gate out-of-corpus check (see pre-reg). Must complete before the UKB AMS basket is finalized / before t028 execution.
+
+## [t030] Promote surgical menopause to a pre-specified discriminating contrast (M1 vs M2/M4)
+- priority: P1
+- status: proposed
+- aspects: []
+- related: [discussion:0001-menopause-timing-pais-rival-models, pre-registration:0001-menopause-pais-total-effect, task:t020, task:t028]
+- created: 2026-06-19
+
+Pre-execution design decision from the rival-model packet (discussion:0001-menopause-timing-pais-rival-models). The surgical-menopause stratum (bilateral oophorectomy → abrupt, less SES-correlated postmenopause; t020 §3 Step 0) is currently a separate nuisance/set-aside stratum. Decide WHETHER and HOW it moves to a pre-specified DISCRIMINATING contrast: an abrupt hormone-withdrawal quasi-experiment that separates M1 (hormone-timing modifier / h0005) from M2 (chronological aging) and M4 (SES confounding) better than covariate adjustment can, because surgical timing is less age- and less SES-correlated than natural-menopause timing. CONSTRAINT: must PRESERVE the primary natural-menopause-timing estimand — surgical menopause is discriminating/triangulating, NOT a replacement exposure; never pool surgical into the natural-transition dose-response (per t020). Deliverable: a pre-registration amendment/exploratory-arm spec (route via statistics-prereg-amendment-vs-fresh if it touches a locked criterion). Visible input to t029's independent review; does NOT block t029 from starting.
+
+## [t031] Specify the left-truncation / survival-depletion bias simulation (M3a)
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [report:0001-bias-audit-menopause-pais-total-effect, discussion:0001-menopause-timing-pais-rival-models, pre-registration:0001-menopause-pais-total-effect, task:t028]
+- created: 2026-06-19
+
+Execution-design deliverable from the bias audit (report:0001-bias-audit-menopause-pais-total-effect, Known-Limitation #7) and the rival-model packet (discussion:0001-menopause-timing-pais-rival-models, model M3a). Define the simulation/sensitivity that QUANTIFIES depletion-of-susceptibles from requiring survival from the 2006-2010 UKB baseline to 2020-2022 infection eligibility (analyzed women are age ~52-83 at infection). Because earlier age at menopause is associated with higher all-cause/CV mortality, the earliest-menopause (high-exposure) stratum is differentially dead before the time origin → likely null-ward bias on the timing→long-COVID estimate. Scope: competing-prior-event / left-truncation simulation using published age-at-menopause→mortality hazards; output a bound on the attenuation, to be reported alongside (and to condition the interpretation of) any null BEFORE it is read as a powered downward update. Visible input to t029; does NOT block t029 from starting.
