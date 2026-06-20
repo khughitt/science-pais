@@ -196,6 +196,49 @@ def parse_gse14577() -> dict:
 
 
 # --------------------------------------------------------------- GSE130353 ----
+GSE130353_GROUP_MAP = {
+    "Healthy control": "HC",
+    "Chronic Fatigue Syndrome": "CFS",       # depositor also writes "(FCS)"; titles use CFS/CSF typos
+    "Q Fever Fatigue Syndrom": "QFS",
+    "Q fever seropositive controls": "QS",   # filename prefix is "PQ"; SOFT status is authoritative
+}
+
+
+def parse_gse130353_soft() -> dict:
+    """Authoritative GSM -> {title, group, donor_id, mmseq_basename} from the SOFT.
+
+    Group is derived from `subject status` (not the filename prefix, which carries
+    the PQ<->QS indirection and CFS/CSF/FCS typos)."""
+    soft = RAW / "GSE130353_family.soft.gz"
+    samples: dict[str, dict] = {}
+    cur = None
+    with gzip.open(soft, "rt", encoding="utf-8", errors="replace") as fh:
+        for line in fh:
+            line = line.rstrip("\n")
+            if line.startswith("^SAMPLE = "):
+                cur = line.split(" = ", 1)[1].strip()
+                samples[cur] = {"accession": cur}
+            elif not cur:
+                continue
+            elif line.startswith("!Sample_title = "):
+                samples[cur]["title"] = line.split(" = ", 1)[1].strip()
+            elif line.startswith("!Sample_characteristics_ch1 = subject status:"):
+                status = line.split("subject status:", 1)[1].strip()
+                samples[cur]["subject_status"] = status
+                grp = "unknown"
+                for key, code in GSE130353_GROUP_MAP.items():
+                    if key in status:
+                        grp = code
+                        break
+                samples[cur]["group"] = grp
+            elif line.startswith("!Sample_characteristics_ch1 = donor id:"):
+                samples[cur]["donor_id"] = line.split("donor id:", 1)[1].strip()
+            elif line.startswith("!Sample_supplementary_file_1 = "):
+                url = line.split(" = ", 1)[1].strip()
+                samples[cur]["mmseq_basename"] = url.rsplit("/", 1)[-1]
+    return samples
+
+
 def parse_gse130353() -> dict:
     tar = RAW / "GSE130353_RAW.tar"
     out = PROC / "GSE130353"
@@ -230,15 +273,77 @@ def parse_gse130353() -> dict:
             if len(mmseq_inspections) < 2 and m.name.endswith(".gene.mmseq.txt.gz"):
                 mmseq_inspections.append(inspect_mmseq(m.name, data))
 
+    # authoritative sample sheet from the SOFT (group from subject status)
+    soft_samples = parse_gse130353_soft()
+    member_basenames = {Path(m["name"]).name for m in members}
+    sheet_rows = []
+    group_counts: dict[str, int] = {}
+    donors: set[str] = set()
+    for gsm, s in sorted(soft_samples.items()):
+        grp = s.get("group", "unknown")
+        group_counts[grp] = group_counts.get(grp, 0) + 1
+        donors.add(s.get("donor_id", gsm))
+        base = s.get("mmseq_basename", "")
+        sheet_rows.append({
+            "accession": gsm,
+            "title": s.get("title", ""),
+            "subject_status": s.get("subject_status", ""),
+            "group": grp,
+            "donor_id": s.get("donor_id", ""),
+            "mmseq_file": base,
+            "member_present": base in member_basenames,
+        })
+    sheet_path = out / "sample_sheet.tsv"
+    cols = ["accession", "group", "donor_id", "title", "subject_status", "mmseq_file", "member_present"]
+    with sheet_path.open("w", encoding="utf-8") as w:
+        w.write("\t".join(cols) + "\n")
+        for r in sheet_rows:
+            w.write("\t".join(str(r[c]) for c in cols) + "\n")
+
+    # G4 admissibility: 10/10/10/10, every SOFT sample matched to a tar member,
+    # and the load-bearing QFS-vs-QS contrast constructable.
+    required = {"HC": 10, "CFS": 10, "QFS": 10, "QS": 10}
+    unmatched = [r["accession"] for r in sheet_rows if not r["member_present"]]
+    g4 = {
+        "required_group_counts": required,
+        "observed_group_counts": group_counts,
+        "groups_admissible": group_counts == required,
+        "n_unique_donors": len(donors),
+        "soft_samples_matched_to_members": len(member_basenames & {r["mmseq_file"] for r in sheet_rows}),
+        "unmatched_samples": unmatched,
+        "qfs_vs_qs_constructable": group_counts.get("QFS", 0) >= 2 and group_counts.get("QS", 0) >= 2,
+        "verdict": "PASS" if (group_counts == required and not unmatched) else "REVIEW",
+    }
+
+    # G2 verdict (mechanical) from the locked column inspection
+    est_col = "log_mu"
+    g2_pass = all(
+        est_col in insp["header_columns"]
+        and insp["numeric_column_scale_stats"].get(est_col, {}).get("pct_integer_like", 100) < 1.0
+        for insp in mmseq_inspections
+    ) if mmseq_inspections else False
+
     contract = {
         "dataset": "GSE130353",
         "status": "extracted",
         "tar_sha256": sha256_path(tar),
         "n_members": len(members),
         "members": members,
+        "sample_sheet": str(sheet_path.relative_to(ROOT)),
         "depositor_processing_claim": "SOFT says '.gene.mmseq.txt ... containing counts per gene' "
-                                      "(MMSEQ via Bowtie1, Ensembl release 68) -- VERIFY against columns below",
+                                      "(MMSEQ via Bowtie1, Ensembl release 68)",
+        "g2_verdict": {
+            "expression_estimate_column": est_col,
+            "scale": "natural-log MMSEQ posterior mean (continuous, ~30% negative, 0% integer)",
+            "counts_column_present_but_not_used": "unique_hits (integer; ignores MMSEQ multi-map model)",
+            "uncertainty_column": "sd (per-estimate posterior SD; candidate limma precision weights)",
+            "feature_id_namespace": "Ensembl gene IDs (ENSG..., release 68)",
+            "depositor_counts_label": "INACCURATE -- estimate is log_mu, not counts; continuous limma only (DESeq2/edgeR inadmissible)",
+            "halt_on_triggered": not g2_pass,
+            "verdict": "PASS" if g2_pass else "HALT",
+        },
         "g2_mmseq_inspection": mmseq_inspections,
+        "g4_admissibility": g4,
         "extract_dir": str(extract_dir.relative_to(ROOT)),
     }
     (out / "parse_contract.json").write_text(json.dumps(contract, indent=2) + "\n")
@@ -319,9 +424,13 @@ def main() -> int:
         print(f"[g2] members: {g130353['n_members']}")
         for insp in g130353["g2_mmseq_inspection"]:
             print(f"[g2] {insp['file']} columns={insp['header_columns']} rows={insp['n_data_rows']}")
-            for c, st in insp["numeric_column_scale_stats"].items():
-                print(f"        {c}: min={st['min']} max={st['max']} mean={st['mean']} "
-                      f"%int={st['pct_integer_like']} %neg={st['pct_negative']}")
+        gv = g130353["g2_verdict"]
+        print(f"[g2] VERDICT={gv['verdict']} estimate_col={gv['expression_estimate_column']} "
+              f"({gv['scale']}); depositor 'counts' label: {gv['depositor_counts_label'][:40]}…")
+        g4 = g130353["g4_admissibility"]
+        print(f"[g4] VERDICT={g4['verdict']} groups={g4['observed_group_counts']} "
+              f"donors={g4['n_unique_donors']} matched={g4['soft_samples_matched_to_members']}/40 "
+              f"qfs_vs_qs_constructable={g4['qfs_vs_qs_constructable']}")
     else:
         print(f"[g2] download needed: {g130353.get('source_url')}")
     return 0
