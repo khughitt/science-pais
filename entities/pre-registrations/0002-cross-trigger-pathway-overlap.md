@@ -44,6 +44,30 @@ amendments:
       would have left room for post-hoc calls at interpretation time. Filling them in before any data
       is observed is the entire point of pre-registration; recording it as an amendment preserves the
       audit trail that they were specified pre-data via independent review, not back-fitted.
+  - date: "2026-06-20"
+    ratified_by: "user code review 2026-06-20 second pass (same-day, pre-data)"
+    type: "pre-data tightening (not a fresh pre-registration; criteria narrowed/specified, none loosened)"
+    change: >
+      Three findings + one open question from the second review pass closed (still data-gated, nothing
+      run): (HIGH) the locked theme-map regexes were inside a Markdown table with escaped pipes (\\|),
+      ambiguous if copied verbatim — moved to a fenced YAML block with RAW PCRE alternation and an
+      explicit "compile verbatim, case-insensitive, no Markdown unescaping" instruction; the
+      cell-type-marker regex likewise. (HIGH) compartment_confounded used the gene-level term
+      "leading-edge" and an undefined "sets driving ρ" — replaced by a locked set-level
+      *concordance-carrying set* (primary-concordant AND nominal fgsea p<0.05 in BOTH contrasts);
+      the 50%-marker rule now runs on that fixed Hallmark set, and fires empty→cannot-fire. (MED)
+      DB-robustness did not require cross-DB direction agreement — now a theme "recurs across ≥2 DBs"
+      only if fatigue-specific in ≥2 of {Hallmark,Reactome,GO-BP} with the SAME theme-level NES sign
+      (theme direction = sign of the largest-|NES| fatigue-specific concordance-carrying set).
+      (OPEN Q) the mixed-theme case (one fatigue-specific set overriding exposure evidence) was made
+      explicit and tightened: theme roll-up is now STRICT-DOMINANCE — fatigue-specific iff
+      (#fatigue-specific sets) > (#exposure_sequela sets); a tie or exposure-majority demotes to
+      exposure_sequela. Decision table + resolution order updated to reference these locked terms.
+    rationale: >
+      Second-pass review caught that "mechanical" was not yet fully mechanical: a copy-paste-ambiguous
+      regex, a gene-level term standing in for a set-level rule, a direction-blind robustness check, and
+      an under-specified mixed-theme roll-up each still left an interpretation-time judgment call. All
+      four are closed pre-data, preserving the no-HARKing audit trail.
 created: "2026-06-20"
 updated: "2026-06-20"
 ---
@@ -124,8 +148,8 @@ and the belief update each licenses on the commitment targets:
 
 | Verdict label | Trigger | Update on `hypothesis:0001` | Update on `question:0017` |
 |---|---|---|---|
-| `shared_suggestive` | p_perm < 0.05 **and** ≥1 primary-concordant theme is **fatigue-specific** (S1-positive ∧ not S2-positive; see *Metric Selection Rationale*) **and** that theme recurs across ≥2 gene-set DBs | **Moderate positive** (capped at "suggestive — needs ≥3-trigger test") | **Weakens** finite-repertoire-coincidence null |
-| `fragile` | p_perm < 0.05 **and** ≥1 fatigue-specific theme, but **no** fatigue-specific theme recurs across ≥2 DBs | Near-zero durable update (unstable signal) | No material update |
+| `shared_suggestive` | p_perm < 0.05 **and** ≥1 **fatigue-specific theme** (strict-dominance roll-up; see *Metric Selection Rationale*) that satisfies **direction-consistent DB-robustness** (fatigue-specific with matching NES sign in ≥2 of {Hallmark, Reactome, GO-BP}) | **Moderate positive** (capped at "suggestive — needs ≥3-trigger test") | **Weakens** finite-repertoire-coincidence null |
+| `fragile` | p_perm < 0.05 **and** ≥1 fatigue-specific theme, but **none** satisfies direction-consistent DB-robustness | Near-zero durable update (unstable signal) | No material update |
 | `exposure_confounded` | p_perm < 0.05 **and no** primary-concordant theme is fatigue-specific, **and** ≥1 concordant theme is **exposure_sequela** (S2-positive) | **Negative** on the interpretation that convergence reflects shared *fatigue* biology | **Strengthens** ascertainment/exposure-sequela account |
 | `compartment_confounded` | concordant pathways dominated by monocyte/PBMC cell-type-marker sets | Negative (artifactual convergence) | Strengthens detection-artifact account |
 | `null_nonarbitrating` | p_perm ≥ 0.05 | Minimal (power/bias ceiling — cannot exclude a real shared signature) | **No** update — explicitly **not** support for the coincidence null |
@@ -142,13 +166,14 @@ verdict:
 1. **`model_inadequate` / `batch_confounded`** — admissibility first: if Hallmark-primary limma
    diagnostics fail or GSE130353 PCA is batch-dominated (G4), the test is inadmissible; stop.
 2. **`null_nonarbitrating`** — else if **p_perm ≥ 0.05**.
-3. **`compartment_confounded`** — else if the primary-concordant signal is **dominated by
-   monocyte/PBMC cell-type-marker sets** (pre-listed marker collection; ≥50% of the leading-edge
-   concordant sets are markers).
-4. **`exposure_confounded`** — else if **no** primary-concordant theme is fatigue-specific **and** ≥1
-   concordant theme is `exposure_sequela`.
-5. **`shared_suggestive`** — else if ≥1 fatigue-specific theme **recurs across ≥2 DBs**.
-6. **`fragile`** — else if ≥1 fatigue-specific theme but **none** recurs across ≥2 DBs.
+3. **`compartment_confounded`** — else if **≥50% of the Hallmark concordance-carrying sets** (locked
+   set-level definition above) are **compartment markers** by the locked marker regex.
+4. **`exposure_confounded`** — else if **no** theme is fatigue-specific **and** ≥1 theme is
+   `exposure_sequela` (strict-dominance roll-up).
+5. **`shared_suggestive`** — else if ≥1 fatigue-specific theme satisfies **direction-consistent
+   DB-robustness** (≥2 of {Hallmark, Reactome, GO-BP}, matching NES sign).
+6. **`fragile`** — else if ≥1 fatigue-specific theme but **none** satisfies direction-consistent
+   DB-robustness.
 7. **`exposure_confounded` (residual)** — else (p_perm<0.05 but **all** concordant themes are
    *unresolved-specificity*: no fatigue-specific and no exposure_sequela theme). Rationale: a
    permutation-significant concordance with **no** demonstrable fatigue specificity at this n does
@@ -238,10 +263,12 @@ Even executed perfectly, this analysis cannot:
   recorded at ingest), **size filter `15 ≤ |set| ≤ 500`** (fgsea minSize/maxSize). Collections:
   **Hallmark (H, 50 sets) = primary/confirmatory**; **Reactome (C2:CP:REACTOME)** and **GO-BP
   (C5:GO:BP)** = **DB sensitivities**. The **pre-registered keyword→theme map** that collapses enriched
-  sets into themes is the **Locked theme map** table below (explicit case-insensitive regexes +
-  first-match precedence — not just theme names); a theme is "shared" iff ≥1 set in it is
-  direction-concordant in **both** datasets. The theme map and the pinned release are locked here so
-  the overlap denominator cannot drift post-hoc.
+  sets into themes is the **Locked theme map** block below (explicit case-insensitive regexes +
+  first-match precedence — not just theme names). The theme map only *assigns* each set to one theme;
+  whether a theme counts toward the verdict is governed by the **concordance-carrying set**,
+  **strict-dominance roll-up**, and **direction-consistent DB-robustness** definitions in the
+  *Specificity metric* block (not by a loose "≥1 concordant set" rule). The theme map and the pinned
+  release are locked here so the overlap denominator cannot drift post-hoc.
 - **Specificity metric (locked, fully thresholded): direct QFS-vs-QS presence contrast.** "Signal"
   is **not** left to interpretation. For every gene-set that is **primary-concordant** (same-sign NES
   in *both* PI-CFS-vs-HC and QFS-vs-HC), evaluate two **presence predicates** using the *same* pinned
@@ -258,35 +285,88 @@ Even executed perfectly, this analysis cannot:
   lacks; nominal p<0.05 is the presence floor. (Rank-percentile and effect-size floors were considered
   and rejected as less standard than fgsea's own p; this choice is locked, not adjudicated post-hoc.)
 
-  **Per-set specificity class (mechanical):**
+  **Concordance-carrying set (locked, set-level — replaces the gene-level "leading-edge" term).**
+  Within one DB, the **concordance-carrying sets** are the primary-concordant sets (same-sign NES in
+  *both* PI-CFS-vs-HC and QFS-vs-HC) that are **nominally significant (fgsea p < 0.05) in both**
+  contrasts. This is a well-defined **set list** (not a gene-level leading-edge); it is the
+  denominator for the `compartment_confounded` 50%-marker rule and the substrate for theme roll-up. If
+  the concordance-carrying list is empty, `compartment_confounded` cannot fire (no sets to be
+  marker-dominated) and the verdict proceeds to the specificity/DB steps.
+
+  **Per-set specificity class (mechanical):** evaluated on the **concordance-carrying sets**.
   - **fatigue-specific** ≡ **S1-positive AND NOT S2-positive** (present where fatigue differs holding
     exposure constant; *absent* in exposure-without-fatigue).
   - **exposure_sequela** ≡ **S2-positive** (present in QS-vs-HC; tracks *Coxiella* exposure) —
     regardless of S1.
   - **unresolved-specificity** ≡ neither S1-positive nor S2-positive (no presence either way at this n).
 
-  **Theme roll-up (mechanical):** a primary-concordant **theme** is **fatigue-specific** iff **≥1** of
-  its sets is *fatigue-specific*; it is **exposure_sequela** iff it has **no** fatigue-specific set
-  **and ≥1** *exposure_sequela* set. This replaces the prior "absent-in-QS-vs-HC" veto, which
-  overclaimed specificity from absence-of-evidence at n=10.
+  **Theme-level NES direction (locked):** a theme's **direction** in a given DB is the **sign of the
+  QFS-vs-HC NES of its fatigue-specific concordance-carrying set with the largest |NES|** (the
+  representative set). This single locked rule makes the theme's sign well-defined for the cross-DB
+  direction check below.
+
+  **Theme roll-up (mechanical — dominance rule, resolves the mixed-theme case).** Within a DB, count a
+  theme's concordance-carrying sets by class:
+  - **fatigue-specific theme** ≡ **(# fatigue-specific sets) > (# exposure_sequela sets)** in the
+    theme (fatigue evidence strictly dominates; a single spurious nominal QS-vs-HC hit cannot by
+    itself sink a theme, and a single fatigue-specific hit cannot by itself rescue an
+    exposure-dominated theme).
+  - **exposure_sequela theme** ≡ **(# exposure_sequela sets) ≥ (# fatigue-specific sets)** and ≥1
+    exposure_sequela set.
+  - **unresolved theme** ≡ no fatigue-specific and no exposure_sequela set.
+
+  This **strict-dominance** choice is the explicit answer to "can a mixed theme still carry
+  `shared_suggestive`?": **only if fatigue-specific sets strictly outnumber exposure_sequela sets**
+  within it — a tie or exposure-majority demotes it to `exposure_sequela`. It replaces both the prior
+  "absent-in-QS-vs-HC" veto (too strict) and the prior "≥1 fatigue-specific set wins" roll-up (too
+  lenient — it let one set override any amount of exposure evidence).
+
+- **DB-robustness (locked — direction-consistent recurrence).** A fatigue-specific theme **"recurs
+  across ≥2 DBs"** (the `shared_suggestive` requirement) **iff it is a fatigue-specific theme in ≥2 of
+  the three DBs {Hallmark, Reactome, GO-BP} AND its theme-level NES direction (above) is the *same
+  sign* in those ≥2 DBs.** A theme that is fatigue-specific in Hallmark (up) and in Reactome (down)
+  does **not** satisfy robustness — opposite-direction "recurrence" is not robust biology, so the
+  sign-agreement requirement is part of the lock. (The primary ρ test itself is run on Hallmark; the
+  DB-robustness check re-runs the QFS-vs-HC / PI-CFS-vs-HC / QFS-vs-QS / QS-vs-HC contrasts on Reactome
+  and GO-BP with the same size filter and permutation procedure, then re-derives concordance-carrying
+  sets and theme classes per DB.)
 
 ### Locked theme map (keyword→theme, pre-registered)
 
 Each gene-set is assigned to **exactly one** theme by matching its **MSigDB set name** (uppercased,
 collection prefix such as `HALLMARK_` / `REACTOME_` / `GOBP_` stripped) against the regexes below,
 evaluated **top-to-bottom; first match wins** (precedence is part of the lock, so a set naming both an
-energy and an immune term resolves deterministically). Regexes are **case-insensitive**, applied with
-`_` as the word join MSigDB uses. Any set matching none falls to **other** and is ineligible to be a
-"shared theme" (it can still enter the ρ rank, but cannot *carry* a verdict theme).
+energy and an immune term resolves deterministically). Any set matching none falls to **other** and is
+ineligible to be a "shared theme" (it can still enter the ρ rank, but cannot *carry* a verdict theme).
 
-| Precedence | Theme | Regex (matched against the prefix-stripped, uppercased set name) |
-|---|---|---|
-| 1 | **mitochondrial/OXPHOS** | `OXIDATIVE_PHOSPHORYLATION\|OXPHOS\|MITOCHOND\|RESPIRATORY_ELECTRON\|ELECTRON_TRANSPORT\|RESPIRATORY_CHAIN\|\bTCA_CYCLE\b\|CITRIC_ACID\|ATP_SYNTH\|COMPLEX_I\b\|FATTY_ACID_BETA_OXID` |
-| 2 | **oxidative-stress** | `REACTIVE_OXYGEN\|OXIDATIVE_STRESS\|\bROS\b\|GLUTATHIONE\|\bNRF2\b\|NFE2L2\|PEROXID\|\bREDOX\b\|SUPEROXIDE\|ANTIOXIDANT\|DETOXIF` |
-| 3 | **apoptosis** | `APOPTOSI\|PROGRAMMED_CELL_DEATH\|CASPASE\|NECROPTOSI\|PYROPTOSI\|\bBCL2\b\|INTRINSIC_APOPTOTIC\|EXTRINSIC_APOPTOTIC\|DEATH_RECEPTOR` |
-| 4 | **innate/IFN** | `INTERFERON\|\bIFN\b\|INNATE\|INFLAMMAT\|\bTNFA?\b\|\bNFKB\b\|NF_KB\|TOLL\|\bTLR\b\|COMPLEMENT\|\bIL6\b\|JAK_STAT\|CYTOKINE\|CHEMOKINE\|NEUTROPHIL\|MONOCYTE\|MACROPHAGE\|MYELOID\|INFLAMMASOME\|RIG_I\|NOD_LIKE` |
-| 5 | **adaptive/T-cell** | `\bT_CELL\|\bTCR\b\|\bCD8\b\|\bCD4\b\|\bTH1\b\|\bTH2\b\|\bTH17\b\|REGULATORY_T\|LYMPHOCYTE\|ADAPTIVE_IMMUN\|ANTIGEN_PROCESS\|\bMHC\b\|\bHLA\b\|IL2_STAT5\|ALLOGRAFT_REJECTION\|\bB_CELL\|IMMUNOGLOBULIN\|GERMINAL_CENTER` |
-| 6 | **other** | (no match above) — ineligible to carry a verdict theme |
+The regexes are given **raw** in the fenced block below — they are **PCRE/ERE alternation strings, not
+Markdown**. Compile them verbatim with the **case-insensitive** flag (`re.IGNORECASE` / R
+`perl=TRUE, ignore.case=TRUE`); the `|` characters are literal alternation operators and `\b` is a
+word boundary. **No Markdown unescaping is involved** (the block is not a table, so pipes are not
+escaped). `_` is the MSigDB word join and is matched literally.
+
+```yaml
+# keyword→theme map — first match wins, evaluated in this exact order; case-insensitive.
+# Matched against the MSigDB set name, uppercased, with the collection prefix
+# (HALLMARK_/REACTOME_/GOBP_/…) stripped. Strings are raw PCRE — compile verbatim.
+- precedence: 1
+  theme: mitochondrial/OXPHOS
+  regex: 'OXIDATIVE_PHOSPHORYLATION|OXPHOS|MITOCHOND|RESPIRATORY_ELECTRON|ELECTRON_TRANSPORT|RESPIRATORY_CHAIN|\bTCA_CYCLE\b|CITRIC_ACID|ATP_SYNTH|\bCOMPLEX_I\b|FATTY_ACID_BETA_OXID'
+- precedence: 2
+  theme: oxidative-stress
+  regex: 'REACTIVE_OXYGEN|OXIDATIVE_STRESS|\bROS\b|GLUTATHIONE|\bNRF2\b|NFE2L2|PEROXID|\bREDOX\b|SUPEROXIDE|ANTIOXIDANT|DETOXIF'
+- precedence: 3
+  theme: apoptosis
+  regex: 'APOPTOSI|PROGRAMMED_CELL_DEATH|CASPASE|NECROPTOSI|PYROPTOSI|\bBCL2\b|INTRINSIC_APOPTOTIC|EXTRINSIC_APOPTOTIC|DEATH_RECEPTOR'
+- precedence: 4
+  theme: innate/IFN
+  regex: 'INTERFERON|\bIFN\b|INNATE|INFLAMMAT|\bTNFA?\b|\bNFKB\b|NF_KB|TOLL|\bTLR\b|COMPLEMENT|\bIL6\b|JAK_STAT|CYTOKINE|CHEMOKINE|NEUTROPHIL|MONOCYTE|MACROPHAGE|MYELOID|INFLAMMASOME|RIG_I|NOD_LIKE'
+- precedence: 5
+  theme: adaptive/T-cell
+  regex: '\bT_CELL|\bTCR\b|\bCD8\b|\bCD4\b|\bTH1\b|\bTH2\b|\bTH17\b|REGULATORY_T|LYMPHOCYTE|ADAPTIVE_IMMUN|ANTIGEN_PROCESS|\bMHC\b|\bHLA\b|IL2_STAT5|ALLOGRAFT_REJECTION|\bB_CELL|IMMUNOGLOBULIN|GERMINAL_CENTER'
+- precedence: 6
+  theme: other            # no match above — ineligible to carry a verdict theme
+```
 
 Precedence rationale (locked): the mechanistically specific energy/redox/death themes the hypothesis
 predicts (1–3) outrank the broader immune themes (4–5), so a set such as
@@ -296,12 +376,17 @@ just the theme names — are the locked artifact; changing any term is an amendm
 choice.
 
 **Locked cell-type-marker set (for the `compartment_confounded` check, resolution step 3).** A
-gene-set is a **compartment marker** iff its prefix-stripped, uppercased name matches
-`MONOCYTE\|MACROPHAGE\|MYELOID\|NEUTROPHIL\|GRANULOCYTE\|DENDRITIC\|\bPBMC\b\|LEUKOCYTE\|MARKER_|_CELL_SURFACE\|CELL_TYPE`.
-`compartment_confounded` fires when **≥50% of the leading-edge primary-concordant sets** (those
-driving the ρ concordance) are compartment markers by this regex. This is evaluated **before**
-specificity (step 3 precedes steps 4–6) because a marker-dominated concordance is artifactual
-regardless of QFS-vs-QS behaviour.
+gene-set is a **compartment marker** iff its prefix-stripped, uppercased name matches this raw
+case-insensitive regex (same compile rules as above):
+
+```yaml
+compartment_marker_regex: 'MONOCYTE|MACROPHAGE|MYELOID|NEUTROPHIL|GRANULOCYTE|DENDRITIC|\bPBMC\b|LEUKOCYTE|MARKER_|_CELL_SURFACE|CELL_TYPE'
+```
+
+The firing rule is **set-level and fixed** (see *Concordance-carrying set*, below): `compartment_confounded`
+fires when **≥50% of the concordance-carrying sets** are compartment markers by this regex. It is
+evaluated **before** specificity (resolution step 3 precedes steps 4–6) because a marker-dominated
+concordance is artifactual regardless of QFS-vs-QS behaviour.
 
 ## Exploratory vs. Confirmatory
 
