@@ -17,7 +17,7 @@ related:
 - question:0008-formalize-vicious-cycle-attractor-model
 - immunity:research-question:immune-homeostasis-and-dysregulation
 created: '2026-06-11'
-updated: '2026-06-11'
+updated: '2026-06-20'
 ---
 # Hypothesis: Post-acute infection syndromes are a shared dysregulated attractor reachable from many triggers, not merely a shared symptom repertoire
 
@@ -93,3 +93,7 @@ Confidence would be materially reduced if:
 - `question:0001-shared-molecular-signature-across-triggers`, `question:0008-formalize-vicious-cycle-attractor-model` — the two decisive open tests.
 - Sibling hypotheses 0002 (antigen-fragment seed), 0003 (exhaustion loop), 0004 (severity threshold) specify candidate seeding and maintenance mechanisms for this attractor.
 - `immunity:research-question:immune-homeostasis-and-dysregulation` — peer mechanism owner.
+
+## Notes
+
+- 2026-06-20: Deflationary rival now tracked as question:0017 — the finite-organ-failure-repertoire coincidence account (convergence is symptomatic, not a shared attractor) plus ascertainment-artifact. These remain genuinely competitive with this hypothesis; head-to-head molecular designs still fail a shared positive signature and the >=3-trigger harmonized test does not exist. Score this hypothesis against q0017 before promotion.

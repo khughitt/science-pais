@@ -73,16 +73,6 @@ Long COVID / ME-CFS / PTLDS as distinct disease labels possibly sharing post-inf
 
 Compare long COVID, PTLD, post-dengue fatigue, and other PAIS evidence to test whether female excess is stronger in post-acute persistence than in acute infection severity, and whether depression/neuropsychiatric outcomes dissociate from somatic fatigue.
 
-## [t016] Define estimands for reproductive-stage PAIS causal analyses
-- priority: P2
-- status: in_progress
-- aspects: []
-- related: [question:0013-reproductive-stage-failed-immune-recovery-after-infection, hypothesis:0005-reproductive-stage-immune-homeostatic-margin, topic:menopause-sex-hormones-and-pais-risk]
-- group: causal-disentanglement
-- created: 2026-06-19
-
-For each planned PAIS sex/hormone analysis, predeclare whether reproductive stage is treated as confounder, mediator, effect modifier, competing diagnosis, or downstream consequence. Specify target population, exposure window, outcome domain, adjustment set, and variables that should not be adjusted away for each estimand.
-
 ## [t018] Compare female and reproductive-stage excess across PAIS subphenotypes
 - priority: P2
 - status: proposed
@@ -183,3 +173,28 @@ Decide, in specs/scope-boundaries.md + a core/decisions.md entry, whether the 's
 - created: 2026-06-20
 
 Reproducible alternative to the declined Galbraith2011 private-array reanalysis. Test hypothesis:0001 (shared dysregulated attractor) at PATHWAY/gene-set level across two PUBLIC post-infective-fatigue expression datasets spanning DIFFERENT triggers: GSE14577 (Gow2009 - post-infectious CFS PBMC, Affymetrix U133A/B, n=8 PI-CFS + 7 HC, male-only, Fukuda criteria) and GSE130353 (Raijmakers2019 - QFS/CFS/asymptomatic-seropositive/healthy monocyte RNA-seq). Goal: gene-set/pathway-overlap (e.g. GSEA/ORA on immune, oxidative-stress, mitochondrial, apoptosis modules) to test whether a shared pathway-level signature survives where Galbraith2011's gene-level cross-trigger test was negative. CAVEATS to honour: small n, platform heterogeneity (microarray vs RNA-seq - no naive merge; compare at pathway level, not probe/gene), sex skew (GSE14577 male-only), Gow2009 has no stated FDR + low cross-study concordance (treat as exploratory). This is HYPOTHESIS-GENERATING, not the decisive harmonized >=3-trigger study. NOTE: per specs/scope-boundaries.md the project is in literature-synthesis/seed stage ('Primary computational pipelines... until the project is past seed stage'); this is a future/post-seed computational task, recorded so the public-data opportunity is not lost. Decision context: author-contact for Galbraith arrays declined on reproducibility grounds (2026-06-20). Grounded in question:0001, hypothesis:0001, discussion:0002.
+
+### Notes
+
+- 2026-06-20: Prerequisite when started: create formal mixin-dataset-1.0 entities + Frictionless datapackages for GSE14577 and GSE130353 once downloaded (commons-readiness gate). Registry note staged at doc/datasets/2026-06-20-public-cross-trigger-geo-sets.md. Both are commons-promotion candidates after the gate is met.
+
+## [t036] Acquire hormone-panel triangulation cohorts (All of Us, Lifelines, Generation Scotland) to positively test H0005 (M1)
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [hypothesis:0005-reproductive-stage-immune-homeostatic-margin, question:0013-reproductive-stage-failed-immune-recovery-after-infection, discussion:0001-menopause-timing-pais-rival-models]
+- group: causal-disentanglement
+- created: 2026-06-20
+
+LOAD-BEARING ASYMMETRY from the 2026-06-20 audit: the committed UKB design can REFUTE H0005 (a powered, sensitivity-robust null is a real downward update) but CANNOT CONFIRM it -- M1's unique positive signature is hormone-marker mediation, exactly what UKB lacks (oestradiol floor-censored at 175 pmol/L; FSH/AMH absent). Positive support for the hormone-mediated failed-recovery model must come from triangulation cohorts WITH hormone panels: All of Us, Lifelines, Generation Scotland (and RECOVER/IMPACC for PEM-stratified arms). Scope/sequence: dataset-feasibility search; this is post-seed-stage per specs/scope-boundaries.md. Recorded so the only path to M1's positive test is not lost.
+
+## [t037] Realize the UKB analysis's prose data-QA provisions as a wired-in, build-fatal QA checkpoint when implemented
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [pre-registration:0001-menopause-pais-total-effect, hypothesis:0005-reproductive-stage-immune-homeostatic-margin]
+- blocked-by: [task:t028]
+- group: causal-disentanglement
+- created: 2026-06-20
+
+AXIS-1 FORWARD GAP from the 2026-06-20 pipeline-QA audit. The pre-registered UKB menopause->PAIS analysis specifies rich data-QA only in PROSE (sampling-frame/natal-female audit; exposure-timing repeat-assessment validation; dual outcome-route A/B triangulation; U-proxy missingness thresholds >50%; the 3x3 misclassification matrix; oestradiol floor-censoring sentinel at 175 pmol/L). Per ~/d/science/docs/conventions/pipeline-qa-checkpoints.md, prose intentions and side-output counts files do NOT discharge axis-1 QA. When t028 builds the analysis table, add a SEPARATE rule that re-reads the built table with STRUCTURAL (build-fatal: one-row-per-participant; natal-female filter integrity; allowed reproductive-stage codes; outcome-route key alignment) vs DISTRIBUTION (age-at-menopause bounds; 175 pmol/L oestradiol sentinel; missingness) checks, config-driven thresholds shared with the cleaning step. This task exists so the prose QA spec survives into code.

@@ -76,3 +76,7 @@ The most discriminating next test is an **independent provoked muscle-biopsy tim
 - Questions: `question:0011-mitochondrial-basis-of-pem` (the deficit this hypothesis proposes a *location and cause* for), `question:0010-vascular-microclot-subphenotype` (the vascular/microclot contribution), `question:0016-oxidative-stress-upstream-driver-of-bioenergetic` (ROS as the self-perpetuation step in P4).
 - Hypotheses: `hypothesis:0001-shared-dysregulated-attractor` (this is a tissue-specific instantiation), `hypothesis:0003-immune-exhaustion-feedback`.
 - Papers: Scheibenbogen2024, Appelman2024, Joseph2023, Keller2014, Walitt2024, Baraniuk2025, Wang2023 (WASF3 supercomplex lesion), Syed2025.
+
+## Notes
+
+- 2026-06-20: Deflationary rivals now tracked as question:0017 — deconditioning/inactivity and nocebo/illness-perception accounts. Both are constrained (not eliminated) by Appelman2024 muscle pathology and invasive/2-day CPET; hold nocebo as a possible subgroup contributor, not a whole-syndrome explanation.
