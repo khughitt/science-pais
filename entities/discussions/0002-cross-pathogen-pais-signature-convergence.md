@@ -87,6 +87,40 @@ Net: pathway-level convergence (oxidative stress, mitochondrial, NK) gains genui
 support for LC↔ME/CFS, while a recovery-discriminating *specific-analyte* signature and the ≥3-trigger
 test both remain unmet.
 
+**Update (2026-06-20 QFS/post-SARS full-text ingestion, t033).** The seven thin-trigger papers
+from the gap search were read in full / abstract and now have notes. Three change the picture:
+- **Raijmakers2025** (`paper:Raijmakers2025`, *EBioMedicine* meta-analysis) is the closest existing
+  cross-PIFS test and its verdict is **sobering and double-edged**. From 14,985 records only **30
+  studies** met a rigorous "documented acute infection + formal PIFS case definition" bar (a ~94%
+  exclusion rate — most of the literature is uninformative), and only 11 had poolable data. It yields
+  the **first genuinely meta-analytic *shared* signal**: RANTES/CCL5 elevated at 6–12 mo (d=0.45,
+  spanning **post-EBV + post-SARS-CoV-2** — two distinct viral triggers, the strongest cross-trigger
+  analyte in the corpus), plus TNFα at 6–12 mo (d=0.30, SARS-CoV-2 only) and WBC at 3–6 mo (d=0.42,
+  EBV). **But no single analyte was poolable across all five triggers**, and leucocyte gene expression,
+  immune-cell subsets, and autoantibodies showed **no consistent cross-study signal**; CCL-19 was
+  PTLDS-enriched (trigger-specific). So the meta-analysis simultaneously *delivers* the first real
+  shared molecular datapoint (RANTES across 2 viral triggers) and *confirms* that the shared signature
+  is narrow and the ≥3-trigger picture still rests on data too sparse to pool. This is the new anchor
+  for the cross-trigger cytokine claim in q0001.
+- **Wu2017** (`paper:Wu2017`) — the lone post-SARS cell is now **heavily confounded**. The dominant
+  PI/LPI lipid signature is plausibly **substantially glucocorticoid-driven**: all 25 survivors received
+  high-dose methylprednisolone in acute illness (mean cumulative ~5,454 mg), and the paper's own
+  steroid-treated non-SARS pneumonia controls reproduced elevated PIs. Combined with the absence of any
+  fatigue phenotyping, post-SARS should be treated as **"single datapoint, drug-confounded, phenotype
+  mismatched"** — effectively still a blank for the *fatigue*-PAIS attractor.
+- **Raijmakers2019** (`paper:Raijmakers2019`) — the QFS↔CFS mito-peptide finding is a genuine **positive
+  shared signal** (MT-RNR2/humanin and MT-RNR1/MOTS-c strongly down in *both* QFS and CFS monocytes,
+  indistinguishable), but with a sharp caveat: **asymptomatic Q-fever seropositive controls also show
+  the downregulation** (intermediate), so it is **not fatigue-specific** — it may be a Coxiella-infection
+  sequela / trained-immunity epigenetic mark rather than a fatigue mechanism. Usefully, its raw monocyte
+  RNA-seq is **publicly deposited (GEO GSE130353)** — a reusable cross-trigger dataset for q0001.
+The QFS cytokine cluster (Keijmel2016, Raijmakers2018, Raijmakers2019b) consistently shows elevated
+*Coxiella*-stimulated IFN-γ/CXCL10/IL-6/TNFα in QFS, with Raijmakers2018 tying IFN-γ+CXCL10 to
+persistent-vs-recovered status (though not to graded fatigue severity) — a coherent but single-group,
+single-trigger immune picture. Net effect: the cross-trigger cytokine axis gains its first meta-analytic
+anchor (RANTES), the QFS mitochondrial cell is now positive-but-not-fatigue-specific, and post-SARS
+collapses back to a confounded non-result.
+
 ## Critical Analysis
 
 ### Signature matrix (axis × trigger)
@@ -104,7 +138,7 @@ assembled from a separate single-trigger study; "no-data" = no usable omics foun
 | Autoantibodies (GPCR/functional) | supported (deSa2026, causal) | supported (Liu2026, incl. post-COVID) | no-data | no-data | no-data |
 | Microclots/thromboinflammation | supported (Nicolai2023) | mixed | no-data | no-data | no-data |
 | Tryptophan-kynurenine | supported | mixed (Che2025) | no-data | no-data | no-data |
-| Mitochondrial/metabolic | **shared LC↔ME/CFS (Shankar2025 h2h, +)** | **shared (Shankar2025 h2h)**; supported (Walitt2024, Liu2026); **mito-peptide shared w/ QFS (Raijmakers2019 h2h)** | no-data | no-data | **mito-peptide humanin/MOTS-c, QFS↔CFS h2h (Raijmakers2019)** |
+| Mitochondrial/metabolic | **shared LC↔ME/CFS (Shankar2025 h2h, +)** | **shared (Shankar2025 h2h)**; supported (Walitt2024, Liu2026); **mito-peptide shared w/ QFS (Raijmakers2019 h2h)** | no-data | no-data | **mito-peptide humanin/MOTS-c down, QFS↔CFS h2h (Raijmakers2019) — but NOT fatigue-specific (seropositive controls also down)** |
 | Oxidative stress (lymphocyte ROS) | **shared LC↔ME/CFS (Shankar2025 h2h, +)** | **shared (Shankar2025 h2h, +)** | no-data | no-data | no-data |
 | NK terminal differentiation | **shared w/ non-COVID fatigue (Sommen2026 h2h)** | shared (Sommen2026, fatigue-general) | no-data | no-data | no-data |
 | Plasma proteome (PCC-specific) | **only 2 proteins vs recovered (Chowdhury2026, near-null)** | no-data | no-data | no-data | no-data |
@@ -157,11 +191,14 @@ trigger's status:
   myelitis, necrotizing myopathy), and one cross-pathogen antibody **review** (Sun2025,
   DOI 10.3390/ijms26051898 — DHF↔LC pathogenic antibodies, claim-level only). A genuine
   evidence vacuum, not a search miss.
-- **Post-SARS (SARS-CoV-1, 2003) — near-empty, single datapoint.** Exactly one survivor
-  molecular study exists: **Wu2017** (`paper:Wu2017`, *Sci Rep*) — a 12-year plasma
-  lipid-metabolome follow-up showing altered lipid metabolism. Phenotype = metabolic
-  sequelae, **not** fatigue-defined. The post-SARS cell moves from blank to a single
-  metabolic datapoint with a phenotype caveat.
+- **Post-SARS (SARS-CoV-1, 2003) — single datapoint, drug-confounded, phenotype-mismatched.**
+  Exactly one survivor molecular study exists: **Wu2017** (`paper:Wu2017`, *Sci Rep*) — a 12-year
+  plasma lipid-metabolome follow-up showing a dominant phosphatidylinositol / lyso-PI elevation.
+  After full-text read, two caveats hollow it out as PAIS evidence: (i) **glucocorticoid confound**
+  — all 25 survivors received high-dose methylprednisolone acutely (~5,454 mg cumulative) and the
+  paper's own steroid-treated non-SARS pneumonia controls reproduced elevated PIs, so the signature
+  may be largely treatment-induced; (ii) **no fatigue phenotyping** at all. The post-SARS cell is
+  therefore best read as effectively still blank for the *fatigue*-PAIS attractor.
 - **QFS — partly closed (single-group).** Materially better than this discussion previously
   recorded: beyond Galbraith2011 + the negative Raijmakers2021, a coherent Nijmegen/Radboud
   cluster covers **cytokine/IFN-γ** (Keijmel2016, Raijmakers2018, Raijmakers2019b), a
