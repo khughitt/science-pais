@@ -258,7 +258,7 @@ field mapping it should consume.
 
 - **The EBV-serology subsample (~9.6k) is the critical limitation:** prior-EBV
   cannot enter the *primary* adjustment without collapsing N by ~96%. Treatment:
-  whole-cohort analysis on {age}, with a **subsample sensitivity arm** adding EBV —
+  whole-cohort analysis on {age, smoking}, with a **subsample sensitivity arm** adding EBV —
   exactly the partial-identification logic the t016 plan specifies. t017 must
   decide the subsample-vs-proxy tradeoff explicitly.
 - **E-value benchmark:** the measured-proxy battery here is what the t016 E-value is
@@ -287,16 +287,16 @@ only. **None enters the primary total-effect adjustment.**
 
 Mapping the t016 plan's Sensitivity Arbitration block onto UKB fields:
 
-1. **E-value** — for the {age}-adjusted point estimate and the near-null CI limit;
-   benchmarked against the §6 measured proxies.
-2. **U-proxy arm** — `{age, Townsend, education, autoimmune-hx, behaviour}` on the
-   whole cohort; **+EBV** on the ~9.6k serology subsample.
+1. **E-value** — for the {age, smoking}-adjusted point estimate and the near-null CI
+   limit; benchmarked against the §6 measured proxies.
+2. **U-proxy arm** — `{age, smoking, Townsend, education, autoimmune-hx, behaviour}` on
+   the whole cohort; **+EBV** on the ~9.6k serology subsample.
 3. **Collider negative control** — re-estimate within a HES/clinic-ascertained
    subsample; a signal appearing there but absent in the population frame *confirms*
    the collider and vetoes clinic-derived literature estimates.
-4. **Estimand-split** — `{age}` vs `{age, baseline comorbidity}` (fields 6150/2443/21001);
-   valid only under the DAG-v2 comorbidity→menopause-timing edge (t023); report both,
-   do not average.
+4. **Estimand-split** — `{age, smoking}` vs `{age, smoking, baseline comorbidity}`
+   (fields 6150/2443/21001); the comorbidity arm is now a DAG-v2 confounder demoted to
+   sensitivity (t023); report both, do not average.
 5. **Operationalization sensitivity** — STRAW+10-projected ordinal (primary, t020)
    vs binary-2724 (secondary); and the 3-definition outcome axis (§5.2).
 
@@ -340,7 +340,7 @@ partial GP coverage). Pre-specify replication:
 | **Generation Scotland** | EU replication | Population/family, age-at-menopause + HRT | No hormone panel; thin long-COVID (CovidLife ~5k) |
 | ONS-CIS / N3C | Triangulation only | Large-N, low-collider | No menopause/hormone depth — age-proxied effect only |
 
-Replication runs the **same {age}-only estimand under the same definition axis**;
+Replication runs the **same {age, smoking} primary estimand under the same definition axis**;
 cross-cohort agreement (hierarchical/frailty pooling, study as random intercept) is
 the credibility lever, given each cohort's distinct biases.
 

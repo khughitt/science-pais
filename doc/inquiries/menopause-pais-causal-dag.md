@@ -18,7 +18,7 @@ updated: "2026-06-21"
 Sketch-stage causal inquiry built for **task t014** and redrawn under **task t023
 (v2)**, operationalizing `hypothesis:0005-reproductive-stage-immune-homeostatic-margin`
 and `question:0013`. The machine-readable model lives in the inquiry patch
-`entities/patches/menopause-pais-causal-dag.md` (**v2: 23 variables, 59 `scic:causes`
+`entities/patches/menopause-pais-causal-dag.md` (**v2: 23 variables, 60 `scic:causes`
 edges**) and materializes into the `inquiry/menopause-pais-causal-dag` named graph.
 
 ## Locked primary estimand
@@ -108,12 +108,17 @@ is the new confounder edge the split made acyclic.
 - `orphaned_interior` **warn** (expected): the sink colliders (`clinic_attendance`,
   `hospital_ascertainment`, `survival_selection`) and the exogenous latent root
   (`unmeasured_shared_confounders`). All expected by design.
-- **pgmpy/networkx back-door re-derivation (2026-06-21, direct on the authored edge
-  list — `export-pgmpy` still emits empty, see critique tooling note):** 23 nodes /
-  59 edges, **acyclic**. **U latent → no valid measured adjustment set
-  (non-identifiable)**; U set aside → unique minimal measured set is the **full
-  battery** `{age, smoking, baseline-comorbidity, baseline-BMI, parity,
-  autoimmune-POI, frailty}` (`{age, smoking}` alone insufficient). Colliders appear
+- **Back-door re-derivation — committed reproducible script** `code/menopause_dag/derive_adjustment_sets.py`
+  (parses `flow_edges` straight from the patch, so it stays in sync; output committed at
+  `code/menopause_dag/adjustment_sets_v2.txt`). Run with `uv run code/menopause_dag/derive_adjustment_sets.py`.
+  It uses **networkx d-separation only — not pgmpy**: `science inquiry validate` reports
+  `pgmpy not installed` in the frozen env, so the inquiry tool's identifiability /
+  adjustment_sets checks remain **warnings, not assertions**, and the
+  `export-pgmpy`-emits-empty bug is still open (see critique tooling note). The committed
+  script is the workaround derivation. Result: **23 nodes / 60 edges, acyclic**; **U latent
+  → no valid measured adjustment set (non-identifiable)**; U set aside → unique minimal
+  measured set is the **full battery** `{age, smoking, baseline-comorbidity, baseline-BMI,
+  parity, autoimmune-POI, frailty}` (`{age, smoking}` alone insufficient). Colliders appear
   in **no** recommended set.
 
 ## Key open issue (unchanged by v2)

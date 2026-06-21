@@ -72,7 +72,7 @@ Within natal females with a usable pre-infection baseline and a documented infec
 - **Comparison:** natural postmenopausal women, **matched / adjusted on age-at-infection
   and time-since-menopause**, so the contrast isolates *mode* of estrogen withdrawal
   (abrupt-surgical vs gradual-natural) at comparable age and post-menopausal duration.
-- **Estimand:** the {age}-adjusted RR of WHO ≥90-day long-COVID (Route A primary,
+- **Estimand:** the {age, smoking}-adjusted RR of WHO ≥90-day long-COVID (Route A primary,
   Route B triangulation — same outcome machinery as the primary) for surgical vs
   natural postmenopause, with the **key planned sub-contrast on age-at-surgery**:
   - **Pre-menopausal bilateral oophorectomy** (surgery before expected natural FMP) =

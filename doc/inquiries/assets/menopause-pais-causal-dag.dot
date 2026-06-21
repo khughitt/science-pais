@@ -80,6 +80,8 @@ digraph t023_v2 {
   "frailty" -> "menopausal_transition" ;
   "frailty" -> "pais_outcome" ;
   "frailty" -> "survival_selection" ;
+  // menopause-timing depletes the high-risk tail via mortality (M3a left-truncation)
+  "menopausal_transition" -> "survival_selection" [color="#aa0000"] ;
   // --- era ---
   "era" -> "acute_severity" ;
   "era" -> "pais_outcome" ;

@@ -156,6 +156,10 @@ inquiry:
   - subject: concept:biological-frailty
     predicate: causes
     object: concept:survival-selection
+  # menopause timing depletes the high-risk tail via mortality (M3a left-truncation)
+  - subject: concept:menopausal-transition-reproductive-stage
+    predicate: causes
+    object: concept:survival-selection
   # calendar / variant / vaccination era (NEW: confounds mediator paths)
   - subject: concept:calendar-variant-vaccination-era
     predicate: causes
@@ -255,7 +259,7 @@ inquiry:
   - ref: hospital-collider
     statement: 'Hospitalization / acute-care ascertainment is a SECOND selection collider (severe acute illness -> hospital -> cohort entry -> both severity and detected PAIS). A hospitalized or acute-care-ascertained sample conditions on it by construction and manufactures a spurious severity-PAIS association. Do-not-condition; prefer population-based sampling.'
   - ref: survival-selection
-    statement: 'Survival selection / left-truncation is a collider on age, smoking, and frailty (alive-and-enrolled at baseline/2020). Cohort membership conditions on it, inducing M3a left-truncation bias; handle via competing-risk / selection modelling and sensitivity, not by adding it as an adjustment covariate.'
+    statement: 'Survival selection / left-truncation is a collider whose parents include the EXPOSURE itself (menopause-timing -> survival-selection: earlier menopause raises all-cause/CV mortality and so depletes the high-risk tail before the 2020 risk set - the M3a depletion mechanism), plus age, smoking, and frailty (alive-and-enrolled at baseline/2020). Because cohort membership conditions on a descendant of the exposure, this is selection-on-survival bias (attenuation toward the null when menopause-timing -> mortality and -> PAIS share direction); it is NOT removed by adjustment and must be handled via competing-risk / IPS-weighting / probabilistic-bias modelling and sensitivity (see doc/methods/2026-06-19-left-truncation-survival-depletion-simulation.md). Do-not-condition as a covariate.'
   - ref: total-effect-mediators
     statement: 'Under the primary (total-effect) estimand, sex hormone levels, immune dysregulation, thromboinflammation/endothelial dysfunction, acute infection severity, incident cardiometabolic comorbidity, and incident visceral adiposity are MEDIATORS of the menopausal-transition effect and are left UNADJUSTED. A severity-controlled direct effect would additionally condition on acute infection severity (and then must also control calendar-variant era, which confounds the severity -> PAIS path).'
   - ref: comorbidity-time-split
@@ -352,7 +356,12 @@ endothelial, and autonomic pathways.
 | Survival selection / left-truncation | **Collider** (selection) | **Do not condition**; competing-risk modelling |
 | Unmeasured shared confounders (U) | Latent confounder (open back-door) | Identifiability threat — non-identifiable as drawn |
 
-## Identifiability (v2, pgmpy/networkx-validated 2026-06-21)
+## Identifiability (v2, networkx-derived 2026-06-21)
+
+Backed by the committed reproducible script `code/menopause_dag/derive_adjustment_sets.py`
+(parses these `flow_edges`; output `code/menopause_dag/adjustment_sets_v2.txt`).
+networkx d-separation only — **not** pgmpy: `science inquiry validate` reports
+`pgmpy not installed`, so the inquiry tool's identifiability checks stay warnings.
 
 - **U latent (real world):** **no valid measured back-door adjustment set** — the
   total effect is **not identifiable** by covariate adjustment (unchanged headline).
@@ -363,8 +372,12 @@ endothelial, and autonomic pathways.
   measured-subset; the other five are demoted to **sensitivity arms** by judgement.
   Identification still rests on an E-value / bounding argument for U plus the
   sensitivity battery — not on adjustment alone.
-- 23 nodes, 59 edges, acyclic. Colliders (clinic, hospital, survival selection) appear
-  in **no** recommended set; mediators are correctly excluded from the total-effect set.
+- 23 nodes, **60 edges**, acyclic. Colliders (clinic, hospital, survival selection)
+  appear in **no** recommended set; mediators are correctly excluded from the
+  total-effect set. **Survival selection** now carries the **`menopause-timing →
+  survival-selection`** edge (M3a left-truncation: the exposure itself depletes the
+  high-risk tail via mortality) — a selection-on-survival channel handled by
+  competing-risk / IPS-weighting / bias simulation, not by adjustment.
 
 ## Reverse causation
 

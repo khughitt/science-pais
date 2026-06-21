@@ -1,0 +1,17 @@
+DAG v2 — derived from entities/patches/menopause-pais-causal-dag.md
+nodes=23 edges=60 acyclic=True
+
+[U latent — real world]
+  minimal measured back-door sets: NONE -> NON-IDENTIFIABLE by adjustment
+
+[U set aside / measured]
+  unique minimal measured set: [('chronological-age', 'smoking', 'sex-assigned-at-birth', 'baseline-cardiometabolic-comorbidity', 'baseline-bmi-adiposity', 'pregnancy-history', 'autoimmune-poi', 'biological-frailty')]
+
+[selected candidate sets, U set aside]
+  valid(['chronological-age', 'smoking']) = False
+  valid(['baseline-cardiometabolic-comorbidity', 'chronological-age', 'smoking']) = False
+  valid(['autoimmune-poi', 'baseline-bmi-adiposity', 'baseline-cardiometabolic-comorbidity', 'biological-frailty', 'chronological-age', 'pregnancy-history', 'smoking']) = False
+
+[colliders never appear in a recommended set]
+  colliders: ['clinic-attendance', 'hospital-ascertainment', 'survival-selection']
+  survival-selection parents: ['biological-frailty', 'chronological-age', 'menopausal-transition-reproductive-stage', 'smoking']

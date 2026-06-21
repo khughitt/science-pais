@@ -146,7 +146,7 @@ directly** — so it does:
   the UKB serology **pilot subsample ≈ 9,600 participants** (exact N **[confirm on
   Showcase]**) — **not** whole-cohort, and pre-infection by construction (baseline bloods).
 - **Handling (explicit):**
-  1. **Primary analysis runs WITHOUT EBV on the full cohort** ({age}-adjusted).
+  1. **Primary analysis runs WITHOUT EBV on the full cohort** ({age, smoking}-adjusted).
   2. **EBV-augmented arm runs on the ~9.6k subsample only**, with its **own reduced
      power floor** reported (this stratum is ~4% of the cohort — expect wide
      intervals, likely `underpowered`).
@@ -187,7 +187,7 @@ directly** — so it does:
 | **U-proxy adjustment arm** | `{age, IMD, education, smoking/PA/BMI, Charlson}` whole-cohort | ✅ |
 | **+EBV arm** | Category 1307 subsample (§5.2) | ⚠️ eligible **on ~9.6k only**, power-reduced |
 | **Collider negative control** | a differently-selected outcome/subsample | ✅ via **Route B HES-PACS** + questionnaire-response IPW (§4) |
-| **Estimand-split** `{age}` vs `{age, baseline comorbidity}` | Charlson timestamped pre-infection (§5.3) | ✅ |
+| **Estimand-split** `{age, smoking}` vs `{age, smoking, baseline comorbidity}` | Charlson timestamped pre-infection (§5.3) | ✅ |
 | **Outcome-definition axis** | def 1 / 2 / 3 (§2) | ⚠️ **partial** — def 1 ✅, def 2 approximation, def 3 infeasible-as-specified |
 | **Exposure operationalization** (t020) | — | (owned by t020; not this schema) |
 

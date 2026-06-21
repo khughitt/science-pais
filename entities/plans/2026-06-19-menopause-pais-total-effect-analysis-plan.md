@@ -223,21 +223,23 @@ estimate. The plan's credibility rests on the **U argument**, not on n.
 
 Pre-committed rule (no post-hoc menu selection):
 
-- **Primary verdict-bearing analysis:** `{age}`-adjusted total-effect HR/RR on a
-  population (non-clinic) cohort, reproductive stage staged at infection.
+- **Primary verdict-bearing analysis:** `{age, smoking}`-adjusted total-effect HR/RR
+  on a population (non-clinic) cohort, reproductive stage staged at infection.
+  (Primary *measured* set, not minimal-sufficient — t029 Q1 / DAG v2 t023.)
 - **Mandatory sensitivities (must run for the verdict to stand):**
   1. **E-value** for the point estimate and the CI limit nearest the null —
      report how strong an unmeasured U (on both stage and PAIS) would have to be to
      explain away the effect; compare against the strength of *measured* proxies as
      a benchmark.
-  2. **U-proxy adjustment arm** — `{age, SES, prior-EBV, autoimmune-history}`;
-     movement toward the null quantifies residual-confounding direction.
+  2. **U-proxy adjustment arm** — `{age, smoking, SES, prior-EBV, autoimmune-history}`
+     (extends the primary `{age, smoking}` set); movement toward the null quantifies
+     residual-confounding direction.
   3. **Collider negative control** — re-estimate within a *clinic-recruited*
      subsample (if any exists): a spurious association appearing there but absent in
      the population frame **confirms** the collider mechanism and vetoes any
      clinic-derived literature estimate.
-- **Estimand-split (report both, do not average):** `{age}` vs
-  `{age, baseline comorbidity}`. These answer different questions and the second is
+- **Estimand-split (report both, do not average):** `{age, smoking}` vs
+  `{age, smoking, baseline comorbidity}`. These answer different questions and the second is
   valid *only if* a `comorbidity → menopause-timing` edge is asserted (DAG v2,
   t023). Disagreement is reported as estimand-dependence, not reconciled.
 - **Operationalization sensitivity:** STRAW+10 ordinal (primary) vs binary-menopause
@@ -263,7 +265,7 @@ Per the survival/hierarchical skill, on execution emit
 input_manifest.json
 analysis_dataset.parquet                 # one row per participant, U-proxies included
 sampling_frame_admissibility.parquet     # clinic-exclusion + exposure-timing gate results
-model_formula_or_config.yaml             # {age}-only primary; sensitivity arms enumerated
+model_formula_or_config.yaml             # {age, smoking} primary; sensitivity arms enumerated
 censoring_and_event_audit.parquet
 survival_diagnostics.parquet             # Schoenfeld / log-log / PH decision
 posterior_or_fit_diagnostics.parquet

@@ -31,7 +31,7 @@ exposure from UK Biobank, what error that introduces, and how to bound it.
 > **Scope.** This owns the *exposure* definition and its measurement-error model.
 > The field IDs come from the t027 spec
 > (`doc/methods/2026-06-19-ukb-data-field-specification.md` §3); the estimand,
-> {age}-adjustment, and sensitivity-arbitration logic are locked in the t016 plan
+> {age, smoking}-adjustment, and sensitivity-arbitration logic are locked in the t016 plan
 > and are referenced, not re-derived.
 
 ---

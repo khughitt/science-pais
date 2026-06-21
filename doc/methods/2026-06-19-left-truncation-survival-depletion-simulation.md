@@ -25,8 +25,8 @@ Known-Limitation #7 of `pre-registration:0001-menopause-pais-total-effect` and a
 > **Decision-impact boundary (state up front).** This is a **verdict-confidence**
 > instrument: it tunes how a **null** is read (powered downward update vs
 > attenuated/uninformative) and may yield an *optional* corrected sensitivity estimate.
-> It does **not** change the primary estimand, the {age} adjustment set, or any locked
-> confirmatory criterion. Like t030, it is additive.
+> It does **not** change the primary estimand, the {age, smoking} adjustment set, or any
+> locked confirmatory criterion. Like t030, it is additive.
 
 ---
 
@@ -102,7 +102,7 @@ As an analytic cross-check (and, at execution, an optional corrected estimate):
 **inverse-probability-of-survival weighting** — reweight risk-set members by the inverse
 modelled probability of surviving the gap given (age, menopause-timing), reconstructing
 the baseline-eligible exposure distribution. The IPSW-corrected RR is reported **only as
-a sensitivity**; the primary estimand stays the unweighted {age}-adjusted RR. Agreement
+a sensitivity**; the primary estimand stays the unweighted {age, smoking}-adjusted RR. Agreement
 between the simulation attenuation factor and the IPSW shift is the internal validity
 check.
 
