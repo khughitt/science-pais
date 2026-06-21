@@ -33,6 +33,14 @@ from specificity import positive, spec_class  # noqa: E402
 from theme_rollup import classify_theme  # noqa: E402
 from db_robustness import robustness  # noqa: E402
 from compartment import fire  # noqa: E402
+from verdict import resolve  # noqa: E402
+
+# locked resolution order (config.verdict.resolution_order / pre-reg:0002)
+ORDER = [
+    "model_inadequate_or_batch_confounded", "null_nonarbitrating",
+    "compartment_confounded", "exposure_confounded", "shared_suggestive",
+    "fragile", "exposure_confounded_residual",
+]
 
 _PASS = 0
 _FAIL = 0
@@ -160,9 +168,55 @@ def test_strip_prefix():
     expect("non-collection prefix untouched", strip_prefix("KEGG_FOO") == "KEGG_FOO")
 
 
+# --- WP8 resolution walk: exercise EACH label path (plan:0003 WP8 DoD) -----------
+def resolve_label(**kw):
+    base = dict(resolution_order=ORDER, limma_ok=True, batch_confounded=False,
+                p_perm=0.01, alpha=0.05, compartment_confounded=False,
+                fatigue_specific_themes=set(), exposure_sequela_themes=set(),
+                db_robust_themes=set())
+    base.update(kw)
+    label, trace = resolve(**base)
+    n_decided = sum(1 for t in trace if t["decided"])
+    return label, n_decided
+
+
+def test_resolution_paths():
+    # step 1 — both legs
+    lab, n = resolve_label(limma_ok=False)
+    expect("limma fail → model_inadequate", lab == "model_inadequate_or_batch_confounded" and n == 1)
+    lab, _ = resolve_label(batch_confounded=True)
+    expect("batch → model_inadequate", lab == "model_inadequate_or_batch_confounded")
+    # step 2 — the actual t035 outcome (p_perm >= alpha)
+    lab, n = resolve_label(p_perm=0.949)
+    expect("p_perm>=alpha → null_nonarbitrating (exactly one decided)",
+           lab == "null_nonarbitrating" and n == 1)
+    # step 3
+    lab, _ = resolve_label(compartment_confounded=True)
+    expect("marker-dominated → compartment_confounded", lab == "compartment_confounded")
+    # step 4
+    lab, _ = resolve_label(exposure_sequela_themes={"innate/IFN"})
+    expect("no fs + exposure theme → exposure_confounded", lab == "exposure_confounded")
+    # step 5
+    lab, _ = resolve_label(fatigue_specific_themes={"mitochondrial/OXPHOS"},
+                           db_robust_themes={"mitochondrial/OXPHOS"})
+    expect("DB-robust fatigue theme → shared_suggestive", lab == "shared_suggestive")
+    # step 6
+    lab, _ = resolve_label(fatigue_specific_themes={"mitochondrial/OXPHOS"})
+    expect("fatigue theme not DB-robust → fragile", lab == "fragile")
+    # step 7 — terminal fall-through
+    lab, _ = resolve_label()  # p<alpha, no compartment, no fs/es themes
+    expect("all unresolved → exposure_confounded_residual",
+           lab == "exposure_confounded_residual")
+    # compartment precedes exposure (ordering): both true → compartment wins
+    lab, _ = resolve_label(compartment_confounded=True,
+                           exposure_sequela_themes={"innate/IFN"})
+    expect("compartment precedes exposure (step order)", lab == "compartment_confounded")
+
+
 def main() -> int:
     for t in (test_universe_guard, test_concordance_carrying, test_specificity,
-              test_theme_rollup, test_db_robustness, test_compartment, test_strip_prefix):
+              test_theme_rollup, test_db_robustness, test_compartment, test_strip_prefix,
+              test_resolution_paths):
         print(f"\n[{t.__name__}]")
         t()
     print(f"\n{_PASS} passed, {_FAIL} failed")

@@ -185,17 +185,30 @@ rule verdict:
         themes=expand(f"{PROC}/rollup/{{db}}.themes.tsv", db=DBS),
         robustness=f"{PROC}/rollup/db_robustness.tsv",
         compartment=f"{PROC}/rollup/compartment.tsv",
-        datapackage=f"{PROC}/datapackage.json",
+        # admissibility step 1: limma diagnostics for every contrast (full-rank /
+        # residual_df / genes-tested). The PCA-batch leg is non-assessable (no batch
+        # covariate in either deposit) and non-firing — see verdict.py.
+        diag=expand(f"{PROC}/de/{{contrast}}.diag.json", contrast=CONTRASTS),
+        datapackage=f"{PROC}/datapackage.json",   # WP1 acquisition manifest (provenance anchor)
+        config=CONFIGFILE,                          # single source for order/alpha/toggles
+        script=f"{SCRIPTS}/verdict.py",
+        lib=f"{SCRIPTS}/_verdict_lib.py",
     output:
         verdict=f"{RES}/verdict.json",
         report=f"{RES}/results.md",
+        metadata=f"{RES}/run_metadata.json",        # deterministic provenance manifest (finding 5)
     params:
-        resolution_order=config["verdict"]["resolution_order"],
-        alpha=config["verdict"]["p_perm_alpha"],
-        precision=config["determinism"]["float_precision"],
+        primary_db=PRIMARY_DB,
     log:
         f"{RES}/logs/verdict.log"
     conda:
         "../envs/py.yaml"
     shell:
-        stub("verdict/verdict locked resolution order → 1 label (verdict.py)")
+        "python {input.script} --primary-rho {input.primary_rho} "
+        "--primary-perm {input.primary_perm} --concordance {input.concordance} "
+        "--perm {input.perm} --specificity {input.specificity} --themes {input.themes} "
+        "--robustness {input.robustness} --compartment {input.compartment} "
+        "--diag {input.diag} --acq-datapackage {input.datapackage} "
+        "--config {input.config} --primary-db {params.primary_db} "
+        "--out-verdict {output.verdict} --out-report {output.report} "
+        "--out-metadata {output.metadata} > {log} 2>&1"

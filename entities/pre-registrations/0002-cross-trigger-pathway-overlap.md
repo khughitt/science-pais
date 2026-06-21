@@ -236,6 +236,21 @@ verdict:
 
 This ordering makes the fall-through explicit and guarantees a single mechanical label.
 
+**Admissibility batch-leg evaluation (operational clarification — not an amendment; no
+threshold changed).** Resolution step 1 fires `model_inadequate`/`batch_confounded` if the
+Hallmark-primary limma diagnostics fail **or** GSE130353 PCA is batch-dominated. At
+implementation (WP8) the **limma-diagnostics leg is evaluated as specified** (all five
+contrasts are full-rank with residual_df ≥ 13 and a non-empty tested universe → it passes).
+The **PCA-batch leg is not assessable**: neither deposit records a batch/scan covariate (GSE130353
+metadata does not report even sex), so PCA-batch *dominance* cannot be demonstrated — a dominant PC
+cannot be attributed to a technical batch without a batch label to test association against.
+Per-locked decision (user, 2026-06-21), the non-assessable batch leg is therefore **non-firing**
+(it records `batch_assessable: false` with the reason in `verdict.json`/`results.md`), rather than
+either (a) manufacturing a new PC-variance threshold the pre-reg never locked, or (b) halting as
+`model_inadequate` on the mere *absence* of a batch test (the step fires on demonstrated dominance,
+not on inability to test). This loosens no threshold and is moot for the present vehicle (the
+verdict is set at step 2). Recorded as a clarifying note for the no-HARKing audit trail.
+
 ## Null Result Plan
 
 - A **`null_nonarbitrating`** result (p_perm ≥ 0.05) means the **test was inadequate**, not that
