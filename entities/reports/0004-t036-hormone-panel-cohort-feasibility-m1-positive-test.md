@@ -14,6 +14,9 @@ related:
   - proposition:0003-infection-pais-perturbs-the-reproductive-axis-and-menopausal-timing
   - pre-registration:0001-menopause-pais-total-effect
   - task:t028
+  - task:t038
+  - task:t039
+  - task:t040
   - paper:Silva2024
   - paper:Shahbaz2025
 created: "2026-06-21"
@@ -85,7 +88,7 @@ from "already measured" throughout.
 | Cohort | R1 hormones | R2 mediators | R3 repro staging | R4 PAIS/PEM | R5 pre-infection baseline | R6 access |
 |---|---|---|---|---|---|---|
 | **RECOVER-Adult** | PARTIAL (AMH measured; E2/T/FSH/LH/SHBG assayable from Mayo biobank) | **STRONG** (immune + endothelial Tier-1 + autonomic Tier-1/3) | PARTIAL | **STRONG (PEM-weighted index)** | **WEAK (enrols ≥3 mo post-infection)** | WEAK (ancillary-study + external funding gated) |
-| **All of Us** | PARTIAL (uncensored EHR labs; coverage UNKNOWN/sparse) | PARTIAL (Fitbit HRV strong; immune/endothelial = crude EHR labs only) | **STRONG** (survey + EHR, ~396k women) | PARTIAL (U09.9 + COPE; no PEM) | **PARTIAL (pre-pandemic enrol + EHR backfill)** | PARTIAL (free but DURA/in-cloud, no export) |
+| **All of Us** | PARTIAL (uncensored EHR labs; coverage UNKNOWN/sparse) | PARTIAL (Fitbit HRV strong; immune/endothelial = crude EHR labs only) | **STRONG** (survey + EHR, ~396k women) | PARTIAL (large U09.9/COPE *substrate*, but **no PEM** and no biologically coherent PAIS phenotype) | **PARTIAL (pre-pandemic enrol + EHR backfill)** | PARTIAL (free but DURA/in-cloud, no export) |
 | **IMPACC** | WEAK (no panel; relative-abundance androgen metabolites only) | STRONG-immune (multi-omic) / thin endothelial / ABSENT autonomic | ABSENT | PARTIAL (PRO clusters; no PEM; hospitalized skew) | WEAK (enrols at hospital admission; no pre-infection) | PARTIAL data (ImmPort/dbGaP) / WEAK biospecimens |
 | **Lifelines** | ABSENT (female sex hormones not assayed; male-only VESPER testosterone) | PARTIAL (GlycA/NMR proxy; ECG; no cytokine panel) | PARTIAL (questionnaire; unverified) | STRONG-symptom / WEAK-biological (no PEM) | STRONG-phenotype / ABSENT-biomarker re-measure | PARTIAL (enclave, fees, no export) |
 | **Gen. Scotland** | ABSENT (zero sex steroids; baseline chem = 6 analytes) | STRONG (DNAm-CRP, protein/cytokine EpiScores) | PARTIAL (questionnaire + linkage) | PARTIAL (CovidLife + NHS linkage; no PEM) | **PARTIAL design / FATAL staleness (markers measured 2006–2011, ~9–15 yr pre-infection)** | PARTIAL (Safe Haven, no export) |
@@ -130,10 +133,13 @@ precondition, not answerable from public docs.
 The deepest **longitudinal immune multi-omics** of any candidate (serial transcriptomics, Olink,
 proteomics, metabolomics, CyTOF, autoantibody/VirScan across acute→12-mo convalescent), and it already
 reports a **sex-linked, androgen-metabolite long-COVID signal** (DHEA-S, androsterone-sulfate, etc.
-*lower* in long COVID) — corroborating M1's *direction*. But: no sex-hormone panel (only
-relative-abundance metabolites, not quantitative E2/FSH/AMH), **no reproductive/menopausal data**, **no
-pre-infection baseline**, hospitalized-severity skew (steroids confounded by critical illness), no PEM,
-no autonomic. **Verdict: a hypothesis-corroborating secondary analysis**, not a primary M1 vehicle —
+*lower* in long COVID) that is **compatible with M1's steroid-axis / mediator predictions**. This is a
+**steroid-axis / mediator-compatible** corroboration, *not* direction-confirming: with no sex-hormone
+panel (only relative-abundance metabolites, not quantitative E2/FSH/AMH), **no reproductive/menopausal
+data**, **no pre-infection baseline**, hospitalized-severity skew (steroids confounded by critical
+illness), no PEM, and no autonomic measures, IMPACC can neither establish the hormone→recovery
+*direction* nor resolve reverse causation. **Verdict: a mediator-compatible secondary analysis**, not a
+primary M1 vehicle —
 but its processed data are obtainable (ImmPort SDY1760 / dbGaP phs002686) **without new assays**, making
 it the cheapest, most reproducible near-term triangulation.
 
@@ -157,28 +163,37 @@ Retain both only as **long-COVID symptom-design references**, not as hormone-med
 
 ## Disposition and recommended sequencing
 
-1. **t036 stays open.** The feasibility verdict is recorded; the positive test itself is post-seed-stage
-   and requires either funded biospecimen assays (RECOVER) or a gated Workbench analysis (All of Us).
+1. **t036 closed; superseded by three path-specific follow-ups.** The dataset-feasibility *search* was
+   t036's deliverable and is complete. Because t036 was framed as *acquisition* of All of Us / Lifelines
+   / Generation Scotland — two of which (Lifelines, GS) this report **rules out** as M1 vehicles —
+   leaving it open would point future work at discarded targets. It is therefore closed and replaced by
+   the three surviving paths as separately-tracked tasks (different readiness levels, so not one task):
+   **`task:t038`** (IMPACC), **`task:t039`** (All of Us coverage query), **`task:t040`** (RECOVER
+   ancillary). The positive test itself remains post-seed-stage.
 2. **No dataset entities created.** Per scope, the dataset-entity lifecycle is for analysis
    provisioning (t028-style), which remains post-seed-stage. This report is the durable artifact.
 3. **Recommended order of pursuit** (cheapest/most-reproducible first):
-   - **(a) IMPACC open-data secondary corroboration** — test whether the *existing* immune/metabolic
-     mediator structure behaves as M1 predicts (the androgen-metabolite signal already points the right
-     way), using ImmPort/dbGaP data with **no new assays**. Reproducible-from-accessible-data; the only
-     near-term move that does not require funding or a pre-seed-stage exception. Corroborates direction,
-     does **not** resolve reverse causation.
-   - **(b) All of Us Workbench coverage query** — a *scoping* query (still feasibility-grade, in scope)
+   - **(a) IMPACC open-data secondary corroboration → `task:t038`** — test whether the *existing*
+     steroid-axis (relative-abundance androgen metabolites) and immune/metabolic mediator structure is
+     **compatible with** M1's predictions, using ImmPort/dbGaP data with **no new assays**. This is a
+     **mediator-compatible** corroboration, *not* direction-confirming: IMPACC has no quantitative
+     hormone panel, no reproductive staging, no pre-infection baseline, and a hospitalized skew, so it
+     can neither establish the hormone→recovery *direction* nor resolve reverse causation. The
+     literature-synthesis portion is in scope now; a fresh multi-omic re-analysis is post-seed-stage.
+   - **(b) All of Us Workbench coverage query → `task:t039`** — a *scoping* query (feasibility-grade)
      for per-analyte oestradiol/FSH/AMH coverage and repeat-measure counts in long-COVID-affected
      peri-/post-menopausal women. This is the empirical gate that decides whether All of Us can ever be
-     the reverse-causation-breaking vehicle. Cheap; resolves the single biggest UNKNOWN.
-   - **(c) RECOVER ancillary biospecimen study** — the eventual *primary* positive test (assay the sex-
-     steroid panel on banked serum, exploit AMH + PEM-stratified outcome + deep mediators). Post-seed-
-     stage, funding- and committee-gated; the highest-quality but highest-cost path.
+     the reverse-causation-breaking vehicle. Cheap; resolves the single biggest UNKNOWN. (Access-gated:
+     needs a signed DURA / Workbench account.)
+   - **(c) RECOVER ancillary biospecimen study → `task:t040`** — the eventual *primary* positive test
+     (assay the sex-steroid panel on banked serum, exploit AMH + PEM-stratified outcome + deep
+     mediators). Post-seed-stage, funding- and committee-gated; the highest-quality but highest-cost path.
 4. **This does not change `proposition:0002`'s fragility.** The report **explains** it: because no
    accessible cohort jointly satisfies R1+R2+R5, the core mechanism leg cannot yet be independently
    corroborated from existing data, and the single-line-fragile flag is an honest reflection of the
-   cohort landscape, not a fixable bookkeeping artifact. The earliest realistic corroboration is path
-   (a) (IMPACC, direction only); a *causally clean* corroboration awaits path (b) or (c).
+   cohort landscape, not a fixable bookkeeping artifact. The earliest realistic move is path (a)
+   (IMPACC) — and even that is only *mediator-compatible*, not direction-confirming; a *causally clean*
+   corroboration awaits path (b) or (c).
 
 ## What would change this verdict
 
