@@ -10,43 +10,69 @@
 # =============================================================================
 
 # --- WP6: concordance ρ + paired sample-label permutation null (per pair×DB) --
+# Observed ρ + scatter from the WP5 (multilevel) NES; the locked NA-NES rule
+# (excluded pairwise) is intrinsic to concordance.py. Scripts are rule INPUTS.
 rule concordance:
     input:
-        concordance_nes_inputs,
+        unpack(concordance_nes_inputs),
+        script=f"{SCRIPTS}/concordance.py",
     output:
         rho=f"{PROC}/concordance/{{pair}}.{{db}}.rho.tsv",
-    params:
-        na=config["preprocessing"]["na_nes_handling"],   # NA NES → excluded pairwise from ρ
+        scatter=f"{PROC}/concordance/{{pair}}.{{db}}.scatter.tsv",
     log:
         f"{RES}/logs/concordance.{{pair}}.{{db}}.log"
     conda:
         "../envs/py.yaml"
     shell:
-        stub("verdict/concordance (scipy spearmanr)")
+        "python {input.script} --nes-x {input.nes_x} --nes-y {input.nes_y} "
+        "--pair {wildcards.pair} --db {wildcards.db} "
+        "--out-rho {output.rho} --out-scatter {output.scatter} > {log} 2>&1"
 
 rule permutation_null:
     input:
         # the heavy rule re-runs the full limma→fgsea→NES→ρ chain under permuted
-        # SAMPLE labels; needs both prepared datasets + the DB's gene sets.
-        g14577=f"{PROC}/GSE14577/expr.gene.tsv.gz",
-        g130353=f"{PROC}/GSE130353/expr.gene.tsv.gz",
-        sheet14577=f"{PROC}/GSE14577/sample_metadata.tsv",
-        sheet130353=f"{PROC}/GSE130353/sample_sheet.tsv",
+        # SAMPLE labels; needs both arms' prepared matrices + the DB's gene sets.
+        x_expr=lambda wc: pair_arm(wc.pair, "x")["expr"],
+        x_sheet=lambda wc: pair_arm(wc.pair, "x")["sheet"],
+        y_expr=lambda wc: pair_arm(wc.pair, "y")["expr"],
+        y_sheet=lambda wc: pair_arm(wc.pair, "y")["sheet"],
         geneset=f"{PROC}/genesets/{{db}}.rds",
+        script=f"{SCRIPTS}/permutation_null.R",
     output:
-        perm=f"{PROC}/perm/{{pair}}.{{db}}.perm.tsv",
+        perm=f"{PROC}/perm/{{pair}}.{{db}}.perm.tsv",          # io_contract perm_columns
+        nulldist=f"{PROC}/perm/{{pair}}.{{db}}.nulldist.tsv",  # B permuted ρ (histogram)
     params:
         B=config["permutation"]["B"],
-        seed=config["determinism"]["seed"],
+        nperm=config["permutation"]["null_nes"]["nperm"],
+        seed=lambda wc: cell_seed(wc),                # per-(pair×DB) substream seed
         rng_kind=config["determinism"]["r_rng_kind"],
-        pools=config["permutation"]["label_pools"],
+        min_size=config["genesets"]["size_filter"]["min"],
+        max_size=config["genesets"]["size_filter"]["max"],
+        x_case=lambda wc: pair_arm(wc.pair, "x")["case"],
+        x_control=lambda wc: pair_arm(wc.pair, "x")["control"],
+        x_sample_col=lambda wc: pair_arm(wc.pair, "x")["sample_col"],
+        x_group_col=lambda wc: pair_arm(wc.pair, "x")["group_col"],
+        y_case=lambda wc: pair_arm(wc.pair, "y")["case"],
+        y_control=lambda wc: pair_arm(wc.pair, "y")["control"],
+        y_sample_col=lambda wc: pair_arm(wc.pair, "y")["sample_col"],
+        y_group_col=lambda wc: pair_arm(wc.pair, "y")["group_col"],
     threads: 8
     log:
         f"{RES}/logs/permutation_null.{{pair}}.{{db}}.log"
     conda:
         "../envs/r-bioc.yaml"
     shell:
-        stub("verdict/permutation_null (permutation_null.R, HEAVY, BiocParallel)")
+        "Rscript {input.script} --pair {wildcards.pair} --db {wildcards.db} "
+        "--x-expr {input.x_expr} --x-sheet {input.x_sheet} "
+        "--x-case {params.x_case:q} --x-control {params.x_control:q} "
+        "--x-sample-col {params.x_sample_col} --x-group-col {params.x_group_col} "
+        "--y-expr {input.y_expr} --y-sheet {input.y_sheet} "
+        "--y-case {params.y_case:q} --y-control {params.y_control:q} "
+        "--y-sample-col {params.y_sample_col} --y-group-col {params.y_group_col} "
+        "--geneset {input.geneset} --B {params.B} --nperm {params.nperm} "
+        "--min-size {params.min_size} --max-size {params.max_size} "
+        "--seed {params.seed} --rng-kind {params.rng_kind:q} --threads {threads} "
+        "--out-perm {output.perm} --out-nulldist {output.nulldist} > {log} 2>&1"
 
 # --- WP7: specificity → theme roll-up → DB-robustness → compartment -----------
 rule specificity:

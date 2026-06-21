@@ -144,6 +144,19 @@ permutation:
     cfs_vs_hc:    {n: 20, case: 10, control: 10}
     qfs_vs_qs:    {n: 20, case: 10, control: 10}
     qs_vs_hc:     {n: 20, case: 10, control: 10}
+  # Null NES routine (OPERATIONAL precision — NOT a verdict knob; B above is the
+  # locked verdict-relevant budget). The null re-runs the full limma→fgsea→NES→ρ
+  # chain B times; computing each permuted NES with the WP5 fgsea-MULTILEVEL
+  # routine would be ~5-6h, so the null uses fgseaSimple with a fixed gene-
+  # permutation count for the NES normalization. The OBSERVED reported ρ + scatter
+  # still come from the WP5 multilevel NES (concordance rule); inside the null the
+  # observed AND permuted ρ use this same fgseaSimple routine, so p_perm is
+  # internally consistent. fgseaSimple NES ≈ multilevel NES (~1e-3 apart), so the
+  # pre-reg's committed "NES rank-concordance" statistic is preserved. (user
+  # decision 2026-06-20, WP6; pre-reg:0002 permutation "Null NES computation" note.)
+  null_nes:
+    method: "fgsea_simple"
+    nperm: 1000
 
 # ----------------------------------------- specificity thresholds (S1/S2) ----
 # pre-reg:0002 Specificity metric — fully thresholded; nominal fgsea p (NOT FDR),

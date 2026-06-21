@@ -49,7 +49,39 @@ def de_expr_input(wildcards):
 def concordance_nes_inputs(wildcards):
     """The two contrasts' NES tables that a (pair × db) concordance compares."""
     pair = config["concordance_pairs"][wildcards.pair]
-    return [
-        f"{PROC}/fgsea/{pair['x']}.{wildcards.db}.nes.tsv",
-        f"{PROC}/fgsea/{pair['y']}.{wildcards.db}.nes.tsv",
-    ]
+    return {
+        "nes_x": f"{PROC}/fgsea/{pair['x']}.{wildcards.db}.nes.tsv",
+        "nes_y": f"{PROC}/fgsea/{pair['y']}.{wildcards.db}.nes.tsv",
+    }
+
+# per-dataset prepared-matrix / sample-sheet paths (the permutation null reads
+# the expr matrices + sheets directly to re-fit limma under permuted labels).
+EXPR_OF = {
+    "gse14577":  f"{PROC}/GSE14577/expr.gene.tsv.gz",
+    "gse130353": f"{PROC}/GSE130353/expr.gene.tsv.gz",
+}
+SHEET_OF = {
+    "gse14577":  f"{PROC}/GSE14577/sample_metadata.tsv",
+    "gse130353": f"{PROC}/GSE130353/sample_sheet.tsv",
+}
+
+def pair_arm(pair, arm):
+    """Resolve one arm ('x'|'y') of a concordance pair to its full DE spec:
+    contrast name, dataset, case/control, expr+sheet paths, sheet columns."""
+    cname = config["concordance_pairs"][pair][arm]
+    spec = config["contrasts"][cname]
+    ds = spec["dataset"]
+    return {
+        "contrast": cname, "dataset": ds,
+        "case": spec["case"], "control": spec["control"],
+        "expr": EXPR_OF[ds], "sheet": SHEET_OF[ds],
+        "sample_col": DE_SHEET_COLS[ds]["sample"],
+        "group_col": DE_SHEET_COLS[ds]["group"],
+    }
+
+def cell_seed(wildcards):
+    """Deterministic per-(pair×DB) substream seed: master seed offset by the
+    cell's fixed index in (PAIRS × DBS) order, so every cell is independently
+    reproducible regardless of execution order/worker count (plan:0003 KD10)."""
+    idx = PAIRS.index(wildcards.pair) * len(DBS) + DBS.index(wildcards.db)
+    return config["determinism"]["seed"] * 1000 + idx

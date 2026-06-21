@@ -312,6 +312,17 @@ Even executed perfectly, this analysis cannot:
   sets, their Jaccard, and the Fisher statistic — reported for interpretability only.
 - **Known limitation of ρ:** a global rank concordance can be driven by a few high-|NES| sets;
   mitigated by the **theme-recurrence (≥2 DB)** requirement and by reporting the NES scatter.
+- **Null NES computation (operational note — B is the verdict knob, not this; not an amendment).**
+  The sample-label null re-runs the full limma→fgsea→NES→ρ chain B times. Each permuted NES is computed
+  with **fgseaSimple** (fixed gene-permutation count, config `permutation.null_nes.nperm`) rather than
+  the fgsea-multilevel routine used for the reported NES: the multilevel method's value-add is
+  small-p **tail accuracy**, not the **NES point estimate** (the two agree to ~1e-3), so the
+  rank-concordance statistic is preserved while the B≥2000 null stays tractable (multilevel would be
+  ~5-6h). Inside the null the **observed and permuted ρ use this same fgseaSimple routine**, so `p_perm`
+  is internally consistent; the **headline reported ρ + scatter** still come from the multilevel NES
+  (the concordance rule). This computes the already-locked NES statistic and changes **no** estimand or
+  threshold (including B), so it is recorded as a clarifying implementation note, **not** a numbered
+  amendment. (user decision 2026-06-20, WP6.)
 - **Pinned gene-set universe (locked):** MSigDB **`2024.1.Hs`** (release pinned; exact release hash
   recorded at ingest), **size filter `15 ≤ |set| ≤ 500`** (fgsea minSize/maxSize). Collections:
   **Hallmark (H, 50 sets) = primary/confirmatory**; **Reactome (C2:CP:REACTOME)** and **GO-BP
