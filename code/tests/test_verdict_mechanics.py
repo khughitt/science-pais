@@ -33,7 +33,7 @@ from specificity import positive, spec_class  # noqa: E402
 from theme_rollup import classify_theme  # noqa: E402
 from db_robustness import robustness  # noqa: E402
 from compartment import fire  # noqa: E402
-from verdict import resolve  # noqa: E402
+from verdict import resolve, theme_sets_across_dbs  # noqa: E402
 
 # locked resolution order (config.verdict.resolution_order / pre-reg:0002)
 ORDER = [
@@ -169,13 +169,17 @@ def test_strip_prefix():
 
 
 # --- WP8 resolution walk: exercise EACH label path (plan:0003 WP8 DoD) -----------
-def resolve_label(**kw):
+def resolve_full(**kw):
     base = dict(resolution_order=ORDER, limma_ok=True, batch_confounded=False,
                 p_perm=0.01, alpha=0.05, compartment_confounded=False,
                 fatigue_specific_themes=set(), exposure_sequela_themes=set(),
                 db_robust_themes=set())
     base.update(kw)
-    label, trace = resolve(**base)
+    return resolve(**base)
+
+
+def resolve_label(**kw):
+    label, trace = resolve_full(**kw)
     n_decided = sum(1 for t in trace if t["decided"])
     return label, n_decided
 
@@ -213,10 +217,51 @@ def test_resolution_paths():
     expect("compartment precedes exposure (step order)", lab == "compartment_confounded")
 
 
+def test_trace_honesty():
+    # the t035 run: null_nonarbitrating decides at step 2; later steps must be
+    # NOT reached and NOT fired — esp. the terminal residual must not spuriously
+    # report fired:true with a 'p_perm<alpha' reason (review WP8 Medium-1).
+    _, trace = resolve_full(p_perm=0.949)
+    by = {t["label"]: t for t in trace}
+    expect("step 2 decided", by["null_nonarbitrating"]["decided"] is True)
+    expect("residual NOT fired after decision",
+           by["exposure_confounded_residual"]["fired"] is False)
+    expect("residual NOT reached after decision",
+           by["exposure_confounded_residual"]["reached"] is False)
+    expect("exactly one step fired", sum(1 for t in trace if t["fired"]) == 1)
+    expect("no fired step is unreached",
+           all(t["reached"] for t in trace if t["fired"]))
+    expect("post-decision reason says not reached",
+           "not reached" in by["compartment_confounded"]["reason"])
+
+
+def test_cross_db_theme_sets():
+    import pandas as pd
+    # a theme fatigue-specific ONLY in Reactome+GO-BP (not Hallmark) must still be
+    # captured — the union must not be Hallmark-narrowed (review WP8 Medium-2).
+    df = pd.DataFrame([
+        {"theme": "mitochondrial/OXPHOS", "db": "reactome",
+         "theme_class": "fatigue-specific", "verdict_eligible": True},
+        {"theme": "mitochondrial/OXPHOS", "db": "gobp",
+         "theme_class": "fatigue-specific", "verdict_eligible": True},
+        {"theme": "innate/IFN", "db": "hallmark",
+         "theme_class": "exposure_sequela", "verdict_eligible": True},
+        {"theme": "other", "db": "gobp",
+         "theme_class": "fatigue-specific", "verdict_eligible": False},  # ineligible
+    ])
+    fs, es = theme_sets_across_dbs(df)
+    expect("cross-DB: Reactome+GO-BP-only fatigue theme captured",
+           fs == {"mitochondrial/OXPHOS"})
+    expect("cross-DB: exposure theme captured", es == {"innate/IFN"})
+    expect("'other' (ineligible) excluded from fatigue set", "other" not in fs)
+    fs0, es0 = theme_sets_across_dbs(pd.DataFrame())
+    expect("empty themes → empty sets", fs0 == set() and es0 == set())
+
+
 def main() -> int:
     for t in (test_universe_guard, test_concordance_carrying, test_specificity,
               test_theme_rollup, test_db_robustness, test_compartment, test_strip_prefix,
-              test_resolution_paths):
+              test_resolution_paths, test_trace_honesty, test_cross_db_theme_sets):
         print(f"\n[{t.__name__}]")
         t()
     print(f"\n{_PASS} passed, {_FAIL} failed")

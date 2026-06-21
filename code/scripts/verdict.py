@@ -76,6 +76,25 @@ BELIEF_UPDATES = {
 }
 
 
+def theme_sets_across_dbs(themes_df):
+    """Cross-DB union of verdict-eligible theme names by class (review WP8, Medium-2).
+
+    The pre-reg derives theme classes PER DB and treats DB-robustness as a cross-DB
+    gate over {Hallmark, Reactome, GO-BP}. Steps 4/6 ("no theme is fatigue-specific",
+    "≥1 fatigue-specific theme") and step 4's exposure clause therefore range over a
+    theme that is so in ANY DB — not the primary (Hallmark) DB alone — otherwise a
+    Reactome+GO-BP-only robust or exposure theme would be silently missed. Step 5's
+    robustness comes separately from db_robustness.tsv (the locked ≥2-DB same-sign
+    rule). Returns (fatigue_specific_any_db, exposure_sequela_any_db)."""
+    def names(cls):
+        if themes_df.empty:
+            return set()
+        sel = themes_df[(themes_df["theme_class"] == cls)
+                        & (themes_df["verdict_eligible"] == True)]  # noqa: E712
+        return set(sel["theme"])
+    return names("fatigue-specific"), names("exposure_sequela")
+
+
 def resolve(*, resolution_order, limma_ok, batch_confounded, p_perm, alpha,
             compartment_confounded, fatigue_specific_themes, exposure_sequela_themes,
             db_robust_themes):
@@ -118,17 +137,30 @@ def resolve(*, resolution_order, limma_ok, batch_confounded, p_perm, alpha,
             "p_perm<alpha but all concordant themes unresolved-specificity"),
     }
 
+    # First-match walk. The trace is HONEST about the cascade: once a step decides,
+    # later steps are NOT reached and are not evaluated as standalone predicates
+    # (several of them — incl. the terminal residual — presuppose `p_perm < alpha`
+    # and would otherwise report a condition that is false in this run). `fired` is
+    # therefore gated on `reached`, so no step shows `fired: true` unless the cascade
+    # actually reached and matched it (review WP8, Medium-1).
     trace = []
     verdict = None
+    decided_step = None
     for i, label in enumerate(resolution_order, start=1):
         if label not in predicates:
             sys.exit(f"[verdict] resolution_order label '{label}' has no predicate")
-        fired, reason = predicates[label]
-        decided = verdict is None and bool(fired)
-        trace.append({"step": i, "label": label, "fired": bool(fired),
-                      "reason": reason, "decided": decided})
-        if decided:
+        cond, reason = predicates[label]
+        reached = verdict is None
+        fired = bool(reached and cond)
+        trace.append({
+            "step": i, "label": label, "reached": reached, "fired": fired,
+            "decided": fired,
+            "reason": reason if reached
+            else f"not reached (verdict decided at step {decided_step})",
+        })
+        if fired:
             verdict = label
+            decided_step = i
     if verdict is None:
         sys.exit("[verdict] no label fired — resolution_order must include a terminal catch-all")
     return verdict, trace
@@ -242,7 +274,7 @@ def main():
         for _, r in surface.sort_values(["pair", "db"]).iterrows()
     ]
 
-    # --- specificity + theme surface (primary DB drives steps 4-6) ----------------
+    # --- specificity + theme surface (cross-DB for steps 4-6; review WP8 Medium-2) -
     spec = pd.concat([read_tsv(p) for p in a.specificity], ignore_index=True)
     specificity_summary = {
         db: grp["spec_class"].value_counts().to_dict()
@@ -252,14 +284,9 @@ def main():
         if a.themes else pd.DataFrame()
     prim = themes_all[themes_all["db"] == primary_db] if not themes_all.empty else themes_all
 
-    def theme_set(df, cls):
-        if df.empty:
-            return set()
-        sel = df[(df["theme_class"] == cls) & (df["verdict_eligible"] == True)]  # noqa: E712
-        return set(sel["theme"])
-
-    fatigue_specific = theme_set(prim, "fatigue-specific")
-    exposure_sequela = theme_set(prim, "exposure_sequela")
+    # theme specificity steps range over ANY DB (the pre-reg derives classes per DB);
+    # `prim` (Hallmark) is retained only for the reported themes_primary_db surface.
+    fatigue_specific, exposure_sequela = theme_sets_across_dbs(themes_all)
 
     robust_df = read_tsv(a.robustness)
     db_robust = set(robust_df.loc[robust_df["db_robust"] == True, "theme"]) \
@@ -283,6 +310,12 @@ def main():
         "admissibility": admissibility,
         "sensitivity_surface": sensitivity_surface,
         "specificity_summary": specificity_summary,
+        # the cross-DB theme sets that actually fed resolution steps 4-6 (auditable):
+        "theme_sets": {
+            "fatigue_specific_any_db": sorted(fatigue_specific),
+            "exposure_sequela_any_db": sorted(exposure_sequela),
+            "db_robust": sorted(db_robust),
+        },
         "themes_primary_db": prim.to_dict(orient="records") if not prim.empty else [],
         "db_robustness": robust_df.to_dict(orient="records") if not robust_df.empty else [],
         "compartment": {k: (None if pd.isna(comp[k]) else
@@ -362,12 +395,20 @@ def write_report(path, v):
     A(f"- ρ (permutation-internal, fgseaSimple): {c['rho_obs_perm']}")
     A(f"- one-sided permutation **p_perm = {c['p_perm']}** (B={c['B']}) vs α = {c['alpha']}\n")
     A("## Resolution trace (first-match wins)\n")
-    A("| Step | Label | Fired | Decided | Reason |")
-    A("|---|---|---|---|---|")
+    A("Steps after the deciding one are **not reached** (not evaluated) — the cascade")
+    A("stops at the first match.\n")
+    A("| Step | Label | Reached | Fired | Decided | Reason |")
+    A("|---|---|---|---|---|---|")
     for t in v["resolution_trace"]:
-        A(f"| {t['step']} | `{t['label']}` | {t['fired']} | "
+        A(f"| {t['step']} | `{t['label']}` | {t['reached']} | {t['fired']} | "
           f"{'**yes**' if t['decided'] else ''} | {t['reason']} |")
     A("")
+    ts = v["theme_sets"]
+    A("Theme sets fed to steps 4–6 (cross-DB union; DB-robustness is the locked ≥2-DB "
+      "same-sign gate): "
+      f"fatigue-specific={ts['fatigue_specific_any_db'] or 'none'}, "
+      f"exposure_sequela={ts['exposure_sequela_any_db'] or 'none'}, "
+      f"db_robust={ts['db_robust'] or 'none'}.\n")
     A("## Admissibility (resolution step 1)\n")
     ad = v["admissibility"]
     A(f"- limma diagnostics OK across all contrasts: **{ad['limma_ok']}** "
