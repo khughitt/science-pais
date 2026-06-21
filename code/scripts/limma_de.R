@@ -15,9 +15,13 @@
 # FDR tally) is emitted for the WP8 admissibility step (model_inadequate),
 # which owns its own thresholds — this script only measures, never adjudicates.
 #
-# Determinism (KD10): limma has no RNG; numeric columns are rounded to 7
-# significant digits so the ranked list is byte-reproducible regardless of any
-# multithreaded-BLAS reduction-order jitter in the last ulps.
+# Determinism (KD10): limma has no RNG and lmFit is bit-reproducible here, so the
+# FULL-PRECISION ranked list (fwrite emits the round-trip-exact decimal for each
+# double) is itself byte-identical across runs. The `t` column is the verdict-
+# bearing statistic fgsea ranks on, so it is NEVER rounded here — rounding it
+# would alter the NES rank and manufacture ties (review WP4-5, High). The only
+# rounding is in the diagnostics sidecar (reporting); the KD10 verdict-rounding
+# happens at the END of the chain, not on this intermediate.
 # =============================================================================
 suppressPackageStartupMessages({
   library(limma)
@@ -105,17 +109,19 @@ fit <- lmFit(M, design)
 fit <- eBayes(fit)
 tt <- topTable(fit, coef = 2L, number = Inf, sort.by = "none")
 
+# FULL precision — no rounding on any analysis column. `t` is the verdict-bearing
+# ranking statistic; fwrite writes the minimal decimal that restores each double
+# exactly, so fgsea ranks on the unrounded moderated-t (review WP4-5, High).
 ranked <- data.table(
   gene_id   = rownames(tt),
-  logFC     = rnd(tt$logFC),
-  t         = rnd(tt$t),
-  P.Value   = rnd(tt$P.Value),
-  adj.P.Val = rnd(tt$adj.P.Val))
-# rank by moderated-t (desc), gene_id tiebreak → deterministic order.
+  logFC     = tt$logFC,
+  t         = tt$t,
+  P.Value   = tt$P.Value,
+  adj.P.Val = tt$adj.P.Val)
+# rank by moderated-t (desc), gene_id tiebreak → deterministic file order.
 ranked <- ranked[order(-t, gene_id)]
-fwrite_tsv <- function(dt, path)
-  write.table(dt, path, sep = "\t", quote = FALSE, row.names = FALSE)
-fwrite_tsv(ranked, args[["out-ranked"]])
+data.table::fwrite(ranked, args[["out-ranked"]], sep = "\t",
+                   quote = FALSE, na = "NA")
 
 # diagnostics for WP8 admissibility (model_inadequate) — measured, not judged.
 n_sig <- sum(tt$adj.P.Val < 0.05, na.rm = TRUE)

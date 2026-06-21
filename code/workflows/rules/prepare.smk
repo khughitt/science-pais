@@ -81,10 +81,13 @@ rule download_genesets:
         "--out {output.gmt} > {log} 2>&1"
 
 # Serialize the LOCKED theme map (PCRE) from config → JSON so prepare_genesets.R
-# applies it verbatim (the r-bioc env has no r-yaml). config is the source.
+# applies it verbatim (the r-bioc env has no r-yaml). config is the source — and
+# NOT ancient(): theme_spec.json carries the verdict-relevant theme/compartment
+# regexes, so a config amendment to either MUST rerun this (and theme_map.tsv
+# downstream), never silently leave them stale (review WP4-5, Medium).
 rule emit_theme_spec:
     input:
-        config=ancient(CONFIGFILE),
+        config=CONFIGFILE,
         script=f"{SCRIPTS}/emit_theme_spec.py",
     output:
         f"{PROC}/genesets/theme_spec.json",

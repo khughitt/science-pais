@@ -59,7 +59,7 @@ current <- sort(unique(keys(org.Hs.eg.db, keytype = "ENSEMBL")))
 
 ref <- list(
   annotation_source = sprintf("org.Hs.eg.db %s", as.character(packageVersion("org.Hs.eg.db"))),
-  ensembl_lift_note = "current_ensembl_universe = org.Hs.eg.db ENSEMBL keys; rel68 ids absent here are retired (logged, not dropped)",
+  ensembl_lift_note = "current_ensembl_universe = org.Hs.eg.db ENSEMBL keys (= the gene-set annotation space); rel68 ids absent here can never be gene-set members, so harmonize_gse130353.py DROPS them from the harmonized matrix (recorded in the harmonize report + sidecar, not silently kept) — plan:0003 KD5 finding-1 fix",
   n_current_ensembl = length(current),
   current_ensembl_universe = current,
   hallmark = list(

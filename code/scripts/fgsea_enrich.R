@@ -20,7 +20,10 @@
 # specificity test uses nominal `pval`, not padj — pre-reg:0002).
 #
 # Determinism (KD10): fgsea-multilevel is stochastic, so RNG kind + master seed
-# are fixed and nproc = 1 (SerialParam); numeric columns rounded to 7 sig digits.
+# are fixed and nproc = 1 (SerialParam). NES/pval/padj are written at FULL
+# precision (fwrite round-trips each double exactly) so the WP6 ρ-concordance
+# and permutation null operate on the unrounded NES (review WP4-5); the seeded
+# single-worker run makes that full-precision table reproducible across runs.
 # =============================================================================
 suppressPackageStartupMessages({
   library(fgsea)
@@ -41,9 +44,6 @@ min_size  <- as.integer(args[["min-size"]])
 max_size  <- as.integer(args[["max-size"]])
 seed      <- as.integer(args[["seed"]])
 if (is.na(seed)) stop("[fgsea_enrich] --seed required (determinism lock)")
-
-SIGDIG <- 7L
-rnd <- function(x) signif(x, SIGDIG)
 
 ranked <- fread(args[["ranked"]], check.names = FALSE, na.strings = c("", "NA"))
 if (!all(c("gene_id", "t") %in% names(ranked)))
@@ -72,14 +72,11 @@ out <- merge(data.table(gene_set = all_sets), have,
              by = "gene_set", all.x = TRUE, sort = TRUE)
 out[, db := db]
 out[, contrast := contrast]
-out[, NES := rnd(NES)]
-out[, pval := rnd(pval)]
-out[, padj := rnd(padj)]
 setcolorder(out, c("gene_set", "db", "contrast", "NES", "pval", "padj", "size"))
 out <- out[order(gene_set)]
 
-write.table(out, args[["out-nes"]], sep = "\t", quote = FALSE,
-            row.names = FALSE, na = "NA")
+# full precision (fwrite round-trips doubles exactly); NA → "NA" per io_contract.
+data.table::fwrite(out, args[["out-nes"]], sep = "\t", quote = FALSE, na = "NA")
 
 n_tested <- nrow(res)
 message(sprintf(
