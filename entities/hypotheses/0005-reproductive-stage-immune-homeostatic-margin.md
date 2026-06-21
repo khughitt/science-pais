@@ -13,6 +13,7 @@ source_refs:
 - cite:Mishra2020
 - cite:Rebman2026
 - cite:Kawai2025
+- cite:Shahbaz2025
 related:
 - question:0013-reproductive-stage-failed-immune-recovery-after-infection
 - question:0007-mechanism-of-female-predominance-in-pais
@@ -77,6 +78,7 @@ A strong null in hormone-measured cohorts would force the model to treat menopau
 - Stewart2024 and Humphreys2025 support the practical importance of menopausal symptom burden and overlap in post-COVID clinical populations [@Stewart2024; @Humphreys2025].
 - Averyanova2022 provides indirect mechanistic plausibility for hormone effects on immune, endothelial, and hemostatic pathways relevant to recovery [@Averyanova2022].
 - Kawai2025 supports viral-infection links to vascular and thromboinflammatory outcomes that could interact with menopause-associated cardiometabolic risk [@Kawai2025].
+- Shahbaz2025 provides a second independent, non-UK-Biobank corroboration of low non-dominant sex hormone in long COVID ME/CFS: reduced testosterone in female LC patients and reduced estradiol in male LC patients, measured directly from plasma in an Edmonton clinical cohort (n=140, CCC ME/CFS case definition, ~12 months post-infection). Inverse correlations between testosterone and inflammatory cytokines (IL-6, TNF-α, IFN-γ, MCP-1, IL-17a, IP-10) in LCF patients provide mechanistic plausibility for testosterone's anti-inflammatory role. Reverse causation unresolved (cross-sectional; menopausal status not collected) [@Shahbaz2025].
 
 ## Disputing Evidence
 
