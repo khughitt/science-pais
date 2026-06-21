@@ -218,7 +218,10 @@ dictionaries/catalogues, and cohort-profile / design papers. Key anchors:
   `measurement` labs; menopause descriptive paper (medRxiv 2026.04.17.26351129); COPE survey
   (PMC10505411); Fitbit/WEAR HRV (PMC12264798).
 - **IMPACC:** design paper (PMC8713959); long-COVID multi-omics / androgen-metabolite paper
-  (PMC12582403; Nat. Commun. s41467-023-44090-5); ImmPort SDY1760 / dbGaP phs002686.
+  (`paper:Gabernet2025`; PMC12582403; *J. Clin. Invest.* 2025;135(21):e193698; DOI 10.1172/JCI193698 —
+  **corrected**: the originally-cited Nat. Commun. s41467-023-44090-5 is `paper:Ozonoff2024`, the
+  PRO-phenotype paper, not the androgen-metabolite result; see `report:0005`); ImmPort SDY1760 / dbGaP
+  phs002686.
 - **Lifelines:** IJE Cohort Profile Update (PMC9558073); Ballering et al. *Lancet* 2022 (PMID 35934007);
   VESPER subcohort (wiki.lifelines.nl); data catalogue (data-catalogue.lifelines.nl).
 - **Generation Scotland:** researcher data pages (genscot.ed.ac.uk); 2024 GS update (PMC11340249);

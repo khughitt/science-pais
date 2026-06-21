@@ -142,19 +142,6 @@ Carries the G2 out-of-corpus disposition recorded in report:0002 (t029 second pa
 
 AXIS-1 FORWARD GAP from the 2026-06-20 pipeline-QA audit. The pre-registered UKB menopause->PAIS analysis specifies rich data-QA only in PROSE (sampling-frame/natal-female audit; exposure-timing repeat-assessment validation; dual outcome-route A/B triangulation; U-proxy missingness thresholds >50%; the 3x3 misclassification matrix; oestradiol floor-censoring sentinel at 175 pmol/L). Per ~/d/science/docs/conventions/pipeline-qa-checkpoints.md, prose intentions and side-output counts files do NOT discharge axis-1 QA. When t028 builds the analysis table, add a SEPARATE rule that re-reads the built table with STRUCTURAL (build-fatal: one-row-per-participant; natal-female filter integrity; allowed reproductive-stage codes; outcome-route key alignment) vs DISTRIBUTION (age-at-menopause bounds; 175 pmol/L oestradiol sentinel; missingness) checks, config-driven thresholds shared with the cleaning step. This task exists so the prose QA spec survives into code.
 
-## [t038] IMPACC open-data secondary corroboration of h0005 M1 (steroid-axis / mediator structure, no new assays)
-- priority: P3
-- status: proposed
-- aspects: []
-- created: 2026-06-21
-
-Surviving path (a) from report:0004 (t036 feasibility). CHEAPEST / most-reproducible of the three M1-corroboration paths. Use IMPACC's ALREADY-PUBLISHED open-access RESULTS to assess whether the existing steroid-axis (relative-abundance androgen metabolites: DHEA-S, androsterone-sulfate, etc. lower in long COVID) and immune/metabolic mediator structure is COMPATIBLE with M1's predictions. This is a MEDIATOR-COMPATIBLE secondary corroboration ONLY -- IMPACC has no quantitative hormone panel (E2/FSH/AMH), no reproductive/menopausal staging, no pre-infection baseline, and a hospitalized-severity skew, so it canNOT confirm direction or resolve the P3 reverse-causation ambiguity. SCOPE: the literature-synthesis portion (what IMPACC's published results already show) is in-scope pre-seed; a FRESH re-analysis of the released multi-omic data (ImmPort SDY1760 / dbGaP phs002686) is a computational analysis and is post-seed-stage per specs/scope-boundaries.md -- defer that. related: report:0004, hypothesis:0005, proposition:0002.
-
-### Notes
-
-- 2026-06-21: Scoped as probe-mode plan plan:0004-impacc-m1-mediator-compatible-corroboration (2026-06-21). In-scope = literature synthesis of IMPACC's PUBLISHED androgen-metabolite + mediator structure vs M1 predictions; result may move proposition:0002 ONLY (own independence group if subjects disjoint from Silva2024/Shahbaz2025), leaving p0001/p0003 unmoved. Fresh SDY1760/phs002686 re-analysis deferred post-seed-stage.
-- 2026-06-21: plan:0004 review (2026-06-21): tightened belief rule -- 'concordant' now REQUIRES androgen + mediator co-variation within ONE phenotype/module/model (two separate LC-association statements => underdetermined); concordant strength CAPPED at weak, not above evidence-line:0007 (Shahbaz). Use existing paper:Ozonoff2024/Talla2023, new entity only if PMC12582403 distinct.
-
 ## [t039] All of Us Researcher Workbench hormone-coverage query (decide if AoU can be the reverse-causation-breaking M1 vehicle)
 - priority: P3
 - status: proposed
