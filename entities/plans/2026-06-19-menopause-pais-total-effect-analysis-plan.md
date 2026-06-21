@@ -87,10 +87,10 @@ No data acquired yet. The plan specifies what an **admissible** input must be:
 | **Population-based** sampling frame (cohort, registry, biobank) | Clinic samples condition on the `clinic_attendance` collider by construction → manufactured association | t015, t008 |
 | **Pre-infection baseline** with reproductive stage staged *at infection* | Post-hoc staging lets PAIS perturb the HPG axis and contaminate the exposure (reverse causation) | t008, t020 |
 | Natal-female restriction recorded | Population-definition given; menopause undefined otherwise | t017 |
-| Age at infection | The single load-bearing confounder (minimal sufficient set) | t017 |
+| Age at infection + baseline smoking | Primary measured adjustment set {age, smoking} (not "minimal-sufficient" — none exists while U is latent; t023 v2 / t029 Q1) | t017 |
 | **U-proxy battery:** SES, prior EBV serostatus, autoimmune history | Promote from latent U to measured proxies to partially close the back-door | t017 |
-| Acute severity, vaccination/reinfection era, calendar period/variant | Mediator (severity) + candidate confounder of mediator paths (era) | t017 |
-| Baseline cardiometabolic comorbidity, timestamped vs menopause | Needed only for the sensitivity arm (see Estimand) | t017 |
+| Acute severity, vaccination/reinfection era, calendar period/variant | Mediator (severity) + confounder of mediator→outcome paths (era) | t017 |
+| Baseline comorbidity, BMI, parity, autoimmune-POI, frailty (timestamped vs menopause) | Confounders-by-structure in DAG v2, carried in the sensitivity arm (see Estimand) | t017 |
 | Outcome: PAIS status + time-to-resolution by a **stated case definition** | WHO vs CDC vs Fukuda/CCC/ICC change apparent prevalence (AGENTS.md) | t017, t002 |
 
 Provenance must reach `datapackage.json` grade before execution (frictionless).
@@ -148,15 +148,22 @@ Provenance must reach `datapackage.json` grade before execution (frictionless).
 
 - **Primary estimand:** total effect of reproductive stage (ordinal:
   pre → peri → post, *at infection*) on PAIS outcome, in natal females.
-- **Adjustment set: `{age at infection}` only.** (Sex-at-birth handled by
-  population restriction.) This is the unique minimal sufficient set under the DAG
-  assuming no unmeasured confounding — the critique's correction; **baseline
-  comorbidity is dropped** from the primary set (it is not a parent of menopause,
-  so adjusting it over-adjusts a mediator descendant and risks M-bias).
+- **Primary measured adjustment set: `{age at infection, smoking}`.** (Sex-at-birth
+  handled by population restriction.) This is the **primary measured** set, **not**
+  "minimal-sufficient" — per the DAG critique no valid sufficient set exists while U
+  is latent, and DAG v2 (t023) shows the formal minimal measured set is the full
+  `{age, smoking, baseline-comorbidity, baseline-BMI, parity, autoimmune-POI,
+  frailty}` battery. Smoking was promoted to primary by the t029 reviewer (Q1). The
+  **incident** comorbidity/adiposity components remain mediators and are never
+  adjusted (over-adjustment / M-bias).
+- **Sensitivity arm:** add baseline comorbidity, baseline BMI, parity, autoimmune-POI,
+  and frailty (all confounders-by-structure in v2, demoted by judgement), plus the MR
+  triangulation arm (t029 Q4) and an E-value bound for residual U.
 - **Do NOT adjust (mediators):** sex hormone levels, immune dysregulation,
-  thromboinflammation/endothelial dysfunction, acute severity, HT.
-- **Never condition (collider):** clinic attendance (enforced at the sampling-frame
-  gate, not as a covariate).
+  thromboinflammation/endothelial dysfunction, acute severity, incident
+  comorbidity/adiposity, HT.
+- **Never condition (colliders):** clinic attendance, hospitalization/ascertainment,
+  survival selection (enforced at the sampling-frame gate, not as covariates).
 - **Primary metric:** hazard ratio for time-to-PAIS-resolution (Cox/Weibull) **or**
   risk ratio for PAIS-present-at-fixed-follow-up (log-binomial), per outcome
   operationalization. Report on the log-HR / log-RR scale.

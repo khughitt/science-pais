@@ -146,10 +146,16 @@ decade-gap projection problem as the questionnaire items: they characterize the
 
 ---
 
-## 4. Confounder — age (the minimal sufficient set)
+## 4. Confounders — the primary measured adjustment set `{age, smoking}`
 
-Per the critique-corrected DAG, **`{age}` is the unique minimal sufficient
-adjustment set** under natal-female restriction. The load-bearing covariate.
+Per the critique-corrected DAG (v2, t023), the **primary measured adjustment set is
+`{age, smoking}`** under natal-female restriction — **not** a "minimal-sufficient"
+set: while U is latent **no valid sufficient adjustment set exists**, and v2 shows
+that even with U set aside the formal minimal measured set is the full
+`{age, smoking, baseline-comorbidity, baseline-BMI, parity, autoimmune-POI, frailty}`
+battery. `{age, smoking}` is the committed measured-subset (t029 Q1); the rest are
+sensitivity arms. Age is the dominant load-bearing covariate; smoking is the measured
+strong common cause promoted alongside it.
 
 | Variable | Field | Use |
 |---|---|---|
@@ -161,10 +167,17 @@ adjustment set** under natal-female restriction. The load-bearing covariate.
   conditioning variable.
 - Model age flexibly (spline / fine bands), since age confounds the menopause→PAIS
   relationship strongly and non-linearly; a linear term risks residual confounding.
-- **Baseline cardiometabolic comorbidity is NOT in the primary adjustment set** (it
-  is not a parent of menopause → over-adjustment / M-bias). It enters only the
-  pre-committed *sensitivity arm* (§8), contingent on the DAG-v2 `comorbidity →
-  menopause-timing` edge (t023).
+- **Smoking is the second primary covariate.** Code baseline smoking as
+  never/former/current + pack-years/duration (fields 20116 + 20161/2887, confirm at
+  application), modelled as a measured confounder (baseline smoking is pre-infection
+  but not always pre-FMP).
+- **Baseline cardiometabolic comorbidity is a confounder but NOT in the primary
+  adjustment set.** In DAG v2 the `baseline-comorbidity → menopause-timing` edge is
+  now drawn, so baseline comorbidity *is* a formal confounder — but it is **demoted to
+  the pre-committed sensitivity arm** (§8) by judgement (timing/role ambiguity), not
+  treated as ignorable. The same holds for baseline BMI, parity, autoimmune-POI, and
+  frailty (t023 v2; t029 Q2/Q3). Note the **incident** comorbidity/adiposity
+  components remain mediators and must never be adjusted.
 
 ---
 

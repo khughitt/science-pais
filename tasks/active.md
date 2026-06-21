@@ -107,23 +107,6 @@ h0005 currently carries its reasoning as a prose 'Proposition Bundle' (unmigrate
 
 - 2026-06-19: Design doc revised to v2 (2026-06-19) after review against the June 8 epistemic-edges facet. Framing change for this migration: P-reverse is an ordinary second relational proposition (multi-edge), roled 'rival' on its cito:discusses membership *relative to h0005* — NOT a new causal-edge label. Confounder/collider cautions from t014 are DERIVED from patch topology + query (epistemic-edges §2.1), so do not author them as edge roles. The only thing this migration exercises that is new is membership_role on the bundle edge (core|rival|background).
 
-## [t023] Build v2 of the t014 menopause-PAIS DAG before specification
-- priority: P2
-- status: proposed
-- aspects: []
-- created: 2026-06-19
-
-Build v2 of the t014 menopause-PAIS causal DAG with the structure the critique flagged as missing.
-
-PREREQUISITE STRUCTURAL FIX (review 2026-06-19): the current graph has a single cardiometabolic-comorbidity node with menopause -> sex-hormones -> comorbidity. Naively adding the recommended comorbidity -> menopause-timing edge to that same node creates a CYCLE. v2 must first SPLIT the node into baseline (pre-infection) comorbidity and menopause-incident comorbidity: baseline-comorbidity -> menopause-timing (makes baseline comorbidity a true confounder -> adjust) while incident comorbidity stays a downstream mediator (menopause/hormones -> incident-comorbidity -> PAIS). Only after the split is acyclic should the new edges be added.
-
-Then add: the baseline-comorbidity -> menopause-timing edge (test both {age} and {age, baseline-comorbidity} adjustment sets), a hospitalization/acute-care ascertainment collider (severe acute -> hospital -> cohort entry), and a calendar-period/variant/vaccination-era node confounding mediator paths. Keep reverse causation (PAIS -> reproductive axis, t021) as a separate acyclic inquiry with exposure fixed at pre-infection stage. Relates: hypothesis:0005, task:t016, task:t021, patch-definition:menopause-pais-causal-dag.
-
-### Notes
-
-- 2026-06-19: Candidate confounder/mediator/alternative set to incorporate in DAG v2 (from the 2026-06-19 confounder review; see doc/methods/2026-06-19-confounder-open-questions-and-staged-amendment.md). CONFOUNDERS (common cause of menopause-timing AND LC; may break {age}-minimal-sufficient): smoking (measured; staged for primary set via t029), BMI/adiposity (ambiguous: confounder vs M1-mediator vs collider — adjudicate role + timing), autoimmune POI / autoimmune common cause, biological frailty / subclinical pre-infection ill-health (non-SES), parity (dual role: staging input AND possible confounder). NEW IDENTIFICATION ARM: Mendelian randomization of genetically-instrumented age-at-menopause -> LC (exogenous to SES/smoking/survival; pleiotropy caveat — menopause loci overlap DNA-repair/immune genes). MEDIATORS (direct-effect/mechanism only, do NOT adjust in total effect): visceral-fat/metabolic shift, estrobolome/gut-microbiome, vasomotor-symptoms/sleep -> autonomic-inflammatory (also a symptom-overlap ascertainment confounder — dual role), iron-status reversal (menstrual loss -> post-menopausal repletion). STRUCTURAL ALTERNATIVES: shielding-behaviour -> infection-timing/variant-era confounding; testing-into-denominator selection (distinct from questionnaire-response M3b); HRT healthy-user / no-open-collider check. Q2/Q4 from the reviewer doc flow here after t029.
-- 2026-06-19: TERMINOLOGY SWEEP (reviewer t029 finding, 2026-06-19): the DAG critique correctly states NO valid back-door adjustment set exists while U is latent, yet several docs call {age} the 'unique minimal sufficient set'. DAG v2 must restate these as the 'primary measured adjustment set' (now {age, smoking} after amendment Q1), never 'minimal-sufficient'. Files to correct: doc/methods/2026-06-19-ukb-data-field-specification.md:148,150 (t027 heading + body); doc/inquiries/menopause-pais-causal-dag.md:35; entities/patches/menopause-pais-causal-dag.md:171; entities/plans/2026-06-19-menopause-pais-total-effect-analysis-plan.md:90,152. (pre-reg:0001 + confounder doc already corrected.) Q2/Q3 dispositions to encode in v2: BMI = explicit role edge (confounder vs menopause->adiposity mediator; baseline-vs-incident timing split); autoimmune-POI = distinct etiologic stratum (not generic 20002 adjustment); frailty = selection/competing-risk structure not a primary covariate; parity = staging input + candidate confounder edge (guard against drifting to a reproductive-life-course estimand).
-
 ## [t025] Compare PEM-positive vs PEM-negative PASC molecular signatures
 - priority: P2
 - status: proposed

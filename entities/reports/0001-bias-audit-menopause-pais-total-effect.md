@@ -187,7 +187,11 @@ ratify.
 
 - **Rating:** possible (the central scientific challenge — handled honestly at the
   design level via partial-identification + E-value, with two confounds to add)
-- **Evidence:** The {age-at-infection} minimal sufficient set is critique-corrected,
+- **Evidence:** The age-at-infection adjustment set is critique-corrected
+  *[update 2026-06-21, t029/t023: the primary measured set is now `{age, smoking}` —
+  deliberately not "minimal-sufficient", since none exists while U is latent; DAG v2
+  adds baseline-comorbidity/BMI/parity/autoimmune-POI/frailty as sensitivity-arm
+  confounders]*,
   mediators are correctly left unadjusted (total effect), HRT is correctly treated as
   mediator/confounded-by-indication and not adjusted, and the partial-identification
   posture (U stays latent; E-value load-bearing; U-proxy arm; EBV only on the ~9.6k
