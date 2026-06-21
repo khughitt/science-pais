@@ -93,20 +93,6 @@ Split PAIS outcomes into somatic fatigue/PEM, dysautonomia, vascular-thromboinfl
 
 Separate hormone therapy evidence by acute infection outcome versus post-acute persistence, route, dose, timing, indication, comorbidity, and healthy-user bias. Decide which findings can inform causal PAIS hypotheses and which should remain clinical-screening or symptom-management context only.
 
-## [t021] Promote h0005 prose Proposition Bundle to first-class proposition + evidence-line entities
-- priority: P2
-- status: proposed
-- aspects: []
-- related: [hypothesis:0005-reproductive-stage-immune-homeostatic-margin]
-- group: causal-disentanglement
-- created: 2026-06-19
-
-h0005 currently carries its reasoning as a prose 'Proposition Bundle' (unmigrated style); cycles already uses first-class proposition + evidence-line entities. Promote each bundle item to a neutral, directional proposition with its own support/dispute evidence-lines. Include BOTH causal directions as separate propositions: P-forward (reproductive-stage transition affects post-infectious recovery threshold) and P-reverse (infection/PAIS perturbs the reproductive axis/timing), each evaluated on its own evidence. This is the test bed for the contextual structural-role design (~/d/science/docs/plans/2026-06-19-contextual-structural-roles-design.md) and connects to the t014 DAG (confounder/collider cautions).
-
-### Notes
-
-- 2026-06-19: Design doc revised to v2 (2026-06-19) after review against the June 8 epistemic-edges facet. Framing change for this migration: P-reverse is an ordinary second relational proposition (multi-edge), roled 'rival' on its cito:discusses membership *relative to h0005* — NOT a new causal-edge label. Confounder/collider cautions from t014 are DERIVED from patch topology + query (epistemic-edges §2.1), so do not author them as edge roles. The only thing this migration exercises that is new is membership_role on the bundle edge (core|rival|background).
-
 ## [t025] Compare PEM-positive vs PEM-negative PASC molecular signatures
 - priority: P2
 - status: proposed

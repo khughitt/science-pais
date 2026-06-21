@@ -25,7 +25,7 @@ updated: "2026-06-21"
 
 ## What this line shows
 
-`paper:Shahbaz2025` reports testosterone **inversely correlated with pro-inflammatory cytokines** (IL-6, TNF-α, IFN-γ, MCP-1, IL-17a, IP-10) in female long-COVID patients — a directional hormone→immune link of exactly the kind `proposition:0002` posits, observed in patients rather than inferred from general biology.
+`paper:Shahbaz2025` reports testosterone **inversely correlated with pro-inflammatory cytokines** (IL-6, TNF-α, IFN-γ, MCP-1, IL-17a, IP-10) in female long-COVID patients — an association compatible with the hormone–immune link `proposition:0002` posits, observed in patients rather than inferred from general biology.
 
 ## Why it is independent
 

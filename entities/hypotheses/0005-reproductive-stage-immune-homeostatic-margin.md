@@ -51,7 +51,7 @@ This may lower or raise the effective threshold for entering the shared dysregul
 ### Core — enter the belief conjunction
 
 - `proposition:0001-reproductive-stage-transition-shifts-the-failed-recovery-threshold` — **forward (P→) effect**: reproductive-stage transition shifts the effective host-reserve / failed-recovery threshold, so PAIS risk is reproductive-stage-dependent at a given insult.
-- `proposition:0002-reproductive-stage-transition-modifies-immune-regulatory-pathways` — **mechanism** beneath P→: the transition modifies immune-regulatory pathways (antiviral resolution, Treg/Tfh/Th17, B-cell/type-I-IFN tone, endothelial, thromboinflammatory).
+- `proposition:0002-reproductive-stage-transition-modifies-immune-regulatory-pathways` — **mechanism** beneath P→: the transition modifies immune-regulatory pathways (antiviral resolution, Treg/Tfh/Th17, B-cell/type-I-IFN tone, endothelial, thromboinflammatory). **Caveat: this core leg is single-line fragile** — its support is two weak lines, dropping either flips it to fragile, so the conjunction's weakest link is a *core* member, not just the background ones. Independent corroboration here (`task:t036`) is the priority.
 
 ### Rival — contrasted against; excluded from the conjunction
 

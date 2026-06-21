@@ -41,3 +41,5 @@ Reproductive-stage transition modifies one or more immune-regulatory pathways go
 ## Caveats
 
 Mechanistic plausibility, not a staged-mediation test. The cytokine correlation is cross-sectional and shares the reverse-causation ambiguity of `proposition:0003`. No in-vivo evidence yet shows that a stage-driven pathway change *causes* the recovery-threshold shift of `proposition:0001` rather than co-occurring with it. Held as a `mechanistic_narrative`-layer claim; the discriminating evidence is mediation analysis in a hormone-measured cohort.
+
+**Single-line fragile — and it is a `core` member.** This proposition is one of the two `core` legs of the `hypothesis:0005` belief conjunction, yet its support rests on just two weak lines (`evidence-line:0006`, analogical; `evidence-line:0007`, cross-sectional): dropping either flips it supported → fragile (`belief.fragile-single-line`). The **core mechanism leg is thus the conjunction's weakest link** — the highest-priority target for independent corroboration (a hormone-measured, mediation-capable cohort, e.g. `task:t036`).

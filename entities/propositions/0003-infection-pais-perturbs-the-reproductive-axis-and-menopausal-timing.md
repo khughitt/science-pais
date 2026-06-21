@@ -1,7 +1,7 @@
 ---
 id: "proposition:0003-infection-pais-perturbs-the-reproductive-axis-and-menopausal-timing"
 type: "proposition"
-title: "Infection / PAIS perturbs the reproductive axis and menopausal timing (reverse direction)"
+title: "Infection / PAIS perturbs the reproductive (HPG) axis state (reverse direction)"
 status: "active"
 claim_layer: "causal_effect"
 identification_strength: "observational"
@@ -33,7 +33,7 @@ updated: "2026-06-21"
 
 ## Claim
 
-Acute infection and/or the established PAIS state **perturbs the reproductive axis** — HPG-axis suppression, altered gonadal-steroid levels, or shifted menstrual/menopausal timing. This is the reverse-causal direction (P←) relative to `proposition:0001`. It is a first-class, evidence-evaluated proposition in its own right; relative to the forward hypothesis `hypothesis:0005` it carries `membership_role: rival` — a competing reading a forward-only model must rule out, not a conjunctive member of that bundle.
+Acute infection and/or the established PAIS state **perturbs the reproductive (HPG) axis state** — e.g. HPG-axis suppression or altered gonadal-steroid levels. This is the reverse-causal direction (P←) relative to `proposition:0001`. A stronger version — that infection shifts menstrual / menopausal **timing** — is a plausible extension but is **not asserted here**: no timing-shift evidence is yet ingested (see Caveats), so it is deferred to a future proposition. (The entity slug retains "menopausal-timing" as the eventual scope; the asserted claim is currently axis-state only.) It is a first-class, evidence-evaluated proposition in its own right; relative to the forward hypothesis `hypothesis:0005` it carries `membership_role: rival` — a competing reading a forward-only model must rule out, not a conjunctive member of that bundle.
 
 ## Evidence Summary
 
