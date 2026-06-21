@@ -75,11 +75,17 @@ rule permutation_null:
         "--out-perm {output.perm} --out-nulldist {output.nulldist} > {log} 2>&1"
 
 # --- WP7: specificity → theme roll-up → DB-robustness → compartment -----------
+# nominal_p is the SINGLE locked fgsea-p floor (config specificity.nominal_p): it
+# gates the S1/S2 presence predicates AND the concordance-carrying p<0.05 rule, so
+# both legs share one knob. The locked concordance-carrying definition lives ONCE in
+# _verdict_lib.py (wired as an input so its edits retrigger theme_rollup/compartment).
 rule specificity:
     input:
         qfs_vs_qs=f"{PROC}/fgsea/qfs_vs_qs.{{db}}.nes.tsv",
         qs_vs_hc=f"{PROC}/fgsea/qs_vs_hc.{{db}}.nes.tsv",
         qfs_vs_hc=f"{PROC}/fgsea/qfs_vs_hc.{{db}}.nes.tsv",
+        script=f"{SCRIPTS}/specificity.py",
+        lib=f"{SCRIPTS}/_verdict_lib.py",
     output:
         classes=f"{PROC}/specificity/{{db}}.classes.tsv",
     params:
@@ -89,30 +95,39 @@ rule specificity:
     conda:
         "../envs/py.yaml"
     shell:
-        stub("verdict/specificity (specificity.py)")
+        "python {input.script} --qfs-vs-hc {input.qfs_vs_hc} "
+        "--qfs-vs-qs {input.qfs_vs_qs} --qs-vs-hc {input.qs_vs_hc} "
+        "--db {wildcards.db} --nominal-p {params.nominal_p} "
+        "--out {output.classes} > {log} 2>&1"
 
 rule theme_rollup:
     input:
         classes=f"{PROC}/specificity/{{db}}.classes.tsv",
-        primary_rho=f"{PROC}/concordance/primary.{{db}}.rho.tsv",
         nes_x=f"{PROC}/fgsea/pi_cfs_vs_hc.{{db}}.nes.tsv",
         nes_y=f"{PROC}/fgsea/qfs_vs_hc.{{db}}.nes.tsv",
+        theme_map=f"{PROC}/genesets/theme_map.tsv",   # locked per-set theme assignment
+        script=f"{SCRIPTS}/theme_rollup.py",
+        lib=f"{SCRIPTS}/_verdict_lib.py",
     output:
         themes=f"{PROC}/rollup/{{db}}.themes.tsv",
     params:
-        theme_map=config["theme_map"],
+        nominal_p=config["specificity"]["nominal_p"],
     log:
         f"{RES}/logs/theme_rollup.{{db}}.log"
     conda:
         "../envs/py.yaml"
     shell:
-        stub("verdict/theme_rollup strict-dominance (theme_rollup.py)")
+        "python {input.script} --classes {input.classes} "
+        "--nes-x {input.nes_x} --nes-y {input.nes_y} "
+        "--theme-map {input.theme_map} --db {wildcards.db} "
+        "--nominal-p {params.nominal_p} --out {output.themes} > {log} 2>&1"
 
+# theme-sign-only recurrence — NO per-DB ρ-direction gate (pre-reg:0002 lock), so
+# the concordance/perm tables are deliberately NOT inputs here.
 rule db_robustness:
     input:
         themes=expand(f"{PROC}/rollup/{{db}}.themes.tsv", db=DBS),
-        primary_rho=expand(f"{PROC}/concordance/primary.{{db}}.rho.tsv", db=DBS),
-        primary_perm=expand(f"{PROC}/perm/primary.{{db}}.perm.tsv", db=DBS),
+        script=f"{SCRIPTS}/db_robustness.py",
     output:
         robustness=f"{PROC}/rollup/db_robustness.tsv",
     params:
@@ -122,24 +137,31 @@ rule db_robustness:
     conda:
         "../envs/py.yaml"
     shell:
-        stub("verdict/db_robustness theme-sign-only >=2 DBs (theme_rollup.py)")
+        "python {input.script} --themes {input.themes} "
+        "--min-dbs {params.min_dbs} --out {output.robustness} > {log} 2>&1"
 
 rule compartment:
     input:
-        primary_rho=f"{PROC}/concordance/primary.{PRIMARY_DB}.rho.tsv",
         nes_x=f"{PROC}/fgsea/pi_cfs_vs_hc.{PRIMARY_DB}.nes.tsv",
         nes_y=f"{PROC}/fgsea/qfs_vs_hc.{PRIMARY_DB}.nes.tsv",
+        script=f"{SCRIPTS}/compartment.py",
+        lib=f"{SCRIPTS}/_verdict_lib.py",
     output:
         compartment=f"{PROC}/rollup/compartment.tsv",
     params:
         marker_regex=config["compartment_marker_regex"],
         fraction=config["verdict"]["compartment_marker_fraction"],
+        nominal_p=config["specificity"]["nominal_p"],
+        db=PRIMARY_DB,
     log:
         f"{RES}/logs/compartment.log"
     conda:
         "../envs/py.yaml"
     shell:
-        stub("verdict/compartment 50%-marker on concordance-carrying set")
+        "python {input.script} --nes-x {input.nes_x} --nes-y {input.nes_y} "
+        "--db {params.db} --marker-regex {params.marker_regex:q} "
+        "--fraction {params.fraction} --nominal-p {params.nominal_p} "
+        "--out {output.compartment} > {log} 2>&1"
 
 # --- WP8: mechanical verdict (locked resolution order → exactly one label) ----
 rule verdict:
