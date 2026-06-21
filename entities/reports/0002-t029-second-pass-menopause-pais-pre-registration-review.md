@@ -11,9 +11,12 @@ related:
   - task:t028
   - task:t030
   - task:t031
+  - task:t032
   - paper:AlcaldeHerraiz2025
+  - paper:Silva2024
+  - paper:Shahbaz2025
 created: "2026-06-20"
-updated: "2026-06-20"
+updated: "2026-06-21"
 ---
 
 # t029 second-pass review
@@ -200,6 +203,21 @@ SHBG-protection story remains single-source and should stay labelled as such.
   `inconclusive-for-coverage` verdict remains appropriate until live field confirmation and
   either an independent SHBG/sex-hormone precedent or a recorded decision to downgrade the
   SHBG prior to single-source background.
+
+## Addendum (2026-06-21, t032): non-UKB out-of-corpus search
+
+Section B above was deliberately **UKB-scoped** (it asked whether an *independent UKB* precedent re-tests the SHBG/sex-hormone signal, and found none). Task **t032** carries the complementary **non-UKB** out-of-corpus action: find any author-independent, non-UK-Biobank cohort linking SHBG or a measured sex hormone to the long-COVID phenotype, which would upgrade the prior off single-source. Result of that search:
+
+**Two independent, non-UKB, author-independent clinical cohorts corroborate a gonadal-steroid → long-COVID association in the protective direction:**
+
+- **`paper:Silva2024`** — Mount Sinai–Yale "MY-LC" cohort (Iwasaki lab), cross-sectional n≈165. Females with LC have **lower testosterone** than control females; **testosterone is associated with lower symptom burden across both sexes** (after accounting for testosterone, sex ceased to predict symptom burden). Measures gonadal steroids, not SHBG.
+- **`paper:Shahbaz2025`** — University of Alberta LC/ME-CFS cohort (Shahbaz/Elahi), case-control n=140, CCC ME/CFS, ~12 mo post-infection. **Reduced testosterone in female LC, reduced estradiol in male LC**; testosterone inversely correlated with inflammatory cytokines. Measures gonadal steroids, not SHBG.
+
+**Disposition (updates the Section B "single-source" labelling, does not change any locked criterion):**
+
+1. **SHBG *measure* remains SINGLE-SOURCE.** No independent non-UKB cohort tests SHBG against long COVID with a positive result. (Szczerbiński 2023, Poland, *did* measure SHBG but reported no SHBG–outcome association and used a hospitalized-survivor exposure, not a validated long-COVID case definition — so it does not upgrade the SHBG prior.) The recorded decision to **downgrade the SHBG prior to single-source background** (pre-reg:0001 amendment 2 / t032) therefore **stands**.
+2. **The broader sex-hormone-protection mechanism class is no longer single-source.** Silva2024 + Shahbaz2025 are two mutually-independent, non-UKB corroborations of low non-dominant gonadal steroid in long COVID — softening the single-source label **for the gonadal-steroid (M1-confirm-side, mediator-specific) prior**, not for the SHBG measure and not for the primary total effect.
+3. **No change to the primary estimand.** Both are clinical-cohort grade, cross-sectional/case-control, with unresolved **reverse causation** (LC may suppress the HPG axis rather than low hormone predisposing to LC). They do **not** establish the pre-infection total-effect causal direction the pre-reg targets, do **not** touch the locked `{age, smoking}` primary adjustment set, and do **not** gate t028 (data-gated regardless). They are M1-confirm-side triangulation material and feed `task:t036` (hormone-panel cohorts for the positive test of `hypothesis:0005`).
 
 ## Sources checked
 
