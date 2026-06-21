@@ -1,3 +1,19 @@
+---
+id: "report:0003-t035-cross-trigger-pathway-overlap-wp4-5-review"
+type: "report"
+title: "t035 WP4-5 implementation review: preprocessing + DE/enrichment (cross-trigger pathway-overlap)"
+status: "proposed"
+source_refs:
+  - plan:0003-cross-trigger-pathway-overlap-pipeline
+  - pre-registration:0002-cross-trigger-pathway-overlap
+  - task:t035
+related:
+  - hypothesis:0001-shared-dysregulated-attractor
+  - question:0017-deflationary-alternatives-vs-shared-pathophysiology
+created: "2026-06-20"
+updated: "2026-06-20"
+---
+
 # Pipeline Review: cross-trigger pathway-overlap pipeline (WP4–WP5)
 
 - **Plan:** plan:0003-cross-trigger-pathway-overlap-pipeline
