@@ -16,8 +16,10 @@ related:
 - question:0001-shared-molecular-signature-across-triggers
 - question:0008-formalize-vicious-cycle-attractor-model
 - immunity:research-question:immune-homeostasis-and-dysregulation
+- pre-registration:0002-cross-trigger-pathway-overlap
+- interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating
 created: '2026-06-11'
-updated: '2026-06-20'
+updated: '2026-06-21'
 ---
 # Hypothesis: Post-acute infection syndromes are a shared dysregulated attractor reachable from many triggers, not merely a shared symptom repertoire
 
@@ -79,6 +81,7 @@ Confidence would be materially reduced if:
 - **Hanson2023:** argues classical ME/CFS is enterovirus-specific and cautions against conflating it with post-COVID illness — favors trigger-specific mechanisms.
 - **Cruz2025:** within a single trigger (SARS-CoV-2), pulmonary sequelae and systemic long COVID are biologically distinct — convergent symptoms need not imply convergent biology even within one pathogen.
 - **Peppercorn2023:** direction-of-effect discordances (HLA-E, S100A4) between LC and ME/CFS caution against assuming molecular identity.
+- **t035 cross-trigger pathway-overlap reanalysis (2026-06-21; `interpretation:0001-...`, `empirical_data_evidence`, weighted-low):** the first *empirical* test bearing on this hypothesis. NES rank-concordance between two distinct triggers (PI-CFS, GSE14577; Q-fever fatigue, GSE130353) was anti-concordant and non-arbitrating (`null_nonarbitrating`; C1 p_perm = 0.949 ≥ α; all six pair × DB cells null). Per `pre-registration:0002` the pre-committed reading is **the test was inadequate, not that this hypothesis is wrong** — 2 cohorts, n = 7–10/group, cross-platform, cross-compartment, sex-unmatched; a non-arbitrating null at this power/bias ceiling **cannot exclude a real shared signature**. Recorded as a marginal downward nudge on *demonstrability-so-far*, not on the conjecture; the Organizing Conjecture and predictions are intact.
 
 ## Evidence Needed To Shift Belief
 
@@ -97,3 +100,4 @@ Confidence would be materially reduced if:
 ## Notes
 
 - 2026-06-20: Deflationary rival now tracked as question:0017 — the finite-organ-failure-repertoire coincidence account (convergence is symptomatic, not a shared attractor) plus ascertainment-artifact. These remain genuinely competitive with this hypothesis; head-to-head molecular designs still fail a shared positive signature and the >=3-trigger harmonized test does not exist. Score this hypothesis against q0017 before promotion.
+- 2026-06-21: First empirical probe (t035, pre-registration:0002) ran and returned `null_nonarbitrating` — see `interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating`. Weighted-low, asymmetric: a marginal downward nudge on demonstrability, **not** support for the q0017 coincidence null (the absence of detectable concordance at this n cannot exclude a real shared signature). Status held at `proposed`; promotion still gated on the harmonized ≥3-trigger test. The run's concrete contribution is the empirical demonstration that public 2-cohort, cross-platform, cross-compartment data cannot adjudicate this question.

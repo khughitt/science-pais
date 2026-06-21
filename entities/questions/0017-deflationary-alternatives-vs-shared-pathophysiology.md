@@ -13,8 +13,10 @@ related:
 - question:0014-which-pais-case-definition-is-most-biologically-coherent
 - question:0015-does-pem-requirement-improve-cross-study-comparability
 - discussion:0002-cross-pathogen-pais-signature-convergence
+- pre-registration:0002-cross-trigger-pathway-overlap
+- interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating
 created: '2026-06-20'
-updated: '2026-06-20'
+updated: '2026-06-21'
 ---
 # Are deflationary alternatives better supported than a shared post-infectious pathophysiology?
 
@@ -77,6 +79,18 @@ each positive claim is scored against it explicitly. Five deflationary accounts 
 - **Reverse causation** is live but partly mitigated in the menopause arm by *pre-infection baseline*
   temporal ordering (UKB reproductive stage fixed 2006–2010; `hypothesis:0005`, `discussion:0001`);
   it remains unaddressed for cross-sectional molecular findings.
+- **t035 cross-trigger pathway-overlap reanalysis (2026-06-21; `interpretation:0001-...`) — NO update
+  to the deflationary bundle.** The first empirical probe of the finite-repertoire-coincidence rival
+  (PI-CFS × Q-fever-fatigue NES rank-concordance, GSE14577 + GSE130353) returned `null_nonarbitrating`
+  (C1 p_perm = 0.949 ≥ α). By the **pre-committed asymmetry** in `pre-registration:0002`, absence of
+  detectable concordance here is **not** evidence *for* the coincidence null — it neither strengthens
+  nor weakens this bundle; it enters only as *"existing public data cannot adjudicate."* A descriptive
+  (non-arbitrating, steps 3–7 unreached) lean was noted — the few mitochondrial/OXPHOS sets surviving
+  on Reactome/GO-BP classify as `exposure_sequela` (S2-positive in QS-vs-HC), consistent with the
+  Raijmakers2019 exposure-confounding account — but it is **not** recorded as support for ascertainment/
+  exposure-artifact, because the confirmatory test never reached the specificity steps. The discriminating
+  experiment (harmonized ≥3-trigger multi-omics) still does not exist; this run is the empirical evidence
+  that public 2-cohort pairings cannot substitute for it.
 
 ## Thoughts
 
