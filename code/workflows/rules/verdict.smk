@@ -16,6 +16,7 @@ rule concordance:
     input:
         unpack(concordance_nes_inputs),
         script=f"{SCRIPTS}/concordance.py",
+        lib=f"{SCRIPTS}/_verdict_lib.py",   # require_same_universe guard
     output:
         rho=f"{PROC}/concordance/{{pair}}.{{db}}.rho.tsv",
         scatter=f"{PROC}/concordance/{{pair}}.{{db}}.scatter.tsv",
@@ -38,6 +39,12 @@ rule permutation_null:
         y_sheet=lambda wc: pair_arm(wc.pair, "y")["sheet"],
         geneset=f"{PROC}/genesets/{{db}}.rds",
         script=f"{SCRIPTS}/permutation_null.R",
+        # permutation_null.R re-implements the WP5 limma→fgsea→NES ranking under
+        # permuted labels; wire the WP5 scripts as inputs so any change to the
+        # ranking/NA/size-filter policy there INVALIDATES the heavy null (it must
+        # not silently diverge from the observed NES). (review WP6-7, Medium.)
+        limma_ref=f"{SCRIPTS}/limma_de.R",
+        fgsea_ref=f"{SCRIPTS}/fgsea_enrich.R",
     output:
         perm=f"{PROC}/perm/{{pair}}.{{db}}.perm.tsv",          # io_contract perm_columns
         nulldist=f"{PROC}/perm/{{pair}}.{{db}}.nulldist.tsv",  # B permuted ρ (histogram)

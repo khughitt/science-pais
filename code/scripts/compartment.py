@@ -22,6 +22,18 @@ import pandas as pd
 from _verdict_lib import concordance_carrying, load_nes, primary_concordant, strip_prefix
 
 
+def fire(n_carrying, n_marker, fraction):
+    """Locked compartment-marker rule (pre-reg:0002 step 3): fires iff >=fraction of
+    the concordance-carrying sets are markers. Empty carrying list CANNOT fire (no
+    sets to be marker-dominated). Returns (confounded, status, marker_fraction)."""
+    if n_carrying == 0:
+        return False, "cannot_fire_empty_carrying", pd.NA
+    frac = n_marker / n_carrying
+    if frac >= fraction:
+        return True, "fired", frac
+    return False, "not_marker_dominated", frac
+
+
 def parse_args():
     p = argparse.ArgumentParser()
     p.add_argument("--nes-x", required=True, help="PI-CFS-vs-HC NES (primary DB)")
@@ -47,14 +59,7 @@ def main():
                    if marker.search(strip_prefix(s))]
     n_marker = len(marker_hits)
 
-    if n_carrying == 0:
-        marker_fraction = pd.NA
-        confounded = False
-        status = "cannot_fire_empty_carrying"
-    else:
-        marker_fraction = n_marker / n_carrying
-        confounded = marker_fraction >= a.fraction
-        status = "fired" if confounded else "not_marker_dominated"
+    confounded, status, marker_fraction = fire(n_carrying, n_marker, a.fraction)
 
     out = pd.DataFrame([{
         "db": a.db, "n_carrying": n_carrying, "n_marker": n_marker,

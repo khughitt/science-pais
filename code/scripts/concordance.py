@@ -23,6 +23,8 @@ import sys
 import pandas as pd
 from scipy.stats import spearmanr
 
+from _verdict_lib import require_same_universe
+
 
 def parse_args():
     p = argparse.ArgumentParser()
@@ -53,6 +55,9 @@ def main():
     y = load_nes(a.nes_y, a.db)
     contrast_x = x["contrast"].iloc[0]
     contrast_y = y["contrast"].iloc[0]
+    # the pinned universe must match exactly before the ρ join (one row per set);
+    # a short/truncated table is a structural error, not a silent inner-join drop.
+    require_same_universe([x, y], [contrast_x, contrast_y])
 
     n_na_x = int(x["NES"].isna().sum())
     n_na_y = int(y["NES"].isna().sum())

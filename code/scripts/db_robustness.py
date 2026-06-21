@@ -27,6 +27,19 @@ COLUMNS = ["theme", "n_dbs_fatigue_specific", "dbs_fatigue_specific",
            "fs_directions", "robust_direction", "db_robust"]
 
 
+def robustness(dirs, min_dbs):
+    """Locked direction-consistent recurrence (pre-reg:0002): given the theme-level
+    NES directions (+1/-1) of the DBs in which the theme is fatigue-specific, the
+    theme is db-robust iff the largest same-sign group reaches min_dbs. Returns
+    (db_robust: bool, robust_direction: +1/-1 or pd.NA). A 2-DB +/- conflict is NOT
+    robust; a 3-DB +,+,- is robust on +."""
+    pos = sum(1 for d in dirs if d > 0)
+    neg = sum(1 for d in dirs if d < 0)
+    if max(pos, neg) >= min_dbs:
+        return True, (1 if pos >= neg else -1)
+    return False, pd.NA
+
+
 def parse_args():
     p = argparse.ArgumentParser()
     p.add_argument("--themes", nargs="+", required=True,
@@ -51,15 +64,7 @@ def main():
             grp = grp.sort_values("db")
             dirs = grp["theme_direction"].astype(int).tolist()
             dbs = grp["db"].tolist()
-            # largest same-sign group among the fatigue-specific DBs
-            pos = sum(1 for d in dirs if d > 0)
-            neg = sum(1 for d in dirs if d < 0)
-            if max(pos, neg) >= a.min_dbs:
-                db_robust = True
-                robust_direction = 1 if pos >= neg else -1
-            else:
-                db_robust = False
-                robust_direction = pd.NA
+            db_robust, robust_direction = robustness(dirs, a.min_dbs)
             rows.append({
                 "theme": theme,
                 "n_dbs_fatigue_specific": int(len(grp)),

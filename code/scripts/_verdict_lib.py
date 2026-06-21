@@ -47,11 +47,32 @@ def strip_prefix(set_name: str) -> str:
     return _PREFIX_RE.sub("", set_name.upper())
 
 
+def require_same_universe(frames, labels) -> None:
+    """Fail-fast guard on the locked "one row per pinned set" contract: every NES
+    table that feeds a verdict-bearing join MUST carry the IDENTICAL gene_set set
+    (NES values may be NA, but no row may be missing). A truncated/short table
+    here would otherwise silently drop or misclassify sets under an inner/left
+    join — pre-reg:0002 fixes the universe, so a mismatch is a structural error,
+    not something to paper over (Explicit > Defensive; fail early)."""
+    base = frozenset(frames[0]["gene_set"])
+    for lab, f in zip(labels[1:], frames[1:]):
+        u = frozenset(f["gene_set"])
+        if u != base:
+            only_a = sorted(base - u)
+            only_b = sorted(u - base)
+            sys.exit(
+                f"[verdict_lib] gene_set universe mismatch ({labels[0]} vs {lab}): "
+                f"{len(only_a)} only in {labels[0]} (e.g. {only_a[:3]}), "
+                f"{len(only_b)} only in {lab} (e.g. {only_b[:3]}) — the pinned "
+                "'one row per set' contract is violated")
+
+
 def primary_concordant(x: pd.DataFrame, y: pd.DataFrame) -> pd.DataFrame:
     """Join two contrasts' NES tables (the x=PI-CFS-vs-HC, y=QFS-vs-HC arms) on the
     pinned universe and flag primary-concordant sets: same-sign NES in BOTH arms,
     both non-NA. NES == 0 carries no direction → not concordant. Returns one row
     per shared gene_set with nes_x/pval_x/nes_y/pval_y and a `concordant` bool."""
+    require_same_universe([x, y], [x["contrast"].iloc[0], y["contrast"].iloc[0]])
     j = x[["gene_set", "NES", "pval"]].merge(
         y[["gene_set", "NES", "pval"]], on="gene_set", how="inner",
         suffixes=("_x", "_y"))

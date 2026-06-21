@@ -45,6 +45,17 @@ def parse_args():
     return p.parse_args()
 
 
+def classify_theme(n_fs, n_es):
+    """Locked strict-dominance theme class (pre-reg:0002): fatigue-specific iff
+    #fatigue-specific > #exposure_sequela; exposure_sequela iff #es >= #fs and >=1
+    (so a tie demotes to exposure_sequela); else unresolved."""
+    if n_fs > n_es:
+        return "fatigue-specific"
+    if n_es >= n_fs and n_es >= 1:
+        return "exposure_sequela"
+    return "unresolved"
+
+
 def theme_direction(rows):
     """Sign of the QFS-vs-HC NES of the fatigue-specific set with the largest
     |NES| (the representative set). Returns (direction, rep_set_name) or
@@ -81,18 +92,17 @@ def main():
         missing = cc.loc[cc["theme"].isna(), "gene_set"].tolist()
         sys.exit(f"[theme_rollup] {a.db}: {len(missing)} carrying sets absent from "
                  f"theme_map.tsv (e.g. {missing[:3]}) — theme assignment incomplete")
+    if cc["spec_class"].isna().any():
+        missing = cc.loc[cc["spec_class"].isna(), "gene_set"].tolist()
+        sys.exit(f"[theme_rollup] {a.db}: {len(missing)} carrying sets absent from the "
+                 f"specificity classes table (e.g. {missing[:3]}) — classes truncated")
 
     rows = []
     for theme, grp in cc.groupby("theme", sort=True):
         n_fs = int((grp["spec_class"] == "fatigue-specific").sum())
         n_es = int((grp["spec_class"] == "exposure_sequela").sum())
         n_un = int((grp["spec_class"] == "unresolved").sum())
-        if n_fs > n_es:
-            theme_class = "fatigue-specific"
-        elif n_es >= n_fs and n_es >= 1:
-            theme_class = "exposure_sequela"
-        else:
-            theme_class = "unresolved"
+        theme_class = classify_theme(n_fs, n_es)
         tdir, rep = theme_direction(grp)
         rows.append({
             "theme": theme, "db": a.db, "n_carrying": int(len(grp)),

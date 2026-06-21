@@ -31,7 +31,7 @@ import sys
 
 import pandas as pd
 
-from _verdict_lib import load_nes
+from _verdict_lib import load_nes, require_same_universe
 
 
 def parse_args():
@@ -61,11 +61,27 @@ def positive(ref_dir, d, p, thr):
     return (d == ref_dir) and (p < thr)
 
 
+def spec_class(s1_pos, s2_pos, has_dir):
+    """Locked per-set specificity class (pre-reg:0002): fatigue-specific ≡ S1+ ∧ ¬S2+;
+    exposure_sequela ≡ S2+ (regardless of S1); unresolved ≡ neither. A set with no
+    QFS-vs-HC reference direction (NA NES) is `absent` — it can never be concordant."""
+    if not has_dir:
+        return "absent"
+    if s1_pos and not s2_pos:
+        return "fatigue-specific"
+    if s2_pos:
+        return "exposure_sequela"
+    return "unresolved"
+
+
 def main():
     a = parse_args()
     ref = load_nes(a.qfs_vs_hc, a.db)
     s1 = load_nes(a.qfs_vs_qs, a.db)
     s2 = load_nes(a.qs_vs_hc, a.db)
+    # all three contrasts must span the identical pinned universe before the join,
+    # else a short table would misclassify (silently drop) sets (fail early).
+    require_same_universe([ref, s1, s2], [a.qfs_vs_hc, a.qfs_vs_qs, a.qs_vs_hc])
 
     # align all three on the pinned universe (same db, identical gene_set set)
     m = ref[["gene_set", "NES"]].rename(columns={"NES": "nes_qfs_vs_hc"})
@@ -86,14 +102,7 @@ def main():
         s2_pos = positive(ref_dir, direction(r.nes_qs_vs_hc),
                           r.p_qs_vs_hc, a.nominal_p)
 
-        if pd.isna(ref_dir):
-            spec_class = "absent"          # no QFS-vs-HC direction → never concordant
-        elif s1_pos and not s2_pos:
-            spec_class = "fatigue-specific"
-        elif s2_pos:
-            spec_class = "exposure_sequela"
-        else:
-            spec_class = "unresolved"
+        cls = spec_class(s1_pos, s2_pos, has_dir=not pd.isna(ref_dir))
 
         rows.append({
             "gene_set": r.gene_set, "db": a.db,
@@ -102,7 +111,7 @@ def main():
             "s1_pos": s1_pos,
             "nes_qs_vs_hc": r.nes_qs_vs_hc, "p_qs_vs_hc": r.p_qs_vs_hc,
             "s2_pos": s2_pos,
-            "spec_class": spec_class,
+            "spec_class": cls,
         })
 
     out = pd.DataFrame(rows, columns=[
