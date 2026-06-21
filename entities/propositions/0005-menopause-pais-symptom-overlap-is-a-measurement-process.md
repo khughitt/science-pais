@@ -1,0 +1,51 @@
+---
+id: "proposition:0005-menopause-pais-symptom-overlap-is-a-measurement-process"
+type: "proposition"
+title: "Menopause-PAIS symptom overlap is a measurement process that can bias apparent associations"
+status: "active"
+claim_layer: "empirical_regularity"
+identification_strength: "observational"
+proxy_directness: "indirect"
+supports_scope: "hypothesis_bundle"
+measurement_model:
+  observed_entity: "symptom-based / questionnaire case ascertainment of PAIS"
+  latent_construct: "the underlying PAIS disease state"
+  measurement_relation: "a shared menopause/PAIS symptom repertoire means reproductive stage can bias which individuals are ascertained as cases, in either direction"
+  known_failure_modes:
+    - "differential symptom reporting by reproductive stage"
+    - "mis-attribution of menopausal symptoms to PAIS or vice-versa"
+    - "case-definition sensitivity"
+discusses:
+  - frame: "hypothesis:0005-reproductive-stage-immune-homeostatic-margin"
+    role: "background"
+related:
+  - "hypothesis:0005-reproductive-stage-immune-homeostatic-margin"
+  - "question:0007-mechanism-of-female-predominance-in-pais"
+  - "topic:pais-case-definition-heterogeneity"
+source_refs:
+  - "paper:Stewart2024"
+  - "paper:Humphreys2025"
+created: "2026-06-21"
+updated: "2026-06-21"
+---
+
+# Proposition: Menopause-PAIS symptom overlap is a measurement process that can bias apparent associations
+
+## Claim
+
+Symptom overlap between menopause and PAIS (fatigue, cognitive complaints, sleep disruption, mood, vasomotor symptoms) is a **measurement process** that can inflate, mask, or reshape apparent menopause–PAIS associations — without, on its own, fully explaining female predominance.
+
+## Evidence Summary
+
+`paper:Stewart2024` and `paper:Humphreys2025` document substantial menopause ↔ post-COVID symptom overlap and care needs in clinical populations, establishing the overlap as real and clinically salient.
+
+## Measurement Model
+
+- **observed_entity:** symptom-based / questionnaire case ascertainment of PAIS.
+- **latent_construct:** the underlying PAIS disease state.
+- **measurement_relation:** a shared symptom repertoire means reproductive stage can bias which individuals are *ascertained* as PAIS cases, in either direction.
+- **known_failure_modes:** differential symptom reporting by stage; mis-attribution of menopausal symptoms to PAIS (or vice-versa); sensitivity of the association to case definition.
+
+## Caveats
+
+Documents the overlap, not its net direction or magnitude. `background` role: it constrains interpretation of `hypothesis:0005` but is not a conjunctive member. It is the measurement counterpart to the confounding-decomposition claim `proposition:0004`.

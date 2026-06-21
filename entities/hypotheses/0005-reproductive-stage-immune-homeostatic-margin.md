@@ -27,7 +27,7 @@ related:
 - cycles:topic:menstrual-cycle-menopause-immune-modulation
 - cycles:topic:reproductive-aging-and-menopause
 created: '2026-06-19'
-updated: '2026-06-19'
+updated: '2026-06-21'
 ---
 # Hypothesis: Reproductive-stage transitions alter immune homeostatic margin and modify risk of failed post-infectious recovery
 
@@ -40,17 +40,29 @@ This may lower or raise the effective threshold for entering the shared dysregul
 
 ## Proposition Bundle
 
-### Core Propositions
+> **Migrated to first-class entities (t021, 2026-06-21).** Each bundle item is now a standalone
+> `proposition` with its own support/dispute `evidence-line`s, and **both causal directions** are
+> represented. The role labels below are `membership_role` on each proposition's `cito:discusses`
+> edge to this hypothesis — only **`core`** members enter the bundle's weakest-link belief
+> conjunction; `rival` and `background` inform interpretation without raising or lowering warranted
+> belief. Per-variable confounder/collider roles are **derived** from
+> `patch-definition:menopause-pais-causal-dag` + its back-door query, not authored on the propositions.
 
-- Reproductive-stage transition modifies one or more immune-regulatory pathways relevant to post-infectious recovery, including antiviral inflammation resolution, Treg/Tfh/Th17 balance, B-cell/type-I-IFN tone, endothelial activation, or thromboinflammatory state.
-- Menopausal transition changes the effective host reserve term in the PAIS threshold model, so the same acute infection may cross a failed-recovery threshold in some reproductive-stage contexts and not others.
-- The female excess in PAIS cannot be interpreted correctly without separating sex assigned at birth, chronological age, menopausal transition, hormone therapy, pregnancy, comorbidity, symptom overlap, and healthcare-seeking or reporting behavior.
+### Core — enter the belief conjunction
 
-### Supporting Or Auxiliary Propositions
+- `proposition:0001-reproductive-stage-transition-shifts-the-failed-recovery-threshold` — **forward (P→) effect**: reproductive-stage transition shifts the effective host-reserve / failed-recovery threshold, so PAIS risk is reproductive-stage-dependent at a given insult.
+- `proposition:0002-reproductive-stage-transition-modifies-immune-regulatory-pathways` — **mechanism** beneath P→: the transition modifies immune-regulatory pathways (antiviral resolution, Treg/Tfh/Th17, B-cell/type-I-IFN tone, endothelial, thromboinflammatory).
 
-- Symptom overlap between menopause and PAIS is a measurement process that can inflate, mask, or reshape apparent associations without fully explaining female predominance.
-- Hormone therapy effects, if present, are likely route-, dose-, timing-, indication-, and comorbidity-dependent rather than uniformly protective or harmful.
-- Vascular and autonomic pathways may mediate part of the reproductive-stage association independent of classical adaptive autoimmunity.
+### Rival — contrasted against; excluded from the conjunction
+
+- `proposition:0003-infection-pais-perturbs-the-reproductive-axis-and-menopausal-timing` — **reverse (P←) direction**: infection/PAIS perturbs the reproductive axis and menopausal timing. Roled `rival` relative to this forward hypothesis; the cross-sectional hormone evidence is **symmetric** between P→ and P← and cannot yet discriminate them.
+
+### Background — inform interpretation; excluded from the conjunction
+
+- `proposition:0004-female-reproductive-stage-excess-requires-confounder-decomposition` — the crude female / reproductive-stage excess is not interpretable without separating sex-at-birth, age, transition, HRT, pregnancy, comorbidity, symptom overlap, and ascertainment.
+- `proposition:0005-menopause-pais-symptom-overlap-is-a-measurement-process` — menopause↔PAIS symptom overlap is a measurement process that can inflate, mask, or reshape apparent associations without fully explaining female predominance.
+- `proposition:0006-hormone-therapy-effects-on-pais-are-context-dependent` — HRT effects, if present, are route-/dose-/timing-/indication-/comorbidity-dependent rather than uniformly protective or harmful (under-evidenced; `task:t019`).
+- `proposition:0007-vascular-autonomic-pathways-contribute-to-the-stage-pais-link` — vascular and autonomic pathways contribute to the association partly independent of classical adaptive autoimmunity.
 
 ## Current Uncertainty
 
