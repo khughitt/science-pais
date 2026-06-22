@@ -29,12 +29,14 @@ source_refs:
 - cite:Shankar2025
 - cite:Saito2024
 - cite:Huang2024
+- cite:McGregor2019
 related:
 - topic:mecfs-long-covid-convergence
 - topic:biomarkers-and-objective-endpoints
 - hypothesis:0001-shared-dysregulated-attractor
 - hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
 - question:0016-oxidative-stress-upstream-driver-of-bioenergetic
+- paper:McGregor2019
 created: '2026-06-11'
 updated: '2026-06-20'
 ---
@@ -69,8 +71,8 @@ disagree on the *direction* of the core abnormality.
 
 | Pole | Representative evidence | Compartment / state |
 |---|---|---|
-| **Resting hypometabolic suppression** | Naviaux2016 (~80% of diagnostic metabolites decreased; conserved "dauer"/torpor framing) | Plasma metabolome, **at rest** |
-| **Compensatory hyperactivation / inefficiency** | Missailidis 2020 (isolated Complex V inefficiency with elevated respiration); Peppercorn2023 (direction-discordant analytes vs long COVID) | Lymphocytes/lymphoblasts, at rest |
+| **Resting hypometabolic suppression** | Naviaux2016 (~80% of diagnostic metabolites decreased; conserved "dauer"/torpor framing); McGregor2019 NoPEM group (serum hypoxanthine lowest in the chronically quiescent, non-episode arm — potentially the deepest resting depletion state) | Plasma metabolome, **at rest** |
+| **Compensatory hyperactivation / inefficiency** | Missailidis 2020 (isolated Complex V inefficiency with elevated respiration); Peppercorn2023 (direction-discordant analytes vs long COVID); McGregor2019 PEM group (hypermetabolic urinary metabolite excretion during active PEM — emergency mobilization analogous to exercise-induced hypermetabolism) | Lymphocytes/lymphoblasts, at rest; urine during active PEM episode |
 | **No resting defect — deficit is provoked only** | Germain2022 (modest resting difference; divergence escalates after exercise, worst in the 24 h recovery window); Walitt2024 (no basal mitochondrial dysfunction in PI-ME/CFS) | Plasma / multi-system, **provoked** |
 | **Provoked worsening at the tissue level** | Appelman2024 (muscle OXPHOS reduced at baseline and *worse* after PEM; selective post-PEM SDH/Complex II fall; amyloid is **extravascular**, refuting capillary-occlusion); Joseph2023 (invasive CPET: impaired peripheral O₂ *extraction*) | Skeletal muscle / whole-body, provoked |
 
@@ -93,5 +95,5 @@ bioenergetic biomarker is proposed as a PEM endpoint.
 ## Related
 
 - Topic notes: `topic:mecfs-long-covid-convergence`, `topic:biomarkers-and-objective-endpoints`, `topic:shared-failure-mode-across-pais`.
-- Article notes: Che2025, Bateman2023, Hanson2023.
+- Article notes: Che2025, Bateman2023, Hanson2023, McGregor2019.
 - Methods/Datasets: cardiopulmonary exercise testing (CPET, two-day protocols); pre/post-exertion metabolomics and proteomics; ex-vivo immune-stimulation assays.
