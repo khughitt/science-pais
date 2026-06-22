@@ -108,19 +108,6 @@ Assess whether t001/t016 should pre-commit to PC-COS core domains (fatigue, brea
 
 Data-gated: pre-registration:0001-menopause-pais-total-effect is committed but execution is blocked on the Vehicle-Admissibility Gate (G1 access provisioned, G2 field IDs confirmed, G3 power floor met, G4-G6 sampling/timing/outcome). Standing verdict [?] inconclusive-for-coverage; no bears_on update on h0005 until a provisioned UKB vehicle clears all G-gates. Activate on UKB AMS approval. Primary confirmatory = reproductive-timing exposure -> WHO>=90d long-COVID RR (Route A questionnaire), {age}-adjusted, natal-female. Ref entities/pre-registrations/0001-menopause-pais-total-effect.md.
 
-## [t032] G2 corpus-independence gate: SHBG/sex-hormone prior is single-source (AlcaldeHerraiz2025)
-- priority: P2
-- status: proposed
-- aspects: []
-- related: [pre-registration:0001-menopause-pais-total-effect, report:0002-t029-second-pass-menopause-pais-pre-registration-review, task:t028]
-- created: 2026-06-20
-
-Carries the G2 out-of-corpus disposition recorded in report:0002 (t029 second pass) and pre-reg:0001 amendment 2. The out-of-corpus second-precedent search found only Gao et al. (JAMA 2024) as a genuinely author-independent UKB precedent (weakly corroborates questionnaire feasibility + survival-to-2020/healthy-volunteer selection; hospitalization-conditioned so unusable for effective-n; tests no hormones). Wang et al. and the Prieto-Alhambra preprint share the AlcaldeHerraiz author network -> NOT corpus-independent. DISPOSITION: questionnaire feasibility/selection weakly corroborated out-of-corpus; effective-n + SHBG-protection signal remain SINGLE-SOURCE and are labelled as such; SHBG prior downgraded to single-source background (mediator-specific / M1-confirm-side, not load-bearing for the primary {age,smoking} total effect). OPEN/OPPORTUNISTIC: find a non-UKB SHBG-or-sex-hormone x long-COVID precedent (RECOVER, German NAPKON, All of Us, Lifelines) that would UPGRADE the SHBG prior from single-source background; would strengthen, not gate. At application: confirm this disposition stands when the AMS basket is finalized. Blocks t028 (soft: t028 is data-gated regardless).
-
-### Notes
-
-- 2026-06-21: 2026-06-21: Opportunistic non-UKB out-of-corpus search done (advancing toward t028). Found TWO independent, author-independent, non-UKB clinical cohorts corroborating a gonadal-steroid -> long-COVID protective association: Silva2024 (Mount Sinai-Yale MY-LC, n~165; testosterone assoc. w/ lower symptom burden across sexes) and Shahbaz2025 (Univ. Alberta LC/ME-CFS, n=140; reduced testosterone in female LC, reduced estradiol in male LC). Both measure GONADAL STEROIDS, not SHBG; both clinical-cohort grade + cross-sectional w/ unresolved reverse causation. DISPOSITION: SHBG *measure* remains SINGLE-SOURCE (Szczerbinski2023 measured SHBG but reported no assoc.; hospitalized-survivor exposure); the broader sex-hormone-protection (M1-confirm-side, mediator-specific) prior is no longer single-source. No change to locked {age,smoking} primary; does not gate t028. Both papers ingested + linked to h0005/q0007/q0013/t036; disposition recorded in report:0002 addendum. OPEN: SHBG-specific upgrade still unmet; at-application confirmation when AMS basket finalized.
-
 ## [t037] Realize the UKB analysis's prose data-QA provisions as a wired-in, build-fatal QA checkpoint when implemented
 - priority: P2
 - status: proposed
