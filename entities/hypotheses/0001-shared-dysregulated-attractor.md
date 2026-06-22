@@ -10,6 +10,7 @@ source_refs:
 - cite:Trautmann2025
 - cite:Komaroff2025
 - cite:Bai2023
+- cite:Gattoni2025
 related:
 - topic:shared-failure-mode-across-pais
 - topic:mecfs-long-covid-convergence
@@ -81,6 +82,7 @@ Confidence would be materially reduced if:
 - **Hanson2023:** argues classical ME/CFS is enterovirus-specific and cautions against conflating it with post-COVID illness — favors trigger-specific mechanisms.
 - **Cruz2025:** within a single trigger (SARS-CoV-2), pulmonary sequelae and systemic long COVID are biologically distinct — convergent symptoms need not imply convergent biology even within one pathogen.
 - **Peppercorn2023:** direction-of-effect discordances (HLA-E, S100A4) between LC and ME/CFS caution against assuming molecular identity.
+- **Gattoni2025 (functional; 2-day CPET):** 15 long COVID patients (80% PEM-positive by mDSQ) showed no significant day-2 CPET decrement in GET, VO2peak, or WRpeak (all p > 0.05) — the opposite of the well-replicated ME/CFS 2-day CPET result. Even within the PEM-enriched phenotype, the bioenergetic recovery failure that is cardinal for ME/CFS does not appear in long COVID at this sample size. Consistent with mechanistic divergence within a shared symptom label; underpowered null (n = 15).
 - **t035 cross-trigger pathway-overlap reanalysis (2026-06-21; `interpretation:0001-...`, `empirical_data_evidence`, weighted-low):** the first *empirical* test bearing on this hypothesis. NES rank-concordance between two distinct triggers (PI-CFS, GSE14577; Q-fever fatigue, GSE130353) was anti-concordant and non-arbitrating (`null_nonarbitrating`; C1 p_perm = 0.949 ≥ α; all six pair × DB cells null). Per `pre-registration:0002` the pre-committed reading is **the test was inadequate, not that this hypothesis is wrong** — 2 cohorts, n = 7–10/group, cross-platform, cross-compartment, sex-unmatched; a non-arbitrating null at this power/bias ceiling **cannot exclude a real shared signature**. Recorded as a marginal downward nudge on *demonstrability-so-far*, not on the conjecture; the Organizing Conjecture and predictions are intact.
 
 ## Evidence Needed To Shift Belief
