@@ -23,6 +23,7 @@ source_refs:
 - cite:Rebman2026
 - cite:Kawai2025
 - cite:Eldokla2022
+- cite:DelgadoAlonso2023
 related:
 - interpretation:0002-t013-cross-trigger-sex-effect-sizes
 - question:0013-reproductive-stage-failed-immune-recovery-after-infection
@@ -59,6 +60,7 @@ Female sex is the most consistent predictor of PAIS across triggers (Choutka2022
 - Acute-infection caution: Costeira2021 and Rebman2026 suggest sex hormones and menopausal state can affect acute infection presentation or symptom reporting, but acute severity, diagnostic behavior, and post-acute persistence may have different sex/hormone relationships [@Costeira2021; @Rebman2026].
 - Vascular alternative: Kawai2025 supports viral-infection links to cardiovascular and thromboinflammatory outcomes, offering a plausible menopause-comorbidity interaction that does not require menopause to be the primary PAIS cause [@Kawai2025].
 - Autonomic severity null sex-difference: Eldokla2022 (n = 322 long-COVID, 73% female, COMPASS-31) found no significant sex difference in COMPASS-31 total score (male median 28.0 vs female 26.5, p = 0.937) or in the proportion exceeding the ≥16.4 ANS-dysfunction threshold (77.0% vs 76.6%, p = 0.938). This is counter-evidence to a "per-patient female amplification" model — the female skew in clinical dysautonomia series more plausibly reflects referral patterns and baseline POTS demographics than higher subjective autonomic burden per case. Caveat: COMPASS-31 is self-report only; sex differences in reporting thresholds cannot be ruled out without objective autonomic testing.
+- Subjective-vs-objective sex dissociation in post-COVID brain fog: DelgadoAlonso2023 (n = 170 PCS, 73% women, WHO criteria; Hospital Clinico San Carlos) found women report significantly more subjective memory complaints (FLEI-memory 26.65 ± 6.54 vs. 23.04 ± 8.41, p = 0.004) but show no significant sex difference on any objective neuropsychological test. Mediation analysis (lavaan SEM, 5000 bootstraps) demonstrates fatigue is the primary mediator between objective cognition and subjective complaint (indirect β = −0.317; ~80% of total indirect effect); depression's contribution to brain fog operates through fatigue (cognition→depression→fatigue→FLEI β = −0.161, p < 0.001) rather than directly. This is the strongest available evidence that the female cognitive-complaint excess is channeled through the fatigue-mediated subjective pathway rather than through objectively worse neuronal performance. Caveat: no sex-stratified mediation model was run; the pooled mediation result must be assumed to generalize to both sexes, which is untested.
 - Cross-trigger synthesis (`interpretation:0002-t013-cross-trigger-sex-effect-sizes`, t013 step 2): assembling the use-now published sex-stratified ORs (Sylvester2022 long COVID; dengue meta; Colombo) shows the female excess **concentrates in post-acute persistence** — in COVID and Q-fever the *acute* phase is male-biased (mortality; occupational exposure) yet the post-acute phase is female-biased, and acute dengue severity is sex-neutral while post-dengue fatigue carries female OR ≈1.65–2.0. Conversely the **fatigue-vs-depression dissociation does not resolve and is directionally inconsistent**: COVID mood is *more* female-biased than the overall (OR 1.58 vs 1.22), whereas dengue shows female fatigue (1.65–1.69) with a null depression arm that is uninterpretable (2 studies/169 pts; the Colombo cohort excluded mood disorders by design). The provisional dissociation flagged above should not be read as leaning toward a fatigue-specific subtype.
 
 ## Thoughts
@@ -75,5 +77,5 @@ Female sex is the most consistent predictor of PAIS across triggers (Choutka2022
 ## Related
 
 - Topic notes: `topic:shared-failure-mode-across-pais`, `topic:post-infectious-dysautonomia-and-autoimmunity`, `topic:menopause-sex-hormones-and-pais-risk`, `topic:thromboinflammation-and-endothelial-dysfunction`, `immunity:topic:endocrine-immune-recovery-thresholds`.
-- Article notes: Hertanti2025, Conde2026, Gusinow2026, Choutka2022, Ganesh2022, Shah2025, Stewart2024, Humphreys2025, Averyanova2022, Costeira2021, Rebman2026, Kawai2025.
+- Article notes: Hertanti2025, Conde2026, Gusinow2026, Choutka2022, Ganesh2022, Shah2025, Stewart2024, Humphreys2025, Averyanova2022, Costeira2021, Rebman2026, Kawai2025, DelgadoAlonso2023.
 - Methods/Datasets: dengue PIF meta-analytic data; ORCHESTRA latent-transition cohort (Gusinow2026).
