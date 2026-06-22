@@ -1,17 +1,20 @@
 ---
-id: "doc:confounder-open-questions-and-staged-amendment-2026-06-19"
-title: "Open identification questions + staged adjustment-set amendment for the t029 independent review"
-created: "2026-06-19"
-updated: "2026-06-19"
+type: method
+title: Open identification questions + staged adjustment-set amendment for the t029
+  independent review
+status: active
+created: '2026-06-19'
+updated: '2026-06-19'
+id: method:confounder-open-questions-and-staged-amendment
 related:
-  - task:t029
-  - task:t023
-  - task:t016
-  - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
-  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
-  - pre-registration:0001-menopause-pais-total-effect
-  - report:0001-bias-audit-menopause-pais-total-effect
-  - discussion:0001-menopause-timing-pais-rival-models
+- task:t029
+- task:t023
+- task:t016
+- hypothesis:0005-reproductive-stage-immune-homeostatic-margin
+- question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- pre-registration:0001-menopause-pais-total-effect
+- report:0001-bias-audit-menopause-pais-total-effect
+- discussion:0001-menopause-timing-pais-rival-models
 ---
 
 # Open identification questions + staged amendment (for the t029 independent review)

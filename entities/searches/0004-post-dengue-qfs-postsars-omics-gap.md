@@ -1,14 +1,16 @@
 ---
-id: "doc:search-post-dengue-qfs-postsars-omics-gap-2026-06-20"
-title: "Literature search: post-dengue / QFS / post-SARS omics gap confirmation (t033)"
-created: "2026-06-20"
-updated: "2026-06-20"
+type: search
+title: 'Literature search: post-dengue / QFS / post-SARS omics gap confirmation (t033)'
+status: active
+created: '2026-06-20'
+updated: '2026-06-20'
+id: search:0004-post-dengue-qfs-postsars-omics-gap
 related:
-  - task:t033
-  - question:0001-shared-molecular-signature-across-triggers
-  - discussion:0002-cross-pathogen-pais-signature-convergence
-  - hypothesis:0001-shared-dysregulated-attractor
-  - topic:shared-failure-mode-across-pais
+- task:t033
+- question:0001-shared-molecular-signature-across-triggers
+- discussion:0002-cross-pathogen-pais-signature-convergence
+- hypothesis:0001-shared-dysregulated-attractor
+- topic:shared-failure-mode-across-pais
 ---
 
 # Search: post-dengue / QFS / post-SARS omics gap confirmation (t033)

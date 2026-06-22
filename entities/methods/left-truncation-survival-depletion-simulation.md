@@ -1,17 +1,20 @@
 ---
-id: "doc:left-truncation-survival-depletion-simulation-2026-06-19"
-title: "Left-truncation / survival-depletion bias simulation (M3a) for the menopause→PAIS analysis (t031)"
-created: "2026-06-19"
-updated: "2026-06-19"
+type: method
+title: "Left-truncation / survival-depletion bias simulation (M3a) for the menopause\u2192\
+  PAIS analysis (t031)"
+status: active
+created: '2026-06-19'
+updated: '2026-06-19'
+id: method:left-truncation-survival-depletion-simulation
 related:
-  - task:t031
-  - task:t016
-  - task:t028
-  - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
-  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
-  - pre-registration:0001-menopause-pais-total-effect
-  - report:0001-bias-audit-menopause-pais-total-effect
-  - discussion:0001-menopause-timing-pais-rival-models
+- task:t031
+- task:t016
+- task:t028
+- hypothesis:0005-reproductive-stage-immune-homeostatic-margin
+- question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- pre-registration:0001-menopause-pais-total-effect
+- report:0001-bias-audit-menopause-pais-total-effect
+- discussion:0001-menopause-timing-pais-rival-models
 ---
 
 # Left-truncation / survival-depletion bias simulation (M3a) (t031)

@@ -1,19 +1,22 @@
 ---
-id: "doc:surgical-menopause-discriminating-contrast-2026-06-19"
-title: "Surgical menopause as a discriminating contrast (M1 vs M2/M4) for the menopause→PAIS analysis (t030)"
-created: "2026-06-19"
-updated: "2026-06-19"
+type: method
+title: "Surgical menopause as a discriminating contrast (M1 vs M2/M4) for the menopause\u2192\
+  PAIS analysis (t030)"
+status: active
+created: '2026-06-19'
+updated: '2026-06-19'
+id: method:surgical-menopause-discriminating-contrast
 related:
-  - task:t030
-  - task:t016
-  - task:t020
-  - task:t028
-  - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
-  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
-  - pre-registration:0001-menopause-pais-total-effect
-  - report:0001-bias-audit-menopause-pais-total-effect
-  - discussion:0001-menopause-timing-pais-rival-models
-  - patch-definition:menopause-pais-causal-dag
+- task:t030
+- task:t016
+- task:t020
+- task:t028
+- hypothesis:0005-reproductive-stage-immune-homeostatic-margin
+- question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- pre-registration:0001-menopause-pais-total-effect
+- report:0001-bias-audit-menopause-pais-total-effect
+- discussion:0001-menopause-timing-pais-rival-models
+- patch-definition:menopause-pais-causal-dag
 ---
 
 # Surgical menopause as a discriminating contrast (M1 vs M2/M4) (t030)

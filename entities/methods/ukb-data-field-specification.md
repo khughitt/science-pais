@@ -1,17 +1,20 @@
 ---
-id: "doc:ukb-data-field-specification-2026-06-19"
-title: "UK Biobank data-field specification & access plan for the menopause→PAIS total-effect analysis (t027)"
-created: "2026-06-19"
-updated: "2026-06-19"
+type: method
+title: "UK Biobank data-field specification & access plan for the menopause\u2192\
+  PAIS total-effect analysis (t027)"
+status: active
+created: '2026-06-19'
+updated: '2026-06-19'
+id: method:ukb-data-field-specification
 related:
-  - task:t027
-  - task:t016
-  - task:t017
-  - task:t020
-  - task:t015
-  - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
-  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
-  - patch-definition:menopause-pais-causal-dag
+- task:t027
+- task:t016
+- task:t017
+- task:t020
+- task:t015
+- hypothesis:0005-reproductive-stage-immune-homeostatic-margin
+- question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- patch-definition:menopause-pais-causal-dag
 ---
 
 # UK Biobank data-field specification & access plan (t027)
