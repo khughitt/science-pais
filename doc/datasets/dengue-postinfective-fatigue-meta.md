@@ -21,6 +21,7 @@ related:
   - question:0007-mechanism-of-female-predominance-in-pais
   - paper:Hertanti2025
   - paper:Conde2026
+  - question:0017-deflationary-alternatives-vs-shared-pathophysiology
 ---
 
 # Post-dengue fatigue — pooled sex-stratified meta-analysis evidence

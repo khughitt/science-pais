@@ -20,6 +20,7 @@ related:
   - task:t013
   - question:0007-mechanism-of-female-predominance-in-pais
   - topic:shared-failure-mode-across-pais
+  - question:0014-which-pais-case-definition-is-most-biologically-coherent
 ---
 
 # MCAM — Multi-Site Clinical Assessment of ME/CFS (CDC)

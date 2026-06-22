@@ -20,6 +20,8 @@ related:
   - task:t013
   - question:0007-mechanism-of-female-predominance-in-pais
   - topic:shared-failure-mode-across-pais
+  - question:0003-acute-severity-threshold-for-self-sustaining-pais
+  - question:0017-deflationary-alternatives-vs-shared-pathophysiology
 ---
 
 # Dubbo Infection Outcomes Study (DIOS)

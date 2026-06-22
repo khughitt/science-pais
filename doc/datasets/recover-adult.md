@@ -20,6 +20,7 @@ related:
   - task:t013
   - task:t040
   - question:0007-mechanism-of-female-predominance-in-pais
+  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
 ---
 
 # RECOVER-Adult

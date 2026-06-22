@@ -21,6 +21,7 @@ related:
   - question:0007-mechanism-of-female-predominance-in-pais
   - paper:Silva2024
   - paper:Shahbaz2025
+  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
 ---
 
 # MY-LC — Mount Sinai–Yale Long COVID immune/sex cohort

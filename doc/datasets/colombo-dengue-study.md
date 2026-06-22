@@ -19,6 +19,8 @@ ontology_terms: [post-dengue-fatigue, dengue, prospective-cohort, sex-difference
 related:
   - task:t013
   - question:0007-mechanism-of-female-predominance-in-pais
+  - question:0003-acute-severity-threshold-for-self-sustaining-pais
+  - question:0017-deflationary-alternatives-vs-shared-pathophysiology
 ---
 
 # Colombo Dengue Study — post-dengue persistent fatigue

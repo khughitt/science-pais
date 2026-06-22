@@ -20,6 +20,8 @@ related:
   - task:t013
   - question:0007-mechanism-of-female-predominance-in-pais
   - paper:Raijmakers2019
+  - question:0003-acute-severity-threshold-for-self-sustaining-pais
+  - question:0017-deflationary-alternatives-vs-shared-pathophysiology
 ---
 
 # Dutch Q-fever fatigue syndrome cohorts (Nijmegen/Radboud)

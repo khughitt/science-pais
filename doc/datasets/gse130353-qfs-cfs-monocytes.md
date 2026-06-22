@@ -21,6 +21,8 @@ related:
   - task:t035
   - question:0001-shared-molecular-signature-across-triggers
   - paper:Raijmakers2019
+  - hypothesis:0001-shared-dysregulated-attractor
+  - question:0017-deflationary-alternatives-vs-shared-pathophysiology
 ---
 
 # GSE130353 — QFS / CFS circulating-monocyte transcriptome

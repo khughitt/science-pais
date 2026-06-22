@@ -20,6 +20,8 @@ related:
   - task:t013
   - question:0007-mechanism-of-female-predominance-in-pais
   - paper:AlcaldeHerraiz2025
+  - question:0003-acute-severity-threshold-for-self-sustaining-pais
+  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
 ---
 
 # UK Biobank — COVID-19 / long COVID

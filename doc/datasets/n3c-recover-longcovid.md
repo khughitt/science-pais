@@ -19,6 +19,7 @@ ontology_terms: [long-covid, sars-cov-2, ehr, computable-phenotype, sex-differen
 related:
   - task:t013
   - question:0007-mechanism-of-female-predominance-in-pais
+  - question:0003-acute-severity-threshold-for-self-sustaining-pais
 ---
 
 # N3C — National COVID Cohort Collaborative (+ RECOVER-EHR)

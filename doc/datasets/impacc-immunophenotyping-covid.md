@@ -21,6 +21,8 @@ related:
   - question:0007-mechanism-of-female-predominance-in-pais
   - paper:Ozonoff2024
   - paper:Gabernet2025
+  - question:0003-acute-severity-threshold-for-self-sustaining-pais
+  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
 ---
 
 # IMPACC — Immunophenotyping Assessment in a COVID-19 Cohort
