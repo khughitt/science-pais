@@ -23,7 +23,7 @@ related:
   - topic:long-covid-immune-dysregulation
   - topic:shared-failure-mode-across-pais
   - paper:Cheetham2023
-  - paper:Delgado-Alonso2023
+  - paper:DelgadoAlonso2023
 created: "2026-06-22"
 updated: "2026-06-22"
 ---

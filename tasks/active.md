@@ -63,16 +63,6 @@ Perevaryukha (Biophysics 2021), Wang (Physica D 2007), Xie (Appl Math Model 2010
 
 Long COVID / ME-CFS / PTLDS as distinct disease labels possibly sharing post-infectious biology. Coordinate with ~/d/health/comparisons/pan-disease.
 
-## [t018] Compare female and reproductive-stage excess across PAIS subphenotypes
-- priority: P2
-- status: proposed
-- aspects: []
-- related: [question:0007-mechanism-of-female-predominance-in-pais, question:0013-reproductive-stage-failed-immune-recovery-after-infection, hypothesis:0005-reproductive-stage-immune-homeostatic-margin, task:t013]
-- group: causal-disentanglement
-- created: 2026-06-19
-
-Split PAIS outcomes into somatic fatigue/PEM, dysautonomia, vascular-thromboinflammatory, cognitive, pain, mood/depression, and recovery-time phenotypes. Test whether female or reproductive-stage excess is concentrated in specific subphenotypes rather than uniform across all post-infectious symptoms.
-
 ## [t019] Audit hormone therapy evidence for PAIS causal inference
 - priority: P3
 - status: proposed
