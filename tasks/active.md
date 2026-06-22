@@ -63,21 +63,6 @@ Perevaryukha (Biophysics 2021), Wang (Physica D 2007), Xie (Appl Math Model 2010
 
 Long COVID / ME-CFS / PTLDS as distinct disease labels possibly sharing post-infectious biology. Coordinate with ~/d/health/comparisons/pan-disease.
 
-## [t013] Compare female excess across acute and post-acute infection outcomes
-- priority: P2
-- status: proposed
-- aspects: []
-- related: [question:0007-mechanism-of-female-predominance-in-pais, topic:menopause-sex-hormones-and-pais-risk, topic:shared-failure-mode-across-pais]
-- group: cross-pais-comparison
-- created: 2026-06-19
-
-Compare long COVID, PTLD, post-dengue fatigue, and other PAIS evidence to test whether female excess is stronger in post-acute persistence than in acute infection severity, and whether depression/neuropsychiatric outcomes dissociate from somatic fatigue.
-
-### Notes
-
-- 2026-06-21: Step 1 (dataset catalog) done: authored 14 per-dataset candidate entities under doc/datasets/ (status: candidate, tier: track/evaluate-next/use-now, access.verified: false). Coverage by trigger — COVID: impacc, recover-adult, n3c-recover-longcovid, uk-biobank-covid, my-lc-iwasaki-klein, all-of-us-covid; cross-trigger: dubbo-infection-outcomes-study (best conceptual fit); Lyme: slice-ptlds-aucott; dengue: colombo-dengue-study, dengue-postinfective-fatigue-meta; Q-fever: gse130353-qfs-cfs-monocytes, dutch-qfever-qfs-cohort; ME/CFS: mcam-mecfs; COVID sex-OR anchor: sylvester-2022-longcovid-sex. Use-now feedstock = published sex-stratified ORs (Sylvester mood OR 1.58 vs somatic; dengue female OR 1.65-1.69; Colombo aOR ~2). Emerging t013 direction: female excess concentrates in POST-ACUTE persistence (acute COVID male-biased mortality; acute Q-fever male-skewed exposure) and dissociates by domain (mood>fatigue). Data-poor triggers: PTLDS, EBV, Ross River, post-SARS. Deferred (lower priority, available on request): ORCHESTRA, OpenSAFELY, ZOE, Stanford-CHAMP, Sweetman, Sun2025/GSE217906 post-sepsis, Moldofsky2011 post-SARS, Ryan2022 acute Q-fever, UK-ME/CFS-Biobank. SCHEMA-GAP findings for the future science datasets CLI: (1) mixin-dataset-1.0 REQUIRES datapackage, but validate tolerates its absence (soft warnings only); model has no first-class candidate status (used status:candidate non-enum + tier:track + access.verified:false) — CLI should make datapackage optional when not-yet-acquired and add 'candidate' to status enum; (2) dataset list is path-globbed + bare (id+title); needs rich table + filters and should ignore non-entity notes (legacy combined note shows titleless); (3) singular 'dataset' vs plural 'datasets' split confirmed real — collapse decision pending; (4) each candidate emits ~1 benign completeness warning.
-- 2026-06-21: Step 2 (cross-trigger effect-size table) done: authored interpretation:0002-t013-cross-trigger-sex-effect-sizes (conceptual mode) assembling use-now published sex-stratified ORs into one table. TWO findings: (1) persistence-concentration ROBUST across triggers — COVID & Q-fever acute phase male-biased (mortality; occupational exposure) yet post-acute female-biased; acute dengue sex-neutral but post-dengue fatigue female OR 1.65-2.0; (2) domain dissociation does NOT resolve and is DIRECTIONALLY INCONSISTENT — COVID mood OR 1.58 > overall 1.22 (mood-elevated) vs dengue fatigue 1.65-1.69 with null/uninterpretable depression (2 studies/169 pts; Colombo excluded mood disorders). Upgraded q0007's 'provisional dissociation' caution: not just underpowered but inconsistent. Independence: Hertanti2025+Conde2026 share primaries = ONE line (group post-dengue-fatigue-meta), not two. Wired into q0007 Current Evidence + related. No proposition/evidence-line edges minted (avoids over-promotion); belief.fragile-single-line did not newly fire. Step 3 candidates: Dubbo within-cohort acute->post-acute transition (decisive design, private data => deferred) or extract Shah2025 age-banded ORs for q0013.
-
 ## [t018] Compare female and reproductive-stage excess across PAIS subphenotypes
 - priority: P2
 - status: proposed

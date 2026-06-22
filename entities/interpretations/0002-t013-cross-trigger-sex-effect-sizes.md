@@ -8,13 +8,14 @@ source_refs: &id001
 - dataset:sylvester-2022-longcovid-sex
 - dataset:dengue-postinfective-fatigue-meta
 - dataset:colombo-dengue-study
+- dataset:dutch-qfever-qfs-cohort
 related:
 - question:0007-mechanism-of-female-predominance-in-pais
 - task:t013
 - question:0013-reproductive-stage-failed-immune-recovery-after-infection
 - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
 created: '2026-06-21'
-updated: '2026-06-21'
+updated: '2026-06-22'
 input: *id001
 prior_interpretations: []
 relations: []
@@ -145,6 +146,11 @@ cannot isolate them. No update beyond "consistent-with."
   `independence_group: cross-trigger-persistence` (COVID + dengue + Q-fever are methodologically distinct
   triggers → genuinely separate lines), and the **dengue fatigue meta as a single shared-source line**
   (Hertanti2025 ⊕ Conde2026, `independence_group: post-dengue-fatigue-meta`) to avoid double-counting.
+  **DONE (2026-06-22, t013 step 3):** minted as `proposition:0008-female-excess-concentrates-in-post-acute-persistence`
+  + `evidence-line:0016` (COVID, `sylvester2022-lc-sex`, moderate), `evidence-line:0017` (dengue meta,
+  `post-dengue-fatigue-meta`, moderate, Colombo folded as same-trigger corroboration), `evidence-line:0018`
+  (Q-fever, `dutch-qfs-natural-experiment`, weak/qualitative). `belief.fragile-single-line` does not fire
+  on 0008 (3 independent lines); validate PASSED.
 - **Do not** promote any "somatic > neuropsychiatric" proposition — the cross-trigger evidence is
   directionally inconsistent.
 - t013 step 3 candidate: pursue the **Dubbo within-cohort transition** (acute male-skew → post-acute
