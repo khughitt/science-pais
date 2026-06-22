@@ -13,6 +13,12 @@ source_refs: &id001
 - paper:Stewart2024
 - paper:Gusinow2026
 - paper:Ursini2023
+- paper:Kwan2022
+- paper:Eldokla2022
+- paper:Wang2026c
+- paper:DelgadoAlonso2023
+- paper:Bland2024
+- paper:Cheetham2023
 related:
 - question:0007-mechanism-of-female-predominance-in-pais
 - question:0013-reproductive-stage-failed-immune-recovery-after-infection
@@ -52,6 +58,16 @@ Conclusion chains:
 > (Sylvester2022 domain ORs; the dengue fatigue meta) carry structured catalog entities; the
 > remaining effect sizes are cited inline at literature-evidence grade and are candidates for
 > promotion to evidence-lines (see Updated Priorities). All findings are `literature_evidence`.
+>
+> **Provenance.** `source_refs` lists every entity-backed input: the two use-now datasets, the
+> pre-existing anchors (Shah2025, Costeira2021, Stewart2024, Gusinow2026, Ursini2023), and the six
+> papers ingested under this task (Kwan2022, Eldokla2022, Wang2026c, DelgadoAlonso2023, Bland2024,
+> Cheetham2023) that back the minted POTS/cognition propositions. The **held-back** cells are
+> sourced from literature **not yet ingested as entities** and are therefore *not* in `source_refs`:
+> the vascular reversal rests on **Abubasheer2025** (VTE meta) and **Ambrosino2021** (FMD); the
+> recovery-time row on **Fischer2025** (Predi-Covid) and König2023; the reproductive-stage rows on
+> **Boneva2015** (ME/CFS) and Neuhouser2024. These are cited inline only and must be ingested before
+> any of those cells is promoted to an evidence-line.
 
 ## Verdict
 

@@ -14,6 +14,8 @@ ontology_terms:
 datasets: []
 source_refs:
   - cite:Bland2024
+  - cite:Cheetham2023
+  - cite:DelgadoAlonso2023
 related:
   - question:0007-mechanism-of-female-predominance-in-pais
   - task:t018
