@@ -22,6 +22,7 @@ source_refs:
 - cite:Costeira2021
 - cite:Rebman2026
 - cite:Kawai2025
+- cite:Eldokla2022
 related:
 - interpretation:0002-t013-cross-trigger-sex-effect-sizes
 - question:0013-reproductive-stage-failed-immune-recovery-after-infection
@@ -34,7 +35,7 @@ related:
 - cycles:topic:menstrual-cycle-menopause-immune-modulation
 - cycles:topic:reproductive-aging-and-menopause
 created: '2026-06-11'
-updated: '2026-06-21'
+updated: '2026-06-22'
 ---
 
 # What mechanism underlies the consistent female predominance of post-infectious fatigue across PAIS, and does it genuinely track somatic fatigue more than post-infectious depression?
@@ -57,6 +58,7 @@ Female sex is the most consistent predictor of PAIS across triggers (Choutka2022
 - Hormone-immune plausibility: Averyanova2022 summarizes pathways by which estrogen and progesterone can modulate cytokines, T-cell balance, B-cell responses, vascular endothelium, and hemostasis, but most of this evidence is indirect for PAIS [@Averyanova2022].
 - Acute-infection caution: Costeira2021 and Rebman2026 suggest sex hormones and menopausal state can affect acute infection presentation or symptom reporting, but acute severity, diagnostic behavior, and post-acute persistence may have different sex/hormone relationships [@Costeira2021; @Rebman2026].
 - Vascular alternative: Kawai2025 supports viral-infection links to cardiovascular and thromboinflammatory outcomes, offering a plausible menopause-comorbidity interaction that does not require menopause to be the primary PAIS cause [@Kawai2025].
+- Autonomic severity null sex-difference: Eldokla2022 (n = 322 long-COVID, 73% female, COMPASS-31) found no significant sex difference in COMPASS-31 total score (male median 28.0 vs female 26.5, p = 0.937) or in the proportion exceeding the ≥16.4 ANS-dysfunction threshold (77.0% vs 76.6%, p = 0.938). This is counter-evidence to a "per-patient female amplification" model — the female skew in clinical dysautonomia series more plausibly reflects referral patterns and baseline POTS demographics than higher subjective autonomic burden per case. Caveat: COMPASS-31 is self-report only; sex differences in reporting thresholds cannot be ruled out without objective autonomic testing.
 - Cross-trigger synthesis (`interpretation:0002-t013-cross-trigger-sex-effect-sizes`, t013 step 2): assembling the use-now published sex-stratified ORs (Sylvester2022 long COVID; dengue meta; Colombo) shows the female excess **concentrates in post-acute persistence** — in COVID and Q-fever the *acute* phase is male-biased (mortality; occupational exposure) yet the post-acute phase is female-biased, and acute dengue severity is sex-neutral while post-dengue fatigue carries female OR ≈1.65–2.0. Conversely the **fatigue-vs-depression dissociation does not resolve and is directionally inconsistent**: COVID mood is *more* female-biased than the overall (OR 1.58 vs 1.22), whereas dengue shows female fatigue (1.65–1.69) with a null depression arm that is uninterpretable (2 studies/169 pts; the Colombo cohort excluded mood disorders by design). The provisional dissociation flagged above should not be read as leaning toward a fatigue-specific subtype.
 
 ## Thoughts
