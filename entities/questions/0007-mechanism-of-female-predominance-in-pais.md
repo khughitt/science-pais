@@ -25,6 +25,7 @@ source_refs:
 - cite:Eldokla2022
 - cite:DelgadoAlonso2023
 - cite:Cheetham2023
+- cite:Kwan2022
 related:
 - interpretation:0002-t013-cross-trigger-sex-effect-sizes
 - question:0013-reproductive-stage-failed-immune-recovery-after-infection
