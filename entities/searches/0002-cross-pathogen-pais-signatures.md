@@ -1,14 +1,16 @@
 ---
-id: "doc:search-cross-pathogen-pais-signatures-2026-06-20"
-title: "Literature search: cross-pathogen PAIS molecular signatures (t001)"
-created: "2026-06-20"
-updated: "2026-06-20"
+type: search
+title: 'Literature search: cross-pathogen PAIS molecular signatures (t001)'
+status: active
+created: '2026-06-20'
+updated: '2026-06-20'
+id: search:0002-cross-pathogen-pais-signatures
 related:
-  - task:t001
-  - hypothesis:0001-shared-dysregulated-attractor
-  - question:0001-shared-molecular-signature-across-triggers
-  - topic:shared-failure-mode-across-pais
-  - topic:mecfs-long-covid-convergence
+- task:t001
+- hypothesis:0001-shared-dysregulated-attractor
+- question:0001-shared-molecular-signature-across-triggers
+- topic:shared-failure-mode-across-pais
+- topic:mecfs-long-covid-convergence
 ---
 
 # Search: cross-pathogen PAIS molecular signatures (t001)

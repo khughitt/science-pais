@@ -1,15 +1,18 @@
 ---
-id: "doc:search-hormone-menopause-pais-cohorts-2026-06-19"
-title: "Literature/cohort search: hormone-measured & menopause-stageable PAIS cohorts (t015)"
-created: "2026-06-19"
-updated: "2026-06-19"
+type: search
+title: 'Literature/cohort search: hormone-measured & menopause-stageable PAIS cohorts
+  (t015)'
+status: active
+created: '2026-06-19'
+updated: '2026-06-19'
+id: search:0001-hormone-menopause-pais-cohorts
 related:
-  - task:t015
-  - task:t016
-  - task:t020
-  - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
-  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
-  - topic:menopause-sex-hormones-and-pais-risk
+- task:t015
+- task:t016
+- task:t020
+- hypothesis:0005-reproductive-stage-immune-homeostatic-margin
+- question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- topic:menopause-sex-hormones-and-pais-risk
 ---
 
 # Search: hormone-measured / menopause-stageable PAIS cohorts (t015)

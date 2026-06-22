@@ -1,15 +1,18 @@
 ---
-id: "doc:search-mitochondrial-bioenergetics-pem-2026-06-20"
-title: "Literature search: mitochondrial / bioenergetic dysfunction and post-exertional malaise (t005)"
-created: "2026-06-20"
-updated: "2026-06-20"
+type: search
+title: 'Literature search: mitochondrial / bioenergetic dysfunction and post-exertional
+  malaise (t005)'
+status: active
+created: '2026-06-20'
+updated: '2026-06-20'
+id: search:0003-mitochondrial-bioenergetics-pem
 related:
-  - task:t005
-  - question:0011-mitochondrial-basis-of-pem
-  - topic:mecfs-long-covid-convergence
-  - topic:biomarkers-and-objective-endpoints
-  - topic:thromboinflammation-and-endothelial-dysfunction
-  - hypothesis:0001-shared-dysregulated-attractor
+- task:t005
+- question:0011-mitochondrial-basis-of-pem
+- topic:mecfs-long-covid-convergence
+- topic:biomarkers-and-objective-endpoints
+- topic:thromboinflammation-and-endothelial-dysfunction
+- hypothesis:0001-shared-dysregulated-attractor
 ---
 
 # Search: mitochondrial / bioenergetic dysfunction and post-exertional malaise (t005)

@@ -1,18 +1,21 @@
 ---
-id: "doc:ukb-outcome-and-uproxy-measurement-schema-2026-06-19"
-title: "UKB implementable long-COVID outcome & U-proxy measurement schema for pre-registration (t017)"
-created: "2026-06-19"
-updated: "2026-06-19"
+type: method
+title: UKB implementable long-COVID outcome & U-proxy measurement schema for pre-registration
+  (t017)
+status: active
+created: '2026-06-19'
+updated: '2026-06-19'
+id: method:ukb-outcome-and-uproxy-measurement-schema
 related:
-  - task:t017
-  - task:t016
-  - task:t027
-  - task:t020
-  - task:t002
-  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
-  - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
-  - patch-definition:menopause-pais-causal-dag
-  - paper:AlcaldeHerraiz2025
+- task:t017
+- task:t016
+- task:t027
+- task:t020
+- task:t002
+- question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- hypothesis:0005-reproductive-stage-immune-homeostatic-margin
+- patch-definition:menopause-pais-causal-dag
+- paper:AlcaldeHerraiz2025
 ---
 
 # UKB long-COVID outcome & U-proxy measurement schema (t017)

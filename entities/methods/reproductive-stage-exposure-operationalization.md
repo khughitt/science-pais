@@ -1,17 +1,20 @@
 ---
-id: "doc:reproductive-stage-exposure-operationalization-2026-06-19"
-title: "Reproductive-stage exposure operationalization & misclassification model for the menopause→PAIS analysis (t020)"
-created: "2026-06-19"
-updated: "2026-06-19"
+type: method
+title: "Reproductive-stage exposure operationalization & misclassification model for\
+  \ the menopause\u2192PAIS analysis (t020)"
+status: active
+created: '2026-06-19'
+updated: '2026-06-19'
+id: method:reproductive-stage-exposure-operationalization
 related:
-  - task:t020
-  - task:t016
-  - task:t017
-  - task:t027
-  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
-  - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
-  - patch-definition:menopause-pais-causal-dag
-  - topic:menopause-sex-hormones-and-pais-risk
+- task:t020
+- task:t016
+- task:t017
+- task:t027
+- question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- hypothesis:0005-reproductive-stage-immune-homeostatic-margin
+- patch-definition:menopause-pais-causal-dag
+- topic:menopause-sex-hormones-and-pais-risk
 ---
 
 # Reproductive-stage exposure operationalization & misclassification model (t020)
