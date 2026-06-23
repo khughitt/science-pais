@@ -30,15 +30,18 @@ source_refs:
 - cite:Saito2024
 - cite:Huang2024
 - cite:McGregor2019
+- cite:Gattoni2025
 related:
 - topic:mecfs-long-covid-convergence
 - topic:biomarkers-and-objective-endpoints
 - hypothesis:0001-shared-dysregulated-attractor
 - hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
 - question:0016-oxidative-stress-upstream-driver-of-bioenergetic
+- proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode
+- interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation
 - paper:McGregor2019
 created: '2026-06-11'
-updated: '2026-06-20'
+updated: '2026-06-22'
 ---
 
 # What is the mitochondrial/bioenergetic basis of post-exertional malaise, and is it shared across PAIS?
@@ -58,10 +61,11 @@ Post-exertional malaise (PEM) — a delayed, disproportionate worsening of sympt
 - Conflicting / cautionary: Hanson2023 argues classical ME/CFS is enterovirus-specific and explicitly cautions against conflating post-COVID illness with classical ME/CFS — directly challenging the "shared across PAIS" half of this question and warning that an apparently common PEM bioenergetic signature could mask trigger-specific biology. Mitochondrial-dysfunction findings in ME/CFS have historically been inconsistent across studies and assays.
 - **Direction-of-effect discordance (added 2026-06-20, from the t005 reading pass):** the literature does not agree on which *way* the resting bioenergetic lesion points (see the dedicated sub-question below). Naviaux2016 reports a resting *hypometabolic* "dauer" state (≈80% of diagnostic metabolites decreased); Missailidis et al. 2020 and Peppercorn2023 instead report *compensatory respiratory hyperactivation*/inefficiency (e.g. isolated Complex V inefficiency with elevated respiration); while Germain2022 and Walitt2024 find **no global resting hypometabolism / no basal mitochondrial dysfunction** at all, with the deficit appearing only in the *provoked* (post-exertional) state. Appelman2024 (long-COVID muscle) shows reduced OXPHOS at baseline that *worsens* after PEM with a selective post-exertional fall in succinate-dehydrogenase activity, and Wang2023 supplies a candidate primary molecular lesion (ER-stress-induced WASF3 blocking respiratory-supercomplex assembly → ~50% lower Complex IV → glycolytic shift).
 - **New compartment + oxidative-stress evidence (2026-06-20 PDF batch):** the bioenergetic lesion is now documented across additional compartments. **Muscle:** Scheibenbogen2024 frames ME/CFS as an "acquired ischemic mitochondrial myopathy" (hypoperfusion → Na⁺/Ca²⁺ overload → mitochondrial damage), extending the Appelman2024 muscle finding into a vascular-bioenergetic vicious-cycle model. **CNS:** Baraniuk2025 finds a CSF serine-folate one-carbon block with a *blunted/inverted* metabolite response to submaximal exercise — a central-compartment correlate of provoked metabolic incompetence. **Mechanism review:** Syed2025 (NIH/Hwang lab, the WASF3 group) surveys the evidence and explicitly declines to settle primary-vs-secondary, while endorsing the *provoked* direction as the basis of PEM. **Oxidative-stress axis:** Shankar2025 (PNAS, within-study LC vs ME/CFS head-to-head) adds elevated lymphocyte ROS + reduced mitochondrial ATP + lower SOD2 as a *shared* mechanism, and Saito2024 reports reduced plasma ATP in LC-with-CFS; Huang2024 (UK Biobank NMR, n=1,194) adds a lipoprotein-dominant, sex-specific energy-metabolism signature. None of these resolves the resting set-point discordance below, but they broaden the *provoked/tissue* pole (muscle + CNS) and add oxidative stress as a candidate upstream driver of the mitochondrial deficit.
+- **t025 cross-trigger endpoint constraint (2026-06-22; `interpretation:0004`, `proposition:0011`):** the strongest new update is not a new molecular signature but a localization constraint. Keller2014 anchors the ME/CFS whole-body 2-day-CPET decrement; Gattoni2025 finds that this whole-body signature does **not** transfer in a small PEM-enriched long-COVID cohort; Appelman2024 shows long-COVID PEM nevertheless has an objective peripheral-muscle OXPHOS lesion after provocation. Current reading: the provoked bioenergetic deficit is real, but its measurable endpoint is trigger- and compartment-specific. This weakens a "single shared whole-body bioenergetic failure" reading while preserving the possibility of a shared attractor expressed through different tissue/channel readouts.
 
 ## Thoughts
 
-- Best current interpretation: there is credible evidence for a provoked bioenergetic/mitochondrial component to PEM (Che2025) and PEM is a shared *symptom* across PAIS (Bateman2023), but whether the underlying bioenergetic lesion is biochemically the same across triggers is unproven and actively contested (Hanson2023).
+- Best current interpretation: there is credible evidence for a provoked bioenergetic/mitochondrial component to PEM (Che2025, Appelman2024, Keller2014), and PEM is a shared *symptom* across PAIS (Bateman2023), but whether the underlying lesion is biochemically and physiologically exchangeable across triggers is unproven and actively contested (Hanson2023, Gattoni2025, `proposition:0011`).
 - Major uncertainty: whether the bioenergetic deficit is a primary mitochondrial defect, a secondary consequence of immune activation/microvascular dysfunction, or both; and whether a provoked exercise-challenge signature replicates across triggers and cohorts.
 
 ## Open sub-question (2026-06-20): which direction does the bioenergetic lesion point?

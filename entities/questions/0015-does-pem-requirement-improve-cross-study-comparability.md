@@ -21,6 +21,8 @@ source_refs:
 - cite:Hoel2026
 - cite:McGregor2019
 - cite:Gattoni2025
+- cite:Keller2014
+- cite:Appelman2024
 related:
 - topic:pais-case-definition-heterogeneity
 - topic:mecfs-long-covid-convergence
@@ -28,9 +30,11 @@ related:
 - hypothesis:0001-shared-dysregulated-attractor
 - question:0001-shared-molecular-signature-across-triggers
 - question:0014-which-pais-case-definition-is-most-biologically-coherent
+- proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode
+- interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation
 - paper:McGregor2019
 created: "2026-06-19"
-updated: "2026-06-19"
+updated: "2026-06-22"
 ---
 
 # Does requiring post-exertional malaise (PEM) in PAIS case definitions improve cross-study comparability of molecular and mechanistic findings?
@@ -69,5 +73,5 @@ PEM is the defining feature that most consistently differentiates biologically-c
 ## Related
 
 - Topic notes: `topic:pais-case-definition-heterogeneity`, `topic:biomarkers-and-objective-endpoints`, `topic:mecfs-long-covid-convergence`
-- Article notes: Che2025, Thaweethai2023, Carruthers2003CCC, Carruthers2011ICC, Peppercorn2023, Hoel2026, Talla2023, McGregor2019
+- Article notes: Che2025, Thaweethai2023, Carruthers2003CCC, Carruthers2011ICC, Peppercorn2023, Hoel2026, Talla2023, McGregor2019, Gattoni2025, Keller2014, Appelman2024
 - Methods/Datasets: DePaul Symptom Questionnaire (DSQ-PEM subscale); CPET as PEM provocation; RECOVER symptom-level data; IMPACC multi-omic data

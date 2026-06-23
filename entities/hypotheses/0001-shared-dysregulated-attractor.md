@@ -11,6 +11,8 @@ source_refs:
 - cite:Komaroff2025
 - cite:Bai2023
 - cite:Gattoni2025
+- cite:Keller2014
+- cite:Appelman2024
 related:
 - topic:shared-failure-mode-across-pais
 - topic:mecfs-long-covid-convergence
@@ -19,8 +21,10 @@ related:
 - immunity:research-question:immune-homeostasis-and-dysregulation
 - pre-registration:0002-cross-trigger-pathway-overlap
 - interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating
+- interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation
+- proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode
 created: '2026-06-11'
-updated: '2026-06-21'
+updated: '2026-06-22'
 ---
 # Hypothesis: Post-acute infection syndromes are a shared dysregulated attractor reachable from many triggers, not merely a shared symptom repertoire
 
@@ -82,7 +86,7 @@ Confidence would be materially reduced if:
 - **Hanson2023:** argues classical ME/CFS is enterovirus-specific and cautions against conflating it with post-COVID illness — favors trigger-specific mechanisms.
 - **Cruz2025:** within a single trigger (SARS-CoV-2), pulmonary sequelae and systemic long COVID are biologically distinct — convergent symptoms need not imply convergent biology even within one pathogen.
 - **Peppercorn2023:** direction-of-effect discordances (HLA-E, S100A4) between LC and ME/CFS caution against assuming molecular identity.
-- **Gattoni2025 (functional; 2-day CPET):** 15 long COVID patients (80% PEM-positive by mDSQ) showed no significant day-2 CPET decrement in GET, VO2peak, or WRpeak (all p > 0.05) — the opposite of the well-replicated ME/CFS 2-day CPET result. Even within the PEM-enriched phenotype, the bioenergetic recovery failure that is cardinal for ME/CFS does not appear in long COVID at this sample size. Consistent with mechanistic divergence within a shared symptom label; underpowered null (n = 15).
+- **t025 / `proposition:0011` (functional/tissue; PEM endpoint localization):** the new constraint is the three-arm pattern, not the Gattoni2025 null alone. Keller2014 anchors the ME/CFS whole-body 2-day-CPET decrement; Gattoni2025 reports no significant day-2 GET/VO2peak/WRpeak decrement in a small PEM-enriched long-COVID cohort (n = 15; 80% PEM-positive by mDSQ); Appelman2024 shows long-COVID PEM still has objective peripheral-muscle OXPHOS pathology after provocation. This does not refute the attractor hypothesis, but it disputes a strong "single shared whole-body bioenergetic lesion" interpretation: if an attractor is shared, its objective bioenergetic expression is trigger- and endpoint-specific. Gattoni remains the weak/underpowered leg; Appelman prevents reading the update as "long-COVID PEM has no objective basis."
 - **t035 cross-trigger pathway-overlap reanalysis (2026-06-21; `interpretation:0001-...`, `empirical_data_evidence`, weighted-low):** the first *empirical* test bearing on this hypothesis. NES rank-concordance between two distinct triggers (PI-CFS, GSE14577; Q-fever fatigue, GSE130353) was anti-concordant and non-arbitrating (`null_nonarbitrating`; C1 p_perm = 0.949 ≥ α; all six pair × DB cells null). Per `pre-registration:0002` the pre-committed reading is **the test was inadequate, not that this hypothesis is wrong** — 2 cohorts, n = 7–10/group, cross-platform, cross-compartment, sex-unmatched; a non-arbitrating null at this power/bias ceiling **cannot exclude a real shared signature**. Recorded as a marginal downward nudge on *demonstrability-so-far*, not on the conjecture; the Organizing Conjecture and predictions are intact.
 
 ## Evidence Needed To Shift Belief
