@@ -10,6 +10,8 @@ source_refs:
 - cite:Cai2024
 - cite:Morroy2016
 - cite:Xie2024
+- cite:Ambrosino2021
+- cite:Xie2022
 related:
 - topic:shared-failure-mode-across-pais
 - question:0003-acute-severity-threshold-for-self-sustaining-pais
@@ -70,6 +72,7 @@ Confidence would be materially reduced if:
 - **Xie2024 / Gandhi2023 (empirical-data/commentary):** hospitalization-level COVID-19 and influenza both produce large post-acute multi-organ burden; post-acute phase dominates.
 - **Morroy2016 (literature):** ~20% chronic fraction after Q-fever; severity-threshold framing across cohorts.
 - Hertanti2025, Conde2026: DHF (severe dengue) selectively predicts post-dengue fatigue.
+- **Ambrosino2021 (empirical-data, case-control):** In post-severe/critical COVID-19 convalescents, FMD (endothelial function) directly correlates with pulmonary-impairment severity markers (rho 0.247–0.436); FMD thus tracks rather than dissociates from acute-severity sequelae. Load-bearing for the severity-confounded interpretation of male-biased vascular PAIS signals.
 
 ## Disputing Evidence
 
