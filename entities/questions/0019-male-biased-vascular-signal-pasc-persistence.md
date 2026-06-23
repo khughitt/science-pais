@@ -18,6 +18,9 @@ related:
 - paper:Kopp2024
 - question:0007-mechanism-of-female-predominance-in-pais
 - question:0010-vascular-microclot-subphenotype
+- question:0020-male-vte-excess-post-acute-persistence
+- proposition:0012-vascular-hard-endpoint-male-reversal-survives-severity-adjustment
+- interpretation:0005-t042-vascular-male-reversal-survives-severity-adjustment
 - hypothesis:0004-acute-severity-threshold
 - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
 created: '2026-06-22'
@@ -27,6 +30,17 @@ updated: '2026-06-22'
 # Does the male-biased acute cardiovascular signal in COVID-19 persist into the post-acute phase, or does it reverse to a female-predominant PASC phenotype?
 
 ## Summary
+
+> **Substantially resolved (2026-06-23, t042 → `interpretation:0005`, `proposition:0012`).** The
+> core of this question — does the male CV signal persist post-acutely and survive acute-severity
+> adjustment — is answered **yes**: the male VTE excess is present in ambulatory (lowest-severity)
+> patients (Xie2022 aHR 1.69) and the male CV-mortality excess persists within a hospitalized
+> (severity-restricted) cohort (Kopp2024 HR 1.68), so it is a genuine male-biased hard-endpoint
+> subphenotype, not acute-severity carryover or a reversal to a female phenotype. **Residual open
+> threads** (carried forward, not closed): (1) is the excess COVID-specific amplification or
+> carried-through baseline male vascular risk at older ages? (2) does it survive *within*-hospitalized
+> severity stratification (ICU vs floor)? (3) the VTE-specific temporal-persistence gap tracked
+> separately in `question:0020`.
 
 Male sex is a well-established predictor of more severe acute COVID-19, including higher ICU admission, cardiac arrest, and in-hospital death. The question is whether this acute male cardiovascular disadvantage carries over into the post-acute phase (18+ months), or whether it reverses to the female-predominant PAIS phenotype seen in fatigue-dominant sequelae. If the male CV excess persists after severity adjustment, it implies a durable thromboinflammatory or vascular mechanism — not just more acute injury — and represents a distinct, male-biased PAIS subphenotype alongside the more commonly discussed female-biased fatigue phenotype.
 

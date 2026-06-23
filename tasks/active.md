@@ -125,18 +125,6 @@ Surviving path (c) from report:0004 (t036 feasibility) -- the EVENTUAL PRIMARY p
 
 Discriminator between the ascertainment/self-report reading and a biological sex-amplification reading of the PAIS female excess (interpretation:0003, t018). Every female-biased subphenotype found so far is self-reported; every objectively-measured or hard-endpoint domain is sex-null (objective cognition) or male-biased (vascular). Find/analyze an OBJECTIVELY-measured subphenotype with symmetric male/female ascertainment that is female-biased (candidates: tilt-confirmed POTS incidence with population ascertainment; sex-stratified immune/biomarker endpoints). A positive case would dispute proposition:0009/0010's ascertainment reading; continued absence strengthens prop:0005. Related: interpretation:0003, proposition:0009, proposition:0010, proposition:0005, question:0007, question:0018.
 
-## [t042] Test whether the male-biased PAIS vascular-thromboinflammatory signal survives acute-severity adjustment
-- priority: P2
-- status: in_progress
-- aspects: []
-- created: 2026-06-22
-
-interpretation:0003 (t018) found hard vascular/thrombotic endpoints male-biased (VTE RR 1.43; CV mortality HR 1.33; FMD worse in males) — opposite the overall female PAIS skew — but males had more severe acute COVID, which independently drives thrombosis. Determine whether the male vascular reversal persists WITHIN acute-severity strata (genuine domain reversal) or collapses (acute-severity carryover). Resolving this is the precondition for minting the held-back vascular male-reversal proposition. Methodological. Related: interpretation:0003, question:0007, proposition:0007.
-
-### Notes
-
-- 2026-06-22: Started: lit search for sex x acute-severity stratified post-COVID vascular hard endpoints (VTE, arterial/CV mortality, FMD) to test whether the male reversal survives severity adjustment.
-
 ## [t043] Determine whether the ME/CFS early-menopause signal (Boneva2015) is reverse-causation or predisposition
 - priority: P3
 - status: proposed
