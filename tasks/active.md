@@ -63,16 +63,6 @@ Perevaryukha (Biophysics 2021), Wang (Physica D 2007), Xie (Appl Math Model 2010
 
 Long COVID / ME-CFS / PTLDS as distinct disease labels possibly sharing post-infectious biology. Coordinate with ~/d/health/comparisons/pan-disease.
 
-## [t019] Audit hormone therapy evidence for PAIS causal inference
-- priority: P3
-- status: proposed
-- aspects: []
-- related: [question:0013-reproductive-stage-failed-immune-recovery-after-infection, hypothesis:0005-reproductive-stage-immune-homeostatic-margin, topic:menopause-sex-hormones-and-pais-risk]
-- group: causal-disentanglement
-- created: 2026-06-19
-
-Separate hormone therapy evidence by acute infection outcome versus post-acute persistence, route, dose, timing, indication, comorbidity, and healthy-user bias. Decide which findings can inform causal PAIS hypotheses and which should remain clinical-screening or symptom-management context only.
-
 ## [t026] Evaluate PC-COS core-outcome-set adoption for PAIS analyses
 - priority: P3
 - status: proposed
@@ -124,3 +114,11 @@ Surviving path (c) from report:0004 (t036 feasibility) -- the EVENTUAL PRIMARY p
 - created: 2026-06-22
 
 Boneva2015 reports early menopause (<=45) adj OR 3.20 and ~10y earlier mean age at menopause in ME/CFS — the strongest true reproductive-stage x subphenotype signal found in the t018 sweep (interpretation:0003), but cross-sectional with unresolved direction (illness may advance menopause vs early menopause predisposing). Needs pre-infection menopausal-timing data (same private/deferred within-cohort design flagged in t013). Empirical. Related: interpretation:0003, hypothesis:0005, question:0013, proposition:0003.
+
+## [t045] Ingest and triage Neuhouser2024 (WHI long-COVID risk factors in postmenopausal women) for the HRT-evidence gap
+- priority: P3
+- status: proposed
+- aspects: []
+- created: 2026-06-23
+
+Surfaced during t019 HRT-evidence audit (interpretation:0008). Neuhouser et al., 'Risk factors for long COVID syndrome in postmenopausal women with previously reported diagnosis of COVID-19', Ann Epidemiol 2024 (WHI; PMC11405002; DOI 10.1016/j.annepidem.2024.xx). n>1,230 COVID-19, 425 long COVID, ML top-20 risk-factor screen. Reported top predictors (weight loss, mobility, RA, heart-valve procedures, sleep) do NOT include HRT. Triage from full text: was menopausal hormone therapy in the candidate feature set (unselected) or never examined? If MHT was examined/reported (even null), add as the first WHI-grade HRT-vs-long-COVID evidence-line on proposition:0006 and correct interpretation:0003's matrix line. Ingest as paper:Neuhouser2024 + references.bib entry.

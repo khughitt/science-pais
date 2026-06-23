@@ -17,6 +17,7 @@ source_refs:
 related:
 - question:0013-reproductive-stage-failed-immune-recovery-after-infection
 - question:0007-mechanism-of-female-predominance-in-pais
+- interpretation:0008-t019-hrt-evidence-audit-no-admissible-pais-test
 - hypothesis:0001-shared-dysregulated-attractor
 - hypothesis:0004-acute-severity-threshold
 - topic:menopause-sex-hormones-and-pais-risk
@@ -27,7 +28,7 @@ related:
 - cycles:topic:menstrual-cycle-menopause-immune-modulation
 - cycles:topic:reproductive-aging-and-menopause
 created: '2026-06-19'
-updated: '2026-06-21'
+updated: '2026-06-23'
 ---
 # Hypothesis: Reproductive-stage transitions alter immune homeostatic margin and modify risk of failed post-infectious recovery
 
@@ -61,7 +62,7 @@ This may lower or raise the effective threshold for entering the shared dysregul
 
 - `proposition:0004-female-reproductive-stage-excess-requires-confounder-decomposition` — the crude female / reproductive-stage excess is not interpretable without separating sex-at-birth, age, transition, HRT, pregnancy, comorbidity, symptom overlap, and ascertainment.
 - `proposition:0005-menopause-pais-symptom-overlap-is-a-measurement-process` — menopause↔PAIS symptom overlap is a measurement process that can inflate, mask, or reshape apparent associations without fully explaining female predominance.
-- `proposition:0006-hormone-therapy-effects-on-pais-are-context-dependent` — HRT effects, if present, are route-/dose-/timing-/indication-/comorbidity-dependent rather than uniformly protective or harmful (under-evidenced; `task:t019`).
+- `proposition:0006-hormone-therapy-effects-on-pais-are-context-dependent` — HRT effects, if present, are route-/dose-/timing-/indication-/comorbidity-dependent rather than uniformly protective or harmful. **Audited (t019, `interpretation:0008`, 2026-06-23):** no admissible direct HRT→post-acute-PAIS test exists in the corpus; the one population signal (Costeira2021) is acute, symptom-predicted, and ascertainment-confounded. The thinness is a genuine evidence gap; HRT evidence is admissible only as clinical-screening/measurement-confound context, not causal. Two weak/proxy lines now support the context-dependence content (`evidence-line:0014`, `evidence-line:0037`).
 - `proposition:0007-vascular-autonomic-pathways-contribute-to-the-stage-pais-link` — vascular and autonomic pathways contribute to the association partly independent of classical adaptive autoimmunity.
 
 ## Current Uncertainty

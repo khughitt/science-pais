@@ -32,6 +32,7 @@ related:
 - proposition:0013-immune-domain-partial-hormone-mediated-objective-exception
 - interpretation:0002-t013-cross-trigger-sex-effect-sizes
 - interpretation:0006-t041-objective-female-biased-subphenotype-search
+- interpretation:0008-t019-hrt-evidence-audit-no-admissible-pais-test
 - question:0018-objective-vs-subjective-cognition-dissociation-in
 - task:t041
 - task:t018
@@ -122,7 +123,7 @@ subphenotype×sex cell at present and is not read into the matrix.
 | **ME/CFS early-menopause signal (strongest true stage effect, non-COVID)** | Early menopause ≤45 adj OR **3.20** (1.21–8.49); mean age at menopause 38.5 (CFS) vs 48.6 y (controls) — but reverse causation plausible (illness → earlier menopause) | Boneva2015 (*Menopause*) |
 | **Acute (not long) COVID estrogen contrast** | Postmenopausal vs premenopausal predicted-COVID OR 1.22; HRT OR 1.32 (paradoxical); **acute outcome, not long COVID** | Costeira2021 (`paper:Costeira2021`) |
 | **Symptom-overlap confound** | 40–54 menopause-symptom-questionnaire load is highest within a post-COVID clinic; shared fatigue/brain-fog/sleep items mean reproductive stage biases *ascertainment* | Stewart2024 (`paper:Stewart2024`) |
-| **HRT × long-COVID outcome** | **Zero** controlled data — even WHI (rich HRT data) did not analyze it | (gap) |
+| **HRT × long-COVID outcome** | **Zero** controlled data in this corpus | (gap) — **correction (t019, 2026-06-23, `interpretation:0008`):** WHI *did* publish a long-COVID risk-factor analysis in postmenopausal women (Neuhouser2024, *Ann Epidemiol*); HRT is not among its reported top predictors, but whether MHT was examined is unconfirmed pending full-text ingestion (`task:t045`). No admissible HRT→long-COVID *effect estimate* yet exists. |
 
 ### What the matrix shows
 

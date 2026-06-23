@@ -22,6 +22,7 @@ related:
   - immunity:topic:sex-as-a-modifier-of-immune-homeostasis
   - cycles:topic:menstrual-cycle-menopause-immune-modulation
   - cycles:topic:reproductive-aging-and-menopause
+  - interpretation:0008-t019-hrt-evidence-audit-no-admissible-pais-test
 source_refs:
   - cite:Stewart2024
   - cite:Wang2026
@@ -36,7 +37,7 @@ source_refs:
   - cite:Rebman2026
   - cite:Shah2025
 created: '2026-06-19'
-updated: '2026-06-19'
+updated: '2026-06-23'
 ---
 # Menopause Status, Sex Hormones, and PAIS Risk
 
@@ -113,6 +114,7 @@ For future analyses, the minimum covariate set should include age, sex assigned 
 
 Long-COVID clinics should screen for perimenopause and menopause, but research documents should keep clinical screening separate from causal attribution.
 A symptom improvement after HRT may support a hormone-deficiency component for an individual patient, but it does not prove that PAIS itself was hormone-driven.
+The **t019 hormone-therapy audit** (`interpretation:0008`, 2026-06-23) formalizes this separation: the corpus contains **no admissible direct HRT→post-acute-PAIS test** — Costeira2021 is acute and symptom-predicted (and vulnerable to, though it does not itself test, menopause-symptom-overlap ascertainment), Newson2021/Stewart2021 are survey/clinical-management, Silva2024 treats hormone therapy as a covariate, and AlcaldeHerraiz2025 confirms the gap — so hormone-therapy evidence enters PAIS work only as clinical-screening and measurement-confound context, never as causal evidence for or against an HRT effect on PAIS.
 
 ## Key References
 
