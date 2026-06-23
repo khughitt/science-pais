@@ -127,11 +127,15 @@ Discriminator between the ascertainment/self-report reading and a biological sex
 
 ## [t042] Test whether the male-biased PAIS vascular-thromboinflammatory signal survives acute-severity adjustment
 - priority: P2
-- status: proposed
+- status: in_progress
 - aspects: []
 - created: 2026-06-22
 
 interpretation:0003 (t018) found hard vascular/thrombotic endpoints male-biased (VTE RR 1.43; CV mortality HR 1.33; FMD worse in males) — opposite the overall female PAIS skew — but males had more severe acute COVID, which independently drives thrombosis. Determine whether the male vascular reversal persists WITHIN acute-severity strata (genuine domain reversal) or collapses (acute-severity carryover). Resolving this is the precondition for minting the held-back vascular male-reversal proposition. Methodological. Related: interpretation:0003, question:0007, proposition:0007.
+
+### Notes
+
+- 2026-06-22: Started: lit search for sex x acute-severity stratified post-COVID vascular hard endpoints (VTE, arterial/CV mortality, FMD) to test whether the male reversal survives severity adjustment.
 
 ## [t043] Determine whether the ME/CFS early-menopause signal (Boneva2015) is reverse-causation or predisposition
 - priority: P3
