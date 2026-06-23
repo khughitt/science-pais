@@ -28,7 +28,7 @@ related:
   - topic:shared-failure-mode-across-pais
   - immunity:topic:sex-as-a-modifier-of-immune-homeostasis
 created: '2026-06-21'
-updated: '2026-06-21'
+updated: '2026-06-23'
 ---
 # Sex differences in symptomatology and immune profiles of Long COVID
 
@@ -97,7 +97,7 @@ An exploratory, cross-sectional, sex-stratified immune-endocrine profiling study
 
 **task:t036 (hormone-panel triangulation cohorts):** The MY-LC cohort demonstrates that a directly hormone-measured clinical cohort can find testosterone associations. This is the level of evidence that t036 seeks from population cohorts (All of Us, Lifelines, Generation Scotland). The finding that testosterone predicts symptom burden independently of sex, and that the hormone-immune association holds after adjusting for hormone-therapy use, supports the triangulation hypothesis and should be cited when scoping t036 searches.
 
-**question:0007 (mechanism of female predominance in PAIS):** Provides mechanistic candidate: testosterone-mediated immune regulation as one explanation for the female-predominance, since lower testosterone in females with LC (relative to control females) co-occurs with the heightened cytokine-secreting T cell and herpesvirus antibody phenotype. However, the testosterone mechanism cannot fully explain female excess because testosterone is also lower in males with LC (relative to control males), suggesting it is a general LC correlate not a female-specific one. The paper calls sex differences in LC "a dynamic spectrum of which hormones like testosterone may help dictate the immune landscape" rather than a biological dichotomy.
+**question:0007 (mechanism of female predominance in PAIS):** Provides mechanistic candidate: testosterone-linked immune regulation as one explanation for the female-predominance, since lower testosterone in females with LC (relative to control females) co-occurs with the heightened cytokine-secreting T cell and herpesvirus antibody phenotype. However, the testosterone mechanism cannot fully explain female excess because testosterone is also lower in males with LC (relative to control males), suggesting it is a general LC correlate not a female-specific one. The paper calls sex differences in LC "a dynamic spectrum of which hormones like testosterone may help dictate the immune landscape" rather than a biological dichotomy.
 
 **question:0013 (reproductive stage and failed immune recovery):** This paper does not measure menopausal status, FSH, LH, AMH, or reproductive stage directly. It uses sex hormone levels (testosterone, estradiol) cross-sectionally. It cannot address whether reproductive-stage transition (perimenopause) changes the probability of entering LC — that requires longitudinal pre/peri/post-infection hormone data. It adds indirect plausibility but does not test the transition-as-exposure hypothesis.
 
@@ -113,7 +113,7 @@ An exploratory, cross-sectional, sex-stratified immune-endocrine profiling study
 | Lower testosterone in females with LC vs. control females | Gonadal steroid axis suppression as LC correlate | Measured directly; cross-sectional only; reverse causation unresolved |
 | Lower estradiol in males with LC vs. control males | HPG-axis dysregulation in both sexes | Authors attribute to lower aromatization from lower testosterone |
 | Testosterone as top predictor of sex-based LC status | Mediator-level hormone signal (M1 of H0005) | Does NOT measure SHBG; does NOT test pre-infection causal direction |
-| Testosterone predicts symptom burden over sex designation | Testosterone-mediated symptom severity pathway | Key observational finding; confounded by severity → testosterone suppression |
+| Testosterone predicts symptom burden over sex designation | Testosterone-conditioned symptom severity pathway | Key observational finding; confounded by severity → testosterone suppression |
 | Exhausted CD4Tex/CD8Tex + cytokine-secreting T cells in LCF | Immune exhaustion / failed immune homeostasis | Consistent with hypothesis:0003 (immune-exhaustion feedback) |
 | Monocyte/DC depletion + NK elevation in LCM | Innate immune reconfiguration in male LC | Distinct from female phenotype; shared IL-8 elevation |
 | EBV/CMV/HSV-2 antibody reactivity elevated in LCF | Latent herpesvirus reactivation (female-predominant) | Adds sex-stratified specificity to the EBV-reactivation mechanism |

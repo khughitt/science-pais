@@ -19,6 +19,9 @@ source_refs: &id001
 - paper:DelgadoAlonso2023
 - paper:Bland2024
 - paper:Cheetham2023
+- paper:Aid2025
+- paper:Shahbaz2025
+- paper:Silva2024
 related:
 - question:0007-mechanism-of-female-predominance-in-pais
 - question:0013-reproductive-stage-failed-immune-recovery-after-infection
@@ -26,12 +29,15 @@ related:
 - proposition:0001-reproductive-stage-transition-shifts-the-failed-recovery-threshold
 - proposition:0005-menopause-pais-symptom-overlap-is-a-measurement-process
 - proposition:0008-female-excess-concentrates-in-post-acute-persistence
+- proposition:0013-immune-domain-partial-hormone-mediated-objective-exception
 - interpretation:0002-t013-cross-trigger-sex-effect-sizes
+- interpretation:0006-t041-objective-female-biased-subphenotype-search
 - question:0018-objective-vs-subjective-cognition-dissociation-in
+- task:t041
 - task:t018
 - task:t013
 created: '2026-06-22'
-updated: '2026-06-22'
+updated: '2026-06-23'
 input: *id001
 prior_interpretations:
 - interpretation:0002-t013-cross-trigger-sex-effect-sizes
@@ -180,6 +186,13 @@ self-reported and almost every objectively-measured or hard-endpoint domain is s
 male-biased, so "domain" and "channel" cannot be fully separated from the published literature
 alone. Treat the measurement-channel reading as the **leading** structure but not a closed one
 until an objective-endpoint, ascertainment-symmetric design tests a female-biased domain.
+**[UPDATE 2026-06-23, t041 → `interpretation:0006`: that test was run across four objective domains.
+The confound no longer holds totally — the immune/inflammatory domain DOES carry an objective,
+ascertainment-symmetric, female-biased endpoint (`proposition:0013`), but it is testosterone-conditioned, not
+self-report-channeled. The other three objective domains (autoantibody, autonomic/exercise sex-null;
+small-fiber a gap) remain consistent with the channel reading. The *strong universal* form ("every
+objective domain is sex-null or male-biased") is therefore FALSIFIED; the channel reading survives as
+the leading-but-bounded structure.]**
 
 ## Question-Level Implications
 
@@ -210,6 +223,12 @@ until an objective-endpoint, ascertainment-symmetric design tests a female-biase
   most efficient discriminator between the ascertainment and the biological-amplification readings.
   Candidates: objective autonomic testing (tilt-confirmed POTS incidence with symmetric
   ascertainment), immune/biomarker endpoints with sex stratification.
+  **[RESOLVED 2026-06-23, t041 → `interpretation:0006` / `proposition:0013`: yes — exactly one of four
+  objective domains (immune/inflammatory) carries a female-amplified, ascertainment-symmetric endpoint
+  (persistent post-acute inflammation, LC-F vs recovered-F with a within-recovered sex-null), but it
+  is substantially testosterone-conditioned, so it reads as a hormone-linked channel rather than a categorical-
+  sex amplification. Autoantibody and autonomic/exercise domains were measured sex-null (reinforcing
+  the ascertainment reading); small-fiber is an un-stratified gap.]**
 - **Does the male-biased vascular domain survive severity adjustment?** (P2, methodological)
   **RESOLVED (t042, `interpretation:0005`): yes** — it persists within acute-severity strata
   (ambulatory and hospitalized), so it is a genuine domain reversal, not carryover. Minted as
@@ -253,7 +272,10 @@ the measurement-channel umbrella remains held.
   3. *The vascular-thromboinflammatory hard-endpoint domain is male-biased (reversed)*
      (`empirical_regularity`, severity-confounded caveat; lines: Abubasheer2025, FMD).
   - and a possible umbrella `empirical_regularity` that the excess tracks a measurement-channel
-    axis, bearing on `proposition:0005`.
+    axis, bearing on `proposition:0005`. **[UPDATE 2026-06-23, t041: do NOT mint this umbrella in its
+    strong universal form — `interpretation:0006` falsified "every objective domain is sex-null or
+    male-biased" via the immune exception (`proposition:0013`). Any future minting must use the
+    bounded form: predominantly self-report-channeled, with a hormone-linked immune exception.]**
 - **Record a `disputes`-leaning evidence-line for the menopause-specific reading** (Shah2025
   within-band null) against a menopause-mechanism interpretation of `proposition:0001` — handled
   as a refinement of the existing `evidence-line:0001`, not a contradiction (the age-band support
