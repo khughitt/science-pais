@@ -124,11 +124,3 @@ Surviving path (c) from report:0004 (t036 feasibility) -- the EVENTUAL PRIMARY p
 - created: 2026-06-22
 
 Boneva2015 reports early menopause (<=45) adj OR 3.20 and ~10y earlier mean age at menopause in ME/CFS — the strongest true reproductive-stage x subphenotype signal found in the t018 sweep (interpretation:0003), but cross-sectional with unresolved direction (illness may advance menopause vs early menopause predisposing). Needs pre-infection menopausal-timing data (same private/deferred within-cohort design flagged in t013). Empirical. Related: interpretation:0003, hypothesis:0005, question:0013, proposition:0003.
-
-## [t044] Compute a severity-adjusted PEM-stratified molecular comparison in PASC (the decisive q0015 test)
-- priority: P2
-- status: proposed
-- aspects: []
-- created: 2026-06-22
-
-t025 confirmed the within-cohort PEM+ vs PEM- molecular contrast does not exist in the literature — it must be computed/commissioned. Decisive test behind question:0015: does a PEM-associated molecular signal survive adjustment for overall illness/fatigue severity? Feasible routes: (a) convert STOP-PASC/Maestri2025 Olink protein-vs-PEM-severity regression (n=152, preprint) to a severity-adjusted group contrast; (b) within-cohort severity-adjusted PEM-stratified analysis on an accessible cohort (RECOVER-Adult / IMPACC, both candidate/evaluate-next, no local payload yet). Data-access-gated like t015/t005. Bears on proposition:0011 and interpretation:0004. Ingest STOP-PASC/Maestri2025, Singh2023, Germain2022 as paper: entities if used as evidence.

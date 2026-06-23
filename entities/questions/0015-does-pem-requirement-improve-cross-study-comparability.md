@@ -22,6 +22,7 @@ source_refs:
 - cite:McGregor2019
 - cite:Gattoni2025
 - cite:Keller2014
+- cite:Maestri2025
 - cite:Appelman2024
 related:
 - topic:pais-case-definition-heterogeneity
@@ -32,9 +33,11 @@ related:
 - question:0014-which-pais-case-definition-is-most-biologically-coherent
 - proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode
 - interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation
+- interpretation:0007-t044-stop-pasc-pem-proteome-severity-unadjusted-gap-stands
+- paper:Maestri2025
 - paper:McGregor2019
 created: "2026-06-19"
-updated: "2026-06-22"
+updated: "2026-06-23"
 ---
 
 # Does requiring post-exertional malaise (PEM) in PAIS case definitions improve cross-study comparability of molecular and mechanistic findings?
@@ -57,6 +60,7 @@ PEM is the defining feature that most consistently differentiates biologically-c
 - **Cross-trigger counterweight (Gattoni2025):** A 2-day CPET study in 15 long COVID patients (80% PEM-positive by mDSQ) found **no significant day-1 vs day-2 decrement** in gas exchange threshold, VO2peak, or peak work rate (all p > 0.05). This null stands in direct contrast to the well-replicated ME/CFS 2-day CPET result (day-2 GET/VO2 decrement). PEM-enriched long COVID patients are, on this validated bioenergetic assay, **not biologically equivalent to PEM-enriched ME/CFS patients**. This weakens — though does not refute — the assumption that requiring PEM documentation produces exchangeable, biologically coherent cohorts across different PAIS triggers. Limitations: n = 15 (underpowered for a null), no ME/CFS comparison arm, 40% of patients aerobically deconditioned (alternative explanation), and the 24h inter-test interval may not capture long COVID PEM kinetics.
 - Against or qualifying: No published study has directly compared molecular (proteomic, metabolomic, immune-profiling) signatures in PEM+ vs PEM- subsets of the same cohort using the same platform with fatigue severity adjustment. McGregor2019 comes closest but lacks this control. The assumed superiority of PEM-required definitions for mechanistic studies rests on indirect inference (AHRQ evidence review for CBT/GET; case series; expert consensus). It is possible that PEM reflects severity rather than a distinct mechanism, in which case controlling for severity rather than requiring PEM might achieve the same biological enrichment.
 - Conflicting: Talla2023 (RECOVER serum proteomics) identifies two inflammatory subgroups and a non-inflammatory subgroup in long COVID patients who may not all have PEM, suggesting molecular heterogeneity exists even within a broad long COVID definition — consistent with the PEM requirement improving coherence but not being the only driver.
+- **t044 update (interpretation:0007, paper:Maestri2025, 2026-06-23):** The highest-feasibility route to *compute* the decisive severity-vs-PEM molecular test — convert STOP-PASC/Maestri2025's protein-vs-PEM regression (n=152, Olink Explore HT) to a severity-adjusted contrast — was attempted and **blocked**. Maestri2025 *does* map the plasma proteome onto PEM severity and finds a symptom-resolved signal (PEM ↓IL1RL1/IL1R2, distinct from the fatigue/cardiovascular ↑LEP/F7/F12 and dyspnea ↓CD38 signatures), but its models are **univariate proportional-odds regressions on each symptom's ordinal Likert severity, adjusted only for batch plate** — there is **no overall-severity covariate**, and with 110 proteins tracking a shared trend across ≥3 PROs the PEM signal is not separated from general severity. The individual-level matrix needed to refit with a severity covariate is gated ("Olink data available upon publication"; analysis repo 404 as of 2026-06). Net: the decisive test **remains uncomputable from public data**; a weak symptom-resolved increment was recorded (`evidence-line:0036` → `proposition:0011`). Reopen when STOP-PASC releases data, or pursue route (b) on RECOVER/IMPACC.
 - **t025 synthesis (interpretation:0004, proposition:0011):** A three-pronged discovery sweep (PASC / ME/CFS PEM-stratified omics; PEM-vs-severity confound) confirms the within-cohort PEM+ vs PEM− molecular comparison this question needs **does not exist as of mid-2026** — it must be computed or commissioned, not found (McGregor2019 is the only true PEM-stratified omics design and it lacks severity adjustment). The sweep's substantive increment is `proposition:0011`: the objective correlate of PEM is **trigger- and endpoint-specific** — the ME/CFS whole-body 2-day-CPET decrement (Keller2014) does not transfer to long COVID (Gattoni2025) but a long-COVID lesion appears instead at the muscle level (Appelman2024). Net effect on this question: PEM-requirement plausibly improves *within-trigger* coherence but does **not** guarantee *cross-trigger* biological exchangeability, and the decisive severity-vs-PEM test remains unrun at the molecular level.
 
 ## Thoughts

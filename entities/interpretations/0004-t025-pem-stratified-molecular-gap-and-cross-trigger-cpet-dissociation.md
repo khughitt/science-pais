@@ -16,10 +16,14 @@ related:
   - "hypothesis:0001-shared-dysregulated-attractor"
   - "proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode"
   - "interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating"
+  - "interpretation:0007-t044-stop-pasc-pem-proteome-severity-unadjusted-gap-stands"
+  - "paper:Maestri2025"
+  - "evidence-line:0036-maestri2025-pem-symptom-resolved-proteome-but-severity-unadjusted-confirms-gap"
   - "topic:mecfs-long-covid-convergence"
   - "task:t025"
+  - "task:t044"
 created: "2026-06-22"
-updated: "2026-06-22"
+updated: "2026-06-23"
 input: *id001
 prior_interpretations:
   - "interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating"
@@ -85,10 +89,10 @@ None blocking. The disposition decision (record + ingest + mint) was taken befor
 - An **absence-of-evidence** claim (no within-cohort PEM-stratified omics study) can be falsified by a single missed or future paper; the sweep was thorough but not a registered systematic review.
 - The cross-trigger contrast is **between-study**, not within one harmonised design — confounded by case definition (Fukuda vs WHO), protocol, deconditioning prevalence, and platform. "Endpoint-specific relocation" is the most parsimonious reading of three non-commensurable assays, not a measured equivalence.
 - The Gattoni2025 null is underpowered (see Evidence Quality).
-- **Provenance note (held-back, non-entity sources):** the sweep surfaced close substitutes not ingested as entities — STOP-PASC/Maestri2025 (Olink protein-vs-PEM-severity *regression*, n=152, preprint), Singh2023 (invasive-CPET O₂-extraction-endotype proteomics), Germain2022/2025 (ME/CFS provocation omics), and two single-analyte PEM-graded studies (Azimi2025 FGF-21; Moezzi2025 haptoglobin). These are recorded here as leads; they must be ingested as `paper:` entities before any of them is used as an evidence-line `source:`.
+- **Provenance note (close substitutes surfaced by the sweep):** STOP-PASC/Maestri2025 (Olink protein-vs-PEM-severity *regression*, n=152, preprint), Singh2023 (invasive-CPET O₂-extraction-endotype proteomics), Germain2022/2025 (ME/CFS provocation omics), and two single-analyte PEM-graded studies (Azimi2025 FGF-21; Moezzi2025 haptoglobin). **[t044 update, 2026-06-23]:** STOP-PASC/Maestri2025 has since been **ingested** as `paper:Maestri2025` and used as an evidence-line source (`evidence-line:0036` → `proposition:0011`); see the Updated Priorities bullet and `interpretation:0007`. The remaining leads (Singh2023, Germain2022/2025, Azimi2025, Moezzi2025) are still recorded only as leads and must be ingested as `paper:` entities before any is used as an evidence-line `source:`.
 
 ## Updated Priorities
 
 - **Close `task:t025`** with the gap-finding (the comparison must be *computed/commissioned*, not found).
-- **File a follow-up** to compute the comparison where feasible: convert STOP-PASC/Maestri2025's protein-vs-PEM-severity regression to a group contrast, or pursue a within-cohort severity-adjusted PEM-stratified analysis on an accessible cohort (RECOVER/IMPACC) — the decisive test behind q0015.
+- **File a follow-up** to compute the comparison where feasible: convert STOP-PASC/Maestri2025's protein-vs-PEM-severity regression to a group contrast, or pursue a within-cohort severity-adjusted PEM-stratified analysis on an accessible cohort (RECOVER/IMPACC) — the decisive test behind q0015. **[t044 update, 2026-06-23 — interpretation:0007]:** route (a) attempted and **blocked**. STOP-PASC/Maestri2025 was ingested (`paper:Maestri2025`); its PEM–protein associations turn out to be *univariate proportional-odds regressions adjusted only for batch plate* (no overall-severity covariate), and the individual-level data needed to refit them is gated ("upon publication"; repo 404 as of 2026-06). The decisive severity-adjusted contrast therefore **remains uncomputable from public data**. A weak symptom-resolved increment (PEM ↓IL1RL1/IL1R2, distinct from fatigue/dyspnea/CV) was recorded (`evidence-line:0036`) supporting `proposition:0011` at the blood-proteome endpoint. Route (b) (RECOVER/IMPACC) stays open and data-access-gated.
 - **Watch** for a larger, provocation-confirmed long-COVID 2-day-CPET study; it would directly strengthen or overturn `evidence-line:0027` and `proposition:0011`.

@@ -15,14 +15,18 @@ related:
   - "question:0001-shared-molecular-signature-across-triggers"
   - "question:0011-mitochondrial-basis-of-pem"
   - "interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation"
+  - "interpretation:0007-t044-stop-pasc-pem-proteome-severity-unadjusted-gap-stands"
+  - "evidence-line:0036-maestri2025-pem-symptom-resolved-proteome-but-severity-unadjusted-confirms-gap"
   - "hypothesis:0001-shared-dysregulated-attractor"
   - "task:t025"
+  - "task:t044"
 source_refs:
   - "paper:Keller2014"
   - "paper:Gattoni2025"
   - "paper:Appelman2024"
+  - "paper:Maestri2025"
 created: "2026-06-22"
-updated: "2026-06-22"
+updated: "2026-06-23"
 ---
 
 # Proposition: Objective PEM correlates are trigger- and endpoint-specific, not one shared failure mode
@@ -36,6 +40,7 @@ Post-exertional malaise (PEM) is shared as a **symptom label** across ME/CFS and
 - **ME/CFS — whole-body 2-day-CPET decrement (the positive reference arm)** — Keller2014 (Fukuda ME/CFS) shows a **13.8% day-2 VO₂peak decline** under confirmed maximal effort on both days (RER ≥ 1.1 unchanged), against a healthy/deconditioned test–retest reproducibility of ≤7% (r ≥ 0.95); 50% reclassified to a more impaired Weber–Janicki category on day 2. This is the established objective whole-body signature that operationalises PEM in ME/CFS and excludes deconditioning. See `evidence-line:0026`.
 - **Long COVID — whole-body signature does not transfer** — Gattoni2025 (n=15 long COVID, 80% mDSQ-PEM) finds **no significant day-1 vs day-2 change** in gas-exchange threshold, VO₂peak, or peak work rate (all p > 0.05): subjective PEM is prevalent while the ME/CFS whole-body decrement is absent. See `evidence-line:0027`.
 - **Long COVID — but objective pathology appears at the muscle level** — Appelman2024 (n=25 long COVID vs 21 recovered controls; PEM a required inclusion criterion; before/after exercise-biopsy) shows reduced mitochondrial **OXPHOS capacity**, a glycolytic fiber-type shift, and myopathic features that **worsen the day after** provoked PEM, with deconditioning ruled out by matched maximal effort. The objective long-COVID PEM lesion is real but sits at a **different endpoint** (peripheral skeletal muscle) than the ME/CFS whole-body CPET signature. See `evidence-line:0028`.
+- **Long COVID — a fourth, blood-proteome endpoint (weak)** — Maestri2025 (STOP-PASC, n=152, Olink Explore HT 5400-plex) finds PEM carries a **symptom-resolved** plasma-protein association (↓IL1RL1/ST2, ↓IL1R2 — soluble IL-1/IL-33 decoy receptors) **distinct** from the fatigue/cardiovascular signature (↑leptin, ↑F7, ↑F12) and dyspnea (↓CD38). This extends the "PEM correlate is specific, not one shared signal" reading to the circulating proteome within a single trigger. Held **weak**: the per-symptom models are univariate and adjusted only for batch plate (no overall-severity covariate), so the PEM signal is not separated from general severity — a near-miss on the decisive `question:0015` test, not a passing of it. See `evidence-line:0036`, `interpretation:0007`.
 
 ## Caveats
 
