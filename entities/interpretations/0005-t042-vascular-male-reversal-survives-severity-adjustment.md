@@ -1,7 +1,7 @@
 ---
 id: interpretation:0005-t042-vascular-male-reversal-survives-severity-adjustment
 type: interpretation
-title: Male vascular hard-endpoint reversal survives acute-severity adjustment (t042
+title: Male vascular hard-endpoint reversal survives coarse acute-severity restriction (t042
   verdict)
 status: active
 source_refs: &id001
@@ -17,6 +17,7 @@ related:
 - evidence-line:0029-xie2022-ambulatory-male-vte-excess-survives-low-severity-stratum
 - evidence-line:0030-kopp2024-male-cv-mortality-excess-within-hospitalized-stratum
 - evidence-line:0031-abubasheer2025-meta-male-hard-endpoint-excess-direction
+- evidence-line:0032-ambrosino2021-fmd-male-endothelial-direction-only-severity-confounded
 - task:t042
 created: '2026-06-23'
 updated: '2026-06-23'
@@ -37,7 +38,7 @@ Conclusion chains:
   is the machine-readable source of truth.
 -->
 
-# Interpretation: Male vascular hard-endpoint reversal survives acute-severity adjustment (t042 verdict)
+# Interpretation: Male vascular hard-endpoint reversal survives coarse acute-severity restriction (t042 verdict)
 
 > **Mode: conceptual.** No new computation. This resolves the severity-adjustment question
 > that `interpretation:0003` (t018) deliberately **held back** before minting the vascular
@@ -49,21 +50,22 @@ Conclusion chains:
 
 ## Verdict
 
-**Verdict:** [+] Survives — the male-biased vascular reversal is a **genuine domain reversal**, not acute-severity carryover, for hard **thrombotic / cardiovascular** endpoints: the male VTE excess is present in **ambulatory (lowest-severity) patients** (Xie2022 aHR 1.69) and the male CV-mortality excess persists **within a hospitalized-restricted cohort** (Kopp2024 HR 1.68, Delta). The **FMD/endothelial leg remains severity-confounded** and is excluded from the discriminating evidence.
+**Verdict:** [+] Survives — the male-biased vascular hard-endpoint direction is a **genuine domain reversal** and is not explained by the coarse hospitalized-vs-ambulatory acute-severity boundary: the male VTE excess is present in **ambulatory (lowest-severity) patients** in the 30-day acute window (Xie2022 aHR 1.69), and the male CV-mortality excess persists **within a hospitalized-restricted cohort** at 18 months (Kopp2024 HR 1.68, Delta). This does **not** close the narrower late-VTE persistence question. The **FMD/endothelial leg remains severity-confounded** and is excluded from the discriminating evidence.
 
 ## Findings Summary
 
 The t018 matrix recorded the vascular-thromboinflammatory cell as **male-biased (reversed)** —
 VTE RR 1.43, CV mortality HR 1.33, FMD worse in males — but flagged it **severity-confounded**
 (males had more severe acute COVID, which independently drives thrombosis) and held the
-proposition back pending this question. The sweep resolves it by bracketing the acute-severity
-range:
+proposition back pending this question. The sweep resolves the coarse hospitalized-vs-ambulatory
+severity-boundary concern by bracketing the acute-severity range:
 
-1. **Low-severity stratum (decisive)** — Xie2022 (UKBB, 18,818 **ambulatory** COVID-19 outpatients,
+1. **Low-severity stratum (decisive severity-boundary test, acute VTE)** — Xie2022 (UKBB, 18,818 **ambulatory** COVID-19 outpatients,
    hospitalized-at-test excluded; vs 93,179 matched uninfected): **male sex adjusted HR 1.69
-   (1.30–2.19)** for incident VTE, adjusting for age, obesity, vaccination, cancer, comorbidity
+   (1.30–2.19)** for 30-day incident VTE, adjusting for age, obesity, vaccination, cancer, comorbidity
    count. A male excess *below* the hospitalization threshold cannot be hospitalization/ICU
-   carryover. `strong` / `literature_evidence`. (`evidence-line:0029`)
+   carryover. It is not evidence that ambulatory VTE persists beyond 30 days. `strong` /
+   `literature_evidence`. (`evidence-line:0029`; temporal gap in `question:0020`)
 2. **High-severity stratum (severity-restricted)** — Kopp2024 (4,509 patients **all hospitalized**
    with moderate-severe pneumonia): 18-month CV mortality men 6.13% vs women 3.62% (Delta, p=0.017);
    multivariable Cox **male HR 1.68 (1.005–2.796), p=0.048**. Male excess holds *within* the
@@ -75,11 +77,12 @@ range:
 4. **Endothelial leg, excluded as discriminating** — Ambrosino2021 (FMD): dysfunction concentrated
    in males (2.5% vs 6.1%, p<0.001; female cases vs controls null), **but FMD correlates with
    pulmonary-impairment severity** (FEV1% rho=0.436) and the sex contrast was not severity-adjusted.
-   Supports the male direction; **cannot** discriminate sex from severity. Cited inline on
-   `proposition:0012`, not promoted.
+   Supports the male direction; **cannot** discriminate sex from severity. Promoted only as a
+   weak, direction-only evidence-line (`evidence-line:0032`), not as severity-discriminating evidence.
 
 Together, lines 1+2 bracket the male excess across the **low and high ends** of acute severity —
-the structure that distinguishes a genuine domain reversal from carryover.
+the structure that distinguishes a genuine hard-endpoint direction reversal from simple
+hospitalization/ICU carryover.
 
 ## Evidence Quality
 
@@ -89,9 +92,9 @@ the structure that distinguishes a genuine domain reversal from carryover.
   multi-wave registry; cross-study meta). The two cohort lines are genuinely independent in
   population and endpoint; the meta carries aggregator-non-independence risk (may share primary
   studies) and is therefore weighted as breadth-for-direction only.
-- **The severity confound named by t018 is the one this resolves**; a *separate* confound —
-  baseline male VTE/arterial predominance at older ages — is **not** resolved and is carried as
-  the leading caveat on `proposition:0012`.
+- **The coarse severity-boundary confound named by t018 is the one this resolves**; a *separate*
+  confound — baseline male VTE/arterial predominance at older ages — is **not** resolved and is
+  carried as the leading caveat on `proposition:0012`.
 
 ## Data Quality Checks
 
@@ -103,7 +106,7 @@ Abubasheer2025 full text was paywalled (estimates read from abstract/PubMed).
 ## Proposition-Level Updates
 
 - **Mints `proposition:0012`** (*the vascular hard-endpoint domain is male-biased and the reversal
-  survives acute-severity adjustment*, `empirical_regularity`) — the cell `interpretation:0003`
+  survives coarse acute-severity restriction*, `empirical_regularity`) — the cell `interpretation:0003`
   held back. Supported by `evidence-line:0029` (strong, ambulatory), `0030` (moderate,
   within-hospitalized), `0031` (moderate, meta-direction). Does **not** fire
   `belief.fragile-single-line` (three independent lines).
@@ -128,11 +131,14 @@ Abubasheer2025 full text was paywalled (estimates read from abstract/PubMed).
 
 ## Evidence vs. Open Questions
 
-- **Resolves** the t018 "does the male-biased vascular domain survive severity adjustment?"
-  sub-question (was P2, methodological): **yes** for thrombotic/CV endpoints.
+- **Resolves** the t018 "does the male-biased vascular domain survive the hospitalized-vs-ambulatory
+  acute-severity boundary?" sub-question (was P2, methodological): **yes** for the hard vascular
+  endpoint direction.
 - **Partially addresses** the agent-spawned `question:0019`/`question:0020` (does the male
-  acute vascular signal persist post-acute): the post-acute male VTE/CV-mortality excess is
-  established; whether it is COVID-specific vs baseline-carried remains open.
+  acute vascular signal persist post-acute): the post-acute male CV-mortality excess is
+  established, and acute ambulatory VTE supplies the low-severity discriminator; late ambulatory
+  VTE persistence remains open in `question:0020`, as does whether the male excess is COVID-specific
+  vs baseline-carried.
 - **Leaves unchanged** the female-biased self-report domains and the reproductive-stage axis.
 
 ## New Questions Raised
@@ -147,7 +153,8 @@ Abubasheer2025 full text was paywalled (estimates read from abstract/PubMed).
 ## Limitations & Residual Uncertainty
 
 - Baseline-rate confounding (older-age male VTE predominance) is unresolved; the reversal is
-  established as severity-independent but not as COVID-specific.
+  established as surviving coarse severity restriction but not as COVID-specific.
+- Late VTE persistence is not established; Xie2022 is an acute 30-day VTE study.
 - CV-mortality signal is wave-heterogeneous (Delta only) and rests on a single cohort.
 - The endothelial-function mechanism (FMD) cannot be separated from acute severity in the
   available data and is excluded from the discriminating evidence.
@@ -158,8 +165,9 @@ Abubasheer2025 full text was paywalled (estimates read from abstract/PubMed).
 - **DONE (2026-06-23, t042):** ingested 4 papers (Xie2022, Kopp2024, Abubasheer2025, Ambrosino2021);
   minted `proposition:0012` with `evidence-line:0029`/`0030`/`0031`; amended `interpretation:0003`'s
   vascular cell and held-back notes. Validate + health to confirm no `fragile-single-line`.
-- **Consolidate** the two agent-spawned questions `question:0019` and `question:0020` (near-duplicate
-  "male vascular signal persists post-acute") — fold into one and relate to `proposition:0012`.
+- **Keep distinct but cross-linked** the two agent-spawned questions `question:0019` and
+  `question:0020`: `question:0019` is substantially resolved for post-acute CV mortality, while
+  `question:0020` remains open for late ambulatory VTE persistence.
 - **Do not** promote the FMD/Ambrosino leg to a discriminating evidence-line while it remains
   severity-confounded.
 - **Carry forward** the COVID-specific-vs-baseline-carryover question as the next refinement of

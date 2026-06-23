@@ -14,7 +14,7 @@ related:
 - proposition:0012-vascular-hard-endpoint-male-reversal-survives-severity-adjustment
 - interpretation:0005-t042-vascular-male-reversal-survives-severity-adjustment
 created: '2026-06-22'
-updated: '2026-06-22'
+updated: '2026-06-23'
 ---
 
 # Does the male-biased VTE excess in ambulatory COVID-19 persist into the post-acute phase or resolve after the 30-day acute window?
@@ -22,12 +22,13 @@ updated: '2026-06-22'
 ## Summary
 
 > **Partially addressed (2026-06-23, t042 → `proposition:0012`, `interpretation:0005`); narrowed,
-> not closed.** t042 established that the male-biased hard-vascular domain survives acute-severity
-> adjustment, including an 18-month male CV-mortality excess (Kopp2024). But that is *CV mortality*,
-> not late VTE: the specific question here — sex-stratified VTE incidence in the **31–180-day**
-> post-acute window in ambulatory cohorts — remains an open gap (Xie2022 measured only the 30-day
-> acute window). Kept as the narrower VTE-temporal companion to the now-resolved CV question
-> `question:0019`.
+> not closed.** t042 established that the male-biased hard-vascular direction survives the coarse
+> hospitalized-vs-ambulatory acute-severity boundary, including an 18-month male CV-mortality excess
+> (Kopp2024) and a 30-day male VTE excess in ambulatory patients (Xie2022). But Kopp2024 is *CV
+> mortality*, not late VTE, and Xie2022 is only the 30-day acute window: the specific question here
+> — sex-stratified VTE incidence in the **31–180-day** post-acute window in ambulatory cohorts —
+> remains an open gap. Kept as the narrower VTE-temporal companion to the substantially resolved
+> CV question `question:0019`.
 
 Xie2022 demonstrates that male sex is an independent VTE risk factor within ambulatory (non-hospitalized) COVID-19 patients (aHR 1.69, 95% CI 1.30–2.19), with the 30-day acute window as the observation period. The question is whether this male-biased thrombotic excess is strictly an acute-phase phenomenon that resolves once the infection clears, or whether it seeds downstream post-acute thromboinflammatory pathology — microclots, small-fiber neuropathy, cardiovascular sequelae — that persists into long COVID.
 
