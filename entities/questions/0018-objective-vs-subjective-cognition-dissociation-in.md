@@ -5,26 +5,26 @@ title: Is the dissociation between objective cognitive deficit and subjective co
   complaint a general feature of PAIS, and what mechanisms drive each domain?
 status: active
 ontology_terms:
-  - cognitive dysfunction
-  - brain fog
-  - subjective cognition
-  - objective cognition
-  - fatigue
-  - post-COVID syndrome
+- cognitive dysfunction
+- brain fog
+- subjective cognition
+- objective cognition
+- fatigue
+- post-COVID syndrome
 datasets: []
 source_refs:
-  - cite:Bland2024
-  - cite:Cheetham2023
-  - cite:DelgadoAlonso2023
+- cite:Bland2024
+- cite:Cheetham2023
+- cite:DelgadoAlonso2023
 related:
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - task:t018
-  - topic:long-covid-immune-dysregulation
-  - topic:shared-failure-mode-across-pais
+- question:0007-mechanism-of-female-predominance-in-pais
+- task:t018
+- topic:long-covid-immune-dysregulation
+- topic:shared-failure-mode-across-pais
+- hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
 created: '2026-06-22'
-updated: '2026-06-22'
+updated: '2026-06-24'
 ---
-
 # Is the dissociation between objective cognitive deficit and subjective cognitive complaint a general feature of PAIS, and what mechanisms drive each domain?
 
 ## Summary

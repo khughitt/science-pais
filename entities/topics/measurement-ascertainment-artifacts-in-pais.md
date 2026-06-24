@@ -7,6 +7,8 @@ related:
 - hypothesis:0001-shared-dysregulated-attractor
 - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
 - hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
+- hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
+- hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
 - topic:pais-case-definition-heterogeneity
 - topic:biomarkers-and-objective-endpoints
 - proposition:0010-cognitive-female-excess-is-self-report-only-absent-in-objective-testing
