@@ -140,11 +140,3 @@ Both q0020 and q0021 need the SAME missing design: an ambulatory cohort with a s
 - created: 2026-06-24
 
 BLOCKED on vehicle-admissibility gate G1-G4 of pre-registration:0003. Activate when an admissible cross-syndrome study/dataset appears: paired proximal+distal IENFD with site-specific norms (G1), primary-dysautonomia control arm (G2), >=2 PAIS triggers under one protocol (G3), >=40 lesion-positive/side power floor (G4). On arrival, run the two confirmatory legs (P1 lesion-positive rate; P2 headline NLD-fraction delta vs primary-dysautonomia) per the locked decision criteria and interpret-results into h0007 promotion. Standing verdict until then: [?] inconclusive-for-coverage (no bears_on update).
-
-## [t051] Ingest PTLDS antibiotic-retreatment trials (Klempner2001/Krupp2003/Fallon2008/Berende2016) for the Borrelia clearance arm of proposition:0020
-- priority: P3
-- status: proposed
-- aspects: []
-- created: 2026-06-24
-
-t046 coded the SARS-CoV-2 antigen-clearance trials against proposition:0020 but left the bacterial-trigger parallel unfilled. The PTLDS antibiotic-retreatment literature (no durable symptom benefit from extended/repeat antibiotics) is the cross-pathogen echo of the long-COVID antiviral nulls and belongs as disputing/weak evidence on proposition:0020-antigen-clearance-rescues-established-pais. Apply the same target-engagement caveat (retreatment trials rarely demonstrate residual-antigen clearance). Establishes cross-pathogen generality for hypothesis:0002.
