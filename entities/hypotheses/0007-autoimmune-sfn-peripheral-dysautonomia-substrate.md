@@ -5,7 +5,8 @@ title: Non-length-dependent autoimmune small-fiber neuropathy as a shared periph
   substrate of PAIS dysautonomia
 status: proposed
 phase: candidate
-source_refs: []
+source_refs:
+- cite:Oaklander2022
 related:
 - question:0004-convergent-small-fiber-neuropathy-substrate
 - question:0009-functional-autoantibodies-drive-dysautonomia
@@ -134,9 +135,18 @@ than a committed hypothesis.
 
 ## Supporting Evidence
 
-- *(literature, to be ingested)* Skin-biopsy SFN has been reported in long COVID and in ME/CFS, and
-  small-fiber / autonomic involvement is described in PTLDS — the empirical seed for P1/P4. These
-  reports are not yet coded as project evidence-lines; ingesting them is `task:t049`.
+- **`cite:Oaklander2022` (ingested 2026-06-24):** Earliest prospective long-COVID referral cohort
+  using paired distal+proximal skin biopsies (n=17; 63% distal / ~50% proximal SFN). The paired-site
+  design demonstrates widespread proximal involvement alongside distal SFN — consistent with P2's
+  non-length-dependent claim — though per-patient NLD classification is not formally reported.
+  65% received immunotherapy; apparent IVIg/corticosteroid benefit is the best current evidence for
+  P3/`proposition:0019`. **No controls of any kind** (neither healthy nor primary-dysautonomia) and
+  no functional GPCR autoantibody serology. Referral bias limits prevalence inference. See
+  `paper:Oaklander2022` for full detail. Supports P1, P2 (partially), P4 (SARS-CoV-2 arm), and
+  P3-auxiliary (`proposition:0019`).
+- *(literature, remaining to be ingested)* Skin-biopsy SFN in ME/CFS and small-fiber / autonomic
+  involvement in PTLDS are the other empirical seeds for P1/P4. These reports are not yet coded
+  as project evidence-lines; ingesting them is `task:t049`.
 - *(literature, indirect)* The functional anti-GPCR autoantibody literature (the `question:0009` /
   `task:t006` thread) supplies the candidate immune mechanism for P3.
 - *(project)* `proposition:0009-dysautonomia-female-skew-is-baseline-carried-not-pais-amplified`

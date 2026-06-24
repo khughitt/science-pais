@@ -14,6 +14,7 @@ source_refs:
 - cite:Adler2024
 - cite:Limongelli2026
 - cite:Bateman2023
+- cite:Oaklander2022
 related:
 - topic:post-infectious-dysautonomia-and-autoimmunity
 - hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
@@ -33,7 +34,7 @@ Dysautonomia (especially POTS) and small-fiber neuropathy (SFN) recur across lon
 
 ## Current Evidence
 
-- Supporting: Adler2024 proposes non-length-dependent autonomic SFN as a final common pathway across PTLDS/PASC/ME-CFS; Limongelli2026 finds an autoimmune-pattern (non-length-dependent in ~33%) SFN in post-vaccine PASC with an SLE/Crohn's/RA-like innate-like T-cell profile; Bateman2023 documents SFN in up to 50% of FM and 30% of ME/CFS iCPET patients.
+- Supporting: Oaklander2022 provides the earliest prospective long-COVID referral series using paired distal+proximal skin biopsies (63% distal / ~50% proximal abnormal), demonstrating that proximal involvement commonly accompanies distal SFN — consistent with a non-length-dependent pattern, though per-patient NLD classification is not formally reported; Adler2024 proposes non-length-dependent autonomic SFN as a final common pathway across PTLDS/PASC/ME-CFS; Limongelli2026 finds an autoimmune-pattern (non-length-dependent in ~33%) SFN in post-vaccine PASC with an SLE/Crohn's/RA-like innate-like T-cell profile; Bateman2023 documents SFN in up to 50% of FM and 30% of ME/CFS iCPET patients.
 - Conflicting / cautionary: Finsterer2022 argues post-COVID dysautonomia is mechanistically heterogeneous (SFN vs GBS-residual vs central HPA), not uniformly SFN; Salvucci2023 shows a reversible mast-cell-mediated dysautonomia subtype that is not structural neuropathy.
 
 ## Thoughts
