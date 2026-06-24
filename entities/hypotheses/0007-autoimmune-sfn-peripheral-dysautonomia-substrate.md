@@ -22,6 +22,7 @@ related:
 - proposition:0019-pais-sfn-immunomodulation-modifies-lesion-trajectory
 - hypothesis:0001-shared-dysregulated-attractor
 - hypothesis:0003-immune-exhaustion-feedback
+- pre-registration:0003-cross-syndrome-paired-biopsy-primary-dysautonomia-controls
 created: '2026-06-24'
 updated: '2026-06-24'
 ---

@@ -149,3 +149,11 @@ h0003 has claim_count=0. Two deposits possible now: (1) Register NCT06597396 (JA
 - created: 2026-06-24
 
 Both q0020 and q0021 need the SAME missing design: an ambulatory cohort with a sex-stratified UNINFECTED / test-negative comparator and post-acute (31-180d) vascular hard-endpoint follow-up. DELIVERABLE: (1) lit/dataset scan for such a cohort (candidates: VA Million Veteran / Al-Aly programme with test-negative controls; OpenSAFELY; Clalit/Kopp2024 source; N3C) reporting VTE/MI/CV-death by sex with an uninfected baseline; (2) if found, estimate the male PASC vascular excess as a ratio-of-ratios (COVID M:F vs uninfected M:F) or sex x infection interaction = the infection-attributable increment over male baseline; (3) feed result into proposition:0012 (does the reversal carry a COVID-specific component or dissolve to baseline carryover?) and into how sex x severity should be jointly modeled in the pre-registered work. If no such cohort exists, record the design gap explicitly. Empirical.
+
+## [t050] Discharge q0004 paired-site biopsy + primary-dysautonomia-control study (h0007 promotion criterion #1)
+- priority: P2
+- status: proposed
+- aspects: []
+- created: 2026-06-24
+
+BLOCKED on vehicle-admissibility gate G1-G4 of pre-registration:0003. Activate when an admissible cross-syndrome study/dataset appears: paired proximal+distal IENFD with site-specific norms (G1), primary-dysautonomia control arm (G2), >=2 PAIS triggers under one protocol (G3), >=40 lesion-positive/side power floor (G4). On arrival, run the two confirmatory legs (P1 lesion-positive rate; P2 headline NLD-fraction delta vs primary-dysautonomia) per the locked decision criteria and interpret-results into h0007 promotion. Standing verdict until then: [?] inconclusive-for-coverage (no bears_on update).

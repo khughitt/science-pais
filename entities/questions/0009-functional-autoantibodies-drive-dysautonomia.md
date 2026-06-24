@@ -21,6 +21,7 @@ related:
 - question:0005-latent-to-overt-autoimmunity-conversion
 - hypothesis:0001-shared-dysregulated-attractor
 - hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
+- pre-registration:0003-cross-syndrome-paired-biopsy-primary-dysautonomia-controls
 created: '2026-06-11'
 updated: '2026-06-24'
 ---

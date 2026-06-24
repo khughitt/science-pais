@@ -19,6 +19,7 @@ source_refs:
 related:
 - topic:post-infectious-dysautonomia-and-autoimmunity
 - hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
+- pre-registration:0003-cross-syndrome-paired-biopsy-primary-dysautonomia-controls
 created: '2026-06-11'
 updated: '2026-06-24'
 ---
