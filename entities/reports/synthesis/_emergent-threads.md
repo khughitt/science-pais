@@ -1,36 +1,78 @@
 ---
-id: "synthesis:emergent-threads"
+id: synthesis:emergent-threads
 type: synthesis
 title: "Emergent threads - health-post-acute-infection"
-report_kind: "emergent-threads"
-generated_at: "2026-06-24T03:28:17Z"
-source_commit: "eb1a5ca60ed1cd69451e2a3d9d6fa16da31fbfec"
-orphan_question_count: 2
+report_kind: emergent-threads
+generated_at: 2026-06-24T19:16:12Z
+source_commit: 05a785bf71096ea8cc4d486b93f3f920a481cd74
+orphan_question_count: 1
 orphan_interpretation_count: 0
-orphan_ids:
-  - question:0004-convergent-small-fiber-neuropathy-substrate
-  - question:0005-latent-to-overt-autoimmunity-conversion
+orphan_ids: ["question:0005-latent-to-overt-autoimmunity-conversion"]
 ---
 
 ## Cross-hypothesis questions
 
-Three questions show cross-hypothesis reach at confidence `inverse` or `direct`.
+Four questions show cross-hypothesis reach at confidence `inverse`, `back-inverse`, or `transitive`
+across at least two distinct hypotheses.
 
-**question:0011-mitochondrial-basis-of-pem** resolves primarily to `hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem` and carries a back-inverse link to `hypothesis:0001-shared-dysregulated-attractor`. This is interesting because it sits at the seam between a focal muscle-ischemia account (h0006) and the project's umbrella shared-attractor account (h0001): depending on what the mitochondrial evidence actually shows, it either confirms the shared-attractor framing or partitions PEM into a mechanistically distinct subphenotype.
+**question:0009-functional-autoantibodies-drive-dysautonomia** resolves primarily to
+`hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate` and carries a back-inverse link to
+`hypothesis:0001-shared-dysregulated-attractor`. The cross-cutting nature is significant: functional
+GPCR autoantibodies are both a candidate mechanism for the autonomous peripheral-neuropathy substrate
+(h0007) and a potential self-sustaining loop within the broader attractor (h0001), making this
+question the sharpest current bridge between the structural-lesion frame and the systemic-feedback
+frame. The assay-dependent evidence split — functional-assay correlations survive (Kharraziha2020)
+while binding-ELISA seropositivity does not discriminate (Hall2022) — means the cross-hypothesis
+reach tracks different evidence standards than either hypothesis alone requires.
 
-**question:0007-mechanism-of-female-predominance-in-pais** resolves primarily to `hypothesis:0005-reproductive-stage-immune-homeostatic-margin` and transitively reaches `hypothesis:0004-acute-severity-threshold`. The cross-cutting nature reflects that the overall female excess in PAIS cannot be explained by reproductive-stage biology alone; the male-biased reversal on vascular hard endpoints (captured in `interpretation:0005-t042-vascular-male-reversal-survives-severity-adjustment`) forces a severity-threshold account (h0004) into the same explanatory space as the sex-hormone account (h0005).
+**question:0011-mitochondrial-basis-of-pem** resolves primarily to
+`hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem` and carries a back-inverse link to
+`hypothesis:0001-shared-dysregulated-attractor`. It sits at the seam between a focal muscle-ischemia
+account and the shared-attractor account: if the mitochondrial deficit is confined to skeletal muscle
+under ischemic microclot load, h0006 is confirmed; if it is systemic (metabolic reprogramming of
+immune cells), it feeds into h0001. The two hypotheses make different predictions on whether
+mitochondrial dysfunction normalises with microclot clearance or persists independently.
 
-**question:0019-male-biased-vascular-signal-pasc-persistence** resolves primarily to `hypothesis:0004-acute-severity-threshold` and also reaches `hypothesis:0005-reproductive-stage-immune-homeostatic-margin`. It is interesting precisely because it connects the severity-threshold frame (is the male vascular excess a residual of greater acute illness burden?) to the reproductive-stage frame (or does it reflect a genuinely sex-differentiated vascular biology independent of severity?); `interpretation:0005` documents that the male reversal survives coarse severity restriction, making this a live bridge between h0004 and h0005.
+**question:0007-mechanism-of-female-predominance-in-pais** resolves primarily to
+`hypothesis:0005-reproductive-stage-immune-homeostatic-margin` with a transitive link to
+`hypothesis:0004-acute-severity-threshold`. The male-biased reversal on cardiovascular hard endpoints
+(`interpretation:0005-t042-vascular-male-reversal-survives-severity-adjustment`,
+`proposition:0012-vascular-hard-endpoint-male-reversal-survives-severity-adjustment`) forces the
+severity-threshold account into the same explanatory space as the sex-hormone account, because the
+female fatigue excess and the male vascular excess are co-present in the same post-acute window and
+require both hypotheses to be explained.
+
+**question:0019-male-biased-vascular-signal-pasc-persistence** resolves primarily to
+`hypothesis:0004-acute-severity-threshold` and also reaches
+`hypothesis:0005-reproductive-stage-immune-homeostatic-margin`. It bridges these two hypotheses by
+asking whether the male post-acute cardiovascular excess (documented in Kopp2024 at 18 months within
+a hospitalized-only stratum) reflects a severity carryover or a genuinely sex-differentiated vascular
+repair biology — a distinction h0004 and h0005 cannot individually resolve. The companion question
+`question:0021-male-vascular-reversal-covid-specific-vs-baseline-carryover` adds a further
+complication: none of the current evidence lines include an uninfected comparator, so the
+infection-attributable fraction of the male vascular signal remains unidentified, conditioning both
+hypotheses simultaneously.
 
 ---
 
 ## Orphan questions
 
-Total: **2**
+Total: **1**
 
-**question:0004-convergent-small-fiber-neuropathy-substrate** — asks whether PTLDS, long COVID, and ME/CFS share a non-length-dependent autonomic small-fiber neuropathy (SFN) substrate distinguishing them from primary dysautonomia; the question's own notes link it informally to `hypothesis:0001-shared-dysregulated-attractor`, but no formal primary-hypothesis assignment was made by the resolver, leaving it unhoused. The core gap is the absence of any cross-syndrome study using a standardized skin-biopsy protocol with primary-dysautonomia controls.
-
-**question:0005-latent-to-overt-autoimmunity-conversion** — asks what fraction of post-infectious latent autoimmunity converts to overt autoimmune disease over a 5–10 year horizon and which autoantibodies mark the highest-risk subset; it too references h0001 informally (autoimmune limb), but the conversion-rate question extends beyond the attractor-state frame and is unresolved by any existing hypothesis. The core gap is that no existing PAIS cohort has long enough follow-up to measure conversion rates.
+**question:0005-latent-to-overt-autoimmunity-conversion** asks what fraction of post-infectious
+latent autoimmunity converts to overt autoimmune disease over a 5–10 year horizon and which
+autoantibody subsets (particularly anti-cytokine/anti-IFN specificities) mark the highest-risk
+patients. The resolver assigns no hypothesis because no current hypothesis frames the *longitudinal
+progression* from latent to clinical autoimmunity: `hypothesis:0001-shared-dysregulated-attractor`
+mentions autoimmunity as one attractor-state input but does not predict conversion rates or risk
+stratification; the remaining hypotheses operate on mechanism rather than prognosis. The question's
+home topic is `topic:post-infectious-dysautonomia-and-autoimmunity`, where Rojas2022 (83% latent
+autoimmunity, only ~3% with overt disease at 7 months) and Sharma2023 (elevated new-onset
+autoimmune-disease hazard ratios in large retrospective cohorts) establish the phenomenon without
+resolving the conversion trajectory. What would give this question a hypothesis home: a formal
+hypothesis that "post-infectious immune-set-point shift in a minority subset results in clinical
+autoimmune conversion over years, with anti-cytokine autoantibody breadth as the stratifying
+predictor" — extending h0001 into the longitudinal autoimmune-prognosis domain.
 
 ---
 
@@ -38,16 +80,35 @@ Total: **2**
 
 Total: **0**
 
-All eight active interpretations (`interpretation:0001` through `interpretation:0008`) carry at least one direct `hypothesis:` entry in their `related:` field. No orphan interpretations exist in this run.
+All 14 active interpretations carry at least one direct or transitive `hypothesis:` link via their
+`related:` fields. No orphan interpretations exist in this run.
 
 ---
 
 ## Candidate hypotheses
 
-Two recurring topics across the orphan questions suggest candidate hypotheses worth considering.
+**Post-infectious immune-set-point shift and long-term autoimmune conversion.** The sole orphan
+question (`question:0005`) concerns a longitudinal-prognosis claim that sits between
+`hypothesis:0001-shared-dysregulated-attractor` (attractor-state framing) and the autoimmunity
+material in `topic:post-infectious-dysautonomia-and-autoimmunity`, but is addressed by neither.
+Rojas2022's near-universal latent autoimmunity and the unexplained gap between 83% autoantibody
+prevalence and ~3% overt disease at 7 months is precisely the unhoused empirical kernel. A candidate
+hypothesis: "In a minority post-infectious subset, latent autoimmunity reflects durable immune
+reprogramming rather than a transient mimicry response, with anti-cytokine/anti-IFN autoantibody
+breadth predicting clinical conversion over a multi-year horizon." Promoting this to a formal
+hypothesis would require a long-term prospective cohort design and would pull in Sharma2023, Rojas2022,
+and Ciaffi2023 as founding evidence lines.
 
-**Peripheral-autonomic neuropathy as PAIS substrate.** Both orphan questions touch the dysautonomia domain indirectly: `question:0004` is explicitly about SFN as the shared structural cause of PAIS dysautonomia. No current hypothesis addresses the *peripheral structural lesion* level (as distinct from the immune-attractor or severity-threshold levels). A candidate hypothesis might be: "A non-length-dependent autoimmune SFN targeting dorsal root ganglia is the shared peripheral substrate for autonomic symptoms across PAIS triggers, and is mechanistically distinct from mast-cell-mediated and central dysautonomia subtypes."
-
-**Post-infectious immune-set-point shift and long-term autoimmune conversion.** `question:0005` concerns the durability of immune reprogramming after acute infection — a question that sits between the existing attractor-state hypothesis (h0001) and the severity-threshold hypothesis (h0004) but is fully addressed by neither. A candidate hypothesis might be: "Post-infectious latent autoimmunity represents a durable shift in immune set-point in a minority subset, with anti-cytokine autoantibody specificity predicting clinical conversion over a multi-year horizon."
-
-These are inferred from two orphan questions apiece — a modest signal. Formal promotion to hypothesis should wait for additional evidence.
+**Measurement-ascertainment axis as a standing hypothesis-constraint.** Not a new hypothesis, but
+`topic:measurement-ascertainment-artifacts-in-pais` now has sufficient grounded structure — spanning
+`hypothesis:0001`, `hypothesis:0005`, `hypothesis:0006`, and `hypothesis:0007` — that it functions
+as a cross-hypothesis meta-constraint. The SFN skin-biopsy harmonization case
+(`interpretation:0014-sfn-prevalence-metric-harmonization-reanalysis`) shows that an apparent 0%–91%
+prevalence range across Walitt2024, Novak2026, Oaklander2022, and Joseph2021 is largely decomposable
+into modality breadth, trigger (LC vs ME/CFS), and referral enrichment rather than biological
+heterogeneity. This pattern recurs across cognition (`proposition:0010`), PEM endpoints
+(`proposition:0011`), and dysautonomia sex-skew (`proposition:0009`). Formalising the measurement-
+channel axis as an explicit methodological hypothesis — "apparent group or cross-trigger differences
+in PAIS phenotypes will preferentially concentrate in self-report or referral-enriched channels and
+attenuate or reverse under objective, trigger-matched measurement" — would give it testable content
+and prevent downstream over-interpretation of new signals before ascertainment is controlled.

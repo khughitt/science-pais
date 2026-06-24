@@ -1,36 +1,79 @@
 ---
+id: synthesis:0003-immune-exhaustion-feedback
 type: synthesis
 title: "Synthesis: 0003-immune-exhaustion-feedback"
 report_kind: hypothesis-synthesis
-id: synthesis:0003-immune-exhaustion-feedback
 hypothesis: hypothesis:0003-immune-exhaustion-feedback
-generated_at: 2026-06-24T03:28:17Z
-source_commit: eb1a5ca60ed1cd69451e2a3d9d6fa16da31fbfec
+generated_at: 2026-06-24T19:16:12Z
+source_commit: 05a785bf71096ea8cc4d486b93f3f920a481cd74
 provenance_coverage: thin
 ---
 
 ## State
 
-`hypothesis:0003-immune-exhaustion-feedback` is **proposed** and in active phase. No graph claims, resolved interpretations, or tasks have been recorded against it; the following draws exclusively from the hypothesis file's own proposition bundle and uncertainty section.
+`hypothesis:0003-immune-exhaustion-feedback` holds that post-acute chronicity is maintained by a
+positive-feedback loop between unresolved antigenic stimulation and adaptive immune exhaustion:
+persisting antigen drives innate inflammation; chronic stimulation pushes CD8+ T cells into
+exhaustion; exhausted T cells fail to clear the stimulus and fail to deliver regulatory termination
+signals — closing the loop. The hypothesis grades **speculative** because it is conjunctive over
+two propositions at different evidence levels.
 
-The central claim is that post-acute chronicity is maintained by a positive-feedback loop: unresolved antigen (or a sterile self-sustaining stimulus) drives innate inflammation; chronic stimulation pushes CD8+ T cells into an exhausted state; exhausted T cells fail to clear the stimulus and fail to deliver the regulatory signals that terminate the acute-phase response — so inflammation continues. The hypothesis names persistent JAK-STAT/IL-6/IFN/complement activation co-occurring with CD8+ exhaustion beyond 180 days, with no detectable circulating virus, as its primary empirical anchor (`hypothesis:0003-immune-exhaustion-feedback`, proposition bundle citing Aid2025). A supporting observation is a late bifurcation at 5–6 months — recovery vs. non-recovery — interpreted as the maintenance loop becoming the decisive factor after the shared early acute response resolves (`hypothesis:0003-immune-exhaustion-feedback`, proposition bundle citing Ryan2022).
+The descriptive pillar, `proposition:0025` (persistent inflammatory activation + dissociated IFN
+signature), is **supported** by two independent evidence lines: `evidence-line:0061` (Aid2025,
+moderate — persistent JAK-STAT/IL-6/type-II-IFN/complement + CD8 exhaustion beyond 180 days with
+no circulating virus, two cohorts) and `evidence-line:0062` (Ryan2022, weak — blunted type-I
+antiviral-effector ISGs MX1/OAS3/OASL at the 24-week bifurcation point in long-COVID referrals),
+per `interpretation:0012-t047-h0003-ifn-reconciliation-and-jak1-trial-registration`.
 
-Key open questions include: (1) whether JAK-STAT/IL-6 signaling is a proximal driver or a downstream marker (`question:0006-jak-stat-il6-driver-vs-marker`); (2) the tension between persistent IFN activation (Aid2025) and IFN-I suppression at 6 months (Ryan2022), which if irreconcilable would mischaracterize the loop's inflammatory arm; and (3) whether the loop requires ongoing antigen from `hypothesis:0002-tissue-reservoir-antigen-fragment` or has become antigen-independent (sterile). Causal direction is asserted from cross-sectional multi-omics, not perturbation experiments — a limitation the hypothesis explicitly acknowledges.
+The causal pillar, `proposition:0026` (the exhaustion loop is a proximal driver, reversible by
+inhibition), is **untested**. Observational symptom-correlations from Aid2025 are suggestive but
+cannot establish direction or reversibility. The causal conjunct is data-gated on
+`pre-registration:0004` (abrocitinib JAK1-inhibitor trial NCT06597396). The cell source sustaining
+the IL-6/JAK-STAT signal also remains unresolved (`question:0006-jak-stat-il6-driver-vs-marker`).
 
 ## Arc
 
-Arc reconstruction is limited because no interpretations carry `prior_interpretations` chains and no tasks are tied to this hypothesis.
+Arc reconstruction is limited because `interpretation:0012-t047-h0003-ifn-reconciliation-and-jak1-trial-registration`
+carries no `prior_interpretations` chain — it is the first formal interpretation on this hypothesis.
 
-The hypothesis was created 2026-06-11 and remains at its initial proposed framing. It was apparently seeded from two empirical sources (Aid2025 and Ryan2022) and explicitly positioned as a *maintenance-engine* complement to `hypothesis:0002-tissue-reservoir-antigen-fragment`. The organizing move was to explain the paradox of simultaneous proinflammatory activation and immune exhaustion in long COVID without requiring replicating virus. A single open question (`question:0006-jak-stat-il6-driver-vs-marker`) was registered to operationalize the most critical discriminating test — the JAK1 inhibitor trial (NCT06597396) — but no task or interpretation has been created to pursue it. The investigation has not advanced beyond initial framing.
+`hypothesis:0003` was initially framed in prose (created 2026-06-11) as a self-reinforcing
+exhaustion loop but carried no coded propositions or evidence-lines (`claim_count=0`). Task t047
+(completed 2026-06-24) performed the first formalization pass: it introduced `proposition:0025` and
+`proposition:0026`, coded two evidence-lines (`evidence-line:0061`, `evidence-line:0062`), and
+registered `pre-registration:0004`.
+
+The central interpretive move in t047, recorded in
+`interpretation:0012-t047-h0003-ifn-reconciliation-and-jak1-trial-registration`, was resolving an
+apparent internal contradiction. Aid2025 reported persistent IFN activation while Ryan2022 reported
+IFN-I suppression — previously flagged as a tension on the hypothesis. The reconciliation reframes
+them as indexing different IFN arms: Aid2025 tracks the type-II/inflammatory arm (IFNγ + IL-6/
+JAK-STAT, PBMC, day 90–700+), while Ryan2022 tracks the type-I antiviral-effector arm (terminal
+ISGs MX1/OAS3/OASL, whole blood, 24-week bifurcation). A dissociated pattern — persistent type-II
+tone alongside tolerized type-I effectors — is the predicted innate-sensing exhaustion signature,
+so Ryan2022 was recoded from a disputing tension into a supporting arm of `proposition:0025`. The
+investigation now stands at: one supported descriptive pillar, one untested causal pillar, and a
+locked pre-registration awaiting trial readout.
 
 ## Research Fronts
 
-**Open primary question**: `question:0006-jak-stat-il6-driver-vs-marker` — whether persistent JAK-STAT/IL-6 signaling is a proximal driver reversible by inhibition or a downstream marker, and whether the axis generalizes beyond SARS-CoV-2. This is the single registered active question. A positive inhibitor RCT co-endpoint (symptom reduction paired with pathway suppression) would provide the most efficient upward evidence; a clean marker-not-driver result would substantially reduce confidence in the loop as an intervention target.
+**Live question.** `question:0006-jak-stat-il6-driver-vs-marker` is the primary open question:
+does JAK-STAT/IL-6 activation drive chronicity (reversible by inhibition) or merely mark it, and
+is the axis shared beyond SARS-CoV-2? The driver-vs-marker arm is now formally registered
+(`pre-registration:0004`); the cross-PAIS comparative arm (PTLDS, post-Q-fever, ME/CFS) has no
+pathway-level comparison and remains open.
 
-**Unresolved mechanistic gaps** (from hypothesis uncertainty section):
-- Cell source sustaining the IL-6/JAK-STAT signal is unidentified (bulk-assay limitation).
-- IFN activation vs. IFN-I suppression tension across Aid2025/Ryan2022 is unreconciled by timing, compartment, or endotype.
-- Antigen-dependence of the loop is unknown and therapeutically pivotal (links to `hypothesis:0002-tissue-reservoir-antigen-fragment`).
-- Cross-PAIS replication of the coupled activation+exhaustion signature (e.g. PTLDS, post-Q-fever) has not been attempted.
+**Open task.** Task t054 (P2, proposed) is the standing tracking task: monitor NCT06597396
+(abrocitinib) to readout and discharge `pre-registration:0004` via locked decision criteria.
+Symptom + pathway co-suppression would produce a supporting line on `proposition:0026`; pathway
+suppression without symptom benefit would produce a disputing (marker-not-driver) line; an
+unstratified flat null constitutes only weak disconfirmation given the multi-loop confound flagged
+in `interpretation:0012-t047-h0003-ifn-reconciliation-and-jak1-trial-registration`.
 
-No open tasks, topic gaps, or uncertainty-slice entries are present in the bundle for this hypothesis.
+**Residual structural gaps.** The reconciliation in
+`interpretation:0012-t047-h0003-ifn-reconciliation-and-jak1-trial-registration` is a cross-study
+inference — both IFN arms have not been co-measured within the same patients. A single-cohort design
+combining type-II inflammatory tone and type-I effector ISG readout longitudinally would confirm
+tolerization vs alternative explanations (pre-existing IFN-I deficiency; antigen-driven suppression).
+Both source studies are pre-Omicron/pre-vaccine, limiting generalizability. Whether the loop requires
+ongoing antigen (linking to `hypothesis:0002-tissue-reservoir-antigen-fragment`) or has become
+antigen-independent remains unknown and therapeutically pivotal.
