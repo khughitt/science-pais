@@ -10,7 +10,12 @@ related:
 - question:0004-convergent-small-fiber-neuropathy-substrate
 - question:0009-functional-autoantibodies-drive-dysautonomia
 - topic:post-infectious-dysautonomia-and-autoimmunity
+- topic:measurement-ascertainment-artifacts-in-pais
 - proposition:0009-dysautonomia-female-skew-is-baseline-carried-not-pais-amplified
+- proposition:0014-pais-small-fiber-structural-lesion-ienfd
+- proposition:0015-pais-sfn-non-length-dependent-pattern
+- proposition:0016-pais-sfn-autoimmune-causation
+- proposition:0017-pais-sfn-cross-trigger-convergence
 - hypothesis:0001-shared-dysregulated-attractor
 - hypothesis:0003-immune-exhaustion-feedback
 created: '2026-06-24'
@@ -41,7 +46,14 @@ corpus.
 
 ### Core Propositions
 
-- **P1 (structural lesion).** A substantial subset of PAIS patients with autonomic symptoms have
+*Formalized into the graph as durable propositions (`/science:specify-model`, 2026-06-24):
+P1 → `proposition:0014-pais-small-fiber-structural-lesion-ienfd`,
+P2 → `proposition:0015-pais-sfn-non-length-dependent-pattern`,
+P3 → `proposition:0016-pais-sfn-autoimmune-causation`,
+P4 → `proposition:0017-pais-sfn-cross-trigger-convergence`. All four currently carry thin/uncoded
+support pending the `task:t049` SFN-literature ingestion.*
+
+- **P1 (structural lesion → `proposition:0014`).** A substantial subset of PAIS patients with autonomic symptoms have
   objectively reduced intraepidermal nerve-fiber density (IENFD) or autonomic small-fiber loss on
   standardized skin biopsy / autonomic testing — i.e. a real peripheral lesion, not only a functional
   state. *(structural_claim; measurement_model: IENFD on distal+proximal skin biopsy, QSART, autonomic
