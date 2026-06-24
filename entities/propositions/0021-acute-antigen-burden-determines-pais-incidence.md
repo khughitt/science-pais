@@ -6,10 +6,7 @@ status: active
 claim_layer: causal_effect
 identification_strength: interventional
 proxy_directness: indirect
-supports_scope: hypothesis_bundle
-discusses:
-- frame: hypothesis:0002-tissue-reservoir-antigen-fragment
-  role: background
+supports_scope: local_proposition
 related:
 - hypothesis:0002-tissue-reservoir-antigen-fragment
 - question:0002-antigen-clearance-rescues-symptoms
@@ -69,7 +66,11 @@ mechanism is **contested between an antiviral effect (lowering acute viral load)
 (AMPK/mTOR) independent of antigen**. This is precisely why the antigen-specific support is graded weak
 and why this proposition should **not** be read as promoting `hypothesis:0002`'s antigen mechanism: the
 firmly-supported part (intervention→incidence) is mechanism-agnostic and is equally consistent with the
-metabolic frame of `hypothesis:0001`/`hypothesis:0004`. Additional caveats: both trials are
+metabolic frame of `hypothesis:0001`/`hypothesis:0004`. For this reason it is **intentionally not a
+belief-bearing member of h0002's bundle** (`supports_scope: local_proposition`; no `discusses` frame —
+it remains in `related:` for navigation only): the belief rollup would otherwise flatten these two weak
+metformin lines into h0002 and over-credit the antigen mechanism (t051 fix, 2026-06-24). Additional
+caveats: both trials are
 **prevention, not established-disease treatment** (they say nothing about reversibility — that is
 `proposition:0020`); the endpoint is a clinical long-COVID diagnosis, not a measured antigen index; and
 ACTIV-6's primary symptom endpoint missed its bar. Confidence in the antigen-specific reading would rise
