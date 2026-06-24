@@ -69,7 +69,7 @@ This is the first study to systematically assess small-fiber neuropathy (SFN) us
 - SFN denervation severity did NOT correlate with the iCPET exertional measures (including VO2 peak, Qc/VO2 slope). The co-occurrence of SFN and hemodynamic abnormalities is descriptive, not a demonstrated causal path within the data.
 
 **Preceding infection:**
-- 24% of ME/CFS patients had documented preceding infection; no formal sub-group analysis of SFN prevalence in infection-triggered vs. non-infection-triggered cases was reported. [UNVERIFIED: whether Fukuda or any other case definition sub-analyses were performed in the supplementary material]
+- 24% of ME/CFS patients had documented preceding infection; no formal sub-group analysis of SFN prevalence in infection-triggered vs. non-infection-triggered cases was reported in the main text. *(Residual uncertainty: the supplementary material was not exhaustively checked for a case-definition or onset-type sub-analysis; the verified main-text results contain none. This does not affect the headline n=160 / 31%-SFN findings, which are confirmed.)*
 
 ## Relevance
 

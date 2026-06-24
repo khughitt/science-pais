@@ -17,8 +17,6 @@ related:
 - question:0009-functional-autoantibodies-drive-dysautonomia
 - task:t006
 source_refs:
-- paper:deSa2026
-- paper:Limongelli2026
 - paper:Stein2025
 created: '2026-06-24'
 updated: '2026-06-24'

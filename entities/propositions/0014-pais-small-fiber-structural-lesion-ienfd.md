@@ -17,7 +17,8 @@ related:
 - proposition:0015-pais-sfn-non-length-dependent-pattern
 - task:t049
 source_refs:
-- paper:Limongelli2026
+- paper:Oaklander2022
+- paper:Joseph2021
 - paper:Walitt2024
 created: '2026-06-24'
 updated: '2026-06-24'

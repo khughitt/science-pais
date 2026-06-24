@@ -17,9 +17,8 @@ related:
 - hypothesis:0001-shared-dysregulated-attractor
 - task:t049
 source_refs:
+- paper:Joseph2021
 - paper:Adler2024
-- paper:Walitt2024
-- paper:Limongelli2026
 created: '2026-06-24'
 updated: '2026-06-24'
 ---
