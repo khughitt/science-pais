@@ -115,15 +115,6 @@ Boneva2015 reports early menopause (<=45) adj OR 3.20 and ~10y earlier mean age 
 
 Surfaced during t019 HRT-evidence audit (interpretation:0008). Neuhouser et al., 'Risk factors for long COVID syndrome in postmenopausal women with previously reported diagnosis of COVID-19', Ann Epidemiol 2024 (WHI; PMC11405002; DOI 10.1016/j.annepidem.2024.xx). n>1,230 COVID-19, 425 long COVID, ML top-20 risk-factor screen. Reported top predictors (weight loss, mobility, RA, heart-valve procedures, sleep) do NOT include HRT. Triage from full text: was menopausal hormone therapy in the candidate feature set (unselected) or never examined? If MHT was examined/reported (even null), add as the first WHI-grade HRT-vs-long-COVID evidence-line on proposition:0006 and correct interpretation:0003's matrix line. Ingest as paper:Neuhouser2024 + references.bib entry.
 
-## [t046] Code antiviral / antigen-clearance trials against question:0002 (clearance-rescues-symptoms) to deposit first evidence on h0002
-- priority: P2
-- status: proposed
-- aspects: []
-- related: [hypothesis:0002-tissue-reservoir-antigen-fragment, question:0002-antigen-clearance-rescues-symptoms, topic:antigen-pathogen-persistence, discussion:0003-antigen-persistence-treatable-vs-fixed]
-- created: 2026-06-24
-
-h0002 has claim_count=0 - no study coded against question:0002. Identify and code published antiviral/antigen-clearance interventions in ESTABLISHED long COVID (e.g. nirmatrelvir/ritonavir RCTs - STOP-PASC/Geng2024, PAXLC; metformin; monoclonal/antiviral arms) plus any Borrelia/Coxiella clearance evidence, classifying each as supporting 'clearance rescues symptoms' (driver) vs null (epiphenomenon). Hypothesis file already notes early antiviral trials have NOT clearly improved symptoms - weakening the clearance-rescues corollary; make that an explicit coded evidence-line rather than prose. Bridges to health-immunity; promote via commons if mechanism-general.
-
 ## [t047] Track JAK-inhibitor RCT NCT06597396 and reconcile the Aid2025 persistent-IFN vs Ryan2022 IFN-I-suppression contradiction (h0003)
 - priority: P2
 - status: proposed
@@ -149,3 +140,11 @@ Both q0020 and q0021 need the SAME missing design: an ambulatory cohort with a s
 - created: 2026-06-24
 
 BLOCKED on vehicle-admissibility gate G1-G4 of pre-registration:0003. Activate when an admissible cross-syndrome study/dataset appears: paired proximal+distal IENFD with site-specific norms (G1), primary-dysautonomia control arm (G2), >=2 PAIS triggers under one protocol (G3), >=40 lesion-positive/side power floor (G4). On arrival, run the two confirmatory legs (P1 lesion-positive rate; P2 headline NLD-fraction delta vs primary-dysautonomia) per the locked decision criteria and interpret-results into h0007 promotion. Standing verdict until then: [?] inconclusive-for-coverage (no bears_on update).
+
+## [t051] Ingest PTLDS antibiotic-retreatment trials (Klempner2001/Krupp2003/Fallon2008/Berende2016) for the Borrelia clearance arm of proposition:0020
+- priority: P3
+- status: proposed
+- aspects: []
+- created: 2026-06-24
+
+t046 coded the SARS-CoV-2 antigen-clearance trials against proposition:0020 but left the bacterial-trigger parallel unfilled. The PTLDS antibiotic-retreatment literature (no durable symptom benefit from extended/repeat antibiotics) is the cross-pathogen echo of the long-COVID antiviral nulls and belongs as disputing/weak evidence on proposition:0020-antigen-clearance-rescues-established-pais. Apply the same target-engagement caveat (retreatment trials rarely demonstrate residual-antigen clearance). Establishes cross-pathogen generality for hypothesis:0002.

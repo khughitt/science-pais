@@ -15,8 +15,11 @@ related:
 - question:0002-antigen-clearance-rescues-symptoms
 - discussion:0003-antigen-persistence-treatable-vs-fixed
 - immunity:research-question:immune-homeostasis-and-dysregulation
+- proposition:0020-antigen-clearance-rescues-established-pais
+- proposition:0021-acute-antigen-burden-determines-pais-incidence
+- interpretation:0011-t046-antigen-clearance-trials-ingestion
 created: '2026-06-11'
-updated: '2026-06-11'
+updated: '2026-06-24'
 ---
 # Hypothesis: A persisting pathogen-fragment reservoir in tissue-resident macrophages is a pathogen-agnostic initiator of chronic post-infectious illness
 
@@ -42,6 +45,7 @@ A common *initiating* lesion across diverse PAIS is the failure of tissue-reside
 - The tissue-macrophage reservoir mechanism is directly demonstrated only in a *mouse* Borrelia model (McClune2025); human tissue evidence is indirect (plasma antigen in Peluso2024; immunomodulatory-complex hypothesis in Morroy2016 is inferential).
 - No study links fragment/antigen burden to symptom severity prospectively, and Peluso2024 explicitly declines the symptom test (see `question:0002`).
 - Whether SARS-CoV-2, EBV, and Coxiella actually exploit the same Kupffer-cell/tissue-macrophage sink as Borrelia is McClune2025's prediction, not yet observed.
+- **The interventional corollary is now formalized and coded (t046, 2026-06-24).** The hypothesis's two testable interventional claims are split into `proposition:0020` (clearing antigen *rescues established disease* — the reversibility reading) and `proposition:0021` (reducing antigen burden *at onset lowers incidence* — the fixed-risk-factor reading). 0020 is weakly disputed but **uninterpretable** (the established-disease trials never engaged the antigen target); 0021 is moderately supported by metformin prevention RCTs. Their treatment-null + prevention-positive signature is the empirical basis of the "antigen-as-fixed-risk-factor-at-onset, non-operative once self-sustaining" reconciliation (`discussion:0003`, `interpretation:0011`).
 
 ## Predictions
 
@@ -75,7 +79,7 @@ Confidence would be materially reduced if:
 ## Disputing Evidence
 
 - **Hanson2023:** argues enterovirus *reservoirs* (not macrophage-retained fragments) drive classical ME/CFS, and notes no full enterovirus genomes recovered — a different persistence model and a replication caveat.
-- Early antiviral trials in established long COVID have not clearly improved symptoms, weakening the "clearance rescues" corollary.
+- **Established-disease antigen-clearance trials are null** (now coded as `proposition:0020`'s evidence base via `interpretation:0011`): `evidence-line:0053` (Geng2024/STOP-PASC, 15-day NMV/r), `evidence-line:0055` (Peluso2026/outSMART-LC, anti-RBD mAb), with `evidence-line:0054` (Bhattacharjee2026/PAX-LC) showing NMV/r left circulating Spike unchanged. **Crucially these are weak and uninterpretable**, not disconfirming: none demonstrated antigen target-engagement, so — per `discussion:0003` — they **do not refute antigen persistence**. The Borrelia/Coxiella clearance parallel (PTLDS antibiotic-retreatment nulls) is not yet ingested.
 
 ## Evidence Needed To Shift Belief
 
