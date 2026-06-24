@@ -7,6 +7,7 @@ status: proposed
 phase: candidate
 source_refs:
 - cite:Oaklander2022
+- cite:Joseph2021
 related:
 - question:0004-convergent-small-fiber-neuropathy-substrate
 - question:0009-functional-autoantibodies-drive-dysautonomia
@@ -144,9 +145,17 @@ than a committed hypothesis.
   no functional GPCR autoantibody serology. Referral bias limits prevalence inference. See
   `paper:Oaklander2022` for full detail. Supports P1, P2 (partially), P4 (SARS-CoV-2 arm), and
   P3-auxiliary (`proposition:0019`).
-- *(literature, remaining to be ingested)* Skin-biopsy SFN in ME/CFS and small-fiber / autonomic
-  involvement in PTLDS are the other empirical seeds for P1/P4. These reports are not yet coded
-  as project evidence-lines; ingesting them is `task:t049`.
+- **`cite:Joseph2021` (ingested 2026-06-24):** Largest ME/CFS skin-biopsy cohort (n=160; NAM 2015
+  criteria). 31% had lower-leg SFN (PGP9.5 punch biopsy, ≤5th percentile). Alongside iCPET,
+  identified two hemodynamic subtypes — preload failure and peripheral O2 extraction failure —
+  proposed to reflect autonomic small-fiber dysregulation. 24% had documented preceding infection
+  (no SFN sub-analysis by onset type). **Distal-only biopsy** (single lower-leg site): P2
+  (non-length-dependent pattern) CANNOT be assessed. No primary-dysautonomia controls; no
+  autoantibody serology. See `paper:Joseph2021`. **Supports P1 and P4 (ME/CFS arm); does NOT
+  address P2, P3.**
+- *(literature, remaining to be ingested)* Small-fiber / autonomic involvement in PTLDS is the
+  remaining empirical seed for P4. Not yet coded as a project evidence-line; ingesting it is
+  `task:t049`.
 - *(literature, indirect)* The functional anti-GPCR autoantibody literature (the `question:0009` /
   `task:t006` thread) supplies the candidate immune mechanism for P3.
 - *(project)* `proposition:0009-dysautonomia-female-skew-is-baseline-carried-not-pais-amplified`
