@@ -26,6 +26,7 @@ related:
 - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
 - hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
 - hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
+- interpretation:0015-t055-measurement-channel-audit-of-pais-group-differences
 created: '2026-06-24'
 updated: '2026-06-24'
 ---
@@ -82,20 +83,26 @@ claim that *the direction and locus of artifact are predictable*.
 
 - **B — Bounded-exception clause** *(structural_claim; the falsifiability anchor)*. The bias is directional
   and predictable but **not total**: real objective, trigger-matched PAIS group differences exist and
-  survive ascertainment control. Current admitted exceptions: `proposition:0013` (a testosterone-conditioned
-  objective female-biased immune-activation signal) and `proposition:0012` (the male vascular hard-endpoint
-  reversal is itself a robust objective signal, not an artifact). This clause is **load-bearing**: it both
-  keeps the hypothesis falsifiable and defines the rate at which accumulating objective signals would
-  weaken it.
+  survive ascertainment control. Current admitted exceptions (the audited set, n=3 as of
+  `interpretation:0015`): `proposition:0013` (a testosterone-conditioned objective female-biased
+  immune-activation signal), `proposition:0012` (the male vascular hard-endpoint reversal is itself a
+  robust objective signal, not an artifact), and `proposition:0025` (long-COVID persistent inflammatory
+  activation — IL-6/JAK-STAT/type-II-IFN + CD8 exhaustion, two cohorts, >180d, no circulating virus — a
+  robust objective case-vs-control difference). This clause is **load-bearing**: it both keeps the
+  hypothesis falsifiable and defines the rate at which accumulating objective signals would weaken it. The
+  `task:t055` audit (`interpretation:0015`) enlarged this set from 2→3, the first reading of the
+  falsification meter: still bounded, not proliferating.
 
 ## Current Uncertainty
 
-The hypothesis is assembled from instances discovered **piecemeal** across four other hypotheses
-(h0001 PEM, h0005 sex, h0006 PEM-muscle, h0007 SFN); it has **never been tested as a regularity**. No
-systematic audit has asked: across N PAIS group-difference claims, what fraction attenuate or reverse under
-objective, trigger-matched, ascertainment-controlled measurement? Until that audit exists, the regularity
-is a pattern noticed, not a rate estimated — its support is real but **anecdotal-aggregate and
-project-internal**. Two further uncertainties: (1) the hypothesis is at risk of unfalsifiability if stated
+The hypothesis was assembled from instances discovered **piecemeal** across four other hypotheses
+(h0001 PEM, h0005 sex, h0006 PEM-muscle, h0007 SFN). The `task:t055` audit
+(`interpretation:0015`) has now tested it **as a regularity** for the first time: across 11 corpus
+group-difference claims (9 determinate), 6/9 are artifact-consistent and the directional sub-structure is
+8/8 (every self-report-channel difference attenuates; every objective-origin difference survives). So the
+regularity is now a **rate estimated, not only a pattern noticed** — but the audit is retrospective,
+project-internal, small-n (11), and coded by the same agent that built the hypothesis, so its support
+remains **anecdotal-aggregate** pending the prospective same-cohort test (criterion #2). Two further uncertainties: (1) the hypothesis is at risk of unfalsifiability if stated
 without the bounding clause; (2) the **mechanism** of the channel bias is unspecified and may differ by
 instance — interoception/illness-behavior (self-report inflation), referral funnels (selection
 enrichment), or definitional drift (scoring) are distinct causes the current evidence cannot separate
@@ -136,6 +143,8 @@ Promote `candidate → active` when:
    (c) whether the effect attenuates/reverses under objective trigger-matched measurement — and shows a
    **directional majority** consistent with M1–M3. This converts the anecdotal instance-collection into a
    quantified regularity with an estimated rate and an explicit exception set.
+   **✓ MET** by `interpretation:0015` (`task:t055`): 11 claims coded, 6/9 determinate claims
+   artifact-consistent, directional sub-structure 8/8 by channel, exception set enumerated and bounded at 3.
 2. **At least one prospective or individual-patient-data test** re-measures a self-report-established PAIS
    difference objectively in the *same* trigger-matched cohort and observes the predicted attenuation —
    moving beyond the current retrospective, cross-study instances.
@@ -171,7 +180,12 @@ meter:
 - **`proposition:0012`** — the male vascular hard-endpoint reversal survives severity adjustment across
   ambulatory and hospitalized strata: a robust objective signal. (It supports M1's *direction-reversal*
   prediction, but as a real objective effect it simultaneously bounds the "objective channels show
-  nothing" caricature.)
+  nothing" caricature.) Provisional: its infection-attributable fraction is unresolved (no uninfected
+  comparator; `question:0021`).
+- **`proposition:0025`** — long-COVID persistent inflammatory activation survives as a robust objective
+  case-vs-control difference (two cohorts, >180 days, no circulating virus). Added to clause B by the
+  `task:t055` audit (`interpretation:0015`): an objective-origin difference that does not attenuate, the
+  third member of the bounded exception set.
 
 ## Evidence Needed To Shift Belief
 

@@ -149,11 +149,3 @@ t052 coded h0002's two distinctive core conjuncts (0023 cross-pathogen tissue/ma
 - created: 2026-06-24
 
 Standing discriminating test for question:0006 / proposition:0026 / hypothesis:0003 driver-vs-marker, committed in pre-registration:0004 (data-gated). On trial readout: check Vehicle-Admissibility Gate G1-G5 (symptom co-primary; pathway/target-engagement readout; placebo-controlled; endotype stratification/enrichment; adequate power+duration). Then apply the locked decision criteria via interpret-results: symptom+pathway co-suppression -> supporting line on proposition:0026 (upward on h0003); pathway suppression WITHOUT symptom benefit -> disputing line (marker-not-driver, falsifier for h0003 maintenance-engine). An unstratified flat null = weak disconfirmation only (wrong-endotype / multi-loop confound). Until readout: standing verdict [?] inconclusive-for-coverage, no bears_on update.
-
-## [t055] Systematic measurement-channel audit of PAIS group-difference claims (h0008 promotion criterion #1)
-- priority: P2
-- status: proposed
-- aspects: []
-- created: 2026-06-24
-
-Code >=10 PAIS group-difference claims in the corpus by (a) measurement channel (self-report vs objective), (b) ascertainment control (case definition / referral / scoring breadth), (c) whether the effect attenuates/reverses under objective trigger-matched measurement. A directional majority consistent with M1-M3 promotes hypothesis:0008 candidate->active and converts the anecdotal instance-collection into a rate estimate with an explicit exception set (proposition:0012, proposition:0013). NOT data-gated: runs on the existing graph. Related: hypothesis:0008, topic:measurement-ascertainment-artifacts-in-pais.
