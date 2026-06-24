@@ -60,6 +60,15 @@ cleared antigen":
   plasma antigen-clearance assay was run** and baseline tissue antigen was scarce (gut-biopsy RNA in only
   1/17). Adds a mechanistically *independent* clearance modality (neutralizing mAb, not an Mpro inhibitor)
   to the same uninterpretable-null pattern.
+- **Dispute — weak, PTLDS parallel:** `evidence-line:0060` (`paper:Krupp2003`, STOP-LD) — 28-day IV
+  ceftriaxone vs placebo in PTLDS patients with persistent severe fatigue (n ~55 [UNVERIFIED]). Mixed
+  result: subjective fatigue (FSS-11) improved significantly; objective cognitive endpoint (mental-speed
+  test) showed no benefit. Authors explicitly declined to recommend retreatment given risks. **No Borrelia
+  antigen, peptidoglycan, or DNA was measured** — the structural gap is identical to the long COVID
+  antiviral nulls. Additional interpretive complication: if the biologically active residue is non-
+  replicating pPG^Bb (McClune2025), ceftriaxone (which targets cell-wall synthesis in replicating
+  bacteria) has no expected clearing mechanism even if fragments are present. Adds the cross-pathogen
+  Borrelia arm to the established-disease-clearance-proxy-null pattern.
 - **Dispute — weak, PTLDS parallel:** `paper:Fallon2008` (Fallon 2008, Neurology) — 10-week IV
   ceftriaxone vs placebo in patients with Lyme encephalopathy (documented prior Lyme, IgG Western blot
   positive, objective memory impairment). Significant broad cognitive improvement at week 12 (end of
