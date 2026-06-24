@@ -15,9 +15,14 @@ related:
 - question:0009-functional-autoantibodies-drive-dysautonomia
 - proposition:0014-pais-small-fiber-structural-lesion-ienfd
 - proposition:0015-pais-sfn-non-length-dependent-pattern
+- proposition:0018-pais-sfn-anti-gpcr-autoantibody-pathogenicity
+- proposition:0019-pais-sfn-immunomodulation-modifies-lesion-trajectory
 - topic:post-infectious-dysautonomia-and-autoimmunity
 - task:t006
-source_refs: []
+source_refs:
+- paper:deSa2026
+- paper:Klein2023
+- paper:Limongelli2026
 created: '2026-06-24'
 updated: '2026-06-24'
 ---
@@ -26,37 +31,48 @@ updated: '2026-06-24'
 ## Claim
 
 The PAIS small-fiber lesion (`proposition:0014`, `proposition:0015`) is **immune-mediated** — caused or
-maintained by an autoimmune process, associated with **functional anti-GPCR autoantibodies**
-(β-adrenergic / muscarinic; the `question:0009` thread) and/or **responsive to immunomodulation** —
-rather than degenerative, metabolic, or deconditioning-driven. Subject = functional anti-GPCR
-autoimmunity; predicate = *causally produces / sustains*; object = the small-fiber structural-functional
-lesion. This is a `causal_effect` / mechanistic claim and the **weakest leg** of `hypothesis:0007`: it
-supplies the mechanism that the non-length-dependent pattern (P2) implicates.
+maintained by an autoimmune process — rather than degenerative, metabolic, or deconditioning-driven.
+Subject = an autoimmune process; predicate = *causally produces / sustains*; object = the peripheral
+small-fiber lesion. This is a `causal_effect` / mechanistic claim and the **weakest leg** of
+`hypothesis:0007`: it supplies the mechanism that the non-length-dependent pattern (P2) implicates.
+
+The claim is deliberately scoped to the **bare immune-mediation** assertion. The two specific evidential
+routes that were previously folded into one elastic "and/or" statement are now carried as **separate,
+individually falsifiable auxiliary propositions**, each supporting (not constituting) this claim:
+`proposition:0018-pais-sfn-anti-gpcr-autoantibody-pathogenicity` (the anti-GPCR-autoantibody mechanism)
+and `proposition:0019-pais-sfn-immunomodulation-modifies-lesion-trajectory` (the interventional
+response). This proposition can be true via a non-antibody immune mechanism even if 0018 fails, and it
+can be supported by 0019 even where the specific autoantibody target is unknown.
 
 ## Evidence Summary
 
-`literature_evidence`, **not yet coded as project evidence-lines** (`task:t006` covers the functional-
-autoantibody lit-search). Functional anti-GPCR autoantibodies are *reported* across post-infectious
-dysautonomia, and immunomodulation (e.g. IVIG) has anecdotal/open-label signal in seropositive subsets —
-the candidate mechanism for P3. But a **pathogenic, fiber-damaging role is largely inferential**: the
-autoantibody→neuropathy link is an association plus biological plausibility, not a demonstrated causal
-mechanism. Coded support is currently absent.
+`literature_evidence`, **not yet deposited as graph evidence-lines** (`task:t006` covers the functional-
+autoantibody lit-search). Corpus-resident summaries the claim leans on: `paper:deSa2026` (a reported
+*causal* link between autoantibodies and neurological symptoms in long COVID, e.g. IgG transfer),
+`paper:Klein2023` (long-COVID immune profiling including autoantibody/serology features), and
+`paper:Limongelli2026` (immune correlates of post-COVID SFN). These motivate immune mediation but the
+detailed pathogenic mechanism is carried by the auxiliary propositions: anti-GPCR pathogenicity
+(`proposition:0018`) and the immunomodulation response (`proposition:0019`, where `paper:Stein2025`'s
+β2-AR-autoantibody immunoadsorption cohort lives). The bare immune-mediation claim therefore has
+**suggestive but uncoded** support; a demonstrated fiber-damaging mechanism remains the open question.
 
 ## Caveats
 
-This is the proposition most exposed to **reverse causation and epiphenomenon** risk: autoantibodies may
-be a marker of immune activation rather than the agent of fiber damage (`proxy_directness: indirect` —
-serum titer proxies the pathogenic mechanism, it does not measure it). The deflationary account
+Immune mediation is inferred indirectly (`proxy_directness: indirect`) — no single measurement reads it
+off directly, so the claim rests on convergence of the auxiliary routes plus exclusion of
+degenerative/metabolic causes. The deflationary account
 (`question:0017-deflationary-alternatives-vs-shared-pathophysiology`) offers a non-autoimmune route to
-the same symptoms. If well-powered immunomodulation trials in autoantibody-positive subsets show **no
-autonomic or IENFD benefit**, this leg is materially weakened even if P1/P2 stand (the lesion would then
-be real and non-length-dependent but not autoimmune). Conditional on P1.
+the same symptoms. Because the claim is now the *bare* immune-mediation assertion, its failure modes are
+narrower than the elastic original: it is **not** falsified merely because the anti-GPCR mechanism (0018)
+fails, since a non-antibody immune mechanism would still satisfy it; it is weakened chiefly if **both**
+auxiliary routes fail *and* a non-immune (e.g. metabolic/degenerative/deconditioning) account better fits
+the lesion. Conditional on P1.
 
 ## Measurement Model
 
-Two linked readouts: (1) **functional anti-GPCR autoantibody assays** (β1/β2-adrenergic, M3/M4-muscarinic
-receptor antibodies; cell-based functional or binding assays) as the exposure proxy; (2) **change in
-autonomic small-fiber measures and IENFD trajectory under immunomodulation** as the interventional test
-of causation. Titer→pathogenicity is the inferential gap: seropositivity is a *proxy* for a pathogenic
-mechanism, so a titer↔severity correlation supports but does not establish the causal claim; the
-immunomodulation-response arm is the stronger identification path.
+This proposition is not measured by a single instrument; it is supported through its two auxiliary
+propositions, which carry the concrete measurement models: anti-GPCR autoantibody assays in
+`proposition:0018` and the immunomodulation-response readout in `proposition:0019`. At this (core) level
+the operational commitment is only that an **immune signature co-localizes with the lesion and that
+non-immune causes are excludable**, with the stronger identification supplied by the interventional
+route (0019).

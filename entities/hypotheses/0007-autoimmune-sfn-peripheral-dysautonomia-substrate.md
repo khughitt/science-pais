@@ -16,6 +16,8 @@ related:
 - proposition:0015-pais-sfn-non-length-dependent-pattern
 - proposition:0016-pais-sfn-autoimmune-causation
 - proposition:0017-pais-sfn-cross-trigger-convergence
+- proposition:0018-pais-sfn-anti-gpcr-autoantibody-pathogenicity
+- proposition:0019-pais-sfn-immunomodulation-modifies-lesion-trajectory
 - hypothesis:0001-shared-dysregulated-attractor
 - hypothesis:0003-immune-exhaustion-feedback
 created: '2026-06-24'
@@ -49,9 +51,13 @@ corpus.
 *Formalized into the graph as durable propositions (`/science:specify-model`, 2026-06-24):
 P1 → `proposition:0014-pais-small-fiber-structural-lesion-ienfd`,
 P2 → `proposition:0015-pais-sfn-non-length-dependent-pattern`,
-P3 → `proposition:0016-pais-sfn-autoimmune-causation`,
-P4 → `proposition:0017-pais-sfn-cross-trigger-convergence`. All four currently carry thin/uncoded
-support pending the `task:t049` SFN-literature ingestion.*
+P3 → `proposition:0016-pais-sfn-autoimmune-causation` (the bare immune-mediation claim),
+P4 → `proposition:0017-pais-sfn-cross-trigger-convergence`. P3's two evidential routes are carried as
+separate, individually falsifiable auxiliary propositions —
+`proposition:0018-pais-sfn-anti-gpcr-autoantibody-pathogenicity` and
+`proposition:0019-pais-sfn-immunomodulation-modifies-lesion-trajectory` (background members of the
+bundle) — so the core causal claim is not made elastic by an "and/or". All currently carry thin/uncoded
+support pending the `task:t049` SFN-literature ingestion (and `task:t006` for the autoantibody routes).*
 
 - **P1 (structural lesion → `proposition:0014`).** A substantial subset of PAIS patients with autonomic symptoms have
   objectively reduced intraepidermal nerve-fiber density (IENFD) or autonomic small-fiber loss on
@@ -62,11 +68,13 @@ support pending the `task:t049` SFN-literature ingestion.*
   (proximal involvement comparable to or exceeding distal), distinguishing it from the
   length-dependent pattern of metabolic/idiopathic SFN and implicating a ganglionopathy / immune-
   mediated mechanism. *(structural_claim.)*
-- **P3 (autoimmune causation).** The lesion is immune-mediated — associated with functional
-  anti-GPCR autoantibodies (β-adrenergic / muscarinic; the `question:0009` thread) and/or
-  responsive to immunomodulation — rather than degenerative or deconditioning-driven.
-  *(causal_effect / mechanistic_narrative; the autoantibody → fiber-dysfunction link is currently a
-  hypothesis, not an established pathogenic mechanism.)*
+- **P3 (autoimmune causation → `proposition:0016`).** The lesion is immune-mediated — caused or
+  sustained by an autoimmune process — rather than degenerative, metabolic, or deconditioning-driven.
+  The two evidential routes are split out so the causal claim is not made elastic: *anti-GPCR
+  autoantibody pathogenicity* (`proposition:0018`; β-adrenergic / muscarinic, the `question:0009`
+  thread) and *immunomodulation modifies the lesion trajectory* (`proposition:0019`). *(causal_effect;
+  the autoantibody → fiber-dysfunction link is the weakest leg — a hypothesis, not an established
+  pathogenic mechanism.)*
 - **P4 (cross-trigger convergence).** The same peripheral SFN substrate recurs across distinct
   triggers (Borrelia/PTLDS, SARS-CoV-2/long COVID, and ME/CFS), supporting a shared end-organ
   failure mode reachable from many infections. *(empirical_regularity.)*

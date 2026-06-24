@@ -16,7 +16,9 @@ related:
 - topic:measurement-ascertainment-artifacts-in-pais
 - proposition:0015-pais-sfn-non-length-dependent-pattern
 - task:t049
-source_refs: []
+source_refs:
+- paper:Limongelli2026
+- paper:Walitt2024
 created: '2026-06-24'
 updated: '2026-06-24'
 ---
@@ -24,24 +26,28 @@ updated: '2026-06-24'
 
 ## Claim
 
-In a substantial subset of post-acute-infection-syndrome (PAIS) patients with autonomic symptoms,
-**objectively reduced intraepidermal nerve-fiber density (IENFD) or autonomic small-fiber loss** is
-present on standardized skin biopsy / autonomic testing. Subject = PAIS patients with autonomic
-symptoms; predicate = *exhibit*; object = a measurable peripheral small-fiber structural deficit. This
-is a `structural_claim` about the **existence of an end-organ lesion** — a real reduction in fiber
-density, not merely a functional or self-reported state. It is P1 of
+In a substantial subset of post-acute-infection-syndrome (PAIS) patients with autonomic symptoms, a
+**peripheral small-fiber structural lesion** is objectively present — measured *directly* as reduced
+**intraepidermal nerve-fiber density (IENFD)** and/or reduced **sweat-gland nerve-fiber density
+(SGNFD)** on standardized skin biopsy. Subject = PAIS patients with autonomic symptoms; predicate =
+*exhibit*; object = a measurable reduction in cutaneous small-fiber density. This is a `structural_claim`
+about the **existence of an end-organ lesion** — a real reduction in fiber density, not merely a
+functional or self-reported state. Functional autonomic testing (QSART, autonomic reflex screen)
+**corroborates** that the affected compartment is small-fiber/autonomic but is *not* itself a structural
+measurement of the lesion (see Measurement Model). It is P1 of
 `hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate` and the existence claim on which
 P2 (`proposition:0015`, the lesion's distribution) and P3 (`proposition:0016`, its causation) depend.
 
 ## Evidence Summary
 
-`literature_evidence`, **not yet coded as project evidence-lines** (ingestion is `task:t049`). The
-empirical seed is skin-biopsy small-fiber neuropathy (SFN) reported in long COVID and ME/CFS and
-small-fiber/autonomic involvement described in PTLDS — e.g. Oaklander et al. 2022 (*Neurol
-Neuroimmunol Neuroinflamm* 9(3):e1146) found SFN the most common abnormality on systematic peripheral-
-neuropathy evaluation of prolonged long COVID. Because none of these reports are yet deposited as
-graph evidence-lines, the proposition currently has **thin coded support**; its support/dispute counts
-should be read as provisional until `task:t049` lands.
+`literature_evidence`, **not yet deposited as graph evidence-lines** (ingestion is `task:t049`). Corpus-
+resident summaries already lean toward P1: `paper:Limongelli2026` reports skin-biopsy small-fiber
+neuropathy with immune correlates in post-acute SARS-CoV-2 syndrome, and `paper:Walitt2024` deep-
+phenotyped post-infectious ME/CFS including autonomic/small-fiber assessment. The broader empirical seed
+includes SFN reported in long COVID and ME/CFS and small-fiber/autonomic involvement in PTLDS — e.g.
+Oaklander et al. 2022 (*Neurol Neuroimmunol Neuroinflamm* 9(3):e1146; not yet a corpus paper entity). The
+listed `source_refs` are summaries the claim leans on, not yet structured support/dispute edges, so coded
+support remains **thin and provisional until `task:t049` lands**.
 
 ## Caveats
 
@@ -54,8 +60,16 @@ not all PAIS autonomic patients, and says nothing yet about the lesion's distrib
 
 ## Measurement Model
 
-The lesion is operationalized as **IENFD on standardized distal (and, for P2, proximal) skin biopsy**
-per established normative cutoffs, supplemented by **QSART** and an **autonomic reflex screen** for the
-autonomic small-fiber compartment. IENFD is treated as a *direct* structural readout of small-fiber
-density (hence `proxy_directness: direct`); the inferential gap is not measurement-to-construct but
-lesion-to-symptom causation, which P3 carries.
+Two tiers, kept distinct:
+
+- **Direct structural readouts** (load-bearing for this `structural_claim`): **IENFD** on standardized
+  distal (and, for P2, proximal) skin biopsy and **SGNFD** on the autonomic (sudomotor) compartment, each
+  read against established site-specific normative cutoffs. These directly index small-fiber density,
+  hence `proxy_directness: direct`.
+- **Functional corroboration** (objective but *not* structural): **QSART** and the **autonomic reflex
+  screen** demonstrate small-fiber/autonomic *dysfunction* and localize the affected compartment, but do
+  not measure fiber density and so cannot by themselves establish a structural lesion. They raise or
+  lower confidence in the structural claim without being part of its truth conditions.
+
+The inferential gap for P1 is therefore *not* measurement-to-construct (IENFD/SGNFD are direct); it is
+lesion-to-symptom causation, which P3 (`proposition:0016`) carries.
