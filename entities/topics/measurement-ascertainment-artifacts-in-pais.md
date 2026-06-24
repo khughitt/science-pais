@@ -13,8 +13,15 @@ related:
 - proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode
 - proposition:0009-dysautonomia-female-skew-is-baseline-carried-not-pais-amplified
 - interpretation:0003-t018-subphenotype-sex-reproductive-stage
+- interpretation:0014-sfn-prevalence-metric-harmonization-reanalysis
+- proposition:0014-pais-small-fiber-structural-lesion-ienfd
+- question:0004-convergent-small-fiber-neuropathy-substrate
 - question:0014-which-pais-case-definition-is-most-biologically-coherent
 - question:0015-does-pem-requirement-improve-cross-study-comparability
+- paper:Novak2026
+- paper:Oaklander2022
+- paper:Joseph2021
+- paper:Walitt2024
 source_refs: []
 created: '2026-06-24'
 updated: '2026-06-24'
@@ -55,6 +62,17 @@ specifically about the **artifact-vs-biology inference**.
 - **Case-definition selection.** Which long-COVID/ME-CFS definition is used selects different
   populations, so apparent molecular/mechanistic differences across studies may be definitional rather
   than biological (`question:0014`, `question:0015`, `topic:pais-case-definition-heterogeneity`).
+- **Endpoint-breadth manufacturing prevalence (worked case: skin-biopsy SFN).** The single largest
+  driver of a cross-study "prevalence" figure can be *what counts as a positive*. In Novak2026 the SFN
+  rate climbs **48% → 67% → 91%** on the *identical* long-COVID patients purely by widening the
+  abnormality definition from sensory ENFD only → any morphological (ENFD or sweat-gland SGNFD) →
+  including functional ESC (`interpretation:0014`). Surprisingly, the percentile *cutoff* rule
+  (QASAT > 0 vs ≤5th-percentile) is a *minor* driver: Novak's QASAT ENFD rate for ME/CFS (33.5%)
+  nearly matches Joseph2021's strict ≤5th-percentile distal rate (31%). And once trigger is held fixed
+  the corpus is concordant (LC ~50–67% across Oaklander + Novak; ME/CFS ~31–33% at the ENFD channel),
+  so the apparent 0%→91% "heterogeneity" is mostly an artifact of pooling triggers and abnormality
+  definitions — not irreconcilable biology. The lesson: an SFN-prevalence number is uninterpretable
+  without stating *trigger + biopsy modality counted + site protocol + cutoff rule*.
 
 ## Current State of Knowledge
 
@@ -76,6 +94,11 @@ specifically about the **artifact-vs-biology inference**.
 
 - Self-report vs objective measures of the same construct (cognition, fatigue) routinely disagree in
   direction or sex-association, which is the core empirical engine of this topic.
+- Skin-biopsy SFN prevalence across PAIS spans 0% (Walitt2024, ME/CFS, adjudicated non-neuropathy-
+  referred cohort) to 91% (Novak2026, LC, broadest definition). `interpretation:0014` shows this
+  tension is largely resolvable: it decomposes into modality breadth, trigger (LC>ME/CFS), and cohort
+  referral-enrichment (which explains the Walitt null), not into a contradiction about whether the
+  lesion exists — every PAIS arm exceeds 0% controls under every metric.
 
 ## Controversies and Open Questions
 
@@ -98,3 +121,5 @@ the discipline the synthesis identified as recurring but previously un-housed.
 - Boneva2015 (ME/CFS early-menopause) via `interpretation:0003`.
 - Appelman2024 / Gattoni2025 (muscle vs whole-body PEM endpoints) via
   `interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation`.
+- Oaklander2022 / Joseph2021 / Walitt2024 / Novak2026 (skin-biopsy SFN prevalence harmonization) via
+  `interpretation:0014-sfn-prevalence-metric-harmonization-reanalysis`.
