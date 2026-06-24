@@ -41,14 +41,13 @@ additional triggers** to fold in once SFN / autonomic small-fiber data exist for
 
 ## Evidence Summary
 
-`literature_evidence`, **not yet deposited as graph evidence-lines** (`task:t049`). Small-fiber /
-autonomic involvement is separately documented per syndrome in corpus-resident summaries:
-`paper:Adler2024` (dysautonomia as a core PTLDS component), `paper:Walitt2024` (deep-phenotyped
-infection-associated ME/CFS with autonomic assessment), and `paper:Limongelli2026` (post-COVID SFN) —
-the empirical seed for convergence. But no study in the corpus compares these syndromes **head-to-head
-under one standardized protocol**, so "the same substrate" is currently an aggregation of separate
-single-syndrome reports, not a demonstrated cross-syndrome equivalence. Coded support is absent pending
-ingestion.
+`literature_evidence`, **coded via `task:t049`** (`interpretation:0009-t049-sfn-cross-syndrome-ingestion`).
+P4 is **supported in breadth**: SFN is documented in long COVID (`evidence-line:0038`, `paper:Oaklander2022`),
+ME/CFS (`evidence-line:0043`, `paper:Joseph2021`), PTLDS (`evidence-line:0044`, `paper:Adler2024`), and
+post-vaccine PASC (`paper:Limongelli2026`). But no study compares these syndromes **head-to-head under one
+standardized protocol**; the protocols are heterogeneous (paired vs distal-only vs narrative review); and
+the ME/CFS leg is **internally contested** (Joseph 31% positive vs the Walitt2024 null). This is
+convergence of the *finding*, not yet of a standardized *substrate*.
 
 ## Caveats
 

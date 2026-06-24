@@ -37,13 +37,14 @@ could be true. It is the single weakest link in `hypothesis:0007`.
 
 ## Evidence Summary
 
-`literature_evidence`, **not yet deposited as graph evidence-lines** (`task:t006`). The strongest
-corpus-resident pointer is `paper:deSa2026`, which reports a *causal* autoantibody→neurological-symptom
-link in long COVID (e.g. IgG passive-transfer reproducing symptoms in an animal model) — the kind of
-design that can move this from association to pathogenicity. `paper:Stein2025` (β2-adrenergic-receptor
-autoantibody-selected post-COVID ME/CFS) and `paper:Limongelli2026` (immune correlates of post-COVID SFN)
-supply human associational support. None is yet coded as a structured support edge, and none directly
-demonstrates anti-GPCR-antibody damage *to small fibers specifically*.
+`literature_evidence`, **coded via `task:t049`** (`interpretation:0009-t049-sfn-cross-syndrome-ingestion`) —
+and the **weakest leg**. The only coded support is `evidence-line:0048` (`paper:Stein2025`, weak/proxy:
+anti-GPCR β2-AR autoantibody selection + depletion-associated autonomic improvement, but β2-AR reduction
+did **not** predict response). Critically, the strongest *causal* autoantibody evidence (`paper:deSa2026`,
+`evidence-line:0045`, coded against `proposition:0016`) targeted **non-GPCR** antigens (MED20/USP5) and did
+**not** recapitulate the autonomic axis — so anti-GPCR-specific pathogenicity *of small fibers / the
+autonomic lesion* remains essentially unproven. `task:t006` should seek anti-GPCR evidence on the
+autonomic axis specifically.
 
 ## Caveats
 

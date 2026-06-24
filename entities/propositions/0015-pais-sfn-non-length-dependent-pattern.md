@@ -38,15 +38,14 @@ autoimmune-causation claim P3 (`proposition:0016`).
 
 ## Evidence Summary
 
-`literature_evidence`, **not yet deposited as graph evidence-lines** (`task:t049`). The discriminating
-methodology is established: **norm-referenced proximal vs distal IENFD** on paired skin biopsy
-distinguishes length-dependent neuropathy from non-length-dependent ganglionopathy, so the claim is
-*operationally testable* wherever proximal-plus-distal sampling is performed. `paper:Limongelli2026`
-supplies a corpus-resident SFN skin-biopsy anchor in post-acute SARS-CoV-2 syndrome, but it is cited as
-a **P1-level lesion anchor that does not by itself settle the distribution question** (it is not a
-paired-site distribution study). Whether PAIS cohorts actually show the non-length-dependent pattern at
-elevated rates is **not yet established in the corpus** — most studies sample distal sites only and
-cannot address it. Coded support is currently absent pending ingestion.
+`literature_evidence`, **coded via `task:t049`** (`interpretation:0009-t049-sfn-cross-syndrome-ingestion`).
+The discriminating methodology is established (norm-referenced proximal vs distal IENFD on paired biopsy),
+but P2 is **thinly documented**: the only clean paired-site non-length-dependent fraction is
+`evidence-line:0041` (`paper:Limongelli2026` — 33% NLD on paired calf+thigh, **but post-*vaccine***);
+`evidence-line:0042` (`paper:Oaklander2022`) adds weak, non-independent support via distal≈proximal
+near-parity *without* a per-patient NLD classification. The largest study (`paper:Joseph2021`) was
+distal-only and **cannot assess P2**. The non-length-dependent pattern is therefore **asserted more than
+measured** — the least-supported leg, and the central methodological gap behind `question:0004`.
 
 ## Caveats
 

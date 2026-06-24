@@ -149,12 +149,3 @@ h0003 has claim_count=0. Two deposits possible now: (1) Register NCT06597396 (JA
 - created: 2026-06-24
 
 Both q0020 and q0021 need the SAME missing design: an ambulatory cohort with a sex-stratified UNINFECTED / test-negative comparator and post-acute (31-180d) vascular hard-endpoint follow-up. DELIVERABLE: (1) lit/dataset scan for such a cohort (candidates: VA Million Veteran / Al-Aly programme with test-negative controls; OpenSAFELY; Clalit/Kopp2024 source; N3C) reporting VTE/MI/CV-death by sex with an uninfected baseline; (2) if found, estimate the male PASC vascular excess as a ratio-of-ratios (COVID M:F vs uninfected M:F) or sex x infection interaction = the infection-attributable increment over male baseline; (3) feed result into proposition:0012 (does the reversal carry a COVID-specific component or dissolve to baseline carryover?) and into how sex x severity should be jointly modeled in the pre-registered work. If no such cohort exists, record the design gap explicitly. Empirical.
-
-## [t049] Ingest cross-syndrome small-fiber-neuropathy skin-biopsy / autonomic-testing literature to seed h0007 (P1/P2/P4)
-- priority: P2
-- status: proposed
-- aspects: []
-- related: [hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate,question:0004-convergent-small-fiber-neuropathy-substrate,topic:post-infectious-dysautonomia-and-autoimmunity]
-- created: 2026-06-24
-
-h0007 (autoimmune-SFN peripheral substrate) is literature-only with no coded evidence-lines. Ingest and code the skin-biopsy / autonomic-function SFN literature across PAIS triggers: long COVID (e.g. Oaklander2022  INSPIRE; Abrams2022), ME/CFS small-fiber reports, and PTLDS/post-Lyme autonomic involvement. For each, record: IENFD method (distal-only vs proximal+distal -> bears on the non-length-dependent P2 claim), case definition, presence of primary-dysautonomia controls (almost always absent = the key gap behind question:0004), and any functional-autoantibody serology. Goal: convert h0007's prose 'Supporting Evidence' into coded evidence-lines and establish whether the non-length-dependent pattern (P2) and cross-trigger convergence (P4) are actually documented or merely asserted. Empirical. Verify all paper titles/authors before ingesting.

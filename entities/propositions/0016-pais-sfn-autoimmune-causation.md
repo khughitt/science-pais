@@ -21,8 +21,7 @@ related:
 - task:t006
 source_refs:
 - paper:deSa2026
-- paper:Klein2023
-- paper:Limongelli2026
+- paper:Walitt2024
 created: '2026-06-24'
 updated: '2026-06-24'
 ---
@@ -46,15 +45,21 @@ can be supported by 0019 even where the specific autoantibody target is unknown.
 
 ## Evidence Summary
 
-`literature_evidence`, **not yet deposited as graph evidence-lines** (`task:t006` covers the functional-
-autoantibody lit-search). Corpus-resident summaries the claim leans on: `paper:deSa2026` (a reported
-*causal* link between autoantibodies and neurological symptoms in long COVID, e.g. IgG transfer),
-`paper:Klein2023` (long-COVID immune profiling including autoantibody/serology features), and
-`paper:Limongelli2026` (immune correlates of post-COVID SFN). These motivate immune mediation but the
-detailed pathogenic mechanism is carried by the auxiliary propositions: anti-GPCR pathogenicity
-(`proposition:0018`) and the immunomodulation response (`proposition:0019`, where `paper:Stein2025`'s
-β2-AR-autoantibody immunoadsorption cohort lives). The bare immune-mediation claim therefore has
-**suggestive but uncoded** support; a demonstrated fiber-damaging mechanism remains the open question.
+`literature_evidence`, **coded via `task:t049`** (`interpretation:0009-t049-sfn-cross-syndrome-ingestion`).
+The claim is **split**: causally supported for long COVID and disputed for ME/CFS.
+- **Support (strong, causal):** `evidence-line:0045` — `paper:deSa2026` passive-transfers long-COVID patient
+  IgG to mice and reduces intraepidermal nerve fibers, demonstrating autoantibodies are *sufficient* to
+  produce SFN. (Caveat carried below: its validated autoantigens were non-GPCR and it did not reproduce
+  the autonomic axis.)
+- **Dispute (weak):** `evidence-line:0046` — `paper:Walitt2024` found *no uniform autoantibody signal* in
+  rigorously adjudicated PI-ME/CFS, arguing against a pan-PAIS autoimmune mechanism (underpowered, n=17).
+
+So immune mediation is **trigger-specific in current evidence** (demonstrated for LC, absent in the best
+ME/CFS cohort), not pan-PAIS. The detailed pathogenic mechanism is carried by the auxiliary propositions:
+anti-GPCR pathogenicity (`proposition:0018`) and the immunomodulation response (`proposition:0019`, where
+`paper:Stein2025`'s β2-AR-autoantibody immunoadsorption cohort lives). `paper:Klein2023` (LC immune
+profiling) and `paper:Limongelli2026` (immune correlates of post-COVID SFN) remain supporting *context*
+in the broader literature but are not coded as 0016-targeted evidence-lines.
 
 ## Caveats
 

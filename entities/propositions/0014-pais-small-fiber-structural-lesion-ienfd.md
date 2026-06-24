@@ -40,14 +40,16 @@ P2 (`proposition:0015`, the lesion's distribution) and P3 (`proposition:0016`, i
 
 ## Evidence Summary
 
-`literature_evidence`, **not yet deposited as graph evidence-lines** (ingestion is `task:t049`). Corpus-
-resident summaries already lean toward P1: `paper:Limongelli2026` reports skin-biopsy small-fiber
-neuropathy with immune correlates in post-acute SARS-CoV-2 syndrome, and `paper:Walitt2024` deep-
-phenotyped post-infectious ME/CFS including autonomic/small-fiber assessment. The broader empirical seed
-includes SFN reported in long COVID and ME/CFS and small-fiber/autonomic involvement in PTLDS — e.g.
-Oaklander et al. 2022 (*Neurol Neuroimmunol Neuroinflamm* 9(3):e1146; not yet a corpus paper entity). The
-listed `source_refs` are summaries the claim leans on, not yet structured support/dispute edges, so coded
-support remains **thin and provisional until `task:t049` lands**.
+`literature_evidence`, **coded via `task:t049`** (`interpretation:0009-t049-sfn-cross-syndrome-ingestion`).
+P1 is now supported across triggers, with one rigorous null:
+- **Support:** `evidence-line:0038` (`paper:Oaklander2022` — long COVID, paired distal+proximal biopsy,
+  62.5% distal IENFD abnormal) and `evidence-line:0039` (`paper:Joseph2021` — ME/CFS, 31% SFN, n=160,
+  distal-only; the largest series).
+- **Dispute:** `evidence-line:0040` (`paper:Walitt2024` — rigorously adjudicated NIH PI-ME/CFS, *no*
+  small-fiber-density difference; n=17).
+Additional context (post-vaccine PASC 90% reduced density; the PTLDS series 10/10) is summarized in
+`interpretation:0009`. Net: **documented but prevalence is protocol- and cohort-sensitive**, not
+established universal.
 
 ## Caveats
 

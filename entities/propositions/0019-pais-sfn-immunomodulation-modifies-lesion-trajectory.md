@@ -36,12 +36,13 @@ account.
 
 ## Evidence Summary
 
-`literature_evidence`, **not yet deposited as graph evidence-lines**. The corpus anchor is
-`paper:Stein2025` — a prospective cohort of repeated **immunoadsorption** in post-COVID ME/CFS patients
-selected for elevated **β2-adrenergic-receptor autoantibodies**, reporting symptomatic efficacy in a
-seropositive subset. This is the most direct corpus-resident support for the route, but it is
-**uncontrolled** (prospective cohort, not RCT) and its endpoints are symptomatic/functional rather than a
-measured small-fiber-lesion (IENFD/SGNFD) trajectory. Not yet coded as a structured edge.
+`literature_evidence`, **coded via `task:t049`** (`interpretation:0009-t049-sfn-cross-syndrome-ingestion`).
+The corpus anchor is `evidence-line:0047` (`paper:Stein2025`) — repeated **immunoadsorption** in β2-AR-AB-
+elevated post-COVID ME/CFS (n=20): 70% responders, COMPASS-31 autonomic improvement sustained to 6 months.
+**Proof-of-concept only:** uncontrolled (no sham; the RituxME open-label→RCT-null precedent), β2-AR
+depletion did *not* predict response, and the endpoints are symptomatic/autonomic rather than a measured
+small-fiber-lesion (IENFD/SGNFD) trajectory — so the **structural** claim this route underwrites is left
+untouched.
 
 ## Caveats
 

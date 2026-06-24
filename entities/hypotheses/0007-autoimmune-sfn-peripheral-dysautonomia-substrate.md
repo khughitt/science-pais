@@ -58,8 +58,10 @@ P4 → `proposition:0017-pais-sfn-cross-trigger-convergence`. P3's two evidentia
 separate, individually falsifiable auxiliary propositions —
 `proposition:0018-pais-sfn-anti-gpcr-autoantibody-pathogenicity` and
 `proposition:0019-pais-sfn-immunomodulation-modifies-lesion-trajectory` (background members of the
-bundle) — so the core causal claim is not made elastic by an "and/or". All currently carry thin/uncoded
-support pending the `task:t049` SFN-literature ingestion (and `task:t006` for the autoantibody routes).*
+bundle) — so the core causal claim is not made elastic by an "and/or". All are now coded against
+literature evidence-lines via `task:t049` (`interpretation:0009-t049-sfn-cross-syndrome-ingestion`):
+P1/P4 supported, P2 and the anti-GPCR route (0018) the thinnest legs; `task:t006` still owns deeper
+anti-GPCR autonomic-axis evidence.*
 
 - **P1 (structural lesion → `proposition:0014`).** A substantial subset of PAIS patients with autonomic symptoms have
   objectively reduced intraepidermal nerve-fiber density (IENFD) or autonomic small-fiber loss on
@@ -92,8 +94,11 @@ support pending the `task:t049` SFN-literature ingestion (and `task:t006` for th
 
 ## Current Uncertainty
 
-The frame is **literature-only and assembled**, not yet tested within this project (no interpretations
-or graph propositions deposited). Key fragilities: SFN prevalence estimates in long COVID/ME/CFS vary
+The frame is now **literature-coded** but only **partially supported**:
+`interpretation:0009-t049-sfn-cross-syndrome-ingestion` deposited 11 evidence-lines (`evidence-line:0038`–
+`0048`) across P1–P4 and the autoantibody routes. P1 (lesion) and P4 (cross-trigger breadth) are
+supported; P2 (non-length-dependent) and the anti-GPCR route (`proposition:0018`) remain the thinnest
+legs. Key fragilities: SFN prevalence estimates in long COVID/ME/CFS vary
 widely by biopsy protocol and case definition (a `topic:measurement-ascertainment-artifacts-in-pais`
 concern); the **non-length-dependent** claim (P2) requires proximal-plus-distal sampling that many
 studies omit; the autoantibody→neuropathy causal link (P3) is the weakest leg — functional
@@ -153,10 +158,17 @@ than a committed hypothesis.
   (non-length-dependent pattern) CANNOT be assessed. No primary-dysautonomia controls; no
   autoantibody serology. See `paper:Joseph2021`. **Supports P1 and P4 (ME/CFS arm); does NOT
   address P2, P3.**
-- *(literature, remaining to be ingested)* Small-fiber / autonomic involvement in PTLDS is the
-  remaining empirical seed for P4. Not yet coded as a project evidence-line; ingesting it is
-  `task:t049`.
-- *(literature, indirect)* The functional anti-GPCR autoantibody literature (the `question:0009` /
+- **`cite:Adler2024`:** PTLDS leg of P4 — narrative review citing a series in which 10/10 well-defined
+  PTLDS patients had abnormal IENFD/SGNFD, plus explicit PTLDS↔long COVID↔ME/CFS cross-syndrome framing.
+  Coded as `evidence-line:0044` (weak; narrative review, no controls). Supports P4 (PTLDS arm).
+- **`cite:deSa2026`:** the causal anchor for P3/`proposition:0016` — long-COVID IgG passive transfer
+  reduces intraepidermal nerve fibers in mice (`evidence-line:0045`, strong/interventional). Note its
+  autoantigens were **non-GPCR** (MED20/USP5) and it did not recapitulate the autonomic axis.
+- **`cite:Stein2025`:** β2-AR-autoantibody-selected immunoadsorption improves autonomic symptoms
+  (`evidence-line:0047` → `proposition:0019`; `evidence-line:0048` weak → `proposition:0018`).
+- **`cite:Walitt2024` (disputing):** rigorously adjudicated PI-ME/CFS with *no* small-fiber-density
+  difference and *no* uniform autoantibody (`evidence-line:0040` → P1; `evidence-line:0046` → 0016).
+- *(literature, indirect)* The broader functional anti-GPCR autoantibody literature (the `question:0009` /
   `task:t006` thread) supplies the candidate immune mechanism for P3.
 - *(project)* `proposition:0009-dysautonomia-female-skew-is-baseline-carried-not-pais-amplified`
   supports A2's framing of the sex distribution as baseline-carried.
