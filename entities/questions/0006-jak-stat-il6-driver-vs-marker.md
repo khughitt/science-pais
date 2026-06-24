@@ -16,8 +16,14 @@ source_refs:
 - cite:Ganesh2022
 related:
 - topic:long-covid-immune-dysregulation
+- topic:therapeutics-and-clinical-trials
+- hypothesis:0003-immune-exhaustion-feedback
+- proposition:0025-lc-persistent-inflammatory-activation-dissociated-ifn
+- proposition:0026-lc-jakstat-exhaustion-loop-is-proximal-driver
+- pre-registration:0004-jak1-inhibitor-driver-vs-marker
+- interpretation:0012-t047-h0003-ifn-reconciliation-and-jak1-trial-registration
 created: '2026-06-11'
-updated: '2026-06-11'
+updated: '2026-06-24'
 ---
 
 # Is persistent JAK-STAT/IL-6 signaling a proximal driver of post-acute chronicity (reversible by inhibition) or a downstream marker, and is the axis shared beyond SARS-CoV-2?
@@ -33,8 +39,9 @@ Persistent JAK-STAT/IL-6 signaling is one of the most reproducible inflammatory 
 
 ## Current Evidence
 
-- Supporting: Aid2025 shows persistent JAK-STAT/IL-6/IFN/complement activation >180 days with no circulating virus and frames it as a failed negative-feedback loop and a therapeutic target; Ganesh2022 finds durable IL-6 elevation (often discordant with CRP/ESR).
-- Conflicting / gaps: causal direction is untested (driver vs marker); bulk assays cannot identify the cell source (Aid2025); no cross-PAIS pathway-level comparison exists, so generalizability beyond SARS-CoV-2 is unknown; Ryan2022's IFN-I *suppression* signal complicates a simple "persistent activation" picture.
+- Supporting: Aid2025 shows persistent JAK-STAT/IL-6/IFN/complement activation >180 days with no circulating virus and frames it as a failed negative-feedback loop and a therapeutic target; Ganesh2022 finds durable IL-6 elevation (often discordant with CRP/ESR). The persistent-activation state is now coded as `proposition:0025` (supported).
+- Conflicting / gaps: causal direction is untested (driver vs marker) — this is the open core, coded as `proposition:0026` (untested, `speculative`); bulk assays cannot identify the cell source (Aid2025); no cross-PAIS pathway-level comparison exists, so generalizability beyond SARS-CoV-2 is unknown. **Ryan2022's IFN-I *suppression* no longer "complicates" the picture** — t047 (`interpretation:0012`) reconciled it as the *type-I antiviral-effector* arm of a dissociated IFN signature (vs Aid2025's persistent *type-II/inflammatory* arm), so it is not a contradiction.
+- **Standing discriminating test REGISTERED (t047):** `pre-registration:0004` (data-gated) commits the driver-vs-marker decision rule on the abrocitinib JAK1-inhibitor RCT **NCT06597396** — symptom + pathway co-suppression → driver (upward on `proposition:0026`/h0003); pathway suppression without symptom benefit → marker (disputing/falsifier). Standing verdict `[?]` inconclusive-for-coverage until readout (tracked by t054).
 
 ## Thoughts
 

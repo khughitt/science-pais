@@ -11,11 +11,17 @@ source_refs:
 related:
 - topic:long-covid-immune-dysregulation
 - topic:shared-failure-mode-across-pais
+- topic:therapeutics-and-clinical-trials
 - question:0006-jak-stat-il6-driver-vs-marker
 - hypothesis:0002-tissue-reservoir-antigen-fragment
 - immunity:research-question:immune-homeostasis-and-dysregulation
+- proposition:0025-lc-persistent-inflammatory-activation-dissociated-ifn
+- proposition:0026-lc-jakstat-exhaustion-loop-is-proximal-driver
+- pre-registration:0004-jak1-inhibitor-driver-vs-marker
+- interpretation:0012-t047-h0003-ifn-reconciliation-and-jak1-trial-registration
+- task:t047
 created: '2026-06-11'
-updated: '2026-06-11'
+updated: '2026-06-24'
 ---
 # Hypothesis: Post-acute chronicity is sustained by a self-reinforcing loop of unresolved antigenic stimulation and T-cell exhaustion that fails to terminate inflammation
 
@@ -27,9 +33,20 @@ Post-acute chronicity is *maintained* by a positive-feedback loop between unreso
 
 ### Core Propositions
 
-- Long COVID exhibits persistent activation of JAK-STAT, IL-6, IFN, and complement pathways beyond 180 days with no detectable circulating virus (Aid2025).
-- This persistent activation co-occurs with CD8+ T-cell exhaustion in the same patients (Aid2025).
-- The two are causally coupled in a self-reinforcing cycle: unresolved antigenic/inflammatory stimulation drives exhaustion, and exhaustion perpetuates failure to terminate inflammation — a loop absent in full recovery (Aid2025).
+Coded as graph propositions (t047, 2026-06-24). The hypothesis is their **conjunction** — the loop
+requires *both* that the inflammatory state exists *and* that it is causal — so it grades `speculative`
+until the causal pillar is tested:
+
+- **`proposition:0025` — persistent inflammatory activation + dissociated IFN (SUPPORTED).** LC exhibits
+  sustained IL-6/JAK-STAT/type-II-IFN/complement tone with a *blunted type-I antiviral-effector arm*,
+  alongside CD8 exhaustion, beyond 180d with no circulating virus — `evidence-line:0061` (Aid2025,
+  moderate) + `evidence-line:0062` (Ryan2022, weak). This conjunct **folds the persistent-activation and
+  exhaustion-co-occurrence observations together** and resolves the former Aid2025-vs-Ryan2022 IFN tension
+  (see Current Uncertainty).
+- **`proposition:0026` — the loop is a proximal driver (UNTESTED).** The activation+exhaustion coupling
+  *causally maintains* chronicity (reversible by inhibition), not merely marks it. No coded evidence —
+  the discriminating test is the JAK1-inhibitor trial, committed in `pre-registration:0004` (data-gated,
+  NCT06597396). Grades `speculative`.
 
 ### Supporting Or Auxiliary Propositions
 
@@ -38,10 +55,11 @@ Post-acute chronicity is *maintained* by a positive-feedback loop between unreso
 
 ## Current Uncertainty
 
-- Causal direction (exhaustion → persistent inflammation vs the reverse) is asserted from cross-sectional/observational multi-omics, not demonstrated by perturbation (Aid2025).
+- Causal direction (exhaustion → persistent inflammation vs the reverse) is asserted from cross-sectional/observational multi-omics, not demonstrated by perturbation (Aid2025). This is the untested `proposition:0026`, gated on `pre-registration:0004`.
 - The cell source sustaining the IL-6/JAK-STAT signal is unresolved (bulk assays; Aid2025) — see `question:0006`.
-- There is an apparent tension between "persistent IFN activation" (Aid2025) and "IFN-I suppression" (Ryan2022); reconciling these by timing/compartment/endotype is unproven.
+- **IFN tension RESOLVED (t047, `interpretation:0012`).** The apparent conflict between "persistent IFN activation" (Aid2025) and "IFN-I suppression" (Ryan2022) is reconciled as a **dissociated IFN signature**: Aid2025 indexes the *type-II/inflammatory* arm (IFNγ + IL-6/JAK-STAT, PBMC, LC-vs-recovered, >180d) while Ryan2022 indexes the *type-I antiviral-effector* arm (MX1/OAS3/OASL, whole blood, referral-vs-convalescent, 6-mo bifurcation). Persistent inflammatory tone + tolerized type-I effectors is the *predicted* exhausted-innate-sensing signature, so Ryan2022 now **supports** `proposition:0025` rather than disputing it. Residual: the two arms are inferred across studies, not co-measured in the same patients (the discriminating confirmation).
 - Whether the loop is sustained by genuine antigen (hypothesis 0002) or has become antigen-independent (sterile) is unknown and therapeutically pivotal.
+- **Belief-graph note (t047, 2026-06-24).** h0003's bundle is conjunctive over its core members: `proposition:0025` (descriptive state) is **supported**, but `proposition:0026` (the causal-driver loop) is **untested** and gated on the JAK1 trial — so the conjunction grades h0003 honestly **`speculative`** ("the inflammatory-arm signature is real; the maintenance-engine claim is unproven"). A descriptive state being well-evidenced must not promote the causal loop; that is exactly what `pre-registration:0004` exists to test. (Same honest-conjunction structure as `hypothesis:0002` post-t052.)
 
 ## Predictions
 
@@ -65,14 +83,14 @@ Confidence would be materially reduced if:
 
 ## Supporting Evidence
 
-- **Aid2025 (empirical-data, two cohorts):** persistent JAK-STAT/IL-6/IFN/complement activation + CD8+ exhaustion >180 days, no circulating virus; explicit self-reinforcing-cycle interpretation; motivated a JAK1-inhibitor trial.
-- **Ryan2022 (empirical-data):** late (5-6 month) bifurcation; blunted IFN-I transcription as a long-COVID-referral-specific signal — consistent with exhausted/tolerized innate sensing.
+- **Aid2025 (empirical-data, two cohorts):** persistent JAK-STAT/IL-6/IFN/complement activation + CD8+ exhaustion >180 days, no circulating virus; explicit self-reinforcing-cycle interpretation; motivated a JAK1-inhibitor trial. Now **coded as `evidence-line:0061` (moderate, supports `proposition:0025`)** (t047).
+- **Ryan2022 (empirical-data):** late (5-6 month) bifurcation; blunted *type-I* IFN-effector transcription (MX1/OAS3/OASL) as a long-COVID-referral-specific signal — consistent with exhausted/tolerized innate sensing. Now **coded as `evidence-line:0062` (weak, supports `proposition:0025`)** as the dissociated type-I-effector arm (t047) — *no longer a disputing tension* (see Current Uncertainty).
 - Ganesh2022 (persistent IL-6) and Talla2023 (persistent inflammatory endotypes) are consistent with durable non-terminating inflammation.
 
 ## Disputing Evidence
 
-- **Ryan2022 vs Aid2025 tension:** IFN-I *suppression* vs persistent IFN *activation* — if irreconcilable, the loop's inflammatory arm is mischaracterized.
-- Broad single-agent therapeutic trials show mostly weak/null effects (Seo2025), which a simple single-loop model would not predict if the loop were the dominant, easily interruptible driver — favoring the multi-loop view of hypothesis 0001 over a single exhaustion loop.
+- **(Resolved) Ryan2022 vs Aid2025 IFN tension** — reconciled (t047, `interpretation:0012`) as a dissociated IFN signature (type-II/inflammatory tone up; type-I antiviral effectors down), not a contradiction; both papers now *support* `proposition:0025`. Retained here only as a pointer to the resolution.
+- Broad single-agent therapeutic trials show mostly weak/null effects (Seo2025), which a simple single-loop model would not predict if the loop were the dominant, easily interruptible driver — favoring the multi-loop view of hypothesis 0001 over a single exhaustion loop. This is the live caution on `proposition:0026` and is built into `pre-registration:0004`'s null-result plan (an unstratified flat null is weak disconfirmation).
 
 ## Evidence Needed To Shift Belief
 
