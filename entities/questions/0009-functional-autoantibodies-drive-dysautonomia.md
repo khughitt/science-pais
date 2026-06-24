@@ -20,10 +20,10 @@ related:
 - topic:post-infectious-dysautonomia-and-autoimmunity
 - question:0005-latent-to-overt-autoimmunity-conversion
 - hypothesis:0001-shared-dysregulated-attractor
+- hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
 created: '2026-06-11'
-updated: '2026-06-11'
+updated: '2026-06-24'
 ---
-
 # Do functional GPCR autoantibodies (β-adrenergic/muscarinic) mechanistically drive dysautonomia and POTS across long COVID and ME/CFS?
 
 ## Summary

@@ -122,3 +122,39 @@ Boneva2015 reports early menopause (<=45) adj OR 3.20 and ~10y earlier mean age 
 - created: 2026-06-23
 
 Surfaced during t019 HRT-evidence audit (interpretation:0008). Neuhouser et al., 'Risk factors for long COVID syndrome in postmenopausal women with previously reported diagnosis of COVID-19', Ann Epidemiol 2024 (WHI; PMC11405002; DOI 10.1016/j.annepidem.2024.xx). n>1,230 COVID-19, 425 long COVID, ML top-20 risk-factor screen. Reported top predictors (weight loss, mobility, RA, heart-valve procedures, sleep) do NOT include HRT. Triage from full text: was menopausal hormone therapy in the candidate feature set (unselected) or never examined? If MHT was examined/reported (even null), add as the first WHI-grade HRT-vs-long-COVID evidence-line on proposition:0006 and correct interpretation:0003's matrix line. Ingest as paper:Neuhouser2024 + references.bib entry.
+
+## [t046] Code antiviral / antigen-clearance trials against question:0002 (clearance-rescues-symptoms) to deposit first evidence on h0002
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [hypothesis:0002-tissue-reservoir-antigen-fragment, question:0002-antigen-clearance-rescues-symptoms, topic:antigen-pathogen-persistence, discussion:0003-antigen-persistence-treatable-vs-fixed]
+- created: 2026-06-24
+
+h0002 has claim_count=0 - no study coded against question:0002. Identify and code published antiviral/antigen-clearance interventions in ESTABLISHED long COVID (e.g. nirmatrelvir/ritonavir RCTs - STOP-PASC/Geng2024, PAXLC; metformin; monoclonal/antiviral arms) plus any Borrelia/Coxiella clearance evidence, classifying each as supporting 'clearance rescues symptoms' (driver) vs null (epiphenomenon). Hypothesis file already notes early antiviral trials have NOT clearly improved symptoms - weakening the clearance-rescues corollary; make that an explicit coded evidence-line rather than prose. Bridges to health-immunity; promote via commons if mechanism-general.
+
+## [t047] Track JAK-inhibitor RCT NCT06597396 and reconcile the Aid2025 persistent-IFN vs Ryan2022 IFN-I-suppression contradiction (h0003)
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [hypothesis:0003-immune-exhaustion-feedback, question:0006-jak-stat-il6-driver-vs-marker, topic:long-covid-immune-dysregulation, topic:therapeutics-and-clinical-trials]
+- created: 2026-06-24
+
+h0003 has claim_count=0. Two deposits possible now: (1) Register NCT06597396 (JAK1 inhibitor in long COVID) as the standing driver-vs-marker discriminating test for question:0006 and track its readout; a symptom-reduction + pathway-suppression co-endpoint = upward evidence for the exhaustion-feedback loop as an intervention target, a clean null = marker-not-driver. (2) Reconcile the internal contradiction the synthesis flagged: Aid2025 reports persistent IFN activation beyond 180d while Ryan2022 reports IFN-I SUPPRESSION at ~6 mo. Resolve by timing/compartment/endotype or record as an open tension that, if irreducible, mischaracterizes the loop's inflammatory arm. Mechanism-general - coordinate with health-immunity, promote via commons if warranted.
+
+## [t048] Find a sex-stratified COVID-vs-uninfected ambulatory cohort to estimate the infection-attributable male vascular excess (31-180d) for q0020/q0021
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [question:0021-male-vascular-reversal-covid-specific-vs-baseline-carryover, question:0020-male-vte-excess-post-acute-persistence, proposition:0012-vascular-hard-endpoint-male-reversal-survives-severity-adjustment, hypothesis:0004-acute-severity-threshold, topic:thromboinflammation-and-endothelial-dysfunction]
+- created: 2026-06-24
+
+Both q0020 and q0021 need the SAME missing design: an ambulatory cohort with a sex-stratified UNINFECTED / test-negative comparator and post-acute (31-180d) vascular hard-endpoint follow-up. DELIVERABLE: (1) lit/dataset scan for such a cohort (candidates: VA Million Veteran / Al-Aly programme with test-negative controls; OpenSAFELY; Clalit/Kopp2024 source; N3C) reporting VTE/MI/CV-death by sex with an uninfected baseline; (2) if found, estimate the male PASC vascular excess as a ratio-of-ratios (COVID M:F vs uninfected M:F) or sex x infection interaction = the infection-attributable increment over male baseline; (3) feed result into proposition:0012 (does the reversal carry a COVID-specific component or dissolve to baseline carryover?) and into how sex x severity should be jointly modeled in the pre-registered work. If no such cohort exists, record the design gap explicitly. Empirical.
+
+## [t049] Ingest cross-syndrome small-fiber-neuropathy skin-biopsy / autonomic-testing literature to seed h0007 (P1/P2/P4)
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate,question:0004-convergent-small-fiber-neuropathy-substrate,topic:post-infectious-dysautonomia-and-autoimmunity]
+- created: 2026-06-24
+
+h0007 (autoimmune-SFN peripheral substrate) is literature-only with no coded evidence-lines. Ingest and code the skin-biopsy / autonomic-function SFN literature across PAIS triggers: long COVID (e.g. Oaklander2022  INSPIRE; Abrams2022), ME/CFS small-fiber reports, and PTLDS/post-Lyme autonomic involvement. For each, record: IENFD method (distal-only vs proximal+distal -> bears on the non-length-dependent P2 claim), case definition, presence of primary-dysautonomia controls (almost always absent = the key gap behind question:0004), and any functional-autoantibody serology. Goal: convert h0007's prose 'Supporting Evidence' into coded evidence-lines and establish whether the non-length-dependent pattern (P2) and cross-trigger convergence (P4) are actually documented or merely asserted. Empirical. Verify all paper titles/authors before ingesting.

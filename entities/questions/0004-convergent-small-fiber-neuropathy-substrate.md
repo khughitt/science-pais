@@ -16,10 +16,10 @@ source_refs:
 - cite:Bateman2023
 related:
 - topic:post-infectious-dysautonomia-and-autoimmunity
+- hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
 created: '2026-06-11'
-updated: '2026-06-11'
+updated: '2026-06-24'
 ---
-
 # Do PTLDS, long COVID, and ME/CFS share a non-length-dependent autonomic small-fiber neuropathy substrate that distinguishes them from primary dysautonomia?
 
 ## Summary
