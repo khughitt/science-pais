@@ -114,6 +114,17 @@ All confirmatory legs are evaluated **only among subjects who clear the confound
 length-dependent-SFN cause) — otherwise length-dependent confounders contaminate the NLD-vs-LD contrast,
 which is the whole point.
 
+**Three-band significance convention (applies to both confirmatory legs).** Because confirmatory tests
+are held at the Bonferroni-corrected α = 0.025 while the weakening criteria reference the nominal
+α = 0.05, the intermediate interval is defined explicitly to remove a degree of freedom at
+interpretation time:
+- **p < 0.025** → **confirmatory support** (corrected threshold; counts toward criterion #1).
+- **0.025 ≤ p < 0.05** → **nominal/supportive but NOT confirmatory** — a weak positive that neither
+  discharges the criterion nor weakens the proposition; it is recorded as suggestive evidence and, for a
+  result of real interest, motivates a replication or a larger vehicle rather than a verdict.
+- **p ≥ 0.05** → **weakening** (subject to the G4 well-powered-null floor, below — a high-p result at
+  n = 40/side is *inconclusive*, not weakening).
+
 ### Confirmatory leg 1 — P1 (`proposition:0014`): is there a lesion?
 
 - **Metric.** Per-subject *lesion-positive* = IENFD **or** SGNFD below the site-specific normative cutoff
@@ -138,8 +149,8 @@ which is the whole point.
   positive subjects (P2 is conditional on P1).
 - **Headline metric.** Δ = NLD-fraction(pooled PAIS-autonomic, lesion-positive) −
   NLD-fraction(primary-dysautonomia, lesion-positive).
-- **Supports P2 (and discharges promotion criterion #1):** Δ ≥ **20 percentage points** with two-
-  proportion test **p < 0.025**. This is the discriminating result — PAIS SFN is preferentially
+- **Supports P2 (the discriminating leg of promotion criterion #1, which also requires P1):** Δ ≥ **20
+  percentage points** with two-proportion test **p < 0.025**. This is the discriminating result — PAIS SFN is preferentially
   non-length-dependent *relative to* primary dysautonomia, implicating a ganglionopathy / immune-mediated
   mechanism rather than a length-dependent metabolic gradient.
 - **Weakens P2:** Δ not significant, or the PAIS lesion is predominantly **length-dependent and
@@ -151,14 +162,24 @@ which is the whole point.
   "distinguishes from primary dysautonomia" clause fails even though P2's pattern claim holds. This is a
   distinct outcome from "no NLD anywhere" and is recorded separately (see Null-Result Plan).
 
-### Promotion rule for `hypothesis:0007` (criterion #1)
+### Promotion rule for `hypothesis:0007`
 
-Promote h0007 **candidate → active** on the strength of *this* study iff **both** confirmatory legs
-support (P1 supported **and** P2 headline Δ ≥ 20 pts at p < 0.025) in an admissible vehicle. P1-supported
-but P2-null **does not** promote (the lesion exists but is not discriminating — h0007's distinctive claim
-is the *pattern*, not mere SFN presence, which `hypothesis:0001` already covers). Promotion criterion #2
-(the `question:0009` serology↔lesion link) is a *separate* gate owned by `task:t006`; this pre-reg can
-discharge it only via the conditional serology leg below.
+h0007's promotion (candidate → active) requires **both** of its stated criteria: #1 (the standardized
+paired-site biopsy + autonomic study with primary-dysautonomia controls) **and** #2 (an independent line
+linking the functional-autoantibody thread to the structural lesion). This pre-reg discharges them as
+follows:
+
+- **This study discharges criterion #1** iff **both** confirmatory legs support (P1 supported **and** P2
+  headline Δ ≥ 20 pts at p < 0.025) in an admissible vehicle. P1-supported but P2-null does **not**
+  discharge it (the lesion exists but is not discriminating — h0007's distinctive claim is the *pattern*,
+  not mere SFN presence, which `hypothesis:0001` already covers).
+- **Promotion still requires criterion #2** (the `question:0009` serology↔lesion link). This pre-reg can
+  discharge criterion #2 **only** via the optional conditional serology leg below (and only if the
+  admissible vehicle carries G5), or it must already be satisfied elsewhere (owned by `task:t006`).
+- **Therefore:** P1+P2 support on a **G1–G4-only** vehicle promotes h0007 **only if criterion #2 is
+  independently met**; on a **G1–G5** vehicle whose serology leg also supports, this single study can
+  discharge both criteria and promote on its own. Absent criterion #2, a clean criterion-#1 result
+  advances h0007 substantially but leaves it **candidate** pending the autoantibody/immune link.
 
 ### Conditional leg 3 — P3 / serology (`proposition:0016`, `0018`, `question:0009`) — only if G5 met
 
@@ -184,12 +205,19 @@ admissible vehicle's power (G4) and design quality — not a kill-switch.
 | P1 null, well-powered | structural-lesion frame collapses to functional account | h0007 **materially weakened** |
 | P1 null, underpowered | inconclusive | no update; vehicle did not clear G4 → not admissible |
 
-**Power & adequacy.** A null only updates belief if the vehicle clears the **G4 power floor**. The
-headline P2 contrast assumes PAIS NLD fraction ~33% (Limongelli prior) vs an expected primary-
-dysautonomia NLD fraction ~5–10% (length-dependent prior); detecting Δ ≥ 20 pts at 80% power, two-
-proportion, α = 0.025 two-sided needs roughly **n ≈ 40 lesion-positive subjects per side** of the
-headline contrast. An underpowered study returns *inconclusive*, not *null*, and fails admissibility —
-it does not move belief.
+**Power & adequacy (the comparator NLD rate is the load-bearing assumption).** A null only updates
+belief if the vehicle clears the **G4 well-powered-null floor**, and what that floor *is* depends
+heavily on the (unknown) primary-dysautonomia NLD rate:
+- If the comparator rate is **very low** (~5%, optimistic length-dependent prior): 33% vs 5% reaches
+  ~80% power at **n ≈ 40 lesion-positive/side**, α = 0.025 two-sided. This is the *minimum-admissibility*
+  floor.
+- At **plausible mid-range** comparator rates (~10–13%): 33% vs 13% or 30% vs 10% reach only ~45–50%
+  power at n = 40/side. Detecting Δ ≈ 20 pts there needs **n ≈ 80 lesion-positive/side** for ~80% power.
+Therefore a **null at n = 40/side is *inconclusive*, not disconfirming** — only a null at the
+**≥ 80/side well-powered floor** (or a CI excluding Δ ≥ 20 pts) weakens P2. An underpowered study (below
+the minimum floor) returns *inconclusive*, fails admissibility, and does not move belief. Because the
+comparator NLD rate is the softest number in this design, the vehicle should report it explicitly and the
+required n should be re-derived from the *observed* comparator rate, not the assumed one.
 
 **If ambiguous:** the most common ambiguity is heterogeneous lesion prevalence across PAIS triggers
 (e.g. long COVID positive, ME/CFS null à la Walitt2024). That outcome supports **trigger-specificity**
@@ -286,9 +314,19 @@ of G1–G4 do **not** qualify (Oaklander2022, Joseph2021, Limongelli2026 each fa
   infection-associated ME/CFS, biopsied/scored identically (for the P4 convergence leg and to avoid
   manufacturing convergence from heterogeneous methods, per
   `topic:measurement-ascertainment-artifacts-in-pais`).
-- **G4 — Power floor.** ≥ **40 lesion-positive subjects per side** of the headline P2 contrast (pooled
-  PAIS-autonomic vs primary-dysautonomia); each individual trigger sub-arm ≥ 15 (for the exploratory
-  convergence leg). Below floor → study returns *inconclusive*, not *null*; does not move belief.
+- **G4 — Power floor (two-tier).** Two distinct floors, because admissibility and well-powered-null are
+  not the same bar:
+  - **Confirmatory-support / minimum-admissibility floor:** ≥ **40 lesion-positive subjects per side** of
+    the headline P2 contrast (pooled PAIS-autonomic vs primary-dysautonomia). This is enough to *detect*
+    a positive Δ ≥ 20 pts when the comparator NLD rate is very low (e.g. 33% vs 5%, ~80% power at
+    α = 0.025), but it is **not** a well-powered-null floor at plausible mid-range comparator rates.
+  - **Well-powered-null floor:** ≥ **80 lesion-positive subjects per side** for Δ ≈ 20 pts. At α = 0.025
+    two-sided, n = 40/side gives only ~45–50% power against realistic contrasts (33% vs 13%, 30% vs 10%),
+    so a *null at n = 40* is **inconclusive, not disconfirming**; only a null at the ≥ 80/side floor (or
+    a tight CI excluding Δ ≥ 20) updates belief against P2. A study between the two floors can *support*
+    P2 (if Δ is significant) but cannot *weaken* it.
+  - Each individual trigger sub-arm ≥ 15 (for the exploratory convergence leg). Below the minimum floor →
+    study returns *inconclusive*, not *null*; does not move belief.
 - **G5 (optional, unlocks conditional legs) — Parallel functional-autoantibody serology.** Functional
   (receptor-activation) anti-GPCR assay (β1/β2-adrenergic, M3/M4-muscarinic) on the same subjects.
   Absence does **not** block G1–G4 admissibility; it only leaves P3/`0018`/`question:0009` un-updated by
