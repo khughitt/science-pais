@@ -16,10 +16,7 @@ related:
 - topic:antigen-pathogen-persistence
 - proposition:0022-degradation-resistant-fragments-persist-and-are-bioactive
 - task:t052
-source_refs:
-- paper:McClune2025
-- paper:Peluso2024
-- paper:Morroy2016
+source_refs: []
 created: '2026-06-24'
 updated: '2026-06-24'
 ---

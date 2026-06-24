@@ -62,9 +62,12 @@ leans on a single rigorous animal model plus a human detection study with no sym
   explicitly decline the symptom-linkage test.
 
 Net: fragment persistence is established across two pathogen classes; **bioactivity** is demonstrated
-*only* for Borrelia and *only* in a mouse model. This is a genuine, directly-evidenced support base —
-enough to lift h0002 out of `speculative` to an honest `contested` — but not strong: it is the
-mechanism's *existence*, not its *causal sufficiency for symptoms*.
+*only* for Borrelia and *only* in a mouse model. This is a genuine, directly-evidenced support base that
+grades **this proposition** `well_supported` — but it supports **only the persistence pillar**. It does
+**not** lift `hypothesis:0002`, which remains `speculative`: the hypothesis is a conjunction that also
+requires the still-untested cross-pathogen generalization (`proposition:0023`) and risk-determinant
+(`proposition:0024`) conjuncts. This line is the mechanism's *existence*, not its *causal sufficiency for
+symptoms* and not the *initiator hypothesis* as a whole.
 
 ## Caveats
 
