@@ -21,7 +21,6 @@ related:
 - topic:measurement-ascertainment-artifacts-in-pais
 source_refs:
 - paper:Novak2026
-- paper:Shah2025
 created: '2026-06-24'
 updated: '2026-06-24'
 ---

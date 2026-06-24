@@ -51,7 +51,7 @@ It is the falsifiable promotion of the standing methodological check housed in
 the project's own corpus of group-difference findings, not a causal-effect or mechanistic claim.
 
 The conjecture earns its keep only if it is **bounded**: genuine objective, trigger-matched group
-differences exist and must be admitted (see the bounding proposition). Without that bound the hypothesis
+differences exist and must be admitted (see the **bounded-exception clause / register B** below). Without that bound the hypothesis
 degenerates into unfalsifiable "everything is artifact"; with it, the hypothesis is the specific, testable
 claim that *the direction and locus of artifact are predictable*.
 
@@ -60,21 +60,26 @@ claim that *the direction and locus of artifact are predictable*.
 ### Core Propositions
 
 The three core propositions are now **first-class graph entities** (minted by the specify-model pass of
-2026-06-24): M1 = `proposition:0027`, M2 = `proposition:0028`, M3 = `proposition:0029`. The audit
-`interpretation:0015` `bears_on` each, so belief on the regularity is tracked natively rather than only in
-prose. The summaries below are the human-readable bundle.
+2026-06-24): M1 = `proposition:0027`, M2 = `proposition:0028`, M3 = `proposition:0029`. Belief on each is
+carried by **stance-bearing evidence-lines** that encode the `task:t055` audit's findings — one line per
+core proposition (`evidence-line:0066` → M1; `evidence-line:0067` → M2; `evidence-line:0069` → M3), each
+aggregating that proposition's audit cut so belief stays fragile (one retrospective audit, not N
+independent tests) — so the regularity is tracked in the belief graph rather than only in prose;
+`interpretation:0015` also `bears_on` each as the conclusion's provenance edge. The summaries below are the human-readable bundle.
 
 - **M1 — Channel-direction regularity** *(empirical_regularity;
   `proposition:0027-pais-group-differences-attenuate-under-objective-re-measurement`)*. For a given PAIS
   construct, the apparent group difference is **systematically larger in — or confined to — the
   self-report channel** and is null, attenuated, or reversed when the *same construct* is measured
-  objectively. Instances: `proposition:0010` (female cognitive excess present in subjective complaint,
-  absent in objective neuropsychological testing); `proposition:0009` (dysautonomia female skew is
-  baseline-carried, tracking the ~5:1 POTS baseline, not PAIS-amplified); the crude-excess parent
-  `proposition:0008`; and the mirror case `proposition:0012` (the *objective* vascular hard-endpoint signal
-  runs male-biased — the opposite direction to the self-report female excess), via
-  `interpretation:0003-t018-subphenotype-sex-reproductive-stage`. The audit confirmed M1's
-  self-report/mixed-origin cut at 4/4.
+  objectively. The **4/4 self-report/mixed-origin cut** (audit `interpretation:0015`): `proposition:0010`
+  (female cognitive excess present in subjective complaint, absent in objective neuropsychological
+  testing); `proposition:0009` (dysautonomia female skew is baseline-carried, tracking the ~5:1 POTS
+  baseline, not PAIS-amplified); `proposition:0001` (reproductive-stage threshold attenuates to null
+  within age band); and the crude-excess parent `proposition:0008` (decomposes under subphenotyping). The
+  **mirror/bounding case** `proposition:0012` (the *objective* vascular hard-endpoint signal runs
+  male-biased — opposite to the self-report female excess) corroborates the direction-reversal limb but is
+  a register-B exception, **not** part of the 4/4 cut. Channel structure via
+  `interpretation:0003-t018-subphenotype-sex-reproductive-stage`.
 
 - **M2 — Ascertainment and scoring inflation** *(empirical_regularity;
   `proposition:0028-pais-heterogeneity-explained-by-ascertainment-and-scoring`)*. Cross-study heterogeneity
@@ -212,14 +217,17 @@ meter:
 
 ## Evidence Needed To Shift Belief
 
-- **Most efficient (uses existing corpus): the systematic audit** in promotion criterion #1 — it requires
-  no new data, only disciplined coding of claims already in the graph, and would convert belief from
-  "pattern noticed" to "rate estimated."
-- **Most discriminating: a same-cohort objective re-measurement** of a self-report-established difference
-  (promotion criterion #2) — the only design that controls trigger, cohort, and ascertainment
-  simultaneously and so isolates channel from biology.
-- A counting discipline on accumulating objective exceptions (clause B) is the cheapest continuous
-  belief-update signal.
+- **Done — the systematic audit** (promotion criterion #1, `task:t055` / `interpretation:0015`): it
+  converted belief from "pattern noticed" to "rate estimated" (6/9 determinate artifact-consistent;
+  self-report/mixed-origin attenuate 4/4; weak-ascertainment collapse 3/3) and is now wired into the
+  belief graph via `evidence-line:0066`–`0069`. The retrospective within-corpus route is near-saturated;
+  further coding will mostly re-confirm.
+- **The remaining belief-shifting route — most discriminating: a same-cohort objective re-measurement** of
+  a self-report-established difference (promotion criterion #2, still open, `pre-registration:0003`) — the
+  only design that controls trigger, cohort, and ascertainment simultaneously and so isolates channel from
+  biology. This is now the *only* unmet promotion criterion.
+- A counting discipline on accumulating objective exceptions (register B, now n=3) is the cheapest
+  continuous belief-update signal.
 
 ## Related Work
 

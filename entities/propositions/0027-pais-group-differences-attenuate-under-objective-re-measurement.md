@@ -41,22 +41,26 @@ still be ascertainment-inflated or endpoint-contingent).
 
 ## Evidence Summary
 
-`literature_evidence`, aggregated by the `task:t055` audit
+`literature_evidence`, carried by `evidence-line:0066` and aggregated by the `task:t055` audit
 (`interpretation:0015-t055-measurement-channel-audit-of-pais-group-differences`). In that audit the
-**self-report-/mixed-origin cut attenuated or decomposed 4/4**:
+**self-report-/mixed-origin cut attenuated or decomposed 4/4** (all four instances, no survivors):
 
 - **`proposition:0010`** (cognition) — the cleanest and only *same-cohort* instance: Walitt2024 reports
   increased subjective cognitive complaints across five domains with **no** group difference on 15
   objective neuropsychological tests, in one cohort.
 - **`proposition:0009`** (dysautonomia) — the apparent PAIS-amplified female skew dissolves once the
   baseline ~5:1 POTS sex ratio is netted out (baseline-carried, not PAIS-amplified).
+- **`proposition:0001`** (reproductive-stage threshold) — the menopause-specific long-COVID signal
+  attenuates to null **within age band** (Shah2025: menopausal RR 1.42 ≈ non-menopausal 1.45). *This is
+  the fourth row of the 4/4 cut.*
 - **`proposition:0008`** (the crude post-acute female excess) — does not survive as a *uniform* biological
   excess; under subphenotype decomposition it is channel-structured
   (`interpretation:0003-t018-subphenotype-sex-reproductive-stage`).
 
-The direction-reversal limb of M1 is corroborated by the mirror case `proposition:0012` (the *objective*
-vascular hard-endpoint signal runs male-biased, opposite to the self-report female excess) — though, as a
-robust objective effect, that proposition is counted under the bounded-exception register B, not here.
+The direction-reversal limb of M1 is corroborated by the **mirror/bounding case** `proposition:0012` (the
+*objective* vascular hard-endpoint signal runs male-biased, opposite to the self-report female excess) —
+but, as a robust objective effect, that proposition is counted under the bounded-exception register B and
+is **not** one of the 4/4 M1 instances above.
 
 ## Caveats
 
