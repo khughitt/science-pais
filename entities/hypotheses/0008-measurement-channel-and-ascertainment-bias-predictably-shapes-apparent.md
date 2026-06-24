@@ -98,8 +98,11 @@ claim that *the direction and locus of artifact are predictable*.
 The hypothesis was assembled from instances discovered **piecemeal** across four other hypotheses
 (h0001 PEM, h0005 sex, h0006 PEM-muscle, h0007 SFN). The `task:t055` audit
 (`interpretation:0015`) has now tested it **as a regularity** for the first time: across 11 corpus
-group-difference claims (9 determinate), 6/9 are artifact-consistent and the directional sub-structure is
-8/8 (every self-report-channel difference attenuates; every objective-origin difference survives). So the
+group-difference claims (9 determinate), 6/9 are artifact-consistent against a bounded 3-member exception
+set. The directional sub-structure is **not** a clean "objective ⇒ survives" rule — two objective-origin
+claims are themselves artifact-consistent (`proposition:0014` collapses/M2, `proposition:0011`
+endpoint-contingent/M3). What holds is the **establishment-channel cut** (self-report/mixed-origin
+attenuate 4/4) and the **ascertainment-control cut** (weak-ascertainment collapse 3/3). So the
 regularity is now a **rate estimated, not only a pattern noticed** — but the audit is retrospective,
 project-internal, small-n (11), and coded by the same agent that built the hypothesis, so its support
 remains **anecdotal-aggregate** pending the prospective same-cohort test (criterion #2). Two further uncertainties: (1) the hypothesis is at risk of unfalsifiability if stated
@@ -130,7 +133,8 @@ The hypothesis is materially weakened or refuted if:
 - A well-powered, trigger-matched, ascertainment-controlled study finds a PAIS group difference that is
   **equally strong or stronger objectively than by self-report** for the same construct, with no
   attenuation, in a domain currently assumed self-report-channeled.
-- Admitted objective exceptions (`proposition:0013`, `proposition:0012`) **proliferate** to the point that
+- Admitted objective exceptions (`proposition:0013`, `proposition:0012`, `proposition:0025`; now n=3 per
+  the `task:t055` audit) **proliferate** to the point that
   "predictable bias" weakens to "sometimes-artifact" — a non-useful claim. The accumulation rate of robust
   objective signals is the running falsification meter.
 
@@ -144,7 +148,9 @@ Promote `candidate → active` when:
    **directional majority** consistent with M1–M3. This converts the anecdotal instance-collection into a
    quantified regularity with an estimated rate and an explicit exception set.
    **✓ MET** by `interpretation:0015` (`task:t055`): 11 claims coded, 6/9 determinate claims
-   artifact-consistent, directional sub-structure 8/8 by channel, exception set enumerated and bounded at 3.
+   artifact-consistent against a bounded 3-member exception set; self-report/mixed-origin claims attenuate
+   4/4 and weak-ascertainment claims collapse 3/3 (objective-origin claims are mixed — 3 survive, 2
+   artifact-consistent — so there is no clean "objective ⇒ survives" rule).
 2. **At least one prospective or individual-patient-data test** re-measures a self-report-established PAIS
    difference objectively in the *same* trigger-matched cohort and observes the predicted attenuation —
    moving beyond the current retrospective, cross-study instances.

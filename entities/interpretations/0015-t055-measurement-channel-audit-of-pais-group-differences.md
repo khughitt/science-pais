@@ -1,7 +1,7 @@
 ---
 id: interpretation:0015-t055-measurement-channel-audit-of-pais-group-differences
 type: interpretation
-title: "Systematic measurement-channel audit of PAIS group-difference claims (h0008 promotion criterion #1) — coding 11 corpus claims by channel × ascertainment-control × behaviour-under-objective-re-measurement shows the predicted directional regularity: every self-report-/weak-ascertainment-channel difference attenuates, collapses, or reverses under objective control (5/5), while every objective-origin difference survives (3/3, the bounded exception set), with two cross-trigger SAMENESS claims still untested under a standardized protocol"
+title: "Systematic measurement-channel audit of PAIS group-difference claims (h0008 promotion criterion #1) — coding 11 corpus claims by channel × ascertainment-control × behaviour-under-objective-re-measurement: 6/9 determinate claims artifact-consistent (M1/M2/M3) against a bounded 3-member objective-exception set; self-report-/mixed-origin claims attenuate 4/4 and weak-ascertainment claims collapse 3/3, but objective-origin claims are mixed (3 survive, 2 artifact-consistent) — so criterion #1 is met without a clean 'objective ⇒ survives' rule; two cross-trigger SAMENESS claims remain untested under a standardized protocol"
 status: active
 source_refs: []
 related:
@@ -48,18 +48,25 @@ by three pre-committed axes — (a) the measurement **channel** in which the dif
 objective, trigger-matched re-measurement** — and asks whether a directional majority is consistent with
 M1–M3.
 
-It is. The regularity holds in the *specific directional form* h0008 predicts, which is sharper than a
-bare "majority are artifacts":
+It is, at the level of the headline count — **6 of 9 determinate claims are artifact-consistent
+(M1/M2/M3), against a fully enumerated 3-member bounded-exception set.** The directional sub-structure is
+real but **weaker than a clean "channel predicts survival"** rule, and the honest cuts are:
 
-- **Every difference established in a self-report or weak-ascertainment channel attenuates, collapses,
-  or reverses under objective, ascertainment-controlled measurement — 5 of 5** (`proposition:0010`
-  cognition, `proposition:0009` dysautonomia, `proposition:0001` menopause threshold,
-  `proposition:0014` SFN prevalence, and the crude female-excess parent `proposition:0008`). None
-  survived as stated.
-- **Every difference that was *objective from the start* survives — 3 of 3**, and these *are* the
-  bounded-exception set B (`proposition:0012` vascular male reversal, `proposition:0013` immune female
-  exception, `proposition:0025` LC inflammatory activation). The bias is bounded exactly where h0008
-  said it would be: in the objective channel.
+- **Self-report- and mixed-origin claims attenuate or decompose — 4 of 4** (`proposition:0010` cognition
+  [self-report], `proposition:0009` dysautonomia [mixed], `proposition:0001` menopause threshold [mixed],
+  and the crude female-excess parent `proposition:0008` [mixed]). None survived as stated — the cleanest
+  cut, and the one most directly confirming M1.
+- **Weak-ascertainment determinate claims collapse or attenuate — 3 of 3** (`proposition:0001`,
+  `proposition:0014` SFN prevalence, `proposition:0008`). This is the M2 cut: where ascertainment control
+  is weak, the difference does not survive harmonization.
+- **Objective-origin determinate claims are MIXED, not uniformly surviving — 3 survive, 2 do not.**
+  Three survive and form bounded-exception set B (`proposition:0012` vascular male reversal,
+  `proposition:0013` immune female exception, `proposition:0025` LC inflammatory activation); but two
+  objective-origin claims are themselves artifact-consistent — `proposition:0014` (SFN prevalence,
+  COLLAPSES/M2) and `proposition:0011` (cross-trigger PEM, ENDPOINT-CONTINGENT/M3). So "objective channel
+  ⇒ survives" is **false as a rule**: an objective measurement can still be ascertainment-inflated (M2) or
+  endpoint-contingent (M3). The bias is bounded in the objective channel, but the objective channel is not
+  uniformly clean.
 - **The third mode (M3, endpoint/construct instability) is instantiated once** (`proposition:0011`
   cross-trigger PEM): the cross-trigger *sameness* claim is contingent on which objective endpoint is
   chosen.
@@ -68,9 +75,12 @@ bare "majority are artifacts":
   convergence). They are coded `UNTESTED`, not counted toward the majority, and are precisely what
   `pre-registration:0003` is designed to resolve.
 
-So the channel **predicts survival**: self-report-channeled differences attenuate (5/5), objective-origin
-differences survive (3/3). That is the falsifiable content of M1, and it held — this is *not* the
-unfalsifiable "everything is artifact" caricature the bounding clause was written to prevent.
+So the regularity that held is the **establishment-channel and ascertainment-control cuts** (self-report/
+mixed-origin attenuate 4/4; weak-ascertainment collapse 3/3), **not** a clean "objective ⇒ survives" rule
+— two objective-origin claims are artifact-consistent. That is enough to satisfy criterion #1 (a
+directional majority with a bounded exception set) without overclaiming an M1 channel substructure the
+table does not support; it is still *not* the unfalsifiable "everything is artifact" caricature the
+bounding clause was written to prevent.
 
 **The one substantive belief-update against a strong reading:** the audit **enlarged the exception set
 from 2 to 3** by admitting `proposition:0025` (LC persistent inflammatory activation, two cohorts, >180d,
@@ -133,15 +143,24 @@ claims are counted and named but do not move the verdict.
 - Bounded exceptions (B, SURVIVES): **3** — claims 7, 8, 9.
 - Directional majority artifact-consistent: **6/9 = 67%**, with a fully enumerated 3-member exception set.
 
-**Directional sub-structure (the sharper test that actually held):**
+**Directional sub-structure (the cuts that actually hold — and the one that does not):**
 
-- Self-report / weak-ascertainment establishing channel → attenuate/collapse: **5/5** (claims 1, 2, 3,
-  4, 5). No survivors.
-- Objective-from-the-start establishing channel → survive: **3/3** (claims 7, 8, 9). No attenuators.
+- **By establishment channel** (claims 1–9 split on axis (a)):
+  - self-report / mixed-origin → attenuate/decompose: **4/4** (claims 1 [self-report], 2, 3, 5 [mixed]).
+    No survivors. *This is the M1 cut and it holds cleanly.*
+  - objective-origin → **mixed: 3 survive (claims 7, 8, 9), 2 are artifact-consistent** (claim 4
+    COLLAPSES/M2, claim 6 ENDPOINT-CONTINGENT/M3). **"Objective ⇒ survives" is false** — an objective
+    measurement can still be ascertainment-inflated or endpoint-contingent.
+- **By ascertainment control** (claims 1–9 split on axis (b)):
+  - weak-ascertainment determinate claims → collapse/attenuate: **3/3** (claims 3, 4, 5). *This is the M2
+    cut and it holds.*
+  - strong/partial-ascertainment determinate claims → 5 of 6 are the surviving objective exceptions plus
+    the two attenuating sex claims; no clean rule.
 
-The channel of establishment is a near-perfect predictor of survival in this corpus — which is M1's
-literal content. The 67% headline understates the regularity because it pools the two channels; split by
-channel, the prediction is 8/8.
+There is **no** "channel predicts survival 8/8" rule: that count was an artifact of placing objective-but-
+weak claim 4 on the attenuation side and dropping objective claim 6. The defensible regularities are the
+**self-report/mixed-origin → attenuate (4/4)** and **weak-ascertainment → collapse (3/3)** cuts, which
+together carry M1 and M2; the objective channel is bounded but not uniformly clean.
 
 **Untested (n = 2; claims 10, 11):** both are cross-trigger/anatomical *sameness* claims that require a
 standardized protocol that does not yet exist. Reported, excluded from the majority denominator. Their
@@ -150,17 +169,21 @@ primary-dysautonomia controls).
 
 **Corroborating sub-audit (not double-counted):** `interpretation:0006` is itself a four-domain objective
 sweep that returned 3 nulls/gaps + 1 surviving exception (the immune signal, claim 8) — an
-independently-constructed mini-replication of this audit's 5-attenuate/1-survive shape within a single
-deliberate objective-domain search.
+independently-constructed mini-replication of this audit's attenuate-dominant-with-bounded-exception shape
+within a single deliberate objective-domain search.
 
 ## What this does and does not establish
 
 **Establishes (criterion #1 met):**
-- The M1 channel-direction regularity is real *as a directional rule*, not just a count: in this corpus
-  the establishing channel predicts whether a difference survives objective re-measurement (8/8 when
-  split by channel).
+- A directional majority (6/9 determinate) is artifact-consistent, against a bounded enumerable exception
+  set — the decision rule for criterion #1.
+- The M1 cut holds in the establishment-channel and ascertainment-control directions: self-report/mixed-
+  origin claims attenuate or decompose (4/4) and weak-ascertainment claims collapse (3/3). It does **not**
+  hold as a clean "objective ⇒ survives" rule (two objective-origin claims are artifact-consistent), so M1
+  is supported as a channel/ascertainment regularity, not as a property of the objective channel per se.
 - M2 (ascertainment/scoring inflation) and M3 (endpoint instability) each have ≥1 clean determinate
-  instance.
+  instance — and both are instantiated by *objective-origin* claims (4 and 6), which is why the objective
+  channel is not uniformly clean.
 - Clause B is operative and bounded: the exception set is enumerable (now {`proposition:0012`,
   `proposition:0013`, `proposition:0025`}) and grew by exactly one under audit — the falsification meter
   is live and reads "bounded," not "proliferating."
@@ -185,8 +208,9 @@ deliberate objective-domain search.
 2. **Update clause B's exception set to three members** in h0008 (add `proposition:0025`) — the audit's
    one concrete belief-update. Done as part of `task:t055` closure.
 3. **The fastest path to `active`** is now `pre-registration:0003`'s prospective paired-site biopsy
-   (criterion #2 + resolves claims 10–11 simultaneously), not more retrospective coding — the retrospective
-   channel is near-saturated at 8/8 and further within-corpus coding will mostly re-confirm.
+   (criterion #2 + resolves claims 10–11 simultaneously), not more retrospective coding — the
+   self-report/mixed-origin attenuation cut is near-saturated (4/4) and further within-corpus coding will
+   mostly re-confirm it.
 4. **Continue the exception-set count** as the cheap continuous signal: a fourth, fifth, … robust
    objective trigger-matched survivor each nudges "predictable bias" toward "sometimes-artifact." Three is
    bounded; track the rate.
