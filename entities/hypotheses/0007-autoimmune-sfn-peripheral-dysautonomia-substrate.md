@@ -10,11 +10,17 @@ source_refs:
 - cite:Joseph2021
 - cite:Kharraziha2020
 - cite:Hall2022
+- cite:Novak2026
 related:
 - question:0004-convergent-small-fiber-neuropathy-substrate
 - question:0009-functional-autoantibodies-drive-dysautonomia
 - topic:post-infectious-dysautonomia-and-autoimmunity
 - topic:measurement-ascertainment-artifacts-in-pais
+- paper:Novak2026
+- evidence-line:0063-novak2026-largest-paired-biopsy-pais-sfn-supports-p1
+- evidence-line:0064-novak2026-single-protocol-two-trigger-convergence-supports-p4
+- evidence-line:0065-novak2026-proximal-sgnfd-not-lesser-weakly-supports-p2
+- interpretation:0013-t050-novak2026-ingestion-and-sfn-specificity-caveat
 - proposition:0009-dysautonomia-female-skew-is-baseline-carried-not-pais-amplified
 - proposition:0014-pais-small-fiber-structural-lesion-ienfd
 - proposition:0015-pais-sfn-non-length-dependent-pattern
@@ -181,6 +187,15 @@ than a committed hypothesis.
   autoantigens were **non-GPCR** (MED20/USP5) and it did not recapitulate the autonomic axis.
 - **`cite:Stein2025`:** β2-AR-autoantibody-selected immunoadsorption improves autonomic symptoms
   (`evidence-line:0047` → `proposition:0019`; `evidence-line:0048` weak → `proposition:0018`).
+- **`cite:Novak2026` (ingested 2026-06-24; the largest paired-site PAIS biopsy series):** single-center
+  retrospective comparison with **paired thigh + calf** ENFD/SGNFD across **long COVID (n=143) and ME/CFS
+  (n=170)** vs hEDS (n=290) and healthy controls (n=73). Biopsy SFN 67%/53% vs **0% controls**
+  (`evidence-line:0063` → P1, moderate). First **single-protocol two-trigger** convergence — answering the
+  prior "convergence of finding, not of protocol" caveat (`evidence-line:0064` → P4, moderate). Group-level
+  proximal SGNFD not lesser than distal weakly supports the NLD pattern but is **not per-subject classified**
+  (`evidence-line:0065` → P2, weak). Screened as a candidate `pre-registration:0003` vehicle but
+  **inadmissible** (fails G2: hEDS is not a clean primary-dysautonomia comparator; QASAT grading, not the
+  ≤5th-percentile cutoff). **Key new caveat → Disputing Evidence (specificity).**
 - **`cite:Walitt2024` (disputing):** rigorously adjudicated PI-ME/CFS with *no* small-fiber-density
   difference and *no* uniform autoantibody (`evidence-line:0040` → P1; `evidence-line:0046` → 0016).
 - *(literature, indirect)* The broader functional anti-GPCR autoantibody literature (the `question:0009` /
@@ -195,6 +210,14 @@ than a committed hypothesis.
   intolerance can arise from deconditioning and hypovolemia without a fixed peripheral lesion.
 - Reported SFN prevalence in long COVID is heterogeneous and protocol-sensitive; some cohorts find
   limited or length-dependent changes, pressuring P2.
+- **Specificity pressure (Novak2026, `evidence-line:0064`).** A non-infectious heritable dysautonomia
+  (hEDS, n=290) shows SFN **comparable to or greater than** the PAIS arms (63% biopsy; "more pronounced
+  peripheral neurodegeneration"). This is the first corpus data point indicating the small-fiber substrate
+  is **not specific to post-infectious syndromes** — it does not dispute P1 (the lesion exists) or P4 (it
+  recurs across PAIS triggers), but it pressures `question:0004`'s "**distinguishes from primary
+  dysautonomia**" clause and A1 (subtype distinctness). It is exactly why the locked discriminating test
+  (`pre-registration:0003`) requires a *clean primary-dysautonomia control arm*: lesion existence is now
+  well-supported, but PAIS-specificity of the *pattern* remains unproven and may be the harder contrast.
 
 ## Evidence Needed To Shift Belief
 

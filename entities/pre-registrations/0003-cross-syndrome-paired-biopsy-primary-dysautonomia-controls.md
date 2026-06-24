@@ -25,6 +25,8 @@ related:
   - paper:Adler2024
   - paper:deSa2026
   - paper:Walitt2024
+  - paper:Novak2026
+  - interpretation:0013-t050-novak2026-ingestion-and-sfn-specificity-caveat
 commits_to:
   - hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
   - proposition:0014-pais-small-fiber-structural-lesion-ienfd
@@ -357,16 +359,22 @@ protocol as the PAIS arms. Screened this hunt:
 
 | Candidate | G1 paired-site | G2 primary-dysautonomia arm | G3 ≥2 PAIS triggers | G4 power | Verdict |
 |---|---|---|---|---|---|
-| **van Campen/Visser/Rowe 2025** ("Shared autonomic phenotype of long COVID and ME/CFS", PMC12829881) | ✓ proximal thigh + distal calf, PGP9.5 | ✗ comparators are **healthy (n=73)** and **hEDS (n=290)** — no idiopathic-POTS/familial arm; hEDS is **explicitly excluded by G2's "no SFN-causing comorbidity" clause** (hEDS itself carries SFN → contaminated control, cf. Suspicious-Results "primary-label integrity") | ✓ **long COVID (n=143) + ME/CFS (n=170)** | ✓ SFN ~80–90% → lesion-positive ≫ 80/side | **INADMISSIBLE (fails G2 only)** — closest vehicle to date |
+| **Novak et al. 2026** ("Shared autonomic phenotype of long COVID and ME/CFS", *PLoS One*, PMC12829881, DOI 10.1371/journal.pone.0341278) | ✓ proximal thigh + distal calf, PGP9.5 (Therapath) | ✗ comparators are **healthy (n=73)** and **hEDS (n=290)** — no idiopathic-POTS/familial arm; hEDS is **explicitly excluded by G2's "no SFN-causing comorbidity" clause** (hEDS itself carries SFN here, 63% → contaminated control, cf. Suspicious-Results "primary-label integrity") | ~ **long COVID (n=143) + ME/CFS (n=170)** present, but the ME/CFS arm is ME-ICC/NAM **without documented infectious onset** — not the G3 "infection-associated ME/CFS" definition | ✓ SFN 53–67% by biopsy → lesion-positive ≫ 80/side | **INADMISSIBLE (fails G2; G3 not cleanly met)** — closest vehicle to date. Scored by **QASAT grading**, not the locked ≤5th-percentile IENFD cutoff (a metric-mismatch caveat). Ingested as supporting evidence for P1/P4 (`paper:Novak2026`). |
 | **Larsen et al. 2025** ("Long-COVID POTS: a deep phenotyping study", medRxiv 2025.04.28.25326587) | ✓ proximal + distal IENFD + P-Syn | ✗ comparator is **healthy controls only** | ✗ **long COVID only** | n/a (P1 came out inverted: 22% LC-POTS vs 38% HC reduced IENFD) | **INADMISSIBLE (fails G2, G3)** |
 | **Gibbons et al. 2013** (neuropathic POTS, PMC3874039) and related POTS-biopsy series | partial | n/a — *is* the primary/neuropathic-POTS arm, but **not run alongside any PAIS arm** | ✗ | 38–45% reduced IENFD in POTS | not a vehicle; **supplies the comparator NLD/lesion prior** (the pre-reg's "softest number" — see Power & Adequacy) |
 
-**Actionable intelligence.** The van Campen/Visser/Rowe group already runs the **exact G1 paired-site
-protocol (proximal thigh + distal calf) at scale across two PAIS triggers (G3) with power far above the G4
-floor** — it fails *only* on G2. An admissible vehicle is therefore realistically **one protocol amendment
-away**: add an idiopathic-POTS or familial-dysautonomia arm (or partition a clean primary-POTS comparator
-with the SFN-comorbidity exclusion applied) under the same protocol. This is the highest-yield place to
-watch for, or solicit, the discriminating vehicle. Separately, Gibbons-type neuropathic-POTS series let the
+**Actionable intelligence.** The Novak group already runs the **exact G1 paired-site protocol (proximal
+thigh + distal calf) at scale across two PAIS triggers (≈G3) with power far above the G4 floor** — the
+binding gap is **G2** (and, secondarily, a documented-infectious-onset ME/CFS arm and the ≤5th-percentile
+IENFD metric). An admissible vehicle is therefore realistically **one protocol amendment away**: add an
+idiopathic-POTS or familial-dysautonomia arm (or partition a clean primary-POTS comparator with the
+SFN-comorbidity exclusion applied) under the same protocol, and re-score against site-specific percentile
+cutoffs. This is the highest-yield place to watch for, or solicit, the discriminating vehicle. **Note:** the
+hEDS arm here is itself a non-infectious dysautonomia group with *comparable* SFN (63%) and "more pronounced
+peripheral neurodegeneration" than the PAIS arms — a live preview of the pre-reg's **"reverse/diagnostic
+surprise"** branch (Δ≈0 because a non-PAIS dysautonomia comparator is *also* lesion-positive), and a caution
+that the specificity contrast (q0004's "distinguishes from primary dysautonomia") may be harder to win than
+the lesion-existence contrast. Separately, Gibbons-type neuropathic-POTS series let the
 **comparator NLD/lesion rate be pre-constrained** from existing data, tightening the G4 power re-derivation
 before a head-to-head exists.
 
