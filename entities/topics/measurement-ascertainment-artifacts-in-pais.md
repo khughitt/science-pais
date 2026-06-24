@@ -24,6 +24,9 @@ related:
 - paper:Oaklander2022
 - paper:Joseph2021
 - paper:Walitt2024
+- proposition:0027-pais-group-differences-attenuate-under-objective-re-measurement
+- proposition:0028-pais-heterogeneity-explained-by-ascertainment-and-scoring
+- proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific
 source_refs: []
 created: '2026-06-24'
 updated: '2026-06-24'

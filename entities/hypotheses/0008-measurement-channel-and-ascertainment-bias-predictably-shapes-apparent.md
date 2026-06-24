@@ -27,6 +27,9 @@ related:
 - hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
 - hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
 - interpretation:0015-t055-measurement-channel-audit-of-pais-group-differences
+- proposition:0027-pais-group-differences-attenuate-under-objective-re-measurement
+- proposition:0028-pais-heterogeneity-explained-by-ascertainment-and-scoring
+- proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific
 created: '2026-06-24'
 updated: '2026-06-24'
 ---
@@ -56,28 +59,42 @@ claim that *the direction and locus of artifact are predictable*.
 
 ### Core Propositions
 
-- **M1 — Channel-direction regularity** *(empirical_regularity)*. For a given PAIS construct, the apparent
-  group difference is **systematically larger in — or confined to — the self-report channel** and is
-  null, attenuated, or reversed when the *same construct* is measured objectively. Existing instances:
-  `proposition:0010` (female cognitive excess present in subjective complaint, absent in objective
-  neuropsychological testing); `proposition:0009` (dysautonomia female skew is baseline-carried, tracking
-  the ~5:1 POTS baseline, not PAIS-amplified); and the mirror case `proposition:0012` (the *objective*
-  vascular hard-endpoint signal runs male-biased — the opposite direction to the self-report female
-  excess), via `interpretation:0003-t018-subphenotype-sex-reproductive-stage`.
+The three core propositions are now **first-class graph entities** (minted by the specify-model pass of
+2026-06-24): M1 = `proposition:0027`, M2 = `proposition:0028`, M3 = `proposition:0029`. The audit
+`interpretation:0015` `bears_on` each, so belief on the regularity is tracked natively rather than only in
+prose. The summaries below are the human-readable bundle.
 
-- **M2 — Ascertainment and scoring inflation** *(empirical_regularity)*. Cross-study heterogeneity in PAIS
-  prevalence/effect estimates is **substantially explained by ascertainment choices** — case definition,
-  referral/selection enrichment, and endpoint/scoring breadth — rather than by biology. The decisive
-  instance is `interpretation:0014-sfn-prevalence-metric-harmonization-reanalysis`: an apparent 0%→91%
-  skin-biopsy SFN prevalence range across four studies decomposes into modality breadth, trigger, and
-  referral enrichment, with within-trigger referral cohorts in fact concordant. The case-definition
-  variants of this claim are `question:0014` and `question:0015`.
+- **M1 — Channel-direction regularity** *(empirical_regularity;
+  `proposition:0027-pais-group-differences-attenuate-under-objective-re-measurement`)*. For a given PAIS
+  construct, the apparent group difference is **systematically larger in — or confined to — the
+  self-report channel** and is null, attenuated, or reversed when the *same construct* is measured
+  objectively. Instances: `proposition:0010` (female cognitive excess present in subjective complaint,
+  absent in objective neuropsychological testing); `proposition:0009` (dysautonomia female skew is
+  baseline-carried, tracking the ~5:1 POTS baseline, not PAIS-amplified); the crude-excess parent
+  `proposition:0008`; and the mirror case `proposition:0012` (the *objective* vascular hard-endpoint signal
+  runs male-biased — the opposite direction to the self-report female excess), via
+  `interpretation:0003-t018-subphenotype-sex-reproductive-stage`. The audit confirmed M1's
+  self-report/mixed-origin cut at 4/4.
 
-- **M3 — Endpoint/construct instability** *(structural_claim)*. A single named PAIS phenotype's objective
-  correlate is **endpoint- and trigger-specific**, so the *choice* of objective endpoint can itself
-  manufacture or hide a "shared mechanism." Instance: `proposition:0011` (the ME/CFS whole-body two-day
-  CPET PEM decrement does not transfer to long COVID at that endpoint, even where a long-COVID muscle
-  OXPHOS lesion exists), via `interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation`.
+- **M2 — Ascertainment and scoring inflation** *(empirical_regularity;
+  `proposition:0028-pais-heterogeneity-explained-by-ascertainment-and-scoring`)*. Cross-study heterogeneity
+  in PAIS prevalence/effect estimates is **substantially explained by ascertainment choices** — case
+  definition, referral/selection enrichment, and endpoint/scoring breadth — rather than by biology. The
+  decisive instance is `interpretation:0014-sfn-prevalence-metric-harmonization-reanalysis`: an apparent
+  0%→91% skin-biopsy SFN prevalence range across four studies decomposes into modality breadth, trigger,
+  and referral enrichment, with within-trigger referral cohorts in fact concordant. The case-definition
+  variants of this claim are `question:0014` and `question:0015`. The audit confirmed M2's
+  weak-ascertainment cut at 3/3.
+
+- **M3 — Endpoint/construct instability** *(structural_claim;
+  `proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific`)*. A single named PAIS
+  phenotype's objective correlate is **endpoint- and trigger-specific**, so the *choice* of objective
+  endpoint can itself manufacture or hide a "shared mechanism." Instance: `proposition:0011` (the ME/CFS
+  whole-body two-day CPET PEM decrement does not transfer to long COVID at that endpoint, even where a
+  long-COVID muscle OXPHOS lesion exists), via
+  `interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation`. **M3 is the
+  single-instance / fragile leg** (one phenotype, PEM): a structural pattern, not yet a regularity, and the
+  audit's one objective-origin artifact-consistent case.
 
 ### Supporting Or Auxiliary Propositions
 
@@ -216,6 +233,11 @@ meter:
 - Open questions it would discipline: `question:0014`, `question:0015` (case-definition coherence and PEM
   comparability), `question:0018` (objective-vs-subjective cognition dissociation).
 - Methodological adjacency: this hypothesis is the project's internal analogue of the
-  measurement-invariance / ascertainment-bias literature in psychometrics and epidemiology; a future
-  specify-model pass should decide whether M1–M3 become first-class graph propositions or remain an
-  organizing umbrella over the existing `proposition:0009`–`0013` set.
+  measurement-invariance / ascertainment-bias literature in psychometrics and epidemiology. The
+  specify-model pass of 2026-06-24 **resolved** the open question of whether M1–M3 become first-class graph
+  propositions: M1/M2/M3 were minted as native propositions (`proposition:0027`/`0028`/`0029`,
+  `discusses` h0008, conjunctive `hypothesis_bundle` scope), with `interpretation:0015` `bears_on` each.
+  The bounded-exception register **B was deliberately *not* minted** as a proposition — it is the
+  exception *set* {`proposition:0012`, `proposition:0013`, `proposition:0025`}, already carried by those
+  entities, not a standalone scientific claim. h0008 now has its own native proposition bundle rather than
+  borrowing only instances that belong to other hypotheses.

@@ -1,7 +1,14 @@
 ---
 id: interpretation:0015-t055-measurement-channel-audit-of-pais-group-differences
 type: interpretation
-title: "Systematic measurement-channel audit of PAIS group-difference claims (h0008 promotion criterion #1) — coding 11 corpus claims by channel × ascertainment-control × behaviour-under-objective-re-measurement: 6/9 determinate claims artifact-consistent (M1/M2/M3) against a bounded 3-member objective-exception set; self-report-/mixed-origin claims attenuate 4/4 and weak-ascertainment claims collapse 3/3, but objective-origin claims are mixed (3 survive, 2 artifact-consistent) — so criterion #1 is met without a clean 'objective ⇒ survives' rule; two cross-trigger SAMENESS claims remain untested under a standardized protocol"
+title: "Systematic measurement-channel audit of PAIS group-difference claims (h0008\
+  \ promotion criterion #1) \u2014 coding 11 corpus claims by channel \xD7 ascertainment-control\
+  \ \xD7 behaviour-under-objective-re-measurement: 6/9 determinate claims artifact-consistent\
+  \ (M1/M2/M3) against a bounded 3-member objective-exception set; self-report-/mixed-origin\
+  \ claims attenuate 4/4 and weak-ascertainment claims collapse 3/3, but objective-origin\
+  \ claims are mixed (3 survive, 2 artifact-consistent) \u2014 so criterion #1 is\
+  \ met without a clean 'objective \u21D2 survives' rule; two cross-trigger SAMENESS\
+  \ claims remain untested under a standardized protocol"
 status: active
 source_refs: []
 related:
@@ -25,15 +32,23 @@ related:
 - question:0014-which-pais-case-definition-is-most-biologically-coherent
 - question:0015-does-pem-requirement-improve-cross-study-comparability
 - task:t055
+- proposition:0027-pais-group-differences-attenuate-under-objective-re-measurement
+- proposition:0028-pais-heterogeneity-explained-by-ascertainment-and-scoring
+- proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific
 created: '2026-06-24'
 updated: '2026-06-24'
 input: []
 prior_interpretations: []
 relations:
-- predicate: "sci:bears_on"
+- predicate: sci:bears_on
   target: hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
+- predicate: sci:bears_on
+  target: proposition:0027-pais-group-differences-attenuate-under-objective-re-measurement
+- predicate: sci:bears_on
+  target: proposition:0028-pais-heterogeneity-explained-by-ascertainment-and-scoring
+- predicate: sci:bears_on
+  target: proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific
 ---
-
 # Interpretation: Systematic measurement-channel audit of PAIS group-difference claims (h0008 promotion criterion #1)
 
 ## Verdict
