@@ -153,10 +153,13 @@ interpretation time:
   percentage points** with two-proportion test **p < 0.025**. This is the discriminating result — PAIS SFN is preferentially
   non-length-dependent *relative to* primary dysautonomia, implicating a ganglionopathy / immune-mediated
   mechanism rather than a length-dependent metabolic gradient.
-- **Weakens P2:** Δ not significant, or the PAIS lesion is predominantly **length-dependent and
+- **Weakens P2 (only at the well-powered-null floor):** a **null at ≥80 lesion-positive/side** (or a CI
+  excluding Δ ≥ 20 pts) — especially where the PAIS lesion is predominantly **length-dependent and
   indistinguishable in pattern** from the primary-dysautonomia / metabolic gradient → P2 fails, the
   "distinct ganglionopathy" reading is lost, and h0007 loses its discriminating leg (downgraded, not
-  promoted).
+  promoted). A study **between the two G4 floors** (≥40 but <80/side) that fails to reach significance
+  **does not weaken P2** — it is *inconclusive* (underpowered to disconfirm), and routes to replication /
+  a larger vehicle rather than a verdict.
 - **Reverse/diagnostic surprise:** if primary-dysautonomia controls *also* show a high NLD fraction
   (Δ ≈ 0 because **both** arms are NLD), the substrate is real but **not specific to PAIS** — q0004's
   "distinguishes from primary dysautonomia" clause fails even though P2's pattern claim holds. This is a
@@ -199,7 +202,7 @@ admissible vehicle's power (G4) and design quality — not a kill-switch.
 
 | Result | Belief update | h0007 disposition |
 |---|---|---|
-| P1 + P2 both support | Promote criterion #1 met | candidate → **active** |
+| P1 + P2 both support | criterion #1 met; h0007 advances | candidate → **active** only if criterion #2 (q0009 serology↔lesion) is also met — else **stays candidate** pending the autoantibody/immune link |
 | P1 supports, P2 null (Δ not sig.) | lesion real but non-discriminating; P2 downgraded | **stays candidate**; redirect to subtype/mechanism work |
 | P1 + P2 support but primary-dysautonomia *also* NLD (Δ≈0) | substrate real, **not PAIS-specific**; q0004 "distinguishes" clause fails | stays candidate; reframe as shared-with-primary |
 | P1 null, well-powered | structural-lesion frame collapses to functional account | h0007 **materially weakened** |
