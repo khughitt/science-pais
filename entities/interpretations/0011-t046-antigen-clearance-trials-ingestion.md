@@ -107,11 +107,16 @@ For **`hypothesis:0002`** (tissue-reservoir antigen-fragment as a pathogen-agnos
 - Bhattacharjee2026's NMV/r-fails-to-clear-Spike result actively *favors* a tissue-reservoir / non-
   replicating-antigen model over active bloodstream replication — a small qualitative point in h0002's
   favor.
-- **Borrelia/Coxiella clearance arm is unfilled:** the bacterial-trigger parallel (PTLDS antibiotic-
-  retreatment nulls — Klempner2001, Krupp2003, Fallon2008, Berende2016/PLEASE) is **not yet in the
-  repo**. Its pattern (retreatment does not durably rescue established PTLDS) would be the cross-pathogen
-  echo of the LC antiviral nulls and belongs on `proposition:0020`. Flagged as a follow-up rather than
-  fabricated here.
+- **Borrelia clearance arm now filled (t051, 2026-06-24):** the bacterial-trigger parallel (PTLDS
+  antibiotic-retreatment — Klempner2001, Krupp2003/STOP-LD, Fallon2008, Berende2016/PLEASE) is now
+  ingested as `evidence-line:0060`, a single consolidated weak-disputes line on `proposition:0020`. The
+  pattern is the predicted cross-pathogen echo (no durable rescue of established PTLDS), and the
+  target-engagement gap is *sharper* here than for long COVID: antibiotics act on replicating spirochaetes,
+  not on retained non-viable pPG^Bb fragments (McClune2025), so the vehicle cannot mechanistically clear
+  the hypothesized target. Coded as **one** line rather than four (shared modality/trigger, not
+  independent refutations) specifically to avoid inflating `proposition:0020`'s dispute weight on a claim
+  whose honest status remains "not adequately tested." The **Coxiella/Q-fever** retreatment parallel
+  remains unfilled.
 
 ## Evidence vs. Open Questions
 
@@ -133,15 +138,17 @@ For **`hypothesis:0002`** (tissue-reservoir antigen-fragment as a pathogen-agnos
    viral-load reduction as a mediator would tell us whether `proposition:0021` is truly about *antigen*
    burden or about acute metabolic stress — disambiguating which of h0002 vs h0001/h0004 the prevention
    signal supports.
-3. **Ingest the PTLDS antibiotic-retreatment literature** to fill the Borrelia clearance arm of
-   `proposition:0020` (cross-pathogen generality of the "late clearance doesn't rescue" pattern).
+3. **Ingest the Coxiella/Q-fever retreatment literature** to extend the bacterial clearance arm of
+   `proposition:0020`. *(The Borrelia/PTLDS arm is now done — t051, `evidence-line:0060`.)*
 
 ## Limitations & Residual Uncertainty
 
-- Five papers, all SARS-CoV-2; no bacterial/spirochaetal clearance evidence coded yet (the Borrelia
-  parallel is flagged, not ingested). The verdict is robust on the *fault line* (no target engagement in
-  established disease; prevention positive) but is not a systematic review of the antiviral-trial
-  landscape (e.g. PREVAIL-LC/ensitrelvir, RECOVER-VITAL, Maraviroc/CCR5 trials remain to be tracked).
+- The original t046 set was five papers, all SARS-CoV-2. The Borrelia/PTLDS clearance arm has since been
+  added (t051, `evidence-line:0060`: Klempner2001/Krupp2003/Fallon2008/Berende2016), so the disputing base
+  now spans two pathogen classes; the Coxiella/Q-fever parallel remains uncoded. The verdict is robust on
+  the *fault line* (no target engagement in established disease; prevention positive) but is not a
+  systematic review of the antiviral-trial landscape (e.g. PREVAIL-LC/ensitrelvir, RECOVER-VITAL,
+  Maraviroc/CCR5 trials remain to be tracked).
 - Two of three null trials are preprints; the prevention mechanism is ambiguous. Weightings reflect this.
 - `proposition:0020` rests entirely on uninterpretable nulls — its disputed status should not harden into
   "refuted" without a clearance-demonstrated trial.
@@ -153,7 +160,8 @@ For **`hypothesis:0002`** (tissue-reservoir antigen-fragment as a pathogen-agnos
 2. **Track the decisive trial design** — antigen-positive-enriched + clearance-demonstrated + symptom
    endpoint + a timing arm (early/transition vs established) — as the single experiment that adjudicates
    0020 vs the 0021 fixed-risk-factor reading. (This mirrors `discussion:0003`'s "Evidence Needed.")
-3. **Add a follow-up task** to ingest the PTLDS antibiotic-retreatment trials for the Borrelia clearance
-   arm of `proposition:0020`.
+3. ~~Ingest the PTLDS antibiotic-retreatment trials for the Borrelia clearance arm of
+   `proposition:0020`.~~ **Done (t051, `evidence-line:0060`).** Remaining: the Coxiella/Q-fever
+   retreatment parallel.
 4. t046 is **complete** (trials formalized and adjudicated); the live gap is now external trial
    availability, not further coding of existing literature.

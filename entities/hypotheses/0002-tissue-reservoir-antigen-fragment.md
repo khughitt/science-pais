@@ -9,8 +9,6 @@ source_refs:
 - cite:McClune2025
 - cite:Peluso2024
 - cite:Morroy2016
-- cite:Klempner2001
-- cite:Fallon2008
 related:
 - topic:antigen-pathogen-persistence
 - topic:shared-failure-mode-across-pais
@@ -81,7 +79,7 @@ Confidence would be materially reduced if:
 ## Disputing Evidence
 
 - **Hanson2023:** argues enterovirus *reservoirs* (not macrophage-retained fragments) drive classical ME/CFS, and notes no full enterovirus genomes recovered — a different persistence model and a replication caveat.
-- **Established-disease antigen-clearance trials are null** (now coded as `proposition:0020`'s evidence base via `interpretation:0011`): `evidence-line:0053` (Geng2024/STOP-PASC, 15-day NMV/r), `evidence-line:0055` (Peluso2026/outSMART-LC, anti-RBD mAb), with `evidence-line:0054` (Bhattacharjee2026/PAX-LC) showing NMV/r left circulating Spike unchanged. **Crucially these are weak and uninterpretable**, not disconfirming: none demonstrated antigen target-engagement, so — per `discussion:0003` — they **do not refute antigen persistence**. The Borrelia retreatment parallel is now ingested: `evidence-line` for `paper:Klempner2001` (PTLDS, IV ceftriaxone + oral doxycycline 90 days, null on SF-36, stopped for futility, no antigen assay) and `paper:Fallon2008` (Lyme encephalopathy, 10-week IV ceftriaxone, transient cognitive benefit at week 12 lost by week 24, no Borrelia antigen assay) both follow the same uninterpretable-null pattern — antibiotics target live spirochetes, not degradation-resistant pPG^Bb fragments. The Coxiella/Q-fever retreatment parallel is not yet ingested.
+- **Established-disease antigen-clearance trials are null** (now coded as `proposition:0020`'s evidence base via `interpretation:0011`): `evidence-line:0053` (Geng2024/STOP-PASC, 15-day NMV/r), `evidence-line:0055` (Peluso2026/outSMART-LC, anti-RBD mAb), with `evidence-line:0054` (Bhattacharjee2026/PAX-LC) showing NMV/r left circulating Spike unchanged. **Crucially these are weak and uninterpretable**, not disconfirming: none demonstrated antigen target-engagement, so — per `discussion:0003` — they **do not refute antigen persistence**. The Borrelia retreatment parallel is now ingested as a consolidated cross-pathogen line, `evidence-line:0060` (Klempner2001, Krupp2003/STOP-LD, Fallon2008, Berende2016/PLEASE) — four PTLDS antibiotic-retreatment RCTs with no durable symptom rescue, none measuring residual Borrelia antigen/peptidoglycan/DNA. This follows the same uninterpretable-null pattern, and arguably *sharper*: antibiotics kill replicating spirochaetes but cannot degrade degradation-resistant non-viable pPG^Bb fragments, so the vehicle is mechanistically incapable of clearing the hypothesized target. (Coded as one weak line, not four — same modality/trigger, not independent refutations — to avoid inflating the dispute on a still-untested claim.) The Coxiella/Q-fever retreatment parallel is not yet ingested.
 
 ## Evidence Needed To Shift Belief
 

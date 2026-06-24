@@ -21,9 +21,7 @@ source_refs:
 - paper:Geng2024
 - paper:Bhattacharjee2026
 - paper:Peluso2026
-- paper:Fallon2008
-- paper:Krupp2003
-- paper:Berende2016
+- paper:Klempner2001
 created: '2026-06-24'
 updated: '2026-06-24'
 ---
@@ -43,10 +41,11 @@ intact.
 ## Evidence Summary
 
 `literature_evidence`, and on the **interventional** axis the claim is **weakly disputed but
-mechanistically uninterpretable** (`interpretation:0011-t046-antigen-clearance-trials-ingestion`). Three
-RCTs in *established* long COVID are null on the clinical endpoint, but **none demonstrated antigen
-target-engagement**, so they cannot distinguish "antigen does not drive symptoms" from "the drug never
-cleared antigen":
+mechanistically uninterpretable** (`interpretation:0011-t046-antigen-clearance-trials-ingestion`). The
+disputing base now spans two pathogen classes — three RCTs in *established* long COVID and a consolidated
+body of four PTLDS antibiotic-retreatment RCTs — all null/mixed on the clinical endpoint, but **none
+demonstrated antigen target-engagement**, so they cannot distinguish "antigen does not drive symptoms"
+from "the drug never cleared antigen":
 
 - **Dispute — weak:** `evidence-line:0053` (`paper:Geng2024`, STOP-PASC) — 15-day nirmatrelvir/ritonavir,
   null on the primary 6-symptom composite and all PROMIS secondaries (stopped early for futility); no
@@ -61,34 +60,19 @@ cleared antigen":
   plasma antigen-clearance assay was run** and baseline tissue antigen was scarce (gut-biopsy RNA in only
   1/17). Adds a mechanistically *independent* clearance modality (neutralizing mAb, not an Mpro inhibitor)
   to the same uninterpretable-null pattern.
-- **Dispute — weak, PTLDS parallel:** `evidence-line:0060` (`paper:Krupp2003`, STOP-LD) — 28-day IV
-  ceftriaxone vs placebo in PTLDS patients with persistent severe fatigue (n ~55 [UNVERIFIED]). Mixed
-  result: subjective fatigue (FSS-11) improved significantly; objective cognitive endpoint (mental-speed
-  test) showed no benefit. Authors explicitly declined to recommend retreatment given risks. **No Borrelia
-  antigen, peptidoglycan, or DNA was measured** — the structural gap is identical to the long COVID
-  antiviral nulls. Additional interpretive complication: if the biologically active residue is non-
-  replicating pPG^Bb (McClune2025), ceftriaxone (which targets cell-wall synthesis in replicating
-  bacteria) has no expected clearing mechanism even if fragments are present. Adds the cross-pathogen
-  Borrelia arm to the established-disease-clearance-proxy-null pattern.
-- **Dispute — weak, PTLDS parallel:** `paper:Fallon2008` (Fallon 2008, Neurology) — 10-week IV
-  ceftriaxone vs placebo in patients with Lyme encephalopathy (documented prior Lyme, IgG Western blot
-  positive, objective memory impairment). Significant broad cognitive improvement at week 12 (end of
-  treatment), but improvement was **not sustained at week 24** after antibiotics stopped. No Borrelia
-  antigen or peptidoglycan fragment (pPG^Bb) was measured at any timepoint, so whether treatment altered
-  residual antigen burden is unknown. The transient-then-relapse time-course is consistent with either
-  an antigen-re-drive mechanism (antigen persists, re-drives pathology once antibiotic pressure lifts) or
-  a direct pharmacological suppression of a self-sustaining loop — the design cannot discriminate them.
-  Adverse event rate 26% in the ceftriaxone arm (vs 7% placebo), primarily PICC-line events.
-
-- **Dispute — weak, PTLDS parallel (largest PTLDS RCT):** `evidence-line:0061` (`paper:Berende2016`,
-  PLEASE) — 281 patients randomized; all received open-label 2-week IV ceftriaxone, then 12 additional
-  weeks of doxycycline, clarithromycin/hydroxychloroquine, or placebo. SF-36 PCS at week 14: no
-  significant difference across arms (P=0.69; active-vs-placebo differences of +0.2 and +0.9 points,
-  both within CI spanning zero). All arms improved from baseline (P<0.001) — the shared ceftriaxone
-  induction means the comparison is "more antibiotic vs less," not "antibiotic vs none." **No Borrelia
-  antigen, peptidoglycan, or fragment was measured.** Three-arm design and N=280 make this the
-  methodologically strongest PTLDS retreatment trial. Adds a second, larger Borrelia-arm null to the
-  established-disease-clearance-proxy-null pattern.
+- **Dispute — weak, consolidated Borrelia (PTLDS) arm:** `evidence-line:0060` (`paper:Klempner2001`,
+  `paper:Krupp2003`, `paper:Fallon2008`, `paper:Berende2016`) — four placebo-controlled RCTs of extended
+  or repeat antibiotic therapy in established PTLDS, collectively showing **no durable symptom rescue**:
+  Klempner2001 (90 d IV ceftriaxone → 60 d doxycycline, double-null on SF-36, stopped for futility);
+  Krupp2003/STOP-LD (28 d IV ceftriaxone — subjective fatigue improved, objective cognition null);
+  Fallon2008 (10 wk IV ceftriaxone — cognitive gain at week 12 lost by week 24); Berende2016/PLEASE
+  (largest, ~280 randomized, no benefit over placebo on SF-36 PCS). **No trial measured residual Borrelia
+  antigen, peptidoglycan, or DNA** — the same target-engagement gap as the long COVID arm, and arguably
+  sharper: antibiotics kill *replicating* spirochaetes but cannot degrade a *non-replicating* pPG^Bb
+  fragment (McClune2025), so the vehicle is mechanistically incapable of clearing the hypothesized target.
+  Coded as **one** weak line, not four — the trials share modality (antibiotics) and trigger (Borrelia)
+  and are not independent refutations; this adds genuine cross-pathogen reach without over-counting the
+  dispute. (See `evidence-line:0060` for per-trial detail and the consolidation rationale.)
 
 There is **no supporting line**: no completed trial both achieved demonstrated antigen clearance and
 measured symptom change. The honest net is *not* "antigen clearance fails to rescue" — it is "the
@@ -101,8 +85,10 @@ clearance**, not a measurement of it; the antecedent of this proposition (antige
 unmet in every trial coded here. The load-bearing confound (per `discussion:0003`): a trial that does not
 demonstrate target-engagement cannot test whether clearing antigen helps, so these nulls **must not be
 cited as refuting antigen persistence** (`hypothesis:0002`). Each trial carries additional standard
-caveats — short course (15 days), tissue-reservoir inaccessibility, no antigen-positive enrichment,
-protracted highly-vaccinated cohorts (median >1 yr since infection), and the `proposition:0021`
+caveats — short course (15 days for the LC antivirals), tissue-reservoir inaccessibility, no
+antigen-positive enrichment, protracted highly-vaccinated cohorts (median >1 yr since infection), and —
+in the Borrelia arm — a **vehicle/target mechanism mismatch** (antibiotics act on replicating spirochaetes,
+not on retained non-viable pPG^Bb fragments), plus the `proposition:0021`
 reconciliation (antigen as a fixed risk factor at onset that becomes non-operative once the chronic state
 is self-sustaining, `hypothesis:0001`) that would make late clearance ineffective *without* refuting the
 mechanism. The decisive test remains an **antigen-positive-enriched, clearance-demonstrated, symptom-
