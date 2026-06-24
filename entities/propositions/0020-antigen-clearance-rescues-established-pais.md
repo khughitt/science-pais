@@ -23,6 +23,7 @@ source_refs:
 - paper:Peluso2026
 - paper:Fallon2008
 - paper:Krupp2003
+- paper:Berende2016
 created: '2026-06-24'
 updated: '2026-06-24'
 ---
@@ -78,6 +79,16 @@ cleared antigen":
   an antigen-re-drive mechanism (antigen persists, re-drives pathology once antibiotic pressure lifts) or
   a direct pharmacological suppression of a self-sustaining loop — the design cannot discriminate them.
   Adverse event rate 26% in the ceftriaxone arm (vs 7% placebo), primarily PICC-line events.
+
+- **Dispute — weak, PTLDS parallel (largest PTLDS RCT):** `evidence-line:0061` (`paper:Berende2016`,
+  PLEASE) — 281 patients randomized; all received open-label 2-week IV ceftriaxone, then 12 additional
+  weeks of doxycycline, clarithromycin/hydroxychloroquine, or placebo. SF-36 PCS at week 14: no
+  significant difference across arms (P=0.69; active-vs-placebo differences of +0.2 and +0.9 points,
+  both within CI spanning zero). All arms improved from baseline (P<0.001) — the shared ceftriaxone
+  induction means the comparison is "more antibiotic vs less," not "antibiotic vs none." **No Borrelia
+  antigen, peptidoglycan, or fragment was measured.** Three-arm design and N=280 make this the
+  methodologically strongest PTLDS retreatment trial. Adds a second, larger Borrelia-arm null to the
+  established-disease-clearance-proxy-null pattern.
 
 There is **no supporting line**: no completed trial both achieved demonstrated antigen clearance and
 measured symptom change. The honest net is *not* "antigen clearance fails to rescue" — it is "the
