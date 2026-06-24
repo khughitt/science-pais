@@ -8,6 +8,8 @@ phase: candidate
 source_refs:
 - cite:Oaklander2022
 - cite:Joseph2021
+- cite:Kharraziha2020
+- cite:Hall2022
 related:
 - question:0004-convergent-small-fiber-neuropathy-substrate
 - question:0009-functional-autoantibodies-drive-dysautonomia
@@ -23,6 +25,7 @@ related:
 - hypothesis:0001-shared-dysregulated-attractor
 - hypothesis:0003-immune-exhaustion-feedback
 - pre-registration:0003-cross-syndrome-paired-biopsy-primary-dysautonomia-controls
+- interpretation:0010-t006-functional-gpcr-autoantibody-ingestion
 created: '2026-06-24'
 updated: '2026-06-24'
 ---
@@ -61,8 +64,12 @@ separate, individually falsifiable auxiliary propositions —
 `proposition:0019-pais-sfn-immunomodulation-modifies-lesion-trajectory` (background members of the
 bundle) — so the core causal claim is not made elastic by an "and/or". All are now coded against
 literature evidence-lines via `task:t049` (`interpretation:0009-t049-sfn-cross-syndrome-ingestion`):
-P1/P4 supported, P2 and the anti-GPCR route (0018) the thinnest legs; `task:t006` still owns deeper
-anti-GPCR autonomic-axis evidence.*
+P1/P4 supported, P2 and the anti-GPCR route (0018) the thinnest legs. The anti-GPCR route was then
+deepened by `task:t006` (`interpretation:0010-t006-functional-gpcr-autoantibody-ingestion`), which
+ingested the primary functional-autoantibody literature and rendered `proposition:0018` **contested**:
+one functional-assay correlation (Kharraziha2020, α1-AR-activity↔orthostatic-severity) against a
+binding-ELISA specificity null (Hall2022), with **no study linking any anti-GPCR antibody to the
+small-fiber lesion**.*
 
 - **P1 (structural lesion → `proposition:0014`).** A substantial subset of PAIS patients with autonomic symptoms have
   objectively reduced intraepidermal nerve-fiber density (IENFD) or autonomic small-fiber loss on
@@ -97,13 +104,16 @@ anti-GPCR autonomic-axis evidence.*
 
 The frame is now **literature-coded** but only **partially supported**:
 `interpretation:0009-t049-sfn-cross-syndrome-ingestion` deposited 11 evidence-lines (`evidence-line:0038`–
-`0048`) across P1–P4 and the autoantibody routes. P1 (lesion) and P4 (cross-trigger breadth) are
-supported; P2 (non-length-dependent) and the anti-GPCR route (`proposition:0018`) remain the thinnest
-legs. Key fragilities: SFN prevalence estimates in long COVID/ME/CFS vary
+`0048`) across P1–P4 and the autoantibody routes, and `interpretation:0010-t006-functional-gpcr-autoantibody-ingestion`
+added 4 more (`evidence-line:0049`–`0052`) on the anti-GPCR route. P1 (lesion) and P4 (cross-trigger
+breadth) are supported; P2 (non-length-dependent) and the anti-GPCR route (`proposition:0018`) remain the
+thinnest legs. Key fragilities: SFN prevalence estimates in long COVID/ME/CFS vary
 widely by biopsy protocol and case definition (a `topic:measurement-ascertainment-artifacts-in-pais`
 concern); the **non-length-dependent** claim (P2) requires proximal-plus-distal sampling that many
-studies omit; the autoantibody→neuropathy causal link (P3) is the weakest leg — functional
-autoantibodies are reported but a pathogenic, fiber-damaging role is largely inferential; and no study
+studies omit; the autoantibody→neuropathy causal link (P3) is the weakest leg and now formally
+**contested** — t006 found one functional-assay correlation (Kharraziha2020) against a binding-ELISA
+specificity null (Hall2022), and crucially **no study links any anti-GPCR antibody to the small-fiber
+lesion** (only to autonomic *function*), so the antibody→*lesion* bridge is untested; and no study
 in the corpus compares PAIS SFN head-to-head against **primary-dysautonomia controls** using one
 standardized protocol, which is exactly what P2/A1 need.
 
@@ -139,6 +149,10 @@ links the functional-autoantibody thread (`question:0009`) to the structural les
 titer↔IENFD/autonomic-severity correlation or an immunomodulation response in a seropositive subset.
 Absent (1), this remains a candidate organizing frame for the dysautonomia/autoimmunity work rather
 than a committed hypothesis.
+
+**Status of the criteria (2026-06-24):**
+- *Criterion #1* is operationalized as the data-gated `pre-registration:0003-cross-syndrome-paired-biopsy-primary-dysautonomia-controls` — **not yet met** (no admissible vehicle exists; tracked by `task:t050`).
+- *Criterion #2* is **not cleanly met** after `task:t006` (`interpretation:0010`). Note its wording links the autoantibody thread *to the structural lesion*: that strict reading is **unmet** — no ingested study correlates any anti-GPCR antibody with IENFD/SGNFD; all endpoints are autonomic *function*. A weaker titer↔autonomic-*severity* reading is only **partially and contestedly** met (Kharraziha2020 functional α1-AR↔OHQ, against the Hall2022 binding-ELISA specificity null). The decisive missing measurement — functional anti-GPCR activity *and* IENFD in the same subjects — is co-measurable in the pre-reg:0003 **G5 serology arm**, which would discharge both criteria in one design. Future criterion-#2 evidence should be gated on **functional** (not binding-ELISA) assays.
 
 ## Supporting Evidence
 

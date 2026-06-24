@@ -7,14 +7,6 @@
 
 Blocked by tooling gap (fb-2026-06-11-005). Bridge papers: Choutka2022, Komaroff2025, Klein2023, Rojas2022, Sharma2023.
 
-## [t006] [lit-search] Functional autoantibody (GPCR: beta-adrenergic/muscarinic) literature
-- priority: P3
-- status: proposed
-- aspects: []
-- created: 2026-06-11
-
-Gap: functional-autoantibody mechanism asserted but specific literature not yet ingested. Relates to question (functional-autoantibodies-drive-dysautonomia), topic:post-infectious-dysautonomia-and-autoimmunity.
-
 ## [t007] [lit-search] Microbiome / gut-brain axis in post-infectious syndromes
 - priority: P3
 - status: proposed

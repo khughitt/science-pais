@@ -16,12 +16,19 @@ source_refs:
 - cite:Stahlberg2025
 - cite:Rojas2022
 - cite:Sharma2023
+- cite:Loebel2016
+- cite:Kharraziha2020
+- cite:Hall2022
+- cite:Schmitz2026
 related:
 - topic:post-infectious-dysautonomia-and-autoimmunity
 - question:0005-latent-to-overt-autoimmunity-conversion
 - hypothesis:0001-shared-dysregulated-attractor
 - hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
 - pre-registration:0003-cross-syndrome-paired-biopsy-primary-dysautonomia-controls
+- interpretation:0010-t006-functional-gpcr-autoantibody-ingestion
+- proposition:0018-pais-sfn-anti-gpcr-autoantibody-pathogenicity
+- task:t006
 created: '2026-06-11'
 updated: '2026-06-24'
 ---
@@ -40,6 +47,10 @@ Dysautonomia — especially postural orthostatic tachycardia syndrome (POTS) —
 
 - Supporting: Stahlberg2025 documents objectively measured microvascular endothelial dysfunction and POTS (27% of cohort) in PACS and frames autonomic and vascular dysregulation as linked failure modes plausibly amenable to an autoimmune mechanism. Rojas2022 shows latent autoimmunity (83%) and polyautoimmunity (62%) are near-universal in post-COVID syndrome, with anti-SARS-CoV-2 IgG correlating with self-reactive autoantibodies (bystander activation) — establishing that a broad post-infectious autoantibody repertoire exists that could include functional GPCR antibodies. Sharma2023 synthesizes large cohorts showing substantially elevated incidence of new-onset autoimmune disease after COVID-19, supporting infection-triggered autoimmunity as real and common.
 - Conflicting / cautionary: None of these papers directly demonstrates that GPCR autoantibodies are present, functional (agonist/antagonist at the receptor), or causal for dysautonomia; the evidence is for autoimmunity in general and dysautonomia in general, not the specific causal link. GPCR-autoantibody findings in the broader ME/CFS/POTS literature are inconsistent and assay-dependent, and healthy individuals can carry low-titer natural GPCR antibodies, raising specificity concerns.
+- **Primary functional-autoantibody literature ingested (t006, 2026-06-24; `interpretation:0010-t006-functional-gpcr-autoantibody-ingestion`)** — verdict **`[~]` contested**, splitting cleanly on assay type:
+  - *Functional-assay support:* **Kharraziha2020** (POTS, functional FRET activity assay) — α1-AR serum **activity** correlates with orthostatic-symptom severity (β=0.77, p=0.009, surviving ΔHR/ΔSBP adjustment); the strongest evidence that *functional* (not merely binding) GPCR-autoantibody signal tracks autonomic severity. **Loebel2016** (foundational ME/CFS, binding ELISA) — β2/M3/M4 seroprevalence ~29.5% on the canonical targets, but binding-only. **Schmitz2026** (long COVID) — anti-GPCR ↔ HRV/BP correlation, but its own in-vitro hiPSC-cardiomyocyte functional test was **null**.
+  - *Specificity rebuttal:* **Hall2022** (POTS, Circulation) — by standard binding ELISA, **98% of POTS and 100% of healthy controls** are "seropositive" for α1-AR with no group difference across 11 receptors; ELISA seropositivity reflects ubiquitous natural antibodies / non-specific binding, **not** disease-specific autoimmunity. This guts the binding-ELISA evidence base **without** touching functional-assay correlations.
+  - *Methodological lesson (load-bearing):* future criterion-#2 evidence should be gated on **functional/receptor-activation assays**, not binding ELISA. And critically — **no ingested study links any anti-GPCR antibody to the small-fiber lesion** (IENFD/SGNFD); all endpoints are autonomic *function*, leaving the antibody→*lesion* bridge of `proposition:0018` untested. That bridge is naturally co-measurable in the `pre-registration:0003` G5 serology arm.
 
 ## Thoughts
 

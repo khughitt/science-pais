@@ -16,8 +16,13 @@ related:
 - proposition:0016-pais-sfn-autoimmune-causation
 - question:0009-functional-autoantibodies-drive-dysautonomia
 - task:t006
+- interpretation:0010-t006-functional-gpcr-autoantibody-ingestion
 source_refs:
 - paper:Stein2025
+- paper:Kharraziha2020
+- paper:Loebel2016
+- paper:Hall2022
+- paper:Schmitz2026
 created: '2026-06-24'
 updated: '2026-06-24'
 ---
@@ -35,14 +40,30 @@ could be true. It is the single weakest link in `hypothesis:0007`.
 
 ## Evidence Summary
 
-`literature_evidence`, **coded via `task:t049`** (`interpretation:0009-t049-sfn-cross-syndrome-ingestion`) —
-and the **weakest leg**. The only coded support is `evidence-line:0048` (`paper:Stein2025`, weak/proxy:
-anti-GPCR β2-AR autoantibody selection + depletion-associated autonomic improvement, but β2-AR reduction
-did **not** predict response). Critically, the strongest *causal* autoantibody evidence (`paper:deSa2026`,
-`evidence-line:0045`, coded against `proposition:0016`) targeted **non-GPCR** antigens (MED20/USP5) and did
-**not** recapitulate the autonomic axis — so anti-GPCR-specific pathogenicity *of small fibers / the
-autonomic lesion* remains essentially unproven. `task:t006` should seek anti-GPCR evidence on the
-autonomic axis specifically.
+`literature_evidence`, **the weakest leg** — and now **contested** following the `task:t006` functional-
+autoantibody ingestion (`interpretation:0010-t006-functional-gpcr-autoantibody-ingestion`; original
+coding via `task:t049` / `interpretation:0009`). The validator flags this proposition
+`belief.fragile-single-line` — the verdict flips on dropping any single line, the honest state of a thin
+base. The coded lines, all on the **autonomic-function** axis:
+
+- **Support — functional (the strongest):** `evidence-line:0049` (`paper:Kharraziha2020`, *moderate*) —
+  functional FRET assay, α1-AR **activity** correlates with orthostatic-symptom severity (β=0.77, p=0.009,
+  surviving ΔHR/ΔSBP). Off the canonical β/M targets and in POTS not PAIS, but the best *functional*
+  correlational evidence.
+- **Support — weak/binding or associational:** `evidence-line:0050` (`paper:Loebel2016` — ME/CFS β2/M3/M4
+  binding-ELISA seroprevalence, no functional confirmation); `evidence-line:0052` (`paper:Schmitz2026` —
+  long-COVID anti-GPCR↔HRV/BP, but its own in-vitro cardiomyocyte test was **null**); `evidence-line:0048`
+  (`paper:Stein2025` — β2-AR-selected immunoadsorption, but β2-AR reduction did not predict response).
+- **Dispute:** `evidence-line:0051` (`paper:Hall2022`, *moderate*, `model_criticism`) — standard binding
+  ELISA scores 98% POTS / 100% healthy controls seropositive with no group difference; binding-ELISA
+  seropositivity is non-specific. It **guts the binding-ELISA support without touching the functional-
+  assay support** (0049) — the two do not cancel.
+
+Two structural gaps remain decisive: (1) the strongest *causal* autoantibody evidence (`paper:deSa2026`,
+`evidence-line:0045`, on `proposition:0016`) targeted **non-GPCR** antigens (MED20/USP5) and spared the
+autonomic axis; (2) **no line links any anti-GPCR antibody to the small-fiber lesion** (`proposition:0014`/
+`0015`) — every endpoint is autonomic *function*, so the antibody→*lesion* bridge this proposition asserts
+is untested. That bridge is co-measurable in the `pre-registration:0003` G5 serology arm.
 
 ## Caveats
 
