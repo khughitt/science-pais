@@ -21,6 +21,8 @@ source_refs:
 - paper:Geng2024
 - paper:Bhattacharjee2026
 - paper:Peluso2026
+- paper:Fallon2008
+- paper:Krupp2003
 created: '2026-06-24'
 updated: '2026-06-24'
 ---
@@ -58,6 +60,15 @@ cleared antigen":
   plasma antigen-clearance assay was run** and baseline tissue antigen was scarce (gut-biopsy RNA in only
   1/17). Adds a mechanistically *independent* clearance modality (neutralizing mAb, not an Mpro inhibitor)
   to the same uninterpretable-null pattern.
+- **Dispute — weak, PTLDS parallel:** `paper:Fallon2008` (Fallon 2008, Neurology) — 10-week IV
+  ceftriaxone vs placebo in patients with Lyme encephalopathy (documented prior Lyme, IgG Western blot
+  positive, objective memory impairment). Significant broad cognitive improvement at week 12 (end of
+  treatment), but improvement was **not sustained at week 24** after antibiotics stopped. No Borrelia
+  antigen or peptidoglycan fragment (pPG^Bb) was measured at any timepoint, so whether treatment altered
+  residual antigen burden is unknown. The transient-then-relapse time-course is consistent with either
+  an antigen-re-drive mechanism (antigen persists, re-drives pathology once antibiotic pressure lifts) or
+  a direct pharmacological suppression of a self-sustaining loop — the design cannot discriminate them.
+  Adverse event rate 26% in the ceftriaxone arm (vs 7% placebo), primarily PICC-line events.
 
 There is **no supporting line**: no completed trial both achieved demonstrated antigen clearance and
 measured symptom change. The honest net is *not* "antigen clearance fails to rescue" — it is "the

@@ -10,6 +10,7 @@ source_refs:
 - cite:Peluso2024
 - cite:Morroy2016
 - cite:Klempner2001
+- cite:Fallon2008
 related:
 - topic:antigen-pathogen-persistence
 - topic:shared-failure-mode-across-pais
@@ -80,7 +81,7 @@ Confidence would be materially reduced if:
 ## Disputing Evidence
 
 - **Hanson2023:** argues enterovirus *reservoirs* (not macrophage-retained fragments) drive classical ME/CFS, and notes no full enterovirus genomes recovered — a different persistence model and a replication caveat.
-- **Established-disease antigen-clearance trials are null** (now coded as `proposition:0020`'s evidence base via `interpretation:0011`): `evidence-line:0053` (Geng2024/STOP-PASC, 15-day NMV/r), `evidence-line:0055` (Peluso2026/outSMART-LC, anti-RBD mAb), with `evidence-line:0054` (Bhattacharjee2026/PAX-LC) showing NMV/r left circulating Spike unchanged. **Crucially these are weak and uninterpretable**, not disconfirming: none demonstrated antigen target-engagement, so — per `discussion:0003` — they **do not refute antigen persistence**. The Borrelia retreatment parallel is now ingested: `evidence-line` for `paper:Klempner2001` (PTLDS, IV ceftriaxone + oral doxycycline 90 days, null on SF-36, stopped for futility, no antigen assay) follows the same uninterpretable-null pattern — antibiotics target live spirochetes, not degradation-resistant pPG^Bb fragments. The Coxiella/Q-fever retreatment parallel is not yet ingested.
+- **Established-disease antigen-clearance trials are null** (now coded as `proposition:0020`'s evidence base via `interpretation:0011`): `evidence-line:0053` (Geng2024/STOP-PASC, 15-day NMV/r), `evidence-line:0055` (Peluso2026/outSMART-LC, anti-RBD mAb), with `evidence-line:0054` (Bhattacharjee2026/PAX-LC) showing NMV/r left circulating Spike unchanged. **Crucially these are weak and uninterpretable**, not disconfirming: none demonstrated antigen target-engagement, so — per `discussion:0003` — they **do not refute antigen persistence**. The Borrelia retreatment parallel is now ingested: `evidence-line` for `paper:Klempner2001` (PTLDS, IV ceftriaxone + oral doxycycline 90 days, null on SF-36, stopped for futility, no antigen assay) and `paper:Fallon2008` (Lyme encephalopathy, 10-week IV ceftriaxone, transient cognitive benefit at week 12 lost by week 24, no Borrelia antigen assay) both follow the same uninterpretable-null pattern — antibiotics target live spirochetes, not degradation-resistant pPG^Bb fragments. The Coxiella/Q-fever retreatment parallel is not yet ingested.
 
 ## Evidence Needed To Shift Belief
 
