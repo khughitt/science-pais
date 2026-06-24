@@ -100,10 +100,15 @@ For **`hypothesis:0002`** (tissue-reservoir antigen-fragment as a pathogen-agnos
 - It moves from `claim_count=0` (prose-only) to a **formalized, evidenced claim base** — the prose note
   "early antiviral trials have not clearly improved symptoms" is now coded as `evidence-line:0053`–`0055`
   with the crucial target-engagement caveat, exactly as t046 asked.
-- The hypothesis is **neither promoted nor weakened**. The clearance nulls do not weaken it (broken
-  tests); the prevention positives only *weakly/indirectly* touch the antigen mechanism (their firm
-  content is mechanism-agnostic). h0002 stays `proposed`/`active` and reads as `contested` — not
-  `well_supported` — at the hypothesis level, which is the intended state.
+- The hypothesis is **neither promoted nor weakened** *by these trials*. The clearance nulls do not weaken
+  it (broken tests); the prevention positives only *weakly/indirectly* touch the antigen mechanism (their
+  firm content is mechanism-agnostic, so 0021 was later decoupled from h0002's belief — t051). h0002 stays
+  `proposed`/`active`. **Belief grade superseded (t051/t052):** with `proposition:0021` decoupled and the
+  hypothesis's three core conjuncts now coded (t052), h0002 grades **`speculative`** at the bundle level —
+  one supported pillar (`proposition:0022`, persistence) conjoined with two untested pillars
+  (`proposition:0023` generalization, `proposition:0024` burden-determines-onset). "One pillar supported;
+  full initiator hypothesis unproven" is the intended honest state; see h0002's t052 belief-graph note for
+  the authoritative account.
 - Bhattacharjee2026's NMV/r-fails-to-clear-Spike result actively *favors* a tissue-reservoir / non-
   replicating-antigen model over active bloodstream replication — a small qualitative point in h0002's
   favor.

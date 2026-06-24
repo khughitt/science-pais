@@ -95,6 +95,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/528476c98c2314ee> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0020-antigen-clearance-rescues-established-pais> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/0562e3f2895176e0> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/2d00fe0305e3189c> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/05dca07d5899443e> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_questions_0003-acute-severity-threshold-for-self-sustaining-pais.md> ;
         sci:bearsOnTarget <http://example.org/project/question/0003-acute-severity-threshold-for-self-sustaining-pais> ;
@@ -251,6 +255,10 @@
         sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0040-walitt2024-pimecfs-no-small-fiber-density-difference-disputes-p1.md> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0040-walitt2024-pimecfs-no-small-fiber-density-difference-disputes-p1> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/0f570dfb3e5ad09f> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/d69456ffd4f32ec1> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/0f59a9798d878f52> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/kawai2025> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0007-vascular-autonomic-pathways-contribute-to-the-stage-pais-link> ;
@@ -363,6 +371,10 @@
         sci:bearsOnSource <http://example.org/project/task/t018> ;
         sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/129ed9630d03398c> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/evidence-line/0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/12e6325c804e6469> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/9cf572eb1c697bd2> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0011-t046-antigen-clearance-trials-ingestion> ;
@@ -378,6 +390,10 @@
     <http://example.org/project/bears-on-edge/13cdad79f847d626> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/e9b87054397f6db5> ;
         sci:bearsOnTarget <http://example.org/project/method/ukb-data-field-specification> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/1404c64d920c22fd> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022.md> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/146e67c977282cca> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/b07854a479fd71fc> ;
@@ -470,6 +486,10 @@
     <http://example.org/project/bears-on-edge/1877cf4cb76beaae> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/che2025> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/1888a5e87ecf77c9> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022.md> ;
+        sci:bearsOnTarget <http://example.org/project/evidence-line/0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/189e6dd252cd489c> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/evidence-line/0038-oaklander2022-longcovid-paired-biopsy-sfn-supports-p1> ;
@@ -911,6 +931,10 @@
         sci:bearsOnSource <http://example.org/project/task/t021> ;
         sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/32de4d4209376334> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source/entities_propositions_0022-degradation-resistant-fragments-persist-and-are-bioactive.md> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/3325e19e5d4329dc> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/7184196e6ece5bd6> ;
         sci:bearsOnTarget <http://example.org/project/paper/xie2024> ;
@@ -986,6 +1010,10 @@
     <http://example.org/project/bears-on-edge/3655548ba308b06f> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/task/t014> ;
         sci:bearsOnTarget <http://example.org/project/question/0007-mechanism-of-female-predominance-in-pais> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/36828cb45019c9f4> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source/entities_propositions_0024-retained-fragment-burden-predicts-chronicity-over-initial-load.md> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0024-retained-fragment-burden-predicts-chronicity-over-initial-load> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/36d321d2974f3b1b> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/fe4eb514fbd71661> ;
@@ -1351,6 +1379,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/77e5750bf393151a> ;
         sci:bearsOnTarget <http://example.org/project/report/0001-bias-audit-menopause-pais-total-effect> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/479450574e0a030d> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/mcclune2025> ;
+        sci:bearsOnTarget <http://example.org/project/evidence-line/0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/479d6ce055cbbf03> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/b2aaaeb9a3dff2e0> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0003-t018-subphenotype-sex-reproductive-stage> ;
@@ -1446,6 +1478,10 @@
     <http://example.org/project/bears-on-edge/4c36dbc7b6795b95> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/ursini2023> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0003-t018-subphenotype-sex-reproductive-stage> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/4c77d8013e1acec9> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/2479b4da5de01aff> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/4cb0bc5b61c48663> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/cheetham2023> ;
@@ -1799,9 +1835,17 @@
         sci:bearsOnSource <http://example.org/project/paper/kharraziha2020> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0049-kharraziha2020-a1ar-activity-orthostatic-severity-supports-0018> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/5da765a697bb5746> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/2479b4da5de01aff> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/5dee23732bef4cd0> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/05faf46c75bbaeb4> ;
         sci:bearsOnTarget <http://example.org/project/synthesis/0003-immune-exhaustion-feedback> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/5df0ec8b8759d745> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source/entities_propositions_0023-cross-pathogen-tissue-macrophage-reservoir-generalization.md> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/5e4de7caa822577a> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/1200997ad4c10ac1> ;
@@ -2082,6 +2126,10 @@
     <http://example.org/project/bears-on-edge/6f2dcdf2a77f12d8> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/kwan2022> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0003-t018-subphenotype-sex-reproductive-stage> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/6f38dfadce96a4ad> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/d60cbddb03e66959> ;
+        sci:bearsOnTarget <http://example.org/project/evidence-line/0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/6f90ab3a019f7ba6> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/a9936b734f03de4a> ;
@@ -2499,6 +2547,10 @@
         sci:bearsOnSource <http://example.org/project/paper/aid2025> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0003-t018-subphenotype-sex-reproductive-stage> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/851fb5234f879ac4> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0059-peluso2024-sars2-antigen-persistence-supports-0022.md> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/85612ea43ebd2d85> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/56bd4c3bd7242540> ;
         sci:bearsOnTarget <http://example.org/project/paper/shankar2025> ;
@@ -2843,6 +2895,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/39a6d2537a67322a> ;
         sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/949534cf180cb82b> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/mcclune2025> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/951fbe85d5e621d6> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/pre-registration/0001-menopause-pais-total-effect> ;
         sci:bearsOnTarget <http://example.org/project/report/0002-t029-second-pass-menopause-pais-pre-registration-review> ;
@@ -2850,6 +2906,14 @@
     <http://example.org/project/bears-on-edge/9545e9792b6a01e3> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_hypotheses_0007-autoimmune-sfn-peripheral-dysautonomia-substrate.md> ;
         sci:bearsOnTarget <http://example.org/project/hypothesis/0007-autoimmune-sfn-peripheral-dysautonomia-substrate> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/95fa32cda5555b34> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/mcclune2025> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/9648d76470d9eb75> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/d60cbddb03e66959> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0024-retained-fragment-burden-predicts-chronicity-over-initial-load> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/96a1ec053b913c5f> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/44f8221f52fe4a11> ;
@@ -2931,6 +2995,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/efb82919ae28aedd> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0021-acute-antigen-burden-determines-pais-incidence> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/9ac3b27bb25ae372> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/peluso2024> ;
+        sci:bearsOnTarget <http://example.org/project/evidence-line/0059-peluso2024-sars2-antigen-persistence-supports-0022> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/9ad2879310a91153> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0022-bland2024-subjective-objective-uncorrelated-supports-cognitive-self-report-channel.md> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0022-bland2024-subjective-objective-uncorrelated-supports-cognitive-self-report-channel> ;
@@ -2979,9 +3047,17 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/7e08a1b89ff3cb6d> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0013-humphreys2025-menopause-pasc-overlap-supports-measurement-process> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/9cdf60355ffdf886> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/d60cbddb03e66959> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/9d5ff1c98f58ec5a> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/e1970032d341a9ec> ;
         sci:bearsOnTarget <http://example.org/project/paper/stewart2021> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/9dbfc1255116fa99> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/d60cbddb03e66959> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/9e268c87e7606651> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/evidence-line/0013-humphreys2025-menopause-pasc-overlap-supports-measurement-process> ;
@@ -2999,6 +3075,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/8012f9a1b9be0e84> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0028-appelman2024-longcovid-muscle-oxphos-worsens-after-pem-relocates-the-objective-lesion> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/9ea6de9fbc5016c9> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/morroy2016> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/9ed74c2ea04cc1d5> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/787e5fa2f4fdced5> ;
         sci:bearsOnTarget <http://example.org/project/paper/patrascu2025> ;
@@ -3006,6 +3086,10 @@
     <http://example.org/project/bears-on-edge/9f5889251c1d2f0b> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/stein2025> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0009-t049-sfn-cross-syndrome-ingestion> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/9f63593c9a5d7fe2> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/peluso2024> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/9f8566b76df70a97> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/klein2023> ;
@@ -3038,6 +3122,10 @@
     <http://example.org/project/bears-on-edge/a02ae0c8bfe74290> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/loebel2016> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0050-loebel2016-mecfs-binding-seroprevalence-supports-0018> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/a04e77f2c288ce1c> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0059-peluso2024-sars2-antigen-persistence-supports-0022.md> ;
+        sci:bearsOnTarget <http://example.org/project/evidence-line/0059-peluso2024-sars2-antigen-persistence-supports-0022> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/a0c94a40f3e951ff> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/shahbaz2025> ;
@@ -3190,6 +3278,10 @@
     <http://example.org/project/bears-on-edge/a78bb94f02396665> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/e544ca6f69ad4b87> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0020-antigen-clearance-rescues-established-pais> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/a7b610c19ab3dce2> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/peluso2024> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/a7f3096c842fdba0> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/keller2014> ;
@@ -3691,6 +3783,10 @@
         sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0035-silva2024-female-lc-immune-signature-bounded-by-testosterone-conditioning.md> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0035-silva2024-female-lc-immune-signature-bounded-by-testosterone-conditioning> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/c3e3639d6d3ce769> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/d3d3e31233580503> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/c3fb25e3ba9c850a> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/fc5d7d0f2e0b100e> ;
         sci:bearsOnTarget <http://example.org/project/concept/cardiometabolic-comorbidity> ;
@@ -3798,6 +3894,10 @@
     <http://example.org/project/bears-on-edge/c8c41999394934db> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/e60e7bc6576ae087> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0048-stein2025-anti-gpcr-selection-weakly-supports-0018> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/c8c7f89957b93ed4> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/mcclune2025> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0024-retained-fragment-burden-predicts-chronicity-over-initial-load> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/c937d3f510ee4d60> sci:bearsOnDepth "3"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/d18081f3c075dbbf> ;
@@ -4079,6 +4179,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/388d0b262f5afbcf> ;
         sci:bearsOnTarget <http://example.org/project/paper/berende2016> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/da2729d1bab9686a> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/2d00fe0305e3189c> ;
+        sci:bearsOnTarget <http://example.org/project/evidence-line/0059-peluso2024-sars2-antigen-persistence-supports-0022> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/da888c7cfa99ca8d> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0010-shah2025-unisolated-excess-supports-confounder-decomposition.md> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0010-shah2025-unisolated-excess-supports-confounder-decomposition> ;
@@ -4126,6 +4230,10 @@
     <http://example.org/project/bears-on-edge/dd01b04f30ec6c71> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0032-ambrosino2021-fmd-male-endothelial-direction-only-severity-confounded.md> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0012-vascular-hard-endpoint-male-reversal-survives-severity-adjustment> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/dd0890856caabbb3> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/21f13fba18560bba> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/dd10659711cfef67> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/0ce79bda6547deca> ;
@@ -4275,6 +4383,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/f1cb815970c01886> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0002-t013-cross-trigger-sex-effect-sizes> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/e41aeabdea34031c> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/4466a4fa59e8d9e9> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0024-retained-fragment-burden-predicts-chronicity-over-initial-load> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/e42d3f9e198d3aa7> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/56498f2587941571> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0006-t041-objective-female-biased-subphenotype-search> ;
@@ -4399,6 +4511,10 @@
         sci:bearsOnSource <http://example.org/project/task/t029> ;
         sci:bearsOnTarget <http://example.org/project/report/0002-t029-second-pass-menopause-pais-pre-registration-review> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/ebef4106ff94eb9a> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/d7baf3a36c65a698> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/ec1d4809d50742ee> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/84850100b11526dd> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0006-t041-objective-female-biased-subphenotype-search> ;
@@ -4410,6 +4526,10 @@
     <http://example.org/project/bears-on-edge/ec4294fdb16a7d18> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/d3400e323cbc6e75> ;
         sci:bearsOnTarget <http://example.org/project/paper/ryan2022> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/ec5d308c79becb63> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/evidence-line/0059-peluso2024-sars2-antigen-persistence-supports-0022> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/ec8eda5933f0728c> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/504f6afae353eeb8> ;
@@ -4442,6 +4562,10 @@
     <http://example.org/project/bears-on-edge/ed8a1760ba0c8741> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/kopp2024> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0030-kopp2024-male-cv-mortality-excess-within-hospitalized-stratum> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/edf5a1bd7d8131b9> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/d7baf3a36c65a698> ;
+        sci:bearsOnTarget <http://example.org/project/evidence-line/0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/ee09902f6adfcc2b> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0044-adler2024-ptlds-leg-cross-syndrome-framing-supports-p4.md> ;
@@ -4766,6 +4890,10 @@
     <http://example.org/project/bears-on-edge/fefbf271c0b48e2d> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/4fbf55a3270cc3bf> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0043-joseph2021-mecfs-leg-cross-trigger-convergence-supports-p4> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/ff00d1da7719bb98> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/2479b4da5de01aff> ;
+        sci:bearsOnTarget <http://example.org/project/evidence-line/0059-peluso2024-sars2-antigen-persistence-supports-0022> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/ff053f58df746973> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/84850100b11526dd> ;
@@ -5905,6 +6033,30 @@
             <http://example.org/project/proposition/0021-acute-antigen-burden-determines-pais-incidence>,
             <http://example.org/project/question/0012-prevention-vaccination-antiviral-reduces-pais> ;
         schema:identifier "evidence-line:0057-bramante2026-activ6-metformin-partial-replication-supports-0021" .
+    <http://example.org/project/evidence-line/0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022> sci:bearsOn <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> ;
+        sci:freshnessState "fresh" ;
+        sci:profile "core" ;
+        sci:projectStatus "active" ;
+        sci:scope "project" ;
+        cito:supports <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> ;
+        a sci:EvidenceLine ;
+        skos:prefLabel "McClune2025 shows Borrelia peptidoglycan persists in tissue post-clearance and is biologically active — moderate support for fragment persistence" ;
+        skos:related <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment>,
+            <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive>,
+            <http://example.org/project/question/0002-antigen-clearance-rescues-symptoms> ;
+        schema:identifier "evidence-line:0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022" .
+    <http://example.org/project/evidence-line/0059-peluso2024-sars2-antigen-persistence-supports-0022> sci:bearsOn <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> ;
+        sci:freshnessState "fresh" ;
+        sci:profile "core" ;
+        sci:projectStatus "active" ;
+        sci:scope "project" ;
+        cito:supports <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> ;
+        a sci:EvidenceLine ;
+        skos:prefLabel "Peluso2024 detects persisting SARS-CoV-2 antigen in ~25% of survivors to 14 months — weak support for fragment persistence (detection only, no symptom or bioactivity link)" ;
+        skos:related <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment>,
+            <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive>,
+            <http://example.org/project/question/0002-antigen-clearance-rescues-symptoms> ;
+        schema:identifier "evidence-line:0059-peluso2024-sars2-antigen-persistence-supports-0022" .
     <http://example.org/project/evidence-line/0060-ptlds-antibiotic-retreatment-null-disputes-0020> sci:bearsOn <http://example.org/project/proposition/0020-antigen-clearance-rescues-established-pais> ;
         sci:freshnessState "fresh" ;
         sci:profile "core" ;
@@ -5952,7 +6104,11 @@
             <http://example.org/project/interpretation/0011-t046-antigen-clearance-trials-ingestion>,
             <http://example.org/project/proposition/0020-antigen-clearance-rescues-established-pais>,
             <http://example.org/project/proposition/0021-acute-antigen-burden-determines-pais-incidence>,
+            <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive>,
+            <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization>,
+            <http://example.org/project/proposition/0024-retained-fragment-burden-predicts-chronicity-over-initial-load>,
             <http://example.org/project/question/0002-antigen-clearance-rescues-symptoms>,
+            <http://example.org/project/task/t052>,
             <http://example.org/project/topic/antigen-pathogen-persistence>,
             <http://example.org/project/topic/shared-failure-mode-across-pais> ;
         schema:identifier "hypothesis:0002-tissue-reservoir-antigen-fragment" .
@@ -6290,6 +6446,18 @@
     <http://example.org/project/membership/proposition_0020-antigen-clearance-rescues-established-pais__hypothesis_0002-tissue-reservoir-antigen-fragment> sci:membershipFrame <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment> ;
         sci:membershipProposition <http://example.org/project/proposition/0020-antigen-clearance-rescues-established-pais> ;
         sci:membershipRole "background" ;
+        a sci:BundleMembership .
+    <http://example.org/project/membership/proposition_0022-degradation-resistant-fragments-persist-and-are-bioactive__hypothesis_0002-tissue-reservoir-antigen-fragment> sci:membershipFrame <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment> ;
+        sci:membershipProposition <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> ;
+        sci:membershipRole "core" ;
+        a sci:BundleMembership .
+    <http://example.org/project/membership/proposition_0023-cross-pathogen-tissue-macrophage-reservoir-generalization__hypothesis_0002-tissue-reservoir-antigen-fragment> sci:membershipFrame <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment> ;
+        sci:membershipProposition <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> ;
+        sci:membershipRole "core" ;
+        a sci:BundleMembership .
+    <http://example.org/project/membership/proposition_0024-retained-fragment-burden-predicts-chronicity-over-initial-load__hypothesis_0002-tissue-reservoir-antigen-fragment> sci:membershipFrame <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment> ;
+        sci:membershipProposition <http://example.org/project/proposition/0024-retained-fragment-burden-predicts-chronicity-over-initial-load> ;
+        sci:membershipRole "core" ;
         a sci:BundleMembership .
     <http://example.org/project/method/confounder-open-questions-and-staged-amendment> sci:profile "core" ;
         sci:projectStatus "active" ;
@@ -7250,7 +7418,11 @@
             <http://example.org/project/topic/biomarkers-and-objective-endpoints>,
             <http://example.org/project/topic/mecfs-long-covid-convergence> ;
         schema:identifier "paper:Maestri2025" .
-    <http://example.org/project/paper/mcclune2025> sci:profile "core" ;
+    <http://example.org/project/paper/mcclune2025> sci:bearsOn <http://example.org/project/evidence-line/0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022>,
+            <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive>,
+            <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization>,
+            <http://example.org/project/proposition/0024-retained-fragment-burden-predicts-chronicity-over-initial-load> ;
+        sci:profile "core" ;
         sci:projectStatus "active" ;
         sci:scope "project" ;
         a sci:Paper ;
@@ -7286,7 +7458,8 @@
         skos:prefLabel "Chronic widespread musculoskeletal pain, fatigue, depression and disordered sleep in chronic post-SARS syndrome; a case-controlled study" ;
         skos:related <http://example.org/project/paper/choutka2022> ;
         schema:identifier "paper:Moldofsky2011" .
-    <http://example.org/project/paper/morroy2016> sci:profile "core" ;
+    <http://example.org/project/paper/morroy2016> sci:bearsOn <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> ;
+        sci:profile "core" ;
         sci:projectStatus "active" ;
         sci:scope "project" ;
         a sci:Paper ;
@@ -7374,7 +7547,10 @@
             <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor>,
             <http://example.org/project/question/0001-shared-molecular-signature-across-triggers> ;
         schema:identifier "paper:Patterson2024" .
-    <http://example.org/project/paper/peluso2024> sci:profile "core" ;
+    <http://example.org/project/paper/peluso2024> sci:bearsOn <http://example.org/project/evidence-line/0059-peluso2024-sars2-antigen-persistence-supports-0022>,
+            <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive>,
+            <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> ;
+        sci:profile "core" ;
         sci:projectStatus "active" ;
         sci:scope "project" ;
         a sci:Paper ;
@@ -8488,6 +8664,45 @@
             <http://example.org/project/question/0012-prevention-vaccination-antiviral-reduces-pais>,
             <http://example.org/project/topic/antigen-pathogen-persistence> ;
         schema:identifier "proposition:0021-acute-antigen-burden-determines-pais-incidence" .
+    <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> sci:freshnessState "fresh" ;
+        sci:profile "core" ;
+        sci:projectStatus "active" ;
+        sci:scope "project" ;
+        cito:discusses <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment> ;
+        a sci:Proposition ;
+        skos:prefLabel "Degradation-resistant pathogen fragments persist in tissue after clearance and are biologically active" ;
+        skos:related <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment>,
+            <http://example.org/project/proposition/0020-antigen-clearance-rescues-established-pais>,
+            <http://example.org/project/question/0002-antigen-clearance-rescues-symptoms>,
+            <http://example.org/project/task/t052>,
+            <http://example.org/project/topic/antigen-pathogen-persistence> ;
+        schema:identifier "proposition:0022-degradation-resistant-fragments-persist-and-are-bioactive" .
+    <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> sci:freshnessState "fresh" ;
+        sci:profile "core" ;
+        sci:projectStatus "active" ;
+        sci:scope "project" ;
+        cito:discusses <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment> ;
+        a sci:Proposition ;
+        skos:prefLabel "A structurally analogous degradation-resistant tissue/macrophage fragment reservoir operates across pathogen classes (Borrelia, SARS-CoV-2, Coxiella-like triggers)" ;
+        skos:related <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment>,
+            <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive>,
+            <http://example.org/project/question/0002-antigen-clearance-rescues-symptoms>,
+            <http://example.org/project/task/t052>,
+            <http://example.org/project/topic/antigen-pathogen-persistence> ;
+        schema:identifier "proposition:0023-cross-pathogen-tissue-macrophage-reservoir-generalization" .
+    <http://example.org/project/proposition/0024-retained-fragment-burden-predicts-chronicity-over-initial-load> sci:freshnessState "fresh" ;
+        sci:profile "core" ;
+        sci:projectStatus "active" ;
+        sci:scope "project" ;
+        cito:discusses <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment> ;
+        a sci:Proposition ;
+        skos:prefLabel "Retained fragment burden/duration predicts chronic PAIS onset better than initial pathogen load" ;
+        skos:related <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment>,
+            <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive>,
+            <http://example.org/project/question/0002-antigen-clearance-rescues-symptoms>,
+            <http://example.org/project/task/t052>,
+            <http://example.org/project/topic/antigen-pathogen-persistence> ;
+        schema:identifier "proposition:0024-retained-fragment-burden-predicts-chronicity-over-initial-load" .
     <http://example.org/project/question/0001-shared-molecular-signature-across-triggers> sci:freshnessState "needs-review" ;
         sci:profile "core" ;
         sci:projectStatus "active" ;
@@ -9025,13 +9240,17 @@
             <http://example.org/project/paper/costeira2021>,
             <http://example.org/project/proposition/0006-hormone-therapy-effects-on-pais-are-context-dependent> .
     <http://example.org/project/source-snapshot/21d66ee163359917> sci:bearsOn <http://example.org/project/paper/moldofsky2011> .
-    <http://example.org/project/source-snapshot/21f13fba18560bba> sci:bearsOn <http://example.org/project/paper/morroy2016> .
+    <http://example.org/project/source-snapshot/21f13fba18560bba> sci:bearsOn <http://example.org/project/paper/morroy2016>,
+            <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> .
     <http://example.org/project/source-snapshot/2231f60001a5ce19> sci:bearsOn <http://example.org/project/concept/incident-cardiometabolic-comorbidity> .
     <http://example.org/project/source-snapshot/2241e0f20f09befd> sci:bearsOn <http://example.org/project/proposition/0009-dysautonomia-female-skew-is-baseline-carried-not-pais-amplified> .
     <http://example.org/project/source-snapshot/23917b1f6a8f9aed> sci:bearsOn <http://example.org/project/question/0014-which-pais-case-definition-is-most-biologically-coherent> .
     <http://example.org/project/source-snapshot/23f3a532e3052bbf> sci:bearsOn <http://example.org/project/proposition/0008-female-excess-concentrates-in-post-acute-persistence> .
     <http://example.org/project/source-snapshot/2436f6b7b1bd4e5f> sci:bearsOn <http://example.org/project/topic/antigen-pathogen-persistence> .
-    <http://example.org/project/source-snapshot/2479b4da5de01aff> sci:bearsOn <http://example.org/project/paper/peluso2024> .
+    <http://example.org/project/source-snapshot/2479b4da5de01aff> sci:bearsOn <http://example.org/project/evidence-line/0059-peluso2024-sars2-antigen-persistence-supports-0022>,
+            <http://example.org/project/paper/peluso2024>,
+            <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive>,
+            <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> .
     <http://example.org/project/source-snapshot/25c8791726269dfe> sci:bearsOn <http://example.org/project/proposition/0002-reproductive-stage-transition-modifies-immune-regulatory-pathways>,
             <http://example.org/project/report/0004-t036-hormone-panel-cohort-feasibility-m1-positive-test>,
             <http://example.org/project/report/0005-t038-impacc-gabernet2025-m1-mediator-compatibility> .
@@ -9046,6 +9265,8 @@
     <http://example.org/project/source-snapshot/2ac277952bbd6620> sci:bearsOn <http://example.org/project/paper/lesgards2025> .
     <http://example.org/project/source-snapshot/2bdc4d25a52b1a19> sci:bearsOn <http://example.org/project/paper/oronsky2021> .
     <http://example.org/project/source-snapshot/2c1a352761c4fbb0> sci:bearsOn <http://example.org/project/concept/menopause-pais-symptom-overlap> .
+    <http://example.org/project/source-snapshot/2d00fe0305e3189c> sci:bearsOn <http://example.org/project/evidence-line/0059-peluso2024-sars2-antigen-persistence-supports-0022>,
+            <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> .
     <http://example.org/project/source-snapshot/2db09a6ad568b5d1> sci:bearsOn <http://example.org/project/evidence-line/0034-shahbaz2025-lc-female-cytokine-gut-barrier-within-sex-elevation>,
             <http://example.org/project/proposition/0013-immune-domain-partial-hormone-mediated-objective-exception> .
     <http://example.org/project/source-snapshot/2f26a3a35e9d6967> sci:bearsOn <http://example.org/project/method/reproductive-stage-exposure-operationalization> .
@@ -9078,6 +9299,7 @@
     <http://example.org/project/source-snapshot/41f10eceee1a3ce2> sci:bearsOn <http://example.org/project/discussion/0003-antigen-persistence-treatable-vs-fixed> .
     <http://example.org/project/source-snapshot/43d5f505b80e08d6> sci:bearsOn <http://example.org/project/paper/gandhi2023> .
     <http://example.org/project/source-snapshot/442348d38a613ad2> sci:bearsOn <http://example.org/project/proposition/0020-antigen-clearance-rescues-established-pais> .
+    <http://example.org/project/source-snapshot/4466a4fa59e8d9e9> sci:bearsOn <http://example.org/project/proposition/0024-retained-fragment-burden-predicts-chronicity-over-initial-load> .
     <http://example.org/project/source-snapshot/44b7888d001ba1a1> sci:bearsOn <http://example.org/project/patch-definition/menopause-pais-causal-dag> .
     <http://example.org/project/source-snapshot/44f8221f52fe4a11> sci:bearsOn <http://example.org/project/evidence-line/0001-shah2025-midlife-female-long-covid-excess-supports-stage-threshold>,
             <http://example.org/project/evidence-line/0010-shah2025-unisolated-excess-supports-confounder-decomposition>,
@@ -9473,13 +9695,21 @@
     <http://example.org/project/source-snapshot/d2caa391997d370c> sci:bearsOn <http://example.org/project/paper/watton2026> .
     <http://example.org/project/source-snapshot/d3400e323cbc6e75> sci:bearsOn <http://example.org/project/paper/ryan2022> .
     <http://example.org/project/source-snapshot/d38883ee3fa27bf5> sci:bearsOn <http://example.org/project/paper/stojanovic2026> .
+    <http://example.org/project/source-snapshot/d3d3e31233580503> sci:bearsOn <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> .
     <http://example.org/project/source-snapshot/d4aa56e29d09667e> sci:bearsOn <http://example.org/project/synthesis/emergent-threads> .
     <http://example.org/project/source-snapshot/d51ed2f51acbe049> sci:bearsOn <http://example.org/project/dataset/colombo-dengue-study>,
             <http://example.org/project/evidence-line/0017-dengue-meta-sexneutral-acute-female-postacute-fatigue-supports-persistence-concentration>,
             <http://example.org/project/interpretation/0002-t013-cross-trigger-sex-effect-sizes>,
             <http://example.org/project/proposition/0008-female-excess-concentrates-in-post-acute-persistence> .
     <http://example.org/project/source-snapshot/d5a536d3f3914d06> sci:bearsOn <http://example.org/project/topic/post-infectious-dysautonomia-and-autoimmunity> .
-    <http://example.org/project/source-snapshot/d60cbddb03e66959> sci:bearsOn <http://example.org/project/paper/mcclune2025> .
+    <http://example.org/project/source-snapshot/d60cbddb03e66959> sci:bearsOn <http://example.org/project/evidence-line/0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022>,
+            <http://example.org/project/paper/mcclune2025>,
+            <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive>,
+            <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization>,
+            <http://example.org/project/proposition/0024-retained-fragment-burden-predicts-chronicity-over-initial-load> .
+    <http://example.org/project/source-snapshot/d69456ffd4f32ec1> sci:bearsOn <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> .
+    <http://example.org/project/source-snapshot/d7baf3a36c65a698> sci:bearsOn <http://example.org/project/evidence-line/0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022>,
+            <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> .
     <http://example.org/project/source-snapshot/d87c0182d5333205> sci:bearsOn <http://example.org/project/evidence-line/0011-mishra2020-adjustment-attenuation-supports-confounder-decomposition>,
             <http://example.org/project/proposition/0004-female-reproductive-stage-excess-requires-confounder-decomposition> .
     <http://example.org/project/source-snapshot/d8e5e3657b75c9a1> sci:bearsOn <http://example.org/project/question/0006-jak-stat-il6-driver-vs-marker> .
@@ -9678,6 +9908,10 @@
             <http://example.org/project/proposition/0021-acute-antigen-burden-determines-pais-incidence> .
     <http://example.org/project/source/entities_evidence-lines_0057-bramante2026-activ6-metformin-partial-replication-supports-0021.md> sci:bearsOn <http://example.org/project/evidence-line/0057-bramante2026-activ6-metformin-partial-replication-supports-0021>,
             <http://example.org/project/proposition/0021-acute-antigen-burden-determines-pais-incidence> .
+    <http://example.org/project/source/entities_evidence-lines_0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022.md> sci:bearsOn <http://example.org/project/evidence-line/0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022>,
+            <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> .
+    <http://example.org/project/source/entities_evidence-lines_0059-peluso2024-sars2-antigen-persistence-supports-0022.md> sci:bearsOn <http://example.org/project/evidence-line/0059-peluso2024-sars2-antigen-persistence-supports-0022>,
+            <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> .
     <http://example.org/project/source/entities_evidence-lines_0060-ptlds-antibiotic-retreatment-null-disputes-0020.md> sci:bearsOn <http://example.org/project/evidence-line/0060-ptlds-antibiotic-retreatment-null-disputes-0020>,
             <http://example.org/project/proposition/0020-antigen-clearance-rescues-established-pais> .
     <http://example.org/project/source/entities_hypotheses_0001-shared-dysregulated-attractor.md> sci:bearsOn <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor> .
@@ -9725,6 +9959,9 @@
     <http://example.org/project/source/entities_propositions_0019-pais-sfn-immunomodulation-modifies-lesion-trajectory.md> sci:bearsOn <http://example.org/project/proposition/0019-pais-sfn-immunomodulation-modifies-lesion-trajectory> .
     <http://example.org/project/source/entities_propositions_0020-antigen-clearance-rescues-established-pais.md> sci:bearsOn <http://example.org/project/proposition/0020-antigen-clearance-rescues-established-pais> .
     <http://example.org/project/source/entities_propositions_0021-acute-antigen-burden-determines-pais-incidence.md> sci:bearsOn <http://example.org/project/proposition/0021-acute-antigen-burden-determines-pais-incidence> .
+    <http://example.org/project/source/entities_propositions_0022-degradation-resistant-fragments-persist-and-are-bioactive.md> sci:bearsOn <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> .
+    <http://example.org/project/source/entities_propositions_0023-cross-pathogen-tissue-macrophage-reservoir-generalization.md> sci:bearsOn <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> .
+    <http://example.org/project/source/entities_propositions_0024-retained-fragment-burden-predicts-chronicity-over-initial-load.md> sci:bearsOn <http://example.org/project/proposition/0024-retained-fragment-burden-predicts-chronicity-over-initial-load> .
     <http://example.org/project/source/entities_questions_0001-shared-molecular-signature-across-triggers.md> sci:bearsOn <http://example.org/project/question/0001-shared-molecular-signature-across-triggers> .
     <http://example.org/project/source/entities_questions_0002-antigen-clearance-rescues-symptoms.md> sci:bearsOn <http://example.org/project/question/0002-antigen-clearance-rescues-symptoms> .
     <http://example.org/project/source/entities_questions_0003-acute-severity-threshold-for-self-sustaining-pais.md> sci:bearsOn <http://example.org/project/question/0003-acute-severity-threshold-for-self-sustaining-pais> .
@@ -10264,11 +10501,17 @@
         skos:prefLabel "Ingest PTLDS antibiotic-retreatment trials (Klempner2001/Krupp2003/Fallon2008/Berende2016) for the Borrelia clearance arm of proposition:0020" ;
         schema:identifier "task:t051" .
     <http://example.org/project/task/t052> sci:profile "core" ;
-        sci:projectStatus "proposed" ;
+        sci:projectStatus "done" ;
         sci:scope "project" ;
         a sci:Task ;
         skos:prefLabel "Code hypothesis:0002 primary support (McClune2025/Peluso2024) as evidence-lines to lift it from speculative" ;
         schema:identifier "task:t052" .
+    <http://example.org/project/task/t053> sci:profile "core" ;
+        sci:projectStatus "proposed" ;
+        sci:scope "project" ;
+        a sci:Task ;
+        skos:prefLabel "Promote h0002 out of speculative: code support for proposition:0023 (cross-pathogen tissue-reservoir) and proposition:0024 (retained-burden-predicts-chronicity)" ;
+        schema:identifier "task:t053" .
     <http://example.org/project/topic/antigen-pathogen-persistence> sci:profile "core" ;
         sci:projectStatus "active" ;
         sci:scope "project" ;
@@ -14877,6 +15120,22 @@
         sci:independenceGroup "activ6-metformin-prevention" ;
         prov:wasDerivedFrom <http://example.org/project/paper/bramante2026>,
             <http://example.org/project/source/entities_evidence-lines_0057-bramante2026-activ6-metformin-partial-replication-supports-0021.md> .
+    <http://example.org/project/evidence-line/0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022> sci:evidenceIndependence "independent" ;
+        sci:evidenceRole "direct_test" ;
+        sci:evidenceStrength "moderate" ;
+        sci:evidenceType "literature" ;
+        sci:identificationStrength "observational" ;
+        sci:independenceGroup "mcclune2025-borrelia-pg-liver-reservoir" ;
+        prov:wasDerivedFrom <http://example.org/project/paper/mcclune2025>,
+            <http://example.org/project/source/entities_evidence-lines_0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022.md> .
+    <http://example.org/project/evidence-line/0059-peluso2024-sars2-antigen-persistence-supports-0022> sci:evidenceIndependence "independent" ;
+        sci:evidenceRole "direct_test" ;
+        sci:evidenceStrength "weak" ;
+        sci:evidenceType "literature" ;
+        sci:identificationStrength "observational" ;
+        sci:independenceGroup "peluso2024-liinc-plasma-antigen-persistence" ;
+        prov:wasDerivedFrom <http://example.org/project/paper/peluso2024>,
+            <http://example.org/project/source/entities_evidence-lines_0059-peluso2024-sars2-antigen-persistence-supports-0022.md> .
     <http://example.org/project/evidence-line/0060-ptlds-antibiotic-retreatment-null-disputes-0020> sci:evidenceIndependence "independent" ;
         sci:evidenceRole "direct_test" ;
         sci:evidenceStrength "weak" ;
@@ -14889,10 +15148,10 @@
             <http://example.org/project/paper/krupp2003>,
             <http://example.org/project/source/entities_evidence-lines_0060-ptlds-antibiotic-retreatment-null-disputes-0020.md> .
     <http://example.org/project/graph_revision> a prov:Entity ;
-        schema:dateModified "2026-06-24T15:20:47+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        schema:dateModified "2026-06-24T16:57:06+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
         schema:name "graph-revision" ;
-        schema:sha256 "afa5b1cc1386a07da9d4d633df2fd1961988083fa57b6d648a1e835d3f6ddf8b" ;
-        schema:text "{\"AGENTS.md\":{\"mtime_ns\":1781147493660692515,\"sha256\":\"4c3130728a42829e832bda9dd828e6b4ffb0c2728e1139c3fa364d800479e952\"},\"CLAUDE.md\":{\"mtime_ns\":1781147463250691381,\"sha256\":\"336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49\"},\"RESEARCH_PLAN.md\":{\"mtime_ns\":1781147663204698837,\"sha256\":\"f0f899d877fc4aabd7b61ee78ae1ff175565dc5b50cb2363393fd2572e31bccb\"},\"code/menopause_dag/adjustment_sets_v2.txt\":{\"mtime_ns\":1782047312048964239,\"sha256\":\"14599e14869c439fba20e73bd3da5eeb1a979eb56ac16433133b6478278043f1\"},\"code/menopause_dag/derive_adjustment_sets.py\":{\"mtime_ns\":1782047293910965239,\"sha256\":\"4270dc9e598debd793596ed37b39c4cab1c554175dc4049be6df3a1f2a99f62d\"},\"code/notebooks/.gitkeep\":{\"mtime_ns\":1781147422769689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/notebooks/pyproject.toml\":{\"mtime_ns\":1781899798260793972,\"sha256\":\"2b42c8d904796817391a5bb60258cd5452a93af6de07cca8c15eab3f0e2453bf\"},\"code/notebooks/uv.lock\":{\"mtime_ns\":1781899809390092264,\"sha256\":\"52f03631f51792685609210bb7470a2fd43ff392aa9c900aec584b920f47ea2b\"},\"code/notebooks/viz.py\":{\"mtime_ns\":1781899798260692922,\"sha256\":\"901607854b5774ae8cb94e8ba7b6035105876bb9bd5f81a9a60fae9904761d94\"},\"code/scripts/.gitkeep\":{\"mtime_ns\":1781147422770689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/scripts/__pycache__/_verdict_lib.cpython-312.pyc\":{\"mtime_ns\":1782035646208261650,\"sha256\":\"ff5a7f597d6e3d17945ae08e338bc9a966fffe83c2362da5b281ab5c72a82ddf\"},\"code/scripts/__pycache__/_verdict_lib.cpython-313.pyc\":{\"mtime_ns\":1782035561507997020,\"sha256\":\"26d19b5c75152cc7a072f024a3f378888aab3fb5a9bb6505ff80e21f0dd78f9d\"},\"code/scripts/__pycache__/acquire_common.cpython-312.pyc\":{\"mtime_ns\":1781991651371038295,\"sha256\":\"e6b0186d9a1d221d79816c183e209b60199ddc468bc867dfc1f3e38930821227\"},\"code/scripts/__pycache__/acquire_common.cpython-313.pyc\":{\"mtime_ns\":1781985426088853970,\"sha256\":\"a9abdbbbd2f1561f4499a787f071566109c9f00dae1ca9d2f9ca6a27d48d3757\"},\"code/scripts/__pycache__/acquire_common.cpython-314.pyc\":{\"mtime_ns\":1781985082077708443,\"sha256\":\"8ccd0ef0fab0fe7d8324cea653b4aff4db12899f756e52a5dd5be7617321e508\"},\"code/scripts/__pycache__/compartment.cpython-313.pyc\":{\"mtime_ns\":1782035561513975111,\"sha256\":\"d8ea787f191bf0a18dbc6389de0b89e44dd9100fd9fe1669c8b1ae7800e286ea\"},\"code/scripts/__pycache__/db_robustness.cpython-313.pyc\":{\"mtime_ns\":1782035561513323479,\"sha256\":\"92aa74cd72dc8b0d2c84552940388392c3025f07eebcbc7d97b6c8d03b27cc38\"},\"code/scripts/__pycache__/extract_gse130353.cpython-314.pyc\":{\"mtime_ns\":1781985082066476521,\"sha256\":\"ec51ff1194340147b3f4a5b95b75dda2be6cf99b80307e6316d87a0d4ef62a6c\"},\"code/scripts/__pycache__/parse_gse14577.cpython-314.pyc\":{\"mtime_ns\":1781985082090113676,\"sha256\":\"992c93a2986e886762da5114f5c5acca154a588c49abf29bc77b5fee1bf9bb0c\"},\"code/scripts/__pycache__/specificity.cpython-313.pyc\":{\"mtime_ns\":1782035561509162957,\"sha256\":\"94c4ea50f714c04bd7851d5b47692748459e18440bae2a46188cbdc06a458169\"},\"code/scripts/__pycache__/theme_rollup.cpython-313.pyc\":{\"mtime_ns\":1782035561512435824,\"sha256\":\"c5b4ef711a471ffb2d013c5240ac1237dd81473a2a456f020934cccbf9e24111\"},\"code/scripts/__pycache__/verdict.cpython-313.pyc\":{\"mtime_ns\":1782042417325499258,\"sha256\":\"c465619118a4c06aa8f97e97dd935396033165d0870dd79acb512db7c055b327\"},\"code/scripts/_verdict_lib.py\":{\"mtime_ns\":1782035288825626770,\"sha256\":\"91b39b15f040b89218605efd0f05d0d9f94c6cf9c09255fff5aebf0d42760fdf\"},\"code/scripts/acquire_common.py\":{\"mtime_ns\":1781984843838406504,\"sha256\":\"29df111b922a1f26d88b0ca47741ad3365e08dfaab6c3672747c7cb40bfa7d35\"},\"code/scripts/collapse_probes.R\":{\"mtime_ns\":1781993099627951575,\"sha256\":\"f316470e9ce94e53a909bb5938fb2a03217b47bf96318b8ac324a5f914afad9c\"},\"code/scripts/compartment.py\":{\"mtime_ns\":1782035447828618009,\"sha256\":\"2b922f61834ff483f99771aeec386648903c9405a1b8d0b8db9d234dd7424daf\"},\"code/scripts/concordance.py\":{\"mtime_ns\":1782035309121625652,\"sha256\":\"afa47e18584ae0677554b3f9cdd3397bc3dfb6311b1d3830e28b2ee61cc0f5f2\"},\"code/scripts/db_robustness.py\":{\"mtime_ns\":1782035427603619123,\"sha256\":\"2164c251dabafb470e9532d1930fe4f2314cba1a627b03e2061595f2f5e71a29\"},\"code/scripts/emit_datapackage.py\":{\"mtime_ns\":1781985174879388262,\"sha256\":\"95ecf53c1beddf7d53bae9de4695a1219ac9668291ccbdf80ed5fd7d4b3e6c1f\"},\"code/scripts/emit_theme_spec.py\":{\"mtime_ns\":1781992942916960210,\"sha256\":\"1cbbd0b2981734386a06a4df5aa6ed64e92f17220b98154fb2f3e22b23dd9eef\"},\"code/scripts/extract_gse130353.py\":{\"mtime_ns\":1781985035227395958,\"sha256\":\"7ac61a5b393b2fad6de1119e57f5e7b18b0cb21acc7d37de4810b8932268d7e0\"},\"code/scripts/fetch_url.py\":{\"mtime_ns\":1781984862061405500,\"sha256\":\"d27bab6bc4e9cbea288502fd862fd28ff022e70ff48263d83e8c9617b5a3a318\"},\"code/scripts/fgsea_enrich.R\":{\"mtime_ns\":1782002180661451171,\"sha256\":\"a8275ed80420caf546d5ae1c75ab66d3d2aa4d3efc62ad18f51fd98b139671d2\"},\"code/scripts/g1_acquire.py\":{\"mtime_ns\":1781985057294394742,\"sha256\":\"e2ed73ba8b18507b821b2435da654a34fe00203ef19f0bafd7f90bcd6e67edef\"},\"code/scripts/genesets_reference.R\":{\"mtime_ns\":1782002217459449143,\"sha256\":\"ce7e399baffddcdc5890887e625758a28e8ddddcac07b8594cd893bb3502e8ba\"},\"code/scripts/harmonize_gse130353.py\":{\"mtime_ns\":1781991785183024006,\"sha256\":\"dab0301fc021af7c853689bfa11784ed264b66bfde29a983d22e99f852264dd9\"},\"code/scripts/harmonize_gse14577.R\":{\"mtime_ns\":1781991283630910101,\"sha256\":\"d447a5a14a3c9578d97a1e9f324c014abc5383539071de6f3b018fbbfbdda048\"},\"code/scripts/limma_de.R\":{\"mtime_ns\":1782002151975452752,\"sha256\":\"dbbb27285cb6ada48580be0dbc2da23a0031082dcc16f31b51069ddb1f254507\"},\"code/scripts/near_zero_filter.py\":{\"mtime_ns\":1781992873926964012,\"sha256\":\"0a546c98d83ff0c8a854fda68bf3da872835f1e24c6b5f5d1382e750286d9f98\"},\"code/scripts/parse_gse14577.py\":{\"mtime_ns\":1781985130943390683,\"sha256\":\"7f4e632d934167fcea128ef1f68dc866a4e8d020b5a34e73a6986597dd46b6da\"},\"code/scripts/permutation_null.R\":{\"mtime_ns\":1782006871402192691,\"sha256\":\"967b54049a0af73745e7c125dc925bcd6ab89f5d4ff8689de2f44e2bad15fd8d\"},\"code/scripts/prepare_genesets.R\":{\"mtime_ns\":1781994573215870374,\"sha256\":\"64fa8d480f6e99ba40b55eac07d3f78e3ba02f6115953f7cb5c21e045f35ecf9\"},\"code/scripts/qa_checkpoint.py\":{\"mtime_ns\":1781987004539287440,\"sha256\":\"0e619e0a01b5610090ddfdcab39a85551f5d6fc69b4160bfd5ddee2daddb1d10\"},\"code/scripts/specificity.py\":{\"mtime_ns\":1782035368358622388,\"sha256\":\"ba13eda2e4447eca32b6a57e316a249f6c99d167bcb1d4d70c183941470b77b4\"},\"code/scripts/theme_rollup.py\":{\"mtime_ns\":1782035402606620500,\"sha256\":\"cfd33cb2b6b39b6c20890914f97b244d21b743214ac2775b585a7ccc18461202\"},\"code/scripts/verdict.py\":{\"mtime_ns\":1782042311070239815,\"sha256\":\"816fb6df80f88330b26c30f1add827633515ec3e34adba6caf124b193a75cac0\"},\"code/scripts/verify_sha256.py\":{\"mtime_ns\":1781991339992048538,\"sha256\":\"bf63104e6c3d1c720d5fd3ac674367fb167459bbc08d2e77e740a90415e8f42b\"},\"code/tests/test_qa_checkpoint.py\":{\"mtime_ns\":1781987152191279304,\"sha256\":\"8b82f518e4aaeaea2f7510ea7640615e0826779a87ce676d64169ae393b2ed90\"},\"code/tests/test_verdict_mechanics.py\":{\"mtime_ns\":1782042405792234595,\"sha256\":\"128f46cb5ce06ba619cc239171fb38149913ee623f51a9b8c595d132736f8e76\"},\"code/workflows/.gitkeep\":{\"mtime_ns\":1781147422772689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/workflows/Snakefile\":{\"mtime_ns\":1781993848082910332,\"sha256\":\"21039b383d5a2aab23ddeea189f4569bdb9553d755b0971e94e28363f4f24d52\"},\"code/workflows/config.yaml\":{\"mtime_ns\":1782006709299201624,\"sha256\":\"51efcb9c39dff88985a4cd0328e1f961f574efe37dd58ac35eb122cb204cb440\"},\"code/workflows/envs/py.conda-lock.yml\":{\"mtime_ns\":1781983013699507352,\"sha256\":\"e511411ee467e2020b489784bcd435b36da20dce445c07a24bb5956a99f5aa8e\"},\"code/workflows/envs/py.yaml\":{\"mtime_ns\":1781982449310538453,\"sha256\":\"fa88b4a99a24fdd3cf2d5ce5057a0b1472f3853449b25498e37349561eb4740f\"},\"code/workflows/envs/r-bioc.conda-lock.yml\":{\"mtime_ns\":1781983603164474870,\"sha256\":\"604651cf5bb985aa7fdb1fed55e76001939e04d6d4d53dc57e47e9de3565746e\"},\"code/workflows/envs/r-bioc.yaml\":{\"mtime_ns\":1781983513715479799,\"sha256\":\"6bcebe04fd8d2742a81fedd4668c20535e3cafb488562a1a3fc6fa41d5a8a6ed\"},\"code/workflows/rules/acquire.smk\":{\"mtime_ns\":1781991426632043764,\"sha256\":\"f2c778fc2f29ed7c272f3a718d09f15ab4dbf0327d2ffbe2a1cdc8ec71ac6650\"},\"code/workflows/rules/common.smk\":{\"mtime_ns\":1782006771278198209,\"sha256\":\"f4ed6ad5d91bd391860f12bef8130124d241492cf5dded2d953b927d17e4e4bd\"},\"code/workflows/rules/enrich.smk\":{\"mtime_ns\":1781997701836697973,\"sha256\":\"5a959e0f4618915e1cbec27093ab5b6eaf95ee76c67ae11e896bbd9b56f26488\"},\"code/workflows/rules/harmonize.smk\":{\"mtime_ns\":1781991436790043204,\"sha256\":\"d9520ec79a2ed641c165bb1b923c38daea9879ffb1c2267b51c0dba678e41502\"},\"code/workflows/rules/prepare.smk\":{\"mtime_ns\":1782002192361450526,\"sha256\":\"3c470d6388c2ed343c63acc0a6fabd998c44f9134d952a3d55f443b079d0fb6d\"},\"code/workflows/rules/qa.smk\":{\"mtime_ns\":1781987026344286239,\"sha256\":\"0e679a1d22e9ee3f7d062e1644be73a0ee9142b2bfa951c157c411e9781a13c1\"},\"code/workflows/rules/verdict.smk\":{\"mtime_ns\":1782038113307471129,\"sha256\":\"e71e5dedfc7ce8061196fa13b22b2e404c2c3ebe5d56b4309844d55e3acafc01\"},\"code/workflows/rules/verify.smk\":{\"mtime_ns\":1781991389656045801,\"sha256\":\"7249646219249271dbc45eb2c8e2ce5c50c332e070d09123248cbde858be1f0b\"},\"doc/datasets/.gitkeep\":{\"mtime_ns\":1781147422777689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/datasets/2026-06-20-public-cross-trigger-geo-sets.md\":{\"mtime_ns\":1782171070506859475,\"sha256\":\"142d0bbbf9cfdec616aeedd01b7ca78e94951300bb1eba4107d92e5043ee8b46\"},\"doc/discussions/.gitkeep\":{\"mtime_ns\":1781147422779689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/inquiries/assets/menopause-pais-causal-dag.dot\":{\"mtime_ns\":1782047261781967009,\"sha256\":\"82ee4dfcd8d80add6d5579c0079c8e58cc3e65ac180193073fc19dba1f43363d\"},\"doc/inquiries/assets/menopause-pais-causal-dag.png\":{\"mtime_ns\":1782047431937957633,\"sha256\":\"32761cd443636a8d6ad1388b3a4518b8a4e4880631c59998b8d3a2648dc46c86\"},\"doc/inquiries/menopause-pais-causal-dag-critique.md\":{\"mtime_ns\":1782171070507035005,\"sha256\":\"7c2f7dfe9f2ff20c2a31cede43abd0fb7c1fc7509cb857672ace07887146bca0\"},\"doc/inquiries/menopause-pais-causal-dag.md\":{\"mtime_ns\":1782171070507138829,\"sha256\":\"24474cec501f76672a91a9beae01e5e887f750d8ba49b4f9c74a1cd4f55ac768\"},\"doc/interpretations/.gitkeep\":{\"mtime_ns\":1781147422781689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/.gitkeep\":{\"mtime_ns\":1781147422782689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/2026-06-10-paper-import-manifest.tsv\":{\"mtime_ns\":1781147861348775000,\"sha256\":\"25ffe958f9e64ed9ef78a963e5e2d09a6098db15d60c5fa9115c5b28739a9bf3\"},\"doc/meta/2026-06-10-paper-import-triage.md\":{\"mtime_ns\":1782171070507298278,\"sha256\":\"e8697526d18ff80865f4454867677dc58fd8ce4cf99566a86d592bab47e0821c\"},\"doc/meta/2026-06-19-case-definition-crosswalk.md\":{\"mtime_ns\":1782171070507403646,\"sha256\":\"1b6158fd460173b17d748e70a7f8a2555ce5ada4e79a2102f4c574aa474f96cf\"},\"doc/meta/2026-06-19-case-definition-crosswalk.tsv\":{\"mtime_ns\":1781904882273812727,\"sha256\":\"c8c92a6cd5ea7e0dcc7e01df65b064165ed9f80dfbc5df28cfc7c964ad75920b\"},\"doc/meta/2026-06-19-next-steps.md\":{\"mtime_ns\":1782171070507503082,\"sha256\":\"9e9ba26ef2dbe460dfa49a4b02a1b1349d0c25105dd5f122d64b24370eb9e111\"},\"doc/meta/2026-06-19-session-summary.md\":{\"mtime_ns\":1782171070507688560,\"sha256\":\"38a7bcff01dd71cb267ebd8dcc56b3ecb34930bd588464f0eaf9ebb447a3f440\"},\"doc/methods/.gitkeep\":{\"mtime_ns\":1781147422784689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/plans/.gitkeep\":{\"mtime_ns\":1781147422786689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/plans/0003-cross-trigger-pathway-overlap-pipeline-review.md\":{\"mtime_ns\":1782171070507790471,\"sha256\":\"1f8f5ff304ae7e3a8ed86e2408ad049be145149eb33920a2600be9aef8657aa3\"},\"doc/reports/.gitkeep\":{\"mtime_ns\":1781147422788689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/searches/.gitkeep\":{\"mtime_ns\":1781147422790689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/searches/2026-06-19-hormone-menopause-pais-cohorts.json\":{\"mtime_ns\":1781906373409730559,\"sha256\":\"2d5cb054fb5c6833c3b47b7fe8bfe60b9c0b9138025a221b3edd2776e855d7ad\"},\"doc/searches/2026-06-20-cross-pathogen-pais-signatures.json\":{\"mtime_ns\":1781950756605284856,\"sha256\":\"50c417a563a88872d7692d1b33b096620aa885371395afbf4a204f7799ead4d1\"},\"doc/searches/2026-06-20-mitochondrial-bioenergetics-pem.json\":{\"mtime_ns\":1781950888650277579,\"sha256\":\"4537afdbf7b66d2b0f24dfb902a74f5b1f536eef256f0ff1ea87bbc07fabab22\"},\"doc/searches/2026-06-20-post-dengue-qfs-postsars-omics-gap.json\":{\"mtime_ns\":1781964537210525486,\"sha256\":\"7a3fd08fd51c5bff68f09f8b495990c197da18c50c0aa7b9fad4abe3741f945e\"},\"doc/searches/2026-06-20-therapeutics-clinical-trials-longcovid-mecfs.json\":{\"mtime_ns\":1781950950575274167,\"sha256\":\"f38639a774345719de1dd1814e0de4fdb5b525542fe80e8f25834597a2e25c37\"},\"doc/searches/2026-06-20-therapeutics-clinical-trials-longcovid-mecfs.md\":{\"mtime_ns\":1782171070507892132,\"sha256\":\"efd9c1938cf8a8fe6f2b0c5f41435e5fd09d51040204697182c97a86fe901465\"},\"doc/themes/.gitkeep\":{\"mtime_ns\":1781147422791689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"knowledge/sources/local/.gitkeep\":{\"mtime_ns\":1781147422800689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"knowledge/sources/local/mappings.yaml\":{\"mtime_ns\":1782171189619636164,\"sha256\":\"c4099b32fba083f877fe249ff628a00ade871f5bcea5a29fecfb6c8e296efc43\"},\"science.yaml\":{\"mtime_ns\":1782171189619636164,\"sha256\":\"ef6d1fbfebd4b78cf270a6dabc44e39647c2ef2185ff637aba5a4239485ab810\"},\"specs/scope-boundaries.md\":{\"mtime_ns\":1782171070507998451,\"sha256\":\"894d11666862e972a79de400185391211ae2f9de612bb6093cbc379337937b89\"},\"tasks/.tasks.lock\":{\"mtime_ns\":1782314447953243913,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"tasks/active.md\":{\"mtime_ns\":1782314447956365095,\"sha256\":\"ed0d8a544e5993dbf25982dcb3bae051a2eca4cb5359e13cd943a08e7f213950\"},\"tasks/done/2026-06.md\":{\"mtime_ns\":1782312775646991462,\"sha256\":\"13e05e03ccb6c9d190db87a1a2f399601736f581bd49bda6d09711800856d349\"}}" .
+        schema:sha256 "651de50db9755e9ed9ce52511e7a9409aa8d651879f693b063647e0eec5fa6b0" ;
+        schema:text "{\"AGENTS.md\":{\"mtime_ns\":1781147493660692515,\"sha256\":\"4c3130728a42829e832bda9dd828e6b4ffb0c2728e1139c3fa364d800479e952\"},\"CLAUDE.md\":{\"mtime_ns\":1781147463250691381,\"sha256\":\"336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49\"},\"RESEARCH_PLAN.md\":{\"mtime_ns\":1781147663204698837,\"sha256\":\"f0f899d877fc4aabd7b61ee78ae1ff175565dc5b50cb2363393fd2572e31bccb\"},\"code/menopause_dag/adjustment_sets_v2.txt\":{\"mtime_ns\":1782047312048964239,\"sha256\":\"14599e14869c439fba20e73bd3da5eeb1a979eb56ac16433133b6478278043f1\"},\"code/menopause_dag/derive_adjustment_sets.py\":{\"mtime_ns\":1782047293910965239,\"sha256\":\"4270dc9e598debd793596ed37b39c4cab1c554175dc4049be6df3a1f2a99f62d\"},\"code/notebooks/.gitkeep\":{\"mtime_ns\":1781147422769689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/notebooks/pyproject.toml\":{\"mtime_ns\":1781899798260793972,\"sha256\":\"2b42c8d904796817391a5bb60258cd5452a93af6de07cca8c15eab3f0e2453bf\"},\"code/notebooks/uv.lock\":{\"mtime_ns\":1781899809390092264,\"sha256\":\"52f03631f51792685609210bb7470a2fd43ff392aa9c900aec584b920f47ea2b\"},\"code/notebooks/viz.py\":{\"mtime_ns\":1781899798260692922,\"sha256\":\"901607854b5774ae8cb94e8ba7b6035105876bb9bd5f81a9a60fae9904761d94\"},\"code/scripts/.gitkeep\":{\"mtime_ns\":1781147422770689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/scripts/__pycache__/_verdict_lib.cpython-312.pyc\":{\"mtime_ns\":1782035646208261650,\"sha256\":\"ff5a7f597d6e3d17945ae08e338bc9a966fffe83c2362da5b281ab5c72a82ddf\"},\"code/scripts/__pycache__/_verdict_lib.cpython-313.pyc\":{\"mtime_ns\":1782035561507997020,\"sha256\":\"26d19b5c75152cc7a072f024a3f378888aab3fb5a9bb6505ff80e21f0dd78f9d\"},\"code/scripts/__pycache__/acquire_common.cpython-312.pyc\":{\"mtime_ns\":1781991651371038295,\"sha256\":\"e6b0186d9a1d221d79816c183e209b60199ddc468bc867dfc1f3e38930821227\"},\"code/scripts/__pycache__/acquire_common.cpython-313.pyc\":{\"mtime_ns\":1781985426088853970,\"sha256\":\"a9abdbbbd2f1561f4499a787f071566109c9f00dae1ca9d2f9ca6a27d48d3757\"},\"code/scripts/__pycache__/acquire_common.cpython-314.pyc\":{\"mtime_ns\":1781985082077708443,\"sha256\":\"8ccd0ef0fab0fe7d8324cea653b4aff4db12899f756e52a5dd5be7617321e508\"},\"code/scripts/__pycache__/compartment.cpython-313.pyc\":{\"mtime_ns\":1782035561513975111,\"sha256\":\"d8ea787f191bf0a18dbc6389de0b89e44dd9100fd9fe1669c8b1ae7800e286ea\"},\"code/scripts/__pycache__/db_robustness.cpython-313.pyc\":{\"mtime_ns\":1782035561513323479,\"sha256\":\"92aa74cd72dc8b0d2c84552940388392c3025f07eebcbc7d97b6c8d03b27cc38\"},\"code/scripts/__pycache__/extract_gse130353.cpython-314.pyc\":{\"mtime_ns\":1781985082066476521,\"sha256\":\"ec51ff1194340147b3f4a5b95b75dda2be6cf99b80307e6316d87a0d4ef62a6c\"},\"code/scripts/__pycache__/parse_gse14577.cpython-314.pyc\":{\"mtime_ns\":1781985082090113676,\"sha256\":\"992c93a2986e886762da5114f5c5acca154a588c49abf29bc77b5fee1bf9bb0c\"},\"code/scripts/__pycache__/specificity.cpython-313.pyc\":{\"mtime_ns\":1782035561509162957,\"sha256\":\"94c4ea50f714c04bd7851d5b47692748459e18440bae2a46188cbdc06a458169\"},\"code/scripts/__pycache__/theme_rollup.cpython-313.pyc\":{\"mtime_ns\":1782035561512435824,\"sha256\":\"c5b4ef711a471ffb2d013c5240ac1237dd81473a2a456f020934cccbf9e24111\"},\"code/scripts/__pycache__/verdict.cpython-313.pyc\":{\"mtime_ns\":1782042417325499258,\"sha256\":\"c465619118a4c06aa8f97e97dd935396033165d0870dd79acb512db7c055b327\"},\"code/scripts/_verdict_lib.py\":{\"mtime_ns\":1782035288825626770,\"sha256\":\"91b39b15f040b89218605efd0f05d0d9f94c6cf9c09255fff5aebf0d42760fdf\"},\"code/scripts/acquire_common.py\":{\"mtime_ns\":1781984843838406504,\"sha256\":\"29df111b922a1f26d88b0ca47741ad3365e08dfaab6c3672747c7cb40bfa7d35\"},\"code/scripts/collapse_probes.R\":{\"mtime_ns\":1781993099627951575,\"sha256\":\"f316470e9ce94e53a909bb5938fb2a03217b47bf96318b8ac324a5f914afad9c\"},\"code/scripts/compartment.py\":{\"mtime_ns\":1782035447828618009,\"sha256\":\"2b922f61834ff483f99771aeec386648903c9405a1b8d0b8db9d234dd7424daf\"},\"code/scripts/concordance.py\":{\"mtime_ns\":1782035309121625652,\"sha256\":\"afa47e18584ae0677554b3f9cdd3397bc3dfb6311b1d3830e28b2ee61cc0f5f2\"},\"code/scripts/db_robustness.py\":{\"mtime_ns\":1782035427603619123,\"sha256\":\"2164c251dabafb470e9532d1930fe4f2314cba1a627b03e2061595f2f5e71a29\"},\"code/scripts/emit_datapackage.py\":{\"mtime_ns\":1781985174879388262,\"sha256\":\"95ecf53c1beddf7d53bae9de4695a1219ac9668291ccbdf80ed5fd7d4b3e6c1f\"},\"code/scripts/emit_theme_spec.py\":{\"mtime_ns\":1781992942916960210,\"sha256\":\"1cbbd0b2981734386a06a4df5aa6ed64e92f17220b98154fb2f3e22b23dd9eef\"},\"code/scripts/extract_gse130353.py\":{\"mtime_ns\":1781985035227395958,\"sha256\":\"7ac61a5b393b2fad6de1119e57f5e7b18b0cb21acc7d37de4810b8932268d7e0\"},\"code/scripts/fetch_url.py\":{\"mtime_ns\":1781984862061405500,\"sha256\":\"d27bab6bc4e9cbea288502fd862fd28ff022e70ff48263d83e8c9617b5a3a318\"},\"code/scripts/fgsea_enrich.R\":{\"mtime_ns\":1782002180661451171,\"sha256\":\"a8275ed80420caf546d5ae1c75ab66d3d2aa4d3efc62ad18f51fd98b139671d2\"},\"code/scripts/g1_acquire.py\":{\"mtime_ns\":1781985057294394742,\"sha256\":\"e2ed73ba8b18507b821b2435da654a34fe00203ef19f0bafd7f90bcd6e67edef\"},\"code/scripts/genesets_reference.R\":{\"mtime_ns\":1782002217459449143,\"sha256\":\"ce7e399baffddcdc5890887e625758a28e8ddddcac07b8594cd893bb3502e8ba\"},\"code/scripts/harmonize_gse130353.py\":{\"mtime_ns\":1781991785183024006,\"sha256\":\"dab0301fc021af7c853689bfa11784ed264b66bfde29a983d22e99f852264dd9\"},\"code/scripts/harmonize_gse14577.R\":{\"mtime_ns\":1781991283630910101,\"sha256\":\"d447a5a14a3c9578d97a1e9f324c014abc5383539071de6f3b018fbbfbdda048\"},\"code/scripts/limma_de.R\":{\"mtime_ns\":1782002151975452752,\"sha256\":\"dbbb27285cb6ada48580be0dbc2da23a0031082dcc16f31b51069ddb1f254507\"},\"code/scripts/near_zero_filter.py\":{\"mtime_ns\":1781992873926964012,\"sha256\":\"0a546c98d83ff0c8a854fda68bf3da872835f1e24c6b5f5d1382e750286d9f98\"},\"code/scripts/parse_gse14577.py\":{\"mtime_ns\":1781985130943390683,\"sha256\":\"7f4e632d934167fcea128ef1f68dc866a4e8d020b5a34e73a6986597dd46b6da\"},\"code/scripts/permutation_null.R\":{\"mtime_ns\":1782006871402192691,\"sha256\":\"967b54049a0af73745e7c125dc925bcd6ab89f5d4ff8689de2f44e2bad15fd8d\"},\"code/scripts/prepare_genesets.R\":{\"mtime_ns\":1781994573215870374,\"sha256\":\"64fa8d480f6e99ba40b55eac07d3f78e3ba02f6115953f7cb5c21e045f35ecf9\"},\"code/scripts/qa_checkpoint.py\":{\"mtime_ns\":1781987004539287440,\"sha256\":\"0e619e0a01b5610090ddfdcab39a85551f5d6fc69b4160bfd5ddee2daddb1d10\"},\"code/scripts/specificity.py\":{\"mtime_ns\":1782035368358622388,\"sha256\":\"ba13eda2e4447eca32b6a57e316a249f6c99d167bcb1d4d70c183941470b77b4\"},\"code/scripts/theme_rollup.py\":{\"mtime_ns\":1782035402606620500,\"sha256\":\"cfd33cb2b6b39b6c20890914f97b244d21b743214ac2775b585a7ccc18461202\"},\"code/scripts/verdict.py\":{\"mtime_ns\":1782042311070239815,\"sha256\":\"816fb6df80f88330b26c30f1add827633515ec3e34adba6caf124b193a75cac0\"},\"code/scripts/verify_sha256.py\":{\"mtime_ns\":1781991339992048538,\"sha256\":\"bf63104e6c3d1c720d5fd3ac674367fb167459bbc08d2e77e740a90415e8f42b\"},\"code/tests/test_qa_checkpoint.py\":{\"mtime_ns\":1781987152191279304,\"sha256\":\"8b82f518e4aaeaea2f7510ea7640615e0826779a87ce676d64169ae393b2ed90\"},\"code/tests/test_verdict_mechanics.py\":{\"mtime_ns\":1782042405792234595,\"sha256\":\"128f46cb5ce06ba619cc239171fb38149913ee623f51a9b8c595d132736f8e76\"},\"code/workflows/.gitkeep\":{\"mtime_ns\":1781147422772689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/workflows/Snakefile\":{\"mtime_ns\":1781993848082910332,\"sha256\":\"21039b383d5a2aab23ddeea189f4569bdb9553d755b0971e94e28363f4f24d52\"},\"code/workflows/config.yaml\":{\"mtime_ns\":1782006709299201624,\"sha256\":\"51efcb9c39dff88985a4cd0328e1f961f574efe37dd58ac35eb122cb204cb440\"},\"code/workflows/envs/py.conda-lock.yml\":{\"mtime_ns\":1781983013699507352,\"sha256\":\"e511411ee467e2020b489784bcd435b36da20dce445c07a24bb5956a99f5aa8e\"},\"code/workflows/envs/py.yaml\":{\"mtime_ns\":1781982449310538453,\"sha256\":\"fa88b4a99a24fdd3cf2d5ce5057a0b1472f3853449b25498e37349561eb4740f\"},\"code/workflows/envs/r-bioc.conda-lock.yml\":{\"mtime_ns\":1781983603164474870,\"sha256\":\"604651cf5bb985aa7fdb1fed55e76001939e04d6d4d53dc57e47e9de3565746e\"},\"code/workflows/envs/r-bioc.yaml\":{\"mtime_ns\":1781983513715479799,\"sha256\":\"6bcebe04fd8d2742a81fedd4668c20535e3cafb488562a1a3fc6fa41d5a8a6ed\"},\"code/workflows/rules/acquire.smk\":{\"mtime_ns\":1781991426632043764,\"sha256\":\"f2c778fc2f29ed7c272f3a718d09f15ab4dbf0327d2ffbe2a1cdc8ec71ac6650\"},\"code/workflows/rules/common.smk\":{\"mtime_ns\":1782006771278198209,\"sha256\":\"f4ed6ad5d91bd391860f12bef8130124d241492cf5dded2d953b927d17e4e4bd\"},\"code/workflows/rules/enrich.smk\":{\"mtime_ns\":1781997701836697973,\"sha256\":\"5a959e0f4618915e1cbec27093ab5b6eaf95ee76c67ae11e896bbd9b56f26488\"},\"code/workflows/rules/harmonize.smk\":{\"mtime_ns\":1781991436790043204,\"sha256\":\"d9520ec79a2ed641c165bb1b923c38daea9879ffb1c2267b51c0dba678e41502\"},\"code/workflows/rules/prepare.smk\":{\"mtime_ns\":1782002192361450526,\"sha256\":\"3c470d6388c2ed343c63acc0a6fabd998c44f9134d952a3d55f443b079d0fb6d\"},\"code/workflows/rules/qa.smk\":{\"mtime_ns\":1781987026344286239,\"sha256\":\"0e679a1d22e9ee3f7d062e1644be73a0ee9142b2bfa951c157c411e9781a13c1\"},\"code/workflows/rules/verdict.smk\":{\"mtime_ns\":1782038113307471129,\"sha256\":\"e71e5dedfc7ce8061196fa13b22b2e404c2c3ebe5d56b4309844d55e3acafc01\"},\"code/workflows/rules/verify.smk\":{\"mtime_ns\":1781991389656045801,\"sha256\":\"7249646219249271dbc45eb2c8e2ce5c50c332e070d09123248cbde858be1f0b\"},\"doc/datasets/.gitkeep\":{\"mtime_ns\":1781147422777689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/datasets/2026-06-20-public-cross-trigger-geo-sets.md\":{\"mtime_ns\":1782171070506859475,\"sha256\":\"142d0bbbf9cfdec616aeedd01b7ca78e94951300bb1eba4107d92e5043ee8b46\"},\"doc/discussions/.gitkeep\":{\"mtime_ns\":1781147422779689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/inquiries/assets/menopause-pais-causal-dag.dot\":{\"mtime_ns\":1782047261781967009,\"sha256\":\"82ee4dfcd8d80add6d5579c0079c8e58cc3e65ac180193073fc19dba1f43363d\"},\"doc/inquiries/assets/menopause-pais-causal-dag.png\":{\"mtime_ns\":1782047431937957633,\"sha256\":\"32761cd443636a8d6ad1388b3a4518b8a4e4880631c59998b8d3a2648dc46c86\"},\"doc/inquiries/menopause-pais-causal-dag-critique.md\":{\"mtime_ns\":1782171070507035005,\"sha256\":\"7c2f7dfe9f2ff20c2a31cede43abd0fb7c1fc7509cb857672ace07887146bca0\"},\"doc/inquiries/menopause-pais-causal-dag.md\":{\"mtime_ns\":1782171070507138829,\"sha256\":\"24474cec501f76672a91a9beae01e5e887f750d8ba49b4f9c74a1cd4f55ac768\"},\"doc/interpretations/.gitkeep\":{\"mtime_ns\":1781147422781689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/.gitkeep\":{\"mtime_ns\":1781147422782689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/2026-06-10-paper-import-manifest.tsv\":{\"mtime_ns\":1781147861348775000,\"sha256\":\"25ffe958f9e64ed9ef78a963e5e2d09a6098db15d60c5fa9115c5b28739a9bf3\"},\"doc/meta/2026-06-10-paper-import-triage.md\":{\"mtime_ns\":1782171070507298278,\"sha256\":\"e8697526d18ff80865f4454867677dc58fd8ce4cf99566a86d592bab47e0821c\"},\"doc/meta/2026-06-19-case-definition-crosswalk.md\":{\"mtime_ns\":1782171070507403646,\"sha256\":\"1b6158fd460173b17d748e70a7f8a2555ce5ada4e79a2102f4c574aa474f96cf\"},\"doc/meta/2026-06-19-case-definition-crosswalk.tsv\":{\"mtime_ns\":1781904882273812727,\"sha256\":\"c8c92a6cd5ea7e0dcc7e01df65b064165ed9f80dfbc5df28cfc7c964ad75920b\"},\"doc/meta/2026-06-19-next-steps.md\":{\"mtime_ns\":1782171070507503082,\"sha256\":\"9e9ba26ef2dbe460dfa49a4b02a1b1349d0c25105dd5f122d64b24370eb9e111\"},\"doc/meta/2026-06-19-session-summary.md\":{\"mtime_ns\":1782171070507688560,\"sha256\":\"38a7bcff01dd71cb267ebd8dcc56b3ecb34930bd588464f0eaf9ebb447a3f440\"},\"doc/methods/.gitkeep\":{\"mtime_ns\":1781147422784689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/plans/.gitkeep\":{\"mtime_ns\":1781147422786689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/plans/0003-cross-trigger-pathway-overlap-pipeline-review.md\":{\"mtime_ns\":1782171070507790471,\"sha256\":\"1f8f5ff304ae7e3a8ed86e2408ad049be145149eb33920a2600be9aef8657aa3\"},\"doc/reports/.gitkeep\":{\"mtime_ns\":1781147422788689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/searches/.gitkeep\":{\"mtime_ns\":1781147422790689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/searches/2026-06-19-hormone-menopause-pais-cohorts.json\":{\"mtime_ns\":1781906373409730559,\"sha256\":\"2d5cb054fb5c6833c3b47b7fe8bfe60b9c0b9138025a221b3edd2776e855d7ad\"},\"doc/searches/2026-06-20-cross-pathogen-pais-signatures.json\":{\"mtime_ns\":1781950756605284856,\"sha256\":\"50c417a563a88872d7692d1b33b096620aa885371395afbf4a204f7799ead4d1\"},\"doc/searches/2026-06-20-mitochondrial-bioenergetics-pem.json\":{\"mtime_ns\":1781950888650277579,\"sha256\":\"4537afdbf7b66d2b0f24dfb902a74f5b1f536eef256f0ff1ea87bbc07fabab22\"},\"doc/searches/2026-06-20-post-dengue-qfs-postsars-omics-gap.json\":{\"mtime_ns\":1781964537210525486,\"sha256\":\"7a3fd08fd51c5bff68f09f8b495990c197da18c50c0aa7b9fad4abe3741f945e\"},\"doc/searches/2026-06-20-therapeutics-clinical-trials-longcovid-mecfs.json\":{\"mtime_ns\":1781950950575274167,\"sha256\":\"f38639a774345719de1dd1814e0de4fdb5b525542fe80e8f25834597a2e25c37\"},\"doc/searches/2026-06-20-therapeutics-clinical-trials-longcovid-mecfs.md\":{\"mtime_ns\":1782171070507892132,\"sha256\":\"efd9c1938cf8a8fe6f2b0c5f41435e5fd09d51040204697182c97a86fe901465\"},\"doc/themes/.gitkeep\":{\"mtime_ns\":1781147422791689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"knowledge/sources/local/.gitkeep\":{\"mtime_ns\":1781147422800689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"knowledge/sources/local/mappings.yaml\":{\"mtime_ns\":1782171189619636164,\"sha256\":\"c4099b32fba083f877fe249ff628a00ade871f5bcea5a29fecfb6c8e296efc43\"},\"science.yaml\":{\"mtime_ns\":1782171189619636164,\"sha256\":\"ef6d1fbfebd4b78cf270a6dabc44e39647c2ef2185ff637aba5a4239485ab810\"},\"specs/scope-boundaries.md\":{\"mtime_ns\":1782171070507998451,\"sha256\":\"894d11666862e972a79de400185391211ae2f9de612bb6093cbc379337937b89\"},\"tasks/.tasks.lock\":{\"mtime_ns\":1782320226321501611,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"tasks/active.md\":{\"mtime_ns\":1782320226323825987,\"sha256\":\"0edb1896e45993ab1a7792f9480aee5c06066ec54eecea7ff09ad6035122c2e5\"},\"tasks/done/2026-06.md\":{\"mtime_ns\":1782320224941307624,\"sha256\":\"5019a27c6f0a2bbf84331f7e230283849b3c0b7025a617ff3d39eaf52416fe05\"}}" .
     <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor> prov:wasDerivedFrom <http://example.org/project/source/entities_hypotheses_0001-shared-dysregulated-attractor.md> .
     <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment> prov:wasDerivedFrom <http://example.org/project/source/entities_hypotheses_0002-tissue-reservoir-antigen-fragment.md> .
     <http://example.org/project/hypothesis/0003-immune-exhaustion-feedback> prov:wasDerivedFrom <http://example.org/project/source/entities_hypotheses_0003-immune-exhaustion-feedback.md> .
@@ -15311,6 +15570,27 @@
         prov:wasDerivedFrom <http://example.org/project/paper/bramante2023>,
             <http://example.org/project/paper/bramante2026>,
             <http://example.org/project/source/entities_propositions_0021-acute-antigen-burden-determines-pais-incidence.md> .
+    <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> sci:claimLayer "empirical_regularity" ;
+        sci:identificationStrength "observational" ;
+        sci:proxyDirectness "direct" ;
+        sci:supportsScope "hypothesis_bundle" ;
+        prov:wasDerivedFrom <http://example.org/project/paper/mcclune2025>,
+            <http://example.org/project/paper/peluso2024>,
+            <http://example.org/project/source/entities_propositions_0022-degradation-resistant-fragments-persist-and-are-bioactive.md> .
+    <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> sci:claimLayer "mechanistic_narrative" ;
+        sci:identificationStrength "observational" ;
+        sci:proxyDirectness "direct" ;
+        sci:supportsScope "hypothesis_bundle" ;
+        prov:wasDerivedFrom <http://example.org/project/paper/mcclune2025>,
+            <http://example.org/project/paper/morroy2016>,
+            <http://example.org/project/paper/peluso2024>,
+            <http://example.org/project/source/entities_propositions_0023-cross-pathogen-tissue-macrophage-reservoir-generalization.md> .
+    <http://example.org/project/proposition/0024-retained-fragment-burden-predicts-chronicity-over-initial-load> sci:claimLayer "causal_effect" ;
+        sci:identificationStrength "observational" ;
+        sci:proxyDirectness "direct" ;
+        sci:supportsScope "hypothesis_bundle" ;
+        prov:wasDerivedFrom <http://example.org/project/paper/mcclune2025>,
+            <http://example.org/project/source/entities_propositions_0024-retained-fragment-burden-predicts-chronicity-over-initial-load.md> .
     <http://example.org/project/question/0001-shared-molecular-signature-across-triggers> prov:wasDerivedFrom <http://example.org/project/source/entities_questions_0001-shared-molecular-signature-across-triggers.md> .
     <http://example.org/project/question/0002-antigen-clearance-rescues-symptoms> prov:wasDerivedFrom <http://example.org/project/source/entities_questions_0002-antigen-clearance-rescues-symptoms.md> .
     <http://example.org/project/question/0003-acute-severity-threshold-for-self-sustaining-pais> prov:wasDerivedFrom <http://example.org/project/source/entities_questions_0003-acute-severity-threshold-for-self-sustaining-pais.md> .
@@ -15403,6 +15683,9 @@
     <http://example.org/project/source-change/1c68c4847e5735e1> sci:observedOn "2026-06-21"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "1b3467e71d0cf90549dbec4568a1d545bb1061e4cb82e4d6ee1b94fd8977acbc" .
+    <http://example.org/project/source-change/1edc0cd84bab7428> sci:observedOn "2026-06-24"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "4a06352f8b8108b4d52e225c078b6420ef44a81872a9a22d03a8b0a4f36bdeb4" .
     <http://example.org/project/source-change/203e91fa895e1eb5> sci:observedOn "2026-06-21"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "f87b6b1866e45f9dbfef0d9bc14225e7084c879cb4e255107e4e63aeef1ea7f6" .
@@ -15439,6 +15722,9 @@
     <http://example.org/project/source-change/3d6d9af70f3ecc57> sci:observedOn "2026-06-23"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "de0df3da5445a44429607d503df242f3b4e66f9c0506ca5a7f857d27ce6a9f37" .
+    <http://example.org/project/source-change/3da55a5ea5ce9555> sci:observedOn "2026-06-24"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "beb9bf9586b6205b94c05bf8e837a8579b99e62bf35c7ec2288eba712c1ba916" .
     <http://example.org/project/source-change/4408cc520dc9fa46> sci:observedOn "2026-06-21"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "34f54a8022e83c3176dd02b591af020d7ca1982fc1a8365f42476b86811b2b42" .
@@ -15493,9 +15779,6 @@
     <http://example.org/project/source-change/8cce0253e8335947> sci:observedOn "2026-06-22"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "6b6e513999cd11fdf68f322dff04066eb8125a73344d5d1324051bd2c90f66b0" .
-    <http://example.org/project/source-change/8e4236e49521b583> sci:observedOn "2026-06-24"^^<http://www.w3.org/2001/XMLSchema#date> ;
-        a sci:SourceChange ;
-        schema:sha256 "35b0938ace0074e7594a77a5c0ac806131b3cdbd8569e0759fd8b6c9194937f6" .
     <http://example.org/project/source-change/8eddf16b5852ef39> sci:observedOn "2026-06-22"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "ac5ffee67a2bef5da289b3838b0e157111bc1d2a9f09ac5cf1a6f014951e2621" .
@@ -15514,6 +15797,9 @@
     <http://example.org/project/source-change/9b49bf67d94a9ce3> sci:observedOn "2026-06-21"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "867de856f3fa9de6e56ffdcba57b8c06803dfb2b8976ab74e4ed3b855f59e262" .
+    <http://example.org/project/source-change/9b981fa256eb27eb> sci:observedOn "2026-06-24"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "84fb7d3d61935ea5a2bb6ccd216fe5ae1e34df71accac93f97a25979ce9c2b7b" .
     <http://example.org/project/source-change/9df11d45c911cf27> sci:observedOn "2026-06-21"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "f67f0369e243ca77ed0e4ff82fc18b6c21e414709d015aee09834ff33f72fa1c" .
@@ -15526,9 +15812,6 @@
     <http://example.org/project/source-change/a933c75bfd210799> sci:observedOn "2026-06-23"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "f5620930f01c1db83804d3f975ae663cf053205b467d5405982eccf2baeb7c1a" .
-    <http://example.org/project/source-change/a93b547589fc38e4> sci:observedOn "2026-06-24"^^<http://www.w3.org/2001/XMLSchema#date> ;
-        a sci:SourceChange ;
-        schema:sha256 "9aeaef884dc091bd974ca8c971f40492ce05ccd0c5b85941f026e081061971c5" .
     <http://example.org/project/source-change/a9ef64c1a136e0e5> sci:observedOn "2026-06-24"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "59630091984038fb796e5efa6fcb4f99fbf2ac8711795a9dffd8a952c2509bc6" .
@@ -15805,6 +16088,9 @@
     <http://example.org/project/source-snapshot/2c1a352761c4fbb0> sci:sourcePath "entities/concepts/menopause-pais-symptom-overlap.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "476a32b57e6465c906486cb741c3948e31fe2918812d60bd2759bab995b69984" .
+    <http://example.org/project/source-snapshot/2d00fe0305e3189c> sci:sourcePath "entities/evidence-lines/0059-peluso2024-sars2-antigen-persistence-supports-0022.md" ;
+        a sci:SourceSnapshot ;
+        schema:sha256 "9b6e4883d77f768d0f934bb351ae71c9986fe1d58ab4aafd86e2ff3618edc1ba" .
     <http://example.org/project/source-snapshot/2db09a6ad568b5d1> sci:latestSourceChange <http://example.org/project/source-change/9135244d1d5779fc> ;
         sci:sourcePath "entities/evidence-lines/0034-shahbaz2025-lc-female-cytokine-gut-barrier-within-sex-elevation.md" ;
         a sci:SourceSnapshot ;
@@ -15868,6 +16154,9 @@
         sci:sourcePath "entities/propositions/0020-antigen-clearance-rescues-established-pais.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "e71e7db01be18fcf07abe9efbe93a0b3ff85c6d9048fce6453d7d24f145123fd" .
+    <http://example.org/project/source-snapshot/4466a4fa59e8d9e9> sci:sourcePath "entities/propositions/0024-retained-fragment-burden-predicts-chronicity-over-initial-load.md" ;
+        a sci:SourceSnapshot ;
+        schema:sha256 "3409c043d92af515ad5ce6c560bb133b58caf9d83c3bb4c4c3e031e28062f3f1" .
     <http://example.org/project/source-snapshot/44b7888d001ba1a1> sci:latestSourceChange <http://example.org/project/source-change/203e91fa895e1eb5> ;
         sci:sourcePath "entities/patches/menopause-pais-causal-dag.md" ;
         a sci:SourceSnapshot ;
@@ -16322,10 +16611,10 @@
     <http://example.org/project/source-snapshot/9c00fd73401e6471> sci:sourcePath "entities/papers/Germain2022.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "2d25d1573ea14c56ad12faeb71f11c13970bf62188fa33ef93dd2b5998674dba" .
-    <http://example.org/project/source-snapshot/9cf572eb1c697bd2> sci:latestSourceChange <http://example.org/project/source-change/a93b547589fc38e4> ;
+    <http://example.org/project/source-snapshot/9cf572eb1c697bd2> sci:latestSourceChange <http://example.org/project/source-change/3da55a5ea5ce9555> ;
         sci:sourcePath "entities/interpretations/0011-t046-antigen-clearance-trials-ingestion.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "9aeaef884dc091bd974ca8c971f40492ce05ccd0c5b85941f026e081061971c5" .
+        schema:sha256 "beb9bf9586b6205b94c05bf8e837a8579b99e62bf35c7ec2288eba712c1ba916" .
     <http://example.org/project/source-snapshot/9eca20c284aef33d> sci:sourcePath "entities/papers/Oaklander2022.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "e5ee175a4e38303e144a6f1c0ddd9c45df72048017ad0af4e00c0373cd11ba99" .
@@ -16547,6 +16836,9 @@
     <http://example.org/project/source-snapshot/d38883ee3fa27bf5> sci:sourcePath "entities/papers/Stojanovic2026.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "a63e68662729ef90cf3c85a4d905d38f0bd4ef6cdb4fbdefe5050d94a1a50a77" .
+    <http://example.org/project/source-snapshot/d3d3e31233580503> sci:sourcePath "entities/propositions/0023-cross-pathogen-tissue-macrophage-reservoir-generalization.md" ;
+        a sci:SourceSnapshot ;
+        schema:sha256 "f99439653fb1589751f5fa2fc2642a3eee4290083bca13492ee1c0af52fe9885" .
     <http://example.org/project/source-snapshot/d4aa56e29d09667e> sci:sourcePath "entities/reports/synthesis/_emergent-threads.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "cae3fe8825c54bdd2b93200e94f7aef0dc752e441fa8af2bef643336787ce7e0" .
@@ -16559,6 +16851,13 @@
     <http://example.org/project/source-snapshot/d60cbddb03e66959> sci:sourcePath "entities/papers/McClune2025.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "469879bbe4afb009215937b3443fa6502f8b53d25861f66c7288e77c2f2e0e9a" .
+    <http://example.org/project/source-snapshot/d69456ffd4f32ec1> sci:latestSourceChange <http://example.org/project/source-change/1edc0cd84bab7428> ;
+        sci:sourcePath "entities/propositions/0022-degradation-resistant-fragments-persist-and-are-bioactive.md" ;
+        a sci:SourceSnapshot ;
+        schema:sha256 "4a06352f8b8108b4d52e225c078b6420ef44a81872a9a22d03a8b0a4f36bdeb4" .
+    <http://example.org/project/source-snapshot/d7baf3a36c65a698> sci:sourcePath "entities/evidence-lines/0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022.md" ;
+        a sci:SourceSnapshot ;
+        schema:sha256 "46a6d88d32642fa6ea018b3e0f2a422a367ea90b305c42f688f41cc49239ff40" .
     <http://example.org/project/source-snapshot/d87c0182d5333205> sci:sourcePath "entities/evidence-lines/0011-mishra2020-adjustment-attenuation-supports-confounder-decomposition.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "a19387ad0157797f30c75461768edf659e3534c8835e09910ebcd1e0163b10cd" .
@@ -16616,10 +16915,10 @@
     <http://example.org/project/source-snapshot/e4150e4e1a95e088> sci:sourcePath "entities/papers/Sun2025.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "c14a2fd15815acc8acdd50675eb2860960cc930f1607a6ef92b7530d36f86e63" .
-    <http://example.org/project/source-snapshot/e4673c0e7660b185> sci:latestSourceChange <http://example.org/project/source-change/8e4236e49521b583> ;
+    <http://example.org/project/source-snapshot/e4673c0e7660b185> sci:latestSourceChange <http://example.org/project/source-change/9b981fa256eb27eb> ;
         sci:sourcePath "entities/hypotheses/0002-tissue-reservoir-antigen-fragment.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "35b0938ace0074e7594a77a5c0ac806131b3cdbd8569e0759fd8b6c9194937f6" .
+        schema:sha256 "84fb7d3d61935ea5a2bb6ccd216fe5ae1e34df71accac93f97a25979ce9c2b7b" .
     <http://example.org/project/source-snapshot/e47461b4ca1e3cf4> sci:sourcePath "entities/methods/ukb-outcome-and-uproxy-measurement-schema.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "6877cb62c30c7127acf9d8f24ca3106ccd6894f3a06f4da766cd191feb6db705" .
@@ -16933,6 +17232,10 @@
         schema:identifier "entities/evidence-lines/0056-bramante2023-covidout-metformin-prevention-supports-0021.md" .
     <http://example.org/project/source/entities_evidence-lines_0057-bramante2026-activ6-metformin-partial-replication-supports-0021.md> a prov:Entity ;
         schema:identifier "entities/evidence-lines/0057-bramante2026-activ6-metformin-partial-replication-supports-0021.md" .
+    <http://example.org/project/source/entities_evidence-lines_0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022.md> a prov:Entity ;
+        schema:identifier "entities/evidence-lines/0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022.md" .
+    <http://example.org/project/source/entities_evidence-lines_0059-peluso2024-sars2-antigen-persistence-supports-0022.md> a prov:Entity ;
+        schema:identifier "entities/evidence-lines/0059-peluso2024-sars2-antigen-persistence-supports-0022.md" .
     <http://example.org/project/source/entities_evidence-lines_0060-ptlds-antibiotic-retreatment-null-disputes-0020.md> a prov:Entity ;
         schema:identifier "entities/evidence-lines/0060-ptlds-antibiotic-retreatment-null-disputes-0020.md" .
     <http://example.org/project/source/entities_hypotheses_0001-shared-dysregulated-attractor.md> a prov:Entity ;
@@ -17357,6 +17660,12 @@
         schema:identifier "entities/propositions/0020-antigen-clearance-rescues-established-pais.md" .
     <http://example.org/project/source/entities_propositions_0021-acute-antigen-burden-determines-pais-incidence.md> a prov:Entity ;
         schema:identifier "entities/propositions/0021-acute-antigen-burden-determines-pais-incidence.md" .
+    <http://example.org/project/source/entities_propositions_0022-degradation-resistant-fragments-persist-and-are-bioactive.md> a prov:Entity ;
+        schema:identifier "entities/propositions/0022-degradation-resistant-fragments-persist-and-are-bioactive.md" .
+    <http://example.org/project/source/entities_propositions_0023-cross-pathogen-tissue-macrophage-reservoir-generalization.md> a prov:Entity ;
+        schema:identifier "entities/propositions/0023-cross-pathogen-tissue-macrophage-reservoir-generalization.md" .
+    <http://example.org/project/source/entities_propositions_0024-retained-fragment-burden-predicts-chronicity-over-initial-load.md> a prov:Entity ;
+        schema:identifier "entities/propositions/0024-retained-fragment-burden-predicts-chronicity-over-initial-load.md" .
     <http://example.org/project/source/entities_questions_0001-shared-molecular-signature-across-triggers.md> a prov:Entity ;
         schema:identifier "entities/questions/0001-shared-molecular-signature-across-triggers.md" .
     <http://example.org/project/source/entities_questions_0002-antigen-clearance-rescues-symptoms.md> a prov:Entity ;
@@ -17522,7 +17831,8 @@
     <http://example.org/project/task/t049> prov:wasDerivedFrom <http://example.org/project/source/tasks_done_2026-06.md> .
     <http://example.org/project/task/t050> prov:wasDerivedFrom <http://example.org/project/source/tasks_active.md> .
     <http://example.org/project/task/t051> prov:wasDerivedFrom <http://example.org/project/source/tasks_done_2026-06.md> .
-    <http://example.org/project/task/t052> prov:wasDerivedFrom <http://example.org/project/source/tasks_active.md> .
+    <http://example.org/project/task/t052> prov:wasDerivedFrom <http://example.org/project/source/tasks_done_2026-06.md> .
+    <http://example.org/project/task/t053> prov:wasDerivedFrom <http://example.org/project/source/tasks_active.md> .
     <http://example.org/project/topic/antigen-pathogen-persistence> prov:wasDerivedFrom <http://example.org/project/source/entities_topics_antigen-pathogen-persistence.md> .
     <http://example.org/project/topic/biomarkers-and-objective-endpoints> prov:wasDerivedFrom <http://example.org/project/source/entities_topics_biomarkers-and-objective-endpoints.md> .
     <http://example.org/project/topic/long-covid-immune-dysregulation> prov:wasDerivedFrom <http://example.org/project/source/entities_topics_long-covid-immune-dysregulation.md> .

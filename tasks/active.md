@@ -141,10 +141,10 @@ Both q0020 and q0021 need the SAME missing design: an ambulatory cohort with a s
 
 BLOCKED on vehicle-admissibility gate G1-G4 of pre-registration:0003. Activate when an admissible cross-syndrome study/dataset appears: paired proximal+distal IENFD with site-specific norms (G1), primary-dysautonomia control arm (G2), >=2 PAIS triggers under one protocol (G3), >=40 lesion-positive/side power floor (G4). On arrival, run the two confirmatory legs (P1 lesion-positive rate; P2 headline NLD-fraction delta vs primary-dysautonomia) per the locked decision criteria and interpret-results into h0007 promotion. Standing verdict until then: [?] inconclusive-for-coverage (no bears_on update).
 
-## [t052] Code hypothesis:0002 primary support (McClune2025/Peluso2024) as evidence-lines to lift it from speculative
-- priority: P2
+## [t053] Promote h0002 out of speculative: code support for proposition:0023 (cross-pathogen tissue-reservoir) and proposition:0024 (retained-burden-predicts-chronicity)
+- priority: P3
 - status: proposed
 - aspects: []
 - created: 2026-06-24
 
-After t051 decoupled proposition:0021 (mechanism-agnostic metformin evidence) from h0002's belief, h0002 grades 'speculative' because its genuine primary support — McClune2025 (mouse Borrelia tissue-reservoir + long-COVID molecular overlap) and Peluso2024 (persisting SARS-CoV-2 antigen) — lives in the prose Supporting Evidence section, NOT coded as evidence-lines. The only coded claim bearing on h0002 is the disputed-but-uninterpretable corollary proposition:0020. Mint a core proposition for the tissue-reservoir mechanism and code McClune2025 (moderate; mouse model caveat) + Peluso2024 (weak; antigen detection, no symptom link) as supporting evidence-lines so the graph grades h0002 an honest 'contested'/'supported (contested)' rather than speculative. This is the correct way to promote h0002 — NOT via the metformin prevention trials.
+t052 coded h0002's two distinctive core conjuncts (0023 cross-pathogen tissue/macrophage-reservoir generalization; 0024 retained-fragment-burden-determines-chronicity-over-initial-load) with NO evidence-line, so the conjunctive bundle honestly caps h0002 at 'speculative'. Promotion path: (a) a non-Borrelia PAIS tissue-reservoir study showing fragment retention in tissue-resident macrophages with overlapping host signature -> supporting line on 0023; (b) a prospective cohort showing retained-fragment burden out-predicts initial pathogen load for chronic-illness onset -> supporting line on 0024. Also a pre-reg target: the innate-sensing/transduction (TLR2) step linking fragment burden to metabolic/immune dysfunction (h0002 Predictions). Until then h0002 stays speculative-with-a-supported-persistence-pillar.
