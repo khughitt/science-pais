@@ -45,4 +45,3 @@ highly vaccinated/previously-infected population already had low baseline PAIS r
 metabolic mechanistic ambiguity as `0056` (the protective lever is not demonstrably *antigen* clearance),
 and same prevention-not-reversibility scope. Net: corroborates a real but modest acute-phase prevention
 effect without resolving whether antigen burden specifically is the operative determinant.
-</content>

@@ -30,7 +30,7 @@ over the 15-day course, NMV/r changed **neither circulating SARS-CoV-2 Spike/S1 
 in the NMV/r arm, p=0.958), **nor anti-Spike antibody, nor PBMC immune subsets**. The only correlate of
 self-reported improvement — in *both* arms — was falling RANTES/CCL5. This is the decisive companion to
 the clinical nulls: it directly demonstrates that 15-day NMV/r **does not engage the antigen target**,
-which is why STOP-PASC (`0054`-class) and PAX-LC's own null primary endpoint cannot be read as testing
+which is why STOP-PASC (`evidence-line:0053`) and PAX-LC's own null primary endpoint cannot be read as testing
 `proposition:0020`. Coded `disputes` (it weighs weakly against the reversible-target reading) with
 `evidence_role: model_criticism` — its real content is to **disarm the other nulls as evidence against
 the mechanism**.
@@ -50,4 +50,3 @@ IgG half-life; ~45–55% of participants had no detectable baseline antigen (no 
 peer-reviewed; long COVID only. The NMV/r-fails-to-clear-Spike result actually *supports a tissue-reservoir
 / non-replicating-antigen* model (`hypothesis:0002`) over active bloodstream replication, and reinforces
 that null NMV/r trials **must not** be cited against antigen persistence.
-</content>

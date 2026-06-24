@@ -48,4 +48,3 @@ self-reported improvement; PET-suggested lower tissue T-cell activation) that di
 group-level endpoint; preprint; long COVID only. Per `discussion:0003`, this null **does not refute**
 `hypothesis:0002`; the exploratory exposure-response signal is, if anything, a faint hint that the
 reversible-target reading is not dead — only untested by an adequate vehicle.
-</content>

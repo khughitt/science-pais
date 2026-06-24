@@ -1,7 +1,7 @@
 ---
 id: proposition:0021-acute-antigen-burden-determines-pais-incidence
 type: proposition
-title: Reducing acute-phase antigen burden lowers PAIS incidence
+title: Acute-phase intervention lowers PAIS incidence (antigen-burden specificity unresolved)
 status: active
 claim_layer: causal_effect
 identification_strength: interventional
@@ -24,47 +24,54 @@ source_refs:
 created: '2026-06-24'
 updated: '2026-06-24'
 ---
-# Proposition: Reducing acute-phase antigen burden lowers PAIS incidence
+# Proposition: Acute-phase intervention lowers PAIS incidence (antigen-burden specificity unresolved)
 
 ## Claim
 
-Intervening **during acute infection to reduce viral/antigen burden lowers the subsequent incidence of
-PAIS** — i.e. antigen burden at or near onset is a *modifiable determinant of who develops* chronic
-post-infectious illness. Subject = acute-phase burden-reducing intervention; predicate = *causally
-lowers*; object = subsequent PAIS incidence. This is the **fixed-risk-factor / prevention** reading of
-`hypothesis:0002` (and the empirical core of `question:0012`). It is the complement to
-`proposition:0020`: burden at onset can shape *who develops* PAIS even if late clearance does not *reverse*
-established disease — the single move that reconciles the prevention-positive with the treatment-null
-evidence.
+The **directly supported claim** is mechanism-agnostic: intervening pharmacologically **during acute
+infection lowers the subsequent incidence of PAIS** — i.e. *something* about the acute phase is a
+modifiable determinant of who develops chronic post-infectious illness. Subject = acute-phase
+intervention; predicate = *causally lowers*; object = subsequent PAIS incidence.
+
+The **antigen-specific reading** — that the operative lever is specifically reduced *antigen/viral
+burden* at onset — is the interpretation that bears on `hypothesis:0002`, and it is **only indirectly and
+weakly supported**: the available evidence (metformin) cannot separate an antiviral mechanism from a
+metabolic (AMPK/mTOR) one. This proposition is the **fixed-risk-factor / prevention** complement to
+`proposition:0020`: an acute-phase determinant can shape *who develops* PAIS even if late clearance does
+not *reverse* established disease — the move that reconciles prevention-positive with treatment-null. It
+is also the empirical core of `question:0012`.
 
 ## Evidence Summary
 
-`literature_evidence`, **directionally supported on the prevention axis but mechanistically ambiguous as
-to whether the operative lever is *antigen* specifically** (`interpretation:0011`):
+`literature_evidence`. Two independent prevention RCTs support the **mechanism-agnostic** intervention→
+incidence claim; support for the **antigen-specific** reading (the one that credits `hypothesis:0002`) is
+**weak/indirect** in both, because metformin's protective mechanism is unresolved
+(`interpretation:0011`). Both lines are therefore coded **weak** *as support for the antigen-specific
+claim*, even though COVID-OUT is itself a high-quality trial:
 
-- **Support — moderate:** `evidence-line:0056` (`paper:Bramante2023`, COVID-OUT, n≈1126 followed) —
-  metformin started in acute outpatient COVID reduced provider-diagnosed long COVID by ~41% over 10
-  months (HR 0.59, 95% CI 0.39–0.89; p=0.012), with larger benefit when started <4 days from onset (HR
-  0.37, 95% CI 0.15–0.95). Ivermectin and fluvoxamine were null — the effect is metformin-specific.
+- **Support — weak (high-quality trial, but antigen-specificity indirect):** `evidence-line:0056`
+  (`paper:Bramante2023`, COVID-OUT, n≈1126 followed) — metformin started in acute outpatient COVID
+  reduced provider-diagnosed long COVID by ~41% over 10 months (HR 0.59, 95% CI 0.39–0.89; p=0.012),
+  larger when started <4 days (HR 0.37, 95% CI 0.15–0.95); ivermectin and fluvoxamine were null. Strong
+  for *intervention→incidence*; weak for *antigen-burden* as the lever.
 - **Support — weak (partial replication):** `evidence-line:0057` (`paper:Bramante2026`, ACTIV-6, mITT
-  n=2983) — the **primary 6-month symptom endpoint was not met** (PPE 0.83 < 0.975 threshold), but
-  clinician-diagnosed long COVID at day 180 was approximately halved (RR 0.50, 95% CrI 0.16–0.99; PPE
-  0.96). Directionally consistent with COVID-OUT but attenuated in a highly immune (vaccinated/previously
-  infected) population.
+  n=2983) — the **primary 6-month symptom endpoint was not met** (PPE 0.83 < 0.975), but clinician-
+  diagnosed long COVID at day 180 was approximately halved (RR 0.50, 95% CrI 0.16–0.99; PPE 0.96).
+  Directionally consistent with COVID-OUT but attenuated in a highly immune population.
 
-Two independent prevention RCTs thus agree that an acute-phase metformin course lowers long-COVID
-incidence — establishing that *something* about the acute phase is a modifiable PAIS determinant.
+The two RCTs agree that an acute-phase metformin course lowers long-COVID incidence — establishing a
+modifiable acute-phase determinant, without establishing that the determinant is antigen burden.
 
 ## Caveats
 
 `proxy_directness: indirect` — metformin is a **proxy for antigen-burden reduction**, and its protective
 mechanism is **contested between an antiviral effect (lowering acute viral load) and a metabolic effect
-(AMPK/mTOR), the latter independent of antigen**. So while these trials robustly support a *modifiable
-acute-phase determinant* of PAIS incidence, they only *indirectly* support the specifically *antigen*-
-burden reading this proposition states. Additional caveats: both trials are **prevention, not
-established-disease treatment** (they say nothing about reversibility — that is `proposition:0020`); the
-endpoint is a clinical long-COVID diagnosis, not a measured antigen index; and ACTIV-6's primary symptom
-endpoint missing its bar tempers the magnitude. Confidence in the antigen-specific reading would rise
-with a prevention trial that (a) measured acute antigen/viral-load reduction as the mediator and (b)
+(AMPK/mTOR) independent of antigen**. This is precisely why the antigen-specific support is graded weak
+and why this proposition should **not** be read as promoting `hypothesis:0002`'s antigen mechanism: the
+firmly-supported part (intervention→incidence) is mechanism-agnostic and is equally consistent with the
+metabolic frame of `hypothesis:0001`/`hypothesis:0004`. Additional caveats: both trials are
+**prevention, not established-disease treatment** (they say nothing about reversibility — that is
+`proposition:0020`); the endpoint is a clinical long-COVID diagnosis, not a measured antigen index; and
+ACTIV-6's primary symptom endpoint missed its bar. Confidence in the antigen-specific reading would rise
+only with a prevention trial that (a) measured acute antigen/viral-load reduction as the mediator and (b)
 showed incidence reduction tracking that mediator.
-</content>

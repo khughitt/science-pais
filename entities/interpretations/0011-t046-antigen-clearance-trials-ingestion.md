@@ -41,8 +41,10 @@ synthesized in `discussion:0003`; this codes them as graph evidence. `hypothesis
 | Geng2024 (STOP-PASC) | NMV/r 15d, established LC, n=155 | null primary + all PROMIS | **No** (no baseline stool RNA; no enrichment) | 0053 → 0020 | disputes / weak |
 | Bhattacharjee2026 (PAX-LC) | NMV/r 15d immuno substudy, n=82 | null; Spike/Ab/PBMC unchanged | **Demonstrated failure** | 0054 → 0020 | disputes / weak (`model_criticism`) |
 | Peluso2026 (outSMART-LC) | AER002 anti-RBD mAb single dose, n=36 | null primary + all secondaries | **No** (no clearance assay; tissue antigen scarce) | 0055 → 0020 | disputes / weak |
-| Bramante2023 (COVID-OUT) | metformin acute, prevention, n≈1126 | LC incidence ↓~41% (HR 0.59) | n/a (prevention) | 0056 → 0021 | supports / moderate |
+| Bramante2023 (COVID-OUT) | metformin acute, prevention, n≈1126 | LC incidence ↓~41% (HR 0.59) | n/a (prevention) | 0056 → 0021 | supports / weak* |
 | Bramante2026 (ACTIV-6) | metformin acute, prevention, n=2983 | primary symptom endpoint missed; clinician-dx LC RR 0.50 | n/a (prevention) | 0057 → 0021 | supports / weak |
+
+*COVID-OUT is a high-quality trial and is *strong* evidence for the mechanism-agnostic intervention→incidence claim; it is graded **weak** here because support for the *antigen-specific* reading (the part that bears on h0002) is indirect — metformin's mechanism is antiviral-vs-metabolic ambiguous.
 
 The decisive structural feature, inherited from `discussion:0003`: **no completed trial both (a)
 demonstrated antigen clearance and (b) measured symptom change.** The established-disease nulls therefore
@@ -79,10 +81,13 @@ refuting antigen persistence. This is captured in 0054's `model_criticism` role 
   been adequately tested," not "it is false." No supporting line exists. Expect a
   `belief.fragile-single-line`-style thinness flag — appropriate for a claim resting entirely on
   uninterpretable nulls.
-- **`proposition:0021` (acute burden determines incidence)** — **moderately supported** by two
-  independent prevention RCTs, tempered by (a) ACTIV-6's missed primary symptom endpoint and (b) the
-  antigen-vs-metabolic mechanistic ambiguity of metformin. Supports the *fixed-risk-factor* reading
-  directionally without proving the lever is antigen specifically.
+- **`proposition:0021` (acute-phase intervention lowers incidence; antigen-specificity unresolved)** —
+  its **mechanism-agnostic** claim (acute intervention → lower incidence) is well-supported by two
+  independent prevention RCTs, but its **antigen-specific** reading — the only part that credits
+  `hypothesis:0002` — is **weakly/indirectly supported** (both lines graded weak), because metformin's
+  mechanism is antigen-vs-metabolic ambiguous and the firmly-supported part is equally consistent with the
+  metabolic frame of `hypothesis:0001`/`0004`. The proposition was retitled and its evidence regraded
+  (post-review) precisely so it does **not** read as promoting h0002's antigen mechanism.
 - **The 0020↔0021 relationship is the epistemic payload:** treatment-null + prevention-positive is
   exactly the signature of antigen acting as a determinant *at onset* that becomes non-operative once the
   chronic self-sustaining state (`hypothesis:0001`) is established. This reconciles the evidence without
@@ -96,8 +101,9 @@ For **`hypothesis:0002`** (tissue-reservoir antigen-fragment as a pathogen-agnos
   "early antiviral trials have not clearly improved symptoms" is now coded as `evidence-line:0053`–`0055`
   with the crucial target-engagement caveat, exactly as t046 asked.
 - The hypothesis is **neither promoted nor weakened**. The clearance nulls do not weaken it (broken
-  tests); the prevention positives modestly *strengthen* the burden-at-onset proposition. h0002 stays
-  `proposed`/`active`.
+  tests); the prevention positives only *weakly/indirectly* touch the antigen mechanism (their firm
+  content is mechanism-agnostic). h0002 stays `proposed`/`active` and reads as `contested` — not
+  `well_supported` — at the hypothesis level, which is the intended state.
 - Bhattacharjee2026's NMV/r-fails-to-clear-Spike result actively *favors* a tissue-reservoir / non-
   replicating-antigen model over active bloodstream replication — a small qualitative point in h0002's
   favor.
@@ -151,4 +157,3 @@ For **`hypothesis:0002`** (tissue-reservoir antigen-fragment as a pathogen-agnos
    arm of `proposition:0020`.
 4. t046 is **complete** (trials formalized and adjudicated); the live gap is now external trial
    availability, not further coding of existing literature.
-</content>

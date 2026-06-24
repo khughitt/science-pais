@@ -48,4 +48,3 @@ requires. Further bounded by: 15-day course (possibly too short / poor tissue pe
 `discussion:0003`, this null **does not refute antigen persistence** (`hypothesis:0002`) — a drug that
 did not demonstrably clear antigen cannot test whether clearing antigen helps. Consistent with the
 `proposition:0021` fixed-risk-factor reconciliation.
-</content>

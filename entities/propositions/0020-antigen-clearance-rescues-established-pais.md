@@ -76,5 +76,3 @@ reconciliation (antigen as a fixed risk factor at onset that becomes non-operati
 is self-sustaining, `hypothesis:0001`) that would make late clearance ineffective *without* refuting the
 mechanism. The decisive test remains an **antigen-positive-enriched, clearance-demonstrated, symptom-
 endpoint** trial.
-</content>
-</invoke>

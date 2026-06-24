@@ -1,12 +1,12 @@
 ---
 id: evidence-line:0056-bramante2023-covidout-metformin-prevention-supports-0021
 type: evidence-line
-title: "Bramante2023 COVID-OUT — acute-phase metformin cuts long-COVID incidence ~41%; supports acute-burden-determines-incidence (mechanism antiviral vs metabolic ambiguous)"
+title: "Bramante2023 COVID-OUT — acute-phase metformin cuts long-COVID incidence ~41%; high-quality trial but weak/indirect support for the antigen-specific reading (antiviral vs metabolic ambiguous)"
 status: active
 stance: supports
 target: proposition:0021-acute-antigen-burden-determines-pais-incidence
 source: paper:Bramante2023
-strength: moderate
+strength: weak
 independence: independent
 independence_group: covidout-metformin-prevention
 evidence_role: direct_test
@@ -29,8 +29,9 @@ In the COVID-OUT quadruple-blind RCT (acute outpatient COVID, ~1126 followed to 
 started during acute infection reduced provider-diagnosed long COVID by ~41%** (HR 0.59, 95% CI
 0.39–0.89; p=0.012), with a larger effect when started <4 days from symptom onset (HR 0.37, 95% CI
 0.15–0.95). Ivermectin and fluvoxamine in the same factorial design were null. This is strong RCT
-evidence that an acute-phase intervention *prevents* PAIS, supporting `proposition:0021` (acute-phase
-burden is a modifiable determinant of who develops chronic illness).
+evidence that an **acute-phase intervention prevents PAIS** (the mechanism-agnostic claim of
+`proposition:0021`). It is only **weak/indirect** support for the **antigen-specific** reading — that
+reduced *antigen burden* is the operative lever — which is the part that would credit `hypothesis:0002`.
 
 ## Why it is independent
 
@@ -40,11 +41,12 @@ agent class from the established-disease antiviral trials (`0053`–`0055`); the
 
 ## Caveats / scope
 
-**Moderate**, not strong, because the link to *antigen* specifically is indirect: metformin's protective
-mechanism is **contested between an antiviral effect (it lowers acute SARS-CoV-2 viral load) and a
-metabolic AMPK/mTOR effect independent of antigen**, so the line supports a modifiable *acute-phase*
-determinant more firmly than the *antigen-burden* reading per se. Further bounded by: a provider-diagnosed
+**Weak** *as support for the antigen-specific reading*, despite being a high-quality trial, because the
+link to *antigen* specifically is indirect: metformin's protective mechanism is **contested between an
+antiviral effect (it lowers acute SARS-CoV-2 viral load) and a metabolic AMPK/mTOR effect independent of
+antigen**, so the line supports a modifiable *acute-phase* determinant far more firmly than the
+*antigen-burden* reading per se — and it is the latter that bears on `hypothesis:0002`. Further bounded
+by: a provider-diagnosed
 (not biomarker-anchored) long-COVID endpoint; overweight/obese ≥30 yr population; pre-Omicron-dominant
 era; and the fact that it speaks to **prevention, not reversibility** (`proposition:0020`). It is the
 empirical anchor of the prevention-positive vs treatment-null contrast in `discussion:0003`.
-</content>
