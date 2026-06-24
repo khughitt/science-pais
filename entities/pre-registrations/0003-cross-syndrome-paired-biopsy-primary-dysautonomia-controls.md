@@ -279,15 +279,18 @@ Even a flawless admissible vehicle cannot establish:
   *specificity* against primary dysautonomia, the comparator the entire corpus lacks. Healthy controls
   anchor P1 (lesion existence); primary-dysautonomia controls anchor P2 (pattern specificity). Both arms
   are required.
-- **Robust to the absolute-prevalence confound (design validation, `interpretation:0014`).** A
+- **Less vulnerable to the absolute-prevalence confound (design validation, `interpretation:0014`).** A
   cross-PAIS metric-harmonization re-analysis (Oaklander/Joseph/Walitt/Novak) found that *absolute*
   SFN prevalence is dominated by four ascertainment choices — biopsy modality counted
   (ENFD/SGNFD/functional), trigger, site protocol, and cohort referral-stream — that vary >40 points on
-  **identical patients** (Novak: 48→67→91% by definition breadth). The headline P2 test here is a
-  **within-subject proximal:distal z-pattern**, in which those modality/cutoff choices shift every arm's
-  absolute rate *together* and largely cancel in the per-subject ratio. This is a positive reason the
-  within-subject NLD-classification metric is the right instrument: it measures the specificity contrast
-  the corpus cannot recover from between-study prevalence comparison.
+  **identical patients** (Novak: 48→67→91% by definition breadth). The headline P2 test here avoids the
+  worst between-study confound by fixing biopsy sites, structural modalities, normative scoring, arm
+  protocol, and confounder exclusions *within a single vehicle* before computing each lesion-positive
+  subject's proximal:distal z-pattern. This is a positive reason the within-subject NLD-classification
+  metric is the right instrument: it measures the specificity contrast the corpus cannot recover from
+  between-study prevalence comparison. It does **not** mean modality breadth is harmless — the protocol
+  must pre-specify which structural modalities enter the lesion-positive set, and functional-only ESC
+  cannot substitute for the structural IENFD/SGNFD truth conditions.
 - **Known limitation of the metric:** the NLD/LD dichotomy is threshold-sensitive at the proximal site
   (where normative data are sparser than distal); the z ≤ −1.645 cutoff and the "proximal ≥ distal
   z-deficit" rule are pre-committed precisely to remove that degree of freedom at interpretation time.

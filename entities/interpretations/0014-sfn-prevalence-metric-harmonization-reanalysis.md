@@ -37,12 +37,14 @@ Re-reading the four studies' methods against their reported rates shows the *cut
 surprisingly little: Novak2026's QASAT-graded **ENFD-only** rates (LC 48.3%, ME/CFS 33.5%) sit right
 next to Joseph2021's strict **≤5th-percentile distal** rate (ME/CFS 31%). The large prevalence
 inflation comes instead from **modality breadth** (counting sweat-gland SGNFD and functional ESC, not
-just sensory ENFD), from **trigger** (LC > ME/CFS), and from **cohort referral-enrichment** (which
-explains the Walitt2024 null). Critically, **within trigger the corpus is far more concordant than the
-raw 0%→91% range implies** — the apparent "heterogeneity" is substantially an artifact of pooling
-different triggers and different abnormality definitions into one number. This does **not** weaken
-`proposition:0014` (lesion existence): every PAIS arm exceeds 0% controls under every metric; only the
-*magnitude* is metric/trigger/cohort-sensitive, not the *direction*.
+just sensory ENFD), from **trigger** (LC > ME/CFS), and from **cohort referral-enrichment** (the most
+parsimonious explanation for the Walitt2024 null). Critically, **the referral/enriched biopsy cohorts are
+far more concordant within trigger than the raw 0%→91% range implies** — much of the apparent
+"heterogeneity" is an artifact of pooling different triggers and different abnormality definitions into
+one number. This does **not** weaken `proposition:0014` (lesion existence) in enriched/autonomic PAIS
+cohorts, but it preserves Walitt2024 as a real counterexample to universality: the *presence of a
+substantial lesion-positive subset* is supported, while the *magnitude and generality* are
+metric/trigger/cohort-sensitive.
 
 ## Findings Summary
 
@@ -73,13 +75,15 @@ Three findings fall out:
    the measurement-channel thesis, and it isolates the driver as **modality breadth, not percentile
    cutoff.**
 
-3. **Within trigger the corpus is concordant; the raw scatter is a pooling artifact.** For **Long
+3. **Within trigger the enriched-biopsy corpus is concordant; the raw scatter is partly a pooling artifact.** For **Long
    COVID**, Oaklander (50–63%) and Novak's morphological rate (67%) agree closely. For **ME/CFS**,
-   Joseph (31%) and Novak's ENFD rate (33.5%) agree closely. The "0%→91%" spread that looked like
-   irreconcilable heterogeneity is mostly (a) lumping LC with ME/CFS — Novak's own single protocol
-   shows LC > ME/CFS for ENFD (48.3% vs 33.5%, p = 0.021), a *genuine trigger effect* — and (b)
+   Joseph (31%) and Novak's ENFD rate (33.5%) agree closely within referral/enriched cohorts, while
+   Walitt2024 remains an adjudicated non-neuropathy-referred counterexample. The "0%→91%" spread that
+   looked like irreconcilable heterogeneity is mostly (a) lumping LC with ME/CFS — Novak's own single
+   protocol shows LC > ME/CFS for ENFD (48.3% vs 33.5%, p = 0.021), a *genuine trigger effect* — (b)
    comparing a sensory-ENFD number from one study to a sensory+autonomic+functional composite from
-   another.
+   another, and (c) mixing referral-enriched cohorts with an adjudicated deep-phenotyping cohort not
+   selected for neuropathy.
 
 ## Evidence Quality
 
@@ -102,8 +106,10 @@ subject* of the analysis rather than defects in it: (a) **referral enrichment** 
 and Novak all draw from neuropathy/autonomic referral streams that enrich for SFN, whereas Walitt's
 adjudicated cohort was not neuropathy-referred, which is the most parsimonious explanation for its
 null; (b) **trigger pooling** — three of the four studies mix or differ in trigger, so any single
-"PAIS SFN prevalence" figure silently averages a real LC>ME/CFS gradient. Controls are clean (0% by
-design / selection) in all four, so the direction-vs-0% inference is secure.
+"PAIS SFN prevalence" figure silently averages a real LC>ME/CFS gradient. Novak and Joseph's controls
+are clean 0% comparators by design/selection; Oaklander lacks controls; and Walitt is the important
+exception, showing that the direction-vs-control inference is not universal outside neuropathy/autonomic
+referral streams.
 
 ## Proposition-Level Updates
 
@@ -124,9 +130,10 @@ design / selection) in all four, so the direction-vs-0% inference is secure.
 ## Hypothesis-Level Implications
 
 For **`hypothesis:0007`** (candidate): the re-analysis is net-stabilizing. It defuses what could have
-read as a credibility problem (wildly inconsistent SFN prevalence) by showing the inconsistency is
-largely definitional and trigger-pooling, not a contradiction in the underlying lesion claim. P1's
-evidence base is, if anything, more coherent after harmonization. No promotion implication — criterion
+read as a credibility problem (wildly inconsistent SFN prevalence) by showing much of the inconsistency
+is definitional and trigger-pooling, not a fatal contradiction in the bounded subset lesion claim. P1's
+evidence base is more coherent after harmonization, while Walitt remains the adjudicated non-referral
+counterweight that prevents a universal-lesion reading. No promotion implication — criterion
 #1 still requires the `pre-registration:0003` G2 vehicle. The substantive lesson for the hypothesis is
 methodological: **all future SFN-prevalence claims must state trigger, biopsy modality counted
 (ENFD / SGNFD / functional), site protocol, and cutoff rule**, because absolute prevalence is
@@ -185,11 +192,12 @@ already concordant.
    SFN-prevalence claim states *trigger + modality counted + site protocol + cutoff rule*. Absolute SFN
    prevalence without these four is uninterpretable.
 2. **Record a design-validation note on `pre-registration:0003`:** its headline P2 test is a
-   *within-subject proximal:distal pattern* contrast, which is structurally **robust to the
-   absolute-prevalence confound** this re-analysis exposes (modality/cutoff choices shift everyone's
-   absolute rate together but largely cancel in a within-subject pattern ratio). This is a positive
+   *within-subject proximal:distal pattern* contrast, which is structurally **less vulnerable to the
+   absolute-prevalence confound** this re-analysis exposes because it fixes site, modality, norms, and
+   arm protocol before classifying each lesion-positive subject's distribution. This is a positive
    reason the pre-reg's per-subject NLD-classification design is the right instrument — stronger than a
-   between-study prevalence comparison could ever be.
+   between-study prevalence comparison could ever be — but it still depends on pre-specifying which
+   structural modalities enter the lesion-positive set.
 3. **Carry the LC>ME/CFS trigger gradient** (Novak p = 0.021) forward as a *real* signal, not noise, in
    any future cross-trigger convergence claim (P4).
 4. No new task required; this closes `interpretation:0013` NQ3. t050 remains blocked on the G2 vehicle.

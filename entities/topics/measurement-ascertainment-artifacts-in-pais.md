@@ -70,9 +70,10 @@ specifically about the **artifact-vs-biology inference**.
   (QASAT > 0 vs ≤5th-percentile) is a *minor* driver: Novak's QASAT ENFD rate for ME/CFS (33.5%)
   nearly matches Joseph2021's strict ≤5th-percentile distal rate (31%). And once trigger is held fixed
   the corpus is concordant (LC ~50–67% across Oaklander + Novak; ME/CFS ~31–33% at the ENFD channel),
-  so the apparent 0%→91% "heterogeneity" is mostly an artifact of pooling triggers and abnormality
-  definitions — not irreconcilable biology. The lesson: an SFN-prevalence number is uninterpretable
-  without stating *trigger + biopsy modality counted + site protocol + cutoff rule*.
+  so the apparent 0%→91% "heterogeneity" is partly an artifact of pooling triggers and abnormality
+  definitions. Walitt2024 remains the important adjudicated, non-neuropathy-referred counterexample,
+  preventing a universal-lesion reading. The lesson: an SFN-prevalence number is uninterpretable without
+  stating *trigger + biopsy modality counted + site protocol + cutoff rule + referral stream*.
 
 ## Current State of Knowledge
 
@@ -97,8 +98,8 @@ specifically about the **artifact-vs-biology inference**.
 - Skin-biopsy SFN prevalence across PAIS spans 0% (Walitt2024, ME/CFS, adjudicated non-neuropathy-
   referred cohort) to 91% (Novak2026, LC, broadest definition). `interpretation:0014` shows this
   tension is largely resolvable: it decomposes into modality breadth, trigger (LC>ME/CFS), and cohort
-  referral-enrichment (which explains the Walitt null), not into a contradiction about whether the
-  lesion exists — every PAIS arm exceeds 0% controls under every metric.
+  referral-enrichment. Positive referral cohorts support a substantial lesion-positive subset, while
+  Walitt's null shows the lesion is not universal and may be cohort-enrichment sensitive.
 
 ## Controversies and Open Questions
 
