@@ -19,10 +19,12 @@ related:
 - question:0014-which-pais-case-definition-is-most-biologically-coherent
 - question:0015-does-pem-requirement-improve-cross-study-comparability
 - topic:measurement-ascertainment-artifacts-in-pais
+- proposition:0015-pais-sfn-non-length-dependent-pattern
+- evidence-line:0071-joseph2021-distal-only-sampling-scope-criticism-disputes-0015
 source_refs:
 - paper:Novak2026
 created: '2026-06-24'
-updated: '2026-06-24'
+updated: '2026-06-25'
 ---
 # Proposition: Cross-study heterogeneity in PAIS prevalence and effect estimates is substantially explained by ascertainment and scoring choices rather than biology
 

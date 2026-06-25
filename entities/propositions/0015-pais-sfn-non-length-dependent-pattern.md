@@ -57,6 +57,15 @@ metabolic/idiopathic SFN**, this proposition fails and the "distinct ganglionopa
 `hypothesis:0007` collapses. Conditional on P1 (`proposition:0014`): if no lesion exists, the
 distribution question is moot.
 
+**Now formally contested as a measurement artifact (2026-06-25).** The h0008-M2 scope-criticism is wired
+as `evidence-line:0071` (`dispute_scope: generalization`, weak): the NLD pattern is **only assessable under
+paired-site sampling**, so its visibility is a protocol choice. The largest cohort (Joseph2021,
+distal-only) is structurally blind to it; where assessed the support is off-target (Limongelli2026
+post-*vaccine*) or group-level (Oaklander2022, Novak2026), so the **well_supported** grade overstates what
+paired-site, per-subject, post-infectious measurement has shown. This is the same modality/scoring-breadth
+mechanism as the SFN-prevalence 0%→91% swing in `interpretation:0014` (M2's flagship instance), applied to
+spatial *pattern*. `pre-registration:0003` is the test.
+
 ## Measurement Model
 
 Operationalized from paired skin biopsies (e.g. distal leg vs proximal thigh/trunk) scored against

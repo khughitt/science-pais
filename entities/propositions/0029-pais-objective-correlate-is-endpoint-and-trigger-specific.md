@@ -16,10 +16,15 @@ related:
 - interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation
 - proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode
 - topic:measurement-ascertainment-artifacts-in-pais
+- proposition:0017-pais-sfn-cross-trigger-convergence
+- proposition:0015-pais-sfn-non-length-dependent-pattern
+- evidence-line:0070-novak2026-standardized-protocol-scope-criticism-disputes-0017
+- evidence-line:0071-joseph2021-distal-only-sampling-scope-criticism-disputes-0015
+- discussion:0004-pem-shared-muscle-lesion-vs-endpoint-contingency
 source_refs:
 - paper:Appelman2024
 created: '2026-06-24'
-updated: '2026-06-24'
+updated: '2026-06-25'
 ---
 # Proposition: A PAIS phenotype's objective correlate is endpoint- and trigger-specific, so endpoint choice can manufacture or hide an apparent shared mechanism
 
@@ -55,7 +60,18 @@ artifact-consistent, which is why the audit rejected a clean "objective ⇒ surv
 (`proposition:0028`, 2+ instances), M3 is asserted on **one phenotype (PEM)**. It is a genuine structural
 pattern but is **not yet a regularity** — a second independent instance (a different PAIS phenotype whose
 cross-trigger sameness flips with endpoint choice) is needed before belief should rise above
-fragile/speculative. The SFN cross-trigger-convergence claim (`proposition:0017`), currently `UNTESTED`
-under a standardized protocol, is the most likely place a second instance would emerge if standardized
-head-to-head biopsy reveals trigger-specific patterns. Conditional scope: M3 governs cross-trigger
+fragile/speculative.
+
+**SFN is now wired as M3's second-phenotype reach (2026-06-25) — a criticism edge, not yet a confirmed
+instance.** M3's bearing on the SFN substrate is formalized as `evidence-line:0070` (disputing the
+standardized-substrate reading of `proposition:0017`, the cross-trigger-convergence claim), with the
+M2-flavored sampling-artifact companion `evidence-line:0071` (disputing `proposition:0015`, the
+non-length-dependent pattern). These make M3's challenge to the SFN legs belief-bearing (both props are now
+`contested`), but they **do not add support to M3 itself**: a *confirmed* second instance requires the
+data-gated `pre-registration:0003` (standardized cross-trigger paired-site biopsy) to actually reveal that
+SFN cross-trigger sameness flips with protocol. Until then M3 stays **single-instance / fragile**, now with
+its reach explicitly spanning two phenotypes (PEM via `proposition:0011`; SFN via the `0070`/`0071`
+criticism edges) rather than one. The structural parallel — h0008 as the systematic adversary of both
+peripheral-substrate candidates (h0006 PEM, h0007 SFN), each adjudicated by the same class of standardized
+cross-trigger study — is laid out in `discussion:0004`. Conditional scope: M3 governs cross-trigger
 *sameness* inferences, not single-cohort case-vs-control claims.

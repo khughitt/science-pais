@@ -57,3 +57,12 @@ manufacturing apparent convergence from heterogeneous methods
 (`topic:measurement-ascertainment-artifacts-in-pais`). If SFN is reliably present for one trigger but
 **absent for another** under a single standardized protocol, this proposition fails and the finding
 becomes trigger-specific. Conditional on P1 holding in ≥2 triggers.
+
+**Now formally contested at the standardized-substrate level (2026-06-25).** The h0008-M3 scope-criticism
+is wired as `evidence-line:0070` (`dispute_scope: generalization`, weak): the **well_supported** grade
+reflects convergence of the *finding* across heterogeneous protocols, but under the only single-protocol
+study (Novak2026) the convergence is **2-trigger-only** (PTLDS rests on a narrative review) and
+**non-specific** (hEDS ≥ PAIS). The strong reading — a *standardized, infection-specific* shared substrate
+— is therefore untested, and `pre-registration:0003` is the joint adjudicator (it is also h0007's
+promotion criterion #1 and the locus of h0008-M3's second-phenotype instance, alongside PEM; see
+`discussion:0004`).
