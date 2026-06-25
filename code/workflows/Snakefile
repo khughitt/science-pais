@@ -1,3 +1,7 @@
+# science:code
+# status: workflow-owned
+# science:end
+
 # =============================================================================
 # Snakefile — cross-trigger pathway-overlap pipeline (t035)
 #

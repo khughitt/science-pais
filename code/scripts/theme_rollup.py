@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env python3
 """theme_rollup.py — WP7: strict-dominance theme roll-up for ONE DB (pre-reg:0002
 "Theme roll-up", dominance rule).

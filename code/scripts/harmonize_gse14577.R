@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env Rscript
 # =============================================================================
 # harmonize_gse14577.R — WP3 (G3): U133 probes -> canonical ensembl_gene_id.

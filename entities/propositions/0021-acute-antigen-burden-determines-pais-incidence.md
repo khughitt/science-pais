@@ -7,6 +7,14 @@ claim_layer: causal_effect
 identification_strength: interventional
 proxy_directness: indirect
 supports_scope: local_proposition
+measurement_model:
+  observed_entity: acute-phase pharmacologic intervention trials with later PAIS or long-COVID incidence endpoints
+  latent_construct: reduced acute antigen burden as a modifiable determinant of subsequent PAIS incidence
+  measurement_relation: metformin or similar acute-phase treatment is an indirect proxy for antigen-burden reduction; mediator evidence is required to separate antiviral from metabolic protection
+  known_failure_modes:
+  - protective effects may operate through AMPK/mTOR or other metabolic pathways rather than antigen reduction
+  - clinical long-COVID diagnosis is not an antigen index
+  - prevention findings do not establish reversibility of established disease
 related:
 - hypothesis:0002-tissue-reservoir-antigen-fragment
 - question:0002-antigen-clearance-rescues-symptoms

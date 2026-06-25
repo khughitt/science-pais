@@ -8,7 +8,7 @@ updated: "2026-06-21"
 origin: external
 source_class: observational
 tier: evaluate-next
-license: restricted
+license: proprietary
 access:
   level: controlled
   availability: available

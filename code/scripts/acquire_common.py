@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env python3
 """Shared acquisition helpers for the t035 pipeline (WP1).
 

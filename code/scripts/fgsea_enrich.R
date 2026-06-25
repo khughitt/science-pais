@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env Rscript
 # =============================================================================
 # fgsea_enrich.R — WP5: fgsea NES table for ONE (contrast × DB) cell.

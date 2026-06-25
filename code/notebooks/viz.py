@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 # /// script
 # requires-python = ">=3.11"
 # dependencies = [
@@ -13,7 +17,7 @@ import marimo
 
 __generated_with = "0.13.0"
 app = marimo.App(width="medium")
-SCIENCE_TOOL_IMPORT_ROOT = "/mnt/ssd/Dropbox/science/science/src"
+SCIENCE_TOOL_IMPORT_ROOT = "~/d/science/science/src"
 
 
 # ── Config & data loading ────────────────────────────────────────────

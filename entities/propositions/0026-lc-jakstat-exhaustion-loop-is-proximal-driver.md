@@ -9,12 +9,21 @@ claim_layer: causal_effect
 identification_strength: interventional
 proxy_directness: indirect
 supports_scope: hypothesis_bundle
+measurement_model:
+  observed_entity: JAK1 inhibition with pathway-suppression biomarkers, inflammatory-endotype stratification, and symptom response
+  latent_construct: proximal causal maintenance of long-COVID chronicity by the JAK-STAT/IL-6/exhaustion loop
+  measurement_relation: pharmacologic pathway inhibition is an indirect driver test; causal support requires co-occurring pathway suppression and symptom improvement in the relevant endotype
+  known_failure_modes:
+  - pathway suppression without symptom benefit implies marker-not-driver or wrong endotype
+  - dose, duration, or single-node targeting may be insufficient for a multi-loop chronic state
+  - unstratified nulls can dilute a true inflammatory-endotype effect
 discusses:
 - hypothesis:0003-immune-exhaustion-feedback
 related:
 - pre-registration:0004-jak1-inhibitor-driver-vs-marker
 - hypothesis:0003-immune-exhaustion-feedback
 - question:0006-jak-stat-il6-driver-vs-marker
+- proposition:0025-lc-persistent-inflammatory-activation-dissociated-ifn
 - topic:long-covid-immune-dysregulation
 - topic:therapeutics-and-clinical-trials
 - task:t047

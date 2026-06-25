@@ -4,7 +4,7 @@ type: paper
 title: 'Long COVID diagnostic with differentiation from chronic Lyme disease using
   machine learning and cytokine hubs'
 status: active
-updated: '2026-06-20'
+updated: '2026-06-25'
 ontology_terms:
 - long COVID
 - chronic Lyme disease
@@ -103,7 +103,7 @@ These were constructed by programmatic search over cytokine combinations guided 
 
 **GBM surrogate-tree interpretation:** High IL-2 levels lead to LC/PASC classification; lower IL-2 levels lead toward CLD or NP; VEGF is a secondary discriminating node.
 
-## Relevance to Project
+## Relevance
 
 ### Cross-pathogen shared-signature verdict
 

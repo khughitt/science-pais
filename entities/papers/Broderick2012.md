@@ -17,7 +17,7 @@ related:
 - hypothesis:0001-shared-dysregulated-attractor
 - question:0001-shared-molecular-signature-across-triggers
 created: '2026-06-20'
-updated: '2026-06-20'
+updated: '2026-06-25'
 ---
 # Cytokine expression profiles of immune imbalance in post-mononucleosis chronic fatigue
 
@@ -38,11 +38,11 @@ UNREAD — populate after reading the paper.
 
 UNREAD — populate after reading the paper.
 
-## Findings
+## Key Findings
 
 UNREAD — populate after reading the paper.
 
-## Relevance to Project
+## Relevance
 
 UNREAD — populate after reading the paper. (Why it was queued: molecular cytokine-network
 anchor for the classic post-EBV / post-mononucleosis ME/CFS arm; populates the EBV cytokine

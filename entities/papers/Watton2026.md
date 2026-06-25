@@ -16,7 +16,7 @@ related:
 - hypothesis:0001-shared-dysregulated-attractor
 - question:0001-shared-molecular-signature-across-triggers
 created: '2026-06-20'
-updated: '2026-06-20'
+updated: '2026-06-25'
 ---
 # Reframing ME/CFS: toward a unified mechanistic model of chronic post-infectious diseases
 
@@ -38,11 +38,11 @@ UNREAD — populate after reading the paper.
 
 UNREAD — populate after reading the paper.
 
-## Findings
+## Key Findings
 
 UNREAD — populate after reading the paper.
 
-## Relevance to Project
+## Relevance
 
 UNREAD — populate after reading the paper. (Why it was queued: a recent unified-mechanism
 synthesis across post-infectious diseases — a convergence CLAIM peer to Komaroff2023/2025 and

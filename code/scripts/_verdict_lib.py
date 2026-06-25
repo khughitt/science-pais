@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env python3
 """_verdict_lib.py — WP7 shared primitives for the verdict-bearing set-level
 definitions, kept in ONE place so the locked rules cannot drift between scripts.

@@ -26,7 +26,7 @@ related:
   - paper:Gow2009
   - task:t033
 created: "2026-06-20"
-updated: "2026-06-20"
+updated: "2026-06-25"
 ---
 
 # Cross-pathogen PAIS molecular signatures: shared attractor vs trigger-specific (t001)
@@ -87,6 +87,13 @@ actually demands, so they sharpen the LC↔ME/CFS half of the question without c
 Net: pathway-level convergence (oxidative stress, mitochondrial, NK) gains genuine within-study
 support for LC↔ME/CFS, while a recovery-discriminating *specific-analyte* signature and the ≥3-trigger
 test both remain unmet.
+
+## Synthesis
+
+The cross-trigger evidence supports a cautious domain-level convergence claim, not a shared
+PAIS-specific molecular-signature claim. The strongest within-study and meta-analytic signals
+cluster around immune, mitochondrial/oxidative-stress, and functional physiology domains, while
+the decisive harmonized >=3-trigger molecular test remains absent.
 
 **Update (2026-06-20 QFS/post-SARS full-text ingestion, t033).** The seven thin-trigger papers
 from the gap search were read in full / abstract and now have notes. Three change the picture:

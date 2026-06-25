@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env python3
 """Parse GSE14577 family SOFT -> per-platform probe x sample matrices (t035 WP1).
 

@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env python3
 """Harmonize GSE130353 MMSEQ members -> gene×donor log_mu matrix (t035 WP3 / G3).
 

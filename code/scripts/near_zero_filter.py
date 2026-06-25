@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env python3
 """Near-zero log_mu filter for GSE130353 (t035 WP4) — contrast-blind KDE antimode.
 

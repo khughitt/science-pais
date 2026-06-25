@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env Rscript
 # =============================================================================
 # genesets_reference.R — WP3 (G3) coverage reference.

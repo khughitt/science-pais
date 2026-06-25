@@ -8,9 +8,9 @@ updated: "2026-06-21"
 origin: external
 source_class: observational
 tier: track
-license: commercial
+license: proprietary
 access:
-  level: controlled
+  level: commercial
   availability: available
   verified: false
   source_url: "https://www.ukbiobank.ac.uk/"

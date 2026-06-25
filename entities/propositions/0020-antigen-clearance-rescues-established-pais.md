@@ -7,6 +7,15 @@ claim_layer: causal_effect
 identification_strength: interventional
 proxy_directness: indirect
 supports_scope: hypothesis_bundle
+measurement_model:
+  observed_entity: antiviral, antibiotic, or neutralizing-antibody treatment in established PAIS plus symptom endpoints and, when available, pathogen-antigen measurements
+  latent_construct: causal reversibility of established PAIS symptoms by clearing persistent antigen
+  measurement_relation: treatment assignment is only an indirect proxy for antigen clearance; the claim is adequately tested only when target engagement and symptom response are measured together
+  known_failure_modes:
+  - drug exposure may fail to clear tissue or circulating antigen
+  - cohorts may not be enriched for antigen-positive participants
+  - antibiotics can kill replicating organisms without degrading retained non-viable fragments
+  - a chronic self-sustaining loop could persist after the initiating antigen burden becomes non-operative
 discusses:
 - frame: hypothesis:0002-tissue-reservoir-antigen-fragment
   role: background

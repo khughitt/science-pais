@@ -1,3 +1,7 @@
+# science:code
+# status: workflow-owned
+# science:end
+
 # =============================================================================
 # harmonize.smk — WP3 (gate G3): probe/ENSG → canonical Ensembl gene id.
 # Writes mapped/unmapped fractions + Hallmark-gene coverage. QA severity locked

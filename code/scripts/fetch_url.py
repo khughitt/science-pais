@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env python3
 """Reproducible download + SHA-256 verify (t035 WP1).
 

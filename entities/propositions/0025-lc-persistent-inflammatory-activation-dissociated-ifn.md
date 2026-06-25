@@ -15,13 +15,14 @@ discusses:
 related:
 - hypothesis:0003-immune-exhaustion-feedback
 - question:0006-jak-stat-il6-driver-vs-marker
+- proposition:0026-lc-jakstat-exhaustion-loop-is-proximal-driver
 - topic:long-covid-immune-dysregulation
 - task:t047
 source_refs:
 - paper:Aid2025
 - paper:Ryan2022
 created: '2026-06-24'
-updated: '2026-06-24'
+updated: '2026-06-25'
 ---
 # Proposition: Long COVID exhibits persistent inflammatory pathway activation with a dissociated IFN signature: sustained IL-6/JAK-STAT/type-II-IFN/complement tone plus a blunted type-I antiviral-effector arm, alongside CD8 exhaustion, beyond 180d with no circulating virus
 

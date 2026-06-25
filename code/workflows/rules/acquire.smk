@@ -1,3 +1,7 @@
+# science:code
+# status: workflow-owned
+# science:end
+
 # =============================================================================
 # acquire.smk — WP1: reproducible acquisition (download + checksum), parse,
 # extract, and emit the minimal Frictionless datapackage (discharges G1).

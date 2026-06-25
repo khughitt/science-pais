@@ -23,7 +23,7 @@ related:
   - topic:biomarkers-and-objective-endpoints
   - topic:mecfs-long-covid-convergence
 created: '2026-06-20'
-updated: '2026-06-20'
+updated: '2026-06-25'
 ---
 # Inability of myalgic encephalomyelitis/chronic fatigue syndrome patients to reproduce VO2peak indicates functional impairment
 
@@ -117,7 +117,7 @@ HR@VT declined ~5 bpm but did not reach significance (higher coefficient of vari
 - Combined: **50% of participants** had worse functional impairment classification when day-2 data were used.
 - Single-CPET assessment systematically over-estimates functional ability in ME/CFS.
 
-## Relevance to PAIS
+## Relevance
 
 ### PEM as an Objective Physiological Phenomenon
 

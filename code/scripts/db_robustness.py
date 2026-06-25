@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env python3
 """db_robustness.py — WP7: cross-DB theme robustness (pre-reg:0002 "DB-robustness —
 direction-consistent recurrence").

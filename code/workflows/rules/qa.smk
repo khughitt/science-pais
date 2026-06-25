@@ -1,3 +1,7 @@
+# science:code
+# status: workflow-owned
+# science:end
+
 # =============================================================================
 # qa.smk — WP2: two-severity QA checkpoints (t037 discipline).
 # Structural failures exit non-zero → the *.qa.pass sentinel is NOT written →

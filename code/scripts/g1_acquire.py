@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env python3
 """G1/G2 acquisition seed orchestrator for t035 (post-WP1 refactor).
 

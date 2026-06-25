@@ -1,3 +1,7 @@
+# science:code
+# status: library
+# science:end
+
 #!/usr/bin/env python3
 """Corrupted-fixture halt test for the WP2 QA checkpoint (plan:0003 WP2 DoD).
 

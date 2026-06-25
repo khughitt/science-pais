@@ -1,3 +1,7 @@
+# science:code
+# status: workflow-owned
+# science:end
+
 # =============================================================================
 # verify.smk — recompute & verify the LOCKED sha256 of provisioned payloads
 # (raw GEO files + the Hallmark GMT) BEFORE they are parsed. Closes the gap where

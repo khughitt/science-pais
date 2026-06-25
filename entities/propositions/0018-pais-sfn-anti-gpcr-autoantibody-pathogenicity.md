@@ -8,6 +8,14 @@ claim_layer: causal_effect
 identification_strength: observational
 proxy_directness: indirect
 supports_scope: hypothesis_bundle
+measurement_model:
+  observed_entity: anti-GPCR serology, functional receptor-activation assays, autonomic-function correlations, and antibody-depletion or transfer readouts
+  latent_construct: pathogenic anti-GPCR autoantibody contribution to PAIS small-fiber/autonomic injury
+  measurement_relation: serum antibody measures are indirect mechanism proxies; pathogenicity requires tracking between antibody function or removal and the small-fiber/autonomic phenotype
+  known_failure_modes:
+  - binding ELISA positivity is non-specific in POTS and controls
+  - functional autonomic correlations do not prove small-fiber structural injury
+  - antibody reduction may not predict clinical or lesion response if antibodies are markers rather than drivers
 discusses:
 - frame: hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
   role: background

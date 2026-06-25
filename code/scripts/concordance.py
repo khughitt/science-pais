@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env python3
 """concordance.py — WP6: observed NES rank-concordance for ONE (pair × DB) cell.
 

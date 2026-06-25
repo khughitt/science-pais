@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env python3
 """Two-severity raw-data QA checkpoint for t035 (WP2; t037 discipline).
 

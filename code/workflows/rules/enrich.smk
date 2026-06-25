@@ -1,3 +1,7 @@
+# science:code
+# status: workflow-owned
+# science:end
+
 # =============================================================================
 # enrich.smk — WP5: limma DE (per contrast) + fgsea (per contrast × DB).
 # 5 contrasts → moderated-t ranked gene lists; 5 × 3 DBs → NES tables.

@@ -22,7 +22,7 @@ related:
   - topic:mecfs-long-covid-convergence
   - topic:biomarkers-and-objective-endpoints
 created: '2026-06-20'
-updated: '2026-06-20'
+updated: '2026-06-25'
 ---
 # Muscle abnormalities worsen after post-exertional malaise in long COVID
 
@@ -91,7 +91,7 @@ Semi-quantitative histological scoring showed a significantly greater proportion
 ### 8. Immune infiltration in muscle
 CD3+ T-cells (p = 0.046) and CD68+ macrophages (p = 0.03) were significantly more abundant in skeletal muscle of long COVID patients. CD20+ B-cells were sparse in both groups. This immune infiltration pattern is consistent with an ongoing inflammatory myopathy or a persistent post-infectious immune response in muscle tissue.
 
-## Relevance to PAIS
+## Relevance
 
 This paper is the most direct exercise-provoked, tissue-level evidence linking PEM in long COVID to objective muscle pathology, and is the key empirical anchor for `question:0011-mitochondrial-basis-of-pem`.
 

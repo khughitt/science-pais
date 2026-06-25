@@ -21,6 +21,7 @@ discusses:
     role: "background"
 related:
   - "hypothesis:0005-reproductive-stage-immune-homeostatic-margin"
+  - "proposition:0002-reproductive-stage-transition-modifies-immune-regulatory-pathways"
   - "topic:menopause-sex-hormones-and-pais-risk"
   - "interpretation:0008-t019-hrt-evidence-audit-no-admissible-pais-test"
   - "evidence-line:0037-costeira2021-hrt-cocp-divergence-acute-supports-hormone-therapy-context-dependence"
@@ -29,7 +30,7 @@ source_refs:
   - "paper:Averyanova2022"
   - "paper:Costeira2021"
 created: "2026-06-21"
-updated: "2026-06-23"
+updated: "2026-06-25"
 ---
 
 # Proposition: Hormone-therapy effects on PAIS, if present, are route/dose/timing/indication-dependent

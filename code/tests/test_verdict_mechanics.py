@@ -1,3 +1,7 @@
+# science:code
+# status: library
+# science:end
+
 #!/usr/bin/env python3
 """Branch tests for the WP6/WP7 verdict mechanics (review WP6-7, Low finding).
 

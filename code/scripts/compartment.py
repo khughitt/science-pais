@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env python3
 """compartment.py — WP7: cell-type-marker compartment check on the PRIMARY DB
 (pre-reg:0002 `compartment_confounded`, resolution step 3).

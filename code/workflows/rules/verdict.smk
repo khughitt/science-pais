@@ -1,3 +1,7 @@
+# science:code
+# status: workflow-owned
+# science:end
+
 # =============================================================================
 # verdict.smk — WP6/WP7/WP8: concordance + permutation null (per pair × DB),
 # specificity, theme roll-up, DB-robustness, compartment, mechanical verdict.

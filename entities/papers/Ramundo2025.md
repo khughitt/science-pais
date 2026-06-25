@@ -16,7 +16,7 @@ related:
 - hypothesis:0001-shared-dysregulated-attractor
 - question:0001-shared-molecular-signature-across-triggers
 created: '2026-06-20'
-updated: '2026-06-20'
+updated: '2026-06-25'
 ---
 # Transcriptomic insights into early mechanisms underlying post-chikungunya chronic inflammatory joint disease
 
@@ -38,11 +38,11 @@ UNREAD — populate after reading the paper.
 
 UNREAD — populate after reading the paper.
 
-## Findings
+## Key Findings
 
 UNREAD — populate after reading the paper.
 
-## Relevance to Project
+## Relevance
 
 UNREAD — populate after reading the paper. (Why it was queued: fills an arbovirus
 transcriptomic cell of the cross-pathogen matrix. CAVEAT — the chronic phenotype is

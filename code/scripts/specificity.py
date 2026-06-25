@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env python3
 """specificity.py — WP7: per-set specificity class for ONE DB (pre-reg:0002
 "Specificity metric", fully thresholded — the QFS-vs-QS presence backbone).

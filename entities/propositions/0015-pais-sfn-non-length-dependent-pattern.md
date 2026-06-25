@@ -7,6 +7,14 @@ claim_layer: structural_claim
 identification_strength: observational
 proxy_directness: direct
 supports_scope: hypothesis_bundle
+measurement_model:
+  observed_entity: paired proximal and distal intraepidermal nerve fiber density, scored against site-specific normative reference distributions
+  latent_construct: non-length-dependent small-fiber structural involvement in PAIS
+  measurement_relation: paired-site IENFD is treated as a direct structural readout; the NLD classifier uses site-specific z-score deficit comparison rather than a raw proximal:distal ratio
+  known_failure_modes:
+  - distal-only sampling is structurally blind to NLD patterning
+  - site-specific normative datasets and biopsy-processing protocols can shift absolute abnormality rates
+  - modality expansion beyond sensory ENFD changes prevalence and must not be conflated with this pattern claim
 discusses:
 - hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
 related:

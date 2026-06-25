@@ -21,7 +21,7 @@ related:
   - topic:biomarkers-and-objective-endpoints
   - hypothesis:0001-shared-dysregulated-attractor
 created: '2026-06-20'
-updated: '2026-06-20'
+updated: '2026-06-25'
 ---
 # Exercise Pathophysiology in Myalgic Encephalomyelitis/Chronic Fatigue Syndrome and Postacute Sequelae of SARS-CoV-2
 
@@ -112,7 +112,7 @@ Meta-analysis: long COVID symptoms in 25% of children post-SARS-CoV-2. Exercise 
 - PASC metabolic profiles show elevated ferritin, D-dimer, ESR, and CRP — chronic inflammatory state
 - NIH RECOVER program and MUSIC study (pediatric long COVID) for prospective multicenter data
 
-## Relevance to PAIS
+## Relevance
 
 This paper is the strongest objective evidence available in the project for **shared exercise pathophysiology across ME/CFS and PASC**, and the principal counterargument to the claim that PASC exertional intolerance reflects deconditioning from acute illness.
 

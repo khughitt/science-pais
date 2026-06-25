@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env Rscript
 # =============================================================================
 # prepare_genesets.R — WP4: pinned, size-filtered gene-set universe + theme map.

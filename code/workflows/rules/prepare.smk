@@ -1,3 +1,7 @@
+# science:code
+# status: workflow-owned
+# science:end
+
 # =============================================================================
 # prepare.smk — WP4: probe→gene collapse, near-zero filter, gene-set prep.
 # Verdict-affecting preprocessing is pre-reg-locked (3rd amendment): the

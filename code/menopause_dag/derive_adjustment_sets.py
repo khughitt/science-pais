@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 # /// script
 # requires-python = ">=3.11"
 # dependencies = ["networkx>=3.2", "pyyaml>=6"]

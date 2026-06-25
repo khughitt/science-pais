@@ -17,7 +17,7 @@ related:
 - question:0001-shared-molecular-signature-across-triggers
 - topic:post-infectious-dysautonomia-and-autoimmunity
 created: '2026-06-20'
-updated: '2026-06-20'
+updated: '2026-06-25'
 ---
 # Aberrant T-cell phenotypes in a cohort of patients with post-treatment Lyme disease
 
@@ -78,7 +78,7 @@ This study fills the PTLD cell of the cross-pathogen T-cell immune-dysregulation
 
 **Symptom subgroup immune associations:** No flow cytometry or cytokine features significantly distinguished any of the six PTLD symptom subgroups from each other.
 
-## Relevance to Project
+## Relevance
 
 This paper is a core PTLDS data point for the cross-pathogen immune-dysregulation track (t001) and directly grounds two project-level entities:
 

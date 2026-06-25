@@ -1,3 +1,7 @@
+# science:code
+# status: workflow-owned
+# science:end
+
 # =============================================================================
 # common.smk — shared helper functions (kept out of rule files so each rule
 # file is rules-only, per snakemake lint guidance).

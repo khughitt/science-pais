@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env python3
 """Emit a minimal Frictionless datapackage.json for the acquired payloads (t035 WP1).
 

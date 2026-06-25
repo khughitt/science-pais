@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env Rscript
 # =============================================================================
 # permutation_null.R — WP6: paired sample-label permutation null for ONE

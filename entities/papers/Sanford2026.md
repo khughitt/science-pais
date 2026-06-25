@@ -16,7 +16,7 @@ related:
 - hypothesis:0001-shared-dysregulated-attractor
 - question:0001-shared-molecular-signature-across-triggers
 created: '2026-06-20'
-updated: '2026-06-20'
+updated: '2026-06-25'
 ---
 # Metabolic basis of post-infectious sequelae after Ebola virus disease
 
@@ -38,11 +38,11 @@ UNREAD — populate after reading the paper.
 
 UNREAD — populate after reading the paper.
 
-## Findings
+## Key Findings
 
 UNREAD — populate after reading the paper.
 
-## Relevance to Project
+## Relevance
 
 UNREAD — populate after reading the paper. (Why it was queued: rare post-Ebola metabolomic
 signature — fills the otherwise-empty post-Ebola metabolic cell of the cross-pathogen matrix.

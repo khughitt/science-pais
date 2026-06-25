@@ -8,6 +8,14 @@ claim_layer: causal_effect
 identification_strength: observational
 proxy_directness: indirect
 supports_scope: hypothesis_bundle
+measurement_model:
+  observed_entity: passive-transfer effects, autoantibody/immune signatures, and lesion response to immunomodulation
+  latent_construct: immune-mediated causation or maintenance of the PAIS small-fiber lesion
+  measurement_relation: immune mediation is inferred from convergence between lesion co-localization, immune perturbation, and interventional or transfer evidence rather than from a single direct assay
+  known_failure_modes:
+  - autoantibody signals may be epiphenomenal markers of immune activation
+  - transfer evidence may reproduce neurological symptoms without reproducing the autonomic or biopsy lesion
+  - trigger-specific immune mechanisms may not generalize across PAIS syndromes
 discusses:
 - hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
 related:

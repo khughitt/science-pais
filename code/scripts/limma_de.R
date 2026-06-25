@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env Rscript
 # =============================================================================
 # limma_de.R — WP5: per-contrast moderated-t ranked gene list (one contrast).

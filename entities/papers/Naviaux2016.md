@@ -22,7 +22,7 @@ related:
   - topic:mecfs-long-covid-convergence
   - hypothesis:0001-shared-dysregulated-attractor
 created: '2026-06-20'
-updated: '2026-06-20'
+updated: '2026-06-25'
 ---
 # Metabolic features of chronic fatigue syndrome
 
@@ -121,7 +121,7 @@ The 8-analyte male panel comprised: phosphatidyl choline PC(16:0/16:0), glucosyl
 
 **8. NADPH and mitochondrial redox.** The authors note that all metabolic abnormalities identified in CFS were either directly regulated by redox or by NADPH availability. ~60% of NADPH is produced by the pentose phosphate pathway at baseline; the remainder by five NADP+-dependent enzymes including mitochondrial MTHFD2. Decreased mitochondrial electron transport (when NADPH and NADP+ pools fall) leads to decreased oxygen consumption, rising dissolved oxygen, activation of NADPH oxidases (Nox4), and hydrogen peroxide production — initiating oxidative shielding rather than oxidative phosphorylation for ATP synthesis.
 
-## Relevance to PAIS
+## Relevance
 
 This paper is foundational for PAIS research on at least three axes:
 

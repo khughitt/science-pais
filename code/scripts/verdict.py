@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env python3
 """verdict.py — WP8: the mechanical verdict (pre-reg:0002 "Verdict resolution order").
 

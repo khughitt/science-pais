@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env python3
 """Extract GSE130353_RAW.tar -> per-donor MMSEQ members + sample_sheet (t035 WP1).
 

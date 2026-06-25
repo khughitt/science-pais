@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env python3
 """Verify a file against its LOCKED SHA-256 and emit a sentinel (t035).
 

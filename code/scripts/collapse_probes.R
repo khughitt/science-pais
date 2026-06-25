@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env Rscript
 # =============================================================================
 # collapse_probes.R — WP4 (GSE14577): probe→gene median collapse + locked

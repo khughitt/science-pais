@@ -1,3 +1,7 @@
+# science:code
+# status: exploratory
+# science:end
+
 #!/usr/bin/env python3
 """Serialize the LOCKED theme map + compartment-marker regex from config.yaml to
 JSON (t035 WP4) so the r-bioc steps can apply them VERBATIM without r-yaml.
