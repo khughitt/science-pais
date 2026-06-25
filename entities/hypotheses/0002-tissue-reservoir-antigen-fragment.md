@@ -21,9 +21,11 @@ related:
 - proposition:0023-cross-pathogen-tissue-macrophage-reservoir-generalization
 - proposition:0024-retained-fragment-burden-predicts-chronicity-over-initial-load
 - interpretation:0011-t046-antigen-clearance-trials-ingestion
+- interpretation:0017-t053-h0002-promotion-audit
 - task:t052
+- task:t053
 created: '2026-06-11'
-updated: '2026-06-24'
+updated: '2026-06-25'
 ---
 # Hypothesis: A persisting pathogen-fragment reservoir in tissue-resident macrophages is a pathogen-agnostic initiator of chronic post-infectious illness
 
@@ -44,13 +46,16 @@ two *untested* pillars accrue evidence, even though the persistence pillar is no
   energy metabolism) — `evidence-line:0058` (McClune2025, moderate; Borrelia pPG^Bb mouse liver reservoir)
   + `evidence-line:0059` (Peluso2024, weak; SARS-CoV-2 plasma antigen). Grades `well_supported` *as a
   proposition*.
-- **`proposition:0023` — cross-pathogen generalization (UNTESTED).** A structurally analogous
+- **`proposition:0023` — cross-pathogen generalization (WEAK PARTIAL SUPPORT).** A structurally analogous
   tissue/macrophage fragment reservoir operates across Borrelia, SARS-CoV-2, and Coxiella-like triggers.
-  This is h0002's *distinctive* shared-failure-mode claim; no tissue-localization result in a non-Borrelia
-  PAIS yet exists — coded with no supporting line, grades `speculative`.
-- **`proposition:0024` — retained burden determines chronicity (UNTESTED).** Retained fragment
-  burden/duration predicts chronic-PAIS onset better than initial pathogen load — no prospective
-  burden-vs-load cohort yet exists; coded with no supporting line, grades `speculative`.
+  `evidence-line:0072` (Goh2022) weakly supports the SARS-CoV-2 tissue/macrophage piece in an n=2
+  long-COVID tissue case report, but it lacks the controlled host-signature test needed to establish the
+  generalization; grades `speculative`.
+- **`proposition:0024` — retained burden determines chronicity (UNTESTED / WEAKLY CONTESTED).** Retained
+  fragment burden/duration predicts chronic-PAIS onset better than initial pathogen load — no prospective
+  burden-vs-load cohort yet exists; no supporting line is coded. `evidence-line:0073`
+  (BrandstetterFigueroa2025) weakly disputes the strong version by showing acute N-antigen burden predicts
+  9-month long-COVID symptoms; grades `speculative`.
 
 A fourth truth condition — that the innate-sensing/transduction step (e.g. TLR2) causally links fragment
 burden to the metabolic/immune dysfunction — remains a **pre-registration target** (see Predictions: the
@@ -70,6 +75,13 @@ the conjunctive grade and is cleaner to formalize when a test is designed.
 - **The interventional corollary is now formalized and coded (t046, 2026-06-24).** The hypothesis's two testable interventional claims are split into `proposition:0020` (clearing antigen *rescues established disease* — the reversibility reading) and `proposition:0021` (reducing antigen burden *at onset lowers incidence* — the fixed-risk-factor reading). 0020 is weakly disputed but **uninterpretable** (the established-disease trials never engaged the antigen target) and is coded as a `background` corollary of this hypothesis. 0021's *mechanism-agnostic* "acute intervention → lower incidence" claim is well-supported by metformin prevention RCTs, but its *antigen-specific* reading is only **weakly/indirectly** supported (metformin's mechanism is antiviral-vs-metabolic ambiguous). Their treatment-null + prevention-positive signature is the empirical basis of the "antigen-as-fixed-risk-factor-at-onset, non-operative once self-sustaining" reconciliation (`discussion:0003`, `interpretation:0011`).
 - **Belief-graph note (t051 fix, 2026-06-24).** `proposition:0021` is **deliberately not a belief-bearing member of this hypothesis** (it stays in `related:` for navigation but no longer `discusses` h0002). Reason: the hypothesis-belief rollup flattens *every* discussing proposition's evidence-lines into the hypothesis regardless of membership role, so leaving 0021 attached caused its two weak, *mechanism-agnostic* metformin lines to grade h0002 `well_supported (contested)` — over-crediting the antigen mechanism with prevention evidence equally consistent with the metabolic frames (h0001/h0004).
 - **Belief-graph note (t052, 2026-06-24) — why h0002 honestly grades `speculative`.** The hypothesis bundle is a **conjunction over its core members** (weakest-link), and it **excludes** background/rival corollaries. t052 coded h0002's three prose core conjuncts as graph propositions: `proposition:0022` (persistence+bioactivity) is now `well_supported`, but `proposition:0023` (cross-pathogen generalization) and `proposition:0024` (retained-burden-determines-chronicity) are coded **with no supporting evidence-line** because they are genuinely untested predictions — so they grade `speculative` and the conjunction caps h0002 at **`speculative`**. This is the honest headline: *one pillar is now supported; the full pathogen-agnostic-initiator hypothesis remains unproven.* Three deliberate choices: (1) coding only the persistence pillar (`{0022}` as sole core) would have made h0002 grade `well_supported`, dishonestly letting "fragments persist" stand in for "initiator hypothesis is supported" — the same over-credit the t051 fix removed, via the bundle path instead of the flatten path; (2) `proposition:0020` (clearing antigen rescues established disease) stays **background, not core** — making it a core conjunct would assert reversibility is a *truth condition* of h0002, which the fixed-risk-factor reconciliation explicitly denies (late clearance can fail without refuting the *initiator* model); (3) a true `supported (contested)` headline is **structurally unreachable** here while any core conjunct is untested — the weakest-link rule caps the magnitude at the weakest pillar. **Promotion path:** a non-Borrelia tissue-reservoir result lifts 0023; a prospective burden-vs-load cohort lifts 0024; together those would carry h0002 toward an honest `supported`. (Note: the all-`discusses` evidence-*signal* surface may still tag h0002 `contested` because 0020's background disputes leak into that path; that tag is incidental — the load-bearing magnitude is the conjunctive bundle grade above.)
+- **Belief-graph note (t053, 2026-06-25) — promotion audit did not promote.** t053 found the closest
+  available non-Borrelia tissue result (`evidence-line:0072`, Goh2022) and coded it as weak partial support
+  for 0023, but it is an n=2 case report without controlled prevalence, degradation-resistant chemistry,
+  host-signature overlap, or symptom/burden association. t053 also found no prospective retained-burden-
+  vs-initial-load cohort for 0024; instead it coded `evidence-line:0073` (BrandstetterFigueroa2025) as weak
+  model criticism because acute N-antigen burden predicts 9-month persistent symptoms. Net: h0002 remains
+  `speculative`; the promotion path is narrower and better specified, not discharged.
 
 ## Predictions
 
@@ -97,18 +109,32 @@ Confidence would be materially reduced if:
 
 - **McClune2025 (empirical-data, mouse + human samples):** pPG^Bb persists in liver post-clearance via Kupffer-cell/hepatocyte retention; drives proteome change, AST/ALT, PBMC energy-metabolism suppression; molecular overlap with long COVID (p=0.00038). Strongest direct support — now **coded as `evidence-line:0058` (moderate, supports `proposition:0022`)** (t052).
 - **Peluso2024 (empirical-data):** Simoa detection of persisting SARS-CoV-2 spike/S1/N in ~25% of survivors to 14 months; burden correlates with acute severity — now **coded as `evidence-line:0059` (weak, supports `proposition:0022`)** (t052). Note both lines support the *persistence* conjunct (0022) only; they do **not** evidence the generalization (0023) or burden-determines-onset (0024) conjuncts, which is why h0002 stays `speculative`.
+- **Goh2022 (case report):** SARS-CoV-2 nucleocapsid protein and viral RNA detected in appendix, skin, and
+  breast tissue from two long-COVID patients 163 and 426 days after symptom onset, with nucleocapsid
+  co-localizing with CD68-positive cells — now **coded as `evidence-line:0072` (weak, supports
+  `proposition:0023`)**. This lifts the non-Borrelia tissue/macrophage arm from absent to weakly observed
+  but does not establish the cross-pathogen reservoir mechanism.
 - **Morroy2016 (literature):** Q-fever immunomodulatory-complex hypothesis — non-viable Coxiella DNA/antigen impairing macrophage clearance.
 - Vreeman2025 supplies a complementary persistence-to-damage mechanism (spike → αvβ6 → TGF-β).
 
 ## Disputing Evidence
 
 - **Hanson2023:** argues enterovirus *reservoirs* (not macrophage-retained fragments) drive classical ME/CFS, and notes no full enterovirus genomes recovered — a different persistence model and a replication caveat.
+- **BrandstetterFigueroa2025 (prospective cohort):** detectable acute plasma SARS-CoV-2 nucleocapsid antigen
+  predicts 9-month persistent long-COVID symptoms after adjustment (aOR 3.0, 95% CI 1.1-8.0), now **coded
+  as `evidence-line:0073` (weak model criticism, disputes `proposition:0024`)**. Not a direct refutation:
+  it lacks retained post-clearance burden measurement, but it keeps initial pathogen burden alive as an
+  independent predictor.
 - **Established-disease antigen-clearance trials are null** (now coded as `proposition:0020`'s evidence base via `interpretation:0011`): `evidence-line:0053` (Geng2024/STOP-PASC, 15-day NMV/r), `evidence-line:0055` (Peluso2026/outSMART-LC, anti-RBD mAb), with `evidence-line:0054` (Bhattacharjee2026/PAX-LC) showing NMV/r left circulating Spike unchanged. **Crucially these are weak and uninterpretable**, not disconfirming: none demonstrated antigen target-engagement, so — per `discussion:0003` — they **do not refute antigen persistence**. The Borrelia retreatment parallel is now ingested as a consolidated cross-pathogen line, `evidence-line:0060` (Klempner2001, Krupp2003/STOP-LD, Fallon2008, Berende2016/PLEASE) — four PTLDS antibiotic-retreatment RCTs with no durable symptom rescue, none measuring residual Borrelia antigen/peptidoglycan/DNA. This follows the same uninterpretable-null pattern, and arguably *sharper*: antibiotics kill replicating spirochaetes but cannot degrade degradation-resistant non-viable pPG^Bb fragments, so the vehicle is mechanistically incapable of clearing the hypothesized target. (Coded as one weak line, not four — same modality/trigger, not independent refutations — to avoid inflating the dispute on a still-untested claim.) The Coxiella/Q-fever retreatment parallel is not yet ingested.
 
 ## Evidence Needed To Shift Belief
 
-- **Most efficient upward:** demonstration in ≥1 non-Borrelia PAIS that pathogen fragments persist in tissue-resident macrophages with an overlapping host signature, plus a prospective fragment-burden-predicts-chronicity result.
-- **Most efficient downward:** negative tissue antigen findings in chronically ill patients, or a clean null in `question:0002`.
+- **Most efficient upward:** controlled demonstration in >=1 non-Borrelia PAIS that pathogen fragments
+  persist in tissue-resident macrophages with an overlapping host signature, plus a prospective
+  fragment-burden-predicts-chronicity result that out-predicts acute load.
+- **Most efficient downward:** negative controlled tissue antigen findings in chronically ill patients, a
+  prospective retained-burden-vs-initial-load study where acute load out-predicts retained burden, or a
+  clean null in `question:0002`.
 - **Also useful:** TLR2-dependence test ex vivo; host clearance-gene burden test across PAIS.
 
 ## Related Work

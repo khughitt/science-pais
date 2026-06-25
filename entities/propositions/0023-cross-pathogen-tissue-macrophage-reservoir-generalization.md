@@ -16,9 +16,10 @@ related:
 - topic:antigen-pathogen-persistence
 - proposition:0022-degradation-resistant-fragments-persist-and-are-bioactive
 - task:t052
+- task:t053
 source_refs: []
 created: '2026-06-24'
-updated: '2026-06-24'
+updated: '2026-06-25'
 ---
 # Proposition: A structurally analogous degradation-resistant tissue/macrophage fragment reservoir operates across pathogen classes (Borrelia, SARS-CoV-2, Coxiella-like triggers)
 
@@ -37,30 +38,36 @@ itself* is what generalizes**, not just that some fragment lingers in each disea
 
 ## Evidence Summary
 
-**No supporting evidence is coded, because the generalization is not yet established — this is a
-discriminating *prediction* of `hypothesis:0002`, held at `speculative`.** What exists is suggestive but
-falls short of the claim:
+**One weak, partial supporting line is now coded, but the generalization is not yet established — this
+remains a discriminating *prediction* of `hypothesis:0002`, held at `speculative`.** What exists is
+suggestive but falls short of the full claim:
 - McClune2025 demonstrates the mechanism *only in Borrelia* (mouse liver) and reports a molecular-signature
   *overlap* with Long COVID (liver proteome vs. LC protein signature, p = 0.00038) — a cross-pathogen
   *correlation*, not a demonstration that SARS-CoV-2 deposits fragments in the *same* macrophage sink.
 - Peluso2024 shows SARS-CoV-2 antigen persists in *plasma*, but does not localize a tissue-macrophage
   reservoir.
+- `evidence-line:0072` (Goh2022) weakly supports the SARS-CoV-2 tissue/macrophage arm: an n=2 long-COVID
+  tissue case report detected nucleocapsid protein and viral RNA 163 and 426 days after symptom onset,
+  with nucleocapsid co-localizing with CD68-positive cells. This is the closest available non-Borrelia
+  human tissue result, but it lacks controlled prevalence, degradation-resistant chemistry, tissue-resident
+  macrophage functional evidence, host-signature overlap, and symptom/burden association.
 - Morroy2016's Q-fever immunomodulatory-complex hypothesis is inferential (non-viable Coxiella
   DNA/antigen impairing macrophage clearance), not a tissue-reservoir demonstration.
 
-The mechanism has therefore been *observed in one pathogen* and *predicted* for the others. Per
-`hypothesis:0002`'s own Predictions and Falsifiability sections, the discriminating test is direct tissue
-sampling in a non-Borrelia PAIS showing fragment retention in tissue-resident macrophages with an
-overlapping host signature.
+The mechanism has therefore been *demonstrated in one pathogen* (Borrelia), *weakly observed in one
+non-Borrelia tissue case report* (SARS-CoV-2), and *predicted* for the others. Per `hypothesis:0002`'s own
+Predictions and Falsifiability sections, the discriminating test remains direct tissue sampling in a
+non-Borrelia PAIS showing fragment retention in tissue-resident macrophages with an overlapping host
+signature.
 
 ## Caveats
 
-This conjunct is **deliberately coded with no supporting evidence-line** so the hypothesis bundle grades
-it `speculative` and the conjunctive roll-up of `hypothesis:0002` reflects that its *distinctive*
-(cross-pathogen) claim is untested — rather than letting the well-supported persistence pillar
-(`proposition:0022`) stand in for the whole hypothesis. It is a `mechanistic_narrative` generalization;
-the molecular-overlap correlation (McClune2025) is consistent with it but is also consistent with
-*convergent downstream* signatures arising from *different* upstream mechanisms — so the overlap must not
-be coded as direct support without a tissue-localization result. Promotion path: a positive non-Borrelia
-tissue-reservoir study would be minted as a supporting evidence-line here, lifting both this conjunct and,
-via the conjunction, `hypothesis:0002`.
+This conjunct remains `speculative` despite `evidence-line:0072` because the coded support is case-report
+level and partial. The conjunctive roll-up of `hypothesis:0002` should therefore still reflect that its
+*distinctive* cross-pathogen claim is not established — rather than letting the well-supported persistence
+pillar (`proposition:0022`) or a two-case tissue observation stand in for the whole hypothesis. It is a
+`mechanistic_narrative` generalization; the molecular-overlap correlation (McClune2025) is consistent with
+it but is also consistent with *convergent downstream* signatures arising from *different* upstream
+mechanisms — so the overlap must not be coded as direct support without a tissue-localization result.
+Promotion path: a controlled positive non-Borrelia tissue-reservoir study with macrophage localization and
+overlapping host signature would lift both this conjunct and, via the conjunction, `hypothesis:0002`.

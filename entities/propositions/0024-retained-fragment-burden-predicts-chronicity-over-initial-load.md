@@ -16,9 +16,10 @@ related:
 - topic:antigen-pathogen-persistence
 - proposition:0022-degradation-resistant-fragments-persist-and-are-bioactive
 - task:t052
+- task:t053
 source_refs: []
 created: '2026-06-24'
-updated: '2026-06-24'
+updated: '2026-06-25'
 ---
 # Proposition: Retained fragment burden/duration predicts chronic PAIS onset better than initial pathogen load
 
@@ -36,15 +37,23 @@ lingering is the thing that determines chronicity.**
 
 ## Evidence Summary
 
-**No supporting evidence is coded — this is an untested, prospective-design *prediction* of
+**No supporting evidence is coded — this remains an untested, prospective-design *prediction* of
 `hypothesis:0002`, held at `speculative`.** McClune2025 supplies the *mechanistic motivation*
 (fragment-retention duration, governed by glycan chemistry and Kupffer-cell handling, is the proposed
 driver; host TLR1/TLR2 clearance variants are proposed modulators) but does **not** test the
 burden-vs-load comparison: no cohort has measured retained-fragment burden at treatment completion and
-shown it out-predicts initial pathogen load for subsequent chronic-illness diagnosis. Per
-`hypothesis:0002`'s Predictions, the discriminating test is a prospective cohort with a fragment-retention
-readout (e.g. r-mAb2G10 pPG^Bb ELISA at treatment completion, or a Simoa antigen index) versus an
-acute-load measure, with chronic-illness diagnosis as the endpoint.
+shown it out-predicts initial pathogen load for subsequent chronic-illness diagnosis.
+
+One weak model-criticism line is now coded: `evidence-line:0073` (BrandstetterFigueroa2025) shows that
+detectable **acute** plasma SARS-CoV-2 nucleocapsid antigen independently predicts persistent long-COVID
+symptoms at 9 months. This does not refute 0024, because it does not measure retained post-clearance
+fragment burden; acute antigen may also index dissemination, severity, or future retention probability.
+It does, however, dispute the strongest version of "initial load is not the lever" and makes the head-to-
+head retained-burden-vs-initial-load design more necessary.
+
+Per `hypothesis:0002`'s Predictions, the discriminating test is a prospective cohort with a
+fragment-retention readout (e.g. r-mAb2G10 pPG^Bb ELISA at treatment completion, or a Simoa antigen index)
+versus an acute-load measure, with chronic-illness diagnosis as the endpoint.
 
 ## Caveats
 
@@ -55,4 +64,5 @@ near-relationship to the *prevention* evidence in `proposition:0021`: the metfor
 acute-phase intervention lowers incidence, but they are **mechanism-agnostic** (antiviral vs. metabolic
 unresolved) and say nothing about *fragment burden* as the lever — so 0021 must **not** be coded as
 support here (that would re-introduce the t051 over-credit). Promotion path: a prospective
-burden-predicts-chronicity result would be minted as a supporting evidence-line on this proposition.
+burden-predicts-chronicity result would be minted as a supporting evidence-line on this proposition; a
+prospective result showing initial load out-predicts retained burden would materially weaken it.

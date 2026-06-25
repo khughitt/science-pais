@@ -134,14 +134,6 @@ BLOCKED on vehicle-admissibility gate G1-G4 of pre-registration:0003. Activate w
 
 VEHICLE HUNT 2026-06-24 (logged in pre-registration:0003 "Screened Vehicles"): no admissible vehicle found; G2 (clean primary-dysautonomia control arm) is the universal blocker. Closest near-miss = Novak et al. 2026 (PLoS One, PMC12829881, DOI 10.1371/journal.pone.0341278), which clears G1 (proximal thigh + distal calf) and G4 (SFN 53-67% by biopsy) and carries two PAIS triggers (long COVID n=143 + ME/CFS n=170) but fails G2 — comparators are healthy + hEDS, and hEDS is excluded by G2's "no SFN-causing comorbidity" clause (hEDS itself 63% SFN = contaminated control). G3 also not cleanly met (ME/CFS arm is ME-ICC/NAM without documented infectious onset); scored by QASAT grading, not the locked <=5th-percentile IENFD cutoff. Ingested as supporting evidence for h0007 P1/P4 (paper:Novak2026) - NOT as a promotion vehicle. Larsen 2025 LC-POTS deep-phenotyping (medRxiv 2025.04.28.25326587) fails G2+G3 (LC-only, healthy controls only). Actionable: the Novak group already runs the exact G1/G4 protocol at scale across two triggers - an admissible vehicle is ~one amendment away (add an idiopathic-POTS/familial-dysautonomia arm, re-score to percentile cutoffs). Note hEDS comparator shows comparable SFN -> previews the pre-reg "reverse/diagnostic surprise" (specificity contrast harder than lesion-existence). Gibbons-type neuropathic-POTS series (PMC3874039; 38-45% reduced IENFD) can pre-constrain the comparator NLD/lesion rate for the G4 power re-derivation. Task stays BLOCKED - no belief update.
 
-## [t053] Promote h0002 out of speculative: code support for proposition:0023 (cross-pathogen tissue-reservoir) and proposition:0024 (retained-burden-predicts-chronicity)
-- priority: P3
-- status: proposed
-- aspects: []
-- created: 2026-06-24
-
-t052 coded h0002's two distinctive core conjuncts (0023 cross-pathogen tissue/macrophage-reservoir generalization; 0024 retained-fragment-burden-determines-chronicity-over-initial-load) with NO evidence-line, so the conjunctive bundle honestly caps h0002 at 'speculative'. Promotion path: (a) a non-Borrelia PAIS tissue-reservoir study showing fragment retention in tissue-resident macrophages with overlapping host signature -> supporting line on 0023; (b) a prospective cohort showing retained-fragment burden out-predicts initial pathogen load for chronic-illness onset -> supporting line on 0024. Also a pre-reg target: the innate-sensing/transduction (TLR2) step linking fragment burden to metabolic/immune dysfunction (h0002 Predictions). Until then h0002 stays speculative-with-a-supported-persistence-pillar.
-
 ## [t054] Track JAK1-inhibitor RCT NCT06597396 (abrocitinib) readout and discharge pre-registration:0004
 - priority: P2
 - status: blocked

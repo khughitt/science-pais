@@ -25,10 +25,13 @@ The persistence-and-bioactivity pillar (`proposition:0022`) is the one supported
 persists in liver via Kupffer-cell retention and suppresses PBMC energy metabolism with molecular overlap to
 the long COVID signature (`evidence-line:0058`, McClune2025, moderate) and SARS-CoV-2 spike/S1/N is
 detectable in roughly 25% of survivors at up to 14 months (`evidence-line:0059`, Peluso2024, weak). Both
-lines evidence persistence only. The two distinctive pillars — cross-pathogen tissue/macrophage-reservoir
-generalization (`proposition:0023`) and retained-fragment burden predicting chronicity over initial pathogen
-load (`proposition:0024`) — carry **no supporting evidence-lines** (task:t052, 2026-06-24); they grade
-speculative and hold the conjunction there.
+lines evidence persistence only. The two distinctive pillars still hold the conjunction at
+**speculative** after task:t053 (2026-06-25): cross-pathogen tissue/macrophage-reservoir generalization
+(`proposition:0023`) now has one weak partial supporting line (`evidence-line:0072`, Goh2022, n=2
+long-COVID tissue case report with SARS-CoV-2 nucleocapsid/RNA and CD68 co-localization), while retained-
+fragment burden predicting chronicity over initial pathogen load (`proposition:0024`) has no supporting
+line and one weak model-criticism line (`evidence-line:0073`, BrandstetterFigueroa2025, acute N-antigen
+predicts 9-month symptoms). Neither discharges the promotion criteria.
 
 The graph also surfaces `hypothesis:0002` as **contested**: the evidence signal registers support_count=2,
 dispute_count=4. The four disputing lines are concentrated on `proposition:0020` (clearing antigen rescues
@@ -73,6 +76,12 @@ propositions. This resolved the hypothesis to its current honest state: one supp
 (`proposition:0022`), two untested pillars (`proposition:0023`, `proposition:0024`), conjunctive bundle
 grades **speculative**. The contested signal on the all-discusses surface is incidental, not load-bearing.
 
+The fourth move was task:t053 (2026-06-25), which audited whether the two untested promotion pillars had
+admissible evidence. It did not promote the hypothesis. Goh2022 weakly supports the non-Borrelia
+tissue/macrophage arm of 0023 but is only a two-case, uncontrolled, partial tissue-localization result.
+BrandstetterFigueroa2025 weakly contests the strong version of 0024 because acute viral burden predicts
+later long-COVID symptoms; no prospective retained-burden-vs-initial-load comparison was found.
+
 ---
 
 ## Research Fronts
@@ -83,12 +92,12 @@ target-engagement demonstration. Per `interpretation:0011-t046-antigen-clearance
 missing experiment is an antigen-positive-enriched, clearance-demonstrated, symptom-endpoint trial with a
 timing arm (early/transitional versus established disease).
 
-**Open tasks bearing on promotion.** task:t053 (proposed, P3) specifies the two promotion criteria for
-moving h0002 out of speculative: (a) a non-Borrelia PAIS tissue-reservoir study demonstrating fragment
-retention in tissue-resident macrophages with overlapping host signature — a supporting line on
-`proposition:0023`; (b) a prospective cohort showing retained-fragment burden out-predicts initial pathogen
-load for chronic-illness onset — a supporting line on `proposition:0024`. Also recorded as a pre-registration
-target in the hypothesis file: TLR2-blockade ex vivo (innate-sensing/transduction step).
+**Open promotion criteria after t053.** task:t053 closed as a no-promotion audit. Moving h0002 out of
+speculative still requires: (a) a controlled non-Borrelia PAIS tissue-reservoir study demonstrating
+fragment retention in tissue-resident macrophages with overlapping host signature — a stronger supporting
+line on `proposition:0023`; (b) a prospective cohort showing retained-fragment burden out-predicts initial
+pathogen load for chronic-illness onset — a supporting line on `proposition:0024`. Also recorded as a
+pre-registration target in the hypothesis file: TLR2-blockade ex vivo (innate-sensing/transduction step).
 
 **Evidential fragility flag.** The graph gaps command returns `evidential_fragility(contested)` for
 `hypothesis:0002`, matching the 2-support / 4-dispute signal. The disputed entity also flagged in that
