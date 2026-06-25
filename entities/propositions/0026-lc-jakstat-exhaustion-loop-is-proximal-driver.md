@@ -27,9 +27,10 @@ related:
 - topic:long-covid-immune-dysregulation
 - topic:therapeutics-and-clinical-trials
 - task:t047
+- task:t054
 source_refs: []
 created: '2026-06-24'
-updated: '2026-06-24'
+updated: '2026-06-25'
 ---
 # Proposition: Persistent JAK-STAT/IL-6 activation coupled with T-cell exhaustion is a proximal causal driver of long-COVID chronicity (reversible by pathway inhibition), not merely a downstream marker
 
@@ -57,6 +58,13 @@ reversibility. The discriminating test is **interventional** and is committed in
   falsifier for `hypothesis:0003`'s maintenance-engine framing).
 
 Until that readout, the standing verdict is `[?]` inconclusive-for-coverage — **no `bears_on` update**.
+
+**Registry-status update (t054, 2026-06-25).** NCT06597396/CLEAR-LC has passed primary completion in the
+ClinicalTrials.gov record (2026-03-27 actual), but no results are posted (`hasResults: false`) and study
+completion remains estimated for 2026-09-30. The registry endpoint list includes FACIT-Fatigue, EQ-5D-5L,
+PASC Symptom PRO, safety/labs, and hsCRP; it does **not** by itself establish the IL-6R/JAK-STAT/ISG
+target-engagement readout or inflammatory-endotype stratification required by `pre-registration:0004`.
+So this proposition remains untested.
 
 ## Caveats
 

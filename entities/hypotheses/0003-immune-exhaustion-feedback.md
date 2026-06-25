@@ -19,9 +19,11 @@ related:
 - proposition:0026-lc-jakstat-exhaustion-loop-is-proximal-driver
 - pre-registration:0004-jak1-inhibitor-driver-vs-marker
 - interpretation:0012-t047-h0003-ifn-reconciliation-and-jak1-trial-registration
+- interpretation:0016-t054-abrocitinib-trial-status-snapshot
 - task:t047
+- task:t054
 created: '2026-06-11'
-updated: '2026-06-24'
+updated: '2026-06-25'
 ---
 # Hypothesis: Post-acute chronicity is sustained by a self-reinforcing loop of unresolved antigenic stimulation and T-cell exhaustion that fails to terminate inflammation
 
@@ -60,6 +62,7 @@ until the causal pillar is tested:
 - **IFN tension RESOLVED (t047, `interpretation:0012`).** The apparent conflict between "persistent IFN activation" (Aid2025) and "IFN-I suppression" (Ryan2022) is reconciled as a **dissociated IFN signature**: Aid2025 indexes the *type-II/inflammatory* arm (IFNγ + IL-6/JAK-STAT, PBMC, LC-vs-recovered, >180d) while Ryan2022 indexes the *type-I antiviral-effector* arm (MX1/OAS3/OASL, whole blood, referral-vs-convalescent, 6-mo bifurcation). Persistent inflammatory tone + tolerized type-I effectors is the *predicted* exhausted-innate-sensing signature, so Ryan2022 now **supports** `proposition:0025` rather than disputing it. Residual: the two arms are inferred across studies, not co-measured in the same patients (the discriminating confirmation).
 - Whether the loop is sustained by genuine antigen (hypothesis 0002) or has become antigen-independent (sterile) is unknown and therapeutically pivotal.
 - **Belief-graph note (t047, 2026-06-24).** h0003's bundle is conjunctive over its core members: `proposition:0025` (descriptive state) is **supported**, but `proposition:0026` (the causal-driver loop) is **untested** and gated on the JAK1 trial — so the conjunction grades h0003 honestly **`speculative`** ("the inflammatory-arm signature is real; the maintenance-engine claim is unproven"). A descriptive state being well-evidenced must not promote the causal loop; that is exactly what `pre-registration:0004` exists to test. (Same honest-conjunction structure as `hypothesis:0002` post-t052.)
+- **Registry-status note (t054, 2026-06-25).** NCT06597396/CLEAR-LC is `ACTIVE_NOT_RECRUITING` with primary completion 2026-03-27 actual and `hasResults: false`; study completion is still estimated for 2026-09-30. The public endpoint list includes fatigue/PASC symptom outcomes and hsCRP, but not a specific IL-6R/JAK-STAT/ISG target-engagement readout. The causal-loop conjunct remains untested; no belief update.
 
 ## Predictions
 

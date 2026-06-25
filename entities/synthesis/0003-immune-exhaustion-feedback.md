@@ -65,8 +65,11 @@ is the axis shared beyond SARS-CoV-2? The driver-vs-marker arm is now formally r
 (`pre-registration:0004`); the cross-PAIS comparative arm (PTLDS, post-Q-fever, ME/CFS) has no
 pathway-level comparison and remains open.
 
-**Open task.** Task t054 (P2, proposed) is the standing tracking task: monitor NCT06597396
-(abrocitinib) to readout and discharge `pre-registration:0004` via locked decision criteria.
+**Open task.** Task t054 (P2, blocked/data-gated) is the standing tracking task: monitor NCT06597396
+(abrocitinib) to readout and discharge `pre-registration:0004` via locked decision criteria. Registry
+snapshot 2026-06-25 (`interpretation:0016`): `ACTIVE_NOT_RECRUITING`, primary completion 2026-03-27
+actual, study completion 2026-09-30 estimated, `hasResults: false`; the public endpoint list includes
+hsCRP but not a specific IL-6/JAK-STAT pathway-engagement score.
 Symptom + pathway co-suppression would produce a supporting line on `proposition:0026`; pathway
 suppression without symptom benefit would produce a disputing (marker-not-driver) line; an
 unstratified flat null constitutes only weak disconfirmation given the multi-loop confound flagged

@@ -16,13 +16,15 @@ related:
 - topic:long-covid-immune-dysregulation
 - topic:therapeutics-and-clinical-trials
 - interpretation:0012-t047-h0003-ifn-reconciliation-and-jak1-trial-registration
+- interpretation:0016-t054-abrocitinib-trial-status-snapshot
 - task:t047
+- task:t054
 commits_to:
 - hypothesis:0003-immune-exhaustion-feedback
 - proposition:0026-lc-jakstat-exhaustion-loop-is-proximal-driver
 - question:0006-jak-stat-il6-driver-vs-marker
 created: '2026-06-24'
-updated: '2026-06-24'
+updated: '2026-06-25'
 ---
 # Pre-registration: JAK1-inhibitor (abrocitinib, NCT06597396) driver-vs-marker test for persistent JAK-STAT/IL-6 signaling in long COVID — data-gated discriminating test of h0003/q0006
 
@@ -133,3 +135,17 @@ target-engagement readout) do **not** activate the rule.
 
 `[?]` inconclusive-for-coverage until an admissible readout exists — **no `bears_on` update** on
 `proposition:0026`, `question:0006`, or `hypothesis:0003`. Tracked by **task:t054**.
+
+## Screened Vehicle Status
+
+**2026-06-25 registry snapshot (t054; `interpretation:0016`).** ClinicalTrials.gov API v2 record for
+NCT06597396 (`https://clinicaltrials.gov/api/v2/studies/NCT06597396`) reports CLEAR-LC as
+`ACTIVE_NOT_RECRUITING`, enrollment **46 actual**, primary completion **2026-03-27 actual**, study
+completion **2026-09-30 estimated**, last update posted **2026-04-20**, and `hasResults: false`.
+Therefore the pre-registration remains data-gated and no belief update is made.
+
+The public endpoint list confirms the expected symptom readouts (FACIT-Fatigue primary; EQ-5D-5L and
+PASC Symptom PRO secondary) and a nonspecific inflammatory biomarker endpoint (hsCRP), but it does **not**
+yet guarantee the load-bearing G2 pathway-engagement assay specified here (IL-6R / JAK-STAT pathway score
+/ downstream ISGs) or G4 inflammatory-endotype stratification. A future readout should be checked for
+those details before interpreting any symptom result as driver-vs-marker evidence.
