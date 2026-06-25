@@ -23,14 +23,6 @@ Gap: only 1 paper (s10020 gut microbiome PASC). Search: gut dysbiosis, microbial
 
 Gap: batch is adult-focused (Choutka2022 excluded pediatric/ MIS-C). Search pediatric PASC phenotype, MIS-C, and how pediatric post-infectious illness compares to adult PAIS.
 
-## [t010] [lit-search] Reinfection and vaccination effects on PAIS risk and recovery
-- priority: P3
-- status: proposed
-- aspects: []
-- created: 2026-06-11
-
-Gap: prevention/modification angle. Search effect of vaccination and reinfection on long-COVID incidence and symptom trajectory. Relates to question (prevention-vaccination-antiviral-reduces-pais), hypothesis:0004-acute-severity-threshold.
-
 ## [t011] Evaluate the 4 quarantined viral-dynamics ODE papers as modeling substrate for the attractor formalism
 - priority: P3
 - status: proposed

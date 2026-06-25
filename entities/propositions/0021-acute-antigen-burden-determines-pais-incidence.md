@@ -23,11 +23,12 @@ related:
 - topic:antigen-pathogen-persistence
 - discussion:0003-antigen-persistence-treatable-vs-fixed
 - interpretation:0011-t046-antigen-clearance-trials-ingestion
+- interpretation:0022-t010-reinfection-vaccination-risk-recovery
 source_refs:
 - paper:Bramante2023
 - paper:Bramante2026
 created: '2026-06-24'
-updated: '2026-06-24'
+updated: '2026-06-25'
 ---
 # Proposition: Acute-phase intervention lowers PAIS incidence (antigen-burden specificity unresolved)
 
@@ -84,3 +85,12 @@ caveats: both trials are
 ACTIV-6's primary symptom endpoint missed its bar. Confidence in the antigen-specific reading would rise
 only with a prevention trial that (a) measured acute antigen/viral-load reduction as the mediator and (b)
 showed incidence reduction tracking that mediator.
+
+**Vaccination/reinfection boundary (t010, 2026-06-25).** The vaccination literature now supports
+`question:0012`'s prevention premise more strongly than the original question page did, but those studies
+are **not** coded as support lines for this proposition. Vaccination and prior immunity are broader,
+upstream proxies than metformin: they can prevent infection, reduce acute severity, change viral burden,
+alter immune priming, and change healthcare utilization. Reinfection studies likewise speak to exposure
+burden and prior-immunity state, not a measured antigen-burden mediator. They therefore remain
+context/triangulation (`interpretation:0022`), not belief-bearing support for the antigen-specific
+reading.

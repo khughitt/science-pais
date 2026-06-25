@@ -30,8 +30,11 @@ source_refs:
 - cite:Bramante2026
 - cite:Peluso2026
 - cite:Bhattacharjee2026
+- cite:Green2025
+- cite:Byambasuren2023
+- cite:Carazo2025
 created: '2026-06-20'
-updated: '2026-06-20'
+updated: '2026-06-25'
 ---
 # Therapeutics and Clinical Trials for Post-Acute Infection Syndromes
 
@@ -103,6 +106,18 @@ confidence intervals crossed zero (non-significant, exploratory). Together these
 metabolic signal and a non-significant antiviral one. Endpoint caveat: both metformin trials' positive
 arms rest on provider-/clinician-diagnosed labels by self-report — methodologically weak.
 
+**Vaccination / prior immunity — prevention and risk modification, not established treatment.**
+The t010 synthesis (`interpretation:0022`) substantially updates the prevention side of `question:0012`.
+Green2025 finds pre-infection vaccination associated with lower long-COVID odds across Omicron-era
+observational studies; Brannock2023, LundbergMorris2023, and Malden2024 supply large EHR/register
+anchors conditional on infection. Carazo2025 adds the modern-immunity caveat: booster and hybrid
+immunity reduce risk, but incremental benefit depends on prior infection, variant, and time since the
+last immunological event. Reinfection evidence is also non-linear: second infection can carry lower
+per-infection risk than first infection in immune/Omicron-era cohorts, while still adding nonzero cases
+and therefore population burden. Vaccination **after** long-COVID diagnosis remains weak: Byambasuren2023
+found only low-certainty observational evidence and no trials, so post-onset vaccination should not be
+treated as established PAIS reversal.
+
 **B-cell depletion / autoantibody removal — testing autoimmunity.** Fluge2019 (RituxME; N=151,
 Canadian Consensus Criteria ME/CFS) is the definitive **negative** rituximab RCT (≈26% vs ≈35%
 response; p=0.22), overturning the same group's promising open-label phase-II results via a high
@@ -133,6 +148,8 @@ incremental GET. (This pacing-vs-GET stance is recorded as decision **D-002** in
 
 - **Prevention is more tractable than treatment.** Metformin during acute infection lowers
   long-COVID incidence (Bramante2023) — the strongest pharmacologic RCT signal in the field.
+- **Vaccination/prior immunity reduces long-COVID burden observationally.** The effect is strongest as
+  prevention/risk modification before infection; post-onset vaccination as treatment remains unproven.
 - **Some behavioral interventions have moderate-certainty benefit.** Zeraatkar2024 (24 RCTs,
   3,695 patients) grades online CBT (fatigue, concentration), combined physical-mental
   rehabilitation (recovery), and intermittent aerobic exercise (physical function) as

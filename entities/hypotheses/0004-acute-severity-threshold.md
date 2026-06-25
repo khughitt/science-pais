@@ -13,14 +13,20 @@ source_refs:
 - cite:Ambrosino2021
 - cite:Xie2022
 - paper:Spetz2025
+- paper:Green2025
+- paper:Carazo2025
 related:
 - topic:shared-failure-mode-across-pais
 - question:0003-acute-severity-threshold-for-self-sustaining-pais
+- question:0012-prevention-vaccination-antiviral-reduces-pais
 - hypothesis:0001-shared-dysregulated-attractor
 - immunity:research-question:immune-homeostasis-and-dysregulation
 - proposition:0012-vascular-hard-endpoint-male-reversal-survives-severity-adjustment
+- proposition:0021-acute-antigen-burden-determines-pais-incidence
 - interpretation:0018-t048-vascular-sex-baseline-carryover-audit
+- interpretation:0022-t010-reinfection-vaccination-risk-recovery
 - task:t048
+- task:t010
 created: '2026-06-11'
 updated: '2026-06-25'
 ---
@@ -41,13 +47,19 @@ The magnitude of the acute-phase insult sets a *threshold* in the host's recover
 ### Supporting Or Auxiliary Propositions
 
 - Host reserve modulates the threshold: female sex, age, and comorbidity shift recovery (Gusinow2026's ~4x recovery-time difference; cardiometabolic multimorbidity in Zheng2026).
-- The intervention-window evidence (acute-phase metformin/antivirals work, established-disease agents mostly fail; Seo2025) is consistent with a phase transition that, once crossed, is hard to reverse.
+- The prevention/modification evidence (pre-infection vaccination/prior immunity lowers long-COVID risk; acute-phase metformin lowers clinician/provider-diagnosed long-COVID incidence; established-disease agents mostly fail) is consistent with a phase transition that, once crossed, is hard to reverse. This remains mechanism-mixed rather than a direct threshold test.
 
 ## Current Uncertainty
 
 - Severity-outcome associations come largely from administrative/observational cohorts subject to "for vs with" ascertainment bias (Gandhi2023), which can inflate apparent severity effects.
 - A large share of ME/CFS and long COVID follows *mild* acute infection (Oronsky2021), which a naive severity-threshold model does not explain — implying severity is one axis among several, not the sole gate.
 - "Threshold/phase transition" vs "continuous dose-response" has not been formally tested with change-point or bistability statistics (see `question:0003`).
+- **Vaccination/reinfection evidence is compatible but non-specific (t010, 2026-06-25).**
+  Pre-infection vaccination and hybrid immunity reduce long-COVID risk in SARS-CoV-2 cohorts
+  (`interpretation:0022`), but they are mixed proxies: they can prevent infection, lower acute severity,
+  reduce viral burden, alter inflammatory priming, and change healthcare utilization. Therefore they
+  support prevention/modification and host-reserve framing, but they do not by themselves prove a
+  severity threshold or identify the acute mediator.
 - **Vascular sex×severity interaction remains a modeling caution (t048, 2026-06-25).** Spetz2025 shows
   that mild/non-hospitalized COVID-19 has elevated DVT/PE risk and that COVID-associated
   thromboembolic risk appears larger in men than women against an uninfected baseline. This means sex
@@ -84,6 +96,11 @@ Confidence would be materially reduced if:
 - Hertanti2025, Conde2026: DHF (severe dengue) selectively predicts post-dengue fatigue.
 - **Ambrosino2021 (empirical-data, case-control):** In post-severe/critical COVID-19 convalescents, FMD (endothelial function) directly correlates with pulmonary-impairment severity markers (rho 0.247–0.436); FMD thus tracks rather than dissociates from acute-severity sequelae. Load-bearing for the severity-confounded interpretation of male-biased vascular PAIS signals.
 - **Spetz2025 (literature/registry cohort):** Swedish total-population cohort showing mild/non-hospitalized COVID-19 still carries elevated DVT/PE risk and that DVT/PE remain elevated in the 91-180 day window overall. It also suggests a larger COVID-associated thromboembolic increment in men than women, so future severity-threshold tests should model sex jointly with infection and severity rather than treating male vascular risk as pure baseline carryover.
+- **Green2025 / Brannock2023 / LundbergMorris2023 / Malden2024 (literature/observational):**
+  pre-infection vaccination is associated with lower long-COVID/PCC risk across systematic-review,
+  EHR, and register designs. Compatible with the acute-threshold frame, but not mechanism-specific.
+- **Carazo2025 (literature/observational):** booster and hybrid immunity reduce long-COVID risk in
+  Quebec healthcare workers, with waning and strong dependence on prior infection/immunity state.
 
 ## Disputing Evidence
 
