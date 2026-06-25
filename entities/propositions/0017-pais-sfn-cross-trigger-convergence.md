@@ -20,7 +20,7 @@ source_refs:
 - paper:Joseph2021
 - paper:Adler2024
 created: '2026-06-24'
-updated: '2026-06-24'
+updated: '2026-06-25'
 ---
 # Proposition: The small-fiber-neuropathy substrate recurs across distinct infectious triggers (PTLDS, long COVID, ME/CFS)
 
@@ -63,6 +63,6 @@ is wired as `evidence-line:0070` (`dispute_scope: generalization`, weak): the **
 reflects convergence of the *finding* across heterogeneous protocols, but under the only single-protocol
 study (Novak2026) the convergence is **2-trigger-only** (PTLDS rests on a narrative review) and
 **non-specific** (hEDS ≥ PAIS). The strong reading — a *standardized, infection-specific* shared substrate
-— is therefore untested, and `pre-registration:0003` is the joint adjudicator (it is also h0007's
-promotion criterion #1 and the locus of h0008-M3's second-phenotype instance, alongside PEM; see
-`discussion:0004`).
+— is therefore untested. `pre-registration:0003` is the formal h0007/q0004 adjudicator for this design
+class; for h0008-M3 it is a scientifically adjacent, non-`commits_to` vehicle that could supply or dissolve
+the second-phenotype instance (alongside PEM; see `discussion:0004`).
