@@ -98,4 +98,4 @@ Verdict against the t016 gates: **population-based · female-analysable · hormo
 
 ## Run provenance
 
-Machine-readable candidate list + cohort audit: [`2026-06-19-hormone-menopause-pais-cohorts.json`](2026-06-19-hormone-menopause-pais-cohorts.json).
+Machine-readable candidate list + cohort audit: [`2026-06-19-hormone-menopause-pais-cohorts.json`](../../doc/searches/2026-06-19-hormone-menopause-pais-cohorts.json).

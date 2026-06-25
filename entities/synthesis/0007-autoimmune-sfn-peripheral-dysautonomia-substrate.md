@@ -2,10 +2,13 @@
 id: synthesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
 type: synthesis
 title: "Synthesis: 0007-autoimmune-sfn-peripheral-dysautonomia-substrate"
+status: "active"
 report_kind: hypothesis-synthesis
 hypothesis: hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
 generated_at: 2026-06-24T19:16:12Z
 source_commit: 05a785bf71096ea8cc4d486b93f3f920a481cd74
+created: "2026-06-24"
+updated: "2026-06-25"
 provenance_coverage: partial
 ---
 

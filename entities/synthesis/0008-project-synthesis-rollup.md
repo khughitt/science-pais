@@ -1,31 +1,34 @@
 ---
-id: "synthesis:rollup"
+id: "synthesis:0008-project-synthesis-rollup"
 type: "synthesis"
 title: "Project synthesis - health-post-acute-infection"
+status: "active"
 report_kind: "synthesis-rollup"
 generated_at: "2026-06-24T19:16:12Z"
 source_commit: "05a785bf71096ea8cc4d486b93f3f920a481cd74"
+created: "2026-06-24"
+updated: "2026-06-25"
 synthesized_from:
   - hypothesis: "hypothesis:0001-shared-dysregulated-attractor"
-    file: "entities/reports/synthesis/0001-shared-dysregulated-attractor.md"
+    file: "entities/synthesis/0001-shared-dysregulated-attractor.md"
     sha: "d7a12d7c3e82b35cf4661de31d21edf7741426cd"
   - hypothesis: "hypothesis:0002-tissue-reservoir-antigen-fragment"
-    file: "entities/reports/synthesis/0002-tissue-reservoir-antigen-fragment.md"
+    file: "entities/synthesis/0002-tissue-reservoir-antigen-fragment.md"
     sha: "6d4b0c1d5818646954bb6dee1cac76e059bb0374"
   - hypothesis: "hypothesis:0003-immune-exhaustion-feedback"
-    file: "entities/reports/synthesis/0003-immune-exhaustion-feedback.md"
+    file: "entities/synthesis/0003-immune-exhaustion-feedback.md"
     sha: "4a3dbf16875e2814c81a6b4095cc8c71c729cf15"
   - hypothesis: "hypothesis:0004-acute-severity-threshold"
-    file: "entities/reports/synthesis/0004-acute-severity-threshold.md"
+    file: "entities/synthesis/0004-acute-severity-threshold.md"
     sha: "c77089f58dc7c728c56cf543881ca38a003e755d"
   - hypothesis: "hypothesis:0005-reproductive-stage-immune-homeostatic-margin"
-    file: "entities/reports/synthesis/0005-reproductive-stage-immune-homeostatic-margin.md"
+    file: "entities/synthesis/0005-reproductive-stage-immune-homeostatic-margin.md"
     sha: "eb360eaf2c5f3707f3a9c74d08fa38df2e161eee"
   - hypothesis: "hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem"
-    file: "entities/reports/synthesis/0006-skeletal-muscle-ischemic-mitochondrial-pem.md"
+    file: "entities/synthesis/0006-skeletal-muscle-ischemic-mitochondrial-pem.md"
     sha: "a8bcdf3bde1de380f96241b3ee235e2830b1d820"
   - hypothesis: "hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate"
-    file: "entities/reports/synthesis/0007-autoimmune-sfn-peripheral-dysautonomia-substrate.md"
+    file: "entities/synthesis/0007-autoimmune-sfn-peripheral-dysautonomia-substrate.md"
     sha: "dac8ce5c489a3a844801142e25791c2d271819d1"
 emergent_threads_sha: "fc72f460c21dffd01ace3d98c3448a21dd7ace44"
 orphan_question_count: 1
@@ -88,4 +91,4 @@ No knowledge gaps detected this run (the `compute_topic_gaps` slice was empty). 
 
 ## Emergent threads
 
-See `entities/reports/synthesis/_emergent-threads.md`. **One orphan question** (`question:0005-latent-to-overt-autoimmunity-conversion`) has no hypothesis home: it concerns the *longitudinal* conversion of post-infectious latent autoimmunity (Rojas2022: 83% latent, ~3% overt at 7 months) to clinical disease, a prognosis question no current mechanism-focused hypothesis frames — the emergent-threads file proposes a candidate "immune-set-point shift" hypothesis to house it. The file also documents four genuinely cross-hypothesis questions (functional autoantibodies `q0009` bridging h0007↔h0001; mitochondrial PEM `q0011` bridging h0006↔h0001; female predominance `q0007` and male-vascular `q0019` jointly conditioning h0004↔h0005), and flags the measurement-ascertainment axis as a candidate standing meta-constraint spanning h0001/h0005/h0006/h0007.
+See `entities/synthesis/0009-emergent-threads.md`. **One orphan question** (`question:0005-latent-to-overt-autoimmunity-conversion`) has no hypothesis home: it concerns the *longitudinal* conversion of post-infectious latent autoimmunity (Rojas2022: 83% latent, ~3% overt at 7 months) to clinical disease, a prognosis question no current mechanism-focused hypothesis frames — the emergent-threads file proposes a candidate "immune-set-point shift" hypothesis to house it. The file also documents four genuinely cross-hypothesis questions (functional autoantibodies `q0009` bridging h0007↔h0001; mitochondrial PEM `q0011` bridging h0006↔h0001; female predominance `q0007` and male-vascular `q0019` jointly conditioning h0004↔h0005), and flags the measurement-ascertainment axis as a candidate standing meta-constraint spanning h0001/h0005/h0006/h0007.

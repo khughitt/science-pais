@@ -29,6 +29,12 @@ ontologies:
 - biology
 knowledge_profiles:
   local: local
+refs:
+  doi_pmid_exempt_dirs:
+  - doc/papers
+  - doc/searches
+  - entities/papers
+  - entities/searches
 aspects:
 - hypothesis-testing
 - computational-analysis

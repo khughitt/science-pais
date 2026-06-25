@@ -182,4 +182,4 @@ Residual gaps for a future pass:
 
 ## Run provenance
 
-Machine-readable candidate list + dedup/provenance/tier: [`2026-06-20-mitochondrial-bioenergetics-pem.json`](2026-06-20-mitochondrial-bioenergetics-pem.json).
+Machine-readable candidate list + dedup/provenance/tier: [`2026-06-20-mitochondrial-bioenergetics-pem.json`](../../doc/searches/2026-06-20-mitochondrial-bioenergetics-pem.json).

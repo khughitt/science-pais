@@ -7,7 +7,7 @@ stance: "disputes"
 target: "proposition:0001-reproductive-stage-transition-shifts-the-failed-recovery-threshold"
 source: "paper:Shah2025"
 strength: "weak"
-independence: "independent"
+independence: "shared-source"
 independence_group: "shah2025-lc-risk"
 evidence_role: "model_criticism"
 evidence_type: "literature_evidence"
@@ -21,7 +21,7 @@ related:
 source_refs:
   - "paper:Shah2025"
 created: "2026-06-22"
-updated: "2026-06-22"
+updated: "2026-06-25"
 ---
 
 # Evidence Line: Shah2025 within-band menopause null disputes a menopause-status-specific stage reading
@@ -32,7 +32,7 @@ Shah2025 is the only PAIS study that breaks the age/menopause collinearity *with
 
 ## Why it is grouped with the supporting line
 
-Same cohort and study as `evidence-line:0001` (RECOVER, Shah2025), so it shares `independence_group: shah2025-lc-risk`: it does **not** add an independent disputing cohort — it **partitions** what the single Shah2025 source says. The age-banded female excess (el:0001, `supports`) and the within-band menopause null (this line, `disputes`) are two readings of one study, deliberately kept in one group so the aggregator does not treat them as independent evidence on either side.
+Same cohort and study as `evidence-line:0001` (RECOVER, Shah2025), so it is coded `independence: shared-source` with the same `independence_group: shah2025-lc-risk`: it does **not** add an independent disputing cohort — it **partitions** what the single Shah2025 source says. The age-banded female excess (el:0001, `supports`) and the within-band menopause null (this line, `disputes`) are two readings of one study, deliberately kept in one group so the aggregator does not treat them as independent evidence on either side.
 
 ## Caveats / scope
 

@@ -1,10 +1,13 @@
 ---
-id: synthesis:emergent-threads
+id: synthesis:0009-emergent-threads
 type: synthesis
 title: "Emergent threads - health-post-acute-infection"
+status: "active"
 report_kind: emergent-threads
 generated_at: 2026-06-24T19:16:12Z
 source_commit: 05a785bf71096ea8cc4d486b93f3f920a481cd74
+created: "2026-06-24"
+updated: "2026-06-25"
 orphan_question_count: 1
 orphan_interpretation_count: 0
 orphan_ids: ["question:0005-latent-to-overt-autoimmunity-conversion"]

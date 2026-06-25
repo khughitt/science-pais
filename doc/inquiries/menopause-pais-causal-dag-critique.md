@@ -9,7 +9,7 @@ source_refs:
 - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
 - task:t014
 created: "2026-06-19"
-updated: "2026-06-19"
+updated: "2026-06-25"
 ---
 
 # Causal DAG Critique: menopausal transition and PAIS risk (t014)
@@ -23,9 +23,11 @@ updated: "2026-06-19"
 
 `science inquiry validate` — `boundary_reachability` **pass**, `no_cycles`
 **pass**, `causal_acyclicity` **pass**, `target_exists` **pass**;
-`orphaned_interior` **warn** for `clinic_attendance` (intended sink collider)
+`orphaned_interior` **warn** for `clinic_attendance`,
+`hospital_ascertainment`, and `survival_selection` (intended sink colliders)
 and `unmeasured_shared_confounders` (intended exogenous latent). No structural
-defects.
+defects; the validator flags interior nodes without both incoming and outgoing
+flow edges, which includes these designed sinks and roots.
 
 > **Tooling note:** `science inquiry export-pgmpy` emitted an **empty** edge
 > list — it reads `scic:causes` from the `graph/causal` layer, but the inquiry
