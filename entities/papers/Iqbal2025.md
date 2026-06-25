@@ -17,9 +17,12 @@ dataset_usage: []
 datasets: []
 source_refs:
 - cite:Iqbal2025
-related: []
+related:
+- search:0007-microbiome-gut-brain-pais
+- interpretation:0023-t007-microbiome-gut-brain-axis
+- topic:gut-microbiome-barrier-axis
 created: '2026-06-11'
-updated: '2026-06-11'
+updated: '2026-06-25'
 ---
 # Chronic inflammation in post-acute sequelae of COVID-19 modulates gut microbiome: a review of literature on COVID-19 sequelae and gut dysbiosis
 

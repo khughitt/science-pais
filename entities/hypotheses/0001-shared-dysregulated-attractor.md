@@ -13,16 +13,21 @@ source_refs:
 - cite:Gattoni2025
 - cite:Keller2014
 - cite:Appelman2024
+- cite:Liu2022
+- cite:Guo2023
 related:
 - topic:shared-failure-mode-across-pais
 - topic:mecfs-long-covid-convergence
+- topic:gut-microbiome-barrier-axis
 - question:0001-shared-molecular-signature-across-triggers
 - question:0008-formalize-vicious-cycle-attractor-model
 - immunity:research-question:immune-homeostasis-and-dysregulation
 - pre-registration:0002-cross-trigger-pathway-overlap
 - interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating
 - interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation
+- interpretation:0023-t007-microbiome-gut-brain-axis
 - proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode
+- proposition:0031-pais-gut-dysbiosis-scfa-depletion
 created: '2026-06-11'
 updated: '2026-06-22'
 ---
@@ -80,6 +85,13 @@ Confidence would be materially reduced if:
 - **Trautmann2025 (literature):** self-sustained inflammatory loops + failed interoception; severity scales with loop co-occurrence.
 - **Bai2023 (literature):** 26/29 canonical ME/CFS symptoms present in PTLDS — cross-trigger symptom convergence.
 - Cross-pathogen anchors (Kalimuddin2022, Morroy2016, Zheng2026) show a consistent chronic fraction across triggers, consistent with a shared host-determined threshold.
+- **t007 microbiome/gut-brain axis (2026-06-25; `proposition:0031`, `interpretation:0023`):** long
+  COVID and ME/CFS both show gut dysbiosis with depleted SCFA/butyrate-producing capacity or related
+  microbial-metabolite abnormalities (Liu2022/Su2023; Guo2023/Xiong2023), and a synbiotic perturbation
+  trial in PACS weakly improves symptoms (Lau2024). This supports a plausible gut-immune-metabolic-neural
+  loop node, but **does not promote this hypothesis**: the evidence is mostly observational, only mature
+  for long COVID + ME/CFS, and Xiong2023 shows chronic symptoms can outlast overt microbiome-composition
+  dysbiosis.
 
 ## Disputing Evidence
 
@@ -107,3 +119,7 @@ Confidence would be materially reduced if:
 
 - 2026-06-20: Deflationary rival now tracked as question:0017 — the finite-organ-failure-repertoire coincidence account (convergence is symptomatic, not a shared attractor) plus ascertainment-artifact. These remain genuinely competitive with this hypothesis; head-to-head molecular designs still fail a shared positive signature and the >=3-trigger harmonized test does not exist. Score this hypothesis against q0017 before promotion.
 - 2026-06-21: First empirical probe (t035, pre-registration:0002) ran and returned `null_nonarbitrating` — see `interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating`. Weighted-low, asymmetric: a marginal downward nudge on demonstrability, **not** support for the q0017 coincidence null (the absence of detectable concordance at this n cannot exclude a real shared signature). Status held at `proposed`; promotion still gated on the harmonized ≥3-trigger test. The run's concrete contribution is the empirical demonstration that public 2-cohort, cross-platform, cross-compartment data cannot adjudicate this question.
+- 2026-06-25: t007 added `proposition:0031` as `supports_scope: local_proposition` rather than a core
+  member of this hypothesis. Rationale: gut dysbiosis/SCFA depletion is a plausible reinforcing loop node,
+  but current evidence cannot distinguish driver, consequence, baseline susceptibility, or disease-stage
+  marker.

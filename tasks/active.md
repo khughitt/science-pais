@@ -7,14 +7,6 @@
 
 Blocked by tooling gap (fb-2026-06-11-005). Bridge papers: Choutka2022, Komaroff2025, Klein2023, Rojas2022, Sharma2023.
 
-## [t007] [lit-search] Microbiome / gut-brain axis in post-infectious syndromes
-- priority: P3
-- status: proposed
-- aspects: []
-- created: 2026-06-11
-
-Gap: only 1 paper (s10020 gut microbiome PASC). Search: gut dysbiosis, microbial metabolites, serotonin/tryptophan, gut-brain signaling in long COVID and ME/CFS.
-
 ## [t009] [lit-search] Pediatric long COVID and MIS-C
 - priority: P3
 - status: proposed
