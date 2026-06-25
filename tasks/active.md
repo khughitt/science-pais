@@ -47,14 +47,6 @@ Perevaryukha (Biophysics 2021), Wang (Physica D 2007), Xie (Appl Math Model 2010
 
 Long COVID / ME-CFS / PTLDS as distinct disease labels possibly sharing post-infectious biology. Coordinate with ~/d/health/comparisons/pan-disease.
 
-## [t026] Evaluate PC-COS core-outcome-set adoption for PAIS analyses
-- priority: P3
-- status: proposed
-- aspects: []
-- created: 2026-06-19
-
-Assess whether t001/t016 should pre-commit to PC-COS core domains (fatigue, breathlessness, cognitive impairment, QoL) as dimensional outcomes alongside the binary PAIS case variable, enabling continuous cross-study comparison. Follows topic:pais-case-definition-heterogeneity (t002).
-
 ## [t028] Execute the pre-registered menopause→PAIS total-effect analysis once UKB data is provisioned
 - priority: P2
 - status: blocked

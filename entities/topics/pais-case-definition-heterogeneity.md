@@ -27,6 +27,7 @@ source_refs:
 - cite:Aucott2013PTLDS
 - cite:Morroy2016
 - cite:Munblit2022PCCOS
+- cite:PCCOS2023COMS
 - cite:Choutka2022
 - cite:Bai2023
 related:
@@ -41,8 +42,9 @@ related:
 - question:0013-reproductive-stage-failed-immune-recovery-after-infection
 - question:0014-which-pais-case-definition-is-most-biologically-coherent
 - question:0015-does-pem-requirement-improve-cross-study-comparability
+- interpretation:0021-t026-pc-cos-adoption-policy
 created: "2026-06-19"
-updated: "2026-06-19"
+updated: "2026-06-25"
 ---
 
 # PAIS Case-Definition Heterogeneity and Harmonization
@@ -169,7 +171,9 @@ The well-documented prevalence range for long COVID (5–35%) is largely a defin
 
 **Symptom-level data as the harmonization substrate.** Collecting individual symptom data at standardized severity/frequency thresholds (rather than a single binary case/not-case variable) allows post-hoc application of any case definition and computation of the RECOVER PASC index. This is the single highest-leverage harmonization action available prospectively. Retrospectively, it is rarely achievable.
 
-**Core outcome set — PC-COS.** The Post-COVID Core Outcome Set (PC-COS) project, led by Munblit et al. (Lancet Respiratory Medicine 2022) and a children's version (European Respiratory Journal 2024), used a Delphi consensus to identify the minimum set of outcomes required in all long COVID trials and clinical practice assessments. The adult PC-COS core domains are: fatigue, breathlessness, cognitive impairment, and quality of life — applicable across clinical definitions. This is not a case definition but an outcome harmonization tool; it is complementary to case definition harmonization.
+**Core outcome set — PC-COS.** The Post-COVID Core Outcome Set (PC-COS) project, led by Munblit et al. (Lancet Respiratory Medicine 2022), used an international Delphi consensus to identify the minimum outcome domains that should be measured in adult long COVID / post-COVID condition research and clinical practice. The adult COS is broader than the common shorthand of fatigue, breathlessness, cognition, and quality of life: it includes fatigue/exhaustion, pain, post-exertion symptoms, work/occupational and study changes, survival, recovery, and cardiovascular, respiratory, nervous-system, cognitive, mental, and physical functioning/symptom/condition domains. This is **not a case definition**; it is an outcome-harmonization tool complementary to WHO/NASEM/RECOVER case-definition work.
+
+**PC-COS instrument status — adopt domains, not a fixed battery.** The follow-on Core Outcome Measurement Set (COMS; PC-COS Study Group 2023) reached full instrument consensus only for survival (time until death), recovery (Recovery Scale for COVID-19), and respiratory outcomes (mMRC Dyspnoea Scale). For the other nine domains, the paper provides preferred candidate instruments rather than consensus mandates: e.g. FAS/FSS/FACIT-F for fatigue, DePaul Symptom Questionnaire for post-exertion symptoms, CFQ/MoCA-Blind for cognition, BPI for pain, and SBQ-LC/SF-36/EQ-5D-5L/WHO-DAS as multidomain candidates. Project policy (`interpretation:0021`) is therefore to pre-specify PC-COS **domains** where computable while recording instrument choice and no-consensus caveats.
 
 **Multi-definition reporting as sensitivity analysis.** A well-established practice in ME/CFS research (and increasingly in long COVID) is to report results under multiple case definitions simultaneously. When effect estimates are robust across all definitions (e.g., a biomarker elevation present under both Fukuda and CCC), the finding is more reliable. When estimates differ markedly across definitions, the result is definition-specific and cannot be generalized. This practice should be adopted as standard in this project's computational outputs.
 

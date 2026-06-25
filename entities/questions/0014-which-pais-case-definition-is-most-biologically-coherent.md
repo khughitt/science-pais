@@ -21,6 +21,8 @@ source_refs:
 - cite:Thaweethai2023
 - cite:WHO2021LongCOVID
 - cite:NASEM2024LongCOVID
+- cite:Munblit2022PCCOS
+- cite:PCCOS2023COMS
 related:
 - topic:pais-case-definition-heterogeneity
 - topic:mecfs-long-covid-convergence
@@ -29,6 +31,7 @@ related:
 - question:0001-shared-molecular-signature-across-triggers
 - question:0015-does-pem-requirement-improve-cross-study-comparability
 - hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
+- interpretation:0021-t026-pc-cos-adoption-policy
 created: '2026-06-19'
 updated: '2026-06-24'
 ---
@@ -48,6 +51,7 @@ At least six case definitions for ME/CFS and four major operationalizations of l
 ## Current Evidence
 
 - Supporting PEM-based definitions: AHRQ 2016 evidence review found GET/CBT effects disappeared when Oxford criteria studies were excluded; Carruthers 2003 (CCC) and 2011 (ICC) patients are more severely impaired and show more immune dysregulation than Fukuda-only patients; RECOVER index (Thaweethai2023) places PEM among the highest-weighted symptoms for distinguishing PASC from recovered controls.
+- Outcome harmonization update (t026): PC-COS should be adopted as a minimum dimensional-reporting frame, not as a case definition. Its inclusion of post-exertion symptoms, cognition, respiratory symptoms, fatigue, pain, physical function, work/study impact, recovery, and related domains improves cross-study reporting, but it does not answer which entry criterion selects the most biologically coherent cohort.
 - Concordance data: Fukuda 79% > SEID 72% > CCC 71% > ICC 61% when applied to the same clinical cohort; the ~18% difference between Fukuda and ICC represents a substantial subgroup who meet broad but not strict criteria.
 - Against strict-only approach: restricting to ICC or RECOVER index substantially reduces sample sizes and may exclude mild-to-moderate cases who could still carry the mechanistic biology of interest; some evidence suggests the PAIS spectrum is continuous rather than threshold-defined.
 - Unresolved: no direct multi-omics comparison of PEM+ vs PEM- post-COVID or ME/CFS patients using the same platform has been published; the assumed biological superiority of PEM-required definitions rests on indirect evidence and expert consensus rather than a definitive head-to-head molecular study.

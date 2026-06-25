@@ -221,6 +221,16 @@ because the artifacts were inspected before thresholds were locked.
 - **Direction is the primary commitment; magnitude is secondary** given the
   partial-identification design.
 
+**t026 PC-COS note (non-locking; 2026-06-25).** PC-COS is adopted as a dimensional
+reporting frame, not as a new confirmatory endpoint set. Where UKB fields support them,
+report PC-COS-aligned secondary/descriptive domains (fatigue/PESE proxy, cognitive
+symptoms, respiratory symptoms, pain, physical impact, recovery, work/study impact) beside
+the binary WHO >=90-day Route-A outcome. These domains do not alter the primary decision
+criteria, multiplicity plan, or G6 outcome-computability gate; any promotable PC-COS-domain
+claim would require its own pre-registered contrast. Rationale: the adult PC-COS domain
+set is consensus-based, but the follow-on COMS reached full instrument consensus only for
+survival, recovery, and mMRC dyspnea, so most domain instruments remain dataset-specific.
+
 ---
 
 ## Decision Criteria
