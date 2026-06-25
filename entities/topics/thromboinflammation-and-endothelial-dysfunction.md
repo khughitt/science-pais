@@ -22,8 +22,9 @@ source_refs:
 - cite:Huang2025
 - cite:Salvucci2023
 - cite:Ganesh2022
+- paper:Spetz2025
 created: '2026-06-11'
-updated: '2026-06-11'
+updated: '2026-06-25'
 ---
 # Thromboinflammation, Microclots, and Endothelial Dysfunction in Long COVID
 
@@ -52,6 +53,7 @@ A convergent body of evidence frames the vasculature as a shared effector organ 
 - A coherent endotheliopathy/coagulation biomarker cluster (vWF up, ADAMTS13 down, D-dimer up, antithrombin III down, factor VIII up) recurs across independent cohorts (Nicolai2023, CerviaHasler2024).
 - Cardiovascular symptom burden is elevated at population scale and is not explained by acute severity alone (Huang2025; Stahlberg2025's mild-acute cohort).
 - Platelet hyperreactivity and monocyte/neutrophil-platelet aggregation provide a cellular substrate linking inflammation to clotting (Nicolai2023, CerviaHasler2024).
+- Population-register hard endpoints now support persistence and sex-effect heterogeneity: Spetz2025 reports elevated DVT/PE risk after mild/non-hospitalized COVID-19, elevated DVT/PE risk in the 91-180 day window overall, and a larger COVID-associated thromboembolic increment in men than women against an uninfected comparator.
 
 ### What is contested or unresolved
 
@@ -69,6 +71,7 @@ CerviaHasler2024 centers complement/TCC imbalance as the driver, whereas Nicolai
 - Are circulating fibrinaloid microclots a reproducible, quantifiable, and *causal* feature of long COVID, or a partly artefactual correlate (Nicolai2023, Pretorius model)?
 - Does a complement/microclot/endothelial axis define a discrete vascular subphenotype, and does membership predict response to anticoagulant or complement-modulating therapy (CerviaHasler2024, Stahlberg2025)?
 - Is the endothelial dysfunction in PACS acquired post-infection or an unmasked pre-existing vulnerability (Stahlberg2025)?
+- Is the male-biased hard-endpoint thromboembolic signal explained by baseline male vascular risk, COVID-added sex-differential thromboinflammation, or both? Spetz2025 weakens pure baseline carryover but does not report the decisive sex×infection×31-180-day×non-hospitalized interaction.
 - How much of the cardiovascular/dysautonomia symptom burden is primary vasculopathy versus mast-cell activation versus central sensitization (Salvucci2023, Ganesh2022, Huang2025)?
 - Do the same complement/coagulation/endothelial abnormalities appear in non-COVID PAIS (ME/CFS, post-Lyme), as required for a cross-PAIS shared vascular mechanism (CerviaHasler2024, Nicolai2023)?
 
@@ -84,3 +87,4 @@ Thromboinflammation supplies a concrete, biomarker-supported effector axis for t
 - Huang2025 — population-scale meta-analysis of cardiovascular sequelae (chest pain, palpitations, hypertension) elevated vs uninfected controls.
 - Salvucci2023 — mast-cell-activation cardiovascular/dysautonomia phenotype reversible with H1/H2 blockade (alternative/overlapping mechanism).
 - Ganesh2022 — Mayo post-COVID cohort; female-predominant central-sensitization phenotype with orthostasis cluster and persistent IL-6.
+- Spetz2025 — Swedish total-population SCIFI-PEARL cohort; uninfected comparator, risk-period and severity analyses, and sex-stratified thromboembolic estimates that partially answer the vascular male-reversal baseline-carryover question.

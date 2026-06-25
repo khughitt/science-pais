@@ -12,13 +12,17 @@ source_refs:
 - cite:Xie2024
 - cite:Ambrosino2021
 - cite:Xie2022
+- paper:Spetz2025
 related:
 - topic:shared-failure-mode-across-pais
 - question:0003-acute-severity-threshold-for-self-sustaining-pais
 - hypothesis:0001-shared-dysregulated-attractor
 - immunity:research-question:immune-homeostasis-and-dysregulation
+- proposition:0012-vascular-hard-endpoint-male-reversal-survives-severity-adjustment
+- interpretation:0018-t048-vascular-sex-baseline-carryover-audit
+- task:t048
 created: '2026-06-11'
-updated: '2026-06-11'
+updated: '2026-06-25'
 ---
 # Hypothesis: Acute-illness severity sets a homeostatic recovery threshold above which the post-infectious state becomes self-sustaining rather than self-resolving
 
@@ -44,6 +48,12 @@ The magnitude of the acute-phase insult sets a *threshold* in the host's recover
 - Severity-outcome associations come largely from administrative/observational cohorts subject to "for vs with" ascertainment bias (Gandhi2023), which can inflate apparent severity effects.
 - A large share of ME/CFS and long COVID follows *mild* acute infection (Oronsky2021), which a naive severity-threshold model does not explain — implying severity is one axis among several, not the sole gate.
 - "Threshold/phase transition" vs "continuous dose-response" has not been formally tested with change-point or bistability statistics (see `question:0003`).
+- **Vascular sex×severity interaction remains a modeling caution (t048, 2026-06-25).** Spetz2025 shows
+  that mild/non-hospitalized COVID-19 has elevated DVT/PE risk and that COVID-associated
+  thromboembolic risk appears larger in men than women against an uninfected baseline. This means sex
+  should not be treated as only a baseline covariate or only an acute-severity proxy in vascular analyses;
+  the needed estimand is sex×infection×time-window, stratified by non-hospitalized vs hospitalized
+  severity.
 
 ## Predictions
 
@@ -73,6 +83,7 @@ Confidence would be materially reduced if:
 - **Morroy2016 (literature):** ~20% chronic fraction after Q-fever; severity-threshold framing across cohorts.
 - Hertanti2025, Conde2026: DHF (severe dengue) selectively predicts post-dengue fatigue.
 - **Ambrosino2021 (empirical-data, case-control):** In post-severe/critical COVID-19 convalescents, FMD (endothelial function) directly correlates with pulmonary-impairment severity markers (rho 0.247–0.436); FMD thus tracks rather than dissociates from acute-severity sequelae. Load-bearing for the severity-confounded interpretation of male-biased vascular PAIS signals.
+- **Spetz2025 (literature/registry cohort):** Swedish total-population cohort showing mild/non-hospitalized COVID-19 still carries elevated DVT/PE risk and that DVT/PE remain elevated in the 91-180 day window overall. It also suggests a larger COVID-associated thromboembolic increment in men than women, so future severity-threshold tests should model sex jointly with infection and severity rather than treating male vascular risk as pure baseline carryover.
 
 ## Disputing Evidence
 

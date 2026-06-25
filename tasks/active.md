@@ -115,15 +115,6 @@ Boneva2015 reports early menopause (<=45) adj OR 3.20 and ~10y earlier mean age 
 
 Surfaced during t019 HRT-evidence audit (interpretation:0008). Neuhouser et al., 'Risk factors for long COVID syndrome in postmenopausal women with previously reported diagnosis of COVID-19', Ann Epidemiol 2024 (WHI; PMC11405002; DOI 10.1016/j.annepidem.2024.xx). n>1,230 COVID-19, 425 long COVID, ML top-20 risk-factor screen. Reported top predictors (weight loss, mobility, RA, heart-valve procedures, sleep) do NOT include HRT. Triage from full text: was menopausal hormone therapy in the candidate feature set (unselected) or never examined? If MHT was examined/reported (even null), add as the first WHI-grade HRT-vs-long-COVID evidence-line on proposition:0006 and correct interpretation:0003's matrix line. Ingest as paper:Neuhouser2024 + references.bib entry.
 
-## [t048] Find a sex-stratified COVID-vs-uninfected ambulatory cohort to estimate the infection-attributable male vascular excess (31-180d) for q0020/q0021
-- priority: P2
-- status: proposed
-- aspects: []
-- related: [question:0021-male-vascular-reversal-covid-specific-vs-baseline-carryover, question:0020-male-vte-excess-post-acute-persistence, proposition:0012-vascular-hard-endpoint-male-reversal-survives-severity-adjustment, hypothesis:0004-acute-severity-threshold, topic:thromboinflammation-and-endothelial-dysfunction]
-- created: 2026-06-24
-
-Both q0020 and q0021 need the SAME missing design: an ambulatory cohort with a sex-stratified UNINFECTED / test-negative comparator and post-acute (31-180d) vascular hard-endpoint follow-up. DELIVERABLE: (1) lit/dataset scan for such a cohort (candidates: VA Million Veteran / Al-Aly programme with test-negative controls; OpenSAFELY; Clalit/Kopp2024 source; N3C) reporting VTE/MI/CV-death by sex with an uninfected baseline; (2) if found, estimate the male PASC vascular excess as a ratio-of-ratios (COVID M:F vs uninfected M:F) or sex x infection interaction = the infection-attributable increment over male baseline; (3) feed result into proposition:0012 (does the reversal carry a COVID-specific component or dissolve to baseline carryover?) and into how sex x severity should be jointly modeled in the pre-registered work. If no such cohort exists, record the design gap explicitly. Empirical.
-
 ## [t050] Discharge q0004 paired-site biopsy + primary-dysautonomia-control study (h0007 promotion criterion #1)
 - priority: P2
 - status: proposed

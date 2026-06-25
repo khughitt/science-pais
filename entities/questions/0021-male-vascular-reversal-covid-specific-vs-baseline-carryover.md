@@ -9,16 +9,20 @@ datasets: []
 source_refs:
 - cite:Xie2022
 - cite:Kopp2024
+- paper:Spetz2025
 related:
 - hypothesis:0004-acute-severity-threshold
 - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
 - proposition:0012-vascular-hard-endpoint-male-reversal-survives-severity-adjustment
 - interpretation:0005-t042-vascular-male-reversal-survives-severity-adjustment
+- interpretation:0018-t048-vascular-sex-baseline-carryover-audit
+- evidence-line:0074-spetz2025-sex-stratified-covid-thromboembolic-amplification-supports-0012
 - question:0019-male-biased-vascular-signal-pasc-persistence
 - question:0020-male-vte-excess-post-acute-persistence
 - topic:thromboinflammation-and-endothelial-dysfunction
+- task:t048
 created: '2026-06-24'
-updated: '2026-06-24'
+updated: '2026-06-25'
 ---
 # Is the male-biased vascular hard-endpoint reversal in PASC COVID-specific biology, or carryover of the male baseline-rate excess in vascular/thrombotic disease?
 
@@ -36,6 +40,13 @@ i.e. an attribute of who gets vascular disease, not of what COVID does. This is 
 of the `proposition:0009`-style "baseline-carried, not PAIS-amplified" decomposition already applied
 to dysautonomia, and it directly conditions how sex and severity should be **jointly modeled**
 (flagged as a residual gap in both the h0004 and h0005 synthesis fronts).
+
+**t048 update (2026-06-25): partially addressed.** Spetz2025 provides the first usable uninfected-
+comparator sex-stratified thromboembolic estimate in this project. In a no-prior-comorbidity sensitivity
+analysis, the implied COVID-associated thromboembolic increment is larger in men than women (approximate
+male-vs-female ratio-of-ratios ~1.57). This weakens the pure baseline-carryover explanation. It does not
+fully close the question because the published tables do not cross sex with the 31-180 day window and
+non-hospitalized severity stratum.
 
 ## Why It Matters
 
@@ -56,22 +67,22 @@ to dysautonomia, and it directly conditions how sex and severity should be **joi
   patients, not to uninfected men; Kopp2024 shows an 18-month male CV-mortality excess within a
   hospitalized stratum. Both are consistent with, but do not isolate, an infection-added effect.
 - **Supporting baseline carryover:** general-population vascular epidemiology shows a robust male
-  excess in VTE, MI, and CV mortality absent any infection. None of the current corpus evidence-lines
-  (`evidence-line:0029`–`0032`) include an **uninfected/test-negative comparator**, so the
-  infection-attributable fraction is unidentified.
-- **Gap:** no analysis in the project estimates the male PASC vascular excess as a *ratio of ratios*
-  (COVID male:female vs. uninfected male:female) or as an absolute excess over a matched uninfected
-  male baseline.
+  excess in VTE, MI, and CV mortality absent any infection. This still explains part of the observed
+  male hard-endpoint burden.
+- **Against pure baseline carryover:** `evidence-line:0074` (Spetz2025) estimates the thromboembolic
+  outcome against an uninfected comparator and implies a larger COVID-associated relative increment in
+  men than women, so baseline carryover alone is too deflationary.
+- **Gap:** no analysis in the project estimates the male PASC vascular excess as the target
+  sex×infection interaction restricted to non-hospitalized cases and the 31-180 day post-acute window.
 
 ## Thoughts
 
-- Best current interpretation: the reversal is real and severity-robust, but its **attribution** to
-  PAIS-specific biology is unproven; the most likely truth is a mix (some baseline carryover plus a
-  modest infection-added thromboinflammatory increment), and the project should treat
-  `proposition:0012` as a domain-direction fact, not yet a causal COVID-specific claim.
-- Major remaining uncertainty: identifying an infection-attributable estimand requires an uninfected
-  or test-negative comparator with the same sex-stratification — the same design gap that leaves
-  `question:0020` (late ambulatory VTE persistence) open.
+- Best current interpretation: the reversal is real, severity-robust, and **not purely baseline-carried**.
+  The most likely truth remains mixed: baseline male vascular risk plus a COVID-added
+  thromboinflammatory increment that is larger in men.
+- Major remaining uncertainty: identifying the target estimand requires an uninfected or test-negative
+  comparator with the same sex-stratification, 31-180 day window, and non-hospitalized restriction — the
+  same design gap that leaves `question:0020` (late ambulatory VTE persistence) open.
 
 ## Connections to Project
 

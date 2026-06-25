@@ -8,13 +8,16 @@ ontology_terms: []
 datasets: []
 source_refs:
 - cite:Xie2022
+- paper:Spetz2025
 related:
 - hypothesis:0004-acute-severity-threshold
 - question:0019-male-biased-vascular-signal-pasc-persistence
 - proposition:0012-vascular-hard-endpoint-male-reversal-survives-severity-adjustment
 - interpretation:0005-t042-vascular-male-reversal-survives-severity-adjustment
+- interpretation:0018-t048-vascular-sex-baseline-carryover-audit
+- task:t048
 created: '2026-06-22'
-updated: '2026-06-23'
+updated: '2026-06-25'
 ---
 
 # Does the male-biased VTE excess in ambulatory COVID-19 persist into the post-acute phase or resolve after the 30-day acute window?
@@ -29,6 +32,12 @@ updated: '2026-06-23'
 > — sex-stratified VTE incidence in the **31–180-day** post-acute window in ambulatory cohorts —
 > remains an open gap. Kept as the narrower VTE-temporal companion to the substantially resolved
 > CV question `question:0019`.
+>
+> **t048 update (2026-06-25): partial positive, not closed.** Spetz2025 shows DVT and PE risk remain
+> elevated in the 91-180 day window overall (DVT HR 1.20; PE HR 1.29) and that mild/non-hospitalized
+> COVID-19 carries elevated DVT/PE risk overall (DVT HR 1.41; PE HR 1.78). However, the paper does not
+> report the sex-stratified 31-180 day estimate within the non-hospitalized stratum, so the exact
+> late-ambulatory male-VTE persistence question remains open.
 
 Xie2022 demonstrates that male sex is an independent VTE risk factor within ambulatory (non-hospitalized) COVID-19 patients (aHR 1.69, 95% CI 1.30–2.19), with the 30-day acute window as the observation period. The question is whether this male-biased thrombotic excess is strictly an acute-phase phenomenon that resolves once the infection clears, or whether it seeds downstream post-acute thromboinflammatory pathology — microclots, small-fiber neuropathy, cardiovascular sequelae — that persists into long COVID.
 
@@ -41,13 +50,14 @@ Xie2022 demonstrates that male sex is an independent VTE risk factor within ambu
 ## Current Evidence
 
 - **Supporting persistence:** The acute thromboinflammatory mechanism (platelet activation, endothelial injury, fibrin microclots) is not acutely self-limited — microclot evidence in PASC patients (CerviaHasler2024) suggests ongoing coagulation dysregulation well beyond 30 days. Male sex is associated with greater platelet reactivity and endothelial dysfunction at baseline, which may not fully normalize post-infection.
-- **Against persistence / uncertainty:** Xie2022 only measured 30-day VTE; no post-acute follow-up data available from this cohort. The VA cohort studies of post-acute cardiovascular outcomes (e.g., Xie2024 / Al-Aly data) use administrative codes and do not stratify acute-phase VTE risk by sex at the ambulatory level.
-- **Gap:** No ambulatory-only sex-stratified study of long-COVID thromboinflammatory sequelae (DVT/PE at 31–180 days, microclot burden, or cardiovascular PASC by sex) was found in the current literature batch.
+- **Supporting persistence:** Spetz2025 adds population-register evidence that DVT and PE remain elevated in the 91-180 day window overall, and that mild/non-hospitalized infection has elevated DVT/PE risk overall.
+- **Against persistence / uncertainty:** Xie2022 only measured 30-day VTE; no post-acute follow-up data available from this cohort. The VA cohort studies of post-acute cardiovascular outcomes (e.g. Xie2024 / Al-Aly data) use administrative codes and do not stratify acute-phase VTE risk by sex at the ambulatory level.
+- **Gap:** No ambulatory-only sex-stratified study of long-COVID thromboinflammatory sequelae (DVT/PE at 31-180 days, microclot burden, or cardiovascular PASC by sex) was found in the current literature batch; Spetz2025 reports the needed dimensions separately but not crossed.
 
 ## Thoughts
 
-- The best current interpretation is that the acute-phase male VTE excess is likely a manifestation of sex-differential thromboinflammatory susceptibility (coagulation factor levels, platelet reactivity, endothelial biology) that probably does not fully reset to baseline in all male patients, making post-acute thromboinflammation a plausible downstream consequence — but this is inferential.
-- The major uncertainty is temporal: there is no sex-stratified ambulatory cohort study tracking VTE or thromboinflammatory biomarkers beyond 30 days post-COVID-19.
+- The best current interpretation is that post-acute DVT/PE persistence is real at the population level through at least 91-180 days, but the sex-specific ambulatory component remains unidentified.
+- The major uncertainty is the joint estimator: sex-stratified ambulatory VTE or thromboinflammatory biomarker follow-up beyond 30 days post-COVID-19.
 
 ## Connections to Project
 
