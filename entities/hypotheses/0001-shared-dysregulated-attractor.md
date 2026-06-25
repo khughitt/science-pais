@@ -15,6 +15,10 @@ source_refs:
 - cite:Appelman2024
 - cite:Liu2022
 - cite:Guo2023
+- cite:Perevaryukha2021
+- cite:Wang2007
+- cite:Xie2010
+- cite:WangHuLiao2014
 related:
 - topic:shared-failure-mode-across-pais
 - topic:mecfs-long-covid-convergence
@@ -26,10 +30,11 @@ related:
 - interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating
 - interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation
 - interpretation:0023-t007-microbiome-gut-brain-axis
+- interpretation:0024-t011-delayed-viral-dynamics-models
 - proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode
 - proposition:0031-pais-gut-dysbiosis-scfa-depletion
 created: '2026-06-11'
-updated: '2026-06-22'
+updated: '2026-06-25'
 ---
 # Hypothesis: Post-acute infection syndromes are a shared dysregulated attractor reachable from many triggers, not merely a shared symptom repertoire
 
@@ -92,6 +97,11 @@ Confidence would be materially reduced if:
   loop node, but **does not promote this hypothesis**: the evidence is mostly observational, only mature
   for long COVID + ME/CFS, and Xiong2023 shows chronic symptoms can outlast overt microbiome-composition
   dysbiosis.
+- **t011 delayed viral-dynamics models (2026-06-25; `interpretation:0024`):** Perevaryukha2021,
+  Wang2007, Xie2010, and WangHuLiao2014 provide mathematical motifs for formalization: delayed immune
+  feedback, threshold-governed regimes, stability switches, and Hopf bifurcation. This is **methods
+  support only**, not biological support: the papers model active within-host viral infection, not
+  established PAIS or cross-trigger immune-autonomic-metabolic loops.
 
 ## Disputing Evidence
 
@@ -123,3 +133,7 @@ Confidence would be materially reduced if:
   member of this hypothesis. Rationale: gut dysbiosis/SCFA depletion is a plausible reinforcing loop node,
   but current evidence cannot distinguish driver, consequence, baseline susceptibility, or disease-stage
   marker.
+- 2026-06-25: t011 retired the four quarantined viral-dynamics ODE/DDE papers as *methods references*.
+  They make q0008 more tractable by supplying delay/stability/bifurcation machinery, but do not change
+  this hypothesis's belief grade. A PAIS model must replace viral-load state variables with loop-node
+  physiology and fit longitudinal recovery-vs-chronification data.

@@ -28,8 +28,12 @@ source_refs:
 - cite:Kalimuddin2022
 - cite:Zheng2026
 - cite:Xie2024
+- cite:Perevaryukha2021
+- cite:Wang2007
+- cite:Xie2010
+- cite:WangHuLiao2014
 created: '2026-06-11'
-updated: '2026-06-11'
+updated: '2026-06-25'
 ---
 # Shared Failure Mode Across Post-Acute Infection Syndromes
 
@@ -42,6 +46,13 @@ Post-acute infection syndromes (PAIS) — long COVID, ME/CFS, post-treatment Lym
 **PAIS as a coherent cross-pathogen class.** Choutka2022 (Nature Medicine) is the foundational argument that PAIS constitute a recognizable class rather than a set of unrelated coincidences, proposing four candidate mechanistic hypotheses: (1) antigen or pathogen persistence, (2) infection-triggered autoimmunity, (3) dysbiosis and latent-virus reactivation, and (4) unrepaired tissue damage. Female sex is the most consistent predictor across triggers. Komaroff2025 extends this by nesting PAIS within the broader category of infection-associated chronic illnesses (IACIs), distinguishing PAIS (failed recovery with a defining symptom cluster) from new organ injury and accelerated chronic-disease incidence.
 
 **The stable dysregulated attractor.** Multiple reviews converge on a dynamical-systems framing: PAIS is not progressive damage but a *stable* low-function state maintained by mutually reinforcing feedback loops (Komaroff2023, Komaroff2025, Trautmann2025). Komaroff2023 (with Lipkin) documents shared abnormalities across seven biological domains (CNS/ANS, neuroendocrine, immune, infectious agents, metabolism/redox, cardiopulmonary, vascular) in ME/CFS and long COVID and proposes an evolutionary "conserved stereotyped response" (dauer/hibernation/torpor) as the unifying frame. Trautmann2025 formalizes this as individual-predisposition-seeded self-sustained inflammatory loops plus failed interoceptive brain-body feedback, predicting that patients with more co-active loops are more severe and more treatment-refractory.
+
+**Delayed-feedback modeling scaffold.** The t011 quarantine pass brought four within-host viral-dynamics
+models into the corpus (Perevaryukha2021, Wang2007, Xie2010, WangHuLiao2014). They are not PAIS biology
+evidence, but they provide the formal vocabulary q0008 needs: delayed immune feedback, threshold
+regimes, stability switches, and Hopf bifurcation. The useful move is to borrow that machinery while
+replacing virus-centered state variables with PAIS loop nodes and fitting longitudinal recovery vs
+chronification data.
 
 **Trigger identity vs. shared downstream failure mode.** The discriminating methodological problem (raised sharply by Hanson2023): syndrome-level symptom overlap is not mechanistic equivalence. Cross-PAIS comparisons must control for trigger class to avoid conflating convergent phenotype with convergent biology. Hanson2023 argues enteroviruses specifically dominate ME/CFS and cautions against conflating classical ME/CFS with post-COVID illness.
 
