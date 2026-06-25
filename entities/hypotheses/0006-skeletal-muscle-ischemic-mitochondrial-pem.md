@@ -9,6 +9,10 @@ source_refs:
 - cite:Scheibenbogen2024
 - cite:Appelman2024
 - cite:Joseph2023
+- cite:Jones2012
+- cite:Wong1992
+- cite:Brown2015
+- cite:Bizjak2024
 related:
 - question:0011-mitochondrial-basis-of-pem
 - question:0010-vascular-microclot-subphenotype
@@ -16,8 +20,12 @@ related:
 - discussion:0004-pem-shared-muscle-lesion-vs-endpoint-contingency
 - proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific
 - proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode
+- proposition:0030-mecfs-exercise-provoked-skeletal-muscle-bioenergetic-abnormality
+- interpretation:0019-t056-mecfs-muscle-bioenergetics-ingestion
+- evidence-line:0075-mecfs-muscle-bioenergetics-supports-0030
+- task:t056
 created: '2026-06-20'
-updated: '2026-06-24'
+updated: '2026-06-25'
 ---
 # Hypothesis: Skeletal-muscle ischemic-mitochondrial lesion as the primary substrate of post-exertional malaise
 
@@ -36,12 +44,12 @@ The primary substrate of post-exertional malaise (PEM) is a lesion in **skeletal
 
 ### Supporting Or Auxiliary Propositions
 
-- **A1 (endpoint-bound):** Post-COVID and ME/CFS PEM share the *same muscle-endpoint lesion* — specifically, a post-exertional muscle-OXPHOS decline of the Appelman2024 type that appears in **both** triggers under a harmonized protocol. This is a tissue-specific instance of `hypothesis:0001`, but it is **constrained by `proposition:0029` (h0008-M3)**: the cross-trigger *whole-body* 2-day-CPET signature does **not** transfer (Keller2014 ME/CFS-positive vs Gattoni2025 long-COVID-null), so A1's sharing claim must be demonstrated at the **muscle endpoint**, not inferred from shared symptoms or assumed across endpoints. The decisive missing cell is ME/CFS post-exertional muscle OXPHOS beside Appelman2024 — currently absent (`discussion:0004`, `task:t056`).
+- **A1 (endpoint-bound):** Post-COVID and ME/CFS PEM share the *same muscle-endpoint lesion* — specifically, a post-exertional muscle-OXPHOS decline of the Appelman2024 type that appears in **both** triggers under a harmonized protocol. This is a tissue-specific instance of `hypothesis:0001`, but it is **constrained by `proposition:0029` (h0008-M3)**: the cross-trigger *whole-body* 2-day-CPET signature does **not** transfer (Keller2014 ME/CFS-positive vs Gattoni2025 long-COVID-null), so A1's sharing claim must be demonstrated at the **muscle endpoint**, not inferred from shared symptoms or assumed across endpoints. `task:t056` found that ME/CFS does have muscle-endpoint bioenergetic abnormalities (`proposition:0030`: Jones2012/Wong1992/Brown2015/Bizjak2024), so the prior "empty ME/CFS muscle cell" is narrowed to a more precise gap: no harmonized ME/CFS Appelman-type post-PEM OXPHOS/SDH biopsy time-course has been published.
 - **A2:** Fibrinaloid microclots contribute by occluding capillaries (links `question:0010`) — but see the *Disputing Evidence* tension that muscle amyloid in long COVID was found **extravascular** (Appelman2024), which complicates a pure capillary-occlusion variant.
 
 ## Current Uncertainty
 
-This is filed as **candidate** (not active) because the integrated AIMM model is largely **single-group** (Scheibenbogen / Wirth) and assembled from individually-plausible steps rather than one end-to-end validated pathway; the central ²³Na-MRI anchor (elevated intracellular muscle Na⁺) rests on a single cited study; and the authors disclose conflicts of interest (Wirth directs Mitodicure GmbH; Scheibenbogen holds diagnostic patents). The primary-vs-secondary problem is unresolved: muscle may be the *cause* of systemic PEM or simply one prominent downstream site. The strongest *independent* empirical support (Appelman2024, Joseph2023) confirms a provoked peripheral/muscle deficit but does **not** confirm the ionic cascade (P3) specifically.
+This is filed as **candidate** (not active) because the integrated AIMM model is largely **single-group** (Scheibenbogen / Wirth) and assembled from individually-plausible steps rather than one end-to-end validated pathway; the central ²³Na-MRI anchor (elevated intracellular muscle Na⁺) rests on a single cited study; and the authors disclose conflicts of interest (Wirth directs Mitodicure GmbH; Scheibenbogen holds diagnostic patents). The primary-vs-secondary problem is unresolved: muscle may be the *cause* of systemic PEM or simply one prominent downstream site. The strongest *independent* empirical support (Appelman2024, Joseph2023, plus the t056 ME/CFS muscle-bioenergetics body) confirms a provoked peripheral/muscle deficit, but it does **not** confirm the ischemic upstream step (P2), ionic cascade (P3), or same-lesion cross-trigger A1 specifically.
 
 ## Predictions
 
@@ -54,13 +62,14 @@ Confidence drops materially if: PEM persists with **normal** muscle perfusion an
 
 ## Promotion criteria
 
-Promote candidate → active when: (1) an **independent** group (not Scheibenbogen/Wirth) replicates *either* elevated intracellular muscle Na⁺ *or* post-exertional escalation of muscle mitochondrial damage in a PEM-positive cohort with matched controls; **and** (2) peripheral (not central) O₂ extraction is shown to limit day-2 CPET in ≥2 independent cohorts; **and** (3, the cross-trigger sharing test — added 2026-06-24 per `discussion:0004`) the post-exertional muscle-OXPHOS lesion is confirmed in **ME/CFS** at the muscle endpoint, set beside the long-COVID lesion (Appelman2024) — ideally within one harmonized multi-endpoint protocol, but at minimum a comparable independent ME/CFS muscle-endpoint result. In short: the ischemic-ionic core (P2+P3) needs at least one independent confirmation beyond the originating group, **and the A1 sharing claim needs a muscle-endpoint cross-trigger datum** — "an independent group" is no longer sufficient on its own, because `proposition:0029` (h0008-M3) shows cross-trigger sameness is endpoint-contingent and the whole-body endpoint does not transfer between triggers.
+Promote candidate → active when: (1) an **independent** group (not Scheibenbogen/Wirth) replicates *either* elevated intracellular muscle Na⁺ *or* post-exertional escalation of muscle mitochondrial damage in a PEM-positive cohort with matched controls; **and** (2) peripheral (not central) O₂ extraction is shown to limit day-2 CPET in ≥2 independent cohorts; **and** (3, the cross-trigger sharing test — added 2026-06-24 per `discussion:0004`, narrowed 2026-06-25 by `interpretation:0019`) the post-exertional muscle-OXPHOS lesion is confirmed in **ME/CFS** at the muscle endpoint, set beside the long-COVID lesion (Appelman2024) — ideally within one harmonized multi-endpoint protocol, but at minimum a comparable independent ME/CFS post-exertion biopsy result. Jones2012/Wong1992/Brown2015/Bizjak2024 partially satisfy the weaker proposition "ME/CFS has muscle bioenergetic abnormalities" (`proposition:0030`) but **do not** satisfy criterion #3 because their endpoints are 31P-MRS pH/ATP kinetics, in-vitro contraction signaling, or resting biopsy morphology rather than Appelman-type post-PEM OXPHOS/SDH kinetics.
 
 ## Supporting Evidence
 
 - **Scheibenbogen2024** (literature/model): the AIMM synthesis; ²³Na-MRI intracellular-Na⁺ anchor; staged PCS→ME/CFS transition model.
 - **Appelman2024** (empirical, strongest independent support): long-COVID muscle OXPHOS reduced at baseline and *worse* after PEM, with a selective post-exertional fall in succinate-dehydrogenase (Complex II) activity — direct evidence of a provoked muscle bioenergetic lesion.
 - **Joseph2023** (empirical): invasive CPET shows impaired *peripheral* O₂ extraction (preload failure + extraction defect) in both ME/CFS and PASC — consistent with the ischemic/peripheral locus (P2, P1).
+- **t056 ME/CFS muscle-bioenergetics body** (`proposition:0030`, `evidence-line:0075`): Jones2012 repeated-exercise 31P-MRS shows excess intramuscular acidosis and delayed pH recovery; Wong1992 shows lower ATP at exhaustion during 31P-NMR exercise; Brown2015 shows impaired contraction-stimulated AMPK/glucose uptake in CFS-derived muscle cells; Bizjak2024 shows direct muscle mitochondrial abnormalities in CFS/post-COVID. This supports muscle localization but not Appelman-equivalent cross-trigger sharing.
 - **Keller2014** (empirical, related): two-day CPET reproducibility loss — the provoked-state objective signature the model predicts.
 
 ## Disputing Evidence
@@ -84,3 +93,4 @@ The most discriminating next test is an **independent provoked muscle-biopsy tim
 
 - 2026-06-20: Deflationary rivals now tracked as question:0017 — deconditioning/inactivity and nocebo/illness-perception accounts. Both are constrained (not eliminated) by Appelman2024 muscle pathology and invasive/2-day CPET; hold nocebo as a possible subgroup contributor, not a whole-syndrome explanation.
 - 2026-06-24: A1 endpoint-bound and promotion criterion #3 added per `discussion:0004` (head-to-head vs h0008-M3 / `proposition:0029`). The Organizing Conjecture's "shared between post-COVID and ME/CFS" is the frame's aspiration; A1 now carries the **precise, testable** form — sharing must be shown at the **muscle endpoint** (post-exertional OXPHOS, Appelman2024-type), because the *whole-body* 2-day-CPET signature demonstrably does not transfer across triggers (Keller2014 vs Gattoni2025). The decisive ME/CFS muscle-endpoint datum does not yet exist; `task:t056` is the interim literature probe, a harmonized multi-endpoint cross-trigger study the decisive (data-gated) test.
+- 2026-06-25: `task:t056` completed (`interpretation:0019`). The "no ME/CFS muscle datum" premise is retired. ME/CFS has muscle-endpoint bioenergetic abnormalities, now coded as `proposition:0030`, but the Appelman-equivalent cross-trigger biopsy time-course remains absent. A1 is therefore strengthened at localization and still unproven at same-lesion equivalence.

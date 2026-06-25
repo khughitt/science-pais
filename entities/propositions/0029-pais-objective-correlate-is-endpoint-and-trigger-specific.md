@@ -20,7 +20,12 @@ related:
 - proposition:0015-pais-sfn-non-length-dependent-pattern
 - evidence-line:0070-novak2026-standardized-protocol-scope-criticism-disputes-0017
 - evidence-line:0071-joseph2021-distal-only-sampling-scope-criticism-disputes-0015
+- proposition:0030-mecfs-exercise-provoked-skeletal-muscle-bioenergetic-abnormality
+- interpretation:0019-t056-mecfs-muscle-bioenergetics-ingestion
+- evidence-line:0076-mecfs-muscle-endpoint-data-disputes-clean-pem-endpoint-dichotomy
+- evidence-line:0077-bizjak2024-cross-trigger-muscle-biopsy-disputes-simple-same-lesion-reading
 - discussion:0004-pem-shared-muscle-lesion-vs-endpoint-contingency
+- task:t056
 source_refs:
 - paper:Appelman2024
 created: '2026-06-24'
@@ -50,6 +55,14 @@ three core propositions:
   mechanism" therefore appears or disappears depending on whether the chosen objective endpoint is
   two-day CPET or muscle bioenergetics — the defining M3 pattern.
 
+- **t056 narrowed the PEM instance rather than resolving it** (`interpretation:0019`,
+  `proposition:0030`). ME/CFS already has muscle-endpoint bioenergetic abnormalities (31P-MRS acidosis
+  recovery, contraction-stimulated muscle-cell signaling, resting biopsy mitochondrial abnormalities).
+  That means M3's PEM example is not a clean "ME/CFS whole-body vs long-COVID muscle" split. It is a
+  stronger endpoint-harmonization warning: heterogeneous muscle endpoints can make the same triggers look
+  either convergent or divergent, and the Appelman-type cross-trigger biopsy time-course still has not
+  been run.
+
 The `task:t055` audit (`interpretation:0015`) coded this claim `ENDPOINT-CONTINGENT` and noted it is the
 *only* determinate M3 instance in the corpus; it is also an objective-origin claim that is nonetheless
 artifact-consistent, which is why the audit rejected a clean "objective ⇒ survives" rule.
@@ -77,3 +90,9 @@ h0008 as the systematic adversary of both peripheral-substrate candidates (h0006
 adjudicated by the same class of standardized cross-trigger study — is laid out in `discussion:0004`.
 Conditional scope: M3 governs cross-trigger
 *sameness* inferences, not single-cohort case-vs-control claims.
+
+**t056 caveat (2026-06-25).** The PEM instance is now more nuanced than the original audit statement:
+ME/CFS muscle-endpoint data exist, but are not endpoint-equivalent to Appelman2024. This does not add a
+new independent M3 support line, because it is the same PEM phenotype and still lacks a harmonized
+cross-trigger protocol. It does make the M3 claim more precise: endpoint choice can **hide possible
+convergence** as well as manufacture apparent divergence.

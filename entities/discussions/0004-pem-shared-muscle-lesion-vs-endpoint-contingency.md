@@ -160,10 +160,11 @@ M3 cannot rise above fragile on this instance without the harmonized within-desi
 a data-gated convergence — no public dataset currently supplies the paired multi-endpoint cross-trigger
 design (the t025/t044 sweeps confirmed its non-existence as of mid-2026).
 
-A cheaper interim probe: ingest and re-read the existing ME/CFS muscle-biopsy / ³¹P-MRS literature
-(e.g. exercise-provoked ME/CFS muscle bioenergetics) to ask whether *any* ME/CFS muscle-endpoint data
-exist that can be set beside Appelman2024 — even between-study, this would move the A1-vs-M3 needle
-before a harmonized study is feasible.
+A cheaper interim probe has now run (`task:t056`, `interpretation:0019`): ME/CFS muscle-endpoint data
+do exist (Jones2012/Wong1992 31P-MRS, Brown2015 contraction-stimulated muscle cells, Bizjak2024 resting
+muscle biopsy). They move the A1-vs-M3 needle from "absent ME/CFS muscle cell" to "non-harmonized
+ME/CFS muscle cell": muscle localization is more plausible, but Appelman-type cross-trigger equivalence
+is still untested.
 
 ## Rival-Model Packet
 
@@ -182,18 +183,19 @@ Three bounded readings of the cross-trigger PEM evidence:
   observation:* an adequately-powered long-COVID 2-day-CPET reproduces the ME/CFS day-2 decrement.
 
 `current_working_model`: **unset.** The evidence does not currently favor one — `prop:0011` is supported
-at the whole-body endpoint, but the muscle endpoint is silent on the cross-trigger cell, and the
-deflationary reading remains live because the load-bearing null is weak.
+but now contested by the t056 ME/CFS muscle-bioenergetics body; the muscle endpoint is positive in both
+trigger families at a broad level, but not harmonized at the Appelman-type OXPHOS/SDH biopsy endpoint,
+and the deflationary reading remains live because the load-bearing long-COVID whole-body null is weak.
 
 ## Current Verdict
 
 **Contested and insufficiently resolved on the collision axis; substantially complementary elsewhere.**
 
-- On the narrow A1-vs-M3 axis, **M3's empirical base (`proposition:0011`) is currently better supported**
-  (three independent cohorts, `supported`) than H0006's A1 (`speculative`, resting on a parent attractor
-  that is itself speculative) — **but only at the whole-body endpoint**. The muscle endpoint, where the
-  collision is actually decided, has exactly one datum (Appelman2024), which supports H0006's
-  *localization* while being silent on *cross-trigger sharing*.
+- On the narrow A1-vs-M3 axis, **M3's empirical base (`proposition:0011`) remains supported but is now
+  contested**. The t056 body shows ME/CFS muscle bioenergetic abnormalities exist (`proposition:0030`),
+  so the old "whole-body-only ME/CFS vs muscle-only long COVID" dichotomy is too clean. The muscle
+  endpoint, where the collision is actually decided, now has positive evidence on both sides at a broad
+  level, but still no harmonized Appelman-type cross-trigger datum.
 - M3 as a **general structural rule** (`prop:0029`) remains **fragile**: it generalizes from a single
   phenotype (PEM), and that single instance is currently a between-study contrast carrying the very
   ascertainment confound M3 exists to police. It needs either the harmonized within-design test (to
@@ -204,8 +206,9 @@ deflationary reading remains live because the load-bearing null is weak.
   H0006's overall grade; it isolates A1 as the proposition most exposed to M3.
 
 Neither side "wins." The honest state is that **one missing experiment gates both**, and until it runs,
-the defensible position is: long-COVID PEM has a real muscle-endpoint lesion (shared *localization* with
-H0006), but cross-trigger *sameness of mechanism* is unproven and currently endpoint-contingent.
+the defensible position is: long-COVID PEM has a real muscle-endpoint lesion and ME/CFS has independent
+muscle-bioenergetic abnormalities (shared *localization* with H0006), but cross-trigger *sameness of
+mechanism* is unproven and currently endpoint-contingent.
 
 ## Synthesis Or Coexistence
 
@@ -230,17 +233,17 @@ These hypotheses are **complementary at different levels**, not mutually exclusi
 
 Whether the cross-trigger PEM "shared mechanism" is one real shared muscle lesion (H0006-A1) or an
 endpoint-selection artifact (H0008-M3). The two are not whole-hypothesis rivals: M3 is a constraint on
-A1, and they agree that the long-COVID objective lesion is peripheral/muscle. The live question is the
-single cell of evidence that does not yet exist — ME/CFS post-exertional muscle OXPHOS under a
-harmonized protocol.
+A1, and they agree that objective muscle abnormalities exist. The live question is the single cell of
+evidence that does not yet exist — ME/CFS post-exertional muscle OXPHOS/SDH under a harmonized
+Appelman-like protocol.
 
 ## Current Position
 
 Insufficiently resolved, leaning skeptical on A1's *unconditional* sharing claim. `proposition:0011`
-(M3's empirical base) is **supported** but only at the whole-body endpoint; at the muscle endpoint the
-sole datum (Appelman2024) backs H0006's *localization* while saying nothing about cross-trigger sharing.
-H0006 stays **speculative** for reasons orthogonal to this comparison; M3 as a general rule stays
-**fragile** (single phenotype, between-study instance). No working model is favored.
+(M3's empirical base) is **supported but contested**; at the muscle endpoint, Appelman2024 and the t056
+ME/CFS body back H0006's *localization* while still saying too little about cross-trigger same-lesion
+equivalence. H0006 stays **speculative** for reasons orthogonal to this comparison; M3 as a general rule
+stays **fragile** (single phenotype, between-study instance). No working model is favored.
 
 ## Critical Analysis
 
@@ -249,8 +252,8 @@ A1 from an assumption into an endpoint-specified, testable claim. The load-beari
 side is that its single PEM instance is a between-study contrast (Keller2014 vs Gattoni2025 vs
 Appelman2024 — different cohorts, case definitions, protocols), carrying the exact ascertainment
 confound M3 exists to police; the Gattoni2025 null is also weak (n=15, 40% deconditioned). The
-load-bearing weakness on the H0006 side is that A1's sharing claim has *no* harmonized cross-trigger
-muscle datum at all. The deflationary third reading (premature divergence driven by an underpowered
+load-bearing weakness on the H0006 side is that A1's sharing claim has *no* harmonized Appelman-type
+cross-trigger muscle datum at all. The deflationary third reading (premature divergence driven by an underpowered
 null) remains live and must not be dismissed.
 
 ## Evidence Needed
@@ -260,15 +263,16 @@ recovered/deconditioned controls; whole-body 2-day CPET with peripheral-vs-centr
 decomposition **and** pre/immediately-post/24–48 h muscle biopsy for OXPHOS, fiber-type, and ionic
 markers). This single design adjudicates A1 vs M3, is H0006's promotion criterion #2 plus the missing
 ME/CFS muscle arm, and is the within-cohort harmonized comparison `question:0015`/`task:t025` flag as
-non-existent. Cheaper interim: ingest the existing ME/CFS exercise-provoked muscle-bioenergetics /
-³¹P-MRS literature to set any ME/CFS muscle-endpoint data beside Appelman2024, even between-study.
+non-existent. The cheaper interim has now been run (`task:t056`): ME/CFS muscle-bioenergetic data exist,
+but are not endpoint-equivalent to Appelman2024.
 
 ## Prioritized Follow-Ups
 
 1. **(analytic, now)** Re-state H0006-A1 with its endpoint bound and amend h0006's promotion criterion
    to require a **muscle-endpoint cross-trigger** confirmation (not merely "an independent group").
-2. **(literature, near-term)** Scope/ingest ME/CFS post-exertional muscle-bioenergetics studies
-   (³¹P-MRS, biopsy) as `paper:` entities — the cheapest probe on the A1-vs-M3 cell.
+2. **(literature, completed 2026-06-25)** Scope/ingest ME/CFS post-exertional muscle-bioenergetics
+   studies (31P-MRS, biopsy) as `paper:` entities — completed by `task:t056`; see `interpretation:0019`
+   and `proposition:0030`.
 3. **(data-gated)** Track the harmonized multi-endpoint cross-trigger study as the shared blocker for
    *both* h0006 promotion and M3 de-fragilization; it has no public-data substitute as of mid-2026.
 4. **(adjacent)** M3's path to becoming a *regularity* still needs a second phenotype — the SFN

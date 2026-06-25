@@ -138,12 +138,3 @@ Standing discriminating test for question:0006 / proposition:0026 / hypothesis:0
 ### Notes
 
 - 2026-06-25: Registry snapshot: ClinicalTrials.gov API v2 record for NCT06597396 reports ACTIVE_NOT_RECRUITING, enrollment 46 actual, primary completion 2026-03-27 actual, study completion 2026-09-30 estimated, last update posted 2026-04-20, and hasResults=false. No admissible readout yet; pre-registration:0004 remains [?] inconclusive-for-coverage. Public endpoints include FACIT-Fatigue/PASC PRO and hsCRP but not a specific IL-6R/JAK-STAT/ISG target-engagement score, so G2 must be checked in the eventual paper/supplement.
-
-## [t056] [lit-search] ME/CFS exercise-provoked muscle bioenergetics (31P-MRS / biopsy) — the A1-vs-M3 cross-trigger cell
-- priority: P2
-- status: proposed
-- aspects: []
-- related: [discussion:0004-pem-shared-muscle-lesion-vs-endpoint-contingency, hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem, proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode, question:0011-mitochondrial-basis-of-pem]
-- created: 2026-06-24
-
-Cheapest probe on the h0006-A1 vs h0008-M3 collision (discussion:0004). Appelman2024 gives long-COVID post-exertional muscle OXPHOS decline; NO ME/CFS muscle-endpoint datum sits beside it. Scope/ingest ME/CFS exercise-provoked muscle-bioenergetics studies (31P-MRS, pre/post-exertion biopsy, OXPHOS/fiber-type) as paper: entities, then set any ME/CFS muscle-endpoint result beside Appelman2024 — even between-study, this moves the A1(shared muscle lesion)-vs-M3(endpoint-contingent sameness) needle before a harmonized multi-endpoint study is feasible. Feeds proposition:0011, proposition:0029, hypothesis:0006 promotion criterion, question:0011. Data-gated harmonized study (the decisive test) has no public substitute as of mid-2026; this is the affordable interim.
