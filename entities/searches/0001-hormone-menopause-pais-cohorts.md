@@ -67,15 +67,15 @@ Verdict against the t016 gates: **population-based · female-analysable · hormo
 | Cohort | Frame / collider | Female | Hormone labs | Menopause staging | Pre-infection baseline | t016 verdict | Limiting factor |
 |---|---|---|---|---|---|---|---|
 | **UK Biobank** | Population, **low** | ~54% (~275k ♀) | testosterone + SHBG usable; **oestradiol censored** (floor 175 pmol/L) | **Yes** — age at menopause, HRT, menarche (questionnaire) | **Yes** (2006–2010, ~decade pre-infection) | **ADMISSIBLE (primary)** | Oestradiol unusable → exposure = questionnaire status (±SHBG/T); long COVID must be researcher-engineered (questionnaire+GP codes) |
-| **All of Us** | National volunteer, low–moderate | 61.6% | Partial (EHR-ordered, sparse/informative-missing) | Yes (survey + EHR + age) | Partial (pre-2020 enrollees) | **PARTIAL (US primary/replication)** | Volunteer self-selection; sparse hormone labs (per-analyte N [UNVERIFIED]); U09.9 ascertainment |
+| **All of Us** | National volunteer, low–moderate | 61.6% | Partial (EHR-ordered, sparse/informative-missing) | Yes (survey + EHR + age) | Partial (pre-2020 enrollees) | **PARTIAL (US primary/replication)** | Volunteer self-selection; sparse hormone labs (per-analyte N not extracted in this search); U09.9 ascertainment |
 | **Lifelines** | Population, **low** | ~58% | Largely no (stored samples → add-on assay) | Yes (age at menopause, parity) | **Yes** (2006–2013) | **PARTIAL (replication)** | No baseline hormone assays; exposure = self-report menopause |
 | **Generation Scotland** | Population/family, **low** | ~59% | No sex-hormone panel | Yes (age at menopause, HRT) | **Yes** (2006–2011) | **PARTIAL (replication)** | No hormone assays; thin long-COVID ascertainment (CovidLife3, ~5k) |
 | **ONS COVID-19 Infection Survey** | Random address-based, **low** | ~53% | No (antibody only) | No (age-proxy only) | Partial/Yes | **TRIANGULATION** | No menopause/hormone data — age-proxied effect only |
 | **RECOVER-Adult** | National, low–medium | 71–73% | **No** | Self-report **binary** only | Partial (ambidirectional) | **PARTIAL** | No hormone labs; crude binary menopause (Shah2025); weak temporal order |
-| **MGB Biobank / PMBB / BioMe** | Hospital biobank, medium | ~57% (MGB) | Partial (EHR-ordered) | Code+age proxy [UNVERIFIED] | No | **PARTIAL (US replication)** | Hospital-patient selection; no baseline; menopause by code/age |
+| **MGB Biobank / PMBB / BioMe** | Hospital biobank, medium | ~57% (MGB) | Partial (EHR-ordered) | Code+age proxy only; validation not extracted in this search | No | **PARTIAL (US replication)** | Hospital-patient selection; no baseline; menopause by code/age |
 | **IMPACC** | Hospitalized acute, medium (severity-selected) | ~39% | No | No | No (first sample acute) | **NOT ADMISSIBLE** | No exposure at all; acute immunophenotyping only |
 | **MY-LC** | **Post-COVID clinic, high** | ~66% | No sex-hormone panel (Klein2023) | No | No | **NOT ADMISSIBLE** | Textbook clinic-attendance collider; no exposure; cross-sectional |
-| **German NAPKON** | HAP/SUEP clinic **high**; POP lower | ~47% | No | [UNVERIFIED] | **No** | **NOT ADMISSIBLE (primary)** | No pre-infection baseline; high collider in hospital arms |
+| **German NAPKON** | HAP/SUEP clinic **high**; POP lower | ~47% | No | Menopause staging not identified in this search | **No** | **NOT ADMISSIBLE (primary)** | No pre-infection baseline; high collider in hospital arms |
 | **N3C** | EHR aggregation, medium–high | mixed | No | No | No | **TRIANGULATION (large-N only)** | EHR collider; no exposure depth |
 
 ## Coverage Notes and Gaps

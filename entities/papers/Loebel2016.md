@@ -48,9 +48,9 @@ This is the **foundational serology paper** establishing that a substantial subs
 
 ### Cohort and Case Definition
 
-- **Berlin cohort:** n = 268 CFS patients; case definition not specified in the abstract [UNVERIFIED — likely Fukuda 1994 criteria, the predominant definition at this Charité group's site; Canadian Consensus Criteria (CCC) usage cannot be confirmed from the abstract alone].
+- **Berlin cohort:** n = 268 CFS patients; case definition is not specified in the PubMed abstract, so CCC/ICC-vs-Fukuda stringency cannot be adjudicated from the extracted source alone.
 - **Bergen rituximab subcohort:** n = 25 patients with pre- and post-treatment samples from the KTS-2 rituximab maintenance trial; these patients received rituximab and were assessed as clinical responders vs. non-responders.
-- **Healthy controls:** n = 108; no further characterization available from the abstract [UNVERIFIED — matching strategy, age/sex distribution, and exclusion criteria not confirmable without full text].
+- **Healthy controls:** n = 108; matching strategy, age/sex distribution, and exclusion criteria are not characterized in the PubMed abstract.
 
 ### Assay Type
 
@@ -59,7 +59,7 @@ This is the **foundational serology paper** establishing that a substantial subs
 ### Receptors Screened
 
 The panel covered IgG against human:
-- α-adrenergic receptors (α1, α2 — [UNVERIFIED exact subtypes])
+- α-adrenergic receptors (subtypes not enumerated in the PubMed abstract)
 - β-adrenergic receptors (β1, β2)
 - Muscarinic acetylcholine receptors M1–M5
 - Dopamine receptors
@@ -92,7 +92,7 @@ The panel covered IgG against human:
 
 **Overall seropositivity:** 29.5% of CFS patients (n=268) had elevated antibodies against one or more of M acetylcholine and β-adrenergic receptors.
 
-Exact effect sizes (odds ratios, mean titer differences, confidence intervals) and precise p-values for each receptor comparison are not available from the abstract [UNVERIFIED — full text required].
+Exact effect sizes (odds ratios, mean titer differences, confidence intervals) and precise p-values for each receptor comparison are not available from the PubMed abstract; full-text extraction is required.
 
 ### Correlation with Immune Markers (β2-AR autoantibodies)
 
@@ -112,11 +112,11 @@ This responder-linked decline is the key indirect causal evidence: if B-cell dep
 
 ### No Titer ↔ Symptom Severity Correlation Reported
 
-The abstract does not report a direct correlation between autoantibody titer and symptom severity scores [UNVERIFIED — a titer↔severity correlation may appear in the full text but is not extractable from the abstract alone]. The immune marker correlations (IgG subclasses, HLA-DR+ T cells) are reported; functional symptom correlations are not confirmed.
+The abstract does not report a direct correlation between autoantibody titer and symptom severity scores. The immune marker correlations (IgG subclasses, HLA-DR+ T cells) are reported; functional symptom correlations are not confirmed from the abstract-level extraction.
 
 ### Subgroup: Infection-Triggered Onset
 
-No subgroup analysis by infection-triggered vs. gradual onset is described in the abstract [UNVERIFIED — the abstract notes that "infection-triggered disease onset" motivates the autoimmune hypothesis in the introduction, but whether seroprevalence or titer was stratified by onset type is not confirmable without full text].
+No subgroup analysis by infection-triggered vs. gradual onset is described in the abstract. The abstract notes that infection-triggered disease onset motivates the autoimmune hypothesis, but whether seroprevalence or titer was stratified by onset type requires full-text extraction.
 
 ## Relevance
 
@@ -148,19 +148,19 @@ This paper is the **primary foundational citation** for the project's anti-GPCR 
 
 1. **Binding ELISA, not functional assay.** The CellTrend ELISA detects IgG binding to receptor epitopes; it does not measure receptor activation, G-protein coupling, downstream signaling, or physiological autonomic effect. Whether the detected antibodies are agonist, antagonist, or functionally inert is entirely unresolved by this study. This is the single most load-bearing limitation for the `question:0009` causal claim — the entire GPCR-autoantibody → dysautonomia hypothesis requires functional confirmation that this paper does not provide.
 
-2. **Healthy control seropositivity.** While the abstract reports that β2-AR, M3, and M4 antibodies are *significantly elevated* in CFS, natural low-titer anti-GPCR antibodies are known to occur in healthy individuals. Exact seropositive rates in the control group are not reported in the abstract [UNVERIFIED], which makes the threshold for "elevated" and the specificity of the assay difficult to assess independently.
+2. **Healthy control seropositivity.** While the abstract reports that β2-AR, M3, and M4 antibodies are *significantly elevated* in CFS, natural low-titer anti-GPCR antibodies are known to occur in healthy individuals. Exact seropositive rates in the control group are not reported in the abstract, which makes the threshold for "elevated" and the specificity of the assay difficult to assess independently.
 
 3. **No functional confirmation of receptor pathogenicity.** Neither receptor crosslinking studies, cell-based activation assays, nor passive-transfer experiments (the decisive causal tests) were performed. The paper is purely observational for the pathogenicity question.
 
-4. **No direct symptom-severity correlation reported.** The abstract reports immune-marker correlations (IgG subclasses, T-cell activation) but does not describe a direct titer ↔ symptom severity correlation, leaving the clinical relevance of titer magnitude unclear [UNVERIFIED — may appear in full text].
+4. **No direct symptom-severity correlation reported.** The abstract reports immune-marker correlations (IgG subclasses, T-cell activation) but does not describe a direct titer ↔ symptom severity correlation, leaving the clinical relevance of titer magnitude unclear from abstract-level extraction.
 
-5. **Case definition uncertainty.** The case definition used for the Berlin cohort is not stated in the abstract. If Fukuda 1994 criteria were used (the Charité group's standard at this period), the cohort is broader than CCC/ICC-defined ME/CFS, potentially diluting autoantibody seroprevalence relative to more restrictive case definitions [UNVERIFIED].
+5. **Case definition uncertainty.** The case definition used for the Berlin cohort is not stated in the abstract. If Fukuda 1994 criteria were used (the Charité group's standard at this period), the cohort is broader than CCC/ICC-defined ME/CFS, potentially diluting autoantibody seroprevalence relative to more restrictive case definitions.
 
 6. **Rituximab subcohort is small (n=25) and confounded.** The B-cell-depletion arm is the key interventional-adjacent signal but: (a) n=25 is small; (b) rituximab has multiple immune effects beyond autoantibody reduction (T-cell regulation, cytokine suppression); (c) responder/non-responder classification was clinical, potentially introducing outcome-label subjectivity; (d) this is a subcohort from a trial (KTS-2) not primarily designed to test autoantibody-responder correlations. The rituximab trial program (including RituxME, the Norwegian placebo-controlled RCT) later showed no significant benefit overall — the anti-GPCR-autoantibody responder subset may represent a genuinely enriched population or a small-sample artifact.
 
 7. **Single-centre Berlin cohort.** The main seroprevalence data come from one academic centre in Germany; replication in independent cohorts with different population ancestry and referral patterns is needed.
 
-8. **Conflict of interest.** Harald Heidecke is a co-founder or affiliate of CellTrend GmbH, the company providing the ELISA platform [UNVERIFIED — standard practice in citing this paper family; warrants disclosure when interpreting quantitative titer claims].
+8. **Conflict of interest.** Harald Heidecke's PubMed affiliation is CellTrend GmbH, the company providing the ELISA platform; this warrants disclosure when interpreting quantitative titer claims.
 
 ## Model / Tool Availability
 

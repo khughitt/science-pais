@@ -31,7 +31,7 @@ updated: '2026-06-24'
 - **Journal:** Neurology, vol. 60, no. 12, pp. 1923–1930
 - **DOI:** 10.1212/01.wnl.0000071227.23769.9e
 - **BibTeX key:** Krupp2003
-- **Source:** LLM knowledge (paywalled; 2003 classic, >20 years old, foundational PTLDS RCT cited in every review of the field; Crossref count 346 [UNVERIFIED: may be undercounted relative to Google Scholar])
+- **Source:** PubMed/NCBI abstract metadata for PMID 12821734, supplemented by later PTLDS trial-review context. Full-text extraction is still deferred for secondary outcome details not present in the abstract.
 
 ## Key Contribution
 
@@ -43,17 +43,17 @@ STOP-LD is one of the earliest double-blind placebo-controlled RCTs of IV antibi
 |---|---|
 | Design | Randomized, double-blind, placebo-controlled trial |
 | Intervention | IV ceftriaxone 2 g/day × 28 days vs IV placebo |
-| Population | Adults with confirmed prior treated Lyme disease and persistent severe fatigue (FSS score ≥4.5) [UNVERIFIED: exact entry FSS threshold] |
-| Sample size | n = 55 [UNVERIFIED: enrollment figure; range cited in literature is ~55–78 across trial phases; 55 is the most commonly cited intent-to-treat n for the primary analysis] |
+| Population | Adults with Lyme disease and persistent severe fatigue for at least 6 months after antibiotic therapy; the abstract does not state an entry FSS threshold |
+| Sample size | n = 55 |
 | Co-primary outcomes | (1) Fatigue severity: FSS-11 (Fatigue Severity Scale, 11-item subjective self-report); (2) Cognitive function: objective mental-speed computer test (processing-speed composite) |
-| Secondary outcomes | [UNVERIFIED: additional neuropsychological and quality-of-life measures] |
-| Setting | Academic center; Stony Brook University [UNVERIFIED] |
-| Follow-up | Assessed at end of treatment and at later time points [UNVERIFIED: specific windows] |
+| Secondary outcomes | Experimental CSF infection measure: outer surface protein A (OspA); additional full-text secondary outcomes not extracted |
+| Setting | Single academic center; lead affiliation Stony Brook University Medical Center |
+| Follow-up | Primary outcome data collected at the 6-month visit |
 | Antigen/pathogen marker measured | None — no persistent Borrelia antigen, peptidoglycan, DNA, or other residual-infection biomarker was measured at baseline or follow-up |
 
 ## Key Findings
 
-1. **Fatigue (FSS-11) — positive (subjective endpoint):** Fatigue severity improved significantly in the ceftriaxone arm compared with placebo on the FSS-11 [UNVERIFIED: exact effect size, p-value]. This was a self-reported, subjective measure.
+1. **Fatigue (FSS-11) — positive (subjective endpoint):** Fatigue severity improved significantly in the ceftriaxone arm compared with placebo on the FSS-11 (rate ratio 3.5; 95% CI 1.50–8.03; p=0.001). This was a self-reported, subjective measure.
 
 2. **Cognitive function (mental-speed test) — null (objective endpoint):** The objective mental-speed computer test showed **no significant difference** between ceftriaxone and placebo. This was the co-primary outcome with equal billing.
 
@@ -72,7 +72,7 @@ The critical interpretive constraint — shared across all trials in this lineag
 - "Ceftriaxone cleared antigen but symptoms persisted anyway" (antigen was cleared; the mechanism is wrong)
 - "Ceftriaxone failed to clear residual Borrelia peptidoglycan" (the fragmented, non-replicating form now characterized by McClune2025 may be ceftriaxone-insensitive, since beta-lactams target cell-wall synthesis in replicating bacteria)
 
-The fatigue signal on the FSS-11 is a single subjective endpoint that was not replicated on the objective co-primary, and the authors themselves declined to endorse retreatment. The signal's durability beyond the treatment period is uncertain [UNVERIFIED: whether follow-up data showed persistence of fatigue benefit].
+The fatigue signal on the FSS-11 is a single subjective endpoint that was not replicated on the objective co-primary, and the authors themselves declined to endorse retreatment. The signal was assessed at the 6-month visit; durability beyond that time point is not established here.
 
 Links to project entities:
 - `proposition:0020-antigen-clearance-rescues-established-pais` — this trial provides a weak, uninterpretable disputing line (Borrelia-trigger arm; adds cross-pathogen echo to the long COVID antiviral nulls)
@@ -96,15 +96,15 @@ Links to project entities:
 
 2. **Mixed primary endpoint result — one subjective positive, one objective null:** The FSS-11 positive does not constitute validated evidence of treatment efficacy when its co-primary (objective cognitive test) is null. Differential improvement on subjective vs. objective measures is a recognized confound in unblinding-susceptible trials.
 
-3. **Partial unblinding risk:** IV ceftriaxone has recognizable side effects (GI, biliary); patients may not have been fully blinded, creating expectation bias on subjective ratings. [UNVERIFIED: extent of unblinding assessed]
+3. **Partial unblinding risk:** IV ceftriaxone has recognizable side effects (GI, biliary); patients may not have been fully blinded, creating expectation bias on subjective ratings. The abstract reports four treatment-associated adverse events requiring hospitalization but does not report a formal blinding assessment.
 
-4. **Sample size:** n ~55 [UNVERIFIED] limits power to detect modest effects and renders subgroup findings unreliable.
+4. **Sample size:** n=55 limits power to detect modest effects and renders subgroup findings unreliable.
 
-5. **Fatigue benefit not replicated in the objective domain and not clearly durable:** Whether the fatigue improvement persisted after treatment ended is unclear from the published record [UNVERIFIED]. The subsequent larger Klempner2001 trial (NEJM) was null across all outcomes; Fallon2008 showed some cognitive benefit with IV ceftriaxone but then relapse — the field's retreat trials as a whole do not support durable benefit.
+5. **Fatigue benefit not replicated in the objective domain and not clearly durable:** The abstract reports fatigue improvement at 6 months but no cognitive or OspA benefit. The subsequent larger Klempner2001 trial (NEJM) was null across all outcomes; Fallon2008 showed some cognitive benefit with IV ceftriaxone but then relapse — the field's retreat trials as a whole do not support durable benefit.
 
 6. **Beta-lactam mechanism mismatch with fragment persistence model:** If the biologically active residue is pPG^Bb (non-replicating, cell-wall-derived; McClune2025), ceftriaxone — which works by inhibiting cell-wall synthesis in replicating bacteria — has no expected clearing mechanism. This is a post-hoc mechanistic caveat unavailable to the original authors, but it matters for interpreting the null.
 
-7. **Case definition specificity:** The entry criterion was persistent severe fatigue post-Lyme; it is not clear whether patients had the full PTLDS clinical syndrome or were selected solely on fatigue severity. [UNVERIFIED: full inclusion/exclusion criteria]
+7. **Case definition specificity:** The abstract-level entry criterion was persistent severe fatigue after treated Lyme disease; whether all participants met a modern full PTLDS case definition requires full-text inclusion/exclusion extraction.
 
 ## Model / Tool Availability
 

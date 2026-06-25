@@ -42,7 +42,7 @@ updated: "2026-06-24"
 - **DOI:** 10.1016/j.jaci.2025.10.034
 - **PMID:** 41274384
 - **BibTeX key:** Schmitz2026
-- **Source:** Europe PMC abstract (blocked_but_oa; full text not agent-accessible); supplemented by Crossref and PubMed metadata. Assay platform inferred from Schulze-Forster/Heidecke affiliation (CellTrend GmbH, Luckenwalde) — the CellTrend binding ELISA has been the platform in every paper from this group. [UNVERIFIED: full-text methods section required to confirm assay details, cohort n, case definition, and exact per-receptor statistics.]
+- **Source:** PubMed/NCBI abstract metadata for PMID 41274384, supplemented by Crossref metadata. Assay platform is inferred from Schulze-Forster/Heidecke affiliation and conflict-of-interest statement (CellTrend GmbH, Luckenwalde) — the CellTrend binding ELISA has been the platform in this paper family. Full-text methods extraction is still required to confirm assay details, cohort n, case definition, and exact per-receptor statistics.
 
 ## Key Contribution
 
@@ -52,15 +52,15 @@ This study is the **primary long-COVID-specific evidence anchor** for the projec
 
 ### Cohort and Case Definition
 
-- **Long-COVID cohort (PCS):** Patients with post-COVID-19 syndrome and documented alterations in autonomic nervous system function assessed by heart rate variability. Exact n is [UNVERIFIED — not reported in abstract; full text required].
-- **Controls:** (a) Patients with COVID-19 after recovery from severe or moderate acute disease; (b) prepandemic healthy individuals. Exact n per control group is [UNVERIFIED].
-- **PCS case definition:** Not specified in the abstract [UNVERIFIED — WHO 2021 definition (≥4 weeks post-infection, ≥2 symptoms) is the standard used in German post-COVID centres; the paper may apply a different threshold. Severity or chronicity criteria are not extractable from the abstract].
-- **Time since infection:** Not specified in the abstract [UNVERIFIED].
+- **Long-COVID cohort (PCS):** Patients with post-COVID-19 syndrome and documented alterations in autonomic nervous system function assessed by heart rate variability. Exact n is not reported in the PubMed abstract; full text is required.
+- **Controls:** (a) Patients with COVID-19 after recovery from severe or moderate acute disease; (b) prepandemic healthy individuals. Exact n per control group is not reported in the PubMed abstract.
+- **PCS case definition:** Not specified in the PubMed abstract. WHO 2021 or a different center-specific threshold cannot be adjudicated from abstract-level extraction.
+- **Time since infection:** Not specified in the PubMed abstract.
 - **Recruitment site and period:** Inferred from affiliations — University of Witten/Herdecke and DRV Clinic Königsfeld (Schmitz/Mooren group), Hannover Medical School / Fraunhofer (Bär/Chatterjee), UKSH Lübeck (Riemekasten), CellTrend GmbH (Schulze-Forster/Heidecke), University Hospital Basel (Schultheiß/Binder). Multi-site German consortium with CellTrend as the autoantibody assay provider.
 
 ### Assay — Binding ELISA (CellTrend Platform)
 
-**BINDING ELISA, not a functional/receptor-activation bioassay.** The involvement of Kai Schulze-Forster and Harald Heidecke (both affiliated with CellTrend GmbH, Luckenwalde, Germany) as co-authors is a strong indicator that the CellTrend cell-based ELISA platform was used — the same binding-assay system used by Loebel2016 and Stein2025. [UNVERIFIED: full-text methods must be consulted to confirm; it is possible the paper uses a modified or updated version of the assay.] This platform detects IgG binding to recombinant GPCR antigens on an ELISA-based cell surface assay. It does NOT measure receptor activation, G-protein coupling, or downstream cAMP/IP3 signaling. Whether the detected autoantibodies are agonist, antagonist, or functionally neutral is not resolved by this assay type — this is the central assay limitation for the `question:0009` causal claim.
+**BINDING ELISA, not a functional/receptor-activation bioassay.** The involvement of Kai Schulze-Forster and Harald Heidecke (both affiliated with CellTrend GmbH, Luckenwalde, Germany, and disclosed as CellTrend cofounders) strongly indicates that the CellTrend binding platform was used — the same assay family used by Loebel2016 and Stein2025. Full-text methods extraction is still required to confirm the exact assay version. This platform detects IgG binding to recombinant GPCR antigens on an ELISA-based cell surface assay. It does NOT measure receptor activation, G-protein coupling, or downstream cAMP/IP3 signaling. Whether the detected autoantibodies are agonist, antagonist, or functionally neutral is not resolved by this assay type — this is the central assay limitation for the `question:0009` causal claim.
 
 ### GPCRs Screened
 
@@ -80,10 +80,10 @@ Note: CXCR3 is **not a canonical autonomic GPCR** — it is a chemokine receptor
 
 ### Autonomic and Cardiovascular Measures
 
-- **Primary autonomic measure:** Heart rate variability (HRV) — mode of analysis (time domain, frequency domain, or non-linear; standardized vs. resting recording duration) is [UNVERIFIED — not specified in abstract].
+- **Primary autonomic measure:** Heart rate variability (HRV) — mode of analysis (time domain, frequency domain, or non-linear; standardized vs. resting recording duration) is not specified in the PubMed abstract.
 - **Blood pressure:** 24-hour ambulatory blood pressure monitoring (24h ABPM) yielding 24-hour mean arterial pressure (MAP) and exercise stress test blood pressure (exercise BP response).
-- No tilt-table testing or formal POTS diagnosis criteria mentioned in the abstract [UNVERIFIED — may appear in full text].
-- No microvascular or retinal vasoregulation readout mentioned in abstract [UNVERIFIED — the study title says "vasoregulation"; if retinal or capillaroscopy data are presented in the full text, they are not extractable from the abstract].
+- No tilt-table testing or formal POTS diagnosis criteria are mentioned in the PubMed abstract.
+- No microvascular or retinal vasoregulation readout is mentioned in the PubMed abstract; the abstracted vasoregulation measures are 24-hour MAP and exercise stress-test blood pressure.
 
 ### Adaptive Immune Repertoire
 
@@ -97,16 +97,16 @@ Human-induced pluripotent stem cell-derived cardiomyocytes (hiPSC-CMs) exposed t
 
 ### Anti-GPCR Autoantibodies and HRV
 
-Autoantibodies against AT1R, AT2R, β1-AR, β2-AR, M1-AChR, and M3-AChR, and CXCR3 (CXCR3ab) were **associated with HRV alterations** in PCS patients. Exact per-receptor seropositivity rates, effect sizes (OR, Spearman rho, or regression coefficients), and p-values are [UNVERIFIED — not reported in abstract; full text required].
+Autoantibodies against AT1R, AT2R, β1-AR, β2-AR, M1-AChR, and M3-AChR, and CXCR3 (CXCR3ab) were **associated with HRV alterations** in PCS patients. Exact per-receptor seropositivity rates, effect sizes (OR, Spearman rho, or regression coefficients), and p-values are not reported in the PubMed abstract; full-text extraction is required.
 
 ### CXCR3ab and 24-hour Mean Arterial Pressure
 
-- **Elevated CXCR3ab levels were linked to higher 24-hour mean arterial pressure** — i.e. a titer ↔ vasoregulation correlation for a chemokine receptor. Quantitative effect size and significance are [UNVERIFIED].
+- **Elevated CXCR3ab levels were linked to higher 24-hour mean arterial pressure** — i.e. a titer ↔ vasoregulation correlation for a chemokine receptor. Quantitative effect size and significance are not reported in the PubMed abstract.
 - This is the most novel vascular finding: a chemokine receptor autoantibody correlated with ambulatory BP load, suggesting CXCR3 on vascular endothelium or smooth muscle could be an additional autoantibody target in long-COVID vasoregulation beyond the classical adrenergic/RAS axis.
 
 ### M1-AChR and CXCR3ab — Stress-Test Blood Pressure
 
-- Patients with **elevated M1-AChR antibodies and elevated CXCR3ab** showed **higher blood pressure during exercise stress tests**, suggesting an exaggerated sympathetic/vascular response linked to the combined autoantibody profile. This is an additive or interaction effect of two different receptor antibodies on sympathetically-driven BP — effect size and p-value are [UNVERIFIED].
+- Patients with **elevated M1-AChR antibodies and elevated CXCR3ab** showed **higher blood pressure during exercise stress tests**, suggesting an exaggerated sympathetic/vascular response linked to the combined autoantibody profile. This is an additive or interaction effect of two different receptor antibodies on sympathetically-driven BP; effect size and p-value are not reported in the PubMed abstract.
 
 ### BCR/TCR Repertoire — No Autoimmune Imprint
 
@@ -124,9 +124,9 @@ Patient-derived AABs showed **no effect on beat frequency and amplitude** of hiP
 
 | Finding | Direction | Quantified? | Notes |
 |---|---|---|---|
-| AT1/AT2, β1/β2-AR, M1/M3-AChR, CXCR3ab correlate with HRV alterations | Positive association | Effect sizes [UNVERIFIED] | Primary HRV result |
-| CXCR3ab ↔ 24h MAP | Positive (higher MAP) | Magnitude [UNVERIFIED] | Novel chemokine-receptor vascular link |
-| M1-AChR + CXCR3ab ↔ stress-test BP | Positive (higher BP) | Magnitude [UNVERIFIED] | Additive/interaction effect |
+| AT1/AT2, β1/β2-AR, M1/M3-AChR, CXCR3ab correlate with HRV alterations | Positive association | Effect sizes not in abstract | Primary HRV result |
+| CXCR3ab ↔ 24h MAP | Positive (higher MAP) | Magnitude not in abstract | Novel chemokine-receptor vascular link |
+| M1-AChR + CXCR3ab ↔ stress-test BP | Positive (higher BP) | Magnitude not in abstract | Additive/interaction effect |
 | BCR clonality / diversity vs healthy controls | No difference | Reported as equal | Negative; no germinal center imprint |
 | SHM level vs healthy controls | No difference | Reported as equal | Negative; no antigen-experience signature |
 | TRBV gene usage vs AAB levels | No correlation | Reported as absent | Negative |
@@ -171,13 +171,13 @@ This paper does **not** connect anti-GPCR antibodies to the small-fiber structur
 
 3. **Cohort n and composition are UNVERIFIED.** The abstract does not report exact group sizes, sex distribution, age, time since infection, or severity of acute illness. These covariates are all known to confound anti-GPCR autoantibody seroprevalence and HRV measures.
 
-4. **PCS case definition unspecified in abstract.** Whether WHO 2021 or a more restrictive definition was applied (e.g. requiring POTS or objective HRV alteration above a threshold) is [UNVERIFIED]. The HRV-alteration inclusion criterion self-selects a dysautonomia-enriched cohort, which inflates the apparent autoantibody-autonomic correlation compared to unselected PCS cohorts.
+4. **PCS case definition unspecified in abstract.** Whether WHO 2021 or a more restrictive definition was applied (e.g. requiring POTS or objective HRV alteration above a threshold) is not extractable from the PubMed abstract. The HRV-alteration inclusion criterion self-selects a dysautonomia-enriched cohort, which inflates the apparent autoantibody-autonomic correlation compared to unselected PCS cohorts.
 
-5. **Seropositivity rates unspecified in abstract.** Per-receptor seropositive fractions in the PCS group vs. each control group are not reportable from the abstract. Whether the "association with HRV" means a seropositive vs. seronegative split, a continuous titer correlation, or a regression-adjusted model is [UNVERIFIED].
+5. **Seropositivity rates unspecified in abstract.** Per-receptor seropositive fractions in the PCS group vs. each control group are not reportable from the abstract. Whether the "association with HRV" means a seropositive vs. seronegative split, a continuous titer correlation, or a regression-adjusted model requires full-text extraction.
 
 6. **No small-fiber neuropathy or skin-biopsy data.** The paper does not test whether anti-GPCR autoantibody positivity correlates with IENFD reduction, QSART abnormality, or any structural peripheral nerve measure. The gap between "autoantibodies modulate autonomic function" and "autoantibodies damage small fibers" (`proposition:0018` central weakness) is not addressed.
 
-7. **No POTS diagnosis by formal criteria.** Tilt-table testing and head-up tilt (HUT)-confirmed POTS are not mentioned in the abstract. HRV at rest and stress-test BP are used, but formal orthostatic intolerance measurement is [UNVERIFIED].
+7. **No POTS diagnosis by formal criteria in abstract.** Tilt-table testing and head-up tilt (HUT)-confirmed POTS are not mentioned in the abstract. HRV and stress-test BP are used, but formal orthostatic intolerance measurement requires full-text extraction.
 
 8. **BCR/TCR SHM null finding — alternative interpretations.** The absence of elevated SHM might mean the autoantibodies are not antigen-selected — but could also reflect insufficient power to detect modest germinal center involvement, or measurement of peripheral blood BCR that may not reflect relevant tissue compartments (lymph nodes, bone marrow). The null result constrains but does not definitively exclude antigen-driven autoimmunity.
 
@@ -187,7 +187,7 @@ This paper does **not** connect anti-GPCR antibodies to the small-fiber structur
 
 ## Model / Tool Availability
 
-No model, tool, or computational artifact is released. The anti-GPCR autoantibody assay is the commercial CellTrend ELISA (CellTrend GmbH, Luckenwalde, Germany) [UNVERIFIED: confirm exact assay version/catalog from full text]. AIRR-seq data and bioinformatic analysis pipeline availability are [UNVERIFIED — not mentioned in abstract; supplementary data deposit status unknown].
+No model, tool, or computational artifact is released in the PubMed abstract. The anti-GPCR autoantibody assay is CellTrend-linked from author affiliations and the conflict-of-interest statement, but exact assay version/catalog requires full-text methods extraction. AIRR-seq data and bioinformatic analysis pipeline availability are not mentioned in the abstract; supplementary data deposit status remains unextracted.
 
 ## Follow-up
 

@@ -38,6 +38,95 @@ refs:
 aspects:
 - hypothesis-testing
 - computational-analysis
+prose_lint:
+  bare_author_year_deny:
+  - Aucott 2016
+  - Ballering 2022
+  - Carruthers 2003
+  - Chen 2022
+  - Choutka 2022
+  - Davis 2025
+  - Eldokla 2022
+  - Fang 2006
+  - Finsterer 2022
+  - Fluge 2015
+  - Fluge & Mella 2011
+  - Galbraith 2011
+  - Hanson 2023
+  - Hertanti 2025
+  - Hickie 2006
+  - Hwang 2023
+  - Keijmel 2016
+  - Keller 2014
+  - Klein & Flanagan 2020
+  - Komaroff 2023
+  - Komaroff & Lipkin 2023
+  - Komaroff and Lipkin 2023
+  - Limongelli 2026
+  - Mantovani 2024
+  - Medicine 2011
+  - Medicine 2012
+  - Medicine 2015
+  - Medicine 2020
+  - Medicine 2022
+  - Medicine 2024
+  - Medicine 2025
+  - Naviaux 2012
+  - Naviaux 2014
+  - Naviaux 2016
+  - Neal & Hanson 2021
+  - Nicolai 2023
+  - Peluso and Deeks 2024
+  - Raijmakers 2018
+  - Scheibenbogen 2018
+  - Scheibenbogen & Paul 2021
+  - Sylvester 2022
+  - Thaweethai 2023
+  - Ursini 2023
+  - Vernon 2002
+  - Vreeman 2025
+  - Wirth & Scheibenbogen 2020
+  - Wirth & Scheibenbogen 2021
+  short_form_ids_deny:
+  - D2
+  - H1
+  - H2
+  - H3
+  - I49
+  - Q1
+  - Q2
+  - Q3
+  - Q4
+  - Q5
+  - Q6
+  - Q7
+  - Q8
+  - Q10
+  - T0
+  - T1
+  - T2
+  - T3
+  - T4
+  - T5
+  - T6
+  - T7
+  - T8
+  - T9
+  - T10
+  - d18
+  - q1
+  - q2
+  - q3
+  - q4
+  - q5
+  - q6
+  - q7
+  - q8
+  - q9
+  - q10
+  - q11
+  - q12
+  - q13
 peers:
 - id: immunity
   path: ~/d/health/processes/immunity
