@@ -15,14 +15,6 @@ Blocked by tooling gap (fb-2026-06-11-005). Bridge papers: Choutka2022, Komaroff
 
 Gap: only 1 paper (s10020 gut microbiome PASC). Search: gut dysbiosis, microbial metabolites, serotonin/tryptophan, gut-brain signaling in long COVID and ME/CFS.
 
-## [t008] [lit-search] Pre-infection-baseline longitudinal cohorts (RECOVER and similar)
-- priority: P3
-- status: proposed
-- aspects: []
-- created: 2026-06-11
-
-Methodology gap: most cohorts lack pre-infection baseline/controls, undercutting causal claims. Identify and characterize the strongest longitudinal designs. Relates to specs/scope-boundaries control-design discipline.
-
 ## [t009] [lit-search] Pediatric long COVID and MIS-C
 - priority: P3
 - status: proposed

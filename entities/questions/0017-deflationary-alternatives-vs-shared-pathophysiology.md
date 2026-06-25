@@ -15,6 +15,7 @@ related:
 - discussion:0002-cross-pathogen-pais-signature-convergence
 - pre-registration:0002-cross-trigger-pathway-overlap
 - interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating
+- search:0005-pre-infection-baseline-longitudinal-cohorts
 created: '2026-06-20'
 updated: '2026-06-21'
 ---
@@ -79,6 +80,14 @@ each positive claim is scored against it explicitly. Five deflationary accounts 
 - **Reverse causation** is live but partly mitigated in the menopause arm by *pre-infection baseline*
   temporal ordering (UKB reproductive stage fixed 2006–2010; `hypothesis:0005`, `discussion:0001`);
   it remains unaddressed for cross-sectional molecular findings.
+- **t008 pre-infection-baseline cohort audit (2026-06-25; `search:0005`) clarifies the design
+  hierarchy.** Lifelines (`paper:Ballering2022`) is the benchmark for attributable symptom excess
+  because it models pre-infection symptoms and matched uninfected symptom dynamics; UK Biobank
+  repeat imaging (`paper:Douaud2022`) is the benchmark for objective pre/post endpoint change.
+  UKB/WHI risk-factor papers (`paper:AlcaldeHerraiz2025`, `paper:Neuhouser2024`, `paper:Ng2025`)
+  constrain temporal ordering for broad pre-pandemic predictors, while RECOVER remains stronger
+  for post-acute phenotype/mechanism discovery than for pre-infection causal ordering. Net:
+  reverse causation is no longer a generic complaint; it should be scored by baseline type.
 - **t035 cross-trigger pathway-overlap reanalysis (2026-06-21; `interpretation:0001-...`) — NO update
   to the deflationary bundle.** The first empirical probe of the finite-repertoire-coincidence rival
   (PI-CFS × Q-fever-fatigue NES rank-concordance, GSE14577 + GSE130353) returned `null_nonarbitrating`
