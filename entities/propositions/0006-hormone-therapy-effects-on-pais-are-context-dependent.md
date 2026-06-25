@@ -24,8 +24,10 @@ related:
   - "proposition:0002-reproductive-stage-transition-modifies-immune-regulatory-pathways"
   - "topic:menopause-sex-hormones-and-pais-risk"
   - "interpretation:0008-t019-hrt-evidence-audit-no-admissible-pais-test"
+  - "interpretation:0020-t045-neuhouser2024-whi-hrt-gap-triage"
   - "evidence-line:0037-costeira2021-hrt-cocp-divergence-acute-supports-hormone-therapy-context-dependence"
   - "task:t019"
+  - "task:t045"
 source_refs:
   - "paper:Averyanova2022"
   - "paper:Costeira2021"
@@ -46,7 +48,7 @@ Two independent weak/proxy lines, both short of a direct PAIS-outcome test:
 - `paper:Averyanova2022` (`evidence-line:0014`) supplies indirect biological plausibility for route- and timing-dependent hormone effects on immune, endothelial, and hemostatic systems — analogical support for *why* an HRT effect would be heterogeneous.
 - `paper:Costeira2021` (`evidence-line:0037`) supplies an empirical instance of that heterogeneity: within one large cohort, HRT and COCP — two estrogen-containing therapies — associate in **opposite directions** with predicted acute COVID (HRT OR 1.32 vs COCP OR 0.87), with route/dose/indication unavailable. This is an **acute, symptom-predicted** outcome, so it is proxy-only for PAIS and vulnerable to (though Costeira2021 does not itself test) menopause-symptom-overlap ascertainment.
 
-The **t019 audit** (`interpretation:0008`) found **no admissible direct HRT→post-acute-PAIS test anywhere in the corpus** — every hormone-therapy datum is acute-COVID, self-selected survey, or clinical-management recommendation. As cited, this proposition is therefore confirmed in content but remains **more prediction than established result**, and its disposition is that HRT evidence enters PAIS work as clinical-screening / measurement-confound context, not causal evidence.
+The **t019 audit** (`interpretation:0008`) found **no admissible direct HRT→post-acute-PAIS test anywhere in the corpus** — every hormone-therapy datum is acute-COVID, self-selected survey, or clinical-management recommendation. The **t045 Neuhouser2024 WHI triage** (`interpretation:0020`) preserves that verdict: WHI published a postmenopausal-women long-COVID risk-factor screen, but HRT/MHT is not reported as an exposure or estimate. As cited, this proposition is therefore confirmed in content but remains **more prediction than established result**, and its disposition is that HRT evidence enters PAIS work as clinical-screening / measurement-confound context, not causal evidence.
 
 ## Caveats
 

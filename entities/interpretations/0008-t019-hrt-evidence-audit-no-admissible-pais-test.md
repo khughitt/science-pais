@@ -10,6 +10,7 @@ source_refs: &id001
 - paper:Stewart2021
 - paper:Silva2024
 - paper:AlcaldeHerraiz2025
+- paper:Neuhouser2024
 related:
 - proposition:0006-hormone-therapy-effects-on-pais-are-context-dependent
 - evidence-line:0037-costeira2021-hrt-cocp-divergence-acute-supports-hormone-therapy-context-dependence
@@ -18,8 +19,11 @@ related:
 - topic:menopause-sex-hormones-and-pais-risk
 - interpretation:0003-t018-subphenotype-sex-reproductive-stage
 - task:t019
+- paper:Neuhouser2024
+- interpretation:0020-t045-neuhouser2024-whi-hrt-gap-triage
+- task:t045
 created: '2026-06-23'
-updated: '2026-06-23'
+updated: '2026-06-25'
 input: *id001
 prior_interpretations: []
 relations: []
@@ -83,11 +87,11 @@ Not a data pipeline (corpus audit). Entity-provenance checks: all sourced number
 - This is a **corpus-scoped audit**, not a registered systematic review; a future HRT-prescription-linked long-COVID study could overturn the non-existence finding. The disposition is correct *for the current corpus*.
 - The verdict is a **gap** (`[⌀]` non-adjudicating), not a null effect: it asserts no admissible HRT→PAIS estimate exists, not that HRT has no PAIS effect.
 - `evidence-line:0037` rests on an **acute, symptom-predicted** outcome; its only admissible content is the non-uniformity/heterogeneity of exogenous-hormone effects, deliberately held **weak/proxy** so it cannot promote `proposition:0006` toward an effect estimate.
-- **Un-ingested lead triaged — Neuhouser2024 (WHI, `Annals of Epidemiology`).** A WHI long-COVID risk-factor analysis in postmenopausal women (n > 1,230 COVID-19; 425 long COVID; machine-learning top-20 risk-factor screen) exists and was **not** in the t019 corpus; it also **falsifies** the standing claim in `interpretation:0003`'s matrix that "even WHI did not analyze [HRT × long COVID]". On the available abstract/press-level sources its reported top predictors are weight loss, mobility limitation, rheumatoid arthritis, heart-valve procedures, and sleep disturbance — **hormone therapy is not among them and is not mentioned**. So as published it is a *risk-factor screen*, not an HRT-exposure→PAIS design, and does **not** supply the admissible HRT effect estimate; the `[⌀]` gap verdict stands. Residual uncertainty: whether MHT was in the candidate feature set but unselected (vs never examined) is unconfirmed from the full text — see Updated Priorities for the ingestion follow-up. WHI's rich HRT data make it a strong *vehicle* for the decisive test, reinforcing the test-it path below.
+- **Neuhouser2024 triaged (WHI, `Annals of Epidemiology`; `interpretation:0020`).** A WHI long-COVID risk-factor analysis in postmenopausal women (1,237 COVID-positive respondents; 425 long COVID; machine-learning top-20 risk-factor screen) exists and corrects the old shorthand that WHI had not analyzed long COVID in this population. But it does **not** supply an admissible HRT→PAIS estimate: hormone therapy is absent from the article text, absent from the reported top-20 predictors, and no HRT/MHT odds ratio or null estimate is reported. The Supplementary Table S1 candidate list was blocked by PMC reCAPTCHA during t045, so whether MHT was an unselected candidate versus never included remains unresolved. The `[⌀]` gap verdict stands.
 
 ## Updated Priorities
 
 - **Close `task:t019`** with the disposition: hormone-therapy evidence is admissible to PAIS work **only as clinical-screening / symptom-management / measurement-confound context**; no causal HRT→PAIS reading is licensed; `proposition:0006` confirmed as prediction-grade with the fragility now explained as a real gap.
 - **Route the "test it" path through `task:t039`** (All of Us hormone/prescription coverage) and the UKB primary-care HRT-prescription option — the only realistic vehicles for a route/dose/indication-resolved, active-comparator HRT→PAIS design. Keep `task:t040` (RECOVER ancillary) as the endogenous-hormone primary test; it is a separate exposure axis.
 - **Keep HRT out of the causal-covariate exposure role** in PAIS analysis design: enter HRT status as a confounder/ascertainment variable with route/dose/indication where available, never as a clean estrogen-dose exposure (the Costeira2021 lesson).
-- **Ingest and fully triage Neuhouser2024** (`task:t045`): confirm from full text whether menopausal hormone therapy was in the WHI risk-factor candidate set, and correct the `interpretation:0003` "even WHI did not analyze it" line. If MHT was examined and reported (even as a null), it becomes the first WHI-grade HRT-vs-long-COVID datum and should be added as an evidence-line on `proposition:0006`.
+- **Neuhouser2024 resolved by `task:t045`:** keep it as WHI risk-screen context, not as a `proposition:0006` evidence-line. The decisive HRT test still requires explicit HRT exposure modeling with route/dose/timing/indication and active-comparator/new-user handling.

@@ -22,6 +22,7 @@ source_refs: &id001
 - paper:Aid2025
 - paper:Shahbaz2025
 - paper:Silva2024
+- paper:Neuhouser2024
 related:
 - question:0007-mechanism-of-female-predominance-in-pais
 - question:0013-reproductive-stage-failed-immune-recovery-after-infection
@@ -33,12 +34,14 @@ related:
 - interpretation:0002-t013-cross-trigger-sex-effect-sizes
 - interpretation:0006-t041-objective-female-biased-subphenotype-search
 - interpretation:0008-t019-hrt-evidence-audit-no-admissible-pais-test
+- interpretation:0020-t045-neuhouser2024-whi-hrt-gap-triage
 - question:0018-objective-vs-subjective-cognition-dissociation-in
+- task:t045
 - task:t041
 - task:t018
 - task:t013
 created: '2026-06-22'
-updated: '2026-06-23'
+updated: '2026-06-25'
 input: *id001
 prior_interpretations:
 - interpretation:0002-t013-cross-trigger-sex-effect-sizes
@@ -72,9 +75,9 @@ Conclusion chains:
 > Cheetham2023) that back the minted POTS/cognition propositions. The **held-back** cells are
 > sourced from literature **not yet ingested as entities** and are therefore *not* in `source_refs`:
 > the vascular reversal rests on **Abubasheer2025** (VTE meta) and **Ambrosino2021** (FMD); the
-> recovery-time row on **Fischer2025** (Predi-Covid) and König2023; the reproductive-stage rows on
-> **Boneva2015** (ME/CFS) and Neuhouser2024. These are cited inline only and must be ingested before
-> any of those cells is promoted to an evidence-line.
+> recovery-time row on **Fischer2025** (Predi-Covid) and König2023; the reproductive-stage row on
+> **Boneva2015** (ME/CFS). Neuhouser2024 has now been ingested by `task:t045`; it corrects the WHI
+> long-COVID availability statement but remains non-adjudicating for HRT.
 
 ## Verdict
 
@@ -123,7 +126,7 @@ subphenotype×sex cell at present and is not read into the matrix.
 | **ME/CFS early-menopause signal (strongest true stage effect, non-COVID)** | Early menopause ≤45 adj OR **3.20** (1.21–8.49); mean age at menopause 38.5 (CFS) vs 48.6 y (controls) — but reverse causation plausible (illness → earlier menopause) | Boneva2015 (*Menopause*) |
 | **Acute (not long) COVID estrogen contrast** | Postmenopausal vs premenopausal predicted-COVID OR 1.22; HRT OR 1.32 (paradoxical); **acute outcome, not long COVID** | Costeira2021 (`paper:Costeira2021`) |
 | **Symptom-overlap confound** | 40–54 menopause-symptom-questionnaire load is highest within a post-COVID clinic; shared fatigue/brain-fog/sleep items mean reproductive stage biases *ascertainment* | Stewart2024 (`paper:Stewart2024`) |
-| **HRT × long-COVID outcome** | **Zero** controlled data in this corpus | (gap) — **correction (t019, 2026-06-23, `interpretation:0008`):** WHI *did* publish a long-COVID risk-factor analysis in postmenopausal women (Neuhouser2024, *Ann Epidemiol*); HRT is not among its reported top predictors, but whether MHT was examined is unconfirmed pending full-text ingestion (`task:t045`). No admissible HRT→long-COVID *effect estimate* yet exists. |
+| **HRT × long-COVID outcome** | **Zero** controlled HRT-effect estimates in this corpus | (gap) — **correction (t045, 2026-06-25, `interpretation:0020`):** WHI *did* publish a long-COVID risk-factor analysis in postmenopausal women (Neuhouser2024, *Ann Epidemiol*), but HRT/MHT is absent from the article text and reported top-20 predictors; Supplementary Table S1 was inaccessible, so unselected-candidate vs never-examined remains unresolved. No admissible HRT→long-COVID effect estimate exists. |
 
 ### What the matrix shows
 
