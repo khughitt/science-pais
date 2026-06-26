@@ -19,8 +19,11 @@ ontology_terms: [long-covid, sars-cov-2, prospective-cohort, biospecimens, sex-d
 related:
   - task:t013
   - task:t040
+  - task:t061
   - question:0007-mechanism-of-female-predominance-in-pais
+  - question:0015-does-pem-requirement-improve-cross-study-comparability
   - question:0013-reproductive-stage-failed-immune-recovery-after-infection
+  - interpretation:0027-t061-severity-adjusted-pem-vehicle-triage
 ---
 
 # RECOVER-Adult
@@ -49,3 +52,8 @@ fatigue domains.
 NIH-gated (dbGaP DAR via BioData Catalyst). Single trigger (no cross-trigger contrast).
 Enrollment ≥3 mo post-infection → **no within-person pre-infection baseline** (reverse-causation limit).
 Biospecimen hormone assay is funding-gated, post-seed-stage (`task:t040`).
+
+**t061/q0015 vehicle triage (2026-06-26):** best controlled-access route for a severity-adjusted
+PEM-positive vs PEM-negative molecular contrast, but not publicly/local-computable. Requires dbGaP/BioData
+Catalyst access plus confirmation that the needed omics module and non-PEM severity covariates are
+available in the same participants.

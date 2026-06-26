@@ -87,12 +87,12 @@ Successor to t053. Search for or design admissible evidence that can lift h0002'
 
 Follow-up from t047 distinct from the abrocitinib readout tracked by t054. Determine whether the JAK-STAT/IL-6 and IFN-arm dissociation pattern is LC-specific or recurs across PAIS triggers such as ME/CFS, PTLDS, and Q-fever fatigue. Highest-value design is same-cohort co-measurement of persistent type-II/inflammatory IFN tone, blunted type-I antiviral-effector ISGs, and IFN-I stimulation response; minimum useful output is a comparable cross-PAIS pathway-level evidence map with assay/platform comparability and endotype caveats. Do not use this to discharge t054/pre-registration:0004's interventional driver-vs-marker test.
 
-## [t061] Find or compute severity-adjusted PEM molecular contrast vehicle
+## [t070] Pursue RECOVER-Adult controlled-access q0015 PEM severity-adjusted omics vehicle
 - priority: P3
 - status: proposed
 - aspects: []
-- related: [question:0015-does-pem-requirement-improve-cross-study-comparability, proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode, interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation, interpretation:0007-t044-stop-pasc-pem-proteome-severity-unadjusted-gap-stands]
-- group: causal-disentanglement
+- related: [question:0015-does-pem-requirement-improve-cross-study-comparability, dataset:recover-adult, interpretation:0027-t061-severity-adjusted-pem-vehicle-triage]
+- group: data-access
 - created: 2026-06-26
 
-Follow-up from t025/t044. The decisive q0015 test remains inaccessible from public STOP-PASC/Maestri2025 data: convert PEM molecular associations into a severity-adjusted PEM-positive vs PEM-negative contrast, or identify an accessible RECOVER/IMPACC-style cohort with validated PEM measurement, overall-severity covariate, acute-severity covariates, and omics/proteomics endpoints. Watch for STOP-PASC individual-level data/repo release; otherwise scope data-access route. Output should say whether a computable vehicle exists, not merely add more unadjusted PEM associations.
+Follow-up from t061 / interpretation:0027. RECOVER-Adult is the best controlled-access route for the decisive q0015 contrast but is not locally/publicly computable. Before any analysis, confirm through RECOVER/dbGaP/BioData Catalyst data dictionaries or access whether the same participants have validated PEM item(s), non-PEM overall-severity covariates, acute-severity covariates, and an omics/proteomics/metabolomics module. If available, scope a DAR/analysis plan for molecular_feature ~ PEM + non_PEM_severity + acute_severity + demographic/batch covariates. If not available, record the blocker and keep STOP-PASC data release as the watch route.

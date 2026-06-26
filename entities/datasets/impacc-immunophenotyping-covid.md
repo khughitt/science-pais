@@ -18,11 +18,14 @@ accessions: [SDY1760, phs002686]
 ontology_terms: [long-covid, sars-cov-2, multiomics, sex-differences, patient-reported-outcomes]
 related:
   - task:t013
+  - task:t061
   - question:0007-mechanism-of-female-predominance-in-pais
+  - question:0015-does-pem-requirement-improve-cross-study-comparability
   - paper:Ozonoff2024
   - paper:Gabernet2025
   - question:0003-acute-severity-threshold-for-self-sustaining-pais
   - question:0013-reproductive-stage-failed-immune-recovery-after-infection
+  - interpretation:0027-t061-severity-adjusted-pem-vehicle-triage
 ---
 
 # IMPACC — Immunophenotyping Assessment in a COVID-19 Cohort
@@ -53,3 +56,9 @@ handle.
 Controlled (ImmPort SDY1760 / dbGaP phs002686); processed data obtainable without new assays.
 **Hospitalized-only** (acute-severity HPG suppression confound, per `report:0005`); no menopausal
 staging; no pre-infection baseline.
+
+**t061/q0015 vehicle triage (2026-06-26):** not an admissible substitute for the decisive
+severity-adjusted PEM molecular contrast on the documented public phenotype surface. It has post-acute
+PRO clusters and multi-omics, but not a validated PEM-positive vs PEM-negative design with severity-matched
+arms; use it for adjacent severity/phenotype-cluster questions unless controlled metadata reveals a true
+PEM item.
