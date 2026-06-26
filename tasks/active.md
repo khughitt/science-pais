@@ -116,3 +116,73 @@ Follow-up from t047 distinct from the abrocitinib readout tracked by t054. Deter
 - created: 2026-06-26
 
 Follow-up from t025/t044. The decisive q0015 test remains inaccessible from public STOP-PASC/Maestri2025 data: convert PEM molecular associations into a severity-adjusted PEM-positive vs PEM-negative contrast, or identify an accessible RECOVER/IMPACC-style cohort with validated PEM measurement, overall-severity covariate, acute-severity covariates, and omics/proteomics endpoints. Watch for STOP-PASC individual-level data/repo release; otherwise scope data-access route. Output should say whether a computable vehicle exists, not merely add more unadjusted PEM associations.
+
+## [t062] Add clean-base QA checkpoints for t035 prepared matrices and gene-set universe
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [pre-registration:0002-cross-trigger-pathway-overlap, plan:0003-cross-trigger-pathway-overlap-pipeline, question:0001-shared-molecular-signature-across-triggers]
+- group: workflow-qa
+- created: 2026-06-26
+
+Pipeline-refactor audit finding. t035 has strong raw/hash/harmonization gates, but the clean reusable substrates consumed by downstream analysis are not each validated by their own separate QA rule: data/processed/GSE14577/expr.gene.tsv.gz, data/processed/GSE130353/expr.gene.tsv.gz, and data/processed/genesets/{hallmark,reactome,gobp}.rds plus theme_map/release_hash. Add wired-in structural/distribution QA checkpoints over these built clean-base substrates, with config-driven thresholds and reports/sentinels, and include them in the default/QA target. Structural examples: unique gene IDs, sample/key consistency with sheet, no all-NA rows, expected group counts after preparation, gene-set non-empty/size-filter compliance, unique gene_set keys, every retained set has a theme and release/hash provenance.
+
+## [t063] Add downstream analysis/result QA and explicit QA target for t035
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [pre-registration:0002-cross-trigger-pathway-overlap, plan:0003-cross-trigger-pathway-overlap-pipeline, question:0001-shared-molecular-signature-across-triggers]
+- group: workflow-qa
+- created: 2026-06-26
+
+Pipeline-refactor audit finding. Add a t035 QA surface for project-specific downstream substrates and results, separate from clean-base QA: DE ranked/diag tables, fgsea NES tables, concordance/scatter tables, permutation/null outputs, specificity/theme/robustness/compartment rollups, and results/verdict.json. The checks should cover schema/column contracts, expected contrast/pair/db cardinality, duplicate-key absence, numeric domains (finite rho, 0<=p<=1, B_eff), config-vocabulary coverage, and verdict trace consistency. Provide an explicit root-runnable QA target (e.g. rule qa_all or documented snakemake target) so QA can be run without rebuilding the full terminal verdict by memory.
+
+## [t064] Emit t035 results datapackage manifest
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [pre-registration:0002-cross-trigger-pathway-overlap, plan:0003-cross-trigger-pathway-overlap-pipeline, question:0001-shared-molecular-signature-across-triggers]
+- group: workflow-portability
+- created: 2026-06-26
+
+Pipeline-refactor audit finding. WP1 emits data/processed/datapackage.json for acquired inputs, and verdict.py emits results/run_metadata.json, but there is no Frictionless-style results/datapackage.json for workflow outputs. Add a terminal manifest rule that records verdict.json, results.md, run_metadata.json, QA reports, and other produced result resources with hashes/provenance/entity cross-references, excluding raw/clean-base payloads. Manifest created/updated dates should derive from run identity or deterministic provenance, not wall-clock regeneration.
+
+## [t065] Formalize t035 clean-base dataset entities and commons-readiness
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [pre-registration:0002-cross-trigger-pathway-overlap, plan:0003-cross-trigger-pathway-overlap-pipeline, question:0001-shared-molecular-signature-across-triggers]
+- group: workflow-portability
+- created: 2026-06-26
+
+Pipeline-refactor audit finding. The t035 clean base substrates are reusable public GEO/MSigDB assets, but the repo only has a lightweight doc/datasets registry note and a minimal raw-payload datapackage. Create/verify formal dataset entities/descriptors for the reusable clean-base substrates (GSE14577 prepared gene matrix, GSE130353 prepared gene matrix, and the pinned mapped MSigDB gene-set universe as appropriate), record access/license/provenance and datapackage pointers, then perform a commons-promotion dry-run when the descriptors satisfy the readiness gate. Do not promote project-specific DE/fgsea/verdict outputs as clean base data.
+
+## [t066] Add workflow-run provenance so science qa-audit covers t035
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [pre-registration:0002-cross-trigger-pathway-overlap, plan:0003-cross-trigger-pathway-overlap-pipeline, question:0001-shared-molecular-signature-across-triggers]
+- group: workflow-qa
+- created: 2026-06-26
+
+Pipeline-refactor audit finding. science qa-audit currently cannot inspect this project because entities/workflow-runs is absent. Add authored workflow-run/provenance entities or the project-local equivalent for the completed t035 Snakemake run(s), pointing at results/run_metadata.json and QA dispositions where available, so process-iteration and QA-engagement can be audited. Include guidance for future computational runs so qa-audit does not stay disconnected from workflow execution history.
+
+## [t067] Add freshness check for menopause DAG adjustment-set derivation
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [hypothesis:0005-reproductive-stage-immune-homeostatic-margin, question:0013-reproductive-stage-failed-immune-recovery-after-infection, pre-registration:0001-menopause-pais-total-effect]
+- group: workflow-qa
+- created: 2026-06-26
+
+Pipeline-refactor audit finding. code/menopause_dag/derive_adjustment_sets.py correctly parses the authored DAG patch and regenerates code/menopause_dag/adjustment_sets_v2.txt, but no wired check asserts the committed text output is fresh relative to entities/patches/menopause-pais-causal-dag.md. Add a lightweight validation target/test that re-runs the script in a temp file and diffs it against adjustment_sets_v2.txt, so DAG edits cannot silently leave the derived identifiability artifact stale.
+
+## [t068] Add code-to-task back-links for t035 workflow scripts
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [pre-registration:0002-cross-trigger-pathway-overlap, plan:0003-cross-trigger-pathway-overlap-pipeline, question:0001-shared-molecular-signature-across-triggers]
+- group: workflow-consistency
+- created: 2026-06-26
+
+Pipeline-refactor audit finding. t035 workflow files have science:code headers and strong reverse links from the plan, but the code side does not use the sanctioned code-task backlink pattern. Add lightweight comment-block back-links (for example task:t035 / plan:0003 / pre-registration:0002 as appropriate) to code/workflows/*.smk and rule-callable scripts, without changing behavior. This is mechanical consistency work; keep it separate from QA logic changes.

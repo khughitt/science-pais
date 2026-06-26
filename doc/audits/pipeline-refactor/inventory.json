@@ -1,0 +1,145 @@
+[
+  {
+    "chain": "t035-gse14577-expression",
+    "source": "GEO GSE14577_family.soft.gz",
+    "substrate_kind": "table/corpus",
+    "ingest_rules": [
+      "download_gse14577_soft",
+      "verify_sha256",
+      "parse_gse14577",
+      "qa_raw_gse14577",
+      "harmonize_gse14577",
+      "prepare_gse14577"
+    ],
+    "clean_base_substrate": [
+      "data/processed/GSE14577/expr.gene.tsv.gz",
+      "data/processed/GSE14577/sample_metadata.tsv",
+      "data/processed/GSE14577/cohort_audit.json"
+    ],
+    "base_config": "code/workflows/config.yaml",
+    "downstream": [
+      "limma_de: pi_cfs_vs_hc",
+      "fgsea_enrich",
+      "concordance",
+      "permutation_null",
+      "verdict"
+    ]
+  },
+  {
+    "chain": "t035-gse130353-expression",
+    "source": "GEO GSE130353_RAW.tar + GSE130353_family.soft.gz",
+    "substrate_kind": "table/corpus",
+    "ingest_rules": [
+      "download_gse130353_tar",
+      "download_gse130353_soft",
+      "verify_sha256",
+      "extract_gse130353",
+      "qa_raw_gse130353",
+      "harmonize_gse130353",
+      "prepare_gse130353"
+    ],
+    "clean_base_substrate": [
+      "data/processed/GSE130353/expr.gene.tsv.gz",
+      "data/processed/GSE130353/sample_sheet.tsv",
+      "data/processed/GSE130353/cohort_audit.json",
+      "data/processed/GSE130353/nearzero.qa.pass"
+    ],
+    "base_config": "code/workflows/config.yaml",
+    "downstream": [
+      "limma_de: qfs_vs_hc, cfs_vs_hc, qfs_vs_qs, qs_vs_hc",
+      "fgsea_enrich",
+      "concordance",
+      "permutation_null",
+      "verdict"
+    ]
+  },
+  {
+    "chain": "t035-msigdb-genesets",
+    "source": "MSigDB 2024.1.Hs GMTs: Hallmark, Reactome, GO:BP",
+    "substrate_kind": "manifest/table",
+    "ingest_rules": [
+      "download_genesets",
+      "verify_sha256",
+      "emit_theme_spec",
+      "prepare_genesets",
+      "harmonize_reference"
+    ],
+    "clean_base_substrate": [
+      "data/processed/genesets/hallmark.rds",
+      "data/processed/genesets/reactome.rds",
+      "data/processed/genesets/gobp.rds",
+      "data/processed/genesets/theme_map.tsv",
+      "data/processed/genesets/msigdb_release_hash.txt",
+      "data/processed/genesets/harmonize_reference.json"
+    ],
+    "base_config": "code/workflows/config.yaml",
+    "downstream": [
+      "fgsea_enrich",
+      "permutation_null",
+      "specificity",
+      "theme_rollup",
+      "db_robustness",
+      "compartment",
+      "verdict"
+    ]
+  },
+  {
+    "chain": "t035-pathway-overlap-analysis",
+    "source": "Prepared expression matrices + prepared gene sets",
+    "substrate_kind": "result bundle",
+    "ingest_rules": [
+      "limma_de",
+      "fgsea_enrich",
+      "concordance",
+      "permutation_null",
+      "specificity",
+      "theme_rollup",
+      "db_robustness",
+      "compartment",
+      "verdict"
+    ],
+    "clean_base_substrate": "not applicable: project-specific downstream analysis",
+    "base_config": "code/workflows/config.yaml",
+    "downstream": [
+      "results/verdict.json",
+      "results/results.md",
+      "results/run_metadata.json",
+      "interpretation of pre-registration:0002"
+    ]
+  },
+  {
+    "chain": "menopause-dag-adjustment-sets",
+    "source": "entities/patches/menopause-pais-causal-dag.md",
+    "substrate_kind": "graph/text result",
+    "ingest_rules": [
+      "code/menopause_dag/derive_adjustment_sets.py"
+    ],
+    "clean_base_substrate": "code/menopause_dag/adjustment_sets_v2.txt",
+    "base_config": "constants in derive_adjustment_sets.py plus patch frontmatter",
+    "downstream": [
+      "doc/inquiries/menopause-pais-causal-dag.md",
+      "pre-registration:0001 interpretation"
+    ]
+  },
+  {
+    "chain": "science-knowledge-graph",
+    "source": "entities/, tasks/, core/, project docs",
+    "substrate_kind": "graph/manifest",
+    "ingest_rules": [
+      "science graph build",
+      "science validate",
+      "science health"
+    ],
+    "clean_base_substrate": [
+      "knowledge/graph.trig",
+      "knowledge/composite.trig"
+    ],
+    "base_config": "science.yaml",
+    "downstream": [
+      "validation",
+      "belief profile",
+      "graph-backed review"
+    ]
+  }
+]
+
