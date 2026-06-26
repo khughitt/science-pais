@@ -26,10 +26,12 @@ related:
 - evidence-line:0077-bizjak2024-cross-trigger-muscle-biopsy-disputes-simple-same-lesion-reading
 - discussion:0004-pem-shared-muscle-lesion-vs-endpoint-contingency
 - task:t056
+- task:t058
+- pre-registration:0005-harmonized-provoked-muscle-endpoint
 source_refs:
 - paper:Appelman2024
 created: '2026-06-24'
-updated: '2026-06-25'
+updated: '2026-06-26'
 ---
 # Proposition: A PAIS phenotype's objective correlate is endpoint- and trigger-specific, so endpoint choice can manufacture or hide an apparent shared mechanism
 
@@ -96,3 +98,8 @@ ME/CFS muscle-endpoint data exist, but are not endpoint-equivalent to Appelman20
 new independent M3 support line, because it is the same PEM phenotype and still lacks a harmonized
 cross-trigger protocol. It does make the M3 claim more precise: endpoint choice can **hide possible
 convergence** as well as manufacture apparent divergence.
+
+**t058 pre-registration (2026-06-26).** `pre-registration:0005` now commits the prospective adjudication
+rule for this PEM instance: a harmonized LC+ME/CFS provoked muscle-endpoint protocol. Same-lesion
+convergence would weaken M3 for PEM; trigger- or endpoint-specific results would strengthen it. Until a
+vehicle clears the gates, this remains data-gated and no belief update is made.

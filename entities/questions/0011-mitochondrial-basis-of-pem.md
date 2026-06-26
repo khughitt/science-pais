@@ -45,13 +45,15 @@ related:
 - interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation
 - interpretation:0019-t056-mecfs-muscle-bioenergetics-ingestion
 - proposition:0030-mecfs-exercise-provoked-skeletal-muscle-bioenergetic-abnormality
+- pre-registration:0005-harmonized-provoked-muscle-endpoint
+- task:t058
 - paper:McGregor2019
 - paper:Jones2012
 - paper:Wong1992
 - paper:Brown2015
 - paper:Bizjak2024
 created: '2026-06-11'
-updated: '2026-06-25'
+updated: '2026-06-26'
 ---
 
 # What is the mitochondrial/bioenergetic basis of post-exertional malaise, and is it shared across PAIS?
@@ -106,6 +108,11 @@ bioenergetic biomarker is proposed as a PEM endpoint.
 - Related hypotheses: `hypothesis:0001-shared-dysregulated-attractor` (bioenergetic failure as a node in a self-sustaining attractor).
 - Required data or analyses: standardized two-day CPET / exercise-challenge studies with paired pre/post multi-omics (metabolomics, proteomics, immune stimulation) across >=2 triggers (long COVID, ME/CFS) with matched recovered controls; pathway-level comparison to test for shared versus trigger-specific bioenergetic signatures.
 - Priority level: P2 — central to PEM operationalization and the shared-mechanism question, but depends on demanding provoked-challenge cross-trigger datasets.
+
+`pre-registration:0005` now fixes the strongest version of that required study for the muscle endpoint:
+LC + ME/CFS under one exertional protocol with serial muscle biopsy/physiology and central/peripheral
+decomposition. Until such a vehicle exists, q0011 remains unresolved for same-lesion cross-trigger
+equivalence.
 
 ## Related
 

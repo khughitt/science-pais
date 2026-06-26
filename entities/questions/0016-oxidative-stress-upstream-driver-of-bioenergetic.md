@@ -24,7 +24,9 @@ related:
 - hypothesis:0001-shared-dysregulated-attractor
 - hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
 - proposition:0035-pem-muscle-lesion-is-self-perpetuating
+- pre-registration:0005-harmonized-provoked-muscle-endpoint
 - task:t057
+- task:t058
 - topic:mecfs-long-covid-convergence
 - topic:biomarkers-and-objective-endpoints
 - topic:therapeutics-and-clinical-trials
@@ -89,6 +91,7 @@ pre-exertion, immediate post-exertion, 24-48 h, and recovery/resolution. Load-be
 
 Blood lymphocyte ROS assays such as Shankar2025 are useful screening and stratification biomarkers, but
 they are not sufficient to settle h0006 P4 unless paired with the provoked muscle trajectory.
+`pre-registration:0005` commits that provoked-muscle version of the directionality test.
 
 ## Admissible Evidence and Failure Modes
 

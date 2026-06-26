@@ -30,6 +30,8 @@ related:
 - proposition:0027-pais-group-differences-attenuate-under-objective-re-measurement
 - proposition:0028-pais-heterogeneity-explained-by-ascertainment-and-scoring
 - proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific
+- pre-registration:0005-harmonized-provoked-muscle-endpoint
+- task:t058
 created: '2026-06-24'
 updated: '2026-06-24'
 ---
@@ -176,6 +178,10 @@ Promote `candidate → active` when:
 2. **At least one prospective or individual-patient-data test** re-measures a self-report-established PAIS
    difference objectively in the *same* trigger-matched cohort and observes the predicted attenuation —
    moving beyond the current retrospective, cross-study instances.
+
+`pre-registration:0005` is adjacent to criterion #2 but narrower: it prospectively adjudicates h0008-M3
+for PEM endpoint-contingency against h0006's same-muscle-lesion claim. It can strengthen or weaken M3, but
+it does not by itself test M1/M2 or promote the whole h0008 bundle.
 
 ## Supporting Evidence
 

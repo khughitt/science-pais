@@ -27,6 +27,7 @@ related:
 - proposition:0034-ionic-na-ca-overload-mediates-pem-muscle-mitochondrial-injury
 - proposition:0035-pem-muscle-lesion-is-self-perpetuating
 - interpretation:0019-t056-mecfs-muscle-bioenergetics-ingestion
+- pre-registration:0005-harmonized-provoked-muscle-endpoint
 - evidence-line:0075-mecfs-muscle-bioenergetics-supports-0030
 - evidence-line:0083-appelman-joseph-t056-muscle-localization-supports-h0006-p1
 - evidence-line:0084-walitt2024-central-resting-null-weakly-disputes-h0006-p1
@@ -36,6 +37,7 @@ related:
 - evidence-line:0088-scheibenbogen2024-aimm-feedback-weakly-supports-h0006-p4
 - task:t056
 - task:t057
+- task:t058
 created: '2026-06-20'
 updated: '2026-06-26'
 review_state:
@@ -158,3 +160,6 @@ The most discriminating next test is an **independent provoked muscle-biopsy tim
 - 2026-06-26: `task:t057` tightened `question:0016` around P4's redox hinge. The operative distinction
   is now driver/reciprocal-node/downstream-marker, with admissible support requiring provoked muscle
   temporal precedence or redox target engagement that improves downstream muscle and PEM endpoints.
+- 2026-06-26: `pre-registration:0005` commits the harmonized LC+ME/CFS provoked muscle-endpoint
+  interpretation rule for the h0006-vs-h0008-M3 adjudicator. It is data-gated and produces no belief
+  update until a qualifying serial muscle-endpoint vehicle exists.

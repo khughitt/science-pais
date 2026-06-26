@@ -67,16 +67,6 @@ Standing discriminating test for question:0006 / proposition:0026 / hypothesis:0
 
 - 2026-06-25: Registry snapshot: ClinicalTrials.gov API v2 record for NCT06597396 reports ACTIVE_NOT_RECRUITING, enrollment 46 actual, primary completion 2026-03-27 actual, study completion 2026-09-30 estimated, last update posted 2026-04-20, and hasResults=false. No admissible readout yet; pre-registration:0004 remains [?] inconclusive-for-coverage. Public endpoints include FACIT-Fatigue/PASC PRO and hsCRP but not a specific IL-6R/JAK-STAT/ISG target-engagement score, so G2 must be checked in the eventual paper/supplement.
 
-## [t058] Pre-register harmonized LC+ME/CFS provoked muscle-endpoint study
-- priority: P2
-- status: proposed
-- aspects: []
-- related: [hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem, hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent, question:0011-mitochondrial-basis-of-pem, question:0016-oxidative-stress-upstream-driver-of-bioenergetic, proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific, proposition:0032-pem-bioenergetic-deficit-localizes-to-skeletal-muscle, proposition:0033-microvascular-hypoperfusion-drives-pem-muscle-bioenergetic-failure, proposition:0034-ionic-na-ca-overload-mediates-pem-muscle-mitochondrial-injury, proposition:0035-pem-muscle-lesion-is-self-perpetuating]
-- group: causal-disentanglement
-- created: 2026-06-26
-
-Design-gated follow-up from t056 and h0006 formalization. Author a pre-registration for the decisive h0006-vs-h0008-M3 adjudicator: long COVID + ME/CFS + recovered/healthy controls under the same exertional provocation, with muscle biopsy pre/immediate/24-48h, OXPHOS/SDH/Complex-II, fiber-type composition, intracellular Na/Ca, ROS/redox markers, perfusion, immune infiltrate, myopathic injury, and central/peripheral CPET decomposition. The key readout is whether the Appelman-style provoked muscle lesion is endpoint-harmonized across triggers, trigger-specific, or measurement-artifact/endpoint-contingent.
-
 ## [t059] Hunt h0002 promotion vehicles for non-Borrelia tissue reservoirs and retained-burden prediction
 - priority: P2
 - status: proposed
