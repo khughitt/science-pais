@@ -126,3 +126,47 @@ rule qa_clean_genesets:
         "--expected-release {params.release} --expected-sha256s {params.sha256s} "
         "--min-size {params.min_size} --max-size {params.max_size} "
         "--report {params.report} --sentinel {output.sentinel} > {log} 2>&1"
+
+
+rule qa_results:
+    input:
+        ranked=expand(f"{PROC}/de/{{contrast}}.ranked.tsv", contrast=CONTRASTS),
+        diag=expand(f"{PROC}/de/{{contrast}}.diag.json", contrast=CONTRASTS),
+        nes=expand(f"{PROC}/fgsea/{{contrast}}.{{db}}.nes.tsv", contrast=CONTRASTS, db=DBS),
+        rho=expand(f"{PROC}/concordance/{{pair}}.{{db}}.rho.tsv", pair=PAIRS, db=DBS),
+        scatter=expand(f"{PROC}/concordance/{{pair}}.{{db}}.scatter.tsv", pair=PAIRS, db=DBS),
+        perm=expand(f"{PROC}/perm/{{pair}}.{{db}}.perm.tsv", pair=PAIRS, db=DBS),
+        nulldist=expand(f"{PROC}/perm/{{pair}}.{{db}}.nulldist.tsv", pair=PAIRS, db=DBS),
+        specificity=expand(f"{PROC}/specificity/{{db}}.classes.tsv", db=DBS),
+        themes=expand(f"{PROC}/rollup/{{db}}.themes.tsv", db=DBS),
+        robustness=f"{PROC}/rollup/db_robustness.tsv",
+        compartment=f"{PROC}/rollup/compartment.tsv",
+        verdict=f"{RES}/verdict.json",
+        report=f"{RES}/results.md",
+        metadata=f"{RES}/run_metadata.json",
+        config=CONFIGFILE,
+        script=f"{SCRIPTS}/qa_results.py",
+    output:
+        sentinel=f"{RES}/qa/t035_results.qa.pass",
+    params:
+        report=f"{RES}/qa/t035_results.qa_report.md",
+        processed=PROC,
+        results=RES,
+    log:
+        f"{RES}/logs/qa_results.log"
+    conda:
+        "../envs/py.yaml"
+    shell:
+        "python {input.script} --processed {params.processed} --results {params.results} "
+        "--config {input.config} --report {params.report} "
+        "--sentinel {output.sentinel} > {log} 2>&1"
+
+
+rule qa_all:
+    input:
+        f"{PROC}/GSE14577/raw.qa.pass",
+        f"{PROC}/GSE130353/raw.qa.pass",
+        f"{PROC}/GSE14577/clean.qa.pass",
+        f"{PROC}/GSE130353/clean.qa.pass",
+        f"{PROC}/genesets/clean.qa.pass",
+        f"{RES}/qa/t035_results.qa.pass",

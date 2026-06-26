@@ -90,3 +90,4 @@ rule all:
         f"{RES}/verdict.json",
         f"{RES}/results.md",
         f"{PROC}/datapackage.json",
+        f"{RES}/qa/t035_results.qa.pass",
