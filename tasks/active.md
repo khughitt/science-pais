@@ -66,3 +66,53 @@ Standing discriminating test for question:0006 / proposition:0026 / hypothesis:0
 ### Notes
 
 - 2026-06-25: Registry snapshot: ClinicalTrials.gov API v2 record for NCT06597396 reports ACTIVE_NOT_RECRUITING, enrollment 46 actual, primary completion 2026-03-27 actual, study completion 2026-09-30 estimated, last update posted 2026-04-20, and hasResults=false. No admissible readout yet; pre-registration:0004 remains [?] inconclusive-for-coverage. Public endpoints include FACIT-Fatigue/PASC PRO and hsCRP but not a specific IL-6R/JAK-STAT/ISG target-engagement score, so G2 must be checked in the eventual paper/supplement.
+
+## [t057] Specify q0016 redox directionality for h0006 self-perpetuation
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [question:0016-oxidative-stress-upstream-driver-of-bioenergetic, hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem, proposition:0035-pem-muscle-lesion-is-self-perpetuating]
+- group: mechanism-formalization
+- created: 2026-06-26
+
+Follow-up from the h0006 specify-model/redox-dependency review. Tighten question:0016 around the discriminating issue for proposition:0035: is ROS/redox stress an upstream feedback driver that helps close the PEM muscle self-perpetuation loop, or a downstream consequence of mitochondrial failure? Deliverable: update q0016 with measurement model, expected temporal ordering, admissible evidence types, and failure modes that would weaken P4/h0006. Keep scope focused on redox directionality in provoked PEM muscle biology, not generic oxidative-stress literature.
+
+## [t058] Pre-register harmonized LC+ME/CFS provoked muscle-endpoint study
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem, hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent, question:0011-mitochondrial-basis-of-pem, question:0016-oxidative-stress-upstream-driver-of-bioenergetic, proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific, proposition:0032-pem-bioenergetic-deficit-localizes-to-skeletal-muscle, proposition:0033-microvascular-hypoperfusion-drives-pem-muscle-bioenergetic-failure, proposition:0034-ionic-na-ca-overload-mediates-pem-muscle-mitochondrial-injury, proposition:0035-pem-muscle-lesion-is-self-perpetuating]
+- group: causal-disentanglement
+- created: 2026-06-26
+
+Design-gated follow-up from t056 and h0006 formalization. Author a pre-registration for the decisive h0006-vs-h0008-M3 adjudicator: long COVID + ME/CFS + recovered/healthy controls under the same exertional provocation, with muscle biopsy pre/immediate/24-48h, OXPHOS/SDH/Complex-II, fiber-type composition, intracellular Na/Ca, ROS/redox markers, perfusion, immune infiltrate, myopathic injury, and central/peripheral CPET decomposition. The key readout is whether the Appelman-style provoked muscle lesion is endpoint-harmonized across triggers, trigger-specific, or measurement-artifact/endpoint-contingent.
+
+## [t059] Hunt h0002 promotion vehicles for non-Borrelia tissue reservoirs and retained-burden prediction
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [hypothesis:0002-tissue-reservoir-antigen-fragment, proposition:0023-cross-pathogen-tissue-macrophage-reservoir-generalization, proposition:0024-retained-fragment-burden-predicts-chronicity-over-initial-load, interpretation:0017-t053-h0002-promotion-audit]
+- group: evidence-ingestion
+- created: 2026-06-26
+
+Successor to t053. Search for or design admissible evidence that can lift h0002's two untested core conjuncts rather than over-crediting the persistence pillar. For proposition:0023, require controlled non-Borrelia PAIS tissue-reservoir evidence showing retained pathogen fragments in tissue-resident macrophages plus overlapping host signature. For proposition:0024, require a prospective cohort measuring both acute pathogen load and retained post-clearance fragment burden in the same subjects, with chronic PAIS diagnosis as endpoint and retained burden out-predicting acute load. Output should distinguish found literature from data-gated/commissioned study requirements.
+
+## [t060] Cross-PAIS IFN/JAK-STAT pathway comparison for q0006
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [question:0006-jak-stat-il6-driver-vs-marker, hypothesis:0003-immune-exhaustion-feedback, proposition:0025-lc-persistent-inflammatory-activation-dissociated-ifn, proposition:0026-lc-jakstat-exhaustion-loop-is-proximal-driver, interpretation:0012-t047-h0003-ifn-reconciliation-and-jak1-trial-registration]
+- group: cross-trigger-generalization
+- created: 2026-06-26
+
+Follow-up from t047 distinct from the abrocitinib readout tracked by t054. Determine whether the JAK-STAT/IL-6 and IFN-arm dissociation pattern is LC-specific or recurs across PAIS triggers such as ME/CFS, PTLDS, and Q-fever fatigue. Highest-value design is same-cohort co-measurement of persistent type-II/inflammatory IFN tone, blunted type-I antiviral-effector ISGs, and IFN-I stimulation response; minimum useful output is a comparable cross-PAIS pathway-level evidence map with assay/platform comparability and endotype caveats. Do not use this to discharge t054/pre-registration:0004's interventional driver-vs-marker test.
+
+## [t061] Find or compute severity-adjusted PEM molecular contrast vehicle
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [question:0015-does-pem-requirement-improve-cross-study-comparability, proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode, interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation, interpretation:0007-t044-stop-pasc-pem-proteome-severity-unadjusted-gap-stands]
+- group: causal-disentanglement
+- created: 2026-06-26
+
+Follow-up from t025/t044. The decisive q0015 test remains inaccessible from public STOP-PASC/Maestri2025 data: convert PEM molecular associations into a severity-adjusted PEM-positive vs PEM-negative contrast, or identify an accessible RECOVER/IMPACC-style cohort with validated PEM measurement, overall-severity covariate, acute-severity covariates, and omics/proteomics endpoints. Watch for STOP-PASC individual-level data/repo release; otherwise scope data-access route. Output should say whether a computable vehicle exists, not merely add more unadjusted PEM associations.
