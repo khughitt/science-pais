@@ -35,13 +35,15 @@ related:
 - evidence-line:0087-scheibenbogen2024-na-ca-cascade-weakly-supports-h0006-p3
 - evidence-line:0088-scheibenbogen2024-aimm-feedback-weakly-supports-h0006-p4
 - task:t056
+- task:t057
 created: '2026-06-20'
 updated: '2026-06-26'
 review_state:
   last_reviewed: '2026-06-26'
-  last_review_note: 'mode-C: prose Related Work cited question:0016 as the P4 ROS
-    step but it was absent from frontmatter related; added question:0016 to related
-    to match prose and carry the redox-direction dependency into the graph.'
+  last_review_note: 't057: question:0016 now carries the redox-directionality
+    specification for P4. h0006 treats ROS as a possible feedback/maintenance node
+    only if temporal precedence or redox target engagement links it to the provoked
+    muscle trajectory.'
 ---
 # Hypothesis: Skeletal-muscle ischemic-mitochondrial lesion as the primary substrate of post-exertional malaise
 
@@ -153,3 +155,6 @@ The most discriminating next test is an **independent provoked muscle-biopsy tim
   localization pillar is supported but contested; the ischemic upstream leg is weak/contested; the ionic
   and self-perpetuation legs remain weak mechanistic inferences. `proposition:0030` stays auxiliary/local
   rather than over-crediting the full h0006 bundle.
+- 2026-06-26: `task:t057` tightened `question:0016` around P4's redox hinge. The operative distinction
+  is now driver/reciprocal-node/downstream-marker, with admissible support requiring provoked muscle
+  temporal precedence or redox target engagement that improves downstream muscle and PEM endpoints.

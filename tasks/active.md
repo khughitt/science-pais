@@ -67,16 +67,6 @@ Standing discriminating test for question:0006 / proposition:0026 / hypothesis:0
 
 - 2026-06-25: Registry snapshot: ClinicalTrials.gov API v2 record for NCT06597396 reports ACTIVE_NOT_RECRUITING, enrollment 46 actual, primary completion 2026-03-27 actual, study completion 2026-09-30 estimated, last update posted 2026-04-20, and hasResults=false. No admissible readout yet; pre-registration:0004 remains [?] inconclusive-for-coverage. Public endpoints include FACIT-Fatigue/PASC PRO and hsCRP but not a specific IL-6R/JAK-STAT/ISG target-engagement score, so G2 must be checked in the eventual paper/supplement.
 
-## [t057] Specify q0016 redox directionality for h0006 self-perpetuation
-- priority: P2
-- status: proposed
-- aspects: []
-- related: [question:0016-oxidative-stress-upstream-driver-of-bioenergetic, hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem, proposition:0035-pem-muscle-lesion-is-self-perpetuating]
-- group: mechanism-formalization
-- created: 2026-06-26
-
-Follow-up from the h0006 specify-model/redox-dependency review. Tighten question:0016 around the discriminating issue for proposition:0035: is ROS/redox stress an upstream feedback driver that helps close the PEM muscle self-perpetuation loop, or a downstream consequence of mitochondrial failure? Deliverable: update q0016 with measurement model, expected temporal ordering, admissible evidence types, and failure modes that would weaken P4/h0006. Keep scope focused on redox directionality in provoked PEM muscle biology, not generic oxidative-stress literature.
-
 ## [t058] Pre-register harmonized LC+ME/CFS provoked muscle-endpoint study
 - priority: P2
 - status: proposed

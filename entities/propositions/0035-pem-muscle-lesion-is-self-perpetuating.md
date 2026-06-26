@@ -41,10 +41,10 @@ created: '2026-06-26'
 updated: '2026-06-26'
 review_state:
   last_reviewed: '2026-06-26'
-  last_review_note: 'mode-C: P4''s ROS feedback limb depends on question:0016 (is
-    redox upstream driver or downstream consequence?). Wired question:0016 into related,
-    added a known_failure_mode (loop may not close at redox node) and a caveat that
-    P4 strength is contingent on q0016.'
+  last_review_note: 't057: P4''s ROS feedback limb now points to question:0016''s
+    directionality specification. Support requires temporal precedence or target
+    engagement showing redox is an upstream/reciprocal driver of the provoked muscle
+    trajectory, not only a downstream injury marker.'
 ---
 # Proposition: PEM muscle mitochondrial-perfusion injury forms a self-perpetuating lesion
 
@@ -80,3 +80,8 @@ Load-bearing evidence would be a longitudinal pre/post/24-48 h/recovery muscle t
 ionic stress, mitochondrial dysfunction, and perfusion impairment reinforce each other and predict PEM
 duration. Interventions that improve perfusion or ion handling and normalize the muscle trajectory would
 provide stronger causal evidence.
+
+Per `question:0016`, the redox limb specifically requires a directionality test. ROS/redox change should
+either precede or independently predict later muscle OXPHOS/SDH decline, ion-handling/perfusion
+impairment, and recovery time, or a redox-directed intervention should demonstrate target engagement and
+downstream improvement. Redox normalization without muscle or PEM improvement would weaken this P4 limb.
