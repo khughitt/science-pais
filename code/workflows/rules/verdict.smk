@@ -38,10 +38,13 @@ rule permutation_null:
         # the heavy rule re-runs the full limma→fgsea→NES→ρ chain under permuted
         # SAMPLE labels; needs both arms' prepared matrices + the DB's gene sets.
         x_expr=lambda wc: pair_arm(wc.pair, "x")["expr"],
+        x_expr_qa=lambda wc: pair_arm(wc.pair, "x")["expr_qa"],
         x_sheet=lambda wc: pair_arm(wc.pair, "x")["sheet"],
         y_expr=lambda wc: pair_arm(wc.pair, "y")["expr"],
+        y_expr_qa=lambda wc: pair_arm(wc.pair, "y")["expr_qa"],
         y_sheet=lambda wc: pair_arm(wc.pair, "y")["sheet"],
         geneset=f"{PROC}/genesets/{{db}}.rds",
+        geneset_qa=f"{PROC}/genesets/clean.qa.pass",
         script=f"{SCRIPTS}/permutation_null.R",
         # permutation_null.R re-implements the WP5 limma→fgsea→NES ranking under
         # permuted labels; wire the WP5 scripts as inputs so any change to the
@@ -117,6 +120,7 @@ rule theme_rollup:
         nes_x=f"{PROC}/fgsea/pi_cfs_vs_hc.{{db}}.nes.tsv",
         nes_y=f"{PROC}/fgsea/qfs_vs_hc.{{db}}.nes.tsv",
         theme_map=f"{PROC}/genesets/theme_map.tsv",   # locked per-set theme assignment
+        geneset_qa=f"{PROC}/genesets/clean.qa.pass",
         script=f"{SCRIPTS}/theme_rollup.py",
         lib=f"{SCRIPTS}/_verdict_lib.py",
     output:

@@ -24,6 +24,7 @@ from __future__ import annotations
 import argparse
 import gzip
 import json
+import math
 import statistics
 import sys
 from pathlib import Path
@@ -187,11 +188,150 @@ def check_gse130353(spec: dict, args) -> tuple[list, list, dict]:
 CHECKERS = {"gse14577": check_gse14577, "gse130353": check_gse130353}
 
 
+# ----------------------------------------------------------- clean matrix ----
+def clean_matrix_stats(path: Path) -> dict:
+    """Validate a prepared gene×sample matrix and return structural facts."""
+    failures: list[str] = []
+    warnings: list[str] = []
+    samples: list[str] = []
+    seen: set[str] = set()
+    duplicate_examples: list[str] = []
+    n_rows = 0
+    all_na_rows = 0
+    missing = 0
+    values = 0
+
+    with gzip.open(path, "rt", encoding="utf-8") as fh:
+        header = fh.readline().rstrip("\n").split("\t")
+        first_column = header[0] if header else ""
+        samples = header[1:] if header else []
+        if first_column != "ensembl_gene_id":
+            failures.append(f"first column is '{first_column}', expected 'ensembl_gene_id'")
+        if len(samples) != len(set(samples)):
+            failures.append("sample columns contain duplicate names")
+
+        for line_no, line in enumerate(fh, start=2):
+            parts = line.rstrip("\n").split("\t")
+            if len(parts) != len(header):
+                failures.append(f"line {line_no}: {len(parts)} columns, expected {len(header)}")
+                continue
+            gene = parts[0]
+            n_rows += 1
+            if gene in seen and len(duplicate_examples) < 5:
+                duplicate_examples.append(gene)
+            seen.add(gene)
+            row_has_value = False
+            for cell in parts[1:]:
+                values += 1
+                if cell in ("", "NA"):
+                    missing += 1
+                    continue
+                try:
+                    value = float(cell)
+                except ValueError:
+                    failures.append(f"line {line_no}: non-numeric value '{cell}'")
+                    continue
+                if not math.isfinite(value):
+                    failures.append(f"line {line_no}: non-finite value '{cell}'")
+                    continue
+                row_has_value = True
+            if not row_has_value:
+                all_na_rows += 1
+
+    if duplicate_examples:
+        failures.append(f"duplicate gene id(s): {duplicate_examples}")
+    if all_na_rows:
+        failures.append(f"{all_na_rows} all-NA gene row(s)")
+
+    pct_missing = round(100 * missing / values, 4) if values else 0.0
+    facts = {
+        "first_column": first_column,
+        "n_genes": n_rows,
+        "n_samples": len(samples),
+        "samples": samples,
+        "pct_missing": pct_missing,
+        "all_na_rows": all_na_rows,
+        "duplicate_gene_examples": duplicate_examples,
+    }
+    return {"failures": failures, "warnings": warnings, "facts": facts}
+
+
+def _audit_sample_list(audit: dict) -> list[str]:
+    if "patients" in audit:
+        return list(audit["patients"])
+    if "samples" in audit:
+        return list(audit["samples"])
+    return []
+
+
+def _audit_gene_count(audit: dict) -> int | None:
+    counts = audit.get("counts", {})
+    if "n_genes_total" in counts:
+        return int(counts["n_genes_total"])
+    if "n_genes_retained" in audit:
+        return int(audit["n_genes_retained"])
+    return None
+
+
+def check_clean_matrix(
+    *,
+    dataset: str,
+    expr: Path,
+    audit: Path,
+    expected_samples: int,
+    report: Path,
+    sentinel: Path,
+    min_genes: int | None = None,
+    max_pct_missing: float | None = None,
+) -> int:
+    """Two-severity QA for prepared gene×sample matrices."""
+    st = clean_matrix_stats(expr)
+    failures = list(st["failures"])
+    warnings = list(st["warnings"])
+    facts = dict(st["facts"])
+
+    audit_obj = json.loads(audit.read_text(encoding="utf-8"))
+    audit_samples = _audit_sample_list(audit_obj)
+    audit_gene_count = _audit_gene_count(audit_obj)
+    facts["audit_gene_count"] = audit_gene_count
+    facts["audit_samples"] = audit_samples
+
+    if facts["n_samples"] != expected_samples:
+        failures.append(f"{facts['n_samples']} sample columns, expected {expected_samples}")
+    if audit_samples and facts["samples"] != audit_samples:
+        failures.append("sample columns do not match audit sample list")
+    if audit_gene_count is not None and facts["n_genes"] != audit_gene_count:
+        failures.append(f"{facts['n_genes']} gene rows, audit records {audit_gene_count}")
+    if min_genes is not None and facts["n_genes"] < min_genes:
+        warnings.append(f"gene universe {facts['n_genes']} < clean-matrix warning floor {min_genes}")
+    if max_pct_missing is not None and facts["pct_missing"] > max_pct_missing:
+        warnings.append(f"{facts['pct_missing']}% missing > clean-matrix warning ceiling {max_pct_missing}%")
+
+    write_report(report, f"{dataset} clean matrix", failures, warnings, facts)
+    for w in warnings:
+        print(f"[qa:{dataset}:clean] WARN {w}", file=sys.stderr)
+    if failures:
+        for f in failures:
+            print(f"[qa:{dataset}:clean] STRUCTURAL FAIL {f}", file=sys.stderr)
+        print(f"[qa:{dataset}:clean] HALT: {len(failures)} structural failure(s); "
+              f"sentinel withheld -> DAG stops. See {report}", file=sys.stderr)
+        return 1
+
+    sentinel.parent.mkdir(parents=True, exist_ok=True)
+    sentinel.write_text(
+        f"PASS {dataset} clean matrix: {facts['n_genes']} genes x {facts['n_samples']} samples; "
+        f"{len(warnings)} distribution warning(s). See {report}\n",
+        encoding="utf-8",
+    )
+    print(f"[qa:{dataset}:clean] PASS ({len(warnings)} warning(s)) -> {sentinel}", file=sys.stderr)
+    return 0
+
+
 # ----------------------------------------------------------------- report ----
 def write_report(path: Path, dataset: str, failures, warnings, facts) -> None:
     verdict = "PASS" if not failures else "FAIL (structural)"
     lines = [
-        f"# Raw QA report — {dataset}",
+        f"# QA report — {dataset}",
         "",
         f"**Verdict:** {verdict}  ",
         f"**Structural failures:** {len(failures)}  ",
@@ -216,8 +356,9 @@ def write_report(path: Path, dataset: str, failures, warnings, facts) -> None:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="two-severity raw-data QA checkpoint")
-    ap.add_argument("--dataset", required=True, choices=sorted(CHECKERS))
+    ap = argparse.ArgumentParser(description="two-severity QA checkpoint")
+    ap.add_argument("--mode", choices=("raw", "clean-matrix"), default="raw")
+    ap.add_argument("--dataset", required=True)
     ap.add_argument("--config", required=True, type=Path)
     ap.add_argument("--report", required=True, type=Path)
     ap.add_argument("--sentinel", required=True, type=Path)
@@ -228,9 +369,30 @@ def main() -> int:
     # gse130353 inputs
     ap.add_argument("--sheet", type=Path)
     ap.add_argument("--contract", type=Path)
+    # clean-matrix inputs
+    ap.add_argument("--expr", type=Path)
+    ap.add_argument("--audit", type=Path)
+    ap.add_argument("--expected-samples", type=int)
     args = ap.parse_args()
 
     cfg = yaml.safe_load(args.config.read_text(encoding="utf-8"))
+    if args.mode == "clean-matrix":
+        if args.expr is None or args.audit is None or args.expected_samples is None:
+            sys.exit("[qa:clean] --expr, --audit, and --expected-samples are required")
+        clean_cfg = cfg.get("qa", {}).get("clean_matrix", {})
+        return check_clean_matrix(
+            dataset=args.dataset,
+            expr=args.expr,
+            audit=args.audit,
+            expected_samples=args.expected_samples,
+            report=args.report,
+            sentinel=args.sentinel,
+            min_genes=clean_cfg.get("min_gene_universe_warn"),
+            max_pct_missing=clean_cfg.get("max_pct_missing_warn"),
+        )
+
+    if args.dataset not in CHECKERS:
+        sys.exit(f"[qa:raw] unknown dataset '{args.dataset}'")
     spec = cfg["qa"][args.dataset]
     failures, warnings, facts = CHECKERS[args.dataset](spec, args)
 

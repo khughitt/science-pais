@@ -55,3 +55,74 @@ rule qa_raw_gse130353:
         "python {input.script} --dataset gse130353 --config {input.config} "
         "--sheet {input.sheet} --contract {input.contract} "
         "--report {params.report} --sentinel {output.sentinel} > {log} 2>&1"
+
+
+rule qa_clean_gse14577:
+    input:
+        expr=f"{PROC}/GSE14577/expr.gene.tsv.gz",
+        audit=f"{PROC}/GSE14577/cohort_audit.json",
+        config=CONFIGFILE,
+        script=f"{SCRIPTS}/qa_checkpoint.py",
+    output:
+        sentinel=f"{PROC}/GSE14577/clean.qa.pass",
+    params:
+        report=f"{RES}/qa/GSE14577_clean.qa_report.md",
+        expected_samples=config["qa"]["clean_matrix"]["datasets"]["gse14577"]["expected_samples"],
+    log:
+        f"{RES}/logs/qa_clean_gse14577.log"
+    conda:
+        "../envs/py.yaml"
+    shell:
+        "python {input.script} --mode clean-matrix --dataset gse14577 --config {input.config} "
+        "--expr {input.expr} --audit {input.audit} --expected-samples {params.expected_samples} "
+        "--report {params.report} --sentinel {output.sentinel} > {log} 2>&1"
+
+
+rule qa_clean_gse130353:
+    input:
+        expr=f"{PROC}/GSE130353/expr.gene.tsv.gz",
+        audit=f"{PROC}/GSE130353/cohort_audit.json",
+        nearzero=f"{PROC}/GSE130353/nearzero.qa.pass",
+        config=CONFIGFILE,
+        script=f"{SCRIPTS}/qa_checkpoint.py",
+    output:
+        sentinel=f"{PROC}/GSE130353/clean.qa.pass",
+    params:
+        report=f"{RES}/qa/GSE130353_clean.qa_report.md",
+        expected_samples=config["qa"]["clean_matrix"]["datasets"]["gse130353"]["expected_samples"],
+    log:
+        f"{RES}/logs/qa_clean_gse130353.log"
+    conda:
+        "../envs/py.yaml"
+    shell:
+        "python {input.script} --mode clean-matrix --dataset gse130353 --config {input.config} "
+        "--expr {input.expr} --audit {input.audit} --expected-samples {params.expected_samples} "
+        "--report {params.report} --sentinel {output.sentinel} > {log} 2>&1"
+
+
+rule qa_clean_genesets:
+    input:
+        rds=expand(f"{PROC}/genesets/{{db}}.rds", db=DBS),
+        theme_map=f"{PROC}/genesets/theme_map.tsv",
+        release_hash=f"{PROC}/genesets/msigdb_release_hash.txt",
+        script=f"{SCRIPTS}/qa_genesets.R",
+    output:
+        sentinel=f"{PROC}/genesets/clean.qa.pass",
+    params:
+        report=f"{RES}/qa/genesets_clean.qa_report.md",
+        dbs=",".join(DBS),
+        rds=lambda wc, input: ",".join(input.rds),
+        release=config["genesets"]["msigdb_release"],
+        sha256s=",".join(config["genesets"]["gmt_sources"][db]["sha256"] for db in DBS),
+        min_size=config["genesets"]["size_filter"]["min"],
+        max_size=config["genesets"]["size_filter"]["max"],
+    log:
+        f"{RES}/logs/qa_clean_genesets.log"
+    conda:
+        "../envs/r-bioc.yaml"
+    shell:
+        "Rscript {input.script} --dbs {params.dbs} --rds {params.rds} "
+        "--theme-map {input.theme_map} --release-hash {input.release_hash} "
+        "--expected-release {params.release} --expected-sha256s {params.sha256s} "
+        "--min-size {params.min_size} --max-size {params.max_size} "
+        "--report {params.report} --sentinel {output.sentinel} > {log} 2>&1"

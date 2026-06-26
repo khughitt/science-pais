@@ -37,17 +37,18 @@ def stub(label):
 
 def de_expr_input(wildcards):
     """limma_de inputs: prepared expr + sample sheet for the contrast's dataset
-    (GSE130353 also gates on the near-zero bimodality sentinel)."""
+    (both datasets gate on the clean-base QA sentinel)."""
     ds = contrast_dataset(wildcards.contrast)
     if ds == "gse130353":
         return {
             "expr": f"{PROC}/GSE130353/expr.gene.tsv.gz",
             "sheet": f"{PROC}/GSE130353/sample_sheet.tsv",
-            "qa": f"{PROC}/GSE130353/nearzero.qa.pass",
+            "qa": f"{PROC}/GSE130353/clean.qa.pass",
         }
     return {
         "expr": f"{PROC}/GSE14577/expr.gene.tsv.gz",
         "sheet": f"{PROC}/GSE14577/sample_metadata.tsv",
+        "qa": f"{PROC}/GSE14577/clean.qa.pass",
     }
 
 def concordance_nes_inputs(wildcards):
@@ -64,6 +65,10 @@ EXPR_OF = {
     "gse14577":  f"{PROC}/GSE14577/expr.gene.tsv.gz",
     "gse130353": f"{PROC}/GSE130353/expr.gene.tsv.gz",
 }
+EXPR_QA_OF = {
+    "gse14577":  f"{PROC}/GSE14577/clean.qa.pass",
+    "gse130353": f"{PROC}/GSE130353/clean.qa.pass",
+}
 SHEET_OF = {
     "gse14577":  f"{PROC}/GSE14577/sample_metadata.tsv",
     "gse130353": f"{PROC}/GSE130353/sample_sheet.tsv",
@@ -78,7 +83,7 @@ def pair_arm(pair, arm):
     return {
         "contrast": cname, "dataset": ds,
         "case": spec["case"], "control": spec["control"],
-        "expr": EXPR_OF[ds], "sheet": SHEET_OF[ds],
+        "expr": EXPR_OF[ds], "expr_qa": EXPR_QA_OF[ds], "sheet": SHEET_OF[ds],
         "sample_col": DE_SHEET_COLS[ds]["sample"],
         "group_col": DE_SHEET_COLS[ds]["group"],
     }

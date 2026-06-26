@@ -85,6 +85,12 @@ qa:
     distribution:                      # surfaced-only continuous-scale sanity
       min_feature_universe: 10000      # ~56625 expected
       max_pct_integer: 1.0             # log_mu is continuous, not integer counts
+  clean_matrix:
+    min_gene_universe_warn: 10000      # surfaced-only; structural gene count comes from cohort_audit.json
+    max_pct_missing_warn: 5.0
+    datasets:
+      gse14577: {expected_samples: 15}
+      gse130353: {expected_samples: 40}
 
 # ---------------------------------------------- gene-set universe ------------
 # pre-reg:0002 Metric Selection Rationale — pinned universe + size filter.

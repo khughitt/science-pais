@@ -40,6 +40,7 @@ rule fgsea_enrich:
     input:
         ranked=f"{PROC}/de/{{contrast}}.ranked.tsv",
         geneset=f"{PROC}/genesets/{{db}}.rds",
+        geneset_qa=f"{PROC}/genesets/clean.qa.pass",
         script=f"{SCRIPTS}/fgsea_enrich.R",
     output:
         nes=f"{PROC}/fgsea/{{contrast}}.{{db}}.nes.tsv",

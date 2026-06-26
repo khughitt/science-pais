@@ -117,16 +117,6 @@ Follow-up from t047 distinct from the abrocitinib readout tracked by t054. Deter
 
 Follow-up from t025/t044. The decisive q0015 test remains inaccessible from public STOP-PASC/Maestri2025 data: convert PEM molecular associations into a severity-adjusted PEM-positive vs PEM-negative contrast, or identify an accessible RECOVER/IMPACC-style cohort with validated PEM measurement, overall-severity covariate, acute-severity covariates, and omics/proteomics endpoints. Watch for STOP-PASC individual-level data/repo release; otherwise scope data-access route. Output should say whether a computable vehicle exists, not merely add more unadjusted PEM associations.
 
-## [t062] Add clean-base QA checkpoints for t035 prepared matrices and gene-set universe
-- priority: P2
-- status: proposed
-- aspects: []
-- related: [pre-registration:0002-cross-trigger-pathway-overlap, plan:0003-cross-trigger-pathway-overlap-pipeline, question:0001-shared-molecular-signature-across-triggers]
-- group: workflow-qa
-- created: 2026-06-26
-
-Pipeline-refactor audit finding. t035 has strong raw/hash/harmonization gates, but the clean reusable substrates consumed by downstream analysis are not each validated by their own separate QA rule: data/processed/GSE14577/expr.gene.tsv.gz, data/processed/GSE130353/expr.gene.tsv.gz, and data/processed/genesets/{hallmark,reactome,gobp}.rds plus theme_map/release_hash. Add wired-in structural/distribution QA checkpoints over these built clean-base substrates, with config-driven thresholds and reports/sentinels, and include them in the default/QA target. Structural examples: unique gene IDs, sample/key consistency with sheet, no all-NA rows, expected group counts after preparation, gene-set non-empty/size-filter compliance, unique gene_set keys, every retained set has a theme and release/hash provenance.
-
 ## [t063] Add downstream analysis/result QA and explicit QA target for t035
 - priority: P2
 - status: proposed
