@@ -1,6 +1,6 @@
 # science:code
 # status: workflow-owned
-# task_ids: [t066]
+# task_ids: [t035, t066]
 # science:end
 
 #!/usr/bin/env python3

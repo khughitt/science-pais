@@ -117,16 +117,6 @@ Follow-up from t047 distinct from the abrocitinib readout tracked by t054. Deter
 
 Follow-up from t025/t044. The decisive q0015 test remains inaccessible from public STOP-PASC/Maestri2025 data: convert PEM molecular associations into a severity-adjusted PEM-positive vs PEM-negative contrast, or identify an accessible RECOVER/IMPACC-style cohort with validated PEM measurement, overall-severity covariate, acute-severity covariates, and omics/proteomics endpoints. Watch for STOP-PASC individual-level data/repo release; otherwise scope data-access route. Output should say whether a computable vehicle exists, not merely add more unadjusted PEM associations.
 
-## [t068] Add code-to-task back-links for t035 workflow scripts
-- priority: P3
-- status: proposed
-- aspects: []
-- related: [pre-registration:0002-cross-trigger-pathway-overlap, plan:0003-cross-trigger-pathway-overlap-pipeline, question:0001-shared-molecular-signature-across-triggers]
-- group: workflow-consistency
-- created: 2026-06-26
-
-Pipeline-refactor audit finding. t035 workflow files have science:code headers and strong reverse links from the plan, but the code side does not use the sanctioned code-task backlink pattern. Add lightweight comment-block back-links (for example task:t035 / plan:0003 / pre-registration:0002 as appropriate) to code/workflows/*.smk and rule-callable scripts, without changing behavior. This is mechanical consistency work; keep it separate from QA logic changes.
-
 ## [t069] Normalize mapped MSigDB clean base for bio.geneset commons promotion
 - priority: P3
 - status: proposed

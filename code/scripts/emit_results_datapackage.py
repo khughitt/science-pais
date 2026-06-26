@@ -1,6 +1,6 @@
 # science:code
 # status: exploratory
-# task: t064
+# task_ids: [t035, t064]
 # science:end
 
 #!/usr/bin/env python3
