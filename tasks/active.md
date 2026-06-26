@@ -66,13 +66,3 @@ Standing discriminating test for question:0006 / proposition:0026 / hypothesis:0
 ### Notes
 
 - 2026-06-25: Registry snapshot: ClinicalTrials.gov API v2 record for NCT06597396 reports ACTIVE_NOT_RECRUITING, enrollment 46 actual, primary completion 2026-03-27 actual, study completion 2026-09-30 estimated, last update posted 2026-04-20, and hasResults=false. No admissible readout yet; pre-registration:0004 remains [?] inconclusive-for-coverage. Public endpoints include FACIT-Fatigue/PASC PRO and hsCRP but not a specific IL-6R/JAK-STAT/ISG target-engagement score, so G2 must be checked in the eventual paper/supplement.
-
-## [t070] Pursue RECOVER-Adult controlled-access q0015 PEM severity-adjusted omics vehicle
-- priority: P3
-- status: proposed
-- aspects: []
-- related: [question:0015-does-pem-requirement-improve-cross-study-comparability, dataset:recover-adult, interpretation:0027-t061-severity-adjusted-pem-vehicle-triage]
-- group: data-access
-- created: 2026-06-26
-
-Follow-up from t061 / interpretation:0027. RECOVER-Adult is the best controlled-access route for the decisive q0015 contrast but is not locally/publicly computable. Before any analysis, confirm through RECOVER/dbGaP/BioData Catalyst data dictionaries or access whether the same participants have validated PEM item(s), non-PEM overall-severity covariates, acute-severity covariates, and an omics/proteomics/metabolomics module. If available, scope a DAR/analysis plan for molecular_feature ~ PEM + non_PEM_severity + acute_severity + demographic/batch covariates. If not available, record the blocker and keep STOP-PASC data release as the watch route.

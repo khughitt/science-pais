@@ -36,12 +36,14 @@ related:
 - interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation
 - interpretation:0007-t044-stop-pasc-pem-proteome-severity-unadjusted-gap-stands
 - interpretation:0027-t061-severity-adjusted-pem-vehicle-triage
+- interpretation:0030-t070-recover-adult-q0015-controlled-access-gate
 - dataset:recover-adult
 - dataset:impacc-immunophenotyping-covid
 - paper:Maestri2025
 - paper:McGregor2019
 - hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
 - task:t061
+- task:t070
 created: '2026-06-19'
 updated: '2026-06-26'
 ---
@@ -72,6 +74,13 @@ PEM is the defining feature that most consistently differentiates biologically-c
   paths, but it is not locally computable without a data-access request and omics-module confirmation;
   IMPACC/SDY1760 is controlled and multi-omic but hospitalized-only and not an admissible validated
   PEM-positive vs PEM-negative severity-adjusted vehicle on the currently documented phenotype surface.
+- **t070 update (interpretation:0030, 2026-06-26):** RECOVER-Adult's current controlled-access release
+  (`phs003463.v6.p5`) clears the phenotype side of the q0015 gate but not the molecular side. The public
+  codebook exposes repeated PASC Symptoms fields, current PEM, and DePaul-style PEM bother/frequency/severity
+  variables, and the release includes EHR, biospecimen-inventory, and wearable data. However, the public
+  dbGaP surface does not expose selectable molecular datasets, and the March 2026 release notes do not
+  identify released omics matrices joinable to the symptom rows. RECOVER-Adult remains the right DAR/scoping
+  route, not yet a runnable severity-adjusted PEM molecular vehicle.
 - **t025 synthesis (interpretation:0004, proposition:0011):** A three-pronged discovery sweep (PASC / ME/CFS PEM-stratified omics; PEM-vs-severity confound) confirms the within-cohort PEM+ vs PEM− molecular comparison this question needs **does not exist as of mid-2026** — it must be computed or commissioned, not found (McGregor2019 is the only true PEM-stratified omics design and it lacks severity adjustment). The sweep's substantive increment is `proposition:0011`: the objective correlate of PEM is **trigger- and endpoint-specific** — the ME/CFS whole-body 2-day-CPET decrement (Keller2014) does not transfer to long COVID (Gattoni2025) but a long-COVID lesion appears instead at the muscle level (Appelman2024). Net effect on this question: PEM-requirement plausibly improves *within-trigger* coherence but does **not** guarantee *cross-trigger* biological exchangeability, and the decisive severity-vs-PEM test remains unrun at the molecular level.
 
 ## Thoughts
