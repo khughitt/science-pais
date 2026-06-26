@@ -17,6 +17,8 @@ related:
 - proposition:0022-degradation-resistant-fragments-persist-and-are-bioactive
 - task:t052
 - task:t053
+- task:t059
+- interpretation:0028-t059-h0002-promotion-vehicle-hunt
 source_refs: []
 created: '2026-06-24'
 updated: '2026-06-25'
@@ -66,3 +68,8 @@ unresolved) and say nothing about *fragment burden* as the lever — so 0021 mus
 support here (that would re-introduce the t051 over-credit). Promotion path: a prospective
 burden-predicts-chronicity result would be minted as a supporting evidence-line on this proposition; a
 prospective result showing initial load out-predicts retained burden would materially weaken it.
+
+**t059 screen (2026-06-26).** No prospective same-subject vehicle was found that measures both acute
+pathogen load and retained post-clearance fragment/antigen burden, then compares their prediction of
+chronic PAIS onset. Acute antigen/load predictors remain model criticism until the retained-burden arm is
+measured head-to-head.

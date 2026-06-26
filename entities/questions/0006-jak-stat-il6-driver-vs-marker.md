@@ -20,10 +20,13 @@ related:
 - hypothesis:0003-immune-exhaustion-feedback
 - proposition:0025-lc-persistent-inflammatory-activation-dissociated-ifn
 - proposition:0026-lc-jakstat-exhaustion-loop-is-proximal-driver
+- proposition:0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis
 - pre-registration:0004-jak1-inhibitor-driver-vs-marker
 - interpretation:0012-t047-h0003-ifn-reconciliation-and-jak1-trial-registration
 - interpretation:0016-t054-abrocitinib-trial-status-snapshot
+- interpretation:0029-t060-cross-pais-ifn-jakstat-pathway-map
 - task:t054
+- task:t060
 created: '2026-06-11'
 updated: '2026-06-25'
 ---
@@ -42,7 +45,8 @@ Persistent JAK-STAT/IL-6 signaling is one of the most reproducible inflammatory 
 ## Current Evidence
 
 - Supporting: Aid2025 shows persistent JAK-STAT/IL-6/IFN/complement activation >180 days with no circulating virus and frames it as a failed negative-feedback loop and a therapeutic target; Ganesh2022 finds durable IL-6 elevation (often discordant with CRP/ESR). The persistent-activation state is now coded as `proposition:0025` (supported).
-- Conflicting / gaps: causal direction is untested (driver vs marker) — this is the open core, coded as `proposition:0026` (untested, `speculative`); bulk assays cannot identify the cell source (Aid2025); no cross-PAIS pathway-level comparison exists, so generalizability beyond SARS-CoV-2 is unknown. **Ryan2022's IFN-I *suppression* no longer "complicates" the picture** — t047 (`interpretation:0012`) reconciled it as the *type-I antiviral-effector* arm of a dissociated IFN signature (vs Aid2025's persistent *type-II/inflammatory* arm), so it is not a contradiction.
+- Conflicting / gaps: causal direction is untested (driver vs marker) — this is the open core, coded as `proposition:0026` (untested, `speculative`); bulk assays cannot identify the cell source (Aid2025). **Ryan2022's IFN-I *suppression* no longer "complicates" the picture** — t047 (`interpretation:0012`) reconciled it as the *type-I antiviral-effector* arm of a dissociated IFN signature (vs Aid2025's persistent *type-II/inflammatory* arm), so it is not a contradiction.
+- **Cross-PAIS update (t060, 2026-06-26):** the generalizability half is now mapped as `proposition:0036`. ME/CFS and QFS show partial IFN/cytokine/exhaustion-axis recurrence (EatonFitch2024, Che2025, Keijmel2016/Morroy2016), but not a harmonized demonstration of the full LC pattern. Patterson2024 and Galbraith2011 are important counterweights: cross-trigger inflammatory signals can be distinguishable or fail gene-level convergence. This supports pathway-family recurrence, not the causal-driver claim.
 - **Standing discriminating test REGISTERED (t047; screened t054):** `pre-registration:0004` (data-gated) commits the driver-vs-marker decision rule on the abrocitinib JAK1-inhibitor RCT **NCT06597396** — symptom + pathway co-suppression -> driver (upward on `proposition:0026`/h0003); pathway suppression without symptom benefit -> marker (disputing/falsifier). Registry snapshot 2026-06-25: trial `ACTIVE_NOT_RECRUITING`, primary completion 2026-03-27 actual, study completion 2026-09-30 estimated, `hasResults: false`; standing verdict remains `[?]` inconclusive-for-coverage. The public endpoint list includes hsCRP but not a JAK-STAT/IL-6 pathway score, so G2 target engagement must be checked in the eventual paper/supplement.
 
 ## Thoughts
@@ -53,7 +57,7 @@ Persistent JAK-STAT/IL-6 signaling is one of the most reproducible inflammatory 
 ## Connections to Project
 
 - Related hypotheses: `hypothesis:0003-immune-exhaustion-feedback`, `hypothesis:0001-shared-dysregulated-attractor`.
-- Required data or analyses: results of JAK1-inhibitor RCT with symptom + pathway co-endpoints; single-cell profiling to localize the IL-6/JAK-STAT source; cross-PAIS pathway-activity comparison.
+- Required data or analyses: results of JAK1-inhibitor RCT with symptom + pathway co-endpoints; single-cell profiling to localize the IL-6/JAK-STAT source; harmonized cross-PAIS pathway-activity comparison using the same IL6-JAK-STAT3, IFN-alpha, IFN-gamma, NF-kB/TNF, complement, and exhaustion/checkpoint score set.
 - Priority level: P1 — a near-term, directly testable driver-vs-marker question with a registered trial.
 
 ## Related

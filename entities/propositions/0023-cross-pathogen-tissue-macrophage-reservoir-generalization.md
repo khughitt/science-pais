@@ -17,6 +17,8 @@ related:
 - proposition:0022-degradation-resistant-fragments-persist-and-are-bioactive
 - task:t052
 - task:t053
+- task:t059
+- interpretation:0028-t059-h0002-promotion-vehicle-hunt
 source_refs: []
 created: '2026-06-24'
 updated: '2026-06-25'
@@ -71,3 +73,8 @@ it but is also consistent with *convergent downstream* signatures arising from *
 mechanisms — so the overlap must not be coded as direct support without a tissue-localization result.
 Promotion path: a controlled positive non-Borrelia tissue-reservoir study with macrophage localization and
 overlapping host signature would lift both this conjunct and, via the conjunction, `hypothesis:0002`.
+
+**t059 screen (2026-06-26).** The promotion vehicle hunt did not identify a new admissible support line.
+Generic SARS-CoV-2 tissue persistence or plasma antigen persistence should not be coded here unless the
+study localizes a retained, clearance-resistant pathogen fragment to tissue-resident macrophages or an
+equivalent phagocyte sink and links it to an overlapping host signature.

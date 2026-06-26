@@ -17,11 +17,14 @@ related:
 - immunity:research-question:immune-homeostasis-and-dysregulation
 - proposition:0025-lc-persistent-inflammatory-activation-dissociated-ifn
 - proposition:0026-lc-jakstat-exhaustion-loop-is-proximal-driver
+- proposition:0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis
 - pre-registration:0004-jak1-inhibitor-driver-vs-marker
 - interpretation:0012-t047-h0003-ifn-reconciliation-and-jak1-trial-registration
 - interpretation:0016-t054-abrocitinib-trial-status-snapshot
+- interpretation:0029-t060-cross-pais-ifn-jakstat-pathway-map
 - task:t047
 - task:t054
+- task:t060
 created: '2026-06-11'
 updated: '2026-06-25'
 ---
@@ -63,6 +66,7 @@ until the causal pillar is tested:
 - Whether the loop is sustained by genuine antigen (hypothesis 0002) or has become antigen-independent (sterile) is unknown and therapeutically pivotal.
 - **Belief-graph note (t047, 2026-06-24).** h0003's bundle is conjunctive over its core members: `proposition:0025` (descriptive state) is **supported**, but `proposition:0026` (the causal-driver loop) is **untested** and gated on the JAK1 trial — so the conjunction grades h0003 honestly **`speculative`** ("the inflammatory-arm signature is real; the maintenance-engine claim is unproven"). A descriptive state being well-evidenced must not promote the causal loop; that is exactly what `pre-registration:0004` exists to test. (Same honest-conjunction structure as `hypothesis:0002` post-t052.)
 - **Registry-status note (t054, 2026-06-25).** NCT06597396/CLEAR-LC is `ACTIVE_NOT_RECRUITING` with primary completion 2026-03-27 actual and `hasResults: false`; study completion is still estimated for 2026-09-30. The public endpoint list includes fatigue/PASC symptom outcomes and hsCRP, but not a specific IL-6R/JAK-STAT/ISG target-engagement readout. The causal-loop conjunct remains untested; no belief update.
+- **Cross-PAIS note (t060, 2026-06-26).** `proposition:0036` now records the generalizability map: ME/CFS and QFS partially recapitulate IFN/cytokine/exhaustion-axis abnormalities, with EatonFitch2024 providing the cleanest same-panel LC/ME/CFS support line. This is kept local to q0006 and **not** added to the h0003 core bundle, because h0003's grade should still be controlled by the LC descriptive state (`0025`) plus the untested causal-driver conjunct (`0026`).
 
 ## Predictions
 
@@ -89,6 +93,7 @@ Confidence would be materially reduced if:
 - **Aid2025 (empirical-data, two cohorts):** persistent JAK-STAT/IL-6/IFN/complement activation + CD8+ exhaustion >180 days, no circulating virus; explicit self-reinforcing-cycle interpretation; motivated a JAK1-inhibitor trial. Now **coded as `evidence-line:0061` (moderate, supports `proposition:0025`)** (t047).
 - **Ryan2022 (empirical-data):** late (5-6 month) bifurcation; blunted *type-I* IFN-effector transcription (MX1/OAS3/OASL) as a long-COVID-referral-specific signal — consistent with exhausted/tolerized innate sensing. Now **coded as `evidence-line:0062` (weak, supports `proposition:0025`)** as the dissociated type-I-effector arm (t047) — *no longer a disputing tension* (see Current Uncertainty).
 - Ganesh2022 (persistent IL-6) and Talla2023 (persistent inflammatory endotypes) are consistent with durable non-terminating inflammation.
+- **EatonFitch2024 (empirical-data, LC+ME/CFS same panel):** NanoString immune-exhaustion PBMC profiling shows overlapping IFN/cytokine/exhaustion pathway themes across ME/CFS and long COVID, now coded as `evidence-line:0089` on local q0006 proposition `0036`. This supports cross-PAIS pathway-family recurrence, not the h0003 causal-driver claim.
 
 ## Disputing Evidence
 

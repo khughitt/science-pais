@@ -16,8 +16,10 @@ related:
 - hypothesis:0003-immune-exhaustion-feedback
 - question:0006-jak-stat-il6-driver-vs-marker
 - proposition:0026-lc-jakstat-exhaustion-loop-is-proximal-driver
+- proposition:0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis
 - topic:long-covid-immune-dysregulation
 - task:t047
+- task:t060
 source_refs:
 - paper:Aid2025
 - paper:Ryan2022
@@ -72,3 +74,9 @@ simultaneously — the discriminating confirmation would be a single cohort assa
 type-I-effector ISGs longitudinally (`interpretation:0012` New Questions). The proposition is descriptive:
 it asserts the *state*, not that the inflammatory arm **causes** symptoms (`proposition:0026`,
 `question:0006`).
+
+**Cross-PAIS boundary (t060, 2026-06-26).** Non-COVID PAIS pathway recurrence is now recorded separately
+as `proposition:0036`. EatonFitch2024, Che2025, and QFS studies make the LC state more plausible as a
+pathway family rather than a SARS-CoV-2-only artifact, but they do not directly support this proposition's
+full LC-specific dissociated signature unless the same design co-measures sustained IL-6/JAK-STAT/type-II
+IFN, blunted type-I antiviral-effectors, and exhaustion markers.

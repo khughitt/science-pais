@@ -259,6 +259,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/7f6e4cd4b619640d> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0075-mecfs-muscle-bioenergetics-supports-0030> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/0b27560cf4e2d3fc> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source/entities_interpretations_0029-t060-cross-pais-ifn-jakstat-pathway-map.md> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/0b5f7b364cc8f4a6> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/maestri2025> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0036-maestri2025-pem-symptom-resolved-proteome-but-severity-unadjusted-confirms-gap> ;
@@ -507,6 +511,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/240dd62dfcfd4ebb> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0022-t010-reinfection-vaccination-risk-recovery> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/1242c90785368969> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/ryan2022> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/12883a8ce24997bb> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/eldokla2022> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0003-t018-subphenotype-sex-reproductive-stage> ;
@@ -590,6 +598,10 @@
     <http://example.org/project/bears-on-edge/14abd9fb7f599f72> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_questions_0004-convergent-small-fiber-neuropathy-substrate.md> ;
         sci:bearsOnTarget <http://example.org/project/question/0004-convergent-small-fiber-neuropathy-substrate> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/14e7304d2d42efb0> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source/entities_propositions_0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis.md> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/1503d2490af7e2f0> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/silva2024> ;
@@ -843,6 +855,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/7f2dd59f12390928> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0023-t007-microbiome-gut-brain-axis> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/1dd8a0b4f14cc966> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/9652841da19e4602> ;
+        sci:bearsOnTarget <http://example.org/project/evidence-line/0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/1de1e0d90e60002e> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0038-oaklander2022-longcovid-paired-biopsy-sfn-supports-p1.md> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0014-pais-small-fiber-structural-lesion-ienfd> ;
@@ -963,6 +979,10 @@
         sci:bearsOnSource <http://example.org/project/paper/eldokla2022> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0009-dysautonomia-female-skew-is-baseline-carried-not-pais-amplified> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/22652bbb9309f19f> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/peluso2024> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/231a19cca59fa546> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/patrascu2025> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0025-t009-pediatric-long-covid-and-misc> ;
@@ -1027,6 +1047,10 @@
         sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0011-mishra2020-adjustment-attenuation-supports-confounder-decomposition.md> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0004-female-reproductive-stage-excess-requires-confounder-decomposition> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/24d87a34b3ffbc96> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/7f2dd59f12390928> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/24e269e44ac04e57> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/497e5a8624f5f445> ;
         sci:bearsOnTarget <http://example.org/project/paper/bosworth2023> ;
@@ -1046,6 +1070,10 @@
     <http://example.org/project/bears-on-edge/25c8c083dd36cfaa> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/51000d0ab6e5a693> ;
         sci:bearsOnTarget <http://example.org/project/paper/ursini2023> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/25d5879daba47792> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/264af8f301370acf> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/25e638ca41c552a4> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/45a27b92dfaca8dd> ;
@@ -1471,6 +1499,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/612262be988c4a5a> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/35fe7a3b244fa84c> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/galbraith2011> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/3610de9495483fa0> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/28f73f1b921b1506> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0005-menopause-pais-symptom-overlap-is-a-measurement-process> ;
@@ -1691,6 +1723,10 @@
         sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0016-sylvester2022-covid-acute-male-postacute-female-supports-persistence-concentration.md> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0008-female-excess-concentrates-in-post-acute-persistence> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/3dba45cf8d6503ba> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis.md> ;
+        sci:bearsOnTarget <http://example.org/project/evidence-line/0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/3dff28880fbbbdea> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/9941bbaa5917f433> ;
         sci:bearsOnTarget <http://example.org/project/paper/vreeman2025> ;
@@ -1830,6 +1866,10 @@
     <http://example.org/project/bears-on-edge/4230296cb55de4e2> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/guo2023> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0079-guo-xiong-mecfs-butyrate-deficit-supports-0031> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/4231ebdd81bd2c95> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/306f558e9b57b7fb> ;
+        sci:bearsOnTarget <http://example.org/project/evidence-line/0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/4287f51256fdac13> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/e2029909b7d1c741> ;
@@ -1983,6 +2023,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/b2aaaeb9a3dff2e0> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0003-t018-subphenotype-sex-reproductive-stage> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/479f0b2afb608f0f> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/che2025> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/47fdf937fa39aad6> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/bbc15f5218e0959c> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0047-stein2025-immunoadsorption-improves-autonomic-supports-0019> ;
@@ -2090,6 +2134,10 @@
     <http://example.org/project/bears-on-edge/4af7257fa9cc6152> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/d0a47543efe005d8> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0035-silva2024-female-lc-immune-signature-bounded-by-testosterone-conditioning> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/4aff5d341a179998> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/keijmel2016> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/4b21a14df285feba> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/c1e39b83d956d115> ;
@@ -2310,6 +2358,10 @@
     <http://example.org/project/bears-on-edge/51b579d019e80dd4> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/c85091dbd059edc6> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/51d4cb652f67d66d> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/b2aaaeb9a3dff2e0> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/51f173a191d9fbcb> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0054-bhattacharjee2026-paxlc-no-target-engagement-disputes-0020.md> ;
@@ -2747,6 +2799,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/25c5176a5f46bab2> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0031-pais-gut-dysbiosis-scfa-depletion> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/60afcfe756ae4643> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/patterson2024> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/60bfbf9e3a0ad918> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/stein2025> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0047-stein2025-immunoadsorption-improves-autonomic-supports-0019> ;
@@ -2795,6 +2851,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/467b5138023059d0> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0039-joseph2021-mecfs-distal-biopsy-31pct-sfn-supports-p1> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/62d740463537b486> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/eatonfitch2024> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/6314249a81828da9> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/e7f68403b9f1e357> ;
         sci:bearsOnTarget <http://example.org/project/dataset/uk-biobank-covid> ;
@@ -2835,6 +2895,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/13c61a474e3b1522> ;
         sci:bearsOnTarget <http://example.org/project/hypothesis/0004-acute-severity-threshold> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/646a1e2033b2dbfe> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/21f13fba18560bba> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/6489881772e09815> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/84850100b11526dd> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0008-t019-hrt-evidence-audit-no-admissible-pais-test> ;
@@ -2854,6 +2918,14 @@
     <http://example.org/project/bears-on-edge/6508939758e89197> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/byambasuren2023> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0022-t010-reinfection-vaccination-risk-recovery> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/65ac9944ae6513d2> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/brandstetterfigueroa2025> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/65b1c5f069649f51> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/db9d6aae385d9b99> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/65da71f8274b8ff8> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/8071e7ded5e9b288> ;
@@ -2930,6 +3002,10 @@
     <http://example.org/project/bears-on-edge/6908878d5a048985> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/586b9bcfa8456d8e> ;
         sci:bearsOnTarget <http://example.org/project/paper/lopezleon2022> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/690950b8423a745c> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/c7f998ce0b175975> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/6922c1729a84762b> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0019-kwan2022-infection-raises-pots-without-sex-amplification-supports-baseline-carried.md> ;
@@ -3071,6 +3147,10 @@
         sci:bearsOnSource <http://example.org/project/paper/krupp2003> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0060-ptlds-antibiotic-retreatment-null-disputes-0020> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/6e4eadaa4cd7c6c6> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/goh2022> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/6e510800b553cd23> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0041-limongelli2026-paired-biopsy-33pct-non-length-dependent-supports-p2.md> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0015-pais-sfn-non-length-dependent-pattern> ;
@@ -3203,6 +3283,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/13fe5872ed67a7aa> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0003-t018-subphenotype-sex-reproductive-stage> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/729161de29121c43> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/607ff61fb63240bc> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/72a2ff8aa0a46512> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/ee5d926695ff828b> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0012-stewart2024-menopause-pasc-overlap-supports-measurement-process> ;
@@ -3298,6 +3382,10 @@
     <http://example.org/project/bears-on-edge/752412d75d407674> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/b2aaaeb9a3dff2e0> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0013-immune-domain-partial-hormone-mediated-objective-exception> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/753106622ce16f2f> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/eatonfitch2024> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/75393b0188ce0358> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/zhangrecoverehr2026> ;
@@ -3410,6 +3498,10 @@
     <http://example.org/project/bears-on-edge/79ca79e9938f8cd3> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/evidence-line/0007-shahbaz2025-testosterone-cytokine-inverse-supports-pathway-mechanism> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0002-reproductive-stage-transition-modifies-immune-regulatory-pathways> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/79de16c9c5423ea1> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/aid2025> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/79efad7343c5647d> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/d19dbe960bf238e1> ;
@@ -4151,6 +4243,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/f771c87c30c4124c> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0023-t007-microbiome-gut-brain-axis> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/95a58b257de9be21> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/morroy2016> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/95c6693f8d80f720> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/novak2026> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0028-pais-heterogeneity-explained-by-ascertainment-and-scoring> ;
@@ -4491,6 +4587,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/1a32b9a17b72964d> ;
         sci:bearsOnTarget <http://example.org/project/paper/zeraatkar2024> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/a110f27c6caf2090> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/306f558e9b57b7fb> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/a11dbf54415dba43> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/joseph2023> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0033-microvascular-hypoperfusion-drives-pem-muscle-bioenergetic-failure> ;
@@ -4530,6 +4630,10 @@
     <http://example.org/project/bears-on-edge/a2c1dcc021f1bee0> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/75423cd7c36a5e75> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0047-stein2025-immunoadsorption-improves-autonomic-supports-0019> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/a2c2e60929015988> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/21f13fba18560bba> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/a2c9586a0eb98ac4> sci:bearsOnDepth "3"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/aa89f8a8e9a1e950> ;
@@ -4578,6 +4682,10 @@
     <http://example.org/project/bears-on-edge/a385fe0483cc0baf> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
         sci:bearsOnTarget <http://example.org/project/report/0004-t036-hormone-panel-cohort-feasibility-m1-positive-test> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/a3b662d1e4f391df> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/1c072adff0d0b957> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/a400e1d3c5fdd564> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/44f8221f52fe4a11> ;
@@ -4654,6 +4762,10 @@
     <http://example.org/project/bears-on-edge/a61080cbb0d932fa> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/liu2022> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0078-liu-su-longcovid-persistent-dysbiosis-supports-0031> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/a616aaf70cb3914f> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source/entities_interpretations_0028-t059-h0002-promotion-vehicle-hunt.md> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/a689dd6b75d28b9b> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/74d3ae468c3eba5d> ;
@@ -4910,6 +5022,10 @@
     <http://example.org/project/bears-on-edge/af20e5b9f4412f63> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/03aa3018998594d5> ;
         sci:bearsOnTarget <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/af2b2bd901915311> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/32ab097bdfeb1ff9> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/af3afc21698d11c0> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/8517441086c64e86> ;
@@ -5179,6 +5295,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/9eca20c284aef33d> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0014-pais-small-fiber-structural-lesion-ienfd> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/b9dda503eae35e0f> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/eatonfitch2024> ;
+        sci:bearsOnTarget <http://example.org/project/evidence-line/0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/ba48571ab68585b4> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/517ded8ccfc5f21d> ;
         sci:bearsOnTarget <http://example.org/project/question/0016-oxidative-stress-upstream-driver-of-bioenergetic> ;
@@ -5295,6 +5415,10 @@
         sci:bearsOnSource <http://example.org/project/paper/novak2026> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0017-pais-sfn-cross-trigger-convergence> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/be8790a202ce910d> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis.md> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/bece8dcf0d6da245> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/evidence-line/0043-joseph2021-mecfs-leg-cross-trigger-convergence-supports-p4> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0017-pais-sfn-cross-trigger-convergence> ;
@@ -5342,6 +5466,10 @@
     <http://example.org/project/bears-on-edge/c022b07bd229c351> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/shahbaz2025> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0003-t018-subphenotype-sex-reproductive-stage> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/c02a94c5782f0d7c> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/paper/morroy2016> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/c04011c1e9a5118f> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_propositions_0002-reproductive-stage-transition-modifies-immune-regulatory-pathways.md> ;
@@ -5458,6 +5586,10 @@
     <http://example.org/project/bears-on-edge/c40adee2fb41c58e> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0046-walitt2024-no-uniform-autoantibody-disputes-immune-mediated.md> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0016-pais-sfn-autoimmune-causation> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/c41145b792acf169> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/2479b4da5de01aff> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/c417ddb39888e31a> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/7f6e4cd4b619640d> ;
@@ -5643,6 +5775,10 @@
         sci:bearsOnSource <http://example.org/project/paper/ambrosino2021> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0005-t042-vascular-male-reversal-survives-severity-adjustment> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/c9c56dcdd6000aa4> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/306f558e9b57b7fb> ;
+        sci:bearsOnTarget <http://example.org/project/paper/eatonfitch2024> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/ca07ac3413112118> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/6e0b045f1a3921ed> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0010-cognitive-female-excess-is-self-report-only-absent-in-objective-testing> ;
@@ -5818,6 +5954,10 @@
     <http://example.org/project/bears-on-edge/cf6863bbf5f557c5> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/b0817e00533f4f28> ;
         sci:bearsOnTarget <http://example.org/project/report/0002-t029-second-pass-menopause-pais-pre-registration-review> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/cf78c9958f45ae8b> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/9652841da19e4602> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/cf93325c3d0b6737> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/813972429db1c98a> ;
@@ -6035,6 +6175,10 @@
         sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0019-kwan2022-infection-raises-pots-without-sex-amplification-supports-baseline-carried.md> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0009-dysautonomia-female-skew-is-baseline-carried-not-pais-amplified> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/d8a671915e51b158> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/d3400e323cbc6e75> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/d8b6d083cd8e3295> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0008-silva2024-reverse-reading-supports-axis-perturbation.md> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0003-infection-pais-perturbs-the-reproductive-axis-and-menopausal-timing> ;
@@ -6082,6 +6226,10 @@
     <http://example.org/project/bears-on-edge/da711916ef9e7031> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/1a7ed955952c52ca> ;
         sci:bearsOnTarget <http://example.org/project/synthesis/0007-autoimmune-sfn-peripheral-dysautonomia-substrate> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/da7f25d7142e158e> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/aee67e068d85b1df> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/da888c7cfa99ca8d> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0010-shah2025-unisolated-excess-supports-confounder-decomposition.md> ;
@@ -6154,6 +6302,10 @@
     <http://example.org/project/bears-on-edge/dd219f12fb959250> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_questions_0015-does-pem-requirement-improve-cross-study-comparability.md> ;
         sci:bearsOnTarget <http://example.org/project/question/0015-does-pem-requirement-improve-cross-study-comparability> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/dd77f721d1a78b3a> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/306f558e9b57b7fb> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/dda0559952f47c14> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/d1a98096f725dd73> ;
@@ -6835,6 +6987,10 @@
         sci:bearsOnSource <http://example.org/project/paper/bizjak2024> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0077-bizjak2024-cross-trigger-muscle-biopsy-disputes-simple-same-lesion-reading> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/f4db948140fd5fa8> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/87efc40c0e045caf> ;
+        sci:bearsOnTarget <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/f56f05dac0f64e39> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/c537af7572ff0ccd> ;
         sci:bearsOnTarget <http://example.org/project/question/0013-reproductive-stage-failed-immune-recovery-after-infection> ;
@@ -7002,6 +7158,10 @@
     <http://example.org/project/bears-on-edge/faf864ec37203eb3> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_propositions_0013-immune-domain-partial-hormone-mediated-objective-exception.md> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0013-immune-domain-partial-hormone-mediated-objective-exception> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/fb09a713a4d4ef63> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/evidence-line/0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis> ;
+        sci:bearsOnTarget <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/fbab50e383630a6c> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/4027eb2100fe9048> ;
@@ -9073,6 +9233,19 @@
             <http://example.org/project/proposition/0035-pem-muscle-lesion-is-self-perpetuating>,
             <http://example.org/project/question/0011-mitochondrial-basis-of-pem> ;
         schema:identifier "evidence-line:0088-scheibenbogen2024-aimm-feedback-weakly-supports-h0006-p4" .
+    <http://example.org/project/evidence-line/0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis> sci:bearsOn <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis> ;
+        sci:freshnessState "fresh" ;
+        sci:profile "core" ;
+        sci:projectStatus "active" ;
+        sci:scope "project" ;
+        cito:supports <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis> ;
+        a sci:EvidenceLine ;
+        skos:prefLabel "EatonFitch2024 same-panel ME/CFS and long-COVID immune-exhaustion transcriptomics weakly supports cross-PAIS IFN/cytokine/exhaustion-axis recurrence" ;
+        skos:related <http://example.org/project/hypothesis/0003-immune-exhaustion-feedback>,
+            <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis>,
+            <http://example.org/project/question/0006-jak-stat-il6-driver-vs-marker>,
+            <http://example.org/project/task/t060> ;
+        schema:identifier "evidence-line:0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis" .
     <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor> sci:freshnessState "needs-review" ;
         sci:profile "core" ;
         sci:projectStatus "proposed" ;
@@ -9112,6 +9285,7 @@
         skos:related <http://example.org/project/discussion/0003-antigen-persistence-treatable-vs-fixed>,
             <http://example.org/project/interpretation/0011-t046-antigen-clearance-trials-ingestion>,
             <http://example.org/project/interpretation/0017-t053-h0002-promotion-audit>,
+            <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt>,
             <http://example.org/project/proposition/0020-antigen-clearance-rescues-established-pais>,
             <http://example.org/project/proposition/0021-acute-antigen-burden-determines-pais-incidence>,
             <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive>,
@@ -9120,6 +9294,7 @@
             <http://example.org/project/question/0002-antigen-clearance-rescues-symptoms>,
             <http://example.org/project/task/t052>,
             <http://example.org/project/task/t053>,
+            <http://example.org/project/task/t059>,
             <http://example.org/project/topic/antigen-pathogen-persistence>,
             <http://example.org/project/topic/shared-failure-mode-across-pais> ;
         schema:identifier "hypothesis:0002-tissue-reservoir-antigen-fragment" .
@@ -9138,12 +9313,15 @@
         skos:related <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment>,
             <http://example.org/project/interpretation/0012-t047-h0003-ifn-reconciliation-and-jak1-trial-registration>,
             <http://example.org/project/interpretation/0016-t054-abrocitinib-trial-status-snapshot>,
+            <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map>,
             <http://example.org/project/pre-registration/0004-jak1-inhibitor-driver-vs-marker>,
             <http://example.org/project/proposition/0025-lc-persistent-inflammatory-activation-dissociated-ifn>,
             <http://example.org/project/proposition/0026-lc-jakstat-exhaustion-loop-is-proximal-driver>,
+            <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis>,
             <http://example.org/project/question/0006-jak-stat-il6-driver-vs-marker>,
             <http://example.org/project/task/t047>,
             <http://example.org/project/task/t054>,
+            <http://example.org/project/task/t060>,
             <http://example.org/project/topic/long-covid-immune-dysregulation>,
             <http://example.org/project/topic/shared-failure-mode-across-pais>,
             <http://example.org/project/topic/therapeutics-and-clinical-trials> ;
@@ -9768,6 +9946,36 @@
             <http://example.org/project/question/0015-does-pem-requirement-improve-cross-study-comparability>,
             <http://example.org/project/task/t061> ;
         schema:identifier "interpretation:0027-t061-severity-adjusted-pem-vehicle-triage" .
+    <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt> sci:amends <http://example.org/project/interpretation/0017-t053-h0002-promotion-audit> ;
+        sci:freshnessState "fresh" ;
+        sci:profile "core" ;
+        sci:projectStatus "active" ;
+        sci:scope "project" ;
+        a sci:Interpretation ;
+        skos:prefLabel "t059 - h0002 promotion vehicle hunt: no admissible non-Borrelia macrophage-reservoir or retained-burden-over-load vehicle found" ;
+        skos:related <http://example.org/project/evidence-line/0072-goh2022-sars2-tissue-cd68-antigen-weakly-supports-0023>,
+            <http://example.org/project/evidence-line/0073-brandstetterfigueroa2025-acute-nag-predicts-lc-disputes-0024>,
+            <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment>,
+            <http://example.org/project/interpretation/0017-t053-h0002-promotion-audit>,
+            <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization>,
+            <http://example.org/project/proposition/0024-retained-fragment-burden-predicts-chronicity-over-initial-load>,
+            <http://example.org/project/task/t059> ;
+        schema:identifier "interpretation:0028-t059-h0002-promotion-vehicle-hunt" .
+    <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> sci:amends <http://example.org/project/interpretation/0012-t047-h0003-ifn-reconciliation-and-jak1-trial-registration> ;
+        sci:freshnessState "fresh" ;
+        sci:profile "core" ;
+        sci:projectStatus "active" ;
+        sci:scope "project" ;
+        a sci:Interpretation ;
+        skos:prefLabel "t060 - cross-PAIS IFN/JAK-STAT pathway map for q0006" ;
+        skos:related <http://example.org/project/evidence-line/0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis>,
+            <http://example.org/project/hypothesis/0003-immune-exhaustion-feedback>,
+            <http://example.org/project/proposition/0025-lc-persistent-inflammatory-activation-dissociated-ifn>,
+            <http://example.org/project/proposition/0026-lc-jakstat-exhaustion-loop-is-proximal-driver>,
+            <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis>,
+            <http://example.org/project/question/0006-jak-stat-il6-driver-vs-marker>,
+            <http://example.org/project/task/t060> ;
+        schema:identifier "interpretation:0029-t060-cross-pais-ifn-jakstat-pathway-map" .
     <http://example.org/project/membership/proposition_0001-reproductive-stage-transition-shifts-the-failed-recovery-threshold__hypothesis_0005-reproductive-stage-immune-homeostatic-margin> sci:membershipFrame <http://example.org/project/hypothesis/0005-reproductive-stage-immune-homeostatic-margin> ;
         sci:membershipProposition <http://example.org/project/proposition/0001-reproductive-stage-transition-shifts-the-failed-recovery-threshold> ;
         sci:membershipRole "core" ;
@@ -9896,6 +10104,10 @@
         sci:membershipProposition <http://example.org/project/proposition/0035-pem-muscle-lesion-is-self-perpetuating> ;
         sci:membershipRole "core" ;
         a sci:BundleMembership .
+    <http://example.org/project/membership/proposition_0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis__hypothesis_0003-immune-exhaustion-feedback> sci:membershipFrame <http://example.org/project/hypothesis/0003-immune-exhaustion-feedback> ;
+        sci:membershipProposition <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis> ;
+        sci:membershipRole "background" ;
+        a sci:BundleMembership .
     <http://example.org/project/method/confounder-open-questions-and-staged-amendment> sci:profile "core" ;
         sci:projectStatus "active" ;
         sci:scope "project" ;
@@ -10008,6 +10220,7 @@
             <http://example.org/project/evidence-line/0061-aid2025-persistent-jakstat-il6-exhaustion-supports-0025>,
             <http://example.org/project/interpretation/0003-t018-subphenotype-sex-reproductive-stage>,
             <http://example.org/project/interpretation/0006-t041-objective-female-biased-subphenotype-search>,
+            <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map>,
             <http://example.org/project/proposition/0013-immune-domain-partial-hormone-mediated-objective-exception>,
             <http://example.org/project/proposition/0025-lc-persistent-inflammatory-activation-dissociated-ifn> ;
         sci:profile "core" ;
@@ -10266,6 +10479,7 @@
             <http://example.org/project/topic/therapeutics-and-clinical-trials> ;
         schema:identifier "paper:Bramante2026" .
     <http://example.org/project/paper/brandstetterfigueroa2025> sci:bearsOn <http://example.org/project/evidence-line/0073-brandstetterfigueroa2025-acute-nag-predicts-lc-disputes-0024>,
+            <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt>,
             <http://example.org/project/proposition/0024-retained-fragment-burden-predicts-chronicity-over-initial-load> ;
         sci:profile "core" ;
         sci:projectStatus "active" ;
@@ -10368,7 +10582,8 @@
             <http://example.org/project/paper/peluso2024> ;
         schema:identifier "paper:CerviaHasler2024" .
     <http://example.org/project/paper/che2025> sci:bearsOn <http://example.org/project/interpretation/0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation>,
-            <http://example.org/project/interpretation/0023-t007-microbiome-gut-brain-axis> ;
+            <http://example.org/project/interpretation/0023-t007-microbiome-gut-brain-axis>,
+            <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
         sci:profile "core" ;
         sci:projectStatus "active" ;
         sci:scope "project" ;
@@ -10501,6 +10716,21 @@
             <http://example.org/project/task/t008>,
             <http://example.org/project/topic/biomarkers-and-objective-endpoints> ;
         schema:identifier "paper:Douaud2022" .
+    <http://example.org/project/paper/eatonfitch2024> sci:bearsOn <http://example.org/project/evidence-line/0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis>,
+            <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map>,
+            <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis> ;
+        sci:profile "core" ;
+        sci:projectStatus "active" ;
+        sci:scope "project" ;
+        a sci:Paper ;
+        skos:prefLabel "Immune exhaustion in ME/CFS and long COVID" ;
+        skos:related <http://example.org/project/hypothesis/0003-immune-exhaustion-feedback>,
+            <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis>,
+            <http://example.org/project/question/0006-jak-stat-il6-driver-vs-marker>,
+            <http://example.org/project/topic/long-covid-immune-dysregulation>,
+            <http://example.org/project/topic/mecfs-long-covid-convergence>,
+            <http://example.org/project/topic/shared-failure-mode-across-pais> ;
+        schema:identifier "paper:EatonFitch2024" .
     <http://example.org/project/paper/eldokla2022> sci:bearsOn <http://example.org/project/evidence-line/0020-eldokla2022-compass31-sex-null-supports-baseline-carried-dysautonomia>,
             <http://example.org/project/interpretation/0003-t018-subphenotype-sex-reproductive-stage>,
             <http://example.org/project/interpretation/0006-t041-objective-female-biased-subphenotype-search>,
@@ -10575,7 +10805,8 @@
         skos:related <http://example.org/project/paper/ozonoff2024>,
             <http://example.org/project/paper/talla2023> ;
         schema:identifier "paper:Gabernet2025" .
-    <http://example.org/project/paper/galbraith2011> sci:profile "core" ;
+    <http://example.org/project/paper/galbraith2011> sci:bearsOn <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
+        sci:profile "core" ;
         sci:projectStatus "active" ;
         sci:scope "project" ;
         a sci:Paper ;
@@ -10649,6 +10880,7 @@
             <http://example.org/project/topic/post-infectious-dysautonomia-and-autoimmunity> ;
         schema:identifier "paper:Girgis2025" .
     <http://example.org/project/paper/goh2022> sci:bearsOn <http://example.org/project/evidence-line/0072-goh2022-sars2-tissue-cd68-antigen-weakly-supports-0023>,
+            <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt>,
             <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> ;
         sci:profile "core" ;
         sci:projectStatus "active" ;
@@ -10896,7 +11128,8 @@
         skos:related <http://example.org/project/topic/shared-failure-mode-across-pais>,
             <http://example.org/project/topic/thromboinflammation-and-endothelial-dysfunction> ;
         schema:identifier "paper:Kawai2025" .
-    <http://example.org/project/paper/keijmel2016> sci:profile "core" ;
+    <http://example.org/project/paper/keijmel2016> sci:bearsOn <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
+        sci:profile "core" ;
         sci:projectStatus "active" ;
         sci:scope "project" ;
         a sci:Paper ;
@@ -11204,7 +11437,9 @@
         skos:prefLabel "Chronic widespread musculoskeletal pain, fatigue, depression and disordered sleep in chronic post-SARS syndrome; a case-controlled study" ;
         skos:related <http://example.org/project/paper/choutka2022> ;
         schema:identifier "paper:Moldofsky2011" .
-    <http://example.org/project/paper/morroy2016> sci:profile "core" ;
+    <http://example.org/project/paper/morroy2016> sci:bearsOn <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt>,
+            <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
+        sci:profile "core" ;
         sci:projectStatus "active" ;
         sci:scope "project" ;
         a sci:Paper ;
@@ -11335,7 +11570,8 @@
         skos:related <http://example.org/project/paper/choutka2022>,
             <http://example.org/project/paper/nicolai2023> ;
         schema:identifier "paper:Patrascu2025" .
-    <http://example.org/project/paper/patterson2024> sci:profile "core" ;
+    <http://example.org/project/paper/patterson2024> sci:bearsOn <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> ;
+        sci:profile "core" ;
         sci:projectStatus "active" ;
         sci:scope "project" ;
         a sci:Paper ;
@@ -11356,6 +11592,7 @@
             <http://example.org/project/topic/pais-case-definition-heterogeneity> ;
         schema:identifier "paper:PCCOS2023COMS" .
     <http://example.org/project/paper/peluso2024> sci:bearsOn <http://example.org/project/evidence-line/0059-peluso2024-sars2-antigen-persistence-supports-0022>,
+            <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt>,
             <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> ;
         sci:profile "core" ;
         sci:projectStatus "active" ;
@@ -11498,6 +11735,7 @@
         skos:prefLabel "Autoimmunity is a hallmark of post-COVID syndrome" ;
         schema:identifier "paper:Rojas2022" .
     <http://example.org/project/paper/ryan2022> sci:bearsOn <http://example.org/project/evidence-line/0062-ryan2022-type-i-ifn-effector-blunting-supports-0025>,
+            <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map>,
             <http://example.org/project/proposition/0025-lc-persistent-inflammatory-activation-dissociated-ifn> ;
         sci:profile "core" ;
         sci:projectStatus "active" ;
@@ -12783,15 +13021,17 @@
         sci:triggeredBy <http://example.org/project/evidence-line/0072-goh2022-sars2-tissue-cd68-antigen-weakly-supports-0023>,
             <http://example.org/project/paper/goh2022>,
             <http://example.org/project/source-snapshot/d3d3e31233580503> ;
-        sci:upstreamChangeAt "2026-06-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        sci:upstreamChangeAt "2026-06-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
         cito:discusses <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment> ;
         a sci:Proposition ;
         skos:prefLabel "A structurally analogous degradation-resistant tissue/macrophage fragment reservoir operates across pathogen classes (Borrelia, SARS-CoV-2, Coxiella-like triggers)" ;
         skos:related <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment>,
+            <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt>,
             <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive>,
             <http://example.org/project/question/0002-antigen-clearance-rescues-symptoms>,
             <http://example.org/project/task/t052>,
             <http://example.org/project/task/t053>,
+            <http://example.org/project/task/t059>,
             <http://example.org/project/topic/antigen-pathogen-persistence> ;
         schema:identifier "proposition:0023-cross-pathogen-tissue-macrophage-reservoir-generalization" .
     <http://example.org/project/proposition/0024-retained-fragment-burden-predicts-chronicity-over-initial-load> sci:freshnessState "needs-review" ;
@@ -12801,15 +13041,17 @@
         sci:triggeredBy <http://example.org/project/evidence-line/0073-brandstetterfigueroa2025-acute-nag-predicts-lc-disputes-0024>,
             <http://example.org/project/paper/brandstetterfigueroa2025>,
             <http://example.org/project/source-snapshot/4466a4fa59e8d9e9> ;
-        sci:upstreamChangeAt "2026-06-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        sci:upstreamChangeAt "2026-06-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
         cito:discusses <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment> ;
         a sci:Proposition ;
         skos:prefLabel "Retained fragment burden/duration predicts chronic PAIS onset better than initial pathogen load" ;
         skos:related <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment>,
+            <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt>,
             <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive>,
             <http://example.org/project/question/0002-antigen-clearance-rescues-symptoms>,
             <http://example.org/project/task/t052>,
             <http://example.org/project/task/t053>,
+            <http://example.org/project/task/t059>,
             <http://example.org/project/topic/antigen-pathogen-persistence> ;
         schema:identifier "proposition:0024-retained-fragment-burden-predicts-chronicity-over-initial-load" .
     <http://example.org/project/proposition/0025-lc-persistent-inflammatory-activation-dissociated-ifn> sci:freshnessState "needs-review" ;
@@ -12817,14 +13059,16 @@
         sci:projectStatus "active" ;
         sci:scope "project" ;
         sci:triggeredBy <http://example.org/project/source-snapshot/da99ff8566b5ba9d> ;
-        sci:upstreamChangeAt "2026-06-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        sci:upstreamChangeAt "2026-06-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
         cito:discusses <http://example.org/project/hypothesis/0003-immune-exhaustion-feedback> ;
         a sci:Proposition ;
         skos:prefLabel "Long COVID exhibits persistent inflammatory pathway activation with a dissociated IFN signature: sustained IL-6/JAK-STAT/type-II-IFN/complement tone plus a blunted type-I antiviral-effector arm, alongside CD8 exhaustion, beyond 180d with no circulating virus" ;
         skos:related <http://example.org/project/hypothesis/0003-immune-exhaustion-feedback>,
             <http://example.org/project/proposition/0026-lc-jakstat-exhaustion-loop-is-proximal-driver>,
+            <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis>,
             <http://example.org/project/question/0006-jak-stat-il6-driver-vs-marker>,
             <http://example.org/project/task/t047>,
+            <http://example.org/project/task/t060>,
             <http://example.org/project/topic/long-covid-immune-dysregulation> ;
         schema:identifier "proposition:0025-lc-persistent-inflammatory-activation-dissociated-ifn" .
     <http://example.org/project/proposition/0026-lc-jakstat-exhaustion-loop-is-proximal-driver> sci:freshnessState "needs-review" ;
@@ -13009,6 +13253,25 @@
             <http://example.org/project/question/0011-mitochondrial-basis-of-pem>,
             <http://example.org/project/question/0016-oxidative-stress-upstream-driver-of-bioenergetic> ;
         schema:identifier "proposition:0035-pem-muscle-lesion-is-self-perpetuating" .
+    <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis> sci:freshnessState "fresh" ;
+        sci:profile "core" ;
+        sci:projectStatus "active" ;
+        sci:scope "project" ;
+        cito:discusses <http://example.org/project/hypothesis/0003-immune-exhaustion-feedback> ;
+        a sci:Proposition ;
+        skos:prefLabel "Non-COVID PAIS partially recapitulate the long-COVID IFN/cytokine/exhaustion axis, but not yet the full JAK-STAT/IL-6 dissociation pattern" ;
+        skos:related <http://example.org/project/hypothesis/0003-immune-exhaustion-feedback>,
+            <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map>,
+            <http://example.org/project/paper/che2025>,
+            <http://example.org/project/paper/eatonfitch2024>,
+            <http://example.org/project/paper/keijmel2016>,
+            <http://example.org/project/paper/morroy2016>,
+            <http://example.org/project/paper/patterson2024>,
+            <http://example.org/project/proposition/0025-lc-persistent-inflammatory-activation-dissociated-ifn>,
+            <http://example.org/project/proposition/0026-lc-jakstat-exhaustion-loop-is-proximal-driver>,
+            <http://example.org/project/question/0006-jak-stat-il6-driver-vs-marker>,
+            <http://example.org/project/task/t060> ;
+        schema:identifier "proposition:0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis" .
     <http://example.org/project/question/0001-shared-molecular-signature-across-triggers> sci:freshnessState "needs-review" ;
         sci:profile "core" ;
         sci:projectStatus "active" ;
@@ -13091,10 +13354,13 @@
         skos:related <http://example.org/project/hypothesis/0003-immune-exhaustion-feedback>,
             <http://example.org/project/interpretation/0012-t047-h0003-ifn-reconciliation-and-jak1-trial-registration>,
             <http://example.org/project/interpretation/0016-t054-abrocitinib-trial-status-snapshot>,
+            <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map>,
             <http://example.org/project/pre-registration/0004-jak1-inhibitor-driver-vs-marker>,
             <http://example.org/project/proposition/0025-lc-persistent-inflammatory-activation-dissociated-ifn>,
             <http://example.org/project/proposition/0026-lc-jakstat-exhaustion-loop-is-proximal-driver>,
+            <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis>,
             <http://example.org/project/task/t054>,
+            <http://example.org/project/task/t060>,
             <http://example.org/project/topic/long-covid-immune-dysregulation>,
             <http://example.org/project/topic/therapeutics-and-clinical-trials> ;
         schema:identifier "question:0006-jak-stat-il6-driver-vs-marker" .
@@ -13681,6 +13947,7 @@
             <http://example.org/project/proposition/0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode> .
     <http://example.org/project/source-snapshot/1ba72f6eff4d380d> sci:bearsOn <http://example.org/project/interpretation/0023-t007-microbiome-gut-brain-axis>,
             <http://example.org/project/paper/iqbal2025> .
+    <http://example.org/project/source-snapshot/1c072adff0d0b957> sci:bearsOn <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt> .
     <http://example.org/project/source-snapshot/1c2a08e527aa3a3c> sci:bearsOn <http://example.org/project/proposition/0032-pem-bioenergetic-deficit-localizes-to-skeletal-muscle> .
     <http://example.org/project/source-snapshot/1c4ac6d7414215b7> sci:bearsOn <http://example.org/project/evidence-line/0060-ptlds-antibiotic-retreatment-null-disputes-0020>,
             <http://example.org/project/paper/fallon2008>,
@@ -13703,7 +13970,9 @@
             <http://example.org/project/paper/costeira2021>,
             <http://example.org/project/proposition/0006-hormone-therapy-effects-on-pais-are-context-dependent> .
     <http://example.org/project/source-snapshot/21d66ee163359917> sci:bearsOn <http://example.org/project/paper/moldofsky2011> .
-    <http://example.org/project/source-snapshot/21f13fba18560bba> sci:bearsOn <http://example.org/project/paper/morroy2016> .
+    <http://example.org/project/source-snapshot/21f13fba18560bba> sci:bearsOn <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt>,
+            <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map>,
+            <http://example.org/project/paper/morroy2016> .
     <http://example.org/project/source-snapshot/2231f60001a5ce19> sci:bearsOn <http://example.org/project/concept/incident-cardiometabolic-comorbidity> .
     <http://example.org/project/source-snapshot/2241e0f20f09befd> sci:bearsOn <http://example.org/project/proposition/0009-dysautonomia-female-skew-is-baseline-carried-not-pais-amplified> .
     <http://example.org/project/source-snapshot/23917b1f6a8f9aed> sci:bearsOn <http://example.org/project/question/0014-which-pais-case-definition-is-most-biologically-coherent> .
@@ -13716,6 +13985,7 @@
             <http://example.org/project/question/0012-prevention-vaccination-antiviral-reduces-pais> .
     <http://example.org/project/source-snapshot/2436f6b7b1bd4e5f> sci:bearsOn <http://example.org/project/topic/antigen-pathogen-persistence> .
     <http://example.org/project/source-snapshot/2479b4da5de01aff> sci:bearsOn <http://example.org/project/evidence-line/0059-peluso2024-sars2-antigen-persistence-supports-0022>,
+            <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt>,
             <http://example.org/project/paper/peluso2024>,
             <http://example.org/project/proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive> .
     <http://example.org/project/source-snapshot/25c5176a5f46bab2> sci:bearsOn <http://example.org/project/proposition/0031-pais-gut-dysbiosis-scfa-depletion> .
@@ -13723,7 +13993,8 @@
             <http://example.org/project/report/0004-t036-hormone-panel-cohort-feasibility-m1-positive-test>,
             <http://example.org/project/report/0005-t038-impacc-gabernet2025-m1-mediator-compatibility> .
     <http://example.org/project/source-snapshot/262753efc391b393> sci:bearsOn <http://example.org/project/paper/huang2024> .
-    <http://example.org/project/source-snapshot/264af8f301370acf> sci:bearsOn <http://example.org/project/paper/keijmel2016> .
+    <http://example.org/project/source-snapshot/264af8f301370acf> sci:bearsOn <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map>,
+            <http://example.org/project/paper/keijmel2016> .
     <http://example.org/project/source-snapshot/26b8a0515cb81cbd> sci:bearsOn <http://example.org/project/concept/unmeasured-shared-confounders> .
     <http://example.org/project/source-snapshot/26cbdc0f802f889f> sci:bearsOn <http://example.org/project/proposition/0021-acute-antigen-burden-determines-pais-incidence> .
     <http://example.org/project/source-snapshot/27f250538856e9fe> sci:bearsOn <http://example.org/project/dataset/gse14577-pi-cfs-prepared-gene-matrix> .
@@ -13751,11 +14022,16 @@
     <http://example.org/project/source-snapshot/2f9bc8aaade20112> sci:bearsOn <http://example.org/project/paper/wang2026b> .
     <http://example.org/project/source-snapshot/302673eb2e03d18c> sci:bearsOn <http://example.org/project/evidence-line/0086-appelman2024-no-occlusion-weakly-disputes-simple-ischemic-p2>,
             <http://example.org/project/proposition/0033-microvascular-hypoperfusion-drives-pem-muscle-bioenergetic-failure> .
+    <http://example.org/project/source-snapshot/306f558e9b57b7fb> sci:bearsOn <http://example.org/project/evidence-line/0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis>,
+            <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map>,
+            <http://example.org/project/paper/eatonfitch2024>,
+            <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis> .
     <http://example.org/project/source-snapshot/30cc27a8562f55fd> sci:bearsOn <http://example.org/project/topic/thromboinflammation-and-endothelial-dysfunction> .
     <http://example.org/project/source-snapshot/318e938a164bcc27> sci:bearsOn <http://example.org/project/workflow/t035-cross-trigger-pathway-overlap> .
     <http://example.org/project/source-snapshot/31a5c1b50e389196> sci:bearsOn <http://example.org/project/interpretation/0024-t011-delayed-viral-dynamics-models>,
             <http://example.org/project/paper/perevaryukha2021> .
     <http://example.org/project/source-snapshot/32ab097bdfeb1ff9> sci:bearsOn <http://example.org/project/evidence-line/0072-goh2022-sars2-tissue-cd68-antigen-weakly-supports-0023>,
+            <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt>,
             <http://example.org/project/paper/goh2022>,
             <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> .
     <http://example.org/project/source-snapshot/32f42e49e4d82471> sci:bearsOn <http://example.org/project/plan/0003-cross-trigger-pathway-overlap-pipeline>,
@@ -13920,6 +14196,7 @@
     <http://example.org/project/source-snapshot/5f2bbfd0fe6b2a1e> sci:bearsOn <http://example.org/project/interpretation/0008-t019-hrt-evidence-audit-no-admissible-pais-test>,
             <http://example.org/project/paper/alcaldeherraiz2025> .
     <http://example.org/project/source-snapshot/6020c8f871445661> sci:bearsOn <http://example.org/project/proposition/0005-menopause-pais-symptom-overlap-is-a-measurement-process> .
+    <http://example.org/project/source-snapshot/607ff61fb63240bc> sci:bearsOn <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> .
     <http://example.org/project/source-snapshot/612262be988c4a5a> sci:bearsOn <http://example.org/project/evidence-line/0026-keller2014-mecfs-whole-body-2day-cpet-decrement-anchors-the-positive-reference-arm>,
             <http://example.org/project/proposition/0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode> .
     <http://example.org/project/source-snapshot/613f61cf0bb95173> sci:bearsOn <http://example.org/project/evidence-line/0077-bizjak2024-cross-trigger-muscle-biopsy-disputes-simple-same-lesion-reading>,
@@ -14043,6 +14320,7 @@
     <http://example.org/project/source-snapshot/7edbce22e8b1908a> sci:bearsOn <http://example.org/project/concept/calendar-variant-vaccination-era> .
     <http://example.org/project/source-snapshot/7f2dd59f12390928> sci:bearsOn <http://example.org/project/interpretation/0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation>,
             <http://example.org/project/interpretation/0023-t007-microbiome-gut-brain-axis>,
+            <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map>,
             <http://example.org/project/paper/che2025> .
     <http://example.org/project/source-snapshot/7f6e4cd4b619640d> sci:bearsOn <http://example.org/project/evidence-line/0075-mecfs-muscle-bioenergetics-supports-0030>,
             <http://example.org/project/evidence-line/0076-mecfs-muscle-endpoint-data-disputes-clean-pem-endpoint-dichotomy>,
@@ -14103,7 +14381,8 @@
             <http://example.org/project/paper/stephenson2024> .
     <http://example.org/project/source-snapshot/87ac6635be65c76d> sci:bearsOn <http://example.org/project/concept/survival-selection> .
     <http://example.org/project/source-snapshot/87c08f4ceaf99746> sci:bearsOn <http://example.org/project/topic/gut-microbiome-barrier-axis> .
-    <http://example.org/project/source-snapshot/87efc40c0e045caf> sci:bearsOn <http://example.org/project/paper/galbraith2011> .
+    <http://example.org/project/source-snapshot/87efc40c0e045caf> sci:bearsOn <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map>,
+            <http://example.org/project/paper/galbraith2011> .
     <http://example.org/project/source-snapshot/88559cd8506f12ef> sci:bearsOn <http://example.org/project/paper/sharma2023> .
     <http://example.org/project/source-snapshot/895d20cd9511d1b4> sci:bearsOn <http://example.org/project/search/0006-reinfection-vaccination-pais-risk-recovery> .
     <http://example.org/project/source-snapshot/89d7d387265bcefe> sci:bearsOn <http://example.org/project/evidence-line/0052-schmitz2026-lc-anti-gpcr-autonomic-correlation-supports-0018>,
@@ -14139,6 +14418,8 @@
     <http://example.org/project/source-snapshot/953384f14344f565> sci:bearsOn <http://example.org/project/hypothesis/0007-autoimmune-sfn-peripheral-dysautonomia-substrate> .
     <http://example.org/project/source-snapshot/95e16b39b178429c> sci:bearsOn <http://example.org/project/paper/liu2026> .
     <http://example.org/project/source-snapshot/9618955d61df3b66> sci:bearsOn <http://example.org/project/dataset/my-lc-iwasaki-klein> .
+    <http://example.org/project/source-snapshot/9652841da19e4602> sci:bearsOn <http://example.org/project/evidence-line/0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis>,
+            <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis> .
     <http://example.org/project/source-snapshot/96b86de4e48e4b7d> sci:bearsOn <http://example.org/project/concept/biological-frailty> .
     <http://example.org/project/source-snapshot/9704200396f27b9b> sci:bearsOn <http://example.org/project/interpretation/0027-t061-severity-adjusted-pem-vehicle-triage> .
     <http://example.org/project/source-snapshot/972cc173ea4ed06d> sci:bearsOn <http://example.org/project/question/0011-mitochondrial-basis-of-pem> .
@@ -14221,6 +14502,7 @@
             <http://example.org/project/proposition/0035-pem-muscle-lesion-is-self-perpetuating> .
     <http://example.org/project/source-snapshot/adedb6f8cc479bd7> sci:bearsOn <http://example.org/project/question/0004-convergent-small-fiber-neuropathy-substrate> .
     <http://example.org/project/source-snapshot/ae0bb6083be4825f> sci:bearsOn <http://example.org/project/paper/zhang2022> .
+    <http://example.org/project/source-snapshot/aee67e068d85b1df> sci:bearsOn <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis> .
     <http://example.org/project/source-snapshot/af4098ee48bdb6da> sci:bearsOn <http://example.org/project/evidence-line/0063-novak2026-largest-paired-biopsy-pais-sfn-supports-p1>,
             <http://example.org/project/evidence-line/0064-novak2026-single-protocol-two-trigger-convergence-supports-p4>,
             <http://example.org/project/evidence-line/0065-novak2026-proximal-sgnfd-not-lesser-weakly-supports-p2>,
@@ -14247,6 +14529,7 @@
             <http://example.org/project/evidence-line/0061-aid2025-persistent-jakstat-il6-exhaustion-supports-0025>,
             <http://example.org/project/interpretation/0003-t018-subphenotype-sex-reproductive-stage>,
             <http://example.org/project/interpretation/0006-t041-objective-female-biased-subphenotype-search>,
+            <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map>,
             <http://example.org/project/paper/aid2025>,
             <http://example.org/project/proposition/0013-immune-domain-partial-hormone-mediated-objective-exception>,
             <http://example.org/project/proposition/0025-lc-persistent-inflammatory-activation-dissociated-ifn> .
@@ -14338,6 +14621,7 @@
     <http://example.org/project/source-snapshot/c6573a069b2eba6a> sci:bearsOn <http://example.org/project/proposition/0014-pais-small-fiber-structural-lesion-ienfd> .
     <http://example.org/project/source-snapshot/c6ba3110fb9bf0ea> sci:bearsOn <http://example.org/project/concept/pais-outcome> .
     <http://example.org/project/source-snapshot/c7f998ce0b175975> sci:bearsOn <http://example.org/project/evidence-line/0073-brandstetterfigueroa2025-acute-nag-predicts-lc-disputes-0024>,
+            <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt>,
             <http://example.org/project/paper/brandstetterfigueroa2025>,
             <http://example.org/project/proposition/0024-retained-fragment-burden-predicts-chronicity-over-initial-load> .
     <http://example.org/project/source-snapshot/c85091dbd059edc6> sci:bearsOn <http://example.org/project/evidence-line/0075-mecfs-muscle-bioenergetics-supports-0030>,
@@ -14379,6 +14663,7 @@
             <http://example.org/project/proposition/0017-pais-sfn-cross-trigger-convergence> .
     <http://example.org/project/source-snapshot/d2caa391997d370c> sci:bearsOn <http://example.org/project/paper/watton2026> .
     <http://example.org/project/source-snapshot/d3400e323cbc6e75> sci:bearsOn <http://example.org/project/evidence-line/0062-ryan2022-type-i-ifn-effector-blunting-supports-0025>,
+            <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map>,
             <http://example.org/project/paper/ryan2022>,
             <http://example.org/project/proposition/0025-lc-persistent-inflammatory-activation-dissociated-ifn> .
     <http://example.org/project/source-snapshot/d38883ee3fa27bf5> sci:bearsOn <http://example.org/project/paper/stojanovic2026> .
@@ -14414,7 +14699,8 @@
             <http://example.org/project/proposition/0034-ionic-na-ca-overload-mediates-pem-muscle-mitochondrial-injury> .
     <http://example.org/project/source-snapshot/db174c4450d4ced3> sci:bearsOn <http://example.org/project/evidence-line/0053-geng2024-stop-pasc-nmvr-null-disputes-0020>,
             <http://example.org/project/proposition/0020-antigen-clearance-rescues-established-pais> .
-    <http://example.org/project/source-snapshot/db9d6aae385d9b99> sci:bearsOn <http://example.org/project/paper/patterson2024> .
+    <http://example.org/project/source-snapshot/db9d6aae385d9b99> sci:bearsOn <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map>,
+            <http://example.org/project/paper/patterson2024> .
     <http://example.org/project/source-snapshot/dbbf774ccd6b5a95> sci:bearsOn <http://example.org/project/topic/pais-case-definition-heterogeneity> .
     <http://example.org/project/source-snapshot/dd1b880c2c865ae4> sci:bearsOn <http://example.org/project/paper/krumholz2024> .
     <http://example.org/project/source-snapshot/dd602b80c4f590d4> sci:bearsOn <http://example.org/project/paper/komaroff2025> .
@@ -14692,6 +14978,8 @@
             <http://example.org/project/proposition/0034-ionic-na-ca-overload-mediates-pem-muscle-mitochondrial-injury> .
     <http://example.org/project/source/entities_evidence-lines_0088-scheibenbogen2024-aimm-feedback-weakly-supports-h0006-p4.md> sci:bearsOn <http://example.org/project/evidence-line/0088-scheibenbogen2024-aimm-feedback-weakly-supports-h0006-p4>,
             <http://example.org/project/proposition/0035-pem-muscle-lesion-is-self-perpetuating> .
+    <http://example.org/project/source/entities_evidence-lines_0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis.md> sci:bearsOn <http://example.org/project/evidence-line/0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis>,
+            <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis> .
     <http://example.org/project/source/entities_hypotheses_0001-shared-dysregulated-attractor.md> sci:bearsOn <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor> .
     <http://example.org/project/source/entities_hypotheses_0002-tissue-reservoir-antigen-fragment.md> sci:bearsOn <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment> .
     <http://example.org/project/source/entities_hypotheses_0003-immune-exhaustion-feedback.md> sci:bearsOn <http://example.org/project/hypothesis/0003-immune-exhaustion-feedback> .
@@ -14730,6 +15018,8 @@
     <http://example.org/project/source/entities_interpretations_0025-t009-pediatric-long-covid-and-misc.md> sci:bearsOn <http://example.org/project/interpretation/0025-t009-pediatric-long-covid-and-misc> .
     <http://example.org/project/source/entities_interpretations_0026-t043-boneva2015-early-menopause-directionality.md> sci:bearsOn <http://example.org/project/interpretation/0026-t043-boneva2015-early-menopause-directionality> .
     <http://example.org/project/source/entities_interpretations_0027-t061-severity-adjusted-pem-vehicle-triage.md> sci:bearsOn <http://example.org/project/interpretation/0027-t061-severity-adjusted-pem-vehicle-triage> .
+    <http://example.org/project/source/entities_interpretations_0028-t059-h0002-promotion-vehicle-hunt.md> sci:bearsOn <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt> .
+    <http://example.org/project/source/entities_interpretations_0029-t060-cross-pais-ifn-jakstat-pathway-map.md> sci:bearsOn <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> .
     <http://example.org/project/source/entities_patches_menopause-pais-causal-dag.md> sci:bearsOn <http://example.org/project/patch-definition/menopause-pais-causal-dag> .
     <http://example.org/project/source/entities_propositions_0001-reproductive-stage-transition-shifts-the-failed-recovery-threshold.md> sci:bearsOn <http://example.org/project/proposition/0001-reproductive-stage-transition-shifts-the-failed-recovery-threshold> .
     <http://example.org/project/source/entities_propositions_0002-reproductive-stage-transition-modifies-immune-regulatory-pathways.md> sci:bearsOn <http://example.org/project/proposition/0002-reproductive-stage-transition-modifies-immune-regulatory-pathways>,
@@ -14768,6 +15058,7 @@
     <http://example.org/project/source/entities_propositions_0033-microvascular-hypoperfusion-drives-pem-muscle-bioenergetic-failure.md> sci:bearsOn <http://example.org/project/proposition/0033-microvascular-hypoperfusion-drives-pem-muscle-bioenergetic-failure> .
     <http://example.org/project/source/entities_propositions_0034-ionic-na-ca-overload-mediates-pem-muscle-mitochondrial-injury.md> sci:bearsOn <http://example.org/project/proposition/0034-ionic-na-ca-overload-mediates-pem-muscle-mitochondrial-injury> .
     <http://example.org/project/source/entities_propositions_0035-pem-muscle-lesion-is-self-perpetuating.md> sci:bearsOn <http://example.org/project/proposition/0035-pem-muscle-lesion-is-self-perpetuating> .
+    <http://example.org/project/source/entities_propositions_0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis.md> sci:bearsOn <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis> .
     <http://example.org/project/source/entities_questions_0001-shared-molecular-signature-across-triggers.md> sci:bearsOn <http://example.org/project/question/0001-shared-molecular-signature-across-triggers> .
     <http://example.org/project/source/entities_questions_0002-antigen-clearance-rescues-symptoms.md> sci:bearsOn <http://example.org/project/question/0002-antigen-clearance-rescues-symptoms> .
     <http://example.org/project/source/entities_questions_0003-acute-severity-threshold-for-self-sustaining-pais.md> sci:bearsOn <http://example.org/project/question/0003-acute-severity-threshold-for-self-sustaining-pais> .
@@ -15388,7 +15679,7 @@
         schema:identifier "task:t058" .
     <http://example.org/project/task/t059> sci:bearsOn <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment> ;
         sci:profile "core" ;
-        sci:projectStatus "proposed" ;
+        sci:projectStatus "done" ;
         sci:scope "project" ;
         sci:tests <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment> ;
         a sci:Task ;
@@ -15400,7 +15691,7 @@
     <http://example.org/project/task/t060> sci:bearsOn <http://example.org/project/hypothesis/0003-immune-exhaustion-feedback>,
             <http://example.org/project/question/0006-jak-stat-il6-driver-vs-marker> ;
         sci:profile "core" ;
-        sci:projectStatus "proposed" ;
+        sci:projectStatus "done" ;
         sci:scope "project" ;
         sci:tests <http://example.org/project/hypothesis/0003-immune-exhaustion-feedback>,
             <http://example.org/project/question/0006-jak-stat-il6-driver-vs-marker> ;
@@ -16080,6 +16371,9 @@
     <http://example.org/project/external/term/NT-proBNP> sci:profile "external" ;
         a sci:ExternalTerm ;
         schema:identifier "NT-proBNP" .
+    <http://example.org/project/external/term/NanoString> sci:profile "external" ;
+        a sci:ExternalTerm ;
+        schema:identifier "NanoString" .
     <http://example.org/project/external/term/Olink%20Explore%20HT> sci:profile "external" ;
         a sci:ExternalTerm ;
         schema:identifier "Olink Explore HT" .
@@ -16275,6 +16569,9 @@
     <http://example.org/project/external/term/Th1%2FTh2%20imbalance> sci:profile "external" ;
         a sci:ExternalTerm ;
         schema:identifier "Th1/Th2 imbalance" .
+    <http://example.org/project/external/term/Tregs> sci:profile "external" ;
+        a sci:ExternalTerm ;
+        schema:identifier "Tregs" .
     <http://example.org/project/external/term/UK%20Biobank> sci:profile "external" ;
         a sci:ExternalTerm ;
         schema:identifier "UK Biobank" .
@@ -16383,6 +16680,9 @@
     <http://example.org/project/external/term/antigen%20persistence> sci:profile "external" ;
         a sci:ExternalTerm ;
         schema:identifier "antigen persistence" .
+    <http://example.org/project/external/term/antigen%20presentation> sci:profile "external" ;
+        a sci:ExternalTerm ;
+        schema:identifier "antigen presentation" .
     <http://example.org/project/external/term/antigen-driven%20immune%20activation> sci:profile "external" ;
         a sci:ExternalTerm ;
         schema:identifier "antigen-driven immune activation" .
@@ -16779,6 +17079,9 @@
     <http://example.org/project/external/term/cytokine%20profiling> sci:profile "external" ;
         a sci:ExternalTerm ;
         schema:identifier "cytokine profiling" .
+    <http://example.org/project/external/term/cytokine%20signaling> sci:profile "external" ;
+        a sci:ExternalTerm ;
+        schema:identifier "cytokine signaling" .
     <http://example.org/project/external/term/cytokine%20signature> sci:profile "external" ;
         a sci:ExternalTerm ;
         schema:identifier "cytokine signature" .
@@ -16950,6 +17253,9 @@
     <http://example.org/project/external/term/exercise%20provocation> sci:profile "external" ;
         a sci:ExternalTerm ;
         schema:identifier "exercise provocation" .
+    <http://example.org/project/external/term/exhausted%20CD8%20cells> sci:profile "external" ;
+        a sci:ExternalTerm ;
+        schema:identifier "exhausted CD8 cells" .
     <http://example.org/project/external/term/exhausted%20T%20cells> sci:profile "external" ;
         a sci:ExternalTerm ;
         schema:identifier "exhausted T cells" .
@@ -17160,6 +17466,9 @@
     <http://example.org/project/external/term/immune%20dysregulation> sci:profile "external" ;
         a sci:ExternalTerm ;
         schema:identifier "immune dysregulation" .
+    <http://example.org/project/external/term/immune%20exhaustion> sci:profile "external" ;
+        a sci:ExternalTerm ;
+        schema:identifier "immune exhaustion" .
     <http://example.org/project/external/term/immune%20paralysis> sci:profile "external" ;
         a sci:ExternalTerm ;
         schema:identifier "immune paralysis" .
@@ -18968,6 +19277,17 @@
             <http://example.org/project/external/term/cognition>,
             <http://example.org/project/external/term/pre-infection%20baseline>,
             <http://example.org/project/external/term/repeat%20MRI> .
+    <http://example.org/project/paper/eatonfitch2024> sci:about <http://example.org/project/external/term/ME%2FCFS>,
+            <http://example.org/project/external/term/NanoString>,
+            <http://example.org/project/external/term/PBMC%20transcriptomics>,
+            <http://example.org/project/external/term/Tregs>,
+            <http://example.org/project/external/term/antigen%20presentation>,
+            <http://example.org/project/external/term/cytokine%20signaling>,
+            <http://example.org/project/external/term/exhausted%20CD8%20cells>,
+            <http://example.org/project/external/term/immune%20exhaustion>,
+            <http://example.org/project/external/term/long%20COVID>,
+            <http://example.org/project/external/term/type%20I%20interferon%20signaling>,
+            <http://example.org/project/external/term/type%20II%20interferon%20signaling> .
     <http://example.org/project/paper/eldokla2022> sci:about <http://example.org/project/external/term/COMPASS-31>,
             <http://example.org/project/external/term/autonomic%20dysfunction>,
             <http://example.org/project/external/term/dysautonomia>,
@@ -21191,11 +21511,19 @@
         prov:wasDerivedFrom <http://example.org/project/paper/appelman2024>,
             <http://example.org/project/paper/scheibenbogen2024>,
             <http://example.org/project/source/entities_evidence-lines_0088-scheibenbogen2024-aimm-feedback-weakly-supports-h0006-p4.md> .
+    <http://example.org/project/evidence-line/0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis> sci:evidenceIndependence "independent" ;
+        sci:evidenceRole "direct_test" ;
+        sci:evidenceStrength "weak" ;
+        sci:evidenceType "literature" ;
+        sci:identificationStrength "observational" ;
+        sci:independenceGroup "eatonfitch2024-nanostring-mecfs-longcovid-pbmc" ;
+        prov:wasDerivedFrom <http://example.org/project/paper/eatonfitch2024>,
+            <http://example.org/project/source/entities_evidence-lines_0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis.md> .
     <http://example.org/project/graph_revision> a prov:Entity ;
-        schema:dateModified "2026-06-26T18:44:30+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        schema:dateModified "2026-06-26T19:03:12+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
         schema:name "graph-revision" ;
-        schema:sha256 "190c09a9d6193bb7130c4cd4d7d758e56ef8947416cb3c27b97ef40514e10269" ;
-        schema:text "{\"AGENTS.md\":{\"mtime_ns\":1781147493660692515,\"sha256\":\"4c3130728a42829e832bda9dd828e6b4ffb0c2728e1139c3fa364d800479e952\"},\"CLAUDE.md\":{\"mtime_ns\":1781147463250691381,\"sha256\":\"336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49\"},\"RESEARCH_PLAN.md\":{\"mtime_ns\":1781147663204698837,\"sha256\":\"f0f899d877fc4aabd7b61ee78ae1ff175565dc5b50cb2363393fd2572e31bccb\"},\"code/menopause_dag/adjustment_sets_v2.txt\":{\"mtime_ns\":1782047312048964239,\"sha256\":\"14599e14869c439fba20e73bd3da5eeb1a979eb56ac16433133b6478278043f1\"},\"code/menopause_dag/check_adjustment_sets_fresh.py\":{\"mtime_ns\":1782485284724417861,\"sha256\":\"465e38d70f9cba27af3992dd068183e747f1c7440d69b389529f77184b939e56\"},\"code/menopause_dag/derive_adjustment_sets.py\":{\"mtime_ns\":1782387175759936704,\"sha256\":\"3968823d5953db127043d6e92eba6ffe2c47b675b9d21b737d7192f2f8bec2a9\"},\"code/notebooks/.gitkeep\":{\"mtime_ns\":1781147422769689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/notebooks/pyproject.toml\":{\"mtime_ns\":1781899798260793972,\"sha256\":\"2b42c8d904796817391a5bb60258cd5452a93af6de07cca8c15eab3f0e2453bf\"},\"code/notebooks/uv.lock\":{\"mtime_ns\":1781899809390092264,\"sha256\":\"52f03631f51792685609210bb7470a2fd43ff392aa9c900aec584b920f47ea2b\"},\"code/notebooks/viz.py\":{\"mtime_ns\":1782387175760604036,\"sha256\":\"129cd77d253bff9796aac84758f3ad3f88c3999e0bf2925b6ea33ef46179b0d1\"},\"code/scripts/.gitkeep\":{\"mtime_ns\":1781147422770689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/scripts/__pycache__/_verdict_lib.cpython-312.pyc\":{\"mtime_ns\":1782035646208261650,\"sha256\":\"ff5a7f597d6e3d17945ae08e338bc9a966fffe83c2362da5b281ab5c72a82ddf\"},\"code/scripts/__pycache__/_verdict_lib.cpython-313.pyc\":{\"mtime_ns\":1782035561507997020,\"sha256\":\"26d19b5c75152cc7a072f024a3f378888aab3fb5a9bb6505ff80e21f0dd78f9d\"},\"code/scripts/__pycache__/acquire_common.cpython-312.pyc\":{\"mtime_ns\":1782481088599624770,\"sha256\":\"13ede5b932b427369c63b7decba71036d6794e03fc7bbc92227f7bea913d6505\"},\"code/scripts/__pycache__/acquire_common.cpython-313.pyc\":{\"mtime_ns\":1782480923435176166,\"sha256\":\"d3fa5e9e2b2ac50350c54fe5d232cac01164b14178a26e155ae1c6052b23477f\"},\"code/scripts/__pycache__/acquire_common.cpython-314.pyc\":{\"mtime_ns\":1781985082077708443,\"sha256\":\"8ccd0ef0fab0fe7d8324cea653b4aff4db12899f756e52a5dd5be7617321e508\"},\"code/scripts/__pycache__/compartment.cpython-313.pyc\":{\"mtime_ns\":1782035561513975111,\"sha256\":\"d8ea787f191bf0a18dbc6389de0b89e44dd9100fd9fe1669c8b1ae7800e286ea\"},\"code/scripts/__pycache__/db_robustness.cpython-313.pyc\":{\"mtime_ns\":1782035561513323479,\"sha256\":\"92aa74cd72dc8b0d2c84552940388392c3025f07eebcbc7d97b6c8d03b27cc38\"},\"code/scripts/__pycache__/emit_clean_base_datapackages.cpython-313.pyc\":{\"mtime_ns\":1782488570327259503,\"sha256\":\"19101e748dcfe48ea4f3a449174c6623c7306925f8e237574eb74fa210de9221\"},\"code/scripts/__pycache__/emit_results_datapackage.cpython-313.pyc\":{\"mtime_ns\":1782486625626601318,\"sha256\":\"38d2dcc3800b73166d60389328ab52471b0ccb92bc46fc02f05f2d1514098d15\"},\"code/scripts/__pycache__/extract_gse130353.cpython-314.pyc\":{\"mtime_ns\":1781985082066476521,\"sha256\":\"ec51ff1194340147b3f4a5b95b75dda2be6cf99b80307e6316d87a0d4ef62a6c\"},\"code/scripts/__pycache__/parse_gse14577.cpython-314.pyc\":{\"mtime_ns\":1781985082090113676,\"sha256\":\"992c93a2986e886762da5114f5c5acca154a588c49abf29bc77b5fee1bf9bb0c\"},\"code/scripts/__pycache__/qa_checkpoint.cpython-313.pyc\":{\"mtime_ns\":1782481059068902956,\"sha256\":\"a04524fe0d54a542033911078e3ae38daf80f322f3895d837ffdd27d2424226c\"},\"code/scripts/__pycache__/qa_results.cpython-313.pyc\":{\"mtime_ns\":1782481838511262287,\"sha256\":\"d9aff3d82c4fff7f29e3a3f250bb363c9a585607620961f0c56137b52098eb0c\"},\"code/scripts/__pycache__/specificity.cpython-313.pyc\":{\"mtime_ns\":1782035561509162957,\"sha256\":\"94c4ea50f714c04bd7851d5b47692748459e18440bae2a46188cbdc06a458169\"},\"code/scripts/__pycache__/theme_rollup.cpython-313.pyc\":{\"mtime_ns\":1782035561512435824,\"sha256\":\"c5b4ef711a471ffb2d013c5240ac1237dd81473a2a456f020934cccbf9e24111\"},\"code/scripts/__pycache__/verdict.cpython-313.pyc\":{\"mtime_ns\":1782042417325499258,\"sha256\":\"c465619118a4c06aa8f97e97dd935396033165d0870dd79acb512db7c055b327\"},\"code/scripts/_verdict_lib.py\":{\"mtime_ns\":1782495804406864251,\"sha256\":\"23e73795dd8df17be199560ecc59a59775e0ff74696cbd84428266168b0ee275\"},\"code/scripts/acquire_common.py\":{\"mtime_ns\":1782495804407766222,\"sha256\":\"c707de8057358793f4f1f1bd050cd4af229da4691bdb03882902c8b043cb09b6\"},\"code/scripts/collapse_probes.R\":{\"mtime_ns\":1782495804429405191,\"sha256\":\"d3ff15609e6100a1c39d61c0427fb56b93d579f8aec25c4b69cf698d4060ec84\"},\"code/scripts/compartment.py\":{\"mtime_ns\":1782495804408514065,\"sha256\":\"9316f04fab3921c67ae11565b68a760551ae44e97633f6e93908bdd654197822\"},\"code/scripts/concordance.py\":{\"mtime_ns\":1782495804408857679,\"sha256\":\"4cb2f98b542df05968461b7581c47729b9fa63cc8317741fd0f7acb3c8d32108\"},\"code/scripts/db_robustness.py\":{\"mtime_ns\":1782495804409723318,\"sha256\":\"7abefee9d668f5ec250ccc0bce93cb59c0db4bb09779f7d2686c164cc17c9bb9\"},\"code/scripts/emit_clean_base_datapackages.py\":{\"mtime_ns\":1782497347570638283,\"sha256\":\"2aecfa8c851d70d28ba57aaf6ede50a2cc8f0dee0d92ca7320274f041aae23a7\"},\"code/scripts/emit_datapackage.py\":{\"mtime_ns\":1782495804414779464,\"sha256\":\"f71f9ad0e5e52931294b8c7cea3eb4306ce2d71d91e66f6ba2c4a9781c8e29ca\"},\"code/scripts/emit_results_datapackage.py\":{\"mtime_ns\":1782495804415506878,\"sha256\":\"55eea22b62e1f2d51d70e63d3ae9e4fb408ed4055b634bd756402951545fd4c8\"},\"code/scripts/emit_theme_spec.py\":{\"mtime_ns\":1782495804416209065,\"sha256\":\"ba11ec81c2f7be5ed4b02ec77e9a815909b2d2a753184f18af28e2b11ea6216f\"},\"code/scripts/emit_workflow_run_qa_audit_package.py\":{\"mtime_ns\":1782495804416916231,\"sha256\":\"fb50cc7de5c9045ae75af6874d98ebe45b5aad83281f6c8ec005f0f254ae64dc\"},\"code/scripts/extract_gse130353.py\":{\"mtime_ns\":1782495804417335808,\"sha256\":\"9dabb71ad750d99d6f26d02d99fe7f326f8dba5cc31c2ca8965f92227eafbdab\"},\"code/scripts/fetch_url.py\":{\"mtime_ns\":1782495804417854861,\"sha256\":\"939781978c8f4af4dff9359db3a4d0ac6d6e629de3efcf23fa9cf87974d663a0\"},\"code/scripts/fgsea_enrich.R\":{\"mtime_ns\":1782495804429865764,\"sha256\":\"fc01fbba442328a13abc1ed70b7348301d871f9d65ddbeda361ad9979da8f05f\"},\"code/scripts/g1_acquire.py\":{\"mtime_ns\":1782495804418360168,\"sha256\":\"36c7659c18f5b1d8225f17259a68fcbae8dc7d1d358f9a331aeb934340b39270\"},\"code/scripts/genesets_reference.R\":{\"mtime_ns\":1782495804434016057,\"sha256\":\"372d95e52d8937100b8483aae643c98f16fbb61b4b2f5d5b07043980620d1018\"},\"code/scripts/harmonize_gse130353.py\":{\"mtime_ns\":1782495804418693353,\"sha256\":\"8c9991f42c06093df72712b7d8a6768fde455990e9ba1804fdc962ae4a0afcf3\"},\"code/scripts/harmonize_gse14577.R\":{\"mtime_ns\":1782495804434723317,\"sha256\":\"f8c108d9898cb3bf2a8c5951b16b409558e9f00655d5115be742ce1e2896c7b7\"},\"code/scripts/limma_de.R\":{\"mtime_ns\":1782495804435708070,\"sha256\":\"32ba64c4b148a83bcbe14d91cd2402223f99a053675824e9df8f06710e5dff07\"},\"code/scripts/near_zero_filter.py\":{\"mtime_ns\":1782495804421723318,\"sha256\":\"5ce937e31166ecb3bea70401c7092276ba1808884b272317c2959f518bc3e055\"},\"code/scripts/parse_gse14577.py\":{\"mtime_ns\":1782495804423721061,\"sha256\":\"5c7baa41538c08fabb108383e7de52ff9dc71b967d35d2a4092072dc8975a0af\"},\"code/scripts/permutation_null.R\":{\"mtime_ns\":1782495804437723317,\"sha256\":\"d107e6691f2b2225ff2fecd9cab1b84a5bac6e1bb222b4cd72052e63c57e851b\"},\"code/scripts/prepare_genesets.R\":{\"mtime_ns\":1782496956546659831,\"sha256\":\"cc42a947c8a1c74e20656eee8f0e18c8edd0a7b0adf67d886d412e811bcb8237\"},\"code/scripts/qa_checkpoint.py\":{\"mtime_ns\":1782495874523719455,\"sha256\":\"07e1c9f16ffdb38e022b7fc1b2bf59d80bb04ec1213c030a40c17b020319ff75\"},\"code/scripts/qa_genesets.R\":{\"mtime_ns\":1782497271793642459,\"sha256\":\"c6f60a6168959c213bb1ae0429ef88f393c1f30edf9fcacbd24a282a7612719e\"},\"code/scripts/qa_results.py\":{\"mtime_ns\":1782495875326719410,\"sha256\":\"cfc85c1cef289a874843d3c0047cc2b6f6c7de1e58842a9453d901cc4b62db3a\"},\"code/scripts/specificity.py\":{\"mtime_ns\":1782495804426826355,\"sha256\":\"3bd2faef85a45505cfdd0ac9480b2ddeb109ef1a05243d10417ff6d35f3b1c5a\"},\"code/scripts/theme_rollup.py\":{\"mtime_ns\":1782495804427448591,\"sha256\":\"0112f1c9d0400a4663d43499f7ba591a031569f9248824c9e5d595bf09ba5874\"},\"code/scripts/verdict.py\":{\"mtime_ns\":1782495804427880652,\"sha256\":\"25fce8ec079e229f37582f6c3e43b455a49edb63e2ff2f55151d78051407c9e8\"},\"code/scripts/verify_sha256.py\":{\"mtime_ns\":1782495804428810155,\"sha256\":\"f080f531366bc96cfcf893e35c9836109a90783ed5128808d013473f485fc940\"},\"code/tests/test_qa_checkpoint.py\":{\"mtime_ns\":1782387175766807579,\"sha256\":\"61b8da3c8ee146c1373724c86e88f71b59622655b76e0e10549f34831a2e999e\"},\"code/tests/test_verdict_mechanics.py\":{\"mtime_ns\":1782387175767060734,\"sha256\":\"746e9aa4b012e44caa3bb16308658723278dcfa8c226f63a125eefeacc99ad84\"},\"code/workflows/.gitkeep\":{\"mtime_ns\":1781147422772689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/workflows/Snakefile\":{\"mtime_ns\":1782496927101661453,\"sha256\":\"810bf66f2acd2b85d301eb6cd8589d4cbd1f7a49f2735972aa585f4c3296baea\"},\"code/workflows/config.yaml\":{\"mtime_ns\":1782480822946652053,\"sha256\":\"09e7a75e711977234480542a41d09fdfbc58169bc5fc067789b9feef7f24f348\"},\"code/workflows/envs/py.conda-lock.yml\":{\"mtime_ns\":1781983013699507352,\"sha256\":\"e511411ee467e2020b489784bcd435b36da20dce445c07a24bb5956a99f5aa8e\"},\"code/workflows/envs/py.yaml\":{\"mtime_ns\":1781982449310538453,\"sha256\":\"fa88b4a99a24fdd3cf2d5ce5057a0b1472f3853449b25498e37349561eb4740f\"},\"code/workflows/envs/r-bioc.conda-lock.yml\":{\"mtime_ns\":1781983603164474870,\"sha256\":\"604651cf5bb985aa7fdb1fed55e76001939e04d6d4d53dc57e47e9de3565746e\"},\"code/workflows/envs/r-bioc.yaml\":{\"mtime_ns\":1781983513715479799,\"sha256\":\"6bcebe04fd8d2742a81fedd4668c20535e3cafb488562a1a3fc6fa41d5a8a6ed\"},\"code/workflows/rules/acquire.smk\":{\"mtime_ns\":1782495804444850073,\"sha256\":\"432238f5c27ecb50e73b73e7f8617b1751af8fd448a05f8f28a144ee0ccf024e\"},\"code/workflows/rules/common.smk\":{\"mtime_ns\":1782495804445464866,\"sha256\":\"cf64920e64782c1063ace887f8ac94c15e8c887362ce3c9b55546671ec687aa4\"},\"code/workflows/rules/enrich.smk\":{\"mtime_ns\":1782495804445836744,\"sha256\":\"8f852b0df71ead32a9cbc5c3065acb786c7010211dbcb1ed0606b0da964d2f65\"},\"code/workflows/rules/harmonize.smk\":{\"mtime_ns\":1782495804446044273,\"sha256\":\"ce1946e7588c1479da698e69dcfec328358dedcf41d9855f5f2cc1a3d99ac208\"},\"code/workflows/rules/prepare.smk\":{\"mtime_ns\":1782496926357661494,\"sha256\":\"5372e2d601058914ba7b2c3bb0f101941e1f344d70b9d8c6c2d319c33d476d5d\"},\"code/workflows/rules/qa.smk\":{\"mtime_ns\":1782496926742661473,\"sha256\":\"e4742939e36381e5b8ca285cb82388c9978921756ae359d178fbc94457d0dc1a\"},\"code/workflows/rules/verdict.smk\":{\"mtime_ns\":1782495876168719364,\"sha256\":\"2a19d52ed3c34596a8eafe258f60f8c8c19cf20e5dfb9df2e2a91647a8315fab\"},\"code/workflows/rules/verify.smk\":{\"mtime_ns\":1782495804449692113,\"sha256\":\"61f627ea37159824ab15895de3575ad1cea33fd811e89d652521f34f9993d9c8\"},\"doc/audits/pipeline-refactor/findings.md\":{\"mtime_ns\":1782479737983711839,\"sha256\":\"6e5f9583d14ec7cf0ae7c8a8dfeb81ab8ec479cb37cb720f382b82aef631b977\"},\"doc/audits/pipeline-refactor/inventory.json\":{\"mtime_ns\":1782479665429715837,\"sha256\":\"f82cd8efb8ea86ef91bf89b5cb5dbe00268383a3775f812d4cd33333d1a06b19\"},\"doc/audits/pipeline-refactor/inventory.md\":{\"mtime_ns\":1782479665029715859,\"sha256\":\"e5d3c62cc412b1732157d2576c53d1826459f88f7a10a583d84f1c54c30c57d5\"},\"doc/audits/pipeline-refactor/synthesis.md\":{\"mtime_ns\":1782479886067703679,\"sha256\":\"02af1a8ef26b1438e353bbe0ad891fc9c7a40995899ddc68d912f25ecaf02a9f\"},\"doc/datasets/.gitkeep\":{\"mtime_ns\":1781147422777689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/datasets/2026-06-20-public-cross-trigger-geo-sets.md\":{\"mtime_ns\":1782171070506859475,\"sha256\":\"142d0bbbf9cfdec616aeedd01b7ca78e94951300bb1eba4107d92e5043ee8b46\"},\"doc/discussions/.gitkeep\":{\"mtime_ns\":1781147422779689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/inquiries/assets/menopause-pais-causal-dag.dot\":{\"mtime_ns\":1782047261781967009,\"sha256\":\"82ee4dfcd8d80add6d5579c0079c8e58cc3e65ac180193073fc19dba1f43363d\"},\"doc/inquiries/assets/menopause-pais-causal-dag.png\":{\"mtime_ns\":1782047431937957633,\"sha256\":\"32761cd443636a8d6ad1388b3a4518b8a4e4880631c59998b8d3a2648dc46c86\"},\"doc/inquiries/menopause-pais-causal-dag-critique.md\":{\"mtime_ns\":1782388851190720089,\"sha256\":\"2050926063f63190870ad2ad2e8992720c2678072b206a8b1c19c623d6ee9ff3\"},\"doc/inquiries/menopause-pais-causal-dag.md\":{\"mtime_ns\":1782171070507138829,\"sha256\":\"24474cec501f76672a91a9beae01e5e887f750d8ba49b4f9c74a1cd4f55ac768\"},\"doc/interpretations/.gitkeep\":{\"mtime_ns\":1781147422781689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/.gitkeep\":{\"mtime_ns\":1781147422782689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/2026-06-10-paper-import-manifest.tsv\":{\"mtime_ns\":1781147861348775000,\"sha256\":\"25ffe958f9e64ed9ef78a963e5e2d09a6098db15d60c5fa9115c5b28739a9bf3\"},\"doc/meta/2026-06-10-paper-import-triage.md\":{\"mtime_ns\":1782171070507298278,\"sha256\":\"e8697526d18ff80865f4454867677dc58fd8ce4cf99566a86d592bab47e0821c\"},\"doc/meta/2026-06-19-case-definition-crosswalk.md\":{\"mtime_ns\":1782171070507403646,\"sha256\":\"1b6158fd460173b17d748e70a7f8a2555ce5ada4e79a2102f4c574aa474f96cf\"},\"doc/meta/2026-06-19-case-definition-crosswalk.tsv\":{\"mtime_ns\":1781904882273812727,\"sha256\":\"c8c92a6cd5ea7e0dcc7e01df65b064165ed9f80dfbc5df28cfc7c964ad75920b\"},\"doc/meta/2026-06-19-next-steps.md\":{\"mtime_ns\":1782171070507503082,\"sha256\":\"9e9ba26ef2dbe460dfa49a4b02a1b1349d0c25105dd5f122d64b24370eb9e111\"},\"doc/meta/2026-06-19-session-summary.md\":{\"mtime_ns\":1782171070507688560,\"sha256\":\"38a7bcff01dd71cb267ebd8dcc56b3ecb34930bd588464f0eaf9ebb447a3f440\"},\"doc/methods/.gitkeep\":{\"mtime_ns\":1781147422784689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/plans/.gitkeep\":{\"mtime_ns\":1781147422786689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/plans/0003-cross-trigger-pathway-overlap-pipeline-review.md\":{\"mtime_ns\":1782171070507790471,\"sha256\":\"1f8f5ff304ae7e3a8ed86e2408ad049be145149eb33920a2600be9aef8657aa3\"},\"doc/reports/.gitkeep\":{\"mtime_ns\":1781147422788689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/searches/.gitkeep\":{\"mtime_ns\":1781147422790689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/searches/2026-06-19-hormone-menopause-pais-cohorts.json\":{\"mtime_ns\":1781906373409730559,\"sha256\":\"2d5cb054fb5c6833c3b47b7fe8bfe60b9c0b9138025a221b3edd2776e855d7ad\"},\"doc/searches/2026-06-20-cross-pathogen-pais-signatures.json\":{\"mtime_ns\":1781950756605284856,\"sha256\":\"50c417a563a88872d7692d1b33b096620aa885371395afbf4a204f7799ead4d1\"},\"doc/searches/2026-06-20-mitochondrial-bioenergetics-pem.json\":{\"mtime_ns\":1781950888650277579,\"sha256\":\"4537afdbf7b66d2b0f24dfb902a74f5b1f536eef256f0ff1ea87bbc07fabab22\"},\"doc/searches/2026-06-20-post-dengue-qfs-postsars-omics-gap.json\":{\"mtime_ns\":1781964537210525486,\"sha256\":\"7a3fd08fd51c5bff68f09f8b495990c197da18c50c0aa7b9fad4abe3741f945e\"},\"doc/searches/2026-06-20-therapeutics-clinical-trials-longcovid-mecfs.json\":{\"mtime_ns\":1781950950575274167,\"sha256\":\"f38639a774345719de1dd1814e0de4fdb5b525542fe80e8f25834597a2e25c37\"},\"doc/searches/2026-06-20-therapeutics-clinical-trials-longcovid-mecfs.md\":{\"mtime_ns\":1782171070507892132,\"sha256\":\"efd9c1938cf8a8fe6f2b0c5f41435e5fd09d51040204697182c97a86fe901465\"},\"doc/themes/.gitkeep\":{\"mtime_ns\":1781147422791689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"knowledge/sources/local/.gitkeep\":{\"mtime_ns\":1781147422800689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"knowledge/sources/local/mappings.yaml\":{\"mtime_ns\":1782171189619636164,\"sha256\":\"c4099b32fba083f877fe249ff628a00ade871f5bcea5a29fecfb6c8e296efc43\"},\"science.yaml\":{\"mtime_ns\":1782392215605534695,\"sha256\":\"e999ef3463e2f4222c76398de56646f29e5b552ade0cf564ba14726ecc9b370d\"},\"specs/scope-boundaries.md\":{\"mtime_ns\":1782171070507998451,\"sha256\":\"894d11666862e972a79de400185391211ae2f9de612bb6093cbc379337937b89\"},\"tasks/.tasks.lock\":{\"mtime_ns\":1782499437789523103,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"tasks/active.md\":{\"mtime_ns\":1782499470695521290,\"sha256\":\"4a6301410a57106ec9ca16fd9d647199fa585d597954bfa239b02ae49401695b\"},\"tasks/done/2026-06.md\":{\"mtime_ns\":1782499448217082516,\"sha256\":\"958866450ce64045f3ad58bd70160a5b36b57062888c630702992fd10d94960d\"}}" .
+        schema:sha256 "7772c10cf8471bdce478e806d8b62a07975ea6a252435267208ef25b35fae9a1" ;
+        schema:text "{\"AGENTS.md\":{\"mtime_ns\":1781147493660692515,\"sha256\":\"4c3130728a42829e832bda9dd828e6b4ffb0c2728e1139c3fa364d800479e952\"},\"CLAUDE.md\":{\"mtime_ns\":1781147463250691381,\"sha256\":\"336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49\"},\"RESEARCH_PLAN.md\":{\"mtime_ns\":1781147663204698837,\"sha256\":\"f0f899d877fc4aabd7b61ee78ae1ff175565dc5b50cb2363393fd2572e31bccb\"},\"code/menopause_dag/adjustment_sets_v2.txt\":{\"mtime_ns\":1782047312048964239,\"sha256\":\"14599e14869c439fba20e73bd3da5eeb1a979eb56ac16433133b6478278043f1\"},\"code/menopause_dag/check_adjustment_sets_fresh.py\":{\"mtime_ns\":1782485284724417861,\"sha256\":\"465e38d70f9cba27af3992dd068183e747f1c7440d69b389529f77184b939e56\"},\"code/menopause_dag/derive_adjustment_sets.py\":{\"mtime_ns\":1782387175759936704,\"sha256\":\"3968823d5953db127043d6e92eba6ffe2c47b675b9d21b737d7192f2f8bec2a9\"},\"code/notebooks/.gitkeep\":{\"mtime_ns\":1781147422769689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/notebooks/pyproject.toml\":{\"mtime_ns\":1781899798260793972,\"sha256\":\"2b42c8d904796817391a5bb60258cd5452a93af6de07cca8c15eab3f0e2453bf\"},\"code/notebooks/uv.lock\":{\"mtime_ns\":1781899809390092264,\"sha256\":\"52f03631f51792685609210bb7470a2fd43ff392aa9c900aec584b920f47ea2b\"},\"code/notebooks/viz.py\":{\"mtime_ns\":1782387175760604036,\"sha256\":\"129cd77d253bff9796aac84758f3ad3f88c3999e0bf2925b6ea33ef46179b0d1\"},\"code/scripts/.gitkeep\":{\"mtime_ns\":1781147422770689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/scripts/__pycache__/_verdict_lib.cpython-312.pyc\":{\"mtime_ns\":1782035646208261650,\"sha256\":\"ff5a7f597d6e3d17945ae08e338bc9a966fffe83c2362da5b281ab5c72a82ddf\"},\"code/scripts/__pycache__/_verdict_lib.cpython-313.pyc\":{\"mtime_ns\":1782035561507997020,\"sha256\":\"26d19b5c75152cc7a072f024a3f378888aab3fb5a9bb6505ff80e21f0dd78f9d\"},\"code/scripts/__pycache__/acquire_common.cpython-312.pyc\":{\"mtime_ns\":1782481088599624770,\"sha256\":\"13ede5b932b427369c63b7decba71036d6794e03fc7bbc92227f7bea913d6505\"},\"code/scripts/__pycache__/acquire_common.cpython-313.pyc\":{\"mtime_ns\":1782480923435176166,\"sha256\":\"d3fa5e9e2b2ac50350c54fe5d232cac01164b14178a26e155ae1c6052b23477f\"},\"code/scripts/__pycache__/acquire_common.cpython-314.pyc\":{\"mtime_ns\":1781985082077708443,\"sha256\":\"8ccd0ef0fab0fe7d8324cea653b4aff4db12899f756e52a5dd5be7617321e508\"},\"code/scripts/__pycache__/compartment.cpython-313.pyc\":{\"mtime_ns\":1782035561513975111,\"sha256\":\"d8ea787f191bf0a18dbc6389de0b89e44dd9100fd9fe1669c8b1ae7800e286ea\"},\"code/scripts/__pycache__/db_robustness.cpython-313.pyc\":{\"mtime_ns\":1782035561513323479,\"sha256\":\"92aa74cd72dc8b0d2c84552940388392c3025f07eebcbc7d97b6c8d03b27cc38\"},\"code/scripts/__pycache__/emit_clean_base_datapackages.cpython-313.pyc\":{\"mtime_ns\":1782488570327259503,\"sha256\":\"19101e748dcfe48ea4f3a449174c6623c7306925f8e237574eb74fa210de9221\"},\"code/scripts/__pycache__/emit_results_datapackage.cpython-313.pyc\":{\"mtime_ns\":1782486625626601318,\"sha256\":\"38d2dcc3800b73166d60389328ab52471b0ccb92bc46fc02f05f2d1514098d15\"},\"code/scripts/__pycache__/extract_gse130353.cpython-314.pyc\":{\"mtime_ns\":1781985082066476521,\"sha256\":\"ec51ff1194340147b3f4a5b95b75dda2be6cf99b80307e6316d87a0d4ef62a6c\"},\"code/scripts/__pycache__/parse_gse14577.cpython-314.pyc\":{\"mtime_ns\":1781985082090113676,\"sha256\":\"992c93a2986e886762da5114f5c5acca154a588c49abf29bc77b5fee1bf9bb0c\"},\"code/scripts/__pycache__/qa_checkpoint.cpython-313.pyc\":{\"mtime_ns\":1782481059068902956,\"sha256\":\"a04524fe0d54a542033911078e3ae38daf80f322f3895d837ffdd27d2424226c\"},\"code/scripts/__pycache__/qa_results.cpython-313.pyc\":{\"mtime_ns\":1782481838511262287,\"sha256\":\"d9aff3d82c4fff7f29e3a3f250bb363c9a585607620961f0c56137b52098eb0c\"},\"code/scripts/__pycache__/specificity.cpython-313.pyc\":{\"mtime_ns\":1782035561509162957,\"sha256\":\"94c4ea50f714c04bd7851d5b47692748459e18440bae2a46188cbdc06a458169\"},\"code/scripts/__pycache__/theme_rollup.cpython-313.pyc\":{\"mtime_ns\":1782035561512435824,\"sha256\":\"c5b4ef711a471ffb2d013c5240ac1237dd81473a2a456f020934cccbf9e24111\"},\"code/scripts/__pycache__/verdict.cpython-313.pyc\":{\"mtime_ns\":1782042417325499258,\"sha256\":\"c465619118a4c06aa8f97e97dd935396033165d0870dd79acb512db7c055b327\"},\"code/scripts/_verdict_lib.py\":{\"mtime_ns\":1782495804406864251,\"sha256\":\"23e73795dd8df17be199560ecc59a59775e0ff74696cbd84428266168b0ee275\"},\"code/scripts/acquire_common.py\":{\"mtime_ns\":1782495804407766222,\"sha256\":\"c707de8057358793f4f1f1bd050cd4af229da4691bdb03882902c8b043cb09b6\"},\"code/scripts/collapse_probes.R\":{\"mtime_ns\":1782495804429405191,\"sha256\":\"d3ff15609e6100a1c39d61c0427fb56b93d579f8aec25c4b69cf698d4060ec84\"},\"code/scripts/compartment.py\":{\"mtime_ns\":1782495804408514065,\"sha256\":\"9316f04fab3921c67ae11565b68a760551ae44e97633f6e93908bdd654197822\"},\"code/scripts/concordance.py\":{\"mtime_ns\":1782495804408857679,\"sha256\":\"4cb2f98b542df05968461b7581c47729b9fa63cc8317741fd0f7acb3c8d32108\"},\"code/scripts/db_robustness.py\":{\"mtime_ns\":1782495804409723318,\"sha256\":\"7abefee9d668f5ec250ccc0bce93cb59c0db4bb09779f7d2686c164cc17c9bb9\"},\"code/scripts/emit_clean_base_datapackages.py\":{\"mtime_ns\":1782497347570638283,\"sha256\":\"2aecfa8c851d70d28ba57aaf6ede50a2cc8f0dee0d92ca7320274f041aae23a7\"},\"code/scripts/emit_datapackage.py\":{\"mtime_ns\":1782495804414779464,\"sha256\":\"f71f9ad0e5e52931294b8c7cea3eb4306ce2d71d91e66f6ba2c4a9781c8e29ca\"},\"code/scripts/emit_results_datapackage.py\":{\"mtime_ns\":1782495804415506878,\"sha256\":\"55eea22b62e1f2d51d70e63d3ae9e4fb408ed4055b634bd756402951545fd4c8\"},\"code/scripts/emit_theme_spec.py\":{\"mtime_ns\":1782495804416209065,\"sha256\":\"ba11ec81c2f7be5ed4b02ec77e9a815909b2d2a753184f18af28e2b11ea6216f\"},\"code/scripts/emit_workflow_run_qa_audit_package.py\":{\"mtime_ns\":1782495804416916231,\"sha256\":\"fb50cc7de5c9045ae75af6874d98ebe45b5aad83281f6c8ec005f0f254ae64dc\"},\"code/scripts/extract_gse130353.py\":{\"mtime_ns\":1782495804417335808,\"sha256\":\"9dabb71ad750d99d6f26d02d99fe7f326f8dba5cc31c2ca8965f92227eafbdab\"},\"code/scripts/fetch_url.py\":{\"mtime_ns\":1782495804417854861,\"sha256\":\"939781978c8f4af4dff9359db3a4d0ac6d6e629de3efcf23fa9cf87974d663a0\"},\"code/scripts/fgsea_enrich.R\":{\"mtime_ns\":1782495804429865764,\"sha256\":\"fc01fbba442328a13abc1ed70b7348301d871f9d65ddbeda361ad9979da8f05f\"},\"code/scripts/g1_acquire.py\":{\"mtime_ns\":1782495804418360168,\"sha256\":\"36c7659c18f5b1d8225f17259a68fcbae8dc7d1d358f9a331aeb934340b39270\"},\"code/scripts/genesets_reference.R\":{\"mtime_ns\":1782495804434016057,\"sha256\":\"372d95e52d8937100b8483aae643c98f16fbb61b4b2f5d5b07043980620d1018\"},\"code/scripts/harmonize_gse130353.py\":{\"mtime_ns\":1782495804418693353,\"sha256\":\"8c9991f42c06093df72712b7d8a6768fde455990e9ba1804fdc962ae4a0afcf3\"},\"code/scripts/harmonize_gse14577.R\":{\"mtime_ns\":1782495804434723317,\"sha256\":\"f8c108d9898cb3bf2a8c5951b16b409558e9f00655d5115be742ce1e2896c7b7\"},\"code/scripts/limma_de.R\":{\"mtime_ns\":1782495804435708070,\"sha256\":\"32ba64c4b148a83bcbe14d91cd2402223f99a053675824e9df8f06710e5dff07\"},\"code/scripts/near_zero_filter.py\":{\"mtime_ns\":1782495804421723318,\"sha256\":\"5ce937e31166ecb3bea70401c7092276ba1808884b272317c2959f518bc3e055\"},\"code/scripts/parse_gse14577.py\":{\"mtime_ns\":1782495804423721061,\"sha256\":\"5c7baa41538c08fabb108383e7de52ff9dc71b967d35d2a4092072dc8975a0af\"},\"code/scripts/permutation_null.R\":{\"mtime_ns\":1782495804437723317,\"sha256\":\"d107e6691f2b2225ff2fecd9cab1b84a5bac6e1bb222b4cd72052e63c57e851b\"},\"code/scripts/prepare_genesets.R\":{\"mtime_ns\":1782496956546659831,\"sha256\":\"cc42a947c8a1c74e20656eee8f0e18c8edd0a7b0adf67d886d412e811bcb8237\"},\"code/scripts/qa_checkpoint.py\":{\"mtime_ns\":1782495874523719455,\"sha256\":\"07e1c9f16ffdb38e022b7fc1b2bf59d80bb04ec1213c030a40c17b020319ff75\"},\"code/scripts/qa_genesets.R\":{\"mtime_ns\":1782497271793642459,\"sha256\":\"c6f60a6168959c213bb1ae0429ef88f393c1f30edf9fcacbd24a282a7612719e\"},\"code/scripts/qa_results.py\":{\"mtime_ns\":1782495875326719410,\"sha256\":\"cfc85c1cef289a874843d3c0047cc2b6f6c7de1e58842a9453d901cc4b62db3a\"},\"code/scripts/specificity.py\":{\"mtime_ns\":1782495804426826355,\"sha256\":\"3bd2faef85a45505cfdd0ac9480b2ddeb109ef1a05243d10417ff6d35f3b1c5a\"},\"code/scripts/theme_rollup.py\":{\"mtime_ns\":1782495804427448591,\"sha256\":\"0112f1c9d0400a4663d43499f7ba591a031569f9248824c9e5d595bf09ba5874\"},\"code/scripts/verdict.py\":{\"mtime_ns\":1782495804427880652,\"sha256\":\"25fce8ec079e229f37582f6c3e43b455a49edb63e2ff2f55151d78051407c9e8\"},\"code/scripts/verify_sha256.py\":{\"mtime_ns\":1782495804428810155,\"sha256\":\"f080f531366bc96cfcf893e35c9836109a90783ed5128808d013473f485fc940\"},\"code/tests/test_qa_checkpoint.py\":{\"mtime_ns\":1782387175766807579,\"sha256\":\"61b8da3c8ee146c1373724c86e88f71b59622655b76e0e10549f34831a2e999e\"},\"code/tests/test_verdict_mechanics.py\":{\"mtime_ns\":1782387175767060734,\"sha256\":\"746e9aa4b012e44caa3bb16308658723278dcfa8c226f63a125eefeacc99ad84\"},\"code/workflows/.gitkeep\":{\"mtime_ns\":1781147422772689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/workflows/Snakefile\":{\"mtime_ns\":1782496927101661453,\"sha256\":\"810bf66f2acd2b85d301eb6cd8589d4cbd1f7a49f2735972aa585f4c3296baea\"},\"code/workflows/config.yaml\":{\"mtime_ns\":1782480822946652053,\"sha256\":\"09e7a75e711977234480542a41d09fdfbc58169bc5fc067789b9feef7f24f348\"},\"code/workflows/envs/py.conda-lock.yml\":{\"mtime_ns\":1781983013699507352,\"sha256\":\"e511411ee467e2020b489784bcd435b36da20dce445c07a24bb5956a99f5aa8e\"},\"code/workflows/envs/py.yaml\":{\"mtime_ns\":1781982449310538453,\"sha256\":\"fa88b4a99a24fdd3cf2d5ce5057a0b1472f3853449b25498e37349561eb4740f\"},\"code/workflows/envs/r-bioc.conda-lock.yml\":{\"mtime_ns\":1781983603164474870,\"sha256\":\"604651cf5bb985aa7fdb1fed55e76001939e04d6d4d53dc57e47e9de3565746e\"},\"code/workflows/envs/r-bioc.yaml\":{\"mtime_ns\":1781983513715479799,\"sha256\":\"6bcebe04fd8d2742a81fedd4668c20535e3cafb488562a1a3fc6fa41d5a8a6ed\"},\"code/workflows/rules/acquire.smk\":{\"mtime_ns\":1782495804444850073,\"sha256\":\"432238f5c27ecb50e73b73e7f8617b1751af8fd448a05f8f28a144ee0ccf024e\"},\"code/workflows/rules/common.smk\":{\"mtime_ns\":1782495804445464866,\"sha256\":\"cf64920e64782c1063ace887f8ac94c15e8c887362ce3c9b55546671ec687aa4\"},\"code/workflows/rules/enrich.smk\":{\"mtime_ns\":1782495804445836744,\"sha256\":\"8f852b0df71ead32a9cbc5c3065acb786c7010211dbcb1ed0606b0da964d2f65\"},\"code/workflows/rules/harmonize.smk\":{\"mtime_ns\":1782495804446044273,\"sha256\":\"ce1946e7588c1479da698e69dcfec328358dedcf41d9855f5f2cc1a3d99ac208\"},\"code/workflows/rules/prepare.smk\":{\"mtime_ns\":1782496926357661494,\"sha256\":\"5372e2d601058914ba7b2c3bb0f101941e1f344d70b9d8c6c2d319c33d476d5d\"},\"code/workflows/rules/qa.smk\":{\"mtime_ns\":1782496926742661473,\"sha256\":\"e4742939e36381e5b8ca285cb82388c9978921756ae359d178fbc94457d0dc1a\"},\"code/workflows/rules/verdict.smk\":{\"mtime_ns\":1782495876168719364,\"sha256\":\"2a19d52ed3c34596a8eafe258f60f8c8c19cf20e5dfb9df2e2a91647a8315fab\"},\"code/workflows/rules/verify.smk\":{\"mtime_ns\":1782495804449692113,\"sha256\":\"61f627ea37159824ab15895de3575ad1cea33fd811e89d652521f34f9993d9c8\"},\"doc/audits/pipeline-refactor/findings.md\":{\"mtime_ns\":1782479737983711839,\"sha256\":\"6e5f9583d14ec7cf0ae7c8a8dfeb81ab8ec479cb37cb720f382b82aef631b977\"},\"doc/audits/pipeline-refactor/inventory.json\":{\"mtime_ns\":1782479665429715837,\"sha256\":\"f82cd8efb8ea86ef91bf89b5cb5dbe00268383a3775f812d4cd33333d1a06b19\"},\"doc/audits/pipeline-refactor/inventory.md\":{\"mtime_ns\":1782479665029715859,\"sha256\":\"e5d3c62cc412b1732157d2576c53d1826459f88f7a10a583d84f1c54c30c57d5\"},\"doc/audits/pipeline-refactor/synthesis.md\":{\"mtime_ns\":1782479886067703679,\"sha256\":\"02af1a8ef26b1438e353bbe0ad891fc9c7a40995899ddc68d912f25ecaf02a9f\"},\"doc/datasets/.gitkeep\":{\"mtime_ns\":1781147422777689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/datasets/2026-06-20-public-cross-trigger-geo-sets.md\":{\"mtime_ns\":1782171070506859475,\"sha256\":\"142d0bbbf9cfdec616aeedd01b7ca78e94951300bb1eba4107d92e5043ee8b46\"},\"doc/discussions/.gitkeep\":{\"mtime_ns\":1781147422779689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/inquiries/assets/menopause-pais-causal-dag.dot\":{\"mtime_ns\":1782047261781967009,\"sha256\":\"82ee4dfcd8d80add6d5579c0079c8e58cc3e65ac180193073fc19dba1f43363d\"},\"doc/inquiries/assets/menopause-pais-causal-dag.png\":{\"mtime_ns\":1782047431937957633,\"sha256\":\"32761cd443636a8d6ad1388b3a4518b8a4e4880631c59998b8d3a2648dc46c86\"},\"doc/inquiries/menopause-pais-causal-dag-critique.md\":{\"mtime_ns\":1782388851190720089,\"sha256\":\"2050926063f63190870ad2ad2e8992720c2678072b206a8b1c19c623d6ee9ff3\"},\"doc/inquiries/menopause-pais-causal-dag.md\":{\"mtime_ns\":1782171070507138829,\"sha256\":\"24474cec501f76672a91a9beae01e5e887f750d8ba49b4f9c74a1cd4f55ac768\"},\"doc/interpretations/.gitkeep\":{\"mtime_ns\":1781147422781689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/.gitkeep\":{\"mtime_ns\":1781147422782689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/2026-06-10-paper-import-manifest.tsv\":{\"mtime_ns\":1781147861348775000,\"sha256\":\"25ffe958f9e64ed9ef78a963e5e2d09a6098db15d60c5fa9115c5b28739a9bf3\"},\"doc/meta/2026-06-10-paper-import-triage.md\":{\"mtime_ns\":1782171070507298278,\"sha256\":\"e8697526d18ff80865f4454867677dc58fd8ce4cf99566a86d592bab47e0821c\"},\"doc/meta/2026-06-19-case-definition-crosswalk.md\":{\"mtime_ns\":1782171070507403646,\"sha256\":\"1b6158fd460173b17d748e70a7f8a2555ce5ada4e79a2102f4c574aa474f96cf\"},\"doc/meta/2026-06-19-case-definition-crosswalk.tsv\":{\"mtime_ns\":1781904882273812727,\"sha256\":\"c8c92a6cd5ea7e0dcc7e01df65b064165ed9f80dfbc5df28cfc7c964ad75920b\"},\"doc/meta/2026-06-19-next-steps.md\":{\"mtime_ns\":1782171070507503082,\"sha256\":\"9e9ba26ef2dbe460dfa49a4b02a1b1349d0c25105dd5f122d64b24370eb9e111\"},\"doc/meta/2026-06-19-session-summary.md\":{\"mtime_ns\":1782171070507688560,\"sha256\":\"38a7bcff01dd71cb267ebd8dcc56b3ecb34930bd588464f0eaf9ebb447a3f440\"},\"doc/methods/.gitkeep\":{\"mtime_ns\":1781147422784689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/plans/.gitkeep\":{\"mtime_ns\":1781147422786689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/plans/0003-cross-trigger-pathway-overlap-pipeline-review.md\":{\"mtime_ns\":1782171070507790471,\"sha256\":\"1f8f5ff304ae7e3a8ed86e2408ad049be145149eb33920a2600be9aef8657aa3\"},\"doc/reports/.gitkeep\":{\"mtime_ns\":1781147422788689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/searches/.gitkeep\":{\"mtime_ns\":1781147422790689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/searches/2026-06-19-hormone-menopause-pais-cohorts.json\":{\"mtime_ns\":1781906373409730559,\"sha256\":\"2d5cb054fb5c6833c3b47b7fe8bfe60b9c0b9138025a221b3edd2776e855d7ad\"},\"doc/searches/2026-06-20-cross-pathogen-pais-signatures.json\":{\"mtime_ns\":1781950756605284856,\"sha256\":\"50c417a563a88872d7692d1b33b096620aa885371395afbf4a204f7799ead4d1\"},\"doc/searches/2026-06-20-mitochondrial-bioenergetics-pem.json\":{\"mtime_ns\":1781950888650277579,\"sha256\":\"4537afdbf7b66d2b0f24dfb902a74f5b1f536eef256f0ff1ea87bbc07fabab22\"},\"doc/searches/2026-06-20-post-dengue-qfs-postsars-omics-gap.json\":{\"mtime_ns\":1781964537210525486,\"sha256\":\"7a3fd08fd51c5bff68f09f8b495990c197da18c50c0aa7b9fad4abe3741f945e\"},\"doc/searches/2026-06-20-therapeutics-clinical-trials-longcovid-mecfs.json\":{\"mtime_ns\":1781950950575274167,\"sha256\":\"f38639a774345719de1dd1814e0de4fdb5b525542fe80e8f25834597a2e25c37\"},\"doc/searches/2026-06-20-therapeutics-clinical-trials-longcovid-mecfs.md\":{\"mtime_ns\":1782171070507892132,\"sha256\":\"efd9c1938cf8a8fe6f2b0c5f41435e5fd09d51040204697182c97a86fe901465\"},\"doc/themes/.gitkeep\":{\"mtime_ns\":1781147422791689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"knowledge/sources/local/.gitkeep\":{\"mtime_ns\":1781147422800689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"knowledge/sources/local/mappings.yaml\":{\"mtime_ns\":1782171189619636164,\"sha256\":\"c4099b32fba083f877fe249ff628a00ade871f5bcea5a29fecfb6c8e296efc43\"},\"science.yaml\":{\"mtime_ns\":1782392215605534695,\"sha256\":\"e999ef3463e2f4222c76398de56646f29e5b552ade0cf564ba14726ecc9b370d\"},\"specs/scope-boundaries.md\":{\"mtime_ns\":1782171070507998451,\"sha256\":\"894d11666862e972a79de400185391211ae2f9de612bb6093cbc379337937b89\"},\"tasks/.tasks.lock\":{\"mtime_ns\":1782499437789523103,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"tasks/active.md\":{\"mtime_ns\":1782500592121947505,\"sha256\":\"9f49f1c469e47aa9d2efabda41e3b2f4283c3feb38e18b59b9d45090a47cda7e\"},\"tasks/done/2026-06.md\":{\"mtime_ns\":1782500592122194658,\"sha256\":\"736f24751efb259ef5e14ce0b5a1326bce0be0eaf7c67057d41e093aba0dcc8c\"}}" .
     <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor> prov:wasDerivedFrom <http://example.org/project/source/entities_hypotheses_0001-shared-dysregulated-attractor.md> .
     <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment> prov:wasDerivedFrom <http://example.org/project/source/entities_hypotheses_0002-tissue-reservoir-antigen-fragment.md> .
     <http://example.org/project/hypothesis/0003-immune-exhaustion-feedback> prov:wasDerivedFrom <http://example.org/project/source/entities_hypotheses_0003-immune-exhaustion-feedback.md> .
@@ -21330,6 +21658,20 @@
     <http://example.org/project/interpretation/0027-t061-severity-adjusted-pem-vehicle-triage> prov:wasDerivedFrom <http://example.org/project/paper/maestri2025>,
             <http://example.org/project/paper/ozonoff2024>,
             <http://example.org/project/source/entities_interpretations_0027-t061-severity-adjusted-pem-vehicle-triage.md> .
+    <http://example.org/project/interpretation/0028-t059-h0002-promotion-vehicle-hunt> prov:wasDerivedFrom <http://example.org/project/paper/brandstetterfigueroa2025>,
+            <http://example.org/project/paper/goh2022>,
+            <http://example.org/project/paper/morroy2016>,
+            <http://example.org/project/paper/peluso2024>,
+            <http://example.org/project/source/entities_interpretations_0028-t059-h0002-promotion-vehicle-hunt.md> .
+    <http://example.org/project/interpretation/0029-t060-cross-pais-ifn-jakstat-pathway-map> prov:wasDerivedFrom <http://example.org/project/paper/aid2025>,
+            <http://example.org/project/paper/che2025>,
+            <http://example.org/project/paper/eatonfitch2024>,
+            <http://example.org/project/paper/galbraith2011>,
+            <http://example.org/project/paper/keijmel2016>,
+            <http://example.org/project/paper/morroy2016>,
+            <http://example.org/project/paper/patterson2024>,
+            <http://example.org/project/paper/ryan2022>,
+            <http://example.org/project/source/entities_interpretations_0029-t060-cross-pais-ifn-jakstat-pathway-map.md> .
     <http://example.org/project/method/confounder-open-questions-and-staged-amendment> prov:wasDerivedFrom <http://example.org/project/source/entities_methods_confounder-open-questions-and-staged-amendment.md> .
     <http://example.org/project/method/left-truncation-survival-depletion-simulation> prov:wasDerivedFrom <http://example.org/project/source/entities_methods_left-truncation-survival-depletion-simulation.md> .
     <http://example.org/project/method/reproductive-stage-exposure-operationalization> prov:wasDerivedFrom <http://example.org/project/source/entities_methods_reproductive-stage-exposure-operationalization.md> .
@@ -21382,6 +21724,7 @@
     <http://example.org/project/paper/delgadoalonso2023> prov:wasDerivedFrom <http://example.org/project/source/entities_papers_delgadoalonso2023.md> .
     <http://example.org/project/paper/desa2026> prov:wasDerivedFrom <http://example.org/project/source/entities_papers_desa2026.md> .
     <http://example.org/project/paper/douaud2022> prov:wasDerivedFrom <http://example.org/project/source/entities_papers_douaud2022.md> .
+    <http://example.org/project/paper/eatonfitch2024> prov:wasDerivedFrom <http://example.org/project/source/entities_papers_eatonfitch2024.md> .
     <http://example.org/project/paper/eldokla2022> prov:wasDerivedFrom <http://example.org/project/source/entities_papers_eldokla2022.md> .
     <http://example.org/project/paper/esseffar2025> prov:wasDerivedFrom <http://example.org/project/source/entities_papers_esseffar2025.md> .
     <http://example.org/project/paper/fallon2008> prov:wasDerivedFrom <http://example.org/project/source/entities_papers_fallon2008.md> .
@@ -21823,6 +22166,12 @@
         sci:supportsScope "hypothesis_bundle" ;
         prov:wasDerivedFrom <http://example.org/project/paper/scheibenbogen2024>,
             <http://example.org/project/source/entities_propositions_0035-pem-muscle-lesion-is-self-perpetuating.md> .
+    <http://example.org/project/proposition/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis> sci:claimLayer "empirical_regularity" ;
+        sci:identificationStrength "observational" ;
+        sci:proxyDirectness "direct" ;
+        sci:supportsScope "local_proposition" ;
+        prov:wasDerivedFrom <http://example.org/project/paper/eatonfitch2024>,
+            <http://example.org/project/source/entities_propositions_0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis.md> .
     <http://example.org/project/question/0001-shared-molecular-signature-across-triggers> prov:wasDerivedFrom <http://example.org/project/source/entities_questions_0001-shared-molecular-signature-across-triggers.md> .
     <http://example.org/project/question/0002-antigen-clearance-rescues-symptoms> prov:wasDerivedFrom <http://example.org/project/source/entities_questions_0002-antigen-clearance-rescues-symptoms.md> .
     <http://example.org/project/question/0003-acute-severity-threshold-for-self-sustaining-pais> prov:wasDerivedFrom <http://example.org/project/source/entities_questions_0003-acute-severity-threshold-for-self-sustaining-pais.md> .
@@ -21902,6 +22251,9 @@
     <http://example.org/project/source-change/0730a9851f4a13bc> sci:observedOn "2026-06-23"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "1f5664b489f878ed83fd947cc66e842c55ae61d446ae0197b94576c539bd9397" .
+    <http://example.org/project/source-change/0aa1524045914337> sci:observedOn "2026-06-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "906648169c83ee77cae5f2ac4750cb0f12cd077b1e4acd1a55a4692b2d830651" .
     <http://example.org/project/source-change/0aa16f2fcb6224f2> sci:observedOn "2026-06-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "a6d651cefc4c355a3d00e75cdd18805448deef7ea8fbf07b87bc239c332bf848" .
@@ -22037,6 +22389,9 @@
     <http://example.org/project/source-change/3da55a5ea5ce9555> sci:observedOn "2026-06-24"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "beb9bf9586b6205b94c05bf8e837a8579b99e62bf35c7ec2288eba712c1ba916" .
+    <http://example.org/project/source-change/3f69a782501c8712> sci:observedOn "2026-06-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "143111ac57f643bab74263336a29343c21e82d8aa7855a2cea818e6ebd0552ea" .
     <http://example.org/project/source-change/3fb46ffeba713d51> sci:observedOn "2026-06-24"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "a6a9fdbf73dbc96d7a92762ca8830b44f1788a1e8252b7376ec000337f3e7756" .
@@ -22061,9 +22416,6 @@
     <http://example.org/project/source-change/4af04a034de8afa4> sci:observedOn "2026-06-20"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "d354a0046eaed1a5f40deb92acd3eb32f8c87aac08db0235dc079e7fbbca984c" .
-    <http://example.org/project/source-change/4c0f87f4e8f030ee> sci:observedOn "2026-06-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
-        a sci:SourceChange ;
-        schema:sha256 "f32f140e0a141705512d259a317b2aad14c95c8454c321ba0111a0048b8db974" .
     <http://example.org/project/source-change/4c6a961c94ef040b> sci:observedOn "2026-06-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "bbbcdd916b43140db4c5abb8a365f631a0b0c04d01cddcbf3d7adf8897d9f12f" .
@@ -22094,18 +22446,12 @@
     <http://example.org/project/source-change/572c9d1a9d89c2c8> sci:observedOn "2026-06-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "f2f8dcb390d957c4df05c3e66e063da0266ed765810312c0a27472400c94b6ad" .
-    <http://example.org/project/source-change/58ed7a6eaaf0ee62> sci:observedOn "2026-06-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
-        a sci:SourceChange ;
-        schema:sha256 "0113820211181e738024ae93e502f01fb11d706764bcf065429470c5d11d241d" .
     <http://example.org/project/source-change/5da77c7786ad4fdc> sci:observedOn "2026-06-24"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "bc6119e23b6e7bdbcaee893c68352905669dd67a69f9ebb56e63fc60295a81b1" .
     <http://example.org/project/source-change/5f34127c18001715> sci:observedOn "2026-06-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "5266fed353bae53baeb03f62faac2b577a101e869356911e00657195dc2c9428" .
-    <http://example.org/project/source-change/6294dfd412da2115> sci:observedOn "2026-06-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
-        a sci:SourceChange ;
-        schema:sha256 "22048f26bf406affe6da6ab7cede4c6f515d2949ff5bd9b6ba834403cf8ac81e" .
     <http://example.org/project/source-change/62ec74998e86b0c8> sci:observedOn "2026-06-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "d7d3785902104a5f401ac2904136a52673d989093daea5c69150aba0d9cb159b" .
@@ -22118,6 +22464,9 @@
     <http://example.org/project/source-change/66507bfc1e8acb2a> sci:observedOn "2026-06-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "41afa2bb51eb5a8619cbd12d2130bacb7b3fe6fb5383d277c452f02923667346" .
+    <http://example.org/project/source-change/6a056bcbb3bee8f8> sci:observedOn "2026-06-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "13e79d4e7c8346c96b9fa55ec9154049ef5256d130afd3b6174ada5f7f8df372" .
     <http://example.org/project/source-change/6ad1eff551038eea> sci:observedOn "2026-06-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "77a2d34e182973558a4fc054a76041c409a66d9b6e11164aa0cf668bc3d173b2" .
@@ -22160,12 +22509,6 @@
     <http://example.org/project/source-change/85ad0ac2d83631f7> sci:observedOn "2026-06-21"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "eda4b4c822cfd738dc118e99dacb88a5820954f4d8a5c816cf954b669870c9f8" .
-    <http://example.org/project/source-change/85b491e9de33b723> sci:observedOn "2026-06-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
-        a sci:SourceChange ;
-        schema:sha256 "15b59d66dd44af4fbbcbc81bc50574a051930fa76faccf1ed1a8b2e7f4c97804" .
-    <http://example.org/project/source-change/87b749fcd6bcb241> sci:observedOn "2026-06-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
-        a sci:SourceChange ;
-        schema:sha256 "609dc17791c2c689972d431c2c2bb58a871d52c9dd8c0ce6c8198ac3061b49aa" .
     <http://example.org/project/source-change/88b40948028e6d16> sci:observedOn "2026-06-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "270dc7ca02e383556b8a3b7a90a218a69788587596e62fc23579a88318635fe0" .
@@ -22190,9 +22533,6 @@
     <http://example.org/project/source-change/9135244d1d5779fc> sci:observedOn "2026-06-23"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "3084cb61f4c0db8d948928cba33e8df2f3acd291ae92f8682e12bb4bb8414bf4" .
-    <http://example.org/project/source-change/93ad91814117279f> sci:observedOn "2026-06-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
-        a sci:SourceChange ;
-        schema:sha256 "121f57c15fe098c48545ab9c63fa1238dde76a4f5e42627d89bcfbbb2df0ca89" .
     <http://example.org/project/source-change/96208d3190693621> sci:observedOn "2026-06-24"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "d2db6cb796a8af5f81e49c5118c06430dabde34aedecc54a6692dee5b0a5415a" .
@@ -22235,6 +22575,9 @@
     <http://example.org/project/source-change/ae2a6e3b97f1094a> sci:observedOn "2026-06-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "568ad774927465d48d6e25c05b4da98557d472e75a78d7b5b4bc4d97758a5628" .
+    <http://example.org/project/source-change/aea31c7109385930> sci:observedOn "2026-06-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "71cf9f3d17d8614bacb6656a38dce34489ea778352590394544a31313fb92498" .
     <http://example.org/project/source-change/b1e48f206b5e997d> sci:observedOn "2026-06-23"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "fd140c99fa2db6ed5c5975d623dddff9ad9b0c14a172fc182fc53313e6c1e937" .
@@ -22274,6 +22617,9 @@
     <http://example.org/project/source-change/cdf817b1c117d7b4> sci:observedOn "2026-06-21"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "56bbd2b4539b8802d3642142eb09f0af78db08eaa54e2607c5c3a8d38784c8da" .
+    <http://example.org/project/source-change/d18bf8bffb90952f> sci:observedOn "2026-06-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "c09722065c1363de13c0e1b424a23acc3c02828991565268b89f473395b59585" .
     <http://example.org/project/source-change/d2f8bb2046399a58> sci:observedOn "2026-06-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "5c9225501cfb08c7ede6321764cbff7c43de181ae55cb533bf5eac84915c10f8" .
@@ -22289,6 +22635,9 @@
     <http://example.org/project/source-change/dac07c20f124ddc4> sci:observedOn "2026-06-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "a4490151769db4781fe404933d8300f0b1f616ba67ccc74d58be9629a0e8ca4d" .
+    <http://example.org/project/source-change/dc57074e8e5b10f2> sci:observedOn "2026-06-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "a4eeb7396ce0cdc4033c10a5225a952e395033bc7e359f9b5df79ec91e24d45d" .
     <http://example.org/project/source-change/e3fe1c81d428185a> sci:observedOn "2026-06-21"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "19a72495914429a248397ee9de72ff380ea4b237fe39fffa60aa8bd26e90c87f" .
@@ -22328,6 +22677,9 @@
     <http://example.org/project/source-change/fd0cdb0efa9a40ee> sci:observedOn "2026-06-21"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "4d7393a843ff533fd85fd4e88587c87b5def8b9c15e3e973b3d5a06154e93ec6" .
+    <http://example.org/project/source-change/fd67fd24f4b72e10> sci:observedOn "2026-06-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "6cfaf44918b5d89578b7f745abb11d9c640eb2b6c9bf94ba2533be7640fd1016" .
     <http://example.org/project/source-change/fdd6e6ddc533b8e6> sci:observedOn "2026-06-21"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "c0b7ec97bb08535a9404ab77492920350bb430f9cdc6626c19b3d6a493a4ac65" .
@@ -22500,6 +22852,9 @@
         sci:sourcePath "entities/papers/Iqbal2025.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "4aadd18478d62c69a0714a04d3283dfe3d5a01bd0949506147183bacac37c6fb" .
+    <http://example.org/project/source-snapshot/1c072adff0d0b957> sci:sourcePath "entities/interpretations/0028-t059-h0002-promotion-vehicle-hunt.md" ;
+        a sci:SourceSnapshot ;
+        schema:sha256 "03c05f1ed5c1e0e1ca81e352044f77c4bfe5add60e9b7bb62a24d18fc09010bc" .
     <http://example.org/project/source-snapshot/1c2a08e527aa3a3c> sci:latestSourceChange <http://example.org/project/source-change/43e868a1b2f0bd79> ;
         sci:sourcePath "entities/propositions/0032-pem-bioenergetic-deficit-localizes-to-skeletal-muscle.md" ;
         a sci:SourceSnapshot ;
@@ -22636,6 +22991,9 @@
     <http://example.org/project/source-snapshot/302673eb2e03d18c> sci:sourcePath "entities/evidence-lines/0086-appelman2024-no-occlusion-weakly-disputes-simple-ischemic-p2.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "ffff1fc57ccbb898091415517c3b36b5e2fb4d530dd52696f49ce8005e887c08" .
+    <http://example.org/project/source-snapshot/306f558e9b57b7fb> sci:sourcePath "entities/papers/EatonFitch2024.md" ;
+        a sci:SourceSnapshot ;
+        schema:sha256 "27614e9cc44afd282205e5fd5224485d57f1c9803e9ef1c6dd0ae208c6194e64" .
     <http://example.org/project/source-snapshot/30cc27a8562f55fd> sci:latestSourceChange <http://example.org/project/source-change/52eb6f2a12f82adb> ;
         sci:sourcePath "entities/topics/thromboinflammation-and-endothelial-dysfunction.md" ;
         a sci:SourceSnapshot ;
@@ -22732,10 +23090,10 @@
         sci:sourcePath "entities/propositions/0020-antigen-clearance-rescues-established-pais.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "f2f8dcb390d957c4df05c3e66e063da0266ed765810312c0a27472400c94b6ad" .
-    <http://example.org/project/source-snapshot/4466a4fa59e8d9e9> sci:latestSourceChange <http://example.org/project/source-change/6294dfd412da2115> ;
+    <http://example.org/project/source-snapshot/4466a4fa59e8d9e9> sci:latestSourceChange <http://example.org/project/source-change/fd67fd24f4b72e10> ;
         sci:sourcePath "entities/propositions/0024-retained-fragment-burden-predicts-chronicity-over-initial-load.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "22048f26bf406affe6da6ab7cede4c6f515d2949ff5bd9b6ba834403cf8ac81e" .
+        schema:sha256 "6cfaf44918b5d89578b7f745abb11d9c640eb2b6c9bf94ba2533be7640fd1016" .
     <http://example.org/project/source-snapshot/44b7888d001ba1a1> sci:latestSourceChange <http://example.org/project/source-change/203e91fa895e1eb5> ;
         sci:sourcePath "entities/patches/menopause-pais-causal-dag.md" ;
         a sci:SourceSnapshot ;
@@ -22913,16 +23271,19 @@
         sci:sourcePath "entities/propositions/0005-menopause-pais-symptom-overlap-is-a-measurement-process.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "6db62ccd6c245180312f894b664b3b6436e1ec5e97aa80768958fab7fc149310" .
+    <http://example.org/project/source-snapshot/607ff61fb63240bc> sci:sourcePath "entities/interpretations/0029-t060-cross-pais-ifn-jakstat-pathway-map.md" ;
+        a sci:SourceSnapshot ;
+        schema:sha256 "40742bc3e9219d6725166040b7ddb5e2d298cb390515a801f18c84cb11a927fe" .
     <http://example.org/project/source-snapshot/612262be988c4a5a> sci:sourcePath "entities/evidence-lines/0026-keller2014-mecfs-whole-body-2day-cpet-decrement-anchors-the-positive-reference-arm.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "0b586644a9a5437fe5fa0e573bc43b5c16657f334fdc449d5b287f9c98b023d5" .
     <http://example.org/project/source-snapshot/613f61cf0bb95173> sci:sourcePath "entities/evidence-lines/0077-bizjak2024-cross-trigger-muscle-biopsy-disputes-simple-same-lesion-reading.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "abc14627c08a7e80954fc56d707b5140666e2ffb8a77344dcecdd6703501e185" .
-    <http://example.org/project/source-snapshot/62ba57105fdecd99> sci:latestSourceChange <http://example.org/project/source-change/4c0f87f4e8f030ee> ;
+    <http://example.org/project/source-snapshot/62ba57105fdecd99> sci:latestSourceChange <http://example.org/project/source-change/3f69a782501c8712> ;
         sci:sourcePath "entities/hypotheses/0003-immune-exhaustion-feedback.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "f32f140e0a141705512d259a317b2aad14c95c8454c321ba0111a0048b8db974" .
+        schema:sha256 "143111ac57f643bab74263336a29343c21e82d8aa7855a2cea818e6ebd0552ea" .
     <http://example.org/project/source-snapshot/632ab6f022246fcd> sci:sourcePath "entities/papers/Ng2025.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "15b54fad9bb6b1e709dbdf468336d408d8ec744344b2e19fa1eef9a89a232a71" .
@@ -23300,6 +23661,9 @@
     <http://example.org/project/source-snapshot/9618955d61df3b66> sci:sourcePath "entities/datasets/my-lc-iwasaki-klein.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "a53e26c1f85e86919cbe6074edc332ce17958242e6894f68c4029f0d00a550c4" .
+    <http://example.org/project/source-snapshot/9652841da19e4602> sci:sourcePath "entities/evidence-lines/0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis.md" ;
+        a sci:SourceSnapshot ;
+        schema:sha256 "78fd0f3c5d578e63c856456d85317e3233373959c9cc4fef6a4dd2cb62a1b572" .
     <http://example.org/project/source-snapshot/96b86de4e48e4b7d> sci:sourcePath "entities/concepts/biological-frailty.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "50766a02a3196cd0b26c32e95b82fc58d625f75879b2ef3c88961455b1656006" .
@@ -23425,6 +23789,10 @@
     <http://example.org/project/source-snapshot/ae0bb6083be4825f> sci:sourcePath "entities/papers/Zhang2022.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "2ca8a958434dc0442634f71ae6cf900dcd1ec776151dcaebb703c5946f58a70d" .
+    <http://example.org/project/source-snapshot/aee67e068d85b1df> sci:latestSourceChange <http://example.org/project/source-change/0aa1524045914337> ;
+        sci:sourcePath "entities/propositions/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis.md" ;
+        a sci:SourceSnapshot ;
+        schema:sha256 "906648169c83ee77cae5f2ac4750cb0f12cd077b1e4acd1a55a4692b2d830651" .
     <http://example.org/project/source-snapshot/af4098ee48bdb6da> sci:sourcePath "entities/papers/Novak2026.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "b72f9607f19c0d12193d2dd4d4d0ed87e226c9cfc7655f41f84e4f80dcc547cc" .
@@ -23643,10 +24011,10 @@
     <http://example.org/project/source-snapshot/d38883ee3fa27bf5> sci:sourcePath "entities/papers/Stojanovic2026.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "a63e68662729ef90cf3c85a4d905d38f0bd4ef6cdb4fbdefe5050d94a1a50a77" .
-    <http://example.org/project/source-snapshot/d3d3e31233580503> sci:latestSourceChange <http://example.org/project/source-change/58ed7a6eaaf0ee62> ;
+    <http://example.org/project/source-snapshot/d3d3e31233580503> sci:latestSourceChange <http://example.org/project/source-change/6a056bcbb3bee8f8> ;
         sci:sourcePath "entities/propositions/0023-cross-pathogen-tissue-macrophage-reservoir-generalization.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "0113820211181e738024ae93e502f01fb11d706764bcf065429470c5d11d241d" .
+        schema:sha256 "13e79d4e7c8346c96b9fa55ec9154049ef5256d130afd3b6174ada5f7f8df372" .
     <http://example.org/project/source-snapshot/d446cc0a533a79fe> sci:sourcePath "entities/papers/WangHuLiao2014.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "f8ac6b911285a5887370e0c7d2337061b069d24bfb2b54fd7a3ef7d914797be4" .
@@ -23686,10 +24054,10 @@
         sci:sourcePath "entities/discussions/0004-pem-shared-muscle-lesion-vs-endpoint-contingency.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "80ff421e4c7685fecea790ed60195cb6e7c3da12b8562f47f461babbbb9e73ad" .
-    <http://example.org/project/source-snapshot/d8e5e3657b75c9a1> sci:latestSourceChange <http://example.org/project/source-change/85b491e9de33b723> ;
+    <http://example.org/project/source-snapshot/d8e5e3657b75c9a1> sci:latestSourceChange <http://example.org/project/source-change/dc57074e8e5b10f2> ;
         sci:sourcePath "entities/questions/0006-jak-stat-il6-driver-vs-marker.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "15b59d66dd44af4fbbcbc81bc50574a051930fa76faccf1ed1a8b2e7f4c97804" .
+        schema:sha256 "a4eeb7396ce0cdc4033c10a5225a952e395033bc7e359f9b5df79ec91e24d45d" .
     <http://example.org/project/source-snapshot/d8f883f45458f78a> sci:sourcePath "entities/evidence-lines/0085-joseph2023-peripheral-extraction-weakly-supports-h0006-p2.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "4f9754ccbbf92e35cdeaebfb3cb08647d507366fceb02e70844c915614f5c0b5" .
@@ -23700,10 +24068,10 @@
     <http://example.org/project/source-snapshot/d9ec0dc3308bbe1f> sci:sourcePath "entities/methods/left-truncation-survival-depletion-simulation.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "d237b93baec84430b6922e9e0e1e64321d445d4a8891915e6d46f31981696f14" .
-    <http://example.org/project/source-snapshot/da99ff8566b5ba9d> sci:latestSourceChange <http://example.org/project/source-change/87b749fcd6bcb241> ;
+    <http://example.org/project/source-snapshot/da99ff8566b5ba9d> sci:latestSourceChange <http://example.org/project/source-change/aea31c7109385930> ;
         sci:sourcePath "entities/propositions/0025-lc-persistent-inflammatory-activation-dissociated-ifn.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "609dc17791c2c689972d431c2c2bb58a871d52c9dd8c0ce6c8198ac3061b49aa" .
+        schema:sha256 "71cf9f3d17d8614bacb6656a38dce34489ea778352590394544a31313fb92498" .
     <http://example.org/project/source-snapshot/dacad0d7ed41d298> sci:sourcePath "entities/evidence-lines/0087-scheibenbogen2024-na-ca-cascade-weakly-supports-h0006-p3.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "5d394fee8a08d33f89646cc343467e2036ed48ebf6d568de81fbe583457083ff" .
@@ -23757,10 +24125,10 @@
     <http://example.org/project/source-snapshot/e4150e4e1a95e088> sci:sourcePath "entities/papers/Sun2025.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "c14a2fd15815acc8acdd50675eb2860960cc930f1607a6ef92b7530d36f86e63" .
-    <http://example.org/project/source-snapshot/e4673c0e7660b185> sci:latestSourceChange <http://example.org/project/source-change/93ad91814117279f> ;
+    <http://example.org/project/source-snapshot/e4673c0e7660b185> sci:latestSourceChange <http://example.org/project/source-change/d18bf8bffb90952f> ;
         sci:sourcePath "entities/hypotheses/0002-tissue-reservoir-antigen-fragment.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "121f57c15fe098c48545ab9c63fa1238dde76a4f5e42627d89bcfbbb2df0ca89" .
+        schema:sha256 "c09722065c1363de13c0e1b424a23acc3c02828991565268b89f473395b59585" .
     <http://example.org/project/source-snapshot/e47461b4ca1e3cf4> sci:sourcePath "entities/methods/ukb-outcome-and-uproxy-measurement-schema.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "6877cb62c30c7127acf9d8f24ca3106ccd6894f3a06f4da766cd191feb6db705" .
@@ -24274,6 +24642,8 @@
         schema:identifier "entities/evidence-lines/0087-scheibenbogen2024-na-ca-cascade-weakly-supports-h0006-p3.md" .
     <http://example.org/project/source/entities_evidence-lines_0088-scheibenbogen2024-aimm-feedback-weakly-supports-h0006-p4.md> a prov:Entity ;
         schema:identifier "entities/evidence-lines/0088-scheibenbogen2024-aimm-feedback-weakly-supports-h0006-p4.md" .
+    <http://example.org/project/source/entities_evidence-lines_0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis.md> a prov:Entity ;
+        schema:identifier "entities/evidence-lines/0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis.md" .
     <http://example.org/project/source/entities_hypotheses_0001-shared-dysregulated-attractor.md> a prov:Entity ;
         schema:identifier "entities/hypotheses/0001-shared-dysregulated-attractor.md" .
     <http://example.org/project/source/entities_hypotheses_0002-tissue-reservoir-antigen-fragment.md> a prov:Entity ;
@@ -24344,6 +24714,10 @@
         schema:identifier "entities/interpretations/0026-t043-boneva2015-early-menopause-directionality.md" .
     <http://example.org/project/source/entities_interpretations_0027-t061-severity-adjusted-pem-vehicle-triage.md> a prov:Entity ;
         schema:identifier "entities/interpretations/0027-t061-severity-adjusted-pem-vehicle-triage.md" .
+    <http://example.org/project/source/entities_interpretations_0028-t059-h0002-promotion-vehicle-hunt.md> a prov:Entity ;
+        schema:identifier "entities/interpretations/0028-t059-h0002-promotion-vehicle-hunt.md" .
+    <http://example.org/project/source/entities_interpretations_0029-t060-cross-pais-ifn-jakstat-pathway-map.md> a prov:Entity ;
+        schema:identifier "entities/interpretations/0029-t060-cross-pais-ifn-jakstat-pathway-map.md" .
     <http://example.org/project/source/entities_methods_confounder-open-questions-and-staged-amendment.md> a prov:Entity ;
         schema:identifier "entities/methods/confounder-open-questions-and-staged-amendment.md" .
     <http://example.org/project/source/entities_methods_left-truncation-survival-depletion-simulation.md> a prov:Entity ;
@@ -24440,6 +24814,8 @@
         schema:identifier "entities/papers/deSa2026.md" .
     <http://example.org/project/source/entities_papers_douaud2022.md> a prov:Entity ;
         schema:identifier "entities/papers/Douaud2022.md" .
+    <http://example.org/project/source/entities_papers_eatonfitch2024.md> a prov:Entity ;
+        schema:identifier "entities/papers/EatonFitch2024.md" .
     <http://example.org/project/source/entities_papers_eldokla2022.md> a prov:Entity ;
         schema:identifier "entities/papers/Eldokla2022.md" .
     <http://example.org/project/source/entities_papers_esseffar2025.md> a prov:Entity ;
@@ -24842,6 +25218,8 @@
         schema:identifier "entities/propositions/0034-ionic-na-ca-overload-mediates-pem-muscle-mitochondrial-injury.md" .
     <http://example.org/project/source/entities_propositions_0035-pem-muscle-lesion-is-self-perpetuating.md> a prov:Entity ;
         schema:identifier "entities/propositions/0035-pem-muscle-lesion-is-self-perpetuating.md" .
+    <http://example.org/project/source/entities_propositions_0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis.md> a prov:Entity ;
+        schema:identifier "entities/propositions/0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis.md" .
     <http://example.org/project/source/entities_questions_0001-shared-molecular-signature-across-triggers.md> a prov:Entity ;
         schema:identifier "entities/questions/0001-shared-molecular-signature-across-triggers.md" .
     <http://example.org/project/source/entities_questions_0002-antigen-clearance-rescues-symptoms.md> a prov:Entity ;
@@ -25035,8 +25413,8 @@
     <http://example.org/project/task/t056> prov:wasDerivedFrom <http://example.org/project/source/tasks_done_2026-06.md> .
     <http://example.org/project/task/t057> prov:wasDerivedFrom <http://example.org/project/source/tasks_done_2026-06.md> .
     <http://example.org/project/task/t058> prov:wasDerivedFrom <http://example.org/project/source/tasks_done_2026-06.md> .
-    <http://example.org/project/task/t059> prov:wasDerivedFrom <http://example.org/project/source/tasks_active.md> .
-    <http://example.org/project/task/t060> prov:wasDerivedFrom <http://example.org/project/source/tasks_active.md> .
+    <http://example.org/project/task/t059> prov:wasDerivedFrom <http://example.org/project/source/tasks_done_2026-06.md> .
+    <http://example.org/project/task/t060> prov:wasDerivedFrom <http://example.org/project/source/tasks_done_2026-06.md> .
     <http://example.org/project/task/t061> prov:wasDerivedFrom <http://example.org/project/source/tasks_done_2026-06.md> .
     <http://example.org/project/task/t062> prov:wasDerivedFrom <http://example.org/project/source/tasks_done_2026-06.md> .
     <http://example.org/project/task/t063> prov:wasDerivedFrom <http://example.org/project/source/tasks_done_2026-06.md> .

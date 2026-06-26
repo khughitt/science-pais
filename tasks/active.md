@@ -67,26 +67,6 @@ Standing discriminating test for question:0006 / proposition:0026 / hypothesis:0
 
 - 2026-06-25: Registry snapshot: ClinicalTrials.gov API v2 record for NCT06597396 reports ACTIVE_NOT_RECRUITING, enrollment 46 actual, primary completion 2026-03-27 actual, study completion 2026-09-30 estimated, last update posted 2026-04-20, and hasResults=false. No admissible readout yet; pre-registration:0004 remains [?] inconclusive-for-coverage. Public endpoints include FACIT-Fatigue/PASC PRO and hsCRP but not a specific IL-6R/JAK-STAT/ISG target-engagement score, so G2 must be checked in the eventual paper/supplement.
 
-## [t059] Hunt h0002 promotion vehicles for non-Borrelia tissue reservoirs and retained-burden prediction
-- priority: P2
-- status: proposed
-- aspects: []
-- related: [hypothesis:0002-tissue-reservoir-antigen-fragment, proposition:0023-cross-pathogen-tissue-macrophage-reservoir-generalization, proposition:0024-retained-fragment-burden-predicts-chronicity-over-initial-load, interpretation:0017-t053-h0002-promotion-audit]
-- group: evidence-ingestion
-- created: 2026-06-26
-
-Successor to t053. Search for or design admissible evidence that can lift h0002's two untested core conjuncts rather than over-crediting the persistence pillar. For proposition:0023, require controlled non-Borrelia PAIS tissue-reservoir evidence showing retained pathogen fragments in tissue-resident macrophages plus overlapping host signature. For proposition:0024, require a prospective cohort measuring both acute pathogen load and retained post-clearance fragment burden in the same subjects, with chronic PAIS diagnosis as endpoint and retained burden out-predicting acute load. Output should distinguish found literature from data-gated/commissioned study requirements.
-
-## [t060] Cross-PAIS IFN/JAK-STAT pathway comparison for q0006
-- priority: P3
-- status: proposed
-- aspects: []
-- related: [question:0006-jak-stat-il6-driver-vs-marker, hypothesis:0003-immune-exhaustion-feedback, proposition:0025-lc-persistent-inflammatory-activation-dissociated-ifn, proposition:0026-lc-jakstat-exhaustion-loop-is-proximal-driver, interpretation:0012-t047-h0003-ifn-reconciliation-and-jak1-trial-registration]
-- group: cross-trigger-generalization
-- created: 2026-06-26
-
-Follow-up from t047 distinct from the abrocitinib readout tracked by t054. Determine whether the JAK-STAT/IL-6 and IFN-arm dissociation pattern is LC-specific or recurs across PAIS triggers such as ME/CFS, PTLDS, and Q-fever fatigue. Highest-value design is same-cohort co-measurement of persistent type-II/inflammatory IFN tone, blunted type-I antiviral-effector ISGs, and IFN-I stimulation response; minimum useful output is a comparable cross-PAIS pathway-level evidence map with assay/platform comparability and endotype caveats. Do not use this to discharge t054/pre-registration:0004's interventional driver-vs-marker test.
-
 ## [t070] Pursue RECOVER-Adult controlled-access q0015 PEM severity-adjusted omics vehicle
 - priority: P3
 - status: proposed
