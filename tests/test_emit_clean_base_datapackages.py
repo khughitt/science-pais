@@ -62,6 +62,7 @@ class CleanBaseDatapackageTest(unittest.TestCase):
                 "hallmark.rds",
                 "reactome.rds",
                 "gobp.rds",
+                "members.tsv",
                 "theme_map.tsv",
                 "theme_spec.json",
                 "msigdb_release_hash.txt",
@@ -70,6 +71,11 @@ class CleanBaseDatapackageTest(unittest.TestCase):
         )
         self.assertEqual(descriptor["name"], "msigdb-2024-1-hs-mapped-pais-gene-set-universe")
         self.assertTrue(all(resource["group"] == "genesets" for resource in descriptor["resources"]))
+        resources_by_path = {resource["path"]: resource for resource in descriptor["resources"]}
+        self.assertEqual(resources_by_path["members.tsv"]["name"], "members-tsv")
+        self.assertEqual(resources_by_path["members.tsv"]["profile"], "tabular-data-resource")
+        self.assertEqual(resources_by_path["members.tsv"]["schema"]["fields"][0]["name"], "set_key")
+        self.assertEqual(resources_by_path["members.tsv"]["schema"]["primaryKey"], "set_key")
 
     def test_missing_resource_fails_early(self) -> None:
         with tempfile.TemporaryDirectory() as td:

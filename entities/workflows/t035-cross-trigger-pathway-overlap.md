@@ -15,7 +15,7 @@ outputs:
     ontology_terms: [post-q-fever-fatigue, me-cfs, rna-seq, transcriptomics]
   - slug: msigdb-2024-1-hs-mapped-pais-gene-set-universe
     title: "MSigDB 2024.1.Hs mapped PAIS gene-set universe"
-    resource_names: [hallmark-rds, reactome-rds, gobp-rds, theme-map-tsv, theme-spec-json, msigdb-release-hash-txt, clean-qa-pass]
+    resource_names: [hallmark-rds, reactome-rds, gobp-rds, members-tsv, theme-map-tsv, theme-spec-json, msigdb-release-hash-txt, clean-qa-pass]
     ontology_terms: [msigdb, gene-sets, homo-sapiens]
 created: "2026-06-26"
 updated: "2026-06-26"
@@ -24,6 +24,7 @@ related:
   - task:t065
   - task:t066
   - task:t068
+  - task:t069
   - pre-registration:0002-cross-trigger-pathway-overlap
   - plan:0003-cross-trigger-pathway-overlap-pipeline
   - question:0001-shared-molecular-signature-across-triggers
@@ -33,8 +34,8 @@ related:
 
 Snakemake recipe for the t035 cross-trigger pathway-overlap analysis. This
 workflow prepares two reusable public expression clean bases and one mapped
-gene-set universe, then runs project-specific pathway-overlap analyses and
-verdict generation.
+gene-set universe, including a normalized `bio.geneset` member table, then runs
+project-specific pathway-overlap analyses and verdict generation.
 
 ## Location
 

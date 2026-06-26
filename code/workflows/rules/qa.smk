@@ -1,6 +1,6 @@
 # science:code
 # status: workflow-owned
-# task_ids: [t035, t062, t063, t065]
+# task_ids: [t035, t062, t063, t065, t069]
 # science:end
 
 # =============================================================================
@@ -105,6 +105,7 @@ rule qa_clean_genesets:
     input:
         rds=expand(f"{PROC}/genesets/{{db}}.rds", db=DBS),
         theme_map=f"{PROC}/genesets/theme_map.tsv",
+        members=f"{PROC}/genesets/members.tsv",
         release_hash=f"{PROC}/genesets/msigdb_release_hash.txt",
         script=f"{SCRIPTS}/qa_genesets.R",
     output:
@@ -124,6 +125,7 @@ rule qa_clean_genesets:
     shell:
         "Rscript {input.script} --dbs {params.dbs} --rds {params.rds} "
         "--theme-map {input.theme_map} --release-hash {input.release_hash} "
+        "--members {input.members} "
         "--expected-release {params.release} --expected-sha256s {params.sha256s} "
         "--min-size {params.min_size} --max-size {params.max_size} "
         "--report {params.report} --sentinel {output.sentinel} > {log} 2>&1"
@@ -192,6 +194,7 @@ rule clean_base_datapackages:
             f"{PROC}/genesets/hallmark.rds",
             f"{PROC}/genesets/reactome.rds",
             f"{PROC}/genesets/gobp.rds",
+            f"{PROC}/genesets/members.tsv",
             f"{PROC}/genesets/theme_map.tsv",
             f"{PROC}/genesets/theme_spec.json",
             f"{PROC}/genesets/msigdb_release_hash.txt",

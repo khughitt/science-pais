@@ -116,13 +116,3 @@ Follow-up from t047 distinct from the abrocitinib readout tracked by t054. Deter
 - created: 2026-06-26
 
 Follow-up from t025/t044. The decisive q0015 test remains inaccessible from public STOP-PASC/Maestri2025 data: convert PEM molecular associations into a severity-adjusted PEM-positive vs PEM-negative contrast, or identify an accessible RECOVER/IMPACC-style cohort with validated PEM measurement, overall-severity covariate, acute-severity covariates, and omics/proteomics endpoints. Watch for STOP-PASC individual-level data/repo release; otherwise scope data-access route. Output should say whether a computable vehicle exists, not merely add more unadjusted PEM associations.
-
-## [t069] Normalize mapped MSigDB clean base for bio.geneset commons promotion
-- priority: P3
-- status: proposed
-- aspects: []
-- related: [dataset:msigdb-2024-1-hs-mapped-pais-gene-set-universe, task:t065, pre-registration:0002-cross-trigger-pathway-overlap]
-- group: workflow-portability
-- created: 2026-06-26
-
-Follow-up from t065. The mapped MSigDB 2024.1.Hs clean base is commons-dry-run ready as a base deposit, but not with the bio.geneset mixin because the package currently contains RDS gene-set lists plus theme_map.tsv, not a normalized long member table with set_key/member identifiers. Add a generated members.tsv (or equivalent) with set_key semantics, decide how theme_map relates to it, re-emit the datapackage, and rerun the bio.geneset promotion dry-run. Keep actual commons apply blocked until MSigDB custom-license policy is confirmed.

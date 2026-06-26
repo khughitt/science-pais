@@ -1,6 +1,6 @@
 # science:code
 # status: exploratory
-# task_ids: [t035]
+# task_ids: [t035, t069]
 # science:end
 
 #!/usr/bin/env Rscript
@@ -22,6 +22,9 @@
 # regexes (theme_spec.json, sourced verbatim from config / pre-reg:0002), compiled
 # PCRE case-insensitive, first-match-wins by precedence, matched against the set
 # name uppercased with the collection prefix (HALLMARK_/REACTOME_/GOBP_) stripped.
+#
+# members.tsv is the normalized bio.geneset promotion table: one row per retained
+# set, opaque set_key = "<db>:<gene_set>", and semicolon-delimited Ensembl member_ids.
 # =============================================================================
 suppressPackageStartupMessages({
   library(org.Hs.eg.db)
@@ -77,6 +80,7 @@ read_gmt <- function(path) {
 }
 
 theme_rows <- list()
+member_rows <- list()
 release_lines <- c(sprintf("msigdb_release\t%s", release),
                    sprintf("id_space\t%s", id_space),
                    sprintf("multimap_policy\t%s", multimap),
@@ -108,10 +112,20 @@ for (k in seq_along(gmts)) {
   sets_keep <- sets_ens[keep]
   saveRDS(sets_keep, out_rds[k])
 
-  for (nm in names(sets_keep))
+  for (nm in names(sets_keep)) {
+    assigned_theme <- assign_theme(nm)
     theme_rows[[length(theme_rows) + 1L]] <- data.frame(
-      db = db, gene_set = nm, theme = assign_theme(nm),
+      db = db, gene_set = nm, theme = assigned_theme,
       size = length(sets_keep[[nm]]), stringsAsFactors = FALSE)
+    member_rows[[length(member_rows) + 1L]] <- data.frame(
+      set_key = paste(db, nm, sep = ":"),
+      name = nm,
+      member_ids = paste(sets_keep[[nm]], collapse = ";"),
+      db = db,
+      theme = assigned_theme,
+      size = length(sets_keep[[nm]]),
+      stringsAsFactors = FALSE)
+  }
 
   summary_lines <- c(summary_lines, sprintf(
     "%s: %d sets in GMT -> %d pass size filter [%d,%d] (Ensembl-mapped)",
@@ -121,6 +135,10 @@ for (k in seq_along(gmts)) {
 theme_map <- do.call(rbind, theme_rows)
 theme_map <- theme_map[order(theme_map$db, theme_map$gene_set), ]
 write.table(theme_map, args[["out-theme-map"]], sep = "\t",
+            quote = FALSE, row.names = FALSE)
+members <- do.call(rbind, member_rows)
+members <- members[order(members$db, members$name), ]
+write.table(members, args[["out-members"]], sep = "\t",
             quote = FALSE, row.names = FALSE)
 writeLines(release_lines, args[["out-release-hash"]])
 

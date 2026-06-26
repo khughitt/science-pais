@@ -12,6 +12,14 @@ tier: use-now
 license: custom
 update_cadence: static
 datapackage: "data/processed/genesets/datapackage.json"
+member_key_column: set_key
+members_resource: members-tsv
+n_sets: 5355
+set_size_summary: {min: 15, median: 43, max: 500}
+identifier_space:
+  tier: gene
+  namespace: ensembl
+  resolution_status: declared_unresolved
 derivation:
   kind: workflow
   workflow_recipe: "workflow:t035-cross-trigger-pathway-overlap"
@@ -23,6 +31,7 @@ ontology_terms: [msigdb, gene-sets, hallmark, reactome, go-biological-process, h
 related:
   - task:t035
   - task:t065
+  - task:t069
   - pre-registration:0002-cross-trigger-pathway-overlap
   - plan:0003-cross-trigger-pathway-overlap-pipeline
   - question:0001-shared-molecular-signature-across-triggers
@@ -38,17 +47,17 @@ the locked PAIS theme map.
 
 ## Granularity at this access level
 
-The resources are workflow-ready RDS gene-set objects plus the theme-map and
+The resources are workflow-ready RDS gene-set objects, a normalized
+`members.tsv` table for `bio.geneset` promotion, plus the theme-map and
 release-hash sidecars. This entity is a reusable reference substrate for the
 t035 analysis, not a project result bundle.
 
 ## Commons readiness
 
-Dry-run promotion target: clean-base deposit without `bio.geneset` extension.
-Actual commons application is blocked on MSigDB license policy. The current
-datapackage is workflow-ready RDS plus a theme index, not a normalized long
-membership table with a `set_key` column; add that table before applying the
-`bio.geneset` mixin.
+Dry-run promotion target: clean-base deposit with the `bio.geneset` extension.
+The generated `members.tsv` resource has one row per retained set
+(`set_key = <db>:<gene_set>`) and semicolon-delimited Ensembl `member_ids`.
+Actual commons application remains blocked on MSigDB custom-license policy.
 
 ## Connections to Project
 

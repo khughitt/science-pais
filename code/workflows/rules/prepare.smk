@@ -1,6 +1,6 @@
 # science:code
 # status: workflow-owned
-# task_ids: [t035]
+# task_ids: [t035, t069]
 # science:end
 
 # =============================================================================
@@ -115,6 +115,7 @@ rule prepare_genesets:
     output:
         rds=expand(f"{PROC}/genesets/{{db}}.rds", db=DBS),
         theme_map=f"{PROC}/genesets/theme_map.tsv",
+        members=f"{PROC}/genesets/members.tsv",
         release_hash=f"{PROC}/genesets/msigdb_release_hash.txt",
     params:
         # comma-joined parallel lists (DBS-ordered) — avoids shell-quoting regexes
@@ -136,6 +137,7 @@ rule prepare_genesets:
         "Rscript {input.script} --gmts {params.gmts} --dbs {params.dbs} "
         "--sha256s {params.sha256s} --out-rds {params.out_rds} "
         "--theme-spec {input.theme_spec} --out-theme-map {output.theme_map} "
+        "--out-members {output.members} "
         "--out-release-hash {output.release_hash} --release {params.release} "
         "--min-size {params.min_size} --max-size {params.max_size} "
         "--id-space {params.id_space} --multimap {params.multimap} > {log} 2>&1"

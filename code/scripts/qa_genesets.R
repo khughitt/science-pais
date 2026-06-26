@@ -1,6 +1,6 @@
 # science:code
 # status: exploratory
-# task_ids: [t035, t062]
+# task_ids: [t035, t062, t069]
 # science:end
 
 #!/usr/bin/env Rscript
@@ -31,6 +31,10 @@ read_kv <- function(path) {
   setNames(rows[[2]], rows[[1]])
 }
 
+split_semicolon <- function(x) {
+  if (!nzchar(x)) character(0) else strsplit(x, ";", fixed = TRUE)[[1]]
+}
+
 append_report <- function(lines, title, items, pass_line) {
   lines <- c(lines, "", title, "")
   if (length(items)) {
@@ -57,10 +61,12 @@ failures <- character(0)
 warnings <- character(0)
 facts <- list()
 all_sets <- data.frame(db = character(), gene_set = character(), size = integer())
+sets_by_db <- list()
 
 for (i in seq_along(dbs)) {
   db <- dbs[i]
   sets <- readRDS(rds_paths[i])
+  sets_by_db[[db]] <- sets
   if (!is.list(sets)) {
     failures <- c(failures, sprintf("%s: RDS is %s, expected named list", db, paste(class(sets), collapse = "/")))
     next
@@ -123,6 +129,54 @@ if (length(missing_cols)) {
   if (nrow(bad_size)) {
     failures <- c(failures, sprintf("theme_map size mismatch for %d retained set(s): %s",
                                     nrow(bad_size), paste(head(bad_size$gene_set, 5), collapse = ", ")))
+  }
+}
+
+members <- read.delim(args[["members"]], sep = "\t", stringsAsFactors = FALSE)
+required_member_cols <- c("set_key", "name", "member_ids", "db", "theme", "size")
+missing_member_cols <- setdiff(required_member_cols, names(members))
+if (length(missing_member_cols)) {
+  failures <- c(failures, sprintf("members.tsv missing required column(s): %s", paste(missing_member_cols, collapse = ", ")))
+} else {
+  blank_set_key <- members$set_key[!nzchar(members$set_key)]
+  dup_set_key <- members$set_key[duplicated(members$set_key)]
+  if (length(blank_set_key)) {
+    failures <- c(failures, "members.tsv contains blank set_key")
+  }
+  if (length(dup_set_key)) {
+    failures <- c(failures, sprintf("members.tsv duplicate set_key values: %s",
+                                    paste(head(unique(dup_set_key), 5), collapse = ", ")))
+  }
+  expected_key <- paste(all_sets$db, all_sets$gene_set, sep = "\t")
+  member_key <- paste(members$db, members$name, sep = "\t")
+  missing_member <- all_sets$gene_set[!expected_key %in% member_key]
+  extra_member <- members$name[!member_key %in% expected_key]
+  if (length(missing_member)) {
+    failures <- c(failures, sprintf("members.tsv lacks %d retained set(s): %s",
+                                    length(missing_member), paste(head(missing_member, 5), collapse = ", ")))
+  }
+  if (length(extra_member)) {
+    failures <- c(failures, sprintf("members.tsv contains %d non-retained set(s): %s",
+                                    length(extra_member), paste(head(extra_member, 5), collapse = ", ")))
+  }
+  for (i in seq_len(nrow(members))) {
+    db <- members$db[i]
+    set_name <- members$name[i]
+    sets <- sets_by_db[[db]]
+    if (is.null(sets)) next
+    expected <- unname(sets[[set_name]])
+    if (is.null(expected)) next
+    observed <- split_semicolon(members$member_ids[i])
+    if (!identical(observed, expected)) {
+      failures <- c(failures, sprintf("members.tsv member_ids mismatch for %s:%s", db, set_name))
+    }
+    if (!identical(as.integer(members$size[i]), length(expected))) {
+      failures <- c(failures, sprintf("members.tsv size mismatch for %s:%s", db, set_name))
+    }
+    if (!identical(members$set_key[i], paste(db, set_name, sep = ":"))) {
+      failures <- c(failures, sprintf("members.tsv set_key %s != expected %s",
+                                      members$set_key[i], paste(db, set_name, sep = ":")))
+    }
   }
 }
 

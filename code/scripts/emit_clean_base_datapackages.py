@@ -1,6 +1,6 @@
 # science:code
 # status: exploratory
-# task_ids: [t035, t065]
+# task_ids: [t035, t065, t069]
 # science:end
 
 #!/usr/bin/env python3
@@ -22,6 +22,8 @@ class ResourceSpec:
     path: str
     title: str
     mediatype: str
+    profile: str | None = None
+    schema: dict[str, object] | None = None
 
 
 @dataclass(frozen=True, slots=True)
@@ -36,8 +38,28 @@ class PackageSpec:
     resources: tuple[ResourceSpec, ...]
 
 
-def _resource(path: str, title: str, mediatype: str) -> ResourceSpec:
-    return ResourceSpec(path=path, title=title, mediatype=mediatype)
+def _resource(
+    path: str,
+    title: str,
+    mediatype: str,
+    *,
+    profile: str | None = None,
+    schema: dict[str, object] | None = None,
+) -> ResourceSpec:
+    return ResourceSpec(path=path, title=title, mediatype=mediatype, profile=profile, schema=schema)
+
+
+GENESET_MEMBERS_SCHEMA: dict[str, object] = {
+    "fields": [
+        {"name": "set_key", "type": "string"},
+        {"name": "name", "type": "string"},
+        {"name": "member_ids", "type": "string"},
+        {"name": "db", "type": "string"},
+        {"name": "theme", "type": "string"},
+        {"name": "size", "type": "integer"},
+    ],
+    "primaryKey": "set_key",
+}
 
 
 CLEAN_BASE_PACKAGES: dict[str, PackageSpec] = {
@@ -55,6 +77,7 @@ CLEAN_BASE_PACKAGES: dict[str, PackageSpec] = {
         related_entities=(
             "task:t035",
             "task:t065",
+            "task:t069",
             "pre-registration:0002-cross-trigger-pathway-overlap",
             "plan:0003-cross-trigger-pathway-overlap-pipeline",
             "question:0001-shared-molecular-signature-across-triggers",
@@ -115,6 +138,13 @@ CLEAN_BASE_PACKAGES: dict[str, PackageSpec] = {
             _resource("hallmark.rds", "Mapped Hallmark gene sets", "application/octet-stream"),
             _resource("reactome.rds", "Mapped Reactome gene sets", "application/octet-stream"),
             _resource("gobp.rds", "Mapped GO:BP gene sets", "application/octet-stream"),
+            _resource(
+                "members.tsv",
+                "Normalized bio.geneset member table",
+                "text/tab-separated-values",
+                profile="tabular-data-resource",
+                schema=GENESET_MEMBERS_SCHEMA,
+            ),
             _resource("theme_map.tsv", "Locked per-set PAIS theme assignments", "text/tab-separated-values"),
             _resource("theme_spec.json", "Serialized locked theme-map configuration", "application/json"),
             _resource("msigdb_release_hash.txt", "Pinned MSigDB release hash", "text/plain"),
@@ -136,7 +166,7 @@ def resource_for(resource: ResourceSpec, *, package_dir: Path, group: str) -> di
     abs_path = package_dir / resource.path
     if not abs_path.exists():
         raise FileNotFoundError(f"missing clean-base resource: {abs_path}")
-    return {
+    descriptor = {
         "name": resource.path.replace(".", "-").replace("_", "-").lower(),
         "path": resource.path,
         "title": resource.title,
@@ -145,6 +175,11 @@ def resource_for(resource: ResourceSpec, *, package_dir: Path, group: str) -> di
         "mediatype": resource.mediatype,
         "group": group,
     }
+    if resource.profile is not None:
+        descriptor["profile"] = resource.profile
+    if resource.schema is not None:
+        descriptor["schema"] = resource.schema
+    return descriptor
 
 
 def build_datapackage(spec: PackageSpec, *, processed: Path) -> dict[str, object]:
