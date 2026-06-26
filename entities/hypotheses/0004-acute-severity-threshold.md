@@ -15,6 +15,8 @@ source_refs:
 - paper:Spetz2025
 - paper:Green2025
 - paper:Carazo2025
+- paper:ZhangRECOVEREHR2026
+- paper:Truong2025
 related:
 - topic:shared-failure-mode-across-pais
 - question:0003-acute-severity-threshold-for-self-sustaining-pais
@@ -25,10 +27,12 @@ related:
 - proposition:0021-acute-antigen-burden-determines-pais-incidence
 - interpretation:0018-t048-vascular-sex-baseline-carryover-audit
 - interpretation:0022-t010-reinfection-vaccination-risk-recovery
+- interpretation:0025-t009-pediatric-long-covid-and-misc
+- topic:pediatric-long-covid-and-misc
 - task:t048
 - task:t010
 created: '2026-06-11'
-updated: '2026-06-25'
+updated: '2026-06-26'
 ---
 # Hypothesis: Acute-illness severity sets a homeostatic recovery threshold above which the post-infectious state becomes self-sustaining rather than self-resolving
 
@@ -66,6 +70,11 @@ The magnitude of the acute-phase insult sets a *threshold* in the host's recover
   should not be treated as only a baseline covariate or only an acute-severity proxy in vascular analyses;
   the needed estimand is sex×infection×time-window, stratified by non-hospitalized vs hospitalized
   severity.
+- **Pediatric MIS-C constrains a severity-only reading (t009, 2026-06-26).** MIS-C can involve severe
+  post-infectious hyperinflammation, vasoactive support, and cardiac dysfunction, yet MUSIC reports
+  generally strong recovery by 6 months (Truong2025). This does not refute h0004, but it narrows the
+  threshold model: the relevant threshold is not simply "severe inflammation occurred"; it is whether the
+  host exits or remains trapped in a chronic dysregulated state.
 
 ## Predictions
 
@@ -101,12 +110,18 @@ Confidence would be materially reduced if:
   EHR, and register designs. Compatible with the acute-threshold frame, but not mechanism-specific.
 - **Carazo2025 (literature/observational):** booster and hybrid immunity reduce long-COVID risk in
   Quebec healthcare workers, with waning and strong dependence on prior infection/immunity state.
+- **ZhangRECOVEREHR2026 (literature/EHR cohort):** RECOVER-EHR pediatric Omicron-era reinfection study shows
+  second infection is associated with higher PASC diagnosis and PASC-related symptom/condition risk than
+  first infection. Compatible with repeated acute-exposure burden increasing PAIS risk, but EHR coding and
+  mechanism-mixing prevent a direct threshold claim.
 
 ## Disputing Evidence
 
 - **Oronsky2021:** the SIRS→CARS→PICS severe-illness arc may not apply to mild-acute-infection PAIS, the predominant ME/CFS/long-COVID phenotype — a direct challenge to a severity-only gate.
 - **Gandhi2023:** "for vs with" ascertainment bias inflates severity-outcome associations in administrative data.
 - Mild-infection-onset ME/CFS and long COVID are common, arguing host factors can dominate over insult magnitude.
+- **Truong2025/MUSIC:** severe MIS-C often resolves by 6 months, so acute/subacute inflammatory severity
+  alone is not sufficient for chronic PAIS.
 
 ## Evidence Needed To Shift Belief
 

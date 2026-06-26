@@ -16,6 +16,7 @@ datasets: []
 related:
 - topic:shared-failure-mode-across-pais
 - topic:antigen-pathogen-persistence
+- topic:pediatric-long-covid-and-misc
 - immunity:research-question:immune-homeostasis-and-dysregulation
 source_refs:
 - cite:Klein2023
@@ -26,8 +27,9 @@ source_refs:
 - cite:Cruz2025
 - cite:Ganesh2022
 - cite:Patrascu2025
+- cite:Truong2025
 created: '2026-06-11'
-updated: '2026-06-11'
+updated: '2026-06-26'
 ---
 # Long COVID Immune Dysregulation and Inflammatory Signatures
 
@@ -51,6 +53,11 @@ Long COVID (PASC) is the most deeply profiled PAIS, and multi-omic immune studie
 
 **Organ-stratified biomarkers and distinct trajectories.** Patrascu2025 organizes 20 biomarkers by organ system (NfL/GFAP, KL-6/SP-D, I-FABP/zonulin, CRP/IL-6/D-dimer/suPAR/NETs), offering a multi-axis phenotyping framework. Cruz2025 (n=113) shows post-COVID pulmonary sequelae and systemic long COVID are *biologically distinct* trajectories sharing only a core antiviral residue (IFN-γ, IL-8, MCP-4).
 
+**MIS-C recovery contrast.** Truong2025/MUSIC anchors the pediatric hyperinflammatory comparator: MIS-C
+can present with severe cardiac/inflammatory involvement, but most measured cardiac and global health
+outcomes normalize or return near baseline by 6 months. This makes MIS-C useful for immune-resolution
+biology while cautioning against pooling it with chronic long COVID.
+
 ## Current State of Knowledge
 
 ### What the evidence supports
@@ -58,6 +65,8 @@ Long COVID (PASC) is the most deeply profiled PAIS, and multi-omic immune studie
 - Long COVID involves persistent, multi-pathway immune activation (IFN, JAK-STAT/IL-6, complement, NF-kB/TNF, neutrophil/NETosis) detectable months post-infection across independent cohorts, with no replicating virus in blood (Aid2025, Talla2023, CerviaHasler2024, Klein2023).
 - The signatures are discriminating enough to build high-AUC classifiers (Klein2023, CerviaHasler2024, Talla2023), supporting a real, reproducible biological state.
 - Long COVID is heterogeneous: at least two inflammatory endotypes plus a sizeable non-inflammatory subgroup (Talla2023), and pulmonary vs systemic trajectories diverge within the same trigger (Cruz2025).
+- MIS-C is immune-mediated and post-infectious but has a different time course from chronic PASC in most
+  children (Truong2025).
 
 ### What is contested or unresolved
 
@@ -73,6 +82,8 @@ Ryan2022 reports IFN-I *suppression* at 6 months as the long-COVID-specific sign
 
 - Is the JAK-STAT/IL-6 axis a proximal driver whose inhibition resolves symptoms, or a downstream marker (Aid2025)?
 - Do the inflammatory endotypes (Talla2023) map onto antigen-persistence vs autoimmune upstream mechanisms, predicting antiviral vs immunomodulatory responsiveness?
+- Why does MIS-C often resolve after severe hyperinflammation while chronic PASC persists in a smaller
+  subset?
 - Which cell type sustains the chronic IL-6/JAK-STAT signal — single-cell resolution is needed (Aid2025)?
 - Do these blood signatures track symptom severity and recovery, i.e. can any serve as a validated surrogate endpoint (a gap flagged in Peluso2024b)?
 
@@ -88,3 +99,4 @@ This topic supplies the molecular substrate for the project's "failed immune hom
 - Ryan2022 — IFN-I suppression + platelet/megakaryocyte downregulation as a 24-week long-COVID-referral signature.
 - Klein2023 — multi-omic LC signature (low cortisol, non-conventional monocytes, EBV); AUC 0.94.
 - Cruz2025; Ganesh2022; Patrascu2025 — distinct trajectories, persistent IL-6, organ-stratified biomarker framework.
+- Truong2025 — MIS-C as pediatric hyperinflammatory recovery contrast.

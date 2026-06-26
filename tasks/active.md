@@ -7,14 +7,6 @@
 
 Blocked by tooling gap (fb-2026-06-11-005). Bridge papers: Choutka2022, Komaroff2025, Klein2023, Rojas2022, Sharma2023.
 
-## [t009] [lit-search] Pediatric long COVID and MIS-C
-- priority: P3
-- status: proposed
-- aspects: []
-- created: 2026-06-11
-
-Gap: batch is adult-focused (Choutka2022 excluded pediatric/ MIS-C). Search pediatric PASC phenotype, MIS-C, and how pediatric post-infectious illness compares to adult PAIS.
-
 ## [t012] Flag the PAIS family to pan-disease as a disease-label-vs-biology test case
 - priority: P3
 - status: proposed

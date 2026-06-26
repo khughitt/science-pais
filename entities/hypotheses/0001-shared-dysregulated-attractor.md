@@ -19,10 +19,15 @@ source_refs:
 - cite:Wang2007
 - cite:Xie2010
 - cite:WangHuLiao2014
+- cite:Gross2024
+- cite:Gross2025
+- cite:Stephenson2024
+- cite:Truong2025
 related:
 - topic:shared-failure-mode-across-pais
 - topic:mecfs-long-covid-convergence
 - topic:gut-microbiome-barrier-axis
+- topic:pediatric-long-covid-and-misc
 - question:0001-shared-molecular-signature-across-triggers
 - question:0008-formalize-vicious-cycle-attractor-model
 - immunity:research-question:immune-homeostasis-and-dysregulation
@@ -31,10 +36,11 @@ related:
 - interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation
 - interpretation:0023-t007-microbiome-gut-brain-axis
 - interpretation:0024-t011-delayed-viral-dynamics-models
+- interpretation:0025-t009-pediatric-long-covid-and-misc
 - proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode
 - proposition:0031-pais-gut-dysbiosis-scfa-depletion
 created: '2026-06-11'
-updated: '2026-06-25'
+updated: '2026-06-26'
 ---
 # Hypothesis: Post-acute infection syndromes are a shared dysregulated attractor reachable from many triggers, not merely a shared symptom repertoire
 
@@ -102,6 +108,14 @@ Confidence would be materially reduced if:
   feedback, threshold-governed regimes, stability switches, and Hopf bifurcation. This is **methods
   support only**, not biological support: the papers model active within-host viral infection, not
   established PAIS or cross-trigger immune-autonomic-metabolic loops.
+- **t009 pediatric long COVID / MIS-C scope pass (2026-06-26; `interpretation:0025`):** RECOVER
+  pediatric cohorts show age-stratified multisystem long-COVID phenotypes from early childhood through
+  adolescence (Gross2024, Gross2025), and CLoCk shows persistent, impairment-aware pediatric PCC is a
+  smaller target than broad symptom prevalence (Stephenson2024). This is compatible with the shared
+  failed-recovery frame but **does not promote this hypothesis**: the pediatric anchors are primarily
+  symptom-index/trajectory studies, not cross-trigger mechanism studies. MIS-C (Truong2025) is especially
+  useful as a contrast case: severe post-infectious hyperinflammation often resolves by 6 months, so the
+  attractor claim must explain chronic non-resolution, not merely inflammation after infection.
 
 ## Disputing Evidence
 

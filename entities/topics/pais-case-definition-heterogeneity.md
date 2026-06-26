@@ -30,6 +30,9 @@ source_refs:
 - cite:PCCOS2023COMS
 - cite:Choutka2022
 - cite:Bai2023
+- cite:Gross2024
+- cite:Gross2025
+- cite:Stephenson2024
 related:
 - topic:mecfs-long-covid-convergence
 - topic:shared-failure-mode-across-pais
@@ -43,8 +46,10 @@ related:
 - question:0014-which-pais-case-definition-is-most-biologically-coherent
 - question:0015-does-pem-requirement-improve-cross-study-comparability
 - interpretation:0021-t026-pc-cos-adoption-policy
+- interpretation:0025-t009-pediatric-long-covid-and-misc
+- topic:pediatric-long-covid-and-misc
 created: "2026-06-19"
-updated: "2026-06-25"
+updated: "2026-06-26"
 ---
 
 # PAIS Case-Definition Heterogeneity and Harmonization
@@ -66,6 +71,15 @@ Post-acute infection syndromes (PAIS) are studied under a large and inconsistent
 **NASEM 2024 definition.** The National Academies of Sciences, Engineering, and Medicine (June 2024 report, "A Long COVID Definition: A Chronic, Systemic Disease State with Profound Consequences") defines Long COVID as an infection-associated chronic condition (IACC) occurring after SARS-CoV-2 infection that is present for at least 3 months as a continuous, relapsing and remitting, or progressive disease state that can present as singular or multiple symptoms and/or diagnosable conditions. Key features: (a) ≥3 months as a continuous or relapsing-remitting state — explicitly including episodic cases that were excluded by some prior operationalizations, (b) no laboratory confirmation required, (c) framed explicitly as an IACC, aligning terminologically with Komaroff2025, (d) no specific symptom list or PEM requirement. Intended to harmonize clinical documentation, research, surveillance, and patient access to benefits.
 
 **RECOVER/PASC Research Index (Thaweethai et al., JAMA 2023, 329:1934–1946).** Developed prospectively in 9,764 participants (89% SARS-CoV-2 infected, 71% female, median age 47) at 85 US sites in the NIH RECOVER cohort. Used LASSO-penalized logistic regression comparing infected vs. uninfected controls to identify 13 discriminating symptoms; the PASC index score is computed from symptom presence/severity with weights derived from the regression. Loss/change of smell or taste and PEM carry the largest individual weights. A score ≥12 (on a 0–44 scale) corresponds to a prevalence of ~23% in the infected cohort. Key features: (a) controls-referenced design means the index captures excess symptom burden relative to the unexposed rather than absolute symptom presence, (b) PEM is explicitly and heavily weighted, making this the most PEM-sensitive of the major research tools, (c) designed for research enrollment rather than clinical diagnosis, (d) iterative refinement intended, including pediatric and other subgroup versions.
+
+**RECOVER pediatric PASC indices.** The pediatric RECOVER work operationalizes the "iterative refinement"
+clause rather than reusing the adult index. Gross2024 derives separate research indices for school-age
+children (6-11 years) and adolescents (12-17 years), with school-age signals weighted toward cognition,
+sleep, GI/pain/skin features and school refusal, and adolescent signals weighted toward smell/taste,
+pain, fatigue/malaise, exertional tiredness, cognition, headache, and lightheadedness. Gross2025 extends
+the framework to early childhood (0-5 years), where observable/proxy-reported appetite, sleep, cough,
+congestion, and low-energy features dominate. These indices are for research characterization, not
+clinical diagnosis, and they make pediatric PAIS explicitly age-stratified.
 
 **Threshold divergence summary.** The ≥4-week (CDC/NICE early long COVID), ≥12-week (NICE post-COVID syndrome / WHO), and PASC index (controls-referenced, PEM-weighted) produce qualitatively different study populations. A simulation using population-based UK ONS data found prevalence estimates ranging from ~5% (strict symptom-plus-impairment threshold at 12 weeks) to ~30–35% (any self-reported symptom ≥4 weeks), a 6-fold range from definition alone.
 
@@ -178,6 +192,12 @@ The well-documented prevalence range for long COVID (5–35%) is largely a defin
 **Multi-definition reporting as sensitivity analysis.** A well-established practice in ME/CFS research (and increasingly in long COVID) is to report results under multiple case definitions simultaneously. When effect estimates are robust across all definitions (e.g., a biomarker elevation present under both Fukuda and CCC), the finding is more reliable. When estimates differ markedly across definitions, the result is definition-specific and cannot be generalized. This practice should be adopted as standard in this project's computational outputs.
 
 **PAIS-agnostic symptom domains.** The project's h0001 (shared attractor) and t001 (cross-pathogen signature) would benefit from a definition approach that captures PEM, unrefreshing sleep, orthostatic intolerance, cognitive impairment, and immune activation as separate outcomes rather than a single binary PAIS variable, allowing each to be modeled as a dimensional endpoint.
+
+**Pediatric domain reporting.** Pediatric PAIS work needs developmental function alongside symptom
+domains: parent/proxy report, child self-report where age-appropriate, school attendance/refusal,
+developmental milestones, and impairment/quality-of-life scales. CLoCk's 24-month data show why this
+matters: broad symptoms remain common across infection-status groups, while consistently meeting an
+impairment-aware PCC definition over time identifies a smaller and more meaningful chronic-illness target.
 
 ---
 

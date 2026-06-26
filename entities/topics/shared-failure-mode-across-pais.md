@@ -19,6 +19,7 @@ related:
 - topic:antigen-pathogen-persistence
 - topic:mecfs-long-covid-convergence
 - topic:post-infectious-dysautonomia-and-autoimmunity
+- topic:pediatric-long-covid-and-misc
 source_refs:
 - cite:Choutka2022
 - cite:Komaroff2025
@@ -32,8 +33,12 @@ source_refs:
 - cite:Wang2007
 - cite:Xie2010
 - cite:WangHuLiao2014
+- cite:Gross2024
+- cite:Gross2025
+- cite:Stephenson2024
+- cite:Truong2025
 created: '2026-06-11'
-updated: '2026-06-25'
+updated: '2026-06-26'
 ---
 # Shared Failure Mode Across Post-Acute Infection Syndromes
 
@@ -60,6 +65,12 @@ chronification data.
 
 **Cross-pathogen anchors.** Pre-COVID PAIS evidence is essential to avoid SARS-CoV-2-centric reasoning: post-SARS syndrome (Moldofsky2011), Q-fever fatigue syndrome (Morroy2016, ~20% chronic), post-dengue fatigue (Kalimuddin2022, Hertanti2025, Conde2026), PTLDS (Bai2023, Wester2024), and "long flu" (Zheng2026, multi-organ sequelae persisting up to 15 years). Bai2023 finds 26 of 29 canonical ME/CFS symptoms appear in PTLDS.
 
+**Pediatric scope and MIS-C contrast.** The t009 pediatric pass adds a lifespan constraint. RECOVER shows
+pediatric long COVID requires age-stratified symptom indices, and CLoCk shows broad pediatric symptom
+prevalence needs longitudinal impairment controls. MIS-C is post-infectious and immune-mediated, but
+MUSIC's 6-month outcomes make it a recovery-contrast syndrome rather than a typical chronic PAIS member.
+This helps separate post-infectious inflammation that resolves from chronic failed recovery.
+
 ## Current State of Knowledge
 
 ### What the evidence supports
@@ -67,6 +78,9 @@ chronification data.
 - **Phenotypic convergence is real and cross-pathogen.** The core PAIS symptom cluster, female predominance, and a chronic fraction near 10-20% recur across SARS-CoV-2, Coxiella, Borrelia, dengue, influenza, and SARS-CoV-1 (Choutka2022, Komaroff2025, Kalimuddin2022, Morroy2016, Zheng2026). Symptom-level overlap between ME/CFS and long COVID, and between PTLDS and ME/CFS, is extensive and documented in controlled comparisons (Komaroff2023, Bai2023).
 - **Post-acute burden dominates and is not COVID-specific.** Xie2024 (81,280 COVID-19 vs 10,985 influenza hospitalizations) shows the post-acute phase contributes more than half of total disease burden for *both* viruses; Gandhi2023 contextualizes this within a century of post-viral syndromes (citing encephalitis lethargica after the 1918 influenza pandemic). This is the strongest operationalization of the "failed homeostatic recovery" frame across pathogens.
 - **Acute severity is a robust (cross-pathogen) predictor.** Hospitalization-level severity predicts durable sequelae in COVID-19 (Cai2024, Rahmati2025, Zeng2023) and the dengue analog (DHF → post-dengue fatigue; Hertanti2025, Conde2026).
+- **Pediatric long COVID extends the frame across developmental stage.** RECOVER and CLoCk support
+  infection-associated, multisystem pediatric PASC, but the phenotype is age- and measurement-channel
+  dependent rather than adult-like in one fixed form.
 
 ### What is contested or unresolved
 
@@ -84,6 +98,8 @@ Komaroff2023/Komaroff2025/Trautmann2025 (strong shared-attractor framing) sit in
 - Does the same chronic fraction (~10-20%) across triggers reflect a conserved host-determined immune-regulatory threshold, or coincidental convergence of unrelated trigger-specific rates (Kalimuddin2022, Morroy2016, Bai2023)?
 - Can a single molecular signature be found that is shared across SARS-CoV-2, Borrelia, EBV, and dengue triggers *and* specific to PAIS vs full recovery? No cross-trigger head-to-head multi-omics comparison yet exists.
 - Where is the operational scope boundary between PAIS and the other IACI subcategories (accelerated neurodegeneration, atherosclerosis) defined by Komaroff2025?
+- Should MIS-C be treated as a PAIS member, a post-infectious immune-resolution comparator, or a separate
+  acute/subacute IACI category?
 
 ## Relevance to This Project
 
@@ -97,3 +113,5 @@ This topic is the spine of the project's research question (`research-question:p
 - Trautmann (2025). Self-sustained inflammatory loops + failed interoception as a unifying PAIS model.
 - Bai & Richardson (2023). PTLDS ↔ ME/CFS symptom convergence (26/29 symptoms).
 - Kalimuddin2022; Morroy2016; Zheng2026; Xie2024 — cross-pathogen anchors (dengue, Q-fever, influenza) establishing PAIS is not SARS-CoV-2-specific.
+- Gross2024/Gross2025; Stephenson2024; Truong2025 — pediatric long-COVID age stratification and MIS-C
+  recovery contrast.
