@@ -147,16 +147,6 @@ Pipeline-refactor audit finding. The t035 clean base substrates are reusable pub
 
 Pipeline-refactor audit finding. science qa-audit currently cannot inspect this project because entities/workflow-runs is absent. Add authored workflow-run/provenance entities or the project-local equivalent for the completed t035 Snakemake run(s), pointing at results/run_metadata.json and QA dispositions where available, so process-iteration and QA-engagement can be audited. Include guidance for future computational runs so qa-audit does not stay disconnected from workflow execution history.
 
-## [t067] Add freshness check for menopause DAG adjustment-set derivation
-- priority: P3
-- status: proposed
-- aspects: []
-- related: [hypothesis:0005-reproductive-stage-immune-homeostatic-margin, question:0013-reproductive-stage-failed-immune-recovery-after-infection, pre-registration:0001-menopause-pais-total-effect]
-- group: workflow-qa
-- created: 2026-06-26
-
-Pipeline-refactor audit finding. code/menopause_dag/derive_adjustment_sets.py correctly parses the authored DAG patch and regenerates code/menopause_dag/adjustment_sets_v2.txt, but no wired check asserts the committed text output is fresh relative to entities/patches/menopause-pais-causal-dag.md. Add a lightweight validation target/test that re-runs the script in a temp file and diffs it against adjustment_sets_v2.txt, so DAG edits cannot silently leave the derived identifiability artifact stale.
-
 ## [t068] Add code-to-task back-links for t035 workflow scripts
 - priority: P3
 - status: proposed
