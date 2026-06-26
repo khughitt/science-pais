@@ -220,3 +220,44 @@ rule verdict:
         "--config {input.config} --primary-db {params.primary_db} "
         "--out-verdict {output.verdict} --out-report {output.report} "
         "--out-metadata {output.metadata} > {log} 2>&1"
+
+
+rule results_datapackage:
+    input:
+        verdict=f"{RES}/verdict.json",
+        report=f"{RES}/results.md",
+        metadata=f"{RES}/run_metadata.json",
+        result_qa=f"{RES}/qa/t035_results.qa.pass",
+        qa_reports=[
+            f"{RES}/qa/GSE14577_raw.qa_report.md",
+            f"{RES}/qa/GSE130353_raw.qa_report.md",
+            f"{RES}/qa/GSE14577_clean.qa_report.md",
+            f"{RES}/qa/GSE130353_clean.qa_report.md",
+            f"{RES}/qa/genesets_clean.qa_report.md",
+            f"{RES}/qa/t035_results.qa_report.md",
+        ],
+        ranked=expand(f"{PROC}/de/{{contrast}}.ranked.tsv", contrast=CONTRASTS),
+        diag=expand(f"{PROC}/de/{{contrast}}.diag.json", contrast=CONTRASTS),
+        nes=expand(f"{PROC}/fgsea/{{contrast}}.{{db}}.nes.tsv", contrast=CONTRASTS, db=DBS),
+        rho=expand(f"{PROC}/concordance/{{pair}}.{{db}}.rho.tsv", pair=PAIRS, db=DBS),
+        scatter=expand(f"{PROC}/concordance/{{pair}}.{{db}}.scatter.tsv", pair=PAIRS, db=DBS),
+        perm=expand(f"{PROC}/perm/{{pair}}.{{db}}.perm.tsv", pair=PAIRS, db=DBS),
+        nulldist=expand(f"{PROC}/perm/{{pair}}.{{db}}.nulldist.tsv", pair=PAIRS, db=DBS),
+        specificity=expand(f"{PROC}/specificity/{{db}}.classes.tsv", db=DBS),
+        themes=expand(f"{PROC}/rollup/{{db}}.themes.tsv", db=DBS),
+        robustness=f"{PROC}/rollup/db_robustness.tsv",
+        compartment=f"{PROC}/rollup/compartment.tsv",
+        config=CONFIGFILE,
+        script=f"{SCRIPTS}/emit_results_datapackage.py",
+    output:
+        datapackage=f"{RES}/datapackage.json",
+    params:
+        processed=PROC,
+        results=RES,
+    log:
+        f"{RES}/logs/emit_results_datapackage.log"
+    conda:
+        "../envs/py.yaml"
+    shell:
+        "python {input.script} --processed {params.processed} --results {params.results} "
+        "--config {input.config} --out {output.datapackage} > {log} 2>&1"

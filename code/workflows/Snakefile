@@ -91,3 +91,4 @@ rule all:
         f"{RES}/results.md",
         f"{PROC}/datapackage.json",
         f"{RES}/qa/t035_results.qa.pass",
+        f"{RES}/datapackage.json",

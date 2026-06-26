@@ -117,16 +117,6 @@ Follow-up from t047 distinct from the abrocitinib readout tracked by t054. Deter
 
 Follow-up from t025/t044. The decisive q0015 test remains inaccessible from public STOP-PASC/Maestri2025 data: convert PEM molecular associations into a severity-adjusted PEM-positive vs PEM-negative contrast, or identify an accessible RECOVER/IMPACC-style cohort with validated PEM measurement, overall-severity covariate, acute-severity covariates, and omics/proteomics endpoints. Watch for STOP-PASC individual-level data/repo release; otherwise scope data-access route. Output should say whether a computable vehicle exists, not merely add more unadjusted PEM associations.
 
-## [t064] Emit t035 results datapackage manifest
-- priority: P3
-- status: proposed
-- aspects: []
-- related: [pre-registration:0002-cross-trigger-pathway-overlap, plan:0003-cross-trigger-pathway-overlap-pipeline, question:0001-shared-molecular-signature-across-triggers]
-- group: workflow-portability
-- created: 2026-06-26
-
-Pipeline-refactor audit finding. WP1 emits data/processed/datapackage.json for acquired inputs, and verdict.py emits results/run_metadata.json, but there is no Frictionless-style results/datapackage.json for workflow outputs. Add a terminal manifest rule that records verdict.json, results.md, run_metadata.json, QA reports, and other produced result resources with hashes/provenance/entity cross-references, excluding raw/clean-base payloads. Manifest created/updated dates should derive from run identity or deterministic provenance, not wall-clock regeneration.
-
 ## [t065] Formalize t035 clean-base dataset entities and commons-readiness
 - priority: P3
 - status: proposed
