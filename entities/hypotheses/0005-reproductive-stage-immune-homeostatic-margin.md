@@ -15,6 +15,7 @@ source_refs:
 - cite:Kawai2025
 - cite:Shahbaz2025
 - cite:Neuhouser2024
+- cite:Boneva2015
 related:
 - question:0013-reproductive-stage-failed-immune-recovery-after-infection
 - question:0007-mechanism-of-female-predominance-in-pais
@@ -23,7 +24,9 @@ related:
 - hypothesis:0004-acute-severity-threshold
 - topic:menopause-sex-hormones-and-pais-risk
 - paper:Neuhouser2024
+- paper:Boneva2015
 - interpretation:0020-t045-neuhouser2024-whi-hrt-gap-triage
+- interpretation:0026-t043-boneva2015-early-menopause-directionality
 - topic:long-covid-immune-dysregulation
 - immunity:topic:endocrine-immune-recovery-thresholds
 - immunity:topic:sex-hormone-life-stage-immune-homeostasis
@@ -31,7 +34,7 @@ related:
 - cycles:topic:menstrual-cycle-menopause-immune-modulation
 - cycles:topic:reproductive-aging-and-menopause
 created: '2026-06-19'
-updated: '2026-06-25'
+updated: '2026-06-26'
 ---
 # Hypothesis: Reproductive-stage transitions alter immune homeostatic margin and modify risk of failed post-infectious recovery
 
@@ -59,7 +62,7 @@ This may lower or raise the effective threshold for entering the shared dysregul
 
 ### Rival — contrasted against; excluded from the conjunction
 
-- `proposition:0003-infection-pais-perturbs-the-reproductive-axis-and-menopausal-timing` — **reverse (P←) direction**: infection/PAIS perturbs the reproductive axis and menopausal timing. Roled `rival` relative to this forward hypothesis; the cross-sectional hormone evidence is **symmetric** between P→ and P← and cannot yet discriminate them.
+- `proposition:0003-infection-pais-perturbs-the-reproductive-axis-and-menopausal-timing` — **reverse (P←) direction**: infection/PAIS perturbs the reproductive axis and menopausal timing. Roled `rival` relative to this forward hypothesis; the cross-sectional hormone evidence is **symmetric** between P→ and P← and cannot yet discriminate them. Boneva2015 weakly narrows the ambiguity for surgical menopause because gynecologic surgery preceded CFS onset in most dated cases, but it does not adjudicate natural menopause or infection-indexed reverse causation (`interpretation:0026`).
 
 ### Background — inform interpretation; excluded from the conjunction
 
@@ -95,6 +98,7 @@ A strong null in hormone-measured cohorts would force the model to treat menopau
 - Averyanova2022 provides indirect mechanistic plausibility for hormone effects on immune, endothelial, and hemostatic pathways relevant to recovery [@Averyanova2022].
 - Kawai2025 supports viral-infection links to vascular and thromboinflammatory outcomes that could interact with menopause-associated cardiometabolic risk [@Kawai2025].
 - Shahbaz2025 provides a second independent, non-UK-Biobank corroboration of low non-dominant sex hormone in long COVID ME/CFS: reduced testosterone in female LC patients and reduced estradiol in male LC patients, measured directly from plasma in an Edmonton clinical cohort (n=140, CCC ME/CFS case definition, ~12 months post-infection). Inverse correlations between testosterone and inflammatory cytokines (IL-6, TNF-α, IFN-γ, MCP-1, IL-17a, IP-10) in LCF patients provide mechanistic plausibility for testosterone's anti-inflammatory role. Reverse causation unresolved (cross-sectional; menopausal status not collected) [@Shahbaz2025].
+- Boneva2015 supplies the strongest non-COVID reproductive-stage signal in the corpus: early/surgical menopause and gynecologic morbidity are enriched in CFS, and hysterectomy/oophorectomy preceded CFS onset in 71% of the dated-surgery subset. This weakly supports an antecedent gynecologic/reproductive-stage vulnerability, but it is surgical-pathway-heavy, retrospective, and not infection-indexed [@Boneva2015].
 
 ## Disputing Evidence
 

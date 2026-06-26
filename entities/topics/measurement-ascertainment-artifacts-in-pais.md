@@ -124,7 +124,7 @@ the discipline the synthesis identified as recurring but previously un-housed.
 
 - Shah2025 (within-age-band menopause null), Aid2025 / Shahbaz2025 / Silva2024 (objective immune
   domain) via `interpretation:0006-t041-objective-female-biased-subphenotype-search`.
-- Boneva2015 (ME/CFS early-menopause) via `interpretation:0003`.
+- Boneva2015 (ME/CFS early/surgical-menopause directionality) via `interpretation:0026`.
 - Appelman2024 / Gattoni2025 (muscle vs whole-body PEM endpoints) via
   `interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation`.
 - Oaklander2022 / Joseph2021 / Walitt2024 / Novak2026 (skin-biopsy SFN prevalence harmonization) via

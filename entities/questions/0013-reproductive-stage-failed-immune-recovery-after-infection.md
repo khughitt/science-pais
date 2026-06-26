@@ -18,6 +18,7 @@ source_refs:
 - cite:Costeira2021
 - cite:Rebman2026
 - cite:Kawai2025
+- cite:Boneva2015
 related:
 - question:0007-mechanism-of-female-predominance-in-pais
 - topic:menopause-sex-hormones-and-pais-risk
@@ -27,7 +28,7 @@ related:
 - immunity:topic:endocrine-immune-recovery-thresholds
 - cycles:topic:menstrual-cycle-menopause-immune-modulation
 created: '2026-06-19'
-updated: '2026-06-19'
+updated: '2026-06-26'
 ---
 # Does reproductive-stage transition change the probability of failed immune recovery after infection?
 
@@ -52,12 +53,13 @@ The core issue is whether reproductive-stage biology changes immune, vascular, a
 - Costeira2021 suggests estrogen-proxy associations with acute COVID outcomes can be methodologically fragile because hormone therapy route, indication, comorbidity, and healthy-user bias are hard to separate [@Costeira2021].
 - Rebman2026 cautions that sex and menopausal status can affect acute infection presentation, diagnostic markers, and post-acute persistence in different directions [@Rebman2026].
 - Kawai2025 supports a viral-infection-to-vascular-risk pathway that could interact with menopause-associated cardiometabolic risk without requiring menopause to be the primary PAIS cause [@Kawai2025].
+- Boneva2015 reports an early/surgical-menopause signal in CFS and a limited timing clue: hysterectomy/oophorectomy preceded CFS onset in 71% of the dated-surgery subset. This weakly argues against a pure illness-causes-all-menopause-timing interpretation for the surgical component, but it does not provide pre-infection natural-menopause or confirmed post-infectious timing [@Boneva2015].
 
 ## Thoughts
 
 - Best current interpretation: reproductive-stage transition is a plausible modifier of failed immune recovery, but it is not yet established as an independent cause of PAIS.
 - The highest-value causal model should separate at least five competing explanations: hormone-mediated immune recovery threshold, X-linked immune dosage, menopause-associated vascular/metabolic risk, symptom overlap/misclassification, and care-seeking or reporting differences.
-- The major remaining uncertainty is whether perimenopause, rather than menopause as a binary state, is the biologically relevant exposure window.
+- The major remaining uncertainty is whether perimenopause, natural menopause, surgical menopause, or gynecologic disease/surgery indications are the biologically relevant exposure window. Boneva2015 makes surgical pathways salient but does not settle the natural-menopause question.
 
 ## Connections to Project
 

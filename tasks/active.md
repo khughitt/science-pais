@@ -7,14 +7,6 @@
 
 Blocked by tooling gap (fb-2026-06-11-005). Bridge papers: Choutka2022, Komaroff2025, Klein2023, Rojas2022, Sharma2023.
 
-## [t012] Flag the PAIS family to pan-disease as a disease-label-vs-biology test case
-- priority: P3
-- status: proposed
-- aspects: []
-- created: 2026-06-11
-
-Long COVID / ME-CFS / PTLDS as distinct disease labels possibly sharing post-infectious biology. Coordinate with ~/d/health/comparisons/pan-disease.
-
 ## [t028] Execute the pre-registered menopause→PAIS total-effect analysis once UKB data is provisioned
 - priority: P2
 - status: blocked
@@ -50,14 +42,6 @@ Surviving path (b) from report:0004 (t036 feasibility). All of Us is the ONLY ca
 - created: 2026-06-21
 
 Surviving path (c) from report:0004 (t036 feasibility) -- the EVENTUAL PRIMARY positive test of h0005 M1, highest-quality but highest-cost. RECOVER-Adult is the strongest single vehicle: AMH ALREADY measured (Tier 2; the one staging analyte UKB lacks), PEM-weighted validated PASC index (Thaweethai 2023; PEM ~87% of PASC-positive -> best-in-class PEM-stratified outcome), and deep mediators across all three families (Tier-1 D-dimer/troponin/ECG endothelial; Tier-1 active-stand + Tier-3 tilt/catecholamine autonomic; 12-task-force pathobiology immune). The full E2/T/FSH/LH/SHBG panel is ASSAYABLE DE NOVO from banked serum/plasma/PBMC at Mayo. TWO decisive limits: (1) enrolment >=3 mo post-infection -> NO within-person pre-infection hormone baseline, so reverse causation is only PARTIALLY addressable (uninfected-control arm + post-infection trajectory, not a clean pre-exposure anchor); (2) hormone exposure does not yet exist -> requires an ancillary-study proposal (ASOC) with INDEPENDENTLY-SECURED EXTERNAL FUNDING, application-gated, multi-month, not reproducible-from-public. SCOPE: post-seed-stage + funded; this task is recorded so the only path to M1's primary positive test is not lost. OPEN UNKNOWN: whether any RECOVER pathobiology sub-study has ALREADY assayed sex steroids on banked serum (supplemental analyte tables not fully readable in scoping) -- would remove the funded-assay step. related: report:0004, hypothesis:0005, proposition:0002, task:t028.
-
-## [t043] Determine whether the ME/CFS early-menopause signal (Boneva2015) is reverse-causation or predisposition
-- priority: P3
-- status: proposed
-- aspects: []
-- created: 2026-06-22
-
-Boneva2015 reports early menopause (<=45) adj OR 3.20 and ~10y earlier mean age at menopause in ME/CFS — the strongest true reproductive-stage x subphenotype signal found in the t018 sweep (interpretation:0003), but cross-sectional with unresolved direction (illness may advance menopause vs early menopause predisposing). Needs pre-infection menopausal-timing data (same private/deferred within-cohort design flagged in t013). Empirical. Related: interpretation:0003, hypothesis:0005, question:0013, proposition:0003.
 
 ## [t050] Discharge q0004 paired-site biopsy + primary-dysautonomia-control study (h0007 promotion criterion #1)
 - priority: P2

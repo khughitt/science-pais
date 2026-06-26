@@ -23,6 +23,7 @@ source_refs: &id001
 - paper:Shahbaz2025
 - paper:Silva2024
 - paper:Neuhouser2024
+- paper:Boneva2015
 related:
 - question:0007-mechanism-of-female-predominance-in-pais
 - question:0013-reproductive-stage-failed-immune-recovery-after-infection
@@ -35,13 +36,14 @@ related:
 - interpretation:0006-t041-objective-female-biased-subphenotype-search
 - interpretation:0008-t019-hrt-evidence-audit-no-admissible-pais-test
 - interpretation:0020-t045-neuhouser2024-whi-hrt-gap-triage
+- interpretation:0026-t043-boneva2015-early-menopause-directionality
 - question:0018-objective-vs-subjective-cognition-dissociation-in
 - task:t045
 - task:t041
 - task:t018
 - task:t013
 created: '2026-06-22'
-updated: '2026-06-25'
+updated: '2026-06-26'
 input: *id001
 prior_interpretations:
 - interpretation:0002-t013-cross-trigger-sex-effect-sizes
@@ -75,8 +77,8 @@ Conclusion chains:
 > Cheetham2023) that back the minted POTS/cognition propositions. The **held-back** cells are
 > sourced from literature **not yet ingested as entities** and are therefore *not* in `source_refs`:
 > the vascular reversal rests on **Abubasheer2025** (VTE meta) and **Ambrosino2021** (FMD); the
-> recovery-time row on **Fischer2025** (Predi-Covid) and König2023; the reproductive-stage row on
-> **Boneva2015** (ME/CFS). Neuhouser2024 has now been ingested by `task:t045`; it corrects the WHI
+> recovery-time row on **Fischer2025** (Predi-Covid) and König2023. Boneva2015 has now been ingested
+> by `task:t043`; Neuhouser2024 has now been ingested by `task:t045`; it corrects the WHI
 > long-COVID availability statement but remains non-adjudicating for HRT.
 
 ## Verdict
@@ -123,7 +125,7 @@ subphenotype×sex cell at present and is not read into the matrix.
 | Result | What it shows | Source |
 |---|---|---|
 | **Within-age-band menopause null** | At ages 40–54, female long-COVID excess is **near-identical** menopausal RR **1.42** (0.99–2.03) vs nonmenopausal RR **1.45** (1.15–1.83) → the well-known 40–54 female peak is **not** explained by menopausal status per se | Shah2025 (`paper:Shah2025`, RECOVER, the only study isolating menopausal status within an age band) |
-| **ME/CFS early-menopause signal (strongest true stage effect, non-COVID)** | Early menopause ≤45 adj OR **3.20** (1.21–8.49); mean age at menopause 38.5 (CFS) vs 48.6 y (controls) — but reverse causation plausible (illness → earlier menopause) | Boneva2015 (*Menopause*) |
+| **ME/CFS early-menopause signal (strongest true stage effect, non-COVID)** | Early/surgical menopause enriched in CFS; hysterectomy/oophorectomy preceded CFS onset in **71%** of the dated-surgery subset. `task:t043` resolves this as weakly antecedent for the surgical component, not a clean natural-menopause or infection-indexed causal test | Boneva2015 (`paper:Boneva2015`; `interpretation:0026`) |
 | **Acute (not long) COVID estrogen contrast** | Postmenopausal vs premenopausal predicted-COVID OR 1.22; HRT OR 1.32 (paradoxical); **acute outcome, not long COVID** | Costeira2021 (`paper:Costeira2021`) |
 | **Symptom-overlap confound** | 40–54 menopause-symptom-questionnaire load is highest within a post-COVID clinic; shared fatigue/brain-fog/sleep items mean reproductive stage biases *ascertainment* | Stewart2024 (`paper:Stewart2024`) |
 | **HRT × long-COVID outcome** | **Zero** controlled HRT-effect estimates in this corpus | (gap) — **correction (t045, 2026-06-25, `interpretation:0020`):** WHI *did* publish a long-COVID risk-factor analysis in postmenopausal women (Neuhouser2024, *Ann Epidemiol*), but HRT/MHT is absent from the article text and reported top-20 predictors; Supplementary Table S1 was inaccessible, so unselected-candidate vs never-examined remains unresolved. No admissible HRT→long-COVID effect estimate exists. |
@@ -152,8 +154,8 @@ subphenotype×sex cell at present and is not read into the matrix.
 
 4. **Reproductive stage is not shown to drive the subphenotype excess.** The only study breaking
    the age/menopause collinearity (Shah2025) finds menopausal status adds nothing within the
-   40–54 band; the strongest genuine stage effect (Boneva2015) is in ME/CFS and is
-   reverse-causation-ambiguous; HRT×long-COVID outcome data are absent. This **tempers** a
+   40–54 band; the strongest genuine stage effect (Boneva2015) is in ME/CFS and is partly
+   antecedent-surgical but still not a clean natural-menopause or infection-indexed test; HRT×long-COVID outcome data are absent. This **tempers** a
    menopause-specific reading of `hypothesis:0005` at the subphenotype level, consistent with
    `interpretation:0002`'s "weak, indirect support" and the `pre-registration:0001` framing.
 
@@ -177,9 +179,9 @@ subphenotype×sex cell at present and is not read into the matrix.
 - **Independence / contested corpora:** microclots are corpus-dependent (single dominant group);
   the dengue depression null and the Ursini FibroCOVID male-OR are single weak studies and are
   treated as such (not promoted).
-- **Reverse causation** is unresolved for every cross-sectional hormone/stage finding
-  (Boneva2015; Silva2024/Shahbaz2025 already in the graph): illness may suppress the HPG axis or
-  advance menopause rather than the reverse.
+- **Reverse causation** remains unresolved for the hormone/stage field overall
+  (Silva2024/Shahbaz2025; Boneva2015 narrows only the surgical-menopause component): illness may
+  suppress the HPG axis or advance natural menopause rather than the reverse.
 
 ## Data Quality Checks
 
@@ -238,8 +240,9 @@ the leading-but-bounded structure.]**
   (ambulatory and hospitalized), so it is a genuine domain reversal, not carryover. Minted as
   `proposition:0012`.
 - **Is the ME/CFS early-menopause signal (Boneva2015) reverse-causation or predisposition?**
-  (P3, empirical) Needs pre-infection menopausal timing — the same within-cohort design `t013`
-  flagged as private/deferred.
+  **RESOLVED (t043, `interpretation:0026`): partly antecedent-surgical, still non-adjudicating for
+  natural menopause and infection-indexed timing.** A clean answer still needs pre-infection
+  menopausal timing — the same within-cohort design `t013` flagged as private/deferred.
 
 ## Limitations & Residual Uncertainty
 
@@ -285,7 +288,7 @@ the measurement-channel umbrella remains held.
   as a refinement of the existing `evidence-line:0001`, not a contradiction (the age-band support
   stands; the menopausal-status attribution does not).
 - **Ingest the load-bearing new papers** (Kwan2022, Cheetham2023, Delgado-Alonso2023, Bland2024,
-  Abubasheer2025, Boneva2015, Fischer2025) as `entities/papers/` so the above evidence-lines have
+  Abubasheer2025, Fischer2025; Boneva2015 is now ingested by t043) as `entities/papers/` so the above evidence-lines have
   valid `source:` refs.
 - **Do not** mint any "somatic > neuropsychiatric" proposition (carried over from
   `interpretation:0002`) — superseded here by the measurement-channel reading.

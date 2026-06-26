@@ -36,8 +36,9 @@ source_refs:
   - cite:Newson2021
   - cite:Rebman2026
   - cite:Shah2025
+  - cite:Boneva2015
 created: '2026-06-19'
-updated: '2026-06-23'
+updated: '2026-06-26'
 ---
 # Menopause Status, Sex Hormones, and PAIS Risk
 
@@ -73,6 +74,8 @@ Clinic and survey studies show the measurement problem.
 Stewart et al. found very high menopause symptom questionnaire burden among women in NHS post-COVID clinics, with the highest total scores in ages 40-54 years and 51% of menstruating patients reporting menstrual disturbance with infection [@Stewart2024].
 Newson et al.'s survey abstract reported many women attributing symptoms to perimenopause/menopause and frequent premenstrual symptom worsening, but the self-selected design makes it hypothesis-generating only [@Newson2021].
 Humphreys et al. synthesize the small literature and conclude that menopausal transition likely shapes presentation and care needs, but menopausal status has not been shown to independently increase long-COVID risk [@Humphreys2025].
+
+Boneva2015 extends the reproductive-stage signal outside long COVID: women with CFS reported earlier menopause and more gynecologic morbidity/surgery than controls, and hysterectomy/oophorectomy preceded CFS onset in 71% of the dated-surgery subset [@Boneva2015]. That timing clue weakens a pure reverse-causation reading for surgical menopause, but the study is retrospective, non-post-infection-indexed, and cannot separate natural menopause from gynecologic indications or surgery-associated hormone withdrawal.
 
 Acute-COVID and infection-comparator studies caution against overfitting the long-COVID story.
 Mishra et al. found worse unadjusted acute COVID outcomes in menopausal women, but menopause was not an independent predictor after adjustment for age, severity, and comorbidities [@Mishra2020].
@@ -119,6 +122,7 @@ The **t019 hormone-therapy audit** (`interpretation:0008`, 2026-06-23) formalize
 ## Key References
 
 - Shah2025: strongest empirical anchor for female excess long-COVID risk in RECOVER.
+- Boneva2015: strongest non-COVID reproductive-stage signal, but mainly surgical/gynecologic and not a clean natural-menopause causal test.
 - Stewart2024: clinic-based evidence of menopause symptom burden and symptom overlap in post-COVID clinics.
 - Humphreys2025: scoping review of the small menopause-long-COVID literature.
 - Averyanova2022: hormone-immune mechanism background, useful but indirect for PAIS.
