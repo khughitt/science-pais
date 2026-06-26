@@ -117,16 +117,6 @@ Follow-up from t047 distinct from the abrocitinib readout tracked by t054. Deter
 
 Follow-up from t025/t044. The decisive q0015 test remains inaccessible from public STOP-PASC/Maestri2025 data: convert PEM molecular associations into a severity-adjusted PEM-positive vs PEM-negative contrast, or identify an accessible RECOVER/IMPACC-style cohort with validated PEM measurement, overall-severity covariate, acute-severity covariates, and omics/proteomics endpoints. Watch for STOP-PASC individual-level data/repo release; otherwise scope data-access route. Output should say whether a computable vehicle exists, not merely add more unadjusted PEM associations.
 
-## [t066] Add workflow-run provenance so science qa-audit covers t035
-- priority: P3
-- status: proposed
-- aspects: []
-- related: [pre-registration:0002-cross-trigger-pathway-overlap, plan:0003-cross-trigger-pathway-overlap-pipeline, question:0001-shared-molecular-signature-across-triggers]
-- group: workflow-qa
-- created: 2026-06-26
-
-Pipeline-refactor audit finding. science qa-audit currently cannot inspect this project because entities/workflow-runs is absent. Add authored workflow-run/provenance entities or the project-local equivalent for the completed t035 Snakemake run(s), pointing at results/run_metadata.json and QA dispositions where available, so process-iteration and QA-engagement can be audited. Include guidance for future computational runs so qa-audit does not stay disconnected from workflow execution history.
-
 ## [t068] Add code-to-task back-links for t035 workflow scripts
 - priority: P3
 - status: proposed

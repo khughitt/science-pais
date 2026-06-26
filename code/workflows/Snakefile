@@ -95,3 +95,4 @@ rule all:
         f"{PROC}/genesets/datapackage.json",
         f"{RES}/qa/t035_results.qa.pass",
         f"{RES}/datapackage.json",
+        f"{RES}/workflow-runs/t035-cross-trigger-pathway-overlap-verdict/datapackage.yaml",

@@ -261,3 +261,30 @@ rule results_datapackage:
     shell:
         "python {input.script} --processed {params.processed} --results {params.results} "
         "--config {input.config} --out {output.datapackage} > {log} 2>&1"
+
+
+rule workflow_run_qa_audit_package:
+    input:
+        metadata=f"{RES}/run_metadata.json",
+        result_qa=f"{RES}/qa/t035_results.qa.pass",
+        qa_reports=[
+            f"{RES}/qa/GSE14577_raw.qa_report.md",
+            f"{RES}/qa/GSE130353_raw.qa_report.md",
+            f"{RES}/qa/GSE14577_clean.qa_report.md",
+            f"{RES}/qa/GSE130353_clean.qa_report.md",
+            f"{RES}/qa/genesets_clean.qa_report.md",
+            f"{RES}/qa/t035_results.qa_report.md",
+        ],
+        script=f"{SCRIPTS}/emit_workflow_run_qa_audit_package.py",
+    output:
+        manifest=f"{RES}/workflow-runs/t035-cross-trigger-pathway-overlap-verdict/datapackage.yaml",
+    params:
+        results=RES,
+        out_dir=f"{RES}/workflow-runs/t035-cross-trigger-pathway-overlap-verdict",
+    log:
+        f"{RES}/logs/emit_workflow_run_qa_audit_package.log"
+    conda:
+        "../envs/py.yaml"
+    shell:
+        "python code/scripts/emit_workflow_run_qa_audit_package.py --results {params.results} "
+        "--out-dir {params.out_dir} > {log} 2>&1"

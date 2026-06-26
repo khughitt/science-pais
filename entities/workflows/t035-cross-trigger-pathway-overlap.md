@@ -22,6 +22,7 @@ updated: "2026-06-26"
 related:
   - task:t035
   - task:t065
+  - task:t066
   - pre-registration:0002-cross-trigger-pathway-overlap
   - plan:0003-cross-trigger-pathway-overlap-pipeline
   - question:0001-shared-molecular-signature-across-triggers
@@ -51,6 +52,7 @@ verdict generation.
 | clean-base manifests | `clean_base_datapackages` | Emit runtime datapackages for reusable clean-base substrates. |
 | analysis | `limma_de`, `fgsea_enrich`, `concordance`, `permutation_null`, `specificity`, `theme_rollup` | Produce t035 project-specific result tables. |
 | result QA | `qa_results`, `results_datapackage` | Gate and package the final result bundle. |
+| workflow-run provenance | `workflow_run_qa_audit_package` | Emit the `science qa-audit` manifest and JSON QA coverage ledgers for the completed t035 run. |
 
 ## Inputs
 
@@ -68,3 +70,6 @@ Reusable clean-base outputs:
 
 Project-specific t035 outputs are described by `results/datapackage.json` and
 should not be promoted as clean-base commons datasets.
+
+Workflow-run provenance for process QA is described by
+`results/workflow-runs/t035-cross-trigger-pathway-overlap-verdict/datapackage.yaml`.
