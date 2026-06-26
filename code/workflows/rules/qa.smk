@@ -170,3 +170,42 @@ rule qa_all:
         f"{PROC}/GSE130353/clean.qa.pass",
         f"{PROC}/genesets/clean.qa.pass",
         f"{RES}/qa/t035_results.qa.pass",
+
+
+rule clean_base_datapackages:
+    input:
+        gse14577=[
+            f"{PROC}/GSE14577/expr.gene.tsv.gz",
+            f"{PROC}/GSE14577/sample_metadata.tsv",
+            f"{PROC}/GSE14577/cohort_audit.json",
+            f"{PROC}/GSE14577/clean.qa.pass",
+        ],
+        gse130353=[
+            f"{PROC}/GSE130353/expr.gene.tsv.gz",
+            f"{PROC}/GSE130353/sample_sheet.tsv",
+            f"{PROC}/GSE130353/cohort_audit.json",
+            f"{PROC}/GSE130353/nearzero.qa.pass",
+            f"{PROC}/GSE130353/clean.qa.pass",
+        ],
+        genesets=[
+            f"{PROC}/genesets/hallmark.rds",
+            f"{PROC}/genesets/reactome.rds",
+            f"{PROC}/genesets/gobp.rds",
+            f"{PROC}/genesets/theme_map.tsv",
+            f"{PROC}/genesets/theme_spec.json",
+            f"{PROC}/genesets/msigdb_release_hash.txt",
+            f"{PROC}/genesets/clean.qa.pass",
+        ],
+        script=f"{SCRIPTS}/emit_clean_base_datapackages.py",
+    output:
+        gse14577=f"{PROC}/GSE14577/datapackage.json",
+        gse130353=f"{PROC}/GSE130353/datapackage.json",
+        genesets=f"{PROC}/genesets/datapackage.json",
+    params:
+        processed=PROC,
+    log:
+        f"{RES}/logs/emit_clean_base_datapackages.log"
+    conda:
+        "../envs/py.yaml"
+    shell:
+        "python {input.script} --processed {params.processed} > {log} 2>&1"

@@ -4,15 +4,19 @@ type: dataset
 title: "GSE130353 — QFS / CFS circulating-monocyte transcriptome"
 status: candidate
 created: "2026-06-21"
-updated: "2026-06-21"
+updated: "2026-06-26"
 origin: external
+dataset_class: deposit
 source_class: observational
 tier: evaluate-next
 license: unknown
 access:
   level: public
   availability: available
-  verified: false
+  verified: true
+  verification_method: retrieved
+  last_reviewed: "2026-06-26"
+  verified_by: "agent (t065)"
   source_url: "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE130353"
 accessions: [GSE130353]
 ontology_terms: [post-q-fever-fatigue, q-fever, me-cfs, rna-seq, monocytes]
@@ -51,3 +55,9 @@ not the sex contrast. (Primary relevance is to `task:t035` cross-trigger pathway
 
 N=40; molecular only (no psychometrics); shared mitochondrial-peptide signal is **not fatigue-specific**
 (asymptomatic seropositive controls share it). Sex labels: confirm per-sample in the series matrix.
+
+## Access verification log
+
+- 2026-06-26 (agent t065): GEO accession and local raw tar/SOFT payloads verified from the
+  t035 acquisition manifest; license remains unknown. The project clean-base derivative is
+  `dataset:gse130353-qfs-cfs-prepared-gene-matrix`.
