@@ -8,22 +8,29 @@ identification_strength: observational
 proxy_directness: direct
 supports_scope: hypothesis_bundle
 discusses:
-  - hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
+- hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
 related:
-  - hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
-  - question:0011-mitochondrial-basis-of-pem
-  - proposition:0030-mecfs-exercise-provoked-skeletal-muscle-bioenergetic-abnormality
-  - proposition:0033-microvascular-hypoperfusion-drives-pem-muscle-bioenergetic-failure
-  - proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific
-  - discussion:0004-pem-shared-muscle-lesion-vs-endpoint-contingency
-  - interpretation:0019-t056-mecfs-muscle-bioenergetics-ingestion
-  - evidence-line:0083-appelman-joseph-t056-muscle-localization-supports-h0006-p1
-  - evidence-line:0084-walitt2024-central-resting-null-weakly-disputes-h0006-p1
+- hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
+- question:0011-mitochondrial-basis-of-pem
+- proposition:0030-mecfs-exercise-provoked-skeletal-muscle-bioenergetic-abnormality
+- proposition:0033-microvascular-hypoperfusion-drives-pem-muscle-bioenergetic-failure
+- proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific
+- discussion:0004-pem-shared-muscle-lesion-vs-endpoint-contingency
+- interpretation:0019-t056-mecfs-muscle-bioenergetics-ingestion
+- evidence-line:0083-appelman-joseph-t056-muscle-localization-supports-h0006-p1
+- evidence-line:0084-walitt2024-central-resting-null-weakly-disputes-h0006-p1
 source_refs:
-  - paper:Appelman2024
-  - paper:Walitt2024
+- paper:Appelman2024
+- paper:Walitt2024
 created: '2026-06-26'
 updated: '2026-06-26'
+review_state:
+  last_reviewed: '2026-06-26'
+  last_review_note: 'No change: claim (''material site'', not ''only site'') is correctly
+    narrower than the evidence; supports/disputes balance (0083 moderate / 0084 weak-generalization)
+    matches the contested belief surface; caveats already flag endpoint non-interchangeability
+    and primary-vs-secondary. Reviewed in conjunction with h0006 ROS/q0016 fix on
+    the bundle.'
 ---
 # Proposition: PEM-relevant bioenergetic pathology localizes materially to skeletal muscle
 

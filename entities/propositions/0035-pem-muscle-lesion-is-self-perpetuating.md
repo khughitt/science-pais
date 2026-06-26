@@ -8,27 +8,43 @@ identification_strength: structural
 proxy_directness: indirect
 supports_scope: hypothesis_bundle
 measurement_model:
-  observed_entity: serial muscle OXPHOS/SDH, ROS, perfusion, ion-handling, and recovery-time readouts after standardized exertion
-  latent_construct: self-perpetuating muscle mitochondrial-perfusion injury loop that sustains delayed and slow-to-resolve PEM
-  measurement_relation: repeated post-exertion worsening and delayed normalization are indirect proxies for positive feedback; causal support requires longitudinal persistence or targeted reversal
+  observed_entity: serial muscle OXPHOS/SDH, ROS, perfusion, ion-handling, and recovery-time
+    readouts after standardized exertion
+  latent_construct: self-perpetuating muscle mitochondrial-perfusion injury loop that
+    sustains delayed and slow-to-resolve PEM
+  measurement_relation: repeated post-exertion worsening and delayed normalization
+    are indirect proxies for positive feedback; causal support requires longitudinal
+    persistence or targeted reversal
   known_failure_modes:
-    - one-time post-exercise worsening can reflect transient injury without self-maintaining feedback
-    - systemic immune or CNS loops may drive recurrence while muscle remains downstream
-    - delayed recovery may arise from endpoint timing rather than a persistent local lesion
+  - one-time post-exercise worsening can reflect transient injury without self-maintaining
+    feedback
+  - systemic immune or CNS loops may drive recurrence while muscle remains downstream
+  - delayed recovery may arise from endpoint timing rather than a persistent local
+    lesion
+  - the ROS limb of the loop may be a downstream consequence of mitochondrial failure
+    rather than an upstream feedback driver (open in question:0016), in which case
+    the loop does not close at the redox node
 discusses:
-  - hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
+- hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
 related:
-  - hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
-  - hypothesis:0001-shared-dysregulated-attractor
-  - question:0011-mitochondrial-basis-of-pem
-  - proposition:0032-pem-bioenergetic-deficit-localizes-to-skeletal-muscle
-  - proposition:0033-microvascular-hypoperfusion-drives-pem-muscle-bioenergetic-failure
-  - proposition:0034-ionic-na-ca-overload-mediates-pem-muscle-mitochondrial-injury
-  - evidence-line:0088-scheibenbogen2024-aimm-feedback-weakly-supports-h0006-p4
+- hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
+- hypothesis:0001-shared-dysregulated-attractor
+- question:0011-mitochondrial-basis-of-pem
+- question:0016-oxidative-stress-upstream-driver-of-bioenergetic
+- proposition:0032-pem-bioenergetic-deficit-localizes-to-skeletal-muscle
+- proposition:0033-microvascular-hypoperfusion-drives-pem-muscle-bioenergetic-failure
+- proposition:0034-ionic-na-ca-overload-mediates-pem-muscle-mitochondrial-injury
+- evidence-line:0088-scheibenbogen2024-aimm-feedback-weakly-supports-h0006-p4
 source_refs:
-  - paper:Scheibenbogen2024
+- paper:Scheibenbogen2024
 created: '2026-06-26'
 updated: '2026-06-26'
+review_state:
+  last_reviewed: '2026-06-26'
+  last_review_note: 'mode-C: P4''s ROS feedback limb depends on question:0016 (is
+    redox upstream driver or downstream consequence?). Wired question:0016 into related,
+    added a known_failure_mode (loop may not close at redox node) and a caveat that
+    P4 strength is contingent on q0016.'
 ---
 # Proposition: PEM muscle mitochondrial-perfusion injury forms a self-perpetuating lesion
 
@@ -52,7 +68,11 @@ existing lesion rather than producing normal adaptation.
 The corpus has not yet shown longitudinal self-maintenance of the lesion within individuals. A single
 post-exercise worsening time point supports provoked aggravation, not chronic positive feedback. The
 claim should therefore remain fragile until serial biopsy/imaging demonstrates persistence, recurrence,
-or response to a targeted intervention.
+or response to a targeted intervention. A further unresolved dependency is the **direction of the redox
+limb**: P4 treats ROS as a feedback driver, but `question:0016` asks whether oxidative/redox stress is an
+upstream driver of the PAIS bioenergetic lesion or a downstream consequence of mitochondrial failure. If
+the latter, the proposed loop does not close at the redox node, so P4's strength is contingent on the
+resolution of that question.
 
 ## Measurement Model
 

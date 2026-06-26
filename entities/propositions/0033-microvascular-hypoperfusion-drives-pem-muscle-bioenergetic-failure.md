@@ -1,35 +1,49 @@
 ---
 id: proposition:0033-microvascular-hypoperfusion-drives-pem-muscle-bioenergetic-failure
 type: proposition
-title: Microvascular hypoperfusion or endothelial dysfunction causally drives PEM muscle bioenergetic failure
+title: Microvascular hypoperfusion or endothelial dysfunction causally drives PEM
+  muscle bioenergetic failure
 status: active
 claim_layer: causal_effect
 identification_strength: observational
 proxy_directness: indirect
 supports_scope: hypothesis_bundle
 measurement_model:
-  observed_entity: provoked iCPET/NIRS peripheral O2 extraction, preload failure, muscle perfusion or capillary/oxygen-delivery readouts
-  latent_construct: microvascular hypoperfusion or endothelial/dysautonomic extraction failure causally upstream of PEM muscle bioenergetic failure
-  measurement_relation: delivery/extraction abnormalities are indirect proxies for causal hypoperfusion; causal support requires temporal ordering against muscle injury and PEM kinetics
+  observed_entity: provoked iCPET/NIRS peripheral O2 extraction, preload failure,
+    muscle perfusion or capillary/oxygen-delivery readouts
+  latent_construct: microvascular hypoperfusion or endothelial/dysautonomic extraction
+    failure causally upstream of PEM muscle bioenergetic failure
+  measurement_relation: delivery/extraction abnormalities are indirect proxies for
+    causal hypoperfusion; causal support requires temporal ordering against muscle
+    injury and PEM kinetics
   known_failure_modes:
-    - extraction failure can reflect intrinsic mitochondrial utilization failure rather than upstream delivery failure
-    - referral-enriched iCPET cohorts may not generalize to broader PEM-positive PAIS
-    - absence of capillary obstruction does not exclude functional shunting or endothelial signaling abnormalities
+  - extraction failure can reflect intrinsic mitochondrial utilization failure rather
+    than upstream delivery failure
+  - referral-enriched iCPET cohorts may not generalize to broader PEM-positive PAIS
+  - absence of capillary obstruction does not exclude functional shunting or endothelial
+    signaling abnormalities
 discusses:
-  - hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
+- hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
 related:
-  - hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
-  - question:0010-vascular-microclot-subphenotype
-  - question:0011-mitochondrial-basis-of-pem
-  - proposition:0032-pem-bioenergetic-deficit-localizes-to-skeletal-muscle
-  - proposition:0034-ionic-na-ca-overload-mediates-pem-muscle-mitochondrial-injury
-  - evidence-line:0085-joseph2023-peripheral-extraction-weakly-supports-h0006-p2
-  - evidence-line:0086-appelman2024-no-occlusion-weakly-disputes-simple-ischemic-p2
+- hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
+- question:0010-vascular-microclot-subphenotype
+- question:0011-mitochondrial-basis-of-pem
+- proposition:0032-pem-bioenergetic-deficit-localizes-to-skeletal-muscle
+- proposition:0034-ionic-na-ca-overload-mediates-pem-muscle-mitochondrial-injury
+- evidence-line:0085-joseph2023-peripheral-extraction-weakly-supports-h0006-p2
+- evidence-line:0086-appelman2024-no-occlusion-weakly-disputes-simple-ischemic-p2
 source_refs:
-  - paper:Joseph2023
-  - paper:Appelman2024
+- paper:Joseph2023
+- paper:Appelman2024
 created: '2026-06-26'
 updated: '2026-06-26'
+review_state:
+  last_reviewed: '2026-06-26'
+  last_review_note: 'No change: claim_layer:causal_effect correctly encodes the assertion''s
+    nature while identification_strength:observational + proxy_directness:indirect
+    flag it is unidentified; the Appelman hyperoxic-OXPHOS tension (utilization vs
+    delivery failure) is already carried by evidence-line 0086 and the first known_failure_mode.
+    No drift.'
 ---
 # Proposition: Microvascular hypoperfusion drives PEM muscle bioenergetic failure
 

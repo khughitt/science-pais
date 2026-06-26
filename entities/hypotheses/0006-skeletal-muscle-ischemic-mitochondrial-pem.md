@@ -16,6 +16,7 @@ source_refs:
 related:
 - question:0011-mitochondrial-basis-of-pem
 - question:0010-vascular-microclot-subphenotype
+- question:0016-oxidative-stress-upstream-driver-of-bioenergetic
 - hypothesis:0001-shared-dysregulated-attractor
 - discussion:0004-pem-shared-muscle-lesion-vs-endpoint-contingency
 - proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific
@@ -36,6 +37,11 @@ related:
 - task:t056
 created: '2026-06-20'
 updated: '2026-06-26'
+review_state:
+  last_reviewed: '2026-06-26'
+  last_review_note: 'mode-C: prose Related Work cited question:0016 as the P4 ROS
+    step but it was absent from frontmatter related; added question:0016 to related
+    to match prose and carry the redox-direction dependency into the graph.'
 ---
 # Hypothesis: Skeletal-muscle ischemic-mitochondrial lesion as the primary substrate of post-exertional malaise
 
