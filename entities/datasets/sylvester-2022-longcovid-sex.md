@@ -29,14 +29,14 @@ sex ORs, **extractable now**. The anchor row of the cross-trigger effect-size ta
 ## What it is
 
 Review/meta-analysis (Sylvester et al. 2022, *Curr Med Res Opin*; PMID 35726132) reporting **sex
-odds ratios by symptom domain** for long COVID.
+odds ratios by symptom domain** for long COVID [@Sylvester2022].
 
 ## Why it fits t013 (directly operationalizes hypothesis b)
 
 Female excess is **domain-specific**: psychiatric/mood **OR 1.58** (1.37–1.82), neurological 1.30,
 ENT 2.28, GI 1.60 — while males are higher for endocrine (0.75) and renal (0.74). Overall long-COVID
 female OR **1.22** (1.13–1.32). This is the cleanest published **neuropsychiatric-vs-somatic
-dissociation** signal for the COVID trigger.
+dissociation** signal for the COVID trigger [@Sylvester2022].
 
 | Acute severity | Post-acute persistence | Neuropsychiatric | Somatic fatigue | Sex-stratified |
 |---|---|---|---|---|

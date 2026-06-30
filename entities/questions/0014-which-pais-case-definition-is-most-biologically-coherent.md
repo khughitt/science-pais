@@ -39,7 +39,7 @@ updated: '2026-06-24'
 
 ## Summary
 
-At least six case definitions for ME/CFS and four major operationalizations of long COVID exist, producing overlapping but non-identical patient populations. Within-cohort concordance studies show that applying Fukuda (1994), CCC (2003), ICC (2011), and SEID (2015) to the same patients identifies 79%, 71%, 61%, and 72% respectively. The RECOVER PASC index for long COVID heavily weights post-exertional malaise (PEM) and loss of smell/taste — features with the strongest mechanistic links to the shared-attractor hypothesis. The Oxford 1991 criteria (fatigue-only) have been formally flagged by AHRQ as selecting an unsuitable population for ME/CFS research. This question asks: which definition(s) produce the cohort that best supports detection of the biological mechanisms this project hypothesizes?
+At least six case definitions for ME/CFS and four major operationalizations of long COVID exist, producing overlapping but non-identical patient populations. Within-cohort concordance studies show that applying Fukuda (1994), CCC (2003), ICC (2011), and SEID (2015) to the same patients identifies 79%, 71%, 61%, and 72% respectively [@Fukuda1994; @Carruthers2003CCC; @Carruthers2011ICC; @IOM2015MECFS]. The RECOVER PASC index for long COVID heavily weights post-exertional malaise (PEM) and loss of smell/taste — features with the strongest mechanistic links to the shared-attractor hypothesis. The Oxford 1991 criteria (fatigue-only) have been formally flagged by AHRQ as selecting an unsuitable population for ME/CFS research. This question asks: which definition(s) produce the cohort that best supports detection of the biological mechanisms this project hypothesizes?
 
 ## Why It Matters
 

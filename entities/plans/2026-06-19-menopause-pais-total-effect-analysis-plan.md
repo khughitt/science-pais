@@ -350,7 +350,7 @@ on questionnaire response ≈201k/500k) and Route B (HES-coded PACS; hospitaliza
 triangulation). The **questionnaire-response selection** is a new admissibility node
 (restriction + inverse-probability-of-response weighting + Route-B triangulation),
 joining the clinic-collider and exposure-timing gates in the Sensitivity Arbitration
-discipline. Time origin = first PCR-positive (**field 40100**, verified).
+discipline. Time origin = first PCR-positive (**field `40100`**, verified).
 
 t017 closed this by checking each definition against what UKB **actually carries**
 (not assuming): UKB **does** have a symptom-level WHO-Delphi instrument (correcting an
@@ -369,6 +369,7 @@ postmenopausal staging — so the treatment node is operationalized as
 **questionnaire reproductive stage** (± usable baseline testosterone/SHBG), which
 *confirms* the DAG's choice of reproductive stage (not serum estradiol) as the
 treatment and routes the exposure-measurement burden to t020's misclassification
+model [@TinTin2021].
 model. Triangulation/replication arms: **All of Us** (US, survey+EHR menopause),
 **Lifelines** and **Generation Scotland** (population, questionnaire menopause, no
 baseline assays); ONS-CIS and N3C are low-exposure triangulation only.

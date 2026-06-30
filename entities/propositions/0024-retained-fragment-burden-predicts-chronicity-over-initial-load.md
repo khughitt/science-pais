@@ -34,7 +34,7 @@ predicate = *predicts chronic-PAIS onset better than*; object = initial pathogen
 **risk-determinant conjunct** of `hypothesis:0002` — the claim that makes fragment *retention* (rather than
 infection severity per se) the causal lever, and the one that, if true, reframes prevention/prognosis
 around clearance kinetics. It is logically downstream of persistence (`proposition:0022`) and distinct
-from it: 0022 says the fragment lingers and is bioactive; **0024 says the *quantity/duration* of that
+from it: `proposition:0022` says the fragment lingers and is bioactive; **`proposition:0024` says the *quantity/duration* of that
 lingering is the thing that determines chronicity.**
 
 ## Evidence Summary
@@ -48,7 +48,7 @@ shown it out-predicts initial pathogen load for subsequent chronic-illness diagn
 
 One weak model-criticism line is now coded: `evidence-line:0073` (BrandstetterFigueroa2025) shows that
 detectable **acute** plasma SARS-CoV-2 nucleocapsid antigen independently predicts persistent long-COVID
-symptoms at 9 months. This does not refute 0024, because it does not measure retained post-clearance
+symptoms at 9 months [@BrandstetterFigueroa2025]. This does not refute `proposition:0024`, because it does not measure retained post-clearance
 fragment burden; acute antigen may also index dissemination, severity, or future retention probability.
 It does, however, dispute the strongest version of "initial load is not the lever" and makes the head-to-
 head retained-burden-vs-initial-load design more necessary.
@@ -64,7 +64,7 @@ reflects that this load-bearing risk-determinant claim is untested — keeping t
 `speculative` rather than letting the supported persistence pillar (`proposition:0022`) carry it. Note the
 near-relationship to the *prevention* evidence in `proposition:0021`: the metformin trials show an
 acute-phase intervention lowers incidence, but they are **mechanism-agnostic** (antiviral vs. metabolic
-unresolved) and say nothing about *fragment burden* as the lever — so 0021 must **not** be coded as
+unresolved) and say nothing about *fragment burden* as the lever — so `proposition:0021` must **not** be coded as
 support here (that would re-introduce the t051 over-credit). Promotion path: a prospective
 burden-predicts-chronicity result would be minted as a supporting evidence-line on this proposition; a
 prospective result showing initial load out-predicts retained burden would materially weaken it.

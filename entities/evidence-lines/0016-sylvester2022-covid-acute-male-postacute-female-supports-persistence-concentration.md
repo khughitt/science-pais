@@ -25,7 +25,7 @@ updated: "2026-06-22"
 
 ## What this line shows
 
-In COVID the acute phase is **male**-biased (higher mortality and severe-disease risk in men) while post-acute long COVID is **female**-biased (`dataset:sylvester-2022-longcovid-sex`: overall long-COVID OR ≈ 1.22, 95% CI 1.13–1.32, with several female-skewed symptom domains). The sex gradient therefore *reverses* between the acute and persistence phases — the pattern `proposition:0008` predicts: the female excess is a property of persistence, not a carry-over of acute female risk.
+In COVID the acute phase is **male**-biased (higher mortality and severe-disease risk in men) while post-acute long COVID is **female**-biased (`dataset:sylvester-2022-longcovid-sex`: overall long-COVID OR ≈ 1.22, 95% CI 1.13–1.32, with several female-skewed symptom domains). The sex gradient therefore *reverses* between the acute and persistence phases — the pattern `proposition:0008` predicts: the female excess is a property of persistence, not a carry-over of acute female risk [@Sylvester2022].
 
 ## Why it is independent
 

@@ -31,7 +31,7 @@ definition; SARS-CoV-2 confirmed; 16/17 mild acute illness), using **paired dist
 (thigh) skin-biopsy IENFD**. 62.5% (10/16) of distal biopsies were abnormal, and SFN was the **most
 common objective neuropathy finding**. This is a **direct structural lesion** documented in an
 infection-triggered PAIS, using a paired-site protocol capable of detecting a non-length-dependent
-pattern — directly supporting `proposition:0014`.
+pattern — directly supporting `proposition:0014` [@Oaklander2022].
 
 ## Why it is independent
 

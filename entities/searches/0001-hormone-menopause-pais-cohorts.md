@@ -58,7 +58,7 @@ menopause/hormone × long-COVID analyses.
 | 7 | Thaweethai et al., *JAMA* — RECOVER PASC index | 2023 | DOI 10.1001/jama.2023.8823 · PMID 37278994 | Peripheral monitor | The PEM-weighted outcome instrument adopted by the t016 plan; RECOVER cohort descriptor. |
 | 8 | Tin Tin et al., *Br J Cancer* — UK Biobank sex-hormone assay characterization | 2021 | DOI 10.1038/s41416-021-01392-z · PMID 33864017 | Peripheral monitor | Documents UKB oestradiol 175 pmol/L floor + ¾-min imputation — the decisive measurement caveat for the exposure. |
 
-(Discovery surfaced 230 + 980 candidates; the bulk are sex-hormone/immunity background reviews not specific to a usable long-COVID cohort and are not queued. The cohort-resource papers above are the load-bearing records.)
+(Discovery surfaced `230 + 980` candidates; the bulk are sex-hormone/immunity background reviews not specific to a usable long-COVID cohort and are not queued. The cohort-resource papers above are the load-bearing records.)
 
 ## Cohort admissibility audit (the actual deliverable)
 

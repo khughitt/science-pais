@@ -32,8 +32,8 @@ pooled effect sizes; **extractable now** from published forest plots. Not a re-a
 ## What it is
 
 Meta-analytic evidence base for post-dengue fatigue, including in-corpus reviews `paper:Hertanti2025`
-(40 studies, n≈38,406; female **OR 1.65**, 95% CI 1.27–2.14) and `paper:Conde2026` (9 studies,
-n≈1,470; female **OR 1.69**, 95% CI 1.33–2.14), plus the 2024 *eClinicalMedicine* pooled review.
+(40 studies, n≈38,406; female **OR 1.65**, 95% CI 1.27–2.14) [@Hertanti2025] and `paper:Conde2026` (9 studies,
+n≈1,470; female **OR 1.69**, 95% CI 1.33–2.14) [@Conde2026], plus the 2024 *eClinicalMedicine* pooled review.
 
 ## Why it fits t013
 

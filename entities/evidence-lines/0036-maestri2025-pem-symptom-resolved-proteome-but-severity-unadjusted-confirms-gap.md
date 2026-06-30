@@ -38,14 +38,14 @@ the PEM signal is mechanistically distinct from the leptin/coagulation fatigue a
 **within-trigger, blood-proteome** datapoint consistent with `proposition:0011`'s core reading — the
 objective correlate of PEM is **specific, not a single undifferentiated shared signal** — extending it
 from the cross-trigger muscle/whole-body endpoints (Keller2014 / Gattoni2025 / Appelman2024) to the
-blood proteome within long COVID.
+blood proteome within long COVID [@Maestri2025].
 
 ## Why it is independent
 
 A distinct cohort (STOP-PASC RCT participants) and a distinct assay (5400-plex plasma proteomics vs
 whole-body CPET and muscle biopsy in the other `proposition:0011` lines); its own
 `independence_group: maestri2025-stop-pasc-cohort`. It adds a fourth, orthogonal endpoint (circulating
-proteome) to the proposition's endpoint-specificity argument.
+proteome) to the proposition's endpoint-specificity argument [@Maestri2025].
 
 ## Caveats / scope
 
@@ -59,7 +59,7 @@ proteome) to the proposition's endpoint-specificity argument.
    trend across ≥ 3 PROs), a protein "associated with PEM" is **not separated from the shared severity
    axis**. The discriminant pattern (different top proteins per symptom) is *consistent with* a
    PEM-specific signal but does **not** establish that it survives severity adjustment — exactly the
-   confound q0015 targets.
+   confound q0015 targets [@Maestri2025].
 2. **PEM ascertainment is a single self-report Likert item**, not a validated PEM instrument (DSQ-PEM)
    or provocation/CPET.
 3. **Cross-sectional**; the authors explicitly disclaim causal direction (immune feature driving PRO vs

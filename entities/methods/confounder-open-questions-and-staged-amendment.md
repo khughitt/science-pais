@@ -33,7 +33,7 @@ same-author criterion changes should not be treated as validated. The reviewer
 > (`report:0001-bias-audit-...`). With the reviewer ready, the clean route is to let the
 > criterion change acquire **out-of-author provenance**.
 
-> **REVIEWER RESOLUTION — t029 independent review, 2026-06-19 (applied to pre-reg:0001).**
+> **REVIEWER RESOLUTION — t029 independent review, 2026-06-19 (applied to `pre-registration:0001`).**
 > - **Q1 RATIFIED** with coding/wording modification → smoking moved to the **primary
 >   measured adjustment set** `{age, smoking}`; pre-data amendment, not a fresh pre-reg;
 >   E-value/U-proxy redefined vs the new set.
@@ -54,7 +54,7 @@ same-author criterion changes should not be treated as validated. The reviewer
 **Change (RATIFIED, modified):** primary adjustment set **`{age}` → `{age, smoking}`**,
 named the **primary measured adjustment set**. **Smoking coding (reviewer modification):**
 **baseline smoking history — never/former/current plus pack-years or duration where
-available** (fields 20116 + 20161/2887/etc., confirm at application) — *not* field 20116
+available** (fields `20116` + `20161`/`2887`/etc., confirm at application) — *not* field `20116`
 alone. **Temporal note (reviewer):** baseline smoking is pre-infection but **not always
 pre-FMP** (women already postmenopausal at UKB baseline), so it enters as a **measured
 confounder**, not a clean pre-menopause exposure.
@@ -133,7 +133,7 @@ into latent U:
 
 **Proposal:** add an **MR of genetically-instrumented age-at-menopause → long-COVID** as
 a **pre-registered triangulation arm** (UKB carries the genotyping; age-at-menopause has
-strong instruments — Day/Ruth GWAS, ~290 loci).
+strong GWAS instruments).
 
 **Why it is high-value.** A genetic instrument for menopause timing is **exogenous to
 SES, smoking, behaviour, and survival-into-2020**, so it attacks **M2 (aging), M4 (SES),

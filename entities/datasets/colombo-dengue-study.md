@@ -1,7 +1,7 @@
 ---
 id: dataset:colombo-dengue-study
 type: dataset
-title: "Colombo Dengue Study — post-dengue persistent fatigue (Seneviratne 2021)"
+title: "Colombo Dengue Study — post-dengue persistent fatigue (Sigera 2021)"
 status: candidate
 created: "2026-06-21"
 updated: "2026-06-21"
@@ -21,6 +21,8 @@ related:
   - question:0007-mechanism-of-female-predominance-in-pais
   - question:0003-acute-severity-threshold-for-self-sustaining-pais
   - question:0017-deflationary-alternatives-vs-shared-pathophysiology
+source_refs:
+  - cite:Sigera2021
 ---
 
 # Colombo Dengue Study — post-dengue persistent fatigue
@@ -30,8 +32,7 @@ sex-stratified ORs usable now**; no public microdata.
 
 ## What it is
 
-Prospective dengue cohort (Sri Lanka; Seneviratne et al. 2021). Female sex predicted persistent
-symptoms (**aOR ~1.99; ~2.24 beyond 90 d; fatigue RR ~2.45** female vs male); ~18% persistent at ≥3 mo.
+Prospective dengue cohort (Sri Lanka; Sigera et al. 2021). At 2 months, 51 of 158 dengue patients had fatigue, and fatigue risk was higher in female than male dengue patients (**RR 2.45**, 95% CI 1.24–4.86) [@Sigera2021].
 
 ## Why it fits t013
 

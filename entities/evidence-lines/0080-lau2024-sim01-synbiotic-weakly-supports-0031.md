@@ -29,7 +29,7 @@ updated: '2026-06-25'
 Lau2024 randomized 463 adults with PACS to 6 months of SIM01 or vitamin C placebo. SIM01, a composite
 synbiotic containing anaerobic *Bifidobacterium* strains and soluble fibers, improved several symptoms
 versus placebo, including fatigue, memory loss, difficulty concentrating, gastrointestinal upset, and
-general unwellness. It also shifted the gut microbiome in the intended direction.
+general unwellness. It also shifted the gut microbiome in the intended direction [@Lau2024].
 
 This weakly supports `proposition:0031` because a randomized perturbation of the gut ecosystem moved
 some PACS symptoms.

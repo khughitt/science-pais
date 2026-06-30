@@ -94,7 +94,7 @@ mechanism.
 
 ### 4. MIS-C is a post-infectious contrast, not a chronic-PASC subtype
 
-Truong2025/MUSIC followed 1204 MIS-C participants across 32 North American hospitals. MIS-C was severe in
+Truong2025/MUSIC followed 1204 MIS-C participants across 32 North American hospitals [@Truong2025]. MIS-C was severe in
 the acute phase, with frequent cardiac dysfunction and vasoactive support, but by 6 months nearly all
 measured cardiac dysfunction had normalized and most participants were back to baseline health across
 energy, sleep, appetite, cognition, and mood domains. Residual fatigue was uncommon by 6 months.

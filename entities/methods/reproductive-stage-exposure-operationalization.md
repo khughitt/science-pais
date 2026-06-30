@@ -87,8 +87,8 @@ questionnaire + age, validated where UKB repeat-assessment allows.
 ## 3. The staging algorithm (primary operationalization)
 
 Let `T_inf` = first documented SARS-CoV-2 infection date (t027 §5.1), `A_inf` = age
-at infection (from fields 34/52), `M` = self-reported age at natural menopause
-(3581), measured at baseline.
+at infection (from fields `34`/`52`), `M` = self-reported age at natural menopause
+(`3581`), measured at baseline.
 
 Applied as an ordered decision tree; the **first** matching rule assigns the stratum.
 
@@ -108,7 +108,7 @@ Applied as an ordered decision tree; the **first** matching rule assigns the str
 
 ### Step 1 — Natural menopause reported at baseline (clean stratum)
 
-If 2724 = Yes (natural) with a valid `M`:
+If `2724` = Yes (natural) with a valid `M`:
 - `A_inf ≥ M` (essentially all, given the ~decade gap) → **postmenopausal**,
   **high confidence** (monotonic: once post, always post).
 
@@ -117,7 +117,7 @@ baseline are unambiguously postmenopausal at infection.
 
 ### Step 2 — Premenopausal at baseline → forward projection (the hard stratum)
 
-If 2724 = No at baseline, the woman's stage at `T_inf` is **unobserved** and must be
+If `2724` = No at baseline, the woman's stage at `T_inf` is **unobserved** and must be
 **projected forward** across the ~10–14 yr gap using `A_inf` and menopause-timing
 predictors:
 
@@ -130,8 +130,8 @@ predictors:
 
 The band cutpoints approximate the UK natural-menopause distribution (median ≈ 51 yr,
 IQR ≈ 48–54). **Refine per-woman** with baseline menopause-timing predictors already
-in the basket — **age at menarche (2714), smoking (20116), parity (2734), BMI
-(21001)** — via a pre-fit time-to-menopause model (e.g. a parametric survival model
+in the basket — **age at menarche (`2714`), smoking (`20116`), parity (`2734`), BMI
+(`21001`)** — via a pre-fit time-to-menopause model (e.g. a parametric survival model
 of age-at-menopause), so each premenopausal-at-baseline woman gets an individual
 *probability of being post / peri / pre at `T_inf`* rather than a flat age-band
 assignment. This probability is the input to the probabilistic operationalization

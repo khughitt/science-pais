@@ -6,7 +6,7 @@ created: "2026-06-10"
 
 # Paper Import Triage — 2026-06-10
 
-Triage of 101 PDFs from ~/downloads into the ~/d/health and ~/d/cancer families.
+Triage of one hundred one PDFs from `~/downloads` into the `~/d/health` and `~/d/cancer` families.
 No DOI collisions with existing summaries (all new). Source filenames recorded for provenance.
 
 ## Disposition summary

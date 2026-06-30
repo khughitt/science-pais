@@ -44,9 +44,10 @@ analysis plan) needs for cohort screening.
 
 **35 of 71** are primary cohort-like studies (cohort/case-control/cross-sectional/
 case-series); the other 36 are reviews, meta-analyses, or basic/animal work that
-enroll no PAIS cohort. The corpus is **heavily long-COVID-weighted** (47/71) — the
+enroll no PAIS cohort. The corpus is **heavily long-COVID-weighted** — the
 non-COVID PAIS arms (PTLDS, ME/CFS, post-dengue/Q-fever/SARS/sepsis) are thin,
-which itself bounds any cross-*pathogen* synthesis (t001).
+which itself bounds any cross-*pathogen* synthesis (t001), based on the
+[`2026-06-19-case-definition-crosswalk.tsv`](2026-06-19-case-definition-crosswalk.tsv) coding table.
 
 ## Finding 1 — definitional heterogeneity is the rule, named standards the exception
 
@@ -109,7 +110,7 @@ low-collider admissibles (`Cai2024`, `Xie2024`) are both VA EHR cohorts that are
 **~90–95% male** and use broad author-defined multi-outcome ICD indices rather
 than a symptom-based PAIS definition. So even the "cleanest" admissible cohorts
 trade collider safety for a hospitalization-conditioned, male-skewed,
-non-symptom-based phenotype.
+non-symptom-based phenotype [@Cai2024; @Xie2024].
 
 **Practical t001 guidance:** treat the 15 "yes" as the candidate pool but pool
 **within definition family and within collider stratum**, reporting any

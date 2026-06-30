@@ -36,7 +36,7 @@ supporting `proposition:0018`.
 **Not independent.** `independence: shared-source` — this line shares `independence_group:
 stein2025-charite-immunoadsorption` and the same cohort with `evidence-line:0047`. It re-reads the
 Stein2025 immunoadsorption series for the anti-GPCR-pathogenicity target and cannot be counted as a
-separate cohort of support.
+separate cohort of support [@Stein2025].
 
 ## Caveats / scope
 

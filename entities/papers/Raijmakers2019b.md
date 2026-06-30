@@ -31,7 +31,7 @@ updated: '2026-06-20'
 - **DOI:** 10.1016/j.jinf.2019.01.006
 - **PMID:** 30684502
 - **BibTeX key:** Raijmakers2019b
-- **Source:** Abstract-level only — paper is paywalled with no open-access copy (Unpaywall confirmed); metadata retrieved via Europe PMC and PubMed MEDLINE. Full-text figures, statistical tables, and supplementary details are [INACCESSIBLE].
+- **Source:** Abstract-level only — paper is paywalled with no open-access copy (Unpaywall confirmed); metadata retrieved via Europe PMC and PubMed MEDLINE. Full-text figures, statistical tables, and supplementary details are not available from the accessible sources.
 
 ## Key Contribution
 
@@ -39,41 +39,41 @@ This paper provides a dedicated cytokine-omics characterisation of Q fever fatig
 
 ## Methods
 
-**Design:** Cross-sectional, case-control study; four comparison groups. [INACCESSIBLE — full Methods not retrieved]
+**Design:** Cross-sectional, case-control study; four comparison groups. Full methods were not retrieved.
 
 **Groups (from MEDLINE record and Europe PMC):**
-- QFS patients (n = 20): diagnosed per Dutch national QFS guideline (fatigue ≥ 6 months post-confirmed acute Q fever, functional impairment, Coxiella seropositivity); [exact CIS/SIP thresholds INACCESSIBLE]
-- CFS patients (n = 19): [case definition criteria INACCESSIBLE, likely Fukuda 1994 per other Radboud/Nijmegen studies from this group]
+- QFS patients (n = 20): diagnosed per Dutch national QFS guideline (fatigue ≥ 6 months post-confirmed acute Q fever, functional impairment, Coxiella seropositivity); exact CIS/SIP thresholds are not available from accessible sources.
+- CFS patients (n = 19): case definition criteria are not available from accessible sources, likely Fukuda 1994 per other Radboud/Nijmegen studies from this group.
 - Asymptomatic Q fever seropositive controls (n = 19): seropositive individuals without fatigue
 - Healthy matched controls (n = 25)
 
 **Cytokine measurement — two complementary approaches:**
 1. **Ex-vivo stimulation:** PBMCs stimulated with Coxiella burnetii antigen (and likely standard stimuli — LPS, PHA, or similar); cytokine production in supernatant measured. Key analytes: IL-6, TNFα, IL-1β.
-2. **Circulating (unstimulated plasma) cytokines:** Measured with Proximity Extension Assay (PEA / Olink-type platform or similar; keyword "Proximity Extension Assay" in MEDLINE). Key analytes: IL-6, IFN-γ. [Full panel composition and specific platform name INACCESSIBLE]
+2. **Circulating (unstimulated plasma) cytokines:** Measured with Proximity Extension Assay (PEA / Olink-type platform or similar; keyword "Proximity Extension Assay" in MEDLINE). Key analytes: IL-6, IFN-γ. Full panel composition and the specific platform name are not available from accessible sources.
 
-**Statistics:** [INACCESSIBLE — specific tests, correction method, and full p-value tables not retrieved]
+**Statistics:** Specific tests, correction method, and full p-value tables were not retrieved.
 
 ## Key Findings
 
-The following findings are derived from the Europe PMC and PubMed MEDLINE abstract; precise effect sizes, confidence intervals, and full cytokine panels are [INACCESSIBLE].
+The following findings are derived from the Europe PMC and PubMed MEDLINE abstract; precise effect sizes, confidence intervals, and full cytokine panels are not available from accessible sources.
 
 **Ex-vivo Coxiella antigen stimulation — elevated pro-inflammatory cytokines in QFS:**
 - IL-6 production by PBMCs was significantly elevated in QFS patients vs controls (reported P = 0.0001)
 - TNFα production was significantly elevated in QFS patients vs controls (reported P = 0.0002)
-- IL-1β production was elevated in QFS patients vs controls [exact P value INACCESSIBLE]
+- IL-1β production was elevated in QFS patients vs controls; the exact P value is not available from accessible sources.
 - These three cytokines are all monocyte-derived and reflect a hyperresponsive innate immune state upon re-encounter with Coxiella antigen
 
 **Circulating (unstimulated) cytokines — low-grade systemic inflammation in QFS:**
-- Circulating IL-6 was elevated in QFS patients vs controls [exact comparison groups and P values INACCESSIBLE]
-- Circulating IFN-γ was elevated in QFS patients vs controls [exact comparison groups and P values INACCESSIBLE]
+- Circulating IL-6 was elevated in QFS patients vs controls; exact comparison groups and P values are not available from accessible sources.
+- Circulating IFN-γ was elevated in QFS patients vs controls; exact comparison groups and P values are not available from accessible sources.
 - The concurrent elevation of both IL-6 (a monocyte/macrophage-derived inflammogen and acute-phase driver) and IFN-γ (a T-cell/NK-cell effector cytokine) in unstimulated plasma supports ongoing, low-grade immune activation rather than a purely stimulus-dependent response
 
 **Comparison to CFS:**
-- Both QFS and CFS patients showed evidence of altered cytokine profiles relative to healthy controls [specific direction and magnitude of CFS differences INACCESSIBLE]
-- Whether the QFS stimulation-driven elevation was also seen in CFS upon Coxiella antigen stimulation, or was QFS-specific (plausible, given the antigen specificity), is [INACCESSIBLE]
+- Both QFS and CFS patients showed evidence of altered cytokine profiles relative to healthy controls; specific direction and magnitude of CFS differences are not available from accessible sources.
+- Whether the QFS stimulation-driven elevation was also seen in CFS upon Coxiella antigen stimulation, or was QFS-specific (plausible, given the antigen specificity), is not available from accessible sources.
 
 **Asymptomatic seropositive controls:**
-- [Profile of this group relative to QFS and healthy controls is INACCESSIBLE]
+- The profile of this group relative to QFS and healthy controls is not available from accessible sources.
 
 ## Relevance
 
@@ -101,15 +101,15 @@ This paper is a core empirical anchor for `question:0001-shared-molecular-signat
 
 1. **Full text inaccessible.** The specific cytokine panel composition, detailed statistical results (fold-changes, confidence intervals, per-comparison p-values), and figures cannot be verified. All finding summaries derive from the MEDLINE abstract and secondary metadata only.
 
-2. **Small sample size.** Groups of 19–25 subjects are underpowered for multiplexed cytokine panels — false-discovery risk is substantial without stringent correction. [Whether FDR correction was applied is INACCESSIBLE]
+2. **Small sample size.** Groups of 19–25 subjects are underpowered for multiplexed cytokine panels — false-discovery risk is substantial without stringent correction. Whether FDR correction was applied is not available from accessible sources.
 
 3. **Cross-sectional design.** No pre-infection baseline; cannot establish whether cytokine elevation predates, follows, or co-occurs with symptom onset. Cannot rule out a pre-existing inflammatory tendency.
 
-4. **Case definition for CFS.** The CFS comparator group's case definition is [INACCESSIBLE], but other papers from this Radboud group use Fukuda 1994 criteria, which are broad and admit patients without post-exertional malaise. If so, the CFS group may be heterogeneous.
+4. **Case definition for CFS.** The CFS comparator group's case definition is not available from accessible sources, but other papers from this Radboud group use Fukuda 1994 criteria, which are broad and admit patients without post-exertional malaise. If so, the CFS group may be heterogeneous.
 
-5. **Coxiella antigen specificity.** Elevated PBMC response to Coxiella antigen specifically in QFS could reflect antigen-driven memory immune recall (plausible if antigen persists), or could simply reflect a retained adaptive immune memory to the primary infection in seropositive individuals generally. Whether the stimulation response is also elevated to non-Coxiella stimuli (LPS, PHA) would disambiguate persistent activation from antigen-specific memory — this comparison is [INACCESSIBLE].
+5. **Coxiella antigen specificity.** Elevated PBMC response to Coxiella antigen specifically in QFS could reflect antigen-driven memory immune recall (plausible if antigen persists), or could simply reflect a retained adaptive immune memory to the primary infection in seropositive individuals generally. Whether the stimulation response is also elevated to non-Coxiella stimuli (LPS, PHA) would disambiguate persistent activation from antigen-specific memory, but this comparison is not available from accessible sources.
 
-6. **Circulating cytokine panel composition unknown.** Which cytokines beyond IL-6 and IFN-γ were assayed, and whether others were significantly altered, is [INACCESSIBLE]. Selective reporting of positives in the abstract is possible.
+6. **Circulating cytokine panel composition unknown.** Which cytokines beyond IL-6 and IFN-γ were assayed, and whether others were significantly altered, is not available from accessible sources. Selective reporting of positives in the abstract is possible.
 
 7. **All Radboud/Nijmegen QFS cohort.** Findings may not generalise to QFS from other outbreaks or geographies, or to Q fever without an epidemic exposure context.
 
@@ -117,7 +117,7 @@ This paper is a core empirical anchor for `question:0001-shared-molecular-signat
 
 ## Model / Tool Availability
 
-No computational model or software tool is described. This is a clinical cytokine profiling study. Raw data availability is [INACCESSIBLE]; no GEO or equivalent deposit is mentioned in secondary metadata.
+No computational model or software tool is described. This is a clinical cytokine profiling study. Raw data availability is not available from accessible sources; no GEO or equivalent deposit is mentioned in secondary metadata.
 
 ## Follow-up
 

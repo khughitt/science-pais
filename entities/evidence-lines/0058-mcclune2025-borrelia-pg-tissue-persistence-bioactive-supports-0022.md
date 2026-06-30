@@ -60,4 +60,4 @@ not PAIS-patient cells; (4) the human-tissue evidence (pPG^Bb in 27/30 Lyme-arth
 after antibiotics) is a small, cross-sectional cohort; (5) the Long COVID proteome overlap (p = 0.00038)
 is a molecular-signature convergence, not a demonstration that the same reservoir mechanism operates in
 SARS-CoV-2 PAIS. The line establishes **persistence + bioactivity**, not causation of human chronic-illness
-symptoms — that gap is carried by `question:0002` and h0002's still-untested discriminating predictions.
+symptoms — that gap is carried by `question:0002` and h0002's still-untested discriminating predictions [@McClune2025].

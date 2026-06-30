@@ -49,9 +49,9 @@ This systematic review and meta-analysis of 11 studies (31,044 males; 25,917 fem
 
 **Outcomes of interest:** Myocardial infarction (MI), venous thromboembolism (VTE), ischemic stroke, major bleeding, mortality, heart failure, hospitalization length, and ECMO utilization.
 
-**Statistical software:** Stata version 18. Pooled relative risks (RR) with 95% confidence intervals computed. Heterogeneity statistics (I²) and publication bias assessment [INACCESSIBLE — methods details not recoverable from abstract].
+**Statistical software:** Stata version 18. Pooled relative risks (RR) with 95% confidence intervals computed. Heterogeneity statistics (I²) and publication bias assessment are not recoverable from the abstract.
 
-**Severity adjustment:** [INACCESSIBLE] The abstract does not state whether pooled RR estimates were adjusted for or stratified by acute COVID-19 severity (hospitalization status, ICU admission, or disease severity score). This is an **important unresolved limitation** — see Limitations section.
+**Severity adjustment:** The abstract does not state whether pooled RR estimates were adjusted for or stratified by acute COVID-19 severity (hospitalization status, ICU admission, or disease severity score). This is an **important unresolved limitation** — see Limitations section.
 
 ## Key Findings
 
@@ -62,10 +62,10 @@ All effect estimates below are from the abstract and represent males vs females 
 | Outcome | Pooled RR (males vs females) | 95% CI | p-value |
 |---|---|---|---|
 | Venous thromboembolism (VTE) | **1.43** | [1.19, 1.71] | 0.0001 |
-| Ischemic stroke | **1.46** | [INACCESSIBLE] | 0.05 |
+| Ischemic stroke | **1.46** | not reported in accessible abstract | 0.05 |
 | Myocardial infarction (MI) | **1.24** | [1.03, 1.49] | 0.02 |
 
-> Note: the abstract reports stroke RR 1.46 with p = 0.05 but does not provide the 95% CI in the available text. CI for stroke is [INACCESSIBLE].
+> Note: the abstract reports stroke RR 1.46 with p = 0.05 but does not provide the 95% CI in the available text.
 
 ### Bleeding and Procedural Endpoints
 
@@ -78,14 +78,14 @@ All effect estimates below are from the abstract and represent males vs females 
 
 | Outcome | Pooled RR (males vs females) | 95% CI | p-value |
 |---|---|---|---|
-| Overall mortality | **1.21** | [INACCESSIBLE] | 0.0001 |
+| Overall mortality | **1.21** | not reported in accessible abstract | 0.0001 |
 
-> Note: the abstract quotes mortality RR 1.21 with p = 0.00 but does not provide the 95% CI in the available text. CI for mortality is [INACCESSIBLE].
+> Note: the abstract quotes mortality RR 1.21 with p = 0.00 but does not provide the 95% CI in the available text.
 
 ### Null Findings
 
-- **Heart failure:** No sex disparity (RR and CI [INACCESSIBLE]).
-- **Hospitalization length:** No sex disparity (RR and CI [INACCESSIBLE]).
+- **Heart failure:** No sex disparity; RR and CI are not reported in the accessible abstract.
+- **Hospitalization length:** No sex disparity; RR and CI are not reported in the accessible abstract.
 
 ## Relevance
 
@@ -118,7 +118,7 @@ The abstract does not state whether pooled RR estimates were adjusted for, or st
 - Only 11 studies included (N ~57k total); pooled CI for ischemic stroke and mortality not recoverable from abstract text.
 - Ischemic stroke p = 0.05 is borderline; wide CI is likely given the borderline significance.
 - ECMO RR 2.14 [1.11, 4.13] has a very wide CI reflecting small event counts.
-- Study-level heterogeneity (I², Cochran Q) and publication bias assessment are [INACCESSIBLE].
+- Study-level heterogeneity (I², Cochran Q) and publication bias assessment are not reported in the accessible abstract.
 - No subgroup analyses described in abstract (e.g., by age, comorbidity, vaccination status, COVID variant era).
 - "Sex" vs "gender" terminology is conflated in the abstract (uses both "sex-based" and "gender disparity"), which may reflect variable operationalization across included studies.
 - Search cutoff January 2024 — does not include studies from the Omicron-dominant era with potentially different cardiovascular event profiles.

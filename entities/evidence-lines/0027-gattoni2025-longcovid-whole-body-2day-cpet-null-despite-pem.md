@@ -27,7 +27,7 @@ updated: "2026-06-22"
 
 ## What this line shows
 
-Gattoni2025 applied the ME/CFS-validated 2-day-CPET protocol to a PEM-enriched long-COVID cohort (n = 15; 80% met PEM on the modified DePaul Symptom Questionnaire) and found **no significant day-1 vs day-2 change** in gas-exchange threshold, VO₂peak, or peak work rate (all p > 0.05 by one-sample t-test on the mean difference). Subjective PEM is prevalent while the ME/CFS whole-body decrement (`evidence-line:0026`) is absent — the whole-body objective signature does **not transfer** from ME/CFS to long COVID. This is the divergence at the core of `proposition:0011`.
+Gattoni2025 applied the ME/CFS-validated 2-day-CPET protocol to a PEM-enriched long-COVID cohort (n = 15; 80% met PEM on the modified DePaul Symptom Questionnaire) and found **no significant day-1 vs day-2 change** in gas-exchange threshold, VO₂peak, or peak work rate (all p > 0.05 by one-sample t-test on the mean difference). Subjective PEM is prevalent while the ME/CFS whole-body decrement (`evidence-line:0026`) is absent — the whole-body objective signature does **not transfer** from ME/CFS to long COVID. This is the divergence at the core of `proposition:0011` [@Gattoni2025].
 
 ## Why it is independent
 
@@ -35,4 +35,4 @@ Distinct cohort, trigger (post-COVID), and assay-endpoint emphasis from both the
 
 ## Caveats / scope
 
-`proxy_support`, **weak** — this is a small, underpowered **null** and must not be over-read. n = 15 cannot confidently exclude an ME/CFS-sized day-2 decrement; no power calculation or confidence intervals were reported in the available abstract; PEM was ascertained retrospectively by mDSQ (past six months) rather than provocation-confirmed; there is no PEM-negative long-COVID arm and no within-study ME/CFS comparison; and 40% of the cohort was aerobically deconditioned (VO₂peak < 80% predicted), a competing explanation the design does not resolve. The line supports `proposition:0011` only as the *whole-body* leg of a three-cohort convergence — "a true zero" and "a missed small effect" are not yet distinguishable from this study alone.
+`proxy_support`, **weak** — this is a small, underpowered **null** and must not be over-read. n = 15 cannot confidently exclude an ME/CFS-sized day-2 decrement; no power calculation or confidence intervals were reported in the available abstract; PEM was ascertained retrospectively by mDSQ (past six months) rather than provocation-confirmed; there is no PEM-negative long-COVID arm and no within-study ME/CFS comparison; and 40% of the cohort was aerobically deconditioned (VO₂peak < 80% predicted), a competing explanation the design does not resolve [@Gattoni2025]. The line supports `proposition:0011` only as the *whole-body* leg of a three-cohort convergence — "a true zero" and "a missed small effect" are not yet distinguishable from this study alone.

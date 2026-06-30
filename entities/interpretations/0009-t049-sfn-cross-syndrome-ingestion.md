@@ -36,7 +36,7 @@ relations: []
 
 ## Verdict
 
-**Verdict:** [~] Mixed — P1 (structural lesion) and P4 (cross-trigger convergence) are now **documented** across long COVID, ME/CFS, and PTLDS; P2 (non-length-dependent pattern) is **asserted more than measured** (only one clean paired-site fraction, and it is post-*vaccine*); the autoimmune-causation core (P3/0016) is causally anchored for long COVID (deSa2026) but null in the best ME/CFS cohort (Walitt2024); and **no study supplies primary-dysautonomia controls** — h0007's promotion criterion #1 remains unmet by the existing literature.
+**Verdict:** [~] Mixed — P1 (structural lesion) and P4 (cross-trigger convergence) are now **documented** across long COVID, ME/CFS, and PTLDS; P2 (non-length-dependent pattern) is **asserted more than measured** (only one clean paired-site fraction, and it is post-*vaccine*); the autoimmune-causation core (`proposition:0016`) is causally anchored for long COVID (deSa2026) but null in the best ME/CFS cohort (Walitt2024); and **no study supplies primary-dysautonomia controls** — h0007's promotion criterion #1 remains unmet by the existing literature.
 
 ## Findings Summary
 
@@ -51,11 +51,11 @@ This ingestion coded seven papers (five corpus-resident: Adler2024, Limongelli20
 
 ## Evidence Quality
 
-All seven sources are `literature_evidence`; deSa2026's passive-transfer arm is the only *experimental* (causal) identification, the rest observational. Independence is good — seven distinct cohorts/designs (Oaklander INSPIRE, Joseph iCPET referral, Walitt NIH intramural, Limongelli Genova post-vaccine, Adler narrative review, deSa MY-LC + mouse transfer, Stein Charité immunoadsorption), so convergence on P1 is not single-group. Power is the dominant weakness: Oaklander (n=17) and Walitt (n=17) are both small, so the P1 support *and* its null counterweight are each underpowered. Joseph (n=160) is the one well-powered structural study but is distal-only. This is exploratory/observational throughout — no confirmatory powered SFN study with controls exists.
+All seven sources are `literature_evidence`; deSa2026's passive-transfer arm is the only *experimental* (causal) identification, the rest observational. Independence is good — seven distinct cohorts/designs (Oaklander INSPIRE, Joseph iCPET referral, Walitt NIH intramural, Limongelli Genova post-vaccine, Adler narrative review, deSa MY-LC + mouse transfer, Stein Charité immunoadsorption), so convergence on P1 is not single-group. Power is the dominant weakness: Oaklander (n=17) and Walitt (n=17) are both small, so the P1 support *and* its null counterweight are each underpowered. Joseph (n=160) is the one well-powered structural study but is distal-only [@Oaklander2022; @Walitt2024; @Joseph2021]. This is exploratory/observational throughout — no confirmatory powered SFN study with controls exists.
 
 ## Data Quality Checks
 
-No data-quality anomalies in the coded sources. Two methodological flags drive the verdict rather than data errors: (1) **biopsy-protocol non-uniformity** — distal-only (Joseph) vs paired distal+proximal (Oaklander, Limongelli) — directly gates whether P2 is even assessable; (2) **selection/ascertainment** — Limongelli biopsied only 30% of its cohort, Stein excluded the severe housebound, Joseph's controls are normal-iCPET referrals (not population controls). These are the `topic:measurement-ascertainment-artifacts-in-pais` concerns made concrete.
+No data-quality anomalies in the coded sources. Two methodological flags drive the verdict rather than data errors: (1) **biopsy-protocol non-uniformity** — distal-only (Joseph) vs paired distal+proximal (Oaklander, Limongelli) — directly gates whether P2 is even assessable; (2) **selection/ascertainment** — Limongelli biopsied only 30% of its cohort, Stein excluded the severe housebound, Joseph's controls are normal-iCPET referrals (not population controls) [@Limongelli2026; @Stein2025; @Joseph2021]. These are the `topic:measurement-ascertainment-artifacts-in-pais` concerns made concrete.
 
 ## Proposition-Level Updates
 

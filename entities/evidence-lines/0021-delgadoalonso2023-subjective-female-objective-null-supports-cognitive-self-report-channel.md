@@ -26,7 +26,7 @@ updated: "2026-06-22"
 
 ## What this line shows
 
-In post-COVID syndrome (n=170, WHO criteria), DelgadoAlonso2023 paired a subjective memory measure (FLEI) with a full objective neuropsychological battery. **Women reported more subjective complaints** (FLEI 26.65±6.54 vs 23.04±8.41, p=0.004) but showed **no sex difference on the objective tests**, and **fatigue was the dominant mediator** (indirect β≈−0.317) linking objective and subjective cognition. This is the most direct single-study instance of `proposition:0010`: the female cognitive excess sits in the subjective/affect-fatigue channel, not the objective deficit.
+In post-COVID syndrome (n=170, WHO criteria), DelgadoAlonso2023 paired a subjective memory measure (FLEI) with a full objective neuropsychological battery. **Women reported more subjective complaints** (FLEI 26.65±6.54 vs 23.04±8.41, p=0.004) but showed **no sex difference on the objective tests**, and **fatigue was the dominant mediator** (indirect β≈−0.317) linking objective and subjective cognition. This is the most direct single-study instance of `proposition:0010`: the female cognitive excess sits in the subjective/affect-fatigue channel, not the objective deficit [@DelgadoAlonso2023].
 
 ## Why it is independent
 

@@ -35,7 +35,7 @@ host-tissue dysregulation signature. Subject = the residual-fragment/tissue-macr
 mechanism; predicate = *recurs structurally across*; object = multiple unrelated pathogen classes. This is
 the **generalization conjunct** of `hypothesis:0002` — the claim that lifts a Borrelia observation into a
 *shared PAIS failure mode*. It is a distinct truth condition from mere persistence (`proposition:0022`):
-0022 says fragments persist and are bioactive; **0023 says the *tissue-macrophage-reservoir architecture
+`proposition:0022` says fragments persist and are bioactive; **`proposition:0023` says the *tissue-macrophage-reservoir architecture
 itself* is what generalizes**, not just that some fragment lingers in each disease.
 
 ## Evidence Summary

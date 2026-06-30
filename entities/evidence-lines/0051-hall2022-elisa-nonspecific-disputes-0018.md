@@ -33,7 +33,7 @@ significant POTS-vs-control difference** at either the manufacturer or a control
 threshold, and the best single-receptor diagnostic C-statistic was ~0.58 (panel 0.60–0.65). The
 interpretation: **ELISA seropositivity reflects ubiquitous low-titer natural GPCR antibodies and
 non-specific binding, not disease-specific autoimmunity**. This directly disputes the *binding-ELISA*
-evidentiary basis of `proposition:0018`.
+evidentiary basis of `proposition:0018` [@Hall2022].
 
 ## Why it is independent
 

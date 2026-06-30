@@ -76,7 +76,7 @@ value > reproducibility (cohort size, replication).
 | 19 | Chowdhury et al., *Sci Rep* -- distinct plasma proteome 3mo post-COVID irrespective of LC | 2026 | DOI 10.1038/s41598-026-46180-y | single-trigger | Peripheral monitor | Counter-evidence: proteome shift not LC-specific -- cautions PAIS-specificity claims. |
 | 20 | Arron et al., *Front Immunol* -- ME/CFS biology review | 2024 | DOI 10.3389/fimmu.2024.1386607 | review | Peripheral monitor | Background catalog of ME/CFS shared axes. |
 
-(Discovery surfaced ~280 candidates across queries; the bulk are single-disease LC or ME/CFS
+(Discovery surfaced `~280` candidates across queries; the bulk are single-disease LC or ME/CFS
 mechanism reviews already represented in the corpus. The records above are the load-bearing,
 *cross-trigger-informative* items not already captured.)
 

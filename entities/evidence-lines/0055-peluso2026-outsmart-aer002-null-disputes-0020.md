@@ -30,7 +30,7 @@ infusion of the long-acting anti-RBD neutralizing monoclonal AER002 — in WHO-d
 740 days since infection, highly symptomatic, 86% PEM). It was **null** on the primary PROMIS-29 PHSS at
 Day 90 and on all pre-specified secondaries. Because this is a neutralizing antibody rather than an Mpro
 inhibitor, it adds a **mechanistically independent** brick to the same uninterpretable-null pattern,
-weakly disputing `proposition:0020`.
+weakly disputing `proposition:0020` [@Peluso2026].
 
 ## Why it is independent
 

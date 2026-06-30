@@ -136,3 +136,101 @@ peers:
   path: ~/d/health/meta
 - id: pan-disease
   path: ~/d/health/comparisons/pan-disease
+health:
+  accepted_validation:
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - proposition/0002-reproductive-stage-transition-modifies-immune-regulatory-pathways
+    - belief_state flips
+    reason: Reviewed in task:t076; this core mechanism leg intentionally remains single-line fragile because available support is weak/proxy and the required hormone-measured mediation vehicle is still missing.
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - proposition/0003-infection-pais-perturbs-the-reproductive-axis-and-menopausal-timing
+    - belief_state flips
+    reason: Reviewed in task:t076; the reverse-direction HPG-axis proposition is intentionally thin because cross-sectional hormone lines do not distinguish PAIS effect from pre-infection vulnerability.
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - proposition/0004-female-reproductive-stage-excess-requires-confounder-decomposition
+    - belief_state flips
+    reason: Reviewed in task:t076; this is a structural identification-discipline claim supported by a small set of design/collider arguments, not a claim to strengthen by relabeling evidence.
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - proposition/0005-menopause-pais-symptom-overlap-is-a-measurement-process
+    - belief_state flips
+    reason: Reviewed in task:t076; symptom-overlap support is intentionally measurement-process evidence, with Aras2025 restricted to menopause-side background rather than PAIS causation.
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - proposition/0006-hormone-therapy-effects-on-pais-are-context-dependent
+    - belief_state flips
+    reason: Reviewed in task:t076; HRT/COCP evidence remains indirect acute-outcome proxy evidence and no admissible direct HRT-to-PAIS causal estimate exists.
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - proposition/0014-pais-small-fiber-structural-lesion-ienfd
+    - belief_state flips
+    reason: Reviewed in task:t076; the SFN structural-lesion claim is deliberately bounded to a protocol-sensitive substantial subset and remains contested by the Walitt2024 PI-ME/CFS null.
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - proposition/0015-pais-sfn-non-length-dependent-pattern
+    - belief_state flips
+    reason: Reviewed in task:t076; the non-length-dependent SFN pattern is intentionally treated as protocol-dependent and formally contested until paired-site, per-subject, post-infectious measurement exists.
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - proposition/0016-pais-sfn-autoimmune-causation
+    - belief_state flips
+    reason: Reviewed in task:t076; immune mediation is trigger-specific in current evidence, with LC passive-transfer support and ME/CFS autoantibody-null dispute preserved rather than averaged away.
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - proposition/0017-pais-sfn-cross-trigger-convergence
+    - belief_state flips
+    reason: Reviewed in task:t076; cross-trigger SFN convergence is intentionally caveated as convergence of findings across heterogeneous protocols, not a standardized infection-specific substrate.
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - proposition/0018-pais-sfn-anti-gpcr-autoantibody-pathogenicity
+    - belief_state flips
+    reason: Reviewed in task:t076; the anti-GPCR pathogenicity route is explicitly the weakest h0007 leg because functional evidence has not yet been linked to the small-fiber lesion.
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - proposition/0021-acute-antigen-burden-determines-pais-incidence
+    - belief_state flips
+    reason: Reviewed in task:t076; metformin prevention trials support an acute-phase determinant but remain weak and indirect for antigen-burden specificity.
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive
+    - belief_state flips
+    reason: Reviewed in task:t076; fragment persistence and bioactivity are real but thin, with bioactivity demonstrated only for Borrelia in a mouse model and symptom causation unshown.
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - proposition/0025-lc-persistent-inflammatory-activation-dissociated-ifn
+    - belief_state flips
+    reason: Reviewed in task:t076; the dissociated IFN/inflammatory state is descriptive and inferred across two modest observational pre-Omicron designs rather than one robust within-cohort demonstration.
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - proposition/0032-pem-bioenergetic-deficit-localizes-to-skeletal-muscle
+    - belief_state flips
+    reason: Reviewed in task:t076; muscle localization is supported but deliberately contested by central/resting-null evidence and endpoint non-interchangeability.
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - proposition/0033-microvascular-hypoperfusion-drives-pem-muscle-bioenergetic-failure
+    - belief_state flips
+    reason: Reviewed in task:t076; the ischemic ordering claim remains weak and contested because peripheral extraction findings do not yet time-order hypoperfusion before muscle injury.
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - hypothesis/0006-skeletal-muscle-ischemic-mitochondrial-pem
+    - belief_state flips
+    reason: Reviewed in task:t076; the h0006 bundle honestly remains asymmetric, with localization support but weak/contested ischemic, ionic, and self-perpetuation legs.

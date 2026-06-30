@@ -71,7 +71,7 @@ cannot adjudicate `proposition:0020` — they are broken tests of it, not discon
 No data-quality concerns in the project graph. One methodological finding is itself a result and is now
 encoded (per `discussion:0003`'s P1 follow-up): **a "target-engagement demonstrated?" attribute is the
 load-bearing column when cataloguing anti-antigen trials** — without it, the current nulls get misread as
-refuting antigen persistence. This is captured in 0054's `model_criticism` role and in `question:0002`.
+refuting antigen persistence. This is captured in `evidence-line:0054`'s `model_criticism` role and in `question:0002`.
 
 ## Proposition-Level Updates
 

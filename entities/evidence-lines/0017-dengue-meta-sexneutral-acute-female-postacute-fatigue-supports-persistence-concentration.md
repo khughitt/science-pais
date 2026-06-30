@@ -27,7 +27,7 @@ updated: "2026-06-22"
 
 ## What this line shows
 
-Acute dengue severity (severe dengue / DHF) is **not** female-predominant, yet post-dengue fatigue carries a clear female excess: OR ≈ 1.65 (Hertanti2025, 40 studies) and ≈ 1.69 (Conde2026, 9 studies), corroborated within-trigger by the Colombo cohort (Seneviratne2021, persistent-symptom aOR ≈ 1.99–2.24). The female excess thus **appears in persistence** despite a sex-neutral acute phase — the pattern `proposition:0008` predicts.
+Acute dengue severity (severe dengue / DHF) is **not** female-predominant, yet post-dengue fatigue carries a clear female excess: OR ≈ 1.65 (Hertanti2025, 40 studies) and ≈ 1.69 (Conde2026, 9 studies), corroborated within-trigger by the Colombo cohort (Sigera2021, fatigue RR 2.45). The female excess thus **appears in persistence** despite a sex-neutral acute phase — the pattern `proposition:0008` predicts [@Hertanti2025; @Conde2026; @Sigera2021].
 
 ## Why it is independent
 
@@ -35,4 +35,4 @@ A distinct trigger (dengue) from the COVID meta (`evidence-line:0016`) and the Q
 
 ## Caveats / scope
 
-`proxy_support`, moderate: the fatigue arms are well-powered (n in the tens of thousands), but the acute-vs-post-acute contrast is again **between-study** (acute severity series vs post-acute fatigue surveys), not a within-cohort phase interaction. Pooled, mostly unadjusted ORs across heterogeneous case definitions. The dengue *depression* arm is uninterpretable (2 studies/169 pts; Colombo excluded baseline mood disorders) and contributes nothing here — this line is about phase location, not domain.
+`proxy_support`, moderate: the fatigue arms are well-powered (n in the tens of thousands), but the acute-vs-post-acute contrast is again **between-study** (acute severity series vs post-acute fatigue surveys), not a within-cohort phase interaction. Pooled, mostly unadjusted ORs across heterogeneous case definitions. The dengue *depression* arm is uninterpretable (2 studies/169 pts; Colombo excluded baseline mood disorders) and contributes nothing here — this line is about phase location, not domain [@Conde2026; @Sigera2021].

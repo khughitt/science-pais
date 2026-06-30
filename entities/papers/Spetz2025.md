@@ -14,7 +14,8 @@ ontology_terms:
 - SCIFI-PEARL
 dataset_usage: []
 datasets: []
-source_refs: []
+source_refs:
+- cite:Spetz2025
 related:
 - proposition:0012-vascular-hard-endpoint-male-reversal-survives-severity-adjustment
 - question:0020-male-vte-excess-post-acute-persistence
@@ -84,4 +85,4 @@ than in women, while post-acute DVT/PE risk persists into the 91-180 day window 
 The decisive t048 cross-tab is not reported. Sex-stratified estimates are for three broad outcome groups
 over follow-up, while risk-period estimates are sex-adjusted but not sex-stratified, and severity estimates
 are not crossed with sex and risk period. Therefore the paper partly answers q0020/q0021 but does not
-fully discharge the requested ambulatory 31-180 day infection x sex interaction.
+fully discharge the requested ambulatory 31-180 day infection x sex interaction [@Spetz2025].

@@ -48,8 +48,8 @@ routes that were previously folded into one elastic "and/or" statement are now c
 individually falsifiable auxiliary propositions**, each supporting (not constituting) this claim:
 `proposition:0018-pais-sfn-anti-gpcr-autoantibody-pathogenicity` (the anti-GPCR-autoantibody mechanism)
 and `proposition:0019-pais-sfn-immunomodulation-modifies-lesion-trajectory` (the interventional
-response). This proposition can be true via a non-antibody immune mechanism even if 0018 fails, and it
-can be supported by 0019 even where the specific autoantibody target is unknown.
+response). This proposition can be true via a non-antibody immune mechanism even if `proposition:0018` fails, and it
+can be supported by `proposition:0019` even where the specific autoantibody target is unknown.
 
 ## Evidence Summary
 
@@ -67,7 +67,7 @@ ME/CFS cohort), not pan-PAIS. The detailed pathogenic mechanism is carried by th
 anti-GPCR pathogenicity (`proposition:0018`) and the immunomodulation response (`proposition:0019`, where
 `paper:Stein2025`'s β2-AR-autoantibody immunoadsorption cohort lives). `paper:Klein2023` (LC immune
 profiling) and `paper:Limongelli2026` (immune correlates of post-COVID SFN) remain supporting *context*
-in the broader literature but are not coded as 0016-targeted evidence-lines.
+in the broader literature but are not coded as `proposition:0016`-targeted evidence-lines.
 
 ## Caveats
 
@@ -76,7 +76,7 @@ off directly, so the claim rests on convergence of the auxiliary routes plus exc
 degenerative/metabolic causes. The deflationary account
 (`question:0017-deflationary-alternatives-vs-shared-pathophysiology`) offers a non-autoimmune route to
 the same symptoms. Because the claim is now the *bare* immune-mediation assertion, its failure modes are
-narrower than the elastic original: it is **not** falsified merely because the anti-GPCR mechanism (0018)
+narrower than the elastic original: it is **not** falsified merely because the anti-GPCR mechanism (`proposition:0018`)
 fails, since a non-antibody immune mechanism would still satisfy it; it is weakened chiefly if **both**
 auxiliary routes fail *and* a non-immune (e.g. metabolic/degenerative/deconditioning) account better fits
 the lesion. Conditional on P1.
@@ -88,4 +88,4 @@ propositions, which carry the concrete measurement models: anti-GPCR autoantibod
 `proposition:0018` and the immunomodulation-response readout in `proposition:0019`. At this (core) level
 the operational commitment is only that an **immune signature co-localizes with the lesion and that
 non-immune causes are excludable**, with the stronger identification supplied by the interventional
-route (0019).
+route (`proposition:0019`).

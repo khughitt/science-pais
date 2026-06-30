@@ -44,15 +44,15 @@ amendments:
       (A1) PEM-weighted arm re-described as a PESE/fatigue-weighted questionnaire
       proxy — UKB DOES carry a post-exertional-symptom item; the prior "no PEM-specific
       signal" wording overstated the gap. Still sensitivity-only, not RECOVER-equivalent.
-      (A2) Add UKB field 3882 (age at bilateral oophorectomy) to the t027 basket
+      (A2) Add UKB field `3882` (age at bilateral oophorectomy) to the t027 basket
       [confirm at application]; required for the surgical age-at-surgery gradient and
       for clean pre-infection surgical exclusion.
       (A3) Downgrade "HRT-active-at-infection" to "baseline HRT status / unknown at
-      infection": baseline fields 2814/3536/3546 do not reach the 2020–2022 infection
+      infection": baseline fields `2814`/`3536`/`3546` do not reach the 2020–2022 infection
       window; an HRT-on-at-infection tag needs GP/prescription linkage or it is dropped.
       (G6) State def-3 (SF-36 functional gate) is FORMALLY DROPPED for this pre-reg,
       not left as a live "substitute-or-drop" option post-lock.
-      (IMD) Resolve the unspecified deprivation field: use Townsend (189) only, or add a
+      (IMD) Resolve the unspecified deprivation field: use Townsend (`189`) only, or add a
       named IMD field/derivation [confirm at application] — no bare "IMD" reference.
     rationale: >
       Out-of-author review (report:0002) closing the bias-audit author-independence
@@ -136,14 +136,14 @@ evidence).
 > - **A1 (applied):** PEM-weighted arm re-described as a **PESE/fatigue-weighted
 >   questionnaire proxy** (UKB *does* carry a post-exertional-symptom item) — sensitivity
 >   only, not RECOVER-equivalent. See Limitation #3.
-> - **A2 (applied):** field **3882** (age at bilateral oophorectomy) added to the t027
+> - **A2 (applied):** field **`3882`** (age at bilateral oophorectomy) added to the t027
 >   basket `[confirm at application]` — needed for the surgical age-at-surgery gradient.
 > - **A3 (applied):** **HRT-active-at-infection downgraded** to "baseline HRT status /
->   unknown at infection" (baseline fields 2814/3536/3546 don't reach 2020; needs GP
+>   unknown at infection" (baseline fields `2814`/`3536`/`3546` don't reach 2020; needs GP
 >   linkage or it's dropped). The surgical HRT-stratification signature inherits this.
 > - **G6 (tightened):** def-3 (SF-36 functional gate) is **formally dropped**, not a live
 >   post-lock substitute-or-drop option.
-> - **IMD (resolved):** Townsend (189) only, or a *named* deprivation field/derivation
+> - **IMD (resolved):** Townsend (`189`) only, or a *named* deprivation field/derivation
 >   `[confirm at application]` — no bare "IMD".
 > - **G2 corpus-independence disposition:** SHBG/sex-hormone prior **downgraded to explicit
 >   single-source background**; questionnaire feasibility/selection weakly corroborated
@@ -292,7 +292,7 @@ A null is **evidence weighted by commitment**, not a verdict on h0005.
   do not average; escalate to `/science:discuss`.
 
 **Power floor (locked):** the confirmatory timing analysis must clear the minimum
-female-case count for 80% power at RR 1.3 (α two-sided 0.05); computed exactly on
+female-case count for `80%` power at `RR 1.3` (`alpha` two-sided `0.05`); computed exactly on
 provisioning (G3 below). A peri-stratum result is reported only if its own cell clears
 the floor — otherwise it is `underpowered`, never `null_meaningful`.
 

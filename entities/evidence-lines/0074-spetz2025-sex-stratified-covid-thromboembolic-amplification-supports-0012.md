@@ -31,7 +31,7 @@ updated: '2026-06-25'
 
 Spetz2025 provides a Swedish total-population, uninfected-comparator cohort (n=4,095,414 aged 40-75)
 with sex-stratified thromboembolic estimates after SARS-CoV-2 infection. In the no-prior-comorbidity
-sensitivity table, the thromboembolic outcome (DVT or PE) shows:
+sensitivity table, the thromboembolic outcome (DVT or PE) shows [@Spetz2025]:
 
 | Exposure stratum | Thromboembolic HR |
 |---|---:|
@@ -44,7 +44,7 @@ Interpreting these as stratum-specific hazards relative to uninfected men, the i
 relative risk is approximately 3.64 in men versus 1.81 / 0.78 = 2.32 in women, giving an approximate
 male-vs-female ratio-of-ratios of **1.57**. A second sensitivity table excluding recent immigrants gives a
 similar pattern: COVID men HR 3.43, uninfected women HR 0.83, COVID women HR 1.86, approximate
-ratio-of-ratios **1.53**.
+ratio-of-ratios **1.53** [@Spetz2025].
 
 This supports `proposition:0012`'s male hard-vascular endpoint reversal and narrows its leading caveat:
 the male signal is unlikely to be **pure** baseline carryover, because the COVID-associated increment in
@@ -66,4 +66,4 @@ severity stratum. Separately, Spetz2025 reports that mild/non-hospitalized COVID
 PE risk, and that DVT/PE remain elevated in the 91-180 day window overall, but it does not report the
 single desired estimand: sex x COVID infection interaction for DVT/PE among non-hospitalized patients in
 the 31-180 day window. Therefore this line supports a COVID-added male thromboembolic component while
-leaving the exact late ambulatory sex-interaction design gap open.
+leaving the exact late ambulatory sex-interaction design gap open [@Spetz2025].

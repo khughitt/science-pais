@@ -44,7 +44,7 @@ to dysautonomia, and it directly conditions how sex and severity should be **joi
 **t048 update (2026-06-25): partially addressed.** Spetz2025 provides the first usable uninfected-
 comparator sex-stratified thromboembolic estimate in this project. In a no-prior-comorbidity sensitivity
 analysis, the implied COVID-associated thromboembolic increment is larger in men than women (approximate
-male-vs-female ratio-of-ratios ~1.57). This weakens the pure baseline-carryover explanation. It does not
+male-vs-female ratio-of-ratios ~1.57) [@Spetz2025]. This weakens the pure baseline-carryover explanation. It does not
 fully close the question because the published tables do not cross sex with the 31-180 day window and
 non-hospitalized severity stratum.
 

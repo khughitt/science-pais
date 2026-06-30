@@ -32,7 +32,7 @@ p = 0.009), and the association **survived adjustment for ΔHR and ΔSBP** (p = 
 OPRL1 activity did **not** correlate with the composite. This is the single best evidence in the corpus
 that *functional* (activity-based, not merely binding) GPCR-autoantibody signal tracks autonomic-symptom
 severity — the correlational arm of `proposition:0018` and of h0007 promotion criterion #2. The
-4-receptor panel separated POTS from controls (AUC 0.88, n = 48 POTS / 25 controls; OHQ subset n = 33).
+4-receptor panel separated POTS from controls (AUC 0.88, n = 48 POTS / 25 controls; OHQ subset n = 33) [@Kharraziha2020].
 
 ## Why it is independent
 

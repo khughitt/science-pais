@@ -33,7 +33,7 @@ some omics in GEO (`dataset:gse130353-qfs-cfs-monocytes`).
 
 Clinical + multi-omics cohorts from the Dutch Q-fever epidemic (Keijmel, Raijmakers; Qure trial,
 cytokine/IFN-γ studies). QFS follows ~20% of acute Q fever; cohorts in the low hundreds with fatigue
-(CIS) and some psychological measures.
+(CIS) and some psychological measures [@Keijmel2016; @Raijmakers2019].
 
 ## Why it fits t013 (sharpest natural experiment)
 

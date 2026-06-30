@@ -61,7 +61,7 @@ its own.
 Liu2022 is the anchor: serial shotgun metagenomics from 106 COVID-19 patients showed that non-PACS
 patients normalized toward non-COVID controls by 6 months, whereas PACS cases retained higher
 *Ruminococcus gnavus* / *Bacteroides vulgatus* and lower *Faecalibacterium prausnitzii*. Butyrate
-producers had the largest inverse correlations with PACS. Su2023 extends this CUHK signal to roughly 1
+producers had the largest inverse correlations with PACS [@Liu2022]. Su2023 extends this CUHK signal to roughly 1
 year.
 
 **Interpretation:** long-COVID dysbiosis can persist into the chronic phase and tracks with symptoms, but
@@ -93,7 +93,7 @@ they are not proof that stool microbiome composition is upstream.
 
 Lau2024 randomized 463 PACS patients to SIM01 versus placebo and improved several symptoms after 6
 months, with microbiome shifts. The result is important because it perturbs the gut ecosystem under
-randomization. It remains weak for mechanism because SIM01 is a broad synbiotic and did not clearly move
+randomization [@Lau2024]. It remains weak for mechanism because SIM01 is a broad synbiotic and did not clearly move
 objective function/QoL.
 
 **Interpretation:** microbiome modulation is worth testing, but the current RCT is not a decisive

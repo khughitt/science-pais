@@ -35,7 +35,7 @@ window out to **10–14 months** (3–6 mo +10.6%, p<0.001; 6–10 mo +8.7%, p<0
 and antigen burden graded by acute-illness severity (hospitalised prevalence ratio 1.97). This provides
 **controlled longitudinal evidence that a degradation-resistant viral fragment persists** well into the
 post-acute phase — extending `proposition:0022`'s persistence claim from Borrelia to a **second pathogen
-class** (SARS-CoV-2).
+class** (SARS-CoV-2) [@Peluso2024].
 
 ## Why it is independent
 

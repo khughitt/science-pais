@@ -44,7 +44,7 @@ The first study to apply the two-day cardiopulmonary exercise test (2-day CPET) 
 
 **Study design.** Single-cohort observational. Two ramp-incremental CPETs separated by 24 hours; pulmonary function test on day 1 prior to CPET.
 
-**Cohort.** N = 15 long COVID patients (7 female; mean age 53 ± 11 yr; mean BMI 32.2 ± 8.5 kg/m²). Recruitment site and long COVID case definition are [INACCESSIBLE] from the abstract alone, but the cohort is clinically defined as long COVID (article title and framing confirm this is a post-SARS-CoV-2 persistent-symptom sample). No healthy or recovered-COVID control arm reported in the abstract.
+**Cohort.** N = 15 long COVID patients (7 female; mean age 53 ± 11 yr; mean BMI 32.2 ± 8.5 kg/m²). Recruitment site and long COVID case definition are not available from the abstract alone, but the cohort is clinically defined as long COVID (article title and framing confirm this is a post-SARS-CoV-2 persistent-symptom sample). No healthy or recovered-COVID control arm reported in the abstract.
 
 **PEM ascertainment.** Modified DePaul Symptom Questionnaire (mDSQ), assessing PEM over the past six months. Prevalence: 80% of patients (n = 12/15) met PEM criteria.
 
@@ -52,7 +52,7 @@ The first study to apply the two-day cardiopulmonary exercise test (2-day CPET) 
 
 **Statistical approach.** One-sample t-tests on mean day-1 minus day-2 differences for each endpoint. Significance threshold p < 0.05. No correction for multiple comparisons noted in the abstract.
 
-**Limitations by design.** No active ME/CFS comparison arm; PEM-negative long COVID arm absent; exact effect sizes, confidence intervals, and power calculation are [INACCESSIBLE] from the abstract.
+**Limitations by design.** No active ME/CFS comparison arm; PEM-negative long COVID arm absent; exact effect sizes, confidence intervals, and power calculation are not available from the abstract.
 
 ## Key Findings
 
@@ -95,13 +95,13 @@ This study instead reports the opposite: long COVID patients with predominant PE
 
 4. **Deconditioning not addressed as a confounder.** 40% of the cohort was aerobically deconditioned by VO2peak criteria. Deconditioning may confound the PEM attribution and may itself explain some of the exercise intolerance, blurring mechanistic interpretation. Lack of a prehabilitation control or fitness-matched design is a limitation the authors note in the abstract's framing.
 
-5. **Case definition detail inaccessible.** The exact long COVID case definition (e.g. WHO 4-week; NICE/CDC; RECOVER index) and whether symptomatic PEM was a required inclusion criterion or merely measured post-hoc is [INACCESSIBLE]. This matters because PEM ascertained by mDSQ (past six months) is retrospective and symptom-recall based, less stringent than requiring PEM on a standardized provocation test.
+5. **Case definition detail inaccessible.** The exact long COVID case definition (e.g. WHO 4-week; NICE/CDC; RECOVER index) and whether symptomatic PEM was a required inclusion criterion or merely measured post-hoc is not available from the abstract. This matters because PEM ascertained by mDSQ (past six months) is retrospective and symptom-recall based, less stringent than requiring PEM on a standardized provocation test.
 
 6. **24-hour inter-test interval may be suboptimal for long COVID PEM kinetics.** ME/CFS PEM characteristically peaks 12–48 hours post-exertion; whether long COVID PEM kinetics are identical is unknown. A 24-hour interval may miss a later nadir or allow partial recovery in some long COVID patients.
 
 7. **Cross-sectional cohort design; no longitudinal follow-up.** Whether the null result is stable across different phases of long COVID illness duration is unknown.
 
-8. **Missing Borg perceptual ratings in abstract.** Whether perceived exertion or dyspnoea differed between days — as a secondary indicator of worsened PEM state on day 2 — is [INACCESSIBLE]; only VO2/GET/WR endpoints are reported in the abstract.
+8. **Missing Borg perceptual ratings in abstract.** Whether perceived exertion or dyspnoea differed between days — as a secondary indicator of worsened PEM state on day 2 — is not available from the abstract; only VO2/GET/WR endpoints are reported in the abstract.
 
 ## Model / Tool Availability
 

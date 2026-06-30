@@ -35,7 +35,7 @@ updated: '2026-06-25'
 
 ## Summary
 
-Persistent JAK-STAT/IL-6 signaling is one of the most reproducible inflammatory signatures in long COVID (Aid2025; IL-6 elevated in 61% of PASC in Ganesh2022). This question asks whether that signaling is a *proximal driver* of post-acute chronicity — whose pharmacological inhibition resolves symptoms — or a downstream *marker* of an upstream lesion, and whether the axis is shared across PAIS beyond SARS-CoV-2.
+Persistent JAK-STAT/IL-6 signaling is one of the most reproducible inflammatory signatures in long COVID (Aid2025; IL-6 elevated in 61% of PASC in Ganesh2022) [@Aid2025; @Ganesh2022]. This question asks whether that signaling is a *proximal driver* of post-acute chronicity — whose pharmacological inhibition resolves symptoms — or a downstream *marker* of an upstream lesion, and whether the axis is shared across PAIS beyond SARS-CoV-2.
 
 ## Why It Matters
 

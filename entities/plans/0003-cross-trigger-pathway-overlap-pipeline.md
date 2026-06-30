@@ -31,7 +31,7 @@ pre-registration; every locked parameter has exactly one home (the config), and 
 
 Methodological readiness is already discharged (`plan:0002`, verdict `ready-with-caveats`) and the
 vehicle-admissibility gates G1/G2/G4 are **cleared** (data provisioned + hashed; MMSEQ scale =
-`log_mu`; groups 10/10/10/10). G3 (gene-id harmonization) is the one remaining gate and becomes a
+`log_mu`; groups `10/10/10/10`). G3 (gene-id harmonization) is the one remaining gate and becomes a
 first-class pipeline stage here.
 
 ## Scope decomposition

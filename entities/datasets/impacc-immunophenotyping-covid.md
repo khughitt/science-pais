@@ -38,7 +38,7 @@ analyzable via secondary use; no local `datapackage` built.
 n≈1,164 hospitalized COVID-19 survivors (20 US hospitals, 2020–21; convalescent multiomics subset
 n=513, ~41% female). Plasma metabolomics, PBMC transcriptomics, Olink proteomics, CyTOF, plus PROMIS
 patient-reported outcomes. Anchor papers already in-corpus: `paper:Ozonoff2024` (PRO phenotype
-clusters), `paper:Gabernet2025` (SPEAR recovery factor; androgen/mediator signal).
+clusters), `paper:Gabernet2025` (SPEAR recovery factor; androgen/mediator signal) [@Ozonoff2024; @Gabernet2025].
 
 ## Why it fits t013
 

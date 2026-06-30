@@ -30,7 +30,7 @@ updated: "2026-06-26"
 
 `paper:Boneva2015` reports that women with CFS had substantially earlier menopause than healthy controls and more gynecologic surgery, including hysterectomy. The association is compatible with the forward `proposition:0001` reading: reproductive-stage transition or the gynecologic pathway leading to surgical menopause can precede a chronic fatigue syndrome state.
 
-The temporal clue is the dated-surgery subset: hysterectomy/oophorectomy preceded CFS onset in 71% of women with both dates recorded. That makes the surgical-menopause component more consistent with antecedent vulnerability than with CFS causing all of the observed menopause timing difference.
+The temporal clue is the dated-surgery subset: hysterectomy/oophorectomy preceded CFS onset in 71% of women with both dates recorded. That makes the surgical-menopause component more consistent with antecedent vulnerability than with CFS causing all of the observed menopause timing difference [@Boneva2015].
 
 ## Caveats / scope
 

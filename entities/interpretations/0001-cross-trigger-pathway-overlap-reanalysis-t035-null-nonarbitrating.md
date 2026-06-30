@@ -24,7 +24,7 @@ relations: []
 
 ## Verdict
 
-**Verdict:** [?] Inconclusive — `null_nonarbitrating`: the C1 confirmatory NES rank-concordance (PI-CFS-vs-HC × QFS-vs-HC, pinned Hallmark) is anti-concordant (ρ = −0.563) and sits deep in the left tail of a well-formed sample-label permutation null (one-sided p_perm = 0.949 ≥ α = 0.05), so the locked resolution order halts at step 2. Per pre-registration:0002 this means **the test was inadequate, not that hypothesis:0001 is wrong**; it is recorded as weighted-low evidence and is **explicitly not** support for the question:0017 coincidence null.
+**Verdict:** [?] Inconclusive — `null_nonarbitrating`: the C1 confirmatory NES rank-concordance (PI-CFS-vs-HC × QFS-vs-HC, pinned Hallmark) is anti-concordant (`rho = -0.563`) and sits deep in the left tail of a well-formed sample-label permutation null (`one-sided p_perm = 0.949 >= alpha = 0.05`), so the locked resolution order halts at step 2. Per `pre-registration:0002` this means **the test was inadequate, not that `hypothesis:0001` is wrong**; it is recorded as weighted-low evidence and is **explicitly not** support for the `question:0017` coincidence null.
 
 This moves the pre-reg's standing verdict **off** `[?] inconclusive-for-coverage` (no qualifying vehicle) to `[?] inconclusive — power/bias ceiling` (an admissible vehicle, GSE14577 + GSE130353, cleared G1–G4 and the analysis ran). The token stays `[?]`, but the basis changed from "no evidence yet" to "evidence obtained, non-arbitrating at this n."
 
@@ -61,7 +61,7 @@ The pre-reg is **epistemic** with an operational sub-portion. The operational po
 
 ## Hypothesis-Level Implications
 
-hypothesis:0001 status remains **`proposed`** — no mechanical status flip. The attractor conjecture rests on narrative/synthesis support plus symptom-overlap; this first empirical probe was, by pre-registered design, incapable of confirming or refuting it. The honest position is unchanged from the q0017 "best current interpretation": cross-trigger convergence is supported at the *pathway/physiology* level but not at shared molecules, consistent with **both** a real shared attractor and a coincidence-of-repertoire null. What this run adds is a concrete, reproducible demonstration that **public 2-cohort, cross-platform, cross-compartment data cannot adjudicate** — which sharpens the case that the discriminating test must be the harmonized ≥3-trigger, full-recovery-controlled, definition-held-constant design, not another opportunistic public-data pairing.
+`hypothesis:0001` status remains **`proposed`** — no mechanical status flip. The attractor conjecture rests on narrative/synthesis support plus symptom-overlap; this first empirical probe was, by pre-registered design, incapable of confirming or refuting it. The honest position is unchanged from the `question:0017` "best current interpretation": cross-trigger convergence is supported at the *pathway/physiology* level but not at shared molecules, consistent with **both** a real shared attractor and a coincidence-of-repertoire null. What this run adds is a concrete, reproducible demonstration that **public `2`-cohort, cross-platform, cross-compartment data cannot adjudicate** — which sharpens the case that the discriminating test must be the harmonized `>=3`-trigger, full-recovery-controlled, definition-held-constant design, not another opportunistic public-data pairing.
 
 ## Evidence vs. Open Questions
 

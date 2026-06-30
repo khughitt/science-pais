@@ -30,7 +30,7 @@ Ambrosino2021 (case-control, 133 convalescent COVID-19 vs 133 matched controls) 
 endothelial dysfunction concentrated in males: male convalescent FMD **2.5%±1.9 vs female 6.1%±2.9
 (p<0.001)**, and female cases vs female controls show **no difference** (6.1 vs 5.3%, p=0.362) — i.e.
 the COVID-associated endothelial deficit is essentially male-only. This supports the **male
-direction** (sub-claim A) of `proposition:0012`.
+direction** (sub-claim A) of `proposition:0012` [@Ambrosino2021].
 
 ## Why it is independent
 
@@ -45,6 +45,6 @@ read as supporting sub-claim (B) (survival of severity adjustment). FMD **correl
 pulmonary-impairment severity** within cases (FEV1% rho=0.436; FVC% rho=0.406; PaO2 rho=0.247;
 DLCO% rho=0.280), the cohort is 81% male, and the male-vs-female contrast was **not** adjusted for
 or stratified by acute severity — so this line cannot separate a sex effect from acute-severity
-confounding. It contributes only to the reproducibility of the male *direction*; the severity-
+confounding [@Ambrosino2021]. It contributes only to the reproducibility of the male *direction*; the severity-
 survival claim rests entirely on `evidence-line:0029` (ambulatory) and `evidence-line:0030`
 (within-hospitalized).

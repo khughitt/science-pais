@@ -31,7 +31,7 @@ BrandstetterFigueroa2025 prospectively followed adults with acute COVID-19 and k
 9 months. In the analysis cohort (n=162), **detectable acute plasma nucleocapsid antigen** remained
 associated with persistent long-COVID symptoms after adjustment for demographics, comorbidities, and
 disease severity (adjusted OR **3.0**, 95% CI **1.1-8.0**). Supplemental oxygen requirement also remained
-independently associated (adjusted OR **3.6**, 95% CI **1.2-11**).
+independently associated (adjusted OR **3.6**, 95% CI **1.2-11**) [@BrandstetterFigueroa2025].
 
 This disputes the strongest reading of `proposition:0024`, which predicts that retained fragment
 burden/duration should be the proximal risk determinant *over initial pathogen load*. Here, an acute viral

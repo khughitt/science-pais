@@ -50,7 +50,7 @@ via broken tests; the persistence pillar itself is not disputed. The open decisi
 
 ## Arc
 
-Arc reconstruction is limited because interpretation:0011 carries no `prior_interpretations` chain and the
+Arc reconstruction is limited because `interpretation:0011` carries no `prior_interpretations` chain and the
 hypothesis was seeded in a single authoring pass on 2026-06-11 with no earlier interpretation record.
 
 The hypothesis opened on 2026-06-11 as a structured conjecture drawing three source papers (McClune2025,

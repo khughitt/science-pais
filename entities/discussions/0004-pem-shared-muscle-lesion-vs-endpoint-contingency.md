@@ -58,7 +58,7 @@ PEM case, carried by the **supported** empirical regularity `proposition:0011`: 
 2-day-CPET decrement (Keller2014: 13.8% day-2 VO₂peak fall) does **not** transfer to PEM-enriched long
 COVID (Gattoni2025: whole-body null, n=15), while long COVID nonetheless shows a real post-exertional
 lesion at the **muscle** endpoint (Appelman2024: worsened OXPHOS after provoked PEM). Same symptom,
-different measurable lesion and measurement channel.
+different measurable lesion and measurement channel [@Keller2014; @Gattoni2025; @Appelman2024].
 
 ## Proposition-Level Comparison
 
@@ -251,7 +251,7 @@ The strongest move the comparison makes is reclassifying M3 from "rival" to "gua
 A1 from an assumption into an endpoint-specified, testable claim. The load-bearing weakness on the M3
 side is that its single PEM instance is a between-study contrast (Keller2014 vs Gattoni2025 vs
 Appelman2024 — different cohorts, case definitions, protocols), carrying the exact ascertainment
-confound M3 exists to police; the Gattoni2025 null is also weak (n=15, 40% deconditioned). The
+confound M3 exists to police; the Gattoni2025 null is also weak (n=15, 40% deconditioned) [@Gattoni2025]. The
 load-bearing weakness on the H0006 side is that A1's sharing claim has *no* harmonized Appelman-type
 cross-trigger muscle datum at all. The deflationary third reading (premature divergence driven by an underpowered
 null) remains live and must not be dismissed.

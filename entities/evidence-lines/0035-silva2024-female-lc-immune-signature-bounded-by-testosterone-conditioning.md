@@ -37,7 +37,7 @@ phenotype, lower-testosterone females look immunologically like LC-males (and vi
 model with sex × testosterone interaction, **after accounting for testosterone, sex designation is no
 longer a significant predictor** of symptom burden or organ-system involvement. The operative
 variable appears more closely tied to gonadal-steroid level than categorical sex, while causal
-mediation remains unproven.
+mediation remains unproven [@Silva2024].
 
 ## Why it is independent
 

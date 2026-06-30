@@ -24,7 +24,7 @@ gaps (unpinned conda versions; unspecified R↔Python table schemas + NA-NES han
 | Dimension | Score | Issues |
 |---|---|---|
 | Evidence coverage | **WARN** | τ, min_donors, U133-combine, and a new DB-robustness sub-rule live in the plan, not pre-reg:0002 |
-| Assumption audit | **WARN** | τ=−7.0 rests on an *unverified* antimode<−7 assumption; the check that would catch it only warns |
+| Assumption audit | **WARN** | the fixed near-zero `log_mu` cutoff rests on an *unverified* antimode assumption; the check that would catch it only warns |
 | Data availability | **WARN** | no `dataset:` entities (project-tooling limitation); mitigated by SHA-256 + datapackage |
 | Identifiability | **PASS** | BoundaryOut reachable from BoundaryIn; exploratory rank-estimand testable at this n |
 | Reproducibility | **WARN** | conda envs not version-pinned / no lockfile; annotation-version coherence still "open" yet verdict-affecting |
@@ -61,9 +61,9 @@ pre-reg to add the ρ-direction gate explicitly. Non-verdict-affecting locks (`h
 which only *warns*; the determinism seed/precision) do **not** need pre-reg amendment — note that
 classification so the boundary is explicit.
 
-### 2. Assumption audit — τ=−7.0 depends on an unverified distributional claim, and the guard only warns
+### 2. Assumption audit — the near-zero cutoff depends on an unverified distributional claim, and the guard only warns
 
-The justification for τ=−7.0 is "the unexpressed mode sits at `log_mu ≈ −14`, antimode below −7." **This
+The justification for the fixed near-zero cutoff is "the unexpressed mode sits at `log_mu ≈ −14`, with an antimode below the cutoff." **This
 was never measured.** G2 was a bounded header/scale smoke check on 1–2 MMSEQ files (range, %negative,
 %integer) — not a pooled 40-donor per-gene density. The plan adds a structural-QA check that the global
 density is bimodal with antimode < τ, but routes a failure to a **surfaced distribution-severity warning,

@@ -73,14 +73,14 @@ as a live post-lock option.
 ### Exposure: natural, surgical, and indeterminate strata
 
 **Natural-menopause timing is supportable only after explicit surgical/hysterectomy
-exclusions.** Field 2724 ("had menopause") plus field 3581 ("age at menopause") can anchor
+exclusions.** Field `2724` ("had menopause") plus field `3581` ("age at menopause") can anchor
 natural timing only after records with bilateral oophorectomy or hysterectomy-only
 menstrual-marker destruction are removed/quarantined. The t020 decision-tree order does
 this in principle.
 
 **Amendment question A2: surgical timing is not computable from the t027 basket as written.**
-t020 refers to "2834 + dates" for bilateral oophorectomy before infection, and the
-surgical contrast depends on the age-at-surgery gradient. Field 2834 is the bilateral
+t020 refers to "`2834` + dates" for bilateral oophorectomy before infection, and the
+surgical contrast depends on the age-at-surgery gradient. Field `2834` is the bilateral
 oophorectomy flag; the age-at-bilateral-oophorectomy field is 3882. t027 does not list
 3882. Add `3882` with `[confirm at application]` to any basket that keeps the surgical
 exploratory arm or uses surgery timing to exclude pre-infection bilateral oophorectomy.
@@ -94,7 +94,7 @@ it above exploratory until benign-indication restriction and HRT stratification 
 actually computable and stable.
 
 **Amendment question A3: HRT-active-at-infection is not computable from baseline HRT fields
-alone.** Fields 2814/3536/3546 establish ever-use, start age, and last-use/still-taking
+alone.** Fields `2814`/`3536`/`3546` establish ever-use, start age, and last-use/still-taking
 status at baseline assessment, not necessarily use at SARS-CoV-2 infection 10-14 years
 later. The HRT-on-at-infection tag and HRT-stratified surgical contrast need either
 prescription/GP linkage fields or a downgrade to "baseline HRT status / unknown at

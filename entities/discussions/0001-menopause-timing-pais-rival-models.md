@@ -109,7 +109,7 @@ attenuation-direction.
 
 ---
 
-## Evidence Inventory (current, pre-data)
+## Evidence Inventory
 
 | Evidence | Bears on | Reading |
 |---|---|---|
@@ -122,16 +122,17 @@ attenuation-direction.
 
 **Where uncertainty concentrates:** M1's *positive* signature (hormone-marker
 mediation) is the **least-supported** proposition in the whole packet and the one UKB
-can **least** test (oestradiol censored at 175 pmol/L; immune/endothelial markers
-sparse at infection; peri cell ≈ 0). M3a (survival depletion) is **newly identified**
-and currently **unquantified**.
+can **least** test (UKB oestradiol is censored at 175 pmol/L, immune/endothelial
+markers are sparse at infection, and the peri cell is near zero [@AlcaldeHerraiz2025]).
+M3a (survival depletion) is **newly identified** and currently **unquantified**.
 
 ---
 
-## Discriminating Predictions → committed pre-reg sensitivity arms
+## Discriminating Predictions
 
-This is the operational core. Each pre-reg:0001 arm is, in effect, a test *designed*
-to move one rival.
+The committed pre-reg sensitivity arms are, in effect, tests designed to move one rival.
+
+This is the operational core.
 
 | Pre-reg arm (committed) | Primary discriminator between | If effect… |
 |---|---|---|

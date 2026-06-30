@@ -53,7 +53,7 @@ not biology.
 This is the M2 artifact in its purest form — the same modality/scoring-breadth mechanism that drove the
 SFN-prevalence 0%→91% swing in `interpretation:0014` (M2's flagship instance), now applied to the *spatial
 pattern* rather than the prevalence. Apparent length-dependence (or its absence) in the SFN literature may
-be a **sampling artifact** rather than a measured distribution.
+be a **sampling artifact** rather than a measured distribution [@Joseph2021; @Novak2026].
 
 ## Why it is independent
 

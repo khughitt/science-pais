@@ -120,7 +120,7 @@ The paper has two components:
 - Conflicts of interest: Bellavite and Di Fede have a consultancy relationship with Vanda Omeopatici s.r.l. (natural medicines/food supplements), disclosed in the paper; this company had no role in study design or analysis.
 - This is a contested literature: PACVS itself is not a recognized diagnostic entity by major public health agencies; the anti-RAS autoantibody framing extends a hypothesis under active investigation in PACS to a less well-documented syndrome.
 - Several cited supporting studies come from overlapping author groups or are preprints; independent replication of the anti-ACE2/anti-MAS1 associations is sparse.
-- Mechanistic claims about idiotypic networks and molecular mimicry are theoretical and based on analogical reasoning rather than direct experimental evidence in these patients. [SPECULATION]
+- Mechanistic claims about idiotypic networks and molecular mimicry are theoretical and based on analogical reasoning rather than direct experimental evidence in these patients.
 - The paper does not distinguish mRNA vs adenoviral vaccine responses despite different immunological profiles; n is far too small for subgroup analysis.
 
 ## Model / Tool Availability

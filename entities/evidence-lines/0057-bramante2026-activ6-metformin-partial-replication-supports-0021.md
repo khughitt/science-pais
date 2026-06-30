@@ -29,7 +29,7 @@ The ACTIV-6 platform RCT (acute outpatient COVID, mITT n=2983) is an independent
 metformin for PAIS prevention. The **primary 6-month symptom endpoint was not met** (posterior
 probability of efficacy 0.83, below the 0.975 threshold), but the **clinician-diagnosed long-COVID
 endpoint at day 180 was approximately halved** (RR 0.50, 95% CrI 0.16–0.99; PPE 0.96). The direction
-matches COVID-OUT (`0056`), so it supports `proposition:0021` — but weakly, as a *partial* replication.
+matches COVID-OUT (`0056`), so it supports `proposition:0021` — but weakly, as a *partial* replication [@Bramante2026].
 
 ## Why it is independent
 

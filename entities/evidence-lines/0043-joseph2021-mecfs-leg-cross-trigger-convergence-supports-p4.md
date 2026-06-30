@@ -27,12 +27,12 @@ updated: '2026-06-24'
 
 Joseph2021 supplies the **ME/CFS leg of cross-trigger convergence** — 31% SFN at scale (n=160) —
 pairing with the long-COVID leg (Oaklander2022) and the PTLDS leg (Adler2024) to document SFN across
-**≥3 distinct triggers**, supporting `proposition:0017`.
+**≥3 distinct triggers**, supporting `proposition:0017` [@Joseph2021; @Oaklander2022; @Adler2024].
 
 ## Why it is independent
 
 **Not independent.** `independence: shared-source` — this line shares `independence_group:
-joseph2021-mecfs-icpet-sfn` and the same cohort with `evidence-line:0039`. It re-uses the Joseph2021
+joseph2021-mecfs-icpet-sfn` and the same cohort with the Joseph2021 structural-lesion evidence line. It re-uses the Joseph2021
 ME/CFS series for a different target (cross-trigger convergence rather than the bare structural
 lesion), so it cannot be counted as a separate cohort of support.
 

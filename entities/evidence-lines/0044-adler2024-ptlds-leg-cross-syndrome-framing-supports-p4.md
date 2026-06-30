@@ -29,7 +29,7 @@ updated: '2026-06-24'
 Adler2024 supplies the **PTLDS leg** — a narrative review citing a series in which **10/10**
 well-defined PTLDS patients had abnormal IENFD and/or SGNFD on skin biopsy — plus explicit PTLDS ↔
 long COVID ↔ ME/CFS cross-syndrome mechanistic framing (SFN proposed as a **final common pathway**).
-This gives weak support to `proposition:0017`.
+This gives weak support to `proposition:0017` [@Adler2024].
 
 ## Why it is independent
 

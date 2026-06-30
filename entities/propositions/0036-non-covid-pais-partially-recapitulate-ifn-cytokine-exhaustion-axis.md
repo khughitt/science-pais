@@ -64,7 +64,7 @@ This proposition should stay below promotion strength. The current evidence map 
 assays (NanoString PBMC, ex-vivo stimulation, plasma cytokines, QFS antigen stimulation), compartments,
 case definitions, and timepoints. It supports **pathway-family recurrence**, not the stricter Aid2025
 claim that the same patients carry sustained IL-6/JAK-STAT/type-II IFN, blunted type-I antiviral-effector
-ISGs, and exhaustion beyond 180 days. It also says nothing about causality; `proposition:0026` remains
+ISGs, and exhaustion beyond 180 days [@Aid2025]. It also says nothing about causality; `proposition:0026` remains
 data-gated on the JAK1-inhibitor readout.
 
 ## Needed Test

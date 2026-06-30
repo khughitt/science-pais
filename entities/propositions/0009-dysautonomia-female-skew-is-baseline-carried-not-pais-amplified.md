@@ -29,7 +29,7 @@ updated: "2026-06-22"
 
 ## Claim
 
-Infection genuinely **raises the incidence** of postural orthostatic tachycardia syndrome (POTS) and related dysautonomia after SARS-CoV-2, but the **female skew within** post-infectious dysautonomia is the **pre-existing female predominance of POTS carried through**, not a post-infectious sex *amplification*. POTS is ~5:1 female at baseline regardless of trigger; post-COVID POTS cohorts run ~74–80% female, i.e. **at** that baseline, not above it. This is an `empirical_regularity` about the **sex distribution** of one subphenotype; it is deliberately agnostic about the autonomic mechanism, and it does **not** deny that infection causes dysautonomia — only that no published design shows an infection×sex *interaction* above the POTS baseline.
+Infection genuinely **raises the incidence** of postural orthostatic tachycardia syndrome (POTS) and related dysautonomia after SARS-CoV-2, but the **female skew within** post-infectious dysautonomia is the **pre-existing female predominance of POTS carried through**, not a post-infectious sex *amplification*. POTS is ~5:1 female at baseline regardless of trigger; post-COVID POTS cohorts run ~74–80% female, i.e. **at** that baseline, not above it [@Kwan2022; @Eldokla2022]. This is an `empirical_regularity` about the **sex distribution** of one subphenotype; it is deliberately agnostic about the autonomic mechanism, and it does **not** deny that infection causes dysautonomia — only that no published design shows an infection×sex *interaction* above the POTS baseline.
 
 ## Evidence Summary
 

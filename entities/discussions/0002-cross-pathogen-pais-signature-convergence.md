@@ -179,7 +179,7 @@ molecular signature**:
   project has **declined that route on reproducibility grounds** (2026-06-20 decision): privately
   held, ~15-year-old data that an author must hand over fails the project's reproducible-understanding
   standard, and author data-sharing for old datasets is unreliable. The Galbraith arrays are therefore
-  treated as **`[INACCESSIBLE]` / blocked**, and the reanalysis pivots to *public* post-infective-fatigue
+  treated as **inaccessible / blocked**, and the reanalysis pivots to *public* post-infective-fatigue
   transcriptomes (see Evidence Needed: GSE14577 + GSE130353). See `paper:Galbraith2011`.
 - **Raijmakers2021** (TSPO PET in ME/CFS *and* QFS) — a shared **negative**: no
   neuroinflammation in either. A shared absence is consistent with convergence but does not
@@ -238,7 +238,7 @@ breadth — it should be carried as a structural limitation, not read as evidenc
   across the three triggers; sample is **PBMCs** (Illumina HumanRef-8 v2), not bulk blood;
   **no GEO/ArrayExpress deposit exists** (confirmed in full text). The raw arrays exist only as
   author-held data, and the project has **declined to request them** (2026-06-20 reproducibility
-  decision) — they are treated as `[INACCESSIBLE]`. Conclusions must not depend on private data.
+  decision) — they are treated as inaccessible. Conclusions must not depend on private data.
 - **Public-data reanalysis path (replaces the Galbraith author-contact residual):** instead of
   chasing private arrays, run a **pathway-level cross-trigger reanalysis on PUBLIC post-infective-
   fatigue transcriptomes**:
@@ -264,7 +264,7 @@ breadth — it should be carried as a structural limitation, not read as evidenc
    (`paper:Galbraith2011`, `paper:Patterson2024`, `paper:Walitt2024`, plus the wider t001/t005
    batch). Headline correction: Galbraith2011 is a head-to-head **negative** at gene level, not
    a supporter. Galbraith full text read; its arrays are unpublished + author-held →
-   **declined as `[INACCESSIBLE]`** (reproducibility), reanalysis re-pointed to public GSE14577 +
+   **declined as inaccessible** (reproducibility), reanalysis re-pointed to public GSE14577 +
    GSE130353 (t035). t033 closed.
 2. ~~New search task: post-dengue / QFS / post-SARS molecular signatures — confirm the gap or
    fill it.~~ **Done 2026-06-20 (t033)** — see the coverage section above and

@@ -30,7 +30,7 @@ Walitt2024 is the NIH intramural deep-phenotyping study of post-infectious ME/CF
 21 healthy volunteers; **unanimous 5-expert adjudication**). It reports an explicit **null on
 skin-biopsy small-fiber nerve density** (catalogued among negative findings, Supplementary Data S22).
 The most rigorously case-defined cohort finds **no SFN difference**, disputing `proposition:0014` as a
-universal structural lesion.
+universal structural lesion [@Walitt2024].
 
 ## Why it is independent
 
@@ -43,4 +43,4 @@ line (`evidence-line:0046`) drawn from the same study.
 `direct_test`, **moderate** — bounded by: (1) very small n=17; only effects of **d≥0.94** are
 detectable at power; (2) pre-COVID-era diverse (non-SARS) triggers. A group-level null in an
 underpowered cohort does **not exclude an SFN subgroup**, but it is the strongest case-ascertainment
-counterweight to a universal P1.
+counterweight to a universal P1 [@Walitt2024].

@@ -29,7 +29,7 @@ updated: '2026-06-24'
 
 ## Summary
 
-Multiple PAIS studies — spanning long COVID, ME/CFS, post-Q-fever, and post-Epstein-Barr virus fatigue — report a near-zero or non-significant correlation between self-reported "brain fog" (subjective cognition) and performance on standardized neurocognitive tasks (objective cognition). Bland2024 quantified this as r=−0.07 (p=0.161) in a three-arm COVID cohort (n=162); the subjective deficit was explained by fatigue and perceived stress after covariate adjustment and was no longer linked to COVID-19 status, while the objective deficit remained COVID-exposure-linked even after accounting for fatigue and stress. This question asks whether the dissociation is a robust, cross-PAIS feature, and what mechanisms drive each domain independently.
+Multiple PAIS studies — spanning long COVID, ME/CFS, post-Q-fever, and post-Epstein-Barr virus fatigue — report a near-zero or non-significant correlation between self-reported "brain fog" (subjective cognition) and performance on standardized neurocognitive tasks (objective cognition). Bland2024 quantified this as r=−0.07 (p=0.161) in a three-arm COVID cohort (n=162); the subjective deficit was explained by fatigue and perceived stress after covariate adjustment and was no longer linked to COVID-19 status, while the objective deficit remained COVID-exposure-linked even after accounting for fatigue and stress [@Bland2024]. This question asks whether the dissociation is a robust, cross-PAIS feature, and what mechanisms drive each domain independently.
 
 ## Why It Matters
 

@@ -77,7 +77,7 @@ for SARS-CoV-2 vaccination," with the words "probably" and "SARS-CoV-2" doing re
 
 `paper:Carazo2025` is the key modern-immunity anchor. In Quebec healthcare workers, Omicron-era booster
 VE was estimated at 41% against COVID-19 and 57% against long COVID, but waned by 6 months; hybrid
-immunity estimates were high regardless of dose count and prior infecting variant. This implies that the
+immunity estimates were high regardless of dose count and prior infecting variant [@Carazo2025]. This implies that the
 incremental value of another booster depends strongly on the existing immunity state, variant, and time
 since the last immunological event.
 

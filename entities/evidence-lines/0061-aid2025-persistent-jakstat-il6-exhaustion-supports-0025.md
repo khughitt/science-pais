@@ -33,7 +33,7 @@ persistently enriched at day 90–180 **and beyond 180 days** (GSEA, FDR q<0.05)
 validated** by ELISA/MSD across both cohorts, co-occurring with **CD8+ T-cell exhaustion** (PDCD1, IFI44,
 PRDM1) and **no detectable plasma SARS-CoV-2** (genomic + subgenomic RT-PCR). Pathway scores correlate with
 fatigue, dyspnoea, and cognitive complaints. This directly supports `proposition:0025`'s persistent-
-inflammatory-activation arm (and the no-circulating-virus clause).
+inflammatory-activation arm (and the no-circulating-virus clause) [@Aid2025].
 
 ## Why it is independent
 
@@ -50,4 +50,4 @@ the cell source of the IL-6/JAK-STAT signal (`question:0006`); (3) **observation
 time-windows** — co-activation with symptoms is associative, establishing the *state* but not that it
 *drives* symptoms (that is `proposition:0026`); (4) no-virus is shown in **blood**, not tissue, so it
 does not exclude a tissue reservoir feeding the loop (`hypothesis:0002`); (5) pre-Omicron/largely
-unvaccinated. Supports the descriptive state, not the causal-loop claim.
+unvaccinated. Supports the descriptive state, not the causal-loop claim [@Aid2025].

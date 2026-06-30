@@ -72,7 +72,7 @@ This is a gut-brain mechanism, but it is not direct evidence that microbiome com
 
 **Intervention signal.** Lau2024 tests SIM01, a synbiotic microbiome-modulating preparation, in 463 PACS
 patients. Several symptoms improved and the microbiome shifted, but objective functional endpoints did
-not clearly move and the product is mechanistically broad.
+not clearly move and the product is mechanistically broad [@Lau2024].
 
 ## Current State of Knowledge
 

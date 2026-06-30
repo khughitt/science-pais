@@ -98,7 +98,7 @@ risk/severity gradient; "persistence" and "neuropsychiatric" are post-acute fema
 No microdata involved, so the standard control-uniqueness / dimensionality checks do not apply. One
 structural concern surfaced and is recorded as `methodological`: **the dengue fatigue-vs-depression
 contrast conflates effect size with statistical power** (well-powered fatigue arm vs n=169 depression
-arm + a cohort that excluded mood disorders by design). Treat the dengue "dissociation" as an artifact
+arm + a cohort that excluded mood disorders by design) [@Conde2026]. Treat the dengue "dissociation" as an artifact
 candidate until a powered, mood-inclusive dengue cohort exists.
 
 ## Question-Level Implications

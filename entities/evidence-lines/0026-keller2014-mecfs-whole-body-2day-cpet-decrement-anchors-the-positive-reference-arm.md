@@ -26,7 +26,7 @@ updated: "2026-06-22"
 
 ## What this line shows
 
-Keller2014 establishes the **positive reference** for `proposition:0011`: in Fukuda-defined ME/CFS, a second maximal CPET 24 h after the first yields a **13.8% fall in VO₂peak**, with confirmed maximal effort on both days (RER ≥ 1.1, unchanged between tests) and against a healthy/deconditioned test–retest reproducibility of ≤7% (r ≥ 0.95). Fifty percent of participants were reclassified to a more impaired functional category on day 2. This is the well-validated **whole-body** objective signature of PEM in ME/CFS, and — because deconditioning predicts a stable, not a worsened, day-2 result — it excludes deconditioning as the explanation.
+Keller2014 establishes the **positive reference** for `proposition:0011`: in Fukuda-defined ME/CFS, a second maximal CPET 24 h after the first yields a **13.8% fall in VO₂peak**, with confirmed maximal effort on both days (RER ≥ 1.1, unchanged between tests) and against a healthy/deconditioned test–retest reproducibility of ≤7% (r ≥ 0.95). Fifty percent of participants were reclassified to a more impaired functional category on day 2. This is the well-validated **whole-body** objective signature of PEM in ME/CFS, and — because deconditioning predicts a stable, not a worsened, day-2 result — it excludes deconditioning as the explanation [@Keller2014].
 
 ## Why it is independent
 

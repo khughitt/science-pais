@@ -35,11 +35,11 @@ the heterogeneous skin-biopsy SFN prevalence across Oaklander2022 / Joseph2021 /
 (`interpretation:0013` New Question 3) — is **only weakly supported, and is not the dominant driver**.
 Re-reading the four studies' methods against their reported rates shows the *cutoff rule* contributes
 surprisingly little: Novak2026's QASAT-graded **ENFD-only** rates (LC 48.3%, ME/CFS 33.5%) sit right
-next to Joseph2021's strict **≤5th-percentile distal** rate (ME/CFS 31%). The large prevalence
+next to Joseph2021's strict **≤5th-percentile distal** rate (ME/CFS 31%) [@Novak2026; @Joseph2021]. The large prevalence
 inflation comes instead from **modality breadth** (counting sweat-gland SGNFD and functional ESC, not
 just sensory ENFD), from **trigger** (LC > ME/CFS), and from **cohort referral-enrichment** (the most
 parsimonious explanation for the Walitt2024 null). Critically, **the referral/enriched biopsy cohorts are
-far more concordant within trigger than the raw 0%→91% range implies** — much of the apparent
+far more concordant within trigger than the raw 0%→91% range implies** [@Oaklander2022; @Joseph2021; @Walitt2024; @Novak2026] — much of the apparent
 "heterogeneity" is an artifact of pooling different triggers and different abnormality definitions into
 one number. This does **not** weaken `proposition:0014` (lesion existence) in enriched/autonomic PAIS
 cohorts, but it preserves Walitt2024 as a real counterexample to universality: the *presence of a
@@ -167,7 +167,7 @@ dominated by those four choices.
 
 The user directed this thread ("look into the first suggested follow-up: a metric-harmonization
 re-analysis"). The substantive answer returned: **the QASAT-vs-≤5th-percentile cutoff is *not* the main
-explanation** — modality breadth (decisively, within Novak: 48→67→91% on identical patients), trigger
+explanation** — modality breadth (decisively, within Novak: 48→67→91% on identical patients) [@Novak2026], trigger
 (LC>ME/CFS), and cohort referral-enrichment (the Walitt null) are; and within trigger the corpus is
 already concordant.
 

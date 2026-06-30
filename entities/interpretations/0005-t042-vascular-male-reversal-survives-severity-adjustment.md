@@ -50,7 +50,7 @@ Conclusion chains:
 
 ## Verdict
 
-**Verdict:** [+] Survives — the male-biased vascular hard-endpoint direction is a **genuine domain reversal** and is not explained by the coarse hospitalized-vs-ambulatory acute-severity boundary: the male VTE excess is present in **ambulatory (lowest-severity) patients** in the 30-day acute window (Xie2022 aHR 1.69), and the male CV-mortality excess persists **within a hospitalized-restricted cohort** at 18 months (Kopp2024 HR 1.68, Delta). This does **not** close the narrower late-VTE persistence question. The **FMD/endothelial leg remains severity-confounded** and is excluded from the discriminating evidence.
+**Verdict:** [+] Survives — the male-biased vascular hard-endpoint direction is a **genuine domain reversal** and is not explained by the coarse hospitalized-vs-ambulatory acute-severity boundary: the male VTE excess is present in **ambulatory (lowest-severity) patients** in the 30-day acute window (Xie2022 aHR 1.69), and the male CV-mortality excess persists **within a hospitalized-restricted cohort** at 18 months (Kopp2024 HR 1.68, Delta) [@Xie2022; @Kopp2024]. This does **not** close the narrower late-VTE persistence question. The **FMD/endothelial leg remains severity-confounded** and is excluded from the discriminating evidence.
 
 ## Findings Summary
 
@@ -99,7 +99,7 @@ hospitalization/ICU carryover.
 ## Data Quality Checks
 
 No microdata involved; control-uniqueness / dimensionality checks do not apply. One item recorded
-as `methodological`: Xie2022 carries a published correction (JAMA Intern Med 2022;182(11):1234)
+as `methodological`: Xie2022 carries a published correction notice
 whose effect on the sex HR was not separately verified; the point estimate is used as reported.
 Abubasheer2025 full text was paywalled (estimates read from abstract/PubMed).
 

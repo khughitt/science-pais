@@ -129,7 +129,7 @@ is the single largest measurement threat and is t020's core problem:
 
 > **Handoff to t020:** this section defines the *inputs*; t020 owns the STRAW+10 /
 > age-band staging rule, the forward-projection algorithm, and the
-> misclassification model. The binary "had menopause" (2724) alone is the
+> misclassification model. The binary "had menopause" (`2724`) alone is the
 > Shah2025/Mishra2020-style operationalization and is a **sensitivity arm only** —
 > it collapses the peri window the analysis most needs.
 

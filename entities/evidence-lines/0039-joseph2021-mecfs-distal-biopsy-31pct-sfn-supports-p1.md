@@ -28,7 +28,7 @@ updated: '2026-06-24'
 
 Joseph2021 is the **largest ME/CFS skin-biopsy series** (n=160; NAM 2015 criteria). 31% (~50/160)
 met the SFN threshold (≤5th percentile of sex/age/race-adjusted norms) on distal lower-leg biopsy.
-This **establishes the lesion in ME/CFS at scale**, directly supporting `proposition:0014`.
+This **establishes the lesion in ME/CFS at scale**, directly supporting `proposition:0014` [@Joseph2021].
 
 ## Why it is independent
 
@@ -42,4 +42,4 @@ by-cohort and methodologically distinct from the long-COVID (Oaklander2022) and 
 non-length-dependent pattern; the authors note that proximal sampling detects SFN in ~46% vs ~32%
 distally, so the 31% figure is likely an **underestimate**; (2) controls are normal-iCPET referrals
 (effectively healthy), **not primary-dysautonomia**; (3) 24% had post-infectious onset but this was
-**not analyzed as a subgroup**; (4) no autoantibody serology.
+**not analyzed as a subgroup**; (4) no autoantibody serology [@Joseph2021].

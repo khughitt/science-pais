@@ -47,18 +47,18 @@ No new evidence-line is coded from this pass. h0002 stays `speculative`.
 
 **SARS-CoV-2 tissue persistence.** `evidence-line:0072` (Goh2022) remains the closest match: tissue
 nucleocapsid/RNA with CD68 co-localization in two long-COVID cases. It is still only weak partial support
-for 0023 because it lacks controlled prevalence, degradation-resistant chemistry, macrophage functional
+for `proposition:0023` because it lacks controlled prevalence, degradation-resistant chemistry, macrophage functional
 retention, host-signature overlap, and symptom/burden association. Other tissue-persistence-style
-findings can motivate the search but should not be automatically coded to 0023 unless they localize the
+findings can motivate the search but should not be automatically coded to `proposition:0023` unless they localize the
 fragment to a tissue-resident macrophage sink or an equivalent phagocyte-retention mechanism.
 
 **Plasma antigen persistence.** Peluso2024 supports persistence (`proposition:0022`), not the macrophage
-reservoir generalization (`0023`) or retained-burden-over-acute-load (`0024`). Plasma positivity is
+reservoir generalization (`proposition:0023`) or retained-burden-over-acute-load (`proposition:0024`). Plasma positivity is
 compatible with a tissue reservoir but is not localization evidence.
 
 **Acute antigen/load predictors.** `evidence-line:0073` (BrandstetterFigueroa2025) remains model
-criticism for 0024 because acute nucleocapsid antigen predicts 9-month long-COVID symptoms. It does not
-refute 0024, but it keeps acute burden alive and makes the head-to-head design mandatory.
+criticism for `proposition:0024` because acute nucleocapsid antigen predicts 9-month long-COVID symptoms. It does not
+refute `proposition:0024`, but it keeps acute burden alive and makes the head-to-head design mandatory.
 
 **Coxiella/QFS antigen-fragment hypothesis.** Morroy2016 records the immunomodulatory-complex idea
 involving non-viable Coxiella DNA/antigen and macrophage-clearance impairment, but this is not yet a

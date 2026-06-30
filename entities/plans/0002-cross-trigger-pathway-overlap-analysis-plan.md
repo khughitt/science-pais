@@ -62,7 +62,7 @@ are not yet provisioned**: GSE14577's intensity tables sit inside the (downloade
 unparsed; GSE130353's 40 per-sample MMSEQ files are *listed in the SOFT* but **not downloaded**. The
 registry (`doc/datasets/2026-06-20-public-cross-trigger-geo-sets.md`) correctly still reads "candidate
 datasets, not yet provisioned." Acquisition + hashing + scale-parse is a **blocking gate** (see
-Readiness Decision), not yet discharged. **Galbraith2011 arrays remain `[INACCESSIBLE]`** (private;
+Readiness Decision), not yet discharged. **Galbraith2011 arrays remain inaccessible** (private;
 declined on reproducibility grounds) — this analysis is their public substitute.
 
 ## Required Input Inspection

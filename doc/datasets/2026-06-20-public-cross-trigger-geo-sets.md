@@ -28,7 +28,7 @@ Top-level SHA-256 (full per-file manifest incl. all 40 MMSEQ members:
 
 **GSE14577 (parsed from local SOFT; series_matrix 404s):** GPL96 22,283 probes × 15 samples
 (`6a9e9b8e…`), GPL97 22,645 × 15 (`c1c5761e…`); **7 HC + 8 PI-CFS** (15 patients, chip A+B each), all
-Male; scale 2.58–14.33, mean ≈6.5, 0% integer → **log2 intensities confirmed**.
+Male; scale 2.58–14.33, mean ≈6.5, 0% integer → **log2 intensities confirmed** [@Gow2009].
 
 **GSE130353 (G2 + G4 cleared from the data, not the metadata):**
 - **G2 scale verdict = PASS.** MMSEQ columns `feature_id, log_mu, sd, mcse, iact, effective_length,
@@ -48,7 +48,7 @@ Male; scale 2.58–14.33, mean ≈6.5, 0% integer → **log2 intensities confirm
   (U133 probes via GPL96/97; MMSEQ `feature_id` already ENSG, release 68).
 
 These two **public** sets are the reproducible substitute for the declined, author-held Galbraith2011
-arrays (`[INACCESSIBLE]` on reproducibility grounds, 2026-06-20). They span **different infectious
+arrays, which are inaccessible on reproducibility grounds under the 2026-06-20 decision. They span **different infectious
 triggers**, so a pathway/gene-set-overlap test across them is a concrete step toward the ≥3-trigger
 test in `question:0001` / `hypothesis:0001`.
 

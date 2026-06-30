@@ -26,7 +26,7 @@ updated: "2026-06-21"
 
 ## What this line shows
 
-In the Mount Sinai–Yale MY-LC cohort (n≈165), `paper:Silva2024` finds testosterone **associated with lower long-COVID symptom burden across both sexes** (after accounting for testosterone, sex ceased to predict burden). A gonadal-steroid → recovery gradient is consistent with `proposition:0001`'s claim that hormonal/reproductive context modulates the failed-recovery threshold.
+In the Mount Sinai–Yale MY-LC cohort (n≈165), `paper:Silva2024` finds testosterone **associated with lower long-COVID symptom burden across both sexes** (after accounting for testosterone, sex ceased to predict burden). A gonadal-steroid → recovery gradient is consistent with `proposition:0001`'s claim that hormonal/reproductive context modulates the failed-recovery threshold [@Silva2024].
 
 ## Why it is independent
 

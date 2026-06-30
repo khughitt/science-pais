@@ -33,7 +33,7 @@ updated: '2026-06-25'
 
 ## Organizing Conjecture
 
-A common *initiating* lesion across diverse PAIS is the failure of tissue-resident phagocytes (Kupffer cells, microglia, alveolar/other macrophages) to fully degrade pathogen-derived fragments that have unusual, degradation-resistant chemistry. The retained fragments form a persistent antigen reservoir that chronically engages innate sensing (e.g. TLR2 for peptidoglycan), suppresses cellular energy metabolism, and seeds the downstream dysregulation common to PAIS. Critically, the *duration of macrophage retention* — set by fragment chemistry and host clearance genetics — rather than initial pathogen load, determines who develops chronic illness. This makes antigen-fragment persistence a pathogen-agnostic *seed* that can light the shared attractor of hypothesis 0001 from triggers as different as Borrelia, SARS-CoV-2, and Coxiella.
+A common *initiating* lesion across diverse PAIS is the failure of tissue-resident phagocytes (Kupffer cells, microglia, alveolar/other macrophages) to fully degrade pathogen-derived fragments that have unusual, degradation-resistant chemistry. The retained fragments form a persistent antigen reservoir that chronically engages innate sensing (e.g. TLR2 for peptidoglycan), suppresses cellular energy metabolism, and seeds the downstream dysregulation common to PAIS. Critically, the *duration of macrophage retention* — set by fragment chemistry and host clearance genetics — rather than initial pathogen load, determines who develops chronic illness. This makes antigen-fragment persistence a pathogen-agnostic *seed* that can light the shared attractor of `hypothesis:0001` from triggers as different as Borrelia, SARS-CoV-2, and Coxiella.
 
 ## Proposition Bundle
 

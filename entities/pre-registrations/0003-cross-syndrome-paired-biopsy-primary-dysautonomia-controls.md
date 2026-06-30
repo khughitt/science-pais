@@ -118,11 +118,11 @@ length-dependent-SFN cause) — otherwise length-dependent confounders contamina
 which is the whole point.
 
 **Three-band significance convention (applies to both confirmatory legs).** Because confirmatory tests
-are held at the Bonferroni-corrected α = 0.025 while the weakening criteria reference the nominal
-α = 0.05, the intermediate interval is defined explicitly to remove a degree of freedom at
+are held at the Bonferroni-corrected `alpha = 0.025` while the weakening criteria reference the nominal
+`alpha = 0.05`, the intermediate interval is defined explicitly to remove a degree of freedom at
 interpretation time:
-- **p < 0.025** → **confirmatory support** (corrected threshold; counts toward criterion #1).
-- **0.025 ≤ p < 0.05** → **nominal/supportive but NOT confirmatory** — a weak positive that neither
+- **`p < 0.025`** → **confirmatory support** (corrected threshold; counts toward criterion #1).
+- **`0.025 <= p < 0.05`** → **nominal/supportive but NOT confirmatory** — a weak positive that neither
   discharges the criterion nor weakens the proposition; it is recorded as suggestive evidence and, for a
   result of real interest, motivates a replication or a larger vehicle rather than a verdict.
 - **p ≥ 0.05** → **weakening** (subject to the G4 well-powered-null floor, below — a high-p result at
@@ -233,8 +233,8 @@ route to a per-trigger stratified re-analysis rather than a pooled verdict.
 ## Suspicious/Unexpected Result Plan
 
 The discriminating contrast is exactly the kind a subtly broken design can manufacture. Before accepting
-any **strongly positive** headline result (e.g. Δ > 50 pts, or PAIS NLD ≈ 100% with primary-dysautonomia
-NLD ≈ 0%), require:
+any **strongly positive** headline result (e.g. `Delta > 50 pts`, or PAIS NLD `~100%` with primary-dysautonomia
+  NLD `~0%`), require:
 
 - **Reader blinding.** IENFD/SGNFD must be read blind to arm. Unblinded reading + a pattern endpoint is a
   classic inflator. Reject (treat as inconclusive) if blinding is absent or compromised.
@@ -385,7 +385,7 @@ SFN-comorbidity exclusion applied) under the same protocol, and re-score against
 cutoffs. This is the highest-yield place to watch for, or solicit, the discriminating vehicle. **Note:** the
 hEDS arm here is itself a non-infectious dysautonomia group with *comparable* SFN (63%) and "more pronounced
 peripheral neurodegeneration" than the PAIS arms — a live preview of the pre-reg's **"reverse/diagnostic
-surprise"** branch (Δ≈0 because a non-PAIS dysautonomia comparator is *also* lesion-positive), and a caution
+surprise"** branch (Δ≈0 because a non-PAIS dysautonomia comparator is *also* lesion-positive) [@Novak2026], and a caution
 that the specificity contrast (q0004's "distinguishes from primary dysautonomia") may be harder to win than
 the lesion-existence contrast. Separately, Gibbons-type neuropathic-POTS series let the
 **comparator NLD/lesion rate be pre-constrained** from existing data, tightening the G4 power re-derivation

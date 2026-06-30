@@ -36,7 +36,7 @@ hospitalization, and tested-positivity / respiratory-support endpoints trended n
 non-significant. That two estrogen-containing therapies diverge in sign — and that the HRT signal is
 endpoint-dependent — is a concrete instance of `proposition:0006`'s claim that exogenous-hormone-therapy
 effects are **not uniformly protective or harmful** but contingent on the exposure's route, dose,
-timing, indication, and the population it is prescribed to.
+timing, indication, and the population it is prescribed to [@Costeira2021].
 
 ## Why it is independent
 
@@ -56,4 +56,4 @@ itself identify, measure, or rule out. HRT **type, route, dose, duration, and in
 unavailable**, so the within-study divergence demonstrates heterogeneity *exists* without identifying
 which dimension drives it. The line therefore supports the **non-uniformity / context-dependence**
 content of `proposition:0006` only; it provides **no** admissible estimate of an HRT→PAIS effect's
-sign or magnitude. See `interpretation:0008` (t019 audit) for the full disposition.
+sign or magnitude [@Costeira2021]. See `interpretation:0008` (t019 audit) for the full disposition.

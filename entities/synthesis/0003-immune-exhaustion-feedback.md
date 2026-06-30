@@ -26,7 +26,7 @@ signature), is **supported** by two independent evidence lines: `evidence-line:0
 moderate — persistent JAK-STAT/IL-6/type-II-IFN/complement + CD8 exhaustion beyond 180 days with
 no circulating virus, two cohorts) and `evidence-line:0062` (Ryan2022, weak — blunted type-I
 antiviral-effector ISGs MX1/OAS3/OASL at the 24-week bifurcation point in long-COVID referrals),
-per `interpretation:0012-t047-h0003-ifn-reconciliation-and-jak1-trial-registration`.
+per `interpretation:0012-t047-h0003-ifn-reconciliation-and-jak1-trial-registration` [@Aid2025; @Ryan2022].
 
 The causal pillar, `proposition:0026` (the exhaustion loop is a proximal driver, reversible by
 inhibition), is **untested**. Observational symptom-correlations from Aid2025 are suggestive but
@@ -53,7 +53,7 @@ them as indexing different IFN arms: Aid2025 tracks the type-II/inflammatory arm
 JAK-STAT, PBMC, day 90–700+), while Ryan2022 tracks the type-I antiviral-effector arm (terminal
 ISGs MX1/OAS3/OASL, whole blood, 24-week bifurcation). A dissociated pattern — persistent type-II
 tone alongside tolerized type-I effectors — is the predicted innate-sensing exhaustion signature,
-so Ryan2022 was recoded from a disputing tension into a supporting arm of `proposition:0025`. The
+so Ryan2022 was recoded from a disputing tension into a supporting arm of `proposition:0025` [@Aid2025; @Ryan2022]. The
 investigation now stands at: one supported descriptive pillar, one untested causal pillar, and a
 locked pre-registration awaiting trial readout.
 

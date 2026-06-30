@@ -34,7 +34,7 @@ effector ISGs MX1, OAS3, OASL were significantly decreased** in referrals vs non
 Reconciled (`interpretation:0012`), this **blunted type-I-effector arm** is the dissociated counterpart to
 the persistent type-II/inflammatory IFN tone — the signature of *tolerized/exhausted innate sensing* under
 chronic stimulation. It therefore **supports** `proposition:0025`'s dissociated-IFN clause rather than
-disputing the persistent-activation finding of Aid2025.
+disputing the persistent-activation finding of Aid2025 [@Ryan2022].
 
 ## Why it is independent
 

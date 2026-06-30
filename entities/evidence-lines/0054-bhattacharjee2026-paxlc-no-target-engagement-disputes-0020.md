@@ -33,7 +33,7 @@ the clinical nulls: it directly demonstrates that 15-day NMV/r **does not engage
 which is why STOP-PASC (`evidence-line:0053`) and PAX-LC's own null primary endpoint cannot be read as testing
 `proposition:0020`. Coded `disputes` (it weighs weakly against the reversible-target reading) with
 `evidence_role: model_criticism` — its real content is to **disarm the other nulls as evidence against
-the mechanism**.
+the mechanism** [@Bhattacharjee2026].
 
 ## Why it is independent
 
@@ -49,4 +49,4 @@ control (PBO/r contains ritonavir, confounding the shared cytokine shifts); Day-
 IgG half-life; ~45–55% of participants had no detectable baseline antigen (no enrichment); preprint, not
 peer-reviewed; long COVID only. The NMV/r-fails-to-clear-Spike result actually *supports a tissue-reservoir
 / non-replicating-antigen* model (`hypothesis:0002`) over active bloodstream replication, and reinforces
-that null NMV/r trials **must not** be cited against antigen persistence.
+that null NMV/r trials **must not** be cited against antigen persistence [@Bhattacharjee2026].

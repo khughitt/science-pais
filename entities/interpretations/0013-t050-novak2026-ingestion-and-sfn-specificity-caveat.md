@@ -65,7 +65,7 @@ calf** ENFD/SGNFD (PGP9.5/Therapath), QASAT-graded.
 ## The specificity caveat (the consequential new result)
 
 Novak2026's **hEDS arm (n=290) — a non-infectious heritable dysautonomia — shows SFN comparable to or
-greater than the PAIS arms** (63% biopsy; "more pronounced peripheral neurodegeneration"). This is the
+greater than the PAIS arms** (63% biopsy; "more pronounced peripheral neurodegeneration") [@Novak2026]. This is the
 first corpus data point indicating the small-fiber substrate is **not exclusive to post-infectious
 syndromes**. It does **not** dispute P1 (the lesion is real) or P4 (it recurs across PAIS triggers); it
 pressures the *specificity* half of `question:0004` ("distinguishes from primary dysautonomia") and A1

@@ -30,7 +30,7 @@ updated: '2026-06-24'
 Limongelli2026 is a prospective post-vaccine PASC cohort (n=71; 21 biopsied) with **paired calf +
 thigh** epidermal nerve-fiber density by confocal immunofluorescence. 19/21 (90%) had reduced fiber
 density, and a **non-length-dependent pattern was found in 33% of biopsied patients** — the cleanest
-paired-site documentation that the NLD pattern actually occurs, directly supporting `proposition:0015`.
+paired-site documentation that the NLD pattern actually occurs, directly supporting `proposition:0015` [@Limongelli2026].
 
 ## Why it is independent
 
@@ -42,4 +42,4 @@ trigger, and assay from the Oaklander2022 paired-parity line.
 `direct_test`, **moderate** — bounded by: (1) **post-vaccine, not post-infection** (trigger-analogous
 but distinct); (2) only 30% of the cohort was biopsied (**selection bias**); (3) no
 vaccinated-asymptomatic control arm; (4) anti-ACE2 / anti-NRP1 autoantibodies were **not significantly
-elevated** — a separate weak point against a specific (non-GPCR) autoantibody driver.
+elevated** — a separate weak point against a specific (non-GPCR) autoantibody driver [@Limongelli2026].

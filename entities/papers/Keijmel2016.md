@@ -41,20 +41,20 @@ This is one of the earliest studies to directly assess antigen-specific immune f
 [INACCESSIBLE — full text not retrieved; the following is drawn from the structured abstract.]
 
 - **Design:** Cross-sectional comparison of ex-vivo cytokine production across three groups: QFS patients, seropositive recovered controls, and chronic Q-fever patients.
-- **Cohorts:** QFS patients (n = 20); seropositive controls (n = 135); chronic Q-fever patients (n = 28). QFS diagnosis is presumed to follow Dutch national QFS case definitions (serological evidence of prior acute Q-fever plus persistent fatigue ≥6 months post-infection), though the exact case definition applied is [INACCESSIBLE].
+- **Cohorts:** QFS patients (n = 20); seropositive controls (n = 135); chronic Q-fever patients (n = 28). QFS diagnosis is presumed to follow Dutch national QFS case definitions (serological evidence of prior acute Q-fever plus persistent fatigue ≥6 months post-infection), though the exact case definition applied is not available from the abstract.
 - **Stimulation assay:** Ex-vivo stimulation of whole blood with *Coxiella burnetii* Nine Mile phase I antigen; IFN-γ and IL-2 production measured in supernatant.
 - **Comparisons:** IFN-γ and IL-2 concentrations compared across groups; IFN-γ/IL-2 ratio computed; correlation of cytokine measures with patient characteristics including symptom duration.
-- **Statistical approach:** [INACCESSIBLE]; results reported as medians with p-values from between-group comparisons.
+- **Statistical approach:** Not available from the abstract; results reported as medians with p-values from between-group comparisons.
 
 ## Key Findings
 
 **IFN-γ production (Coxiella-stimulated)**
 - QFS patients: median IFN-γ = 319.5 pg/mL
 - Seropositive controls: median IFN-γ = 120 pg/mL → QFS significantly higher (p < 0.01)
-- Chronic Q-fever patients: median IFN-γ = 2,846 pg/mL → QFS substantially lower; comparison statistics [INACCESSIBLE]
+- Chronic Q-fever patients: median IFN-γ = 2,846 pg/mL → QFS substantially lower; comparison statistics are not available from the abstract.
 
 **IFN-γ/IL-2 ratio**
-- QFS ratio: similar to seropositive controls (p-value [INACCESSIBLE])
+- QFS ratio: similar to seropositive controls; the p-value is not available from the abstract.
 - QFS ratio: lower than chronic Q-fever patients (p < 0.01)
 
 **Symptom duration correlations**
@@ -94,12 +94,12 @@ This paper is directly relevant to the project's core frame of post-acute infect
 
 - **Small QFS cohort (n = 20):** Underpowered for subgroup analyses; confidence intervals on cytokine medians and correlation estimates are likely wide.
 - **Cross-sectional design:** Cannot establish whether immune alterations precede, accompany, or follow QFS symptom onset; no pre-infection baseline available for most patients.
-- **Age confounding:** QFS patients were significantly younger than both comparator groups (p < 0.001); age is an important determinant of T-cell function and IFN-γ production. Whether the elevated IFN-γ in QFS is a QFS-specific signal or partly an age effect is not addressed. [INACCESSIBLE whether age-adjusted analyses were performed.]
-- **Case definition not fully reported in abstract:** The QFS diagnostic criteria applied are [INACCESSIBLE] in the abstract. Dutch national QFS criteria require serological confirmation of prior acute Q-fever plus fatigue; whether additional exclusion criteria (depression, other medical causes) were applied is unknown.
+- **Age confounding:** QFS patients were significantly younger than both comparator groups (p < 0.001); age is an important determinant of T-cell function and IFN-γ production. Whether the elevated IFN-γ in QFS is a QFS-specific signal or partly an age effect is not addressed, and the abstract does not report whether age-adjusted analyses were performed.
+- **Case definition not fully reported in abstract:** The QFS diagnostic criteria applied are not fully available from the abstract. Dutch national QFS criteria require serological confirmation of prior acute Q-fever plus fatigue; whether additional exclusion criteria (depression, other medical causes) were applied is unknown.
 - **Seropositive controls (n = 135) not matched to QFS patients:** The large seropositive control group was apparently used from a previously collected cohort (wording: "compared to those previously determined"), introducing potential batch effects and differences in sampling conditions for the cytokine assay.
 - **No healthy (seronegative) controls:** The study compares QFS to seropositive recovered and to chronic Q-fever patients, but not to individuals without prior *Coxiella* infection. It is therefore not possible to determine whether the QFS cytokine profile is elevated relative to population background or merely relative to the seropositive-recovered level.
 - **IFN-γ measurement: circulating vs. stimulated ambiguity:** The abstract describes "ex-vivo stimulated whole blood" IFN-γ — this is antigen-induced production, not resting/circulating plasma IFN-γ. The distinction matters for comparing to studies measuring circulating IFN-γ.
-- **Symptom characterization not described in abstract:** Fatigue severity, functional impairment, co-morbidities, and treatment history of QFS patients are [INACCESSIBLE]; heterogeneity within the QFS group cannot be assessed.
+- **Symptom characterization not described in abstract:** Fatigue severity, functional impairment, co-morbidities, and treatment history of QFS patients are not available from the abstract; heterogeneity within the QFS group cannot be assessed.
 - **Single time-point cytokine measurement:** No longitudinal follow-up data; correlation of symptom duration with cytokine levels is cross-sectional and subject to survivorship/selection bias.
 
 ## Model / Tool Availability

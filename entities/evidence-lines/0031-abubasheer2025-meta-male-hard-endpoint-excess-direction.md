@@ -26,6 +26,7 @@ updated: "2026-06-23"
 ## What this line shows
 
 Abubasheer2025 is a systematic review and meta-analysis of sex-based differences in cardiovascular outcomes in COVID-19. It pools a **male excess across hard endpoints**: VTE **RR 1.43 (95% CI 1.19–1.71)**, myocardial infarction RR 1.24, plus higher ischemic stroke, mortality, and major bleeding (RR 1.22). This establishes that the male *direction* of the vascular reversal is **reproducible across many cohorts**, not an artefact of any single dataset — supporting sub-claim (A) of `proposition:0012` (the domain is male-biased).
+Abubasheer2025 is a systematic review and meta-analysis of sex-based differences in cardiovascular outcomes in COVID-19. It pools a **male excess across hard endpoints**: VTE **RR 1.43 (95% CI 1.19–1.71)**, myocardial infarction RR 1.24, plus higher ischemic stroke, mortality, and major bleeding (RR 1.22). This establishes that the male *direction* of the vascular reversal is **reproducible across many cohorts**, not an artefact of any single dataset — supporting sub-claim (A) of `proposition:0012` (the domain is male-biased) [@Abubasheer2025].
 
 ## Why it is independent
 

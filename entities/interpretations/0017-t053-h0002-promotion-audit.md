@@ -39,12 +39,12 @@ more specific, but it does **not** promote `hypothesis:0002` out of `speculative
 `evidence-line:0072` codes Goh2022 as weak support for `proposition:0023`. The study is a two-patient
 long-COVID tissue case report: SARS-CoV-2 nucleocapsid protein and viral RNA were detected in appendix,
 skin, and breast tissue 163 and 426 days after symptom onset, and nucleocapsid signal co-localized with
-CD68-positive cells. This is the closest available non-Borrelia human tissue result for the
+CD68-positive cells [@Goh2022]. This is the closest available non-Borrelia human tissue result for the
 tissue/macrophage arm of h0002.
 
 `evidence-line:0073` codes BrandstetterFigueroa2025 as weak model criticism of `proposition:0024`. In a
 prospective acute-COVID cohort, detectable acute plasma SARS-CoV-2 nucleocapsid antigen predicted
-persistent long-COVID symptoms at 9 months after adjustment (aOR 3.0, 95% CI 1.1-8.0). This keeps acute
+persistent long-COVID symptoms at 9 months after adjustment (aOR 3.0, 95% CI 1.1-8.0) [@BrandstetterFigueroa2025]. This keeps acute
 pathogen burden alive as an independent predictor and disputes the strongest reading that initial load is
 not the lever.
 
@@ -52,12 +52,12 @@ not the lever.
 
 Goh2022 is partial: it shows tissue antigen/RNA and CD68 co-localization, but not degradation-resistant
 fragment chemistry, a tissue-resident macrophage clearance defect, controlled prevalence, host proteome or
-metabolic overlap with McClune2025, or symptom/burden association. It therefore lifts 0023 from absent to
+metabolic overlap with McClune2025, or symptom/burden association. It therefore lifts `proposition:0023` from absent to
 weakly observed in SARS-CoV-2 tissue, but does not establish the cross-pathogen reservoir mechanism.
 
-BrandstetterFigueroa2025 is not a direct refutation of 0024, because it does not measure retained
+BrandstetterFigueroa2025 is not a direct refutation of `proposition:0024`, because it does not measure retained
 post-clearance fragment burden. Acute N antigen may index acute severity, systemic dissemination, or the
-probability of later retention. It does, however, mean 0024 cannot claim retained burden out-predicts
+probability of later retention. It does, however, mean `proposition:0024` cannot claim retained burden out-predicts
 initial load until the head-to-head prospective design is run.
 
 Net: `proposition:0023` remains speculative with weak support; `proposition:0024` remains speculative and

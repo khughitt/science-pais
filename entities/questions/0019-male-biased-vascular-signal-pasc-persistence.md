@@ -36,9 +36,9 @@ updated: '2026-06-23'
 > **Substantially resolved for CV mortality; narrowed for VTE (2026-06-23, t042 →
 > `interpretation:0005`, `proposition:0012`).** The core CV question — does a male hard-endpoint
 > signal persist post-acutely and avoid reversal to a female phenotype — is answered **yes** for
-> 18-month cardiovascular mortality in Kopp2024 (hospitalized-restricted Delta-wave HR 1.68).
+> 18-month cardiovascular mortality in Kopp2024 (hospitalized-restricted Delta-wave HR 1.68) [@Kopp2024].
 > Xie2022 adds the decisive low-severity discriminator for the broader vascular direction: male
-> VTE excess is present in ambulatory patients (aHR 1.69), but only in the 30-day acute window.
+> VTE excess is present in ambulatory patients (aHR 1.69), but only in the 30-day acute window [@Xie2022].
 > Therefore t042 resolves the coarse acute-severity-carryover concern, not the narrower late-VTE
 > temporal-persistence gap. **Residual open threads** (carried forward, not closed): (1) is the
 > excess COVID-specific amplification or carried-through baseline male vascular risk at older ages?

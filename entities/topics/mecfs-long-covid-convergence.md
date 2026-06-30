@@ -44,7 +44,7 @@ The pairing of ME/CFS and long COVID is the central natural experiment of the PA
 
 **Post-exertional malaise (PEM) as the discriminating feature.** Bateman2023 contrasts FM (often improves with low-impact exercise) with ME/CFS (worsens after physical/cognitive/upright activity), implying distinct energetic-reserve failure modes and explaining why graded exercise harms ME/CFS but not FM — a key subtyping axis for PAIS. Che2025 operationalizes PEM with a cardiopulmonary exercise challenge, finding many pathobiological pathways *worsen* after exercise.
 
-**Molecular convergence: immune + mitochondrial.** Peppercorn2023 (SWATH-MS, PBMCs, 6 long COVID ~1y vs ME/CFS) finds 162 differentially regulated proteins enriched in immune and mitochondrial pathways, with substantial overlap between the two conditions — protein-level evidence of shared immune-cell pathophysiology despite very different illness durations. Hoel2026 (aptamer serum proteomics, 50 ME/CFS) finds multisystem imbalance: reduced intracellular protein release from muscle/brain/marrow, elevated secretome (coagulation, complement, cytokines), and depressed neutrophil-derived proteins with normal counts.
+**Molecular convergence: immune + mitochondrial.** Peppercorn2023 (SWATH-MS, PBMCs, 6 long COVID ~1y vs ME/CFS) finds 162 differentially regulated proteins enriched in immune and mitochondrial pathways, with substantial overlap between the two conditions — protein-level evidence of shared immune-cell pathophysiology despite very different illness durations. Hoel2026 (aptamer serum proteomics, 50 ME/CFS) finds multisystem imbalance: reduced intracellular protein release from muscle/brain/marrow, elevated secretome (coagulation, complement, cytokines), and depressed neutrophil-derived proteins with normal counts [@Peppercorn2023; @Hoel2026].
 
 **Converging pathobiological pathways in ME/CFS.** Che2025 (metabolomics + proteomics + ex-vivo cytokine responses, 56 ME/CFS) identifies ≥7 converging pathways: exaggerated innate responses to microbial superantigens, ECM/adhesion failure, mitochondrial dysfunction, dyslipidemia, urea-cycle disruption, tryptophan→kynurenine diversion, and gut dysbiosis — many worsened post-exercise — supporting a self-reinforcing failed-homeostasis model.
 
@@ -55,9 +55,9 @@ level (SCFA/butyrate ecology, barrier/metabolite signaling), not at a precise sh
 Xiong2023 is the key constraint: long-duration ME/CFS can remain clinically/metabolically abnormal after
 overt microbiome-composition dysbiosis partly resolves, so this is not a simple single-cause model.
 
-**Shared metabolic-mitochondrial readouts.** FGF21 is elevated in the most severe PASC clusters (Ozonoff2024) and in ME/CFS; Hoel2026 highlights chronic exerkine elevation (FGF-21, GDF-15) as a persistent energy-stress signal. Ozonoff2024 (IMPACC, n=590) also links severe PASC clusters to acute-phase immune features (higher viral burden, lower anti-RBD/Spike IgG, fewer B cells), connecting acute immunology to convergent metabolic outcomes.
+**Shared metabolic-mitochondrial readouts.** FGF21 is elevated in the most severe PASC clusters (Ozonoff2024) and in ME/CFS; Hoel2026 highlights chronic exerkine elevation (FGF-21, GDF-15) as a persistent energy-stress signal. Ozonoff2024 (IMPACC, n=590) also links severe PASC clusters to acute-phase immune features (higher viral burden, lower anti-RBD/Spike IgG, fewer B cells), connecting acute immunology to convergent metabolic outcomes [@Ozonoff2024; @Hoel2026].
 
-**Neurocognitive convergence.** Sandoval2025 (factor analysis, 2,313 ME/CFS + 299 PASC) finds two replicable neurocognitive domains — concentration/memory impairment and sensory/perceptual overload — shared across both conditions and associated with functional severity, implicating salience-network dysregulation.
+**Neurocognitive convergence.** Sandoval2025 (factor analysis, 2,313 ME/CFS + 299 PASC) finds two replicable neurocognitive domains — concentration/memory impairment and sensory/perceptual overload — shared across both conditions and associated with functional severity, implicating salience-network dysregulation [@Sandoval2025].
 
 ## Current State of Knowledge
 
@@ -95,7 +95,7 @@ The strong-convergence reviews (Komaroff2023, Bateman2023) emphasize unity, whil
 
 ## Relevance to This Project
 
-This topic is the empirical core of the project's central question: it provides the most direct test of whether two differently triggered PAIS share biology. Its convergences support a shared attractor (hypothesis 0001) and a shared metabolic-mitochondrial failure mode; its discordances guard against overstating mechanistic identity. It connects to `topic:long-covid-immune-dysregulation` (immune arm), `topic:antigen-pathogen-persistence` (candidate trigger of the shared state), and `immunity:research-question:immune-homeostasis-and-dysregulation`.
+This topic is the empirical core of the project's central question: it provides the most direct test of whether two differently triggered PAIS share biology. Its convergences support a shared attractor (hypothesis `0001`) and a shared metabolic-mitochondrial failure mode; its discordances guard against overstating mechanistic identity. It connects to `topic:long-covid-immune-dysregulation` (immune arm), `topic:antigen-pathogen-persistence` (candidate trigger of the shared state), and `immunity:research-question:immune-homeostasis-and-dysregulation`.
 
 ## Key References
 

@@ -30,7 +30,7 @@ reported elevated **β2-adrenergic and M3/M4-muscarinic receptor antibodies** in
 patients vs controls (β2/M-receptor antibody elevation in ~29.5% of patients), and antibody levels
 declined in rituximab responders in a linked sub-cohort — establishing that an anti-GPCR autoantibody
 *repertoire against the canonical β-adrenergic/muscarinic targets* exists in ME/CFS. This anchors the
-*existence* premise of `proposition:0018` for the ME/CFS trigger.
+*existence* premise of `proposition:0018` for the ME/CFS trigger [@Loebel2016].
 
 ## Why it is independent
 

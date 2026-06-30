@@ -34,7 +34,7 @@ profiles in **two PAIS arms under one standardized paired-site protocol at one c
 67% (long COVID) vs 53% (ME/CFS); reduced orthostatic CBFv 92% vs 88%; widespread autonomic failure
 95% vs 89%. This directly answers `evidence-line:0043`'s standing caveat that "convergence is of the
 finding, not of a standardized protocol" — here it **is** a standardized-protocol convergence,
-strengthening the *quality* (not the cohort count) of the P4 base.
+strengthening the *quality* (not the cohort count) of the P4 base [@Novak2026].
 
 ## Why it is independent
 
@@ -54,4 +54,4 @@ small-fiber substrate is **not exclusive to post-infectious syndromes**. This su
 convergent substrate of dysautonomia *broadly* rather than of PAIS *specifically*, and previews the
 `pre-registration:0003` "reverse/diagnostic surprise" branch (the specificity-vs-primary-dysautonomia
 contrast may be harder to win than lesion existence). Also: referral bias; QASAT metric (per
-`evidence-line:0063`); ME/CFS symptom duration longer (chronicity confound).
+`evidence-line:0063`); ME/CFS symptom duration longer (chronicity confound) [@Novak2026].

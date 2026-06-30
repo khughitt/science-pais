@@ -398,14 +398,14 @@ Even executed perfectly, this analysis cannot:
   pre-nominated set** (the primary-concordant pathways), not a genome-wide screen — at n=10 vs 10 an
   FDR floor would be empty for the same power reason ORA was demoted, falsely sinking everything to
   `exposure_confounded`. The **same-sign-NES** requirement is the direction lock that a bare p-value
-  lacks; nominal p<0.05 is the presence floor. (Rank-percentile and effect-size floors were considered
+  lacks; nominal `p < 0.05` is the presence floor. (Rank-percentile and effect-size floors were considered
   and rejected as less standard than fgsea's own p; this choice is locked, not adjudicated post-hoc.)
 
   **Concordance-carrying set (locked, set-level — replaces the gene-level "leading-edge" term).**
   Within one DB, the **concordance-carrying sets** are the primary-concordant sets (same-sign NES in
-  *both* PI-CFS-vs-HC and QFS-vs-HC) that are **nominally significant (fgsea p < 0.05) in both**
+  *both* PI-CFS-vs-HC and QFS-vs-HC) that are **nominally significant (`fgsea p < 0.05`) in both**
   contrasts. This is a well-defined **set list** (not a gene-level leading-edge); it is the
-  denominator for the `compartment_confounded` 50%-marker rule and the substrate for theme roll-up. If
+  denominator for the `compartment_confounded` `50%`-marker rule and the substrate for theme roll-up. If
   the concordance-carrying list is empty, `compartment_confounded` cannot fire (no sets to be
   marker-dominated) and the verdict proceeds to the specificity/DB steps.
 
@@ -500,7 +500,7 @@ compartment_marker_regex: 'MONOCYTE|MACROPHAGE|MYELOID|NEUTROPHIL|GRANULOCYTE|DE
 ```
 
 The firing rule is **set-level and fixed** (see *Concordance-carrying set*, below): `compartment_confounded`
-fires when **≥50% of the concordance-carrying sets** are compartment markers by this regex. It is
+fires when **`>=50%` of the concordance-carrying sets** are compartment markers by this regex. It is
 evaluated **before** specificity (resolution step 3 precedes steps 4–6) because a marker-dominated
 concordance is artifactual regardless of QFS-vs-QS behaviour.
 

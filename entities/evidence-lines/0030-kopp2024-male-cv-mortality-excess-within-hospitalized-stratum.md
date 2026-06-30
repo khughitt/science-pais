@@ -26,7 +26,7 @@ updated: "2026-06-23"
 
 ## What this line shows
 
-Kopp2024 follows **4,509 patients all hospitalized with moderate-to-severe SARS-CoV-2 pneumonia** for 18 months — a **severity-restricted (high-severity) stratum**. Within this stratum, men have higher 18-month cardiovascular mortality (Delta wave **6.13% vs 3.62%**, p=0.017) and a higher combined CV endpoint (16.87% vs 12.61%), and **male sex remains an independent predictor of 18-month CV death in multivariable Cox regression, HR 1.68 (95% CI 1.005–2.796), p=0.048**, after adjustment for age, BMI, and comorbidities. Because every patient is already hospitalized, the male excess here is *within* a controlled high-severity band — the complement to the ambulatory line (`evidence-line:0029`): the two together bracket the reversal across the low and high ends of the acute-severity range.
+Kopp2024 follows **4,509 patients all hospitalized with moderate-to-severe SARS-CoV-2 pneumonia** for 18 months — a **severity-restricted (high-severity) stratum**. Within this stratum, men have higher 18-month cardiovascular mortality (Delta wave **6.13% vs 3.62%**, p=0.017) and a higher combined CV endpoint (16.87% vs 12.61%), and **male sex remains an independent predictor of 18-month CV death in multivariable Cox regression, HR 1.68 (95% CI 1.005–2.796), p=0.048**, after adjustment for age, BMI, and comorbidities. Because every patient is already hospitalized, the male excess here is *within* a controlled high-severity band — the complement to the ambulatory line (`evidence-line:0029`): the two together bracket the reversal across the low and high ends of the acute-severity range [@Kopp2024].
 
 ## Why it is independent
 
@@ -34,4 +34,4 @@ A single-cohort multi-wave hospitalized registry with its own `independence_grou
 
 ## Caveats / scope
 
-`direct_test`, moderate: (1) **wave-heterogeneous** — the male excess is significant in the Delta wave only; Alpha and Omicron are null, so the effect is not stable across variants/eras. (2) The model did **not** adjust for within-hospital severity (ICU vs floor), so residual severity confounding inside the hospitalized band remains, though the cohort restriction already removes the ambulatory-vs-hospitalized contrast. (3) Single cohort, modest event counts (CI lower bound ~1.0); observational with sex as an adjusted covariate.
+`direct_test`, moderate: (1) **wave-heterogeneous** — the male excess is significant in the Delta wave only; Alpha and Omicron are null, so the effect is not stable across variants/eras. (2) The model did **not** adjust for within-hospital severity (ICU vs floor), so residual severity confounding inside the hospitalized band remains, though the cohort restriction already removes the ambulatory-vs-hospitalized contrast. (3) Single cohort, modest event counts (CI lower bound ~1.0); observational with sex as an adjusted covariate [@Kopp2024].

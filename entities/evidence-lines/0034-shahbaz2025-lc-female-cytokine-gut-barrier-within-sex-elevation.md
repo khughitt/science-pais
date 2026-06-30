@@ -33,14 +33,14 @@ enrichment). In the **within-sex** contrast, long-COVID females-vs-recovered-fem
 **gut-barrier** markers (I-FABP, LPS-BP, sCD14), and **Treg/CD39 depletion** that are weaker or not
 seen in the male contrast, while both sexes share the cortisol drop and terminal-effector T-cell
 expansion. This places a second, independent cohort behind the female-amplified inflammatory
-direction, using a sex-symmetric lab panel.
+direction, using a sex-symmetric lab panel [@Shahbaz2025].
 
 ## Why it is independent
 
 A distinct long-COVID cohort meeting CCC ME/CFS criteria (n=140) with its own `independence_group:
 shahbaz2025-lc-mecfs-cohort`, separate from the Aid2025 multi-omic cohorts (`evidence-line:0033`)
 and the MY-LC signature (`evidence-line:0035`). It extends the signal to a ME/CFS-like phenotype
-within long COVID; it does **not** establish generality to independent non-COVID ME/CFS cohorts.
+within long COVID; it does **not** establish generality to independent non-COVID ME/CFS cohorts [@Shahbaz2025].
 
 ## Caveats / scope
 
@@ -50,4 +50,4 @@ shared cortisol drop and the female-extra inflammation could be downstream of ch
 comparison; (3) like all lines here it does not test whether the operative variable is sex or
 testosterone level (that bound is `evidence-line:0035`); (4) "female-amplified inflammation" is an
 **activation/secretory** readout, not the functional NK-cytotoxicity endpoint that remains
-unstratified (a `proposition:0013` gap).
+unstratified (a `proposition:0013` gap) [@Shahbaz2025].

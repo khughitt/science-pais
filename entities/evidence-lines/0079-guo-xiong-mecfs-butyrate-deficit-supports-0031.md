@@ -30,7 +30,7 @@ updated: '2026-06-25'
 Guo2023 profiles 106 ME/CFS cases and 91 healthy controls with fecal shotgun metagenomics, functional
 metagenomics, qPCR, fecal SCFA metabolomics, network analysis, and clinical phenotyping. ME/CFS cases show
 reduced *Faecalibacterium prausnitzii* and *Eubacterium rectale*, confirmed deficient butyrate-producing
-capacity, and an inverse relationship between *F. prausnitzii* abundance and fatigue severity.
+capacity, and an inverse relationship between *F. prausnitzii* abundance and fatigue severity [@Guo2023].
 
 Xiong2023 adds a duration-stratified host-microbiome view: short-term ME/CFS shows stronger microbial
 dysbiosis, while long-term ME/CFS can have more severe clinical/metabolic abnormalities despite partial

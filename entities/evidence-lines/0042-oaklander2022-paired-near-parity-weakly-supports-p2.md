@@ -27,12 +27,12 @@ updated: '2026-06-24'
 
 In the same long-COVID cohort, Oaklander2022's paired distal + proximal biopsy showed **near-parity**
 (62.5% distal vs ~50% proximal biopsies abnormal), consistent with widespread / proximal small-fiber
-involvement — i.e. a non-length-dependent distribution. This gives weak support to `proposition:0015`.
+involvement — i.e. a non-length-dependent distribution. This gives weak support to `proposition:0015` [@Oaklander2022].
 
 ## Why it is independent
 
 **Not independent.** `independence: shared-source` — this line shares `independence_group:
-oaklander2022-inspire-longcovid-sfn` and the identical cohort with `evidence-line:0038`. The two lines
+oaklander2022-inspire-longcovid-sfn` and the identical cohort with the Oaklander2022 structural-lesion evidence line. The two lines
 are drawn from the same patients, so they cannot be counted as separate cohorts of support.
 
 ## Caveats / scope

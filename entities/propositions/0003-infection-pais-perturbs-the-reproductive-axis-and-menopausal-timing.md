@@ -39,7 +39,7 @@ Acute infection and/or the established PAIS state **perturbs the reproductive (H
 
 ## Evidence Summary
 
-The same cross-sectional associations that weakly support `proposition:0001` are **equally consistent with this reverse reading**: lower testosterone in female long-COVID (`paper:Silva2024`, `paper:Shahbaz2025`) could reflect LC-driven HPG-axis suppression rather than low pre-infection hormone predisposing to LC. `paper:Boneva2015` is a weak counterweight only for the surgical-timing subset: hysterectomy/oophorectomy preceded CFS onset in 71% of women with both dates, disputing a simple illness-driven account of that component (`evidence-line:0082`). It does not rule out PAIS-driven hormone-axis perturbation or natural-menopause timing shifts.
+The same cross-sectional associations that weakly support `proposition:0001` are **equally consistent with this reverse reading**: lower testosterone in female long-COVID (`paper:Silva2024`, `paper:Shahbaz2025`) could reflect LC-driven HPG-axis suppression rather than low pre-infection hormone predisposing to LC. `paper:Boneva2015` is a weak counterweight only for the surgical-timing subset: hysterectomy/oophorectomy preceded CFS onset in 71% of women with both dates, disputing a simple illness-driven account of that component (`evidence-line:0082`) [@Boneva2015]. It does not rule out PAIS-driven hormone-axis perturbation or natural-menopause timing shifts.
 
 ## Caveats
 

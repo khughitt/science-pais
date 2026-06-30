@@ -51,10 +51,10 @@ IMPACC study." IMPACC convalescent cohort, **n=513** hospitalized COVID-19 survi
 enrolled at 20 US hospitals, May 2020–March 2021; pre-Omicron, largely unvaccinated). Multiomics
 (plasma metabolomics, PBMC transcriptomics, Olink proteomics, CyTOF) reduced via **SPEAR**, a
 *supervised* dimensionality reduction, into a "recovery factor" discriminating minimal-deficit (MIN)
-from long-COVID (LC) participants.
+from long-COVID (LC) participants [@Gabernet2025].
 
-> **Provenance fix:** `report:0004` cited the "androgen-metabolite paper" as *"PMC12582403;
-> Nat. Commun. s41467-023-44090-5."* That DOI (`10.1038/s41467-023-44090-5`) actually belongs to
+> **Provenance fix:** `report:0004` cited the "androgen-metabolite paper" as *"`PMC12582403`;
+> Nat. Commun. `s41467-023-44090-5`."* That DOI (`10.1038/s41467-023-44090-5`) actually belongs to
 > **`paper:Ozonoff2024`** (the IMPACC PRO-phenotype paper, which reports FGF21 / B-cells /
 > methylhistidine-acylcarnitine modules — **no androgen metabolites**). PMC12582403 is a **distinct**
 > JCI 2025 paper. `report:0004`'s Sources line is corrected accordingly.

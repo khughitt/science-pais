@@ -30,7 +30,7 @@ Liu2022 followed 106 COVID-19 patients from admission to 6 months and compared 2
 metagenomic samples with 68 non-COVID controls. At 6 months, PACS cases retained an abnormal gut profile:
 higher *Ruminococcus gnavus* and *Bacteroides vulgatus*, lower *Faecalibacterium prausnitzii*, and inverse
 correlations between PACS and butyrate-producing bacteria such as *Bifidobacterium pseudocatenulatum* and
-*F. prausnitzii*. Patients without PACS moved back toward the non-COVID control microbiome profile.
+*F. prausnitzii*. Patients without PACS moved back toward the non-COVID control microbiome profile [@Liu2022].
 
 Su2023 extends the same CUHK long-COVID microbiome program to roughly 1 year after SARS-CoV-2 clearance,
 supporting durability beyond the 6-month window.

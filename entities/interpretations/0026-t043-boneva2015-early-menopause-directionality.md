@@ -33,7 +33,7 @@ relations:
 
 ## Verdict
 
-**[~] Partly informative, still non-adjudicating.** Boneva2015 should not be left as "purely reverse-causation ambiguous." The dated-surgery subset shows hysterectomy/oophorectomy preceded CFS onset in 71% of women with both dates, which weakly favors an antecedent gynecologic/surgical-menopause component over a blanket "CFS caused early menopause" explanation.
+**[~] Partly informative, still non-adjudicating.** Boneva2015 should not be left as "purely reverse-causation ambiguous." The dated-surgery subset shows hysterectomy/oophorectomy preceded CFS onset in 71% of women with both dates, which weakly favors an antecedent gynecologic/surgical-menopause component over a blanket "CFS caused early menopause" explanation [@Boneva2015].
 
 But the result is not a clean predisposition test. The strongest timing handle is surgical, not natural menopause; CFS onset is not infection onset; and gynecologic disease/surgery indications may be shared vulnerability, mediator, confounder, or ascertainment. The right graph disposition is weak proxy support for `proposition:0001` plus weak model criticism against the simplest reverse reading of `proposition:0003`, with no h0005 promotion.
 

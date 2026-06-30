@@ -26,7 +26,7 @@ relations: []
 
 **Verdict:** [~] Mixed/contested — one functional assay shows GPCR-autoantibody *activity* tracks
 orthostatic-symptom severity (Kharraziha2020, α1-AR, β=0.77, p=0.009), but the binding-ELISA basis is
-non-specific (Hall2022, 98% POTS vs 100% controls), the canonical β-adrenergic/muscarinic targets are
+non-specific (Hall2022, 98% POTS vs 100% controls) [@Kharraziha2020; @Hall2022], the canonical β-adrenergic/muscarinic targets are
 only weakly/contestedly supported, and **no study links anti-GPCR antibodies to the small-fiber lesion**.
 h0007 promotion criterion #2's *correlational* arm is **partially discharged for autonomic function
 only**; the antibody→IENFD/SGNFD-*lesion* bridge it ultimately needs remains entirely untested.
@@ -43,8 +43,8 @@ Four papers ingested (t006), coded as `evidence-line:0049`–`0052` against
 | Schmitz2026 (long COVID) | binding-inferred | anti-GPCR ↔ HRV/BP; **but in-vitro hiPSC-CM test null** | 0052 | supports / weak |
 | Hall2022 (POTS) | binding ELISA | 98% POTS / 100% HC seropositive; no group difference | 0051 | **disputes** / moderate (mechanism) |
 
-The decisive structural feature: **0049 (functional) and 0051 (binding-null) do not cancel** — they
-measure different things. Hall2022 removes binding-ELISA seroprevalence (0050, and the basis of much of
+The decisive structural feature: **the Kharraziha functional line and the Hall binding-null line do not cancel** — they
+measure different things. Hall2022 removes binding-ELISA seroprevalence (the Loebel line, and the basis of much of
 the field) from the ledger; it does **not** touch Kharraziha's functional-activity correlation. So the
 surviving support is narrow: *one* functional assay, on the *off-target* α1-AR (not β/M), in *POTS not
 PAIS*.

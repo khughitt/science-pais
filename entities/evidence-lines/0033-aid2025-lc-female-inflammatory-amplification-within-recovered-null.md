@@ -34,7 +34,7 @@ sex difference within the recovered (CC) control group**. The within-recovered n
 that argues against a simple carried-through baseline female-immune skew in this cohort, but it is
 not powered to exclude every baseline-carry explanation. The endpoints are lab-assayed
 (RNA-seq / proteomics) and applied symmetrically to both
-sexes, satisfying the ascertainment-symmetry requirement.
+sexes, satisfying the ascertainment-symmetry requirement [@Aid2025].
 
 ## Why it is independent
 

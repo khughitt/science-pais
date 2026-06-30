@@ -32,7 +32,7 @@ relations: []
 
 **[⌀] Non-adjudicating.** Neuhouser2024 corrects the prior wording that "even WHI did not analyze long COVID" because WHI now has a published long-COVID risk-factor analysis in postmenopausal women. But it does **not** become the first WHI-grade HRT-vs-long-COVID evidence-line: menopausal hormone therapy is not in the article text, not among the reported top-20 machine-learning predictors, and no HRT/MHT odds ratio or null estimate is reported.
 
-The residual uncertainty is narrower than before. The inaccessible Supplementary Table S1 prevents confirming whether MHT was in the 447-variable candidate pool and failed selection, or was never included. Either way, the published result is not an admissible HRT effect estimate.
+The residual uncertainty is narrower than before. The inaccessible Supplementary Table S1 prevents confirming whether MHT was in the 447-variable candidate pool and failed selection, or was never included [@Neuhouser2024]. Either way, the published result is not an admissible HRT effect estimate.
 
 ## Findings
 

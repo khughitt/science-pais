@@ -86,7 +86,7 @@ antibody **AER002** with no benefit on PROMIS-29 or any pre-specified endpoint (
 antigen-clearance assay was run, and baseline tissue antigen was scarce — gut-biopsy SARS-CoV-2 RNA in
 only 1/17). Two independent anti-antigen strategies (protease inhibitor + neutralizing mAb) thus fail
 in established long COVID — constraining, without refuting, the antigen-as-reversible-target hypothesis
-(`question:0002`).
+(`question:0002`) [@Geng2024; @Krumholz2024; @Bhattacharjee2026; @Peluso2026].
 
 **Antivirals / metabolic agents — testing *prevention* by reducing acute burden.** The one
 robustly positive RCT is metabolic, not antiviral: Bramante2023 (COVID-OUT) found outpatient
@@ -99,7 +99,7 @@ clinician-diagnosed long-COVID endpoint **was** significant (RR ≈0.50, 95% CrI
 direction as COVID-OUT but attenuated, plausibly because of lower baseline risk, high pre-immunity, and
 a milder variant rather than a true null. The replication is therefore **outcome-dependent**: it holds
 for the (weak) clinician-label endpoint and fails for the symptom-based endpoint — itself a lesson about
-endpoint choice. Yotsuyanagi2024 (SCORPIO-SR) reports a **post hoc** prevention subanalysis of the
+endpoint choice [@Bramante2023; @Bramante2026]. Yotsuyanagi2024 (SCORPIO-SR) reports a **post hoc** prevention subanalysis of the
 3CLpro inhibitor ensitrelvir: point-estimate risk reductions for post-COVID symptoms but all
 confidence intervals crossed zero (non-significant, exploratory). Together these populate
 `question:0012` (does reducing acute viral/inflammatory burden prevent PAIS?) with a partially-replicated
@@ -121,12 +121,12 @@ treated as established PAIS reversal.
 **B-cell depletion / autoantibody removal — testing autoimmunity.** Fluge2019 (RituxME; N=151,
 Canadian Consensus Criteria ME/CFS) is the definitive **negative** rituximab RCT (≈26% vs ≈35%
 response; p=0.22), overturning the same group's promising open-label phase-II results via a high
-placebo response — the project's canonical cautionary tale on uncontrolled-trial enthusiasm.
+placebo response — the project's canonical cautionary tale on uncontrolled-trial enthusiasm [@Fluge2019].
 Stein2025 (immunoadsorption; N=20 *prospective cohort, uncontrolled*) takes the complementary
 strategy of physically removing autoantibodies in a subgroup **pre-selected** for elevated
 β2-adrenergic-receptor autoantibodies: SF-36 physical function rose ~17.75 points (70%
 responders), sustained at 6 months — but autoantibody depletion was equal in responders and
-non-responders, weakening the simple "β2AR-AB drives symptoms" causal claim. Lesson for the
+non-responders, weakening the simple "β2AR-AB drives symptoms" causal claim [@Stein2025]. Lesson for the
 autoimmunity thread (`question:0009`): biomarker *stratification* may be essential, but
 uncontrolled designs systematically overstate effects (cf. RituxME).
 
@@ -140,7 +140,7 @@ with a registered RCT pending; vagal/neuromodulation is at pilot stage. For post
 malaise, **pacing** (energy management) is the leading non-pharmacologic strategy and is now
 standard of care, while **graded exercise therapy** is contested — the PACE trial's recovery
 claims were challenged on reanalysis, and post-2021 NICE guidance holds that PEM contraindicates
-incremental GET. (This pacing-vs-GET stance is recorded as decision **D-002** in `core/decisions.md`: pacing is the default activity-management frame and incremental GET is contraindicated wherever PEM is present.)
+incremental GET. (This pacing-vs-GET stance is recorded as decision **`D-002`** in `core/decisions.md`: pacing is the default activity-management frame and incremental GET is contraindicated wherever PEM is present.)
 
 ## Current State of Knowledge
 

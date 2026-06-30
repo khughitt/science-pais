@@ -31,7 +31,7 @@ started during acute infection reduced provider-diagnosed long COVID by ~41%** (
 0.15–0.95). Ivermectin and fluvoxamine in the same factorial design were null. This is strong RCT
 evidence that an **acute-phase intervention prevents PAIS** (the mechanism-agnostic claim of
 `proposition:0021`). It is only **weak/indirect** support for the **antigen-specific** reading — that
-reduced *antigen burden* is the operative lever — which is the part that would credit `hypothesis:0002`.
+reduced *antigen burden* is the operative lever — which is the part that would credit `hypothesis:0002` [@Bramante2023].
 
 ## Why it is independent
 

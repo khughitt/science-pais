@@ -38,7 +38,7 @@ peripheral-immune state; predicate = *is characterized by*; object = persistent 
 activation + dissociated (type-II up / type-I-effector down) IFN + CD8 exhaustion. This is the
 **descriptive-state conjunct** of `hypothesis:0003` — the loop's *inflammatory arm as observed*. It is
 deliberately *not* the causal-loop claim (that the activation and exhaustion are coupled and *drive*
-chronicity), which is carried separately by `proposition:0026` and is untested.
+chronicity), which is carried separately by `proposition:0026` and is untested [@Aid2025; @Ryan2022].
 
 The IFN dissociation is the resolution of the **Aid2025-vs-Ryan2022 tension** that `hypothesis:0003`
 flagged: the two findings are not contradictory because they index **different IFN arms, contrasts,
@@ -64,7 +64,7 @@ is no disputing line:
 ## Caveats
 
 Both sources are **observational**, modest-n, **pre-vaccination / pre-Omicron** cohorts (Aid2025
-discovery 72% unvaccinated, Ryan2022 entirely pre-vaccine), so generalizability to the current vaccinated/
+discovery 72% unvaccinated, Ryan2022 entirely pre-vaccine) [@Aid2025; @Ryan2022], so generalizability to the current vaccinated/
 Omicron LC population is unestablished. The two readouts are not strictly comparable: **PBMC** (Aid2025)
 vs **whole blood** (Ryan2022, granulocyte/platelet-rich); **GSEA pathway enrichment** (broad IFN-signaling
 machinery) vs **specific terminal ISG transcripts**; **LC-vs-recovered/healthy** (Aid2025) vs

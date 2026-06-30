@@ -31,7 +31,7 @@ deSa2026 is the **causal anchor**: total IgG purified from long-COVID patients, 
 intraperitoneally to mice, **reduces intraepidermal nerve-fiber volume/count (SFN)** vs healthy-donor
 IgG, in a **donor-symptom-matched pattern** (85–90% concordance for pain/dysautonomia donors). It
 elevates autoantibody → SFN from association to **in-vivo causation**, directly supporting
-`proposition:0016`. This is the one **experimental** identification in the batch.
+`proposition:0016`. This is the one **experimental** identification in the batch [@deSa2026].
 
 ## Why it is independent
 

@@ -25,7 +25,7 @@ updated: "2026-06-22"
 
 ## What this line shows
 
-Kwan2022 is the strongest controlled design ordering SARS-CoV-2 infection → new POTS diagnosis in time (large health-system EHR; vaccination cohort n≈284,592). It shows infection genuinely **raises POTS incidence** (infection→POTS odds 2.11 [1.70–2.63]; vaccination→POTS 1.52 [1.36–1.71]; infection-vs-vaccination RR 5.35 [5.05–5.68]). Critically for `proposition:0009`, its **sex-stratified analyses are "similar between sexes,"** and the POTS-affected subgroup is **59% female ≈ the 57% cohort baseline** — the incidence rises without the sex distribution shifting, i.e. the female skew is the pre-existing POTS demographic carried through, not an infection-specific sex amplification.
+Kwan2022 is the strongest controlled design ordering SARS-CoV-2 infection → new POTS diagnosis in time (large health-system EHR; vaccination cohort n≈284,592). It shows infection genuinely **raises POTS incidence** (infection→POTS odds 2.11 [1.70–2.63]; vaccination→POTS 1.52 [1.36–1.71]; infection-vs-vaccination RR 5.35 [5.05–5.68]). Critically for `proposition:0009`, its **sex-stratified analyses are "similar between sexes,"** and the POTS-affected subgroup is **59% female ≈ the 57% cohort baseline** — the incidence rises without the sex distribution shifting, i.e. the female skew is the pre-existing POTS demographic carried through, not an infection-specific sex amplification [@Kwan2022].
 
 ## Why it is independent
 

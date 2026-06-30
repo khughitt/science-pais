@@ -99,6 +99,7 @@ The strongest single vehicle, and the only candidate that can plausibly carry th
 test. **AMH is already in the protocol** (Tier 2, added v3.0) — the one staging analyte UKB lacks.
 **PEM is the second-highest-weighted symptom** in the validated Thaweethai 2023 PASC index (~87% of
 PASC-positive participants), so the in-scope PEM-stratified failed-recovery outcome is best-in-class.
+This supports RECOVER-Adult as the strongest available PEM-weighted outcome vehicle [@Thaweethai2023].
 Mediators span all three families: Tier-1 D-dimer/troponin/NT-proBNP/ECG (endothelial/thrombo-
 inflammatory) and Tier-1 10-min active stand + Tier-3 tilt-table/catecholamine (autonomic), plus a
 12-task-force pathobiology program (cytokines, autoantibodies, antigen persistence) on banked
@@ -114,7 +115,7 @@ reproducible-from-public-data.
 
 ### Tier 2 — only candidate that can break reverse causation: All of Us
 
-Uniquely pairs (a) **uncensored** sex hormones — real EHR clinical labs, no UKB 175 pmol/L ceiling, no
+Uniquely pairs (a) **uncensored** sex hormones — real EHR clinical labs, no UKB 175 pmol/L ceiling [@TinTin2021], no
 missing-FSH/AMH-by-design — with (b) **pre-pandemic enrolment + EHR backfill** (potential within-person
 pre→post-infection trajectories) and (c) **strong dual-source reproductive staging** (survey + EHR,
 ~396k women characterized) and (d) a genuine autonomic stream (Fitbit RMSSD HRV). On paper this is the
@@ -126,7 +127,7 @@ non-random and likely thin in exactly the peri-/post-menopausal women of interes
 selection-into-measurement as a mediation confounder. There is **no systematic cytokine/IFN/auto-
 antibody panel** and **no documented PEM** capture. Feasibility hinges on per-analyte coverage counts
 **that can only be resolved by querying the Researcher Workbench Data Browser** — an empirical
-precondition, not answerable from public docs.
+precondition, not answerable from public docs [@TinTin2021].
 
 ### Tier 3 — secondary corroboration only: IMPACC
 

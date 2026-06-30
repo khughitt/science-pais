@@ -34,7 +34,7 @@ against a pan-PAIS autoimmune causation, disputing `proposition:0016`.
 **Not independent.** `independence: shared-source` — this line shares `independence_group:
 walitt2024-nih-pimecfs` and the same NIH cohort with `evidence-line:0040`. The autoantibody null and
 the small-fiber-density null are drawn from the same patients and cannot be counted as separate
-cohorts of dispute.
+cohorts of dispute [@Walitt2024].
 
 ## Caveats / scope
 

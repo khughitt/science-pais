@@ -26,7 +26,7 @@ updated: "2026-06-20"
 
 WP4–WP5 are functionally correct and the science framing is sound: the near-zero
 filter's "derive, don't guess" bimodality guard did real work (derived τ=−5.567,
-not the superseded fixed −7.0), and the DE stage correctly treats per-gene limma
+not the superseded fixed `-7.0`), and the DE stage correctly treats per-gene limma
 as *rank input* for GSEA rather than as a verdict — appropriate given the
 pilot-grade RNA-seq power. One **High** correctness bug (rounding the verdict-
 bearing moderated-t before fgsea) plus a **Medium** staleness risk and a **Low**

@@ -32,7 +32,7 @@ skin biopsies (ENFD + SGNFD, PGP9.5/Therapath) to the largest PAIS biopsy series
 **long COVID n=143, ME/CFS n=170**, healthy controls n=73. Biopsy-confirmed SFN was **67.2% (long
 COVID)** and **52.6% (ME/CFS)** versus **0% in controls** (91.4% / 82.9% when combined with
 electrochemical skin conductance). A real, objectively measured peripheral small-fiber lesion is present
-in a substantial subset of both PAIS arms — directly supporting `proposition:0014`.
+in a substantial subset of both PAIS arms — directly supporting `proposition:0014` [@Novak2026].
 
 ## Why it is independent
 

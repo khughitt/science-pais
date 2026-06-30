@@ -57,7 +57,7 @@ Conceptual-mode assessment (reasoning quality / grounding / independence / testa
 
 ## Data Quality Checks
 
-Not a data pipeline. The relevant checks are entity-provenance: McGregor2019 ingested from Europe PMC full text; Gattoni2025 from Europe PMC abstract only (methods/CIs `[INACCESSIBLE]` — flagged in the entity); Keller2014 and Appelman2024 pre-existing full-text entities. No control/dimensionality/sample-count checks apply.
+Not a data pipeline. The relevant checks are entity-provenance: McGregor2019 ingested from Europe PMC full text; Gattoni2025 from Europe PMC abstract only (methods/CIs inaccessible in the available source — flagged in the entity); Keller2014 and Appelman2024 pre-existing full-text entities. No control/dimensionality/sample-count checks apply.
 
 ## Proposition-Level Updates
 

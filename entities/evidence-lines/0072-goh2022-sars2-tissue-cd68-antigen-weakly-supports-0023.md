@@ -30,7 +30,7 @@ updated: '2026-06-25'
 Goh2022 reports two long-COVID patients whose tissue samples contained residual SARS-CoV-2 nucleocapsid
 protein and viral RNA **163 and 426 days** after symptom onset. Multiplex immunohistochemistry detected
 nucleocapsid protein in appendix, skin, and breast tissue, and the nucleocapsid signal co-localized with
-the macrophage marker **CD68**. Both patients had negative nasopharyngeal PCR at sampling.
+the macrophage marker **CD68**. Both patients had negative nasopharyngeal PCR at sampling [@Goh2022].
 
 This is a direct, human, non-Borrelia tissue result and therefore weakly supports the tissue/macrophage
 part of `proposition:0023`: the fragment-reservoir architecture is not confined to the McClune2025

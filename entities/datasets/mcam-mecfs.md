@@ -21,6 +21,8 @@ related:
   - question:0007-mechanism-of-female-predominance-in-pais
   - topic:shared-failure-mode-across-pais
   - question:0014-which-pais-case-definition-is-most-biologically-coherent
+source_refs:
+  - cite:Unger2017
 ---
 
 # MCAM — Multi-Site Clinical Assessment of ME/CFS (CDC)
@@ -33,6 +35,7 @@ searchMECFS / MapMECFS application.
 Best-characterized US ME/CFS cohort (Stage 1 ~471 ME/CFS + matched controls) with standardized
 **fatigue + mood instruments** and biospecimens. Strong female predominance (~3–4:1) typical of ME/CFS.
 (The UK ME/CFS Biobank, LSHTM, is an analogous gated option for sex-rich omics.)
+See Unger et al. and the [searchMECFS MCAM study page](https://searchmecfs.org/Home/Studies) for access context [@Unger2017].
 
 ## Why it fits t013
 

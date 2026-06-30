@@ -30,7 +30,7 @@ PASC (n=155, median 17.5 months post-infection), was **null** on its primary 6-s
 10 weeks and on all PROMIS secondaries (physical P=.66, fatigue P=.79, dyspnea P=.70, cognition P=.98),
 and was stopped early for futility. If residual replicating antigen drove symptoms and NMV/r cleared it,
 benefit was expected; none appeared. This **weakly disputes** `proposition:0020` (antigen clearance
-rescues established-disease symptoms).
+rescues established-disease symptoms) [@Geng2024].
 
 ## Why it is independent
 
@@ -47,4 +47,4 @@ requires. Further bounded by: 15-day course (possibly too short / poor tissue pe
 ~99% vaccinated cohort; partial unmasking via dysgeusia (61.8% vs 7.5%); long COVID only. Per
 `discussion:0003`, this null **does not refute antigen persistence** (`hypothesis:0002`) — a drug that
 did not demonstrably clear antigen cannot test whether clearing antigen helps. Consistent with the
-`proposition:0021` fixed-risk-factor reconciliation.
+`proposition:0021` fixed-risk-factor reconciliation [@Geng2024].

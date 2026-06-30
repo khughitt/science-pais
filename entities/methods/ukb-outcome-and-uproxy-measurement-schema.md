@@ -52,7 +52,7 @@ precedent shows this is **too pessimistic**: AlcaldeHerraiz2025 built its primar
 outcome from the **UKB Health and Well-Being online questionnaire** — a self-report
 instrument with **45 COVID-related symptom questions**, completed by **~201,684
 participants (June 2022–May 2023)**, mapped to the **WHO Delphi consensus** long-COVID
-symptom list. Notably, that study **did not use U09.9 or GP linkage at all** for LC.
+symptom list [@AlcaldeHerraiz2025]. Notably, that study **did not use U09.9 or GP linkage at all** for LC.
 
 So UKB offers **two structurally different outcome routes**, with different selection
 and ascertainment properties — and using **both** is the design's main credibility

@@ -25,7 +25,7 @@ updated: "2026-06-22"
 
 ## What this line shows
 
-In a long-COVID clinic cohort (n=322, 73% female), Eldokla2022 measured autonomic symptom burden with COMPASS-31 and found **no sex difference** when burden is treated continuously (male total 28.0 vs female 26.5, p=0.937) or at threshold (≥16.4: 77.0% vs 76.6%, p=0.938). If post-infectious dysautonomia amplified the female burden *per patient*, COMPASS-31 should be higher in women; it is not. This supports `proposition:0009`'s reading that the female skew is in *who receives a POTS diagnosis* (baseline demographics + referral), not in sex-differentiated autonomic severity.
+In a long-COVID clinic cohort (n=322, 73% female), Eldokla2022 measured autonomic symptom burden with COMPASS-31 and found **no sex difference** when burden is treated continuously (male total 28.0 vs female 26.5, p=0.937) or at threshold (≥16.4: 77.0% vs 76.6%, p=0.938). If post-infectious dysautonomia amplified the female burden *per patient*, COMPASS-31 should be higher in women; it is not. This supports `proposition:0009`'s reading that the female skew is in *who receives a POTS diagnosis* (baseline demographics + referral), not in sex-differentiated autonomic severity [@Eldokla2022].
 
 ## Why it is independent
 
@@ -33,4 +33,4 @@ A separate single-center cross-sectional cohort (Assiut, Egypt; Delta era) with 
 
 ## Caveats / scope
 
-`proxy_support`, **weak**: COMPASS-31 is a **self-report** instrument, so a sex-null on it cannot exclude sex-differentiated *reporting* offsetting sex-differentiated biology; single-center, clinic-referred, Delta-era Egyptian sample limits generalizability; the GI-dominant domain pattern (91.6%) is atypical. It is a direct sex comparison but on a subjective measure — direction-consistent corroboration, not a quantitative anchor.
+`proxy_support`, **weak**: COMPASS-31 is a **self-report** instrument, so a sex-null on it cannot exclude sex-differentiated *reporting* offsetting sex-differentiated biology; single-center, clinic-referred, Delta-era Egyptian sample limits generalizability; the GI-dominant domain pattern (91.6%) is atypical [@Eldokla2022]. It is a direct sex comparison but on a subjective measure — direction-consistent corroboration, not a quantitative anchor.

@@ -26,6 +26,7 @@ updated: "2026-06-22"
 ## What this line shows
 
 Cheetham2023 is the strongest controlled-longitudinal design for **objective** cognition in long COVID (online battery, n≈3,335, with controls). The objective accuracy deficit scales with **ongoing-symptom status** (largest for ≥12-week non-recovered, β≈−0.22 SD vs asymptomatic controls), is **absent in the fully recovered**, and persists to ~2 years; **sex enters only as a non-significant adjustment covariate**. This constrains `proposition:0010` by establishing that the objective deficit is real and explained by symptom-status rather than sex — the backdrop against which the female excess appears only in the subjective channel.
+Cheetham2023 is the strongest controlled-longitudinal design for **objective** cognition in long COVID (online battery, n≈3,335, with controls). The objective accuracy deficit scales with **ongoing-symptom status** (largest for ≥12-week non-recovered, β≈−0.22 SD vs asymptomatic controls), is **absent in the fully recovered**, and persists to ~2 years; **sex enters only as a non-significant adjustment covariate**. This constrains `proposition:0010` by establishing that the objective deficit is real and explained by symptom-status rather than sex — the backdrop against which the female excess appears only in the subjective channel [@Cheetham2023].
 
 ## Why it is independent
 

@@ -72,7 +72,7 @@ distal-only) is structurally blind to it; where assessed the support is off-targ
 post-*vaccine*) or group-level (Oaklander2022, Novak2026), so the **well_supported** grade overstates what
 paired-site, per-subject, post-infectious measurement has shown. This is the same modality/scoring-breadth
 mechanism as the SFN-prevalence 0%→91% swing in `interpretation:0014` (M2's flagship instance), applied to
-spatial *pattern*. `pre-registration:0003` is the formal h0007/P2 adjudicator for this proposition.
+spatial *pattern* [@Novak2026]. `pre-registration:0003` is the formal h0007/P2 adjudicator for this proposition.
 
 ## Measurement Model
 

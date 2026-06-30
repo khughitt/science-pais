@@ -133,7 +133,7 @@ This preprint from the Illinois Research Network (ILLInet) RECOVER Hub reports a
 
 8. **Preprint; not peer reviewed.** Evidence level is preliminary pending peer review.
 
-9. **EBV reactivation confound.** The discussion raises EBV as a possible contributor to the LIF/IL-11 cytokine pattern and mucosal Ig signature, but EBV serology or reactivation markers were not measured, leaving this as [SPECULATION].
+9. **EBV reactivation confound.** The discussion raises EBV as a possible contributor to the LIF/IL-11 cytokine pattern and mucosal Ig signature, but EBV serology or reactivation markers were not measured, leaving this as speculative.
 
 ## Model / Tool Availability
 

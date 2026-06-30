@@ -25,7 +25,7 @@ updated: "2026-06-22"
 
 ## What this line shows
 
-Bland2024 (n=162; post-COVID syndrome vs recovered vs infection-naïve) found subjective and objective cognition **uncorrelated** (CFQ↔Cognitron r≈−0.07, p=0.161). The **subjective** complaint lost COVID-group significance once fatigue and stress were covaried (F=0.56, p=0.575), whereas the **objective** deficit remained COVID-linked (F=4.61, p=0.011). This independently corroborates the channel structure in `proposition:0010`: the self-report complaint is carried by affect/fatigue while the objective deficit tracks the exposure.
+Bland2024 (n=162; post-COVID syndrome vs recovered vs infection-naïve) found subjective and objective cognition **uncorrelated** (CFQ↔Cognitron r≈−0.07, p=0.161). The **subjective** complaint lost COVID-group significance once fatigue and stress were covaried (F=0.56, p=0.575), whereas the **objective** deficit remained COVID-linked (F=4.61, p=0.011). This independently corroborates the channel structure in `proposition:0010`: the self-report complaint is carried by affect/fatigue while the objective deficit tracks the exposure [@Bland2024].
 
 ## Why it is independent
 

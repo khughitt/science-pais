@@ -18,7 +18,7 @@ orphan_ids: ["question:0005-latent-to-overt-autoimmunity-conversion"]
 Four questions show cross-hypothesis reach at confidence `inverse`, `back-inverse`, or `transitive`
 across at least two distinct hypotheses.
 
-**question:0009-functional-autoantibodies-drive-dysautonomia** resolves primarily to
+**`question:0009-functional-autoantibodies-drive-dysautonomia`** resolves primarily to
 `hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate` and carries a back-inverse link to
 `hypothesis:0001-shared-dysregulated-attractor`. The cross-cutting nature is significant: functional
 GPCR autoantibodies are both a candidate mechanism for the autonomous peripheral-neuropathy substrate
@@ -28,7 +28,7 @@ frame. The assay-dependent evidence split — functional-assay correlations surv
 while binding-ELISA seropositivity does not discriminate (Hall2022) — means the cross-hypothesis
 reach tracks different evidence standards than either hypothesis alone requires.
 
-**question:0011-mitochondrial-basis-of-pem** resolves primarily to
+**`question:0011-mitochondrial-basis-of-pem`** resolves primarily to
 `hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem` and carries a back-inverse link to
 `hypothesis:0001-shared-dysregulated-attractor`. It sits at the seam between a focal muscle-ischemia
 account and the shared-attractor account: if the mitochondrial deficit is confined to skeletal muscle
@@ -36,7 +36,7 @@ under ischemic microclot load, h0006 is confirmed; if it is systemic (metabolic 
 immune cells), it feeds into h0001. The two hypotheses make different predictions on whether
 mitochondrial dysfunction normalises with microclot clearance or persists independently.
 
-**question:0007-mechanism-of-female-predominance-in-pais** resolves primarily to
+**`question:0007-mechanism-of-female-predominance-in-pais`** resolves primarily to
 `hypothesis:0005-reproductive-stage-immune-homeostatic-margin` with a transitive link to
 `hypothesis:0004-acute-severity-threshold`. The male-biased reversal on cardiovascular hard endpoints
 (`interpretation:0005-t042-vascular-male-reversal-survives-severity-adjustment`,
@@ -45,7 +45,7 @@ severity-threshold account into the same explanatory space as the sex-hormone ac
 female fatigue excess and the male vascular excess are co-present in the same post-acute window and
 require both hypotheses to be explained.
 
-**question:0019-male-biased-vascular-signal-pasc-persistence** resolves primarily to
+**`question:0019-male-biased-vascular-signal-pasc-persistence`** resolves primarily to
 `hypothesis:0004-acute-severity-threshold` and also reaches
 `hypothesis:0005-reproductive-stage-immune-homeostatic-margin`. It bridges these two hypotheses by
 asking whether the male post-acute cardiovascular excess (documented in Kopp2024 at 18 months within
@@ -62,7 +62,7 @@ hypotheses simultaneously.
 
 Total: **1**
 
-**question:0005-latent-to-overt-autoimmunity-conversion** asks what fraction of post-infectious
+**`question:0005-latent-to-overt-autoimmunity-conversion`** asks what fraction of post-infectious
 latent autoimmunity converts to overt autoimmune disease over a 5–10 year horizon and which
 autoantibody subsets (particularly anti-cytokine/anti-IFN specificities) mark the highest-risk
 patients. The resolver assigns no hypothesis because no current hypothesis frames the *longitudinal
@@ -72,7 +72,7 @@ stratification; the remaining hypotheses operate on mechanism rather than progno
 home topic is `topic:post-infectious-dysautonomia-and-autoimmunity`, where Rojas2022 (83% latent
 autoimmunity, only ~3% with overt disease at 7 months) and Sharma2023 (elevated new-onset
 autoimmune-disease hazard ratios in large retrospective cohorts) establish the phenomenon without
-resolving the conversion trajectory. What would give this question a hypothesis home: a formal
+resolving the conversion trajectory [@Rojas2022; @Sharma2023]. What would give this question a hypothesis home: a formal
 hypothesis that "post-infectious immune-set-point shift in a minority subset results in clinical
 autoimmune conversion over years, with anti-cytokine autoantibody breadth as the stratifying
 predictor" — extending h0001 into the longitudinal autoimmune-prognosis domain.
@@ -98,7 +98,7 @@ Rojas2022's near-universal latent autoimmunity and the unexplained gap between 8
 prevalence and ~3% overt disease at 7 months is precisely the unhoused empirical kernel. A candidate
 hypothesis: "In a minority post-infectious subset, latent autoimmunity reflects durable immune
 reprogramming rather than a transient mimicry response, with anti-cytokine/anti-IFN autoantibody
-breadth predicting clinical conversion over a multi-year horizon." Promoting this to a formal
+breadth predicting clinical conversion over a multi-year horizon" [@Rojas2022]. Promoting this to a formal
 hypothesis would require a long-term prospective cohort design and would pull in Sharma2023, Rojas2022,
 and Ciaffi2023 as founding evidence lines.
 
@@ -114,4 +114,4 @@ heterogeneity. This pattern recurs across cognition (`proposition:0010`), PEM en
 channel axis as an explicit methodological hypothesis — "apparent group or cross-trigger differences
 in PAIS phenotypes will preferentially concentrate in self-report or referral-enriched channels and
 attenuate or reverse under objective, trigger-matched measurement" — would give it testable content
-and prevent downstream over-interpretation of new signals before ascertainment is controlled.
+and prevent downstream over-interpretation of new signals before ascertainment is controlled [@Walitt2024; @Novak2026; @Oaklander2022; @Joseph2021].

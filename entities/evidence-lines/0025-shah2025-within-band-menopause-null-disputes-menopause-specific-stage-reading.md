@@ -28,7 +28,7 @@ updated: "2026-06-25"
 
 ## What this line shows
 
-Shah2025 is the only PAIS study that breaks the age/menopause collinearity *within* an age band. At ages 40–54 the female long-COVID excess is **near-identical** in menopausal (RR ≈ 1.42, 95% CI 0.99–2.03) and nonmenopausal (RR ≈ 1.45, 1.15–1.83) women. So the midlife female peak that `evidence-line:0001` reads as *supporting* `proposition:0001` is **age-linked, not attributable to menopausal status per se** — weak evidence *against* a **menopause-status-specific** mechanism for the reproductive-stage threshold (it favours an age/immunosenescence account over a menopausal-transition one). This is the machine-readable counterweight to `evidence-line:0001`'s age-band support.
+Shah2025 is the only PAIS study that breaks the age/menopause collinearity *within* an age band. At ages 40–54 the female long-COVID excess is **near-identical** in menopausal (RR ≈ 1.42, 95% CI 0.99–2.03) and nonmenopausal (RR ≈ 1.45, 1.15–1.83) women. So the midlife female peak that `evidence-line:0001` reads as *supporting* `proposition:0001` is **age-linked, not attributable to menopausal status per se** — weak evidence *against* a **menopause-status-specific** mechanism for the reproductive-stage threshold (it favours an age/immunosenescence account over a menopausal-transition one). This is the machine-readable counterweight to `evidence-line:0001`'s age-band support [@Shah2025].
 
 ## Why it is grouped with the supporting line
 

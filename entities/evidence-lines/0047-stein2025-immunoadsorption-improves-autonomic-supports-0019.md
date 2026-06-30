@@ -33,7 +33,7 @@ autoantibody-elevated post-COVID ME/CFS (n=20). **70% responders** on SF-36 Phys
 COMPASS-31 autonomic symptoms improved (orthostatic / secretomotor / GI sub-domains; **mean −12.23
 pts, p=0.001**), **sustained to 6 months**; re-treatment re-improved relapsers. This is
 interventional support that lowering antibody burden improves the autonomic trajectory, supporting
-`proposition:0019`.
+`proposition:0019` [@Stein2025].
 
 ## Why it is independent
 
