@@ -24,6 +24,8 @@ related:
   - hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
   - question:0007-mechanism-of-female-predominance-in-pais
   - dataset:n3c-recover-longcovid
+  - interpretation:0031-t079-n3c-vs-opensafely-vehicle-decision
+  - interpretation:0032-t079-bc3-autoimmune-stratum-granularity
 source_refs:
   - cite:Williamson2020
   - cite:Andrews2022
@@ -58,7 +60,7 @@ Per `plan:0005`'s admissibility gates:
 |---|---|---|
 | Population-based sampling (h0008) | **strong** | GP registration ≈ whole-population England — the platform's headline advantage |
 | Dated pre-index autoimmune diagnosis (BC-3) | **strong** | OpenCodelists SNOMED lists with real primary-care event dates (not billing proxies) |
-| Autoimmune stratum granularity (BC-3) | **good, partly unverified** | RA/SLE, IBD, MS codelists confirmed; Sjögren/vasculitis/myositis/autoimmune-thyroid [UNVERIFIED] |
+| Autoimmune stratum granularity (BC-3) | **good — 7.5/8 confirmed** (`interpretation:0032`) | RA/SLE/IBD/MS confirmed; Sjögren (`sjogrens_cod`), myositis (`myositis_cod`), vasculitis (subtype union: `gca_cod`/`wegenervasc_cod`/`polyarteritis_cod`/`takayasuart_cod`/`cryoglobvasc_cod`) now confirmed as official NHSD SNOMED refsets; autoimmune-thyroid **partial** — Graves (`gravesdis_cod`) clean, no autoimmune-*hypo*thyroid refset (only all-cause `thy_cod`) |
 | Dated infection index + acute severity (BC-6) | **strong** | SGSS test dates; SUS/HES + ECDS + ICNARC dated admissions/ICU |
 | Individual-level utilisation (BC-7) | **strong** | per-patient GP-consultation counts via ehrQL `clinical_events` / consultations |
 | Computable PASC outcome (BC-5) | **weak — the binding limitation** | SNOMED long-COVID codes exist but are **severely under-recorded and differentially so** |
@@ -110,5 +112,7 @@ utilisation adjustment and negative-control/quantitative-bias analysis.
 ## Related
 
 - Article notes: `paper:Hill2022` (the N3C substrate this replicates), `dataset:n3c-recover-longcovid`.
-- Open items: verify Sjögren / vasculitis / myositis / autoimmune-thyroid codelists on
-  opencodelists.org; confirm EMIS reopening timeline.
+- Open items: **BC-3 codelist verification RESOLVED 2026-07-01 (`interpretation:0032`)** —
+  Sjögren/myositis/vasculitis confirmed as NHSD SNOMED refsets; only the **autoimmune-*hypo*thyroid**
+  granularity (no autoimmune-specific refset; all-cause `thy_cod` only) and the **EMIS reopening
+  timeline** remain open.

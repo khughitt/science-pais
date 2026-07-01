@@ -23,6 +23,7 @@ related:
   - dataset:recover-adult
   - dataset:uk-biobank-covid
   - interpretation:0031-t079-n3c-vs-opensafely-vehicle-decision
+  - interpretation:0032-t079-bc3-autoimmune-stratum-granularity
 skills_loaded:
   - id: statistics-bias-vs-variance-decomposition
     reason: the dominant error term is differential ascertainment / confounding (both exposure and outcome are female-predominant and healthcare-contact-intensive), which does not shrink with sample size and must be separated from sampling variance
@@ -343,8 +344,19 @@ gates the eventual data-gated pre-registration will reference by name.
   differentially under-recorded. All of Us = diverse triangulation.
 - **BC-2 — Access verification.** Resolve the access path for the chosen vehicle (N3C
   enclave DUA / OpenSAFELY approval / All-of-Us Workbench); prototype on N3C synthetic tier.
-- **BC-3 — Autoimmune stratum granularity.** Verify the vehicle resolves disease-specific
-  strata with dated pre-index onset (fixes Hill's pooled-Charlson gap).
+- **BC-3 — Autoimmune stratum granularity. ✅ LARGELY RESOLVED 2026-07-01
+  (`interpretation:0032`).** Both vehicles resolve all 8 disease-specific strata with dated
+  pre-index onset (fixes Hill's pooled-Charlson gap): N3C via OMOP concept sets (SLE/RA/Crohn's/UC
+  = OHDSI Phenotype Library cohorts #119/#196/#198/#201; rest author-built from SNOMED),
+  OpenSAFELY via NHSD SNOMED refsets (Sjögren/myositis/vasculitis-subtype-union now confirmed).
+  **Residuals:** (a) **autoimmune-thyroid** is the convergent weak stratum — isolable Graves but
+  not autoimmune-*hypo*thyroid in either coding system → conservative Graves+Hashimoto-specific
+  primary definition + all-cause-inclusive sensitivity stratum; (b) OMOP concept_ids unverified
+  (→ `task:t081`); (c) three a-priori scoping decisions to pre-register (vasculitis union,
+  autoimmune-thyroid specific-primary, myositis exclusions). Pooling hierarchy assigned:
+  systemic-rheumatic {SLE, RA, Sjögren, vasculitis, myositis} / organ-specific {IBD, MS,
+  autoimmune-thyroid} / genetic-risk-only tier is **not EHR-resolvable** (genotype modality,
+  belongs to `question:0005`). Cell counts are BC-4, not BC-3.
 - **BC-4 — Sex-interaction support.** Confirm sex × stratum × PASC cell counts clear the
   power floor for at least the systemic-rheumatic and organ-specific groups.
 - **BC-5 — PASC case definition.** Lock which computable PASC definition the vehicle

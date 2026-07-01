@@ -21,6 +21,7 @@ related:
   - task:t079
   - plan:0005-autoimmune-diathesis-sex-modifier-pais-analysis-plan
   - interpretation:0031-t079-n3c-vs-opensafely-vehicle-decision
+  - interpretation:0032-t079-bc3-autoimmune-stratum-granularity
   - dataset:opensafely-longcovid
   - question:0007-mechanism-of-female-predominance-in-pais
   - question:0003-acute-severity-threshold-for-self-sustaining-pais
@@ -61,3 +62,11 @@ no patient-reported fatigue severity. Single trigger.
 - 2026-07-01 (agent): consumed by `plan:0006-n3c-synthetic-prototype-autoimmune-sex-pais-pipeline`
   (t079/BC-2) — **open synthetic slice only**; the de-identified/Limited enclave siblings remain
   out of scope pending DUA. Locked as primary vehicle by `interpretation:0031`.
+- 2026-07-01 (agent, BC-3 / `interpretation:0032`): autoimmune-stratum granularity confirmed —
+  all 8 disease-specific strata constructible as OMOP concept sets (fixes Hill's pooled-Charlson
+  gap). SLE/RA/Crohn's/UC have curated **OHDSI Phenotype Library** cohorts (#119/#196/#198/#201);
+  MS/Sjögren/vasculitis/myositis/autoimmune-thyroid are author-buildable from standard SNOMED
+  disorders (unvalidated → clinical-review pass before a real estimate). Specific OMOP concept_ids
+  **[UNVERIFIED]** (ATHENA API 403) — confirm under `task:t081`. A-priori scoping needed for
+  vasculitis (family vs subtype), autoimmune-thyroid (exclude all-cause hypothyroidism E03), and
+  myositis (exclude drug-induced/paraneoplastic).

@@ -13,6 +13,7 @@ related:
   - task:t081
   - task:t082
   - interpretation:0031-t079-n3c-vs-opensafely-vehicle-decision
+  - interpretation:0032-t079-bc3-autoimmune-stratum-granularity
   - dataset:n3c-recover-longcovid
   - dataset:n3c-recover-longcovid-synthetic
   - paper:Hill2022
@@ -210,11 +211,17 @@ until both are settled.
      OMOP `CONCEPT`/`CONCEPT_ANCESTOR` vocabulary (the portable, meaningful check). A
      synthetic-data **patient-hit count** is recorded as a smoke test only and is **explicitly
      allowed to be zero** for rare strata — a zero is not a WP1 failure.
-  2. **Confirmed vs BC-3-gated strata (F4):** SLE/RA/IBD/MS ship as **draft** lists; the four
-     unconfirmed strata (Sjögren, vasculitis, myositis, autoimmune-thyroid) are **stubs marked
-     `bc3_gated: true`** in `BUNDLE.lock`, not claimed complete. Bundle `status: draft-unreviewed`.
-  3. Bundle loads and is immutable-by-checksum. **Clinical sign-off is BC-3**, gating use for a
-     real estimate — not prototyping.
+  2. **Confirmed vs BC-3-gated strata (F4) — updated by `interpretation:0032` (2026-07-01):**
+     BC-3 vocabulary verification is done — SLE/RA/IBD/MS **and** Sjögren/vasculitis/myositis now
+     ship as **draft-confirmed** lists (OHDSI Phenotype Library cohorts #119/#196/#198/#201 for the
+     first four; author-built-from-SNOMED for the next three). **Autoimmune-thyroid** stays flagged
+     `bc3_gated: true` with the specific-vs-all-cause fork recorded in `BUNDLE.lock`. Three a-priori
+     scoping decisions (vasculitis union, autoimmune-thyroid specific-primary, myositis exclusions)
+     carried as bundle metadata. Bundle `status: draft-unreviewed`.
+  3. Bundle loads and is immutable-by-checksum. **Clinical sign-off (a real-estimate gate, not a
+     prototyping gate) is BC-3's remaining step** — the five author-built N3C strata (MS, Sjögren,
+     vasculitis, myositis, autoimmune-thyroid) still need a clinical-review pass before use for a
+     real estimate; vocabulary resolvability is already cleared.
 - **Reusable:** `true` — shared input for the enclave run and the OpenSAFELY translation (BC-5).
 
 ### WP2: Cohort construction  *(gated on F1)*
