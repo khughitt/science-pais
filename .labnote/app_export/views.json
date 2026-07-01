@@ -1,0 +1,164 @@
+{
+  "views": [
+    {
+      "id": "hypothesis",
+      "label": "Hypotheses",
+      "modules": [],
+      "order": 10,
+      "route": "/findings/hypothesis",
+      "surface": "findings"
+    },
+    {
+      "id": "proposition",
+      "label": "Propositions",
+      "modules": [],
+      "order": 20,
+      "route": "/findings/proposition",
+      "surface": "findings"
+    },
+    {
+      "id": "synthesis",
+      "label": "Synthesis",
+      "modules": [],
+      "order": 30,
+      "route": "/findings/synthesis",
+      "surface": "findings"
+    },
+    {
+      "id": "question",
+      "label": "Questions",
+      "modules": [],
+      "order": 40,
+      "route": "/explore/question",
+      "surface": "explore"
+    },
+    {
+      "id": "dataset",
+      "label": "Datasets",
+      "modules": [],
+      "order": 50,
+      "route": "/explore/dataset",
+      "surface": "explore"
+    },
+    {
+      "id": "method",
+      "label": "Methods",
+      "modules": [],
+      "order": 60,
+      "route": "/explore/method",
+      "surface": "explore"
+    },
+    {
+      "id": "search",
+      "label": "Searches",
+      "modules": [],
+      "order": 70,
+      "route": "/explore/search",
+      "surface": "explore"
+    },
+    {
+      "id": "workflow",
+      "label": "Workflows",
+      "modules": [],
+      "order": 80,
+      "route": "/explore/workflow",
+      "surface": "explore"
+    },
+    {
+      "id": "workflow_run",
+      "label": "Workflow Runs",
+      "modules": [],
+      "order": 90,
+      "route": "/explore/workflow-run",
+      "surface": "explore"
+    },
+    {
+      "id": "concept",
+      "label": "Concept",
+      "modules": [],
+      "order": 500,
+      "route": "/explore/concept",
+      "surface": "explore"
+    },
+    {
+      "id": "discussion",
+      "label": "Discussion",
+      "modules": [],
+      "order": 500,
+      "route": "/explore/discussion",
+      "surface": "explore"
+    },
+    {
+      "id": "evidence_line",
+      "label": "Evidence Line",
+      "modules": [],
+      "order": 500,
+      "route": "/explore/evidence-line",
+      "surface": "explore"
+    },
+    {
+      "id": "interpretation",
+      "label": "Interpretation",
+      "modules": [],
+      "order": 500,
+      "route": "/explore/interpretation",
+      "surface": "explore"
+    },
+    {
+      "id": "meta",
+      "label": "Meta",
+      "modules": [],
+      "order": 500,
+      "route": "/explore/meta",
+      "surface": "explore"
+    },
+    {
+      "id": "patch_definition",
+      "label": "Patch Definition",
+      "modules": [],
+      "order": 500,
+      "route": "/explore/patch-definition",
+      "surface": "explore"
+    },
+    {
+      "id": "plan",
+      "label": "Plan",
+      "modules": [],
+      "order": 500,
+      "route": "/explore/plan",
+      "surface": "explore"
+    },
+    {
+      "id": "pre_registration",
+      "label": "Pre Registration",
+      "modules": [],
+      "order": 500,
+      "route": "/explore/pre-registration",
+      "surface": "explore"
+    },
+    {
+      "id": "report",
+      "label": "Report",
+      "modules": [],
+      "order": 500,
+      "route": "/explore/report",
+      "surface": "explore"
+    },
+    {
+      "id": "research_question",
+      "label": "Research Question",
+      "modules": [],
+      "order": 500,
+      "route": "/explore/research-question",
+      "surface": "explore"
+    },
+    {
+      "id": "topic",
+      "label": "Topic",
+      "modules": [],
+      "order": 500,
+      "route": "/explore/topic",
+      "surface": "explore"
+    }
+  ]
+}
