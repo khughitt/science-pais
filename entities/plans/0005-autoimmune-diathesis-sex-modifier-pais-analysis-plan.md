@@ -375,7 +375,11 @@ Pre-committed rules for when analyses disagree:
 - The **interaction panel**: multiplicative ratio-of-RRs and additive RERI, with CIs.
 - The **negative-control** result and **E-value** table.
 - A **vehicle-feasibility memo** recording which candidate cleared BC-1..BC-7 and why the
-  primary vehicle was chosen.
+  primary vehicle was chosen. **✅ Delivered 2026-07-01:**
+  `doc:t079-vehicle-feasibility-memo-2026-07-01`
+  (`~/d/health/processes/post-acute-infection/doc/meta/2026-07-01-t079-vehicle-feasibility-memo.md`)
+  — consolidates `interpretation:0031`–`0035`; BC-1/3/5/6/7 resolved, BC-2 held (access), BC-4 open
+  (access-gated design gate).
 - Site-heterogeneity diagnostics (τ², prediction interval) for any pooled estimate.
 
 ## Aspect-contributed Sections
