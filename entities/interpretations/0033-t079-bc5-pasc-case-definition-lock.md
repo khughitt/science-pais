@@ -8,6 +8,7 @@ source_refs:
   - paper:Pfaff2022
   - paper:Thaweethai2023
   - cite:WalkerLongCOVID2021
+  - cite:Henderson2024
 related:
   - task:t079
   - plan:0005-autoimmune-diathesis-sex-modifier-pais-analysis-plan
@@ -35,13 +36,17 @@ lock only; no participant-level data, no phenotype execution. -->
 
 **Lock the primary PASC outcome to a *coded, duration-anchored* computable phenotype in each
 vehicle, and demote the "most mature" machine-learned phenotype to a flagged sensitivity
-analysis — because its construction bakes in the two biases this study exists to defeat.** The
-audit produced one decisive, slightly counter-intuitive result: the N3C ML computable phenotype
-(`paper:Pfaff2022`) has **outpatient visit rate as its single top feature** and an **uncorrected
-implicit female signal** (75% female among its non-hospitalised training positives, with sex
-deliberately excluded as a feature so the signal leaks uncontrolled), so adopting it as the
-*primary* endpoint would make the outcome a structural function of utilisation and sex — exactly
-the h0008 differential-ascertainment and female-predominance confounds under study. The
+analysis — because its construction is dominated by the utilisation axis this study must keep
+clean, with an untested sex-specific error profile on top.** The audit produced one decisive,
+slightly counter-intuitive result: the N3C ML computable phenotype (`paper:Pfaff2022`) has
+**outpatient visit rate as its single top feature** — so the outcome is, by construction, a
+structural function of utilisation, exactly the h0008 differential-ascertainment axis under study
+— **and** carries an **untested sex-specific misclassification risk**: 75% of its non-hospitalised
+training positives were female, sex was deliberately excluded as a feature, and no sex-stratified
+performance was reported, so sex-correlated features can leak an implicit female signal that is
+*uncharacterised rather than demonstrably corrected*. (The utilisation argument is the decisive
+one and stands alone; the sex concern is a documented risk, not a verified bias — it would take a
+by-sex score-distribution / feature-contribution check to confirm.) The
 survey-based RECOVER PASC index (`paper:Thaweethai2023`) is **not EHR-computable at all**. The
 honest meta-finding: **no EHR PASC outcome is ascertainment-clean** — every one is utilisation-gated
 on the outcome side — so BC-5 does not deliver a clean endpoint; it locks the *least-baked-in*
@@ -55,7 +60,7 @@ not (see rule #4 update).
 | Definition | EHR-computable in N3C? | Ascertainment structure | BC-5 role |
 |---|---|---|---|
 | **U09.9-or-LC-clinic coded** (Hill2022) | **Yes** — ICD-10 U09.9 + long-COVID-specialty-clinic visit | Utilisation-correlated **at the ascertainment step** (needs a coded visit), but utilisation/sex are **not definitional inputs** → adjustable | **PRIMARY** |
-| **Pfaff2022 ML phenotype** (3 XGBoost models, 924 OMOP features, prob. score, thr 0.45; AUROC 0.92 int / 0.82 ext) | **Yes** — fully from `condition_occurrence`/`drug_exposure`/`visit_occurrence`/`measurement`/`person`; code `NCTraCSIDSci/n3c-longcovid` | **Utilisation/sex baked into the definition**: outpatient visit rate = top Shapley feature; 75% female positives with sex excluded → uncorrected female signal; site overfit (0.92→0.82); respiratory bias (2/3 training clinics pulmonary) | **FLAGGED SENSITIVITY** — never primary here |
+| **Pfaff2022 ML phenotype** (3 XGBoost models, 924 OMOP features, prob. score, thr 0.45; AUROC 0.92 int / 0.82 ext) | **Yes** — fully from `condition_occurrence`/`drug_exposure`/`visit_occurrence`/`measurement`/`person`; code `NCTraCSIDSci/n3c-longcovid` | **Utilisation baked into the definition** (outpatient visit rate = top Shapley feature) **+ untested sex-specific error** (75% female positives, sex excluded, no by-sex performance reported → sex-proxy leakage *risk*); site overfit (0.92→0.82); respiratory bias (2/3 training clinics pulmonary) | **FLAGGED SENSITIVITY** — never primary here |
 | **RECOVER PASC index** (`Thaweethai2023`; 13 PRO items, smell/taste 8 + PEM 7, thr ≥12/~35) | **No** — every item is patient-reported survey data; authors explicitly contrast it with EHR | N/A (survey) | **Construct gold standard only** — via the `dataset:recover-adult` adjunct's linked PRO, not an N3C endpoint |
 
 **Why coded-primary despite lower sensitivity.** The study's whole threat model is differential
@@ -76,16 +81,19 @@ OpenCodelists):
   `1325181000000106` "Ongoing symptomatic disease caused by SARS-CoV-2" (4–12 wk) — slug
   `opensafely/nice-managing-the-long-term-effects-of-covid-19`.
 - **Referral (3 codes,** incl. `1325031000000108` "Referral to post-COVID assessment clinic") —
-  the **dominant coding mode over time** (~64% of coded cases), the highest-value low-risk extender.
+  slug `opensafely/referral-and-signposting-for-long-covid` (version `12d06dc0`); the **dominant
+  coding mode since mid-2022** (35,440 / 55,465 ≈ 64% of coded cases [@Henderson2024]), the
+  highest-value low-risk extender.
 - **Assessment (10 codes):** slug `opensafely/assessment-instruments-and-outcome-measures-for-long-covid`.
 
 **Lock:** primary = **all-three-clusters pooled** (materially more sensitive than diagnosis-only;
 referral codes ~double the count), with **coded-diagnosis-only vs coded-any** as a pre-registered
 **bracketing sensitivity pair**. A symptom-cluster + "≥12-week persistent symptom post-infection"
 temporal phenotype is **exploratory upper-bound only**, because two blockers documented in the
-OpenSAFELY data defeat it as a primary: (a) **59% of coded cases have no recorded positive test**,
-so a confirmed-infection temporal anchor discards most true cases; (b) symptom codes
-(fatigue/breathlessness/palpitations) are non-specific → low PPV.
+OpenSAFELY data defeat it as a primary: (a) **59% of coded cases had no positive test recorded
+≥12 wk before the long-COVID record** [@Henderson2024], so a confirmed-infection temporal anchor
+discards most true cases; (b) symptom codes (fatigue/breathlessness/palpitations) are non-specific
+→ low PPV.
 
 **The consequential downgrade (updates `interpretation:0031` + plan rule #4):** broadening the
 OpenSAFELY phenotype **RESHAPES — and may worsen — the differential-by-utilisation bias rather than
@@ -138,18 +146,25 @@ Checked 2026-07-01.
   (`https://www.opencodelists.org/codelist/opensafely/nice-managing-the-long-term-effects-of-covid-19/64f1ae69/`);
   assessment `opensafely/assessment-instruments-and-outcome-measures-for-long-covid`
   (`https://www.opencodelists.org/codelist/opensafely/assessment-instruments-and-outcome-measures-for-long-covid/79c0fa8a/`);
-  referral code `1325031000000108` (standalone referral-codelist slug **`[UNVERIFIED]`**).
+  referral `opensafely/referral-and-signposting-for-long-covid`
+  (`https://www.opencodelists.org/codelist/opensafely/referral-and-signposting-for-long-covid/12d06dc0/` —
+  3 codes, SNOMED CT, incl. `1325031000000108`).
 - **Under-coding evidence:** `cite:WalkerLongCOVID2021` (23,273/58M; 26.7% of practices never coded);
-  clinical-coding trends 2020–2023 (eClinicalMedicine 2024, PMC11127160 — 55,465 coded; 59% no
-  positive test; referral codes dominant).
+  `cite:Henderson2024` (Henderson et al., *eClinicalMedicine* 2024;72:102638, `doi:10.1016/j.eclinm.2024.102638`,
+  PMC11127160 — 55,465 coded; 59% no positive test recorded ≥12 wk prior; referral codes dominant since
+  mid-2022, ≈64% of cases; incidence rose with GP-interaction frequency).
 
 ## Data Quality Checks
 
 Structural outcome-QA facts carried into `plan:0005`:
-- **U09.9 temporal floor** — the code entered US ICD-10-CM on **2021-10-01** (`[UNVERIFIED]` exact
-  N3C-site adoption ramp), so index infections before then cannot receive a U09.9 outcome →
-  differential ascertainment by calendar time / variant era (already a covariate). The
-  LC-clinic-visit arm partially bridges the pre-Oct-2021 gap but adds clinic-access skew.
+- **U09.9 left-truncation / differential availability** — the code became active in US ICD-10-CM on
+  **2021-10-01** (`[UNVERIFIED]` exact N3C-site adoption ramp). This is **not** "pre-Oct-2021
+  infections can never be U09.9": a pre-activation infection *can* be assigned U09.9 later if the
+  patient is still observed after activation. The real issue is **left-truncated, differential
+  outcome availability by calendar era and follow-up** — no U09.9 can be recorded during the
+  pre-activation window, and early-era cases have a shorter post-activation ascertainment window —
+  which correlates with variant era (already a covariate). The LC-clinic-visit arm partially bridges
+  the pre-activation window but adds clinic-access skew.
 - **Pfaff phenotype PPV** in unbalanced real-world N3C is substantially below the class-balanced
   precision (0.85); the recommended 0.45 threshold needs recalibration per target prevalence — an
   analysis-time step, not a definition change.
@@ -164,8 +179,8 @@ None. BC-5 is an outcome-definition lock; no `proposition:` gains or loses an ev
 
 - `hypothesis:0008` (measurement-channel / ascertainment) is **strongly and convergently
   reinforced on the outcome side across all three legs**: the coded outcome is utilisation-gated at
-  ascertainment; the ML phenotype is utilisation-gated *by construction* (top feature) **and**
-  carries an embedded female signal; the OpenSAFELY broad phenotype reshapes rather than removes the
+  ascertainment; the ML phenotype is utilisation-gated *by construction* (top feature) with an
+  untested sex-specific error profile on top; the OpenSAFELY broad phenotype reshapes rather than removes the
   utilisation gradient. h0008's core claim — that the measurement channel, not only the sampling
   frame, shapes the apparent signal — now has three independent outcome-channel instances plus the
   BC-3 exposure-channel instance (`interpretation:0032`). Operationally this means the study's

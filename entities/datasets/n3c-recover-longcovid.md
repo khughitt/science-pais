@@ -68,11 +68,13 @@ no patient-reported fatigue severity. Single trigger.
 - 2026-07-01 (agent, BC-5 / `interpretation:0033`): PASC outcome definition locked. **Primary =
   coded U09.9-or-LC-clinic** (Hill-replicable), WHO-aligned ≥90 d ascertainment window. The N3C
   **ML computable phenotype** (`paper:Pfaff2022`, fully EHR-computable, AUROC 0.92 int/0.82 ext) is
-  **demoted to a flagged sensitivity endpoint** — outpatient visit rate is its top feature and it
-  embeds an uncorrected female signal, so it structurally bakes in the study's h0008/female-predominance
-  target confounds. RECOVER survey PASC index (`paper:Thaweethai2023`) not EHR-computable → construct
-  anchor via `dataset:recover-adult` only. U09.9 coding drift: US ICD-10-CM from 2021-10-01 (calendar-time
-  ascertainment). Every EHR outcome is utilisation-gated → ascertainment handled by design.
+  **demoted to a flagged sensitivity endpoint** — outpatient visit rate is its top feature (outcome
+  utilisation-gated by construction, the h0008 axis under study), with an untested sex-specific error
+  profile on top (75% female training positives, sex excluded → sex-proxy-leakage *risk*, not verified).
+  RECOVER survey PASC index (`paper:Thaweethai2023`) not EHR-computable → construct anchor via
+  `dataset:recover-adult` only. U09.9 = left-truncated/differential outcome availability (active in US
+  ICD-10-CM from 2021-10-01; pre-activation infections codable later only if still observed).
+  Every EHR outcome is utilisation-gated → ascertainment handled by design.
 - 2026-07-01 (agent, BC-3 / `interpretation:0032`): autoimmune-stratum granularity confirmed —
   all 8 disease-specific strata constructible as OMOP concept sets (fixes Hill's pooled-Charlson
   gap). SLE/RA/Crohn's/UC have curated **OHDSI Phenotype Library** cohorts (#119/#196/#198/#201);

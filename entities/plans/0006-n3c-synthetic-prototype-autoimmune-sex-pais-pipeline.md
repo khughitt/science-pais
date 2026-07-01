@@ -271,13 +271,16 @@ until both are settled.
   (Hill-replicable); PASC **ascertainment window WHO-aligned ≥90 d** in `windows.yaml`, kept
   **distinct from the ≥45 d survival/inclusion window** (BC-5 separated these).
 - **Definition of done:** binary PASC outcome plumbed with pre-registered variants —
-  **(i) coded-diagnosis-only vs coded-any** bracketing pair; **(ii) the Pfaff2022 ML phenotype
-  (threshold 0.45) as a FLAGGED sensitivity endpoint**, with a code comment + manifest note
-  recording that its top feature is outpatient visit rate and it embeds an uncorrected female
-  signal, so it is **never the primary** here (adopting it would bake the study's target confounds
-  into the outcome); **(iii)** a CDC-aligned ≥28 d window variant. The RECOVER survey PASC index is
-  **out of scope** for N3C (not EHR-computable). Case-definition provenance recorded (this is
-  plan:0005's BC-5 for the N3C side, now resolved).
+  **(i)** the **N3C-specific** coded bracketing pair **`U09.9-only` vs `U09.9-or-LC-clinic`** (the
+  OpenSAFELY replication analog is `diagnosis-only` vs `all-three-clusters`, carried in
+  plan:0005/BC-5, *not* here); **(ii) the Pfaff2022 ML phenotype (threshold 0.45) as a FLAGGED
+  sensitivity endpoint**, with a code comment + manifest note recording that its top feature is
+  outpatient visit rate (so the outcome is utilisation-gated by construction) **and** that it has an
+  untested sex-specific error profile (75% female training positives, sex excluded, no by-sex
+  performance) — a sex-proxy-leakage *risk*, not a verified bias — so it is **never the primary**
+  here; **(iii)** a CDC-aligned ≥28 d window variant. The RECOVER survey PASC index is **out of
+  scope** for N3C (not EHR-computable). Case-definition provenance recorded (this is plan:0005's
+  BC-5 for the N3C side, now resolved).
 
 ### WP7: Estimation  *(honors the F1 collect boundary)*
 - **Depends on:** WP3, WP4, WP5, WP6.

@@ -31,6 +31,7 @@ source_refs:
   - cite:Williamson2020
   - cite:Andrews2022
   - cite:WalkerLongCOVID2021
+  - cite:Henderson2024
 created: "2026-07-01"
 updated: "2026-07-01"
 ---
@@ -82,10 +83,11 @@ phenotype does **not** clean the bias — it **reshapes, and may worsen, it**. E
 (diagnosis, referral, assessment, symptom) is generated *at an encounter*; referral/symptom codes
 are *more* contact-dependent than a single diagnosis code, so broadening pulls in more of the
 high-utilisation (autoimmune-enriched, female-enriched — coded LC aHR ~1.33 female) population. Two
-further blockers make a symptom-temporal phenotype exploratory-only: **59% of coded cases have no
-recorded positive test** (a confirmed-infection temporal anchor discards most true cases), and
-symptom codes (fatigue/breathlessness/palpitations) have low PPV. **Lock:** primary = NICE
-3-cluster coded pooled (referral codes are ~64% of cases and roughly double diagnosis-only counts),
+further blockers make a symptom-temporal phenotype exploratory-only: **59% of coded cases had no
+positive test recorded ≥12 wk prior** [@Henderson2024] (a confirmed-infection temporal anchor
+discards most true cases), and symptom codes (fatigue/breathlessness/palpitations) have low PPV.
+**Lock:** primary = NICE 3-cluster coded pooled (referral codes are ≈64% of cases and roughly
+double diagnosis-only counts [@Henderson2024]),
 with **coded-diagnosis-only vs coded-any** as a bracketing sensitivity pair; symptom-temporal =
 exploratory upper-bound. OpenSAFELY therefore arbitrates the **sampling-frame** contrast but **not
 the outcome channel** — the utilisation gradient is handled analytically (pre-pandemic

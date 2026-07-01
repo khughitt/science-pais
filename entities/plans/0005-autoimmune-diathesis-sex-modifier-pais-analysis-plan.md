@@ -168,7 +168,7 @@ Before any modeling, on the selected vehicle:
    (replacing Hill's county proxy).
 5. **PASC phenotype provenance. LOCKED — BC-5 / `interpretation:0033`.** N3C primary = coded
    U09.9-or-LC-clinic (WHO-aligned ≥90 d); Pfaff ML phenotype = flagged sensitivity (utilisation
-   is its top feature + embedded female signal); RECOVER survey index = construct anchor only
+   is its top feature + an untested sex-specific error profile); RECOVER survey index = construct anchor only
    (not EHR-computable). OpenSAFELY primary = NICE 3-cluster coded pooled + diagnosis-only/any
    bracketing pair. Coding drift recorded: U09.9 from 2021-10-01 (calendar-time ascertainment);
    every EHR outcome utilisation-gated.
@@ -376,8 +376,10 @@ gates the eventual data-gated pre-registration will reference by name.
   **coded U09.9-or-LC-clinic** computable phenotype (Hill-replicable), WHO-aligned **≥90 d**
   ascertainment window (separated from the ≥45 d survival/inclusion window). The N3C **ML
   computable phenotype** (`paper:Pfaff2022`) is **demoted to a flagged sensitivity endpoint, not
-  primary** — its top feature is outpatient visit rate and it embeds an uncorrected female signal
-  (75% female positives, sex excluded), so it bakes the study's target confounds into the outcome.
+  primary** — its top feature is outpatient visit rate (so the outcome is utilisation-gated by
+  construction, the h0008 axis under study), with an untested sex-specific error profile on top
+  (75% female training positives, sex excluded, no by-sex performance reported → a sex-proxy-leakage
+  *risk*, not a verified bias). The utilisation argument alone justifies the demotion.
   The **RECOVER PASC index** (`paper:Thaweethai2023`) is **survey/PRO-only → not EHR-computable**;
   it is a construct anchor via `dataset:recover-adult`, never an N3C endpoint. OpenSAFELY primary =
   **NICE 3-cluster coded** (diagnosis+referral+assessment) pooled, with **coded-diagnosis-only vs
