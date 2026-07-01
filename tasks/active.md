@@ -69,8 +69,9 @@ Standing discriminating test for question:0006 / proposition:0026 / hypothesis:0
 
 ## [t079] Vehicle-feasibility pass for autoimmune-diathesis × sex × PASC analysis (t078 / plan:0005)
 - priority: P2
-- status: in-progress
+- status: blocked
 - aspects: []
+- blocked-by: [task:t080, task:t081, task:t082]
 - created: 2026-06-30
 
 Blocking checks BC-1..BC-7 from plan:0005-autoimmune-diathesis-sex-modifier-pais-analysis-plan before it can move to ready/pre-register. BC-1 vehicle selection + OpenSAFELY dataset discovery (no dataset entity yet); BC-2 access verification (prototype N3C synthetic tier); BC-3 autoimmune stratum granularity with dated pre-index onset (fix Hill pooled-Charlson gap); BC-4 sex×stratum×PASC cell counts vs power floor; BC-5 lock computable PASC definition; BC-6 acute-severity dateability in acute window (gates E2/E3 mediator role); BC-7 individual-level utilization covariate (replace county proxy). Provisional primary vehicle N3C; population-based replication OpenSAFELY/All-of-Us; RECOVER-Adult phenotype adjunct; UKB baseline triangulation.
@@ -88,6 +89,7 @@ Blocking checks BC-1..BC-7 from plan:0005-autoimmune-diathesis-sex-modifier-pais
 - 2026-07-01: BC-7 (individual-level utilisation) RESOLVED 2026-07-01 → interpretation:0035. Both vehicles natively build a per-patient pre-index encounter-count covariate (N3C OMOP visit_occurrence; OpenSAFELY ehrQL clinical_events/consultations) → Hill's county physicians-per-1000 proxy replaced (3rd of Hill's 3 gaps closed). Load-bearing finding: utilisation is DUAL-ROLE — the ascertainment confounder AND a consequence of the autoimmune exposure (autoimmune disease generates encounters) → naive adjustment over-adjusts/colliders. Fixes: (a) split by care setting — pre-index OUTPATIENT contact = E1 adjuster, INPATIENT = severity-side F6 denylist; (b) adjustment-framing pair (adjusted primary / unadjusted sensitivity, divergence read by sex since both autoimmune+utilisation are female-skewed); (c) strictly pre-index 365d window; (d) negative control must be AUTOIMMUNE-INDEPENDENT or it absorbs true signal. Covariate has vehicle-specific error (N3C undercounts out-of-network care) + era/telehealth drift → ascertainment defence is BOUNDED, quantified by negative control + E-value, not clean. Qualifies the h0008 DEFENCE (after BC-3/BC-5/BC-6 qualified the threat on exposure/outcome/mediator). Propagated to plan:0005 (BC-7 line, E1 adjustment set + utilisation caveat in Model Assumptions, negative-control autoimmune-independence) + plan:0006 (WP4 split + adj/unadj pair) + both dataset entities. MILESTONE: BC-1/3/5/6/7 all resolved → literature-progressable feasibility pass DESIGN-COMPLETE; only BC-4 (cell counts, access-gated) + BC-2 (access) remain — plan:0005 now blocked only on access/execution, not design.
 - 2026-07-01: BC-7 review fixes (2026-07-01): (1) split latent/true autoimmune disease D from recorded diagnosis E_obs in the utilisation causal graph — for E_obs utilisation is UPSTREAM measurement machinery (contact->E_obs), for D it is a DOWNSTREAM disease footprint (D->contact); dual-role conclusion survives but graph is unambiguous for pre-reg. (2) softened 'autoimmune-independent negative control' → 'not-autoimmune-specific and not mechanistically downstream of autoimmune disease' (strict independence too high a bar since D raises contact globally) + empirical baseline-association check. (3) BC-4 reframed as a still-open DESIGN gate (can force stratum pooling, endpoint choice, interaction-scale expectations), access-gated — not 'all design settled'. Updated interpretation:0035 + plan:0005 + both dataset entities.
 - 2026-07-01: Consolidated vehicle-feasibility memo DELIVERED 2026-07-01 → doc/meta/2026-07-01-t079-vehicle-feasibility-memo.md (doc:t079-vehicle-feasibility-memo-2026-07-01), the required-output-artifact from plan:0005. Synthesises interpretation:0031-0035 into: headline decision (N3C primary / OpenSAFELY sampling-frame replication / AoU+RECOVER+UKB adjuncts), a BC-1→BC-7 clearance ledger, a vehicle×8-property scorecard (rows 4 outcome + 8 sampling-frame drive the N3C-vs-OpenSAFELY split; row 7 = BC-4 unresolved), the cross-cutting h0008 finding (measurement/selection structural on exposure/outcome/mediator channels AND the utilisation defence itself bounded → validity rests on quantified design defences not a clean channel), the locked design decisions, and a PROMINENT BC-4 caveat (open design gate not mere counting — can force stratum pooling / endpoint choice / interaction-scale/RERI expectations; access-gated). Status: BC-1/3/5/6/7 resolved, BC-2 held (t080/t081/t082), BC-4 open. plan:0005 Required Output Artifacts marked delivered. plan:0005 stays not-ready, blocked only on access/execution (BC-2) + access-plus-design (BC-4).
+- 2026-07-01: 2026-07-01: BC-2 access track scoped -> concrete onboarding checklists written to t080 (N3C Enclave synthetic tier: citizen-scientist route confirmed = NO institutional DUA needed; make-or-break unknown = whether a DOWNLOADABLE synthetic OMOP package exists, else plan:0006 local-duckdb leg/F1 has no substrate) and t081 (Athena vocab: unselect CPT4 to skip UMLS; PIN + reconcile the Athena bundle version against the enclave's frozen OMOP vocab). Status corrected in-progress->blocked (invalid status value); blocked-by t080/t081/t082 — all remaining BCs (BC-2 execution, BC-4 cell counts) are access-gated, design side is complete.
 
 ## [t080] Acquire N3C Enclave account + open synthetic-tier access (gates plan:0006 WP0)
 - priority: P2
@@ -97,6 +99,25 @@ Blocking checks BC-1..BC-7 from plan:0005-autoimmune-diathesis-sex-modifier-pais
 
 plan:0006/BC-2 WP0 needs the N3C open synthetic OMOP data package. Even the synthetic tier requires an N3C Enclave account. On acquisition: set dataset:n3c-recover-longcovid-synthetic local_path + verified:true + verification_method + last_reviewed, and confirm the OMOP CDM version. Blocks any runnable WP0/WP2 code.
 
+### Notes
+
+- 2026-07-01: 2026-07-01: CONCRETE ACCESS CHECKLIST (grounded in current NCATS/CD2H onboarding docs, web-verified 2026-07-01).
+
+PATH DECISION (step 0): Citizen-scientist route is DEFAULT and sufficient. NCATS FAQ confirms citizen scientists (individuals with no institutional affiliation) CAN join N3C and are RESTRICTED to the synthetic dataset — which is exactly and only what plan:0006 targets. This means NO institutional Data Use Agreement / Authorized Official signature is needed (the affiliation blocker that sank the All-of-Us path in t039 does NOT apply here). If Keith already has a home institution with a DUA on file with NCATS, the affiliated route is faster — but the citizen-scientist route needs no institutional dependency, so default to it.
+
+STEPS:
+1. Register at the N3C onboarding portal (via ncats.nih.gov/research/research-activities/n3c/data-overview/access) and request an N3C Enclave account. [UNVERIFIED] exact identity/login provider (Login.gov vs eRA Commons) — FAQ does not pin it; resolve at the registration screen or email ncats_n3c@mail.nih.gov.
+2. DUA: citizen scientists sign an INDIVIDUAL DUA (the Authorized-Official institutional DUA path is only for affiliated users). [UNVERIFIED] exact citizen-scientist DUA form/mechanism — NCATS FAQ confirms the citizen-scientist tier exists but does not publish the individual-DUA form; confirm with N3C program staff (ncats_n3c@mail.nih.gov). This is the one procedural unknown.
+3. Log into the Enclave (an account alone does NOT grant data access).
+4. Training: HSR/human-subjects-research training is NOT required for synthetic-only access (web-confirmed). The generic NIH information-security refresher course may still be required before submitting a DUR — budget ~60-90 min.
+5. Submit the Data Use Request (DUR): project title, non-confidential/public research statement, project plan, DATA LEVEL = SYNTHETIC, attest to the DUA + N3C Data User Code of Conduct. NO IRB determination letter needed (that is only for the Limited Data Set tier).
+6. DAC (Data Access Committee) review: ~15 business days end-to-end per FAQ (10 business days review + 3 for workspace creation).
+7. On approval: confirm the synthetic OMOP CDM version; set dataset:n3c-recover-longcovid-synthetic -> verified:true + verification_method + last_reviewed + a stageable pointer, then rerun the plan:0006 data-availability gate.
+
+MAKE-OR-BREAK UNKNOWN (resolve DURING onboarding, blocks the plan:0006 dual-runtime design): N3C synthetic data has historically been ENCLAVE-ONLY compute with NO row-level extraction, identical to the real tier. plan:0006 assumes a LOCAL synthetic slice runnable under duckdb (the ohdsi_shim local leg, review finding F1). If N3C offers NO downloadable synthetic OMOP package (enclave-Spark only), that assumption is FALSE and the dual-runtime shim loses its local substrate -> either (a) develop against a self-generated OMOP-shaped synthetic fixture locally and treat the enclave synthetic tier as the first Spark target, or (b) drop the local-duckdb leg. VERIFY whether a downloadable synthetic package exists before committing WP0 code. This is the decisive t080 deliverable, not just 'get an account'.
+
+Feeds F2 (dataset:n3c-recover-longcovid-synthetic stageability) and gates plan:0006 WP0/WP2. No participant data involved (synthetic).
+
 ## [t081] Obtain OMOP Athena vocabulary for concept vocabulary-validity checks (gates plan:0006 WP1)
 - priority: P2
 - status: proposed
@@ -104,6 +125,25 @@ plan:0006/BC-2 WP0 needs the N3C open synthetic OMOP data package. Even the synt
 - created: 2026-07-01
 
 plan:0006/BC-2 WP1 F3 vocabulary-validity check (every concept resolves in OMOP CONCEPT/CONCEPT_ANCESTOR) requires the OMOP Athena standardized vocabulary (free registration/download at athena.ohdsi.org). Blocks the WP1 vocab-validity DoD. Also feeds BC-3 codelist curation.
+
+### Notes
+
+- 2026-07-01: 2026-07-01: CONCRETE ATHENA VOCABULARY CHECKLIST (grounded in OHDSI Athena / Book of OHDSI docs, web-verified 2026-07-01).
+
+PURPOSE: supply the OMOP standardized vocabulary that plan:0006 WP1's F3 vocabulary-validity check reads (every concept in the strata concept-set bundle must resolve in CONCEPT + expand via CONCEPT_ANCESTOR). Also feeds BC-3 codelist curation and resolves the [UNVERIFIED] OMOP concept_ids from interpretation:0032.
+
+STEPS:
+1. Register/login at athena.ohdsi.org (free individual account).
+2. Select the vocabularies the pipeline needs: SNOMED (autoimmune dx + severity disorders), ICD10CM/ICD9CM + ICD10PCS (source dx/procedures incl. U09.9), RxNorm/ATC (vaccination, drugs), HCPCS, plus the OMOP-native vocabs; ensure CONCEPT, CONCEPT_RELATIONSHIP, and CONCEPT_ANCESTOR are included (CONCEPT_ANCESTOR is REQUIRED for descendant expansion of the strata concept sets).
+3. CPT4 DECISION: CPT4 is gated behind a separate UMLS license + a post-download reconstitution step (run cpt4.jar with a UMLS API key; UMLS licenses are individual-only). For the prototype vocab-validity check the strata are SNOMED/ICD-based and severity is hospitalisation/ICU/vent (ICD/SNOMED) -> CPT4 is very likely NOT needed. RECOMMEND: UNSELECT CPT4 on the Athena selection page to skip the UMLS step entirely (unselecting also cleanly drops CPT4 from concept/concept_relationship/concept_ancestor). Revisit only if a severity/procedure concept turns out CPT-only.
+4. Request download -> Athena emails a link -> download the bundle (CSV vocabulary tables).
+5. (Only if CPT4 was selected) obtain a UMLS API key and run cpt4.jar to reconstitute CPT concepts.
+6. Load the CSVs into the local vocab store the F3 check queries (duckdb over the CSVs is enough); verify CONCEPT_ANCESTOR loaded.
+7. PIN the Athena vocabulary RELEASE VERSION (Athena stamps each bundle with a build date/version) and record it in plan:0006 as the versioned vocabulary input -> this is what makes the WP1 vocab-validity check reproducible.
+
+CRITICAL CROSS-CHECK WITH t080 (add to t081 DoD): the Athena bundle version must be RECONCILED against the N3C enclave's frozen OMOP vocabulary version (t080 step 7). A concept_id valid in Athena's latest release can differ from N3C's pinned vocab, so passing vocab-validity LOCALLY does NOT guarantee it passes IN-ENCLAVE. Record the enclave vocab version once t080 clears and re-run F3 against a matched version, or explicitly document the version delta. This t081<->t080 vocabulary-version reconciliation is the non-obvious engineering trap to catch before WP1 code exists.
+
+Gates plan:0006 WP1 vocab-validity DoD. No participant data involved (public vocabulary).
 
 ## [t082] Scope-boundary decision: does writing runnable pipeline code move PAIS past seed-stage literature-synthesis? (gates all plan:0006 code)
 - priority: P2
