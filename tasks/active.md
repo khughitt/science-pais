@@ -112,3 +112,35 @@ plan:0006/BC-2 WP1 F3 vocabulary-validity check (every concept resolves in OMOP 
 - created: 2026-07-01
 
 specs/scope-boundaries.md defers primary computational pipelines until past seed stage; early work is literature synthesis. Planning (plan:0005/0006) is still seed-stage; WRITING/maintaining runnable pipeline code is the phase transition and must be an explicit decision (decisions.md / curate), not an accident of t079 momentum. If approved, code home = code/n3c-autoimmune-sex-pais/ (research-profile convention), NOT results/ and NOT an unanchored root src/. Gates any plan:0006 code (fixtures included).
+
+## [t083] Bridge circadian/HPA-rhythm 'holds the displaced immune-state' question to the health-cycles peer + scan existing immune-circadian coupling
+- priority: P2
+- status: proposed
+- aspects: []
+- created: 2026-07-01
+
+Forward-motion on the immune-state-landscape sketch (patch:immune-state-shift-causal-landscape). The discussion flagged circadian as the highest-novelty/lowest-data upstream forcing input and the natural cross-project collaboration, but it is parked-in-prose with zero motion. Steps: (1) create a bridging question - does circadian/HPA-cortisol rhythm gate/HOLD the persistent immune-state displacement (clock gates cytokine + glucocorticoid rhythms); (2) run /science:sync (3 days stale) and scan ~/d/health/processes/cycles for existing immune-circadian coupling entities to reuse rather than duplicate; (3) decide whether circadian promotes from prose candidate to an edged node or stays deferred to the cycles peer + q0008. related: patch:immune-state-shift-causal-landscape, question:0008-formalize-vicious-cycle-attractor-model, hypothesis:0001.
+
+## [t084] Operationalize the bimodal-outcome-distribution attractor signature on existing longitudinal PAIS recovery data
+- priority: P2
+- status: proposed
+- aspects: []
+- created: 2026-07-01
+
+Cheapest near-term empirical test of the attractor/dynamical claim - runnable on EXISTING longitudinal recovery-trajectory data, no new data required (latent-transition modeling / Gusinow2026 already named in q0008 as substrate). Discussion gave concrete falsifiable dynamical signatures; prop:0041/q0008/h0001 currently capture hysteresis + bistability + critical-slowing but MISS two: (a) bimodal outcome distribution (not a smooth severity gradient) and (b) kick-out-able / transient-strong-intervention flips state. Deliverable: (1) add bimodality + transient-kick to the prop:0041 and h0001 falsifier sets; (2) test recovery-time / severity-trajectory distributions for bimodality vs monotonic decay in an accessible longitudinal PAIS cohort. related: proposition:0041-feedback-maintenance-requires-dynamical-treatment-outside-dag, question:0008, hypothesis:0001.
+
+## [t085] Draw the q0022 immune-state->symptom hub edge as its own causal-profile inquiry (adjustment set + collider audit)
+- priority: P3
+- status: proposed
+- aspects: []
+- created: 2026-07-01
+
+The patch (Status & next steps) names this as the next step for the contested causal-hub / mediator-vs-marker claim (prop:0039), but it is untracked. Draw the single immune-state-displacement -> pais-outcome edge as a dedicated causal-profile inquiry with an explicit estimand, adjustment set, and collider audit (do NOT let it inherit prop:0038 descriptive support). Live external test remains the abrocitinib JAK1 readout (pre-registration:0004). Run via /science:sketch-model then /science:critique-approach. related: question:0022-immune-state-displacement-mediator-vs-co-traveler, proposition:0039, pre-registration:0004, hypothesis:0001.
+
+## [t086] Light literature calibration of the HPA/cortisol axis in PAIS - decide prose-candidate vs edged node
+- priority: P3
+- status: proposed
+- aspects: []
+- created: 2026-07-01
+
+The patch parks HPA/cortisol as 'high-plausibility / thin-PAIS-evidence', which may undersell it - hypocortisolism in ME/CFS is a decades-old replicated finding and HPA is a master immune regulator + rhythm-sensitive (ties to the circadian bridge task). Run a focused /science:search-literature pass to calibrate the actual evidence weight and decide whether HPA promotes from prose candidate to an edged upstream forcing node in the landscape, or stays deferred. related: patch:immune-state-shift-causal-landscape, hypothesis:0001.

@@ -41,8 +41,9 @@ related:
 - interpretation:0025-t009-pediatric-long-covid-and-misc
 - proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode
 - proposition:0031-pais-gut-dysbiosis-scfa-depletion
+- hypothesis:0009-post-infectious-immune-set-point-shift-drives-long-term-autoimmune
 created: '2026-06-11'
-updated: '2026-06-26'
+updated: '2026-07-01'
 ---
 # Hypothesis: Post-acute infection syndromes are a shared dysregulated attractor reachable from many triggers, not merely a shared symptom repertoire
 

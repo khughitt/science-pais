@@ -16,10 +16,10 @@ source_refs:
 - cite:Ciaffi2023
 related:
 - topic:post-infectious-dysautonomia-and-autoimmunity
+- hypothesis:0009-post-infectious-immune-set-point-shift-drives-long-term-autoimmune
 created: '2026-06-11'
-updated: '2026-06-11'
+updated: '2026-07-01'
 ---
-
 # What fraction of latent post-infectious autoimmunity converts to overt autoimmune disease over 5-10 years, and which autoantibodies mark the highest-risk subset?
 
 ## Summary

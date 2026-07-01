@@ -37,7 +37,7 @@ No participant-level data was accessed in any BC — this is a design/feasibilit
 ## Headline decision
 
 - **Primary vehicle: N3C** (`dataset:n3c-recover-longcovid`) — OMOP CDM, enclave-gated, with an
-  **open synthetic tier to prototype on now**. Chosen for the most mature computable PASC
+  **open synthetic tier to prototype once N3C account access clears**. Chosen for the most mature computable PASC
   phenotype (Hill-replicable), rare-stratum × sex **scale**, and native individual-level pre-index
   history. Cost carried: US healthcare-seeking EHR → sampling-frame ascertainment skew.
 - **Population-based replication: OpenSAFELY** (`dataset:opensafely-longcovid`) — near-whole-population
@@ -185,8 +185,9 @@ counts exist. Treat BC-4 as an open design gate, access-gated.
 The autoimmune-diathesis × sex × PASC estimand is **feasible on N3C with OpenSAFELY replication**,
 and it is **unreported in the literature** (Hill2022 has the design substrate but pools autoimmune,
 treats sex as a covariate, and proxies utilisation — all three gaps now closed by BC-3/the
-estimand/BC-7). The dominant risk is **not** power but **ascertainment**, which is structural on
-all three channels (BC-3/5/6) and only boundedly defensible (BC-7) — so the pre-registration's
+estimand/BC-7). The dominant **validity** risk is **ascertainment**, which is structural on
+all three channels (BC-3/5/6) and only boundedly defensible (BC-7); the dominant **feasibility**
+unknown remains **BC-4 power/cell counts**. So the pre-registration's
 confirmatory strength lives in its **design defences and their quantification (E-value +
 not-autoimmune-specific negative control + bracketing pairs + population-based replication)**, not
 in any single clean measurement. The next real milestone is **access (BC-2 via t080–t082)**, at
