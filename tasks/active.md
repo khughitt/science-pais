@@ -66,3 +66,11 @@ Standing discriminating test for question:0006 / proposition:0026 / hypothesis:0
 ### Notes
 
 - 2026-06-25: Registry snapshot: ClinicalTrials.gov API v2 record for NCT06597396 reports ACTIVE_NOT_RECRUITING, enrollment 46 actual, primary completion 2026-03-27 actual, study completion 2026-09-30 estimated, last update posted 2026-04-20, and hasResults=false. No admissible readout yet; pre-registration:0004 remains [?] inconclusive-for-coverage. Public endpoints include FACIT-Fatigue/PASC PRO and hsCRP but not a specific IL-6R/JAK-STAT/ISG target-engagement score, so G2 must be checked in the eventual paper/supplement.
+
+## [t078] Autoimmune diathesis as effect-modifier for post-infectious failed recovery (sex-conditioned)
+- priority: P2
+- status: proposed
+- aspects: []
+- created: 2026-06-30
+
+Fast-follow from patch-definition:immune-state-shift-causal-landscape and question:0005. Sex-conditioned EHR/cohort check: is pre-existing autoimmune diathesis an effect-modifier (not mechanism) for PAIS / failed post-infectious recovery? Condition on sex, age, acute severity, ascertainment intensity, healthcare-contact bias. Trap: autoimmunity and long COVID are both female-predominant -> naive association is sex-confounded (h0008 measurement-channel meta-finding). Ties to h0005 homeostatic-margin.

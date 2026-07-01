@@ -30,6 +30,8 @@ related:
 - topic:pediatric-long-covid-and-misc
 - question:0001-shared-molecular-signature-across-triggers
 - question:0008-formalize-vicious-cycle-attractor-model
+- question:0022-immune-state-displacement-mediator-vs-co-traveler
+- patch-definition:immune-state-shift-causal-landscape
 - immunity:research-question:immune-homeostasis-and-dysregulation
 - pre-registration:0002-cross-trigger-pathway-overlap
 - interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating
@@ -46,7 +48,9 @@ updated: '2026-06-26'
 
 ## Organizing Conjecture
 
-Post-acute infection syndromes (long COVID, ME/CFS, PTLDS, post-dengue/Q-fever fatigue, post-SARS, "long flu") are not merely a coincidental sharing of a finite symptom repertoire; they are a single, *stable dysregulated attractor* in the space of immune-autonomic-metabolic physiology, reachable from many different infectious triggers. Above some perturbation, a susceptible host's recovery dynamics fall into a self-sustaining basin maintained by mutually reinforcing feedback loops (chronic immune activation, autonomic dysregulation, reduced cerebral perfusion, mitochondrial/energetic impairment, neuroinflammation) rather than progressive tissue damage. The trigger seeds the basin; the loops keep the system there even after the trigger is cleared. This predicts genuine *biological* (not just symptomatic) convergence across triggers and explains the field's signature feature — resistance to single-target therapy.
+Post-acute infection syndromes (long COVID, ME/CFS, PTLDS, post-dengue/Q-fever fatigue, post-SARS, "long flu") are not merely a coincidental sharing of a finite symptom repertoire; they share a **persistent post-infectious immune-state displacement** — a recovery failure in which immune-autonomic-metabolic physiology is held away from its pre-infection set-point — **potentially realized through heterogeneous molecular configurations** and **maintained by mutually reinforcing immune-autonomic-metabolic feedback** (the dynamical "attractor" / self-sustaining-basin form of the claim). Above some perturbation, a susceptible host's recovery dynamics fall into this self-sustaining basin (chronic immune activation, autonomic dysregulation, reduced cerebral perfusion, mitochondrial/energetic impairment, neuroinflammation) rather than progressive tissue damage. The trigger seeds the displacement; the loops keep the system there even after the trigger is cleared. This predicts *biological* (not merely symptomatic) convergence across triggers and explains the field's signature feature — resistance to single-target therapy.
+
+**What this does and does not predict (evidence-bar).** Because the shared object is a *state displacement* that may be **degenerately realized** (many molecular routes to one persistent macro-state), this hypothesis does **not** require every PAIS subtype to share one analyte, gene module, cytokine hub, or molecular lesion. Two claims must be judged separately: (i) a *descriptive* claim — PAIS often involve a persistent immune-state shift (relatively well-aligned with evidence); and (ii) a *causal-hub* claim — that immune state is the central **mediator** through which most symptoms arise (much less settled; tracked as `question:0022` and tested separately, e.g. the abrocitinib JAK1 readout). Critically, **shared-analyte nulls (Galbraith2011, Patterson2024, Chowdhury2026, the t035 pathway-overlap null) weaken "shared molecular signature", not automatically "shared persistent state displacement"** — they are evidence against a strong shared-molecule reading, not against the state-displacement frame. The strong shared-*pathway* prediction (`question:0001`) remains the most discriminating *positive* test, but is not a precondition for the hypothesis. The causal landscape around the immune-state node — upstream forcings, parallel actors, downstream effectors, and the DAG-inexpressible maintenance loops — is sketched in `patch-definition:immune-state-shift-causal-landscape`.
 
 ## Proposition Bundle
 
@@ -151,3 +155,16 @@ Confidence would be materially reduced if:
   They make q0008 more tractable by supplying delay/stability/bifurcation machinery, but do not change
   this hypothesis's belief grade. A PAIS model must replace viral-load state variables with loop-node
   physiology and fit longitudinal recovery-vs-chronification data.
+- 2026-06-30: **Reframe (no belief-grade change).** The Organizing Conjecture was retuned from "a single
+  *stable dysregulated attractor*" to a **persistent post-infectious immune-state displacement, potentially
+  realized through heterogeneous molecular configurations and maintained by immune-autonomic-metabolic
+  feedback**. This preserves the attractor/basin/multi-loop machinery but drops the implication that every
+  subtype shares one analyte/gene-module/cytokine-hub/lesion (a *degenerate*-realization reading). Key
+  consequence — an **evidence-bar correction**: shared-*analyte* nulls (Galbraith2011, Patterson2024,
+  Chowdhury2026, t035) weaken "shared molecular signature", **not** "shared persistent state displacement";
+  they should no longer be read as nudges against this hypothesis's core. The descriptive (state-shifted)
+  vs causal-hub (immune-state-mediates-symptoms) split is now explicit, with the hub leg spun out as
+  `question:0022` and its live test the abrocitinib JAK1 readout. The surrounding causal landscape
+  (upstream forcings, parallel actors, downstream effectors, DAG-inexpressible maintenance loops) is
+  sketched in `patch-definition:immune-state-shift-causal-landscape`. Reframe requested/ratified by the
+  user; status stays `proposed`.
