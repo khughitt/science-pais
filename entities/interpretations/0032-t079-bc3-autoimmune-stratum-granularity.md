@@ -91,10 +91,21 @@ assignment:
 1. **Vasculitis** — define the stratum as *any-systemic-vasculitis* (union of the five+
    subtype refsets / SNOMED family) vs a specific subset; exclude nonspecific "vasculitis,
    unspecified" codes or keep them. Decide once, apply in both vehicles.
-2. **Autoimmune-thyroid** — primary definition = **Graves + Hashimoto-specific codes only**
-   (autoimmune-specific, lower sensitivity), with an **all-cause-hypothyroid-inclusive**
-   version as a pre-registered sensitivity stratum. Never silently fold all-cause
-   hypothyroidism into the autoimmune exposure.
+2. **Autoimmune-thyroid** — primary definition = **Graves + explicit-Hashimoto/autoimmune-
+   thyroiditis codes only** (autoimmune-specific, **low sensitivity**), with an
+   **all-cause-hypothyroid-inclusive** version as a pre-registered sensitivity stratum. Never
+   silently fold all-cause hypothyroidism into the autoimmune exposure. Implementation detail
+   that makes this concrete: "Hashimoto-specific" means an **author-built code set of the
+   explicit autoimmune-thyroiditis concepts** — SNOMED *Hashimoto thyroiditis* (21983002) /
+   *autoimmune thyroiditis* / *chronic lymphocytic thyroiditis*, i.e. ICD-10-CM **E06.3** — which
+   both vehicles can express because the SNOMED concept exists in each. The asymmetry is only
+   that OpenSAFELY has **no curated *refset*** bundling these (unlike Graves' `gravesdis_cod`),
+   so the Hashimoto side is author-built there; N3C is likewise author-built (no Phenotype
+   Library cohort). The stratum is low-sensitivity in both because most autoimmune-hypothyroid
+   patients are coded only with a generic hypothyroidism code (all-cause `thy_cod` / E03) that
+   the specific definition deliberately excludes. If explicit Hashimoto coding proves too sparse
+   in a vehicle, the fallback there is **Graves-only** (still autoimmune-specific), not
+   all-cause hypothyroid — the sensitivity variant is reported separately, never as the primary.
 3. **Myositis** — exclude drug-induced and paraneoplastic myopathy; OpenSAFELY's `myositis_cod`
    pools PM+DM (acceptable); N3C build should match that grain for cross-vehicle comparability.
 
@@ -107,7 +118,36 @@ UK-OGL-licensed) — the strongest provenance tier, not single-user contribution
 the four OHDSI Phenotype Library cohorts (#119/#196/#198/#201) were verified by direct lookup
 of the library's `Cohorts.csv`; the other four strata are grounded in the fact that every one
 is a standard SNOMED disorder with ICD-10-CM source codes that N3C maps to SNOMED standard
-concepts (constructible, but author-built and unvalidated).
+concepts (constructible, but author-built and unvalidated). Durable source pointers are
+listed below so the audit is reproducible.
+
+## Sources (durable pointers)
+
+Checked 2026-07-01. OpenCodelists slugs resolve at `https://www.opencodelists.org/codelist/<slug>/`;
+**version tags are intentionally not pinned here** — codelist version-pinning (a specific
+release hash per slug) is a `plan:0006` WP1 bundle-build step, not a BC-3 deliverable.
+
+- **OpenSAFELY / OpenCodelists (SNOMED CT unless noted).** NHSD Primary Care Domain refsets:
+  SLE `nhsd-primary-care-domain-refsets/slupus_cod`, RA `.../rarth_cod`, UC
+  `.../ulcerative-colitis-uc-codes`, Sjögren `.../sjogrens_cod`, myositis (PM+DM) `.../myositis_cod`,
+  Graves `.../gravesdis_cod`, all-cause hypothyroidism (sensitivity variant only) `.../thy_cod`;
+  vasculitis subtype-union `.../gca_cod`, `.../wegenervasc_cod`, `.../polyarteritis_cod`,
+  `.../takayasuart_cod`, `.../cryoglobvasc_cod`. NHSD `nhsd/multiple-sclerosis-snomed-ct`.
+  OpenSAFELY-org (CTV3/Read→SNOMED): `opensafely/rheumatoid-arthritis`,
+  `opensafely/ra-sle-psoriasis-snomed`, `opensafely/inflammatory-bowel-disease-snomed`,
+  `opensafely/crohns-disease`, `opensafely/multiple-sclerosis-v2`, `opensafely/giant-cell-arteritis`.
+  *(MPA and EGPA/Churg-Strauss refsets not separately verified — likely in the same NHSD family;
+  resolve at WP1.)*
+- **N3C / OMOP.** OHDSI Phenotype Library — `https://ohdsi.github.io/PhenotypeLibrary/`,
+  cohort list snapshot `https://raw.githubusercontent.com/OHDSI/PhenotypeLibrary/main/inst/Cohorts.csv`:
+  cohorts **#119** (SLE), **#196** (RA), **#198** (Crohn's), **#201** (UC). SNOMED standard
+  concepts (author-built strata): SLE 55464009, RA 69896004, Crohn's 34000006, UC 64766004,
+  MS 24700007, Sjögren 83901003, Hashimoto 21983002, GCA 195350000, DM 396230008, PM 31384009.
+  OMOP `concept_id`s for these are **`[UNVERIFIED]`** — the ATHENA public API
+  (`https://athena.ohdsi.org`) returned **HTTP 403** (needs an authenticated token); confirm
+  interactively under `task:t081`.
+- **Supporting validation.** SLE EHR-phenotype chart validation: PLOS ONE 2023,
+  `doi:10.1371/journal.pone.0281929`.
 
 ## Data Quality Checks
 

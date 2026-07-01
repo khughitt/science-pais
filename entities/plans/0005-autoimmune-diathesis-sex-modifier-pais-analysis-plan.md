@@ -345,8 +345,9 @@ gates the eventual data-gated pre-registration will reference by name.
 - **BC-2 — Access verification.** Resolve the access path for the chosen vehicle (N3C
   enclave DUA / OpenSAFELY approval / All-of-Us Workbench); prototype on N3C synthetic tier.
 - **BC-3 — Autoimmune stratum granularity. ✅ LARGELY RESOLVED 2026-07-01
-  (`interpretation:0032`).** Both vehicles resolve all 8 disease-specific strata with dated
-  pre-index onset (fixes Hill's pooled-Charlson gap): N3C via OMOP concept sets (SLE/RA/Crohn's/UC
+  (`interpretation:0032`).** Both vehicles **support the eight planned disease-specific strata**
+  with dated pre-index onset (fixes Hill's pooled-Charlson gap) — **7/8 clean, autoimmune-thyroid
+  only partially resolved**: N3C via OMOP concept sets (SLE/RA/Crohn's/UC
   = OHDSI Phenotype Library cohorts #119/#196/#198/#201; rest author-built from SNOMED),
   OpenSAFELY via NHSD SNOMED refsets (Sjögren/myositis/vasculitis-subtype-union now confirmed).
   **Residuals:** (a) **autoimmune-thyroid** is the convergent weak stratum — isolable Graves but

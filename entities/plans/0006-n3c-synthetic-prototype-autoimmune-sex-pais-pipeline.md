@@ -69,8 +69,9 @@ confirm.
 - The **N3C real/Limited and De-identified tiers** — the mixed-access siblings of
   `dataset:n3c-recover-longcovid`; this plan consumes **only the open synthetic slice**.
 - **OpenSAFELY replication** — BC-5 phenotype work first (`interpretation:0031`).
-- Final codelist clinical review for the rarest strata — parallels **BC-3**; here we build
-  the *mechanism*, not the clinically-signed-off list.
+- Final codelist clinical review for the rarest strata — the **BC-3-derived real-estimate
+  clinical-review follow-up** (BC-3's vocabulary clearance is done, `interpretation:0032`);
+  here we build the *mechanism*, not the clinically-signed-off list.
 
 ## Architecture
 
@@ -218,10 +219,11 @@ until both are settled.
      `bc3_gated: true` with the specific-vs-all-cause fork recorded in `BUNDLE.lock`. Three a-priori
      scoping decisions (vasculitis union, autoimmune-thyroid specific-primary, myositis exclusions)
      carried as bundle metadata. Bundle `status: draft-unreviewed`.
-  3. Bundle loads and is immutable-by-checksum. **Clinical sign-off (a real-estimate gate, not a
-     prototyping gate) is BC-3's remaining step** — the five author-built N3C strata (MS, Sjögren,
-     vasculitis, myositis, autoimmune-thyroid) still need a clinical-review pass before use for a
-     real estimate; vocabulary resolvability is already cleared.
+  3. Bundle loads and is immutable-by-checksum. **A separate real-estimate clinical-review gate
+     (a BC-3-derived follow-up, *not* part of BC-3's clearance)** applies to the five author-built
+     N3C strata (MS, Sjögren, vasculitis, myositis, autoimmune-thyroid): they need a clinical
+     sign-off before use for a real estimate. BC-3 itself is resolved — vocabulary resolvability
+     is cleared; this gate is a downstream prototyping→real-estimate step, not an open BC-3 item.
 - **Reusable:** `true` — shared input for the enclave run and the OpenSAFELY translation (BC-5).
 
 ### WP2: Cohort construction  *(gated on F1)*
@@ -318,7 +320,8 @@ until both are settled.
 - No interpretable effect estimate (synthetic data). No causal claim of any kind emerges here.
 - No real-tier access work beyond filing the WP0 punch-list (rest of BC-2).
 - No OpenSAFELY code (BC-5 gates it).
-- No clinical sign-off of codelists (BC-3).
+- No clinical sign-off of codelists (the BC-3-derived real-estimate clinical-review follow-up;
+  BC-3's vocabulary-resolvability clearance is done, `interpretation:0032`).
 
 ## Acceptance Criteria
 
