@@ -74,20 +74,29 @@ primary vehicle, which is why the defence is bounded rather than clean.
 
 ## The load-bearing finding — utilisation is a confounder AND a consequence of the exposure
 
-Draw the two paths BC-7 makes explicit:
+Draw the paths BC-7 makes explicit, **distinguishing latent/true autoimmune disease `D` from the
+recorded autoimmune diagnosis `E_obs` — the coded exposure the study actually uses.** Collapsing
+`D` and `E_obs` into "autoimmune status" is exactly what makes utilisation look like one
+ambiguous object; separating them makes the graph clean:
 
-- **Confounding / ascertainment path (adjust it):** `contact → coded-exposure` and
-  `contact → coded-outcome`. Higher-utilisation patients are more likely to have both their
-  autoimmune status *and* their PASC *recorded*, inflating the apparent association independent of
-  any true effect. This is the path the utilisation covariate exists to block.
-- **Causal / exposure-footprint path (do NOT fully adjust it):** `autoimmune status → contact`.
-  Autoimmune disease raises baseline healthcare use *because it is autoimmune disease*, so
-  conditioning on contact removes a slice of the exposure's real signature and, because contact
-  has other causes too, can turn the covariate into a **collider**
-  (`autoimmune → contact ← other-causes → outcome-ascertainment`).
+- **Measurement-machinery path — recorded exposure (`contact` is UPSTREAM of `E_obs`):**
+  `contact → E_obs` and `contact → coded-outcome`. A healthcare encounter is *required* for true
+  disease to become a **coded** diagnosis and for PASC to become a **coded** outcome, so
+  higher-utilisation patients are more likely to have both *recorded*, inflating the apparent
+  association independent of biology. Here utilisation is **upstream measurement machinery** — the
+  path the covariate exists to block.
+- **Disease-footprint path — true disease (`contact` is DOWNSTREAM of `D`):** `D → contact`. True
+  autoimmune disease raises baseline healthcare use *because it is disease* (monitoring, DMARDs,
+  flares), so utilisation is partly a **downstream footprint of `D`**; conditioning on it removes a
+  slice of the exposure's real signature and, because contact has other causes, can turn the
+  covariate into a **collider** (`D → contact ← other-causes → coded-outcome`).
 
-There is no single adjustment that is correct for both roles — the exact structure behind the
-`plan:0005` vaccination-adjustment caveat and the E1/E2 severity split. **Resolution (pre-register):**
+So the dual role is not a paradox: **for the recorded exposure `E_obs`, utilisation is upstream
+measurement machinery; for true disease `D`, it is a downstream disease footprint.** There is no
+single adjustment correct for both roles — the same structure behind the `plan:0005`
+vaccination-adjustment caveat and the E1/E2 severity split — but the graph is unambiguous once `D`
+and `E_obs` are kept separate, which the pre-registration should state explicitly.
+**Resolution (pre-register):**
 
 1. **Split utilisation by care setting.** Use **pre-index OUTPATIENT / primary-care contact** as
    the ascertainment-opportunity adjuster in E1; keep **inpatient contact out of the E1 adjustment
@@ -101,10 +110,14 @@ There is no single adjustment that is correct for both roles — the exact struc
 3. **Fixed PRE-index window only.** Build the covariate from a fixed pre-index baseline (candidate
    365 d, ≥1 qualifying encounter to establish observation); **never** post-index contact
    (post-index use is a consequence of both severity and PASC → over-adjustment / collider).
-4. **Sharpen the negative-control-outcome spec.** Because `autoimmune → contact` is real, the
-   negative-control outcome must be **ascertainment-sensitive but autoimmune-independent** — else
-   it absorbs true exposure signal and under-reports residual ascertainment bias. BC-7 adds this
-   constraint to the negative-control choice in `plan:0005`.
+4. **Sharpen the negative-control-outcome spec.** Because `D → contact` raises utilisation
+   *globally*, strict "autoimmune-independence" is too high a bar — autoimmune disease lifts
+   contact for almost everything. The right constraint: the negative-control outcome must be
+   **encounter-sensitive but neither autoimmune-specific nor mechanistically downstream of
+   autoimmune disease** (not part of autoimmune monitoring/treatment), and its **baseline
+   association with the autoimmune strata is then checked empirically** and discounted if non-null.
+   Otherwise it absorbs true exposure signal and under-reports residual ascertainment bias. BC-7
+   adds this constraint to the negative-control choice in `plan:0005`.
 
 ## Case-definition / window flag (per AGENTS.md)
 
@@ -150,7 +163,9 @@ Structural utilisation-QA facts carried into `plan:0005`/`plan:0006`:
 - **N3C differential undercount** (out-of-network care invisible) is the primary vehicle's key
   covariate-measurement weakness → the defence is bounded; quantify residual via negative control +
   E-value.
-- **Negative control must be autoimmune-independent** (BC-7 constraint), or it absorbs true signal.
+- **Negative control:** encounter-sensitive but **not autoimmune-specific and not mechanistically
+  downstream of autoimmune disease** (not strict independence — `D` raises contact globally);
+  baseline association with the strata checked empirically, or it absorbs true signal.
 - **Era/telehealth drift** entangles the utilisation term with calendar era → era-interaction /
   within-era normalisation.
 - **Strictly pre-index window** (candidate 365 d); post-index contact is over-adjustment.
@@ -168,7 +183,7 @@ an evidence-line.
   against that channel (individual-utilisation adjustment) is itself measurement-limited** — it is
   a dual-role variable, differentially undercounted in the primary vehicle, and era-entangled. So
   h0008's operational conclusion sharpens from "adjust for utilisation" to "the ascertainment
-  defence is a **bounded mitigation** (adjustment-framing pair + autoimmune-independent negative
+  defence is a **bounded mitigation** (adjustment-framing pair + a not-autoimmune-specific negative
   control + E-value), whose adequacy is *quantified, not assumed*." The negative-control and
   E-value results — not the utilisation adjustment alone — become the actual ascertainment arbiter.
 - `question:0007` (female-predominance mechanism) — because autoimmune disease and higher
@@ -180,13 +195,17 @@ an evidence-line.
 
 **Settled (BC-7):** individual pre-index utilisation is buildable in both vehicles (OMOP
 `visit_occurrence`; ehrQL `consultations`) → Hill's county proxy replaced; the covariate is
-dual-role (ascertainment confounder + exposure consequence) → split outpatient (E1 adjuster) vs
+dual-role (`D`-footprint + `E_obs`-measurement-machinery) → split outpatient (E1 adjuster) vs
 inpatient (mediator/denylist), adjustment-framing pair (adjusted primary / unadjusted sensitivity),
-strictly pre-index window; negative control must be autoimmune-independent; N3C differential
-undercount + era drift acknowledged. **Still open:** **BC-4** (sex × stratum × PASC cell counts —
-the binding unknown, and largely **access-gated** on the N3C enclave) and **BC-2** (access
-verification). With BC-1/BC-3/BC-5/BC-6/BC-7 cleared, the **literature-progressable feasibility
-pass is essentially complete** — the remaining gates are access/execution, not design.
+strictly pre-index window; negative control not-autoimmune-specific / not-downstream (baseline
+association checked); N3C differential undercount + era drift acknowledged. **Still open:** **BC-4**
+(sex × stratum × PASC cell counts — the binding unknown, and largely **access-gated** on the N3C
+enclave) and **BC-2** (access verification). With BC-1/BC-3/BC-5/BC-6/BC-7 cleared, the
+**literature-progressable design work is complete — but BC-4 remains an open design gate, not only
+a counting exercise**: the observed counts can still force **stratum pooling**, **endpoint choice**
+(the coded-primary is less sensitive → fewer cells), and **interaction-scale expectations**
+(additive/RERI binds first). Its design consequences are simply unresolvable until the enclave
+counts exist, so design feasibility is *not* fully settled — it is access-gated.
 
 ## New Questions Raised
 
@@ -208,15 +227,19 @@ pass is essentially complete** — the remaining gates are access/execution, not
 
 ## Updated Priorities
 
-1. **The feasibility triage is design-complete.** BC-1/BC-3/BC-5/BC-6/BC-7 are resolved; only
-   **BC-4** (cell counts, access-gated) and **BC-2** (access) remain, both requiring the N3C
-   enclave. `plan:0005` stays `not-ready` but is now blocked **only on access/execution**, not on
-   any open design question — the natural next milestone is the BC-2 access track (or a BC-4
+1. **The literature-progressable design work is complete; BC-4 remains an open design gate that is
+   access-gated.** BC-1/BC-3/BC-5/BC-6/BC-7 are resolved. **BC-4 is not merely counting** — the
+   observed sex × stratum × PASC cell counts can still force **stratum pooling**, **endpoint
+   choice**, and **interaction-scale expectations** (additive/RERI binds first), so design
+   feasibility is *not* fully settled; those consequences are just unresolvable until the enclave
+   counts exist. `plan:0005` stays `not-ready`, blocked on access/execution for **BC-2** and on
+   access-plus-design for **BC-4** — the natural next milestone is the BC-2 access track (or a BC-4
    scoping pass on published marginals) rather than another literature check.
 2. **Propagate the utilisation lock into `plan:0006` WP4**: build the pre-index utilisation
    covariate **split outpatient vs inpatient**, emit **utilisation-adjusted and -unadjusted E1
    variants** (mirroring the existing vaccination pair), route inpatient contact to the F6 severity
    denylist, and pin the 365 d pre-index window in `windows.yaml`. WP stays code-gated (`t082`).
-3. **Update `plan:0005`**: mark BC-7 resolved; add the dual-role caveat + adjustment-framing pair to
-   the E1 adjustment set; add the **autoimmune-independent** constraint to the negative-control
+3. **Update `plan:0005`**: mark BC-7 resolved; add the dual-role (`D`-footprint vs
+   `E_obs`-measurement) caveat + adjustment-framing pair to the E1 adjustment set; add the
+   **not-autoimmune-specific / not-downstream + empirical-baseline-check** constraint to the negative-control
    spec; note the outpatient/inpatient split and the era/telehealth drift.

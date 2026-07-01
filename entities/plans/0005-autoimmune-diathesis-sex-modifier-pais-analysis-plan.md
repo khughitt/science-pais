@@ -319,9 +319,11 @@ The dominant error is **bias, not variance** — larger N does not fix it (the
   so a sex-pooled or sex-unadjusted association is confounded by construction. Defenses:
   individual-level **pre-index outpatient** utilization adjustment (dual-role, BC-7 —
   adjusted/unadjusted framing pair); a **negative-control outcome** that is
-  ascertainment-sensitive but **not mechanistically tied to autoimmune→PASC *and*
-  autoimmune-independent in its ascertainment** (BC-7: because `autoimmune → higher-utilisation`,
-  a negative control that is itself autoimmune-associated would absorb true signal and under-report
+  **encounter-sensitive but neither autoimmune-specific nor mechanistically downstream of
+  autoimmune disease** (not part of autoimmune monitoring/treatment), with its **baseline
+  association with the strata checked empirically** and discounted if non-null (BC-7: strict
+  "autoimmune-independence" is too high a bar because autoimmune disease raises contact *globally*;
+  a control that is autoimmune-*specific* or downstream would absorb true signal and under-report
   residual bias); and preference for **population-based sampling** (OpenSAFELY/All of Us) over
   clinic-ascertained.
 - **Exposure misclassification** from prevalent-code-as-incident and pooled strata (Hill's
@@ -458,15 +460,19 @@ gates the eventual data-gated pre-registration will reference by name.
   vehicles natively build an individual pre-index encounter-count covariate (N3C OMOP
   `visit_occurrence`; OpenSAFELY ehrQL `clinical_events`/`consultations`) from a fixed lookback →
   **Hill's county physicians-per-1,000 proxy is replaced** (third of Hill's three gaps closed).
-  **Load-bearing caveat:** individual utilisation is a **dual-role variable** — both the
-  ascertainment-opportunity confounder to adjust (contact → coded exposure *and* coded outcome)
-  **and** a **consequence of the autoimmune exposure** (autoimmune disease generates encounters),
-  so it sits on the causal path and naive adjustment over-adjusts / can open a collider. **Fixes:**
+  **Load-bearing caveat:** individual utilisation is a **dual-role variable**, cleanly resolved by
+  distinguishing **true/latent disease `D`** from the **recorded diagnosis `E_obs`** (the coded
+  exposure): for `E_obs` utilisation is **upstream measurement machinery** (`contact → E_obs`,
+  needed for the diagnosis to be coded), while for `D` it is a **downstream disease footprint**
+  (`D → contact`). It is thus both the ascertainment-opportunity confounder to adjust **and** on
+  the causal path, so naive adjustment over-adjusts / can open a collider. **Fixes:**
   (a) **split by care setting** — pre-index *outpatient* contact = E1 ascertainment adjuster,
   *inpatient* contact = severity-adjacent (F6 denylist, mediator side); (b) **adjustment-framing
   pair** — E1 utilisation-adjusted (primary) + unadjusted (sensitivity), divergence informative
   (mirrors the vaccination caveat); (c) strictly **pre-index** window (candidate 365 d); (d) the
-  **negative-control outcome must be autoimmune-independent** or it absorbs true signal. The
+  **negative-control outcome must be not-autoimmune-specific and not-downstream of autoimmune
+  disease** (baseline association empirically checked; not strict independence — `D` raises contact
+  globally). The
   covariate is measured with **vehicle-specific error** (N3C undercounts out-of-network care) and
   **era/telehealth-drift** → the ascertainment defence is **buildable but bounded**, quantified by
   the negative control + E-value, not a clean fix. This **qualifies the h0008 defence** (after

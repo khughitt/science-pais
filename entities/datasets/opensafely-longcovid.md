@@ -66,7 +66,7 @@ Per `plan:0005`'s admissibility gates:
 | Dated pre-index autoimmune diagnosis (BC-3) | **strong** | OpenCodelists SNOMED lists with real primary-care event dates (not billing proxies) |
 | Autoimmune stratum granularity (BC-3) | **good — 7.5/8 confirmed** (`interpretation:0032`) | RA/SLE/IBD/MS confirmed; Sjögren (`sjogrens_cod`), myositis (`myositis_cod`), vasculitis (subtype union: `gca_cod`/`wegenervasc_cod`/`polyarteritis_cod`/`takayasuart_cod`/`cryoglobvasc_cod`) now confirmed as official NHSD SNOMED refsets; autoimmune-thyroid **partial** — Graves (`gravesdis_cod`) clean, no autoimmune-*hypo*thyroid refset (only all-cause `thy_cod`) |
 | Dated infection index + acute severity (BC-6) | **strong — top rungs; ordinal middle soft** (`interpretation:0034`) | SGSS test dates; SUS/HES + ECDS + ICNARC dated admissions/ICU date hospitalisation/ICU/ventilation/death crisply → coarse hospitalisation-based mediator primary. Moderate/**oxygen rung under-captured** (home/primary-care O₂ sparse) → WHO-ordinal = sensitivity. ONS death = competing event for E2/E3, not a drop |
-| Individual-level utilisation (BC-7) | **strong buildability, dual-role caveat** (`interpretation:0035`) | per-patient GP-consultation counts via ehrQL `clinical_events` / consultations (near-complete for registered patients; misses private care). Utilisation is dual-role — ascertainment confounder **and** consequence of the autoimmune exposure → adjust pre-index *outpatient* only (adjusted/unadjusted E1 pair); negative control must be autoimmune-independent |
+| Individual-level utilisation (BC-7) | **strong buildability, dual-role caveat** (`interpretation:0035`) | per-patient GP-consultation counts via ehrQL `clinical_events` / consultations (near-complete for registered patients; misses private care). Utilisation is dual-role — ascertainment confounder **and** consequence of the autoimmune exposure (true disease `D` footprint vs recorded `E_obs` measurement machinery) → adjust pre-index *outpatient* only (adjusted/unadjusted E1 pair); negative control not-autoimmune-specific / not-downstream (baseline association checked) |
 | Computable PASC outcome (BC-5) | **weak — the binding limitation** (locked `interpretation:0033`) | NICE 3-cluster coded (diagnosis 2 + referral 3 + assessment 10); primary = all-clusters pooled + diagnosis-only/any **bracketing pair**; symptom-temporal = exploratory-only. Broadening **reshapes, not removes**, the utilisation-gated under-recording |
 | Rare-stratum × sex power (BC-4) | **constrained** | EMIS pause (TPP-only) + SDC suppression force stratum pooling |
 
@@ -126,7 +126,8 @@ consultation-frequency adjustment + negative-control + bracketing pair), in both
   registered patients; misses private care). **Dual-role caveat:** utilisation is both the
   ascertainment confounder and a consequence of the autoimmune exposure → adjust pre-index
   *outpatient* contact only (inpatient = severity-side), report adjusted/unadjusted E1 pair
-  (divergence read by sex), and require an autoimmune-independent negative control. No
+  (divergence read by sex), and require a negative control that is not-autoimmune-specific /
+  not-downstream of autoimmune disease (baseline association checked, not strict independence). No
   participant-level data (federated).
 
 ## Connections to Project

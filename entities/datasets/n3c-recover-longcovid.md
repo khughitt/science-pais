@@ -83,7 +83,8 @@ no patient-reported fatigue severity. Single trigger.
   **Two caveats carried into `plan:0005`/`plan:0006`:** (a) utilisation is **dual-role** — the
   ascertainment confounder **and** a consequence of the autoimmune exposure → adjust pre-index
   *outpatient* contact only (inpatient = severity-side, F6 denylist), report adjusted/unadjusted E1
-  pair (divergence read by sex), autoimmune-independent negative control; (b) **N3C-specific
+  pair (divergence read by sex), negative control not-autoimmune-specific / not-downstream
+  (baseline association checked, not strict independence); (b) **N3C-specific
   differential undercount** — only care at contributing sites is visible, so "low utilisation"
   conflates truly-low-contact with out-of-network care → the ascertainment defence is **bounded**,
   quantified by negative control + E-value. No participant-level data accessed (no access gate).
