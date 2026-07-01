@@ -31,7 +31,7 @@ neighborhood_policy:
 patch_type: inquiry
 inquiry:
   profile: investigation
-  status: sketch
+  status: specified
   boundary_roles:
   - ref: concept:persistent-antigen-fragment-burden
     role: BoundaryIn
@@ -47,20 +47,24 @@ inquiry:
   - subject: concept:persistent-immune-state-displacement
     predicate: feedsInto
     object: concept:small-fiber-neuropathy-dysautonomia
-    claim_refs: []
+    claim_refs:
+      - "proposition:0040-vascular-metabolic-sfn-axes-plausible-effectors"
   - subject: concept:persistent-immune-state-displacement
     predicate: feedsInto
     object: concept:thromboinflammation-and-endothelial-dysfunction
-    claim_refs: []
+    claim_refs:
+      - "proposition:0040-vascular-metabolic-sfn-axes-plausible-effectors"
   - subject: concept:persistent-immune-state-displacement
     predicate: feedsInto
     object: concept:metabolic-mitochondrial-dysfunction
-    claim_refs: []
+    claim_refs:
+      - "proposition:0040-vascular-metabolic-sfn-axes-plausible-effectors"
   # the central HUB/mediator candidate (the contested claim; q0022)
   - subject: concept:persistent-immune-state-displacement
     predicate: feedsInto
     object: concept:pais-outcome
-    claim_refs: []
+    claim_refs:
+      - "proposition:0039-immune-state-displacement-mediates-vs-marks-pais-symptoms"
   # vascular / O2 limb (Joseph2023)
   - subject: concept:thromboinflammation-and-endothelial-dysfunction
     predicate: feedsInto
@@ -86,14 +90,19 @@ inquiry:
     claim_refs: []
   assumptions:
   - ref: sketch-not-identified-dag
+    derived_from: hypothesis:0001-shared-dysregulated-attractor
     statement: 'This is a SKETCH (status: sketch), not an identified causal DAG. Edges are candidate directional relations (sci:feedsInto), not estimated effects; no estimand is committed and no adjustment set is claimed. Promotion of any edge to a causal claim with an estimand belongs in a later causal-profile inquiry targeting a specific question (e.g. q0022 for the hub edge).'
   - ref: descriptive-vs-hub-split
+    derived_from: question:0022-immune-state-displacement-mediator-vs-co-traveler
     statement: 'Two claims are kept strictly separate. (i) DESCRIPTIVE: PAIS often involve a persistent immune-state displacement (relatively well-aligned with evidence). (ii) CAUSAL-HUB: immune state is the central mediator through which most symptoms arise (much less settled). The single edge persistent_immune_state_displacement -> pais-outcome encodes claim (ii) and must not inherit support from claim (i); it is the focal estimand of question:0022 and the live test is the abrocitinib JAK1 readout (h0003 / pre-registration:0004).'
   - ref: degenerate-realization-evidence-bar
+    derived_from: proposition:0037-shared-analyte-signature-not-required-for-immune-state-displacement
     statement: 'The shared object is a persistent STATE displacement that may be DEGENERATELY realized — many molecular configurations producing one persistent macro-state. Consequently shared-ANALYTE nulls (Galbraith2011, Patterson2024, Chowdhury2026, the t035 pathway-overlap null) weaken "shared molecular signature", NOT automatically "shared persistent state displacement". The strong shared-pathway prediction (q0001) remains the most discriminating POSITIVE test but is not a precondition for the displacement frame.'
   - ref: feedback-loops-not-dag-expressible
+    derived_from: proposition:0041-feedback-maintenance-requires-dynamical-treatment-outside-dag
     statement: 'The immune<->autonomic and immune<->metabolic MAINTENANCE loops are genuine cycles and are NOT expressible in an acyclic flow/DAG. They are carried as sci:Unknown nodes (immune_autonomic_feedback_loop, immune_metabolic_feedback_loop), not faked with arrows. Static DAGs can represent candidate directional relations and intervention/confounding questions; they cannot represent attractor maintenance, hysteresis, or feedback stability. Those are deferred to a time-indexed / dynamical-systems treatment (question:0008; cf. peer project ~/d/health/processes/cycles).'
   - ref: candidates-in-prose-not-edged
+    derived_from: hypothesis:0001-shared-dysregulated-attractor
     statement: 'Upstream/parallel candidate systems with thin PAIS-specific evidence (HPA/cortisol rhythm, circadian clock, gonadal hormones, mast-cell/connective-tissue, CNS/glial/neuroinflammatory, microbiome/gut-barrier, autoimmune diathesis) are deliberately held in PROSE (see "Candidate upstream/parallel systems not yet edged"), NOT added as edged graph variables. This prevents laundering speculation into graph structure and keeps thin candidates from looking equivalent to the evidenced spine. Promote a candidate to an edged node only when evidence or a specific testable question warrants it.'
   transformations: []
   unknowns:
@@ -131,18 +140,27 @@ shared-analyte nulls should weaken "shared molecular signature", not automatical
   edge `immune-state-displacement → pais-outcome` carries this claim; the live test is
   the abrocitinib JAK1 readout (`hypothesis:0003`, `pre-registration:0004`).
 
-## Candidate proposition families
+## Proposition families (formalized)
 
-Named here for later formalization (`/science:specify-model`); none validated:
+The five families are now durable proposition entities — evidence buckets designed so
+future evidence lands in the right one and descriptive immune involvement is never
+re-blurred with causal-hub status. None are adjudicated; each is held at its honest layer.
 
-1. **Persistence** — immune state is persistently *displaced* after some infections.
-2. **Mediation (hub)** — immune state *mediates* symptoms (vs. being a co-traveler).
-3. **Maintenance** — immune state is *held* there by immune-autonomic-metabolic
-   feedback loops (the dynamical/attractor leg; `question:0008`).
-4. **Reversibility** — immune perturbation can *reverse* symptoms (the cleanest causal
-   test; abrocitinib and related immunomodulation).
-5. **Degeneracy** — immune-state displacements are *degenerate* (one macro-state, many
-   molecular realizations) rather than analyte-identical.
+1. **Degeneracy / evidence-bar** [`structural_claim`] — `proposition:0037`: a shared
+   analyte signature is **not required** for h0001; shared-analyte nulls weaken "shared
+   molecular signature", not "shared state displacement".
+2. **Persistence (descriptive)** [`empirical_regularity`] — `proposition:0038`: a
+   persistent immune-state displacement *occurs* in PAIS. Proxy-measured; asserts the
+   shift exists, **not** that it drives symptoms.
+3. **Mediation vs marker (hub)** [`causal_effect`, contested] — `proposition:0039`: the
+   displaced state *mediates* symptoms rather than *marking* another process. Focal
+   estimand of `question:0022`; wired to the hub edge; must not inherit (2)'s support.
+4. **Effectors** [`mechanistic_narrative`] — `proposition:0040`: vascular, metabolic,
+   and SFN axes are plausible *downstream effectors*. Wired to the three
+   immune-state→effector edges.
+5. **Feedback maintenance is dynamical** [`structural_claim`] — `proposition:0041`:
+   the immune⇄autonomic / immune⇄metabolic maintenance loops need dynamical-systems
+   treatment (`question:0008`), not DAG arrows; carried as the two `unknowns`.
 
 ## Core spine (edged now)
 
