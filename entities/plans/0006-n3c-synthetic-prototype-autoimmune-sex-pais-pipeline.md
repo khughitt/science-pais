@@ -9,6 +9,9 @@ plan_kind: "pipeline"
 related:
   - plan:0005-autoimmune-diathesis-sex-modifier-pais-analysis-plan
   - task:t079
+  - task:t080
+  - task:t081
+  - task:t082
   - interpretation:0031-t079-n3c-vs-opensafely-vehicle-decision
   - dataset:n3c-recover-longcovid
   - dataset:n3c-recover-longcovid-synthetic
@@ -25,6 +28,16 @@ related:
 > floor, bias-vs-variance, sensitivity arbitration) are **already settled in
 > `plan:0005-autoimmune-diathesis-sex-modifier-pais-analysis-plan`** and are **not
 > re-decided here** — this plan only builds the runnable, enclave-portable skeleton.
+>
+> **Execution status (2026-07-01): DESIGNED · REVIEWED · SYNTHETIC-SLICE-GOVERNED · execution-blocked.**
+> BC-2 is *not failed* — it is blocked at execution on two access gates and one scope decision,
+> all filed as tasks: **t080** (N3C Enclave / synthetic-tier access → WP0), **t081** (OMOP Athena
+> vocabulary → WP1 vocab-validity), **t082** (scope-boundary decision — writing runnable pipeline
+> code is a seed-stage→build phase transition and must be an explicit decision, not t079 momentum).
+> **No pipeline code (fixtures included) is written until t082 approves it.** If approved, the code
+> home is **`code/n3c-autoimmune-sex-pais/`** (research-profile convention) — *not* `results/`, *not*
+> an unanchored root `src/`. F1/F2 design decisions are resolved in-plan; F2's dataset artifact
+> (`dataset:n3c-recover-longcovid-synthetic`) exists; the rest awaits the gates.
 
 ## Purpose
 
@@ -61,10 +74,11 @@ confirm.
 ## Architecture
 
 Portable OMOP-first layout; the same `src/` runs local-synthetic and enclave-Spark behind a
-thin execution shim.
+thin execution shim. **Code home is `code/n3c-autoimmune-sex-pais/` (conditional on t082 scope
+approval); nothing below is created until then.**
 
 ```
-n3c-autoimmune-sex-pais/                      NEW  (prototype repo / enclave code-workbook mirror)
+code/n3c-autoimmune-sex-pais/                 NEW  (prototype repo / enclave code-workbook mirror; gated on t082)
 ├── config/
 │   ├── windows.yaml                          NEW  index/lookback/acute/PASC offsets + matching SEED + boundary rules (versioned)
 │   └── disclosure.yaml                        NEW  per-target SDC profiles (n3c PROVISIONAL, opensafely); "clears both" = stricter (F7)
