@@ -4,7 +4,7 @@ type: "plan"
 title: "Analysis plan: pre-existing autoimmune diathesis as a sex-conditioned effect modifier of long-COVID/PASC risk (t078)"
 status: not-ready
 created: "2026-06-30"
-updated: "2026-06-30"
+updated: "2026-07-01"
 plan_kind: "analysis-plan"
 related:
   - task:t078
@@ -18,9 +18,11 @@ related:
   - paper:Hill2022
   - paper:Srivatsan2025
   - dataset:n3c-recover-longcovid
+  - dataset:opensafely-longcovid
   - dataset:all-of-us-covid
   - dataset:recover-adult
   - dataset:uk-biobank-covid
+  - interpretation:0031-t079-n3c-vs-opensafely-vehicle-decision
 skills_loaded:
   - id: statistics-bias-vs-variance-decomposition
     reason: the dominant error term is differential ascertainment / confounding (both exposure and outcome are female-predominant and healthcare-contact-intensive), which does not shrink with sample size and must be separated from sampling variance
@@ -100,18 +102,24 @@ assumed input — vehicle selection is itself a blocking check (BC-1).
 
 **Candidate-vehicle ranking (to be verified in BC-1..BC-3, not assumed):**
 
-1. **N3C (`dataset:n3c-recover-longcovid`) — provisional primary.** Hill2022 already proved
-   it carries the matched design + computable PASC phenotype at millions-scale; EHR scale
-   is what makes rare-stratum × sex cells estimable; individual-level utilization and
-   pre-index ICD history are natively present (fixes two of Hill's three gaps). Costs:
-   EHR-coded autoimmune and PASC are both noisy/under-coded; enclave-only compute; no
-   patient-reported severity. **Prototype on the open synthetic tier now; real data is
+1. **N3C (`dataset:n3c-recover-longcovid`) — PRIMARY (confirmed BC-1, 2026-07-01,
+   `interpretation:0031`).** Hill2022 already proved it carries the matched design +
+   computable PASC phenotype at millions-scale; EHR scale is what makes rare-stratum × sex
+   cells estimable; individual-level utilization and pre-index ICD history are natively
+   present (fixes two of Hill's three gaps). It also has the **most mature computable PASC
+   outcome** and an **open synthetic tier to prototype on now**. Costs: US
+   healthcare-seeking EHR → sampling-frame ascertainment skew; enclave-only compute;
+   EHR-coded autoimmune/PASC noisy. **Prototype on the open synthetic tier now; real data is
    enclave-gated.**
-2. **OpenSAFELY — provisional population-based replication vehicle, but not yet scaffolded.**
-   Whole-population UK primary care (tens of millions), the strongest sampling frame for
-   the h0008 ascertainment concern and for individual utilization. **No `dataset:` entity
-   exists yet → dataset discovery is a blocking check (BC-1).** Attractive on paper,
-   unverified in every field.
+2. **OpenSAFELY (`dataset:opensafely-longcovid`) — POPULATION-BASED REPLICATION (confirmed
+   BC-1, 2026-07-01).** Near-whole-population England primary care (~58M; **realistically
+   TPP-only ~24M now — EMIS research backend paused**), the strongest sampling frame for the
+   h0008 concern, with dated pre-index autoimmune onset, dated SGSS index + SUS/HES/ICNARC
+   severity, and per-patient GP-consultation utilisation. **Not primary:** coded long COVID
+   is **severely and *differentially* under-recorded** (higher-utilisation patients, incl.
+   autoimmune patients, are coded more) → a coded-only outcome carries outcome-side h0008
+   bias; SDC (≤7, round-5) forces rare-cell pooling. Retained as the ascertainment arbiter
+   (rule #4) **conditional on a non-coded-only PASC phenotype (BC-5)**.
 3. **All of Us (`dataset:all-of-us-covid`) — diverse-population triangulation.** Offsets
    UKB/N3C skew; EHR + surveys, sex-stratifiable. Long-COVID phenotyping less mature than
    RECOVER; N smaller than N3C → rare strata likely underpowered. Best used to test whether
@@ -286,7 +294,12 @@ Pre-committed rules for when analyses disagree:
 3. **Negative-control outcome** must be null; a non-null negative control **caps the
    credited effect size** via the observed bias.
 4. **Population-based vs clinic-ascertained** vehicles disagreeing → the population-based
-   estimate is the arbiter for the h0008 concern (pre-committed).
+   estimate (OpenSAFELY) is the arbiter for the h0008 concern (pre-committed) — **but only
+   for a non-coded-only PASC phenotype**. OpenSAFELY's *coded* long-COVID outcome is itself
+   differentially under-recorded (higher-utilisation/autoimmune patients coded more), so a
+   coded-only OpenSAFELY estimate carries outcome-side ascertainment bias and does **not**
+   arbitrate; the arbiter role is contingent on BC-5's broader phenotype
+   (`interpretation:0031`).
 5. **Interaction scale disagreement** (multiplicative present, additive absent or vice
    versa) is reported on both scales; the additive/RERI result is primary for the
    effect-modification claim.
@@ -323,8 +336,11 @@ granularity, severity timing, individual utilization, and stratum × sex cell co
 Each becomes a `science tasks` blocker (created below). These are the vehicle-admissibility
 gates the eventual data-gated pre-registration will reference by name.
 
-- **BC-1 — Vehicle selection + OpenSAFELY discovery.** Confirm N3C as primary vs
-  OpenSAFELY; create a `dataset:` entity for OpenSAFELY if it advances (none exists).
+- **BC-1 — Vehicle selection + OpenSAFELY discovery. ✅ RESOLVED 2026-07-01
+  (`interpretation:0031`).** N3C = primary (mature computable PASC phenotype + open synthetic
+  tier + rare-stratum scale); OpenSAFELY = pre-committed population-based replication
+  (`dataset:opensafely-longcovid` created), **not primary** because coded long COVID is
+  differentially under-recorded. All of Us = diverse triangulation.
 - **BC-2 — Access verification.** Resolve the access path for the chosen vehicle (N3C
   enclave DUA / OpenSAFELY approval / All-of-Us Workbench); prototype on N3C synthetic tier.
 - **BC-3 — Autoimmune stratum granularity.** Verify the vehicle resolves disease-specific

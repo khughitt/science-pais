@@ -18,6 +18,10 @@ accessions: []
 ontology_terms: [long-covid, sars-cov-2, ehr, computable-phenotype, sex-differences]
 related:
   - task:t013
+  - task:t079
+  - plan:0005-autoimmune-diathesis-sex-modifier-pais-analysis-plan
+  - interpretation:0031-t079-n3c-vs-opensafely-vehicle-decision
+  - dataset:opensafely-longcovid
   - question:0007-mechanism-of-female-predominance-in-pais
   - question:0003-acute-severity-threshold-for-self-sustaining-pais
 ---

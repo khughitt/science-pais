@@ -69,8 +69,12 @@ Standing discriminating test for question:0006 / proposition:0026 / hypothesis:0
 
 ## [t079] Vehicle-feasibility pass for autoimmune-diathesis × sex × PASC analysis (t078 / plan:0005)
 - priority: P2
-- status: proposed
+- status: in-progress
 - aspects: []
 - created: 2026-06-30
 
 Blocking checks BC-1..BC-7 from plan:0005-autoimmune-diathesis-sex-modifier-pais-analysis-plan before it can move to ready/pre-register. BC-1 vehicle selection + OpenSAFELY dataset discovery (no dataset entity yet); BC-2 access verification (prototype N3C synthetic tier); BC-3 autoimmune stratum granularity with dated pre-index onset (fix Hill pooled-Charlson gap); BC-4 sex×stratum×PASC cell counts vs power floor; BC-5 lock computable PASC definition; BC-6 acute-severity dateability in acute window (gates E2/E3 mediator role); BC-7 individual-level utilization covariate (replace county proxy). Provisional primary vehicle N3C; population-based replication OpenSAFELY/All-of-Us; RECOVER-Adult phenotype adjunct; UKB baseline triangulation.
+
+### Notes
+
+- 2026-07-01: BC-1 RESOLVED (interpretation:0031, 2026-07-01). Decision: N3C = PRIMARY vehicle; OpenSAFELY = pre-committed population-based REPLICATION (not primary); All-of-Us = diverse triangulation. Rationale: both platforms carry the exposure side well (dated pre-index autoimmune strata, dated SGSS/OMOP infection index, dated acute severity, individual utilisation), so the call turns on OUTCOME + prototyping cost. N3C has the most mature computable PASC phenotype (Hill proved it), rare-stratum x sex scale, and an OPEN SYNTHETIC TIER to prototype on now. OpenSAFELY's coded long-COVID is SEVERELY and DIFFERENTIALLY under-recorded (Walker: 23,273/58M; 26.7% of practices never coded; under-coding correlated with consultation frequency -> autoimmune patients coded more) => coded-only outcome carries outcome-side h0008 bias, disqualifying as primary but leaving its population-based frame valuable for the ascertainment arbiter role (plan rule #4) CONDITIONAL on a non-coded-only PASC phenotype (BC-5). Also: EMIS research backend PAUSED -> OpenSAFELY realistically TPP-only ~24M now; SDC (<=7, round-5) forces rare-cell pooling. Created dataset:opensafely-longcovid; added 3 OpenSAFELY refs (Williamson2020, Andrews2022, WalkerLongCOVID2021). Remaining: BC-2..BC-7. Next = BC-2 (stand up pipeline on N3C open synthetic tier). [UNVERIFIED] Sjogren/vasculitis/myositis/autoimmune-thyroid OpenCodelists URLs; exact coded-vs-survey under-recording ratio.
