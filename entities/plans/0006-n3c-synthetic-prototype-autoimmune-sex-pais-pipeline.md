@@ -65,23 +65,27 @@ thin execution shim.
 ```
 n3c-autoimmune-sex-pais/                      NEW  (prototype repo / enclave code-workbook mirror)
 ├── config/
-│   ├── windows.yaml                          NEW  index/lookback/acute/PASC window offsets (versioned)
-│   └── disclosure.yaml                        NEW  SDC params (suppress ≤ n, round-to-m) — enclave + OpenSAFELY portable
+│   ├── windows.yaml                          NEW  index/lookback/acute/PASC offsets + matching SEED + boundary rules (versioned)
+│   └── disclosure.yaml                        NEW  per-target SDC profiles (n3c PROVISIONAL, opensafely); "clears both" = stricter (F7)
 ├── concept_sets/                              NEW  the versioned exposure/outcome/severity bundle (BC-1 input)
-│   ├── autoimmune/{sle,ra,sjogren,vasculitis,myositis,ibd,ms,ai-thyroid}.csv   NEW
+│   ├── autoimmune/{sle,ra,ibd,ms}.csv         NEW  confirmed strata — draft lists
+│   ├── autoimmune/{sjogren,vasculitis,myositis,ai-thyroid}.csv  NEW  STUBS, bc3_gated:true (F4)
 │   ├── pasc.csv  severity.csv  utilisation.csv                                 NEW
-│   └── BUNDLE.lock                            NEW  checksums + source provenance (immutable)
+│   └── BUNDLE.lock                            NEW  checksums + provenance + per-stratum bc3_gated flags (immutable); status: draft-unreviewed
+├── schemas/                                   NEW  per-stage output contracts (grain, columns, keys) — asserted at stage entry/exit (F5)
+│   └── s1..s7.schema.yaml                     NEW
 ├── src/
-│   ├── io/ohdsi_shim.py                       NEW  one interface; duckdb(local-synthetic) | spark(enclave)
-│   ├── s1_cohort.py                           NEW  index event, inclusion, 1:5 matching (+weighting alt)
+│   ├── io/ohdsi_shim.py                       NEW  SQL-portable subset; duckdb(local) | spark(enclave); single named COLLECT boundary (F1)
+│   ├── s1_cohort.py                           NEW  index event, inclusion, seeded total-order 1:5 matching (+weighting alt)
 │   ├── s2_exposure.py                         NEW  dated pre-index strata + pooling hierarchy
-│   ├── s3_covariates.py                       NEW  age/sex/era/vax/comorbidity/utilisation/prior-infection
+│   ├── s3_covariates.py                       NEW  age/sex/era/vax(adj+unadj)/comorbidity/utilisation/prior-infection
 │   ├── s4_severity.py                         NEW  POST-index dated mediator (hosp/ICU/oxygen)
 │   ├── s5_outcome.py                          NEW  computable PASC phenotype (U09.9 + phenotype)
-│   ├── s6_estimate.py                         NEW  E1/E2/E3 + RERI + multiplicative + site frailty
-│   └── s7_outputs.py                          NEW  disclosure-portable tables + diagnostics
+│   ├── s6_estimate.py                         NEW  COLLECT→pandas; E1/E2/E3 + RERI + multiplicative + frailty (local stats)
+│   └── s7_outputs.py                          NEW  policy-driven SDC tables + diagnostics + datapackage.json (F5)
 ├── run/                                       NEW  ordered driver (tool-agnostic; Snakemake/Make optional)
-└── tests/                                     NEW  temporal-order + suppression unit tests on tiny fixtures
+└── tests/                                     NEW  cross-engine matching determinism, E1 design-matrix severity denylist,
+                                                    window-boundary fixtures, parameterized suppression, schema-contract checks
 ```
 
 ## Key decisions
@@ -92,17 +96,31 @@ n3c-autoimmune-sex-pais/                      NEW  (prototype repo / enclave cod
 - **Reason:** the synthetic tier lets us de-risk every stage's *mechanics* and portability at
   zero access cost, so enclave time is spent on results, not debugging.
 
-### Key decision 2: OMOP-first with an execution shim (portability over local convenience)
-- **Chosen approach:** write stage logic as OMOP-CDM queries behind `ohdsi_shim` so the same
-  code runs on local synthetic (duckdb/pandas) and the enclave (Palantir Foundry / PySpark).
-- **Rejected alternative:** prototype in local-only pandas idioms and re-port to Spark later.
-- **Reason:** re-porting is where silent logic drift enters; one code path eliminates it.
+### Key decision 2: OMOP-first shim with an explicit distributed→collect boundary (not "one code path everywhere")
+- **Chosen approach:** heavy set-based data assembly (s1–s6 cohort/exposure/covariate/severity/
+  outcome joins) is written as an **OMOP-CDM SQL-portable subset** behind `ohdsi_shim`
+  (duckdb local ↔ Spark enclave); estimation (`s6_estimate`) runs on a **collected pandas
+  frame** in *both* environments, after a disclosure-safe size check. The shim guarantees
+  portability **only** for the SQL-portable layer, and the collect boundary is a named,
+  documented contract — not an implicit `.toPandas()` wherever convenient.
+- **Rejected alternative:** treat the whole of `src/` as uniformly dual-runtime ("same code
+  everywhere"), including estimation.
+- **Reason:** log-binomial/RERI/frailty are statsmodels/R, which **cannot** run as Spark
+  transforms; pretending otherwise hides the real boundary. F1 (review) — the honest contract
+  is "distributed SQL builds analysis tables → collect (size-checked) → local stats," identical
+  in synthetic and enclave, with the *only* enclave swap being an optional enclave-native stats
+  engine later. See **Pre-WP2 blocking decisions**.
 
-### Key decision 3: Matched 1:5 as the reference design, weighting as a coded alternative
-- **Chosen approach:** reproduce Hill's within-site 1:5 matching as the primary design.
-- **Rejected alternative:** propensity-score weighting as primary.
-- **Reason:** matching is the published, portable N3C precedent (`paper:Hill2022`); weighting
-  is retained as a switch for the sensitivity arbitration, not the default.
+### Key decision 3: Matched 1:5 with a *deterministic, seeded, total-order* algorithm
+- **Chosen approach:** reproduce Hill's within-site 1:5 matching, implemented as a
+  **deterministic total-order selection** — candidates ordered by a stable key
+  (`hash(person_id, seed)` + explicit tiebreak columns), seed pinned in config — so the matched
+  sets are **identical across duckdb and Spark** and reproducible run-to-run.
+- **Rejected alternative:** (a) propensity-score weighting as primary; (b) matching that relies
+  on engine-default row order.
+- **Reason:** Spark ordering is non-deterministic without a total order + seed, so naive
+  matching would produce *different cohorts on the two engines* — silently breaking the
+  portability claim (F1). Weighting is retained as a coded switch for sensitivity arbitration.
 
 ### Key decision 4: Severity is a separately-built POST-index mediator, never a baseline covariate
 - **Chosen approach:** `s4_severity.py` reads only acute-window (post-index) dated events and
@@ -126,33 +144,75 @@ n3c-autoimmune-sex-pais/                      NEW  (prototype repo / enclave cod
 - **Reason:** exposure → severity → outcome ordering is the identification backbone; a config
   contract makes violations a test failure, not a code-review miss.
 
+## Pre-WP2 blocking decisions
+
+These two design decisions (review `doc/reviews/0006-...-pipeline-review.md`, F1 + F2) are
+**expensive to fix after code exists** and **must be written and resolved before any cohort
+code (`s1_cohort.py`, WP2) is started.** WP0–WP1 may proceed in parallel; WP2 may not begin
+until both are settled.
+
+**F1 — Deterministic matching + explicit distributed→collect boundary (KD2, KD3).**
+- Matching is a **seeded total-order** algorithm (order by `hash(person_id, seed)` + declared
+  tiebreak columns); seed pinned in `config/windows.yaml`. A cross-engine determinism test
+  (same fixture → byte-identical matched-set IDs on duckdb and Spark) is a WP2 entry gate.
+- The **shim contract** is documented: s1–s6 are SQL-portable/distributed; the pipeline
+  **collects to pandas at a single named point** *after* a disclosure-safe size check; s6/s7
+  stats run local (statsmodels/R) in both environments. No stage silently collects.
+
+**F2 — Structural synthetic-slice dataset handling (WP0).**
+- Before cohort code, the consumed data must be a **verifiable, stageable artifact that cannot
+  resolve to the Limited/enclave tier.** Resolve as either: (a) a granular sibling
+  `dataset:n3c-recover-longcovid-synthetic` (`access.level` public/registration, `local_path`/
+  `datapackage` → the acquired synthetic OMOP package, `verified: true` +
+  `verification_method` + `last_reviewed`); **or** (b) an `access.exception: {mode:
+  scope-reduced, decision_date, followup_task: t079}` + `local_path` on the existing entity.
+  Option (a) preferred (layout-v3 granular-sibling pattern). Until this exists, the pipeline
+  has no admissible input and WP2 cannot start.
+
 ## Work Packages
 
-### WP0: Synthetic-tier standup + access punch-list
+### WP0: Synthetic-tier standup + access punch-list  *(resolves F2)*
 - **Depends on:** `interpretation:0031` (vehicle locked). 
 - **Entry point:** acquire the N3C synthetic OMOP data package; instantiate `ohdsi_shim` local
   backend.
-- **Definition of done:** synthetic OMOP tables queryable via the shim; a written punch-list of
-  what only the enclave/Limited tier can confirm (real utilisation coding, PASC phenotype
-  coverage, true cell counts) filed against BC-2's real-tier remainder. Confirm the enclave
-  runtime (Foundry/PySpark, OMOP CDM version) as an **open question**, not an assumption.
+- **Definition of done:**
+  1. **Structural synthetic-slice scoping (F2):** create/scope the input as
+     `dataset:n3c-recover-longcovid-synthetic` (granular sibling, `local_path`/`datapackage` →
+     the acquired synthetic package, `verified: true` + `verification_method` + `last_reviewed`)
+     **or** add `access.exception: {mode: scope-reduced, followup_task: t079}` + `local_path` to
+     the existing entity. The pipeline's input path resolves **only** to this artifact; the
+     Limited/De-identified siblings are not reachable from any config value.
+  2. Synthetic OMOP tables queryable via the shim; **schema/runtime confirmed** (OMOP CDM
+     version; whether synthetic and Limited tiers share a schema) rather than assumed.
+  3. A written **enclave-only punch-list** — real utilisation coding, PASC phenotype coverage,
+     true cell counts, enclave stats engine — filed against BC-2's real-tier remainder.
 
-### WP1: Versioned concept-set / codelist bundle
+### WP1: Versioned concept-set / codelist bundle  *(resolves F3, F4)*
 - **Depends on:** WP0.
-- **Entry point:** assemble OMOP concept sets for the eight autoimmune strata, PASC, severity,
+- **Entry point:** assemble OMOP concept sets for the autoimmune strata, PASC, severity,
   utilisation into `concept_sets/` with `BUNDLE.lock` (checksums + provenance).
-- **Definition of done:** bundle loads, is immutable-by-checksum, and each stratum resolves to
-  ≥1 concept on synthetic data. **Clinical sign-off of the rarest strata is explicitly BC-3, not
-  this WP** — flagged, not silently assumed.
-- **Reusable:** `true` — the concept-set bundle is the shared input for the enclave run and the
-  OpenSAFELY translation (BC-5).
+- **Definition of done:**
+  1. **Vocabulary validity is separate from patient hits (F3):** every code resolves in the
+     OMOP `CONCEPT`/`CONCEPT_ANCESTOR` vocabulary (the portable, meaningful check). A
+     synthetic-data **patient-hit count** is recorded as a smoke test only and is **explicitly
+     allowed to be zero** for rare strata — a zero is not a WP1 failure.
+  2. **Confirmed vs BC-3-gated strata (F4):** SLE/RA/IBD/MS ship as **draft** lists; the four
+     unconfirmed strata (Sjögren, vasculitis, myositis, autoimmune-thyroid) are **stubs marked
+     `bc3_gated: true`** in `BUNDLE.lock`, not claimed complete. Bundle `status: draft-unreviewed`.
+  3. Bundle loads and is immutable-by-checksum. **Clinical sign-off is BC-3**, gating use for a
+     real estimate — not prototyping.
+- **Reusable:** `true` — shared input for the enclave run and the OpenSAFELY translation (BC-5).
 
-### WP2: Cohort construction
-- **Depends on:** WP0, WP1.
+### WP2: Cohort construction  *(gated on F1)*
+- **Depends on:** WP0, WP1, **and the F1 pre-WP2 decision (deterministic matching + shim
+  boundary) being written and resolved.**
 - **Entry point:** `s1_cohort.py` — index SARS-CoV-2 event, inclusion (≥45 d post-index
-  observation; sufficient pre-index observation for lookback), 1:5 within-site matching.
+  observation; sufficient pre-index observation for lookback), 1:5 within-site matching via the
+  **seeded total-order** algorithm (KD3).
 - **Definition of done:** a matched cohort table with matched-set IDs; the weighting alternative
-  runs behind a flag; unit test confirms no member violates the observation windows.
+  runs behind a flag; **cross-engine determinism test passes** (same fixture → identical
+  matched-set IDs on duckdb and Spark); unit test confirms no member violates the observation
+  windows (inclusive/exclusive boundaries per `windows.yaml`).
 
 ### WP3: Exposure build
 - **Depends on:** WP1, WP2.
@@ -175,7 +235,10 @@ n3c-autoimmune-sex-pais/                      NEW  (prototype repo / enclave cod
 - **Entry point:** `s4_severity.py` — acute-window (post-index) dated hospitalisation / ICU /
   oxygen.
 - **Definition of done:** severity variable dated strictly after index and before the PASC
-  window; a guard test fails if severity is ever joined into the E1 adjustment set.
+  window; **the E1 guard asserts at the model-input level (F6)** — `severity_cols` (plus a
+  maintained denylist of severity-*derived* proxies, e.g. hospitalisation-derived features)
+  must be disjoint from the exact column set of the E1 design matrix. A red-team fixture that
+  tries to sneak a severity proxy into E1 must trip the guard.
 
 ### WP6: Outcome build
 - **Depends on:** WP2.
@@ -185,24 +248,33 @@ n3c-autoimmune-sex-pais/                      NEW  (prototype repo / enclave cod
   phenotype-only) plumbed; case-definition provenance recorded (this is plan:0005's BC-5 for the
   N3C side).
 
-### WP7: Estimation
+### WP7: Estimation  *(honors the F1 collect boundary)*
 - **Depends on:** WP3, WP4, WP5, WP6.
-- **Entry point:** `s6_estimate.py` — E1 total (log-binomial → modified-Poisson/robust-SE
-  fallback; severity excluded), E2 controlled-direct (severity at reference), optional E3
-  mediation decomposition; sex × stratum interaction on **additive (RERI, primary) + multiplicative**
-  scales; site random intercept / frailty.
-- **Definition of done:** all estimators return without error on synthetic data and emit the
+- **Entry point:** `s6_estimate.py` — the **distributed/SQL layer builds the analysis table**;
+  the pipeline then **collects to pandas at the single named boundary, after a disclosure-safe
+  size check**, and E1/E2/E3 estimation runs **local (statsmodels/R) in both synthetic and
+  enclave** environments (F1). E1 total (log-binomial → modified-Poisson/robust-SE fallback;
+  severity excluded), E2 controlled-direct (severity at reference), optional E3 mediation;
+  sex × stratum interaction on **additive (RERI, primary) + multiplicative** scales; site random
+  intercept / frailty.
+- **Definition of done:** the collect boundary is a single explicit call (no ad-hoc
+  `.toPandas()` elsewhere); all estimators return without error on synthetic data and emit the
   E1/E2 pair as **distinct labeled estimands** (not a robustness pair); the fallback path is
-  exercised by a forced-non-convergence fixture.
+  exercised by a forced-non-convergence fixture. *(An enclave-native stats engine is an optional
+  later swap, recorded in the WP0 punch-list, not required for the prototype.)*
 
-### WP8: Diagnostics + disclosure-portable outputs
+### WP8: Diagnostics + disclosure-portable outputs  *(resolves F7)*
 - **Depends on:** WP7.
 - **Entry point:** `s7_outputs.py` — per-stratum × sex cell counts, minimum detectable RR per
   stratum, positivity/overlap, E-value on E1, negative-control-outcome result; all through the
-  `disclosure.yaml` suppress-then-round layer.
-- **Definition of done:** every emitted table is disclosure-safe (no cell ≤ threshold survives);
-  a suppression unit test proves rare autoimmune-stratum × sex cells are handled; outputs are
-  structured to clear both N3C enclave review and OpenSAFELY SDC.
+  policy-driven SDC layer.
+- **Definition of done:** `disclosure.yaml` carries **per-target policy profiles** (N3C,
+  OpenSAFELY) that differ; the layer applies the **stricter rule** (max threshold, coarsest
+  rounding) whenever "clears both" portability is claimed. The N3C threshold value is marked
+  **PROVISIONAL** pending WP0 confirmation and lives **only in config** — the suppression unit
+  test is **parameterized on the mechanism, never a magic N**. Every emitted table is
+  disclosure-safe under the active profile (proven by test), including rare autoimmune-stratum ×
+  sex cells.
 
 ### WP9: Scale/resource + end-to-end validation
 - **Depends on:** WP2–WP8.
@@ -229,12 +301,16 @@ n3c-autoimmune-sex-pais/                      NEW  (prototype repo / enclave cod
 
 ## Acceptance Criteria
 
-- [ ] All six stages + output layer run end-to-end on the synthetic slice via one code path.
-- [ ] Concept-set bundle is versioned/immutable; all eight strata resolve.
-- [ ] E1 and E2 emit as distinct labeled estimands; severity structurally excluded from E1.
+- [ ] **F2:** input resolves only to the verifiable synthetic artifact; no config value can reach the Limited/enclave tier.
+- [ ] **F1:** cross-engine matching determinism test green (duckdb ≡ Spark matched-set IDs); single named COLLECT boundary, no stray `.toPandas()`.
+- [ ] All six data stages + estimation + output layer run end-to-end on the synthetic slice.
+- [ ] **F3:** concept-set bundle versioned/immutable; every code is **vocabulary-valid**; synthetic patient-hit counts recorded as a smoke test (zero allowed for rare strata).
+- [ ] **F4:** confirmed strata (SLE/RA/IBD/MS) shipped as draft; the four unconfirmed strata stubbed `bc3_gated: true`; bundle `status: draft-unreviewed`.
+- [ ] E1 and E2 emit as distinct labeled estimands; **F6:** severity (and its proxy denylist) disjoint from the E1 design matrix, proven by a red-team fixture.
 - [ ] Vaccination-adjusted and -unadjusted variants both produced.
 - [ ] Interaction reported on additive (RERI) + multiplicative scales.
-- [ ] Every output table passes the disclosure suppress-then-round layer (proven by test).
-- [ ] Temporal-ordering guard tests green (exposure < severity < outcome).
+- [ ] **F5:** each stage asserts its declared output schema; a `datapackage.json` manifest is produced for the outputs.
+- [ ] **F7:** every output table passes the active SDC profile; "clears both" uses the stricter policy; threshold config-only + PROVISIONAL + mechanism-tested.
+- [ ] **F8/F9:** matching seed + tool versions pinned; window-boundary (same-day / reinfection) fixtures green (exposure < severity < outcome).
 - [ ] Peak memory + wall-clock recorded on the largest synthetic slice.
 - [ ] WP0 punch-list of enclave-only confirmations filed against BC-2's real-tier remainder.
