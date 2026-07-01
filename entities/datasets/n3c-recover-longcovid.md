@@ -24,6 +24,7 @@ related:
   - interpretation:0032-t079-bc3-autoimmune-stratum-granularity
   - interpretation:0033-t079-bc5-pasc-case-definition-lock
   - interpretation:0034-t079-bc6-acute-severity-dateability
+  - interpretation:0035-t079-bc7-individual-utilisation
   - paper:Pfaff2022
   - paper:Thaweethai2023
   - dataset:opensafely-longcovid
@@ -76,6 +77,16 @@ no patient-reported fatigue severity. Single trigger.
   `dataset:recover-adult` only. U09.9 = left-truncated/differential outcome availability (active in US
   ICD-10-CM from 2021-10-01; pre-activation infections codable later only if still observed).
   Every EHR outcome is utilisation-gated → ascertainment handled by design.
+- 2026-07-01 (agent, BC-7 / `interpretation:0035`): individual utilisation buildable — OMOP
+  `visit_occurrence`/`visit_detail` per-patient encounter counts over a fixed pre-index window
+  **replace Hill's county physicians-per-1,000 proxy** (third of Hill's three gaps closed).
+  **Two caveats carried into `plan:0005`/`plan:0006`:** (a) utilisation is **dual-role** — the
+  ascertainment confounder **and** a consequence of the autoimmune exposure → adjust pre-index
+  *outpatient* contact only (inpatient = severity-side, F6 denylist), report adjusted/unadjusted E1
+  pair (divergence read by sex), autoimmune-independent negative control; (b) **N3C-specific
+  differential undercount** — only care at contributing sites is visible, so "low utilisation"
+  conflates truly-low-contact with out-of-network care → the ascertainment defence is **bounded**,
+  quantified by negative control + E-value. No participant-level data accessed (no access gate).
 - 2026-07-01 (agent, BC-6 / `interpretation:0034`): acute-severity **dateability** confirmed —
   Hill2022's dated N3C severity set (hospitalisation, LOS tiers, invasive mechanical ventilation,
   ECMO, vasopressor, AKI, sepsis) dates the mediator relative to the earliest positive-test/dx

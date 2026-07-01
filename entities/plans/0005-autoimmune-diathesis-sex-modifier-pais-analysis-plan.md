@@ -28,6 +28,7 @@ related:
   - interpretation:0032-t079-bc3-autoimmune-stratum-granularity
   - interpretation:0033-t079-bc5-pasc-case-definition-lock
   - interpretation:0034-t079-bc6-acute-severity-dateability
+  - interpretation:0035-t079-bc7-individual-utilisation
 skills_loaded:
   - id: statistics-bias-vs-variance-decomposition
     reason: the dominant error term is differential ascertainment / confounding (both exposure and outcome are female-predominant and healthcare-contact-intensive), which does not shrink with sample size and must be separated from sampling variance
@@ -219,7 +220,9 @@ Boekel2023 warns about.
   want inside the total effect). Adjustment set: age, sex, calendar/variant era,
   vaccination at index (**partly post-exposure — see caveat in *Model Assumptions***),
   baseline non-autoimmune comorbidity, **individual healthcare
-  utilization**, prior-infection count. Metric: **risk ratio** (log-binomial / Poisson with
+  utilization** (**pre-index *outpatient* contact only** — dual-role, partly a consequence of the
+  autoimmune exposure; see caveat in *Model Assumptions*; inpatient contact is severity-side, not
+  here), prior-infection count. Metric: **risk ratio** (log-binomial / Poisson with
   robust SE) and risk difference per stratum. **Survivor-conditional caveat (BC-6 /
   `interpretation:0034`):** the ≥45 d survival-inclusion filter makes E1 a **survivor-conditional**
   total effect ("PASC among ≥45-day survivors"), because acute death is a consequence of the
@@ -270,6 +273,18 @@ regardless of interaction-test significance.
   (biological-susceptibility framing, primary) and carry an **unadjusted-for-vaccination**
   variant as a pre-registered sensitivity contrast; if they diverge materially, the
   vaccination-mediated path is itself a finding (parallels the E1-vs-E2 severity logic).
+- **Utilisation-adjustment caveat (named, not silent — BC-7/`interpretation:0035`).** Individual
+  utilisation is a **dual-role variable**: the ascertainment-opportunity confounder to adjust
+  (contact → coded exposure *and* coded outcome) **and** a **consequence of the autoimmune
+  exposure** (autoimmune disease generates encounters), so it lies on the causal path and naive
+  adjustment removes a slice of the exposure's real footprint / can act as a collider
+  (`autoimmune → contact ← other-causes → outcome-ascertainment`). Pre-commit: adjust for
+  **pre-index *outpatient* contact** only (inpatient is severity-side); report E1
+  **utilisation-adjusted (ascertainment-control, primary)** and **-unadjusted (biological-footprint,
+  sensitivity)** — divergence is a finding, read *by sex* (both autoimmune disease and utilisation
+  are female-skewed, so over-adjustment would preferentially attenuate the female stratum). The
+  covariate is measured with vehicle-specific error (N3C undercounts out-of-network care) → the
+  ascertainment defence is bounded, quantified by the negative control + E-value.
 - **E2 CDE** additionally requires **no unmeasured mediator–outcome confounder** (a common
   cause of acute severity and PASC, e.g. frailty, biases the CDE and can induce
   collider bias when severity is conditioned on). This assumption is strong and is the
@@ -302,10 +317,13 @@ The dominant error is **bias, not variance** — larger N does not fix it (the
   are higher-utilization → more encounters → **more opportunities to be coded with PASC**,
   independent of true risk. And autoimmune disease and PASC are **both female-predominant**,
   so a sex-pooled or sex-unadjusted association is confounded by construction. Defenses:
-  individual-level utilization adjustment; a **negative-control outcome** that is
-  ascertainment-sensitive but not mechanistically tied to autoimmune→PASC (to detect
-  residual surveillance bias); and preference for **population-based sampling**
-  (OpenSAFELY/All of Us) over clinic-ascertained.
+  individual-level **pre-index outpatient** utilization adjustment (dual-role, BC-7 —
+  adjusted/unadjusted framing pair); a **negative-control outcome** that is
+  ascertainment-sensitive but **not mechanistically tied to autoimmune→PASC *and*
+  autoimmune-independent in its ascertainment** (BC-7: because `autoimmune → higher-utilisation`,
+  a negative control that is itself autoimmune-associated would absorb true signal and under-report
+  residual bias); and preference for **population-based sampling** (OpenSAFELY/All of Us) over
+  clinic-ascertained.
 - **Exposure misclassification** from prevalent-code-as-incident and pooled strata (Hill's
   gap) → managed by the dated-lookback rule and versioned codelists.
 - **Mediator conditioning (E2).** Conditioning on severity can open a collider path
@@ -436,8 +454,23 @@ gates the eventual data-gated pre-registration will reference by name.
   survival (≥45 d) and ascertainment (≥90 d) windows, with a buffer, and pin inclusive/exclusive
   boundaries + a day-28-spanning-admission rule. This is the **mediator-channel** instance of the
   h0008 measurement/selection pattern (after BC-3 exposure-channel and BC-5 outcome-channel).
-- **BC-7 — Individual-level utilization.** Confirm individual encounter-count covariate is
-  buildable from a fixed pre-index window (replaces county proxy).
+- **BC-7 — Individual-level utilization. ✅ RESOLVED 2026-07-01 (`interpretation:0035`).** Both
+  vehicles natively build an individual pre-index encounter-count covariate (N3C OMOP
+  `visit_occurrence`; OpenSAFELY ehrQL `clinical_events`/`consultations`) from a fixed lookback →
+  **Hill's county physicians-per-1,000 proxy is replaced** (third of Hill's three gaps closed).
+  **Load-bearing caveat:** individual utilisation is a **dual-role variable** — both the
+  ascertainment-opportunity confounder to adjust (contact → coded exposure *and* coded outcome)
+  **and** a **consequence of the autoimmune exposure** (autoimmune disease generates encounters),
+  so it sits on the causal path and naive adjustment over-adjusts / can open a collider. **Fixes:**
+  (a) **split by care setting** — pre-index *outpatient* contact = E1 ascertainment adjuster,
+  *inpatient* contact = severity-adjacent (F6 denylist, mediator side); (b) **adjustment-framing
+  pair** — E1 utilisation-adjusted (primary) + unadjusted (sensitivity), divergence informative
+  (mirrors the vaccination caveat); (c) strictly **pre-index** window (candidate 365 d); (d) the
+  **negative-control outcome must be autoimmune-independent** or it absorbs true signal. The
+  covariate is measured with **vehicle-specific error** (N3C undercounts out-of-network care) and
+  **era/telehealth-drift** → the ascertainment defence is **buildable but bounded**, quantified by
+  the negative control + E-value, not a clean fix. This **qualifies the h0008 defence** (after
+  BC-3 exposure / BC-5 outcome / BC-6 mediator qualified the threat).
 
 When BC-1..BC-7 clear, this plan moves to `ready-with-caveats` and routes to
 `/science:pre-register` as a `data-gated` pre-registration whose G-gates are these BCs.

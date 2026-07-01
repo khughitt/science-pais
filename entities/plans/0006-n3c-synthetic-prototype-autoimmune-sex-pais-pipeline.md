@@ -16,6 +16,7 @@ related:
   - interpretation:0032-t079-bc3-autoimmune-stratum-granularity
   - interpretation:0033-t079-bc5-pasc-case-definition-lock
   - interpretation:0034-t079-bc6-acute-severity-dateability
+  - interpretation:0035-t079-bc7-individual-utilisation
   - paper:Pfaff2022
   - dataset:n3c-recover-longcovid
   - dataset:n3c-recover-longcovid-synthetic
@@ -98,7 +99,7 @@ code/n3c-autoimmune-sex-pais/                 NEW  (prototype repo / enclave cod
 │   ├── io/ohdsi_shim.py                       NEW  SQL-portable subset; duckdb(local) | spark(enclave); single named COLLECT boundary (F1)
 │   ├── s1_cohort.py                           NEW  index event, inclusion, seeded total-order 1:5 matching (+weighting alt)
 │   ├── s2_exposure.py                         NEW  dated pre-index strata + pooling hierarchy
-│   ├── s3_covariates.py                       NEW  age/sex/era/vax(adj+unadj)/comorbidity/utilisation/prior-infection
+│   ├── s3_covariates.py                       NEW  age/sex/era/vax(adj+unadj)/comorbidity/utilisation(outpatient adj+unadj; inpatient→severity denylist, BC-7)/prior-infection
 │   ├── s4_severity.py                         NEW  POST-index dated mediator: coarse hosp/ICU primary, WHO-ordinal+O2 sensitivity, acute-death competing-event flag (BC-6)
 │   ├── s5_outcome.py                          NEW  computable PASC phenotype (U09.9 + phenotype)
 │   ├── s6_estimate.py                         NEW  COLLECT→pandas; E1/E2/E3 + RERI + multiplicative + frailty (local stats)
@@ -247,14 +248,19 @@ until both are settled.
 - **Definition of done:** per-patient stratum flags with onset strictly before index; a pooling
   report shows which strata collapse at synthetic cell counts (mechanism check only).
 
-### WP4: Covariate build
+### WP4: Covariate build  *(BC-7 locked — `interpretation:0035`)*
 - **Depends on:** WP2.
 - **Entry point:** `s3_covariates.py` — age, sex, calendar/variant era, vaccination-at-index,
-  baseline non-autoimmune comorbidity, **individual pre-index utilisation (encounter counts over
-  a fixed lookback)**, prior-infection count.
+  baseline non-autoimmune comorbidity, **individual pre-index utilisation (encounter counts over a
+  fixed 365 d lookback in `windows.yaml`), split by care setting (outpatient vs inpatient)**,
+  prior-infection count.
 - **Definition of done:** covariate table built; **vaccination carries the plan:0005 caveat** —
   produced in both a vaccination-adjusted and a vaccination-unadjusted variant (partly
-  post-exposure); utilisation is individual-level (Hill's county proxy is *not* used).
+  post-exposure); **utilisation is individual-level (Hill's county proxy is *not* used) and
+  dual-role (BC-7):** the **pre-index *outpatient* count** is the E1 ascertainment adjuster and is
+  emitted in **utilisation-adjusted and -unadjusted E1 variants** (mirroring the vaccination pair,
+  divergence read by sex); the **inpatient count is routed to the F6 severity denylist** (mediator
+  side, must not enter E1). All utilisation counting is strictly pre-index by construction.
 
 ### WP5: Severity mediator build  *(BC-6 locked — `interpretation:0034`)*
 - **Depends on:** WP2.
