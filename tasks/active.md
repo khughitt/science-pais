@@ -75,3 +75,7 @@ Standing discriminating test for question:0006 / proposition:0026 / hypothesis:0
 - created: 2026-06-30
 
 Fast-follow from patch-definition:immune-state-shift-causal-landscape and question:0005. Sex-conditioned EHR/cohort check: is pre-existing autoimmune diathesis an effect-modifier (not mechanism) for PAIS / failed post-infectious recovery? Condition on sex, age, acute severity, ascertainment intensity, healthcare-contact bias. Trap: autoimmunity and long COVID are both female-predominant -> naive association is sex-confounded (h0008 measurement-channel meta-finding). Ties to h0005 homeostatic-margin.
+
+### Notes
+
+- 2026-06-30: Lit search done (search:0009). 5 Core-now papers stubbed: Hill2022 (N3C/RECOVER EHR PASC risk factors), Srivatsan2025 (PASC in rheumatic disease), Wolff2023 (allergic-disease->long COVID SR, atopy contrast), Steiner2020 (PTPN22/CTLA4 x infectious-onset ME/CFS), Tsai2019 (IBD->CFS cohort). KEY GAP: no existing study gives a sex-stratified pre-existing-autoimmune x long-COVID estimate with matched controls + severity/utilization adjustment — closest (Yadaw2023 N3C) has outcome=acute severity, not long COVID. => t078 is likely a NEW-ANALYSIS target (N3C/OpenSAFELY/All-of-Us), not evidence extraction. Next: research-papers on the 5 stubs, then decide interpretation vs dataset-feasibility vs analysis-plan.
