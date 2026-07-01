@@ -15,6 +15,7 @@ related:
   - interpretation:0031-t079-n3c-vs-opensafely-vehicle-decision
   - interpretation:0032-t079-bc3-autoimmune-stratum-granularity
   - interpretation:0033-t079-bc5-pasc-case-definition-lock
+  - interpretation:0034-t079-bc6-acute-severity-dateability
   - paper:Pfaff2022
   - dataset:n3c-recover-longcovid
   - dataset:n3c-recover-longcovid-synthetic
@@ -98,7 +99,7 @@ code/n3c-autoimmune-sex-pais/                 NEW  (prototype repo / enclave cod
 │   ├── s1_cohort.py                           NEW  index event, inclusion, seeded total-order 1:5 matching (+weighting alt)
 │   ├── s2_exposure.py                         NEW  dated pre-index strata + pooling hierarchy
 │   ├── s3_covariates.py                       NEW  age/sex/era/vax(adj+unadj)/comorbidity/utilisation/prior-infection
-│   ├── s4_severity.py                         NEW  POST-index dated mediator (hosp/ICU/oxygen)
+│   ├── s4_severity.py                         NEW  POST-index dated mediator: coarse hosp/ICU primary, WHO-ordinal+O2 sensitivity, acute-death competing-event flag (BC-6)
 │   ├── s5_outcome.py                          NEW  computable PASC phenotype (U09.9 + phenotype)
 │   ├── s6_estimate.py                         NEW  COLLECT→pandas; E1/E2/E3 + RERI + multiplicative + frailty (local stats)
 │   └── s7_outputs.py                          NEW  policy-driven SDC tables + diagnostics + datapackage.json (F5)
@@ -255,15 +256,23 @@ until both are settled.
   produced in both a vaccination-adjusted and a vaccination-unadjusted variant (partly
   post-exposure); utilisation is individual-level (Hill's county proxy is *not* used).
 
-### WP5: Severity mediator build
+### WP5: Severity mediator build  *(BC-6 locked — `interpretation:0034`)*
 - **Depends on:** WP2.
-- **Entry point:** `s4_severity.py` — acute-window (post-index) dated hospitalisation / ICU /
-  oxygen.
-- **Definition of done:** severity variable dated strictly after index and before the PASC
-  window; **the E1 guard asserts at the model-input level (F6)** — `severity_cols` (plus a
-  maintained denylist of severity-*derived* proxies, e.g. hospitalisation-derived features)
-  must be disjoint from the exact column set of the E1 design matrix. A red-team fixture that
-  tries to sneak a severity proxy into E1 must trip the guard.
+- **Entry point:** `s4_severity.py` — acute-window (index → **≤28 d**, fixed upper bound in
+  `windows.yaml`) dated events. **Primary mediator = coarse dated hospitalisation-based severity**
+  (none / hospitalised-non-ICU / ICU-or-ventilation), which the synthetic OMOP schema dates
+  crisply; a **finer WHO-style ordinal** adding the moderate/oxygen rung is a **flagged
+  sensitivity mediator only** (that rung is differentially under-captured — BC-6). **Acute death
+  is encoded as a competing event, not a row-drop** — the ≥45 d survival filter is the E1
+  denominator device, but E2/E3 read a competing-risk-framed mediator so the survivor-only CDE
+  is not silently conditioned on a downstream consequence of severity.
+- **Definition of done:** severity variable dated strictly after index (≤28 d acute window) and
+  before the PASC window with a **buffer** between them; a competing-event flag for acute death is
+  emitted alongside the ordinal severity column; **the E1 guard asserts at the model-input level
+  (F6)** — `severity_cols` (plus a maintained denylist of severity-*derived* proxies, e.g.
+  hospitalisation-derived features, **and the acute-death competing-event flag**) must be disjoint
+  from the exact column set of the E1 design matrix. A red-team fixture that tries to sneak a
+  severity proxy into E1 must trip the guard.
 
 ### WP6: Outcome build  *(BC-5 locked — `interpretation:0033`)*
 - **Depends on:** WP2.
@@ -289,8 +298,10 @@ until both are settled.
   size check**, and E1/E2/E3 estimation runs **local (statsmodels/R) in both synthetic and
   enclave** environments (F1). E1 total (log-binomial → modified-Poisson/robust-SE fallback;
   severity excluded), E2 controlled-direct (severity at reference), optional E3 mediation;
-  sex × stratum interaction on **additive (RERI, primary) + multiplicative** scales; site random
-  intercept / frailty.
+  **E2/E3 read the acute-death competing-event flag (BC-6/`interpretation:0034`) so the
+  survivor-only CDE is competing-risk-framed, not conditioned on a downstream consequence of
+  severity**; sex × stratum interaction on **additive (RERI, primary) + multiplicative** scales;
+  site random intercept / frailty.
 - **Definition of done:** the collect boundary is a single explicit call (no ad-hoc
   `.toPandas()` elsewhere); all estimators return without error on synthetic data and emit the
   E1/E2 pair as **distinct labeled estimands** (not a robustness pair); the fallback path is

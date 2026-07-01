@@ -27,6 +27,7 @@ related:
   - interpretation:0031-t079-n3c-vs-opensafely-vehicle-decision
   - interpretation:0032-t079-bc3-autoimmune-stratum-granularity
   - interpretation:0033-t079-bc5-pasc-case-definition-lock
+  - interpretation:0034-t079-bc6-acute-severity-dateability
 source_refs:
   - cite:Williamson2020
   - cite:Andrews2022
@@ -63,7 +64,7 @@ Per `plan:0005`'s admissibility gates:
 | Population-based sampling (h0008) | **strong** | GP registration ≈ whole-population England — the platform's headline advantage |
 | Dated pre-index autoimmune diagnosis (BC-3) | **strong** | OpenCodelists SNOMED lists with real primary-care event dates (not billing proxies) |
 | Autoimmune stratum granularity (BC-3) | **good — 7.5/8 confirmed** (`interpretation:0032`) | RA/SLE/IBD/MS confirmed; Sjögren (`sjogrens_cod`), myositis (`myositis_cod`), vasculitis (subtype union: `gca_cod`/`wegenervasc_cod`/`polyarteritis_cod`/`takayasuart_cod`/`cryoglobvasc_cod`) now confirmed as official NHSD SNOMED refsets; autoimmune-thyroid **partial** — Graves (`gravesdis_cod`) clean, no autoimmune-*hypo*thyroid refset (only all-cause `thy_cod`) |
-| Dated infection index + acute severity (BC-6) | **strong** | SGSS test dates; SUS/HES + ECDS + ICNARC dated admissions/ICU |
+| Dated infection index + acute severity (BC-6) | **strong — top rungs; ordinal middle soft** (`interpretation:0034`) | SGSS test dates; SUS/HES + ECDS + ICNARC dated admissions/ICU date hospitalisation/ICU/ventilation/death crisply → coarse hospitalisation-based mediator primary. Moderate/**oxygen rung under-captured** (home/primary-care O₂ sparse) → WHO-ordinal = sensitivity. ONS death = competing event for E2/E3, not a drop |
 | Individual-level utilisation (BC-7) | **strong** | per-patient GP-consultation counts via ehrQL `clinical_events` / consultations |
 | Computable PASC outcome (BC-5) | **weak — the binding limitation** (locked `interpretation:0033`) | NICE 3-cluster coded (diagnosis 2 + referral 3 + assessment 10); primary = all-clusters pooled + diagnosis-only/any **bracketing pair**; symptom-temporal = exploratory-only. Broadening **reshapes, not removes**, the utilisation-gated under-recording |
 | Rare-stratum × sex power (BC-4) | **constrained** | EMIS pause (TPP-only) + SDC suppression force stratum pooling |
@@ -112,6 +113,12 @@ consultation-frequency adjustment + negative-control + bracketing pair), in both
 - 2026-07-01 (agent): landing-confirmed via OpenSAFELY docs (data-sources, data-access-policy,
   SDC), reports.opensafely.org TPP schema, and OpenCodelists. EMIS backend noted paused for
   research. No participant-level data retrieved (federated model — none is extractable).
+- 2026-07-01 (agent, BC-6 / `interpretation:0034`): acute-severity dateability confirmed —
+  SGSS-dated index + SUS/HES/ECDS/ICNARC dated admissions/ICU + ONS death date the top severity
+  rungs crisply (`cite:Williamson2020`), so the E2 mediator is dateable. Same two riders as N3C:
+  oxygen/moderate rung differentially under-captured → coarse hospitalisation-based mediator
+  primary; ONS death = competing event for E2/E3, not a survival-filter drop. No participant-level
+  data (federated).
 
 ## Connections to Project
 

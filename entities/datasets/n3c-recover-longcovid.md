@@ -23,6 +23,7 @@ related:
   - interpretation:0031-t079-n3c-vs-opensafely-vehicle-decision
   - interpretation:0032-t079-bc3-autoimmune-stratum-granularity
   - interpretation:0033-t079-bc5-pasc-case-definition-lock
+  - interpretation:0034-t079-bc6-acute-severity-dateability
   - paper:Pfaff2022
   - paper:Thaweethai2023
   - dataset:opensafely-longcovid
@@ -75,6 +76,15 @@ no patient-reported fatigue severity. Single trigger.
   `dataset:recover-adult` only. U09.9 = left-truncated/differential outcome availability (active in US
   ICD-10-CM from 2021-10-01; pre-activation infections codable later only if still observed).
   Every EHR outcome is utilisation-gated → ascertainment handled by design.
+- 2026-07-01 (agent, BC-6 / `interpretation:0034`): acute-severity **dateability** confirmed —
+  Hill2022's dated N3C severity set (hospitalisation, LOS tiers, invasive mechanical ventilation,
+  ECMO, vasopressor, AKI, sepsis) dates the mediator relative to the earliest positive-test/dx
+  index, so **E2 is identified in principle**. Two riders carried into `plan:0005`/`plan:0006`:
+  (a) moderate/**oxygen rung differentially under-captured** → primary mediator = coarse dated
+  hospitalisation-based severity, WHO-ordinal = sensitivity; (b) Hill's **≥45 d survival
+  exclusion selects on a downstream consequence of the mediator** (severe acute COVID → acute
+  death) → acute death modelled as a **competing risk** for E2/E3, not a row-drop. No
+  participant-level data accessed (no access gate for this check).
 - 2026-07-01 (agent, BC-3 / `interpretation:0032`): autoimmune-stratum granularity confirmed —
   all 8 disease-specific strata constructible as OMOP concept sets (fixes Hill's pooled-Charlson
   gap). SLE/RA/Crohn's/UC have curated **OHDSI Phenotype Library** cohorts (#119/#196/#198/#201);
