@@ -28,6 +28,12 @@ participant-level data were available or analyzed. -->
 
 # Interpretation: t079/BC-1 — N3C vs OpenSAFELY vehicle decision
 
+> **⚠️ SUPERSEDED 2026-07-01 (`core/decisions.md` D-004).** The "N3C primary" verdict below rested on
+> N3C having an **open synthetic tier to prototype on** — that premise is **false** (N3C synthetic is
+> enclave-only and non-downloadable). With the estimand shelved as
+> infeasible-under-transparency-standards, this vehicle decision is **void**. Retained as banked
+> reasoning; do **not** treat the verdict as operative.
+
 ## Verdict
 
 **N3C is the provisional primary vehicle; OpenSAFELY is the pre-committed population-based

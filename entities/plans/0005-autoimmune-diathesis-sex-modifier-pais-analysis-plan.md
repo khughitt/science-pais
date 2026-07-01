@@ -42,6 +42,16 @@ skills_loaded:
 
 # Analysis Plan: pre-existing autoimmune diathesis as a sex-conditioned effect modifier of long-COVID/PASC risk (t078)
 
+> **⚠️ SHELVED 2026-07-01 — infeasible-under-transparency-standards (`core/decisions.md` D-004).**
+> This estimand requires population-scale, individual-level patient EHR (rare autoimmune-stratum ×
+> sex power), a categorically access-gated, **non-downloadable** data class. N3C (the locked primary)
+> is gated + non-downloadable even at the synthetic tier; OpenSAFELY carries the same real-data
+> gating (insider-only). No vehicle can produce this as **third-party-reproducible** knowledge, so
+> the line is **shelved, not executed**. The **design is banked** — the two-estimand contrast, DAGs,
+> adjustment sets, negative-control/bracketing design, and the `hypothesis:0008` synthesis remain
+> valid and reusable. `status: not-ready` is retained (the plan never became viable); do **not** read
+> the sections below as a live plan.
+
 This is a **design-stage** analysis plan. It **locks the target contrast** — two
 explicitly-distinct estimands plus an optional mediation decomposition — and the
 adjustment strategy, negative controls, and sensitivity-arbitration rules. It is

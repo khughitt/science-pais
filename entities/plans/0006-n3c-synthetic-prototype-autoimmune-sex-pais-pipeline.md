@@ -2,7 +2,7 @@
 id: "plan:0006-n3c-synthetic-prototype-autoimmune-sex-pais-pipeline"
 type: "plan"
 title: "Pipeline (prototype): N3C synthetic-tier skeleton for the autoimmune × sex × PASC estimand (t079/BC-2)"
-status: "active"
+status: "archived"
 created: "2026-07-01"
 updated: "2026-07-01"
 plan_kind: "pipeline"
@@ -28,13 +28,20 @@ related:
 
 # Pipeline (prototype): N3C synthetic-tier skeleton for the autoimmune × sex × PASC estimand (t079/BC-2)
 
+> **⚠️ ARCHIVED 2026-07-01 (`core/decisions.md` D-004).** The N3C synthetic tier this pipeline builds
+> on is **non-downloadable (enclave-only)**, so its "open prototype substrate" premise is false and
+> the parent estimand (`plan:0005`) is shelved as infeasible-under-transparency-standards. This plan
+> is **not to be executed.** Retained as **banked design** — the WP decomposition, the `ohdsi_shim`
+> abstraction, and the disclosure-portable output pattern are reusable if a genuinely
+> third-party-reproducible population-EHR vehicle ever appears.
+
 > Execution orchestration for `plan:0005`. This is a **prototype/design plan**, not a
 > production run. The methodological readiness checks (estimands, independent unit, power
 > floor, bias-vs-variance, sensitivity arbitration) are **already settled in
 > `plan:0005-autoimmune-diathesis-sex-modifier-pais-analysis-plan`** and are **not
 > re-decided here** — this plan only builds the runnable, enclave-portable skeleton.
 >
-> **Execution status (2026-07-01): DESIGNED · REVIEWED · SYNTHETIC-SLICE-GOVERNED · execution-blocked.**
+> **Execution status (2026-07-01): SHELVED / ARCHIVED** — see the banner above and `core/decisions.md` D-004. (Was: DESIGNED · REVIEWED · SYNTHETIC-SLICE-GOVERNED · execution-blocked, before the N3C synthetic tier was confirmed non-downloadable.)
 > BC-2 is *not failed* — it is blocked at execution on two access gates and one scope decision,
 > all filed as tasks: **t080** (N3C Enclave / synthetic-tier access → WP0), **t081** (OMOP Athena
 > vocabulary → WP1 vocab-validity), **t082** (scope-boundary decision — writing runnable pipeline

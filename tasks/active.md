@@ -69,9 +69,8 @@ Standing discriminating test for question:0006 / proposition:0026 / hypothesis:0
 
 ## [t079] Vehicle-feasibility pass for autoimmune-diathesis × sex × PASC analysis (t078 / plan:0005)
 - priority: P2
-- status: blocked
+- status: deferred
 - aspects: []
-- blocked-by: [task:t080, task:t081, task:t082]
 - created: 2026-06-30
 
 Blocking checks BC-1..BC-7 from plan:0005-autoimmune-diathesis-sex-modifier-pais-analysis-plan before it can move to ready/pre-register. BC-1 vehicle selection + OpenSAFELY dataset discovery (no dataset entity yet); BC-2 access verification (prototype N3C synthetic tier); BC-3 autoimmune stratum granularity with dated pre-index onset (fix Hill pooled-Charlson gap); BC-4 sex×stratum×PASC cell counts vs power floor; BC-5 lock computable PASC definition; BC-6 acute-severity dateability in acute window (gates E2/E3 mediator role); BC-7 individual-level utilization covariate (replace county proxy). Provisional primary vehicle N3C; population-based replication OpenSAFELY/All-of-Us; RECOVER-Adult phenotype adjunct; UKB baseline triangulation.
@@ -91,10 +90,11 @@ Blocking checks BC-1..BC-7 from plan:0005-autoimmune-diathesis-sex-modifier-pais
 - 2026-07-01: Consolidated vehicle-feasibility memo DELIVERED 2026-07-01 → doc/meta/2026-07-01-t079-vehicle-feasibility-memo.md (doc:t079-vehicle-feasibility-memo-2026-07-01), the required-output-artifact from plan:0005. Synthesises interpretation:0031-0035 into: headline decision (N3C primary / OpenSAFELY sampling-frame replication / AoU+RECOVER+UKB adjuncts), a BC-1→BC-7 clearance ledger, a vehicle×8-property scorecard (rows 4 outcome + 8 sampling-frame drive the N3C-vs-OpenSAFELY split; row 7 = BC-4 unresolved), the cross-cutting h0008 finding (measurement/selection structural on exposure/outcome/mediator channels AND the utilisation defence itself bounded → validity rests on quantified design defences not a clean channel), the locked design decisions, and a PROMINENT BC-4 caveat (open design gate not mere counting — can force stratum pooling / endpoint choice / interaction-scale/RERI expectations; access-gated). Status: BC-1/3/5/6/7 resolved, BC-2 held (t080/t081/t082), BC-4 open. plan:0005 Required Output Artifacts marked delivered. plan:0005 stays not-ready, blocked only on access/execution (BC-2) + access-plus-design (BC-4).
 - 2026-07-01: 2026-07-01: BC-2 access track scoped -> concrete onboarding checklists written to t080 (N3C Enclave synthetic tier: citizen-scientist route confirmed = NO institutional DUA needed; make-or-break unknown = whether a DOWNLOADABLE synthetic OMOP package exists, else plan:0006 local-duckdb leg/F1 has no substrate) and t081 (Athena vocab: unselect CPT4 to skip UMLS; PIN + reconcile the Athena bundle version against the enclave's frozen OMOP vocab). Status corrected in-progress->blocked (invalid status value); blocked-by t080/t081/t082 — all remaining BCs (BC-2 execution, BC-4 cell counts) are access-gated, design side is complete.
 - 2026-07-01: 2026-07-01: VEHICLE DECISION REOPENED. t080 blocked on reproducibility grounds (N3C synthetic verified non-downloadable + gated). This contradicts a load-bearing premise of interpretation:0031 and the vehicle-feasibility memo (N3C locked primary partly BECAUSE of an 'open synthetic tier to prototype'). CRUX now pending user decision: OpenSAFELY has the SAME real-data gating (no row download) but a materially DIFFERENT code-transparency model (analysis code public on GitHub, developed/tested against LOCAL DUMMY DATA via ehrQL, only disclosure-controlled AGGREGATE outputs released). So the reproducibility bar determines the path: (A) open-code+local-dummy clears the bar -> promote OpenSAFELY primary, retire N3C, re-open memo/interpretation:0031, accept the coded-LC outcome under-recording (BC-5) as cost; (B) accept 'open code + gated data + aggregate outputs' as sufficient for BOTH -> keep N3C scientific-primary, drop the downloadable-synthetic claim, prototype against a self-generated OMOP fixture; (C) strict bar 'no gated/non-downloadable data' -> disqualifies BOTH N3C and OpenSAFELY -> the rare-stratum-power estimand has no admissible transparent vehicle -> shelve t078/t079/plan:0005/0006 as infeasible-under-standards until an open vehicle appears. interpretation:0031, the memo, plan:0005, plan:0006 held UNEDITED pending this decision so nothing is silently rewritten.
+- 2026-07-01: 2026-07-01: SHELVED-AND-BANKED (core/decisions.md D-004). Estimand infeasible-under-transparency-standards: needs population-scale individual-level EHR (categorically gated + non-downloadable); N3C non-downloadable even at synthetic tier, OpenSAFELY same real-data gating (insider-only). Design banked (estimands/DAGs/adjustment/negative-control/bracketing + the h0008 synthesis remain valid). plan:0005 SHELVED banner (stays not-ready), plan:0006 archived, interpretation:0031 superseded, memo SHELVED banner. Status deferred; blockers cleared (shelved by decision, not waiting on t080/t081).
 
 ## [t080] Acquire N3C Enclave account + open synthetic-tier access (gates plan:0006 WP0)
 - priority: P2
-- status: blocked
+- status: deferred
 - aspects: []
 - created: 2026-07-01
 
@@ -119,10 +119,11 @@ MAKE-OR-BREAK UNKNOWN (resolve DURING onboarding, blocks the plan:0006 dual-runt
 
 Feeds F2 (dataset:n3c-recover-longcovid-synthetic stageability) and gates plan:0006 WP0/WP2. No participant data involved (synthetic).
 - 2026-07-01: 2026-07-01: BLOCKED on reproducibility/transparency grounds (user decision, verified 2026-07-01). Keith checked: N3C synthetic data CANNOT be downloaded — it is enclave-only compute, same as the real tier. Combined with the data being access-gated (DUR/DAC), BOTH properties (gated + non-downloadable) break the project's core reproducibility + transparency goals: there is no open substrate to develop or reproduce against, even at the synthetic tier. => The 'open synthetic tier to prototype' premise that made N3C the LOCKED primary vehicle (interpretation:0031, memo headline) is FALSE. Do NOT pursue N3C in future efforts unless N3C changes its access model (e.g. releases a downloadable synthetic package). This blocks plan:0006 (the N3C synthetic prototype pipeline) at its substrate, not just WP0. Reopens the vehicle decision — see t079 note. t081 (Athena, public vocab) is independent and unaffected.
+- 2026-07-01: 2026-07-01: Deferred under D-004 (parent line shelved). N3C stays off the table unless it offers a third-party-reproducible access path (downloadable de-id individual-level data or a truly downloadable synthetic tier).
 
 ## [t081] Obtain OMOP Athena vocabulary for concept vocabulary-validity checks (gates plan:0006 WP1)
 - priority: P2
-- status: proposed
+- status: deferred
 - aspects: []
 - created: 2026-07-01
 
@@ -146,14 +147,19 @@ STEPS:
 CRITICAL CROSS-CHECK WITH t080 (add to t081 DoD): the Athena bundle version must be RECONCILED against the N3C enclave's frozen OMOP vocabulary version (t080 step 7). A concept_id valid in Athena's latest release can differ from N3C's pinned vocab, so passing vocab-validity LOCALLY does NOT guarantee it passes IN-ENCLAVE. Record the enclave vocab version once t080 clears and re-run F3 against a matched version, or explicitly document the version delta. This t081<->t080 vocabulary-version reconciliation is the non-obvious engineering trap to catch before WP1 code exists.
 
 Gates plan:0006 WP1 vocab-validity DoD. No participant data involved (public vocabulary).
+- 2026-07-01: 2026-07-01: Deferred under D-004 (parent line shelved). Athena vocab work is orphaned; the public OMOP vocabulary remains freely available if any future third-party-reproducible line needs it.
 
 ## [t082] Scope-boundary decision: does writing runnable pipeline code move PAIS past seed-stage literature-synthesis? (gates all plan:0006 code)
 - priority: P2
-- status: proposed
+- status: deferred
 - aspects: []
 - created: 2026-07-01
 
 specs/scope-boundaries.md defers primary computational pipelines until past seed stage; early work is literature synthesis. Planning (plan:0005/0006) is still seed-stage; WRITING/maintaining runnable pipeline code is the phase transition and must be an explicit decision (decisions.md / curate), not an accident of t079 momentum. If approved, code home = code/n3c-autoimmune-sex-pais/ (research-profile convention), NOT results/ and NOT an unanchored root src/. Gates any plan:0006 code (fixtures included).
+
+### Notes
+
+- 2026-07-01: 2026-07-01: Deferred under D-004 (moot). The seed->build scope transition question is void now that plan:0006 is archived; no runnable pipeline code will be written for this shelved line.
 
 ## [t083] Bridge circadian/HPA-rhythm 'holds the displaced immune-state' question to the health-cycles peer + scan existing immune-circadian coupling
 - priority: P2

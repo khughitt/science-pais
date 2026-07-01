@@ -26,6 +26,12 @@ related:
 
 # Vehicle-Feasibility Memo (t079)
 
+> **⚠️ SHELVED 2026-07-01 (`core/decisions.md` D-004).** The headline decision below (N3C primary) is
+> **void**: N3C is gated + non-downloadable (enclave-only even at the synthetic tier) and OpenSAFELY
+> carries the same insider-only gating, so the estimand is infeasible-under-transparency-standards and
+> the line is shelved. This memo is retained as a **banked feasibility record** — the BC-1→BC-7 ledger
+> and especially the `hypothesis:0008` synthesis remain valid; the *vehicle recommendation* does not.
+
 This is the **vehicle-feasibility memo** required by
 `plan:0005-autoimmune-diathesis-sex-modifier-pais-analysis-plan` (*Required Output Artifacts*).
 It consolidates the seven blocking checks (BC-1→BC-7) into one decision record: **which
