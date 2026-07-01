@@ -267,12 +267,14 @@ until both are settled.
   denominator device, but E2/E3 read a competing-risk-framed mediator so the survivor-only CDE
   is not silently conditioned on a downstream consequence of severity.
 - **Definition of done:** severity variable dated strictly after index (≤28 d acute window) and
-  before the PASC window with a **buffer** between them; a competing-event flag for acute death is
-  emitted alongside the ordinal severity column; **the E1 guard asserts at the model-input level
-  (F6)** — `severity_cols` (plus a maintained denylist of severity-*derived* proxies, e.g.
-  hospitalisation-derived features, **and the acute-death competing-event flag**) must be disjoint
-  from the exact column set of the E1 design matrix. A red-team fixture that tries to sneak a
-  severity proxy into E1 must trip the guard.
+  before the PASC window with a **buffer** between them; **`windows.yaml` pins inclusive/exclusive
+  boundary conventions and a day-28-spanning-admission rule** (assign by admission date, not
+  discharge) so one long acute admission is neither split nor double-counted; a competing-event
+  flag for acute death is emitted alongside the ordinal severity column; **the E1 guard asserts at
+  the model-input level (F6)** — `severity_cols` (plus a maintained denylist of severity-*derived*
+  proxies, e.g. hospitalisation-derived features, **and the acute-death competing-event flag**)
+  must be disjoint from the exact column set of the E1 design matrix. A red-team fixture that tries
+  to sneak a severity proxy into E1 must trip the guard.
 
 ### WP6: Outcome build  *(BC-5 locked — `interpretation:0033`)*
 - **Depends on:** WP2.
@@ -298,10 +300,11 @@ until both are settled.
   size check**, and E1/E2/E3 estimation runs **local (statsmodels/R) in both synthetic and
   enclave** environments (F1). E1 total (log-binomial → modified-Poisson/robust-SE fallback;
   severity excluded), E2 controlled-direct (severity at reference), optional E3 mediation;
-  **E2/E3 read the acute-death competing-event flag (BC-6/`interpretation:0034`) so the
-  survivor-only CDE is competing-risk-framed, not conditioned on a downstream consequence of
-  severity**; sex × stratum interaction on **additive (RERI, primary) + multiplicative** scales;
-  site random intercept / frailty.
+  **E1 is emitted labelled survivor-conditional with a competing-risk / composite-death
+  sensitivity, and E2/E3 read the acute-death competing-event flag (BC-6/`interpretation:0034`)
+  so both the total effect and the CDE are competing-risk-framed rather than silently conditioned
+  on a downstream consequence of severity**; sex × stratum interaction on **additive (RERI,
+  primary) + multiplicative** scales; site random intercept / frailty.
 - **Definition of done:** the collect boundary is a single explicit call (no ad-hoc
   `.toPandas()` elsewhere); all estimators return without error on synthetic data and emit the
   E1/E2 pair as **distinct labeled estimands** (not a robustness pair); the fallback path is

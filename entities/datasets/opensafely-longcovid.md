@@ -115,10 +115,11 @@ consultation-frequency adjustment + negative-control + bracketing pair), in both
   research. No participant-level data retrieved (federated model — none is extractable).
 - 2026-07-01 (agent, BC-6 / `interpretation:0034`): acute-severity dateability confirmed —
   SGSS-dated index + SUS/HES/ECDS/ICNARC dated admissions/ICU + ONS death date the top severity
-  rungs crisply (`cite:Williamson2020`), so the E2 mediator is dateable. Same two riders as N3C:
-  oxygen/moderate rung differentially under-captured → coarse hospitalisation-based mediator
-  primary; ONS death = competing event for E2/E3, not a survival-filter drop. No participant-level
-  data (federated).
+  rungs crisply (`cite:Williamson2020`), so the mediator is **computable/dateable** (CDE
+  identification stays assumption-dependent). Same two riders as N3C: oxygen/moderate rung
+  differentially under-captured → coarse hospitalisation-based mediator primary; the ≥45 d survival
+  filter → **E1 survivor-conditional** and ONS death = competing event for E2/E3, not a
+  survival-filter drop. No participant-level data (federated).
 
 ## Connections to Project
 

@@ -1,7 +1,7 @@
 ---
 id: interpretation:0034-t079-bc6-acute-severity-dateability
 type: interpretation
-title: "t079/BC-6: acute-severity dateability — both vehicles date severity relative to index (E2 mediator identified in principle), but the ladder degrades in the middle and the ≥45d survival filter selects on the mediation path (competing-risk selection on E2/E3)"
+title: "t079/BC-6: acute-severity dateability — severity is dateable enough to COMPUTE E2/E3 candidates (identification stays assumption-dependent); the ladder degrades in the middle and the ≥45d survival filter selects on a consequence of severity for E1 as well as E2/E3"
 status: active
 source_refs:
   - paper:Hill2022
@@ -33,10 +33,15 @@ dateability + identifiability only; no participant-level data, no severity pheno
 
 ## Verdict
 
-**Both vehicles can date acute-COVID severity relative to a dated index event, so the E2
-controlled-direct-effect mediator is *identified in principle* in each — BC-6 clears the
-literal dateability gate.** But the check surfaces two subtleties that matter more than the
-"yes," and one is load-bearing. **(1)** The severity *ladder* is captured unevenly: the top
+**Both vehicles can date acute-COVID severity relative to a dated index event, so severity is
+dateable enough to *compute* E2/E3 candidate estimates — BC-6 clears the measurement/timing
+gate for the mediator. It does not, by itself, *identify* E2/E3.** A controlled direct effect
+still requires **mediator–outcome no-unmeasured-confounding**, **no exposure-induced
+mediator–outcome confounder**, **positivity across severity strata**, and a **clearly-chosen
+survivor / competing-risk estimand** — all assumption-dependent and unprovable at design stage.
+BC-6's job is narrower than "identification": it confirms the mediator can be *built and dated*,
+and it surfaces two design threats that matter more than the "yes," one of them load-bearing.
+**(1)** The severity *ladder* is captured unevenly: the top
 rungs (hospitalisation, ICU, invasive mechanical ventilation, ECMO, vasopressor, death) are
 crisply and durably dated by admission/procedure records in *both* vehicles, but the
 *moderate* rung — supplemental oxygen / "needed O₂ but not admitted" — is under-captured and
@@ -45,9 +50,14 @@ so a fine-grained WHO-ordinal mediator degrades exactly in its middle. **(2, dec
 **≥45-day survival-inclusion filter** carried from Hill2022 into `plan:0005` **conditions on a
 downstream consequence of the mediator itself** (severe acute COVID → acute death): requiring
 survival to day 45 to be eligible **truncates the top of the severity distribution and
-selects on the very autoimmune→severity→outcome path** the E2/E3 estimands decompose. So
-severity is *dateable* (BC-6 "yes"), but the mediation estimands need an explicit
-**competing-risk / selection treatment**, not merely a dated mediator variable. This is the
+selects on the very autoimmune→severity→outcome path** the E2/E3 estimands decompose. **This
+selection is not confined to E2/E3 — it makes E1 itself survivor-conditional:** "PASC among
+≥45-day survivors" is a valid but survivor-scoped total effect, a different target from "failed
+recovery after infection"; excluding acute deaths (a consequence of the mediator) can induce
+exposure/sex/stratum-specific selection on the primary E1 estimate too. So severity is *dateable*
+(BC-6 "yes"), but **both** the total effect (explicit labelling + a death sensitivity) **and** the
+mediation estimands (competing-risk treatment) need a selection response, not merely a dated
+mediator variable. This is the
 **mediator-channel** analog of the exposure-channel finding in `interpretation:0032` (BC-3)
 and the outcome-channel finding in `interpretation:0033` (BC-5): the same measurement/selection
 structure that shapes the apparent signal on exposure and outcome also shapes it on the
@@ -72,7 +82,7 @@ bound on the acute window is not optional: without it a *late* hospitalisation �
 PASC *consequence* — would be miscounted as acute-COVID severity, contaminating the mediator
 in the reverse-causal direction.
 
-## The load-bearing finding — the ≥45d survival filter selects on the mediation path
+## The load-bearing finding — the ≥45d survival filter selects on a consequence of severity (E1 survivor-conditional; E2/E3 need competing-risk handling)
 
 Hill2022 excludes patients who **died within 45 days of index** (a standard immortal-time /
 denominator device, reasonable for the *total-effect* case-control design). But for **E2
@@ -89,10 +99,23 @@ COVID → death). Conditioning eligibility on ≥45-day survival therefore:
   *surviving* analytic cohort is depleted of exactly the high-risk exposed cases, biasing the
   autoimmune → PASC estimate toward the null in a stratum-specific, sex-specific way.
 
-**This is why severity being "dateable" is necessary but not sufficient for E2/E3.** BC-6's
-concrete contribution is to convert the plan's already-committed "E3 is exploratory" from a
-generic caution into a **named identification threat with a pre-committed response** (below),
-and to attach a **competing-risk caveat to E2** that was previously only implicit.
+**This bites E1 too, not only the mediation estimands.** The same exclusion makes the *primary
+total effect* **survivor-conditional**: "PASC among ≥45-day survivors" is internally valid but
+is a different estimand from "failed recovery after infection." Pre-commit one (ideally both) of
+two fixes in `plan:0005`: **(a) relabel E1 explicitly as survivor-conditional** — the honest
+minimal move, since the ≥45 d filter is Hill-replicable — and **(b) carry a competing-risk /
+composite (death-before-ascertainment) sensitivity for E1**, so exposure/sex/stratum-specific
+differential acute mortality is not silently absorbed. This is *separate from* the E2/E3
+competing-risk treatment.
+
+**This is why severity being "dateable" is necessary but not sufficient.** BC-6's concrete
+contribution is to clear the *measurement/timing* gate while converting the plan's
+already-committed "E3 is exploratory" from a generic caution into a **named identification
+threat with a pre-committed response** (below), attaching a **competing-risk caveat to E2** that
+was previously only implicit, and **relabelling E1 as survivor-conditional**. The deeper CDE
+identification assumptions (mediator–outcome confounding, no exposure-induced confounder,
+positivity across severity strata) remain *unaddressed by BC-6* and stay the substantive E2/E3
+risk.
 
 ## Design consequences (pre-register; feed `plan:0005` + `plan:0006`)
 
@@ -103,14 +126,19 @@ and to attach a **competing-risk caveat to E2** that was previously only implici
    logic as BC-3/BC-5). Do not let the CDE hinge on the ladder's soft middle.
 2. **Enforce temporal order by construction with fixed offsets:** pre-index autoimmune
    exposure → acute-severity window (index → ≤28 d) → **buffer** → PASC ascertainment (≥90 d,
-   BC-5). No post-hoc reclassification of late events into "acute severity."
-3. **Decouple the ≥45 d survival window from the severity-mediator analysis.** Keep ≥45 d
-   survival as the *total-effect* (E1) denominator filter (Hill-replicable), but for E2/E3
-   treat **acute death as a competing risk**, not an exclusion: report the mediation estimands
-   under an explicit competing-risk framing (or a bounded selection sensitivity analysis /
-   composite severe-outcome-or-death mediator), and flag that the ≥45 d-survivors-only estimate
-   is a **lower bound biased by differential acute mortality**. This is the E2/E3 analog of
-   BC-5's "the ascertainment defence lives in the design."
+   BC-5). No post-hoc reclassification of late events into "acute severity." Pin **inclusive /
+   exclusive boundary conventions** in `windows.yaml` and a rule for **admissions spanning the
+   day-28 boundary** (assign by admission date, not discharge) so one long acute admission is
+   neither split nor double-counted.
+3. **Handle the ≥45 d survival filter on both the total effect and the mediation estimands.**
+   Keep ≥45 d survival as the E1 denominator filter (Hill-replicable) **only if E1 is explicitly
+   labelled survivor-conditional**, and carry an **E1 competing-risk / composite
+   (death-before-ascertainment) sensitivity** alongside it. For E2/E3, treat **acute death as a
+   competing risk**, not an exclusion: report the mediation estimands under an explicit
+   competing-risk framing (or a bounded selection sensitivity analysis / composite
+   severe-outcome-or-death mediator), and flag that the ≥45 d-survivors-only estimate is a
+   **lower bound biased by differential acute mortality**. This is the E1/E2/E3 analog of BC-5's
+   "the ascertainment defence lives in the design."
 4. **Carry the variant-era / vaccination interaction on the mediator.** Acute severity is
    strongly **variant-era-dependent** (Omicron milder) and **vaccination-reduced**; since
    variant era is already a covariate and vaccination-at-index already carries the
@@ -156,9 +184,10 @@ Structural mediator-QA facts carried into `plan:0005`/`plan:0006`:
 - **Top-of-ladder crisp, middle soft.** ICU/ventilation/ECMO/death dated reliably in both
   vehicles; supplemental-oxygen/moderate rung differentially under-captured → coarse mediator
   primary, ordinal sensitivity.
-- **≥45 d survival filter = selection on the mediation path**, differential by exposure if
-  autoimmune disease raises acute mortality → E2/E3 need competing-risk handling; ≥45 d-only
-  mediation estimates are a differentially-biased lower bound.
+- **≥45 d survival filter = selection on a consequence of severity**, differential by exposure if
+  autoimmune disease raises acute mortality → **E1 becomes survivor-conditional** (relabel + carry
+  an E1 death-before-ascertainment sensitivity) **and** E2/E3 need competing-risk handling; the
+  ≥45 d-only estimates are differentially-biased lower bounds.
 - **Acute-window upper bound mandatory** to stop late (possibly PASC-driven) hospitalisations
   from contaminating the acute-severity mediator in reverse.
 - **Severity strength is variant-era/vaccination-conditional** → the E1↔E2 gap is not a fixed
@@ -172,7 +201,8 @@ an evidence-line.
 ## Hypothesis-Level Implications
 
 - `hypothesis:0004` (acute-severity threshold) — BC-6 confirms the **mediator on the h0004 path
-  is measurable and dateable** in both vehicles (the E2/E3 machinery is buildable), while
+  is measurable and dateable** in both vehicles (the E2/E3 machinery is *computable*; whether it
+  is *identified* remains assumption-dependent), while
   sharpening *how*: the measurable mediator is a coarse hospitalisation-based severity, and the
   h0004 path's terminal rung (acute death) is a competing risk that the naive ≥45 d-survivor
   design silently conditions away. The autoimmune ⇄ severity interaction that h0004 predicts is
@@ -187,17 +217,19 @@ an evidence-line.
 
 ## Evidence vs. Open Questions
 
-**Settled (BC-6):** both vehicles date acute severity relative to a dated index (E2 mediator
-identified in principle); primary mediator = coarse dated hospitalisation-based severity, fine
-WHO-ordinal = sensitivity (moderate/oxygen rung differentially under-captured); temporal order
-enforced by fixed offsets with an acute-window upper bound and a buffer before ≥90 d
-ascertainment; the ≥45 d survival filter is decoupled from E2/E3 and acute death is treated as
-a competing risk. **Still open:** **BC-4** (sex × stratum × PASC cell counts — the binding
+**Settled (BC-6):** both vehicles date acute severity relative to a dated index (mediator
+*computable*; CDE *identification* remains assumption-dependent); primary mediator = coarse dated
+hospitalisation-based severity, fine WHO-ordinal = sensitivity (moderate/oxygen rung differentially
+under-captured); temporal order enforced by fixed offsets with an acute-window upper bound and a
+buffer before ≥90 d ascertainment; the ≥45 d survival filter makes **E1 survivor-conditional**
+(relabelled + E1 death-sensitivity) and is handled as a **competing risk for E2/E3**. **Still open:** **BC-4** (sex × stratum × PASC cell counts — the binding
 unknown; BC-6 adds that competing-risk handling of acute death will *further* thin the most
 severe exposed cells, so the power test must be run on the survivor-and-mediation cohort, not
-just the raw cohort); **BC-7** (individual-level utilisation — now triply load-bearing: exposure
-(BC-3), outcome (BC-5), and here the utilisation covariate is also what distinguishes the
-under-captured moderate/oxygen rung).
+just the raw cohort); **BC-7** (individual-level utilisation — load-bearing across exposure
+(BC-3) and outcome (BC-5). **Boundary correction:** BC-7 is *not* the fix for the oxygen/moderate-rung
+under-capture — utilisation adjustment probes *encounter opportunity*, but outpatient/home-oxygen
+missingness is **workflow/site/system-dependent**, not merely a function of contact frequency, so
+it is the **coarse-mediator-primary** choice, not BC-7, that handles the oxygen rung).
 
 ## New Questions Raised
 
@@ -213,6 +245,12 @@ under-captured moderate/oxygen rung).
   design stage; it becomes a BC-4 measurement once cohorts are buildable.
 - **Oxygen/moderate-rung capture rates** are asserted qualitatively from the coding structure,
   not measured; the exact differential under-capture is an inspection item on the real tier.
+- **Identification ≠ dateability (the load-bearing caveat).** BC-6 clears only the
+  measurement/timing gate. The CDE's substantive assumptions — **mediator–outcome
+  no-unmeasured-confounding**, **no exposure-induced mediator–outcome confounder**, and
+  **positivity across severity strata** (some rare-stratum × severity × sex cells may have no
+  exposed-severe or no exposed-mild observations) — are **unaddressed here** and remain the real
+  E2/E3 risk; they are checked at analysis time, not at design stage.
 - **Bennett2021 ordinal-severity phenotype** specifics are a pointer only, deliberately not
   relied on (kept out of the source_refs to avoid an unverified durability claim).
 
@@ -227,5 +265,7 @@ under-captured moderate/oxygen rung).
    fix the acute-window upper bound + buffer in `windows.yaml`. WP stays code-gated (`t082`).
 3. **Update `plan:0005`**: mark BC-6 resolved; separate the acute-severity window from the
    survival and ascertainment windows in Preprocessing; add the competing-risk/selection caveat
-   to E2 and the named survival-selection reason under E3-exploratory; note the
-   variant-era/vaccination conditionality of the mediator strength.
+   to E2 and the named survival-selection reason under E3-exploratory; **relabel E1 as
+   survivor-conditional and add an E1 competing-risk/composite-death sensitivity** (the ≥45 d
+   filter biases E1, not only E2/E3); note the variant-era/vaccination conditionality of the
+   mediator strength.

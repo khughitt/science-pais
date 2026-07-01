@@ -220,7 +220,14 @@ Boekel2023 warns about.
   vaccination at index (**partly post-exposure — see caveat in *Model Assumptions***),
   baseline non-autoimmune comorbidity, **individual healthcare
   utilization**, prior-infection count. Metric: **risk ratio** (log-binomial / Poisson with
-  robust SE) and risk difference per stratum.
+  robust SE) and risk difference per stratum. **Survivor-conditional caveat (BC-6 /
+  `interpretation:0034`):** the ≥45 d survival-inclusion filter makes E1 a **survivor-conditional**
+  total effect ("PASC among ≥45-day survivors"), because acute death is a consequence of the
+  severity mediator — internally valid but a *different target* from "failed recovery after
+  infection." Pre-commit: report E1 **explicitly labelled survivor-conditional**, and carry a
+  **competing-risk / composite (death-before-ascertainment) sensitivity** so exposure/sex/stratum-specific
+  differential acute mortality is not silently absorbed. (This is separate from — and in addition
+  to — the E2/E3 competing-risk treatment below.)
 - **E2 — CONTROLLED DIRECT EFFECT (primary, confirmatory, distinct).** Effect of stratum
   *s* on PASC **with acute severity set to a reference level** — the autoimmune→PASC effect
   *not routed through* acute severity. Requires the mediator-outcome no-unmeasured-confounder
@@ -303,12 +310,14 @@ The dominant error is **bias, not variance** — larger N does not fix it (the
   gap) → managed by the dated-lookback rule and versioned codelists.
 - **Mediator conditioning (E2).** Conditioning on severity can open a collider path
   severity ← U → PASC; carried as an explicit assumption + bias analysis, not ignored.
-- **Survival-selection on the mediator path (E2/E3, BC-6/`interpretation:0034`).** A *distinct*
-  collider from mediator-conditioning: the ≥45 d survival-inclusion filter conditions on
-  surviving the acute phase, a **downstream consequence of the mediator** (autoimmune → severe
+- **Survival-selection on a consequence of severity (E1 *and* E2/E3, BC-6/`interpretation:0034`).**
+  A *distinct* collider from mediator-conditioning: the ≥45 d survival-inclusion filter conditions
+  on surviving the acute phase, a **downstream consequence of the mediator** (autoimmune → severe
   acute COVID → death). If autoimmune disease raises acute mortality, the survivor cohort is
-  depleted of high-risk exposed cases, biasing E2/E3 (stratum- and sex-specifically) → acute
-  death modelled as a **competing risk**, not conditioned away.
+  depleted of high-risk exposed cases, biasing **E1 (making it survivor-conditional) and E2/E3**
+  (stratum- and sex-specifically) → **E1 relabelled survivor-conditional with a competing-risk /
+  composite-death sensitivity**, and acute death modelled as a **competing risk for E2/E3**, not
+  conditioned away.
 - **Immortal-time / index-date** artifacts from survival-window definitions → fixed offsets.
 
 ## Sensitivity Arbitration
@@ -409,19 +418,24 @@ gates the eventual data-gated pre-registration will reference by name.
   design (utilisation adjustment + negative control + bracketing pairs), not in a clean outcome.
 - **BC-6 — Acute-severity measurement + timing. ✅ RESOLVED 2026-07-01
   (`interpretation:0034`).** Both vehicles **date acute severity relative to a dated index**, so
-  the E2 mediator is identified in principle: top rungs (hospitalisation/ICU/ventilation/ECMO/death)
+  severity is **dateable enough to *compute* E2/E3 candidate estimates** — BC-6 clears the
+  measurement/timing gate. It does **not** by itself *identify* the CDE (that still needs
+  mediator–outcome no-unmeasured-confounding, no exposure-induced confounder, and positivity
+  across severity strata — assumption-dependent). Top rungs (hospitalisation/ICU/ventilation/ECMO/death)
   are crisply dated in N3C (Hill's dated severity set) and OpenSAFELY (SUS/HES/ECDS/ICNARC/ONS).
   **Two riders:** (a) the **moderate/oxygen rung is differentially under-captured** in both →
   **primary mediator = coarse dated hospitalisation-based severity**, fine WHO-ordinal =
   sensitivity only; (b) **decisive** — the **≥45 d survival-inclusion filter conditions on a
   downstream consequence of the mediator** (severe acute COVID → acute death), selecting on the
   autoimmune→severity→outcome path and, if autoimmune disease raises acute mortality, depleting
-  the surviving cohort of high-risk exposed cases. **Fix:** keep ≥45 d survival as the E1
-  denominator filter but **treat acute death as a competing risk for E2/E3** (or bound the
-  selection), and pre-register the acute-severity window (index → ≤28 d) as a fixed offset
-  distinct from the survival (≥45 d) and ascertainment (≥90 d) windows, with a buffer. This is
-  the **mediator-channel** instance of the h0008 measurement/selection pattern (after BC-3
-  exposure-channel and BC-5 outcome-channel).
+  the surviving cohort of high-risk exposed cases — which biases **E1 as well** (making it
+  survivor-conditional), not only E2/E3. **Fix:** **label E1 survivor-conditional + carry an E1
+  competing-risk / composite-death sensitivity**; keep ≥45 d survival as the E1 denominator
+  filter, and for E2/E3 **treat acute death as a competing risk** (or bound the selection);
+  pre-register the acute-severity window (index → ≤28 d) as a fixed offset distinct from the
+  survival (≥45 d) and ascertainment (≥90 d) windows, with a buffer, and pin inclusive/exclusive
+  boundaries + a day-28-spanning-admission rule. This is the **mediator-channel** instance of the
+  h0008 measurement/selection pattern (after BC-3 exposure-channel and BC-5 outcome-channel).
 - **BC-7 — Individual-level utilization.** Confirm individual encounter-count covariate is
   buildable from a fixed pre-index window (replaces county proxy).
 

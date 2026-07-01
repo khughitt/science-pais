@@ -79,12 +79,15 @@ no patient-reported fatigue severity. Single trigger.
 - 2026-07-01 (agent, BC-6 / `interpretation:0034`): acute-severity **dateability** confirmed —
   Hill2022's dated N3C severity set (hospitalisation, LOS tiers, invasive mechanical ventilation,
   ECMO, vasopressor, AKI, sepsis) dates the mediator relative to the earliest positive-test/dx
-  index, so **E2 is identified in principle**. Two riders carried into `plan:0005`/`plan:0006`:
+  index, so severity is **dateable enough to compute E2/E3 candidates** (CDE *identification*
+  stays assumption-dependent — mediator–outcome confounding, positivity across severity strata).
+  Two riders carried into `plan:0005`/`plan:0006`:
   (a) moderate/**oxygen rung differentially under-captured** → primary mediator = coarse dated
   hospitalisation-based severity, WHO-ordinal = sensitivity; (b) Hill's **≥45 d survival
   exclusion selects on a downstream consequence of the mediator** (severe acute COVID → acute
-  death) → acute death modelled as a **competing risk** for E2/E3, not a row-drop. No
-  participant-level data accessed (no access gate for this check).
+  death) → **E1 relabelled survivor-conditional (+ E1 death sensitivity)** and acute death
+  modelled as a **competing risk** for E2/E3, not a row-drop. No participant-level data accessed
+  (no access gate for this check).
 - 2026-07-01 (agent, BC-3 / `interpretation:0032`): autoimmune-stratum granularity confirmed —
   all 8 disease-specific strata constructible as OMOP concept sets (fixes Hill's pooled-Charlson
   gap). SLE/RA/Crohn's/UC have curated **OHDSI Phenotype Library** cohorts (#119/#196/#198/#201);
