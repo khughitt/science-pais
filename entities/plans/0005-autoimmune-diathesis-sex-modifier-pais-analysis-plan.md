@@ -195,7 +195,8 @@ Boekel2023 warns about.
   *s* (vs no autoimmune diagnosis) on PASC risk, **adjusting for confounders but NOT for
   acute severity** (severity is a mediator; conditioning on it removes the h0004 path we
   want inside the total effect). Adjustment set: age, sex, calendar/variant era,
-  vaccination at index, baseline non-autoimmune comorbidity, **individual healthcare
+  vaccination at index (**partly post-exposure — see caveat in *Model Assumptions***),
+  baseline non-autoimmune comorbidity, **individual healthcare
   utilization**, prior-infection count. Metric: **risk ratio** (log-binomial / Poisson with
   robust SE) and risk difference per stratum.
 - **E2 — CONTROLLED DIRECT EFFECT (primary, confirmatory, distinct).** Effect of stratum
@@ -218,6 +219,18 @@ regardless of interaction-test significance.
 - **E1 total effect** identifies under no-unmeasured-confounding of the autoimmune→PASC
   relationship given the adjustment set (age, sex, era, vaccination, baseline comorbidity,
   utilization, prior-infection count) and correct exposure temporality.
+- **Vaccination-adjustment caveat (named, not silent).** Vaccination at index is only
+  partly a pre-exposure confounder. If pre-existing autoimmune diagnosis affected
+  vaccination **eligibility or timing** (e.g. immunosuppressed patients prioritized,
+  deferred, or hesitant), some of the vaccination variable is **post-exposure** relative to
+  the autoimmune status, and adjusting for it can **block an exposure-driven prevention
+  path** (autoimmune status → vaccination behavior → PASC) that arguably belongs inside the
+  total effect. This may still be the correct choice for the **biological-susceptibility
+  estimand** (asking whether autoimmune biology raises PASC risk *holding vaccination
+  fixed*), but the two framings differ. Pre-commit: report E1 **with** vaccination adjusted
+  (biological-susceptibility framing, primary) and carry an **unadjusted-for-vaccination**
+  variant as a pre-registered sensitivity contrast; if they diverge materially, the
+  vaccination-mediated path is itself a finding (parallels the E1-vs-E2 severity logic).
 - **E2 CDE** additionally requires **no unmeasured mediator–outcome confounder** (a common
   cause of acute severity and PASC, e.g. frailty, biases the CDE and can induce
   collider bias when severity is conditioned on). This assumption is strong and is the

@@ -96,8 +96,12 @@ E-utilities (esearch/esummary) + targeted web search (`fallback-web`).
 - **Confound to pre-commit (per h0008):** autoimmune disease and long COVID are both
   female-predominant and both healthcare-contact-intensive → naive association is
   sex- *and* ascertainment-confounded. Any t078 estimate must condition on sex, age,
-  acute severity, utilization, and baseline comorbidity, and prefer population-based over
-  clinic-ascertained sampling.
+  utilization, and baseline comorbidity, and prefer population-based over
+  clinic-ascertained sampling. **Acute severity is handled separately, not blanket-adjusted:**
+  it is a *mediator* on the h0004 path (autoimmune → severe acute → PASC), so the analysis
+  reports a **total effect** (severity not conditioned) and a **severity-controlled / direct
+  contrast** as two distinct estimands — see `plan:0005-autoimmune-diathesis-sex-modifier-pais-analysis-plan`.
+  Conditioning severity into a single adjustment set would block the exposure-driven path.
 - **Exposure heterogeneity:** "autoimmune diathesis" spans organ-specific (Hashimoto's,
   IBD, MS), systemic-rheumatic (SLE, RA), and genetic-risk-only (PTPN22/CTLA4) strata,
   which may modify risk differently — do not pool blindly.
