@@ -17,6 +17,8 @@ related:
   - patch-definition:immune-state-shift-causal-landscape
   - paper:Hill2022
   - paper:Srivatsan2025
+  - paper:Pfaff2022
+  - paper:Thaweethai2023
   - dataset:n3c-recover-longcovid
   - dataset:opensafely-longcovid
   - dataset:all-of-us-covid
@@ -24,6 +26,7 @@ related:
   - dataset:uk-biobank-covid
   - interpretation:0031-t079-n3c-vs-opensafely-vehicle-decision
   - interpretation:0032-t079-bc3-autoimmune-stratum-granularity
+  - interpretation:0033-t079-bc5-pasc-case-definition-lock
 skills_loaded:
   - id: statistics-bias-vs-variance-decomposition
     reason: the dominant error term is differential ascertainment / confounding (both exposure and outcome are female-predominant and healthcare-contact-intensive), which does not shrink with sample size and must be separated from sampling variance
@@ -163,8 +166,12 @@ Before any modeling, on the selected vehicle:
    ascertainment window — mandatory for its mediator role.
 4. **Utilization measurability.** Confirm individual-level pre-index encounter counts exist
    (replacing Hill's county proxy).
-5. **PASC phenotype provenance.** Record exactly which definition the vehicle supports
-   (U09.9, computable phenotype, clinic visit, survey index) and its known coding drift.
+5. **PASC phenotype provenance. LOCKED — BC-5 / `interpretation:0033`.** N3C primary = coded
+   U09.9-or-LC-clinic (WHO-aligned ≥90 d); Pfaff ML phenotype = flagged sensitivity (utilisation
+   is its top feature + embedded female signal); RECOVER survey index = construct anchor only
+   (not EHR-computable). OpenSAFELY primary = NICE 3-cluster coded pooled + diagnosis-only/any
+   bracketing pair. Coding drift recorded: U09.9 from 2021-10-01 (calendar-time ascertainment);
+   every EHR outcome utilisation-gated.
 6. **Uninfected/comparison availability.** Confirm whether an uninfected arm exists or the
    design is PASC-vs-no-PASC among infected (Hill's design); this changes the estimand's
    reference set.
@@ -173,9 +180,11 @@ Before any modeling, on the selected vehicle:
 
 - Harmonize autoimmune strata to a **pre-registered ICD-10/SNOMED codelist** (versioned,
   committed before extraction) — the single largest lever on exposure misclassification.
-- Define **index date** and the **acute severity window** and **PASC ascertainment window**
-  as fixed offsets so temporal ordering (exposure → severity → outcome) is enforced by
-  construction, not by post-hoc filtering.
+- Define **index date**, the **acute severity window**, the **survival/observation inclusion
+  window** (Hill's ≥45 d — a denominator filter), and the **PASC ascertainment window** (locked
+  WHO-aligned **≥90 d**, distinct from the inclusion window — BC-5 separated these) as fixed
+  offsets so temporal ordering (exposure → severity → outcome) is enforced by construction, not by
+  post-hoc filtering. Report a CDC-aligned ≥28 d ascertainment variant.
 - Define **variant era** and **vaccination status at index** as calendar/observed covariates.
 - Build the **individual utilization** covariate from a fixed pre-index baseline window
   (e.g. 365 d) to avoid conditioning on post-exposure contact.
@@ -294,13 +303,16 @@ Pre-committed rules for when analyses disagree:
    ascertainment-robust**.
 3. **Negative-control outcome** must be null; a non-null negative control **caps the
    credited effect size** via the observed bias.
-4. **Population-based vs clinic-ascertained** vehicles disagreeing → the population-based
-   estimate (OpenSAFELY) is the arbiter for the h0008 concern (pre-committed) — **but only
-   for a non-coded-only PASC phenotype**. OpenSAFELY's *coded* long-COVID outcome is itself
-   differentially under-recorded (higher-utilisation/autoimmune patients coded more), so a
-   coded-only OpenSAFELY estimate carries outcome-side ascertainment bias and does **not**
-   arbitrate; the arbiter role is contingent on BC-5's broader phenotype
-   (`interpretation:0031`).
+4. **Population-based vs clinic-ascertained** vehicles disagreeing → OpenSAFELY arbitrates the
+   **sampling-frame** contrast for the h0008 concern (pre-committed), **but not the outcome
+   channel.** BC-5 (`interpretation:0033`) sharpened this: broadening beyond the coded outcome
+   **reshapes — and may worsen — the differential-by-utilisation bias** (every long-COVID code is
+   generated at an encounter; referral/symptom codes are *more* contact-dependent, pulling in more
+   of the high-utilisation/autoimmune/female-enriched population), so **no** OpenSAFELY phenotype —
+   coded-only or broad — is a clean outcome-side arbiter. OpenSAFELY's arbiter role is therefore
+   limited to the sampling-frame axis and is **conditional on** running the coded-diagnosis-only vs
+   coded-any **bracketing pair** plus pre-pandemic-utilisation adjustment and the negative-control
+   outcome; the outcome-side gradient is handled analytically in both vehicles, not assumed away.
 5. **Interaction scale disagreement** (multiplicative present, additive absent or vice
    versa) is reported on both scales; the additive/RERI result is primary for the
    effect-modification claim.
@@ -360,8 +372,19 @@ gates the eventual data-gated pre-registration will reference by name.
   belongs to `question:0005`). Cell counts are BC-4, not BC-3.
 - **BC-4 — Sex-interaction support.** Confirm sex × stratum × PASC cell counts clear the
   power floor for at least the systemic-rheumatic and organ-specific groups.
-- **BC-5 — PASC case definition.** Lock which computable PASC definition the vehicle
-  supports and its coding-drift profile.
+- **BC-5 — PASC case definition. ✅ RESOLVED 2026-07-01 (`interpretation:0033`).** N3C primary =
+  **coded U09.9-or-LC-clinic** computable phenotype (Hill-replicable), WHO-aligned **≥90 d**
+  ascertainment window (separated from the ≥45 d survival/inclusion window). The N3C **ML
+  computable phenotype** (`paper:Pfaff2022`) is **demoted to a flagged sensitivity endpoint, not
+  primary** — its top feature is outpatient visit rate and it embeds an uncorrected female signal
+  (75% female positives, sex excluded), so it bakes the study's target confounds into the outcome.
+  The **RECOVER PASC index** (`paper:Thaweethai2023`) is **survey/PRO-only → not EHR-computable**;
+  it is a construct anchor via `dataset:recover-adult`, never an N3C endpoint. OpenSAFELY primary =
+  **NICE 3-cluster coded** (diagnosis+referral+assessment) pooled, with **coded-diagnosis-only vs
+  coded-any** as a bracketing sensitivity pair; a symptom-temporal phenotype is exploratory-only
+  (59% of coded cases lack a positive-test anchor; symptom-code PPV low). **Meta-finding:** every
+  EHR PASC outcome is utilisation-gated on the outcome side → the ascertainment defence lives in the
+  design (utilisation adjustment + negative control + bracketing pairs), not in a clean outcome.
 - **BC-6 — Acute-severity measurement + timing.** Confirm severity events are dateable in
   the acute window so the mediator role is identified (gates E2/E3).
 - **BC-7 — Individual-level utilization.** Confirm individual encounter-count covariate is

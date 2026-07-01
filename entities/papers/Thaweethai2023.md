@@ -43,7 +43,7 @@ updated: "2026-07-01"
 
 ## Key Contribution
 
-The RECOVER Consortium developed the first prospective, data-driven research definition of PASC in adults, constructed as a weighted symptom-score index derived from patient-reported survey data (not EHR codes). Twelve to thirteen symptoms were selected via a two-stage LASSO approach from a 44-symptom PRO survey administered at ≥6 months post-infection; a score ≥12 defines PASC positive for research purposes. This index is the canonical "RECOVER-Adult research definition" and is explicitly distinguished from EHR-coded U09.9 (clinical), from the Pfaff 2022 N3C machine-learned EHR phenotype, and from the WHO/CDC clinical case-definition timing windows.
+The RECOVER Consortium developed the first prospective, data-driven research definition of PASC in adults, constructed as a weighted symptom-score index derived from patient-reported survey data (not EHR codes). Twelve to thirteen symptoms were selected via a two-stage LASSO approach from a 44-symptom PRO survey administered at ≥6 months post-infection; a score ≥12 defines PASC positive for research purposes. This index is the canonical "RECOVER-Adult research definition" and is explicitly distinguished from EHR-coded U09.9 (clinical), from the Pfaff 2022 [@Pfaff2022] N3C machine-learned EHR phenotype, and from the WHO/CDC clinical case-definition timing windows.
 
 ## Methods
 
@@ -98,9 +98,9 @@ Maximum possible score: 35 (with hair loss) or 34 (without).
 **For BC-5 (autoimmune × sex × PASC feasibility check) — central finding:** The RECOVER-Adult PASC index is **not EHR-computable**. Every symptom in the scoring rubric is a patient-reported survey item requiring administration of the RECOVER questionnaire. No structured EHR diagnosis code, lab value, or billing code maps onto this composite. An N3C EHR-based study cannot apply this index as a primary case definition without a linked PRO/questionnaire data source.
 
 **Alternative definitions for N3C-based studies:**
-- Pfaff 2022 (N3C) XGBoost phenotype: EHR-computable but a machine-learned approximation, not the RECOVER PRO index.
+- Pfaff 2022 [@Pfaff2022] (N3C) XGBoost phenotype: EHR-computable but a machine-learned approximation, not the RECOVER PRO index.
 - U09.9 ICD-10-CM: clinician-coded, EHR-computable, but specificity-limited and under-captured.
-- RECOVER-EHR (pediatric, Zhang 2026): uses U09.9 + symptom/condition codes, EHR-computable.
+- RECOVER-EHR (pediatric, Zhang 2026 [@ZhangRECOVEREHR2026]): uses U09.9 + symptom/condition codes, EHR-computable.
 
 **Sex-related relevance:** The RECOVER-Adult study oversampled female participants (71%) and confirmed female predominance in PASC. However, sex-stratified PASC rates are not prominently reported, and the scoring system was not developed with sex-stratification or sex-specific coefficients — a potential limitation for sex-mechanism studies.
 
@@ -144,7 +144,7 @@ The PASC score calculator is described in Supplement 1 of the paper. As of 2023,
 
 ## Follow-up
 
-- Pfaff 2022 (`paper:Pfaff2022`) — the complementary N3C EHR-based XGBoost long-COVID phenotype; must be compared when choosing a case definition for EHR studies.
+- Pfaff 2022 [@Pfaff2022] (`paper:Pfaff2022`) — the complementary N3C EHR-based XGBoost long-COVID phenotype; must be compared when choosing a case definition for EHR studies.
 - ZhangRECOVEREHR2026 (`paper:ZhangRECOVEREHR2026`) — RECOVER pediatric EHR-coded PASC; illustrates U09.9-based approach.
-- For BC-5 lock: the choice of case definition for the N3C autoimmune × sex study must use an EHR-computable vehicle (U09.9 or Pfaff 2022 phenotype), since the RECOVER PRO index is inapplicable to N3C without linked survey data.
+- For BC-5 lock: the choice of case definition for the N3C autoimmune × sex study must use an EHR-computable vehicle (U09.9 or Pfaff 2022 [@Pfaff2022] phenotype), since the RECOVER PRO index is inapplicable to N3C without linked survey data.
 - Future questions: Does the RECOVER cohort have linked biomarker/autoimmune data that could enable sex-stratified mechanistic sub-analyses? Does the 10% Omicron prevalence estimate hold in sex-stratified subgroups?

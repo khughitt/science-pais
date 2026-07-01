@@ -26,6 +26,7 @@ related:
   - dataset:n3c-recover-longcovid
   - interpretation:0031-t079-n3c-vs-opensafely-vehicle-decision
   - interpretation:0032-t079-bc3-autoimmune-stratum-granularity
+  - interpretation:0033-t079-bc5-pasc-case-definition-lock
 source_refs:
   - cite:Williamson2020
   - cite:Andrews2022
@@ -63,7 +64,7 @@ Per `plan:0005`'s admissibility gates:
 | Autoimmune stratum granularity (BC-3) | **good — 7.5/8 confirmed** (`interpretation:0032`) | RA/SLE/IBD/MS confirmed; Sjögren (`sjogrens_cod`), myositis (`myositis_cod`), vasculitis (subtype union: `gca_cod`/`wegenervasc_cod`/`polyarteritis_cod`/`takayasuart_cod`/`cryoglobvasc_cod`) now confirmed as official NHSD SNOMED refsets; autoimmune-thyroid **partial** — Graves (`gravesdis_cod`) clean, no autoimmune-*hypo*thyroid refset (only all-cause `thy_cod`) |
 | Dated infection index + acute severity (BC-6) | **strong** | SGSS test dates; SUS/HES + ECDS + ICNARC dated admissions/ICU |
 | Individual-level utilisation (BC-7) | **strong** | per-patient GP-consultation counts via ehrQL `clinical_events` / consultations |
-| Computable PASC outcome (BC-5) | **weak — the binding limitation** | SNOMED long-COVID codes exist but are **severely under-recorded and differentially so** |
+| Computable PASC outcome (BC-5) | **weak — the binding limitation** (locked `interpretation:0033`) | NICE 3-cluster coded (diagnosis 2 + referral 3 + assessment 10); primary = all-clusters pooled + diagnosis-only/any **bracketing pair**; symptom-temporal = exploratory-only. Broadening **reshapes, not removes**, the utilisation-gated under-recording |
 | Rare-stratum × sex power (BC-4) | **constrained** | EMIS pause (TPP-only) + SDC suppression force stratum pooling |
 
 ## The outcome problem (why this is replication, not primary)
@@ -74,9 +75,21 @@ roughly one-to-two orders of magnitude below ONS survey self-report. Crucially t
 under-coding is **differential by consultation frequency**: higher-utilisation patients
 (which includes autoimmune-disease patients) are more likely to be coded, so a **coded-only
 PASC outcome carries h0008 ascertainment bias on the outcome side** — the very bias this
-study exists to defeat. A coded-only outcome is therefore inadmissible as the primary
-endpoint here; any OpenSAFELY analysis needs a **broader symptom/functional phenotype** plus
-utilisation adjustment and negative-control/quantitative-bias analysis.
+study exists to defeat.
+
+**BC-5 sharpened this (`interpretation:0033`, 2026-07-01):** broadening to a symptom/functional
+phenotype does **not** clean the bias — it **reshapes, and may worsen, it**. Every long-COVID code
+(diagnosis, referral, assessment, symptom) is generated *at an encounter*; referral/symptom codes
+are *more* contact-dependent than a single diagnosis code, so broadening pulls in more of the
+high-utilisation (autoimmune-enriched, female-enriched — coded LC aHR ~1.33 female) population. Two
+further blockers make a symptom-temporal phenotype exploratory-only: **59% of coded cases have no
+recorded positive test** (a confirmed-infection temporal anchor discards most true cases), and
+symptom codes (fatigue/breathlessness/palpitations) have low PPV. **Lock:** primary = NICE
+3-cluster coded pooled (referral codes are ~64% of cases and roughly double diagnosis-only counts),
+with **coded-diagnosis-only vs coded-any** as a bracketing sensitivity pair; symptom-temporal =
+exploratory upper-bound. OpenSAFELY therefore arbitrates the **sampling-frame** contrast but **not
+the outcome channel** — the utilisation gradient is handled analytically (pre-pandemic
+consultation-frequency adjustment + negative-control + bracketing pair), in both vehicles.
 
 ## Access / caveats
 

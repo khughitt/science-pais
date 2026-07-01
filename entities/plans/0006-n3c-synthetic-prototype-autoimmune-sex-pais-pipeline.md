@@ -14,6 +14,8 @@ related:
   - task:t082
   - interpretation:0031-t079-n3c-vs-opensafely-vehicle-decision
   - interpretation:0032-t079-bc3-autoimmune-stratum-granularity
+  - interpretation:0033-t079-bc5-pasc-case-definition-lock
+  - paper:Pfaff2022
   - dataset:n3c-recover-longcovid
   - dataset:n3c-recover-longcovid-synthetic
   - paper:Hill2022
@@ -263,13 +265,19 @@ until both are settled.
   must be disjoint from the exact column set of the E1 design matrix. A red-team fixture that
   tries to sneak a severity proxy into E1 must trip the guard.
 
-### WP6: Outcome build
+### WP6: Outcome build  *(BC-5 locked — `interpretation:0033`)*
 - **Depends on:** WP2.
-- **Entry point:** `s5_outcome.py` — computable PASC phenotype (U09.9 + N3C phenotype), PASC
-  ascertainment window per `windows.yaml`.
-- **Definition of done:** binary PASC outcome with sensitivity variants (U09.9-only,
-  phenotype-only) plumbed; case-definition provenance recorded (this is plan:0005's BC-5 for the
-  N3C side).
+- **Entry point:** `s5_outcome.py` — **primary = coded `U09.9`-or-LC-clinic** computable phenotype
+  (Hill-replicable); PASC **ascertainment window WHO-aligned ≥90 d** in `windows.yaml`, kept
+  **distinct from the ≥45 d survival/inclusion window** (BC-5 separated these).
+- **Definition of done:** binary PASC outcome plumbed with pre-registered variants —
+  **(i) coded-diagnosis-only vs coded-any** bracketing pair; **(ii) the Pfaff2022 ML phenotype
+  (threshold 0.45) as a FLAGGED sensitivity endpoint**, with a code comment + manifest note
+  recording that its top feature is outpatient visit rate and it embeds an uncorrected female
+  signal, so it is **never the primary** here (adopting it would bake the study's target confounds
+  into the outcome); **(iii)** a CDC-aligned ≥28 d window variant. The RECOVER survey PASC index is
+  **out of scope** for N3C (not EHR-computable). Case-definition provenance recorded (this is
+  plan:0005's BC-5 for the N3C side, now resolved).
 
 ### WP7: Estimation  *(honors the F1 collect boundary)*
 - **Depends on:** WP3, WP4, WP5, WP6.
@@ -310,8 +318,12 @@ until both are settled.
 
 - N3C enclave runtime specifics (Foundry/PySpark version, OMOP CDM version, whether synthetic
   and Limited tiers share a schema) — confirm in WP0; affects `ohdsi_shim`.
-- Does synthetic N3C include the RECOVER computable PASC phenotype, or only U09.9? Changes WP6
-  fidelity.
+- Does the synthetic tier carry U09.9 codes and LC-clinic visit types densely enough to smoke-test
+  the WP6 primary phenotype? (BC-5 locked the *definition* — coded U09.9/clinic primary, Pfaff ML
+  sensitivity, `interpretation:0033`; this is now only a synthetic-tier *density* question, resolved
+  in WP0, not a definition question.) The Pfaff ML phenotype's published model artifact
+  (`NCTraCSIDSci/n3c-longcovid`) is enclave-oriented — whether it runs on the open synthetic slice is
+  a WP0 punch-list item.
 - Fixed lookback length (365 d candidate) and the suppression threshold/rounding — inherited
   from plan:0005 / N3C policy; confirm exact N3C small-cell rule for `disclosure.yaml`.
 
