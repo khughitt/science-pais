@@ -11,6 +11,7 @@ related:
   - task:t079
   - interpretation:0031-t079-n3c-vs-opensafely-vehicle-decision
   - dataset:n3c-recover-longcovid
+  - dataset:n3c-recover-longcovid-synthetic
   - paper:Hill2022
   - hypothesis:0004-acute-severity-threshold
   - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
@@ -159,15 +160,14 @@ until both are settled.
   **collects to pandas at a single named point** *after* a disclosure-safe size check; s6/s7
   stats run local (statsmodels/R) in both environments. No stage silently collects.
 
-**F2 — Structural synthetic-slice dataset handling (WP0).**
-- Before cohort code, the consumed data must be a **verifiable, stageable artifact that cannot
-  resolve to the Limited/enclave tier.** Resolve as either: (a) a granular sibling
-  `dataset:n3c-recover-longcovid-synthetic` (`access.level` public/registration, `local_path`/
-  `datapackage` → the acquired synthetic OMOP package, `verified: true` +
-  `verification_method` + `last_reviewed`); **or** (b) an `access.exception: {mode:
-  scope-reduced, decision_date, followup_task: t079}` + `local_path` on the existing entity.
-  Option (a) preferred (layout-v3 granular-sibling pattern). Until this exists, the pipeline
-  has no admissible input and WP2 cannot start.
+**F2 — Structural synthetic-slice dataset handling (WP0).** ✅ *entity created 2026-07-01.*
+- The consumed data is now the granular sibling **`dataset:n3c-recover-longcovid-synthetic`**
+  (`parent_dataset: dataset:n3c-recover-longcovid`, `access.exception: scope-reduced`), so the
+  pipeline's input path resolves to a **synthetic-only artifact that cannot reference the
+  Limited/enclave tiers.** **Still open (completes F2 in WP0):** acquire the synthetic OMOP
+  package, set `local_path` + `verified: true` + `verification_method`, confirm the OMOP CDM
+  version. Until `local_path` is populated the pipeline has no *stageable* input and WP2 cannot
+  start.
 
 ## Work Packages
 

@@ -27,6 +27,8 @@ related:
 consumed_by:
   - plan:0006-n3c-synthetic-prototype-autoimmune-sex-pais-pipeline
   - task:t079
+siblings:
+  - dataset:n3c-recover-longcovid-synthetic
 ---
 
 # N3C — National COVID Cohort Collaborative (+ RECOVER-EHR)
