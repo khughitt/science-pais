@@ -64,8 +64,8 @@ E-utilities (esearch/esummary) + targeted web search (`fallback-web`).
 
 | Rank | Citation (short) | Year | IDs | Tier | Why it matters |
 |---|---|---|---|---|---|
-| 1 | Hill — N3C/RECOVER PASC risk factors (EHR) | 2022 | PMID 36032983 · DOI 10.1101/2022.08.15.22278603 | **Core now** | Best design fit: large N3C EHR cohort, matched controls, ML risk-factor screen incl. pre-existing conditions, explicit PASC definition. Preprint — check for published N3C/RECOVER version. |
-| 2 | Srivatsan — PASC burden in rheumatic diseases | 2025 | PMID 39550103 · DOI 10.1016/j.rdc.2024.08.003 | **Core now** | Direct exposure = pre-existing autoimmune rheumatic disease; outcome = PASC burden. Closest topical review-of-cohorts. |
+| 1 | Hill — N3C/RECOVER PASC risk factors (EHR) | 2023 | PMID 37880596 · DOI 10.1186/s12889-023-16916-w · (preprint medRxiv 2022, PMID 36032983) | **Core now — READ** | Best design fit: large N3C EHR cohort, 1:5 matched, computable PASC phenotype (U09.9 or LC-clinic visit). Published in **BMC Public Health 2023** (not Lancet). Read → `paper:Hill2022`: autoimmune enters only as a pooled Charlson "rheumatologic disease" term (OR 1.27); sex is a covariate, no sex×comorbidity interaction; utilization only a county-level proxy. Substrate for the t078 design, not the estimand. |
+| 2 | Srivatsan — PASC burden in rheumatic diseases | 2025 | PMID 39550103 · DOI 10.1016/j.rdc.2024.08.003 | **Core now — READ** | Direct exposure = pre-existing autoimmune rheumatic disease; outcome = PASC burden. Read → `paper:Srivatsan2025`: **pointer-only** narrative review, no pooled estimate, sex×ARD never crossed; key finding — in the one matched cohort it cites (Boekel2023) ARD→PASC attenuates to non-significant after severity adjustment. Hands off four matched primary cohorts: Boekel2023, Sen/COVAD2023, PatelNJ2024, DiIorio2022. |
 | 3 | Wolff — allergic diseases as Long-COVID risk (SR of prospective cohorts) | 2023 | PMID 37936547 · DOI 10.1111/cea.14391 | **Core now** | The atopy **contrast** arm: systematic review restricted to *prospective* cohorts; tests whether the liability is autoimmune-specific vs general immune-hyperreactivity. |
 | 4 | Steiner — PTPN22/CTLA4 variants in ME/CFS with infectious onset | 2020 | PMID 32328064 · DOI 10.3389/fimmu.2020.00578 | **Core now** | Genetic **autoimmune diathesis × infection-triggered PAIS** — the cleanest test of "prior autoimmune liability predisposes to post-infectious non-recovery"; effect concentrated in infectious-onset subgroup. |
 | 5 | Tsai — IBD → incident chronic fatigue syndrome (population cohort) | 2019 | PMID 30795765 · DOI 10.1186/s12967-019-1797-3 | **Core now** | Pre-existing autoimmune (IBD) → later CFS in a matched population-based retrospective cohort — on-target design in the PAIS-broadened arm. |
@@ -80,7 +80,7 @@ E-utilities (esearch/esummary) + targeted web search (`fallback-web`).
 
 ## Priority Reading Queue
 
-**Core now** (read to decide t078's form): Hill2022 → Srivatsan2025 → Wolff2023 → Steiner2020 → Tsai2019.
+**Core now** (read to decide t078's form): Hill2022 ✅READ → Srivatsan2025 ✅READ → Wolff2023 → Steiner2020 → Tsai2019. *(Top two read 2026-06-30; both confirm the t078 estimand is unreported → t078 promoted to a design-stage analysis plan. Boekel2023 severity-attenuation makes acute severity a candidate mediator, not just a confounder.)*
 **Relevant next:** Yadaw2023 (severity-as-confounder), then re-read the corpus pair Shah2025 + Fedorchenko2023 through the effect-modifier lens.
 **Peripheral monitor:** Tzang2025, Heo2024 (reverse-direction anchors for q0005), Mandel2025 (denominators).
 
