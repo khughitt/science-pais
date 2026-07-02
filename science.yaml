@@ -25,6 +25,10 @@ tags:
 - antigen-persistence
 - dysautonomia
 data_sources: []
+reproducibility_policy:
+  bar: third-party-reproducible
+  unknown: halt
+  below_bar: halt
 ontologies:
 - biology
 knowledge_profiles:

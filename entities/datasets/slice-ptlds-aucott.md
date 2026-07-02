@@ -14,6 +14,11 @@ access:
   availability: available
   verified: false
   source_url: "https://www.frontiersin.org/articles/10.3389/fmed.2017.00224/full"
+  reproducibility:
+    obtainability: named-collaboration
+    execution: custodian-run
+    extractability: none
+    notes: "Individual-level SLICE clinical cohort private (contact Johns Hopkins Lyme Disease Research Center); reproducible only by direct collaboration, no standardized third-party export -> insider-only. Some omics substudies MAY be deposited in GEO/dbGaP (UNVERIFIED); if confirmed, register those as separate third-party-reproducible slices."
 accessions: []
 ontology_terms: [ptlds, lyme-disease, borrelia-burgdorferi, prospective-cohort, sex-differences]
 related:

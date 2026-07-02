@@ -14,6 +14,11 @@ access:
   availability: available
   verified: false
   source_url: "https://www.thelancet.com/journals/eclinm/article/PIIS2589-5370(24)00620-5/fulltext"
+  reproducibility:
+    obtainability: public
+    execution: local
+    extractability: full-dataset
+    notes: "Published pooled meta-analytic effect sizes (reference dataset): fully extractable now from public forest plots and re-poolable — third-party-reproducible at the aggregate grain. Not individual-level microdata (a scientific-strength limit, not an access one)."
 accessions: []
 ontology_terms: [post-dengue-fatigue, dengue, meta-analysis, sex-differences]
 related:

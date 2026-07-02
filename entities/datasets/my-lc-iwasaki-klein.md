@@ -14,6 +14,11 @@ access:
   availability: available
   verified: false
   source_url: "https://www.biorxiv.org/content/10.1101/2024.06.18.599612"
+  reproducibility:
+    obtainability: unknown
+    execution: unknown
+    extractability: unknown
+    notes: "MIXED and under-evidenced: participant-level immune/hormonal data are controlled with NO confirmed third-party access route (primary source is a bioRxiv preprint; only partial processed data appear in GEO/supplements). Reproducibility route unconfirmed -> left unknown pending identification of a concrete data-access mechanism; do not infer from access.level. A public supplement/GEO processed slice, if used as a distinct input, would be third-party-reproducible, but it is not this participant-level cohort."
 accessions: []
 ontology_terms: [long-covid, sars-cov-2, immune-profiling, sex-hormones, sex-differences]
 related:

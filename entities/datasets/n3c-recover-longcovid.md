@@ -14,6 +14,11 @@ access:
   availability: available
   verified: false
   source_url: "https://covid.cd2h.org/dashboard/recover"
+  reproducibility:
+    obtainability: approved-project
+    execution: trusted-environment
+    extractability: aggregate-reviewed
+    notes: "Describes the De-identified/Limited (enclave) route — the real-signal tier this mixed umbrella now represents (the open synthetic tier is broken out as dataset:n3c-recover-longcovid-synthetic). Access is DUA + institutional + approved-project onboarding; compute is enclave-only (Palantir Foundry); only export-reviewed aggregates leave. Below the third-party-reproducible bar (D-004). Refines D-004's informal 'insider-only' label to the precise lattice class trust-based-output (reviewed aggregates DO leave — not extract:none, not custodian-run)."
 accessions: []
 ontology_terms: [long-covid, sars-cov-2, ehr, computable-phenotype, sex-differences]
 related:
@@ -31,7 +36,6 @@ related:
   - question:0007-mechanism-of-female-predominance-in-pais
   - question:0003-acute-severity-threshold-for-self-sustaining-pais
 consumed_by:
-  - plan:0006-n3c-synthetic-prototype-autoimmune-sex-pais-pipeline
   - task:t079
 siblings:
   - dataset:n3c-recover-longcovid-synthetic

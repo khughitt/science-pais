@@ -14,6 +14,11 @@ access:
   availability: available
   verified: false
   source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9115379/"
+  reproducibility:
+    obtainability: named-collaboration
+    execution: custodian-run
+    extractability: none
+    notes: "No deposited/public microdata; the individual-level cohort is held by the original investigators and reproducible only by direct collaboration. Only investigator-published aggregate effect sizes are third-party-available (not third-party-extractable by an independent reproducer). Insider-only."
 accessions: []
 ontology_terms: [post-dengue-fatigue, dengue, prospective-cohort, sex-differences]
 related:

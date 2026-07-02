@@ -14,6 +14,11 @@ access:
   availability: available
   verified: false
   source_url: "https://link.springer.com/article/10.1186/s12967-020-02585-5"
+  reproducibility:
+    obtainability: named-collaboration
+    execution: custodian-run
+    extractability: none
+    notes: "Clinical microdata private (Nijmegen/Radboud investigators); reproducible only by direct collaboration, no standardized third-party export -> insider-only. A separate omics slice IS deposited as dataset:gse130353-qfs-cfs-monocytes (independently third-party-reproducible); this entity is the clinical cohort, not that slice."
 accessions: []
 ontology_terms: [post-q-fever-fatigue, q-fever, coxiella-burnetii, prospective-cohort, sex-differences]
 related:

@@ -19,6 +19,11 @@ access:
   last_reviewed: "2026-06-26"
   verified_by: "agent (t065)"
   source_url: "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE14577"
+  reproducibility:
+    obtainability: public
+    execution: local
+    extractability: full-dataset
+    notes: "Open GEO series (GSE14577) — depositor intensity tables download without credentials and rerun locally. Third-party-reproducible."
 accessions: [GSE14577]
 ontology_terms: [post-infectious-cfs, me-cfs, pbmc, microarray, transcriptomics]
 source_refs:

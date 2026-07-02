@@ -19,6 +19,11 @@ access:
   last_reviewed: "2026-06-26"
   verified_by: "agent (t065)"
   source_url: "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/"
+  reproducibility:
+    obtainability: public
+    execution: local
+    extractability: full-dataset
+    notes: "Public Broad MSigDB release — GMT collections download without credentials and rerun locally. Reference dataset. Third-party-reproducible."
 accessions: [MSigDB:2024.1.Hs]
 ontology_terms: [msigdb, gene-sets, hallmark, reactome, go-biological-process, homo-sapiens]
 related:

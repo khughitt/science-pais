@@ -14,6 +14,11 @@ access:
   availability: available
   verified: false
   source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC1569956/"
+  reproducibility:
+    obtainability: named-collaboration
+    execution: custodian-run
+    extractability: none
+    notes: "No public microdata; individual-level DIOS data held by the original investigators (UNSW Lloyd/Hickie) and reproducible only by direct collaboration; no standardized third-party export. Published tables are investigator-produced aggregates. Insider-only."
 accessions: []
 ontology_terms: [post-infective-fatigue, ebv, q-fever, ross-river-virus, sex-differences]
 related:

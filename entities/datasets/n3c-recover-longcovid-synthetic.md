@@ -24,6 +24,11 @@ access:
     decision_date: "2026-07-01"
     followup_task: task:t079
     rationale: "plan:0006 (BC-2) consumes ONLY the open synthetic tier of N3C. This granular sibling exists so the prototype's input path resolves to a synthetic-only artifact and cannot reference the parent's De-identified / Limited (enclave) tiers. Synthetic data not yet acquired — WP0 sets local_path + verified:true on acquisition."
+  reproducibility:
+    obtainability: registration
+    execution: trusted-environment
+    extractability: unknown
+    notes: "N3C synthetic tier is enclave-only / non-downloadable (D-004), so it is NOT locally rerunnable — the 'reproducible-for-pipeline-mechanics' exception (obtain + rerun locally) does NOT apply. The binding known fact is execution=trusted-environment, which alone places it below the third-party-reproducible bar for access-route reasons (not scientific-strength). Synthetic-tier output/export-control rules are unconfirmed, so extractability is left 'unknown' pending direct verification — do not infer through access.level. Revisit if N3C ever offers a genuinely downloadable synthetic slice (D-004 'revisit if')."
 consumed_by:
   - plan:0006-n3c-synthetic-prototype-autoimmune-sex-pais-pipeline
   - task:t079

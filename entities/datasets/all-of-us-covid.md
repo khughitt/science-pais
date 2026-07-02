@@ -14,6 +14,11 @@ access:
   availability: available
   verified: false
   source_url: "https://www.researchallofus.org/"
+  reproducibility:
+    obtainability: registration
+    execution: trusted-environment
+    extractability: aggregate-reviewed
+    notes: "All of Us Researcher Workbench is a no-extraction TRE: registered/controlled-tier access + DURA, compute stays in the workbench, only disclosure-reviewed aggregates export. Registration does NOT rescue reproducibility because execution is enclave-bound -> trust-based-output, below the third-party bar."
 accessions: []
 ontology_terms: [long-covid, sars-cov-2, ehr, diverse-cohort, sex-differences]
 related:

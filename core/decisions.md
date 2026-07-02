@@ -97,7 +97,7 @@ Durable scientific knowledge in this ecosystem must be independently re-runnable
 
 **Implications:**
 - `task:t079` → deferred (shelved); `plan:0005` stays `not-ready` (it never became viable) with a SHELVED banner; `plan:0006` → archived; `interpretation:0031` → superseded; the `doc:` feasibility memo carries a SHELVED banner. `task:t080`/`t081`/`t082` → deferred.
-- N3C and OpenSAFELY are to be recorded as `insider-only` in the reproducibility inventory being scoped in `~/d/science` (the change that would have flagged N3C at *plan* time).
+- N3C and OpenSAFELY are to be recorded as **below-bar / non-third-party-reproducible** in the reproducibility inventory scoped in `~/d/science` — specifically `trust-based-output` (TRE / aggregate-output vehicles: reviewed aggregates *do* leave, so they are **not** `insider-only`). This is the change that would have flagged N3C at *plan* time. (Wording refined 2026-07-01: the formal Five-Safes classifier yields `trust-based-output`, one notch above the informal "insider-only" first written here; both sit below the third-party-reproducible bar, so the shelve conclusion is unchanged.)
 - The `hypothesis:0008` synthesis is the durable residue and remains live for other lines.
 
 **Revisit if:**

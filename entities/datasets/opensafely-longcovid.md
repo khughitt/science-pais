@@ -16,6 +16,11 @@ access:
   verification_method: landing-confirmed
   last_reviewed: "2026-07-01"
   source_url: "https://www.opensafely.org/"
+  reproducibility:
+    obtainability: approved-project
+    execution: federated-code-to-data
+    extractability: aggregate-reviewed
+    notes: "Federated code-to-data: an approved project submits analysis code that runs against TPP/EMIS backends; row-level data are never obtained and only disclosure-controlled (SDC) aggregates return. Below the third-party-reproducible bar (D-004). This refines D-004's informal 'insider-only' label to the precise lattice class trust-based-output — reviewed aggregates DO leave, so it is not extract:none. Open code model does not rescue reproducibility because the DATA class is gated."
 accessions: []
 ontology_terms: [long-covid, sars-cov-2, ehr, primary-care, population-based, computable-phenotype, sex-differences, autoimmune, ascertainment-bias]
 related:

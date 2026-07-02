@@ -14,6 +14,11 @@ access:
   availability: available
   verified: false
   source_url: "https://pubmed.ncbi.nlm.nih.gov/35726132/"
+  reproducibility:
+    obtainability: public
+    execution: local
+    extractability: full-dataset
+    notes: "Published meta-analysis (reference dataset): the artifact IS the domain-stratified sex ORs, fully extractable now from the public paper and trivially re-poolable — third-party-reproducible at the meta-analytic (aggregate) grain. No individual-participant data; the aggregate grain is a scientific-strength limit, not an access-reproducibility one."
 accessions: []
 ontology_terms: [long-covid, sars-cov-2, meta-analysis, sex-differences, neuropsychiatric]
 related:
