@@ -9,7 +9,8 @@ ontology_terms:
 - immune dysregulation
 - causal model
 - biomarker vs driver
-datasets: []
+datasets:
+- dataset:covid19-hgi-longcovid-gwas
 source_refs: []
 related:
 - hypothesis:0001-shared-dysregulated-attractor
