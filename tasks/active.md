@@ -200,3 +200,13 @@ The patch parks HPA/cortisol as 'high-plausibility / thin-PAIS-evidence', which 
 - created: 2026-07-03
 
 Per doc/plans/2026-07-03-data-catalog-expansion-design.md F3: t082 is the plan:0006/N3C code gate and is moot under D-004, so it does not govern a new open-data program. Before any Wave-1 MR/analysis CODE is written (or any cohort ingestion / runnable pipeline for open reproducible data), make an explicit scope decision referencing specs/scope-boundaries.md. SCOPE OF THIS GATE: blocks MR/analysis EXECUTION only -- NOT the Gate-0 reach/capability audit and NOT dataset cataloging/discovery, which proceed under the existing catalog arc. A fully-open low-friction MR vehicle is a candidate argument for this decision, not an assumption.
+
+## [t089] Wave-1: run open GWAS/MR analysis for sex×autoimmune PAIS questions
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [task:t088]
+- blocked-by: [task:t088]
+- created: 2026-07-03
+
+Execute the MR handoff in doc/plans/2026-07-03-gwas-mr-ingestion-handoff.md. BLOCKED on t088 (open-analysis scope decision) — this is analysis EXECUTION, gated by specs/scope-boundaries.md. Cataloging/handoff already done (Wave-1 pilot).
