@@ -159,6 +159,11 @@ consistent with the lightweight decision):*
    that point at a real dataset (e.g. RECOVER → h0006) with `science dataset link`.
    **Do not** blind-link across all 31 targets; only reconcile citations that are
    genuinely reaching.
+   > **Correction (Gate-0 execution, 2026-07-03):** the "RECOVER → h0006" example did
+   > **not** hold — every "recover" hit in h0006 is the plain-English word, not the
+   > RECOVER cohort, and `recover-adult` lacks the muscle/mitochondrial assay to reach
+   > h0006 regardless. h0006/h0002/h0003 are genuine-discovery gaps, not reconcilable.
+   > See `doc/plans/2026-07-03-wave1-checkpoint.md`.
 2. **Annotate capabilities** — add `provided_capabilities` to the 21 datasets and
    `required_capabilities` to the 9 reached targets, clearing the 20 + 9 validation
    warnings so coverage rows resolve to `covered-*` / true-`missing-*` meaningfully.
