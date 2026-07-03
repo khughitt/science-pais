@@ -21,6 +21,14 @@ access:
     notes: "Processed multi-omics obtainable via ImmPort SDY1760 (free researcher registration + click-through DUA then download); controlled genomic layer via dbGaP phs002686 DAR. A qualified third party can re-obtain individual-level processed data and rerun locally -> credentialed-reproducible."
 accessions: [SDY1760, phs002686]
 ontology_terms: [long-covid, sars-cov-2, multiomics, sex-differences, patient-reported-outcomes]
+provided_capabilities:
+  - modality: immunophenotype
+    assay: olink
+    trigger: sars-cov-2
+    cohort_design: prospective-longitudinal
+  - modality: transcriptomics
+    assay: bulk-rna
+    trigger: sars-cov-2
 related:
   - task:t013
   - task:t061

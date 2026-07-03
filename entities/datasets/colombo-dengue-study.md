@@ -21,6 +21,12 @@ access:
     notes: "No deposited/public microdata; the individual-level cohort is held by the original investigators and reproducible only by direct collaboration. Only investigator-published aggregate effect sizes are third-party-available (not third-party-extractable by an independent reproducer). Insider-only."
 accessions: []
 ontology_terms: [post-dengue-fatigue, dengue, prospective-cohort, sex-differences]
+provided_capabilities:
+  - modality: epidemiology
+    trigger: dengue
+    cohort_design: prospective-longitudinal
+    outcome: fatigue
+    stratification: sex
 related:
   - task:t013
   - question:0007-mechanism-of-female-predominance-in-pais

@@ -21,6 +21,11 @@ access:
     notes: "Clinical microdata private (Nijmegen/Radboud investigators); reproducible only by direct collaboration, no standardized third-party export -> insider-only. A separate omics slice IS deposited as dataset:gse130353-qfs-cfs-monocytes (independently third-party-reproducible); this entity is the clinical cohort, not that slice."
 accessions: []
 ontology_terms: [post-q-fever-fatigue, q-fever, coxiella-burnetii, prospective-cohort, sex-differences]
+provided_capabilities:
+  - modality: epidemiology
+    trigger: q-fever
+    cohort_design: prospective-longitudinal
+    outcome: fatigue
 related:
   - task:t013
   - question:0007-mechanism-of-female-predominance-in-pais

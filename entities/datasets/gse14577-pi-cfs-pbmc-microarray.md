@@ -26,6 +26,11 @@ access:
     notes: "Open GEO series (GSE14577) — depositor intensity tables download without credentials and rerun locally. Third-party-reproducible."
 accessions: [GSE14577]
 ontology_terms: [post-infectious-cfs, me-cfs, pbmc, microarray, transcriptomics]
+provided_capabilities:
+  - modality: transcriptomics
+    assay: microarray
+    trigger: mixed
+    cohort_design: case-control
 source_refs:
   - cite:Gow2009
 related:

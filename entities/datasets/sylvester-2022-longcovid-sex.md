@@ -21,6 +21,10 @@ access:
     notes: "Published meta-analysis (reference dataset): the artifact IS the domain-stratified sex ORs, fully extractable now from the public paper and trivially re-poolable — third-party-reproducible at the meta-analytic (aggregate) grain. No individual-participant data; the aggregate grain is a scientific-strength limit, not an access-reproducibility one."
 accessions: []
 ontology_terms: [long-covid, sars-cov-2, meta-analysis, sex-differences, neuropsychiatric]
+provided_capabilities:
+  - cohort_design: meta-analysis
+    trigger: sars-cov-2
+    stratification: sex
 related:
   - task:t013
   - question:0007-mechanism-of-female-predominance-in-pais

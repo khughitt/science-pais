@@ -21,6 +21,21 @@ access:
     notes: "All of Us Researcher Workbench is a no-extraction TRE: registered/controlled-tier access + DURA, compute stays in the workbench, only disclosure-reviewed aggregates export. Registration does NOT rescue reproducibility because execution is enclave-bound -> trust-based-output, below the third-party bar."
 accessions: []
 ontology_terms: [long-covid, sars-cov-2, ehr, diverse-cohort, sex-differences]
+provided_capabilities:
+  - modality: clinical-ehr
+    assay: ehr-coded
+    trigger: sars-cov-2
+    cohort_design: prospective-longitudinal
+    stratification: sex
+  - modality: clinical-ehr
+    assay: survey-pro
+    trigger: sars-cov-2
+    cohort_design: prospective-longitudinal
+    stratification: sex
+  - modality: clinical-ehr
+    assay: wearable
+    trigger: sars-cov-2
+    cohort_design: prospective-longitudinal
 related:
   - task:t013
   - task:t039

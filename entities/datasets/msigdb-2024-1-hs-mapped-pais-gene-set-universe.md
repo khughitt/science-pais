@@ -28,6 +28,9 @@ derivation:
     - dataset:msigdb-2024-1-hs-source-gmt-collections
 parent_dataset: dataset:msigdb-2024-1-hs-source-gmt-collections
 ontology_terms: [msigdb, gene-sets, hallmark, reactome, go-biological-process, homo-sapiens, clean-base]
+provided_capabilities:
+  - modality: gene-sets
+    trigger: not-applicable
 related:
   - task:t035
   - task:t065

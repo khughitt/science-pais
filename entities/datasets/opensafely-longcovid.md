@@ -23,6 +23,12 @@ access:
     notes: "Federated code-to-data: an approved project submits analysis code that runs against TPP/EMIS backends; row-level data are never obtained and only disclosure-controlled (SDC) aggregates return. Below the third-party-reproducible bar (D-004). This refines D-004's informal 'insider-only' label to the precise lattice class trust-based-output — reviewed aggregates DO leave, so it is not extract:none. Open code model does not rescue reproducibility because the DATA class is gated."
 accessions: []
 ontology_terms: [long-covid, sars-cov-2, ehr, primary-care, population-based, computable-phenotype, sex-differences, autoimmune, ascertainment-bias]
+provided_capabilities:
+  - modality: clinical-ehr
+    assay: ehr-coded
+    trigger: sars-cov-2
+    cohort_design: prospective-longitudinal
+    stratification: sex
 related:
   - task:t079
   - plan:0005-autoimmune-diathesis-sex-modifier-pais-analysis-plan

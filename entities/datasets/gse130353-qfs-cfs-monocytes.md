@@ -25,6 +25,11 @@ access:
     notes: "Open GEO series (GSE130353) — raw/processed matrices download without credentials and rerun locally (already retrieved to gitignored data/raw/). Third-party-reproducible."
 accessions: [GSE130353]
 ontology_terms: [post-q-fever-fatigue, q-fever, me-cfs, rna-seq, monocytes]
+provided_capabilities:
+  - modality: transcriptomics
+    assay: bulk-rna
+    trigger: q-fever
+    cohort_design: case-control
 related:
   - task:t013
   - task:t035

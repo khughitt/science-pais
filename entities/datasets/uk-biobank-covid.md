@@ -21,6 +21,17 @@ access:
     notes: "Any bona-fide researcher with an approved application + access fee obtains individual-level records (download or the RAP/DNAnexus hosted workspace) and reruns under their own control — a normal qualified third party CAN re-obtain, so credentialed-reproducible. Fee + healthy-volunteer/older-age skew are barriers/validity caveats, not access-route blockers. obtainability=approved-researcher (broadly available to qualified researchers), NOT approved-project."
 accessions: []
 ontology_terms: [long-covid, sars-cov-2, prospective-cohort, mental-health-linkage, sex-differences]
+provided_capabilities:
+  - modality: clinical-ehr
+    assay: ehr-coded
+    trigger: sars-cov-2
+    cohort_design: prospective-longitudinal
+    stratification: sex
+  - modality: clinical-ehr
+    trigger: sars-cov-2
+    cohort_design: prospective-longitudinal
+    outcome: sex-hormone-level
+    stratification: sex
 related:
   - task:t013
   - question:0007-mechanism-of-female-predominance-in-pais

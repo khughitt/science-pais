@@ -31,6 +31,11 @@ derivation:
     - dataset:gse130353-qfs-cfs-monocytes
 parent_dataset: dataset:gse130353-qfs-cfs-monocytes
 ontology_terms: [post-q-fever-fatigue, q-fever, me-cfs, monocytes, rna-seq, transcriptomics, clean-base]
+provided_capabilities:
+  - modality: transcriptomics
+    assay: bulk-rna
+    trigger: q-fever
+    cohort_design: case-control
 source_refs:
   - cite:Raijmakers2019
 related:

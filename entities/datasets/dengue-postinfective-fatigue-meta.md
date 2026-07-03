@@ -21,6 +21,11 @@ access:
     notes: "Published pooled meta-analytic effect sizes (reference dataset): fully extractable now from public forest plots and re-poolable — third-party-reproducible at the aggregate grain. Not individual-level microdata (a scientific-strength limit, not an access one)."
 accessions: []
 ontology_terms: [post-dengue-fatigue, dengue, meta-analysis, sex-differences]
+provided_capabilities:
+  - cohort_design: meta-analysis
+    trigger: dengue
+    outcome: fatigue
+    stratification: sex
 related:
   - task:t013
   - question:0007-mechanism-of-female-predominance-in-pais

@@ -21,6 +21,12 @@ access:
     notes: "Clinical data + biospecimen metadata obtainable via a searchMECFS / MapMECFS data-access application (broadly available to qualified researchers), downloaded for local rerun -> credentialed-reproducible. Application/governance overhead and deliberate sub-study sex/age selection are caveats, not access-route blockers."
 accessions: []
 ontology_terms: [me-cfs, post-infectious-fatigue, clinical-cohort, biospecimens, sex-differences]
+provided_capabilities:
+  - modality: epidemiology
+    trigger: mixed
+    cohort_design: cross-sectional
+    outcome: fatigue
+    stratification: sex
 related:
   - task:t013
   - question:0007-mechanism-of-female-predominance-in-pais

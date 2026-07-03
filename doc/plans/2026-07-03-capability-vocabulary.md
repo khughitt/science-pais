@@ -28,12 +28,20 @@ matches *every* key/value of *some* required set (provider may be a superset).
   satisfy the same causal target. Causal-MR targets require an `analysis_role` +
   `trait`; purely descriptive targets require only `stratification`/`modality`.
 
+**v0.1 additions (Task 3 annotation pass):**
+- `modality: gene-sets` — added for reference gene-set annotation resources
+  (e.g. MSigDB collections) that are analysis substrates, not measured biological
+  data; no existing modality value honestly described them.
+- `trigger: lyme-disease` — added because Lyme disease / PTLDS (`dataset:slice-ptlds-aucott`)
+  is a genuine, distinct post-acute-infection trigger in the corpus with no prior
+  token; folding it into `mixed` would have hidden a trigger-specific dataset.
+
 | Key | Allowed values |
 |---|---|
-| `modality` | `transcriptomics`, `genetics`, `proteomics`, `metabolomics`, `clinical-ehr`, `epidemiology`, `immunophenotype` |
+| `modality` | `transcriptomics`, `genetics`, `proteomics`, `metabolomics`, `clinical-ehr`, `epidemiology`, `immunophenotype`, `gene-sets` |
 | `assay` | `bulk-rna`, `microarray`, `gwas-sumstats`, `olink`, `cytof`, `metabolomics-panel`, `ehr-coded`, `survey-pro`, `wearable` |
 | `cohort_design` | `case-control`, `prospective-longitudinal`, `cross-sectional`, `summary-stats`, `meta-analysis` |
-| `trigger` | `sars-cov-2`, `dengue`, `q-fever`, `ebv`, `mixed`, `not-applicable` |
+| `trigger` | `sars-cov-2`, `dengue`, `q-fever`, `ebv`, `lyme-disease`, `mixed`, `not-applicable` |
 | `case_definition` | `who-lc`, `cdc-lc`, `fukuda`, `ccc`, `icc`, `not-applicable` |
 | `outcome` | `fatigue`, `pem`, `autoimmune-dx`, `dysautonomia`, `recovery-status`, `sex-hormone-level` |
 | `stratification` | `sex`, `age`, `time-since-infection`, `severity`, `none` |

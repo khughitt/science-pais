@@ -26,6 +26,9 @@ access:
     notes: "Public Broad MSigDB release — GMT collections download without credentials and rerun locally. Reference dataset. Third-party-reproducible."
 accessions: [MSigDB:2024.1.Hs]
 ontology_terms: [msigdb, gene-sets, hallmark, reactome, go-biological-process, homo-sapiens]
+provided_capabilities:
+  - modality: gene-sets
+    trigger: not-applicable
 related:
   - task:t035
   - task:t065

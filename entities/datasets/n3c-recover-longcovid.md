@@ -21,6 +21,13 @@ access:
     notes: "Describes the De-identified/Limited (enclave) route — the real-signal tier this mixed umbrella now represents (the open synthetic tier is broken out as dataset:n3c-recover-longcovid-synthetic). Access is DUA + institutional + approved-project onboarding; compute is enclave-only (Palantir Foundry); only export-reviewed aggregates leave. Below the third-party-reproducible bar (D-004). Refines D-004's informal 'insider-only' label to the precise lattice class trust-based-output (reviewed aggregates DO leave — not extract:none, not custodian-run)."
 accessions: []
 ontology_terms: [long-covid, sars-cov-2, ehr, computable-phenotype, sex-differences]
+provided_capabilities:
+  - modality: clinical-ehr
+    assay: ehr-coded
+    trigger: sars-cov-2
+    cohort_design: prospective-longitudinal
+    case_definition: who-lc
+    stratification: sex
 related:
   - task:t013
   - task:t079

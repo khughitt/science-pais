@@ -22,6 +22,13 @@ access:
     notes: "Released via dbGaP / NHLBI BioData Catalyst (phs003463.v6.p5): a qualified researcher submits a standard Data Access Request, is approved, and downloads the individual-level release to their own environment to rerun — credentialed-reproducible. approved-researcher (standard DAR is broadly available to qualified third parties), NOT approved-project. The molecular-module gap noted in the body is a plan-feasibility issue, not an access-reproducibility one."
 accessions: [phs003463.v6.p5]
 ontology_terms: [long-covid, sars-cov-2, prospective-cohort, biospecimens, sex-differences, pem, ehr, wearables]
+provided_capabilities:
+  - modality: clinical-ehr
+    assay: ehr-coded
+    trigger: sars-cov-2
+    cohort_design: prospective-longitudinal
+    case_definition: who-lc
+    stratification: sex
 related:
   - task:t013
   - task:t040

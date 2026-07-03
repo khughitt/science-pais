@@ -21,6 +21,11 @@ access:
     notes: "Individual-level SLICE clinical cohort private (contact Johns Hopkins Lyme Disease Research Center); reproducible only by direct collaboration, no standardized third-party export -> insider-only. Some omics substudies MAY be deposited in GEO/dbGaP (UNVERIFIED); if confirmed, register those as separate third-party-reproducible slices."
 accessions: []
 ontology_terms: [ptlds, lyme-disease, borrelia-burgdorferi, prospective-cohort, sex-differences]
+provided_capabilities:
+  - modality: epidemiology
+    trigger: lyme-disease
+    cohort_design: prospective-longitudinal
+    outcome: fatigue
 related:
   - task:t013
   - question:0007-mechanism-of-female-predominance-in-pais

@@ -26,6 +26,11 @@ derivation:
     - dataset:gse14577-pi-cfs-pbmc-microarray
 parent_dataset: dataset:gse14577-pi-cfs-pbmc-microarray
 ontology_terms: [post-infectious-cfs, me-cfs, pbmc, microarray, transcriptomics, clean-base]
+provided_capabilities:
+  - modality: transcriptomics
+    assay: microarray
+    trigger: mixed
+    cohort_design: case-control
 source_refs:
   - cite:Gow2009
 related:

@@ -21,6 +21,11 @@ access:
     notes: "No public microdata; individual-level DIOS data held by the original investigators (UNSW Lloyd/Hickie) and reproducible only by direct collaboration; no standardized third-party export. Published tables are investigator-produced aggregates. Insider-only."
 accessions: []
 ontology_terms: [post-infective-fatigue, ebv, q-fever, ross-river-virus, sex-differences]
+provided_capabilities:
+  - modality: epidemiology
+    trigger: mixed
+    cohort_design: prospective-longitudinal
+    outcome: fatigue
 related:
   - task:t013
   - question:0007-mechanism-of-female-predominance-in-pais
