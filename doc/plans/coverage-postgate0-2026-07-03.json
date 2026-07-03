@@ -1,0 +1,1144 @@
+{
+  "rows": [
+    {
+      "target": "hypothesis:0001-shared-dysregulated-attractor",
+      "title": "Post-acute infection syndromes are a shared dysregulated attractor reachable from many triggers, not merely a shared symptom repertoire",
+      "datasets": [
+        "dataset:gse130353-qfs-cfs-monocytes",
+        "dataset:gse14577-pi-cfs-pbmc-microarray"
+      ],
+      "dataset_count": 2,
+      "compatible_datasets": [
+        "dataset:gse130353-qfs-cfs-monocytes",
+        "dataset:gse14577-pi-cfs-pbmc-microarray"
+      ],
+      "compatible_dataset_count": 2,
+      "incompatible_datasets": [],
+      "coverage_state": "covered-unstaged",
+      "gap_reason": "unstaged-deposit",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 2,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "hypothesis:0002-tissue-reservoir-antigen-fragment",
+      "title": "A persisting pathogen-fragment reservoir in tissue-resident macrophages is a pathogen-agnostic initiator of chronic post-infectious illness",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "hypothesis:0003-immune-exhaustion-feedback",
+      "title": "Post-acute chronicity is sustained by a self-reinforcing loop of unresolved antigenic stimulation and T-cell exhaustion that fails to terminate inflammation",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "hypothesis:0004-acute-severity-threshold",
+      "title": "Acute-illness severity sets a homeostatic recovery threshold above which the post-infectious state becomes self-sustaining rather than self-resolving",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "hypothesis:0005-reproductive-stage-immune-homeostatic-margin",
+      "title": "Reproductive-stage transitions alter immune homeostatic margin and modify risk of failed post-infectious recovery",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem",
+      "title": "Skeletal-muscle ischemic-mitochondrial lesion as the primary substrate of post-exertional malaise",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate",
+      "title": "Non-length-dependent autoimmune small-fiber neuropathy as a shared peripheral substrate of PAIS dysautonomia",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent",
+      "title": "Measurement-channel and ascertainment bias predictably shapes apparent PAIS group differences",
+      "datasets": [
+        "dataset:opensafely-longcovid"
+      ],
+      "dataset_count": 1,
+      "compatible_datasets": [
+        "dataset:opensafely-longcovid"
+      ],
+      "compatible_dataset_count": 1,
+      "incompatible_datasets": [],
+      "coverage_state": "covered-pointer",
+      "gap_reason": "only-pointer",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 1,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "hypothesis:0009-post-infectious-immune-set-point-shift-drives-long-term-autoimmune",
+      "title": "Post-infectious immune-set-point shift drives long-term autoimmune conversion",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0001-shared-molecular-signature-across-triggers",
+      "title": "Is there a molecular signature that is both shared across PAIS triggers (SARS-CoV-2, Borrelia, EBV, dengue) and specific to failed recovery versus full recovery?",
+      "datasets": [
+        "dataset:gse130353-qfs-cfs-monocytes",
+        "dataset:gse130353-qfs-cfs-prepared-gene-matrix",
+        "dataset:gse14577-pi-cfs-pbmc-microarray",
+        "dataset:gse14577-pi-cfs-prepared-gene-matrix",
+        "dataset:msigdb-2024-1-hs-mapped-pais-gene-set-universe",
+        "dataset:msigdb-2024-1-hs-source-gmt-collections"
+      ],
+      "dataset_count": 6,
+      "compatible_datasets": [
+        "dataset:gse130353-qfs-cfs-monocytes",
+        "dataset:gse130353-qfs-cfs-prepared-gene-matrix",
+        "dataset:gse14577-pi-cfs-pbmc-microarray",
+        "dataset:gse14577-pi-cfs-prepared-gene-matrix"
+      ],
+      "compatible_dataset_count": 4,
+      "incompatible_datasets": [
+        {
+          "dataset": "dataset:msigdb-2024-1-hs-mapped-pais-gene-set-universe",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "modality": "transcriptomics"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "gene-sets",
+              "trigger": "not-applicable"
+            }
+          ]
+        },
+        {
+          "dataset": "dataset:msigdb-2024-1-hs-source-gmt-collections",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "modality": "transcriptomics"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "gene-sets",
+              "trigger": "not-applicable"
+            }
+          ]
+        }
+      ],
+      "coverage_state": "covered-runnable",
+      "gap_reason": "none",
+      "counts": {
+        "runnable": 2,
+        "unstaged_deposit": 2,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0002-antigen-clearance-rescues-symptoms",
+      "title": "Does clearing persistent antigen (e.g. antiviral treatment in long COVID) rescue post-acute symptoms, establishing antigen persistence as a driver rather than an epiphenomenon?",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0003-acute-severity-threshold-for-self-sustaining-pais",
+      "title": "Is there a quantifiable acute-phase severity threshold above which homeostatic recovery becomes self-sustaining failure rather than self-resolving, and is it shared across pathogens?",
+      "datasets": [
+        "dataset:all-of-us-covid",
+        "dataset:colombo-dengue-study",
+        "dataset:dubbo-infection-outcomes-study",
+        "dataset:dutch-qfever-qfs-cohort",
+        "dataset:impacc-immunophenotyping-covid",
+        "dataset:n3c-recover-longcovid",
+        "dataset:slice-ptlds-aucott",
+        "dataset:uk-biobank-covid"
+      ],
+      "dataset_count": 8,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [
+        {
+          "dataset": "dataset:all-of-us-covid",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "cohort_design": "prospective-longitudinal",
+              "stratification": "severity"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "clinical-ehr",
+              "assay": "ehr-coded",
+              "trigger": "sars-cov-2",
+              "cohort_design": "prospective-longitudinal",
+              "stratification": "sex"
+            },
+            {
+              "modality": "clinical-ehr",
+              "assay": "survey-pro",
+              "trigger": "sars-cov-2",
+              "cohort_design": "prospective-longitudinal",
+              "stratification": "sex"
+            },
+            {
+              "modality": "clinical-ehr",
+              "assay": "wearable",
+              "trigger": "sars-cov-2",
+              "cohort_design": "prospective-longitudinal"
+            }
+          ]
+        },
+        {
+          "dataset": "dataset:colombo-dengue-study",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "cohort_design": "prospective-longitudinal",
+              "stratification": "severity"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "epidemiology",
+              "trigger": "dengue",
+              "cohort_design": "prospective-longitudinal",
+              "outcome": "fatigue",
+              "stratification": "sex"
+            }
+          ]
+        },
+        {
+          "dataset": "dataset:dubbo-infection-outcomes-study",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "cohort_design": "prospective-longitudinal",
+              "stratification": "severity"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "epidemiology",
+              "trigger": "mixed",
+              "cohort_design": "prospective-longitudinal",
+              "outcome": "fatigue"
+            }
+          ]
+        },
+        {
+          "dataset": "dataset:dutch-qfever-qfs-cohort",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "cohort_design": "prospective-longitudinal",
+              "stratification": "severity"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "epidemiology",
+              "trigger": "q-fever",
+              "cohort_design": "prospective-longitudinal",
+              "outcome": "fatigue"
+            }
+          ]
+        },
+        {
+          "dataset": "dataset:impacc-immunophenotyping-covid",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "cohort_design": "prospective-longitudinal",
+              "stratification": "severity"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "immunophenotype",
+              "assay": "olink",
+              "trigger": "sars-cov-2",
+              "cohort_design": "prospective-longitudinal"
+            },
+            {
+              "modality": "transcriptomics",
+              "assay": "bulk-rna",
+              "trigger": "sars-cov-2"
+            }
+          ]
+        },
+        {
+          "dataset": "dataset:n3c-recover-longcovid",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "cohort_design": "prospective-longitudinal",
+              "stratification": "severity"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "clinical-ehr",
+              "assay": "ehr-coded",
+              "trigger": "sars-cov-2",
+              "cohort_design": "prospective-longitudinal",
+              "case_definition": "who-lc",
+              "stratification": "sex"
+            }
+          ]
+        },
+        {
+          "dataset": "dataset:slice-ptlds-aucott",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "cohort_design": "prospective-longitudinal",
+              "stratification": "severity"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "epidemiology",
+              "trigger": "lyme-disease",
+              "cohort_design": "prospective-longitudinal",
+              "outcome": "fatigue"
+            }
+          ]
+        },
+        {
+          "dataset": "dataset:uk-biobank-covid",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "cohort_design": "prospective-longitudinal",
+              "stratification": "severity"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "clinical-ehr",
+              "assay": "ehr-coded",
+              "trigger": "sars-cov-2",
+              "cohort_design": "prospective-longitudinal",
+              "stratification": "sex"
+            },
+            {
+              "modality": "clinical-ehr",
+              "trigger": "sars-cov-2",
+              "cohort_design": "prospective-longitudinal",
+              "outcome": "sex-hormone-level",
+              "stratification": "sex"
+            }
+          ]
+        }
+      ],
+      "coverage_state": "capability-mismatch",
+      "gap_reason": "capability-mismatch",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0004-convergent-small-fiber-neuropathy-substrate",
+      "title": "Do PTLDS, long COVID, and ME/CFS share a non-length-dependent autonomic small-fiber neuropathy substrate that distinguishes them from primary dysautonomia?",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0005-latent-to-overt-autoimmunity-conversion",
+      "title": "What fraction of latent post-infectious autoimmunity converts to overt autoimmune disease over 5-10 years, and which autoantibodies mark the highest-risk subset?",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0006-jak-stat-il6-driver-vs-marker",
+      "title": "Is persistent JAK-STAT/IL-6 signaling a proximal driver of post-acute chronicity (reversible by inhibition) or a downstream marker, and is the axis shared beyond SARS-CoV-2?",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0007-mechanism-of-female-predominance-in-pais",
+      "title": "What mechanism underlies the consistent female predominance of post-infectious fatigue across PAIS, and does it genuinely track somatic fatigue more than post-infectious depression?",
+      "datasets": [
+        "dataset:all-of-us-covid",
+        "dataset:colombo-dengue-study",
+        "dataset:dengue-postinfective-fatigue-meta",
+        "dataset:dubbo-infection-outcomes-study",
+        "dataset:dutch-qfever-qfs-cohort",
+        "dataset:impacc-immunophenotyping-covid",
+        "dataset:mcam-mecfs",
+        "dataset:my-lc-iwasaki-klein",
+        "dataset:n3c-recover-longcovid",
+        "dataset:opensafely-longcovid",
+        "dataset:recover-adult",
+        "dataset:slice-ptlds-aucott",
+        "dataset:sylvester-2022-longcovid-sex",
+        "dataset:uk-biobank-covid"
+      ],
+      "dataset_count": 14,
+      "compatible_datasets": [
+        "dataset:all-of-us-covid",
+        "dataset:colombo-dengue-study",
+        "dataset:dengue-postinfective-fatigue-meta",
+        "dataset:mcam-mecfs",
+        "dataset:my-lc-iwasaki-klein",
+        "dataset:n3c-recover-longcovid",
+        "dataset:opensafely-longcovid",
+        "dataset:recover-adult",
+        "dataset:sylvester-2022-longcovid-sex",
+        "dataset:uk-biobank-covid"
+      ],
+      "compatible_dataset_count": 10,
+      "incompatible_datasets": [
+        {
+          "dataset": "dataset:dubbo-infection-outcomes-study",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "stratification": "sex"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "epidemiology",
+              "trigger": "mixed",
+              "cohort_design": "prospective-longitudinal",
+              "outcome": "fatigue"
+            }
+          ]
+        },
+        {
+          "dataset": "dataset:dutch-qfever-qfs-cohort",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "stratification": "sex"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "epidemiology",
+              "trigger": "q-fever",
+              "cohort_design": "prospective-longitudinal",
+              "outcome": "fatigue"
+            }
+          ]
+        },
+        {
+          "dataset": "dataset:impacc-immunophenotyping-covid",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "stratification": "sex"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "immunophenotype",
+              "assay": "olink",
+              "trigger": "sars-cov-2",
+              "cohort_design": "prospective-longitudinal"
+            },
+            {
+              "modality": "transcriptomics",
+              "assay": "bulk-rna",
+              "trigger": "sars-cov-2"
+            }
+          ]
+        },
+        {
+          "dataset": "dataset:slice-ptlds-aucott",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "stratification": "sex"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "epidemiology",
+              "trigger": "lyme-disease",
+              "cohort_design": "prospective-longitudinal",
+              "outcome": "fatigue"
+            }
+          ]
+        }
+      ],
+      "coverage_state": "covered-unstaged",
+      "gap_reason": "unstaged-deposit",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 1,
+        "reference": 0,
+        "pointer": 1,
+        "unverified": 4,
+        "gated": 4
+      }
+    },
+    {
+      "target": "question:0008-formalize-vicious-cycle-attractor-model",
+      "title": "Can the mutually reinforcing vicious-cycle model of PAIS be formalized as a dynamical-systems or causal-graph hypothesis that makes discriminating predictions distinguishing chronification from recovery?",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0009-functional-autoantibodies-drive-dysautonomia",
+      "title": "Do functional GPCR autoantibodies (\u03b2-adrenergic/muscarinic) mechanistically drive dysautonomia and POTS across long COVID and ME/CFS?",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0010-vascular-microclot-subphenotype",
+      "title": "Does a complement/microclot/endothelial axis define a distinct vascular subphenotype of long COVID, and does it predict treatment response?",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0011-mitochondrial-basis-of-pem",
+      "title": "What is the mitochondrial/bioenergetic basis of post-exertional malaise, and is it shared across PAIS?",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0012-prevention-vaccination-antiviral-reduces-pais",
+      "title": "Does vaccination or early antiviral treatment of acute infection reduce the incidence of post-acute infection syndromes?",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0013-reproductive-stage-failed-immune-recovery-after-infection",
+      "title": "Does reproductive-stage transition change the probability of failed immune recovery after infection?",
+      "datasets": [
+        "dataset:all-of-us-covid",
+        "dataset:impacc-immunophenotyping-covid",
+        "dataset:my-lc-iwasaki-klein",
+        "dataset:recover-adult",
+        "dataset:uk-biobank-covid"
+      ],
+      "dataset_count": 5,
+      "compatible_datasets": [
+        "dataset:all-of-us-covid",
+        "dataset:my-lc-iwasaki-klein",
+        "dataset:recover-adult",
+        "dataset:uk-biobank-covid"
+      ],
+      "compatible_dataset_count": 4,
+      "incompatible_datasets": [
+        {
+          "dataset": "dataset:impacc-immunophenotyping-covid",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "stratification": "sex",
+              "trigger": "sars-cov-2"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "immunophenotype",
+              "assay": "olink",
+              "trigger": "sars-cov-2",
+              "cohort_design": "prospective-longitudinal"
+            },
+            {
+              "modality": "transcriptomics",
+              "assay": "bulk-rna",
+              "trigger": "sars-cov-2"
+            }
+          ]
+        }
+      ],
+      "coverage_state": "covered-unstaged",
+      "gap_reason": "unstaged-deposit",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 1,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 1,
+        "gated": 2
+      }
+    },
+    {
+      "target": "question:0014-which-pais-case-definition-is-most-biologically-coherent",
+      "title": "Which long COVID and ME/CFS case definitions select the most biologically coherent patient population for mechanistic research?",
+      "datasets": [
+        "dataset:mcam-mecfs"
+      ],
+      "dataset_count": 1,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [
+        {
+          "dataset": "dataset:mcam-mecfs",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "case_definition": "who-lc"
+            },
+            {
+              "case_definition": "cdc-lc"
+            },
+            {
+              "case_definition": "fukuda"
+            },
+            {
+              "case_definition": "ccc"
+            },
+            {
+              "case_definition": "icc"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "epidemiology",
+              "trigger": "mixed",
+              "cohort_design": "cross-sectional",
+              "outcome": "fatigue",
+              "stratification": "sex"
+            }
+          ]
+        }
+      ],
+      "coverage_state": "capability-mismatch",
+      "gap_reason": "capability-mismatch",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0015-does-pem-requirement-improve-cross-study-comparability",
+      "title": "Does requiring post-exertional malaise (PEM) in PAIS case definitions improve cross-study comparability of molecular and mechanistic findings?",
+      "datasets": [
+        "dataset:impacc-immunophenotyping-covid",
+        "dataset:recover-adult"
+      ],
+      "dataset_count": 2,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [
+        {
+          "dataset": "dataset:impacc-immunophenotyping-covid",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "outcome": "pem"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "immunophenotype",
+              "assay": "olink",
+              "trigger": "sars-cov-2",
+              "cohort_design": "prospective-longitudinal"
+            },
+            {
+              "modality": "transcriptomics",
+              "assay": "bulk-rna",
+              "trigger": "sars-cov-2"
+            }
+          ]
+        },
+        {
+          "dataset": "dataset:recover-adult",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "outcome": "pem"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "clinical-ehr",
+              "assay": "ehr-coded",
+              "trigger": "sars-cov-2",
+              "cohort_design": "prospective-longitudinal",
+              "case_definition": "who-lc",
+              "stratification": "sex"
+            }
+          ]
+        }
+      ],
+      "coverage_state": "capability-mismatch",
+      "gap_reason": "capability-mismatch",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0016-oxidative-stress-upstream-driver-of-bioenergetic",
+      "title": "Is oxidative/redox stress a shared upstream driver of the PAIS bioenergetic lesion, and is it a tractable target?",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0017-deflationary-alternatives-vs-shared-pathophysiology",
+      "title": "Are deflationary alternatives better supported than a shared post-infectious pathophysiology?",
+      "datasets": [
+        "dataset:colombo-dengue-study",
+        "dataset:dengue-postinfective-fatigue-meta",
+        "dataset:dubbo-infection-outcomes-study",
+        "dataset:dutch-qfever-qfs-cohort",
+        "dataset:gse130353-qfs-cfs-monocytes",
+        "dataset:slice-ptlds-aucott"
+      ],
+      "dataset_count": 6,
+      "compatible_datasets": [
+        "dataset:gse130353-qfs-cfs-monocytes"
+      ],
+      "compatible_dataset_count": 1,
+      "incompatible_datasets": [
+        {
+          "dataset": "dataset:colombo-dengue-study",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "modality": "transcriptomics"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "epidemiology",
+              "trigger": "dengue",
+              "cohort_design": "prospective-longitudinal",
+              "outcome": "fatigue",
+              "stratification": "sex"
+            }
+          ]
+        },
+        {
+          "dataset": "dataset:dengue-postinfective-fatigue-meta",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "modality": "transcriptomics"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "cohort_design": "meta-analysis",
+              "trigger": "dengue",
+              "outcome": "fatigue",
+              "stratification": "sex"
+            }
+          ]
+        },
+        {
+          "dataset": "dataset:dubbo-infection-outcomes-study",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "modality": "transcriptomics"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "epidemiology",
+              "trigger": "mixed",
+              "cohort_design": "prospective-longitudinal",
+              "outcome": "fatigue"
+            }
+          ]
+        },
+        {
+          "dataset": "dataset:dutch-qfever-qfs-cohort",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "modality": "transcriptomics"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "epidemiology",
+              "trigger": "q-fever",
+              "cohort_design": "prospective-longitudinal",
+              "outcome": "fatigue"
+            }
+          ]
+        },
+        {
+          "dataset": "dataset:slice-ptlds-aucott",
+          "reason": "capability-mismatch",
+          "required_capabilities": [
+            {
+              "modality": "transcriptomics"
+            }
+          ],
+          "provided_capabilities": [
+            {
+              "modality": "epidemiology",
+              "trigger": "lyme-disease",
+              "cohort_design": "prospective-longitudinal",
+              "outcome": "fatigue"
+            }
+          ]
+        }
+      ],
+      "coverage_state": "covered-unstaged",
+      "gap_reason": "unstaged-deposit",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 1,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0018-objective-vs-subjective-cognition-dissociation-in",
+      "title": "Is the dissociation between objective cognitive deficit and subjective cognitive complaint a general feature of PAIS, and what mechanisms drive each domain?",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0019-male-biased-vascular-signal-pasc-persistence",
+      "title": "Does the male-biased acute cardiovascular signal in COVID-19 persist into the post-acute phase, or does it reverse to a female-predominant PASC phenotype?",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0020-male-vte-excess-post-acute-persistence",
+      "title": "Does the male-biased VTE excess in ambulatory COVID-19 persist into the post-acute phase or resolve after the 30-day acute window?",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0021-male-vascular-reversal-covid-specific-vs-baseline-carryover",
+      "title": "Is the male-biased vascular hard-endpoint reversal in PASC COVID-specific biology, or carryover of the male baseline-rate excess in vascular/thrombotic disease?",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    },
+    {
+      "target": "question:0022-immune-state-displacement-mediator-vs-co-traveler",
+      "title": "Does persistent immune-state displacement mediate PAIS symptoms, or is it mainly a marker / co-traveler of another failed-recovery process?",
+      "datasets": [],
+      "dataset_count": 0,
+      "compatible_datasets": [],
+      "compatible_dataset_count": 0,
+      "incompatible_datasets": [],
+      "coverage_state": "no-candidate",
+      "gap_reason": "no-candidate",
+      "counts": {
+        "runnable": 0,
+        "unstaged_deposit": 0,
+        "reference": 0,
+        "pointer": 0,
+        "unverified": 0,
+        "gated": 0
+      }
+    }
+  ],
+  "excluded_summary": {
+    "gated": 9,
+    "reference": 1,
+    "pointer": 2
+  }
+}
