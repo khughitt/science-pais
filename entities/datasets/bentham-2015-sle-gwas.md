@@ -15,10 +15,33 @@ license: unknown
 access:
   level: public
   availability: available
-  verified: false
+  verified: true
   source_url: https://www.ebi.ac.uk/gwas/studies/GCST003156
-accessions: [GWAS_Catalog:GCST003156, PMID:26502338, DOI:10.1038/ng.3434]
-ontology_terms: [systemic-lupus-erythematosus, autoimmune-disease, gwas, summary-statistics, homo-sapiens, mr-exposure]
+  verification_method: landing-confirmed
+  last_reviewed: '2026-07-03'
+  verified_by: agent (verify-access)
+  reproducibility:
+    obtainability: public
+    execution: local
+    extractability: full-dataset
+    notes: "Public GWAS summary statistics: downloadable harmonised flat files on the GWAS Catalog FTP (GCST003156, fullPvalueSet=true), re-poolable/re-analyzable locally at the summary grain — third-party-reproducible. Not individual-level genotypes (a scientific-strength limit, not an access one)."
+accessions:
+- GWAS_Catalog:GCST003156
+- PMID:26502338
+- DOI:10.1038/ng.3434
+ontology_terms:
+- systemic-lupus-erythematosus
+- autoimmune-disease
+- gwas
+- summary-statistics
+- homo-sapiens
+- mr-exposure
+provided_capabilities:
+- modality: genetics
+  assay: gwas-sumstats
+  cohort_design: summary-stats
+  analysis_role: mr_exposure
+  trait: autoimmune-disease
 related:
 - question:0007-mechanism-of-female-predominance-in-pais
 - hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
@@ -72,3 +95,23 @@ immune set-point shift → autoimmune conversion).
   GRCh38 file. Recorded UNKNOWN pending Task-8 confirmation of the file used.
 - Ancestry: European only — flag cross-ancestry MR against any non-European
   outcome stratum (bridge assumption 4, estimand §d).
+
+## Bridge note (Task 8)
+
+Linked as the **`mr_exposure` (`trait: autoimmune-disease`)** genetic instrument for the
+autoimmune→PAIS arm of the Wave-1 MR estimand
+(`~/d/health/processes/post-acute-infection/doc/plans/2026-07-03-wave1-gwas-mr-estimand.md`
+§a). Serves the causal targets `hypothesis:0009` (post-infectious immune-set-point
+shift → autoimmune conversion — the estimand's worked example) and `hypothesis:0007`
+(autoimmune small-fiber-neuropathy substrate); both declare the matching required set
+`{analysis_role: mr_exposure, trait: autoimmune-disease}`, satisfied by this GWAS's
+`provided_capabilities` under exact-match. This link is the **sanctioned open-MR
+substitute** for one facet of the D-004-shelved autoimmune × sex × PASC line — a
+narrower, reproducible germline-liability estimand, **not** a re-opening of the gated
+EHR vehicle (which stays shelved with `hypothesis:0008`). The MR reading is gated on the
+bridge assumptions in estimand §d — in particular the **a-priori HLA include/exclude
+decision** (assumption 5), since the SLE signal is MHC-dense.
+
+## Access verification log
+
+- 2026-07-03 (agent (verify-access)): Bentham 2015 SLE GWAS (GCST003156): fullPvalueSet=true harmonised genome-wide summary statistics on the GWAS Catalog FTP, no registration/gating; landing page + downloadable files confirmed.

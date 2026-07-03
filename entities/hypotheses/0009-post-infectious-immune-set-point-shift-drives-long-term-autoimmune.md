@@ -12,9 +12,16 @@ related:
 - question:0005-latent-to-overt-autoimmunity-conversion
 - hypothesis:0001-shared-dysregulated-attractor
 - hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
+required_capabilities:
+- analysis_role: mr_exposure
+  trait: autoimmune-disease
 created: '2026-07-01'
-updated: '2026-07-01'
+updated: '2026-07-03'
+datasets:
+- dataset:bentham-2015-sle-gwas
+- dataset:covid19-hgi-longcovid-gwas
 ---
+
 # Hypothesis: Post-infectious immune-set-point shift drives long-term autoimmune conversion
 
 ## Organizing Conjecture

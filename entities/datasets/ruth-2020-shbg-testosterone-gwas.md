@@ -15,10 +15,45 @@ license: unknown
 access:
   level: public
   availability: available
-  verified: false
+  verified: true
   source_url: https://www.ebi.ac.uk/gwas/studies/GCST90012109
-accessions: [GWAS_Catalog:GCST90012109, GWAS_Catalog:GCST90012107, GWAS_Catalog:GCST90012111, GWAS_Catalog:GCST90012113, GWAS_Catalog:GCST90012112, GWAS_Catalog:GCST90012114, GWAS_Catalog:GCST90012103, GWAS_Catalog:GCST90012102, GWAS_Catalog:GCST90012104, PMID:32042192, DOI:10.1038/s41591-020-0751-5]
-ontology_terms: [sex-hormone-binding-globulin, testosterone, sex-hormone-biomarker, gwas, summary-statistics, sex-stratified, homo-sapiens, mr-exposure]
+  verification_method: landing-confirmed
+  last_reviewed: '2026-07-03'
+  verified_by: agent (verify-access)
+  reproducibility:
+    obtainability: public
+    execution: local
+    extractability: full-dataset
+    notes: "Public GWAS summary statistics: downloadable harmonised flat files on the GWAS Catalog FTP for male-only, female-only, and sex-combined strata (fullPvalueSet=true), re-poolable/re-analyzable locally at the summary grain — third-party-reproducible. Not individual-level genotypes (a scientific-strength limit, not an access one)."
+accessions:
+- GWAS_Catalog:GCST90012109
+- GWAS_Catalog:GCST90012107
+- GWAS_Catalog:GCST90012111
+- GWAS_Catalog:GCST90012113
+- GWAS_Catalog:GCST90012112
+- GWAS_Catalog:GCST90012114
+- GWAS_Catalog:GCST90012103
+- GWAS_Catalog:GCST90012102
+- GWAS_Catalog:GCST90012104
+- PMID:32042192
+- DOI:10.1038/s41591-020-0751-5
+ontology_terms:
+- sex-hormone-binding-globulin
+- testosterone
+- sex-hormone-biomarker
+- gwas
+- summary-statistics
+- sex-stratified
+- homo-sapiens
+- mr-exposure
+provided_capabilities:
+- modality: genetics
+  assay: gwas-sumstats
+  cohort_design: summary-stats
+  analysis_role: mr_exposure
+  trait: sex-hormone-biomarker
+  outcome: sex-hormone-level
+  stratification: sex
 related:
 - question:0007-mechanism-of-female-predominance-in-pais
 - question:0013-reproductive-stage-failed-immune-recovery-after-infection
@@ -80,3 +115,24 @@ recovery), and hypothesis:0005 (reproductive-stage immune-homeostatic margin).
 - Ancestry: European only — flag cross-ancestry MR (bridge assumption 4, estimand §d).
 - Sample-overlap risk (bridge assumption 3, estimand §d): UK Biobank contributes to both this exposure GWAS and
   the HGI long-COVID outcome — overlap must be quantified/corrected in Task 8.
+
+## Bridge note (Task 8)
+
+Linked as the **`mr_exposure` (`trait: sex-hormone-biomarker`)** genetic instrument for
+the sex-hormone arm of the Wave-1 MR estimand
+(`~/d/health/processes/post-acute-infection/doc/plans/2026-07-03-wave1-gwas-mr-estimand.md`
+§a). Serves the causal target `hypothesis:0005` (reproductive-stage immune-homeostatic
+margin), which declares the matching required set
+`{analysis_role: mr_exposure, trait: sex-hormone-biomarker}`. Uniquely among the three
+Wave-1 GWAS this candidate carries a **truthful `stratification: sex`** (male-only /
+female-only deposited sumstats), so it is in scope for the sex-effect-modification facet
+(estimand §b.2) — subject to a sex-stratified *outcome* GWAS also existing (the HGI
+long-COVID outcome is mixed-sex, so sex-modified MR is not yet closeable on the outcome
+side). Reproducible germline-liability estimand, adjacent to but not a re-opening of the
+D-004-shelved EHR line. MR reading gated on estimand §d bridge assumptions (note the
+sample-overlap gate: UK Biobank contributes to both this exposure GWAS and the HGI
+outcome — quantify/correct).
+
+## Access verification log
+
+- 2026-07-03 (agent (verify-access)): Ruth 2020 SHBG/testosterone GWAS: fullPvalueSet=true harmonised genome-wide summary statistics on the GWAS Catalog FTP for male-only, female-only, and sex-combined strata, no registration/gating; landing page + downloadable files confirmed.

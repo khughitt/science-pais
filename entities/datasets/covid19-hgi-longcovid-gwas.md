@@ -15,10 +15,37 @@ license: unknown
 access:
   level: public
   availability: available
-  verified: false
+  verified: true
   source_url: https://www.ebi.ac.uk/gwas/studies/GCST90454543
-accessions: [GWAS_Catalog:GCST90454543, GWAS_Catalog:GCST90454540, GWAS_Catalog:GCST90454541, GWAS_Catalog:GCST90454542, PMID:40399555, DOI:10.1038/s41588-025-02100-w]
-ontology_terms: [long-covid, post-acute-covid-19, gwas, summary-statistics, homo-sapiens, mr-outcome]
+  verification_method: landing-confirmed
+  last_reviewed: '2026-07-03'
+  verified_by: agent (verify-access)
+  reproducibility:
+    obtainability: public
+    execution: local
+    extractability: full-dataset
+    notes: "Public GWAS summary statistics: downloadable harmonised flat files on the GWAS Catalog FTP (fullPvalueSet=true), re-poolable/re-analyzable locally at the summary grain — third-party-reproducible. Not individual-level genotypes (a scientific-strength limit, not an access one)."
+accessions:
+- GWAS_Catalog:GCST90454543
+- GWAS_Catalog:GCST90454540
+- GWAS_Catalog:GCST90454541
+- GWAS_Catalog:GCST90454542
+- PMID:40399555
+- DOI:10.1038/s41588-025-02100-w
+ontology_terms:
+- long-covid
+- post-acute-covid-19
+- gwas
+- summary-statistics
+- homo-sapiens
+- mr-outcome
+provided_capabilities:
+- modality: genetics
+  assay: gwas-sumstats
+  cohort_design: summary-stats
+  trigger: sars-cov-2
+  analysis_role: mr_outcome
+  trait: long-covid
 related:
 - question:0007-mechanism-of-female-predominance-in-pais
 - hypothesis:0009-post-infectious-immune-set-point-shift-drives-long-term-autoimmune
@@ -75,3 +102,28 @@ per bridge assumption 6 (estimand §d); the strict/broad split above is the mate
 - Sample-overlap check vs exposure GWAS (bridge assumption 3, estimand §d) is deferred to
   Task 8 — HGI shares biobanks (e.g. UK Biobank, FinnGen) that also contribute to
   autoimmune and hormone GWAS, so overlap is plausible and must be quantified.
+
+## Bridge note (Task 8)
+
+Linked as the **`mr_outcome` (`trait: long-covid`)** side of the Wave-1 two-sample-MR
+estimand (`~/d/health/processes/post-acute-infection/doc/plans/2026-07-03-wave1-gwas-mr-estimand.md`
+§a). Co-linked as the shared outcome GWAS to the causal targets `hypothesis:0005`,
+`hypothesis:0007`, and `hypothesis:0009`, and independently satisfies `question:0022`
+(immune-state-displacement mediator-vs-co-traveler) via
+`{analysis_role: mr_outcome, trait: long-covid}` — the reverse-causation / mediation
+direction the estimand §b(1) names. This MR vehicle is the **sanctioned, reproducible
+open substitute** described in the estimand note; it is **not** a re-opening of the
+gated, non-reproducible N3C/OpenSAFELY EHR estimand shelved under **D-004** — that
+population-scale, ascertainment-structured interaction stays with `hypothesis:0008`.
+
+**Case-definition stratum (Task-7 minor, resolved).** The primary MR-outcome stratum
+is **GCST90454543** (the recorded `source_url`), the **broad** case definition (long
+COVID after *any* SARS-CoV-2 infection) with population controls. The **strict**
+stratum (test-verified infection; infected-but-no-long-COVID controls) is retained as
+a **pre-committed case-definition sensitivity** per bridge assumption 6 (estimand §d);
+strict-vs-broad is a live methodological choice and is deliberately not yet frozen.
+Sex-agnostic outcome only — this GWAS is mixed-sex and carries no `stratification: sex`.
+
+## Access verification log
+
+- 2026-07-03 (agent (verify-access)): COVID-19 HGI long-COVID summary statistics: fullPvalueSet=true harmonised genome-wide flat files on the GWAS Catalog FTP (GCST90454540-543), no registration/gating; landing page + downloadable files confirmed.

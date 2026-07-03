@@ -1,7 +1,8 @@
 ---
 id: hypothesis:0005-reproductive-stage-immune-homeostatic-margin
 type: hypothesis
-title: Reproductive-stage transitions alter immune homeostatic margin and modify risk of failed post-infectious recovery
+title: Reproductive-stage transitions alter immune homeostatic margin and modify risk
+  of failed post-infectious recovery
 status: proposed
 phase: active
 source_refs:
@@ -33,9 +34,16 @@ related:
 - immunity:topic:sex-as-a-modifier-of-immune-homeostasis
 - cycles:topic:menstrual-cycle-menopause-immune-modulation
 - cycles:topic:reproductive-aging-and-menopause
+required_capabilities:
+- analysis_role: mr_exposure
+  trait: sex-hormone-biomarker
 created: '2026-06-19'
-updated: '2026-06-26'
+updated: '2026-07-03'
+datasets:
+- dataset:ruth-2020-shbg-testosterone-gwas
+- dataset:covid19-hgi-longcovid-gwas
 ---
+
 # Hypothesis: Reproductive-stage transitions alter immune homeostatic margin and modify risk of failed post-infectious recovery
 
 ## Organizing Conjecture

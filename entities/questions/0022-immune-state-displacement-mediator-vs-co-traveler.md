@@ -18,8 +18,11 @@ related:
 - question:0008-formalize-vicious-cycle-attractor-model
 - patch-definition:immune-state-shift-causal-landscape
 - pre-registration:0004-jak1-inhibitor-driver-vs-marker
+required_capabilities:
+- analysis_role: mr_outcome
+  trait: long-covid
 created: '2026-06-30'
-updated: '2026-06-30'
+updated: '2026-07-03'
 ---
 
 # Does persistent immune-state displacement mediate PAIS symptoms, or is it mainly a marker / co-traveler of another failed-recovery process?

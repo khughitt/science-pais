@@ -32,9 +32,16 @@ related:
 - hypothesis:0003-immune-exhaustion-feedback
 - pre-registration:0003-cross-syndrome-paired-biopsy-primary-dysautonomia-controls
 - interpretation:0010-t006-functional-gpcr-autoantibody-ingestion
+required_capabilities:
+- analysis_role: mr_exposure
+  trait: autoimmune-disease
 created: '2026-06-24'
-updated: '2026-06-24'
+updated: '2026-07-03'
+datasets:
+- dataset:bentham-2015-sle-gwas
+- dataset:covid19-hgi-longcovid-gwas
 ---
+
 # Hypothesis: Non-length-dependent autoimmune small-fiber neuropathy as a shared peripheral substrate of PAIS dysautonomia
 
 ## Organizing Conjecture
