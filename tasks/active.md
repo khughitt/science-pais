@@ -192,3 +192,11 @@ The patch (Status & next steps) names this as the next step for the contested ca
 - created: 2026-07-01
 
 The patch parks HPA/cortisol as 'high-plausibility / thin-PAIS-evidence', which may undersell it - hypocortisolism in ME/CFS is a decades-old replicated finding and HPA is a master immune regulator + rhythm-sensitive (ties to the circadian bridge task). Run a focused /science:search-literature pass to calibrate the actual evidence weight and decide whether HPA promotes from prose candidate to an edged upstream forcing node in the landscape, or stays deferred. related: patch:immune-state-shift-causal-landscape, hypothesis:0001.
+
+## [t088] Scope decision: open third-party-reproducible computational analyses after data-catalog expansion
+- priority: P2
+- status: proposed
+- aspects: []
+- created: 2026-07-03
+
+Per doc/plans/2026-07-03-data-catalog-expansion-design.md F3: t082 is the plan:0006/N3C code gate and is moot under D-004, so it does not govern a new open-data program. Before any Wave-1 MR/analysis CODE is written (or any cohort ingestion / runnable pipeline for open reproducible data), make an explicit scope decision referencing specs/scope-boundaries.md. SCOPE OF THIS GATE: blocks MR/analysis EXECUTION only -- NOT the Gate-0 reach/capability audit and NOT dataset cataloging/discovery, which proceed under the existing catalog arc. A fully-open low-friction MR vehicle is a candidate argument for this decision, not an assumption.

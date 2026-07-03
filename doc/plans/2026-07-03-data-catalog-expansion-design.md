@@ -47,7 +47,7 @@ The scan **inverts the myeloma premise**. Numbers from a survey of
 |---|---|---|
 | Catalog size | 255 dataset entities | **21** |
 | Modality spread | near-monomodal (bulk RNA) | genuinely multi-modal, multi-disease |
-| Binding constraint | **staging** (cataloged→runnable); gating ≈ irrelevant (5/255) | **gating on the highest-value questions**, plus a disconnected graph |
+| Binding constraint | **staging** (cataloged→runnable); gating ≈ irrelevant (5/255) | **gating on the highest-value questions**, plus a capability-blind / sparsely covered graph |
 | Right reframe | "convert cataloged→runnable" | **"find open data that does the job the gated data can't"** |
 
 Three findings reshape the premise:
@@ -69,9 +69,11 @@ summary statistics + Mendelian randomization.** Autoimmune-disease GWAS, HLA
 associations, sex-hormone GWAS (SHBG, testosterone), and long-COVID GWAS
 (COVID-19 HGI, GWAS Catalog, Open Targets, IEU OpenGWAS) are *fully public and
 third-party-reproducible*. MR on summary statistics can attack reverse-causation
-and sex-effect-modification — the exact things the shelved EHR work was for —
-**without any enclave**. This is a genuine open vehicle for the shelved arm and
-directly serves the genetic-autoimmune question.
+and — with sex-stratified sumstats — sex-effect-modification, addressing a *subset*
+of what the shelved EHR line was reaching for (a **narrower, different estimand**;
+see the Wave-1 estimand rewrite in §4) **without any enclave**. This is a genuine
+open vehicle for part of the shelved arm and directly serves the genetic-autoimmune
+question.
 
 **(c) The catalog is connected but capability-blind, and mostly uncovered**
 *(corrected after the 2026-07-03 review — F1)*. Reach edges already exist on the
@@ -160,15 +162,32 @@ consistent with the lightweight decision):*
 2. **Annotate capabilities** — add `provided_capabilities` to the 21 datasets and
    `required_capabilities` to the 9 reached targets, clearing the 20 + 9 validation
    warnings so coverage rows resolve to `covered-*` / true-`missing-*` meaningfully.
+   **Define a tiny capability vocabulary first** (before touching any record) — if
+   the fields are hand-authored ad hoc across 20+9 records, coverage matching gets
+   noisy immediately. Proposed controlled fields (a dataset *provides* them, a target
+   *requires* them; a target is `covered-runnable` only when the dataset provides a
+   superset): **`assay`** (e.g. `bulk-rna`, `gwas-sumstats`, `olink`, `cytof`,
+   `metabolomics`, `ehr-coded`, `survey-pro`, `wearable`), **`modality`**
+   (`transcriptomics`, `genetics`, `proteomics`, `metabolomics`, `clinical-ehr`,
+   `epidemiology`), **`cohort_design`** (`case-control`, `prospective-longitudinal`,
+   `cross-sectional`, `summary-stats`, `meta-analysis`), **`trigger`** (`sars-cov-2`,
+   `dengue`, `q-fever`, `ebv`, `mixed`, `n/a`), **`case_definition`** (e.g.
+   `who-lc`, `cdc-lc`, `fukuda`, `ccc`, `icc`, `n/a`), **`outcome`** (`fatigue`,
+   `pem`, `autoimmune-dx`, `dysautonomia`, `recovery-status`), and
+   **`stratification`** (`sex`, `age`, `time-since-infection`, `severity`,
+   `none`). The value set is seeded here and extended only when a real dataset needs
+   a term (recorded in the Gate-0 triage note). This convention is the single most
+   leverage-adding part of Gate-0 — it is what makes the coverage scan trustworthy.
 3. **Baseline coverage** — capture `prioritize --coverage --format json` as the
    pre-wave snapshot and hand-triage the `no-candidate` residual into a triage table
    (each target marked **reconcilable** — an existing dataset can be wired — vs
    **genuine-discovery**), appended to this doc.
 
-**Acceptance criteria (Gate-0 done):** zero `provided-missing` / `required-missing`
-capability warnings on linked datasets/targets; every `no-candidate` target
-classified *reconcilable* or *genuine-discovery* in the triage table; and a
-committed baseline coverage JSON. Gate-0 is the recommended pilot: it is lossless,
+**Acceptance criteria (Gate-0 done):** a committed capability-vocabulary note (the
+seeded field/value set); zero `provided-missing` / `required-missing` capability
+warnings on linked datasets/targets; every `no-candidate` target classified
+*reconcilable* or *genuine-discovery* in the triage table; and a committed baseline
+coverage JSON. Gate-0 is the recommended pilot: it is lossless,
 independently useful, and shakes out the arc before any discovery.
 
 ### Wave 1 — Open substitutes for the gated arm
@@ -282,10 +301,11 @@ origin is reconstructable.
   pipelines deferred until past seed stage") — **not t082** (F3): t082 is
   specifically the *plan:0006 / N3C* code gate and is now `deferred` and effectively
   moot under D-004, so it does not cleanly govern a new open-data program. Before any
-  Wave-1 MR or analysis code is written, open a **new scope decision** — *"open
-  third-party-reproducible computational analyses after data-catalog expansion"* —
-  referencing `specs/scope-boundaries.md`; that new gate, not t082, governs MR code,
-  cohort ingestion, and any runnable pipeline.
+  Wave-1 MR or analysis code is written, resolve the **new scope decision** — *"open
+  third-party-reproducible computational analyses after data-catalog expansion"*
+  (filed as **t088**), referencing `specs/scope-boundaries.md`; that gate, not t082,
+  governs MR code, cohort ingestion, and any runnable pipeline. t088 blocks
+  **execution only** — Gate-0 and dataset cataloging/discovery proceed without it.
   - *Note:* a fully-open, low-friction MR vehicle is a strong *candidate argument*
     for that new decision (it is the cheapest possible reproducible analysis), but
     the decision is made explicitly, not assumed here.
