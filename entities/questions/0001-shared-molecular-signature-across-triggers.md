@@ -29,6 +29,8 @@ related:
 - topic:mecfs-long-covid-convergence
 - discussion:0002-cross-pathogen-pais-signature-convergence
 - hypothesis:0001-shared-dysregulated-attractor
+required_capabilities:
+  - modality: transcriptomics
 created: '2026-06-11'
 updated: '2026-06-20'
 ---

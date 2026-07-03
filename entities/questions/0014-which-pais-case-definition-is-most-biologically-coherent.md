@@ -32,6 +32,8 @@ related:
 - question:0015-does-pem-requirement-improve-cross-study-comparability
 - hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
 - interpretation:0021-t026-pc-cos-adoption-policy
+required_capabilities:
+  - case_definition: who-lc
 created: '2026-06-19'
 updated: '2026-06-24'
 ---

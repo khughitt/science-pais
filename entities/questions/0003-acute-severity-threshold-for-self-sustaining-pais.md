@@ -18,6 +18,9 @@ source_refs:
 - cite:Xie2024
 related:
 - topic:shared-failure-mode-across-pais
+required_capabilities:
+  - cohort_design: prospective-longitudinal
+    stratification: severity
 created: '2026-06-11'
 updated: '2026-06-11'
 ---

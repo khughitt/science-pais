@@ -27,6 +27,9 @@ related:
 - immunity:topic:sex-hormone-life-stage-immune-homeostasis
 - immunity:topic:endocrine-immune-recovery-thresholds
 - cycles:topic:menstrual-cycle-menopause-immune-modulation
+required_capabilities:
+  - stratification: sex
+    trigger: sars-cov-2
 created: '2026-06-19'
 updated: '2026-06-26'
 ---

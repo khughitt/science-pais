@@ -42,6 +42,8 @@ related:
 - proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode
 - proposition:0031-pais-gut-dysbiosis-scfa-depletion
 - hypothesis:0009-post-infectious-immune-set-point-shift-drives-long-term-autoimmune
+required_capabilities:
+  - modality: transcriptomics
 created: '2026-06-11'
 updated: '2026-07-01'
 ---

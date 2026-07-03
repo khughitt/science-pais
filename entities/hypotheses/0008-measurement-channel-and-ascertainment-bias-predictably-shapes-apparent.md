@@ -32,6 +32,8 @@ related:
 - proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific
 - pre-registration:0005-harmonized-provoked-muscle-endpoint
 - task:t058
+required_capabilities:
+  - modality: clinical-ehr
 created: '2026-06-24'
 updated: '2026-06-24'
 ---

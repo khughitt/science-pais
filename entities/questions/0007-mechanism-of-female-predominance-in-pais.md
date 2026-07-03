@@ -49,6 +49,8 @@ related:
 - immunity:topic:sex-as-a-modifier-of-immune-homeostasis
 - cycles:topic:menstrual-cycle-menopause-immune-modulation
 - cycles:topic:reproductive-aging-and-menopause
+required_capabilities:
+  - stratification: sex
 created: '2026-06-11'
 updated: '2026-06-23'
 ---
