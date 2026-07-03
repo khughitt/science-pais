@@ -114,6 +114,14 @@ matches *every* key/value of *some* required set (provider may be a superset).
 - Multiple sets in a list are OR'd — use them for "either modality X or Y".
 - Extend this vocabulary by adding a row here in the same commit that first
   uses the new token; never introduce a token only in an entity file.
+- **`stratification: sex` is a truth claim, not a wish** — a dataset may declare it
+  ONLY if the source actually exposes sex-stratified or sex-interaction estimates
+  (for GWAS: sex-stratified or interaction summary statistics). Do not add it to a
+  candidate just to make a sex-target match.
+- **`analysis_role` / `trait` separate descriptive from causal-MR coverage** — a
+  sex-stratified *descriptive* cohort and an MR-usable GWAS must not both silently
+  satisfy the same causal target. Causal-MR targets require an `analysis_role` +
+  `trait`; purely descriptive targets require only `stratification`/`modality`.
 
 | Key | Allowed values |
 |---|---|
@@ -124,11 +132,13 @@ matches *every* key/value of *some* required set (provider may be a superset).
 | `case_definition` | `who-lc`, `cdc-lc`, `fukuda`, `ccc`, `icc`, `not-applicable` |
 | `outcome` | `fatigue`, `pem`, `autoimmune-dx`, `dysautonomia`, `recovery-status`, `sex-hormone-level` |
 | `stratification` | `sex`, `age`, `time-since-infection`, `severity`, `none` |
+| `analysis_role` | `mr_exposure`, `mr_outcome`, `descriptive_covariate` |
+| `trait` | `long-covid`, `autoimmune-disease`, `sex-hormone-biomarker` |
 
-## Worked example
+## Worked examples
 
-`question:0001-shared-molecular-signature-across-triggers` requires only a
-cross-trigger molecular readout:
+**Descriptive coverage.** `question:0001-shared-molecular-signature-across-triggers`
+requires only a cross-trigger molecular readout:
 ```yaml
 required_capabilities:
   - modality: transcriptomics
@@ -142,6 +152,17 @@ provided_capabilities:
     cohort_design: case-control
 ```
 The provided set matches every key of the required set → **compatible**.
+
+**Causal-MR coverage (role-gated).** A causal target that needs a genetic instrument
+for autoimmune liability requires:
+```yaml
+required_capabilities:
+  - analysis_role: mr_exposure
+    trait: autoimmune-disease
+```
+Only a GWAS declaring *both* tokens (see Task 8) satisfies it — a sex-stratified
+descriptive cohort (which lacks `analysis_role`) does **not**, so descriptive and
+causal coverage cannot collapse into each other.
 ````
 
 - [ ] **Step 2: Sanity-check it renders and commit**
@@ -303,28 +324,43 @@ Expected: ~9 target ids (e.g. `question:0001`, `question:0007`, `question:0013`,
 
 - [ ] **Step 2: Add a MINIMAL `required_capabilities` block to each**
 
-Author only the *discriminating* need (1–3 keys), so real datasets can match. Insert into frontmatter (e.g. after `related:`). Examples:
+Author only the *discriminating* need (1–3 keys), so real datasets can match. **Choose
+the required set by the target's role** (vocabulary authoring rules): a *descriptive*
+question requires modality/stratification; a *causal-MR* question requires
+`analysis_role` + `trait` so a sex-stratified descriptive cohort cannot satisfy it by
+accident (F2). Insert into frontmatter (e.g. after `related:`). Examples:
 
 ```yaml
-# entities/questions/0001-shared-molecular-signature-across-triggers.md
+# entities/questions/0001-shared-molecular-signature-across-triggers.md  (descriptive)
 required_capabilities:
   - modality: transcriptomics
 ```
 ```yaml
-# entities/questions/0007-mechanism-of-female-predominance-in-pais.md
+# entities/questions/0007-mechanism-of-female-predominance-in-pais.md  (descriptive: any sex-resolved evidence)
 required_capabilities:
   - stratification: sex
 ```
 ```yaml
-# entities/questions/0013-reproductive-stage-failed-immune-recovery-after-infection.md
+# entities/questions/0013-reproductive-stage-failed-immune-recovery-after-infection.md  (descriptive, trigger-scoped)
 required_capabilities:
   - stratification: sex
     trigger: sars-cov-2
 ```
 ```yaml
-# entities/hypotheses/0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent.md
+# entities/hypotheses/0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent.md  (descriptive)
 required_capabilities:
   - modality: clinical-ehr
+```
+For the **causal-MR** targets that Wave-1 GWAS is meant to serve (e.g.
+`hypothesis:0009` post-infectious autoimmune conversion, and the causal reading of
+q0013/q0019–q0022), use a role-gated set so only an MR-usable GWAS matches — author
+these in **Task 8 Step 4** alongside the GWAS `provided` sets so the pair stays
+consistent, not here:
+```yaml
+# example (authored in Task 8): a causal autoimmune→PAIS target
+required_capabilities:
+  - analysis_role: mr_exposure
+    trait: autoimmune-disease
 ```
 Guard: if a target's required set names a key/value that no provided set carries, it will stay `missing`/`mismatch` — that is a legitimate signal it needs discovery, not a reason to weaken the requirement. Record such cases for the Task 5 triage.
 
@@ -404,11 +440,13 @@ Post-Gate-0: `coverage-postgate0-2026-07-03.json`.
 
 | target | class | note (dataset to wire / modality needed) | wave |
 |---|---|---|---|
-| hypothesis:0007-autoimmune-sfn-… | genuine-discovery | needs open SFN/autonomic dataset; t050-gated | 2 |
-| question:0019-… (male vascular/VTE) | genuine-discovery | needs open VTE/vascular-by-sex cohort | 1/2 |
-| … one row per no-candidate target … | | | |
+| hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate | genuine-discovery | needs open SFN/autonomic dataset; t050-gated | 2 |
+| question:0019-<full-slug> | genuine-discovery | male vascular/VTE — needs open VTE/vascular-by-sex cohort | 1/2 |
+| …one row per no-candidate target, full slug in column 1… | | | |
 ```
-Every no-candidate target from Step 2 MUST appear exactly once.
+Every no-candidate target from Step 2 MUST appear exactly once, with its **full slug**
+in column 1 (no `…` truncation there — Step 4b matches column 1 against the JSON
+exactly; put any shortening in the note column).
 
 - [ ] **Step 4: Record the coverage delta**
 
@@ -425,7 +463,36 @@ print('AFTER ',Counter(r['coverage_state'] for r in a))
 ```
 Paste both lines under a `## Coverage delta` heading in the triage doc.
 
-- [ ] **Step 5: Commit — Gate-0 complete**
+- [ ] **Step 4b: Machine-check triage completeness (F4)**
+
+The triage table is the key Gate-0 deliverable, so verify — not eyeball — that its
+first column is exactly the JSON's `no-candidate` set (no missing, extra, or
+duplicate rows). This reads the table's `target` column (first cell of each data row
+whose target starts with `question:`/`hypothesis:`):
+```bash
+uv run --frozen python -c "
+import json,re,sys
+d=json.load(open('doc/plans/coverage-postgate0-2026-07-03.json')); rows=d.get('rows',d)
+want={r['target'] for r in rows if r['coverage_state']=='no-candidate'}
+got=[]
+for ln in open('doc/plans/2026-07-03-gate0-triage.md'):
+    m=re.match(r'\s*\|\s*((?:question|hypothesis):[a-z0-9-]+)', ln)
+    if m: got.append(m.group(1))
+from collections import Counter
+dupes=[t for t,n in Counter(got).items() if n>1]
+gotset=set(got)
+missing, extra = want-gotset, gotset-want
+ok = not (missing or extra or dupes)
+print('triage OK' if ok else 'triage FAIL')
+if missing: print('  MISSING:', sorted(missing))
+if extra:   print('  EXTRA  :', sorted(extra))
+if dupes:   print('  DUPES  :', sorted(dupes))
+sys.exit(0 if ok else 1)
+"
+```
+Expected: `triage OK`, exit 0. If it fails, fix the table (note: full target slugs
+must match the JSON exactly — do not abbreviate them with `…` in the first column;
+put any abbreviation in the note column instead) and re-run until it passes.
 
 ```bash
 git add doc/plans/coverage-postgate0-2026-07-03.json doc/plans/2026-07-03-gate0-triage.md
@@ -519,13 +586,27 @@ git commit -m "feat(data-catalog): author Wave-1 GWAS/MR candidate dataset entit
 
 - [ ] **Step 1: Verify access + set class (one atomic call per dataset)**
 
-For each GWAS entity, confirm the landing page/download and set access. Example:
+For each GWAS entity, confirm the landing page/download and set access. **The
+`--method` allowed for each class is whitelisted** (`datasets_catalog.py:431`):
+`reference` accepts only `{credential-confirmed, landing-confirmed, metadata-confirmed}`;
+`retrieved` is **deposit-only** (F1). So pick the branch by whether you actually stage files:
+
+- **Stay `reference`** (the default — summary stats as a re-poolable reference grain):
 ```bash
 uv run --frozen science dataset verify-access dataset:covid19-hgi-longcovid-gwas \
   --level public --method landing-confirmed --license unknown --class reference \
-  --note "COVID-19 HGI public summary-statistics release; downloadable flat files."
+  --note "COVID-19 HGI public summary-statistics release; downloadable flat files observed on the landing page."
 ```
-Use `--method retrieved` instead if you actually downloaded the sumstats. Expected: `access.verified: true`, a verification-log line appended.
+- **Convert to `deposit`** (only if you download/stage the sumstats now) — deposit
+  accepts `--method retrieved`, and a deposit with a runtime artifact then requires a
+  `datapackage`/`local_path` + SHA-256 hashes (per the §4a handoff contract, staged row):
+```bash
+uv run --frozen science dataset verify-access dataset:covid19-hgi-longcovid-gwas \
+  --level public --method retrieved --license unknown --class deposit \
+  --note "Downloaded HGI sumstats; staged locally (datapackage + hashes recorded)."
+```
+Do **not** pair `--class reference` with `--method retrieved` — the CLI rejects it.
+Expected: `access.verified: true`, a verification-log line appended.
 
 - [ ] **Step 2: Add the reproducibility block (third-party-reproducible)**
 
@@ -539,24 +620,71 @@ Hand-author an `access.reproducibility` block on each entity, matching the proje
 ```
 This is what clears the `reproducibility_policy` bar for `tier`. If any candidate is NOT third-party-reproducible (e.g. requires an application), set its tier to `track` and note it — do not mark it `use-now`.
 
-- [ ] **Step 3: Annotate `provided_capabilities` (vocabulary tokens)**
+- [ ] **Step 3: Annotate `provided_capabilities` (vocabulary tokens, incl. role/trait)**
 
-Example for the HGI GWAS:
+Annotate each GWAS with its `analysis_role` + `trait` (so causal targets match) and add
+`stratification: sex` **only if the discovered files are genuinely sex-stratified /
+interaction sumstats** (F2 — it is a truth claim, not a wish). Examples:
 ```yaml
+# dataset:covid19-hgi-longcovid-gwas  (the long-COVID OUTCOME GWAS)
 provided_capabilities:
   - modality: genetics
     assay: gwas-sumstats
-    trigger: sars-cov-2
     cohort_design: summary-stats
+    trigger: sars-cov-2
+    analysis_role: mr_outcome
+    trait: long-covid
+    # add `stratification: sex` ONLY if a sex-stratified HGI release is used
 ```
-For a sex-stratified autoimmune or SHBG GWAS, add `stratification: sex` and (SHBG) `outcome: sex-hormone-level`. Draw every token from Task 1; if you need a new token, add it to the vocabulary note in this same commit.
+```yaml
+# dataset:<autoimmune>-gwas  (the EXPOSURE instrument)
+provided_capabilities:
+  - modality: genetics
+    assay: gwas-sumstats
+    cohort_design: summary-stats
+    analysis_role: mr_exposure
+    trait: autoimmune-disease
+```
+```yaml
+# dataset:<shbg>-gwas  (sex-hormone biomarker exposure)
+provided_capabilities:
+  - modality: genetics
+    assay: gwas-sumstats
+    cohort_design: summary-stats
+    analysis_role: mr_exposure
+    trait: sex-hormone-biomarker
+    outcome: sex-hormone-level
+```
+Draw every token from Task 1; if you need a new one, add it to the vocabulary note in
+this same commit.
 
-- [ ] **Step 4: Link each GWAS dataset to the targets it reaches**
+- [ ] **Step 4: Author the causal-MR `required_capabilities`, then link (paired, so they match)**
 
+For each causal target the GWAS serves, add a role-gated `required_capabilities` set
+whose keys are a subset of the GWAS `provided` set above — author these here, paired
+with the links, so the pair is provably compatible. Example for a causal
+autoimmune→PAIS target (`hypothesis:0009`):
+```yaml
+# entities/hypotheses/0009-post-infectious-immune-set-point-shift-drives-long-term-autoimmune…md
+required_capabilities:
+  - analysis_role: mr_exposure
+    trait: autoimmune-disease
+```
+Then link, and verify compatibility on the spot:
 ```bash
-uv run --frozen science dataset link dataset:covid19-hgi-longcovid-gwas question:0007-mechanism-of-female-predominance-in-pais
+uv run --frozen science dataset link dataset:<autoimmune>-gwas hypothesis:0009-post-infectious-immune-set-point-shift-drives-long-term-autoimmune
+uv run --frozen science dataset prioritize --coverage --format json | uv run --frozen python -c "
+import json,sys; d=json.load(sys.stdin); rows=d.get('rows',d)
+r=[x for x in rows if x['target'].startswith('hypothesis:0009')][0]
+print(r['coverage_state'], r['target'], r.get('datasets'))
+"
 ```
-Link the autoimmune/SHBG GWAS to the relevant q0013/q0019–q0022/h0005/h0009 targets you can defend.
+Expected: `hypothesis:0009` moves off `no-candidate` to a `covered-*` state (not
+`missing-required-capabilities`/`capability-mismatch`) — if it stays mismatched, the
+`required` set names a key the GWAS `provided` set lacks; fix one side. Link the
+long-COVID *outcome* GWAS only to targets whose requirement it actually satisfies
+(e.g. a `stratification: sex` descriptive target **only if** you added that token in
+Step 3). Do not link a GWAS to a target it cannot satisfy under exact-match.
 
 - [ ] **Step 5: Verify done-definition + coverage movement**
 
@@ -600,12 +728,19 @@ Create `doc/plans/2026-07-03-gwas-mr-ingestion-handoff.md`: the front→back bou
 
 - [ ] **Step 3: File the MR-execution follow-up task (blocked on t088)**
 
+Use the first-class `--blocked-by` field (verified in `science tasks add --help`) so
+the backlog knows this is dependency-gated, not merely proposed (F3) — the prose note
+stays too, but is not the only blocker representation:
 ```bash
 uv run --frozen science tasks add "Wave-1: run open GWAS/MR analysis for sex×autoimmune PAIS questions" \
   --priority P3 \
+  --blocked-by task:t088 \
+  --related task:t088 \
   --description "Execute the MR handoff in doc/plans/2026-07-03-gwas-mr-ingestion-handoff.md. BLOCKED on t088 (open-analysis scope decision) — this is analysis EXECUTION, gated by specs/scope-boundaries.md. Cataloging/handoff already done (Wave-1 pilot)."
 ```
-Expected: a new task id printed; record it in the handoff doc.
+Expected: a new task id printed, shown as blocked-by t088. Record the id in the
+handoff doc. If `--related task:t088` is rejected as a ref-form mismatch, drop it and
+keep `--blocked-by`.
 
 - [ ] **Step 4: Final validate + coverage sweep**
 
@@ -638,6 +773,7 @@ Summarize the branch (`data-catalog-wave1`): Gate-0 closed (coverage now trustwo
 
 ## Self-review notes
 
-- **Spec coverage:** Gate-0 reach+capability audit (Tasks 2–5), capability vocabulary (Task 1, gate in Task 5), acceptance criteria (Task 5 checkpoint), estimand rewrite before discovery (Task 6), §4a handoff contract (Task 8 Step 5 + Task 9), GWAS/MR pilot end-to-end (Tasks 6–9), t088 front-half boundary (Global Constraints + Tasks 8–9 + Out of scope), Wave-1 hard checkpoint (Task 9). Reproducibility gate realized in Task 8 Step 2.
-- **Placeholder scan:** the only intentional fill-ins are real-data lookups that must be run to be known (Task 2 prose-citation list; Task 7 accessions/URLs; the exact per-target required sets in Task 4) — each marked with the command that produces it, not a vague TODO.
-- **Name/type consistency:** capability fields `provided_capabilities`/`required_capabilities` (list of string→string maps) used identically in Tasks 1/3/4/8; CLI verbs (`link`, `add`, `verify-access`, `identity`, `prioritize --coverage`) match their verified `--help`; coverage states (`no-candidate`, `missing-required-capabilities`, `covered-reference`, `covered-runnable`) match `dataset_prioritize.py`.
+- **Spec coverage:** Gate-0 reach+capability audit (Tasks 2–5), capability vocabulary (Task 1, gate in Task 5), acceptance criteria (Task 5 checkpoint + Step 4b machine-check), estimand rewrite before discovery (Task 6), §4a handoff contract (Task 8 Step 5 + Task 9), GWAS/MR pilot end-to-end (Tasks 6–9), t088 front-half boundary (Global Constraints + Tasks 8–9 + Out of scope), Wave-1 hard checkpoint (Task 9). Reproducibility gate realized in Task 8 Step 2.
+- **Placeholder scan:** the only intentional fill-ins are real-data lookups that must be run to be known (Task 2 prose-citation list; Task 7 accessions/URLs; the exact per-target required sets, authored paired-with-links in Task 8 Step 4) — each marked with the command that produces it, not a vague TODO.
+- **Name/type consistency:** capability fields `provided_capabilities`/`required_capabilities` (list of string→string maps) used identically in Tasks 1/3/4/8; CLI verbs (`link`, `add`, `verify-access`, `identity`, `prioritize --coverage`, `tasks add --blocked-by`) match their verified `--help`; coverage states (`no-candidate`, `missing-required-capabilities`, `covered-reference`, `covered-runnable`) match `dataset_prioritize.py`.
+- **Review fixes applied (2026-07-03 pipeline review):** F1 — Task 8 Step 1 splits the `verify-access` method by class (`retrieved` is deposit-only per `datasets_catalog.py:431`; `reference` uses landing/metadata-confirmed). F2 — vocabulary gains `analysis_role`/`trait`, `stratification: sex` is a truth-claim guard, and Task 8 authors causal-MR `required` sets paired with links so descriptive and causal coverage cannot collapse. F3 — Task 9 uses `--blocked-by task:t088`. F4 — Task 5 Step 4b machine-checks triage completeness (no missing/extra/dupe targets).

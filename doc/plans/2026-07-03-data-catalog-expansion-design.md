@@ -175,8 +175,11 @@ consistent with the lightweight decision):*
    `who-lc`, `cdc-lc`, `fukuda`, `ccc`, `icc`, `n/a`), **`outcome`** (`fatigue`,
    `pem`, `autoimmune-dx`, `dysautonomia`, `recovery-status`), and
    **`stratification`** (`sex`, `age`, `time-since-infection`, `severity`,
-   `none`). The value set is seeded here and extended only when a real dataset needs
-   a term (recorded in the Gate-0 triage note). This convention is the single most
+   `none`), plus role/trait discriminators so descriptive and causal-MR coverage
+   don't collapse — **`analysis_role`** (`mr_exposure`, `mr_outcome`,
+   `descriptive_covariate`) and **`trait`** (`long-covid`, `autoimmune-disease`,
+   `sex-hormone-biomarker`). The value set is seeded here and extended only when a
+   real dataset needs a term (recorded in the Gate-0 triage note). This convention is the single most
    leverage-adding part of Gate-0 — it is what makes the coverage scan trustworthy.
 3. **Baseline coverage** — capture `prioritize --coverage --format json` as the
    pre-wave snapshot and hand-triage the `no-candidate` residual into a triage table
