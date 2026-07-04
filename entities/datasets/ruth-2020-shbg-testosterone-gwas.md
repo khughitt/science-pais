@@ -96,9 +96,12 @@ female-only, and sex-combined strata for each trait. Deposited accessions includ
 Serves the Wave-1 estimand's **`mr_exposure` (`trait: sex-hormone-biomarker`)**
 role (`doc/plans/2026-07-03-wave1-gwas-mr-estimand.md` §a). Uniquely among the
 three Wave-1 candidates, it **satisfies the discovery-filter sex-stratification
-gate**: male-only and female-only sumstats are published, so genotype-effect
-sex-modification of a hormone exposure on a PAIS outcome is estimable (subject to a
-sex-stratified outcome GWAS also existing). This is the hinge candidate for
+gate**: male-only and female-only sumstats are published, enabling **sex-specific
+exposure instruments**. **Note (`plan:0008` KD3):** with the current long-COVID
+outcome mixed-sex, this supports only a **bounded exposure-architecture** probe
+(concordance/discordance of sex-specific hormone predictors against a common
+outcome) — a genotype-effect sex-modification *test* would require a sex-stratified
+outcome GWAS, which does not exist for long-COVID. This is the hinge candidate for
 question:0007 (female predominance), question:0013 (reproductive-stage failed
 recovery), and hypothesis:0005 (reproductive-stage immune-homeostatic margin).
 
@@ -128,10 +131,11 @@ the sex-hormone arm of the Wave-1 MR estimand
 margin), which declares the matching required set
 `{analysis_role: mr_exposure, trait: sex-hormone-biomarker}`. Uniquely among the three
 Wave-1 GWAS this candidate carries a **truthful `stratification: sex`** (male-only /
-female-only deposited sumstats), so it is in scope for the sex-effect-modification facet
-(estimand §b.2) — subject to a sex-stratified *outcome* GWAS also existing (the HGI
-long-COVID outcome is mixed-sex, so sex-modified MR is not yet closeable on the outcome
-side). Reproducible germline-liability estimand, adjacent to but not a re-opening of the
+female-only deposited sumstats), so it supplies genuine **sex-specific exposure
+instruments** (estimand §b.2). But a sex-effect-modification *test* is **not
+closeable** against the current mixed-sex HGI long-COVID outcome (no sex-stratified
+outcome GWAS exists); per `plan:0008` KD3 this candidate therefore supports only a
+**bounded exposure-architecture** probe, not a sex-modification claim. Reproducible germline-liability estimand, adjacent to but not a re-opening of the
 D-004-shelved EHR line. MR reading gated on estimand §d bridge assumptions (note the
 sample-overlap gate: UK Biobank contributes to both this exposure GWAS and the HGI
 outcome — quantify/correct).

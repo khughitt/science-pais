@@ -111,11 +111,15 @@ per bridge assumption 6 (estimand §d); the strict/broad split above is the mate
 
 Linked as the **`mr_outcome` (`trait: long-covid`)** side of the Wave-1 two-sample-MR
 estimand (`~/d/health/processes/post-acute-infection/doc/plans/2026-07-03-wave1-gwas-mr-estimand.md`
-§a). Co-linked as the shared outcome GWAS to the causal targets `hypothesis:0005`,
-`hypothesis:0007`, and `hypothesis:0009`, and independently satisfies `question:0022`
+§a). Co-linked as the shared outcome GWAS to the causal targets `hypothesis:0005`
+and `hypothesis:0007`, and independently satisfies `question:0022`
 (immune-state-displacement mediator-vs-co-traveler) via
 `{analysis_role: mr_outcome, trait: long-covid}` — the reverse-causation / mediation
-direction the estimand §b(1) names. This MR vehicle is the **sanctioned, reproducible
+direction the estimand §b(1) names. `hypothesis:0009`'s post-infectious latent→overt
+*conversion* arrow is **not** identifiable by MR on this outcome (`plan:0008` KD6);
+where reverse-direction MR uses long-COVID liability as the exposure it bears on
+`question:0022` as shared-liability / directionality context, not h0009 conversion
+evidence. This MR vehicle is the **sanctioned, reproducible
 open substitute** described in the estimand note; it is **not** a re-opening of the
 gated, non-reproducible N3C/OpenSAFELY EHR estimand shelved under **D-004** — that
 population-scale, ascertainment-structured interaction stays with `hypothesis:0008`.

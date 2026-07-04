@@ -81,8 +81,11 @@ Serves the Wave-1 estimand's **`mr_exposure` (`trait: autoimmune-disease`)** rol
 autoimmune disease, instrumented by genome-wide-significant SNPs, tested for a
 causal effect on the long-COVID / PAIS outcome. SLE is female-predominant and a
 canonical systemic-autoimmune exemplar, aligning with hypothesis:0007
-(autoimmune small-fiber-neuropathy substrate) and hypothesis:0009 (post-infectious
-immune set-point shift → autoimmune conversion).
+(autoimmune small-fiber-neuropathy substrate) — the autoimmune-liability→PAIS
+direction this exposure actually instruments. `hypothesis:0009` (post-infectious
+immune set-point shift → *later* autoimmune conversion) runs the **opposite**,
+acquired-state direction and is **not** tested by this exposure — shared-liability
+context only (`plan:0008` KD6).
 
 ## Access / caveats
 
@@ -105,11 +108,14 @@ immune set-point shift → autoimmune conversion).
 Linked as the **`mr_exposure` (`trait: autoimmune-disease`)** genetic instrument for the
 autoimmune→PAIS arm of the Wave-1 MR estimand
 (`~/d/health/processes/post-acute-infection/doc/plans/2026-07-03-wave1-gwas-mr-estimand.md`
-§a). Serves the causal targets `hypothesis:0009` (post-infectious immune-set-point
-shift → autoimmune conversion — the estimand's worked example) and `hypothesis:0007`
-(autoimmune small-fiber-neuropathy substrate); both declare the matching required set
-`{analysis_role: mr_exposure, trait: autoimmune-disease}`, satisfied by this GWAS's
-`provided_capabilities` under exact-match. This link is the **sanctioned open-MR
+§a). Serves the causal target `hypothesis:0007` (autoimmune small-fiber-neuropathy
+substrate — the autoimmune-liability→PAIS arm), which declares the matching required
+set `{analysis_role: mr_exposure, trait: autoimmune-disease}`, satisfied by this
+GWAS's `provided_capabilities` under exact-match. `hypothesis:0009` (post-infectious
+immune-set-point shift → *later* autoimmune conversion) is the reverse,
+acquired-state arrow and is **not identifiable** by this germline-liability
+instrument in either MR direction (`plan:0008` KD6) — shared-liability context only,
+not conversion evidence. This link is the **sanctioned open-MR
 substitute** for one facet of the D-004-shelved autoimmune × sex × PASC line — a
 narrower, reproducible germline-liability estimand, **not** a re-opening of the gated
 EHR vehicle (which stays shelved with `hypothesis:0008`). The MR reading is gated on the

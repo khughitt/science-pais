@@ -123,6 +123,12 @@ note §c). Any result read as evidence toward `hypothesis:0005`,
 must satisfy every bridge assumption in the estimand note's §d — each is a gate,
 not a caveat.
 
+> **Narrowed by `plan:0008` KD6 (2026-07-04).** `hypothesis:0009`'s post-infectious
+> latent→overt *conversion* arrow is not identifiable by germline-liability MR (in
+> either direction); for the Wave-1 design it is shared-liability / directionality
+> context only, not an admissible MR-evidence target. This applies equally to the
+> h0009 mention in the §4 acceptance list below. h0005/h0007 unaffected.
+
 ## 3. Sensitivity analyses required (per estimand §d, restated as an execution checklist)
 
 1. **Instrument relevance (IV1).** Report per-instrument and mean F-statistic for

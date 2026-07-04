@@ -30,8 +30,10 @@ MHC-aware instrument → local reproducible clumping → streamed harmonisation 
 seeded estimators → QA'd output bundle) on the single cleanest pair, and returned
 **GO**. This plan is the full `design` it pointed to: the analysis that can produce
 a **reportable-grade** MR estimate — one that clears the handoff §4 acceptance gate
-and is admissible as evidence toward `hypothesis:0005`/`0007`/`0009` and
-`question:0007`/`0013`/`0022`.
+and is admissible as evidence toward `hypothesis:0005`/`0007` and
+`question:0007`/`0013`/`0022`. (`hypothesis:0009` is **contextual only** — its
+post-infectious latent→overt *conversion* arrow is not MR-identifiable in this
+design; see KD6.)
 
 Guiding principle: the pilot was explicitly **mechanics-only**, blocked from a
 scientific reading by two independent bars — the **ancestry hard-stop** (the only
@@ -43,6 +45,11 @@ be retired and demote the affected claim accordingly. It does **not** re-decide 
 estimand or bridge assumptions — those are fixed in
 `~/d/health/processes/post-acute-infection/doc/plans/2026-07-03-wave1-gwas-mr-estimand.md`
 and the execution checklist in `doc/plans/2026-07-03-gwas-mr-ingestion-handoff.md`.
+**Supersession (KD6):** where those two documents list `hypothesis:0009` as an
+admissible MR-evidence target, this design **narrows** them — germline-liability MR,
+in either direction, cannot identify h0009's acquired-state→later-conversion arrow,
+so h0009 stands here as shared-liability context only. That narrowing governs this
+plan; both upstream docs now carry a dated pointer to it.
 
 **Authorisation scope (load-bearing, gated by WP0).** This plan operates within
 **D-005**, which authorised the Wave-1 open GWAS/MR line over the **three cataloged

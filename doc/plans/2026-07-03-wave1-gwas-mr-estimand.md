@@ -97,6 +97,14 @@ A confirmed MR result here is evidence *toward* the causal readings in
 `hypothesis:0009` (post-infectious immune-set-point shift → autoimmune conversion),
 **subject to the bridge assumptions in (d)**.
 
+> **Narrowed by `plan:0008` KD6 (2026-07-04).** Two-sample MR on germline liability —
+> in *either* direction — does **not** identify `hypothesis:0009`'s *post-infectious
+> acquired-state → later autoimmune conversion* arrow (genotype is fixed
+> pre-infection; at best MR probes shared inherited liability). For the Wave-1
+> design, h0009 is **shared-liability / directionality context only**, not an
+> admissible MR-evidence target. `hypothesis:0005` and `hypothesis:0007` are
+> unaffected. See `plan:0008` KD6.
+
 ---
 
 ## (c) What this estimand does NOT replace
@@ -130,8 +138,9 @@ shelved; it opens an adjacent, reproducible one.
 
 ## (d) Bridge assumptions
 
-An MR result counts as evidence for `hypothesis:0005`/`hypothesis:0007`/
-`hypothesis:0009` or for `question:0007`/`question:0013`/`question:0019`–
+An MR result counts as evidence for `hypothesis:0005`/`hypothesis:0007` (and, as
+shared-liability context only, `hypothesis:0009` — see the KD6 note in (b)) or for
+`question:0007`/`question:0013`/`question:0019`–
 `question:0022` **only if all of the following are stated and defended in the
 candidate's handoff note** (§4a fit/limitation paragraph). Failing one does not
 merely weaken the estimate — it can invalidate the causal reading, so each is a gate,
