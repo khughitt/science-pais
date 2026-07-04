@@ -214,3 +214,48 @@ Execute the MR handoff in doc/plans/2026-07-03-gwas-mr-ingestion-handoff.md. UNB
 - 2026-07-04: plan:0009 Task 1 (entity-side, no-network parts done): created dataset:eur-ldsc-ld-score-reference — eur_w_ld_chr pinned to DOI-archival Zenodo 8182036 (md5 e2f16343…, CC-BY-4.0), NOT the UT-Austin Box link; w_hm3.snplist archival source to confirm at staging. Added plan:0009 to consumed_by on ruth/hgi/1000g + wired LDSC entity into plan:0009 related+Inputs. Validate PASS. REMAINING Task-1 is network-gated (Bash network blocked in this sandbox): retrieve 6 Ruth strata + GCST90454541 + eur_w_ld_chr + w_hm3.snplist + 1000G panel; record SHA-256/rows/build + outcome case/control N; resolve Ruth assembly + upgrade verification_method; rerun gate.
 - 2026-07-04: plan:0009 Task 1 COMPLETE. Wired a reproducible Snakemake staging workflow (code/workflows/wave1-mr-hormone/) and executed it: 6 Ruth strata (~16.3M rows each, GRCh38) + outcome GCST90454541 (9,442,353 rows, sha bd7e0a06, byte-identical to plan:0007) + MRlap LDSC ref (eur_w_ld_chr 23 chr + w_hm3.snplist 1,217,312 SNPs, both DOI-archival md5-verified) + 1000G-EUR panel — all SHA-256'd. Ruth assembly resolved GRCh38, verification_method upgraded, consumed_by closed, LDSC entity finalized. Outcome total N=1,100,445 (5 case-control cohorts) recorded for MRlap total-N. Data reorg: data/raw+data/processed moved off Dropbox to /data/proj/post-acute-infection and symlinked back; snakemake --touch confirms no rerun. Validate PASS. Residual: per-cohort case/control split not in meta (from HGI DF4 if needed at Task 4).
 - 2026-07-04: Task-1 review (doc/reviews/0009-wave1-mr-hormone-pilot-task1-review.md): closed findings F1-F4. F1: acquire_sumstats.py factors pure extract_total_n() summing nested samples[*].sample_size to machine-recorded sample_size_total=1,100,445 (hard-stop if unresolved; case/control split flagged absent). F2: stage_ldsc_ref.py validates chr 1..22 exactly + M_5_50 sidecars, records extras (6_old) as ignored. F3: build-reconciliation prose corrected (Ruth+HGI GRCh38, LDSC/1000G GRCh37, rsID join); config.yaml hm3 comment de-staled to Zenodo. F4: HGI entity status updated. Manifests regenerated from local checksummed payloads (no re-download); validate PASS; graph rebuilt.
+
+## [t090] explore-ideas: represent multi-lens convergent candidates instead of forcing keep-one
+- priority: P2
+- status: proposed
+- aspects: []
+- group: explore-ideas-tooling
+- created: 2026-07-04
+
+When two lenses independently generate the same idea (2026-07-04 pass: trained-immunity/HSPC via mechanism+analogy; critical-slowing-down via analogy+temporal), the report emits two blocks and the human must manually keep one. Two gaps: (1) no cross-candidate dedup in Phase 3 and no duplicate_of/convergence field, so apply would create duplicate entities; add convergence detection + apply-time collision warning. (2) Deeper design point (Keith): the entity model forces one lens per entity and discards the complementary view; explore whether a question/hypothesis can natively carry multiple lens perspectives rather than throwing one out. Complementary multi-lens views are signal, not redundancy.
+
+## [t091] explore-ideas: generate gap-closing follow-up tasks for kept candidates
+- priority: P2
+- status: proposed
+- aspects: []
+- group: explore-ideas-tooling
+- created: 2026-07-04
+
+Applying kept candidates creates question/hypothesis stubs but no path to actually close the gap, so important gaps risk being stubbed and forgotten. Add a phase (or --apply side-effect / companion flag) that emits a follow-up task group per kept candidate, wired to the natural next actions: research-topic / research-papers for literature gaps, find-datasets / catalog-datasets for data needs.
+
+## [t092] explore-ideas: support proposed_kind topic/theme end-to-end
+- priority: P2
+- status: proposed
+- aspects: []
+- group: explore-ideas-tooling
+- created: 2026-07-04
+
+Original goal not yet implemented. Generation lenses only produce question/hypothesis; apply reports topic/theme keeps as apply-manually. Extend generation to propose topics/themes and wire apply to create them. Especially valuable given the 2026-07-04 questions expose whole under-covered AREAS (innate-immune memory / trained immunity, resolution-failure biology, population boundary conditions such as immunosuppressed/LMIC/frailty) that merit topic entities, not just individual questions.
+
+## [t093] explore-ideas polish: meta-kind registration, report prose-lint exemption, anchor + phase-1 drift
+- priority: P3
+- status: proposed
+- aspects: []
+- group: explore-ideas-tooling
+- created: 2026-07-04
+
+Bundle of smaller frictions from the first run: (a) type:meta explorations are not a registered entity kind -> unknown_entity_kind graph-audit warning (also affects the next-steps meta file); register meta or route to a recognized kind. (b) bare-author-year prose lint has no per-directory exemption; citation-dense explore/search reports need one, or the command should emit [@key]-formatted cites. (c) Phase-3 anchor resolution keys on DOI but paper frontmatter DOIs are empty -> resolve by citekey/title instead. (d) Command Phase-1 reads specs/research-question.md which no longer exists (now entities/research-question.md). (e) Command says dispatch bare idea-lens-researcher but the harness only exposes the namespaced science:idea-lens-researcher; reconcile or document.
+
+## [t094] Act on explore-2026-07-04: triage, apply, and spawn gap-closing follow-ups
+- priority: P2
+- status: proposed
+- aspects: []
+- group: explore-ideas
+- created: 2026-07-04
+
+entities/meta/explorations/explore-2026-07-04.md holds 30 candidates (17 novel, 13 sharpens-existing). Steps: set keep/drop per YAML block; consolidate the two convergent pairs (trained-immunity/HSPC; critical-slowing-down) into single entities; run science explore-ideas apply --from explore-2026-07-04 --model-id <model>; then for each kept candidate open the natural follow-up (research-topic/research-papers, find-datasets/catalog-datasets). Highest-value novel gaps: innate-immune memory (cGAS-STING, NLRP3, trained-immunity/HSPC), SPM resolution-failure endotype, persister-cell viral dormancy, and under-covered populations (immunosuppressed, LMIC/ancestral, frailty).
