@@ -24,7 +24,11 @@ from pathlib import Path
 # --- invocation contract (invocation-independent, plan:0003 pattern) ---------
 SNAKEFILE_DIR = Path(workflow.basedir).resolve()
 REPO_ROOT = SNAKEFILE_DIR.parent.parent.parent          # wave1-mr → workflows → code → root
-SCRIPTS = str(SNAKEFILE_DIR / "scripts")
+# SCRIPTS is a repo-relative Path LITERAL (not derived from workflow.basedir) so
+# the static workflow-reference scanner (science_tool.code.workflow_refs) can
+# resolve `{SCRIPTS}/x` and not flag the scripts as orphaned. It resolves at
+# runtime because `workdir` is pinned to the repo root below.
+SCRIPTS = Path("code/workflows/wave1-mr/scripts")
 CONFIGFILE = str(SNAKEFILE_DIR / "config.yaml")
 configfile: CONFIGFILE
 workdir: str(REPO_ROOT)
