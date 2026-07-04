@@ -300,10 +300,16 @@ doc/plans/
 
 ## Work packages
 
-### WP0 — D-005 authorisation scope gate (blocks all acquisition)
+### WP0 — D-005 authorisation scope gate (blocks all acquisition) — ✅ DISCHARGED by D-006 (2026-07-04)
 
 - **Depends on:** `plan:0007` (done).
 - **Entry point:** `core/decisions.md` (D-005), the handoff, this plan's KD1.
+- **Outcome (D-006):** EUR outcome via the Long COVID HGI DF4 distribution (LocusZoom
+  `gwas/793752`, GRCh38, public) = **same authorised HGI vehicle** → in-scope;
+  `eur_w_ld_chr` + HapMap3 = **infrastructure** (like the pilot's 1000G-EUR panel) →
+  in-scope; **FinnGen = held** (distinct vehicle, needs its own authorisation +
+  reproducibility check). WP1/WP2 may proceed; FinnGen rung 3 is blocked pending a
+  new decision. If WP1 finds no EUR-specific HGI stratum, KD1 demotion applies.
 - **Definition of done:** each new input classified against D-005: **(a)** EUR
   long-COVID via the Long COVID HGI LocusZoom/portal distribution = the **authorised
   HGI vehicle** → in-scope, record the freeze/channel; **(b)** `eur_w_ld_chr` +

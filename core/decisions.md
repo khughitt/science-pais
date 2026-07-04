@@ -107,6 +107,7 @@ Durable scientific knowledge in this ecosystem must be independently re-runnable
 
 - **Date:** 2026-07-04
 - **Status:** active
+- **Extended by:** D-006 (2026-07-04) — clarifies that reportable-grade promotion of this vehicle (`plan:0008`) is in-scope "direct maintenance", and holds FinnGen as a distinct vehicle.
 - **Decision:** The project may cross the `specs/scope-boundaries.md` seed-stage boundary for the **specific Wave-1 GWAS/MR pilot** described in `doc/plans/2026-07-03-gwas-mr-ingestion-handoff.md`: two-sample MR over the three cataloged public GWAS summary-statistic vehicles (`dataset:covid19-hgi-longcovid-gwas`, `dataset:bentham-2015-sle-gwas`, and `dataset:ruth-2020-shbg-testosterone-gwas`), with IVW primary and the pre-committed sensitivity/bridge-assumption checklist in that handoff.
 This decision authorizes planning and implementation of that open, third-party-reproducible pilot only.
 It does **not** authorize gated-data analysis, patient-level EHR analysis, N3C/OpenSAFELY execution, or a general transition to unrestricted computational pipeline work.
@@ -132,3 +133,29 @@ D-004 still governs gated, non-downloadable EHR vehicles and remains unchanged.
 
 **Revisit if:**
 - A planned step needs non-public, credentialed, enclave-only, or non-downloadable data; the MR estimand is expanded toward the D-004-shelved EHR estimand; or the pilot design drops below the project's third-party-reproducible bar.
+
+## D-006: Wave-1 MR reportable-grade promotion (plan:0008) is direct maintenance of the D-005 pilot; FinnGen held as a distinct vehicle
+
+- **Date:** 2026-07-04
+- **Status:** active
+- **Extends:** D-005 (does not supersede). Discharges `plan:0008` WP0 (the authorisation scope gate).
+- **Decision:** The reportable-grade Wave-1 MR design (`plan:0008`) is **direct maintenance of the D-005-authorised pilot vehicle**, not a new computational line, and needs no separate scope authorisation for its primary path. Classifying each input `plan:0008` adds beyond the three D-005 vehicles:
+  - **(a) EUR-matched long-COVID outcome — in-scope (same vehicle).** Sourcing a European-ancestry long-COVID **outcome** from the **Long COVID HGI** distribution — the DF4 freeze via LocusZoom (`my.locuszoom.org/gwas/793752/`, "Long COVID HGI – DF4 N1", GRCh38, publicly downloadable without registration), the `covid19hg.org/results` portal, or a GWAS Catalog EUR stratum — is the **same measured-phenotype vehicle** as the D-005-authorised `dataset:covid19-hgi-longcovid-gwas`, in a different freeze/channel. Whether a genuinely EUR-specific stratum exists within that vehicle is a **WP1 factual question**, not presumed here; if none does, `plan:0008` KD1's demotion-to-mechanics-only applies.
+  - **(b) LD-score + HapMap3 references — in-scope (infrastructure).** The `eur_w_ld_chr` EUR LD-score reference and the HapMap3 SNP list that the MRlap overlap correction requires are **analysis infrastructure**, the same class as the LD reference panel (`dataset:1000g-eur-ld-panel`) the D-005 pilot already used for clumping — not measured-phenotype vehicles.
+  - **(c) FinnGen long-COVID — held (distinct vehicle).** FinnGen (`plan:0008` KD1 rung 3) is a **distinct measured-phenotype vehicle**, not the HGI vehicle. It may **not** be used until (i) a separate decision broadens scope to it **and** (ii) its results-access path is confirmed to clear the third-party-reproducible bar (the `finngen.fi` form/email-mediated access is unverified against that bar). Because (a)/(b) are expected to satisfy the EUR-outcome need, FinnGen stays a contingency and is **not** authorised here.
+
+**Why:**
+D-005 already contemplates "direct maintenance of this pilot" as not needing a fresh scope decision, and names the HGI long-COVID GWAS as an authorised vehicle. Promoting the pilot to reportable grade reuses that same vehicle (a different HGI freeze is the same public data source) plus LD-reference infrastructure of the kind the pilot already used. The only genuinely new vehicle — FinnGen — is the only element that would need fresh authorisation, and it is held rather than used. Every authorised input remains public and third-party-retrievable, so the D-004 transparency bar is intact.
+
+**Alternatives considered and rejected:**
+- Treat `plan:0008` as a wholly new computational line needing full re-authorisation — rejected as over-ceremony; it is the same vehicle promoted, which D-005 already covers as maintenance.
+- Pre-authorise FinnGen as a drop-in rung — rejected; distinct vehicle, unverified access path, and unnecessary if the HGI vehicle yields a EUR stratum.
+- Rewrite D-005 in place — rejected; `decisions.md` is append-only, so this extends D-005 via a new entry.
+
+**Implications:**
+- `plan:0008` WP0 is discharged; WP1 (acquire the HGI EUR distribution) and WP2 (stage `eur_w_ld_chr` + HapMap3) may proceed.
+- Any use of FinnGen — or any other non-HGI outcome vehicle — requires a new decision plus a reproducibility-class check first.
+- If WP1 finds no EUR-specific HGI stratum, the ancestry hard-stop is not lifted and `plan:0008` KD1 demotes the primary to mechanics/robustness-only.
+
+**Revisit if:**
+- No EUR outcome can be sourced from the HGI vehicle and FinnGen (or another vehicle) becomes necessary; or any authorised input's access path drops below the third-party-reproducible bar.

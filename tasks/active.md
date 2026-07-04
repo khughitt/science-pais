@@ -205,3 +205,4 @@ Execute the MR handoff in doc/plans/2026-07-03-gwas-mr-ingestion-handoff.md. UNB
 ### Notes
 
 - 2026-07-04: Authored plan:0008 (Wave-1 MR full design) — the design the pilot GO pointed to: EUR-matched outcome sourcing ladder (WP1, lifts the ancestry hard-stop), Ruth sex-stratified hormone arm + MRlap Ruth-HGI overlap correction (WP2/WP5), config-driven analysis matrix over the pilot harness (WP3), broad/strict + HLA-inclusive sensitivities (WP4), bidirectional direction for h0009/q0022 (WP6), pre-registration + acceptance-gate assembly (WP7). Validated PASS.
+- 2026-07-04: WP0 (D-005 authorisation scope gate) discharged by D-006: EUR long-COVID outcome via the Long COVID HGI DF4 distribution (LocusZoom, GRCh38, public) is the same authorised HGI vehicle → in-scope; eur_w_ld_chr + HapMap3 = infrastructure → in-scope; FinnGen held as a distinct vehicle pending separate authorisation + reproducibility check. WP1/WP2 unblocked; FinnGen rung 3 blocked.
