@@ -201,3 +201,7 @@ The patch parks HPA/cortisol as 'high-plausibility / thin-PAIS-evidence', which 
 - created: 2026-07-03
 
 Execute the MR handoff in doc/plans/2026-07-03-gwas-mr-ingestion-handoff.md. UNBLOCKED by D-005 / completed t088. Scope remains limited to the Wave-1 open GWAS/MR pilot; cataloging/handoff is already done, and the next step is /science:plan-pipeline before any analysis code.
+
+### Notes
+
+- 2026-07-04: Authored plan:0008 (Wave-1 MR full design) — the design the pilot GO pointed to: EUR-matched outcome sourcing ladder (WP1, lifts the ancestry hard-stop), Ruth sex-stratified hormone arm + MRlap Ruth-HGI overlap correction (WP2/WP5), config-driven analysis matrix over the pilot harness (WP3), broad/strict + HLA-inclusive sensitivities (WP4), bidirectional direction for h0009/q0022 (WP6), pre-registration + acceptance-gate assembly (WP7). Validated PASS.
