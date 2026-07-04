@@ -12,6 +12,7 @@ related:
   - "task:t089"
   - "dataset:bentham-2015-sle-gwas"
   - "dataset:covid19-hgi-longcovid-gwas"
+  - "dataset:1000g-eur-ld-panel"
 ---
 
 # Wave-1 MR pilot: autoimmune liability → long-COVID (mechanics derisk)
@@ -84,8 +85,14 @@ European reference panel (not the remote IEU clumping API — local clumping kee
 the step third-party-reproducible; see Inputs for its staging contract).
 Estimators: **IVW primary**, MR-Egger and weighted-median as the minimum
 robustness bar (handoff §3.2). Report per-instrument and mean F-statistic
-(handoff §3.1). All payloads gitignored under `data/`; all outputs and a run
-manifest under `results/`.
+(handoff §3.1). Clumping thresholds (r² < 0.001, 10 Mb) and `harmonise_data`
+`action = 2` are the **TwoSampleMR `clump_data`/`harmonise_data` defaults**,
+recorded as such in the run manifest. **Reproducibility:** IVW and MR-Egger are
+closed-form, but the weighted-median SE is bootstrapped — set and record a
+**fixed RNG seed** for it (and any bootstrapped diagnostic), and pin the
+toolchain in a committed **`renv.lock`** (or conda `environment.yml`) so the run
+is reconstructable, not merely described. All payloads gitignored under `data/`;
+all outputs and a run manifest under `results/`.
 
 ## Inputs
 
@@ -96,16 +103,15 @@ manifest under `results/`.
   (broad cases / population controls; binary trait, **log-OR**; harmonised
   GRCh38). European-dominant multi-ancestry meta (see ancestry caveat); no
   EUR-only file exists for this accession.
-- **LD reference panel (real data dependency — staging contract required).**
-  1000 Genomes Phase 3 **EUR** subset as a plink1 `.bed/.bim/.fam` bfile. Stage
-  under `data/raw/ld/1000g-eur-phase3/` (gitignored) with, recorded in the run
+- **LD reference panel** — `dataset:1000g-eur-ld-panel` (1000 Genomes Phase 3
+  **EUR** subset; plink1 `.bed/.bim/.fam` bfile; native GRCh37). A load-bearing,
+  now first-class tracked input (it determines the surviving instrument set).
+  Stage under `data/raw/ld/1000g-eur-phase3/` (gitignored), recording in the run
   manifest / datapackage: **source URL**, **release/version**, **genome build**,
   per-file **SHA-256**, and local path. Its build **must be reconciled with the
-  GRCh38 harmonised sumstats** — either a GRCh38 panel, or rsID-based matching
-  using the harmonised `hm_rsid` column (harmonised files carry it); a build
-  mismatch resolved by neither is a **hard stop** (Task 2). Formalizing this as
-  its own `dataset:` entity is deferred to `plan:0008`; the probe carries the
-  staging contract inline.
+  GRCh38 harmonised sumstats** — either a GRCh38-lifted panel, or rsID-based
+  matching via the harmonised `hm_rsid` column; a build mismatch resolved by
+  neither is a **hard stop** (Task 2).
 - Estimand + bridge assumptions: `doc/plans/2026-07-03-wave1-gwas-mr-estimand.md`.
 - Staging + acceptance contract: `doc/plans/2026-07-03-gwas-mr-ingestion-handoff.md`.
 - `TwoSampleMR` (R), `MendelianRandomization` (R), and a local `plink` (1.9+) for
@@ -156,8 +162,12 @@ Pin the ingestion contract before code:
 3. **Harmonize exposure ↔ outcome.** Run `harmonise_data(action = 2)` per the SSF
    contract above: align effect alleles, infer/drop palindromic SNPs by EAF,
    extract outcome effects for the instrument SNPs (proxy lookup for missing SNPs
-   is optional and, if skipped, logged as a limitation). Log every dropped SNP
-   with its reason; **no silent drops**.
+   is optional and, if skipped, logged as a limitation). **Scale discipline:** the
+   GCST90454541 harmonised full-p-value file is multi-GB (N≈1.1M, tens of millions
+   of variants) — extract the instrument SNPs by **streaming / selective read keyed
+   on `hm_rsid`, not a full in-memory load** — and record **peak memory +
+   wall-clock** for the extraction in `qa_report`. Log every dropped SNP with its
+   reason; **no silent drops**.
 4. **Estimate + diagnostics + reproducible output bundle.** Run IVW (primary),
    MR-Egger, and weighted-median; report point estimates, SEs, the MR-Egger
    intercept (directional-pleiotropy test), and explicit IVW/Egger/weighted-median
@@ -177,18 +187,24 @@ Pin the ingestion contract before code:
 `results/wave1-mr-pilot/` must contain, for the run to count as complete:
 
 - **`datapackage.json`** — Frictionless descriptor listing every input and output
-  resource with SHA-256 and source (the two sumstats + the LD panel).
+  resource with SHA-256 and source (the two sumstats + the LD panel), plus
+  **entity cross-references** (`dataset:bentham-2015-sle-gwas`,
+  `dataset:covid19-hgi-longcovid-gwas`, `dataset:1000g-eur-ld-panel`,
+  `plan:0007`) and a **provenance DAG** linking each output back to its inputs.
 - **`qa_report.json` + `qa_report.md`** — structural checks with explicit
   pass/fail: required-column presence, row counts, allele-coding sanity,
-  instrument count, mean F, palindromic-drop count, and the ancestry/build
-  reconciliation result. Any failed **structural hard-stop** aborts the run.
+  instrument count, mean F, palindromic-drop count, the ancestry/build
+  reconciliation result, and the **peak-memory + wall-clock** of the outcome
+  extraction. Any failed **structural hard-stop** aborts the run.
 - **Instrument table + MR results** — the clumped instrument set (with per-SNP F)
   and the IVW/Egger/weighted-median estimates + Egger intercept.
 - **Command/run log** — the commands executed and their stdout/stderr.
+- **`renv.lock`** (or conda `environment.yml`) — the pinned toolchain.
 - **`run_metadata.json`** — tool + R-package versions (`sessionInfo()` /
   package versions), all parameters (clump thresholds, MHC window,
-  `harmonise_data` action), input accessions + SHA-256s, retrieval date, and the
-  producing git commit — full provenance to re-run.
+  `harmonise_data` action, **weighted-median RNG seed**), input accessions +
+  SHA-256s, retrieval date, and the producing git commit — full provenance to
+  re-run.
 
 ## Decision criteria
 
@@ -231,8 +247,11 @@ before the design plan.
 - Palindromic/ambiguous-SNP handling under `action = 2` is logged; harmonization
   drop-log is present and non-silent.
 - Per-instrument and mean F-statistics are reported.
-- The full output bundle (datapackage.json, qa_report.{json,md}, logs,
-  run_metadata.json) is present; the ancestry/mechanics-only label is stated.
+- The weighted-median RNG seed and a committed `renv.lock` (or conda env) are
+  present; outcome-extraction peak-memory + wall-clock are recorded in `qa_report`.
+- The full output bundle (datapackage.json **with entity cross-refs**,
+  qa_report.{json,md}, logs, renv.lock, run_metadata.json) is present; the
+  ancestry/mechanics-only label is stated.
 - Outputs land under `results/wave1-mr-pilot/`; no data payload is committed
   (confirm `git status` shows nothing under `data/`).
 

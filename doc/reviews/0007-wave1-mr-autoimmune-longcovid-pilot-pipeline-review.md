@@ -3,6 +3,7 @@
 - **Reviews:** `plan:0007-wave1-mr-autoimmune-longcovid-pilot` (`entities/plans/0007-wave1-mr-autoimmune-longcovid-pilot.md`)
 - **Date:** 2026-07-04
 - **Overall:** WARN — execution-ready for its stated *mechanics* goal; four pre-execution tightenings recommended, none blocking the probe itself.
+- **Resolution (2026-07-04):** all four recommendations were folded into `plan:0007` in the commit following this review — `dataset:1000g-eur-ld-panel` registered (Dim 3); weighted-median RNG seed + `renv.lock` required (Dim 5); streaming outcome-extraction with peak-memory/wall-clock recording (Dim 6); `datapackage.json` entity cross-references + provenance DAG (Dim 9); clumping-threshold default provenance noted (Dim 1). This report is retained as the point-in-time record.
 
 ## Summary
 
