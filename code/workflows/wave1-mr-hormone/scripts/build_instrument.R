@@ -149,18 +149,21 @@ if (n_clump_input == 0) {
   close(clump_log_con)
 }
 
-log_lines <- if (file.exists(clump_log_path)) readLines(clump_log_path, warn = FALSE) else character(0)
-n_absent_in_panel <- {
-  # plink/ld_clump reports SNPs absent from the reference bfile two ways: one
-  # "Warning: 'rsXXXX' is not present..." line per missing SNP (whose rsID
-  # itself contains digits — do NOT regex-scrape numbers from these lines) and
-  # an optional aggregate "N more top variant IDs missing" summary line.
-  per_snp <- sum(grepl("^Warning: '[^']+' (is )?(not present|absent)", log_lines, ignore.case = TRUE))
-  extra_hits <- regmatches(log_lines, regexpr("([0-9]+)(?=\\s+more\\s+top\\s+variant)", log_lines, perl = TRUE))
-  extra_hits <- extra_hits[nzchar(extra_hits)]
-  extra <- if (length(extra_hits) > 0) sum(suppressWarnings(as.integer(extra_hits))) else 0L
-  if (per_snp > 0 || extra > 0) per_snp + extra else NA_integer_
-}
+# n_absent_in_panel: of the SNPs fed to clumping (post-MHC GWS set `gws`), how
+# many are absent from the 1000G-EUR reference panel. Computed DIRECTLY by rsID
+# set-membership against the panel .bim (column 2 = rsID), NOT by scraping the
+# clump log: ieugwasr 1.1.0 emits only a single aggregate line ("Removing X of Y
+# variants due to LD with other variants or absence from LD reference panel")
+# that conflates LD-pruning with panel-absence and cannot be decomposed from the
+# log. The set-membership count is exact and independent of plink/ieugwasr log
+# wording. The clump log is still captured above as a run artifact. Clumping is
+# by rsID, so the panel .bim rsID column is the correct join key (fail loud if
+# the .bim is unreadable — a technical fault, not a silent NA).
+panel_bim <- paste0(ld_prefix, ".bim")
+if (!file.exists(panel_bim))
+  stop(sprintf("build_instrument[%s]: panel .bim not found at %s — HALT (technical)", stratum, panel_bim))
+panel_rsid <- fread(panel_bim, header = FALSE, select = 2L, showProgress = FALSE)$V2
+n_absent_in_panel <- sum(!gws$SNP %in% panel_rsid)
 
 inst <- gws[SNP %in% clumped$rsid]
 n_clumped <- nrow(inst)
