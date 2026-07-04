@@ -44,6 +44,7 @@ provided_capabilities:
   trait: autoimmune-disease
 consumed_by:
 - plan:0007-wave1-mr-autoimmune-longcovid-pilot
+- plan:0008-wave1-mr-autoimmune-hormone-longcovid-design
 - task:t089
 related:
 - question:0007-mechanism-of-female-predominance-in-pais

@@ -54,6 +54,9 @@ provided_capabilities:
   trait: sex-hormone-biomarker
   outcome: sex-hormone-level
   stratification: sex
+consumed_by:
+- plan:0008-wave1-mr-autoimmune-hormone-longcovid-design
+- task:t089
 related:
 - question:0007-mechanism-of-female-predominance-in-pais
 - question:0013-reproductive-stage-failed-immune-recovery-after-infection

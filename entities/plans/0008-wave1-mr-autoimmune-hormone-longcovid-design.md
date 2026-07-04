@@ -43,11 +43,24 @@ be retired and demote the affected claim accordingly. It does **not** re-decide 
 estimand or bridge assumptions — those are fixed in
 `~/d/health/processes/post-acute-infection/doc/plans/2026-07-03-wave1-gwas-mr-estimand.md`
 and the execution checklist in `doc/plans/2026-07-03-gwas-mr-ingestion-handoff.md`.
-It operates strictly within **D-005** (authorising only the open,
-third-party-reproducible Wave-1 GWAS/MR line) and does **not** re-open the
-**D-004**-shelved gated-EHR autoimmune × sex × PASC estimand — the germline-liability
-IV effect is an *adjacent, narrower, reproducible* question, not a reconstruction of
-the shelved one.
+
+**Authorisation scope (load-bearing, gated by WP0).** This plan operates within
+**D-005**, which authorised the Wave-1 open GWAS/MR line over the **three cataloged
+public GWAS-summary-statistic vehicles** named in the handoff
+(`bentham-2015-sle-gwas`, `covid19-hgi-longcovid-gwas`,
+`ruth-2020-shbg-testosterone-gwas`). Promoting the pilot to reportable grade needs a
+**EUR-matched long-COVID outcome**, plus reference infrastructure (an EUR LD-score
+panel, a HapMap3 SNP list) that D-005 did not enumerate. Two of those additions are
+**still the authorised HGI vehicle** in a different distribution/freeze (see KD1);
+the LD-score/HapMap3 references are analysis infrastructure, not new
+measured-phenotype vehicles. Anything beyond that — notably a **FinnGen** outcome —
+is a *distinct* vehicle not covered by D-005 as written. **WP0 is a scope gate that
+must resolve before any WP1 acquisition code**: either confirm the new inputs are
+in-authorisation (same HGI vehicle / pure infrastructure) or record a D-005
+clarification, and hold FinnGen behind its own explicit authorisation +
+reproducibility-class check. This plan does **not** re-open the **D-004**-shelved
+gated-EHR autoimmune × sex × PASC estimand — the germline-liability IV effect is an
+*adjacent, narrower, reproducible* question, not a reconstruction of the shelved one.
 
 ## Scope decomposition
 
@@ -59,29 +72,34 @@ the shelved one.
   testosterone → long-COVID), the new arm, including **sex-specific exposure
   instruments** and **sample-overlap correction** (Ruth is 100% UK Biobank; HGI
   pools UKB).
-- **A EUR-matched outcome** to lift the ancestry hard-stop (WP1), with an explicit
-  sourcing ladder and a fail-closed fallback.
+- **A EUR-matched outcome** to lift the ancestry hard-stop (WP1), sourced within
+  D-005 authorisation (WP0), with an explicit ladder and a fail-closed fallback.
 - **The full pre-committed sensitivity matrix:** broad/population (primary) +
   broad/strict + strict-case outcome strata; extended-MHC-excluded (primary) +
   HLA-inclusive exposure instruments; IVW + MR-Egger + weighted-median.
-- **Reverse / bidirectional direction** (long-COVID liability → autoimmune/hormone),
-  the arrow that bears on `hypothesis:0009` and `question:0022`.
-- **The acceptance gate** (handoff §4) assembled per reported estimate, and a
-  pre-registration of the frozen analysis matrix + HLA decision **before** any
-  outcome-side result is read.
+- **Reverse / bidirectional direction** (long-COVID liability → autoimmune/hormone)
+  as a **shared-liability / directionality** sensitivity for `question:0022` (see
+  KD6 for why it does *not* identify `hypothesis:0009`'s conversion arrow).
+- **The acceptance gate** (handoff §4) assembled per reported estimate, behind a
+  **pre-registration freeze** (WP3.5) of the analysis matrix + HLA decision that
+  temporally precedes every unblinded outcome-side result.
 
 **Out of scope (deferred, with reason):**
 
 - **A sex-stratified *outcome* GWAS.** None is published for long-COVID (handoff §1,
   Ruth entity bridge note). Arm B therefore runs sex-specific *exposure* instruments
-  against a **mixed-sex** outcome — a **bounded** sex-modification probe, not a full
-  genotype × sex interaction. The ceiling is a Key Decision below, not a bug to fix
-  here.
+  against a **mixed-sex** outcome — a **bounded, hypothesis-generating** probe of
+  sex-specific exposure architecture, not any form of genotype × sex interaction
+  (KD3).
 - **Non-European ancestry MR.** All three exposures and the target outcome are
   European; cross-ancestry is a separate, later line.
 - **New exposure traits** beyond SLE and SHBG/testosterone (e.g. RA, thyroid
   autoimmunity, estradiol-female). Additive; a Wave-2 concern once the two-arm
   template is proven reportable.
+- **`hypothesis:0009`'s post-infectious latent→overt conversion arrow.** No MR
+  design here can estimate an *acquired-state → later-disease* transition over a
+  5–10-year horizon (KD6). h0009 is retained in `related:` only for the
+  shared-liability context, with that limitation stated.
 - **Individual-level / ascertainment-structured effects** — permanently with
   `hypothesis:0008` under D-004; MR cannot and does not address them.
 
@@ -91,179 +109,273 @@ Reuse the pilot's proven, isolated Snakemake+conda harness under
 `code/workflows/wave1-mr/`. The design generalises the pilot's single hard-coded
 pair into a **config-driven analysis matrix** (exposure × outcome-stratum ×
 HLA-policy × direction), so no estimator logic is rewritten — only parametrised and
-fanned out. New surface is the EUR-outcome acquisition, the Ruth arm, the MRlap
-overlap correction (which needs genome-wide LDSC infrastructure), and the
-matrix/aggregation layer.
+fanned out. New surface: the EUR-outcome acquisition, the Ruth arm, the **per-source
+schema-adapter contract** (WP3, F7), the MRlap overlap correction with its own
+genome-wide LDSC/HapMap3 infrastructure and scale contract (KD2/KD-scale), and the
+matrix/aggregation + pre-registration/acceptance layer.
 
 ```
 code/workflows/wave1-mr/
-├── Snakefile                         MODIFY  fan rules over config.matrix (was one pair)
+├── Snakefile                         MODIFY  fan rules over config.matrix (was one pair);
+│                                              WP4-6 rules gated on prereg sentinel
 ├── config.yaml                       MODIFY  add: eur outcome ladder, ruth strata,
-│                                              analysis matrix, mrlap/ldsc params,
-│                                              hla-inclusive policy, direction flag
+│                                              analysis matrix, mrlap/ldsc/hm3 params,
+│                                              hla-inclusive policy, direction flag,
+│                                              per-source schema-adapter map
 ├── envs/
-│   ├── r-mr.yaml                     MODIFY  add r-mrlap (+ its deps); keep pinned
+│   ├── r-mr.yaml                     MODIFY  add r-mrlap (pinned commit) + deps
 │   ├── r-mr.conda-lock.yml           MODIFY  relock after env change
-│   └── ldsc.yaml                     NEW     ldsc / munge infra env (python2 or
-│                                              a maintained LDSC fork), conda-locked
+│   └── ldsc.yaml                     NEW     LDSC / munge infra env, conda-locked
+├── schemas/
+│   └── source_adapters.yaml          NEW     per-source-family column/scale contract (F7)
 ├── scripts/
-│   ├── acquire_sumstats.py           MODIFY  parametrise over accession list
+│   ├── acquire_sumstats.py           MODIFY  parametrise over accession/URL list + source family
 │   ├── stage_ld.py                   UNCHANGED  1000G-EUR panel staging
-│   ├── stage_ldsc_ref.py             NEW     stage eur_w_ld_chr LD scores (checksummed)
+│   ├── stage_ldsc_ref.py             NEW     stage eur_w_ld_chr LD scores + HapMap3 SNP list (checksummed)
 │   ├── setup_twosamplemr.R           UNCHANGED  pinned-tag install + version sentinel
-│   ├── build_instrument.R            MODIFY  emit both MHC-excluded and HLA-inclusive
-│   │                                          instrument sets; sex-stratum aware
+│   ├── adapt_sumstats.py             NEW     apply source_adapters.yaml → canonical schema; hard-stop on gaps
+│   ├── build_instrument.R            MODIFY  emit MHC-excluded AND HLA-inclusive sets; sex-stratum aware
+│   ├── prereg_freeze.R               NEW     write immutable prereg sentinel (matrix+HLA+primary, commit+ts)
 │   ├── harmonize_estimate.R          MODIFY  loop the matrix; TwoSampleMR 3-estimator
-│   ├── overlap_correct.R             NEW     MRlap (LDSC-intercept) correction, Arm B
-│   ├── reverse_direction.R           NEW     long-COVID → exposure MR (bidirectional)
-│   └── emit_datapackage_qa.py        MODIFY  matrix-aware manifest + acceptance-gate
-│                                              checklist emission
+│   ├── overlap_correct.R             NEW     MRlap (LDSC-intercept) correction, native-scale, Arm B
+│   ├── reverse_direction.R           NEW     long-COVID → exposure MR (shared-liability sensitivity)
+│   └── emit_datapackage_qa.py        MODIFY  matrix-aware manifest + acceptance-gate checklist;
+│                                              HARD-STOP if any result artifact predates prereg sentinel
 code/workflows/wave1-mr/results → results/wave1-mr/   (gitignored payloads under data/)
 entities/datasets/
-├── covid19-hgi-longcovid-gwas.md     MODIFY  add EUR-stratum file (if HGI EUR deposit)
-├── <eur-longcovid-outcome>.md        NEW?    only if the EUR outcome is a distinct
-│                                              study (FinnGen / NatCardioVasc-2025)
-└── <eur-ldsc-ld-scores>.md           NEW     reference dataset for MRlap/LDSC
+├── covid19-hgi-longcovid-gwas.md     MODIFY  add EUR-stratum file (LocusZoom Long COVID HGI DFx EUR)
+├── ruth-2020-shbg-testosterone-gwas.md  MODIFY  consumed_by += plan:0008; resolve assembly at WP2
+├── bentham-2015-sle-gwas.md          MODIFY  consumed_by += plan:0008
+├── 1000g-eur-ld-panel.md             MODIFY  consumed_by += plan:0008
+├── <finngen-longcovid>.md            NEW?    ONLY if WP0 authorises FinnGen rung 3
+└── <eur-ldsc-hm3-reference>.md       NEW     eur_w_ld_chr LD scores + HapMap3 SNP list (MRlap infra)
 doc/plans/
 └── 2026-07-04-wave1-mr-pilot-result.md  UNCHANGED  pilot go/no-go of record
 ```
 
 ## Key decisions
 
-### Key decision 1: source a EUR-matched outcome via an explicit ladder; fail closed to mechanics-only
+### Key decision 1: source a EUR-matched outcome within D-005 authorisation, via an explicit ladder; fail closed to mechanics-only
 
-- **Chosen approach:** WP1 sources a genuinely European-ancestry long-COVID outcome
-  in priority order: **(1)** an HGI EUR-ancestry-specific long-COVID stratum if one
-  is deposited (HGI serves ancestry-specific subpopulation files for the COVID
-  phenotypes; verify a long-COVID EUR file exists on the Catalog/FTP or the
-  covid19hg portal); **(2)** the **European-ancestry long-COVID GWAS** in Nature
-  Cardiovascular Research 2025 (*"Human genetics implicate thromboembolism in the
-  pathogenesis of long COVID in individuals of European ancestry"*,
-  DOI 10.1038/s44161-025-00749-4) if its summary statistics are openly downloadable
-  and third-party-reproducible; **(3)** a **FinnGen** long-COVID endpoint (European
-  isolate — record the LD-panel caveat). Each rung must clear the same
-  reproducibility bar (public, downloadable, checksummable) before use.
+- **Chosen approach:** prefer the **same HGI vehicle** in a EUR distribution before
+  any new vehicle. Ladder: **(1)** the **Long COVID HGI** European-ancestry
+  summary statistics as distributed via **LocusZoom** (e.g. the public
+  "Long COVID HGI — DF4 N1" study download, build GRCh38) or the covid19hg portal /
+  GWAS Catalog EUR stratum — this is the D-005-authorised HGI vehicle, just a
+  different freeze/channel, so it stays in-authorisation; **(2)** the
+  European-ancestry long-COVID analysis in Nature Cardiovascular Research 2025
+  (DOI 10.1038/s44161-025-00749-4), **whose data-availability itself points to the
+  Long COVID HGI LocusZoom study** — i.e. rung 2 largely resolves to rung 1's
+  vehicle; **(3)** a **FinnGen** long-COVID endpoint — a *distinct* vehicle, allowed
+  **only** if WP0 authorises it and its form/email-mediated access is confirmed to
+  clear the project's third-party-reproducible bar (record the LD-panel isolate
+  caveat).
 - **Rejected alternative:** keep the European-dominant multi-ancestry
   GCST90454541 as the *primary* outcome. Rejected because bridge assumption 4
   (ancestry-matched panels) makes an unmatched primary inadmissible; the pilot
   already banked this as the hard-stop.
-- **Reason:** the acceptance gate's ancestry box cannot be checked without a
-  matched European outcome; if **no** rung yields one, the primary claim is
-  **demoted to mechanics/robustness-only** (per the pilot's stated fallback) and the
-  European-dominant run is reported only with an explicit ancestry sensitivity — the
-  line does not silently promote an unmatched estimate.
+- **Reason:** the acceptance gate's ancestry box cannot be checked without a matched
+  European outcome; the ladder retires the hard-stop while keeping the primary within
+  the authorised HGI vehicle. If **no** rung yields a reproducible, authorised EUR
+  outcome, the primary claim is **demoted to mechanics/robustness-only** (the pilot's
+  stated fallback) and the European-dominant run is reported only with an explicit
+  ancestry sensitivity — the line does not silently promote an unmatched or
+  unauthorised estimate.
 
-### Key decision 2: correct Ruth↔HGI sample overlap with MRlap (LDSC-intercept), not exclusion
+### Key decision 2: correct Ruth↔HGI sample overlap with MRlap; report it as a native-scale bias-correction sensitivity, not a drop-in primary
 
 - **Chosen approach:** for Arm B, quantify and **correct** the UK-Biobank overlap
-  with **MRlap** (Mounier & Kutalik 2023), which jointly corrects sample overlap and
-  weak-instrument bias from the cross-trait LDSC intercept; report the MRlap-corrected
-  effect as primary for Arm B, with the naive TwoSampleMR IVW as the uncorrected
-  comparator, and record the estimated overlap fraction.
-- **Rejected alternative:** UK-Biobank *exclusion* (use a leave-UKB-out outcome
-  meta). Rejected because no leave-UKB-out long-COVID meta is published; we cannot
-  manufacture one from summary statistics.
+  with **MRlap** (Mounier & Kutalik 2023), which jointly corrects sample overlap,
+  weak-instrument, and winner's-curse bias from the cross-trait LDSC intercept.
+  MRlap operates on **standardised effects** and its own contract (KD-scale below);
+  because that scale differs from the pilot's TwoSampleMR log-OR path, the
+  MRlap-corrected effect is reported as a **bias-correction sensitivity in its native
+  standardised/observed-scale units**, *beside* the naive TwoSampleMR log-OR IVW —
+  the two are **not** presented as interchangeable point estimates, and the naive
+  IVW remains the labelled log-OR primary unless a pre-specified, defensible scale
+  conversion is registered at WP3.5.
+- **Rejected alternative:** (a) UK-Biobank *exclusion* (leave-UKB-out outcome meta) —
+  no such long-COVID meta is published; (b) treating MRlap-corrected and naive-IVW as
+  one comparable primary-vs-comparator pair on a shared log-OR scale — a scale
+  mismatch (KD-scale).
 - **Reason:** Ruth is 100% UKB and the HGI outcome pools UKB, so overlap is
   structural and material for Arm B (bridge assumption 3). MRlap is the reproducible,
-  open, summary-statistics-only correction. **Cost carried forward:** MRlap needs
-  *genome-wide* munged sumstats for both traits plus an EUR LD-score reference — not
-  the instrument-only streaming the pilot used — so WP2 stages the LD scores and WP5
-  budgets a genome-wide LDSC pass (a real resource step, validated on real data).
+  open, summary-statistics-only correction, but honest reporting requires respecting
+  its effect scale. **Cost carried forward:** MRlap needs *genome-wide* munged
+  sumstats for both traits plus an EUR LD-score + HapMap3 reference — not the
+  instrument-only streaming the pilot used — so WP2 stages that infrastructure and
+  WP5 budgets a genome-wide LDSC pass (a real resource step, validated on real data).
   Arm A (Bentham, largely non-UKB) still gets a shared-cohort check but is expected
   to need no correction.
 
-### Key decision 3: Arm B is a bounded sex-modification probe, ceilinged by the mixed-sex outcome
+### KD-scale: MRlap interface + effect-scale contract (freeze before WP5)
+
+- **Input contract:** MRlap consumes canonical-schema sumstats with `SNP` (rsID),
+  effect/other alleles, `beta`/`SE` (or `Z`), `chr`/`pos`, and **total sample size
+  `N`** (case-control uses **observed-scale analysis with total N**, *not* effective
+  N), restricted to the HapMap3 SNP set, with the `eur_w_ld_chr` LD-score reference.
+- **Effect scale:** the reportable MRlap effect is in **standardised/observed-scale**
+  units; it is **not** relabelled as a log-OR. Any liability- or log-OR-scale
+  conversion must be **pre-specified at WP3.5** with its formula and assumptions, or
+  it is not done and the native scale stands. The `qa_report` states the scale of
+  every Arm B estimate explicitly.
+- **Reference + pinning:** LDSC reference = `eur_w_ld_chr`; SNP set = HapMap3
+  (both new tracked references, WP2). **MRlap is pinned by git commit** (no tagged
+  release exists) in `envs/r-mr.yaml` and recorded in `run_metadata.json`.
+
+### Key decision 3: Arm B is a bounded exposure-architecture probe, not a sex-modification test
 
 - **Chosen approach:** run **male-only** and **female-only** Ruth exposure
   instruments (SHBG, testosterone) against the **mixed-sex** long-COVID outcome, and
-  compare the two sex-specific effects. Report this as a **sex-specific-instrument**
-  contrast — it captures sex-differences in the *exposure* genetic architecture
-  propagated to a common outcome.
-- **Rejected alternative:** claim full genotype × sex effect-modification of the
-  exposure→outcome effect. Rejected because that requires a **sex-stratified
-  outcome**, which does not exist for long-COVID (handoff §1; estimand §b.2).
+  report whether sex-specific genetic predictors of SHBG/testosterone show
+  **concordant or discordant** associations with mixed-sex long-COVID liability.
+- **Rejected alternative:** framing this as a genotype × sex effect-modification test
+  — or even as a *necessary condition* for sex-modification. Rejected: sex
+  modification of the exposure→outcome effect can exist even when sex-specific
+  instrument estimates look similar after mixing the outcome, and divergent
+  male/female estimates can reflect **exposure genetic architecture** rather than any
+  effect modification. So the contrast is neither necessary nor sufficient for
+  sex-modification.
 - **Reason:** the acceptance gate (box 9) forbids asserting sex-modification beyond
-  what the run sumstats support. The honest, estimable claim is bounded; the write-up
-  must state that a difference between male- and female-instrument effects on a
-  mixed-sex outcome is **necessary but not sufficient** for sex-modification of the
-  causal effect, and cannot separate exposure-architecture differences from
-  outcome-response differences.
+  what the run sumstats support. With no sex-stratified outcome, the only honest,
+  estimable, reportable claim is a **hypothesis-generating** concordance/discordance
+  read on the exposure side.
 
 ### Key decision 4: generalise the pilot harness to a config matrix; do not fork a second workflow
 
 - **Chosen approach:** extend `code/workflows/wave1-mr/` in place — the Snakefile
   fans its existing rules over a `config.matrix` of `(exposure, outcome_stratum,
   hla_policy, direction)` cells; estimators, harmonisation, and QA are the pilot's,
-  parametrised.
+  parametrised. A **per-source schema-adapter** (`schemas/source_adapters.yaml`,
+  applied by `adapt_sumstats.py`) normalises each source family to one canonical
+  schema before harmonisation (F7).
 - **Rejected alternative:** a fresh `wave1-mr-full/` workflow. Rejected — it would
   duplicate the proven, locked env and rule bodies and invite drift.
 - **Reason:** the pilot's mechanics are the asset; the design's novelty is coverage,
   not plumbing. One workflow, one locked env, config-driven fan-out (the `plan:0003`
   KD4 "params live in config, not rules" pattern the pilot already follows).
 
-### Key decision 5: pre-register the frozen matrix + HLA decision before any outcome result is read
+### Key decision 5: pre-register the frozen matrix + HLA decision as its own gate that structurally precedes every estimate
 
-- **Chosen approach:** WP7 opens with a `/science:pre-register`-style freeze of the
-  full analysis matrix, the a-priori HLA include/exclude decision (primary =
-  extended-MHC-excluded), the primary outcome stratum, and the overlap-correction
-  plan — committed **before** WP4/WP5 estimates are unblinded.
-- **Rejected alternative:** decide HLA / stratum / primary-vs-sensitivity after
-  seeing which gives a cleaner result. Rejected outright — it is the
-  researcher-degrees-of-freedom hole the estimand §d.5 and handoff §3.4 explicitly
-  disallow.
+- **Chosen approach:** a dedicated **WP3.5 pre-registration freeze** — depending only
+  on WP1/WP2/WP3 (staging + matrix construction), **not** on any estimate — writes an
+  immutable sentinel (`prereg_freeze.R`) recording the full analysis matrix, the
+  a-priori HLA include/exclude decision (primary = extended-MHC-excluded), the primary
+  outcome stratum, the overlap-correction plan, and any registered scale conversion,
+  stamped with its git commit + timestamp. **WP4/WP5/WP6 rules are gated on this
+  sentinel**, and `emit_datapackage_qa.py` **hard-stops if any result artifact
+  predates the sentinel** (commit/timestamp check).
+- **Rejected alternative:** rely on a parenthetical note that WP7 "opens" the
+  pre-registration before unblinding. Rejected — work-package *dependency order* is
+  what a scheduler or future agent follows; a note cannot prevent WP4/WP5 running
+  first and back-dating the freeze (review F2).
 - **Reason:** the acceptance gate is only credible if the choices it audits were
-  fixed in advance; post-hoc selection voids the causal reading regardless of the
-  numbers.
+  fixed in advance and *provably* so; making the freeze a dependency and enforcing it
+  in QA turns "we promise we pre-registered" into a machine-checked invariant.
+
+### Key decision 6: reverse MR is a shared-liability / directionality sensitivity — it does NOT identify h0009's conversion arrow
+
+- **Chosen approach:** WP6's long-COVID-liability → SLE and → SHBG/testosterone runs
+  are reported as **shared-inherited-liability / liability-direction** sensitivities
+  for `question:0022` (mediator vs co-traveler) and as context for the
+  autoimmunity↔PAIS relationship — **not** as evidence for `hypothesis:0009`.
+- **Rejected alternative:** reading reverse MR as directional evidence for h0009
+  (the original draft's WP6 framing). Rejected: h0009 is a **post-infectious
+  acquired-state → later overt autoimmune conversion** claim over a 5–10-year horizon;
+  germline liability to long-COVID is fixed at conception, precedes infection and
+  onset, and therefore **cannot** test whether the *acquired* post-infectious state
+  causes later autoimmune disease. Reverse MR at best probes shared inherited
+  liability and direction under strong assumptions.
+- **Reason:** conflating the two would smuggle an unidentified longitudinal claim
+  into an acceptance-gated estimate. h0009's conversion proposition needs a
+  longitudinal/incident-disease design outside this plan; here it earns only a stated
+  limitation.
 
 ## Work packages
 
+### WP0 — D-005 authorisation scope gate (blocks all acquisition)
+
+- **Depends on:** `plan:0007` (done).
+- **Entry point:** `core/decisions.md` (D-005), the handoff, this plan's KD1.
+- **Definition of done:** each new input classified against D-005: **(a)** EUR
+  long-COVID via the Long COVID HGI LocusZoom/portal distribution = the **authorised
+  HGI vehicle** → in-scope, record the freeze/channel; **(b)** `eur_w_ld_chr` +
+  HapMap3 = analysis **infrastructure**, not a measured-phenotype vehicle → in-scope;
+  **(c)** FinnGen = **distinct vehicle** → held until an explicit authorisation
+  (D-005 clarification or a new decision) **and** a reproducibility-class check of its
+  form/email access are recorded. If any needed input is neither authorised HGI
+  vehicle nor pure infrastructure and cannot be authorised, it is dropped and KD1's
+  demotion applies. No WP1 acquisition code runs before WP0 is recorded.
+
 ### WP1 — Source + stage the EUR-matched outcome (lifts the ancestry hard-stop)
 
-- **Depends on:** `plan:0007` (harness) — done.
+- **Depends on:** WP0.
 - **Entry point:** `scripts/acquire_sumstats.py` (parametrised), the KD1 ladder.
 - **Definition of done:** a European-ancestry long-COVID outcome staged under
-  `data/raw/gwas/` (gitignored) with source URL, build, per-file SHA-256, row count,
-  and ancestry evidence recorded; the corresponding dataset entity created or
-  extended (extend `covid19-hgi-longcovid-gwas` if it is an HGI EUR stratum; else a
-  new entity via `/science:find-datasets`) with `access.verified: true`, enum-safe
-  `verification_method`, dated `last_reviewed`, and reproducibility class
-  `third-party-reproducible`; the **data-access + reproducibility gate rerun and
-  passing** for this input. **Hard stop / fail-closed:** if no ladder rung yields a
-  reproducible EUR outcome, record the negative result and invoke KD1's demotion —
-  the design proceeds mechanics/robustness-only and says so, rather than promoting an
-  unmatched outcome.
+  `data/raw/gwas/` (gitignored) with source URL, distribution/freeze, build, per-file
+  SHA-256, row count, and ancestry evidence recorded; the corresponding dataset entity
+  created or extended (extend `covid19-hgi-longcovid-gwas` for an HGI EUR
+  distribution; a new entity via `/science:find-datasets` only if WP0 authorised a
+  distinct vehicle) with `access.verified: true`, enum-safe `verification_method`,
+  dated `last_reviewed`, reproducibility class `third-party-reproducible`, and
+  `consumed_by += plan:0008`; the **data-access + reproducibility gate rerun and
+  passing**. **Case-definition check:** record the EUR distribution's case definition
+  and its comparability to the HGI broad/population definition (bridge assumption 6) —
+  a study/freeze switch that changes the estimand is itself a sensitivity, not a
+  drop-in. **Fail-closed:** if no authorised rung yields a reproducible EUR outcome,
+  record the negative result and invoke KD1's demotion.
 
-### WP2 — Stage the Ruth sex-stratified exposures + LDSC infrastructure
+### WP2 — Stage Ruth sex-stratified exposures + LDSC/HapMap3 infrastructure
 
-- **Depends on:** WP1 (parallel-safe; no data dependency).
+- **Depends on:** WP0 (parallel-safe with WP1).
 - **Entry point:** `scripts/acquire_sumstats.py`, `scripts/stage_ldsc_ref.py`,
   `envs/ldsc.yaml`.
-- **Definition of done:** the required Ruth strata staged — **male-only** and
+- **Definition of done:** required Ruth strata staged — **male-only** and
   **female-only** SHBG (GCST90012109 / GCST90012107) and total testosterone
-  (GCST90012113 / GCST90012112), plus the sex-combined siblings for cross-check —
-  each with SHA-256/build/rows; `ruth-2020-shbg-testosterone-gwas` entity upgraded to
-  a retrieval-grade `verification_method` and its `assembly.label` resolved
-  (currently UNKNOWN). An **EUR LD-score reference** (`eur_w_ld_chr`) staged as a new
-  tracked reference dataset (checksummed, openly downloadable) for MRlap/LDSC; a
-  reproducible `ldsc.yaml` env locked. Gate rerun and passing for both inputs.
+  (GCST90012113 / GCST90012112), plus sex-combined siblings for cross-check — each
+  with SHA-256/build/rows; `ruth-2020-shbg-testosterone-gwas` upgraded to a
+  retrieval-grade `verification_method`, `assembly.label` resolved (currently
+  UNKNOWN), and `consumed_by += plan:0008`. An **EUR LD-score reference**
+  (`eur_w_ld_chr`) **and a HapMap3 SNP list** staged as a new tracked reference
+  dataset (checksummed, openly downloadable, build/ancestry recorded, rsID-key policy
+  confirmed against the GRCh37-native Ruth and the outcome sumstats); a reproducible
+  `ldsc.yaml` env locked. Gate rerun and passing for all inputs.
 
-### WP3 — Generalise the harness to the analysis matrix
+### WP3 — Generalise the harness to the analysis matrix + per-source schema adapter
 
-- **Depends on:** WP1, WP2 (needs the real staged inputs to validate fan-out).
-- **Entry point:** `Snakefile`, `config.yaml`, `scripts/build_instrument.R`,
+- **Depends on:** WP1, WP2 (needs real staged inputs to validate fan-out).
+- **Entry point:** `Snakefile`, `config.yaml`, `schemas/source_adapters.yaml`,
+  `scripts/adapt_sumstats.py`, `scripts/build_instrument.R`,
   `scripts/harmonize_estimate.R`, `scripts/emit_datapackage_qa.py`.
 - **Definition of done:** `config.matrix` enumerates the pre-committed cells;
-  `build_instrument.R` emits **both** an extended-MHC-excluded and an HLA-inclusive
-  instrument set per exposure and is sex-stratum aware; `harmonize_estimate.R` loops
-  the matrix producing per-cell IVW/Egger/weighted-median + Egger intercept + per/mean
-  F; the QA emitter is matrix-aware (one datapackage, per-cell QA rows, structural
-  hard-stops preserved). A **dry-run + one real cell** (the pilot pair, re-run
+  `source_adapters.yaml` defines, **keyed by source family** (GWAS Catalog harmonised
+  SSF; LocusZoom Long COVID HGI; FinnGen endpoint if authorised; Ruth strata;
+  LDSC/HapMap3 reference), the column mapping, allele orientation, build/rsID policy,
+  beta/log-OR/OR/Z handling, p-value handling, EAF/palindrome policy, case/control N,
+  and **missing-column hard stops**; `adapt_sumstats.py` applies it to a canonical
+  schema with a **real row-level smoke test per source family**. `build_instrument.R`
+  emits **both** an extended-MHC-excluded and an HLA-inclusive instrument set per
+  exposure and is sex-stratum aware; `harmonize_estimate.R` loops the matrix
+  producing per-cell IVW/Egger/weighted-median + Egger intercept + per/mean F; the QA
+  emitter is matrix-aware. A **dry-run + one real cell** (the pilot pair, re-run
   through the generalised code) reproduces the pilot's numbers bit-for-bit —
   regression guard that the refactor changed no estimator behaviour.
 
+### WP3.5 — Pre-registration freeze (gates WP4–WP6)
+
+- **Depends on:** WP1, WP2, WP3 (staging + matrix construction only — **no
+  estimate**).
+- **Entry point:** `scripts/prereg_freeze.R`.
+- **Definition of done:** an immutable pre-registration sentinel committed —
+  recording the full analysis matrix, the a-priori HLA include/exclude decision
+  (primary = extended-MHC-excluded), the primary outcome stratum, the
+  overlap-correction plan, and any registered MRlap scale conversion — stamped with
+  git commit + timestamp. WP4/WP5/WP6 Snakemake rules take this sentinel as an input;
+  the QA emitter later hard-stops if any result artifact predates it (KD5).
+
 ### WP4 — Arm A: autoimmune → long-COVID, full sensitivity matrix
 
-- **Depends on:** WP3, and WP1's EUR outcome (or its documented demotion).
+- **Depends on:** WP3.5, and WP1's EUR outcome (or its documented demotion).
 - **Entry point:** the matrix cells for `exposure = bentham-sle`.
 - **Definition of done:** primary = SLE (extended-MHC-excluded) → **EUR** broad/
   population long-COVID; sensitivities = HLA-inclusive instrument; broad/strict
@@ -275,67 +387,69 @@ doc/plans/
 
 ### WP5 — Arm B: sex-hormone → long-COVID, overlap-corrected + sex-specific instruments
 
-- **Depends on:** WP3, WP2 (LD scores), WP1's EUR outcome.
+- **Depends on:** WP3.5, WP2 (LD scores + HapMap3), WP1's EUR outcome.
 - **Entry point:** the matrix cells for `exposure = ruth-shbg / ruth-testosterone`,
-  `scripts/overlap_correct.R`.
+  `scripts/overlap_correct.R` (per KD-scale contract).
 - **Definition of done:** sex-combined and **sex-specific** (male, female) instrument
   runs for SHBG and total testosterone → long-COVID; **MRlap** overlap+weak-instrument
-  correction applied with the estimated UKB overlap fraction recorded, MRlap-corrected
-  primary vs naive-IVW comparator both reported; the male-vs-female instrument-effect
-  contrast reported strictly as the **bounded** probe of KD3 (no full-interaction
-  claim). **Scale/resource validation on real data:** the genome-wide LDSC munge +
-  MRlap pass is run on the full staged sumstats with **peak memory + wall-clock
-  recorded** in `qa_report` — MRlap's genome-wide requirement is exactly the kind of
-  real-input resource behaviour green fixtures do not prove.
+  correction applied per the KD-scale contract, with the estimated UKB overlap fraction
+  recorded and the MRlap effect reported in its **native scale** beside the naive-IVW
+  log-OR (labelled, not merged); the male-vs-female instrument concordance/discordance
+  reported strictly as the **bounded exposure-architecture** probe of KD3.
+  **Scale/resource validation on real data:** the genome-wide LDSC munge + MRlap pass
+  is run on the full staged sumstats with **peak memory + wall-clock recorded** in
+  `qa_report` — MRlap's genome-wide requirement is exactly the kind of real-input
+  resource behaviour green fixtures do not prove.
 
-### WP6 — Reverse / bidirectional direction
+### WP6 — Reverse / bidirectional direction (shared-liability sensitivity)
 
-- **Depends on:** WP4, WP5 (reuses staged inputs + instruments).
+- **Depends on:** WP3.5, WP4, WP5 (reuses staged inputs + instruments).
 - **Entry point:** `scripts/reverse_direction.R`.
-- **Definition of done:** long-COVID liability → SLE and long-COVID liability →
-  SHBG/testosterone MR run where the outcome-as-exposure instrument is adequately
-  strong (report F; **halt-and-note** the direction if long-COVID yields too few
-  strong instruments — a single-locus FOXP4-dominated long-COVID GWAS may not
-  instrument well, which is itself the finding). This is the arrow that bears on
-  `hypothesis:0009` (PAIS → later autoimmune conversion) and sharpens
-  `question:0022` (mediator vs co-traveler); its interpretation is stated as
-  directional evidence under the same bridge assumptions.
+- **Definition of done:** long-COVID liability → SLE and → SHBG/testosterone MR run
+  where the outcome-as-exposure instrument is adequately strong (report F;
+  **halt-and-note** the direction if long-COVID yields too few strong instruments — a
+  FOXP4-dominated long-COVID GWAS may not instrument well, which is itself the
+  finding). Interpreted strictly as a **shared-liability / directionality** sensitivity
+  for `question:0022` — **not** as evidence for `hypothesis:0009` (KD6), with that
+  limitation stated in the write-up.
 
-### WP7 — Acceptance-gate assembly, pre-registration, write-up
+### WP7 — Acceptance-gate assembly + write-up
 
 - **Depends on:** WP4, WP5, WP6.
 - **Entry point:** `scripts/emit_datapackage_qa.py` (gate emission), a results note.
-- **Definition of done:** the **pre-registration freeze** (KD5) is committed before
-  any WP4/WP5 estimate is unblinded (temporally: this is authored at WP7's *open*,
-  gating WP4–WP6 reads — listed last only because it closes the loop). Then, per
-  reported estimate, the handoff §4 nine-box acceptance checklist is emitted into
-  `qa_report` with each box explicitly checked or the estimate marked
-  not-reportable; a results note records which arms/cells cleared the gate and are
-  admissible as `hypothesis:0005`/`0007`/`0009` / `question:0007`/`0013`/`0022`
-  evidence, which are mechanics/robustness-only, and the go/no-go for a Wave-2
-  trait expansion.
+- **Definition of done:** per reported estimate, the handoff §4 nine-box acceptance
+  checklist is emitted into `qa_report` with each box explicitly checked or the
+  estimate marked not-reportable; the emitter **hard-stops if any result artifact
+  predates the WP3.5 pre-registration sentinel** (KD5). A results note records which
+  arms/cells cleared the gate and are admissible as `hypothesis:0005`/`0007` /
+  `question:0007`/`0013`/`0022` evidence (and explicitly which are *not* — including
+  the h0009 conversion limitation, KD6), which are mechanics/robustness-only, and the
+  go/no-go for a Wave-2 trait expansion.
 
 ## Open questions
 
-1. **Does an HGI EUR-ancestry long-COVID stratum exist as a downloadable file?**
-   WP1 rung 1. If not, rung 2 (NatCardioVasc-2025 EUR long-COVID) hinges on whether
-   its summary statistics are openly deposited — to verify at WP1, not assumed here.
-2. **Is the NatCardioVasc-2025 EUR long-COVID phenotype comparable** (case
-   definition, bridge assumption 6) to the HGI broad/population definition, or does
-   switching outcome studies change the estimand? If it changes it, record the
-   case-definition delta and treat cross-study as its own sensitivity, not a
-   drop-in.
-3. **Will long-COVID instrument well enough for WP6's reverse direction?** The
-   published long-COVID signal is FOXP4-dominated (few genome-wide-significant loci);
-   the reverse MR may be underpowered — WP6 treats that as a reportable negative, not
-   a failure.
-4. **MRlap LD-score ancestry/build match** to the Ruth (GRCh37-native) and outcome
-   sumstats — confirm the `eur_w_ld_chr` reference aligns (rsID-keyed) as WP2's DoD.
+1. **Which Long COVID HGI EUR distribution/freeze is the right primary** (WP1 rung 1)
+   — DF4 N1 via LocusZoom, a Catalog EUR stratum, or the portal — and does the freeze
+   change the case definition vs the pilot's GCST90454541 (bridge assumption 6)?
+2. **Does the NatCardioVasc-2025 EUR route resolve to the same HGI LocusZoom study**
+   (its data-availability suggests so), making rung 2 a pointer to rung 1 rather than
+   a distinct vehicle? Confirm at WP0/WP1.
+3. **Does FinnGen clear both authorisation (WP0) and the reproducibility bar** given
+   its form/email-mediated results access? If not, it is dropped as an outcome.
+4. **Will long-COVID instrument well enough for WP6's reverse direction?** The
+   published signal is FOXP4-dominated; the reverse MR may be underpowered — WP6 treats
+   that as a reportable negative, not a failure.
+5. **MRlap scale conversion:** is any defensible standardised→liability/log-OR
+   conversion worth pre-specifying at WP3.5, or does MRlap stand in native units as a
+   pure bias-correction sensitivity (KD-scale default)?
+6. **LD-score / HapMap3 build+ancestry match** to the GRCh37-native Ruth and the EUR
+   outcome — confirm rsID-keyed alignment as WP2's DoD.
 
 ## Non-goals
 
 - Reconstructing the D-004-shelved individual-level, ascertainment-structured
   autoimmune × sex × PASC interaction (stays with `hypothesis:0008`).
+- Estimating `hypothesis:0009`'s post-infectious latent→overt conversion arrow (KD6).
 - Any non-European-ancestry MR.
 - New exposure traits beyond SLE and SHBG/testosterone (Wave-2).
 - A sex-stratified outcome analysis (no such long-COVID GWAS exists).
@@ -348,29 +462,39 @@ An MR estimate from this plan is reportable as evidence toward the target
 hypotheses/questions **only if** its per-estimate `qa_report` checklist (handoff §4)
 is fully checked:
 
+- [ ] WP0 authorisation recorded: the outcome is the D-005-authorised HGI vehicle (or
+      an explicitly authorised addition), references are infrastructure, and any
+      FinnGen use is separately authorised + reproducibility-checked (F1).
 - [ ] All consumed dataset entities complete + access-verified + reproducibility
-      class recorded (§4 box 1); **ancestry-matched EUR outcome used**, or the
-      mismatch flagged and the estimate **not** treated as primary (KD1 demotion).
+      class recorded + `consumed_by` includes `plan:0008` (§4 box 1, F6);
+      **ancestry-matched EUR outcome used**, or the mismatch flagged and the estimate
+      **not** treated as primary (KD1 demotion).
 - [ ] Instrument F-statistics reported; no exposure relies solely on weak
       instruments (§3.1).
 - [ ] IVW + MR-Egger + weighted-median all run; concordance/discordance stated
       explicitly (§3.2).
-- [ ] Sample overlap quantified; **Arm B MRlap-corrected** (Ruth↔HGI via UKB),
-      Arm A shared-cohort check recorded (§3.3).
-- [ ] A-priori HLA include/exclude decision fixed **before** outcome results seen
-      and stated; HLA-inclusive reported as sensitivity (§3.4, KD5).
+- [ ] Sample overlap quantified; **Arm B MRlap-corrected and reported in its labelled
+      native scale** beside the naive log-OR IVW (KD-scale), Arm A shared-cohort check
+      recorded (§3.3).
+- [ ] A-priori HLA include/exclude decision fixed in the **WP3.5 pre-registration
+      sentinel before any estimate**, and QA confirms no result predates it (§3.4,
+      KD5); HLA-inclusive reported as sensitivity.
 - [ ] All panels ancestry-matched, or mismatch flagged and not primary (§3.5).
 - [ ] HGI case-definition stratum stated per estimate; broad/population primary,
       broad/strict + strict-case as sensitivities, never silently mixed (§3.6).
+- [ ] Effect **scale** stated for every estimate (log-OR for TwoSampleMR;
+      standardised/observed for MRlap) — no cross-scale comparison presented as
+      like-for-like (KD-scale).
 - [ ] Stated as a germline-liability IV effect, explicitly **not** as closing the
-      D-004 gap (estimand §c).
-- [ ] Any sex claim uses only Ruth sex-stratified exposure strata and is scoped to
-      the **bounded** mixed-sex-outcome ceiling (§4 box 9, KD3).
-- [ ] The pre-registration freeze predates every unblinded estimate (KD5).
+      D-004 gap (estimand §c), and reverse-direction results explicitly **not** read
+      as h0009 conversion evidence (KD6).
+- [ ] Any sex statement uses only Ruth sex-stratified exposure strata and is scoped to
+      the **bounded exposure-architecture** read (§4 box 9, KD3) — no
+      sex-modification/interaction claim.
 - [ ] Full reproducible bundle present (matrix-aware `datapackage.json` with entity
       cross-refs + provenance DAG, per-cell `qa_report.{json,md}`, `run_metadata.json`
-      with seeds/versions/SHA-256s, updated `r-mr.conda-lock.yml` + `ldsc.yaml` lock);
-      no data payload committed.
+      with seeds/versions/SHA-256s + pinned MRlap commit, updated `r-mr.conda-lock.yml`
+      + `ldsc.yaml` lock, `source_adapters.yaml`); no data payload committed.
 
 If any box cannot be checked for a given estimate, that estimate is not reportable
 as hypothesis/question evidence — this is the gate, not a post-hoc checklist.
