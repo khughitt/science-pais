@@ -26,6 +26,10 @@ paths:
 # live in the GCST90012001-GCST90013000 range folder. Continuous traits, SD-scaled
 # effects; native GRCh37, harmonised GRCh38 served (the acquired .h.tsv.gz is
 # GRCh38). The acquire rule resolves the single *.h.tsv.gz within each dir.
+# `expected_sha256` pins the observed harmonised-file hash (GWAS Catalog publishes
+# no source checksum): acquire HARD-STOPS on mismatch so a silent re-harmonisation
+# cannot swap the input — matching the Zenodo sources' md5 gate. Re-pinning is a
+# deliberate plan edit.
 _ruth_range: &ruth_range "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000"
 exposures:
   - name: "ruth-shbg-combined"
@@ -34,36 +38,42 @@ exposures:
     sex: "combined"
     harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000/GCST90012111/harmonised/"
     build: "GRCh38"
+    expected_sha256: "27c911dd81a8eb81c79e967efa758371a45935bb89447b49e88b73e5d703274d"
   - name: "ruth-shbg-male"
     accession: "GCST90012109"
     trait: "shbg"
     sex: "male"
     harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000/GCST90012109/harmonised/"
     build: "GRCh38"
+    expected_sha256: "4b71db9a6ebc8a0d51e715f4b6287d457ab4b4451ccda76e29259ee19ee5b8b7"
   - name: "ruth-shbg-female"
     accession: "GCST90012107"
     trait: "shbg"
     sex: "female"
     harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000/GCST90012107/harmonised/"
     build: "GRCh38"
+    expected_sha256: "39cb79e55f34b8f492d4f59e61a77731dd0da7f51059f653fe245226d5bf9709"
   - name: "ruth-testosterone-combined"
     accession: "GCST90012114"
     trait: "total-testosterone"
     sex: "combined"
     harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000/GCST90012114/harmonised/"
     build: "GRCh38"
+    expected_sha256: "5b74d4ed24504f2868d12b174547439df714aad26409c522fd56188e9664b5fc"
   - name: "ruth-testosterone-male"
     accession: "GCST90012113"
     trait: "total-testosterone"
     sex: "male"
     harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000/GCST90012113/harmonised/"
     build: "GRCh38"
+    expected_sha256: "39d1648c10e5d5c38265d6bd6a9ad91ea3b53296d05d635873919eb75b115072"
   - name: "ruth-testosterone-female"
     accession: "GCST90012112"
     trait: "total-testosterone"
     sex: "female"
     harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000/GCST90012112/harmonised/"
     build: "GRCh38"
+    expected_sha256: "193d0dc26a77a076cb76bc23dc8e4156bd9e985ea4eb14b68f5301f99b8e4e4a"
 
 # ---------------------------------------------------------------- outcome ----
 # plan:0009 — same authorised HGI vehicle as plan:0007 (D-006). GCST90454541 =
@@ -76,6 +86,7 @@ outcome:
   trait: "long-covid"
   harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90454001-GCST90455000/GCST90454541/harmonised/"
   build: "GRCh38"
+  expected_sha256: "bd7e0a0648608b69cab69b6dd9b6e7919dfcf640b6c035a3533a5d9bd00a6891"
   ancestry_note: "European-dominant multi-ancestry meta; no EUR-only sibling → ancestry flag (plan:0009 KD1, non-primary)."
 
 # ------------------------------------------------- MRlap LDSC reference -------

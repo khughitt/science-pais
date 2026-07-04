@@ -85,12 +85,22 @@ def count_rows(path: Path) -> int:
 def acquire_one(spec: dict, dest: Path) -> dict:
     url = resolve_harmonised_file(spec["harmonised_dir"])
     sha = download(url, dest)
+    # GWAS Catalog serves harmonised files at a stable URL but does not publish a
+    # source checksum; pin the observed SHA-256 so a silent re-harmonisation is a
+    # HARD-STOP, not a silent swap (matches the Zenodo sources' md5 gate).
+    expected = spec.get("expected_sha256")
+    if expected and sha != expected:
+        raise SystemExit(
+            f"acquire: {spec['name']} {spec['accession']} SHA-256 mismatch: "
+            f"expected {expected}, got {sha} — HALT (source re-harmonised? update the pin deliberately)"
+        )
     rec = {
         "accession": spec["accession"],
         "name": spec["name"],
         "source_url": url,
         "local_path": str(dest),
         "sha256": sha,
+        "sha256_pin_verified": bool(expected),
         "n_rows": count_rows(dest),
         "build": spec["build"],
     }
