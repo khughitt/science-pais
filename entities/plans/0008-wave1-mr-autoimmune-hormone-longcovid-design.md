@@ -23,6 +23,22 @@ related:
 
 # Wave-1 MR full design: autoimmune + sex-hormone liability → long-COVID
 
+> **Status update (2026-07-04) — reportable-primary execution DEFERRED; design banked.**
+> WP1 established that **no matched EUR long-COVID outcome is publicly downloadable**
+> (see the WP1 finding below + the `dataset:covid19-hgi-longcovid-gwas` verification
+> log), so every estimate this design could produce is irreducibly
+> **ancestry-flagged and non-primary** (estimand §d.5) — no reportable *primary*
+> hypothesis evidence is achievable until a matched EUR long-COVID (or EUR PAIS —
+> e.g. EUR ME/CFS/fatigue) GWAS is published. **Decision: defer the full
+> reportable-primary design and bank it as-is**, and pursue the one novel,
+> high-value line now as a scoped exploratory probe — **`plan:0009` (Arm-B
+> sex-hormone pilot)**, the hormone analogue of `plan:0007`. This design remains the
+> target to resume when a matched outcome exists.
+> **Revisit trigger:** a matched EUR long-COVID / EUR PAIS GWAS becomes publicly
+> downloadable → resume this design (Arm A sensitivity matrix, formal
+> pre-registration, acceptance-gate-for-primary, bidirectional-as-evidence).
+> **FinnGen remains held** (D-006).
+
 ## Purpose
 
 `plan:0007` proved the two-sample-MR **mechanics** end to end (retrieval →
