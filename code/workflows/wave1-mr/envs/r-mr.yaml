@@ -19,6 +19,8 @@ dependencies:
   - r-remotes
   - r-yaml                     # R-side config.yaml parsing
   - r-data.table
+  - r-r.utils                  # fread() gz support (read *.h.tsv.gz directly)
+  - gzip                       # zcat, for streaming outcome extraction (harmonize_estimate)
   - r-mendelianrandomization   # CRAN estimator engine cross-check (conda-forge)
   - r-jsonlite
   - r-dplyr

@@ -13,7 +13,7 @@
 version: 1
 metadata:
   content_hash:
-    linux-64: 62aaa201755a3aa3541d4b5a6e4d380d8302272c81e4050c9a8e2765ce0add45
+    linux-64: d81e19e66d63b41c6f11711e74c72bd5e29feeefde0ad6a69354401d61c610d4
   channels:
   - url: conda-forge
     used_env_vars: []
@@ -407,6 +407,19 @@ package:
   hash:
     md5: 5e194579a5f72c70102f342aa362f5f9
     sha256: f78da7a8b49943a6ce48372a5bc85ab741ac86666f1040e8876545065ec1096e
+  category: main
+  optional: false
+- name: gzip
+  version: '1.14'
+  manager: conda
+  platform: linux-64
+  dependencies:
+    __glibc: '>=2.17,<3.0.a0'
+    libgcc: '>=13'
+  url: https://conda.anaconda.org/conda-forge/linux-64/gzip-1.14-hb9d3cd8_0.conda
+  hash:
+    md5: 84fa0d10c305971e39f516ca8354a9cd
+    sha256: 7f0a85e34c384216448b468ac3af2b3b02b609b488f2ba079ca8443db83c2b22
   category: main
   optional: false
 - name: harfbuzz
@@ -2683,6 +2696,45 @@ package:
   hash:
     md5: 72eec00c67bf7dfbacc77f067a96dee6
     sha256: 1d460988f745668e636ae4d05134f578990a455337c9650af20188dc71c81645
+  category: main
+  optional: false
+- name: r-r.methodss3
+  version: 1.8.2
+  manager: conda
+  platform: linux-64
+  dependencies:
+    r-base: '>=4.5,<4.6.0a0'
+  url: https://conda.anaconda.org/conda-forge/noarch/r-r.methodss3-1.8.2-r45hc72bb7e_4.conda
+  hash:
+    md5: 491826d3aaedc8f5e71aec5ddd24df26
+    sha256: e37dd18b15526d87a949a380b941660bb5e323a5c8b9e05435554c73f27bd94f
+  category: main
+  optional: false
+- name: r-r.oo
+  version: 1.27.1
+  manager: conda
+  platform: linux-64
+  dependencies:
+    r-base: '>=4.5,<4.6.0a0'
+    r-r.methodss3: '>=1.7.1'
+  url: https://conda.anaconda.org/conda-forge/noarch/r-r.oo-1.27.1-r45hc72bb7e_1.conda
+  hash:
+    md5: 39bd43593006907bbea339b24a904ade
+    sha256: e9874a6edc3af280493d2a5a331e6721f8ad26df221a4b22d4df8c65267cd4be
+  category: main
+  optional: false
+- name: r-r.utils
+  version: 2.13.0
+  manager: conda
+  platform: linux-64
+  dependencies:
+    r-base: '>=4.5,<4.6.0a0'
+    r-r.methodss3: '>=1.8.0'
+    r-r.oo: '>=1.23.0'
+  url: https://conda.anaconda.org/conda-forge/noarch/r-r.utils-2.13.0-r45hc72bb7e_1.conda
+  hash:
+    md5: 3e01265486a11af09548f143dd5c20f8
+    sha256: 8907a11d1f208a5ae44efd57c2cea0fa5e0e22ae4427c9c0d830570f60fa4b56
   category: main
   optional: false
 - name: r-r6
