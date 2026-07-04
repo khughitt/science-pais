@@ -27,11 +27,12 @@ __pycache__/
 # OS
 .DS_Store
 
-# Research data payloads (keep descriptors / .gitkeep)
-data/raw/*
-data/processed/*
-!data/raw/.gitkeep
-!data/processed/.gitkeep
+# Research data payloads live OFF this (Dropbox) repo on the big disk:
+# data/raw and data/processed are host-local symlinks to
+# /data/proj/post-acute-infection/{raw,processed} (see data/README.md).
+# Ignore the symlinks themselves and any payloads reachable through them.
+data/raw
+data/processed
 results/*
 !results/.gitkeep
 
