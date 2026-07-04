@@ -216,47 +216,65 @@ Execute the MR handoff in doc/plans/2026-07-03-gwas-mr-ingestion-handoff.md. UNB
 - 2026-07-04: Task-1 review (doc/reviews/0009-wave1-mr-hormone-pilot-task1-review.md): closed findings F1-F4. F1: acquire_sumstats.py factors pure extract_total_n() summing nested samples[*].sample_size to machine-recorded sample_size_total=1,100,445 (hard-stop if unresolved; case/control split flagged absent). F2: stage_ldsc_ref.py validates chr 1..22 exactly + M_5_50 sidecars, records extras (6_old) as ignored. F3: build-reconciliation prose corrected (Ruth+HGI GRCh38, LDSC/1000G GRCh37, rsID join); config.yaml hm3 comment de-staled to Zenodo. F4: HGI entity status updated. Manifests regenerated from local checksummed payloads (no re-download); validate PASS; graph rebuilt.
 - 2026-07-04: plan:0009 Task 2 (hormone instruments) executed on branch plan0009-task2-hormone-instruments (worktree). Built 6 Ruth SHBG/testosterone exposure instruments via code/workflows/wave1-mr-hormone/ (r-mr env; TwoSampleMR 0.7.9 / ieugwasr 1.1.0, version-assert passed). p<5e-8 -> local 1000G-EUR clump (rsID, r2<0.001/10Mb, no MHC) -> F=(b/se)^2, tiered gate mean_F>10 AND n>=3. ALL SIX ELIGIBLE, 0 quarantined: SHBG combined 353 (meanF 155), SHBG male 213 (151), SHBG female 201 (121), T combined 160 (90), T male 159 (95), T female 192 (92); min single-instrument F>22 throughout. The a-priori female-testosterone weak-stratum concern did not materialise. Peak RSS ~8.6GB, ~15min at -c1. Caveat for Task 3/4: ~81-87% of genome-wide-sig SNPs absent from the 1000G-EUR panel (16.3M-variant sumstats vs 1.84M-variant panel) -> clumping/instrument selection restricted to panel-covered subset; captured exactly in each sidecar attrition.n_absent_in_panel (fixed from a silent-null; ieugwasr log conflates LD+absence). Subagent-driven: fresh implementer authored Task-1 code (review Approved), controller ran + inspected + fixed. Outputs gitignored under results/wave1-mr-hormone-pilot/instruments_manifest.json. NOT committed to main yet; final whole-branch review pending. Next: Task 3 naive MR (reuses instrument TSVs).
 
-## [t090] explore-ideas: represent multi-lens convergent candidates instead of forcing keep-one
+## [t095] explore-followup batch 1: innate-immune memory / trained immunity (q0023,q0024,q0026)
 - priority: P2
 - status: proposed
 - aspects: []
-- group: explore-ideas-tooling
+- group: explore-followups
 - created: 2026-07-04
 
-When two lenses independently generate the same idea (2026-07-04 pass: trained-immunity/HSPC via mechanism+analogy; critical-slowing-down via analogy+temporal), the report emits two blocks and the human must manually keep one. Two gaps: (1) no cross-candidate dedup in Phase 3 and no duplicate_of/convergence field, so apply would create duplicate entities; add convergence detection + apply-time collision warning. (2) Deeper design point (Keith): the entity model forces one lens per entity and discards the complementary view; explore whether a question/hypothesis can natively carry multiple lens perspectives rather than throwing one out. Complementary multi-lens views are signal, not redundancy.
+Highest-value novel AREA from explore-2026-07-04. Entities: q0023 (cGAS-STING as upstream driver of persistent IFN-I), q0024 (NLRP3/gasdermin-D pyroptosis self-amplifying IL-1b/IL-18 loop), q0026 (IL-6/STAT3 imprinting of hematopoietic progenitors -> hyperreactive monocytes, antigen-independent). Follow-up: research-topic on innate-immune memory / trained immunity in PAIS (this is an under-covered AREA that merits a topic entity, not just questions - see upstream fb-2026-07-04-007), then research-papers to seed it.
 
-## [t091] explore-ideas: generate gap-closing follow-up tasks for kept candidates
+## [t096] explore-followup batch 2: resolution-failure & thromboinflammatory coupling (q0035,q0038,q0025)
 - priority: P2
 - status: proposed
 - aspects: []
-- group: explore-ideas-tooling
+- group: explore-followups
 - created: 2026-07-04
 
-Applying kept candidates creates question/hypothesis stubs but no path to actually close the gap, so important gaps risk being stubbed and forgotten. Add a phase (or --apply side-effect / companion flag) that emits a follow-up task group per kept candidate, wired to the natural next actions: research-topic / research-papers for literature gaps, find-datasets / catalog-datasets for data needs.
+Entities: q0035 (specialized pro-resolving mediator deficit as distinct endotype - novel), q0038 (NETosis histones/eDNA as microclot scaffold coupling vascular+autoimmune arms), q0025 (IFN-I -> tryptophan malabsorption -> platelet serotonin depletion -> vagal hypofunction cognition chain). Follow-up: research-papers on resolution biology (SPMs/lipoxins) and NET-microclot mechanisms in PAIS.
 
-## [t092] explore-ideas: support proposed_kind topic/theme end-to-end
+## [t097] explore-followup batch 3: population boundary conditions (q0031,q0032,q0033,q0034,q0040)
 - priority: P2
 - status: proposed
 - aspects: []
-- group: explore-ideas-tooling
+- group: explore-followups
 - created: 2026-07-04
 
-Original goal not yet implemented. Generation lenses only produce question/hypothesis; apply reports topic/theme keeps as apply-manually. Extend generation to propose topics/themes and wire apply to create them. Especially valuable given the 2026-07-04 questions expose whole under-covered AREAS (innate-immune memory / trained immunity, resolution-failure biology, population boundary conditions such as immunosuppressed/LMIC/frailty) that merit topic entities, not just individual questions.
+Under-covered populations flagged as novel gaps. Entities: q0031 (chronically immunosuppressed hosts), q0032 (LMIC / ancestrally diverse populations), q0033 (frailty/pre-frailty bidirectional), q0034 (pre-existing atopic/MCAS subgroup), q0040 (pregnancy/peripartum immune milieu). Follow-up: research-topic on PAIS population boundary conditions / effect modifiers (merits a topic entity - fb-2026-07-04-007), plus find-datasets for cohorts covering these strata (mind gated-dataset transparency bar).
 
-## [t093] explore-ideas polish: meta-kind registration, report prose-lint exemption, anchor + phase-1 drift
+## [t098] explore-followup batch 4: causal-inference & measurement methodology (q0027,q0030,q0039,q0028,q0029)
+- priority: P2
+- status: proposed
+- aspects: []
+- group: explore-followups
+- created: 2026-07-04
+
+Entities: q0027 (two-sample MR for causal direction across triggers), q0030 (target trial emulation in multi-trigger EHR), q0039 (negative-control outcome designs to bound utilization confounding), q0028 (wearable+EMA ambulatory PEM phenotyping), q0029 (tissue-resolved spatial multi-omics). Follow-up: find-datasets / catalog-datasets for GWAS+outcome instruments (MR), multi-trigger EHR (TTE/negative-control), and wearable cohorts; scope method feasibility per candidate.
+
+## [t099] explore-followup batch 5: contrarian null-hypothesis probes (h0010,h0011,q0041,h0012,q0042)
 - priority: P3
 - status: proposed
 - aspects: []
-- group: explore-ideas-tooling
+- group: explore-followups
 - created: 2026-07-04
 
-Bundle of smaller frictions from the first run: (a) type:meta explorations are not a registered entity kind -> unknown_entity_kind graph-audit warning (also affects the next-steps meta file); register meta or route to a recognized kind. (b) bare-author-year prose lint has no per-directory exemption; citation-dense explore/search reports need one, or the command should emit [@key]-formatted cites. (c) Phase-3 anchor resolution keys on DOI but paper frontmatter DOIs are empty -> resolve by citekey/title instead. (d) Command Phase-1 reads specs/research-question.md which no longer exists (now entities/research-question.md). (e) Command says dispatch bare idea-lens-researcher but the harness only exposes the namespaced science:idea-lens-researcher; reconcile or document.
+Sharpens-existing contrarian challenges to core project assumptions. Entities: h0010 (attractor is a slow heterogeneous recovery gradient, not a stable state), h0011 (acute severity does NOT predict chronic fatigue - only objective organ sequelae), q0041 (female predominance as ascertainment artifact), h0012 (fatigue/cognitive symptoms as trigger-nonspecific sickness-behavior, not trigger-specific pathology), q0042 (cross-trigger ~10-20% chronic fraction as case-definition artifact). Follow-up: research-papers / targeted re-analysis to stress-test each null against existing longitudinal + controlled evidence.
 
-## [t094] Act on explore-2026-07-04: triage, apply, and spawn gap-closing follow-ups
-- priority: P2
+## [t100] explore-followup batch 6: temporal dynamics & timing (q0036,q0037,q0045,q0046,q0047)
+- priority: P3
 - status: proposed
 - aspects: []
-- group: explore-ideas
+- group: explore-followups
 - created: 2026-07-04
 
-entities/meta/explorations/explore-2026-07-04.md holds 30 candidates (17 novel, 13 sharpens-existing). Steps: set keep/drop per YAML block; consolidate the two convergent pairs (trained-immunity/HSPC; critical-slowing-down) into single entities; run science explore-ideas apply --from explore-2026-07-04 --model-id <model>; then for each kept candidate open the natural follow-up (research-topic/research-papers, find-datasets/catalog-datasets). Highest-value novel gaps: innate-immune memory (cGAS-STING, NLRP3, trained-immunity/HSPC), SPM resolution-failure endotype, persister-cell viral dormancy, and under-covered populations (immunosuppressed, LMIC/ancestral, frailty).
+Entities: q0036 (critical-slowing-down premonitory early-warning signals - novel), q0037 (latent homeostatic fragility / lower re-entry threshold on reinfection - novel), q0045 (temporal causal ordering of homeostatic domain failure), q0046 (mechanistic basis of the time-limited acute-phase intervention window), q0047 (menstrual/ultradian periodicity as subphenotype discriminator). Follow-up: research-papers on time-series/dynamical-systems methods and longitudinal PAIS trajectories; identify densely-sampled cohorts for CSD testing.
+
+## [t101] explore-followup batch 7: persistence, dormancy & tolerance-collapse analogies (q0043,q0044)
+- priority: P3
+- status: proposed
+- aspects: []
+- group: explore-followups
+- created: 2026-07-04
+
+Cross-domain analogies sharpening existing persistence/autoimmunity topics. Entities: q0043 (bacterial persister-cell bet-hedging as model for stochastic viral dormancy in tissue reservoirs), q0044 (chronic GvHD as analogy for post-viral tolerance-infrastructure collapse). Follow-up: research-papers bridging persister-cell biology and cGvHD tolerance literature into topic:antigen-pathogen-persistence and topic:post-infectious-dysautonomia-and-autoimmunity.
