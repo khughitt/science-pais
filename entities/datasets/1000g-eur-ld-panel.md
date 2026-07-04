@@ -17,9 +17,9 @@ access:
   availability: available
   verified: true
   source_url: https://doi.org/10.5281/zenodo.6614170
-  verification_method: landing-confirmed
+  verification_method: metadata-confirmed
   last_reviewed: '2026-07-04'
-  verified_by: agent (plan:0007 review)
+  verified_by: agent (plan:0007 run)
   reproducibility:
     obtainability: public
     execution: local
@@ -100,3 +100,7 @@ tracked as a first-class dataset per the project's reproducibility standard
   (https, DOI 10.5281/zenodo.6614170, CC-BY-4.0) after the plain-http MRC-IEU
   fileserve source proved unreachable/insecure; per-file md5 pinned in
   `config.yaml`. Build reconciliation = rsID (GRCh37 panel vs GRCh38 sumstats).
+- 2026-07-04 (agent, plan:0007 run): **retrieved + md5-verified**. 1000G_EUR
+  bed/bim/fam downloaded from Zenodo, md5s matched; SHA-256 bed
+  `96da3683…f53a2463`, bim `0375fd02…1478653e`, fam `ccc5f199…c9c5edc8`
+  (503 EUR samples, 1,836,406 variants). Used as the local plink LD-clumping panel.

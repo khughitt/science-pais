@@ -17,9 +17,9 @@ access:
   availability: available
   verified: true
   source_url: https://www.ebi.ac.uk/gwas/studies/GCST90454541
-  verification_method: landing-confirmed
-  last_reviewed: '2026-07-03'
-  verified_by: agent (verify-access)
+  verification_method: metadata-confirmed
+  last_reviewed: '2026-07-04'
+  verified_by: agent (plan:0007 run)
   reproducibility:
     obtainability: public
     execution: local
@@ -56,7 +56,7 @@ related:
 identity_context:
   taxon: 9606
   assembly:
-    label: UNKNOWN
+    label: GRCh38
     registry: dataset:assembly-registry
     resolution_status: declared_unresolved
 ---
@@ -138,4 +138,5 @@ GWAS is mixed-sex and carries no `stratification: sex`.
 ## Access verification log
 
 - 2026-07-03 (agent (verify-access)): COVID-19 HGI long-COVID summary statistics: fullPvalueSet=true harmonised genome-wide flat files on the GWAS Catalog FTP (GCST90454540-543), no registration/gating; landing page + downloadable files confirmed.
-- 2026-07-04 (agent): consumed by plan:0007-wave1-mr-autoimmune-longcovid-pilot (Wave-1 MR pilot; outcome GWAS, broad/population-controls stratum GCST90454541, European-dominant multi-ancestry, GRCh38). File retrieval + assembly-label resolution pending per that plan's task 1.
+- 2026-07-04 (agent): consumed by plan:0007-wave1-mr-autoimmune-longcovid-pilot (Wave-1 MR pilot; outcome GWAS, broad/population-controls stratum GCST90454541, European-dominant multi-ancestry, GRCh38).
+- 2026-07-04 (agent, plan:0007 run): **retrieved + verified**. Harmonised fullPvalueSet file `GCST90454541.h.tsv.gz` pulled from the GWAS Catalog FTP; SHA-256 `bd7e0a06…bd00a6891`, 9,442,353 rows, build GRCh38 (assembly label resolved). Used as the MR outcome (streamed instrument-SNP extraction, mechanics-only).

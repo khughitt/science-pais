@@ -17,9 +17,9 @@ access:
   availability: available
   verified: true
   source_url: https://www.ebi.ac.uk/gwas/studies/GCST003156
-  verification_method: landing-confirmed
-  last_reviewed: '2026-07-03'
-  verified_by: agent (verify-access)
+  verification_method: metadata-confirmed
+  last_reviewed: '2026-07-04'
+  verified_by: agent (plan:0007 run)
   reproducibility:
     obtainability: public
     execution: local
@@ -52,7 +52,7 @@ related:
 identity_context:
   taxon: 9606
   assembly:
-    label: UNKNOWN
+    label: GRCh38
     registry: dataset:assembly-registry
     resolution_status: declared_unresolved
 ---
@@ -118,4 +118,5 @@ decision** (assumption 5), since the SLE signal is MHC-dense.
 ## Access verification log
 
 - 2026-07-03 (agent (verify-access)): Bentham 2015 SLE GWAS (GCST003156): fullPvalueSet=true harmonised genome-wide summary statistics on the GWAS Catalog FTP, no registration/gating; landing page + downloadable files confirmed.
-- 2026-07-04 (agent): consumed by plan:0007-wave1-mr-autoimmune-longcovid-pilot (Wave-1 MR pilot; exposure GWAS). File retrieval + assembly-label resolution pending per that plan's task 1.
+- 2026-07-04 (agent): consumed by plan:0007-wave1-mr-autoimmune-longcovid-pilot (Wave-1 MR pilot; exposure GWAS).
+- 2026-07-04 (agent, plan:0007 run): **retrieved + verified**. Harmonised fullPvalueSet file `26502338-GCST003156-EFO_0002690.h.tsv.gz` pulled from the GWAS Catalog FTP; SHA-256 `4480ff36…c02bd6583`, 7,914,824 rows, build GRCh38 (assembly label resolved). Used as the MR exposure (32 clumped instruments, mean F=76.4).
