@@ -100,29 +100,79 @@ def acquire_one(spec: dict, dest: Path) -> dict:
     return rec
 
 
-def capture_meta_n(harmonised_dir: str, dest: Path) -> dict:
-    """Pull the sibling *-meta.yaml (small) and extract any sample-size fields.
+def extract_total_n(meta: object) -> dict:
+    """Construct the outcome TOTAL sample size from a parsed GWAS-SSF meta mapping.
 
-    GWAS-SSF meta files vary; we record whatever sample-size-ish keys are present
-    rather than assume a schema. Non-fatal: absence is logged, not a hard stop
-    (N can also be read from the outcome dataset entity / DF4 release notes).
+    Pure (no I/O), so it is unit-testable against a staged -meta.yaml. MRlap's
+    observed-scale overlap correction needs the study TOTAL N (case + control),
+    not a case/control split (plan:0009 Task 4 / KD-scale). GWAS-SSF meta files
+    carry per-cohort entries under a nested `samples:` list, each with a
+    `sample_size` (the cohort case+control total); the study total is their sum.
+    Top-level keys are a fallback for other schemas.
+
+    HARD-STOP if no total N can be constructed — Task 4 must receive a
+    machine-checked total from this manifest, not fall back to a prose value.
+
+    Note: in this HGI release `samples[*].sample_size` is the per-cohort TOTAL
+    only (a `case_control_study` flag is present, but no `n_cases`/`n_controls`),
+    so a case/control split is NOT available from the meta and must not be implied.
     """
+    if not isinstance(meta, dict):
+        raise SystemExit("acquire: outcome -meta.yaml is not a mapping; cannot construct total N — HALT")
+
+    # Nested per-cohort samples[*].sample_size (each a case+control total).
+    components = []
+    for s in meta.get("samples", []) or []:
+        if isinstance(s, dict) and "sample_size" in s:
+            anc = s.get("sample_ancestry_category") or s.get("sample_ancestry") or ["unspecified"]
+            components.append({
+                "ancestry": anc[0] if isinstance(anc, list) and anc else str(anc),
+                "sample_size": int(s["sample_size"]),
+                "case_control_study": bool(s.get("case_control_study", False)),
+            })
+    nested_total = sum(c["sample_size"] for c in components) if components else None
+
+    # Fallback: top-level sample-size-ish keys (older/other GWAS-SSF schemas).
+    top_fields = {
+        k: v for k, v in meta.items()
+        if re.search(r"(sample_size|n_cas|n_con|ncase|ncontrol)", str(k), re.I)
+    }
+    total = nested_total
+    if total is None and isinstance(top_fields.get("sample_size"), int):
+        total = int(top_fields["sample_size"])
+    if total is None:
+        raise SystemExit(
+            "acquire: could not construct outcome total N from -meta.yaml "
+            "(no nested samples[*].sample_size and no top-level sample_size) — HALT"
+        )
+
+    return {
+        "sample_size_total": total,
+        "sample_size_policy": "total_observed_n",
+        "sample_size_components": components,
+        "case_control_split_available": False,
+        "case_control_note": (
+            "GWAS-SSF -meta.yaml carries per-cohort TOTAL sample_size only "
+            "(case_control_study flag, no n_cases/n_controls); MRlap needs total "
+            "observed N, not the split — a case/control breakdown is NOT available here."
+        ),
+        "top_level_sample_size_fields": top_fields,
+    }
+
+
+def capture_meta_n(harmonised_dir: str, dest: Path) -> dict:
+    """Fetch the sibling *-meta.yaml, persist it, and construct the total N."""
     try:
         url = _resolve_in_dir(harmonised_dir, r"\.h\.tsv\.gz-meta\.yaml")
     except SystemExit as e:
-        return {"meta_yaml": None, "note": f"no -meta.yaml resolved ({e})"}
+        raise SystemExit(
+            f"acquire: outcome -meta.yaml not resolved ({e}); cannot construct total N — HALT"
+        )
     raw = _get(url)
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_bytes(raw)
-    n_fields: dict = {}
-    try:
-        meta = yaml.safe_load(raw.decode("utf-8", errors="replace")) or {}
-        for k, v in (meta.items() if isinstance(meta, dict) else []):
-            if re.search(r"(sample_size|n_cas|n_con|ncase|ncontrol|number.*sample)", str(k), re.I):
-                n_fields[k] = v
-    except Exception as e:  # noqa: BLE001 - meta parsing is best-effort
-        n_fields = {"parse_error": str(e)}
-    return {"meta_yaml": str(dest), "source_url": url, "sample_size_fields": n_fields}
+    meta = yaml.safe_load(raw.decode("utf-8", errors="replace")) or {}
+    return {"meta_yaml": str(dest), "source_url": url, **extract_total_n(meta)}
 
 
 def main() -> int:

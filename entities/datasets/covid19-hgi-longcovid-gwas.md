@@ -65,7 +65,10 @@ identity_context:
 
 # COVID-19 Host Genetics Initiative — long-COVID GWAS summary statistics (2025 release)
 
-**Candidate dataset.** `status: candidate` — catalogued but not yet acquired.
+**Candidate dataset.** `status: candidate` — **acquired + checksummed** (the
+broad/population stratum GCST90454541) for `plan:0007` and re-staged for
+`plan:0009` Task 1 (see the verification log); status stays `candidate` until a
+result promotes the line.
 
 ## What it is
 

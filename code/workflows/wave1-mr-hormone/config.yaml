@@ -83,8 +83,8 @@ outcome:
 # internally and needs `ld` (eur_w_ld_chr folder) + `hm3` (w_hm3.snplist).
 # eur_w_ld_chr HARDENED to the DOI-archival, checksummed Zenodo mirror (record
 # 8182036) — NOT MRlap's non-archival UT-Austin Box link (plan:0009 review Dim 3).
-# w_hm3.snplist from the maintained Broad Alkes-group GCS bucket (https, non-DOI;
-# SHA-256 recorded on download — residual reproducibility note).
+# w_hm3.snplist likewise on a DOI-archival, checksummed Zenodo mirror (record
+# 7773502, md5-verified) — the Broad Alkes-group GCS bucket 404'd at staging.
 ldsc_ref:
   name: "eur-ldsc-ld-score-reference"
   build: "GRCh37"                     # rsID-keyed; reconcile by rsID (build-independent)

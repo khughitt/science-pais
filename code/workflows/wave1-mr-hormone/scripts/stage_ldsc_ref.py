@@ -8,13 +8,16 @@ dataset:eur-ldsc-ld-score-reference. MRlap runs cross-trait LDSC internally and
 needs two path arguments: `ld` = the eur_w_ld_chr folder, `hm3` = w_hm3.snplist.
 
 - eur_w_ld_chr: DOI-archival, checksummed Zenodo mirror (record 8182036), md5
-  verified (HARD-STOP on mismatch), extracted, per-chromosome files counted.
+  verified (HARD-STOP on mismatch), extracted; the required chr 1..22 ldscore +
+  M_5_50 files are validated exactly and archival extras recorded as ignored.
   Deliberately NOT MRlap's non-archival UT-Austin Box link (plan:0009 review Dim 3).
-- w_hm3.snplist: maintained Broad Alkes-group GCS bucket (https, non-DOI). No
-  published md5 at source, so SHA-256 is recorded on download (residual repro note).
+- w_hm3.snplist: DOI-archival, checksummed Zenodo mirror (record 7773502), md5
+  verified (HARD-STOP on mismatch). The original Broad Alkes-group GCS bucket
+  404'd at staging, so the Zenodo mirror is the pinned source.
 
-Build is GRCh37 but the reference is rsID-keyed, so reconciliation with the
-GRCh37-native Ruth exposures and the GRCh38 outcome is by rsID (build-independent).
+The LDSC reference is GRCh37 and rsID-keyed. The staged Ruth exposures and HGI
+outcome are GRCh38 harmonised sumstats, so reconciliation is by rsID/hm_rsid
+(build-independent), with a hard stop later if rsIDs are missing.
 """
 from __future__ import annotations
 
@@ -63,11 +66,24 @@ def stage_eur_w_ld_chr(spec: dict, ldsc_dir: Path) -> dict:
         if len(cands) != 1:
             raise SystemExit(f"stage_ldsc_ref: cannot locate eur_w_ld_chr folder, found {cands} — HALT")
         ld_folder = cands.pop()
-    ldscore_files = sorted(ld_folder.glob("*.l2.ldscore.gz"))
-    if len(ldscore_files) < 22:
+    # Required set = chromosomes 1..22, each with its matching .l2.M_5_50 sidecar.
+    # Archival extras (e.g. `6_old.l2.ldscore.gz`) are recorded as ignored, NOT
+    # counted as chromosomes — MRlap/LDSC address the folder by chr prefix.
+    all_ldscore = sorted(ld_folder.glob("*.l2.ldscore.gz"))
+    required_names = {f"{c}.l2.ldscore.gz" for c in range(1, 23)}
+    missing = []
+    for chrom in range(1, 23):
+        score = ld_folder / f"{chrom}.l2.ldscore.gz"
+        m5 = ld_folder / f"{chrom}.l2.M_5_50"
+        if not score.is_file():
+            missing.append(f"{score.name} (missing ldscore)")
+        elif not m5.is_file():
+            missing.append(f"{m5.name} (missing M_5_50 sidecar)")
+    if missing:
         raise SystemExit(
-            f"stage_ldsc_ref: expected >=22 per-chromosome *.l2.ldscore.gz, found {len(ldscore_files)} — HALT"
+            f"stage_ldsc_ref: eur_w_ld_chr missing required chr 1..22 files: {missing} — HALT"
         )
+    extras = sorted(f.name for f in all_ldscore if f.name not in required_names)
     return {
         "archive": str(archive),
         "archive_md5": got_md5,
@@ -76,7 +92,9 @@ def stage_eur_w_ld_chr(spec: dict, ldsc_dir: Path) -> dict:
         "doi": spec.get("doi", ""),
         "license": spec.get("license", ""),
         "ld_folder": str(ld_folder),
-        "n_ldscore_files": len(ldscore_files),
+        "required_chromosomes": "1..22",
+        "n_required_ldscore_files": 22,
+        "extra_ldscore_files_ignored": extras,
     }
 
 
@@ -128,7 +146,11 @@ def main() -> int:
     ldsc_dir = Path(a.ldsc_dir)
 
     eur = stage_eur_w_ld_chr(ref["eur_w_ld_chr"], ldsc_dir)
-    sys.stderr.write(f"stage_ldsc_ref: eur_w_ld_chr md5 OK ({eur['archive_md5'][:12]}…), {eur['n_ldscore_files']} chr files\n")
+    sys.stderr.write(
+        f"stage_ldsc_ref: eur_w_ld_chr md5 OK ({eur['archive_md5'][:12]}…), "
+        f"{eur['n_required_ldscore_files']} required chr files (1..22), "
+        f"{len(eur['extra_ldscore_files_ignored'])} extra ignored\n"
+    )
     hm3 = stage_hm3(ref["hm3"], ldsc_dir)
     sys.stderr.write(f"stage_ldsc_ref: w_hm3.snplist rows={hm3['n_rows']} sha256={hm3['archive_sha256'][:12]}…\n")
 
@@ -137,8 +159,10 @@ def main() -> int:
         "build": ref["build"],
         "rsid_keyed": True,
         "build_reconciliation": (
-            "reference rsID-keyed (GRCh37 underlying); reconcile with GRCh37 Ruth + "
-            "GRCh38 outcome by rsID → build-independent; PASS."
+            "Staged Ruth exposures and HGI outcome are GRCh38 harmonised sumstats; "
+            "the LDSC (eur_w_ld_chr) and 1000G references are GRCh37. The LDSC "
+            "reference is rsID-keyed, so join is by rsID/hm_rsid → build-independent; "
+            "hard-stop later if rsIDs are missing. PASS."
         ),
         "eur_w_ld_chr": eur,
         "hm3": hm3,
