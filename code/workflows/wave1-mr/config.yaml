@@ -58,10 +58,23 @@ ld_panel:
   name: "1000g-eur-phase3"
   superpopulation: "EUR"
   build: "GRCh37"
-  # de-facto ready-to-use plink bundle for two-sample-MR clumping (MRC-IEU 1kg.v3):
-  source_url: "http://fileserve.mrcieu.ac.uk/ld/1kg.v3.tgz"
-  bfile_prefix: "EUR"                 # <prefix>.bed/.bim/.fam after extraction
-  sha256: "PENDING-RETRIEVAL"
+  # HARDENED (plan:0007 pipeline-review Dim 3): https + DOI-archival + checksummed,
+  # replacing the plain-http, single-host MRC-IEU fileserve 1kg.v3 source. Zenodo
+  # record 6614170 (GRCh37, per-superpopulation plink bfiles), CC-BY-4.0. Files are
+  # downloaded directly (no tgz), and each md5 below is verified on download.
+  doi: "10.5281/zenodo.6614170"
+  license: "CC-BY-4.0"
+  bfile_prefix: "1000G_EUR"           # <prefix>.bed/.bim/.fam
+  files:
+    bed:
+      url: "https://zenodo.org/api/records/6614170/files/1000G_EUR.bed/content"
+      md5: "a163c74ea92676c9ada76fe5eb3b2ec9"
+    bim:
+      url: "https://zenodo.org/api/records/6614170/files/1000G_EUR.bim/content"
+      md5: "81b1ee40a05ef5be98ad3e496c71d708"
+    fam:
+      url: "https://zenodo.org/api/records/6614170/files/1000G_EUR.fam/content"
+      md5: "669a4260fda7a9e1dd7df374aff294ea"
 
 # ------------------------------------------------------------ instrument -----
 # plan:0007 Approach / Task 2 — genome-wide-significant, MHC-excluded, clumped.

@@ -4,11 +4,12 @@
 # science:end
 """Stage the 1000G-EUR LD reference panel for local plink clumping.
 
-plan:0007 Task 2 (first half) / dataset:1000g-eur-ld-panel. Download + extract
-the MRC-IEU 1kg.v3 EUR plink bfile, SHA-256 everything, and record the
-build-reconciliation decision: the panel is GRCh37, the sumstats are GRCh38, so
-clumping proceeds by **rsID** (hm_rsid), which is build-independent. That is the
-reconciliation; a positional join would be the hard-stop path (not used here).
+plan:0007 Task 2 (first half) / dataset:1000g-eur-ld-panel. Downloads the three
+EUR plink files directly from the HARDENED source — Zenodo 6614170 (https,
+DOI-archival, CC-BY-4.0), verifying each file's published md5 (hard-stop on
+mismatch) and recording SHA-256. The panel is GRCh37; the sumstats are GRCh38, so
+clumping proceeds by rsID (hm_rsid), which is build-independent — that is the
+build reconciliation (a positional join would be the hard-stop path, not used).
 """
 from __future__ import annotations
 
@@ -16,7 +17,6 @@ import argparse
 import hashlib
 import json
 import sys
-import tarfile
 import urllib.request
 from pathlib import Path
 
@@ -25,63 +25,59 @@ import yaml
 _UA = {"User-Agent": "wave1-mr-pilot/plan-0007 (research; contact via repo)"}
 
 
-def _sha256(path: Path) -> str:
-    h = hashlib.sha256()
-    with open(path, "rb") as fh:
-        while chunk := fh.read(1 << 20):
-            h.update(chunk)
-    return h.hexdigest()
-
-
-def download(url: str, dest: Path) -> str:
+def _hash_download(url: str, dest: Path) -> tuple[str, str]:
+    """Stream-download; return (md5_hex, sha256_hex)."""
     dest.parent.mkdir(parents=True, exist_ok=True)
+    md5, sha = hashlib.md5(), hashlib.sha256()
     req = urllib.request.Request(url, headers=_UA)
     with urllib.request.urlopen(req, timeout=600) as resp, open(dest, "wb") as fh:
         while chunk := resp.read(1 << 20):
             fh.write(chunk)
-    return _sha256(dest)
+            md5.update(chunk)
+            sha.update(chunk)
+    return md5.hexdigest(), sha.hexdigest()
 
 
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--config", required=True)
-    p.add_argument("--bfile-prefix", required=True)   # e.g. data/raw/ld/1000g-eur-phase3/EUR
+    p.add_argument("--bfile-prefix", required=True)   # e.g. data/raw/ld/1000g-eur-phase3/1000G_EUR
     p.add_argument("--manifest", required=True)
     a = p.parse_args()
     cfg = yaml.safe_load(Path(a.config).read_text())
     ld = cfg["ld_panel"]
 
     prefix = Path(a.bfile_prefix)
-    out_dir = prefix.parent
-    out_dir.mkdir(parents=True, exist_ok=True)
-
-    tgz = out_dir / "1kg.v3.tgz"
-    tgz_sha = download(ld["source_url"], tgz)
-    with tarfile.open(tgz, "r:gz") as tf:
-        tf.extractall(out_dir, filter="data")
-
-    bfiles = {ext: prefix.with_suffix(ext) for ext in (".bed", ".bim", ".fam")}
-    missing = [str(p) for p in bfiles.values() if not p.exists()]
-    if missing:
-        raise SystemExit(
-            f"stage_ld: expected plink bfile {a.bfile_prefix}.{{bed,bim,fam}} after extract; missing {missing}"
-        )
+    sha_by_ext: dict[str, str] = {}
+    for ext, spec in ld["files"].items():
+        dest = prefix.with_suffix(f".{ext}")
+        got_md5, sha = _hash_download(spec["url"], dest)
+        if got_md5 != spec["md5"]:
+            raise SystemExit(
+                f"stage_ld: md5 mismatch for {dest.name}: expected {spec['md5']}, got {got_md5} — HALT"
+            )
+        sha_by_ext[ext] = sha
+        sys.stderr.write(f"stage_ld: {dest.name} md5 OK ({got_md5[:12]}…) sha256={sha[:12]}…\n")
 
     manifest = {
         "name": ld["name"],
         "superpopulation": ld["superpopulation"],
         "build": ld["build"],
-        "source_url": ld["source_url"],
-        "archive_sha256": tgz_sha,
+        "doi": ld["doi"],
+        "license": ld["license"],
         "bfile_prefix": a.bfile_prefix,
-        "bfile_sha256": {ext.lstrip("."): _sha256(p) for ext, p in bfiles.items()},
+        "file_md5": {ext: spec["md5"] for ext, spec in ld["files"].items()},
+        "file_sha256": sha_by_ext,
+        # emit_datapackage_qa reads `archive_sha256`; use the .bed digest as the panel's identity.
+        "archive_sha256": sha_by_ext["bed"],
+        "source_url": f"https://doi.org/{ld['doi']}",
         "build_reconciliation": (
             "panel=GRCh37, sumstats=GRCh38 → clump by rsID (hm_rsid), "
             "build-independent; PASS (plan:0007 Task 2)."
         ),
     }
     Path(a.manifest).write_text(json.dumps(manifest, indent=2))
-    sys.stderr.write(f"stage_ld: {ld['name']} staged; archive sha256={tgz_sha[:12]}…\n")
+    sys.stderr.write(f"stage_ld: {ld['name']} staged from {ld['doi']} (md5-verified)\n")
     return 0
 
 
