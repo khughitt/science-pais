@@ -25,9 +25,10 @@ access:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "MRlap's internal cross-trait LDSC needs two reference inputs: the European LD-score set (eur_w_ld_chr, the `ld` argument) and the HapMap3 SNP list (w_hm3.snplist, the `hm3` argument). eur_w_ld_chr is pinned to a DOI-archival, checksummed Zenodo mirror (record 8182036, eur_w_ld_chr.tar.gz, md5 e2f16343c4cfaa76caa7d0c03d26b489, CC-BY-4.0) — deliberately NOT the non-archival UT-Austin Box share link MRlap's README points at, mirroring the plan:0007 1000G Zenodo-hardening. Third-party-reproducible (top class). w_hm3.snplist archival source is confirmed at staging (see caveats)."
+    notes: "MRlap's internal cross-trait LDSC needs two reference inputs: the European LD-score set (eur_w_ld_chr, the `ld` argument) and the HapMap3 SNP list (w_hm3.snplist, the `hm3` argument). BOTH are pinned to DOI-archival, checksummed Zenodo mirrors — eur_w_ld_chr: record 8182036 (eur_w_ld_chr.tar.gz, md5 e2f16343c4cfaa76caa7d0c03d26b489, CC-BY-4.0); w_hm3.snplist: record 7773502 (w_hm3.snplist.gz, md5 153ecc2bcfa740afafe656e6a384d769, CC-BY-4.0) — deliberately NOT the non-archival UT-Austin Box share link MRlap's README points at nor the Broad GCS bucket (404 at staging), mirroring the plan:0007 1000G Zenodo-hardening. Third-party-reproducible (top class)."
 accessions:
 - DOI:10.5281/zenodo.8182036
+- DOI:10.5281/zenodo.7773502
 - PMID:25642630
 - GitHub:bulik/ldsc
 ontology_terms:
@@ -97,12 +98,12 @@ and the `plan:0009` pipeline-review Dim-3 finding).
   (plain-http MRC-IEU → Zenodo DOI). The published md5 is verified on download; the
   extracted per-chromosome `.l2.ldscore.gz` / `.l2.M_5_50` set is checksummed and
   row-counted into the run manifest.
-- **w_hm3.snplist — archival source confirmed at staging (Task 1 to-do).** Not bundled
-  in the eur_w_ld_chr Zenodo record. Canonical source is the Broad Alkes-group
-  `w_hm3.snplist.bz2` (https, `data.broadinstitute.org/alkesgroup/LDSCORE/`) — verify a
-  DOI-archival mirror first; if none, pin the Broad https URL with a recorded SHA-256
-  (checksummed-on-download) and log the non-DOI transport as the residual reproducibility
-  note. Do not proceed to MRlap (Task 4) without a checksummed `hm3` file.
+- **w_hm3.snplist — openly downloadable from a DOI-archival, checksummed source.**
+  Zenodo record 7773502 (DOI 10.5281/zenodo.7773502, `w_hm3.snplist.gz`, 5.2 MB, md5
+  `153ecc2bcfa740afafe656e6a384d769`, CC-BY-4.0). The Broad Alkes-group GCS bucket
+  (`storage.googleapis.com/broad-alkesgroup-public/LDSCORE/w_hm3.snplist.bz2`) **404'd at
+  staging** and the historical `data.broadinstitute.org/alkesgroup` path is gone, so the
+  Zenodo mirror is the pinned source — md5 verified on download.
 - **Build = GRCh37 (native, rsID-keyed).** The LD scores are keyed by rsID (not
   coordinates), so alignment to the GRCh37-native Ruth exposures and the GRCh38 outcome
   is by **rsID**, matching the `plan:0007`/`plan:0009` reconciliation policy. Task 1
@@ -117,7 +118,15 @@ and the `plan:0009` pipeline-review Dim-3 finding).
   LDSC reference (plan:0009 pipeline-review Dim-3 finding — parallel to the 1000G-panel
   promotion in the plan:0007 review). eur_w_ld_chr source pinned to the DOI-archival,
   checksummed Zenodo record 8182036 (md5 `e2f16343c4cfaa76caa7d0c03d26b489`, CC-BY-4.0),
-  replacing MRlap's non-archival UT-Austin Box link (provenance only). w_hm3.snplist
-  archival source to be confirmed at download (Broad Alkes-group https as checksummed
-  fallback). Retrieval + per-file SHA-256 + extracted-content row counts pending the
-  Task-1 staging run (network-gated).
+  replacing MRlap's non-archival UT-Austin Box link (provenance only).
+- 2026-07-04 (agent, plan:0009 Task 1 staging run): **eur_w_ld_chr retrieved + md5-verified**
+  from Zenodo 8182036 (md5 `e2f16343c4cf…` matched); tar extracted to `data/raw/ldsc/eur_w_ld_chr/`
+  with 23 per-chromosome `*.l2.ldscore.gz` files (+ `*.l2.M_5_50`). The initial w_hm3
+  source (Broad GCS `w_hm3.snplist.bz2`) **404'd**; the stager hard-stopped (no silent
+  fallback). **w_hm3.snplist re-pinned to the DOI-archival Zenodo record 7773502**
+  (`w_hm3.snplist.gz`, md5 `153ecc2bcfa740afafe656e6a384d769`, CC-BY-4.0) — so both
+  MRlap references now clear the third-party-reproducible top bar. Recorded SHA-256s:
+  eur_w_ld_chr.tar.gz `9537f00e…6060b069` (23 per-chromosome `*.l2.ldscore.gz` extracted);
+  w_hm3.snplist.gz `3c876903…14d45a48` → `w_hm3.snplist` with **1,217,312** SNPs (the
+  expected HapMap3 count). Staged off-Dropbox at `/data/proj/post-acute-infection/raw/ldsc/`
+  (repo `data/raw` symlink); `ldsc_ref_manifest.json` written by rule `stage_ldsc_ref`.

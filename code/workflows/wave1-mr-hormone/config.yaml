@@ -1,0 +1,123 @@
+# =============================================================================
+# config.yaml — Wave-1 MR Arm-B hormone pilot (sex-hormone liability → long-COVID)
+#
+# SINGLE encoding of plan:0009's locked staging parameters. Rules read these and
+# hard-code nothing (plan:0003 KD4 pattern). Changing a value is a plan edit.
+#
+# Source of truth: entities/plans/0009-wave1-mr-hormone-pilot.md
+# Estimand:        doc/plans/2026-07-03-wave1-gwas-mr-estimand.md
+# Scale/overlap:   plan:0008 KD2 + KD-scale (MRlap contract)
+#
+# SCOPE OF THIS FILE (Task 1): input staging only — acquire the six Ruth strata,
+# the HGI outcome, the MRlap LDSC reference (eur_w_ld_chr + w_hm3.snplist), and
+# the 1000G-EUR panel, with checksums + row counts. Instrument/MRlap/estimate
+# params (Tasks 2-5) are appended in later increments.
+# =============================================================================
+
+# ----------------------------------------------------------------- paths -----
+paths:
+  raw: "data/raw"
+  processed: "data/processed/wave1-mr-hormone"
+  results: "results/wave1-mr-hormone-pilot"
+
+# --------------------------------------------------------------- exposures ---
+# plan:0009 Inputs — dataset:ruth-2020-shbg-testosterone-gwas. Six harmonised
+# fullPvalueSet strata (SHBG + total testosterone × combined/male/female). All
+# live in the GCST90012001-GCST90013000 range folder. Continuous traits, SD-scaled
+# effects; native GRCh37, harmonised GRCh38 served (the acquired .h.tsv.gz is
+# GRCh38). The acquire rule resolves the single *.h.tsv.gz within each dir.
+_ruth_range: &ruth_range "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000"
+exposures:
+  - name: "ruth-shbg-combined"
+    accession: "GCST90012111"
+    trait: "shbg"
+    sex: "combined"
+    harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000/GCST90012111/harmonised/"
+    build: "GRCh38"
+  - name: "ruth-shbg-male"
+    accession: "GCST90012109"
+    trait: "shbg"
+    sex: "male"
+    harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000/GCST90012109/harmonised/"
+    build: "GRCh38"
+  - name: "ruth-shbg-female"
+    accession: "GCST90012107"
+    trait: "shbg"
+    sex: "female"
+    harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000/GCST90012107/harmonised/"
+    build: "GRCh38"
+  - name: "ruth-testosterone-combined"
+    accession: "GCST90012114"
+    trait: "total-testosterone"
+    sex: "combined"
+    harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000/GCST90012114/harmonised/"
+    build: "GRCh38"
+  - name: "ruth-testosterone-male"
+    accession: "GCST90012113"
+    trait: "total-testosterone"
+    sex: "male"
+    harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000/GCST90012113/harmonised/"
+    build: "GRCh38"
+  - name: "ruth-testosterone-female"
+    accession: "GCST90012112"
+    trait: "total-testosterone"
+    sex: "female"
+    harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000/GCST90012112/harmonised/"
+    build: "GRCh38"
+
+# ---------------------------------------------------------------- outcome ----
+# plan:0009 — same authorised HGI vehicle as plan:0007 (D-006). GCST90454541 =
+# broad cases / POPULATION controls. Binary → hm_beta is a log-OR. European-
+# dominant multi-ancestry → the ancestry flag (KD1). The acquire rule also pulls
+# the sibling *-meta.yaml so the case/control N is staged for MRlap total-N.
+outcome:
+  name: "covid19-hgi-longcovid-broad-population"
+  accession: "GCST90454541"
+  trait: "long-covid"
+  harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90454001-GCST90455000/GCST90454541/harmonised/"
+  build: "GRCh38"
+  ancestry_note: "European-dominant multi-ancestry meta; no EUR-only sibling → ancestry flag (plan:0009 KD1, non-primary)."
+
+# ------------------------------------------------- MRlap LDSC reference -------
+# plan:0009 — dataset:eur-ldsc-ld-score-reference. MRlap runs cross-trait LDSC
+# internally and needs `ld` (eur_w_ld_chr folder) + `hm3` (w_hm3.snplist).
+# eur_w_ld_chr HARDENED to the DOI-archival, checksummed Zenodo mirror (record
+# 8182036) — NOT MRlap's non-archival UT-Austin Box link (plan:0009 review Dim 3).
+# w_hm3.snplist from the maintained Broad Alkes-group GCS bucket (https, non-DOI;
+# SHA-256 recorded on download — residual reproducibility note).
+ldsc_ref:
+  name: "eur-ldsc-ld-score-reference"
+  build: "GRCh37"                     # rsID-keyed; reconcile by rsID (build-independent)
+  eur_w_ld_chr:
+    url: "https://zenodo.org/api/records/8182036/files/eur_w_ld_chr.tar.gz/content"
+    archive_name: "eur_w_ld_chr.tar.gz"
+    md5: "e2f16343c4cfaa76caa7d0c03d26b489"
+    doi: "10.5281/zenodo.8182036"
+    license: "CC-BY-4.0"
+  hm3:
+    url: "https://zenodo.org/api/records/7773502/files/w_hm3.snplist.gz/content"
+    archive_name: "w_hm3.snplist.gz"
+    md5: "153ecc2bcfa740afafe656e6a384d769"
+    doi: "10.5281/zenodo.7773502"
+    license: "CC-BY-4.0"
+
+# ------------------------------------------------------------ LD reference ---
+# plan:0009 — dataset:1000g-eur-ld-panel (reused from plan:0007, Zenodo 6614170).
+# Native GRCh37 → reconcile with GRCh38 sumstats by rsID (hm_rsid); else hard-stop.
+ld_panel:
+  name: "1000g-eur-phase3"
+  superpopulation: "EUR"
+  build: "GRCh37"
+  doi: "10.5281/zenodo.6614170"
+  license: "CC-BY-4.0"
+  bfile_prefix: "1000G_EUR"
+  files:
+    bed:
+      url: "https://zenodo.org/api/records/6614170/files/1000G_EUR.bed/content"
+      md5: "a163c74ea92676c9ada76fe5eb3b2ec9"
+    bim:
+      url: "https://zenodo.org/api/records/6614170/files/1000G_EUR.bim/content"
+      md5: "81b1ee40a05ef5be98ad3e496c71d708"
+    fam:
+      url: "https://zenodo.org/api/records/6614170/files/1000G_EUR.fam/content"
+      md5: "669a4260fda7a9e1dd7df374aff294ea"

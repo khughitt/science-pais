@@ -17,9 +17,9 @@ access:
   availability: available
   verified: true
   source_url: https://www.ebi.ac.uk/gwas/studies/GCST90012109
-  verification_method: landing-confirmed
-  last_reviewed: '2026-07-03'
-  verified_by: agent (verify-access)
+  verification_method: metadata-confirmed
+  last_reviewed: '2026-07-04'
+  verified_by: agent (plan:0009 Task 1)
   reproducibility:
     obtainability: public
     execution: local
@@ -65,14 +65,17 @@ related:
 identity_context:
   taxon: 9606
   assembly:
-    label: UNKNOWN
+    label: GRCh38
     registry: dataset:assembly-registry
     resolution_status: declared_unresolved
 ---
 
 # Ruth 2020 SHBG and testosterone GWAS summary statistics (sex-specific, European ancestry)
 
-**Candidate dataset.** `status: candidate` — catalogued but not yet acquired.
+**Candidate dataset.** `status: candidate` — the six MR-exposure strata (SHBG +
+total testosterone × combined/male/female) are **acquired + checksummed** for
+`plan:0009` (see the verification log); status stays `candidate` until a result
+promotes the line.
 
 ## What it is
 
@@ -118,7 +121,8 @@ recovery), and hypothesis:0005 (reproductive-stage immune-homeostatic margin).
 - Note (bridge assumption d for hormones): SHBG/testosterone genetic architecture
   is itself partly sex-specific; use the matching sex stratum on each side.
 - **Assembly:** UK Biobank imputation → native GRCh37; GWAS Catalog also serves
-  harmonised GRCh38. Recorded UNKNOWN pending Task-8 file confirmation.
+  harmonised GRCh38. **Resolved GRCh38** (plan:0009 Task 1 used the harmonised
+  `fullPvalueSet` files); reconciled with the GRCh37 LD/LDSC references by rsID.
 - Ancestry: European only — flag cross-ancestry MR (bridge assumption 4, estimand §d).
 - Sample-overlap risk (bridge assumption 3, estimand §d): UK Biobank contributes to both this exposure GWAS and
   the HGI long-COVID outcome — overlap must be quantified/corrected in Task 8.
@@ -144,3 +148,4 @@ outcome — quantify/correct).
 ## Access verification log
 
 - 2026-07-03 (agent (verify-access)): Ruth 2020 SHBG/testosterone GWAS: fullPvalueSet=true harmonised genome-wide summary statistics on the GWAS Catalog FTP for male-only, female-only, and sex-combined strata, no registration/gating; landing page + downloadable files confirmed.
+- 2026-07-04 (agent, plan:0009 Task 1 staging run): **retrieved + SHA-256-recorded** via the reproducible Snakemake workflow `code/workflows/wave1-mr-hormone/` (rule `acquire_sumstats`). All six harmonised `fullPvalueSet` strata pulled from the GWAS Catalog FTP, **build GRCh38** (assembly label resolved from UNKNOWN), file name form `32042192-<GCST>-<EFO>.h.tsv.gz` (EFO_0004696 = SHBG, EFO_0004908 = total testosterone). SHA-256 / rows: SHBG combined GCST90012111 `27c911dd…d703274d` (16,322,241); SHBG male GCST90012109 `4b71db9a…9ee5b8b7` (16,321,912); SHBG female GCST90012107 `39cb79e5…d5bf9709` (16,325,146); testosterone combined GCST90012114 `5b74d4ed…e9664b5fc` (16,317,870); testosterone male GCST90012113 `39d1648c…75b115072` (16,316,685); testosterone female GCST90012112 `193d0dc2…99b8e4e4a` (16,320,220). Payloads staged off-Dropbox at `/data/proj/post-acute-infection/raw/gwas/hormone-pilot/` (repo `data/raw` symlink); recorded in the run's `acquire_manifest.json`.

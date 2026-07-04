@@ -1,0 +1,139 @@
+# science:code
+# status: workflow-owned
+# task_ids: [t089]
+# science:end
+
+# =============================================================================
+# Snakefile — Wave-1 MR Arm-B hormone pilot (sex-hormone liability → long-COVID)
+#
+# Isolated pipeline (NOT folded into wave1-mr/, the frozen plan:0007 run-of-record,
+# nor the 0003 gene-set Snakefile). Thin orchestrator: reads config.yaml (all
+# locked params), rules hard-code nothing (plan:0003 KD4 pattern). Run with:
+#
+#     uv run snakemake -s code/workflows/wave1-mr-hormone/Snakefile --use-conda -c1 stage_all
+#
+# Design:  entities/plans/0009-wave1-mr-hormone-pilot.md
+# Review:  doc/reviews/0009-wave1-mr-hormone-pilot-pipeline-review.md
+#
+# SCOPE (Task 1 increment): input STAGING only. `stage_all` acquires the six Ruth
+# strata + the HGI outcome (+ its -meta.yaml for case/control N), the MRlap LDSC
+# reference (eur_w_ld_chr + w_hm3.snplist), and the 1000G-EUR panel, each with
+# checksums + row counts, into one staging manifest. Instrument/MRlap/estimate
+# rules (Tasks 2-5) are appended in later increments.
+# =============================================================================
+import json
+from pathlib import Path
+
+# --- invocation contract (invocation-independent, plan:0003 pattern) ---------
+SNAKEFILE_DIR = Path(workflow.basedir).resolve()
+REPO_ROOT = SNAKEFILE_DIR.parent.parent.parent      # wave1-mr-hormone → workflows → code → root
+SCRIPTS = Path("code/workflows/wave1-mr-hormone/scripts")
+CONFIGFILE = str(SNAKEFILE_DIR / "config.yaml")
+configfile: CONFIGFILE
+workdir: str(REPO_ROOT)
+
+RAW = config["paths"]["raw"]
+RESULTS = config["paths"]["results"]
+
+# --- resolved staging targets ------------------------------------------------
+GWAS_DIR = f"{RAW}/gwas/hormone-pilot"
+EXPOSURE_FILES = [
+    f"{GWAS_DIR}/{e['name']}.{e['accession']}.h.tsv.gz" for e in config["exposures"]
+]
+OUT = config["outcome"]
+OUTCOME_FILE = f"{GWAS_DIR}/{OUT['name']}.{OUT['accession']}.h.tsv.gz"
+ACQ_MANIFEST = f"{GWAS_DIR}/acquire_manifest.json"
+
+LDSC_DIR = f"{RAW}/ldsc"
+LDSC_LD_MARKER = f"{LDSC_DIR}/eur_w_ld_chr/22.l2.ldscore.gz"   # representative extracted file
+LDSC_HM3 = f"{LDSC_DIR}/w_hm3.snplist"
+LDSC_MANIFEST = f"{LDSC_DIR}/ldsc_ref_manifest.json"
+
+LD_PREFIX = f"{RAW}/ld/{config['ld_panel']['name']}/{config['ld_panel']['bfile_prefix']}"
+LD_MANIFEST = f"{RAW}/ld/{config['ld_panel']['name']}/ld_manifest.json"
+
+STAGING_MANIFEST = f"{RESULTS}/staging_manifest.json"
+
+
+rule stage_all:
+    input:
+        STAGING_MANIFEST,
+
+
+# --- acquire the six Ruth strata + the HGI outcome (+ -meta.yaml, SHA-256) ----
+rule acquire_sumstats:
+    output:
+        exposures=EXPOSURE_FILES,
+        outcome=OUTCOME_FILE,
+        manifest=ACQ_MANIFEST,
+    conda:
+        "envs/stage.yaml"
+    params:
+        config=CONFIGFILE,
+        out_dir=GWAS_DIR,
+    shell:
+        "python {SCRIPTS}/acquire_sumstats.py --config {params.config} "
+        "--out-dir {params.out_dir} --manifest {output.manifest}"
+
+
+# --- stage the MRlap LDSC reference: eur_w_ld_chr (md5) + w_hm3.snplist --------
+rule stage_ldsc_ref:
+    output:
+        ld_marker=LDSC_LD_MARKER,
+        hm3=LDSC_HM3,
+        manifest=LDSC_MANIFEST,
+    conda:
+        "envs/stage.yaml"
+    params:
+        config=CONFIGFILE,
+        ldsc_dir=LDSC_DIR,
+    shell:
+        "python {SCRIPTS}/stage_ldsc_ref.py --config {params.config} "
+        "--ldsc-dir {params.ldsc_dir} --manifest {output.manifest}"
+
+
+# --- stage the 1000G-EUR panel (naive-arm clumping; md5-verified) -------------
+rule stage_ld:
+    output:
+        bed=f"{LD_PREFIX}.bed",
+        bim=f"{LD_PREFIX}.bim",
+        fam=f"{LD_PREFIX}.fam",
+        manifest=LD_MANIFEST,
+    conda:
+        "envs/stage.yaml"
+    params:
+        config=CONFIGFILE,
+    shell:
+        "python {SCRIPTS}/stage_ld.py --config {params.config} "
+        "--bfile-prefix {LD_PREFIX} --manifest {output.manifest}"
+
+
+# --- aggregate: one staging manifest referencing all four sub-manifests --------
+rule staging_manifest:
+    input:
+        acq=ACQ_MANIFEST,
+        ldsc=LDSC_MANIFEST,
+        ld=LD_MANIFEST,
+        exposures=EXPOSURE_FILES,
+        outcome=OUTCOME_FILE,
+        ldsc_ld=LDSC_LD_MARKER,
+        hm3=LDSC_HM3,
+    output:
+        manifest=STAGING_MANIFEST,
+    run:
+        Path(output.manifest).parent.mkdir(parents=True, exist_ok=True)
+        combined = {
+            "plan": "plan:0009-wave1-mr-hormone-pilot",
+            "task": "t089",
+            "stage": "Task 1 — input staging",
+            "sumstats": json.loads(Path(input.acq).read_text()),
+            "ldsc_reference": json.loads(Path(input.ldsc).read_text()),
+            "ld_panel": json.loads(Path(input.ld).read_text()),
+            "entities": [
+                "dataset:ruth-2020-shbg-testosterone-gwas",
+                "dataset:covid19-hgi-longcovid-gwas",
+                "dataset:eur-ldsc-ld-score-reference",
+                "dataset:1000g-eur-ld-panel",
+            ],
+        }
+        Path(output.manifest).write_text(json.dumps(combined, indent=2))

@@ -1,0 +1,12 @@
+# Conda env for plan:0009 Task 1 input staging (download + checksum + parse).
+# The stagers use only the Python stdlib (urllib, hashlib, gzip, bz2, tarfile)
+# plus PyYAML for config/meta parsing — no external CLI tools needed.
+# Conda-lock (stage.conda-lock.yml) is produced once the env resolves on the
+# execution host, matching the project's Snakemake --use-conda convention.
+name: wave1-mr-hormone-stage
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.12
+  - pyyaml>=6
