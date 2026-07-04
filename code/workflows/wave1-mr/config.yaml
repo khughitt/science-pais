@@ -23,7 +23,7 @@ paths:
 # resolved version into run_metadata.json. Confirm the exact latest-stable tag
 # at setup; recorded, not assumed.
 env:
-  twosamplemr_ref: "v0.6.8"          # remotes::install_github("MRCIEU/TwoSampleMR@<ref>")
+  twosamplemr_ref: "v0.7.9"          # latest release 2026-06-24; remotes::install_github("MRCIEU/TwoSampleMR@<ref>")
   twosamplemr_repo: "MRCIEU/TwoSampleMR"
 
 # --------------------------------------------------------------- exposure ----
