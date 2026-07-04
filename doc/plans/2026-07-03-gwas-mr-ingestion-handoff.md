@@ -28,26 +28,39 @@ task is filed as **`task:t089`** (blocked-by `task:t088`; see §6).
 
 ### `dataset:covid19-hgi-longcovid-gwas` — mr_outcome (trait: long-covid)
 
-- **Landing page:** https://www.ebi.ac.uk/gwas/studies/GCST90454543 (GWAS Catalog);
+> **Correction (2026-07-04, supersedes the stratum labels in this subsection).**
+> The original text misidentified **GCST90454543** as broad-cases /
+> **population**-controls. Per the GWAS Catalog harmonised `*-meta.yaml` files,
+> **GCST90454541** is broad-cases / **population**-controls, and **GCST90454543** is
+> broad-cases / **strict** controls (had SARS-CoV-2 but did not develop long COVID) —
+> a different, within-infected estimand. `plan:0007` is authoritative: **primary MR
+> outcome = GCST90454541**; 543 (broad/strict) and the strict-**case** strata are
+> sensitivities. Both harmonised files are European-dominant *multi-ancestry* metas
+> (no EUR-only sibling), constraining ancestry-matched MR — see `plan:0007`'s
+> ancestry hard-stop.
+
+- **Landing page:** https://www.ebi.ac.uk/gwas/studies/GCST90454541 (GWAS Catalog);
   initiative page https://www.covid19hg.org/results/
-- **Accessions (GWAS Catalog):** GCST90454543 (primary, see case-definition
-  decision below), GCST90454540, GCST90454541, GCST90454542
+- **Accessions (GWAS Catalog):** GCST90454541 (primary — broad/population, see the
+  correction above and the stratum note below), GCST90454543 (broad/strict —
+  sensitivity), GCST90454540, GCST90454542
 - **Citation:** Lammi et al., *Nature Genetics* 2025; PMID 40399555;
   DOI 10.1038/s41588-025-02100-w
 - **Files to stage:** the harmonised full-summary-statistics flat file
-  (`fullPvalueSet=true`) for **GCST90454543** from the GWAS Catalog FTP
+  (`fullPvalueSet=true`) for **GCST90454541** (primary; plus GCST90454543 for the
+  strict-control sensitivity) from the GWAS Catalog FTP
   (`ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/`, harmonised subfolder for
   this accession). Stage build/assembly alongside the file (the release ships both
   GRCh37 and GRCh38 — record whichever harmonised file is pulled; do not leave
   `identity_context.assembly.label: UNKNOWN` past ingestion).
-- **Case-definition stratum decision (pre-committed here, not deferred to
-  ingestion time):** primary MR-outcome stratum is **GCST90454543**, the **broad**
-  case definition (long COVID after *any* SARS-CoV-2 infection, population
-  controls). **GCST90454540–542** (the strict stratum — test-verified infection,
-  infected-but-no-long-COVID controls — and any intermediate strata) are retained
-  as a **pre-committed case-definition sensitivity analysis**, per bridge
-  assumption 6 in the estimand note (§d below). Do not choose broad-vs-strict
-  post-hoc from which gives a cleaner result.
+- **Case-definition stratum decision (corrected 2026-07-04; see banner):** primary
+  MR-outcome stratum is **GCST90454541** — the **broad** case definition (long COVID
+  after *any* SARS-CoV-2 infection) with **population controls**. **GCST90454543**
+  (broad cases / **strict** infected-but-no-long-COVID controls) and the
+  strict-**case** strata (GCST90454540/542) are retained as **pre-committed
+  case-/control-definition sensitivity analyses**, per bridge assumption 6 in the
+  estimand note (§d below). Do not choose the stratum post-hoc from which gives a
+  cleaner result.
 - **Known limitation to carry into staging:** mixed-sex only; no sex-stratified or
   sex-interaction sumstats are published for this outcome. Out of scope for the
   sex-modification targets (question:0007/0013/0019–0022) as an outcome; in scope
@@ -139,10 +152,11 @@ not a caveat.
    as sensitivity if a matched European outcome stratum is unavailable). Any
    cross-ancestry combination is flagged and not treated as primary. Record the LD
    reference panel ancestry used for clumping/pruning.
-6. **PAIS case-definition comparability.** Record and carry forward the
-   broad-vs-strict HGI stratum decision from §1 (primary = broad GCST90454543,
-   sensitivity = strict GCST90454540–542) through every downstream reported
-   estimate; do not silently mix strata across sensitivity runs.
+6. **PAIS case-definition comparability.** Record and carry forward the corrected
+   HGI stratum decision from §1 (primary = broad/population **GCST90454541**;
+   sensitivities = broad/strict **GCST90454543** and the strict-case strata
+   GCST90454540/542) through every downstream reported estimate; do not silently
+   mix strata across sensitivity runs.
 
 ## 4. Acceptance check
 

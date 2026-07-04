@@ -16,7 +16,7 @@ access:
   level: public
   availability: available
   verified: true
-  source_url: https://www.ebi.ac.uk/gwas/studies/GCST90454543
+  source_url: https://www.ebi.ac.uk/gwas/studies/GCST90454541
   verification_method: landing-confirmed
   last_reviewed: '2026-07-03'
   verified_by: agent (verify-access)
@@ -119,15 +119,23 @@ open substitute** described in the estimand note; it is **not** a re-opening of 
 gated, non-reproducible N3C/OpenSAFELY EHR estimand shelved under **D-004** — that
 population-scale, ascertainment-structured interaction stays with `hypothesis:0008`.
 
-**Case-definition stratum (Task-7 minor, resolved).** The primary MR-outcome stratum
-is **GCST90454543** (the recorded `source_url`), the **broad** case definition (long
-COVID after *any* SARS-CoV-2 infection) with population controls. The **strict**
-stratum (test-verified infection; infected-but-no-long-COVID controls) is retained as
-a **pre-committed case-definition sensitivity** per bridge assumption 6 (estimand §d);
-strict-vs-broad is a live methodological choice and is deliberately not yet frozen.
-Sex-agnostic outcome only — this GWAS is mixed-sex and carries no `stratification: sex`.
+**Case-definition stratum (Task-7 minor; corrected 2026-07-04).** The primary
+MR-outcome stratum is **GCST90454541** — the **broad** case definition (long COVID
+after *any* SARS-CoV-2 infection) with **population controls** (FTP metadata:
+"Broad control definition (population control)"). *Correction: an earlier note named
+GCST90454543 as the broad/population stratum. That is wrong — GCST90454543 is broad
+cases vs **strict** controls (had SARS-CoV-2 but did not develop long COVID), a
+different, within-infected estimand. Verified 2026-07-04 against the GWAS Catalog
+harmonised `*-meta.yaml` files for GCST90454541 and GCST90454543.* GCST90454543
+(broad/strict) and the strict-**case** strata (GCST90454540/542) are retained as
+**pre-committed case-definition sensitivities** per bridge assumption 6 (estimand §d);
+the case × control definition choice is a live methodological one, deliberately not
+yet frozen. **Ancestry:** the harmonised files are European-dominant *multi-ancestry*
+metas (no EUR-only sibling file), which constrains ancestry-matched MR — see
+`plan:0007` Decision-criteria ancestry hard-stop. Sex-agnostic outcome only — this
+GWAS is mixed-sex and carries no `stratification: sex`.
 
 ## Access verification log
 
 - 2026-07-03 (agent (verify-access)): COVID-19 HGI long-COVID summary statistics: fullPvalueSet=true harmonised genome-wide flat files on the GWAS Catalog FTP (GCST90454540-543), no registration/gating; landing page + downloadable files confirmed.
-- 2026-07-04 (agent): consumed by plan:0007-wave1-mr-autoimmune-longcovid-pilot (Wave-1 MR pilot; outcome GWAS, broad stratum GCST90454543, European-ancestry). File retrieval + assembly-label resolution pending per that plan's task 1.
+- 2026-07-04 (agent): consumed by plan:0007-wave1-mr-autoimmune-longcovid-pilot (Wave-1 MR pilot; outcome GWAS, broad/population-controls stratum GCST90454541, European-dominant multi-ancestry, GRCh38). File retrieval + assembly-label resolution pending per that plan's task 1.
