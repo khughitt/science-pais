@@ -1,0 +1,31 @@
+# R env for the Wave-1 two-sample-MR pilot (plan:0007).
+#
+# Conda-available deps are locked here; `envs/r-mr.conda-lock.yml` is the
+# byte-level reproducibility artifact (generated with `uv run conda-lock -f
+# r-mr.yaml -p linux-64`). Run under Snakemake with `--use-conda`.
+#
+# TwoSampleMR and ieugwasr are NOT on conda (MRC-IEU / r-universe). The
+# `setup_twosamplemr` rule installs TwoSampleMR from the pinned tag
+# (config: env.twosamplemr_ref) into THIS env's R library via `remotes`, and
+# records the resolved version into run_metadata.json. remotes pulls the
+# remaining CRAN deps (ieugwasr is on CRAN). The heavy compiled deps below are
+# provided from conda so remotes does not source-compile them.
+name: wave1-mr
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-base=4.5
+  - r-remotes
+  - r-data.table
+  - r-mendelianrandomization   # CRAN estimator engine cross-check (conda-forge)
+  - r-jsonlite
+  - r-dplyr
+  - r-plyr
+  - r-reshape2
+  - r-ggplot2
+  - r-mvtnorm
+  - r-glmnet
+  - r-curl
+  - r-httr
+  - plink                      # bioconda — local LD clumping (1000G-EUR GRCh37)

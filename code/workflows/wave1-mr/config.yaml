@@ -1,0 +1,98 @@
+# =============================================================================
+# config.yaml — Wave-1 MR pilot (autoimmune liability → long-COVID)
+#
+# SINGLE encoding of the pilot's locked parameters. Every value MIRRORS
+# plan:0007 (cited inline as `# plan:0007 <section>`); rules read these and
+# hard-code nothing (plan:0003 KD4 pattern). Changing a value is a plan edit,
+# not a runtime edit.
+#
+# Source of truth: entities/plans/0007-wave1-mr-autoimmune-longcovid-pilot.md
+# Estimand:        doc/plans/2026-07-03-wave1-gwas-mr-estimand.md
+# Handoff:         doc/plans/2026-07-03-gwas-mr-ingestion-handoff.md
+# =============================================================================
+
+# ----------------------------------------------------------------- paths -----
+paths:
+  raw: "data/raw"
+  processed: "data/processed/wave1-mr"
+  results: "results/wave1-mr-pilot"
+
+# ------------------------------------------------------------- environment ---
+# plan:0007 "Reproducible execution harness" — TwoSampleMR is not on conda; the
+# setup rule installs this pinned tag into the r-mr conda env and records the
+# resolved version into run_metadata.json. Confirm the exact latest-stable tag
+# at setup; recorded, not assumed.
+env:
+  twosamplemr_ref: "v0.6.8"          # remotes::install_github("MRCIEU/TwoSampleMR@<ref>")
+  twosamplemr_repo: "MRCIEU/TwoSampleMR"
+
+# --------------------------------------------------------------- exposure ----
+# plan:0007 Inputs — Bentham 2015 SLE, GCST003156, harmonised fullPvalueSet.
+# Binary trait → hm_beta is a log-OR. dataset:bentham-2015-sle-gwas.
+exposure:
+  name: "bentham-2015-sle"
+  accession: "GCST003156"
+  trait: "systemic-lupus-erythematosus"
+  # Harmonised directory (acquire rule resolves the *.h.tsv.gz within it):
+  harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST003001-GCST004000/GCST003156/harmonised/"
+  build: "GRCh38"                     # harmonised file build; recorded on retrieval
+  sha256: "PENDING-RETRIEVAL"         # Task 1 records the real digest
+
+# ---------------------------------------------------------------- outcome ----
+# plan:0007 — CORRECTED primary stratum: GCST90454541 = broad cases / POPULATION
+# controls (NOT 543, which is broad/strict). European-dominant multi-ancestry.
+# Binary trait → hm_beta is a log-OR. dataset:covid19-hgi-longcovid-gwas.
+outcome:
+  name: "covid19-hgi-longcovid-broad-population"
+  accession: "GCST90454541"
+  trait: "long-covid"
+  harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90454001-GCST90455000/GCST90454541/harmonised/"
+  build: "GRCh38"
+  ancestry_note: "European-dominant multi-ancestry meta; no EUR-only sibling → ancestry hard-stop (plan:0007 Decision criteria)."
+  sha256: "PENDING-RETRIEVAL"
+
+# ------------------------------------------------------------ LD reference ---
+# plan:0007 — dataset:1000g-eur-ld-panel. Native GRCh37 → reconcile with GRCh38
+# sumstats by rsID (hm_rsid) or a GRCh38-lifted panel; else hard-stop (Task 2).
+ld_panel:
+  name: "1000g-eur-phase3"
+  superpopulation: "EUR"
+  build: "GRCh37"
+  # de-facto ready-to-use plink bundle for two-sample-MR clumping (MRC-IEU 1kg.v3):
+  source_url: "http://fileserve.mrcieu.ac.uk/ld/1kg.v3.tgz"
+  bfile_prefix: "EUR"                 # <prefix>.bed/.bim/.fam after extraction
+  sha256: "PENDING-RETRIEVAL"
+
+# ------------------------------------------------------------ instrument -----
+# plan:0007 Approach / Task 2 — genome-wide-significant, MHC-excluded, clumped.
+instrument:
+  p_threshold: 5.0e-8                 # genome-wide significance
+  clump_r2: 0.001                     # TwoSampleMR clump_data default
+  clump_kb: 10000                     # TwoSampleMR clump_data default (10 Mb)
+  mhc_exclude:                        # extended MHC, chr6:25–34 Mb (pre-committed)
+    chrom: 6
+    start: 25000000
+    end: 34000000
+  f_min: 10                           # weak-instrument floor; halt if mean F < 10
+
+# ------------------------------------------------------------ harmonise ------
+harmonise:
+  action: 2                           # infer palindromic by EAF; drop ambiguous
+
+# -------------------------------------------------------------- estimate -----
+# plan:0007 — IVW primary; Egger + weighted-median robustness bar. WM SE is
+# bootstrapped → fixed seed for bit-reproducibility (IVW/Egger closed-form).
+estimate:
+  methods: ["mr_ivw", "mr_egger_regression", "mr_weighted_median"]
+  weighted_median_seed: 20260704
+  weighted_median_bootstrap_n: 1000
+
+# -------------------------------------------------------- entity backlinks ---
+# plan:0007 Outputs contract Dim-9 — datapackage.json carries these cross-refs.
+entities:
+  plan: "plan:0007-wave1-mr-autoimmune-longcovid-pilot"
+  task: "task:t089"
+  datasets:
+    - "dataset:bentham-2015-sle-gwas"
+    - "dataset:covid19-hgi-longcovid-gwas"
+    - "dataset:1000g-eur-ld-panel"

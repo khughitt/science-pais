@@ -90,9 +90,30 @@ robustness bar (handoff §3.2). Report per-instrument and mean F-statistic
 recorded as such in the run manifest. **Reproducibility:** IVW and MR-Egger are
 closed-form, but the weighted-median SE is bootstrapped — set and record a
 **fixed RNG seed** for it (and any bootstrapped diagnostic), and pin the
-toolchain in a committed **`renv.lock`** (or conda `environment.yml`) so the run
-is reconstructable, not merely described. All payloads gitignored under `data/`;
-all outputs and a run manifest under `results/`.
+toolchain with **conda-lock**, matching the project's Snakemake `--use-conda`
+convention (as in `plan:0003`) — not `renv`. All payloads gitignored under
+`data/`; all outputs and a run manifest under `results/`.
+
+## Reproducible execution harness
+
+Runs under the project's established convention (`plan:0003`): a **Snakemake**
+DAG with **per-rule `conda:` envs**, invoked `uv run snakemake --use-conda`. The
+MR pilot is an **isolated** pipeline under `code/workflows/wave1-mr/` (its own
+`Snakefile` + `config.yaml`), not folded into the 0003 gene-set Snakefile.
+
+- **Env:** `code/workflows/wave1-mr/envs/r-mr.yaml` → byte-level
+  `r-mr.conda-lock.yml`. Conda-available deps are locked there (`r-base`,
+  `r-remotes`, `r-data.table`, `r-mendelianrandomization`, `plink` from bioconda,
+  …).
+- **TwoSampleMR is not on conda.** It is installed from a **pinned GitHub tag**
+  (`remotes::install_github("MRCIEU/TwoSampleMR@<tag>")`, `upgrade = "never"`)
+  by a dedicated setup rule that writes a sentinel and **records the resolved
+  version** into `run_metadata.json`. `<tag>` is a locked `config.yaml` value.
+- **Params are locked in `config.yaml`** (accessions/URLs, p-threshold, clump
+  r²/kb, MHC window, weighted-median seed, TwoSampleMR tag, paths) — the runtime
+  reads them; nothing is hard-coded in rules (0003 KD4 pattern).
+- **Invocation-independent:** `workdir` pinned to repo root so `data/` and
+  `results/` resolve to one tree regardless of where `snakemake` is invoked.
 
 ## Inputs
 
@@ -199,7 +220,8 @@ Pin the ingestion contract before code:
 - **Instrument table + MR results** — the clumped instrument set (with per-SNP F)
   and the IVW/Egger/weighted-median estimates + Egger intercept.
 - **Command/run log** — the commands executed and their stdout/stderr.
-- **`renv.lock`** (or conda `environment.yml`) — the pinned toolchain.
+- **`r-mr.conda-lock.yml`** (byte-level conda-lock env) + the recorded pinned
+  TwoSampleMR tag/version — the reconstructable toolchain.
 - **`run_metadata.json`** — tool + R-package versions (`sessionInfo()` /
   package versions), all parameters (clump thresholds, MHC window,
   `harmonise_data` action, **weighted-median RNG seed**), input accessions +
@@ -247,11 +269,12 @@ before the design plan.
 - Palindromic/ambiguous-SNP handling under `action = 2` is logged; harmonization
   drop-log is present and non-silent.
 - Per-instrument and mean F-statistics are reported.
-- The weighted-median RNG seed and a committed `renv.lock` (or conda env) are
-  present; outcome-extraction peak-memory + wall-clock are recorded in `qa_report`.
+- The weighted-median RNG seed and the committed conda-lock env
+  (`r-mr.conda-lock.yml`) + recorded TwoSampleMR tag are present;
+  outcome-extraction peak-memory + wall-clock are recorded in `qa_report`.
 - The full output bundle (datapackage.json **with entity cross-refs**,
-  qa_report.{json,md}, logs, renv.lock, run_metadata.json) is present; the
-  ancestry/mechanics-only label is stated.
+  qa_report.{json,md}, logs, r-mr.conda-lock.yml, run_metadata.json) is present;
+  the ancestry/mechanics-only label is stated.
 - Outputs land under `results/wave1-mr-pilot/`; no data payload is committed
   (confirm `git status` shows nothing under `data/`).
 

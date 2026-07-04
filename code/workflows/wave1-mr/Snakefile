@@ -1,0 +1,161 @@
+# science:code
+# status: workflow-owned
+# task_ids: [t089]
+# science:end
+
+# =============================================================================
+# Snakefile — Wave-1 MR pilot (autoimmune liability → long-COVID)
+#
+# Isolated pipeline (NOT folded into the 0003 gene-set Snakefile). Thin
+# orchestrator: reads config.yaml (all locked params), wires acquire → stage →
+# instrument → harmonise+estimate → datapackage/QA. Run reproducibly with:
+#
+#     uv run snakemake -s code/workflows/wave1-mr/Snakefile --use-conda -c1
+#
+# Design:  entities/plans/0007-wave1-mr-autoimmune-longcovid-pilot.md
+# Estimand/handoff: doc/plans/2026-07-03-wave1-gwas-mr-{estimand,ingestion-handoff}.md
+#
+# WP0 status: SKELETON. Rule I/O is fully wired so `snakemake -n` resolves the
+# complete DAG (acquire → results/wave1-mr-pilot/datapackage.json). Rule bodies
+# are stubs that exit 1 (fail-early) until implemented in the next increment.
+# =============================================================================
+from pathlib import Path
+
+# --- invocation contract (invocation-independent, plan:0003 pattern) ---------
+SNAKEFILE_DIR = Path(workflow.basedir).resolve()
+REPO_ROOT = SNAKEFILE_DIR.parent.parent.parent          # wave1-mr → workflows → code → root
+SCRIPTS = str(SNAKEFILE_DIR / "scripts")
+CONFIGFILE = str(SNAKEFILE_DIR / "config.yaml")
+configfile: CONFIGFILE
+workdir: str(REPO_ROOT)
+
+RAW = config["paths"]["raw"]
+PROC = config["paths"]["processed"]
+RESULTS = config["paths"]["results"]
+
+EXP_ACC = config["exposure"]["accession"]
+OUT_ACC = config["outcome"]["accession"]
+LD_PREFIX = f"{RAW}/ld/{config['ld_panel']['name']}/{config['ld_panel']['bfile_prefix']}"
+
+# --- resolved file targets ---------------------------------------------------
+EXPOSURE   = f"{RAW}/gwas/exposure.{EXP_ACC}.h.tsv.gz"
+OUTCOME    = f"{RAW}/gwas/outcome.{OUT_ACC}.h.tsv.gz"
+ACQ_MANIFEST = f"{RAW}/gwas/wave1_acquire_manifest.json"
+LD_MANIFEST  = f"{RAW}/ld/{config['ld_panel']['name']}/ld_manifest.json"
+INSTRUMENT = f"{PROC}/instrument.tsv"
+HARMONISED = f"{PROC}/harmonised.tsv"
+MR_RESULTS = f"{RESULTS}/mr_results.json"
+QA_JSON    = f"{RESULTS}/qa_report.json"
+QA_MD      = f"{RESULTS}/qa_report.md"
+RUN_META   = f"{RESULTS}/run_metadata.json"
+DATAPACKAGE = f"{RESULTS}/datapackage.json"
+SETUP_OK   = f"{RESULTS}/.env/twosamplemr.ok"
+
+
+rule all:
+    input:
+        DATAPACKAGE,
+        QA_JSON,
+
+
+# --- env setup: pin TwoSampleMR (not on conda) into the r-mr env -------------
+rule setup_twosamplemr:
+    output:
+        sentinel=SETUP_OK,
+    conda:
+        "envs/r-mr.yaml"
+    params:
+        repo=config["env"]["twosamplemr_repo"],
+        ref=config["env"]["twosamplemr_ref"],
+    shell:
+        "Rscript {SCRIPTS}/setup_twosamplemr.R "
+        "--repo {params.repo} --ref {params.ref} --sentinel {output.sentinel}"
+
+
+# --- acquire the two harmonised sumstats (+ SHA-256 manifest) ----------------
+rule acquire_sumstats:
+    output:
+        exposure=EXPOSURE,
+        outcome=OUTCOME,
+        manifest=ACQ_MANIFEST,
+    params:
+        config=CONFIGFILE,
+    shell:
+        "python {SCRIPTS}/acquire_sumstats.py --config {params.config} "
+        "--exposure-out {output.exposure} --outcome-out {output.outcome} "
+        "--manifest {output.manifest}"
+
+
+# --- stage the 1000G-EUR LD panel (+ SHA-256, build-reconciliation record) ---
+rule stage_ld:
+    output:
+        bed=f"{LD_PREFIX}.bed",
+        bim=f"{LD_PREFIX}.bim",
+        fam=f"{LD_PREFIX}.fam",
+        manifest=LD_MANIFEST,
+    params:
+        config=CONFIGFILE,
+    shell:
+        "python {SCRIPTS}/stage_ld.py --config {params.config} "
+        "--bfile-prefix {LD_PREFIX} --manifest {output.manifest}"
+
+
+# --- build the SLE instrument: MHC-exclude, local plink clump, F-stats -------
+rule build_instrument:
+    input:
+        exposure=EXPOSURE,
+        ld_bed=f"{LD_PREFIX}.bed",
+        setup=SETUP_OK,
+    output:
+        instrument=INSTRUMENT,
+    conda:
+        "envs/r-mr.yaml"
+    params:
+        config=CONFIGFILE,
+        ld_prefix=LD_PREFIX,
+    shell:
+        "Rscript {SCRIPTS}/build_instrument.R --config {params.config} "
+        "--exposure {input.exposure} --ld-prefix {params.ld_prefix} "
+        "--out {output.instrument}"
+
+
+# --- harmonise (action=2) + IVW/Egger/weighted-median (seeded) ---------------
+rule harmonize_estimate:
+    input:
+        instrument=INSTRUMENT,
+        outcome=OUTCOME,
+        setup=SETUP_OK,
+    output:
+        harmonised=HARMONISED,
+        results=MR_RESULTS,
+    conda:
+        "envs/r-mr.yaml"
+    params:
+        config=CONFIGFILE,
+    shell:
+        "Rscript {SCRIPTS}/harmonize_estimate.R --config {params.config} "
+        "--instrument {input.instrument} --outcome {input.outcome} "
+        "--harmonised-out {output.harmonised} --results-out {output.results}"
+
+
+# --- datapackage.json (entity cross-refs + DAG) + qa_report + run_metadata ---
+rule datapackage_qa:
+    input:
+        results=MR_RESULTS,
+        harmonised=HARMONISED,
+        acq_manifest=ACQ_MANIFEST,
+        ld_manifest=LD_MANIFEST,
+        setup=SETUP_OK,
+    output:
+        datapackage=DATAPACKAGE,
+        qa_json=QA_JSON,
+        qa_md=QA_MD,
+        run_metadata=RUN_META,
+    params:
+        config=CONFIGFILE,
+    shell:
+        "python {SCRIPTS}/emit_datapackage_qa.py --config {params.config} "
+        "--results {input.results} --harmonised {input.harmonised} "
+        "--acq-manifest {input.acq_manifest} --ld-manifest {input.ld_manifest} "
+        "--datapackage {output.datapackage} --qa-json {output.qa_json} "
+        "--qa-md {output.qa_md} --run-metadata {output.run_metadata}"
