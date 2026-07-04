@@ -102,3 +102,33 @@ Durable scientific knowledge in this ecosystem must be independently re-runnable
 
 **Revisit if:**
 - A population-scale EHR vehicle offers a genuinely **third-party-reproducible** access path (downloadable de-identified individual-level data, or a truly open/downloadable synthetic tier), **or** the estimand is reformulated so it no longer requires population-scale gated EHR.
+
+## D-005: Authorize only the Wave-1 open GWAS/MR pilot as the first post-seed computational analysis
+
+- **Date:** 2026-07-04
+- **Status:** active
+- **Decision:** The project may cross the `specs/scope-boundaries.md` seed-stage boundary for the **specific Wave-1 GWAS/MR pilot** described in `doc/plans/2026-07-03-gwas-mr-ingestion-handoff.md`: two-sample MR over the three cataloged public GWAS summary-statistic vehicles (`dataset:covid19-hgi-longcovid-gwas`, `dataset:bentham-2015-sle-gwas`, and `dataset:ruth-2020-shbg-testosterone-gwas`), with IVW primary and the pre-committed sensitivity/bridge-assumption checklist in that handoff.
+This decision authorizes planning and implementation of that open, third-party-reproducible pilot only.
+It does **not** authorize gated-data analysis, patient-level EHR analysis, N3C/OpenSAFELY execution, or a general transition to unrestricted computational pipeline work.
+
+**Why:**
+The scope boundary was written to prevent premature large-scale analysis while the project was still establishing its literature and hypothesis frame.
+The Wave-1 data-catalog arc now supplies a narrow, auditable, third-party-reproducible vehicle: public summary statistics with resolvable accessions, explicit dataset entities, declared capabilities, and a handoff contract that separates cataloging from execution.
+That vehicle clears the transparency objection behind D-004 because arbitrary third parties can retrieve the same public summary-statistic inputs and rerun the intended analysis.
+The scientific estimand is also narrower than the shelved autoimmune x sex x PASC EHR line: it is a germline-liability instrumental-variable effect under MR assumptions, not an individual-level diagnosis/treatment/ascertainment-structured effect and not a reconstruction of the D-004 estimand.
+
+**Alternatives considered and rejected:**
+- Keep the project fully at seed-stage literature synthesis — rejected because it would treat a fully open, deliberately constrained empirical pilot the same as gated EHR execution, losing a useful reproducible test without reducing a real transparency risk.
+- Declare the project generally "past seed stage" for computational work — rejected as too broad.
+The current authorization is intentionally vehicle-specific; future computational lines need their own scope decision unless they are direct maintenance of this pilot.
+- Reopen the N3C/OpenSAFELY EHR path under the same ruling — rejected.
+D-004 still governs gated, non-downloadable EHR vehicles and remains unchanged.
+
+**Implications:**
+- `task:t088` is resolved for the Wave-1 MR vehicle.
+- `task:t089` may move to the `/science:plan-pipeline` handoff for this pilot.
+- Pipeline planning must preserve the handoff's constraints: public retrievable inputs, recorded hashes/datapackages for staged files, ancestry/case-definition/sample-overlap/HLA sensitivity checks, and interpretation only as germline-liability IV evidence.
+- Any additional computational analysis line beyond this Wave-1 vehicle requires a separate scope decision unless a future decision explicitly broadens this ruling.
+
+**Revisit if:**
+- A planned step needs non-public, credentialed, enclave-only, or non-downloadable data; the MR estimand is expanded toward the D-004-shelved EHR estimand; or the pilot design drops below the project's third-party-reproducible bar.
