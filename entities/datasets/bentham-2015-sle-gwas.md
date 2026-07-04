@@ -42,6 +42,9 @@ provided_capabilities:
   cohort_design: summary-stats
   analysis_role: mr_exposure
   trait: autoimmune-disease
+consumed_by:
+- plan:0007-wave1-mr-autoimmune-longcovid-pilot
+- task:t089
 related:
 - question:0007-mechanism-of-female-predominance-in-pais
 - hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
@@ -115,3 +118,4 @@ decision** (assumption 5), since the SLE signal is MHC-dense.
 ## Access verification log
 
 - 2026-07-03 (agent (verify-access)): Bentham 2015 SLE GWAS (GCST003156): fullPvalueSet=true harmonised genome-wide summary statistics on the GWAS Catalog FTP, no registration/gating; landing page + downloadable files confirmed.
+- 2026-07-04 (agent): consumed by plan:0007-wave1-mr-autoimmune-longcovid-pilot (Wave-1 MR pilot; exposure GWAS). File retrieval + assembly-label resolution pending per that plan's task 1.

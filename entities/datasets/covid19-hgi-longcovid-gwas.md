@@ -46,6 +46,9 @@ provided_capabilities:
   trigger: sars-cov-2
   analysis_role: mr_outcome
   trait: long-covid
+consumed_by:
+- plan:0007-wave1-mr-autoimmune-longcovid-pilot
+- task:t089
 related:
 - question:0007-mechanism-of-female-predominance-in-pais
 - hypothesis:0009-post-infectious-immune-set-point-shift-drives-long-term-autoimmune
@@ -127,3 +130,4 @@ Sex-agnostic outcome only — this GWAS is mixed-sex and carries no `stratificat
 ## Access verification log
 
 - 2026-07-03 (agent (verify-access)): COVID-19 HGI long-COVID summary statistics: fullPvalueSet=true harmonised genome-wide flat files on the GWAS Catalog FTP (GCST90454540-543), no registration/gating; landing page + downloadable files confirmed.
+- 2026-07-04 (agent): consumed by plan:0007-wave1-mr-autoimmune-longcovid-pilot (Wave-1 MR pilot; outcome GWAS, broad stratum GCST90454543, European-ancestry). File retrieval + assembly-label resolution pending per that plan's task 1.
