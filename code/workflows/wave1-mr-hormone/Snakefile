@@ -33,6 +33,7 @@ configfile: CONFIGFILE
 workdir: str(REPO_ROOT)
 
 RAW = config["paths"]["raw"]
+PROC = config["paths"]["processed"]
 RESULTS = config["paths"]["results"]
 
 # --- resolved staging targets ------------------------------------------------
@@ -53,6 +54,12 @@ LD_PREFIX = f"{RAW}/ld/{config['ld_panel']['name']}/{config['ld_panel']['bfile_p
 LD_MANIFEST = f"{RAW}/ld/{config['ld_panel']['name']}/ld_manifest.json"
 
 STAGING_MANIFEST = f"{RESULTS}/staging_manifest.json"
+
+# --- resolved instrument-build targets (plan:0009 Task 2) --------------------
+STRATA = {e["name"]: e for e in config["exposures"]}          # name -> spec
+INS_DIR = f"{PROC}/instruments"
+SETUP_OK = f"{INS_DIR}/.setup_twosamplemr.json"
+INSTRUMENTS_MANIFEST = f"{RESULTS}/instruments_manifest.json"
 
 
 rule stage_all:
@@ -137,3 +144,72 @@ rule staging_manifest:
             ],
         }
         Path(output.manifest).write_text(json.dumps(combined, indent=2))
+
+
+# =============================================================================
+# Task 2 — hormone instruments (plan:0009). Build six MR exposure instruments
+# from the staged Ruth strata: local 1000G-EUR clump, F-stats, tiered
+# eligibility gate, one aggregate manifest. Run with:
+#
+#     uv run snakemake -s code/workflows/wave1-mr-hormone/Snakefile \
+#         --use-conda -c1 build_instruments
+# =============================================================================
+
+rule build_instruments:                    # Task-2 target
+    input:
+        INSTRUMENTS_MANIFEST,
+
+
+# --- env setup: pin TwoSampleMR (not on conda) into the r-mr env, version-assert
+rule setup_twosamplemr:                     # copy of plan:0007 rule (r-mr env) + F1 version-assert
+    output:
+        sentinel=SETUP_OK,
+    conda:
+        "envs/r-mr.yaml"
+    params:
+        config=CONFIGFILE,
+        repo=config["env"]["twosamplemr_repo"],
+        ref=config["env"]["twosamplemr_ref"],
+    shell:
+        "Rscript {SCRIPTS}/setup_twosamplemr.R --config {params.config} "
+        "--repo {params.repo} --ref {params.ref} --sentinel {output.sentinel}"
+
+
+# --- build one instrument per stratum: local plink clump, F-stats, sidecar ---
+rule build_instrument:                      # fan-out over the six strata
+    input:
+        exposure=lambda w: f"{GWAS_DIR}/{w.stratum}.{STRATA[w.stratum]['accession']}.h.tsv.gz",
+        ld_bed=f"{LD_PREFIX}.bed",
+        setup=SETUP_OK,
+    output:
+        tsv=f"{INS_DIR}/{{stratum}}.instrument.tsv",
+        sidecar=f"{INS_DIR}/{{stratum}}.instrument.json",
+        clump_log=f"{INS_DIR}/{{stratum}}.clump.log",
+    benchmark:
+        f"{INS_DIR}/{{stratum}}.benchmark.tsv"          # F3: wall-clock + max_rss per stratum
+    conda:
+        "envs/r-mr.yaml"
+    params:
+        config=CONFIGFILE,
+        ld_prefix=LD_PREFIX,
+    shell:
+        "Rscript {SCRIPTS}/build_instrument.R --config {params.config} "
+        "--stratum {wildcards.stratum} --exposure {input.exposure} "
+        "--ld-prefix {params.ld_prefix} --out {output.tsv} --sidecar {output.sidecar} "
+        "--clump-log {output.clump_log}"
+
+
+# --- aggregate: six sidecars + six benchmark TSVs -> one instruments manifest -
+rule aggregate_instruments:
+    input:
+        sidecars=expand(f"{INS_DIR}/{{stratum}}.instrument.json", stratum=STRATA),
+        benchmarks=expand(f"{INS_DIR}/{{stratum}}.benchmark.tsv", stratum=STRATA),
+        setup=SETUP_OK,
+    output:
+        manifest=INSTRUMENTS_MANIFEST,
+    conda:
+        "envs/stage.yaml"
+    shell:
+        "python {SCRIPTS}/aggregate_instruments.py --config {CONFIGFILE} "
+        "--sidecars {input.sidecars} --benchmarks {input.benchmarks} "
+        "--setup {input.setup} --manifest {output.manifest}"

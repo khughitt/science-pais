@@ -132,3 +132,32 @@ ld_panel:
     fam:
       url: "https://zenodo.org/api/records/6614170/files/1000G_EUR.fam/content"
       md5: "669a4260fda7a9e1dd7df374aff294ea"
+
+# --------------------------------------------------------------- env ----------
+# plan:0009 Task 2. TwoSampleMR is not on conda; setup_twosamplemr installs the
+# pinned tag (with ieugwasr for local clumping) into the r-mr env library and
+# records resolved versions. Same pin as plan:0007 (v0.7.9). The conda-lock.yml
+# is recorded provenance only — --use-conda materializes r-mr.yaml (F1). The R
+# layer is the real drift risk, so setup HARD-FAILS unless the resolved
+# versions match (both values from the plan:0007 run-of-record sentinel
+# results/wave1-mr-pilot/.env/twosamplemr.ok: R 4.5.3, MendelianRandomization
+# 0.10.0):
+env:
+  twosamplemr_repo: "MRCIEU/TwoSampleMR"
+  twosamplemr_ref: "v0.7.9"
+  twosamplemr_version_expected: "0.7.9"        # hard-fail if packageVersion != this
+  ieugwasr_version_expected: "1.1.0"           # hard-fail if packageVersion != this
+
+# ------------------------------------------------------- instrument -----------
+# plan:0009 Task 2. Genome-wide-sig -> local 1000G-EUR clump -> F=(beta/se)^2.
+# NO mhc_exclude — hormones are not HLA-dominated; the cis-SHBG signal is a
+# legitimate instrument (plan:0009 Approach). Weak strata are quarantined, not
+# fatal (eligible_for_mr:false + reason), per the Task-2 gate.
+instrument:
+  p_threshold: 5.0e-8
+  clump_r2: 0.001
+  clump_kb: 10000                    # 10 Mb
+  f_min: 10                          # mean-F floor for MR eligibility
+  min_instruments_mr: 3              # Egger/weighted-median eligibility floor
+  target_instruments: 10             # quality flag only (not a gate)
+  # mhc_exclude: (intentionally absent — no MHC exclusion for hormones)
