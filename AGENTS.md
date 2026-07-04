@@ -58,7 +58,7 @@ imperative rule. The "why" stays in core/decisions.md. -->
 - Decisions: `core/decisions.md`
 - Project overview: `core/overview.md`
 - Active tasks: `tasks/active.md`
-- Research question: `specs/research-question.md`
+- Research question: `entities/research-question.md`
 - Scope boundaries: `specs/scope-boundaries.md`
-- Hypotheses: `specs/hypotheses/`
-- Research plan: `RESEARCH_PLAN.md`
+- Hypotheses: `entities/hypotheses/`
+- Research plan: `README.md`
