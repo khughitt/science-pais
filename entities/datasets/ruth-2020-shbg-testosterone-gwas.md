@@ -56,6 +56,7 @@ provided_capabilities:
   stratification: sex
 consumed_by:
 - plan:0008-wave1-mr-autoimmune-hormone-longcovid-design
+- plan:0009-wave1-mr-hormone-pilot
 - task:t089
 related:
 - question:0007-mechanism-of-female-predominance-in-pais

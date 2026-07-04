@@ -16,6 +16,7 @@ related:
   - "dataset:ruth-2020-shbg-testosterone-gwas"
   - "dataset:covid19-hgi-longcovid-gwas"
   - "dataset:1000g-eur-ld-panel"
+  - "dataset:eur-ldsc-ld-score-reference"
 ---
 
 # Wave-1 MR Arm-B hormone pilot: sex-hormone liability → long-COVID
@@ -118,13 +119,13 @@ Reproducibility: extend the `plan:0007` conda-lock env with `r-mrlap` + `r-genom
   binary, log-OR; **European-dominant multi-ancestry** — the ancestry flag).
 - **LD panel** — `dataset:1000g-eur-ld-panel` (Zenodo 6614170; local plink clumping),
   reconciled to GRCh38 by rsID as in `plan:0007`.
-- **MRlap infrastructure (new, in-scope per D-006)** — `eur_w_ld_chr` EUR LD-score
-  reference + the HapMap3 (`w_hm3.snplist`) list; staged checksummed at Task 1 as a
-  tracked reference dataset from an **archival, checksummed source** (record SHA-256) —
-  **not** the UT-Austin Box share link MRlap's README points at (kept as provenance
-  only), mirroring the `plan:0007` 1000G Zenodo-hardening. Entity created at Task 1
-  under the retrieval-probe exception; the data-access gate reruns before Task 4
-  consumes it.
+- **MRlap infrastructure (new, in-scope per D-006)** — `dataset:eur-ldsc-ld-score-reference`:
+  `eur_w_ld_chr` EUR LD-score reference (pinned to the **DOI-archival, checksummed**
+  Zenodo record 8182036, md5 `e2f16343…`, CC-BY-4.0 — **not** the UT-Austin Box share
+  link, mirroring the `plan:0007` 1000G Zenodo-hardening) + the HapMap3 (`w_hm3.snplist`)
+  list (archival source confirmed at staging). Entity created; per-file SHA-256 +
+  extracted contents recorded at Task 1 under the retrieval-probe exception; the
+  data-access gate reruns before Task 4 consumes it.
 - `TwoSampleMR`, `MRlap` + `GenomicSEM` (MRlap's internal cross-trait LDSC engine),
   `MendelianRandomization`, local `plink` (naive-arm clumping only).
 - Scale/overlap contract: `plan:0008` KD2 + KD-scale; bounded-sex framing: `plan:0008` KD3.
