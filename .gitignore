@@ -36,6 +36,9 @@ data/processed
 results/*
 !results/.gitkeep
 
+# labnote generated artifacts
+.labnote/
+
 # Snakemake run cache/logs (workflow outputs live under data/ & results/, gitignored)
 .snakemake/
 code/workflows/.snakemake/
