@@ -337,6 +337,18 @@ doc/plans/
   a study/freeze switch that changes the estimand is itself a sensitivity, not a
   drop-in. **Fail-closed:** if no authorised rung yields a reproducible EUR outcome,
   record the negative result and invoke KD1's demotion.
+- **WP1 finding (2026-07-04) — ladder exhausted, NEGATIVE.** No EUR-only Long COVID
+  summary-statistics file is publicly downloadable: the HGI DF4 release deposited
+  only the four **multi-ancestry** (European-dominant ~85–90%) strata
+  (GCST90454540–543 / LocusZoom N2·W2·N1·W1); the paper's European-ancestry analysis
+  was an internal sensitivity, not a deposited file. The NatCardioVasc-2025 fallback
+  deposits no EUR-only file either (it reuses the multi-ancestry HGI N1 + FinnGen r10).
+  See the `covid19-hgi-longcovid-gwas` verification log (2026-07-04, plan:0008 WP1)
+  for sources. **The ancestry hard-stop cannot be lifted from a downloadable EUR-only
+  HGI file.** This triggers the KD1 fork — accept the demotion (European-dominant
+  outcome, ancestry-flagged, non-primary per estimand §d.5) **or** open a new decision
+  to authorise FinnGen r10 as a genuine (Finnish-isolate) European outcome. **Held for
+  the user's governance choice before WP3+ proceeds.**
 
 ### WP2 — Stage Ruth sex-stratified exposures + LDSC/HapMap3 infrastructure
 
