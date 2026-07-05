@@ -70,13 +70,33 @@ write_results <- function(...) {
   writeLines(jsonlite::toJSON(results, auto_unbox = TRUE, pretty = TRUE, null = "null"), results_out)
 }
 
+# --- hormone estimand + KD1/KD3 labels (hoisted; used in all write_results calls) ----
+estimand <- sprintf(paste0("germline-liability IV effect of a 1-SD increase in %s ",
+  "(%s; Ruth 2020, European UKB continuous-trait GWAS) on long-COVID liability ",
+  "(log-OR), 1000G-EUR-clumped genome-wide-significant instruments."),
+  spec$trait, spec$sex)
+labels <- list(
+  ancestry_flag = paste0("Outcome GCST90454541 is a European-dominant (~85-90%) ",
+    "multi-ancestry HGI broad/population meta; no EUR-only sibling. ANCESTRY-FLAGGED, ",
+    "NON-PRIMARY (KD1) — exploratory/robustness only, never primary evidence for ",
+    "hypothesis:0005 / question:0007 / question:0013."),
+  bounded_sex = paste0("Male-only / female-only strata give a BOUNDED ",
+    "exposure-architecture read against a mixed-sex outcome (KD3) — NOT a ",
+    "genotype x sex effect-modification test. No sex-modification claim."),
+  exposure_side = paste0("SHBG and total testosterone share Ruth instrument loci ",
+    "(steroid-axis pleiotropy plausible; Egger+WM only partially bound it). ",
+    "Female-testosterone is weakest-instrumented yet most decision-relevant."),
+  sample_overlap_uncorrected = TRUE,   # Ruth = 100% UKB, HGI pools UKB → structural
+  naive_comparator_only = TRUE)        # overlap NOT corrected here; MRlap is Task 4
+
 # --- eligibility guard (edit 2: loud skip, no estimator run) -----------------
 sidecar <- jsonlite::fromJSON(sidecar_path)
 if (isFALSE(sidecar$eligible_for_mr)) {
   reasons <- sidecar$eligibility_reasons
   cat(sprintf("harmonize_estimate[%s]: SKIP — quarantined (eligible_for_mr=false), reasons=[%s]\n",
               stratum, paste(reasons, collapse = ",")))
-  write_results(status = "skipped-quarantined", eligibility_reasons = I(reasons), methods = list())
+  write_results(status = "skipped-quarantined", eligibility_reasons = I(reasons), methods = list(),
+                estimand = estimand, labels = labels)
   fwrite(data.table(SNP = character(0), chr = integer(0), pos = numeric(0),
                      EA = character(0), OA = character(0), beta = numeric(0),
                      se = numeric(0), eaf = numeric(0), pval = numeric(0), F = numeric(0)),
@@ -144,28 +164,9 @@ if (nrow(kept) < 3) {
   write_results(status = "insufficient-harmonised-instruments",
                 n_instruments_input = n_instruments_input, n_harmonised = nrow(kept),
                 dropped = I(as.character(dropped)), quality_flags = I(quality_flags),
-                methods = list())
+                methods = list(), estimand = estimand, labels = labels)
   fwrite(dat, harmonised_out, sep = "\t"); quit(save = "no", status = 0)
 }
-
-# --- hormone estimand + KD1/KD3 labels (edit 5) ------------------------------
-estimand <- sprintf(paste0("germline-liability IV effect of a 1-SD increase in %s ",
-  "(%s; Ruth 2020, European UKB continuous-trait GWAS) on long-COVID liability ",
-  "(log-OR), 1000G-EUR-clumped genome-wide-significant instruments."),
-  spec$trait, spec$sex)
-labels <- list(
-  ancestry_flag = paste0("Outcome GCST90454541 is a European-dominant (~85-90%) ",
-    "multi-ancestry HGI broad/population meta; no EUR-only sibling. ANCESTRY-FLAGGED, ",
-    "NON-PRIMARY (KD1) — exploratory/robustness only, never primary evidence for ",
-    "hypothesis:0005 / question:0007 / question:0013."),
-  bounded_sex = paste0("Male-only / female-only strata give a BOUNDED ",
-    "exposure-architecture read against a mixed-sex outcome (KD3) — NOT a ",
-    "genotype x sex effect-modification test. No sex-modification claim."),
-  exposure_side = paste0("SHBG and total testosterone share Ruth instrument loci ",
-    "(steroid-axis pleiotropy plausible; Egger+WM only partially bound it). ",
-    "Female-testosterone is weakest-instrumented yet most decision-relevant."),
-  sample_overlap_uncorrected = TRUE,   # Ruth = 100% UKB, HGI pools UKB → structural
-  naive_comparator_only = TRUE)        # overlap NOT corrected here; MRlap is Task 4
 
 # --- estimators + enforced weighted-median bootstrap (edit 6, P1) ------------
 set.seed(as.integer(cfg$estimate$weighted_median_seed))
