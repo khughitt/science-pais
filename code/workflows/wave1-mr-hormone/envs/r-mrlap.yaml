@@ -1,0 +1,44 @@
+# R env for the Wave-1 MRlap overlap-corrected MR arm (plan:0009 Task 4).
+#
+# Conda-available deps are locked here; a `conda-lock.yml` byte-level
+# reproducibility artifact can be regenerated with `uv run conda-lock -f
+# r-mrlap.yaml -p linux-64` (mirrors r-mr.yaml's convention). Run under
+# Snakemake with `--use-conda`.
+#
+# TwoSampleMR, GenomicSEM, and MRlap are NOT on conda (GitHub-only). The
+# `setup_mrlap` rule installs TwoSampleMR@v0.7.9, then GenomicSEM and MRlap at
+# pinned commits (config: mrlap_env.*), into THIS env's R library via
+# `remotes`, and asserts the resolved GithubSHA1s/versions. The heavy compiled
+# deps below are provided from conda so remotes does not source-compile them —
+# same set as envs/r-mr.yaml (TwoSampleMR's compiled deps), plus lavaan/gdata/
+# corpcor/Matrix for GenomicSEM, plus explicit compilers/make since this env's
+# source installs (GenomicSEM, MRlap) are heavier than r-mr.yaml's single
+# TwoSampleMR install. No Python LD-Score-regression package in this lock set.
+name: wave1-mr-hormone-mrlap
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-base=4.5
+  - r-remotes
+  - r-yaml                     # R-side config.yaml parsing
+  - r-jsonlite
+  - r-data.table
+  - r-r.utils                  # fread() gz support (read *.h.tsv.gz directly)
+  - r-lavaan                   # GenomicSEM dependency (SEM fitting)
+  - r-gdata                    # GenomicSEM dependency
+  - r-corpcor                  # GenomicSEM dependency (shrinkage covariance)
+  - r-matrix                   # GenomicSEM dependency (sparse/dense matrix ops)
+  - gzip                       # zcat, for streaming canonicalization
+  - r-mendelianrandomization   # CRAN estimator engine cross-check (conda-forge; TwoSampleMR compiled dep)
+  - r-glmnet                   # TwoSampleMR compiled dep
+  - r-mvtnorm                  # TwoSampleMR compiled dep
+  - r-curl                     # TwoSampleMR compiled dep
+  - r-httr                     # TwoSampleMR compiled dep
+  - r-dplyr                    # TwoSampleMR compiled dep
+  - r-plyr                     # TwoSampleMR compiled dep
+  - r-reshape2                 # TwoSampleMR compiled dep
+  - r-ggplot2                  # TwoSampleMR compiled dep
+  - make                       # so remotes does not source-compile without a build tool
+  - gxx_linux-64                # C++ compiler for source installs (GenomicSEM/MRlap/TwoSampleMR deps)
+  - gfortran_linux-64           # Fortran compiler for source installs (e.g. glmnet-adjacent deps)
