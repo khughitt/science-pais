@@ -161,3 +161,19 @@ instrument:
   min_instruments_mr: 3              # Egger/weighted-median eligibility floor
   target_instruments: 10             # quality flag only (not a gate)
   # mhc_exclude: (intentionally absent — no MHC exclusion for hormones)
+
+# ------------------------------------------------------------- harmonise -----
+# plan:0009 Task 3. TwoSampleMR harmonise action=2 (infer palindromic strand by
+# EAF, drop ambiguous); same as plan:0007. All drops logged (non-silent).
+harmonise:
+  action: 2
+
+# -------------------------------------------------------------- estimate -----
+# plan:0009 Task 3 naive comparator: IVW (primary) / MR-Egger / weighted-median
+# on the 1000G-EUR-clumped instruments. Outcome effect is log-OR long-COVID per
+# 1-SD hormone. WM SE is bootstrapped → fixed seed (IVW/Egger are closed-form).
+estimate:
+  methods: ["mr_ivw", "mr_egger_regression", "mr_weighted_median"]
+  weighted_median_seed: 20260705
+  weighted_median_bootstrap_n: 1000
+  harmonisation_dropout_warn_frac: 0.5   # quality flag if kept/input instruments < this

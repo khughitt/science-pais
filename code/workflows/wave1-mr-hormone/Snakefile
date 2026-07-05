@@ -213,3 +213,63 @@ rule aggregate_instruments:
         "python {SCRIPTS}/aggregate_instruments.py --config {CONFIGFILE} "
         "--sidecars {input.sidecars} --benchmarks {input.benchmarks} "
         "--setup {input.setup} --manifest {output.manifest}"
+
+
+# =============================================================================
+# Task 3 — naive MR comparator (plan:0009). Harmonise each of the six hormone
+# instruments against the long-COVID outcome and run the naive IVW / MR-Egger /
+# weighted-median comparator; aggregate into one manifest. Run with:
+#
+#     uv run snakemake -s code/workflows/wave1-mr-hormone/Snakefile \
+#         --use-conda -c1 naive_mr
+# =============================================================================
+
+# --- resolved naive-MR targets (plan:0009 Task 3) ----------------------------
+MR_DIR = f"{PROC}/mr"
+NAIVE_MR_MANIFEST = f"{RESULTS}/naive_mr_results.json"
+
+
+rule naive_mr:                              # Task-3 target
+    input:
+        NAIVE_MR_MANIFEST,
+
+
+# --- harmonise one stratum's instruments <-> outcome, run IVW/Egger/WM --------
+rule harmonize_estimate:                    # fan-out over the six strata
+    input:
+        instrument=f"{INS_DIR}/{{stratum}}.instrument.tsv",
+        sidecar=f"{INS_DIR}/{{stratum}}.instrument.json",
+        outcome=OUTCOME_FILE,
+        setup=SETUP_OK,
+    output:
+        harmonised=f"{MR_DIR}/{{stratum}}.harmonised.tsv",
+        results=f"{MR_DIR}/{{stratum}}.mr_results.json",
+    benchmark:
+        f"{MR_DIR}/{{stratum}}.benchmark.tsv"    # real-data stream-extract: wall-clock + max_rss
+    conda:
+        "envs/r-mr.yaml"
+    params:
+        config=CONFIGFILE,
+    shell:
+        "Rscript {SCRIPTS}/harmonize_estimate.R --config {params.config} "
+        "--stratum {wildcards.stratum} --instrument {input.instrument} "
+        "--sidecar {input.sidecar} --outcome {input.outcome} "
+        "--harmonised-out {output.harmonised} --results-out {output.results}"
+
+
+# --- aggregate: six per-stratum results + benchmarks -> one naive-MR manifest -
+rule aggregate_mr:
+    input:
+        results=expand(f"{MR_DIR}/{{stratum}}.mr_results.json", stratum=STRATA),
+        benchmarks=expand(f"{MR_DIR}/{{stratum}}.benchmark.tsv", stratum=STRATA),
+        setup=SETUP_OK,
+        instruments=INSTRUMENTS_MANIFEST,
+    output:
+        manifest=NAIVE_MR_MANIFEST,
+    conda:
+        "envs/stage.yaml"
+    shell:
+        "python {SCRIPTS}/aggregate_mr.py --config {CONFIGFILE} "
+        "--results {input.results} --benchmarks {input.benchmarks} "
+        "--setup {input.setup} --instruments {input.instruments} "
+        "--manifest {output.manifest}"
