@@ -118,6 +118,7 @@ estimate:
   methods: ["mr_ivw", "mr_egger_regression", "mr_weighted_median"]
   weighted_median_seed: 20260705
   weighted_median_bootstrap_n: 1000
+  harmonisation_dropout_warn_frac: 0.5   # quality flag if kept/input instruments < this
 ```
 
 `config["exposures"]` already carries each stratum's `name` / `accession` /
@@ -233,6 +234,19 @@ with these edits:
    a finite `{intercept, se, pval}` object or `null` with a `reason` string (never
    silently absent).
 
+8. **Harmonisation-dropout quality flag (P2/Dim-6, non-gating).** `action = 2`
+   drops palindromic/ambiguous SNPs; a large drop means the estimate rests on far
+   fewer instruments than were built. Record `n_harmonised`/`n_instruments_input`
+   (already non-silent) **and** raise a quality flag so a thin set is surfaced, not
+   silent — mirroring Task 2's `below_target_n` pattern:
+   ```r
+   quality_flags <- character(0)
+   if (nrow(kept) / nrow(inst) < cfg$estimate$harmonisation_dropout_warn_frac)
+     quality_flags <- c(quality_flags, "high_harmonisation_dropout")
+   ```
+   `quality_flags` is written to the per-stratum JSON. It is a **flag, not a gate**
+   — the stratum still estimates.
+
 **Per-stratum results JSON** (written by `write_results`, small helper):
 ```json
 {
@@ -246,7 +260,7 @@ with these edits:
                 "b": <num>, "se": <num>, "pval": <num>, "or": <num>}, "...Egger, WM..." ],
   "egger_intercept": {"intercept": <num>, "se": <num>, "pval": <num>},   // or null + "reason"
   "concordance": {"all_methods_same_sign": <bool>, "ivw_beta": <num>},
-  "dropped_snps": [<rsid...>],
+  "dropped_snps": [<rsid...>], "quality_flags": [<"high_harmonisation_dropout"?>],
   "harmonise_action": 2, "weighted_median_seed": 20260705,
   "weighted_median_bootstrap_n_resolved": <int>,
   "resources": {"outcome_extract_seconds": <num>, "peak_memory_mb": <num>},
@@ -262,7 +276,9 @@ Reads the six per-stratum result JSONs + six benchmark TSVs + the setup sentinel
 any missing/malformed input **and, as defense-in-depth (P1), on any `status:
 "estimated"` record that lacks a configured method or carries a non-finite
 `b`/`se`/`pval`/`or`** (the estimator script is the primary gate; the aggregator
-re-asserts so a malformed record can never reach the manifest silently). Writes
+re-asserts so a malformed record can never reach the manifest silently). It also
+emits an `entities` cross-ref list (the two consumed datasets) for
+input-traceability, matching Task 1's `staging_manifest.json` convention. Writes
 under `results/wave1-mr-hormone-pilot/`:
 
 ```json
@@ -288,6 +304,8 @@ under `results/wave1-mr-hormone-pilot/`:
                      "female_ivw_sign": <int>, "male_female_sign_concordant": <bool>}
   },
   "twosamplemr_setup": { "...resolved versions from the sentinel..." },
+  "entities": [ "dataset:ruth-2020-shbg-testosterone-gwas",
+                "dataset:covid19-hgi-longcovid-gwas" ],
   "resource": { "per_stratum": [ {"stratum": "...", "wall_clock_s": <num>, "max_rss_mb": <num>} ],
                 "peak_rss_mb": <max>, "total_wall_clock_s": <sum> }
 }
@@ -362,17 +380,18 @@ rule aggregate_mr:
       `config.yaml` (verbatim above).
 - [ ] **Step 2 — estimator script.** Write `scripts/harmonize_estimate.R` by
       copying `code/workflows/wave1-mr/scripts/harmonize_estimate.R` and applying
-      the seven edits above (new args + `--stratum` resolution, eligibility guard,
+      the eight edits above (new args + `--stratum` resolution, eligibility guard,
       `EA`/`OA` exposure mapping, graceful `<3`-harmonised record, hormone
       estimand + KD1/KD3 + `sample_overlap_uncorrected`/`naive_comparator_only`
       labels, **enforced WM `nboot`**, **estimator-output hard-stop**,
-      `write_results` helper emitting the per-stratum JSON). Keep the
-      stream-extract + `harmonise_data(action=2)` + estimator core unchanged.
+      **`high_harmonisation_dropout` quality flag**, `write_results` helper
+      emitting the per-stratum JSON). Keep the stream-extract +
+      `harmonise_data(action=2)` + estimator core unchanged.
 - [ ] **Step 3 — aggregator.** Write `scripts/aggregate_mr.py` (join six results +
       benchmark TSVs + sentinel + instruments manifest → `naive_mr_results.json`
-      with `summary`, `cross_stratum` sign-concordance, `resource`; hard-stop on
-      missing/malformed input **and on any `estimated` record missing a method or
-      carrying a non-finite `b`/`se`/`pval`/`or`**).
+      with `summary`, `cross_stratum` sign-concordance, `entities` cross-ref,
+      `resource`; hard-stop on missing/malformed input **and on any `estimated`
+      record missing a method or carrying a non-finite `b`/`se`/`pval`/`or`**).
 - [ ] **Step 4 — Snakefile.** Add `MR_DIR` / `NAIVE_MR_MANIFEST`, the
       `harmonize_estimate` (wildcard + `benchmark:`) and `aggregate_mr` rules, and
       the `naive_mr` target.
@@ -415,10 +434,17 @@ rule aggregate_mr:
   spot-checked): the quarantine path yields `status: "skipped-quarantined"` + a
   header-only harmonised TSV + no estimator output; the `<3`-harmonised path yields
   `status: "insufficient-harmonised-instruments"` without crashing.
+- **Harmonisation dropout surfaced:** `quality_flags` carries
+  `high_harmonisation_dropout` when `n_harmonised / n_instruments_input <
+  harmonisation_dropout_warn_frac` (flag, not gate); every stratum records
+  `n_harmonised` regardless.
 - **Scale/resource on real data:** per-stratum `max_rss_mb` + wall-clock from
   `benchmark:` for the outcome stream-extract in the manifest `resource` block;
   `peak_rss_mb` reported. (The multi-GB outcome is streamed by rsID, never fully
   loaded.)
+- **Manifest input-traceability:** `naive_mr_results.json` carries an `entities`
+  cross-ref to the two consumed datasets (full `datapackage.json` bundle deferred
+  to Task 5 by design).
 - **Every output carries the ancestry-flag + non-primary + bounded-sex labels
   plus the machine-readable `sample_overlap_uncorrected` / `naive_comparator_only`
   flags** (Ruth×HGI UKB overlap is *not* corrected here — Task 4); the
