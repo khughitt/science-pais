@@ -13,8 +13,17 @@ origins:
   ref: explore-ideas-temporal
 related: []
 created: '2026-07-04'
-updated: '2026-07-04'
+updated: '2026-07-05'
 added_by: explore-ideas:claude-opus-4-8:cand-temporal-domain-failure-sequence
+lens_views:
+- lens: temporal
+  rationale: "Sharpens question:0008 and the causal-priority open question already\
+    \ noted in topic:shared-failure-mode-across-pais (which domain deviates first\
+    \ is unresolved). Dense longitudinal multi-omics from the first weeks could establish\
+    \ causal order \u2014 the primary intervention target \u2014 and explain cross-trigger\
+    \ convergence as different sequence-entry points into a similar cascade. Orthogonal\
+    \ to the severity-magnitude and late-divergence framings.\n"
+  origin_ref: explore-ideas-temporal
 ---
 # Temporal causal ordering of homeostatic domain failure in the post-acute period
 
