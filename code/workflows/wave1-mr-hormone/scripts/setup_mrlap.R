@@ -29,29 +29,23 @@ if (is.null(config_path) || is.null(sentinel))
 
 cfg <- yaml::read_yaml(config_path)
 
-# --- install in dependency order (idempotent + retrying) ---------------------
-# The three GitHub installs are the flaky, network-bound step (a transient
-# api.github.com/codeload failure on any one tarball aborts the whole rule). So
-# each install is (a) SKIPPED when the package is already present at the pinned
-# SHA/version — making a re-run fetch only what is actually missing — and
-# (b) RETRIED on failure. The four hard-fail asserts below remain the gate; this
-# only changes HOW we reach a correctly-pinned library, never WHETHER we verify it.
-retries <- 3L
-retry_sleep_s <- 20
+# GitHub tarball downloads (esp. the larger MRlap repo) can exceed R's default
+# 60s download.file timeout on a slow link and fail as "download ... failed" —
+# raise it generously so a slow-but-working download is not aborted mid-stream.
+options(timeout = max(600, getOption("timeout")))
 
-with_retry <- function(expr, what) {
-  for (attempt in seq_len(retries)) {
-    ok <- tryCatch({ force(expr); TRUE },
-                   error = function(e) {
-                     message(sprintf("setup_mrlap: %s failed (attempt %d/%d): %s",
-                                     what, attempt, retries, conditionMessage(e)))
-                     FALSE
-                   })
-    if (isTRUE(ok)) return(invisible(TRUE))
-    if (attempt < retries) Sys.sleep(retry_sleep_s)
-  }
-  stop(sprintf("setup_mrlap: %s failed after %d attempts — HALT", what, retries))
-}
+# --- install in dependency order (idempotent + verify-gated retry) -----------
+# The three GitHub installs are the flaky, network-bound step. Each is SKIPPED
+# when the package is already present at the pinned SHA/version (so a re-run
+# fetches only what is missing), and RETRIED otherwise. Crucially the retry
+# gates on the ACTUAL installed state (the package resolves at the pinned
+# SHA/version afterwards) rather than on whether install_github threw — remotes
+# does not always re-raise a download failure as a catchable error, so a
+# throw-gated retry would silently pass a half-installed library through. The
+# four hard-fail asserts below remain the reproducibility gate; this only
+# changes HOW we reach a correctly-pinned library, never WHETHER we verify it.
+retries <- 4L
+retry_sleep_s <- 20
 
 installed_sha <- function(pkg) {
   if (!requireNamespace(pkg, quietly = TRUE)) return(NA_character_)
@@ -63,41 +57,59 @@ installed_version <- function(pkg) {
   as.character(utils::packageVersion(pkg))
 }
 
-# 1. TwoSampleMR @ pinned tag (transitive engine MRlap calls; pulls ieugwasr
-#    from CRAN via `dependencies = TRUE`). Install ieugwasr explicitly first so
-#    its version is captured even if already present.
-if (!requireNamespace("ieugwasr", quietly = TRUE)) {
-  with_retry(remotes::install_cran("ieugwasr", upgrade = "never"), "ieugwasr (CRAN)")
+# install_fn: a nullary closure that performs the install.
+# verify_fn:  a nullary predicate that is TRUE iff the package is now present at
+#             the pinned SHA/version. Retry until verify_fn holds; HALT after N.
+ensure <- function(install_fn, verify_fn, what) {
+  if (isTRUE(verify_fn())) {
+    message(sprintf("setup_mrlap: %s already satisfied — skipping", what))
+    return(invisible(TRUE))
+  }
+  for (attempt in seq_len(retries)) {
+    tryCatch(install_fn(), error = function(e)
+      message(sprintf("setup_mrlap: %s install attempt %d/%d errored: %s",
+                      what, attempt, retries, conditionMessage(e))))
+    if (isTRUE(verify_fn())) {
+      message(sprintf("setup_mrlap: %s installed (attempt %d/%d)", what, attempt, retries))
+      return(invisible(TRUE))
+    }
+    message(sprintf("setup_mrlap: %s not present after attempt %d/%d", what, attempt, retries))
+    if (attempt < retries) Sys.sleep(retry_sleep_s)
+  }
+  stop(sprintf("setup_mrlap: %s not installed at pinned ref after %d attempts — HALT",
+               what, retries))
 }
-if (identical(installed_version("TwoSampleMR"), cfg$mrlap_env$twosamplemr_version_expected)) {
-  message("setup_mrlap: TwoSampleMR ", cfg$mrlap_env$twosamplemr_version_expected,
-          " already installed — skipping")
-} else {
-  with_retry(remotes::install_github(
+
+# 1. ieugwasr (CRAN) — transitive dep of TwoSampleMR; install if absent so its
+#    version is captured. (TwoSampleMR's install also pulls it, but do it first.)
+ensure(
+  function() remotes::install_cran("ieugwasr", upgrade = "never"),
+  function() requireNamespace("ieugwasr", quietly = TRUE),
+  "ieugwasr (CRAN)")
+
+# 2. TwoSampleMR @ pinned tag (transitive engine MRlap calls; dependencies=TRUE).
+ensure(
+  function() remotes::install_github(
     paste0(cfg$mrlap_env$twosamplemr_repo, "@", cfg$mrlap_env$twosamplemr_ref),
-    upgrade = "never", dependencies = TRUE
-  ), "TwoSampleMR (GitHub)")
-}
+    upgrade = "never", dependencies = TRUE),
+  function() identical(installed_version("TwoSampleMR"), cfg$mrlap_env$twosamplemr_version_expected),
+  "TwoSampleMR (GitHub)")
 
-# 2. GenomicSEM @ pinned commit (MRlap's internal cross-trait LDSC engine).
-if (identical(installed_sha("GenomicSEM"), substr(cfg$mrlap_env$genomicsem_ref, 1, 40))) {
-  message("setup_mrlap: GenomicSEM @ pinned SHA already installed — skipping")
-} else {
-  with_retry(remotes::install_github(
+# 3. GenomicSEM @ pinned commit (MRlap's internal cross-trait LDSC engine).
+ensure(
+  function() remotes::install_github(
     paste0(cfg$mrlap_env$genomicsem_repo, "@", cfg$mrlap_env$genomicsem_ref),
-    upgrade = "never"
-  ), "GenomicSEM (GitHub)")
-}
+    upgrade = "never"),
+  function() identical(installed_sha("GenomicSEM"), substr(cfg$mrlap_env$genomicsem_ref, 1, 40)),
+  "GenomicSEM (GitHub)")
 
-# 3. MRlap @ pinned commit.
-if (identical(installed_sha("MRlap"), substr(cfg$mrlap_env$mrlap_ref, 1, 40))) {
-  message("setup_mrlap: MRlap @ pinned SHA already installed — skipping")
-} else {
-  with_retry(remotes::install_github(
+# 4. MRlap @ pinned commit.
+ensure(
+  function() remotes::install_github(
     paste0(cfg$mrlap_env$mrlap_repo, "@", cfg$mrlap_env$mrlap_ref),
-    upgrade = "never"
-  ), "MRlap (GitHub)")
-}
+    upgrade = "never"),
+  function() identical(installed_sha("MRlap"), substr(cfg$mrlap_env$mrlap_ref, 1, 40)),
+  "MRlap (GitHub)")
 
 suppressPackageStartupMessages({
   library(TwoSampleMR)
