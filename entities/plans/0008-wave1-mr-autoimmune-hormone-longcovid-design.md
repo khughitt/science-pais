@@ -1,6 +1,6 @@
 ---
 id: "plan:0008-wave1-mr-autoimmune-hormone-longcovid-design"
-type: "plan"
+kind: "plan"
 plan_kind: "pipeline"
 title: "Wave-1 MR full design: autoimmune + sex-hormone liability → long-COVID (reportable-grade)"
 status: "active"

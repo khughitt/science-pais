@@ -1,6 +1,6 @@
 ---
 id: question:0011-mitochondrial-basis-of-pem
-type: question
+kind: question
 title: What is the mitochondrial/bioenergetic basis of post-exertional malaise, and
   is it shared across PAIS?
 status: active

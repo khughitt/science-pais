@@ -1,6 +1,6 @@
 ---
 id: paper:Raijmakers2019
-type: paper
+kind: paper
 title: A possible role for mitochondrial-derived peptides humanin and MOTS-c in patients
   with Q fever fatigue syndrome and chronic fatigue syndrome
 status: active

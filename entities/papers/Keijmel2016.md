@@ -1,6 +1,6 @@
 ---
 id: paper:Keijmel2016
-type: paper
+kind: paper
 title: 'Altered interferon-γ response in patients with Q-fever fatigue syndrome'
 status: active
 ontology_terms:

@@ -1,6 +1,6 @@
 ---
 id: interpretation:0017-t053-h0002-promotion-audit
-type: interpretation
+kind: interpretation
 title: "t053 - h0002 promotion audit: weak SARS-CoV-2 tissue/macrophage support, acute-load criticism, no promotion"
 status: active
 source_refs: []

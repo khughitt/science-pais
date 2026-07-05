@@ -1,6 +1,6 @@
 ---
 id: interpretation:0025-t009-pediatric-long-covid-and-misc
-type: interpretation
+kind: interpretation
 title: "t009: Pediatric long COVID is age-stratified PAIS; MIS-C is an adjacent recovery-contrast syndrome"
 status: active
 source_refs:

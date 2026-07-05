@@ -1,6 +1,6 @@
 ---
 id: question:0008-formalize-vicious-cycle-attractor-model
-type: question
+kind: question
 title: Can the mutually reinforcing vicious-cycle model of PAIS be formalized as a
   dynamical-systems or causal-graph hypothesis that makes discriminating predictions
   distinguishing chronification from recovery?

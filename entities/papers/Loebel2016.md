@@ -1,6 +1,6 @@
 ---
 id: paper:Loebel2016
-type: paper
+kind: paper
 title: "Antibodies to β adrenergic and muscarinic cholinergic receptors in patients\
   \ with Chronic Fatigue Syndrome"
 status: active

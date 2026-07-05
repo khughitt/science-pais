@@ -1,6 +1,6 @@
 ---
 id: "concept:cardiometabolic-comorbidity"
-type: "concept"
+kind: "concept"
 title: "Cardiometabolic comorbidity"
 status: "active"
 created: "2026-06-19"

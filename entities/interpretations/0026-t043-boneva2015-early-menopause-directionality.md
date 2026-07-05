@@ -1,6 +1,6 @@
 ---
 id: interpretation:0026-t043-boneva2015-early-menopause-directionality
-type: interpretation
+kind: interpretation
 title: "t043: Boneva2015 early-menopause signal is partly antecedent-surgical, not a clean forward or reverse causal test"
 status: active
 source_refs:

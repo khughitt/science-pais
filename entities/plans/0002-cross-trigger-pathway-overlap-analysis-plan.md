@@ -1,5 +1,5 @@
 ---
-type: plan
+kind: plan
 id: plan:0002-cross-trigger-pathway-overlap-analysis-plan
 title: "Analysis plan: cross-trigger pathway-overlap reanalysis (GSE14577 + GSE130353) for q0001 (t035)"
 date: 2026-06-20

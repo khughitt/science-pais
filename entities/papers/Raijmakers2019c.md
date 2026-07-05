@@ -1,6 +1,6 @@
 ---
 id: paper:Raijmakers2019c
-type: paper
+kind: paper
 title: Long-Lasting Transcriptional Changes in Circulating Monocytes of Acute Q Fever Patients
 status: active
 ontology_terms:

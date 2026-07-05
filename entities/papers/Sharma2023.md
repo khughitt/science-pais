@@ -1,6 +1,6 @@
 ---
 id: paper:Sharma2023
-type: paper
+kind: paper
 title: High risk of autoimmune diseases after COVID-19
 status: active
 ontology_terms:

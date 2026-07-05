@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0080-lau2024-sim01-synbiotic-weakly-supports-0031
-type: evidence-line
+kind: evidence-line
 title: "Lau2024 SIM01 RCT: synbiotic microbiome modulation improves some long-COVID symptoms but not objective function"
 status: active
 stance: supports

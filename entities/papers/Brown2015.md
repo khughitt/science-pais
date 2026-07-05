@@ -1,6 +1,6 @@
 ---
 id: paper:Brown2015
-type: paper
+kind: paper
 title: Abnormalities of AMPK activation and glucose uptake in cultured skeletal muscle cells from individuals with chronic fatigue syndrome
 status: active
 ontology_terms:

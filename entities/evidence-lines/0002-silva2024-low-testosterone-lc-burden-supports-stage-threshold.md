@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0002-silva2024-low-testosterone-lc-burden-supports-stage-threshold"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Silva2024 (MY-LC) testosterone-symptom-burden association weakly supports the stage threshold"
 status: "active"
 stance: "supports"

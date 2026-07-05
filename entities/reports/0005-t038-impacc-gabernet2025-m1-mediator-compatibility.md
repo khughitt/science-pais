@@ -1,6 +1,6 @@
 ---
 id: "report:0005-t038-impacc-gabernet2025-m1-mediator-compatibility"
-type: "report"
+kind: "report"
 title: "t038: IMPACC (Gabernet2025) androgen-metabolite signal vs h0005 M1 — directionally concordant but underdetermined (no belief update)"
 status: "proposed"
 source_refs:

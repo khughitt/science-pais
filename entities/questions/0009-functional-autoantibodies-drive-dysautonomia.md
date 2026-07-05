@@ -1,6 +1,6 @@
 ---
 id: question:0009-functional-autoantibodies-drive-dysautonomia
-type: question
+kind: question
 title: "Do functional GPCR autoantibodies (\u03B2-adrenergic/muscarinic) mechanistically\
   \ drive dysautonomia and POTS across long COVID and ME/CFS?"
 status: active

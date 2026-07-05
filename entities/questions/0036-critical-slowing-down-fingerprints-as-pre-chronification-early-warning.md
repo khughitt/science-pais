@@ -1,6 +1,6 @@
 ---
 id: question:0036-critical-slowing-down-fingerprints-as-pre-chronification-early-warning
-type: question
+kind: question
 title: Critical-slowing-down fingerprints as pre-chronification early-warning signals
 status: active
 ontology_terms: []

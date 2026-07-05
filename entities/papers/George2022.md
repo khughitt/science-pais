@@ -1,6 +1,6 @@
 ---
 id: paper:George2022
-type: paper
+kind: paper
 title: A persistent neutrophil-associated immune signature characterizes post-COVID-19
   pulmonary sequelae
 status: active

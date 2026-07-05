@@ -1,6 +1,6 @@
 ---
 id: "pre-registration:0001-menopause-pais-total-effect"
-type: "pre-registration"
+kind: "pre-registration"
 title: "Pre-registration: total effect of reproductive-stage timing on long COVID in UK Biobank (menopause→PAIS)"
 status: "committed"
 committed: "2026-06-19"

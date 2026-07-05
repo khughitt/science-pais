@@ -1,6 +1,6 @@
 ---
 id: paper:ZhangRECOVEREHR2026
-type: paper
+kind: paper
 title: "Long COVID associated with SARS-CoV-2 reinfection among children and adolescents in the omicron era (RECOVER-EHR): a retrospective cohort study"
 status: active
 ontology_terms:

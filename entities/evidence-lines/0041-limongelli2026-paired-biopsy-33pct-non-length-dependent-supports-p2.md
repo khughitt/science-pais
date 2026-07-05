@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0041-limongelli2026-paired-biopsy-33pct-non-length-dependent-supports-p2
-type: evidence-line
+kind: evidence-line
 title: "Limongelli2026 documents a 33% non-length-dependent pattern on paired calf+thigh\
   \ biopsy in post-vaccine PASC — supports P2"
 status: active

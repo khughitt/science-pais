@@ -1,6 +1,6 @@
 ---
 id: question:0044-chronic-gvhd-as-analogy-for-post-viral-tolerance-infrastructure-collapse
-type: question
+kind: question
 title: Chronic GvHD as analogy for post-viral tolerance-infrastructure collapse underlying
   PAIS autoimmune endotypes
 status: active

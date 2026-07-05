@@ -1,6 +1,6 @@
 ---
 id: paper:EatonFitch2024
-type: paper
+kind: paper
 title: Immune exhaustion in ME/CFS and long COVID
 status: active
 ontology_terms:

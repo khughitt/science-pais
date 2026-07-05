@@ -1,6 +1,6 @@
 ---
 id: paper:Raijmakers2019b
-type: paper
+kind: paper
 title: Cytokine profiles in patients with Q fever fatigue syndrome
 status: active
 ontology_terms:

@@ -1,6 +1,6 @@
 ---
 id: hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
-type: hypothesis
+kind: hypothesis
 title: Measurement-channel and ascertainment bias predictably shapes apparent PAIS
   group differences
 status: proposed

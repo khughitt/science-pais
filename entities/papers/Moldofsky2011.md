@@ -1,6 +1,6 @@
 ---
 id: paper:Moldofsky2011
-type: paper
+kind: paper
 title: Chronic widespread musculoskeletal pain, fatigue, depression and disordered
   sleep in chronic post-SARS syndrome; a case-controlled study
 status: active

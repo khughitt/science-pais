@@ -1,6 +1,6 @@
 ---
 id: paper:Naviaux2016
-type: paper
+kind: paper
 title: Metabolic features of chronic fatigue syndrome
 status: active
 ontology_terms:

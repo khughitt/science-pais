@@ -1,6 +1,6 @@
 ---
 id: interpretation:0027-t061-severity-adjusted-pem-vehicle-triage
-type: interpretation
+kind: interpretation
 title: "t061: no public severity-adjusted PEM molecular matrix is runnable; RECOVER-Adult is the controlled-access route"
 status: active
 source_refs: &id001

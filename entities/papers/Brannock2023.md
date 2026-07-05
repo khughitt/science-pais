@@ -1,6 +1,6 @@
 ---
 id: paper:Brannock2023
-type: paper
+kind: paper
 title: Long COVID risk and pre-COVID vaccination in an EHR-based cohort study from the RECOVER program
 status: active
 ontology_terms:

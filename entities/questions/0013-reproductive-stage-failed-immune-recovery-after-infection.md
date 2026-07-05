@@ -1,6 +1,6 @@
 ---
 id: question:0013-reproductive-stage-failed-immune-recovery-after-infection
-type: question
+kind: question
 title: Does reproductive-stage transition change the probability of failed immune recovery after infection?
 status: active
 ontology_terms:

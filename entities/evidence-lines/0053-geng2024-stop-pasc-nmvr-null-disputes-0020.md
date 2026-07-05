@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0053-geng2024-stop-pasc-nmvr-null-disputes-0020
-type: evidence-line
+kind: evidence-line
 title: "Geng2024 STOP-PASC 15-day nirmatrelvir/ritonavir null in established long COVID — weakly disputes antigen-clearance-rescues, but no target engagement"
 status: active
 stance: disputes

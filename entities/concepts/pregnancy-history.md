@@ -1,6 +1,6 @@
 ---
 id: "concept:pregnancy-history"
-type: "concept"
+kind: "concept"
 title: "Pregnancy history"
 status: "active"
 created: "2026-06-19"

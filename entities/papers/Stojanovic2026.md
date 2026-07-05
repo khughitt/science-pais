@@ -1,6 +1,6 @@
 ---
 id: "paper:Stojanovic2026"
-type: "paper"
+kind: "paper"
 title: "Vascular Complications of Long COVID—From Endothelial Dysfunction to Systemic Thrombosis: A Systematic Review"
 status: "active"
 ontology_terms:

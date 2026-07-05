@@ -1,6 +1,6 @@
 ---
 id: "interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation"
-type: "interpretation"
+kind: "interpretation"
 title: "t025: the within-cohort PEM-stratified molecular comparison does not exist, and PEM's objective correlate is trigger- and endpoint-specific"
 status: "active"
 source_refs: &id001

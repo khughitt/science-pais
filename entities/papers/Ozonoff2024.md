@@ -1,6 +1,6 @@
 ---
 id: paper:Ozonoff2024
-type: paper
+kind: paper
 title: 'Features of acute COVID-19 associated with post-acute sequelae of SARS-CoV-2
   phenotypes: results from the IMPACC study'
 status: active

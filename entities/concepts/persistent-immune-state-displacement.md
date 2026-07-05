@@ -1,6 +1,6 @@
 ---
 id: "concept:persistent-immune-state-displacement"
-type: "concept"
+kind: "concept"
 title: "Persistent immune-state displacement"
 status: "active"
 created: "2026-06-30"

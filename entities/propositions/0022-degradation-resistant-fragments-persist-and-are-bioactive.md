@@ -1,6 +1,6 @@
 ---
 id: proposition:0022-degradation-resistant-fragments-persist-and-are-bioactive
-type: proposition
+kind: proposition
 title: Degradation-resistant pathogen fragments persist in tissue after clearance
   and are biologically active
 status: active

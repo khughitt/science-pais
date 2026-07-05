@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0014-averyanova2022-route-timing-plausibility-supports-hrt-context-dependence"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Averyanova2022 route/timing-dependent hormone biology weakly supports HRT context-dependence"
 status: "active"
 stance: "supports"

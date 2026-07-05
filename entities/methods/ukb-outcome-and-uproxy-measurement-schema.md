@@ -1,5 +1,5 @@
 ---
-type: method
+kind: method
 title: UKB implementable long-COVID outcome & U-proxy measurement schema for pre-registration
   (t017)
 status: active

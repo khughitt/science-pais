@@ -1,6 +1,6 @@
 ---
 id: interpretation:0020-t045-neuhouser2024-whi-hrt-gap-triage
-type: interpretation
+kind: interpretation
 title: "t045: Neuhouser2024 WHI long-COVID risk screen does not adjudicate the HRT evidence gap"
 status: active
 source_refs:

@@ -1,6 +1,6 @@
 ---
 id: paper:Kawai2025
-type: paper
+kind: paper
 title: Viral Infections and Risk of Cardiovascular Disease
 status: active
 ontology_terms:

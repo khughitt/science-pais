@@ -1,6 +1,6 @@
 ---
 id: paper:Esseffar2025
-type: paper
+kind: paper
 title: Menopause-Associated Comorbidities and Their Impact on COVID-19 Severity
 status: active
 ontology_terms:

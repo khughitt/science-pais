@@ -1,6 +1,6 @@
 ---
 id: question:0021-male-vascular-reversal-covid-specific-vs-baseline-carryover
-type: question
+kind: question
 title: Is the male-biased vascular hard-endpoint reversal in PASC COVID-specific biology,
   or carryover of the male baseline-rate excess in vascular/thrombotic disease?
 status: active

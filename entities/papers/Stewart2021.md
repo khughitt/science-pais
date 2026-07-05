@@ -1,6 +1,6 @@
 ---
 id: paper:Stewart2021
-type: paper
+kind: paper
 title: Long COVID risk - a signal to address sex hormones and women health
 status: active
 ontology_terms:

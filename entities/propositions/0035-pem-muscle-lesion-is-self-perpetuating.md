@@ -1,6 +1,6 @@
 ---
 id: proposition:0035-pem-muscle-lesion-is-self-perpetuating
-type: proposition
+kind: proposition
 title: PEM muscle mitochondrial-perfusion injury forms a self-perpetuating lesion
 status: active
 claim_layer: mechanistic_narrative

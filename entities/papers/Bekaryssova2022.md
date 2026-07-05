@@ -1,6 +1,6 @@
 ---
 id: paper:Bekaryssova2022
-type: paper
+kind: paper
 title: Reactive arthritis before and after the onset of the COVID-19 pandemic
 status: active
 ontology_terms:

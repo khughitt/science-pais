@@ -1,6 +1,6 @@
 ---
 id: proposition:0028-pais-heterogeneity-explained-by-ascertainment-and-scoring
-type: proposition
+kind: proposition
 title: Cross-study heterogeneity in PAIS prevalence and effect estimates is substantially
   explained by ascertainment and scoring choices rather than biology
 status: active

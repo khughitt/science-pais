@@ -1,6 +1,6 @@
 ---
 id: question:0005-latent-to-overt-autoimmunity-conversion
-type: question
+kind: question
 title: What fraction of latent post-infectious autoimmunity converts to overt autoimmune
   disease over 5-10 years, and which autoantibodies mark the highest-risk subset?
 status: active

@@ -1,6 +1,6 @@
 ---
 id: interpretation:0021-t026-pc-cos-adoption-policy
-type: interpretation
+kind: interpretation
 title: "t026: Adopt PC-COS domains as minimum dimensional reporting, not as case definition or fixed instrument battery"
 status: active
 source_refs:

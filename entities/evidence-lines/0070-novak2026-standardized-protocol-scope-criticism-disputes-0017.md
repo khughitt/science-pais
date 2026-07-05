@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0070-novak2026-standardized-protocol-scope-criticism-disputes-0017
-type: evidence-line
+kind: evidence-line
 title: "M3/M2 scope-criticism: under the only single-protocol study (Novak2026) cross-trigger convergence is 2-trigger-only and non-specific (hEDS ≥ PAIS) — disputes the standardized-substrate reading of prop:0017"
 status: active
 stance: disputes

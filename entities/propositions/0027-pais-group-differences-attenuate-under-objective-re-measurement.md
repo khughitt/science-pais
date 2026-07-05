@@ -1,6 +1,6 @@
 ---
 id: proposition:0027-pais-group-differences-attenuate-under-objective-re-measurement
-type: proposition
+kind: proposition
 title: Apparent PAIS group differences attenuate toward null or reverse under objective
   trigger-matched re-measurement (channel-direction regularity)
 status: active

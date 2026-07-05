@@ -1,6 +1,6 @@
 ---
 id: hypothesis:0011-acute-illness-severity-does-not-predict-chronic-fatigue-in-pais-only
-type: hypothesis
+kind: hypothesis
 title: "Acute illness severity does not predict chronic fatigue in PAIS \u2014 only\
   \ objective organ sequelae"
 status: proposed

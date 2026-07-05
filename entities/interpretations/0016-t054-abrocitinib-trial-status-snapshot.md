@@ -1,6 +1,6 @@
 ---
 id: interpretation:0016-t054-abrocitinib-trial-status-snapshot
-type: interpretation
+kind: interpretation
 title: "t054 - NCT06597396/CLEAR-LC abrocitinib registry-status snapshot: primary completion passed, no posted results, pre-registration:0004 remains data-gated"
 status: active
 source_refs: []

@@ -1,6 +1,6 @@
 ---
 id: proposition:0021-acute-antigen-burden-determines-pais-incidence
-type: proposition
+kind: proposition
 title: Acute-phase intervention lowers PAIS incidence (antigen-burden specificity unresolved)
 status: active
 claim_layer: causal_effect

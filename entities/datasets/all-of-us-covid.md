@@ -1,6 +1,6 @@
 ---
 id: dataset:all-of-us-covid
-type: dataset
+kind: dataset
 title: "All of Us Research Program — COVID / long COVID"
 status: candidate
 created: "2026-06-21"

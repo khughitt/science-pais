@@ -1,6 +1,6 @@
 ---
 id: dataset:dutch-qfever-qfs-cohort
-type: dataset
+kind: dataset
 title: "Dutch Q-fever fatigue syndrome cohorts (Nijmegen/Radboud)"
 status: candidate
 created: "2026-06-21"

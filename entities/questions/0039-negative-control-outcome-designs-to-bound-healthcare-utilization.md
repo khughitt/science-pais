@@ -1,6 +1,6 @@
 ---
 id: question:0039-negative-control-outcome-designs-to-bound-healthcare-utilization
-type: question
+kind: question
 title: Negative-control outcome designs to bound healthcare-utilization confounding
   in PAIS incidence estimates
 status: active

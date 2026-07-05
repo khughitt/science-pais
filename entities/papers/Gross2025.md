@@ -1,6 +1,6 @@
 ---
 id: paper:Gross2025
-type: paper
+kind: paper
 title: Characterizing Long COVID Symptoms During Early Childhood
 status: active
 ontology_terms:

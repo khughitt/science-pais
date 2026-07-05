@@ -1,6 +1,6 @@
 ---
 id: question:0029-tissue-resolved-spatial-multi-omics-and-molecular-imaging-to-localize
-type: question
+kind: question
 title: Tissue-resolved spatial multi-omics and molecular imaging to localize post-infectious
   immune activity beyond blood
 status: active

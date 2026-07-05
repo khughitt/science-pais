@@ -1,6 +1,6 @@
 ---
 id: paper:Kwissa2025
-type: paper
+kind: paper
 title: Persistent Immune Dysregulation during Post-Acute Sequelae of COVID-19 is Manifested in Antibodies Targeting Envelope and Nucleocapsid Proteins
 status: active
 ontology_terms:

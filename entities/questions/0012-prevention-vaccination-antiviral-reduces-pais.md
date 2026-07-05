@@ -1,6 +1,6 @@
 ---
 id: question:0012-prevention-vaccination-antiviral-reduces-pais
-type: question
+kind: question
 title: Does vaccination or early antiviral treatment of acute infection reduce the
   incidence of post-acute infection syndromes?
 status: active

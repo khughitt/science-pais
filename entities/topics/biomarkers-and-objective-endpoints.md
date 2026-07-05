@@ -1,6 +1,6 @@
 ---
 id: topic:biomarkers-and-objective-endpoints
-type: topic
+kind: topic
 title: Biomarkers and Objective Endpoints for Post-Acute Infection Syndromes
 status: active
 ontology_terms:

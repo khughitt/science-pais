@@ -1,6 +1,6 @@
 ---
 id: paper:Finsterer2022
-type: paper
+kind: paper
 title: Small fiber neuropathy underlying dysautonomia in COVID-19 and in post-SARS-CoV-2
   vaccination and long-COVID syndromes
 status: active

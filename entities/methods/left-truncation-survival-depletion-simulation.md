@@ -1,5 +1,5 @@
 ---
-type: method
+kind: method
 title: "Left-truncation / survival-depletion bias simulation (M3a) for the menopause\u2192\
   PAIS analysis (t031)"
 status: active

@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0024-wang2026c-female-proportion-does-not-predict-pots-prevalence-supports-baseline-carried"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Wang2026c meta-regression — female proportion does not predict PASC POTS/OH prevalence (age does) — supports baseline-carried dysautonomia skew"
 status: "active"
 stance: "supports"

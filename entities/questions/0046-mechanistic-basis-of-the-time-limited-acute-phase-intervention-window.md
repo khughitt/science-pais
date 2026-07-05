@@ -1,6 +1,6 @@
 ---
 id: question:0046-mechanistic-basis-of-the-time-limited-acute-phase-intervention-window
-type: question
+kind: question
 title: Mechanistic basis of the time-limited acute-phase intervention window for PAIS
   prevention
 status: active

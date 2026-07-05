@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0010-shah2025-unisolated-excess-supports-confounder-decomposition"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Shah2025 non-isolation of perimenopause supports the confounder-decomposition requirement"
 status: "active"
 stance: "supports"

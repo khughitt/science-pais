@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0042-oaklander2022-paired-near-parity-weakly-supports-p2
-type: evidence-line
+kind: evidence-line
 title: "Oaklander2022 paired-site near-parity (distal≈proximal abnormal) is consistent\
   \ with a non-length-dependent distribution — weak support for P2"
 status: active

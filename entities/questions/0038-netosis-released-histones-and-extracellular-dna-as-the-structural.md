@@ -1,6 +1,6 @@
 ---
 id: question:0038-netosis-released-histones-and-extracellular-dna-as-the-structural
-type: question
+kind: question
 title: NETosis-released histones and extracellular DNA as the structural scaffold
   nucleating amyloid-like microclots, coupling vascular and autoimmune arms of PAIS
 status: active

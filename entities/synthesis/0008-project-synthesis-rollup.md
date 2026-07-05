@@ -1,6 +1,6 @@
 ---
 id: "synthesis:0008-project-synthesis-rollup"
-type: "synthesis"
+kind: "synthesis"
 title: "Project synthesis - health-post-acute-infection"
 status: "active"
 report_kind: "synthesis-rollup"

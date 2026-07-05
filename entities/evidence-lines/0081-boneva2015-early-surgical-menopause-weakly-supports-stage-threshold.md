@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0081-boneva2015-early-surgical-menopause-weakly-supports-stage-threshold"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Boneva2015 early/surgical menopause in CFS weakly supports a reproductive-stage threshold"
 status: "active"
 stance: "supports"

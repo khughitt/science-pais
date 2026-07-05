@@ -1,6 +1,6 @@
 ---
 id: paper:Krupp2003
-type: paper
+kind: paper
 title: "Study and treatment of post Lyme disease (STOP-LD): a randomized double masked clinical trial"
 status: active
 ontology_terms:

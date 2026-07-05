@@ -1,6 +1,6 @@
 ---
 id: "concept:metabolic-mitochondrial-dysfunction"
-type: "concept"
+kind: "concept"
 title: "Metabolic / mitochondrial dysfunction"
 status: "active"
 created: "2026-06-30"

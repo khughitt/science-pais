@@ -1,6 +1,6 @@
 ---
 id: question:0031-pais-incidence-and-mechanism-in-chronically-immunosuppressed-hosts
-type: question
+kind: question
 title: PAIS incidence and mechanism in chronically immunosuppressed hosts
 status: active
 ontology_terms: []

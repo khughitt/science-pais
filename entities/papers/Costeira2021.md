@@ -1,6 +1,6 @@
 ---
 id: paper:Costeira2021
-type: paper
+kind: paper
 title: Estrogen and COVID-19 symptoms
 status: active
 ontology_terms:

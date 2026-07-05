@@ -1,6 +1,6 @@
 ---
 id: "report:0001-bias-audit-menopause-pais-total-effect"
-type: "report"
+kind: "report"
 title: "Bias Audit: menopause→PAIS total-effect pre-registration (data-gated)"
 status: "proposed"
 source_refs:

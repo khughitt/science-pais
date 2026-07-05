@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0056-bramante2023-covidout-metformin-prevention-supports-0021
-type: evidence-line
+kind: evidence-line
 title: "Bramante2023 COVID-OUT — acute-phase metformin cuts long-COVID incidence ~41%; high-quality trial but weak/indirect support for the antigen-specific reading (antiviral vs metabolic ambiguous)"
 status: active
 stance: supports

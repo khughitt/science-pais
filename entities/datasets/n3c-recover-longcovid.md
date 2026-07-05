@@ -1,6 +1,6 @@
 ---
 id: dataset:n3c-recover-longcovid
-type: dataset
+kind: dataset
 title: "N3C — National COVID Cohort Collaborative (+ RECOVER-EHR)"
 status: candidate
 created: "2026-06-21"

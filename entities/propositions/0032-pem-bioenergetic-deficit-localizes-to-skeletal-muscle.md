@@ -1,6 +1,6 @@
 ---
 id: proposition:0032-pem-bioenergetic-deficit-localizes-to-skeletal-muscle
-type: proposition
+kind: proposition
 title: PEM-relevant bioenergetic pathology localizes materially to skeletal muscle
 status: active
 claim_layer: structural_claim

@@ -1,6 +1,6 @@
 ---
 id: question:0028-ambulatory-within-person-wearable-ema-protocol-for-pem-phenotyping
-type: question
+kind: question
 title: Ambulatory within-person wearable + EMA protocol for PEM phenotyping without
   exercise challenge
 status: active

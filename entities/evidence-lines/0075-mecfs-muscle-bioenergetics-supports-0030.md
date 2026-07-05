@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0075-mecfs-muscle-bioenergetics-supports-0030
-type: evidence-line
+kind: evidence-line
 title: "ME/CFS exercise/contraction muscle-bioenergetics body supports a muscle-endpoint abnormality, but not yet Appelman-type equivalence"
 status: active
 stance: supports

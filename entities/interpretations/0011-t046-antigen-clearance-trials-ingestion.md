@@ -1,6 +1,6 @@
 ---
 id: interpretation:0011-t046-antigen-clearance-trials-ingestion
-type: interpretation
+kind: interpretation
 title: 't046 antigen-clearance trials: established-disease clearance null-but-uninterpretable
   (no target engagement); acute-phase prevention positive; together they support the
   fixed-risk-factor-at-onset reconciliation, not refutation of antigen persistence'

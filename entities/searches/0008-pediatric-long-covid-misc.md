@@ -1,6 +1,6 @@
 ---
 id: search:0008-pediatric-long-covid-misc
-type: search
+kind: search
 title: "Literature search: pediatric long COVID and MIS-C (t009)"
 status: active
 created: "2026-06-26"

@@ -1,6 +1,6 @@
 ---
 id: proposition:0012-vascular-hard-endpoint-male-reversal-survives-severity-adjustment
-type: proposition
+kind: proposition
 title: The PAIS vascular-thromboinflammatory hard-endpoint domain is male-biased and
   the reversal survives coarse acute-severity restriction
 status: active

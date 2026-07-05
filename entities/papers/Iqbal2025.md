@@ -1,6 +1,6 @@
 ---
 id: paper:Iqbal2025
-type: paper
+kind: paper
 title: 'Chronic inflammation in post-acute sequelae of COVID-19 modulates gut microbiome:
   a review of literature on COVID-19 sequelae and gut dysbiosis'
 status: active

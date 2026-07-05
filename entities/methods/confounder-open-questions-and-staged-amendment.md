@@ -1,5 +1,5 @@
 ---
-type: method
+kind: method
 title: Open identification questions + staged adjustment-set amendment for the t029
   independent review
 status: active

@@ -1,6 +1,6 @@
 ---
 id: synthesis:0001-shared-dysregulated-attractor
-type: synthesis
+kind: synthesis
 title: "Synthesis: 0001-shared-dysregulated-attractor"
 status: "active"
 report_kind: hypothesis-synthesis

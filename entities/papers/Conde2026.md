@@ -1,6 +1,6 @@
 ---
 id: paper:Conde2026
-type: paper
+kind: paper
 title: 'Post-Infectious Fatigue and Depression Following Dengue: A Systematic Review
   and Meta-Analysis of Associated Factors'
 status: active

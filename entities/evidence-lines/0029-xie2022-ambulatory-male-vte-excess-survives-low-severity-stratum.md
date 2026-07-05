@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0029-xie2022-ambulatory-male-vte-excess-survives-low-severity-stratum"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Xie2022 male VTE excess in ambulatory (lowest-severity) COVID-19 patients is the decisive severity-discriminating line"
 status: "active"
 stance: "supports"

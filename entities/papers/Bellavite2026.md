@@ -1,6 +1,6 @@
 ---
 id: "paper:Bellavite2026"
-type: "paper"
+kind: "paper"
 title: "Autoimmune Features of Post-COVID-19 Vaccination Syndrome and Their Impacts on the Renin–Angiotensin System"
 status: "active"
 ontology_terms:

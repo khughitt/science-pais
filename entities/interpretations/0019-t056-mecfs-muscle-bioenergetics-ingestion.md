@@ -1,6 +1,6 @@
 ---
 id: interpretation:0019-t056-mecfs-muscle-bioenergetics-ingestion
-type: interpretation
+kind: interpretation
 title: "t056: ME/CFS has muscle-endpoint bioenergetic abnormalities, but the Appelman-type cross-trigger lesion remains unfilled"
 status: active
 source_refs:

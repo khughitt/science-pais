@@ -1,6 +1,6 @@
 ---
 id: dataset:mcam-mecfs
-type: dataset
+kind: dataset
 title: "MCAM — Multi-Site Clinical Assessment of ME/CFS (CDC)"
 status: candidate
 created: "2026-06-21"

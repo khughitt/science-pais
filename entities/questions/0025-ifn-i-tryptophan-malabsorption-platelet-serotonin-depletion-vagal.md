@@ -1,6 +1,6 @@
 ---
 id: question:0025-ifn-i-tryptophan-malabsorption-platelet-serotonin-depletion-vagal
-type: question
+kind: question
 title: "IFN-I \u2192 tryptophan malabsorption \u2192 platelet serotonin depletion\
   \ \u2192 vagal hypofunction as a causal chain for PAIS cognitive impairment"
 status: active

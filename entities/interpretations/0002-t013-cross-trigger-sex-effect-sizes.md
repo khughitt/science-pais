@@ -1,6 +1,6 @@
 ---
 id: interpretation:0002-t013-cross-trigger-sex-effect-sizes
-type: interpretation
+kind: interpretation
 title: 'Cross-trigger sex-stratified effect sizes: female excess concentrates in post-acute
   persistence; domain dissociation unresolved'
 status: active

@@ -1,7 +1,7 @@
 ---
 schema_profile: science-entity-base/1.0+dataset/1.0
 id: dataset:1000g-eur-ld-panel
-type: dataset
+kind: dataset
 title: 1000 Genomes Phase 3 European (EUR) LD reference panel
 status: candidate
 created: '2026-07-04'

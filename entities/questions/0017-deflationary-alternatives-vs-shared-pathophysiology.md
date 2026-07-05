@@ -1,6 +1,6 @@
 ---
 id: question:0017-deflationary-alternatives-vs-shared-pathophysiology
-type: question
+kind: question
 title: Are deflationary alternatives better supported than a shared post-infectious
   pathophysiology?
 status: active

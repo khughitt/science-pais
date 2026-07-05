@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0027-gattoni2025-longcovid-whole-body-2day-cpet-null-despite-pem"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Gattoni2025 long-COVID whole-body 2-day-CPET null despite high PEM self-report"
 status: "active"
 stance: "supports"

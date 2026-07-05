@@ -1,6 +1,6 @@
 ---
 id: question:0020-male-vte-excess-post-acute-persistence
-type: question
+kind: question
 title: Does the male-biased VTE excess in ambulatory COVID-19 persist into the post-acute
   phase or resolve after the 30-day acute window?
 status: active

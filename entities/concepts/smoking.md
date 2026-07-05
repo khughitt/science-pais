@@ -1,6 +1,6 @@
 ---
 id: "concept:smoking"
-type: "concept"
+kind: "concept"
 title: "Smoking"
 status: "active"
 created: "2026-06-21"

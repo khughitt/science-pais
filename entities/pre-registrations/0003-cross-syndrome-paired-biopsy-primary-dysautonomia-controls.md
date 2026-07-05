@@ -1,6 +1,6 @@
 ---
 id: "pre-registration:0003-cross-syndrome-paired-biopsy-primary-dysautonomia-controls"
-type: "pre-registration"
+kind: "pre-registration"
 title: "Pre-registration: standardized cross-syndrome paired-site (proximal+distal) skin-biopsy + autonomic protocol with a primary-dysautonomia control arm — the q0004 discriminating test of h0007 (NLD-autoimmune-SFN substrate)"
 status: "committed"
 committed: "2026-06-24"

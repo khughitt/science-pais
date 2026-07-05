@@ -1,6 +1,6 @@
 ---
 id: "concept:small-fiber-neuropathy-dysautonomia"
-type: "concept"
+kind: "concept"
 title: "Small-fiber neuropathy / dysautonomia"
 status: "active"
 created: "2026-06-30"

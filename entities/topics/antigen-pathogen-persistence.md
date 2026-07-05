@@ -1,6 +1,6 @@
 ---
 id: topic:antigen-pathogen-persistence
-type: topic
+kind: topic
 title: Antigen and Pathogen Persistence as a Driver of Chronic Post-Infectious Illness
 status: active
 ontology_terms:

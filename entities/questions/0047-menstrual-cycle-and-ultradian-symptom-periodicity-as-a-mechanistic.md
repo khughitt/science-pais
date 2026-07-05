@@ -1,6 +1,6 @@
 ---
 id: question:0047-menstrual-cycle-and-ultradian-symptom-periodicity-as-a-mechanistic
-type: question
+kind: question
 title: Menstrual-cycle and ultradian symptom periodicity as a mechanistic discriminator
   of PAIS subphenotypes
 status: active

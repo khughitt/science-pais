@@ -1,6 +1,6 @@
 ---
 id: interpretation:0034-t079-bc6-acute-severity-dateability
-type: interpretation
+kind: interpretation
 title: "t079/BC-6: acute-severity dateability — severity is dateable enough to COMPUTE E2/E3 candidates (identification stays assumption-dependent); the ladder degrades in the middle and the ≥45d survival filter selects on a consequence of severity for E1 as well as E2/E3"
 status: active
 source_refs:

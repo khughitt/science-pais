@@ -1,6 +1,6 @@
 ---
 id: paper:Germain2022
-type: paper
+kind: paper
 title: Plasma metabolomics reveals disrupted response and recovery following maximal
   exercise in myalgic encephalomyelitis/chronic fatigue syndrome
 status: active

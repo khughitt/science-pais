@@ -1,6 +1,6 @@
 ---
 id: question:0035-specialized-pro-resolving-mediator-deficit-as-a-mechanistically-distinct
-type: question
+kind: question
 title: Specialized pro-resolving mediator deficit as a mechanistically distinct PAIS
   endotype
 status: active

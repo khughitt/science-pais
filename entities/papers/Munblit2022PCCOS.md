@@ -1,6 +1,6 @@
 ---
 id: paper:Munblit2022PCCOS
-type: paper
+kind: paper
 title: "A core outcome set for post-COVID-19 condition in adults for use in clinical practice and research"
 status: active
 ontology_terms:

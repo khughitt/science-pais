@@ -1,6 +1,6 @@
 ---
 id: question:0019-male-biased-vascular-signal-pasc-persistence
-type: question
+kind: question
 title: Does the male-biased acute cardiovascular signal in COVID-19 persist into the
   post-acute phase, or does it reverse to a female-predominant PASC phenotype?
 status: active

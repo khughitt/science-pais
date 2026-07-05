@@ -1,7 +1,7 @@
 ---
 schema_profile: science-entity-base/1.0+dataset/1.0
 id: dataset:eur-ldsc-ld-score-reference
-type: dataset
+kind: dataset
 title: European LDSC LD-score reference (eur_w_ld_chr) + HapMap3 SNP list (MRlap
   cross-trait LDSC infrastructure)
 status: candidate

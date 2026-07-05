@@ -1,6 +1,6 @@
 ---
 id: dataset:msigdb-2024-1-hs-mapped-pais-gene-set-universe
-type: dataset
+kind: dataset
 title: "MSigDB 2024.1.Hs mapped PAIS gene-set universe"
 status: active
 created: "2026-06-26"

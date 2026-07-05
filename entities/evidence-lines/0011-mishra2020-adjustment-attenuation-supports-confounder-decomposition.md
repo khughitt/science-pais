@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0011-mishra2020-adjustment-attenuation-supports-confounder-decomposition"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Mishra2020/Costeira2021 adjustment attenuation supports the confounder-decomposition requirement"
 status: "active"
 stance: "supports"

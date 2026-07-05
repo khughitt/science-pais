@@ -1,6 +1,6 @@
 ---
 id: "paper:deGois2026"
-type: "paper"
+kind: "paper"
 title: "Baseline immune signatures are associated with prospective COVID-19 infection and clinical outcomes in healthcare workers: Evidence from a cohort study in Brazil"
 status: active
 ontology_terms:

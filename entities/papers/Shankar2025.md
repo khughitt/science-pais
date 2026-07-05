@@ -1,6 +1,6 @@
 ---
 id: "paper:Shankar2025"
-type: "paper"
+kind: "paper"
 title: "Oxidative stress is a shared characteristic of ME/CFS and Long COVID"
 status: active
 ontology_terms:

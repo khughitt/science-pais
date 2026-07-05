@@ -1,6 +1,6 @@
 ---
 id: paper:Ambrosino2021
-type: paper
+kind: paper
 title: "Persistent Endothelial Dysfunction in Post-Acute COVID-19 Syndrome: A Case-Control Study"
 status: active
 ontology_terms:

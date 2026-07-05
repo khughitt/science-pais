@@ -1,6 +1,6 @@
 ---
 id: question:0026-acute-infection-il-6-stat3-imprinting-of-hematopoietic-progenitors
-type: question
+kind: question
 title: Acute-infection IL-6/STAT3 imprinting of hematopoietic progenitors generates
   hyperreactive monocytes sustaining PAIS inflammation independent of antigen
 status: active

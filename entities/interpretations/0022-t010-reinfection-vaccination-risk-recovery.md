@@ -1,6 +1,6 @@
 ---
 id: interpretation:0022-t010-reinfection-vaccination-risk-recovery
-type: interpretation
+kind: interpretation
 title: "t010: Reinfection and vaccination modify long-COVID risk, but the evidence is observational and mechanism-mixed"
 status: active
 source_refs:

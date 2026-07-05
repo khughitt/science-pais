@@ -1,6 +1,6 @@
 ---
 id: "concept:menopausal-transition-reproductive-stage"
-type: "concept"
+kind: "concept"
 title: "Menopausal transition (reproductive stage)"
 status: "active"
 created: "2026-06-19"

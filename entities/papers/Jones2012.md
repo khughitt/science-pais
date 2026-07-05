@@ -1,6 +1,6 @@
 ---
 id: paper:Jones2012
-type: paper
+kind: paper
 title: Loss of capacity to recover from acidosis on repeat exercise in chronic fatigue syndrome
 status: active
 ontology_terms:

@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0023-cheetham2023-objective-deficit-symptom-status-not-sex-supports-cognitive-self-report-channel"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Cheetham2023 objective cognitive deficit tracks symptom status not sex (background constraint on the cognitive channel)"
 status: "active"
 stance: "supports"

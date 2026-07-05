@@ -1,6 +1,6 @@
 ---
 id: question:0027-two-sample-mendelian-randomization-to-test-causal-direction-of-shared
-type: question
+kind: question
 title: Two-sample Mendelian randomization to test causal direction of shared PAIS
   mechanisms across triggers
 status: active

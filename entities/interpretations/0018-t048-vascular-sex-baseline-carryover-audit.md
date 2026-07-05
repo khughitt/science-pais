@@ -1,6 +1,6 @@
 ---
 id: interpretation:0018-t048-vascular-sex-baseline-carryover-audit
-type: interpretation
+kind: interpretation
 title: "t048 - vascular male reversal audit: Spetz2025 narrows baseline carryover, exact ambulatory 31-180d sex interaction still unreported"
 status: active
 source_refs:

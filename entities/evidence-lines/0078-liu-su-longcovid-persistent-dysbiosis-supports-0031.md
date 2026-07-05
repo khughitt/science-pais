@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0078-liu-su-longcovid-persistent-dysbiosis-supports-0031
-type: evidence-line
+kind: evidence-line
 title: "Liu2022/Su2023 CUHK longitudinal microbiome: long-COVID PACS retains dysbiosis and SCFA-producer depletion to 6-12 months"
 status: active
 stance: supports

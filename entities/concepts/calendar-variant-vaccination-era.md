@@ -1,6 +1,6 @@
 ---
 id: "concept:calendar-variant-vaccination-era"
-type: "concept"
+kind: "concept"
 title: "Calendar period / variant / vaccination era"
 status: "active"
 created: "2026-06-21"

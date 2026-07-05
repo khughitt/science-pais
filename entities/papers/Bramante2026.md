@@ -1,6 +1,6 @@
 ---
 id: paper:Bramante2026
-type: paper
+kind: paper
 title: 'Metformin on the Presence of COVID-19 Symptoms 6 Months after Infection: The
   ACTIV-6 Randomized Clinical Trial'
 status: active

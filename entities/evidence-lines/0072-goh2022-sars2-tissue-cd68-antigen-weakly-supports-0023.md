@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0072-goh2022-sars2-tissue-cd68-antigen-weakly-supports-0023
-type: evidence-line
+kind: evidence-line
 title: Goh2022 long-COVID tissue case report detects SARS-CoV-2 antigen/RNA with CD68 co-localization — weak partial support for cross-pathogen tissue/macrophage reservoir
 status: active
 stance: supports

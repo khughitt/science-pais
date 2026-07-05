@@ -1,6 +1,6 @@
 ---
 id: proposition:0033-microvascular-hypoperfusion-drives-pem-muscle-bioenergetic-failure
-type: proposition
+kind: proposition
 title: Microvascular hypoperfusion or endothelial dysfunction causally drives PEM
   muscle bioenergetic failure
 status: active

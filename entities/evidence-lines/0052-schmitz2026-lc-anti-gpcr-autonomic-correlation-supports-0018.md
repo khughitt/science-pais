@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0052-schmitz2026-lc-anti-gpcr-autonomic-correlation-supports-0018
-type: evidence-line
+kind: evidence-line
 title: "Schmitz2026 long-COVID anti-GPCR autoantibodies correlate with HRV/BP autonomic alteration but in-vitro cardiomyocyte test is null — weak support for anti-GPCR pathogenicity"
 status: active
 stance: supports

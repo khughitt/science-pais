@@ -1,6 +1,6 @@
 ---
 id: paper:Choutka2022
-type: paper
+kind: paper
 title: Unexplained post-acute infection syndromes
 status: active
 ontology_terms:

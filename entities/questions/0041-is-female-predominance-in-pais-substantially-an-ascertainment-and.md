@@ -1,6 +1,6 @@
 ---
 id: question:0041-is-female-predominance-in-pais-substantially-an-ascertainment-and
-type: question
+kind: question
 title: Is female predominance in PAIS substantially an ascertainment and healthcare-seeking
   artifact?
 status: active

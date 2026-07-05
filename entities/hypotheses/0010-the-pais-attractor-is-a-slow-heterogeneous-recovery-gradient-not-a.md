@@ -1,6 +1,6 @@
 ---
 id: hypothesis:0010-the-pais-attractor-is-a-slow-heterogeneous-recovery-gradient-not-a
-type: hypothesis
+kind: hypothesis
 title: The PAIS 'attractor' is a slow heterogeneous recovery gradient, not a stable
   chronic state
 status: proposed

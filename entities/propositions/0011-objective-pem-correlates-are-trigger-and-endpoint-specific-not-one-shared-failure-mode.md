@@ -1,6 +1,6 @@
 ---
 id: "proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode"
-type: "proposition"
+kind: "proposition"
 title: "The objective correlates of post-exertional malaise are trigger- and endpoint-specific, not a single shared whole-body bioenergetic-recovery failure across PAIS triggers"
 status: "active"
 claim_layer: "empirical_regularity"

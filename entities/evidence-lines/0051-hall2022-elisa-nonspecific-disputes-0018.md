@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0051-hall2022-elisa-nonspecific-disputes-0018
-type: evidence-line
+kind: evidence-line
 title: "Hall2022 standard-methodology ELISA finds GPCR autoantibodies non-specific (98% POTS vs 100% controls seropositive) — disputes anti-GPCR pathogenicity"
 status: active
 stance: disputes

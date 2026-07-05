@@ -1,6 +1,6 @@
 ---
 id: paper:Sandoval2025
-type: paper
+kind: paper
 title: Two neurocognitive domains identified for patients with myalgic encephalomyelitis/chronic
   fatigue syndrome and post-acute sequelae of COVID-19
 status: active

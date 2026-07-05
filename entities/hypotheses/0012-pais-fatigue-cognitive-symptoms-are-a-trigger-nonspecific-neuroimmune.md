@@ -1,6 +1,6 @@
 ---
 id: hypothesis:0012-pais-fatigue-cognitive-symptoms-are-a-trigger-nonspecific-neuroimmune
-type: hypothesis
+kind: hypothesis
 title: PAIS fatigue/cognitive symptoms are a trigger-nonspecific neuroimmune sickness-behavior
   response, not trigger-specific immune pathology
 status: proposed

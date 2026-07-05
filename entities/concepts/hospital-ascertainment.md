@@ -1,6 +1,6 @@
 ---
 id: "concept:hospital-ascertainment"
-type: "concept"
+kind: "concept"
 title: "Hospitalization / acute-care ascertainment"
 status: "active"
 created: "2026-06-21"

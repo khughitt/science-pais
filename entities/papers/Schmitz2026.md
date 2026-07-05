@@ -1,6 +1,6 @@
 ---
 id: paper:Schmitz2026
-type: paper
+kind: paper
 title: "Autonomic dysfunction and vasoregulation in long COVID-19 are linked to anti-GPCR autoantibodies"
 status: active
 paper_kind: ""

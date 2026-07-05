@@ -1,6 +1,6 @@
 ---
 id: paper:Peppercorn2023
-type: paper
+kind: paper
 title: A pilot study on the immune cell proteome of long COVID patients shows changes
   to physiological pathways similar to those in myalgic encephalomyelitis/chronic
   fatigue syndrome

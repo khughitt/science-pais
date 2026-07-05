@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0036-maestri2025-pem-symptom-resolved-proteome-but-severity-unadjusted-confirms-gap"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Maestri2025 STOP-PASC shows PEM has a symptom-resolved plasma-proteome signature within long COVID, but the per-symptom models are severity-unadjusted, so the decisive q0015 test stays open"
 status: "active"
 stance: "supports"

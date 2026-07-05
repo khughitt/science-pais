@@ -1,6 +1,6 @@
 ---
 id: paper:Bosworth2023
-type: paper
+kind: paper
 title: "Risk of New-Onset Long COVID Following Reinfection With Severe Acute Respiratory Syndrome Coronavirus 2: A Community-Based Cohort Study"
 status: active
 ontology_terms:

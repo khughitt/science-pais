@@ -1,6 +1,6 @@
 ---
 id: "paper:Lesgards2025"
-type: "paper"
+kind: "paper"
 title: "Do Long COVID and COVID Vaccine Side Effects Share Pathophysiological Picture and Biochemical Pathways?"
 status: "active"
 ontology_terms:

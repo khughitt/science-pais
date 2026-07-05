@@ -1,6 +1,6 @@
 ---
 id: paper:Gross2024
-type: paper
+kind: paper
 title: Characterizing Long COVID in Children and Adolescents
 status: active
 ontology_terms:

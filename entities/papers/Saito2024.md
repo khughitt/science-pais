@@ -1,6 +1,6 @@
 ---
 id: "paper:Saito2024"
-type: "paper"
+kind: "paper"
 title: "Metabolomic and immune alterations in long COVID patients with chronic fatigue syndrome"
 status: active
 ontology_terms:

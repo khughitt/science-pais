@@ -1,6 +1,6 @@
 ---
 id: paper:Joseph2021
-type: paper
+kind: paper
 title: Insights From Invasive Cardiopulmonary Exercise Testing of Patients With Myalgic
   Encephalomyelitis/Chronic Fatigue Syndrome
 status: active

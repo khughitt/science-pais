@@ -1,6 +1,6 @@
 ---
 id: "proposition:0004-female-reproductive-stage-excess-requires-confounder-decomposition"
-type: "proposition"
+kind: "proposition"
 title: "The crude female / reproductive-stage excess in PAIS requires confounder decomposition before causal reading"
 status: "active"
 claim_layer: "structural_claim"

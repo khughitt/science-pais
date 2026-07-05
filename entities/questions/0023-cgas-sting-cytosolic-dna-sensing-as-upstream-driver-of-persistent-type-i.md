@@ -1,6 +1,6 @@
 ---
 id: question:0023-cgas-sting-cytosolic-dna-sensing-as-upstream-driver-of-persistent-type-i
-type: question
+kind: question
 title: cGAS-STING cytosolic DNA sensing as upstream driver of persistent type I IFN
   in PAIS
 status: active

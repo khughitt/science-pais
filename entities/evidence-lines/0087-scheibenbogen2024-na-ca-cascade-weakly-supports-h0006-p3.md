@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0087-scheibenbogen2024-na-ca-cascade-weakly-supports-h0006-p3
-type: evidence-line
+kind: evidence-line
 title: "Scheibenbogen2024 AIMM sodium-calcium cascade weakly supports h0006 P3 ionic mediator"
 status: active
 stance: supports

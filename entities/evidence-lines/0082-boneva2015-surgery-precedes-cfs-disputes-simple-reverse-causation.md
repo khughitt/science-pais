@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0082-boneva2015-surgery-precedes-cfs-disputes-simple-reverse-causation"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Boneva2015 surgery-before-CFS timing weakly disputes simple illness-driven menopause timing"
 status: "active"
 stance: "disputes"

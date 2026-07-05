@@ -1,6 +1,6 @@
 ---
 id: paper:Humphreys2025
-type: paper
+kind: paper
 title: A Scoping Review of Long COVID and Menopause
 status: active
 ontology_terms:

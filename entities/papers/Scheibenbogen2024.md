@@ -1,6 +1,6 @@
 ---
 id: paper:Scheibenbogen2024
-type: paper
+kind: paper
 title: "Key Pathophysiological Role of Skeletal Muscle Disturbance in Post COVID and Myalgic Encephalomyelitis/Chronic Fatigue Syndrome (ME/CFS): Accumulated Evidence"
 status: active
 ontology_terms:

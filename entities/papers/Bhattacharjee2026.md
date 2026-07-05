@@ -1,6 +1,6 @@
 ---
 id: paper:Bhattacharjee2026
-type: paper
+kind: paper
 title: 'Exploratory analyses of Immunologic Features in a Randomized, Placebo-Controlled
   Trial of Nirmatrelvir/Ritonavir for Long COVID'
 status: active

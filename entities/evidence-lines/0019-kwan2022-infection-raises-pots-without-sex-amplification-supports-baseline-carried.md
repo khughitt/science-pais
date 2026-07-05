@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0019-kwan2022-infection-raises-pots-without-sex-amplification-supports-baseline-carried"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Kwan2022 infection-raised POTS incidence with sex-similar distribution supports baseline-carried dysautonomia skew"
 status: "active"
 stance: "supports"

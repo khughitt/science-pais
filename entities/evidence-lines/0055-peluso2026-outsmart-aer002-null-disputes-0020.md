@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0055-peluso2026-outsmart-aer002-null-disputes-0020
-type: evidence-line
+kind: evidence-line
 title: "Peluso2026 outSMART-LC — single anti-RBD monoclonal (AER002) null in long COVID, no antigen-clearance assay; weakly disputes antigen-clearance-rescues via an independent modality"
 status: active
 stance: disputes

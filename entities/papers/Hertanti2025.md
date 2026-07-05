@@ -1,6 +1,6 @@
 ---
 id: paper:Hertanti2025
-type: paper
+kind: paper
 title: 'Global prevalence and risk factors of fatigue and post-infectious fatigue
   among patients with dengue: a systematic review and meta-analysis'
 status: active

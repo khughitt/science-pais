@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0046-walitt2024-no-uniform-autoantibody-disputes-immune-mediated
-type: evidence-line
+kind: evidence-line
 title: "Walitt2024 finds no uniform autoantibody signal in PI-ME/CFS — disputes\
   \ pan-PAIS autoimmune causation"
 status: active

@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0049-kharraziha2020-a1ar-activity-orthostatic-severity-supports-0018
-type: evidence-line
+kind: evidence-line
 title: "Kharraziha2020 functional α1-AR activity correlates with orthostatic-symptom severity in POTS — the strongest functional correlational support for anti-GPCR autonomic pathogenicity"
 status: active
 stance: supports

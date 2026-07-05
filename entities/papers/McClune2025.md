@@ -1,6 +1,6 @@
 ---
 id: paper:McClune2025
-type: paper
+kind: paper
 title: The peptidoglycan of Borrelia burgdorferi can persist in discrete tissues and
   cause systemic responses consistent with chronic illness
 status: active

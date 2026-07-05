@@ -1,6 +1,6 @@
 ---
 id: paper:Perevaryukha2021
-type: paper
+kind: paper
 title: "A Continuous Model of Three Scenarios of the Infection Process with Delayed Immune Response Factors"
 status: active
 ontology_terms:

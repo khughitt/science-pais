@@ -1,6 +1,6 @@
 ---
 id: question:0030-target-trial-emulation-in-multi-trigger-ehr-cohorts-for-cross-pais
-type: question
+kind: question
 title: Target trial emulation in multi-trigger EHR cohorts for cross-PAIS comparative
   effectiveness
 status: active

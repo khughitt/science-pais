@@ -1,6 +1,6 @@
 ---
 id: "paper:Berende2016"
-type: "paper"
+kind: "paper"
 title: "Randomized Trial of Longer-Term Therapy for Symptoms Attributed to Lyme Disease (PLEASE)"
 status: active
 paper_kind: ""

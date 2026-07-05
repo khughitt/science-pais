@@ -1,6 +1,6 @@
 ---
 id: "concept:unmeasured-shared-confounders"
-type: "concept"
+kind: "concept"
 title: "Unmeasured shared confounders"
 status: "active"
 created: "2026-06-19"

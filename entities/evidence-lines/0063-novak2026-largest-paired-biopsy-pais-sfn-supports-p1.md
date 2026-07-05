@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0063-novak2026-largest-paired-biopsy-pais-sfn-supports-p1
-type: evidence-line
+kind: evidence-line
 title: "Novak2026 is the largest paired-site biopsy series documenting SFN in both\
   \ long COVID and ME/CFS vs 0% in controls — supports a structural lesion"
 status: active

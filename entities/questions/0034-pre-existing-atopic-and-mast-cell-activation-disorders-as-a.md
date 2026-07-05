@@ -1,6 +1,6 @@
 ---
 id: question:0034-pre-existing-atopic-and-mast-cell-activation-disorders-as-a
-type: question
+kind: question
 title: Pre-existing atopic and mast-cell activation disorders as a mechanistically
   distinct PAIS subgroup
 status: active

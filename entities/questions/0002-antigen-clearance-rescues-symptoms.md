@@ -1,6 +1,6 @@
 ---
 id: question:0002-antigen-clearance-rescues-symptoms
-type: question
+kind: question
 title: Does clearing persistent antigen (e.g. antiviral treatment in long COVID) rescue
   post-acute symptoms, establishing antigen persistence as a driver rather than an
   epiphenomenon?

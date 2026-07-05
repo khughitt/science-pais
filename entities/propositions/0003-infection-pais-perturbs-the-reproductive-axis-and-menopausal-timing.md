@@ -1,6 +1,6 @@
 ---
 id: "proposition:0003-infection-pais-perturbs-the-reproductive-axis-and-menopausal-timing"
-type: "proposition"
+kind: "proposition"
 title: "Infection / PAIS perturbs the reproductive (HPG) axis state (reverse direction)"
 status: "active"
 claim_layer: "causal_effect"

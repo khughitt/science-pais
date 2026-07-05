@@ -1,6 +1,6 @@
 ---
 id: interpretation:0035-t079-bc7-individual-utilisation
-type: interpretation
+kind: interpretation
 title: "t079/BC-7: individual-level utilisation buildable in both vehicles (replaces Hill's county proxy) — but it is a DUAL-ROLE variable (ascertainment confounder AND consequence of the autoimmune exposure), measured with vehicle-specific error; the ascertainment defence is bounded, not clean"
 status: active
 source_refs:

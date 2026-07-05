@@ -1,6 +1,6 @@
 ---
 id: paper:Byambasuren2023
-type: paper
+kind: paper
 title: Effect of covid-19 vaccination on long covid
 status: active
 ontology_terms:

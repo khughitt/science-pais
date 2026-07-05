@@ -1,6 +1,6 @@
 ---
 id: "proposition:0039-immune-state-displacement-mediates-vs-marks-pais-symptoms"
-type: "proposition"
+kind: "proposition"
 title: "Persistent immune-state displacement mediates PAIS symptoms rather than merely marking another failed-recovery process"
 status: "active"
 claim_layer: "causal_effect"

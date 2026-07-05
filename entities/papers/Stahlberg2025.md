@@ -1,6 +1,6 @@
 ---
 id: paper:Stahlberg2025
-type: paper
+kind: paper
 title: 'Post-Acute COVID-19 Syndrome: Prevalence of Peripheral Microvascular Endothelial
   Dysfunction and Associations With NT-ProBNP Dynamics'
 status: active

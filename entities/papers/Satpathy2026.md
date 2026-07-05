@@ -1,6 +1,6 @@
 ---
 id: paper:Satpathy2026
-type: paper
+kind: paper
 title: 'Single-cell profiling of innate and adaptive immune dysregulation in Long COVID'
 status: active
 ontology_terms:

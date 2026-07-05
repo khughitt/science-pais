@@ -1,6 +1,6 @@
 ---
 id: patch-definition:immune-state-shift-causal-landscape
-type: patch-definition
+kind: patch-definition
 title: Immune-state-displacement causal landscape (PAIS)
 status: active
 created: "2026-06-30"

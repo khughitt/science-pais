@@ -1,6 +1,6 @@
 ---
 id: question:0032-pais-burden-phenotype-and-mechanism-in-lmic-and-ancestrally-diverse
-type: question
+kind: question
 title: PAIS burden, phenotype, and mechanism in LMIC and ancestrally diverse populations
 status: active
 ontology_terms: []

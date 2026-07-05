@@ -1,6 +1,6 @@
 ---
 id: question:0037-latent-homeostatic-fragility-after-pais-recovery-lower-re-entry
-type: question
+kind: question
 title: 'Latent homeostatic fragility after PAIS recovery: lower re-entry threshold
   on reinfection'
 status: active

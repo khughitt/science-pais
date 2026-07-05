@@ -1,6 +1,6 @@
 ---
 id: "plan:0009-wave1-mr-hormone-pilot"
-type: "plan"
+kind: "plan"
 plan_kind: "pipeline"
 title: "Wave-1 MR Arm-B hormone pilot: sex-hormone liability → long-COVID (overlap-corrected, ancestry-flagged exploratory)"
 status: "active"

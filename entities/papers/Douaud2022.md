@@ -1,6 +1,6 @@
 ---
 id: paper:Douaud2022
-type: paper
+kind: paper
 title: "SARS-CoV-2 is associated with changes in brain structure in UK Biobank"
 status: active
 ontology_terms:

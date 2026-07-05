@@ -1,6 +1,6 @@
 ---
 id: paper:Hadley2024
-type: paper
+kind: paper
 title: Insights from an N3C RECOVER EHR-based cohort study characterizing SARS-CoV-2 reinfections and Long COVID
 status: active
 ontology_terms:

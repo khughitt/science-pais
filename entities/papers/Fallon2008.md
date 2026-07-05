@@ -1,6 +1,6 @@
 ---
 id: paper:Fallon2008
-type: paper
+kind: paper
 title: "A randomized, placebo-controlled trial of repeated IV antibiotic therapy for Lyme encephalopathy"
 status: active
 paper_kind: ""

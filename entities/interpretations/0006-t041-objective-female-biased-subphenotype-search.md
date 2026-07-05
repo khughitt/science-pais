@@ -1,6 +1,6 @@
 ---
 id: interpretation:0006-t041-objective-female-biased-subphenotype-search
-type: interpretation
+kind: interpretation
 title: 't041 objective female-biased subphenotype search: predominantly null/reinforcing
   across four objective domains, with one weak testosterone-conditioned immune exception'
 status: active

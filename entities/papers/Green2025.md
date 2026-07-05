@@ -1,6 +1,6 @@
 ---
 id: paper:Green2025
-type: paper
+kind: paper
 title: A systematic review and meta-analysis of the impact of vaccination on prevention of long COVID
 status: active
 ontology_terms:

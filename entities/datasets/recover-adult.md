@@ -1,6 +1,6 @@
 ---
 id: dataset:recover-adult
-type: dataset
+kind: dataset
 title: "RECOVER-Adult (Researching COVID to Enhance Recovery)"
 status: candidate
 created: "2026-06-21"

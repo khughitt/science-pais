@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0033-aid2025-lc-female-inflammatory-amplification-within-recovered-null"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Aid2025 female-amplified inflammatory-pathway enrichment in long COVID with a within-recovered sex-null — strongest available interaction control"
 status: "active"
 stance: "supports"

@@ -1,6 +1,6 @@
 ---
 id: interpretation:0005-t042-vascular-male-reversal-survives-severity-adjustment
-type: interpretation
+kind: interpretation
 title: Male vascular hard-endpoint reversal survives coarse acute-severity restriction (t042
   verdict)
 status: active

@@ -1,6 +1,6 @@
 ---
 id: interpretation:0023-t007-microbiome-gut-brain-axis
-type: interpretation
+kind: interpretation
 title: "t007: Microbiome and gut-brain evidence supports a recurring PAIS loop node, not a standalone cause"
 status: active
 source_refs:

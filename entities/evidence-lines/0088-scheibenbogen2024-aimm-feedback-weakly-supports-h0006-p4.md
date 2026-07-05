@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0088-scheibenbogen2024-aimm-feedback-weakly-supports-h0006-p4
-type: evidence-line
+kind: evidence-line
 title: "Scheibenbogen2024 AIMM feedback model weakly supports h0006 P4 self-perpetuating muscle lesion"
 status: active
 stance: supports

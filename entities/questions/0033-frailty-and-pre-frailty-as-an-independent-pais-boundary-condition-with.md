@@ -1,6 +1,6 @@
 ---
 id: question:0033-frailty-and-pre-frailty-as-an-independent-pais-boundary-condition-with
-type: question
+kind: question
 title: Frailty and pre-frailty as an independent PAIS boundary condition with bidirectional
   coupling
 status: active

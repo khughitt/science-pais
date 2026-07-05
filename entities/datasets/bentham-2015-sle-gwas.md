@@ -1,7 +1,7 @@
 ---
 schema_profile: science-entity-base/1.0+dataset/1.0
 id: dataset:bentham-2015-sle-gwas
-type: dataset
+kind: dataset
 title: Bentham 2015 systemic lupus erythematosus GWAS summary statistics (European
   ancestry)
 status: candidate

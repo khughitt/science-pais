@@ -1,6 +1,6 @@
 ---
 id: paper:Malden2024
-type: paper
+kind: paper
 title: "Post-COVID conditions following COVID-19 vaccination: a retrospective matched cohort study of patients with SARS-CoV-2 infection"
 status: active
 ontology_terms:

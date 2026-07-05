@@ -1,6 +1,6 @@
 ---
 id: "paper:Thaweethai2023"
-type: "paper"
+kind: "paper"
 title: "Development of a Definition of Postacute Sequelae of SARS-CoV-2 Infection"
 status: "active"
 paper_kind: ""

@@ -1,6 +1,6 @@
 ---
 id: question:0043-bacterial-persister-cell-bet-hedging-as-a-model-for-stochastic-viral
-type: question
+kind: question
 title: Bacterial persister-cell bet-hedging as a model for stochastic viral dormancy
   in PAIS tissue reservoirs
 status: active

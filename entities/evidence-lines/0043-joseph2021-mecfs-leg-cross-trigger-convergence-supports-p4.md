@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0043-joseph2021-mecfs-leg-cross-trigger-convergence-supports-p4
-type: evidence-line
+kind: evidence-line
 title: "Joseph2021 supplies the ME/CFS leg of cross-trigger SFN convergence —\
   \ supports P4"
 status: active

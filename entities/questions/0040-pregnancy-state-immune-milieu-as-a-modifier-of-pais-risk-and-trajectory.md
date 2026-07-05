@@ -1,6 +1,6 @@
 ---
 id: question:0040-pregnancy-state-immune-milieu-as-a-modifier-of-pais-risk-and-trajectory
-type: question
+kind: question
 title: Pregnancy-state immune milieu as a modifier of PAIS risk and trajectory
 status: active
 ontology_terms: []

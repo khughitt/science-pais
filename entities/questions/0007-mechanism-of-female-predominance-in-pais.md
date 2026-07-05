@@ -1,6 +1,6 @@
 ---
 id: question:0007-mechanism-of-female-predominance-in-pais
-type: question
+kind: question
 title: What mechanism underlies the consistent female predominance of post-infectious
   fatigue across PAIS, and does it genuinely track somatic fatigue more than
   post-infectious depression?

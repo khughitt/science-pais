@@ -1,6 +1,6 @@
 ---
 id: paper:PCCOS2023COMS
-type: paper
+kind: paper
 title: "Core outcome measurement instruments for use in clinical and research settings for adults with post-COVID-19 condition"
 status: active
 ontology_terms:

@@ -1,6 +1,6 @@
 ---
 id: paper:Cheetham2023
-type: paper
+kind: paper
 title: 'The effects of COVID-19 on cognitive performance in a community-based cohort:
   a COVID symptom study biobank prospective cohort study'
 status: active

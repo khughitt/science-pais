@@ -1,5 +1,5 @@
 ---
-type: search
+kind: search
 title: 'Literature search: mitochondrial / bioenergetic dysfunction and post-exertional
   malaise (t005)'
 status: active

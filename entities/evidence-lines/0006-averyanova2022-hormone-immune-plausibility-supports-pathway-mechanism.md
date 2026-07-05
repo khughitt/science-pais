@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0006-averyanova2022-hormone-immune-plausibility-supports-pathway-mechanism"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Averyanova2022 hormone-immune-endothelial plausibility supports the pathway-modification mechanism"
 status: "active"
 stance: "supports"

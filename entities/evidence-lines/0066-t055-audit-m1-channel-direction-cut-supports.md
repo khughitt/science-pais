@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0066-t055-audit-m1-channel-direction-cut-supports
-type: evidence-line
+kind: evidence-line
 title: "t055 audit: PAIS self-report/mixed-origin group differences attenuate or decompose under objective re-measurement (4/4 cut) — supports M1"
 status: active
 stance: supports

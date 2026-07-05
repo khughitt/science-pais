@@ -1,6 +1,6 @@
 ---
 id: interpretation:0008-t019-hrt-evidence-audit-no-admissible-pais-test
-type: interpretation
+kind: interpretation
 title: "t019: hormone-therapy evidence is acute, ascertainment-confounded, or clinical-management\
   \ only — no admissible direct HRT to PAIS test exists"
 status: active

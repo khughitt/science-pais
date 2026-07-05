@@ -1,6 +1,6 @@
 ---
 id: paper:Silva2024
-type: paper
+kind: paper
 title: "Sex differences in symptomatology and immune profiles of Long COVID"
 status: active
 ontology_terms:

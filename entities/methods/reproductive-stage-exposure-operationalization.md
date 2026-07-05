@@ -1,5 +1,5 @@
 ---
-type: method
+kind: method
 title: "Reproductive-stage exposure operationalization & misclassification model for\
   \ the menopause\u2192PAIS analysis (t020)"
 status: active

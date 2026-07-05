@@ -1,6 +1,6 @@
 ---
 id: "concept:pais-outcome"
-type: "concept"
+kind: "concept"
 title: "PAIS outcome"
 status: "active"
 created: "2026-06-19"

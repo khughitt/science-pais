@@ -1,6 +1,6 @@
 ---
 id: question:0004-convergent-small-fiber-neuropathy-substrate
-type: question
+kind: question
 title: Do PTLDS, long COVID, and ME/CFS share a non-length-dependent autonomic small-fiber
   neuropathy substrate that distinguishes them from primary dysautonomia?
 status: active

@@ -1,6 +1,6 @@
 ---
 id: interpretation:0003-t018-subphenotype-sex-reproductive-stage
-type: interpretation
+kind: interpretation
 title: 'Subphenotype decomposition of the PAIS female / reproductive-stage excess:
   the excess is subphenotype-dependent and tracks a measurement-channel axis, and is
   not shown to be menopausal-status-driven'

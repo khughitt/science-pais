@@ -1,6 +1,6 @@
 ---
 id: question:0042-is-the-cross-trigger-1020-chronic-fraction-an-artifact-of-shared-case
-type: question
+kind: question
 title: "Is the cross-trigger ~10\u201320% chronic fraction an artifact of shared case\
   \ definitions applied without adequate controls?"
 status: active

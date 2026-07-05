@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0021-delgadoalonso2023-subjective-female-objective-null-supports-cognitive-self-report-channel"
-type: "evidence-line"
+kind: "evidence-line"
 title: "DelgadoAlonso2023 subjective female complaint with objective sex-null and fatigue mediation supports the self-report cognitive channel"
 status: "active"
 stance: "supports"

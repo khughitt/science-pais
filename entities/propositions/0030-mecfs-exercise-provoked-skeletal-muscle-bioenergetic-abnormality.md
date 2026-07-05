@@ -1,6 +1,6 @@
 ---
 id: proposition:0030-mecfs-exercise-provoked-skeletal-muscle-bioenergetic-abnormality
-type: proposition
+kind: proposition
 title: ME/CFS has exercise-provoked skeletal-muscle bioenergetic abnormalities, but the Appelman-type post-PEM muscle-OXPHOS lesion is not yet harmonized across triggers
 status: active
 claim_layer: structural_claim

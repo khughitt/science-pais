@@ -1,6 +1,6 @@
 ---
 id: synthesis:0005-reproductive-stage-immune-homeostatic-margin
-type: synthesis
+kind: synthesis
 title: "Synthesis: 0005-reproductive-stage-immune-homeostatic-margin"
 status: "active"
 report_kind: hypothesis-synthesis

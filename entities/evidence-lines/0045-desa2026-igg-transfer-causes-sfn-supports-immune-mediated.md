@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0045-desa2026-igg-transfer-causes-sfn-supports-immune-mediated
-type: evidence-line
+kind: evidence-line
 title: "deSa2026 long-COVID IgG passive transfer reduces intraepidermal nerve fibers\
   \ in mice — causal support for immune-mediated SFN"
 status: active

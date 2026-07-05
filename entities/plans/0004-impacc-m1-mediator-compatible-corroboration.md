@@ -1,5 +1,5 @@
 ---
-type: plan
+kind: plan
 id: plan:0004-impacc-m1-mediator-compatible-corroboration
 title: "Scope (probe): IMPACC open-data mediator-compatible corroboration of h0005 M1 (t038)"
 date: 2026-06-21

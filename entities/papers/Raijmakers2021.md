@@ -1,6 +1,6 @@
 ---
 id: paper:Raijmakers2021
-type: paper
+kind: paper
 title: 'No signs of neuroinflammation in women with chronic fatigue syndrome or Q
   fever fatigue syndrome using the TSPO ligand [11C]-PK11195'
 status: active

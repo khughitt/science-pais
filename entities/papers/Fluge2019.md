@@ -1,6 +1,6 @@
 ---
 id: paper:Fluge2019
-type: paper
+kind: paper
 title: 'B-Lymphocyte Depletion in Patients With Myalgic Encephalomyelitis/Chronic Fatigue
   Syndrome: A Randomized, Double-Blind, Placebo-Controlled Trial'
 status: active

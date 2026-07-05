@@ -1,6 +1,6 @@
 ---
 id: dataset:gse14577-pi-cfs-prepared-gene-matrix
-type: dataset
+kind: dataset
 title: "GSE14577 prepared PI-CFS gene-expression clean base"
 status: active
 created: "2026-06-26"

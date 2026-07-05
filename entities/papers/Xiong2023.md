@@ -1,6 +1,6 @@
 ---
 id: paper:Xiong2023
-type: paper
+kind: paper
 title: Multi-'omics of gut microbiome-host interactions in short- and long-term myalgic encephalomyelitis/chronic fatigue syndrome patients
 status: active
 ontology_terms:

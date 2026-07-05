@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0060-ptlds-antibiotic-retreatment-null-disputes-0020
-type: evidence-line
+kind: evidence-line
 title: "PTLDS antibiotic-retreatment RCTs (Klempner2001/Krupp2003/Fallon2008/Berende2016) — no durable symptom rescue, no antigen target-engagement; weakly disputes antigen-clearance-rescues (consolidated Borrelia arm)"
 status: active
 stance: disputes

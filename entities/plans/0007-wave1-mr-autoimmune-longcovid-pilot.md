@@ -1,6 +1,6 @@
 ---
 id: "plan:0007-wave1-mr-autoimmune-longcovid-pilot"
-type: "plan"
+kind: "plan"
 plan_kind: "pipeline"
 title: "Wave-1 MR pilot: autoimmune liability → long-COVID (mechanics derisk)"
 status: "active"

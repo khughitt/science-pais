@@ -1,6 +1,6 @@
 ---
 id: proposition:0016-pais-sfn-autoimmune-causation
-type: proposition
+kind: proposition
 title: The PAIS small-fiber lesion is immune-mediated (functional anti-GPCR autoantibodies
   / immunomodulation-responsive)
 status: active

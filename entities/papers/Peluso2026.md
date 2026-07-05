@@ -1,6 +1,6 @@
 ---
 id: paper:Peluso2026
-type: paper
+kind: paper
 title: "A phase 2a double-blind, placebo-controlled randomized trial of the SARS-CoV-2-specific monoclonal antibody AER002 in people with Long COVID"
 status: active
 ontology_terms:

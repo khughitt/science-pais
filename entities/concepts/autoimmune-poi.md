@@ -1,6 +1,6 @@
 ---
 id: "concept:autoimmune-poi"
-type: "concept"
+kind: "concept"
 title: "Autoimmune premature ovarian insufficiency"
 status: "active"
 created: "2026-06-21"

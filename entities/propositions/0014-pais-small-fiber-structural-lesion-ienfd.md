@@ -1,6 +1,6 @@
 ---
 id: proposition:0014-pais-small-fiber-structural-lesion-ienfd
-type: proposition
+kind: proposition
 title: PAIS autonomic patients have an objective small-fiber structural lesion (reduced
   IENFD)
 status: active

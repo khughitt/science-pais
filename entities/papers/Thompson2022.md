@@ -1,6 +1,6 @@
 ---
 id: paper:Thompson2022
-type: paper
+kind: paper
 title: "Long COVID burden and risk factors in 10 UK longitudinal studies and electronic health records"
 status: active
 ontology_terms:

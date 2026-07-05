@@ -1,6 +1,6 @@
 ---
 id: paper:Eldokla2022
-type: paper
+kind: paper
 title: "Prevalence and patterns of symptoms of dysautonomia in patients with long-COVID
   syndrome: A cross-sectional study"
 status: active

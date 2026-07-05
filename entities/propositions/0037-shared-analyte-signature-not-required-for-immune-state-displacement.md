@@ -1,6 +1,6 @@
 ---
 id: "proposition:0037-shared-analyte-signature-not-required-for-immune-state-displacement"
-type: "proposition"
+kind: "proposition"
 title: "A shared molecular/analyte signature is not required for the shared post-infectious immune-state displacement hypothesis (degeneracy / evidence-bar)"
 status: "active"
 claim_layer: "structural_claim"

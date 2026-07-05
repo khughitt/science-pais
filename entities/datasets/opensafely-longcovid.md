@@ -1,6 +1,6 @@
 ---
 id: dataset:opensafely-longcovid
-type: dataset
+kind: dataset
 title: "OpenSAFELY — English primary-care EHR (COVID / long COVID)"
 status: candidate
 origin: external

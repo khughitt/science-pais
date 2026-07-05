@@ -1,6 +1,6 @@
 ---
 id: "concept:chronological-age"
-type: "concept"
+kind: "concept"
 title: "Chronological age"
 status: "active"
 created: "2026-06-19"

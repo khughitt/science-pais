@@ -1,6 +1,6 @@
 ---
 id: topic:menopause-sex-hormones-and-pais-risk
-type: topic
+kind: topic
 title: Menopause Status, Sex Hormones, and PAIS Risk
 status: active
 ontology_terms:

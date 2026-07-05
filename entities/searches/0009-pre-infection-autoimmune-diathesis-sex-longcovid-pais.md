@@ -1,6 +1,6 @@
 ---
 id: search:0009-pre-infection-autoimmune-diathesis-sex-longcovid-pais
-type: search
+kind: search
 title: "Literature search: pre-existing autoimmune diathesis as sex-conditioned effect modifier for long COVID / PAIS risk (t078)"
 status: active
 created: "2026-06-30"

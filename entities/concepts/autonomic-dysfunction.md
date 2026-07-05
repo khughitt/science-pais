@@ -1,6 +1,6 @@
 ---
 id: "concept:autonomic-dysfunction"
-type: "concept"
+kind: "concept"
 title: "Autonomic dysfunction"
 status: "active"
 created: "2026-06-30"

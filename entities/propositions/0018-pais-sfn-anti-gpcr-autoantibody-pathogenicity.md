@@ -1,6 +1,6 @@
 ---
 id: proposition:0018-pais-sfn-anti-gpcr-autoantibody-pathogenicity
-type: proposition
+kind: proposition
 title: Functional anti-GPCR autoantibodies are pathogenic for the PAIS small-fiber/autonomic
   lesion (not merely an epiphenomenal marker)
 status: active

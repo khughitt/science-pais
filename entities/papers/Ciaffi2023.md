@@ -1,6 +1,6 @@
 ---
 id: paper:Ciaffi2023
-type: paper
+kind: paper
 title: 'Post-Acute COVID-19 Joint Pain and New Onset of Rheumatic Musculoskeletal
   Diseases: A Systematic Review'
 status: active

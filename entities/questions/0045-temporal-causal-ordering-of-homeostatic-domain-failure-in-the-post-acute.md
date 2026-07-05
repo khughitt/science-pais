@@ -1,6 +1,6 @@
 ---
 id: question:0045-temporal-causal-ordering-of-homeostatic-domain-failure-in-the-post-acute
-type: question
+kind: question
 title: Temporal causal ordering of homeostatic domain failure in the post-acute period
 status: active
 ontology_terms: []

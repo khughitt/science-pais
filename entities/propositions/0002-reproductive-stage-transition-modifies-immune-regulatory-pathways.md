@@ -1,6 +1,6 @@
 ---
 id: "proposition:0002-reproductive-stage-transition-modifies-immune-regulatory-pathways"
-type: "proposition"
+kind: "proposition"
 title: "Reproductive-stage transition modifies immune-regulatory pathways relevant to post-infectious recovery"
 status: "active"
 claim_layer: "mechanistic_narrative"

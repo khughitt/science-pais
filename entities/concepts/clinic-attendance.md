@@ -1,6 +1,6 @@
 ---
 id: "concept:clinic-attendance"
-type: "concept"
+kind: "concept"
 title: "Clinic attendance"
 status: "active"
 created: "2026-06-19"

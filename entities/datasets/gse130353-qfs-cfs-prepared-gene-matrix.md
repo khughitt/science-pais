@@ -1,6 +1,6 @@
 ---
 id: dataset:gse130353-qfs-cfs-prepared-gene-matrix
-type: dataset
+kind: dataset
 title: "GSE130353 prepared QFS/CFS monocyte gene-expression clean base"
 status: active
 created: "2026-06-26"

@@ -1,6 +1,6 @@
 ---
 id: paper:Oaklander2022
-type: paper
+kind: paper
 title: Peripheral Neuropathy Evaluations of Patients With Prolonged Long COVID
 status: active
 ontology_terms:

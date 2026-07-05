@@ -1,6 +1,6 @@
 ---
 id: paper:Morroy2016
-type: paper
+kind: paper
 title: 'Fatigue following Acute Q-Fever: A Systematic Literature Review'
 status: active
 ontology_terms:

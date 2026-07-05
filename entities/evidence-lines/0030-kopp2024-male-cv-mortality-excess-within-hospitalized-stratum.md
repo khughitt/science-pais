@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0030-kopp2024-male-cv-mortality-excess-within-hospitalized-stratum"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Kopp2024 male CV-mortality excess persists within a hospitalized (severity-restricted) cohort"
 status: "active"
 stance: "supports"

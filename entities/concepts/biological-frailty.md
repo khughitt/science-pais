@@ -1,6 +1,6 @@
 ---
 id: "concept:biological-frailty"
-type: "concept"
+kind: "concept"
 title: "Biological frailty / subclinical pre-infection ill-health"
 status: "active"
 created: "2026-06-21"

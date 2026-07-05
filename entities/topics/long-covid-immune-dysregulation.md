@@ -1,6 +1,6 @@
 ---
 id: topic:long-covid-immune-dysregulation
-type: topic
+kind: topic
 title: Long COVID Immune Dysregulation and Inflammatory Signatures
 status: active
 ontology_terms:

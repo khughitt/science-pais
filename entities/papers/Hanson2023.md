@@ -1,6 +1,6 @@
 ---
 id: paper:Hanson2023
-type: paper
+kind: paper
 title: The viral origin of myalgic encephalomyelitis/chronic fatigue syndrome
 status: active
 ontology_terms:

@@ -1,6 +1,6 @@
 ---
 id: paper:Bateman2023
-type: paper
+kind: paper
 title: Fibromyalgia and myalgic encephalomyelitis/chronic fatigue syndrome
 status: active
 ontology_terms:

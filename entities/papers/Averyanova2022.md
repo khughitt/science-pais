@@ -1,6 +1,6 @@
 ---
 id: paper:Averyanova2022
-type: paper
+kind: paper
 title: Sex hormones and immune system
 status: active
 ontology_terms:

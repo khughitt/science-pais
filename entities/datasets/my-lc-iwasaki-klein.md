@@ -1,6 +1,6 @@
 ---
 id: dataset:my-lc-iwasaki-klein
-type: dataset
+kind: dataset
 title: "MY-LC — Mount Sinai–Yale Long COVID immune/sex cohort"
 status: candidate
 created: "2026-06-21"

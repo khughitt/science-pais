@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0037-costeira2021-hrt-cocp-divergence-acute-supports-hormone-therapy-context-dependence"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Costeira2021 within-study HRT↑ / COCP↓ divergence (acute COVID, predicted outcome) weakly supports hormone-therapy context-dependence"
 status: "active"
 stance: "supports"

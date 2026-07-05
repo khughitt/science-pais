@@ -1,6 +1,6 @@
 ---
 id: topic:mecfs-long-covid-convergence
-type: topic
+kind: topic
 title: 'ME/CFS and Long COVID: Symptom and Biomarker Convergence'
 status: active
 ontology_terms:

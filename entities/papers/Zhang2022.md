@@ -1,6 +1,6 @@
 ---
 id: paper:Zhang2022
-type: paper
+kind: paper
 title: Data-driven identification of post-acute SARS-CoV-2 infection subphenotypes
 status: active
 ontology_terms:

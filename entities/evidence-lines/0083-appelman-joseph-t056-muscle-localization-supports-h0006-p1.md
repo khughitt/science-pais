@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0083-appelman-joseph-t056-muscle-localization-supports-h0006-p1
-type: evidence-line
+kind: evidence-line
 title: "Provoked long-COVID biopsy, peripheral exercise physiology, and ME/CFS muscle-bioenergetics support h0006 P1 muscle localization"
 status: active
 stance: supports

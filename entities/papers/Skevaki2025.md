@@ -1,6 +1,6 @@
 ---
 id: paper:Skevaki2025
-type: paper
+kind: paper
 title: 'Long COVID: Pathophysiology, current concepts, and future directions'
 status: active
 ontology_terms:

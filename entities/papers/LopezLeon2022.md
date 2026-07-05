@@ -1,6 +1,6 @@
 ---
 id: paper:LopezLeon2022
-type: paper
+kind: paper
 title: "Long-COVID in children and adolescents: a systematic review and meta-analyses"
 status: active
 ontology_terms:

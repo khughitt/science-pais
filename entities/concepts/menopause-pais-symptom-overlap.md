@@ -1,6 +1,6 @@
 ---
 id: "concept:menopause-pais-symptom-overlap"
-type: "concept"
+kind: "concept"
 title: "Menopause-PAIS symptom overlap"
 status: "active"
 created: "2026-06-19"

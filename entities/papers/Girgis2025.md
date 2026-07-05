@@ -1,6 +1,6 @@
 ---
 id: paper:Girgis2025
-type: paper
+kind: paper
 title: 'Aberrant T-cell phenotypes in a cohort of patients with post-treatment Lyme
   disease'
 status: active

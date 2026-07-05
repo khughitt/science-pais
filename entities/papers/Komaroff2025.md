@@ -1,6 +1,6 @@
 ---
 id: paper:Komaroff2025
-type: paper
+kind: paper
 title: Growing recognition of post-acute infection syndromes
 status: active
 ontology_terms:

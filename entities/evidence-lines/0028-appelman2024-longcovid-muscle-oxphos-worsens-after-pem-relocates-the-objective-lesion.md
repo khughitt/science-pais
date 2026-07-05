@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0028-appelman2024-longcovid-muscle-oxphos-worsens-after-pem-relocates-the-objective-lesion"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Appelman2024 long-COVID muscle OXPHOS worsening after PEM relocates the objective lesion to the periphery"
 status: "active"
 stance: "supports"

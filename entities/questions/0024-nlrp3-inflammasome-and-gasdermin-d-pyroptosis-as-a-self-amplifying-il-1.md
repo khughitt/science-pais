@@ -1,6 +1,6 @@
 ---
 id: question:0024-nlrp3-inflammasome-and-gasdermin-d-pyroptosis-as-a-self-amplifying-il-1
-type: question
+kind: question
 title: "NLRP3 inflammasome and gasdermin-D pyroptosis as a self-amplifying IL-1\u03B2\
   /IL-18 loop sustaining PAIS without viremia"
 status: active

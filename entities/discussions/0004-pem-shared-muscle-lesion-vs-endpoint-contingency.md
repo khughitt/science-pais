@@ -1,6 +1,6 @@
 ---
 id: discussion:0004-pem-shared-muscle-lesion-vs-endpoint-contingency
-type: discussion
+kind: discussion
 title: 'Cross-trigger PEM: one shared muscle lesion (h0006) vs endpoint-contingent objective correlate (h0008-M3)'
 status: active
 source_refs:

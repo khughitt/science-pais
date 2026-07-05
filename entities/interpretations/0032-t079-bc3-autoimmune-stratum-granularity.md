@@ -1,6 +1,6 @@
 ---
 id: interpretation:0032-t079-bc3-autoimmune-stratum-granularity
-type: interpretation
+kind: interpretation
 title: "t079/BC-3: disease-specific autoimmune strata resolve in BOTH vehicles (fixes Hill's pooled-Charlson gap); autoimmune-thyroid is the convergent weak stratum"
 status: active
 source_refs:

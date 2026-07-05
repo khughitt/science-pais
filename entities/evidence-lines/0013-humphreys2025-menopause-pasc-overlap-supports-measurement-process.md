@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0013-humphreys2025-menopause-pasc-overlap-supports-measurement-process"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Humphreys2025 menopause-PASC overlap corroborates the measurement-process claim"
 status: "active"
 stance: "supports"

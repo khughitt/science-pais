@@ -1,6 +1,6 @@
 ---
 id: paper:Vreeman2025
-type: paper
+kind: paper
 title: 'Post-COVID pulmonary sequelae: Mechanisms and potential targets to reduce persistent fibrosis'
 status: active
 ontology_terms:

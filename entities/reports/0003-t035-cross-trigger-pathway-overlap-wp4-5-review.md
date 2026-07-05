@@ -1,6 +1,6 @@
 ---
 id: "report:0003-t035-cross-trigger-pathway-overlap-wp4-5-review"
-type: "report"
+kind: "report"
 title: "t035 WP4-5 implementation review: preprocessing + DE/enrichment (cross-trigger pathway-overlap)"
 status: "proposed"
 source_refs:

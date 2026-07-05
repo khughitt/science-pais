@@ -1,6 +1,6 @@
 ---
 id: paper:Wang2023b
-type: paper
+kind: paper
 title: "Sequential multi-omics analysis identifies clinical phenotypes and predictive biomarkers for long COVID"
 status: active
 ontology_terms:
