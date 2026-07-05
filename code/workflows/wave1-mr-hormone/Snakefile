@@ -292,7 +292,7 @@ CANON_DIR = f"{MRLAP_DIR}/canonical"
 SETUP_MRLAP = f"{MRLAP_DIR}/.setup_mrlap.json"
 MRLAP_MANIFEST = f"{RESULTS}/mrlap_results.json"
 LDSC_LD_DIR = f"{RAW}/ldsc/eur_w_ld_chr"        # MRlap `ld` dir (staged Task 1)
-LDSC_HM3 = f"{RAW}/ldsc/w_hm3.snplist"          # MRlap `hm3` (staged Task 1)
+# MRlap `hm3` reuses the Task-1 LDSC_HM3 constant (f"{LDSC_DIR}/w_hm3.snplist"); no redefinition.
 
 
 rule mrlap:                                 # Task-4 target
