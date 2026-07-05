@@ -92,6 +92,9 @@ code/workflows/wave1-mr-hormone/
     │                                       graceful <3-harmonised handling (record, don't abort)
     └── aggregate_mr.py            CREATE  join 6 per-stratum results (+ benchmark TSVs, setup sentinel,
                                             instruments_manifest) → naive_mr_results.json + cross-stratum concordance
+└── tests/
+    └── test_guards.sh             CREATE  exercise the quarantine + <3-harmonised safety paths on tiny
+                                            synthetic fixtures (no conda / no outcome download)
 ```
 
 `harmonize_estimate.R` is a deliberate **copy into the isolated workflow**
@@ -184,15 +187,51 @@ with these edits:
        "genotype x sex effect-modification test. No sex-modification claim."),
      exposure_side = paste0("SHBG and total testosterone share Ruth instrument loci ",
        "(steroid-axis pleiotropy plausible; Egger+WM only partially bound it). ",
-       "Female-testosterone is weakest-instrumented yet most decision-relevant."))
+       "Female-testosterone is weakest-instrumented yet most decision-relevant."),
+     sample_overlap_uncorrected = TRUE,   # Ruth = 100% UKB, HGI pools UKB → structural
+     naive_comparator_only = TRUE)        # overlap NOT corrected here; MRlap is Task 4
    ```
-   `OR = exp(b)` is now **OR of long-COVID per 1-SD hormone** — recorded per method.
+   The two boolean flags are **machine-readable** and load-bearing: this arm has
+   **uncorrected sample overlap by design** (Ruth is 100% UK Biobank; the HGI
+   outcome pools UKB), so no naive estimate may be read as overlap-corrected — that
+   correction is the whole point of Task 4. `OR = exp(b)` is now **OR of long-COVID
+   per 1-SD hormone** — recorded per method.
 
-6. **Estimators (unchanged core).** `set.seed(cfg$estimate$weighted_median_seed)`;
-   `mr(dat, method_list = cfg$estimate$methods)`; `mr_pleiotropy_test(dat)` for the
-   Egger intercept; sign-concordance across the three methods; resource capture
-   (`extract_secs`, `peak_mb`). Snakemake `benchmark:` additionally records
-   `max_rss` + wall-clock for the real-data stream-extract step.
+6. **Estimators + enforced weighted-median bootstrap (P1).** Wire the config
+   `nboot` pin explicitly — `mr(dat, method_list=…)` alone silently uses
+   `default_parameters()` (`nboot = 1000`), so the config value is decorative
+   unless passed:
+   ```r
+   set.seed(cfg$estimate$weighted_median_seed)
+   wm_nboot <- as.integer(cfg$estimate$weighted_median_bootstrap_n)
+   params <- modifyList(default_parameters(), list(nboot = wm_nboot))
+   res   <- mr(dat, method_list = as.character(cfg$estimate$methods), parameters = params)
+   egger <- tryCatch(mr_pleiotropy_test(dat), error = function(e) NULL)   # Egger intercept
+   ```
+   Record the **resolved** `weighted_median_bootstrap_n` (= `wm_nboot`) in the
+   results JSON, not just the config value. Sign-concordance across the three
+   methods; resource capture (`extract_secs`, `peak_mb`). Snakemake `benchmark:`
+   additionally records `max_rss` + wall-clock for the real-data stream-extract.
+
+7. **Estimator-output hard-stop (P1, technical fault).** A non-finite estimate
+   from a well-instrumented (≥159-SNP) stratum is a **technical fault**, not
+   "weak" — enforce the plan's own Decision-criteria hard-stop programmatically
+   rather than leaving it to inspection:
+   ```r
+   # after res/egger, for an "estimated" stratum:
+   want <- as.character(cfg$estimate$methods)                     # every configured method present
+   got  <- res$method
+   if (!all(vapply(c("Inverse variance weighted","MR Egger","Weighted median"),
+                   function(m) any(grepl(m, got, fixed = TRUE)), logical(1))))
+     stop(sprintf("harmonize_estimate[%s]: mr() returned %d/%d configured methods — HALT (technical)",
+                  stratum, length(got), length(want)))
+   if (!all(is.finite(c(res$b, res$se, res$pval))))
+     stop(sprintf("harmonize_estimate[%s]: non-finite b/se/pval in estimator output — HALT (technical)",
+                  stratum))
+   ```
+   The Egger intercept stays optional but **explicit**: `egger_intercept` is either
+   a finite `{intercept, se, pval}` object or `null` with a `reason` string (never
+   silently absent).
 
 **Per-stratum results JSON** (written by `write_results`, small helper):
 ```json
@@ -205,12 +244,14 @@ with these edits:
   "mean_f_instruments": <num>,
   "methods": [ {"method": "Inverse variance weighted", "nsnp": <int>,
                 "b": <num>, "se": <num>, "pval": <num>, "or": <num>}, "...Egger, WM..." ],
-  "egger_intercept": {"intercept": <num>, "se": <num>, "pval": <num>},
+  "egger_intercept": {"intercept": <num>, "se": <num>, "pval": <num>},   // or null + "reason"
   "concordance": {"all_methods_same_sign": <bool>, "ivw_beta": <num>},
   "dropped_snps": [<rsid...>],
   "harmonise_action": 2, "weighted_median_seed": 20260705,
+  "weighted_median_bootstrap_n_resolved": <int>,
   "resources": {"outcome_extract_seconds": <num>, "peak_memory_mb": <num>},
-  "labels": { "ancestry_flag": "...", "bounded_sex": "...", "exposure_side": "..." }
+  "labels": { "ancestry_flag": "...", "bounded_sex": "...", "exposure_side": "...",
+              "sample_overlap_uncorrected": true, "naive_comparator_only": true }
 }
 ```
 
@@ -218,14 +259,19 @@ with these edits:
 
 Reads the six per-stratum result JSONs + six benchmark TSVs + the setup sentinel +
 `instruments_manifest.json` (for the instrument-count cross-ref); **hard-stops** on
-any missing/malformed input. Writes under `results/wave1-mr-hormone-pilot/`:
+any missing/malformed input **and, as defense-in-depth (P1), on any `status:
+"estimated"` record that lacks a configured method or carries a non-finite
+`b`/`se`/`pval`/`or`** (the estimator script is the primary gate; the aggregator
+re-asserts so a malformed record can never reach the manifest silently). Writes
+under `results/wave1-mr-hormone-pilot/`:
 
 ```json
 {
   "plan": "plan:0009-wave1-mr-hormone-pilot", "task": "t089",
   "stage": "Task 3 — naive MR comparator (IVW / Egger / weighted-median)",
   "labels": { "ancestry_flag": "...(KD1)...", "bounded_sex": "...(KD3)...",
-              "exposure_side": "...SHBG<->testosterone coupling; female-T caveat..." },
+              "exposure_side": "...SHBG<->testosterone coupling; female-T caveat...",
+              "sample_overlap_uncorrected": true, "naive_comparator_only": true },
   "estimate_params": { "methods": ["mr_ivw","mr_egger_regression","mr_weighted_median"],
                        "weighted_median_seed": 20260705,
                        "weighted_median_bootstrap_n": 1000, "harmonise_action": 2 },
@@ -316,29 +362,40 @@ rule aggregate_mr:
       `config.yaml` (verbatim above).
 - [ ] **Step 2 — estimator script.** Write `scripts/harmonize_estimate.R` by
       copying `code/workflows/wave1-mr/scripts/harmonize_estimate.R` and applying
-      the six edits above (new args + `--stratum` resolution, eligibility guard,
+      the seven edits above (new args + `--stratum` resolution, eligibility guard,
       `EA`/`OA` exposure mapping, graceful `<3`-harmonised record, hormone
-      estimand + KD1/KD3 labels, `write_results` helper emitting the per-stratum
-      JSON). Keep the stream-extract + `harmonise_data(action=2)` + estimator core
-      unchanged.
+      estimand + KD1/KD3 + `sample_overlap_uncorrected`/`naive_comparator_only`
+      labels, **enforced WM `nboot`**, **estimator-output hard-stop**,
+      `write_results` helper emitting the per-stratum JSON). Keep the
+      stream-extract + `harmonise_data(action=2)` + estimator core unchanged.
 - [ ] **Step 3 — aggregator.** Write `scripts/aggregate_mr.py` (join six results +
       benchmark TSVs + sentinel + instruments manifest → `naive_mr_results.json`
       with `summary`, `cross_stratum` sign-concordance, `resource`; hard-stop on
-      missing/malformed input).
+      missing/malformed input **and on any `estimated` record missing a method or
+      carrying a non-finite `b`/`se`/`pval`/`or`**).
 - [ ] **Step 4 — Snakefile.** Add `MR_DIR` / `NAIVE_MR_MANIFEST`, the
       `harmonize_estimate` (wildcard + `benchmark:`) and `aggregate_mr` rules, and
       the `naive_mr` target.
-- [ ] **Step 5 — run (real data).** `uv run snakemake -s
+- [ ] **Step 5 — guard fixture test (P2).** Add `code/workflows/wave1-mr-hormone/tests/test_guards.sh`
+      (or `.py`) that exercises the two safety paths on **tiny synthetic fixtures**,
+      independent of the real data: (a) a sidecar with `eligible_for_mr: false`
+      drives a `status: "skipped-quarantined"` results JSON + a header-only
+      harmonised TSV + no estimator run; (b) a 2-instrument TSV harmonised against
+      a 2-row fake outcome drives `status: "insufficient-harmonised-instruments"`
+      without crashing. Assert the status strings + that no `methods` were emitted.
+      Runs in seconds; no conda/outcome download.
+- [ ] **Step 6 — run (real data).** `uv run snakemake -s
       code/workflows/wave1-mr-hormone/Snakefile --use-conda -c1 naive_mr`
       (reuses the Task-2 `r-mr` env + setup sentinel; no reinstall). Per-stratum
       wall-clock + `max_rss` captured by `benchmark:`.
-- [ ] **Step 6 — inspect.** Read `naive_mr_results.json`: six strata each with
+- [ ] **Step 7 — inspect.** Read `naive_mr_results.json`: six strata each with
       `n_harmonised`, per-method `b`/`se`/`pval`/`or`, Egger intercept, sign
-      concordance; the `cross_stratum` male-vs-female sign block; the labels; and
-      `peak_rss_mb`. Confirm IVW/Egger/WM are finite and sane, the Egger intercept
-      is computable, and the female-testosterone stratum's estimate is recorded
-      (wide/weak = informative, not an error).
-- [ ] **Step 7 — validate + note.** `uv run --frozen science validate`; record a
+      concordance; the `cross_stratum` male-vs-female sign block; the labels
+      (incl. `sample_overlap_uncorrected`); and `peak_rss_mb`. Confirm IVW/Egger/WM
+      are finite and sane, the Egger intercept is computable, and the
+      female-testosterone stratum's estimate is recorded (wide/weak = informative,
+      not an error).
+- [ ] **Step 8 — validate + note.** `uv run --frozen science validate`; record a
       t089 note summarising per-stratum IVW OR + concordance + peak RSS; commit.
 
 ## Final validation / Definition of done
@@ -348,18 +405,25 @@ rule aggregate_mr:
   missing/malformed input.
 - Each **eligible** stratum ran IVW/Egger/weighted-median on `harmonise(action=2)`
   instruments; drop-log present and **non-silent**; WM RNG seed recorded.
-- Per-method `b`/`se`/`pval`/`or` finite; Egger intercept present (or explicitly
-  `null` with reason); sign-concordance recorded.
-- **Eligibility guard demonstrably works** (spot-checked): a stratum flagged
-  `eligible_for_mr: false` in its sidecar is skipped loudly with a recorded reason
-  and no estimator output; a `<3`-harmonised stratum is recorded, not crashed.
+- Per-method `b`/`se`/`pval`/`or` finite — **enforced by a hard-stop** in
+  `harmonize_estimate.R` (an `estimated` stratum missing a configured method or
+  carrying a non-finite estimate HALTs as a technical fault) and re-asserted in the
+  aggregator; the WM `nboot` is the **enforced config value** (passed via
+  `parameters`), recorded resolved; Egger intercept present or explicitly `null`
+  with reason; sign-concordance recorded.
+- **Both safety gates exercised by the Step-5 fixture test** (not merely
+  spot-checked): the quarantine path yields `status: "skipped-quarantined"` + a
+  header-only harmonised TSV + no estimator output; the `<3`-harmonised path yields
+  `status: "insufficient-harmonised-instruments"` without crashing.
 - **Scale/resource on real data:** per-stratum `max_rss_mb` + wall-clock from
   `benchmark:` for the outcome stream-extract in the manifest `resource` block;
   `peak_rss_mb` reported. (The multi-GB outcome is streamed by rsID, never fully
   loaded.)
-- **Every output carries the ancestry-flag + non-primary + bounded-sex labels;**
-  the `cross_stratum` block is labelled a descriptive exposure-architecture read,
-  not a sex-modification test.
+- **Every output carries the ancestry-flag + non-primary + bounded-sex labels
+  plus the machine-readable `sample_overlap_uncorrected` / `naive_comparator_only`
+  flags** (Ruth×HGI UKB overlap is *not* corrected here — Task 4); the
+  `cross_stratum` block is labelled a descriptive exposure-architecture read, not a
+  sex-modification test.
 - `git status` shows nothing under `data/`; `naive_mr_results.json` lives under
   `results/wave1-mr-hormone-pilot/` (gitignored, regenerable); config pins
   reproduce it.
