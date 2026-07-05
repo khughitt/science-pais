@@ -1,6 +1,6 @@
 ---
 id: "paper:Wang2026b"
-type: "paper"
+kind: "paper"
 title: "Taurine supplementation as a therapeutic strategy for cellular senescence and chronic inflammation in long COVID: a systematic review and meta-analysis"
 status: active
 ontology_terms:

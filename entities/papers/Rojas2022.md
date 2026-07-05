@@ -1,6 +1,6 @@
 ---
 id: paper:Rojas2022
-type: paper
+kind: paper
 title: Autoimmunity is a hallmark of post-COVID syndrome
 status: active
 ontology_terms:

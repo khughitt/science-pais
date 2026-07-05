@@ -1,6 +1,6 @@
 ---
 id: "workflow-run:t035-cross-trigger-pathway-overlap-verdict"
-type: "workflow-run"
+kind: "workflow-run"
 title: "t035 cross-trigger pathway-overlap verdict run"
 status: "complete"
 workflow: "t035-cross-trigger-pathway-overlap"

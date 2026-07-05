@@ -1,6 +1,6 @@
 ---
 id: "paper:Chowdhury2026"
-type: "paper"
+kind: "paper"
 title: "Distinct plasma proteome signature at 3 months post-COVID-19 infection irrespective of post-COVID condition"
 status: active
 ontology_terms:

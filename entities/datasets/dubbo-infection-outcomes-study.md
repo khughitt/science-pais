@@ -1,6 +1,6 @@
 ---
 id: dataset:dubbo-infection-outcomes-study
-type: dataset
+kind: dataset
 title: "Dubbo Infection Outcomes Study (DIOS)"
 status: candidate
 created: "2026-06-21"

@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0009-shahbaz2025-reverse-reading-supports-axis-perturbation"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Shahbaz2025 cross-sectional hormone deficit is equally consistent with infection-driven axis perturbation"
 status: "active"
 stance: "supports"

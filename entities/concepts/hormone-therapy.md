@@ -1,6 +1,6 @@
 ---
 id: "concept:hormone-therapy"
-type: "concept"
+kind: "concept"
 title: "Hormone therapy"
 status: "active"
 created: "2026-06-19"

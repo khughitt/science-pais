@@ -1,6 +1,6 @@
 ---
 id: topic:pediatric-long-covid-and-misc
-type: topic
+kind: topic
 title: Pediatric Long COVID and MIS-C
 status: active
 ontology_terms:

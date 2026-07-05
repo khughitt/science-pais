@@ -1,6 +1,6 @@
 ---
 id: discussion:0003-antigen-persistence-treatable-vs-fixed
-type: discussion
+kind: discussion
 title: 'Antigen persistence: reversible treatment target vs fixed risk factor'
 status: active
 source_refs:

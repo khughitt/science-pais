@@ -1,6 +1,6 @@
 ---
 id: proposition:0026-lc-jakstat-exhaustion-loop-is-proximal-driver
-type: proposition
+kind: proposition
 title: Persistent JAK-STAT/IL-6 activation coupled with T-cell exhaustion is a proximal
   causal driver of long-COVID chronicity (reversible by pathway inhibition), not merely
   a downstream marker

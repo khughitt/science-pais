@@ -1,6 +1,6 @@
 ---
 id: paper:Trautmann2025
-type: paper
+kind: paper
 title: Core features and inherent diversity of post-acute infection syndromes
 status: active
 ontology_terms:

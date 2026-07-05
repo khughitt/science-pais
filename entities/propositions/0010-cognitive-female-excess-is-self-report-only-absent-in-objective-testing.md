@@ -1,6 +1,6 @@
 ---
 id: "proposition:0010-cognitive-female-excess-is-self-report-only-absent-in-objective-testing"
-type: "proposition"
+kind: "proposition"
 title: "The PAIS cognitive female-excess is confined to self-reported complaints and is absent in objective neuropsychological testing"
 status: "active"
 claim_layer: "empirical_regularity"

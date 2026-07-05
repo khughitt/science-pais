@@ -1,6 +1,6 @@
 ---
 id: paper:Maestri2025
-type: paper
+kind: paper
 title: "Systems Immunology of Long Covid: Insights from the STOP-PASC Clinical Trial"
 status: active
 ontology_terms:

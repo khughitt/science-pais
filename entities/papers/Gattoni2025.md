@@ -1,6 +1,6 @@
 ---
 id: paper:Gattoni2025
-type: paper
+kind: paper
 title: Two-day cardiopulmonary exercise testing in long COVID post-exertional malaise
   diagnosis
 status: active

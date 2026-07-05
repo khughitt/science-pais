@@ -1,5 +1,5 @@
 ---
-type: search
+kind: search
 title: "Literature/cohort search: pre-infection-baseline longitudinal PAIS designs (t008)"
 status: active
 created: "2026-06-25"

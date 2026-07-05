@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0047-stein2025-immunoadsorption-improves-autonomic-supports-0019
-type: evidence-line
+kind: evidence-line
 title: "Stein2025 immunoadsorption improves autonomic symptoms in β2-AR-AB-elevated\
   \ post-COVID ME/CFS — proof-of-concept support for immunomodulation modifying\
   \ trajectory"

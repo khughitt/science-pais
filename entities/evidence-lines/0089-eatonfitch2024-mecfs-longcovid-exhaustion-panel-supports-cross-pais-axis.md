@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis
-type: evidence-line
+kind: evidence-line
 title: EatonFitch2024 same-panel ME/CFS and long-COVID immune-exhaustion transcriptomics weakly supports cross-PAIS IFN/cytokine/exhaustion-axis recurrence
 status: active
 stance: supports

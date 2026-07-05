@@ -1,6 +1,6 @@
 ---
 id: paper:Klempner2001
-type: paper
+kind: paper
 title: 'Two Controlled Trials of Antibiotic Treatment in Patients with Persistent
   Symptoms and a History of Lyme Disease'
 status: active

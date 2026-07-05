@@ -1,6 +1,6 @@
 ---
 id: dataset:gse14577-pi-cfs-pbmc-microarray
-type: dataset
+kind: dataset
 title: "GSE14577 — PI-CFS PBMC microarray"
 status: candidate
 created: "2026-06-26"

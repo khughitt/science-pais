@@ -1,6 +1,6 @@
 ---
 id: paper:Pollack2023
-type: paper
+kind: paper
 title: "Female reproductive health impacts of Long COVID and associated illnesses including ME/CFS, POTS, and connective tissue disorders"
 status: active
 ontology_terms:

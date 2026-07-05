@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0016-sylvester2022-covid-acute-male-postacute-female-supports-persistence-concentration"
-type: "evidence-line"
+kind: "evidence-line"
 title: "COVID acute-male / post-acute-female reversal supports persistence-concentration"
 status: "active"
 stance: "supports"

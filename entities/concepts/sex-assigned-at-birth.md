@@ -1,6 +1,6 @@
 ---
 id: "concept:sex-assigned-at-birth"
-type: "concept"
+kind: "concept"
 title: "Sex assigned at birth"
 status: "active"
 created: "2026-06-19"

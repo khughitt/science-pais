@@ -1,5 +1,5 @@
 ---
-type: plan
+kind: plan
 id: plan:2026-06-19-menopause-pais-total-effect-analysis-plan
 title: "Analysis plan: total effect of menopausal transition on PAIS risk (t016)"
 date: 2026-06-19

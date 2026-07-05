@@ -1,6 +1,6 @@
 ---
 id: paper:Patrascu2025
-type: paper
+kind: paper
 title: 'Advances in Understanding Inflammation and Tissue Damage: Markers of Persistent
   Sequelae in COVID-19 Patients'
 status: active

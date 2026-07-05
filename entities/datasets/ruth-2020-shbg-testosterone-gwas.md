@@ -1,7 +1,7 @@
 ---
 schema_profile: science-entity-base/1.0+dataset/1.0
 id: dataset:ruth-2020-shbg-testosterone-gwas
-type: dataset
+kind: dataset
 title: Ruth 2020 SHBG and testosterone GWAS summary statistics (sex-specific, European
   ancestry)
 status: candidate

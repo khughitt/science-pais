@@ -1,6 +1,6 @@
 ---
 id: proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific
-type: proposition
+kind: proposition
 title: A PAIS phenotype's objective correlate is endpoint- and trigger-specific, so
   endpoint choice can manufacture or hide an apparent shared mechanism
 status: active

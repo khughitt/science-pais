@@ -1,6 +1,6 @@
 ---
 id: "research-question:post-acute-infection-syndromes"
-type: "research-question"
+kind: "research-question"
 title: "Why do some people fail to recover after acute infection, and what shared mechanisms link the post-acute infection syndromes?"
 status: "active"
 ontology_terms: []

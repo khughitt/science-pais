@@ -1,6 +1,6 @@
 ---
 id: "concept:incident-visceral-adiposity"
-type: "concept"
+kind: "concept"
 title: "Incident visceral adiposity"
 status: "active"
 created: "2026-06-21"

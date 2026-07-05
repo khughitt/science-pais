@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0044-adler2024-ptlds-leg-cross-syndrome-framing-supports-p4
-type: evidence-line
+kind: evidence-line
 title: "Adler2024 supplies the PTLDS leg and explicit cross-syndrome SFN framing —\
   \ weak support for P4"
 status: active

@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0065-novak2026-proximal-sgnfd-not-lesser-weakly-supports-p2
-type: evidence-line
+kind: evidence-line
 title: "Novak2026 group-level proximal SGNFD involvement is not lesser than distal —\
   \ weak, inferred (not per-subject classified) support for the non-length-dependent\
   \ pattern (P2)"

@@ -1,6 +1,6 @@
 ---
 id: "report:0002-t029-second-pass-menopause-pais-pre-registration-review"
-type: "report"
+kind: "report"
 title: "t029 second-pass review: unreviewed pre-reg surface and second-precedent cross-read"
 status: "proposed"
 source_refs:

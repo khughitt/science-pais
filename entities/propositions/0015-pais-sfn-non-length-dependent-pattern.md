@@ -1,6 +1,6 @@
 ---
 id: proposition:0015-pais-sfn-non-length-dependent-pattern
-type: proposition
+kind: proposition
 title: The PAIS small-fiber lesion is disproportionately non-length-dependent
 status: active
 claim_layer: structural_claim

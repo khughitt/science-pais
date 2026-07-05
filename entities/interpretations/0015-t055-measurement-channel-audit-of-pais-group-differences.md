@@ -1,6 +1,6 @@
 ---
 id: interpretation:0015-t055-measurement-channel-audit-of-pais-group-differences
-type: interpretation
+kind: interpretation
 title: "Systematic measurement-channel audit of PAIS group-difference claims (h0008\
   \ promotion criterion #1) \u2014 coding 11 corpus claims by channel \xD7 ascertainment-control\
   \ \xD7 behaviour-under-objective-re-measurement: 6/9 determinate claims artifact-consistent\

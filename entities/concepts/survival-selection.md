@@ -1,6 +1,6 @@
 ---
 id: "concept:survival-selection"
-type: "concept"
+kind: "concept"
 title: "Survival selection / left-truncation"
 status: "active"
 created: "2026-06-21"

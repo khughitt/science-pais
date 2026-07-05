@@ -1,6 +1,6 @@
 ---
 id: paper:Carazo2025
-type: paper
+kind: paper
 title: Effectiveness of COVID-19 Vaccination and Prior Infections to Reduce Long COVID Risk
 status: active
 ontology_terms:

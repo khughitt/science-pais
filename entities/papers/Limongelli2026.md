@@ -1,6 +1,6 @@
 ---
 id: paper:Limongelli2026
-type: paper
+kind: paper
 title: Immune correlates underlying small fiber neuropathy presenting as vaccine-associated
   post-acute SARS-coronavirus syndrome
 status: active

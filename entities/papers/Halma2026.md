@@ -1,6 +1,6 @@
 ---
 id: "paper:Halma2026"
-type: "paper"
+kind: "paper"
 title: "Autoimmunity, Vascular Dysfunction and Metabolic Alterations: A Trifecta of Impacts in Postacute COVID-19 Vaccination Syndrome (PACVS)"
 status: "active"
 ontology_terms:

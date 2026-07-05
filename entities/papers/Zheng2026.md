@@ -1,6 +1,6 @@
 ---
 id: paper:Zheng2026
-type: paper
+kind: paper
 title: Longitudinal Landscape of Long Flu and Long COVID
 status: active
 ontology_terms:

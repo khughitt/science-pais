@@ -1,6 +1,6 @@
 ---
 id: proposition:0031-pais-gut-dysbiosis-scfa-depletion
-type: proposition
+kind: proposition
 title: Gut dysbiosis with depleted SCFA/butyrate-producing capacity recurs across long COVID and ME/CFS, but remains mostly associative
 status: active
 claim_layer: empirical_regularity

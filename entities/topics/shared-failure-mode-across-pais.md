@@ -1,6 +1,6 @@
 ---
 id: topic:shared-failure-mode-across-pais
-type: topic
+kind: topic
 title: Shared Failure Mode Across Post-Acute Infection Syndromes
 status: active
 ontology_terms:

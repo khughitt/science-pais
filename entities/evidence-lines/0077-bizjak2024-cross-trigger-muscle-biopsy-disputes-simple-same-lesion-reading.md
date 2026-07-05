@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0077-bizjak2024-cross-trigger-muscle-biopsy-disputes-simple-same-lesion-reading
-type: evidence-line
+kind: evidence-line
 title: "Bizjak2024 weakly disputes a simple same-lesion reading of ME/CFS and post-COVID muscle abnormalities"
 status: active
 stance: disputes

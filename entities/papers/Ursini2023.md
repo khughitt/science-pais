@@ -1,6 +1,6 @@
 ---
 id: paper:Ursini2023
-type: paper
+kind: paper
 title: 'Inflammatory rheumatic diseases with onset after SARS-CoV-2 infection or COVID-19
   vaccination: a report of 267 cases from the COVID-19 and ASD group'
 status: active

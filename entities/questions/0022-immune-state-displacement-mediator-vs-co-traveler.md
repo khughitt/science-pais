@@ -1,6 +1,6 @@
 ---
 id: question:0022-immune-state-displacement-mediator-vs-co-traveler
-type: question
+kind: question
 title: Does persistent immune-state displacement mediate PAIS symptoms, or is it mainly
   a marker / co-traveler of another failed-recovery process?
 status: active

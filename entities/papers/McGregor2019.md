@@ -1,6 +1,6 @@
 ---
 id: paper:McGregor2019
-type: paper
+kind: paper
 title: "Post-Exertional Malaise Is Associated with Hypermetabolism, Hypoacetylation and Purine Metabolism Deregulation in ME/CFS Cases"
 status: active
 ontology_terms:

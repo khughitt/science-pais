@@ -1,6 +1,6 @@
 ---
 id: paper:Vernon2024
-type: paper
+kind: paper
 title: "Incidence and Prevalence of Post-COVID-19 Myalgic Encephalomyelitis: A Report from the Observational RECOVER-Adult Study"
 status: active
 ontology_terms:

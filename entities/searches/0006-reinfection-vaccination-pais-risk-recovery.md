@@ -1,6 +1,6 @@
 ---
 id: search:0006-reinfection-vaccination-pais-risk-recovery
-type: search
+kind: search
 title: "Literature search: reinfection and vaccination effects on PAIS risk and recovery (t010)"
 status: active
 created: "2026-06-25"

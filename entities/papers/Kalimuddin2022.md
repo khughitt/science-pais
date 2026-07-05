@@ -1,6 +1,6 @@
 ---
 id: paper:Kalimuddin2022
-type: paper
+kind: paper
 title: Chronic sequelae complicate convalescence from both dengue and acute viral
   respiratory illness
 status: active

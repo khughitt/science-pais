@@ -1,6 +1,6 @@
 ---
 id: "paper:Huang2024"
-type: "paper"
+kind: "paper"
 title: "Discriminating Myalgic Encephalomyelitis/Chronic Fatigue Syndrome and comorbid conditions using metabolomics in UK Biobank"
 status: active
 ontology_terms:

@@ -1,6 +1,6 @@
 ---
 id: paper:Newson2021
-type: paper
+kind: paper
 title: Long Covid and menopause - the important role of hormones in Long Covid must be considered
 status: active
 ontology_terms:

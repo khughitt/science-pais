@@ -1,6 +1,6 @@
 ---
 id: paper:Raijmakers2025
-type: paper
+kind: paper
 title: 'Immunological associations in post-infective fatigue syndromes including Long
   COVID: a systematic review and meta-analysis'
 status: active

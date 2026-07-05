@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0035-silva2024-female-lc-immune-signature-bounded-by-testosterone-conditioning"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Silva2024 distinct female LC immune signature supports the female direction but bounds it — testosterone conditioning weakens categorical-sex interpretation"
 status: "active"
 stance: "supports"

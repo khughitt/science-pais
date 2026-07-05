@@ -1,6 +1,6 @@
 ---
 id: paper:Parotto2023
-type: paper
+kind: paper
 title: 'Post-acute sequelae of COVID-19: understanding and addressing the burden of
   multisystem manifestations'
 status: active

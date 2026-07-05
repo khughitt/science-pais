@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0040-walitt2024-pimecfs-no-small-fiber-density-difference-disputes-p1
-type: evidence-line
+kind: evidence-line
 title: "Walitt2024 (NIH PI-ME/CFS, rigorously adjudicated) finds no small-fiber-density\
   \ difference — disputes a universal structural lesion"
 status: active

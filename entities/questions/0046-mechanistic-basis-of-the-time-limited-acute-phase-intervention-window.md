@@ -1,6 +1,6 @@
 ---
 id: question:0046-mechanistic-basis-of-the-time-limited-acute-phase-intervention-window
-type: question
+kind: question
 title: Mechanistic basis of the time-limited acute-phase intervention window for PAIS
   prevention
 status: active
@@ -14,8 +14,18 @@ origins:
   ref: explore-ideas-temporal
 related: []
 created: '2026-07-04'
-updated: '2026-07-04'
+updated: '2026-07-05'
 added_by: explore-ideas:claude-opus-4-8:cand-temporal-acute-intervention-window
+lens_views:
+- lens: temporal
+  rationale: "Sharpens question:0012 (does prevention reduce PAIS) by asking the mechanistic\
+    \ basis of the closing window implied by early-treatment trials (metformin/nirmatrelvir\
+    \ within 3\u20135 days). Different candidate mechanisms predict different closure\
+    \ determinants (antigen archiving vs affinity-matured autoreactive clones vs glucocorticoid\
+    \ exhaustion), and cross-pathogen kinetics from day-of-onset would convert empirical\
+    \ timing into mechanism and generalize prevention beyond antivirals. Relates to\
+    \ hypothesis:0004.\n"
+  origin_ref: explore-ideas-temporal
 ---
 # Mechanistic basis of the time-limited acute-phase intervention window for PAIS prevention
 

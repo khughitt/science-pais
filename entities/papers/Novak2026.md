@@ -1,6 +1,6 @@
 ---
 id: paper:Novak2026
-type: paper
+kind: paper
 title: 'Shared autonomic phenotype of long COVID and myalgic encephalomyelitis/chronic
   fatigue syndrome'
 status: active

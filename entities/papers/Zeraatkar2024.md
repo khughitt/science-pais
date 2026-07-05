@@ -1,6 +1,6 @@
 ---
 id: paper:Zeraatkar2024
-type: paper
+kind: paper
 title: 'Interventions for the management of long covid (post-covid condition): living
   systematic review'
 status: active

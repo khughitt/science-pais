@@ -1,6 +1,6 @@
 ---
 id: paper:Salvucci2023
-type: paper
+kind: paper
 title: Antihistamines improve cardiovascular manifestations and other symptoms of
   long-COVID attributed to mast cell activation
 status: active

@@ -1,6 +1,6 @@
 ---
 id: paper:Talla2023
-type: paper
+kind: paper
 title: Persistent serum protein signatures define an inflammatory subcategory of long
   COVID
 status: active

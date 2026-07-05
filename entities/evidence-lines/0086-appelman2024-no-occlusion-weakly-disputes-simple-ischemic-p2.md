@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0086-appelman2024-no-occlusion-weakly-disputes-simple-ischemic-p2
-type: evidence-line
+kind: evidence-line
 title: "Appelman2024 no capillary occlusion or simple hypoxia signal weakly disputes a simple ischemic-upstream h0006 P2"
 status: active
 stance: disputes

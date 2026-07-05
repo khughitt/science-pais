@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0020-eldokla2022-compass31-sex-null-supports-baseline-carried-dysautonomia"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Eldokla2022 no sex difference in continuous COMPASS-31 autonomic burden supports baseline-carried dysautonomia skew"
 status: "active"
 stance: "supports"

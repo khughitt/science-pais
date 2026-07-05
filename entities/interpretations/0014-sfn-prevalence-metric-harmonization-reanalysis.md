@@ -1,6 +1,6 @@
 ---
 id: interpretation:0014-sfn-prevalence-metric-harmonization-reanalysis
-type: interpretation
+kind: interpretation
 title: "Metric-harmonization re-analysis of cross-PAIS skin-biopsy SFN prevalence — the QASAT-vs-≤5th-percentile cutoff explains LESS of the Oaklander/Joseph/Walitt/Novak scatter than assumed; modality breadth (sensory→autonomic→functional), trigger (LC>ME/CFS), and cohort referral-enrichment are the dominant drivers, and within-trigger the corpus is more concordant than the raw range suggests"
 status: active
 source_refs: []

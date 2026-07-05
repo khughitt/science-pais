@@ -1,6 +1,6 @@
 ---
 id: paper:Bramante2023
-type: paper
+kind: paper
 title: 'Outpatient treatment of COVID-19 and incidence of post-COVID-19 condition over
   10 months (COVID-OUT): a multicentre, randomised, quadruple-blind, parallel-group,
   phase 3 trial'

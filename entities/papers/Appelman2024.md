@@ -1,6 +1,6 @@
 ---
 id: paper:Appelman2024
-type: paper
+kind: paper
 title: Muscle abnormalities worsen after post-exertional malaise in long COVID
 status: active
 ontology_terms:

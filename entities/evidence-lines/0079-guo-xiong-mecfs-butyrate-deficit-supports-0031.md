@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0079-guo-xiong-mecfs-butyrate-deficit-supports-0031
-type: evidence-line
+kind: evidence-line
 title: "Guo2023/Xiong2023 ME/CFS metagenomics: deficient butyrate-producing capacity and duration-dependent gut-host dysbiosis"
 status: active
 stance: supports

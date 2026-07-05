@@ -1,6 +1,6 @@
 ---
 id: interpretation:0010-t006-functional-gpcr-autoantibody-ingestion
-type: interpretation
+kind: interpretation
 title: 't006 functional GPCR-autoantibody literature: criterion-#2 correlational arm
   partially and contestedly met for autonomic function; antibody-to-lesion bridge
   untested'

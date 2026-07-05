@@ -1,6 +1,6 @@
 ---
 id: "concept:thromboinflammation-and-endothelial-dysfunction"
-type: "concept"
+kind: "concept"
 title: "Thromboinflammation and endothelial dysfunction"
 status: "active"
 created: "2026-06-19"

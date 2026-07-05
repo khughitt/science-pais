@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0074-spetz2025-sex-stratified-covid-thromboembolic-amplification-supports-0012
-type: evidence-line
+kind: evidence-line
 title: Spetz2025 Swedish total-population cohort shows COVID-added thromboembolic risk is stronger in men than women - supports male vascular reversal beyond pure baseline carryover
 status: active
 stance: supports

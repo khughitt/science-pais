@@ -1,6 +1,6 @@
 ---
 id: paper:CerviaHasler2024
-type: paper
+kind: paper
 title: Persistent complement dysregulation with signs of thromboinflammation in active
   Long Covid
 status: active

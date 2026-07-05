@@ -1,6 +1,6 @@
 ---
 id: search:0007-microbiome-gut-brain-pais
-type: search
+kind: search
 title: "Literature search: microbiome, microbial metabolites, and gut-brain axis in PAIS (t007)"
 status: active
 created: "2026-06-25"

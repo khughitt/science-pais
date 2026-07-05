@@ -1,6 +1,6 @@
 ---
 id: "concept:baseline-cardiometabolic-comorbidity"
-type: "concept"
+kind: "concept"
 title: "Baseline cardiometabolic comorbidity"
 status: "active"
 created: "2026-06-21"

@@ -1,6 +1,6 @@
 ---
 id: paper:Steiner2020
-type: paper
+kind: paper
 title: "Autoimmunity-Related Risk Variants in PTPN22 and CTLA4 Are Associated With ME/CFS With Infectious Onset"
 status: active
 ontology_terms:

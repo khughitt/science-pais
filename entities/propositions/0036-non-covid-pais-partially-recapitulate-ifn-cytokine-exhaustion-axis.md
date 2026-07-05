@@ -1,6 +1,6 @@
 ---
 id: proposition:0036-non-covid-pais-partially-recapitulate-ifn-cytokine-exhaustion-axis
-type: proposition
+kind: proposition
 title: Non-COVID PAIS partially recapitulate the long-COVID IFN/cytokine/exhaustion axis, but not yet the full JAK-STAT/IL-6 dissociation pattern
 status: active
 claim_layer: empirical_regularity

@@ -1,6 +1,6 @@
 ---
 id: paper:Rahmati2025
-type: paper
+kind: paper
 title: 'Long-Term Sequelae of COVID-19: A Systematic Review and Meta-Analysis of Symptoms
   3 Years Post-SARS-CoV-2 Infection'
 status: active

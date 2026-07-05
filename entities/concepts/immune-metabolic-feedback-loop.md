@@ -1,6 +1,6 @@
 ---
 id: "concept:immune-metabolic-feedback-loop"
-type: "concept"
+kind: "concept"
 title: "Immune-metabolic feedback loop"
 status: "active"
 created: "2026-06-30"

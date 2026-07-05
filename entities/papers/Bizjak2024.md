@@ -1,6 +1,6 @@
 ---
 id: paper:Bizjak2024
-type: paper
+kind: paper
 title: Functional and morphological differences of muscle mitochondria in chronic fatigue syndrome and post-COVID syndrome
 status: active
 ontology_terms:

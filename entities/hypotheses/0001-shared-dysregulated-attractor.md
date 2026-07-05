@@ -1,6 +1,6 @@
 ---
 id: hypothesis:0001-shared-dysregulated-attractor
-type: hypothesis
+kind: hypothesis
 title: Post-acute infection syndromes are a shared dysregulated attractor reachable
   from many triggers, not merely a shared symptom repertoire
 status: proposed

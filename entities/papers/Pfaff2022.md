@@ -1,6 +1,6 @@
 ---
 id: paper:Pfaff2022
-type: paper
+kind: paper
 title: "Identifying who has long COVID in the USA: a machine learning approach using N3C data"
 status: active
 ontology_terms:

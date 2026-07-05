@@ -1,6 +1,6 @@
 ---
 id: interpretation:0029-t060-cross-pais-ifn-jakstat-pathway-map
-type: interpretation
+kind: interpretation
 title: "t060 - cross-PAIS IFN/JAK-STAT pathway map for q0006"
 status: active
 source_refs:

@@ -1,6 +1,6 @@
 ---
 id: paper:Ganesh2022
-type: paper
+kind: paper
 title: The Female-Predominant Persistent Immune Dysregulation of the Post-COVID Syndrome
 status: active
 ontology_terms:

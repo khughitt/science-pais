@@ -1,6 +1,6 @@
 ---
 id: discussion:0002-cross-pathogen-pais-signature-convergence
-type: discussion
+kind: discussion
 title: "Cross-pathogen PAIS molecular signatures: shared attractor vs trigger-specific (t001)"
 status: active
 current_working_model: "convergent domains, unproven shared molecules"

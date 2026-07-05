@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0015-kawai2025-viral-vascular-link-supports-vascular-autonomic-channel"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Kawai2025 viral-vascular/thromboinflammatory link supports the vascular-autonomic channel"
 status: "active"
 stance: "supports"

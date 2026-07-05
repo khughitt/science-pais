@@ -1,6 +1,6 @@
 ---
 id: paper:Wester2024
-type: paper
+kind: paper
 title: 'What Makes It Tick: Exploring the Mechanisms of Post-treatment Lyme Disease
   Syndrome'
 status: active

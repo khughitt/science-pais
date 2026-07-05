@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0018-raijmakers2019-qfever-male-acute-exposure-nonmale-persistence-supports-persistence-concentration"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Q-fever male-skewed acute exposure but non-male-skewed QFS persistence supports persistence-concentration"
 status: "active"
 stance: "supports"

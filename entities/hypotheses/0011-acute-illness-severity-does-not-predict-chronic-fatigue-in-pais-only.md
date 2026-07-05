@@ -1,6 +1,6 @@
 ---
 id: hypothesis:0011-acute-illness-severity-does-not-predict-chronic-fatigue-in-pais-only
-type: hypothesis
+kind: hypothesis
 title: "Acute illness severity does not predict chronic fatigue in PAIS \u2014 only\
   \ objective organ sequelae"
 status: proposed
@@ -11,8 +11,16 @@ origins:
   ref: explore-ideas-contrarian
 related: []
 created: '2026-07-04'
-updated: '2026-07-04'
+updated: '2026-07-05'
 added_by: explore-ideas:claude-opus-4-8:cand-contrarian-severity-fatigue-null
+lens_views:
+- lens: contrarian
+  rationale: "Directly challenges hypothesis:0004 and question:0003. If mild cases\
+    \ disproportionately generate the fatigue/brain-fog phenotype (Pires2025: mild\
+    \ fatigue 17.7 vs severe 13.3), the fatigue phenotype may be response-to-illness\
+    \ driven rather than injury-magnitude driven \u2014 splitting the severity-threshold\
+    \ claim into phenotype-specific arms with distinct mechanisms.\n"
+  origin_ref: explore-ideas-contrarian
 ---
 # Hypothesis: Acute illness severity does not predict chronic fatigue in PAIS — only objective organ sequelae
 

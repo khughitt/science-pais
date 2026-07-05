@@ -1,6 +1,6 @@
 ---
 id: "paper:Bland2024"
-type: "paper"
+kind: "paper"
 title: "Profiles of objective and subjective cognitive function in Post-COVID Syndrome, COVID-19 recovered, and COVID-19 naive individuals"
 status: active
 ontology_terms:

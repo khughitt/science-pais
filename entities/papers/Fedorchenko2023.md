@@ -1,6 +1,6 @@
 ---
 id: paper:Fedorchenko2023
-type: paper
+kind: paper
 title: Long COVID in autoimmune rheumatic diseases
 status: active
 ontology_terms:

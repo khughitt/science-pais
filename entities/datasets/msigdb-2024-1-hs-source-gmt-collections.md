@@ -1,6 +1,6 @@
 ---
 id: dataset:msigdb-2024-1-hs-source-gmt-collections
-type: dataset
+kind: dataset
 title: "MSigDB 2024.1.Hs source GMT collections"
 status: candidate
 created: "2026-06-26"

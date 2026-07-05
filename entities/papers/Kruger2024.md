@@ -1,6 +1,6 @@
 ---
 id: "paper:Kruger2024"
-type: "paper"
+kind: "paper"
 title: "Vascular Pathogenesis in Acute and Long COVID: Current Insights and Therapeutic Outlook"
 status: active
 ontology_terms:

@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0003-shahbaz2025-low-testosterone-lc-supports-stage-threshold"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Shahbaz2025 (Alberta) low non-dominant sex hormone in LC weakly supports the stage threshold"
 status: "active"
 stance: "supports"

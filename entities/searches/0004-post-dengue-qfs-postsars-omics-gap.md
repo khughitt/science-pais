@@ -1,5 +1,5 @@
 ---
-type: search
+kind: search
 title: 'Literature search: post-dengue / QFS / post-SARS omics gap confirmation (t033)'
 status: active
 created: '2026-06-20'

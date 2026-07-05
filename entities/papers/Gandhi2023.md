@@ -1,6 +1,6 @@
 ---
 id: paper:Gandhi2023
-type: paper
+kind: paper
 title: Post-viral sequelae of COVID-19 and influenza
 status: active
 ontology_terms:

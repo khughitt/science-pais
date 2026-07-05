@@ -1,6 +1,6 @@
 ---
 id: proposition:0024-retained-fragment-burden-predicts-chronicity-over-initial-load
-type: proposition
+kind: proposition
 title: Retained fragment burden/duration predicts chronic PAIS onset better than initial
   pathogen load
 status: active

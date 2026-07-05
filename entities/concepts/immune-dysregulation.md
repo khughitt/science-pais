@@ -1,6 +1,6 @@
 ---
 id: "concept:immune-dysregulation"
-type: "concept"
+kind: "concept"
 title: "Immune dysregulation"
 status: "active"
 created: "2026-06-19"

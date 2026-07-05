@@ -1,6 +1,6 @@
 ---
 id: paper:Ramundo2025
-type: paper
+kind: paper
 title: 'Transcriptomic insights into early mechanisms underlying post-chikungunya
   chronic inflammatory joint disease'
 status: stub

@@ -1,6 +1,6 @@
 ---
 id: paper:Stephenson2024
-type: paper
+kind: paper
 title: A 24-month National Cohort Study examining long-term effects of COVID-19 in children and young people
 status: active
 ontology_terms:

@@ -1,6 +1,6 @@
 ---
 id: paper:DelgadoAlonso2023
-type: paper
+kind: paper
 title: "Unraveling brain fog in post-COVID syndrome: Relationship between subjective
   cognitive complaints and cognitive function, fatigue, and neuropsychiatric symptoms"
 status: active

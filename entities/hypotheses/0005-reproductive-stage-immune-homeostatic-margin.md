@@ -1,6 +1,6 @@
 ---
 id: hypothesis:0005-reproductive-stage-immune-homeostatic-margin
-type: hypothesis
+kind: hypothesis
 title: Reproductive-stage transitions alter immune homeostatic margin and modify risk
   of failed post-infectious recovery
 status: proposed

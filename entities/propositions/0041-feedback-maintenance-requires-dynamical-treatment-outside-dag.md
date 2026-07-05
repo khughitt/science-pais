@@ -1,6 +1,6 @@
 ---
 id: "proposition:0041-feedback-maintenance-requires-dynamical-treatment-outside-dag"
-type: "proposition"
+kind: "proposition"
 title: "Feedback maintenance of the displaced immune state requires dynamical-systems treatment outside the acyclic DAG"
 status: "active"
 claim_layer: "structural_claim"

@@ -1,6 +1,6 @@
 ---
 id: paper:WangHuLiao2014
-type: paper
+kind: paper
 title: "Stability and Hopf bifurcation for a virus infection model with delayed humoral immunity response"
 status: active
 ontology_terms:

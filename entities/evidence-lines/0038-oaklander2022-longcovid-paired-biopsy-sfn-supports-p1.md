@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0038-oaklander2022-longcovid-paired-biopsy-sfn-supports-p1
-type: evidence-line
+kind: evidence-line
 title: "Oaklander2022 paired-site skin biopsy finds SFN the most common objective\
   \ abnormality in prolonged long COVID — supports a structural lesion"
 status: active

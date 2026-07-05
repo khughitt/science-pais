@@ -1,6 +1,6 @@
 ---
 id: "concept:baseline-bmi-adiposity"
-type: "concept"
+kind: "concept"
 title: "Baseline BMI / adiposity"
 status: "active"
 created: "2026-06-21"

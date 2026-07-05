@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0022-bland2024-subjective-objective-uncorrelated-supports-cognitive-self-report-channel"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Bland2024 subjective-objective cognition dissociation supports the self-report cognitive channel"
 status: "active"
 stance: "supports"

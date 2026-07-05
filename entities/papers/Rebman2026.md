@@ -1,6 +1,6 @@
 ---
 id: paper:Rebman2026
-type: paper
+kind: paper
 title: Sex and menopause-based differences in presentation of early Lyme disease
 status: active
 ontology_terms:

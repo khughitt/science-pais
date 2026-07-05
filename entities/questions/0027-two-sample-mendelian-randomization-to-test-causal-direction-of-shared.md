@@ -1,6 +1,6 @@
 ---
 id: question:0027-two-sample-mendelian-randomization-to-test-causal-direction-of-shared
-type: question
+kind: question
 title: Two-sample Mendelian randomization to test causal direction of shared PAIS
   mechanisms across triggers
 status: active
@@ -12,8 +12,19 @@ origins:
   ref: explore-ideas-methodology
 related: []
 created: '2026-07-04'
-updated: '2026-07-04'
+updated: '2026-07-05'
 added_by: explore-ideas:claude-opus-4-8:cand-methodology-mr-cross-trigger-causal-mechanisms
+lens_views:
+- lens: methodology
+  rationale: 'Candidate mechanisms are largely observational and direction-ambiguous.
+    MR uses germline variants as natural randomizations, giving causal inference robust
+    to reverse causation and confounding; running instruments cross-trigger additionally
+    tests which mechanisms are generic vs trigger-specific. Requires only public GWAS
+    summary statistics. Directly serves question:0001 (shared vs trigger-specific)
+    and question:0022 (mediator vs co-traveler).
+
+    '
+  origin_ref: explore-ideas-methodology
 ---
 # Two-sample Mendelian randomization to test causal direction of shared PAIS mechanisms across triggers
 

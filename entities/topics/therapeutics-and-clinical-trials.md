@@ -1,6 +1,6 @@
 ---
 id: topic:therapeutics-and-clinical-trials
-type: topic
+kind: topic
 title: Therapeutics and Clinical Trials for Post-Acute Infection Syndromes
 status: active
 ontology_terms:

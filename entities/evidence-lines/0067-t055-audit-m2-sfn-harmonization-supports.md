@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0067-t055-audit-m2-sfn-harmonization-supports
-type: evidence-line
+kind: evidence-line
 title: "t055 audit: SFN-prevalence cross-study heterogeneity decomposes into modality/trigger/referral (interp:0014) — supports M2"
 status: active
 stance: supports

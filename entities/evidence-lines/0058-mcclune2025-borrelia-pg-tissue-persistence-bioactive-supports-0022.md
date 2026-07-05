@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0058-mcclune2025-borrelia-pg-tissue-persistence-bioactive-supports-0022
-type: evidence-line
+kind: evidence-line
 title: "McClune2025 shows Borrelia peptidoglycan persists in tissue post-clearance\
   \ and is biologically active — moderate support for fragment persistence"
 status: active

@@ -1,6 +1,6 @@
 ---
 id: paper:Watton2026
-type: paper
+kind: paper
 title: 'Reframing ME/CFS: toward a unified mechanistic model of chronic post-infectious
   diseases'
 status: stub

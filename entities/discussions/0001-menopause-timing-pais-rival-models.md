@@ -1,6 +1,6 @@
 ---
 id: "discussion:0001-menopause-timing-pais-rival-models"
-type: "discussion"
+kind: "discussion"
 title: "Rival models for the menopause-timing↔long-COVID association (h0005 vs aging / selection / SES)"
 status: "active"
 source_refs:

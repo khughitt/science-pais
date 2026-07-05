@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0061-aid2025-persistent-jakstat-il6-exhaustion-supports-0025
-type: evidence-line
+kind: evidence-line
 title: "Aid2025 multi-cohort: persistent JAK-STAT/IL-6/IFN/complement activation +\
   \ CD8 exhaustion >180d with no circulating virus — supports the persistent-inflammatory-activation\
   \ state"

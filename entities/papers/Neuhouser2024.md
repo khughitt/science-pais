@@ -1,6 +1,6 @@
 ---
 id: paper:Neuhouser2024
-type: paper
+kind: paper
 title: Risk factors for long COVID syndrome in postmenopausal women with previously reported diagnosis of COVID-19
 status: active
 ontology_terms:

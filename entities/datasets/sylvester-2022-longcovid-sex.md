@@ -1,6 +1,6 @@
 ---
 id: dataset:sylvester-2022-longcovid-sex
-type: dataset
+kind: dataset
 title: "Sylvester 2022 — sex differences in long COVID (domain-stratified ORs)"
 status: candidate
 created: "2026-06-21"

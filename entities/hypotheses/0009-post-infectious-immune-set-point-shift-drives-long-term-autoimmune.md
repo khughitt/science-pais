@@ -1,6 +1,6 @@
 ---
 id: hypothesis:0009-post-infectious-immune-set-point-shift-drives-long-term-autoimmune
-type: hypothesis
+kind: hypothesis
 title: Post-infectious immune-set-point shift drives long-term autoimmune conversion
 status: proposed
 phase: candidate

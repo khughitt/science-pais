@@ -1,6 +1,6 @@
 ---
 id: "concept:impaired-o2-delivery-extraction"
-type: "concept"
+kind: "concept"
 title: "Impaired O2 delivery / extraction"
 status: "active"
 created: "2026-06-30"

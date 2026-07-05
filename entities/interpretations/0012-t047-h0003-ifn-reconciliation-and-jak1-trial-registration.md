@@ -1,6 +1,6 @@
 ---
 id: interpretation:0012-t047-h0003-ifn-reconciliation-and-jak1-trial-registration
-type: interpretation
+kind: interpretation
 title: "t047 \u2014 reconciling Aid2025 persistent-IFN-activation vs Ryan2022 type-I-IFN-suppression\
   \ as a dissociated IFN signature; registering the JAK1-inhibitor (NCT06597396) driver-vs-marker\
   \ test for h0003/q0006"

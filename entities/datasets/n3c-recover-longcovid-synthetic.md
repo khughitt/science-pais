@@ -1,6 +1,6 @@
 ---
 id: dataset:n3c-recover-longcovid-synthetic
-type: dataset
+kind: dataset
 title: "N3C — synthetic OMOP slice (open tier) for the autoimmune × sex × PASC prototype"
 status: candidate
 origin: external

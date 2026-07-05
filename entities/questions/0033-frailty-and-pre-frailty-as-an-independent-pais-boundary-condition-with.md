@@ -1,6 +1,6 @@
 ---
 id: question:0033-frailty-and-pre-frailty-as-an-independent-pais-boundary-condition-with
-type: question
+kind: question
 title: Frailty and pre-frailty as an independent PAIS boundary condition with bidirectional
   coupling
 status: active
@@ -12,8 +12,19 @@ origins:
   ref: explore-ideas-population
 related: []
 created: '2026-07-04'
-updated: '2026-07-04'
+updated: '2026-07-05'
 added_by: explore-ideas:claude-opus-4-8:cand-population-frailty-pais-bidirectional
+lens_views:
+- lens: population
+  rationale: 'The project treats age as a covariate, but frailty is biologically distinct
+    and shares hallmarks (chronic inflammation, exhausted T-cell pools, mitochondrial
+    dysfunction) with PAIS mechanisms. This predicts mutual amplification: frailty
+    lowers the homeostatic-recovery threshold (relates to hypothesis:0004) while PAIS
+    deepens inflammaging. Frailty is both a high-risk stratum and a mechanistic probe
+    of the failed-homeostasis model.
+
+    '
+  origin_ref: explore-ideas-population
 ---
 # Frailty and pre-frailty as an independent PAIS boundary condition with bidirectional coupling
 

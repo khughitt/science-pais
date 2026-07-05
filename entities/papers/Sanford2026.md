@@ -1,6 +1,6 @@
 ---
 id: paper:Sanford2026
-type: paper
+kind: paper
 title: 'Metabolic basis of post-infectious sequelae after Ebola virus disease'
 status: stub
 ontology_terms:

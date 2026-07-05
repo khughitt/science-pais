@@ -1,5 +1,5 @@
 ---
-type: search
+kind: search
 title: 'Literature/cohort search: hormone-measured & menopause-stageable PAIS cohorts
   (t015)'
 status: active

@@ -1,6 +1,6 @@
 ---
 id: paper:Walitt2024
-type: paper
+kind: paper
 title: 'Deep phenotyping of post-infectious myalgic encephalomyelitis/chronic fatigue
   syndrome'
 status: active

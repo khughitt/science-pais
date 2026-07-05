@@ -1,6 +1,6 @@
 ---
 id: topic:gut-microbiome-barrier-axis
-type: topic
+kind: topic
 title: Gut Microbiome, Barrier Function, and Gut-Brain Axis in PAIS
 status: active
 ontology_terms:

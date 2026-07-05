@@ -1,6 +1,6 @@
 ---
 id: question:0042-is-the-cross-trigger-1020-chronic-fraction-an-artifact-of-shared-case
-type: question
+kind: question
 title: "Is the cross-trigger ~10\u201320% chronic fraction an artifact of shared case\
   \ definitions applied without adequate controls?"
 status: active
@@ -12,8 +12,17 @@ origins:
   ref: explore-ideas-contrarian
 related: []
 created: '2026-07-04'
-updated: '2026-07-04'
+updated: '2026-07-05'
 added_by: explore-ideas:claude-opus-4-8:cand-contrarian-chronic-fraction-artifact
+lens_views:
+- lens: contrarian
+  rationale: "Directly attacks a key epidemiological pillar of hypothesis:0001 and\
+    \ relates to hypothesis:0008 and question:0014. Long COVID prevalence at >12 weeks\
+    \ spans 0\u201393% by definition; healthcare-record 13.6% vs self-report 43.9%;\
+    \ up to 13-point ranges within one cohort by definition choice. If the ~10\u2013\
+    20% convergence is definitional, uncontrolled prevalence estimates should not\
+    \ anchor mechanistic inference.\n"
+  origin_ref: explore-ideas-contrarian
 ---
 # Is the cross-trigger ~10–20% chronic fraction an artifact of shared case definitions applied without adequate controls?
 

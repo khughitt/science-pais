@@ -1,6 +1,6 @@
 ---
 id: hypothesis:0012-pais-fatigue-cognitive-symptoms-are-a-trigger-nonspecific-neuroimmune
-type: hypothesis
+kind: hypothesis
 title: PAIS fatigue/cognitive symptoms are a trigger-nonspecific neuroimmune sickness-behavior
   response, not trigger-specific immune pathology
 status: proposed
@@ -12,8 +12,20 @@ origins:
   ref: explore-ideas-contrarian
 related: []
 created: '2026-07-04'
-updated: '2026-07-04'
+updated: '2026-07-05'
 added_by: explore-ideas:claude-opus-4-8:cand-contrarian-sickness-behavior-common-path
+lens_views:
+- lens: contrarian
+  rationale: 'Sharpens question:0017 (deflationary alternatives) and question:0022,
+    and stress-tests hypothesis:0001. Dantzer''s cytokine-induced sickness-behavior
+    program produces the exact PAIS core cluster and is sustained by low-level neuroinflammation
+    after the trigger resolves; if correct, the diverse trigger-specific mechanisms
+    are coincidental correlates of initial inflammatory magnitude. Distinct from the
+    project''s existing dauer/torpor conserved-response frame. Testable null: outcomes
+    more similar across triggers than trigger-specific models predict.
+
+    '
+  origin_ref: explore-ideas-contrarian
 ---
 # Hypothesis: PAIS fatigue/cognitive symptoms are a trigger-nonspecific neuroimmune sickness-behavior response, not trigger-specific immune pathology
 

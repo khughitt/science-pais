@@ -1,6 +1,6 @@
 ---
 id: question:0044-chronic-gvhd-as-analogy-for-post-viral-tolerance-infrastructure-collapse
-type: question
+kind: question
 title: Chronic GvHD as analogy for post-viral tolerance-infrastructure collapse underlying
   PAIS autoimmune endotypes
 status: active
@@ -12,8 +12,19 @@ origins:
   ref: explore-ideas-analogy
 related: []
 created: '2026-07-04'
-updated: '2026-07-04'
+updated: '2026-07-05'
 added_by: explore-ideas:claude-opus-4-8:cand-analogy-cgvhd-post-viral-tolerance-collapse
+lens_views:
+- lens: analogy
+  rationale: 'Sharpens hypothesis:0009 and question:0005 by proposing a structurally
+    different mechanism than molecular mimicry: the infection damages the tolerance-generating
+    machinery itself, reframing PAIS autoimmunity as a tolerance-reconstitution problem.
+    Opens clinically validated therapies untested in PAIS and predicts autoimmune
+    severity tracks Treg frequency / thymic output (sjTRECs, naive-T proportion) rather
+    than autoantibody titer alone.
+
+    '
+  origin_ref: explore-ideas-analogy
 ---
 # Chronic GvHD as analogy for post-viral tolerance-infrastructure collapse underlying PAIS autoimmune endotypes
 

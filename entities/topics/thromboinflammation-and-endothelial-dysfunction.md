@@ -1,6 +1,6 @@
 ---
 id: topic:thromboinflammation-and-endothelial-dysfunction
-type: topic
+kind: topic
 title: Thromboinflammation, Microclots, and Endothelial Dysfunction in Long COVID
 status: active
 ontology_terms:

@@ -1,6 +1,6 @@
 ---
 id: synthesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
-type: synthesis
+kind: synthesis
 title: "Synthesis: 0007-autoimmune-sfn-peripheral-dysautonomia-substrate"
 status: "active"
 report_kind: hypothesis-synthesis

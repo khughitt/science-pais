@@ -1,7 +1,7 @@
 ---
 schema_profile: science-entity-base/1.0+dataset/1.0
 id: dataset:covid19-hgi-longcovid-gwas
-type: dataset
+kind: dataset
 title: COVID-19 Host Genetics Initiative — long-COVID GWAS summary statistics (2025
   release)
 status: candidate

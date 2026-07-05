@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0057-bramante2026-activ6-metformin-partial-replication-supports-0021
-type: evidence-line
+kind: evidence-line
 title: "Bramante2026 ACTIV-6 — acute metformin partially replicates the long-COVID prevention signal (clinician-diagnosis halved) but misses its primary symptom endpoint"
 status: active
 stance: supports

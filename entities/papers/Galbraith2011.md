@@ -1,6 +1,6 @@
 ---
 id: paper:Galbraith2011
-type: paper
+kind: paper
 title: 'Peripheral blood gene expression in postinfective fatigue syndrome following
   from three different triggering infections'
 status: active

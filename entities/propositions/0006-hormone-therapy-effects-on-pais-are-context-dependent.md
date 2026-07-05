@@ -1,6 +1,6 @@
 ---
 id: "proposition:0006-hormone-therapy-effects-on-pais-are-context-dependent"
-type: "proposition"
+kind: "proposition"
 title: "Hormone-therapy effects on PAIS, if present, are route/dose/timing/indication-dependent"
 status: "active"
 claim_layer: "causal_effect"

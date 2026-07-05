@@ -1,6 +1,6 @@
 ---
 id: paper:Stein2025
-type: paper
+kind: paper
 title: 'Efficacy of repeated immunoadsorption in patients with post-COVID myalgic encephalomyelitis/chronic
   fatigue syndrome and elevated beta2-adrenergic receptor autoantibodies: a prospective
   cohort study'

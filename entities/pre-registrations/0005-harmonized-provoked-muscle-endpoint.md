@@ -1,6 +1,6 @@
 ---
 id: pre-registration:0005-harmonized-provoked-muscle-endpoint
-type: pre-registration
+kind: pre-registration
 title: "Harmonized LC+ME/CFS provoked muscle-endpoint study for h0006 vs h0008-M3"
 status: committed
 committed: '2026-06-26'

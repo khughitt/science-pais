@@ -1,6 +1,6 @@
 ---
 id: dataset:dengue-postinfective-fatigue-meta
-type: dataset
+kind: dataset
 title: "Post-dengue fatigue — pooled sex-stratified meta-analysis evidence"
 status: candidate
 created: "2026-06-21"

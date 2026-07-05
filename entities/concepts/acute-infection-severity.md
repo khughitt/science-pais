@@ -1,6 +1,6 @@
 ---
 id: "concept:acute-infection-severity"
-type: "concept"
+kind: "concept"
 title: "Acute infection severity"
 status: "active"
 created: "2026-06-19"

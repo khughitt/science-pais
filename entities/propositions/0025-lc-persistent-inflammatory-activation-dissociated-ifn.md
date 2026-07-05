@@ -1,6 +1,6 @@
 ---
 id: proposition:0025-lc-persistent-inflammatory-activation-dissociated-ifn
-type: proposition
+kind: proposition
 title: 'Long COVID exhibits persistent inflammatory pathway activation with a dissociated
   IFN signature: sustained IL-6/JAK-STAT/type-II-IFN/complement tone plus a blunted
   type-I antiviral-effector arm, alongside CD8 exhaustion, beyond 180d with no circulating

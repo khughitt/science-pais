@@ -1,5 +1,5 @@
 ---
-type: method
+kind: method
 title: "Surgical menopause as a discriminating contrast (M1 vs M2/M4) for the menopause\u2192\
   PAIS analysis (t030)"
 status: active

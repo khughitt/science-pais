@@ -1,6 +1,6 @@
 ---
 id: proposition:0020-antigen-clearance-rescues-established-pais
-type: proposition
+kind: proposition
 title: Clearing persistent antigen rescues symptoms in established PAIS
 status: active
 claim_layer: causal_effect

@@ -1,6 +1,6 @@
 ---
 id: patch-definition:menopause-pais-causal-dag
-type: patch-definition
+kind: patch-definition
 title: Menopausal transition and PAIS risk (t014/t023 causal DAG v2)
 status: active
 created: "2026-06-19"

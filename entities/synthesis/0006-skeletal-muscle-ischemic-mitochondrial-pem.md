@@ -1,6 +1,6 @@
 ---
 id: synthesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
-type: synthesis
+kind: synthesis
 title: "Synthesis: 0006-skeletal-muscle-ischemic-mitochondrial-pem"
 status: "active"
 report_kind: hypothesis-synthesis

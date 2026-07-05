@@ -1,6 +1,6 @@
 ---
 id: "proposition:0040-vascular-metabolic-sfn-axes-plausible-effectors"
-type: "proposition"
+kind: "proposition"
 title: "Vascular, metabolic, and small-fiber-neuropathy axes are plausible downstream effectors linking immune-state displacement to PAIS symptoms"
 status: "active"
 claim_layer: "mechanistic_narrative"

@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0085-joseph2023-peripheral-extraction-weakly-supports-h0006-p2
-type: evidence-line
+kind: evidence-line
 title: "Joseph2023 iCPET peripheral-extraction physiology weakly supports h0006 P2 hypoperfusion/upstream-delivery leg"
 status: active
 stance: supports

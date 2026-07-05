@@ -1,6 +1,6 @@
 ---
 id: dataset:impacc-immunophenotyping-covid
-type: dataset
+kind: dataset
 title: "IMPACC — Immunophenotyping Assessment in a COVID-19 Cohort"
 status: candidate
 created: "2026-06-21"

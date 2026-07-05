@@ -1,6 +1,6 @@
 ---
 id: synthesis:0009-emergent-threads
-type: synthesis
+kind: synthesis
 title: "Emergent threads - health-post-acute-infection"
 status: "active"
 report_kind: emergent-threads

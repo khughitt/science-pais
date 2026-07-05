@@ -1,6 +1,6 @@
 ---
 id: question:0016-oxidative-stress-upstream-driver-of-bioenergetic
-type: question
+kind: question
 title: Is oxidative/redox stress a shared upstream driver of the PAIS bioenergetic
   lesion, and is it a tractable target?
 status: active

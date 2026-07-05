@@ -1,6 +1,6 @@
 ---
 id: paper:Davis2025
-type: paper
+kind: paper
 title: "Dysregulation of lipid metabolism, energy production, and oxidative stress in myalgic encephalomyelitis/chronic fatigue syndrome, Gulf War Syndrome and fibromyalgia"
 status: active
 ontology_terms:

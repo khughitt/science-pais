@@ -1,6 +1,6 @@
 ---
 id: interpretation:0031-t079-n3c-vs-opensafely-vehicle-decision
-type: interpretation
+kind: interpretation
 title: "t079/BC-1: N3C is the primary vehicle; OpenSAFELY is the pre-committed population-based replication (not primary — coded PASC is differentially under-recorded)"
 status: active
 source_refs:

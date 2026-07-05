@@ -1,6 +1,6 @@
 ---
 id: topic:post-infectious-dysautonomia-and-autoimmunity
-type: topic
+kind: topic
 title: Post-Infectious Dysautonomia, Organ-Specific Sequelae, and Autoimmunity
 status: active
 ontology_terms:

@@ -1,6 +1,6 @@
 ---
 id: question:0010-vascular-microclot-subphenotype
-type: question
+kind: question
 title: Does a complement/microclot/endothelial axis define a distinct vascular subphenotype
   of long COVID, and does it predict treatment response?
 status: active

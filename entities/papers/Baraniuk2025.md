@@ -1,6 +1,6 @@
 ---
 id: paper:Baraniuk2025
-type: paper
+kind: paper
 title: "Cerebrospinal fluid metabolomics, lipidomics and serine pathway dysfunction in myalgic encephalomyelitis/chronic fatigue syndrome (ME/CFS)"
 status: active
 ontology_terms:

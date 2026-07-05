@@ -1,6 +1,6 @@
 ---
 id: "proposition:0008-female-excess-concentrates-in-post-acute-persistence"
-type: "proposition"
+kind: "proposition"
 title: "The PAIS female excess concentrates in the post-acute persistence phase rather than being inherited from an acute female skew"
 status: "active"
 claim_layer: "empirical_regularity"

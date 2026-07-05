@@ -1,6 +1,6 @@
 ---
 id: paper:Shahbaz2025
-type: paper
+kind: paper
 title: "Integrated immune, hormonal, and transcriptomic profiling reveals sex-specific dysregulation in long COVID patients with ME/CFS"
 status: active
 ontology_terms:

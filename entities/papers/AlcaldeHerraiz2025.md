@@ -1,6 +1,6 @@
 ---
 id: paper:AlcaldeHerraiz2025
-type: paper
+kind: paper
 title: "Sociodemographic factors, biomarkers and comorbidities associated with post-acute COVID-19 sequelae in UK Biobank"
 status: active
 ontology_terms:

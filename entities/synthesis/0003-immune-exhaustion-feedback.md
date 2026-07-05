@@ -1,6 +1,6 @@
 ---
 id: synthesis:0003-immune-exhaustion-feedback
-type: synthesis
+kind: synthesis
 title: "Synthesis: 0003-immune-exhaustion-feedback"
 status: "active"
 report_kind: hypothesis-synthesis

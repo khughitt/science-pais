@@ -1,6 +1,6 @@
 ---
 id: "concept:persistent-antigen-fragment-burden"
-type: "concept"
+kind: "concept"
 title: "Persistent antigen fragment burden"
 status: "active"
 created: "2026-06-30"

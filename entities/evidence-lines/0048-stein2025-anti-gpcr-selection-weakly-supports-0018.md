@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0048-stein2025-anti-gpcr-selection-weakly-supports-0018
-type: evidence-line
+kind: evidence-line
 title: "Stein2025 anti-GPCR (β2-AR) autoantibody selection + depletion-associated\
   \ autonomic improvement — weak support for anti-GPCR pathogenicity"
 status: active

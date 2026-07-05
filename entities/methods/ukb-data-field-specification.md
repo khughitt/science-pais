@@ -1,5 +1,5 @@
 ---
-type: method
+kind: method
 title: "UK Biobank data-field specification & access plan for the menopause\u2192\
   PAIS total-effect analysis (t027)"
 status: active

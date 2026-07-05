@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0059-peluso2024-sars2-antigen-persistence-supports-0022
-type: evidence-line
+kind: evidence-line
 title: "Peluso2024 detects persisting SARS-CoV-2 antigen in ~25% of survivors to 14\
   \ months — weak support for fragment persistence (detection only, no symptom\
   \ or bioactivity link)"

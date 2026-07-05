@@ -1,6 +1,6 @@
 ---
 id: "pre-registration:0002-cross-trigger-pathway-overlap"
-type: "pre-registration"
+kind: "pre-registration"
 title: "Pre-registration: cross-trigger pathway-overlap concordance (GSE14577 + GSE130353) as a hypothesis-generating probe of shared post-infectious pathophysiology (t035)"
 status: "committed"
 committed: "2026-06-20"

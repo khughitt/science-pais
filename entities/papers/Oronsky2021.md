@@ -1,6 +1,6 @@
 ---
 id: paper:Oronsky2021
-type: paper
+kind: paper
 title: A Review of Persistent Post-COVID Syndrome (PPCS)
 status: active
 ontology_terms:

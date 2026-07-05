@@ -1,6 +1,6 @@
 ---
 id: interpretation:0013-t050-novak2026-ingestion-and-sfn-specificity-caveat
-type: interpretation
+kind: interpretation
 title: "t050 — Novak2026 (largest paired-site PAIS biopsy series) reinforces h0007's lesion (P1) and single-protocol cross-trigger convergence (P4), nudges the non-length-dependent pattern (P2), and surfaces the first SFN-specificity caveat (hEDS dysautonomia shows comparable small-fiber loss)"
 status: active
 source_refs: &id001 []

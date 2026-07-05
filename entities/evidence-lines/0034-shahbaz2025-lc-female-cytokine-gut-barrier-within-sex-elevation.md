@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0034-shahbaz2025-lc-female-cytokine-gut-barrier-within-sex-elevation"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Shahbaz2025 directly-measured pro-inflammatory cytokine and gut-barrier elevations in the LC-female-vs-recovered-female contrast, weaker/absent in males"
 status: "active"
 stance: "supports"

@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0062-ryan2022-type-i-ifn-effector-blunting-supports-0025
-type: evidence-line
+kind: evidence-line
 title: "Ryan2022 longitudinal: blunted type-I antiviral-effector ISGs (MX1/OAS3/OASL)\
   \ in long-COVID referrals at the 6-month bifurcation — reconciled as the dissociated\
   \ type-I-effector arm, supports (not disputes) the dissociated-IFN reading"

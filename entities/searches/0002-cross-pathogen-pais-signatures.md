@@ -1,5 +1,5 @@
 ---
-type: search
+kind: search
 title: 'Literature search: cross-pathogen PAIS molecular signatures (t001)'
 status: active
 created: '2026-06-20'

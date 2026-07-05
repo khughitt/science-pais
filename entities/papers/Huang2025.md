@@ -1,6 +1,6 @@
 ---
 id: paper:Huang2025
-type: paper
+kind: paper
 title: 'Prevalence of cardiovascular symptoms in post-acute COVID-19 syndrome: a meta-analysis'
 status: active
 ontology_terms:

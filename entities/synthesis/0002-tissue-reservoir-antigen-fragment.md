@@ -1,6 +1,6 @@
 ---
 id: synthesis:0002-tissue-reservoir-antigen-fragment
-type: synthesis
+kind: synthesis
 title: "Synthesis: 0002-tissue-reservoir-antigen-fragment"
 status: "active"
 report_kind: hypothesis-synthesis

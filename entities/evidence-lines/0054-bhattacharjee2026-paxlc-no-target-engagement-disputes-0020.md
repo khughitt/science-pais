@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0054-bhattacharjee2026-paxlc-no-target-engagement-disputes-0020
-type: evidence-line
+kind: evidence-line
 title: "Bhattacharjee2026 PAX-LC substudy — NMV/r changes neither Spike antigen nor immune state; demonstrates the target-engagement failure that makes the antiviral nulls uninterpretable"
 status: active
 stance: disputes

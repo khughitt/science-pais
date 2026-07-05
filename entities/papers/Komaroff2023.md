@@ -1,6 +1,6 @@
 ---
 id: paper:Komaroff2023
-type: paper
+kind: paper
 title: 'ME/CFS and Long COVID share similar symptoms and biological abnormalities:
   road map to the literature'
 status: active

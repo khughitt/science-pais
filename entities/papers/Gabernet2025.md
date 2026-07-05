@@ -1,6 +1,6 @@
 ---
 id: paper:Gabernet2025
-type: paper
+kind: paper
 title: 'A multiomics recovery factor predicts long COVID in the IMPACC study'
 status: active
 ontology_terms:

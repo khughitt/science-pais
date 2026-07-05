@@ -1,6 +1,6 @@
 ---
 id: hypothesis:0010-the-pais-attractor-is-a-slow-heterogeneous-recovery-gradient-not-a
-type: hypothesis
+kind: hypothesis
 title: The PAIS 'attractor' is a slow heterogeneous recovery gradient, not a stable
   chronic state
 status: proposed
@@ -11,8 +11,18 @@ origins:
   ref: explore-ideas-contrarian
 related: []
 created: '2026-07-04'
-updated: '2026-07-04'
+updated: '2026-07-05'
 added_by: explore-ideas:claude-opus-4-8:cand-contrarian-pais-recovery-gradient
+lens_views:
+- lens: contrarian
+  rationale: "Directly stress-tests hypothesis:0001 and question:0008. RECOVER-Adult\
+    \ (8 trajectories: 36% minimal by 15 months, 5% persistently high, 14% late-worsening)\
+    \ and a 4-year UK cohort (33% satisfactory recovery, continued slow improvement)\
+    \ are hard to reconcile with a single stable attractor. A slow recovery gradient\
+    \ mislabeled as \"chronic\" at 3\u201312 months implies pacing/patience interventions\
+    \ over loop-breaking immunotherapy. Sharpens the attractor claim into a falsifiable\
+    \ competing dynamical hypothesis.\n"
+  origin_ref: explore-ideas-contrarian
 ---
 # Hypothesis: The PAIS 'attractor' is a slow heterogeneous recovery gradient, not a stable chronic state
 

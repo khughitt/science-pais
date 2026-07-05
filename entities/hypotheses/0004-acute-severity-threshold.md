@@ -1,6 +1,6 @@
 ---
 id: hypothesis:0004-acute-severity-threshold
-type: hypothesis
+kind: hypothesis
 title: Acute-illness severity sets a homeostatic recovery threshold above which the
   post-infectious state becomes self-sustaining rather than self-resolving
 status: proposed

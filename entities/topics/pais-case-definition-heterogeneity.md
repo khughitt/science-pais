@@ -1,6 +1,6 @@
 ---
 id: topic:pais-case-definition-heterogeneity
-type: topic
+kind: topic
 title: PAIS Case-Definition Heterogeneity and Harmonization
 status: active
 ontology_terms:

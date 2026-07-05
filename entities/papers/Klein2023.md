@@ -1,6 +1,6 @@
 ---
 id: paper:Klein2023
-type: paper
+kind: paper
 title: Distinguishing features of long COVID identified through immune profiling
 status: active
 ontology_terms:

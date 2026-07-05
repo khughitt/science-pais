@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0001-shah2025-midlife-female-long-covid-excess-supports-stage-threshold"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Shah2025 midlife female long-COVID excess weakly supports a reproductive-stage threshold"
 status: "active"
 stance: "supports"

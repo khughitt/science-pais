@@ -1,6 +1,6 @@
 ---
 id: paper:Spetz2025
-type: paper
+kind: paper
 title: Covid-19 and cardiovascular disease in a total population-study of long-term effects, social factors and Covid-19-vaccination
 status: active
 ontology_terms:

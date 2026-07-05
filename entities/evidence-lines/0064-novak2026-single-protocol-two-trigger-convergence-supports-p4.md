@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0064-novak2026-single-protocol-two-trigger-convergence-supports-p4
-type: evidence-line
+kind: evidence-line
 title: "Novak2026 is the first single-protocol head-to-head SFN/autonomic comparison\
   \ of long COVID and ME/CFS — supports cross-trigger convergence (P4) but reveals a\
   \ specificity caveat"

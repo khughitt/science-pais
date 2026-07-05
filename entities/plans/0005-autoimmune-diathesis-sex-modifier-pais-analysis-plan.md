@@ -1,6 +1,6 @@
 ---
 id: "plan:0005-autoimmune-diathesis-sex-modifier-pais-analysis-plan"
-type: "plan"
+kind: "plan"
 title: "Analysis plan: pre-existing autoimmune diathesis as a sex-conditioned effect modifier of long-COVID/PASC risk (t078)"
 status: not-ready
 created: "2026-06-30"

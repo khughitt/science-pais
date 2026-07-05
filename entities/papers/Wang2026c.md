@@ -1,6 +1,6 @@
 ---
 id: "paper:Wang2026c"
-type: "paper"
+kind: "paper"
 title: "The prevalence of orthostatic intolerance, postural orthostatic tachycardia syndrome and orthostatic hypotension in post-acute sequelae of COVID-19"
 status: active
 ontology_terms:

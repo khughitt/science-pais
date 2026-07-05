@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0031-abubasheer2025-meta-male-hard-endpoint-excess-direction"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Abubasheer2025 meta-analysis establishes the male hard-endpoint direction across cohorts (direction, not severity-survival)"
 status: "active"
 stance: "supports"

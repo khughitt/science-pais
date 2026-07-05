@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0012-stewart2024-menopause-pasc-overlap-supports-measurement-process"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Stewart2024 documented menopause-PASC symptom overlap supports the measurement-process claim"
 status: "active"
 stance: "supports"

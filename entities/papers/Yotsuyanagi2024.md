@@ -1,6 +1,6 @@
 ---
 id: paper:Yotsuyanagi2024
-type: paper
+kind: paper
 title: 'Prevention of post COVID-19 condition by early treatment with ensitrelvir in
   the phase 3 SCORPIO-SR trial'
 status: active

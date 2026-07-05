@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0005-rebman2026-acute-vs-postacute-divergence-disputes-monotonic-stage"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Rebman2026 acute-vs-post-acute divergence disputes a simple monotonic hormone-protection story"
 status: "active"
 stance: "disputes"

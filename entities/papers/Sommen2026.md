@@ -1,6 +1,6 @@
 ---
 id: paper:Sommen2026
-type: paper
+kind: paper
 title: "Long COVID: Deep single-cell immunophenotyping and machine learning reveal a general signature for fatigue"
 status: active
 ontology_terms:

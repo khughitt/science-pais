@@ -1,6 +1,6 @@
 ---
 id: "concept:incident-cardiometabolic-comorbidity"
-type: "concept"
+kind: "concept"
 title: "Incident (menopause-driven) cardiometabolic comorbidity"
 status: "active"
 created: "2026-06-21"

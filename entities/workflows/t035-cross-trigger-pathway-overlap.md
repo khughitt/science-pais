@@ -1,6 +1,6 @@
 ---
 id: workflow:t035-cross-trigger-pathway-overlap
-type: workflow
+kind: workflow
 title: "t035 cross-trigger pathway-overlap Snakemake workflow"
 status: active
 method: "snakemake"

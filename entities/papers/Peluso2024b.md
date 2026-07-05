@@ -1,6 +1,6 @@
 ---
 id: paper:Peluso2024b
-type: paper
+kind: paper
 title: Mechanisms of long COVID and the path toward therapeutics
 status: active
 ontology_terms:

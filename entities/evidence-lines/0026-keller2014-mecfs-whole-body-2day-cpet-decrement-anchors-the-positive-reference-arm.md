@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0026-keller2014-mecfs-whole-body-2day-cpet-decrement-anchors-the-positive-reference-arm"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Keller2014 ME/CFS day-2 VO2peak decrement anchors the whole-body objective-PEM reference arm"
 status: "active"
 stance: "supports"

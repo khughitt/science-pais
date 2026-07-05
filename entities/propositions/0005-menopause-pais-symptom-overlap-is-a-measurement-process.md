@@ -1,6 +1,6 @@
 ---
 id: "proposition:0005-menopause-pais-symptom-overlap-is-a-measurement-process"
-type: "proposition"
+kind: "proposition"
 title: "Menopause-PAIS symptom overlap is a measurement process that can bias apparent associations"
 status: "active"
 claim_layer: "empirical_regularity"

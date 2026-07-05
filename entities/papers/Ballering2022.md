@@ -1,6 +1,6 @@
 ---
 id: paper:Ballering2022
-type: paper
+kind: paper
 title: "Persistence of somatic symptoms after COVID-19 in the Netherlands: an observational cohort study"
 status: active
 ontology_terms:

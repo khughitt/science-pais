@@ -1,6 +1,6 @@
 ---
 id: "paper:Raijmakers2018"
-type: "paper"
+kind: "paper"
 title: "Interferon-γ and CXCL10 responses related to complaints in patients with Q fever fatigue syndrome"
 status: "active"
 ontology_terms: []

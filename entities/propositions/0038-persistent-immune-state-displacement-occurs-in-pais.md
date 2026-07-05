@@ -1,6 +1,6 @@
 ---
 id: "proposition:0038-persistent-immune-state-displacement-occurs-in-pais"
-type: "proposition"
+kind: "proposition"
 title: "PAIS involve a persistent post-infectious immune-state displacement (descriptive)"
 status: "active"
 claim_layer: "empirical_regularity"

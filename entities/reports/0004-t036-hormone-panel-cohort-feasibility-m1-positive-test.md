@@ -1,6 +1,6 @@
 ---
 id: "report:0004-t036-hormone-panel-cohort-feasibility-m1-positive-test"
-type: "report"
+kind: "report"
 title: "t036 dataset-feasibility: hormone-panel triangulation cohorts for the M1 positive test of h0005"
 status: "proposed"
 source_refs:

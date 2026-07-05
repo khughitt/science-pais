@@ -1,6 +1,6 @@
 ---
 id: paper:Boneva2015
-type: paper
+kind: paper
 title: Early menopause and other gynecologic risk indicators for chronic fatigue syndrome in women
 status: active
 ontology_terms:

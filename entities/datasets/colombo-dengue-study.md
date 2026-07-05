@@ -1,6 +1,6 @@
 ---
 id: dataset:colombo-dengue-study
-type: dataset
+kind: dataset
 title: "Colombo Dengue Study — post-dengue persistent fatigue (Sigera 2021)"
 status: candidate
 created: "2026-06-21"

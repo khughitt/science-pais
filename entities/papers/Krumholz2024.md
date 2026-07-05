@@ -1,6 +1,6 @@
 ---
 id: paper:Krumholz2024
-type: paper
+kind: paper
 title: 'The PAX LC Trial: A Decentralized, Phase 2, Randomized, Double-Blind Study of
   Nirmatrelvir/Ritonavir Compared with Placebo/Ritonavir for Long COVID'
 status: active

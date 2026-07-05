@@ -1,6 +1,6 @@
 ---
 id: question:0028-ambulatory-within-person-wearable-ema-protocol-for-pem-phenotyping
-type: question
+kind: question
 title: Ambulatory within-person wearable + EMA protocol for PEM phenotyping without
   exercise challenge
 status: active
@@ -12,8 +12,18 @@ origins:
   ref: explore-ideas-methodology
 related: []
 created: '2026-07-04'
-updated: '2026-07-04'
+updated: '2026-07-05'
 added_by: explore-ideas:claude-opus-4-8:cand-methodology-wearable-ema-pem-ambulatory
+lens_views:
+- lens: methodology
+  rationale: "CPET (the gold-standard PEM operationalization the project uses via\
+    \ Che2025) demands clinic attendance, risks post-exertional harm, and excludes\
+    \ the severely ill. A wearable+EMA design captures the same physiology in the\
+    \ natural environment, enabling personalized crash thresholds, continuous symptom-physiology\
+    \ coupling, and one-instrument severity grading across triggers \u2014 separating\
+    \ whether the PEM phenotype is real from how it is measured (a reproducibility\
+    \ bottleneck the project flags). Serves question:0011 and question:0015.\n"
+  origin_ref: explore-ideas-methodology
 ---
 # Ambulatory within-person wearable + EMA protocol for PEM phenotyping without exercise challenge
 

@@ -1,6 +1,6 @@
 ---
 id: dataset:slice-ptlds-aucott
-type: dataset
+kind: dataset
 title: "Johns Hopkins SLICE — Lyme / post-treatment Lyme disease syndrome"
 status: candidate
 created: "2026-06-21"

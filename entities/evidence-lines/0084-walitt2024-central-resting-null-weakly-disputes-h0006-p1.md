@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0084-walitt2024-central-resting-null-weakly-disputes-h0006-p1
-type: evidence-line
+kind: evidence-line
 title: "Walitt2024 central effort-preference frame and resting nulls weakly dispute h0006 P1 as a primary muscle-substrate claim"
 status: active
 stance: disputes

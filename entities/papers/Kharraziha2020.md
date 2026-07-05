@@ -1,6 +1,6 @@
 ---
 id: "paper:Kharraziha2020"
-type: "paper"
+kind: "paper"
 title: "Serum Activity Against G Protein-Coupled Receptors and Severity of Orthostatic Symptoms in Postural Orthostatic Tachycardia Syndrome"
 status: "active"
 paper_kind: ""

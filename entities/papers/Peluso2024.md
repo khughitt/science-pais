@@ -1,6 +1,6 @@
 ---
 id: paper:Peluso2024
-type: paper
+kind: paper
 title: Plasma-based antigen persistence in the post-acute phase of COVID-19
 status: active
 ontology_terms:

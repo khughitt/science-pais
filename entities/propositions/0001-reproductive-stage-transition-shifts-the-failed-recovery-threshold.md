@@ -1,6 +1,6 @@
 ---
 id: "proposition:0001-reproductive-stage-transition-shifts-the-failed-recovery-threshold"
-type: "proposition"
+kind: "proposition"
 title: "Reproductive-stage transition shifts the failed-recovery threshold governing PAIS risk"
 status: "active"
 claim_layer: "causal_effect"

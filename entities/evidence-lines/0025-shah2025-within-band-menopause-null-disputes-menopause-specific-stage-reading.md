@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0025-shah2025-within-band-menopause-null-disputes-menopause-specific-stage-reading"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Shah2025 within-age-band menopause null disputes a menopause-status-specific reading of the reproductive-stage threshold"
 status: "active"
 stance: "disputes"

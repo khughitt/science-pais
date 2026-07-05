@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0071-joseph2021-distal-only-sampling-scope-criticism-disputes-0015
-type: evidence-line
+kind: evidence-line
 title: "M2 scope-criticism: the non-length-dependent pattern is only detectable under paired-site sampling; the largest cohort (Joseph2021) is distal-only and structurally cannot see it — disputes the measured-status of prop:0015"
 status: active
 stance: disputes

@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0032-ambrosino2021-fmd-male-endothelial-direction-only-severity-confounded"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Ambrosino2021 male endothelial dysfunction (FMD) supports the male direction only — severity-confounded, not a discriminating line"
 status: "active"
 stance: "supports"

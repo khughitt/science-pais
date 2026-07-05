@@ -1,6 +1,6 @@
 ---
 id: question:0006-jak-stat-il6-driver-vs-marker
-type: question
+kind: question
 title: Is persistent JAK-STAT/IL-6 signaling a proximal driver of post-acute chronicity
   (reversible by inhibition) or a downstream marker, and is the axis shared beyond
   SARS-CoV-2?

@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0008-silva2024-reverse-reading-supports-axis-perturbation"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Silva2024 cross-sectional hormone deficit is equally consistent with infection-driven axis perturbation"
 status: "active"
 stance: "supports"

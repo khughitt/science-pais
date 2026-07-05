@@ -1,6 +1,6 @@
 ---
 id: proposition:0019-pais-sfn-immunomodulation-modifies-lesion-trajectory
-type: proposition
+kind: proposition
 title: Immunomodulation that lowers autoantibody burden improves the PAIS autonomic/small-fiber
   lesion trajectory
 status: active

@@ -1,6 +1,6 @@
 ---
 id: proposition:0013-immune-domain-partial-hormone-mediated-objective-exception
-type: proposition
+kind: proposition
 title: The immune/inflammatory domain is a partial, testosterone-conditioned objective exception
   to the self-report-channeled female PAIS excess
 status: active

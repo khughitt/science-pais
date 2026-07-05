@@ -1,6 +1,6 @@
 ---
 id: paper:Adler2024
-type: paper
+kind: paper
 title: 'Dysautonomia following Lyme disease: a key component of post-treatment Lyme
   disease syndrome?'
 status: active

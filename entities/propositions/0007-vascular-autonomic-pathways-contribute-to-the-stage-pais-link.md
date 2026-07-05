@@ -1,6 +1,6 @@
 ---
 id: "proposition:0007-vascular-autonomic-pathways-contribute-to-the-stage-pais-link"
-type: "proposition"
+kind: "proposition"
 title: "Vascular and autonomic pathways contribute to the reproductive-stage-PAIS link independent of adaptive autoimmunity"
 status: "active"
 claim_layer: "mechanistic_narrative"

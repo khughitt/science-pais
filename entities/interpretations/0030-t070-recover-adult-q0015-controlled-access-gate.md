@@ -1,6 +1,6 @@
 ---
 id: interpretation:0030-t070-recover-adult-q0015-controlled-access-gate
-type: interpretation
+kind: interpretation
 title: "t070 - RECOVER-Adult q0015 controlled-access gate: phenotype release clears, molecular release does not"
 status: active
 source_refs:

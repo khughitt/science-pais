@@ -1,6 +1,6 @@
 ---
 id: interpretation:0009-t049-sfn-cross-syndrome-ingestion
-type: interpretation
+kind: interpretation
 title: 't049 cross-syndrome SFN ingestion: structural lesion documented across triggers
   but non-length-dependent pattern asserted more than measured; primary-dysautonomia
   controls universally absent'

@@ -1,6 +1,6 @@
 ---
 id: paper:Broderick2012
-type: paper
+kind: paper
 title: 'Cytokine expression profiles of immune imbalance in post-mononucleosis chronic
   fatigue'
 status: stub

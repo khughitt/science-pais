@@ -1,6 +1,6 @@
 ---
 id: paper:BrandstetterFigueroa2025
-type: paper
+kind: paper
 title: Viral Burden and Illness Severity During Acute SARS-CoV-2 Infection Predict Persistent Long COVID Symptoms
 status: active
 ontology_terms:

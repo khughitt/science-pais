@@ -1,6 +1,6 @@
 ---
 id: hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
-type: hypothesis
+kind: hypothesis
 title: Skeletal-muscle ischemic-mitochondrial lesion as the primary substrate of post-exertional
   malaise
 status: proposed

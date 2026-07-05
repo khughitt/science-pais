@@ -1,6 +1,6 @@
 ---
 id: paper:Mishra2020
-type: paper
+kind: paper
 title: COVID-19 and Menstrual Status
 status: active
 ontology_terms:

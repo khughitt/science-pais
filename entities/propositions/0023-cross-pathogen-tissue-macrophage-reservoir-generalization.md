@@ -1,6 +1,6 @@
 ---
 id: proposition:0023-cross-pathogen-tissue-macrophage-reservoir-generalization
-type: proposition
+kind: proposition
 title: A structurally analogous degradation-resistant tissue/macrophage fragment reservoir
   operates across pathogen classes (Borrelia, SARS-CoV-2, Coxiella-like triggers)
 status: active

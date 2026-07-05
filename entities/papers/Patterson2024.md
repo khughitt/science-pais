@@ -1,6 +1,6 @@
 ---
 id: paper:Patterson2024
-type: paper
+kind: paper
 title: 'Long COVID diagnostic with differentiation from chronic Lyme disease using
   machine learning and cytokine hubs'
 status: active

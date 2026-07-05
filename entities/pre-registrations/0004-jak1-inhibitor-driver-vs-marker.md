@@ -1,6 +1,6 @@
 ---
 id: pre-registration:0004-jak1-inhibitor-driver-vs-marker
-type: pre-registration
+kind: pre-registration
 title: "JAK1-inhibitor (abrocitinib, NCT06597396) driver-vs-marker test for persistent\
   \ JAK-STAT/IL-6 signaling in long COVID — data-gated discriminating test of\
   \ h0003/q0006"

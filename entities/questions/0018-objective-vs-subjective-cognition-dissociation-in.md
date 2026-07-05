@@ -1,6 +1,6 @@
 ---
 id: question:0018-objective-vs-subjective-cognition-dissociation-in
-type: question
+kind: question
 title: Is the dissociation between objective cognitive deficit and subjective cognitive
   complaint a general feature of PAIS, and what mechanisms drive each domain?
 status: active

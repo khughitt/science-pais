@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0073-brandstetterfigueroa2025-acute-nag-predicts-lc-disputes-0024
-type: evidence-line
+kind: evidence-line
 title: BrandstetterFigueroa2025 acute N-antigen burden predicts 9-month long-COVID symptoms — weak model criticism of retained-burden-over-initial-load proposition
 status: active
 stance: disputes

@@ -1,6 +1,6 @@
 ---
 id: interpretation:0024-t011-delayed-viral-dynamics-models
-type: interpretation
+kind: interpretation
 title: "t011: Delayed viral-dynamics ODE/DDE papers supply mathematical motifs, not a PAIS attractor model"
 status: active
 source_refs:

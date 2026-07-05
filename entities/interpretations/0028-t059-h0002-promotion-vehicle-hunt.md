@@ -1,6 +1,6 @@
 ---
 id: interpretation:0028-t059-h0002-promotion-vehicle-hunt
-type: interpretation
+kind: interpretation
 title: "t059 - h0002 promotion vehicle hunt: no admissible non-Borrelia macrophage-reservoir or retained-burden-over-load vehicle found"
 status: active
 source_refs:

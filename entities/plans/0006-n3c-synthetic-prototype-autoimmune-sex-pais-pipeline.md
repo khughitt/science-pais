@@ -1,6 +1,6 @@
 ---
 id: "plan:0006-n3c-synthetic-prototype-autoimmune-sex-pais-pipeline"
-type: "plan"
+kind: "plan"
 title: "Pipeline (prototype): N3C synthetic-tier skeleton for the autoimmune × sex × PASC estimand (t079/BC-2)"
 status: "archived"
 created: "2026-07-01"

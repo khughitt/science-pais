@@ -1,6 +1,6 @@
 ---
 id: synthesis:0004-acute-severity-threshold
-type: synthesis
+kind: synthesis
 title: "Synthesis: 0004-acute-severity-threshold"
 status: "active"
 report_kind: hypothesis-synthesis

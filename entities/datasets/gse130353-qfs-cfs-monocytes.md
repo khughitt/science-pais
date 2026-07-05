@@ -1,6 +1,6 @@
 ---
 id: dataset:gse130353-qfs-cfs-monocytes
-type: dataset
+kind: dataset
 title: "GSE130353 — QFS / CFS circulating-monocyte transcriptome"
 status: candidate
 created: "2026-06-21"

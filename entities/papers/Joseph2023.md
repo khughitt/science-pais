@@ -1,6 +1,6 @@
 ---
 id: paper:Joseph2023
-type: paper
+kind: paper
 title: Exercise Pathophysiology in Myalgic Encephalomyelitis/Chronic Fatigue Syndrome
   and Postacute Sequelae of SARS-CoV-2
 status: active

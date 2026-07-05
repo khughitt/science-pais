@@ -1,6 +1,6 @@
 ---
 id: "proposition:0009-dysautonomia-female-skew-is-baseline-carried-not-pais-amplified"
-type: "proposition"
+kind: "proposition"
 title: "The female predominance of post-infectious dysautonomia (POTS) is the baseline POTS female-predominance carried through, not a PAIS-specific sex amplification"
 status: "active"
 claim_layer: "empirical_regularity"

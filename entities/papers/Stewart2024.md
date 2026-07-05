@@ -1,6 +1,6 @@
 ---
 id: paper:Stewart2024
-type: paper
+kind: paper
 title: Menopause symptom prevalence in three post-COVID-19 syndrome clinics in England
 status: active
 ontology_terms:

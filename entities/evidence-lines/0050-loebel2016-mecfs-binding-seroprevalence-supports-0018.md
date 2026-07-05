@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0050-loebel2016-mecfs-binding-seroprevalence-supports-0018
-type: evidence-line
+kind: evidence-line
 title: "Loebel2016 binding-ELISA β2/M3/M4 autoantibody seroprevalence in ME/CFS — weak proxy support for anti-GPCR pathogenicity (no functional confirmation)"
 status: active
 stance: supports

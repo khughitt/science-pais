@@ -1,6 +1,6 @@
 ---
 id: paper:Nicolai2023
-type: paper
+kind: paper
 title: "Thromboinflammation in long COVID—the elusive key to postinfection sequelae?"
 status: active
 ontology_terms:

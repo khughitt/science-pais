@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0007-shahbaz2025-testosterone-cytokine-inverse-supports-pathway-mechanism"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Shahbaz2025 testosterone-cytokine inverse correlation supports the pathway-modification mechanism"
 status: "active"
 stance: "supports"

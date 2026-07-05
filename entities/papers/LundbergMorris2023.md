@@ -1,6 +1,6 @@
 ---
 id: paper:LundbergMorris2023
-type: paper
+kind: paper
 title: "Covid-19 vaccine effectiveness against post-covid-19 condition among 589 722 individuals in Sweden: population based cohort study"
 status: active
 ontology_terms:

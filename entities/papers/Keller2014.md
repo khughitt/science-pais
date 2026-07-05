@@ -1,6 +1,6 @@
 ---
 id: paper:Keller2014
-type: paper
+kind: paper
 title: Inability of myalgic encephalomyelitis/chronic fatigue syndrome patients to
   reproduce VO2peak indicates functional impairment
 status: active

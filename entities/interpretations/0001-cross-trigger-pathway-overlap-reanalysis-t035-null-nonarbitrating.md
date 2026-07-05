@@ -1,6 +1,6 @@
 ---
 id: interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating
-type: interpretation
+kind: interpretation
 title: 'Cross-trigger pathway-overlap reanalysis (t035): null_nonarbitrating'
 status: active
 source_refs: &id001

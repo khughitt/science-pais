@@ -1,6 +1,6 @@
 ---
 id: proposition:0034-ionic-na-ca-overload-mediates-pem-muscle-mitochondrial-injury
-type: proposition
+kind: proposition
 title: Sodium and calcium overload mediate the step from hypoperfusion to PEM muscle
   mitochondrial injury
 status: active

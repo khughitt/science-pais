@@ -1,6 +1,6 @@
 ---
 id: dataset:uk-biobank-covid
-type: dataset
+kind: dataset
 title: "UK Biobank — COVID-19 / long COVID"
 status: candidate
 created: "2026-06-21"

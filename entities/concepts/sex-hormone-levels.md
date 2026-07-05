@@ -1,6 +1,6 @@
 ---
 id: "concept:sex-hormone-levels"
-type: "concept"
+kind: "concept"
 title: "Sex hormone levels"
 status: "active"
 created: "2026-06-19"

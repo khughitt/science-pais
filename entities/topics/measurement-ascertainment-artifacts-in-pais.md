@@ -1,6 +1,6 @@
 ---
 id: topic:measurement-ascertainment-artifacts-in-pais
-type: topic
+kind: topic
 title: Measurement-channel and ascertainment artifacts in PAIS
 status: active
 related:

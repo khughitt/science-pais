@@ -1,6 +1,6 @@
 ---
 id: paper:Abubasheer2025
-type: paper
+kind: paper
 title: "Sex-Based Differences in Cardiovascular Outcomes Associated With COVID-19: A Systematic Review and Meta-Analysis"
 status: active
 ontology_terms:

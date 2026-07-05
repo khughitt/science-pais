@@ -1,6 +1,6 @@
 ---
 id: proposition:0017-pais-sfn-cross-trigger-convergence
-type: proposition
+kind: proposition
 title: The small-fiber-neuropathy substrate recurs across distinct post-infectious
   syndromes (PTLDS, long COVID, infection-associated ME/CFS)
 status: active

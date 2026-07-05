@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0069-t055-audit-m3-pem-endpoint-contingent-supports
-type: evidence-line
+kind: evidence-line
 title: "t055 audit: cross-trigger PEM correlate is endpoint-contingent — single objective-origin instance, weakly supports M3"
 status: active
 stance: supports

@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0004-mishra2020-acute-covid-adjustment-attenuation-disputes-stage-threshold"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Mishra2020/Costeira2021 acute-COVID adjustment attenuation disputes a simple stage effect"
 status: "active"
 stance: "disputes"

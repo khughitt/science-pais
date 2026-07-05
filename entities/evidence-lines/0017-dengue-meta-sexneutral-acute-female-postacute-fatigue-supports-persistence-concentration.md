@@ -1,6 +1,6 @@
 ---
 id: "evidence-line:0017-dengue-meta-sexneutral-acute-female-postacute-fatigue-supports-persistence-concentration"
-type: "evidence-line"
+kind: "evidence-line"
 title: "Dengue sex-neutral acute severity but female post-dengue fatigue supports persistence-concentration"
 status: "active"
 stance: "supports"

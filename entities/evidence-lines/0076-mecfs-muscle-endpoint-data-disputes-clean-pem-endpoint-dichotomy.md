@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0076-mecfs-muscle-endpoint-data-disputes-clean-pem-endpoint-dichotomy
-type: evidence-line
+kind: evidence-line
 title: "ME/CFS exercise/contraction muscle-endpoint data weakly disputes the clean ME/CFS-whole-body vs long-COVID-muscle dichotomy in proposition:0011"
 status: active
 stance: disputes

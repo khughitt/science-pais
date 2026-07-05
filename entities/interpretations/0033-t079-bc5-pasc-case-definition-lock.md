@@ -1,6 +1,6 @@
 ---
 id: interpretation:0033-t079-bc5-pasc-case-definition-lock
-type: interpretation
+kind: interpretation
 title: "t079/BC-5: PASC case-definition lock — coded U09.9/clinic primary, ML phenotype demoted to flagged sensitivity (its top feature IS the confound), survey index not EHR-computable; every EHR outcome is utilization-gated"
 status: active
 source_refs:

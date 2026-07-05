@@ -1,6 +1,6 @@
 ---
 id: interpretation:0007-t044-stop-pasc-pem-proteome-severity-unadjusted-gap-stands
-type: interpretation
+kind: interpretation
 title: 't044: STOP-PASC PEM proteome is severity-unadjusted; the decisive q0015 severity-vs-PEM
   test stays open, with a weak symptom-resolved increment'
 status: active

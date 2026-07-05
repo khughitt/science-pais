@@ -1,6 +1,6 @@
 ---
 id: paper:Truong2025
-type: paper
+kind: paper
 title: Six-Month Outcomes in the Long-Term Outcomes After the Multisystem Inflammatory Syndrome in Children Study
 status: active
 ontology_terms:

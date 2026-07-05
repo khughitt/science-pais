@@ -1,6 +1,6 @@
 ---
 id: paper:Gusinow2026
-type: paper
+kind: paper
 title: Latent transition analysis for longitudinal studies of post-acute infection
   syndromes
 status: active

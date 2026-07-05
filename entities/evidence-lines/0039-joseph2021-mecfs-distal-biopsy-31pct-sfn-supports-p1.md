@@ -1,6 +1,6 @@
 ---
 id: evidence-line:0039-joseph2021-mecfs-distal-biopsy-31pct-sfn-supports-p1
-type: evidence-line
+kind: evidence-line
 title: "Joseph2021 finds 31% SFN in the largest ME/CFS skin-biopsy series (distal-only)\
   \ — supports a structural lesion"
 status: active
