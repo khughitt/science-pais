@@ -12,8 +12,20 @@ origins:
   ref: explore-ideas-temporal
 related: []
 created: '2026-07-04'
-updated: '2026-07-04'
+updated: '2026-07-05'
 added_by: explore-ideas:claude-opus-4-8:cand-temporal-menstrual-ultradian-probe
+lens_views:
+- lens: temporal
+  rationale: 'Sharpens hypothesis:0005 by using naturally occurring hormonal oscillation
+    as a free high-frequency perturbation probe: different mechanisms predict distinct
+    temporal fingerprints (late-follicular immune exacerbation vs sympatho-adrenal
+    tracking vs flattened cortisol amplitude vs ovulatory mast-cell peaks), enabling
+    within-individual mechanism discrimination and trial stratification. NOTE scope:
+    circadian/chronobiology is primarily health-cycles territory; in-scope here only
+    because periodicity is used as a PAIS mechanistic discriminator.
+
+    '
+  origin_ref: explore-ideas-temporal
 ---
 # Menstrual-cycle and ultradian symptom periodicity as a mechanistic discriminator of PAIS subphenotypes
 

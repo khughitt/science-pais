@@ -11,8 +11,19 @@ origins:
   ref: explore-ideas-population
 related: []
 created: '2026-07-04'
-updated: '2026-07-04'
+updated: '2026-07-05'
 added_by: explore-ideas:claude-opus-4-8:cand-population-lmic-ancestral-diversity-pais
+lens_views:
+- lens: population
+  rationale: 'The PAIS literature is overwhelmingly high-income, European-ancestry,
+    yet most COVID-19 cases occurred in LMICs. Ancestral variation in HLA-DQ/ABO (top
+    multi-ancestry long-COVID loci) and tonic helminth-driven Th2/regulatory skewing
+    could shift which PAIS pathways dominate. The project''s cross-pathogen frame
+    implicitly assumes mechanism generalizability across population contexts that
+    has not been tested. Serves question:0001 and question:0007.
+
+    '
+  origin_ref: explore-ideas-population
 ---
 # PAIS burden, phenotype, and mechanism in LMIC and ancestrally diverse populations
 

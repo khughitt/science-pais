@@ -13,8 +13,20 @@ origins:
   ref: explore-ideas-temporal
 related: []
 created: '2026-07-04'
-updated: '2026-07-04'
+updated: '2026-07-05'
 added_by: explore-ideas:claude-opus-4-8:cand-temporal-reinfection-latent-fragility
+lens_views:
+- lens: temporal
+  rationale: 'Reinfection studies measure new-onset PASC across all prior-infected
+    people but do not stratify by whether a first infection caused PAIS that then
+    remitted. If the attractor leaves a durable trace (immune memory, epigenetics,
+    autonomic wiring), recovered-PAIS patients are a distinct high-vulnerability stratum
+    and "recovery" is a metastable near-attractor state. Directly probes whether hypothesis:0001''s
+    basin of attraction is structurally remodeled by a PAIS episode. Anchored by Bosworth2023
+    (already a project paper, supporting).
+
+    '
+  origin_ref: explore-ideas-temporal
 ---
 # Latent homeostatic fragility after PAIS recovery: lower re-entry threshold on reinfection
 

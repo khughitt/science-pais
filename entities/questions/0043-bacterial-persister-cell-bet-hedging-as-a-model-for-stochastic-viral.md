@@ -12,8 +12,17 @@ origins:
   ref: explore-ideas-analogy
 related: []
 created: '2026-07-04'
-updated: '2026-07-04'
+updated: '2026-07-05'
 added_by: explore-ideas:claude-opus-4-8:cand-analogy-persister-cell-viral-dormancy-pais
+lens_views:
+- lens: analogy
+  rationale: "Sharpens hypothesis:0002 and question:0002 by adding a third persistence\
+    \ class beyond dead-fragment deposits and continuous replication: viable-but-dormant\
+    \ cells that periodically resuscitate. Generates distinct predictions \u2014 episodic\
+    \ reseeding explaining non-monotonic symptom fluctuation, antiviral failure on\
+    \ metabolically inactive targets, biphasic killing kinetics, and bimodal within-reservoir\
+    \ single-cell transcript distributions absent genetic diversity.\n"
+  origin_ref: explore-ideas-analogy
 ---
 # Bacterial persister-cell bet-hedging as a model for stochastic viral dormancy in PAIS tissue reservoirs
 
