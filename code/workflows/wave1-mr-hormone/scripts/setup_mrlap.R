@@ -29,29 +29,75 @@ if (is.null(config_path) || is.null(sentinel))
 
 cfg <- yaml::read_yaml(config_path)
 
-# --- install in dependency order --------------------------------------------
-# 1. TwoSampleMR @ pinned tag (transitive engine MRlap calls; pulls ieugwasr
-#    from CRAN via `dependencies = TRUE` — install it explicitly first so the
-#    resolved ieugwasr version is captured even if already present).
-if (!requireNamespace("ieugwasr", quietly = TRUE)) {
-  remotes::install_cran("ieugwasr", upgrade = "never")
+# --- install in dependency order (idempotent + retrying) ---------------------
+# The three GitHub installs are the flaky, network-bound step (a transient
+# api.github.com/codeload failure on any one tarball aborts the whole rule). So
+# each install is (a) SKIPPED when the package is already present at the pinned
+# SHA/version — making a re-run fetch only what is actually missing — and
+# (b) RETRIED on failure. The four hard-fail asserts below remain the gate; this
+# only changes HOW we reach a correctly-pinned library, never WHETHER we verify it.
+retries <- 3L
+retry_sleep_s <- 20
+
+with_retry <- function(expr, what) {
+  for (attempt in seq_len(retries)) {
+    ok <- tryCatch({ force(expr); TRUE },
+                   error = function(e) {
+                     message(sprintf("setup_mrlap: %s failed (attempt %d/%d): %s",
+                                     what, attempt, retries, conditionMessage(e)))
+                     FALSE
+                   })
+    if (isTRUE(ok)) return(invisible(TRUE))
+    if (attempt < retries) Sys.sleep(retry_sleep_s)
+  }
+  stop(sprintf("setup_mrlap: %s failed after %d attempts — HALT", what, retries))
 }
-remotes::install_github(
-  paste0(cfg$mrlap_env$twosamplemr_repo, "@", cfg$mrlap_env$twosamplemr_ref),
-  upgrade = "never", dependencies = TRUE
-)
+
+installed_sha <- function(pkg) {
+  if (!requireNamespace(pkg, quietly = TRUE)) return(NA_character_)
+  sha <- utils::packageDescription(pkg)$GithubSHA1
+  if (is.null(sha)) NA_character_ else substr(sha, 1, 40)
+}
+installed_version <- function(pkg) {
+  if (!requireNamespace(pkg, quietly = TRUE)) return(NA_character_)
+  as.character(utils::packageVersion(pkg))
+}
+
+# 1. TwoSampleMR @ pinned tag (transitive engine MRlap calls; pulls ieugwasr
+#    from CRAN via `dependencies = TRUE`). Install ieugwasr explicitly first so
+#    its version is captured even if already present.
+if (!requireNamespace("ieugwasr", quietly = TRUE)) {
+  with_retry(remotes::install_cran("ieugwasr", upgrade = "never"), "ieugwasr (CRAN)")
+}
+if (identical(installed_version("TwoSampleMR"), cfg$mrlap_env$twosamplemr_version_expected)) {
+  message("setup_mrlap: TwoSampleMR ", cfg$mrlap_env$twosamplemr_version_expected,
+          " already installed — skipping")
+} else {
+  with_retry(remotes::install_github(
+    paste0(cfg$mrlap_env$twosamplemr_repo, "@", cfg$mrlap_env$twosamplemr_ref),
+    upgrade = "never", dependencies = TRUE
+  ), "TwoSampleMR (GitHub)")
+}
 
 # 2. GenomicSEM @ pinned commit (MRlap's internal cross-trait LDSC engine).
-remotes::install_github(
-  paste0(cfg$mrlap_env$genomicsem_repo, "@", cfg$mrlap_env$genomicsem_ref),
-  upgrade = "never"
-)
+if (identical(installed_sha("GenomicSEM"), substr(cfg$mrlap_env$genomicsem_ref, 1, 40))) {
+  message("setup_mrlap: GenomicSEM @ pinned SHA already installed — skipping")
+} else {
+  with_retry(remotes::install_github(
+    paste0(cfg$mrlap_env$genomicsem_repo, "@", cfg$mrlap_env$genomicsem_ref),
+    upgrade = "never"
+  ), "GenomicSEM (GitHub)")
+}
 
 # 3. MRlap @ pinned commit.
-remotes::install_github(
-  paste0(cfg$mrlap_env$mrlap_repo, "@", cfg$mrlap_env$mrlap_ref),
-  upgrade = "never"
-)
+if (identical(installed_sha("MRlap"), substr(cfg$mrlap_env$mrlap_ref, 1, 40))) {
+  message("setup_mrlap: MRlap @ pinned SHA already installed — skipping")
+} else {
+  with_retry(remotes::install_github(
+    paste0(cfg$mrlap_env$mrlap_repo, "@", cfg$mrlap_env$mrlap_ref),
+    upgrade = "never"
+  ), "MRlap (GitHub)")
+}
 
 suppressPackageStartupMessages({
   library(TwoSampleMR)
