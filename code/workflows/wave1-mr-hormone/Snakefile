@@ -273,3 +273,118 @@ rule aggregate_mr:
         "--results {input.results} --benchmarks {input.benchmarks} "
         "--setup {input.setup} --instruments {input.instruments} "
         "--manifest {output.manifest}"
+
+
+# =============================================================================
+# Task 4 — MRlap overlap correction (plan:0009). Canonicalize each raw genome-
+# wide sumstat (source-family column map + N injection, hard-stop adapter),
+# install MRlap + GenomicSEM at pinned commits, run the overlap-corrected MR
+# per stratum (MRlap's own distance-pruned instruments + internal cross-trait
+# LDSC), and aggregate beside the Task-3 naive manifest. Run with:
+#
+#     uv run snakemake -s code/workflows/wave1-mr-hormone/Snakefile \
+#         --use-conda -c1 mrlap
+# =============================================================================
+
+# --- resolved MRlap targets (plan:0009 Task 4) -------------------------------
+MRLAP_DIR = f"{PROC}/mrlap"
+CANON_DIR = f"{MRLAP_DIR}/canonical"
+SETUP_MRLAP = f"{MRLAP_DIR}/.setup_mrlap.json"
+MRLAP_MANIFEST = f"{RESULTS}/mrlap_results.json"
+LDSC_LD_DIR = f"{RAW}/ldsc/eur_w_ld_chr"        # MRlap `ld` dir (staged Task 1)
+LDSC_HM3 = f"{RAW}/ldsc/w_hm3.snplist"          # MRlap `hm3` (staged Task 1)
+
+
+rule mrlap:                                 # Task-4 target
+    input:
+        MRLAP_MANIFEST,
+
+
+# --- env setup: install MRlap + GenomicSEM at pinned commits, version-assert --
+rule setup_mrlap:                           # install MRlap + GenomicSEM @ pinned commits
+    output:
+        sentinel=SETUP_MRLAP,
+    conda:
+        "envs/r-mrlap.yaml"
+    params:
+        config=CONFIGFILE,
+    shell:
+        "Rscript {SCRIPTS}/setup_mrlap.R --config {params.config} --sentinel {output.sentinel}"
+
+
+# --- canonicalize one stratum's raw exposure sumstat to the MRlap schema -----
+rule canonicalize_exposure:                 # fan-out over the six strata
+    input:
+        raw=lambda w: f"{GWAS_DIR}/{w.stratum}.{STRATA[w.stratum]['accession']}.h.tsv.gz",
+    output:
+        canon=f"{CANON_DIR}/{{stratum}}.exposure.tsv.gz",
+        sidecar=f"{CANON_DIR}/{{stratum}}.exposure.tsv.gz.canonical.json",
+    benchmark:
+        f"{CANON_DIR}/{{stratum}}.exposure.benchmark.tsv"   # ~4.4 GB stream: wall-clock + max_rss
+    conda:
+        "envs/stage.yaml"
+    params:
+        config=CONFIGFILE,
+    shell:
+        "python {SCRIPTS}/canonicalize_sumstats.py --config {params.config} "
+        "--source-family ruth-exposure --stratum {wildcards.stratum} "
+        "--in {input.raw} --out {output.canon}"
+
+
+# --- canonicalize the shared HGI long-COVID outcome sumstat to the MRlap schema
+rule canonicalize_outcome:
+    input:
+        raw=OUTCOME_FILE,
+    output:
+        canon=f"{CANON_DIR}/outcome.tsv.gz",
+        sidecar=f"{CANON_DIR}/outcome.tsv.gz.canonical.json",
+    benchmark:
+        f"{CANON_DIR}/outcome.benchmark.tsv"                # stream: wall-clock + max_rss
+    conda:
+        "envs/stage.yaml"
+    params:
+        config=CONFIGFILE,
+    shell:
+        "python {SCRIPTS}/canonicalize_sumstats.py --config {params.config} "
+        "--source-family hgi-outcome --stratum outcome "
+        "--in {input.raw} --out {output.canon}"
+
+
+# --- run MRlap (internal munge + cross-trait LDSC + overlap correction) ------
+rule run_mrlap:                             # fan-out over the six strata
+    input:
+        exposure=f"{CANON_DIR}/{{stratum}}.exposure.tsv.gz",
+        outcome=f"{CANON_DIR}/outcome.tsv.gz",
+        ld=LDSC_LD_DIR,
+        hm3=LDSC_HM3,
+        setup=SETUP_MRLAP,
+    output:
+        results=f"{MRLAP_DIR}/{{stratum}}.mrlap.json",
+        dump=f"{MRLAP_DIR}/{{stratum}}.mrlap.rds",
+    benchmark:
+        f"{MRLAP_DIR}/{{stratum}}.benchmark.tsv"    # genome-wide munge + LDSC: wall-clock + max_rss
+    conda:
+        "envs/r-mrlap.yaml"
+    params:
+        config=CONFIGFILE,
+    shell:
+        "Rscript {SCRIPTS}/run_mrlap.R --config {params.config} "
+        "--stratum {wildcards.stratum} --exposure {input.exposure} "
+        "--outcome {input.outcome} --results-out {output.results} --dump-out {output.dump}"
+
+
+# --- aggregate: six MRlap results + benchmarks + naive manifest -> one manifest
+rule aggregate_mrlap:
+    input:
+        results=expand(f"{MRLAP_DIR}/{{stratum}}.mrlap.json", stratum=STRATA),
+        benchmarks=expand(f"{MRLAP_DIR}/{{stratum}}.benchmark.tsv", stratum=STRATA),
+        naive=NAIVE_MR_MANIFEST,
+        setup=SETUP_MRLAP,
+    output:
+        manifest=MRLAP_MANIFEST,
+    conda:
+        "envs/stage.yaml"
+    shell:
+        "python {SCRIPTS}/aggregate_mrlap.py --config {CONFIGFILE} "
+        "--results {input.results} --naive {input.naive} "
+        "--benchmarks {input.benchmarks} --setup {input.setup} --manifest {output.manifest}"
