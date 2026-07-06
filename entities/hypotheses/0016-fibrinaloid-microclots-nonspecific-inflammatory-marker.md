@@ -12,6 +12,8 @@ origins:
 related:
 - question:0010-vascular-microclot-subphenotype
 - question:0038-netosis-released-histones-and-extracellular-dna-as-the-structural
+- question:0017-deflationary-alternatives-vs-shared-pathophysiology
+- hypothesis:0001-shared-dysregulated-attractor
 created: '2026-07-06'
 updated: '2026-07-06'
 added_by: explore-ideas:claude-opus-4-8:cand-contrarian-microclots-nonspecific
@@ -31,78 +33,91 @@ lens_views:
 
 ## Organizing Conjecture
 
-<!--
-High-level research idea.
-State the overarching conjecture in plain language.
-This is the umbrella idea, not the final unit of evidence aggregation.
--->
+Fibrinaloid ("amyloid") microclots in long-COVID plasma are a **generic response to systemic
+inflammation** — shared across many post-infectious and chronic inflammatory conditions — **not a
+long-COVID-specific pathogenic mechanism**. The deflationary claim: microclot presence does **not mediate
+long-COVID-specific symptomatology beyond what general inflammatory indices already predict**. If correct,
+microclots are a marker of inflammatory state, and anticoagulant/fibrinolytic targeting will not be
+long-COVID-specifically effective.
 
 ## Proposition Bundle
 
-<!--
-List the key propositions that make up this hypothesis.
-Prefer explicit sub-propositions, especially those with explicit S-P-O structure:
-- subject
-- predicate
-- object
--->
-
 ### Core Propositions
 
-<!-- Propositions that must be roughly true for the hypothesis to survive. -->
+- Fibrinaloid microclots are detectable in long-COVID plasma (accepted).
+- Microclots are **also present across other inflammatory / post-infectious conditions** — i.e. they are
+  non-specific.
+- Microclot burden does **not** predict long-COVID-specific symptom profile beyond general inflammatory
+  markers (e.g. CRP, fibrinogen).
+- Consequently, anticoagulant/fibrinolytic therapy will **not** be long-COVID-specifically effective.
 
 ### Supporting Or Auxiliary Propositions
 
-<!-- Propositions that strengthen or elaborate the hypothesis but are not essential. -->
+- Microclot detection methods are not standardized, inflating apparent case-specific signal via
+  measurement variability.
+- This hypothesis stress-tests the microclot subphenotype (`question:0010`) and the NETosis/structural
+  thrombo-inflammatory account (`question:0038`) as *disease-specific* mechanisms.
 
 ## Current Uncertainty
 
-<!--
-What makes this hypothesis currently fragile, contested, or underspecified?
-Note whether support is sparse, single-source, indirect, literature-only, etc.
--->
+The decisive comparison — microclot prevalence/burden in long COVID **versus matched non-PAIS
+inflammatory controls**, with symptom correlation after adjusting for general inflammation — has largely
+not been done at adequate rigor. Assay non-standardization means positive findings are hard to compare
+across labs. The hypothesis is deflationary but not nihilistic: microclots may still matter in a
+*subgroup* even if non-specific overall.
 
 ## Predictions
 
-<!--
-What should we observe if the core claims are true?
-Distinguish strong discriminating predictions from weaker corollaries.
--->
+**Strong / discriminating:**
+
+- Microclots are **equally prevalent** in non-long-COVID inflammatory controls as in long COVID (matched
+  on inflammatory burden).
+- Microclot burden shows **no independent** correlation with long-COVID-specific symptoms after adjusting
+  for general inflammatory indices.
+- Anticoagulation/fibrinolysis trials **fail** or show benefit only in unblinded/uncontrolled reports.
+
+**Weaker / corollaries:**
+
+- Between-lab microclot quantification varies more than between-condition biology.
 
 ## Falsifiability
 
-<!--
-What results would materially lower confidence in the core claims?
-Be specific about what would force revision.
--->
+Confidence would be materially reduced if:
+
+- Microclots are **specifically enriched** in long COVID versus matched inflammatory controls.
+- Microclot burden **independently predicts** long-COVID-specific symptoms after adjusting for
+  inflammation.
+- A **randomized, controlled** anticoagulant/fibrinolytic trial durably improves long-COVID symptoms.
 
 ## Supporting Evidence
 
-<!--
-Existing evidence that supports one or more propositions in this bundle.
-Note evidence type where possible:
-- literature
-- empirical-data
-- simulation
-- benchmark
--->
+- **Hunt2024 (literature, critical review):** systematically critiques the microclot/thrombosis evidence
+  base in long COVID and concludes the supporting inferences are not based on sufficient evidence — the
+  central contrarian anchor.
+- Assay-standardization concerns across the microclot-imaging literature (methodological).
 
 ## Disputing Evidence
 
-<!--
-Existing evidence that weakens or contests one or more propositions.
-Include null or conflicting findings here.
--->
+- **Kell2022 (literature):** argues amyloid-fibrin microclots are causally central to long COVID with
+  therapeutic implications — the dominant mechanistic claim this hypothesis challenges; supported by
+  case-series reports of symptom improvement on anticoagulation.
+- Reports of microclot burden correlating with specific long-COVID features would, if replicated under
+  control, weaken the non-specificity claim.
 
 ## Evidence Needed To Shift Belief
 
-<!--
-What evidence would most efficiently increase or decrease confidence?
-What is the most discriminating next test?
--->
+- **Most efficient upward (toward this hypothesis):** a standardized-assay case–control study showing
+  microclots equally present in matched inflammatory controls, with no independent symptom correlation.
+- **Most efficient downward:** long-COVID-specific enrichment or a positive controlled anticoagulation
+  trial.
+- **Most discriminating next test:** blinded, standardized microclot quantification across long COVID and
+  ≥2 non-PAIS inflammatory conditions with inflammation-adjusted symptom modeling.
 
 ## Related Work
 
-<!--
-Papers, topics, inquiries, and other hypotheses that bear on this hypothesis.
--->
+- `question:0010-vascular-microclot-subphenotype`,
+  `question:0038-netosis-released-histones-and-extracellular-dna-as-the-structural` — the mechanistic
+  accounts this hypothesis holds to a specificity standard.
+- `question:0017-deflationary-alternatives-vs-shared-pathophysiology` — this is a mechanism-specific
+  member of the project's deflationary program; `hypothesis:0001` is stress-tested by it.
+- Hunt2024 (critique of thrombosis account), Kell2022 (amyloid-fibrin microclot mechanism).

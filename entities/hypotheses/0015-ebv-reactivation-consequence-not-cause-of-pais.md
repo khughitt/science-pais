@@ -11,6 +11,8 @@ origins:
   ref: explore-ideas-contrarian
 related:
 - question:0022-immune-state-displacement-mediator-vs-co-traveler
+- question:0054-ebv-reactivation-autoantibody-emergence-temporal-ordering
+- question:0051-prior-symptomatic-ebv-mononucleosis-as-pais-risk-amplifier
 created: '2026-07-06'
 updated: '2026-07-06'
 added_by: explore-ideas:claude-opus-4-8:cand-contrarian-ebv-reactivation-epiphenomenon
@@ -31,78 +33,91 @@ lens_views:
 
 ## Organizing Conjecture
 
-<!--
-High-level research idea.
-State the overarching conjecture in plain language.
-This is the umbrella idea, not the final unit of evidence aggregation.
--->
+Elevated EBV-reactivation markers in post-COVID fatigue reflect **non-specific immune dysregulation**
+driven by severe acute SARS-CoV-2 infection, **not an independently causal post-infectious pathway**. The
+deflationary claim is concrete and testable: the EBV–long-COVID association **will not survive adjustment**
+for acute illness severity and global immune-activation markers. If correct, EBV reactivation is a
+downstream *readout* of how disrupted the immune system was — a co-traveler — and targeting EBV would not
+resolve PAIS.
 
 ## Proposition Bundle
 
-<!--
-List the key propositions that make up this hypothesis.
-Prefer explicit sub-propositions, especially those with explicit S-P-O structure:
-- subject
-- predicate
-- object
--->
-
 ### Core Propositions
 
-<!-- Propositions that must be roughly true for the hypothesis to survive. -->
+- EBV-reactivation markers associate with long COVID (accepted; the association is real).
+- EBV reactivation is **downstream** of acute severity and generalized immune disruption, not an upstream
+  driver.
+- The EBV–long-COVID association **attenuates toward null** after adjustment for acute severity + immune
+  activation.
+- Consequently, **anti-EBV therapy will not improve** long-COVID outcomes.
 
 ### Supporting Or Auxiliary Propositions
 
-<!-- Propositions that strengthen or elaborate the hypothesis but are not essential. -->
+- EBV-reactivation markers co-move with other latent-herpesvirus reactivations (HHV-6, CMV), i.e. they
+  index generic immune dyscontrol rather than an EBV-specific pathway.
+- This hypothesis is the deflationary counterpart to the EBV-mechanism reading and feeds the
+  mediator-vs-co-traveler question (`question:0022`).
 
 ## Current Uncertainty
 
-<!--
-What makes this hypothesis currently fragile, contested, or underspecified?
-Note whether support is sparse, single-source, indirect, literature-only, etc.
--->
+No study has yet performed the **full adjustment** (acute severity + global immune activation) that would
+adjudicate the claim, so the association's causal status is genuinely open. The hypothesis is also not
+all-or-nothing: EBV reactivation could be *both* a consequence and a partial contributor, which a binary
+"survives/attenuates" test would oversimplify.
 
 ## Predictions
 
-<!--
-What should we observe if the core claims are true?
-Distinguish strong discriminating predictions from weaker corollaries.
--->
+**Strong / discriminating:**
+
+- The EBV-marker → long-COVID association **attenuates substantially** after adjusting for acute severity
+  and immune-activation markers.
+- A randomized anti-EBV antiviral trial **fails** to improve long-COVID symptoms.
+- EBV reactivation timing does **not** precede/predict PAIS onset independently of severity (the
+  ordering test in `question:0054`).
+
+**Weaker / corollaries:**
+
+- EBV markers track other reactivations (generic reactivation signature), not an EBV-specific effect.
 
 ## Falsifiability
 
-<!--
-What results would materially lower confidence in the core claims?
-Be specific about what would force revision.
--->
+Confidence would be materially reduced if:
+
+- The EBV–long-COVID association **survives** rigorous adjustment for severity and immune activation.
+- An anti-EBV therapy **improves** long-COVID in a controlled trial.
+- EBV reactivation **temporally precedes and predicts** PAIS independently of acute severity
+  (`question:0054`), or enables downstream autoantibody emergence (a serial causal chain).
 
 ## Supporting Evidence
 
-<!--
-Existing evidence that supports one or more propositions in this bundle.
-Note evidence type where possible:
-- literature
-- empirical-data
-- simulation
-- benchmark
--->
+- **Peluso2022 (literature, observational):** reports the EBV-reactivation → long-COVID association
+  (elevated odds for fatigue and cognitive symptoms) but **cannot separate causality from severity
+  confounding** — precisely the gap this hypothesis exploits.
+- **Chen2023 (literature, review):** describes the EBV-reactivation mechanism in long COVID as
+  "enigmatic," with causal pathways unestablished — consistent with the epiphenomenon framing.
 
 ## Disputing Evidence
 
-<!--
-Existing evidence that weakens or contests one or more propositions.
-Include null or conflicting findings here.
--->
+- Mechanistic plausibility of causal EBV reactivation is non-trivial: molecular mimicry and the
+  EBV→autoimmunity precedent (e.g. EBV in multiple sclerosis) provide a route by which reactivation
+  could be genuinely causal rather than a bystander.
+- Some cohorts report EBV signals that persist after partial adjustment, which the strong-null version of
+  this hypothesis must explain.
 
 ## Evidence Needed To Shift Belief
 
-<!--
-What evidence would most efficiently increase or decrease confidence?
-What is the most discriminating next test?
--->
+- **Most efficient upward (toward this hypothesis):** a well-powered cohort showing the EBV association
+  collapses after severity + immune-activation adjustment; a null anti-EBV RCT.
+- **Most efficient downward:** severity-independent EBV prediction of PAIS, or a positive anti-EBV trial.
+- **Most discriminating next test:** the joint EBV-vs-autoantibody temporal-ordering design
+  (`question:0054`) plus a severity-adjusted association analysis.
 
 ## Related Work
 
-<!--
-Papers, topics, inquiries, and other hypotheses that bear on this hypothesis.
--->
+- `question:0022-immune-state-displacement-mediator-vs-co-traveler` — the general mediator-vs-co-traveler
+  frame this instantiates for EBV.
+- `question:0054-ebv-reactivation-autoantibody-emergence-temporal-ordering` — the ordering test that most
+  directly bears on EBV causality.
+- `question:0051-prior-symptomatic-ebv-mononucleosis-as-pais-risk-amplifier` — a distinct EBV-as-host-history
+  axis that could confound reactivation studies.
+- Peluso2022 (EBV–long-COVID association), Chen2023 (reactivation mechanism unestablished).

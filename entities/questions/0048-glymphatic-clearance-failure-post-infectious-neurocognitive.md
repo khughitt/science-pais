@@ -10,7 +10,8 @@ source_refs: []
 origins:
 - type: assistant
   ref: explore-ideas-mechanism
-related: []
+related:
+- hypothesis:0001-shared-dysregulated-attractor
 created: '2026-07-06'
 updated: '2026-07-06'
 added_by: explore-ideas:claude-opus-4-8:cand-mechanism-glymphatic-failure-neurocognitive-pais
@@ -32,38 +33,58 @@ lens_views:
 
 ## Summary
 
-<!-- What is being asked and why it is important. -->
+Does post-infectious neuroinflammation impair AQP4-polarized glymphatic CSF–ISF exchange —
+degrading clearance of cytokines and neurotoxic metabolites from brain interstitial fluid — and does
+that impairment form a **self-amplifying loop** (reduced clearance → accumulated inflammatory mediators
+→ further astrogliosis and AQP4 depolarization → further reduced clearance) that maintains neurocognitive
+and fatigue symptoms in PAIS **even after peripheral immune profiles normalize**? The mechanism is
+attractive because it offers a locally self-sustaining brain-compartment loop that could explain the
+frequent dissociation between resolving blood immunophenotypes and persistent "brain fog."
 
 ## Why It Matters
 
-<!-- Bulleted list. Cover at least:
-- the decision this question affects
-- the risk if the question is left unanswered
--->
+- **Decision it affects:** whether to pursue glymphatic/BBB neuroimaging endpoints (DTI-ALPS,
+  contrast/CSF-tracer clearance) and sleep- or AQP4-directed interventions for the neurocognitive PAIS
+  phenotype, versus continuing to index brain symptoms to peripheral immune markers.
+- **Risk if unanswered:** neurocognitive symptoms are among the most disabling and least tractable PAIS
+  features; if a compartmentalized brain-clearance loop is the driver, peripheral-marker-guided trials
+  will keep missing it, and the "peripheral immunity has normalized, so the illness is resolved" reading
+  will systematically under-treat this subgroup.
 
 ## Current Evidence
 
-<!-- Bulleted list. Cover at least:
-- supporting evidence
-- conflicting evidence
--->
+- **Supporting:** Chaganti2025 reports asymmetrically reduced DTI-ALPS (a glymphatic-function proxy) in
+  long-COVID patients with neurocognitive impairment, inversely correlated with BBB permeability —
+  consistent with a coupled BBB/glymphatic loop. Reactive astrogliosis causing AQP4 depolarization and
+  the sleep-dependence of glymphatic flux are well established in animal neuroinflammation models, and
+  BBB disruption is documented in long COVID.
+- **Conflicting / limiting:** DTI-ALPS is an *indirect* diffusion proxy, not a direct clearance measure;
+  the evidence is cross-sectional and correlational, so causal direction (clearance failure driving
+  symptoms vs. glymphatic change as a downstream marker of neuroinflammation) is untested. There is no
+  cross-PAIS data — nothing in ME/CFS, PTLDS, or post-Q-fever cohorts — so generality beyond long COVID
+  is unknown.
 
 ## Thoughts
 
-<!-- Bulleted list. Cover at least:
-- the best current interpretation
-- the major remaining uncertainty
--->
+- **Best current interpretation:** a plausible, mechanistically coherent self-amplifying loop that fits
+  the shared-attractor frame (`hypothesis:0001`) as a candidate *brain-compartment* maintenance loop, but
+  it currently rests on a single cross-sectional imaging correlation.
+- **Major uncertainty:** direction of causation, and whether impaired glymphatic clearance is an upstream
+  driver or a downstream readout of neuroinflammation — resolvable only with longitudinal imaging paired
+  to cognitive trajectory, ideally with a sleep-manipulation or clearance-tracer arm.
 
 ## Connections to Project
 
-- Related hypotheses:
-- Required datasets: list dataset IDs in frontmatter `datasets:`.
-- Required analyses:
-- Priority level:
+- Related hypotheses: `hypothesis:0001-shared-dysregulated-attractor` (a candidate CNS-compartment
+  maintenance loop within the attractor frame).
+- Required datasets: longitudinal DTI-ALPS / dynamic contrast or CSF-tracer clearance imaging with paired
+  objective cognition and sleep staging; ideally ≥2 PAIS triggers for generality.
+- Required analyses: temporal-ordering test of glymphatic decline vs. cognitive change; mediation of
+  symptoms by clearance measures after adjusting for peripheral inflammation.
+- Priority level: P3 — mechanistically novel but requires new imaging data the project does not yet hold.
 
 ## Related
 
-- Topic notes:
-- Article notes:
-- Methods/Datasets:
+- Topic notes: `topic:long-covid-immune-dysregulation`.
+- Article notes: Chaganti2025 (long-COVID DTI-ALPS ↔ BBB disruption).
+- Methods/Datasets: none yet — new neuroimaging cohort required.

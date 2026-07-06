@@ -235,6 +235,10 @@ Highest-value novel AREA from explore-2026-07-04. Entities: q0023 (cGAS-STING as
 
 Entities: q0035 (specialized pro-resolving mediator deficit as distinct endotype - novel), q0038 (NETosis histones/eDNA as microclot scaffold coupling vascular+autoimmune arms), q0025 (IFN-I -> tryptophan malabsorption -> platelet serotonin depletion -> vagal hypofunction cognition chain). Follow-up: research-papers on resolution biology (SPMs/lipoxins) and NET-microclot mechanisms in PAIS.
 
+### Notes
+
+- 2026-07-06: explore-2026-07-06 addition (resolution-failure & thromboinflammatory coupling): + h0014 (NK/macrophage failure to clear virus-induced senescent endothelium -> SASP propagation as PAIS-persistence determinant). NOTE: two other 2026-07-06 mechanism entities open NEW threads not covered by any existing batch and are flagged for a future batch: q0048 (glymphatic clearance failure as self-amplifying neurocognitive loop) and h0013 (IDO1-IDO2 bistable tryptophan metabolic trap).
+
 ## [t097] explore-followup batch 3: population boundary conditions (q0031,q0032,q0033,q0034,q0040)
 - priority: P2
 - status: proposed
@@ -243,6 +247,10 @@ Entities: q0035 (specialized pro-resolving mediator deficit as distinct endotype
 - created: 2026-07-04
 
 Under-covered populations flagged as novel gaps. Entities: q0031 (chronically immunosuppressed hosts), q0032 (LMIC / ancestrally diverse populations), q0033 (frailty/pre-frailty bidirectional), q0034 (pre-existing atopic/MCAS subgroup), q0040 (pregnancy/peripartum immune milieu). Follow-up: research-topic on PAIS population boundary conditions / effect modifiers (merits a topic entity - fb-2026-07-04-007), plus find-datasets for cohorts covering these strata (mind gated-dataset transparency bar).
+
+### Notes
+
+- 2026-07-06: explore-2026-07-06 additions (population boundary conditions): + q0051 (prior symptomatic EBV mononucleosis as a pre-infection PAIS risk amplifier, independent of current reactivation).
 
 ## [t098] explore-followup batch 4: causal-inference & measurement methodology (q0027,q0030,q0039,q0028,q0029)
 - priority: P2
@@ -253,6 +261,10 @@ Under-covered populations flagged as novel gaps. Entities: q0031 (chronically im
 
 Entities: q0027 (two-sample MR for causal direction across triggers), q0030 (target trial emulation in multi-trigger EHR), q0039 (negative-control outcome designs to bound utilization confounding), q0028 (wearable+EMA ambulatory PEM phenotyping), q0029 (tissue-resolved spatial multi-omics). Follow-up: find-datasets / catalog-datasets for GWAS+outcome instruments (MR), multi-trigger EHR (TTE/negative-control), and wearable cohorts; scope method feasibility per candidate.
 
+### Notes
+
+- 2026-07-06: explore-2026-07-06 additions (causal-inference & measurement methodology): + q0049 (2-day CPET with paired multi-omic sampling as an objective PEM assay across PAIS) and q0050 (prospective >=3-trigger harmonized cross-pathogen co-enrollment design). q0050 also has a dedicated feasibility task, t103.
+
 ## [t099] explore-followup batch 5: contrarian null-hypothesis probes (h0010,h0011,q0041,h0012,q0042)
 - priority: P3
 - status: proposed
@@ -261,6 +273,10 @@ Entities: q0027 (two-sample MR for causal direction across triggers), q0030 (tar
 - created: 2026-07-04
 
 Sharpens-existing contrarian challenges to core project assumptions. Entities: h0010 (attractor is a slow heterogeneous recovery gradient, not a stable state), h0011 (acute severity does NOT predict chronic fatigue - only objective organ sequelae), q0041 (female predominance as ascertainment artifact), h0012 (fatigue/cognitive symptoms as trigger-nonspecific sickness-behavior, not trigger-specific pathology), q0042 (cross-trigger ~10-20% chronic fraction as case-definition artifact). Follow-up: research-papers / targeted re-analysis to stress-test each null against existing longitudinal + controlled evidence.
+
+### Notes
+
+- 2026-07-06: explore-2026-07-06 additions (contrarian null-hypothesis probes): + h0015 (EBV reactivation = consequence not cause), h0016 (fibrinaloid microclots = non-specific inflammatory marker), h0017 (PEM overdiagnosed via self-report), h0018 (circulating antigen = severity biomarker not driver). These four are organized by the new theme:0001-deflationary-nulls-and-biomarker-vs-driver and scored via t104.
 
 ## [t100] explore-followup batch 6: temporal dynamics & timing (q0036,q0037,q0045,q0046,q0047)
 - priority: P3
@@ -271,6 +287,10 @@ Sharpens-existing contrarian challenges to core project assumptions. Entities: h
 
 Entities: q0036 (critical-slowing-down premonitory early-warning signals - novel), q0037 (latent homeostatic fragility / lower re-entry threshold on reinfection - novel), q0045 (temporal causal ordering of homeostatic domain failure), q0046 (mechanistic basis of the time-limited acute-phase intervention window), q0047 (menstrual/ultradian periodicity as subphenotype discriminator). Follow-up: research-papers on time-series/dynamical-systems methods and longitudinal PAIS trajectories; identify densely-sampled cohorts for CSD testing.
 
+### Notes
+
+- 2026-07-06: explore-2026-07-06 additions (temporal dynamics & timing): + q0052 (acute pathogen clearance rate as cross-pathogen trajectory predictor), q0053 (gut-microbiome normalization kinetics leading vs lagging symptom resolution), q0054 (EBV-reactivation vs autoantibody-emergence temporal ordering). All three organized by the new theme:0002-temporal-ordering-and-causal-kinetics.
+
 ## [t101] explore-followup batch 7: persistence, dormancy & tolerance-collapse analogies (q0043,q0044)
 - priority: P3
 - status: proposed
@@ -279,3 +299,33 @@ Entities: q0036 (critical-slowing-down premonitory early-warning signals - novel
 - created: 2026-07-04
 
 Cross-domain analogies sharpening existing persistence/autoimmunity topics. Entities: q0043 (bacterial persister-cell bet-hedging as model for stochastic viral dormancy in tissue reservoirs), q0044 (chronic GvHD as analogy for post-viral tolerance-infrastructure collapse). Follow-up: research-papers bridging persister-cell biology and cGvHD tolerance literature into topic:antigen-pathogen-persistence and topic:post-infectious-dysautonomia-and-autoimmunity.
+
+## [t103] Scope/feasibility of the ≥3-trigger harmonized cross-pathogen co-enrollment study (q0050)
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design, question:0001-shared-molecular-signature-across-triggers, question:0017-deflationary-alternatives-vs-shared-pathophysiology, hypothesis:0001-shared-dysregulated-attractor]
+- group: explore-followups
+- created: 2026-07-06
+
+The project's named discriminating experiment now has a dedicated entity (q0050). Assess feasibility of a prospective multi-arm co-enrollment (serologically-confirmed acute COVID-19/Lyme/influenza/EBV/Q-fever within a common 4-12wk window, matched uninfected controls, harmonized multi-omics): recruitment logistics, power, and whether achievable Ns resolve shared-vs-trigger-specific signatures. Deliver a go/no-go + staged-design recommendation (start with highest-incidence/most-confirmable triggers to reach the >=3-trigger bar). Anchors: Trautmann2025 (incompatible designs limit comparison), Thomas2026/MELLOW (harmonized dense-sampling feasible). Contrast with the underpowered public 2-cohort GEO pairings (t035 null).
+
+## [t104] Score new deflationary nulls (h0015-h0018) against h0001 in next bias-audit
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [theme:0001-deflationary-nulls-and-biomarker-vs-driver, hypothesis:0001-shared-dysregulated-attractor, question:0017-deflationary-alternatives-vs-shared-pathophysiology]
+- group: explore-followups
+- created: 2026-07-06
+
+The 2026-07-06 explore pass added four mechanism-specific nulls: h0015 (EBV reactivation = consequence), h0016 (microclots non-specific), h0017 (PEM overdiagnosed via self-report), h0018 (circulating antigen = severity biomarker). Fold them into the standing /science:bias-audit scoring against the shared-attractor thesis (h0001). For each: record the discriminating test (h0015 -> severity-adjusted assoc + q0054 ordering; h0016 -> matched-inflammatory-control comparison; h0017 -> objective PEM specificity via q0049; h0018 -> antigen-clearance RCT q0002) and the current verdict. Organized by theme:0001.
+
+## [t105] Ground 2026-07-06 explore entities: add key anchor papers to bib/paper entities
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [theme:0001-deflationary-nulls-and-biomarker-vs-driver, theme:0002-temporal-ordering-and-causal-kinetics]
+- group: explore-followups
+- created: 2026-07-06
+
+~18 load-bearing anchors for the 13 new entities are not in the project bib (only Gattoni2025/Appelman2024/Trautmann2025/Peluso2024b resolved at apply time). Add the key ones as references.bib/paper entities so the new q/h carry real source_refs + literature origins instead of assistant-only: Kashi2019, Nunes2026, Mateu2026, Stussman2025, Twomey2020, Herbert2025, Xie2025(gut), Jernbom2024, Chaganti2025, Al-Hakeim2023, Peluso2022, Chen2023, Hunt2024, Kell2022, Butt2024, Davis2023, Altmann2023, Thomas2026. DOIs are in entities/meta/explorations/explore-2026-07-06.md (literature_anchors). Prioritize the 'predates:' anchors (independent literature origins): Kashi2019, Nunes2026, Hunt2024, Stussman2025, Twomey2020, Mateu2026.

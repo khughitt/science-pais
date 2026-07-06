@@ -195,6 +195,10 @@
         sci:bearsOnSource <http://example.org/project/pre-registration/0005-harmonized-provoked-muscle-endpoint> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0033-microvascular-hypoperfusion-drives-pem-muscle-bioenergetic-failure> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/067c24b179cbe769> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/task/t103> ;
+        sci:bearsOnTarget <http://example.org/project/question/0050-cross-pathogen-co-enrollment-harmonized-multiomics-design> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/067d311f5166c8b6> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/6dd12521a340c908> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0027-gattoni2025-longcovid-whole-body-2day-cpet-null-despite-pem> ;
@@ -735,6 +739,10 @@
         sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0032-ambrosino2021-fmd-male-endothelial-direction-only-severity-confounded.md> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0032-ambrosino2021-fmd-male-endothelial-direction-only-severity-confounded> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/17aa16bf5a66002d> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/task/t104> ;
+        sci:bearsOnTarget <http://example.org/project/question/0017-deflationary-alternatives-vs-shared-pathophysiology> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/17ad98d3b09bfb3f> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/pre-registration/0003-cross-syndrome-paired-biopsy-primary-dysautonomia-controls> ;
         sci:bearsOnTarget <http://example.org/project/hypothesis/0007-autoimmune-sfn-peripheral-dysautonomia-substrate> ;
@@ -1238,6 +1246,10 @@
     <http://example.org/project/bears-on-edge/271df50557a1e4e7> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/bhattacharjee2026> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0020-antigen-clearance-rescues-established-pais> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/273d3de945ef7d0b> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/e135649e0878979e> ;
+        sci:bearsOnTarget <http://example.org/project/theme/0002-temporal-ordering-and-causal-kinetics> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/273f2eabf01b827d> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/dataset/sylvester-2022-longcovid-sex> ;
@@ -2062,6 +2074,10 @@
     <http://example.org/project/bears-on-edge/4231ebdd81bd2c95> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/306f558e9b57b7fb> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/4251fc98273b11ed> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source/entities_themes_0002-temporal-ordering-and-causal-kinetics.md> ;
+        sci:bearsOnTarget <http://example.org/project/theme/0002-temporal-ordering-and-causal-kinetics> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/4287f51256fdac13> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/e2029909b7d1c741> ;
@@ -3867,6 +3883,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/7fb4126e5eef6e04> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0017-dengue-meta-sexneutral-acute-female-postacute-fatigue-supports-persistence-concentration> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/7b825ab3c4c8922f> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source/entities_themes_0001-deflationary-nulls-and-biomarker-vs-driver.md> ;
+        sci:bearsOnTarget <http://example.org/project/theme/0001-deflationary-nulls-and-biomarker-vs-driver> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/7bcf644c6b4652eb> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/evidence-line/0072-goh2022-sars2-tissue-cd68-antigen-weakly-supports-0023> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0023-cross-pathogen-tissue-macrophage-reservoir-generalization> ;
@@ -4259,6 +4279,10 @@
         sci:bearsOnSource <http://example.org/project/source/entities_evidence-lines_0009-shahbaz2025-reverse-reading-supports-axis-perturbation.md> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0003-infection-pais-perturbs-the-reproductive-axis-and-menopausal-timing> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/892b564cbd5b84ea> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/source-snapshot/4d9817e3d0f27935> ;
+        sci:bearsOnTarget <http://example.org/project/theme/0001-deflationary-nulls-and-biomarker-vs-driver> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/895749ebf31ba511> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/7b07ce27e5546f61> ;
         sci:bearsOnTarget <http://example.org/project/concept/thromboinflammation-and-endothelial-dysfunction> ;
@@ -4486,6 +4510,10 @@
     <http://example.org/project/bears-on-edge/8fce1b6296d49bfe> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/evidence-line/0056-bramante2023-covidout-metformin-prevention-supports-0021> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0021-acute-antigen-burden-determines-pais-incidence> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/8fd70879ba0e312a> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/task/t104> ;
+        sci:bearsOnTarget <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/8ff4c4da5957c56f> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/c2d9fab9275c0323> ;
@@ -7155,6 +7183,10 @@
         sci:bearsOnSource <http://example.org/project/paper/bosworth2023> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0022-t010-reinfection-vaccination-risk-recovery> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/e5b3d59ba9fe8b98> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/task/t103> ;
+        sci:bearsOnTarget <http://example.org/project/question/0001-shared-molecular-signature-across-triggers> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/e616993616478429> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/paper/hill2022> ;
         sci:bearsOnTarget <http://example.org/project/interpretation/0031-t079-n3c-vs-opensafely-vehicle-decision> ;
@@ -7575,6 +7607,10 @@
         sci:bearsOnSource <http://example.org/project/source-snapshot/8471406974a78a5b> ;
         sci:bearsOnTarget <http://example.org/project/evidence-line/0067-t055-audit-m2-sfn-harmonization-supports> ;
         a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/f2dedb09736a6a9d> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/task/t103> ;
+        sci:bearsOnTarget <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor> ;
+        a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/f2ebc98554fc31e3> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source/entities_hypotheses_0016-fibrinaloid-microclots-nonspecific-inflammatory-marker.md> ;
         sci:bearsOnTarget <http://example.org/project/hypothesis/0016-fibrinaloid-microclots-nonspecific-inflammatory-marker> ;
@@ -7726,6 +7762,10 @@
     <http://example.org/project/bears-on-edge/f7d01f11c8b05f69> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/7ff32af493606dfd> ;
         sci:bearsOnTarget <http://example.org/project/proposition/0010-cognitive-female-excess-is-self-report-only-absent-in-objective-testing> ;
+        a sci:BearsOnEdge .
+    <http://example.org/project/bears-on-edge/f7e606595e1e17ba> sci:bearsOnDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:bearsOnSource <http://example.org/project/task/t103> ;
+        sci:bearsOnTarget <http://example.org/project/question/0017-deflationary-alternatives-vs-shared-pathophysiology> ;
         a sci:BearsOnEdge .
     <http://example.org/project/bears-on-edge/f80f0e23f16acac7> sci:bearsOnDepth "2"^^<http://www.w3.org/2001/XMLSchema#integer> ;
         sci:bearsOnSource <http://example.org/project/source-snapshot/6f2260f22fe78a3b> ;
@@ -10458,7 +10498,9 @@
         sci:triggeredBy <http://example.org/project/pre-registration/0002-cross-trigger-pathway-overlap>,
             <http://example.org/project/source-snapshot/1a2f9aad6be2cdb4>,
             <http://example.org/project/source-snapshot/f2213317d6dd42d2>,
-            <http://example.org/project/task/t033> ;
+            <http://example.org/project/task/t033>,
+            <http://example.org/project/task/t103>,
+            <http://example.org/project/task/t104> ;
         sci:upstreamChangeAt "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:Hypothesis ;
         skos:prefLabel "Post-acute infection syndromes are a shared dysregulated attractor reachable from many triggers, not merely a shared symptom repertoire" ;
@@ -10739,7 +10781,8 @@
         sci:scope "project" ;
         a sci:Hypothesis ;
         skos:prefLabel "IDO1-IDO2 kinetic imbalance creates a bistable tryptophan metabolic trap in PAIS-susceptible individuals" ;
-        skos:related <http://example.org/project/question/0025-ifn-i-tryptophan-malabsorption-platelet-serotonin-depletion-vagal> ;
+        skos:related <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor>,
+            <http://example.org/project/question/0025-ifn-i-tryptophan-malabsorption-platelet-serotonin-depletion-vagal> ;
         schema:identifier "hypothesis:0013-ido1-ido2-bistable-tryptophan-metabolic-trap" .
     <http://example.org/project/hypothesis/0014-nk-failure-clear-senescent-endothelium-sasp-propagation> sci:freshnessState "fresh" ;
         sci:profile "core" ;
@@ -10747,7 +10790,9 @@
         sci:scope "project" ;
         a sci:Hypothesis ;
         skos:prefLabel "NK-cell failure to clear virus-induced senescent endothelial cells determines PAIS persistence via SASP propagation" ;
-        skos:related <http://example.org/project/question/0010-vascular-microclot-subphenotype> ;
+        skos:related <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor>,
+            <http://example.org/project/hypothesis/0003-immune-exhaustion-feedback>,
+            <http://example.org/project/question/0010-vascular-microclot-subphenotype> ;
         schema:identifier "hypothesis:0014-nk-failure-clear-senescent-endothelium-sasp-propagation" .
     <http://example.org/project/hypothesis/0015-ebv-reactivation-consequence-not-cause-of-pais> sci:freshnessState "fresh" ;
         sci:profile "core" ;
@@ -10755,7 +10800,9 @@
         sci:scope "project" ;
         a sci:Hypothesis ;
         skos:prefLabel "EBV reactivation in post-COVID fatigue is a consequence of immune disruption, not an independent causal mechanism" ;
-        skos:related <http://example.org/project/question/0022-immune-state-displacement-mediator-vs-co-traveler> ;
+        skos:related <http://example.org/project/question/0022-immune-state-displacement-mediator-vs-co-traveler>,
+            <http://example.org/project/question/0051-prior-symptomatic-ebv-mononucleosis-as-pais-risk-amplifier>,
+            <http://example.org/project/question/0054-ebv-reactivation-autoantibody-emergence-temporal-ordering> ;
         schema:identifier "hypothesis:0015-ebv-reactivation-consequence-not-cause-of-pais" .
     <http://example.org/project/hypothesis/0016-fibrinaloid-microclots-nonspecific-inflammatory-marker> sci:freshnessState "fresh" ;
         sci:profile "core" ;
@@ -10763,7 +10810,9 @@
         sci:scope "project" ;
         a sci:Hypothesis ;
         skos:prefLabel "Fibrinaloid microclots in long COVID are a non-specific inflammatory marker, not a disease-specific pathogenic mechanism" ;
-        skos:related <http://example.org/project/question/0010-vascular-microclot-subphenotype>,
+        skos:related <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor>,
+            <http://example.org/project/question/0010-vascular-microclot-subphenotype>,
+            <http://example.org/project/question/0017-deflationary-alternatives-vs-shared-pathophysiology>,
             <http://example.org/project/question/0038-netosis-released-histones-and-extracellular-dna-as-the-structural> ;
         schema:identifier "hypothesis:0016-fibrinaloid-microclots-nonspecific-inflammatory-marker" .
     <http://example.org/project/hypothesis/0017-pem-overdiagnosed-via-self-report-nonspecific> sci:freshnessState "fresh" ;
@@ -10772,7 +10821,9 @@
         sci:scope "project" ;
         a sci:Hypothesis ;
         skos:prefLabel "Post-exertional malaise is substantially overdiagnosed via self-report in long COVID and is not mechanistically specific to PAIS" ;
-        skos:related <http://example.org/project/question/0015-does-pem-requirement-improve-cross-study-comparability> ;
+        skos:related <http://example.org/project/question/0015-does-pem-requirement-improve-cross-study-comparability>,
+            <http://example.org/project/question/0017-deflationary-alternatives-vs-shared-pathophysiology>,
+            <http://example.org/project/question/0049-two-day-cpet-multiomic-pem-assay-across-pais> ;
         schema:identifier "hypothesis:0017-pem-overdiagnosed-via-self-report-nonspecific" .
     <http://example.org/project/hypothesis/0018-circulating-antigen-as-severity-biomarker-not-driver> sci:freshnessState "fresh" ;
         sci:profile "core" ;
@@ -10780,7 +10831,8 @@
         sci:scope "project" ;
         a sci:Hypothesis ;
         skos:prefLabel "Circulating SARS-CoV-2 antigen in long COVID is a severity biomarker, not a symptom driver" ;
-        skos:related <http://example.org/project/question/0002-antigen-clearance-rescues-symptoms> ;
+        skos:related <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment>,
+            <http://example.org/project/question/0002-antigen-clearance-rescues-symptoms> ;
         schema:identifier "hypothesis:0018-circulating-antigen-as-severity-biomarker-not-driver" .
     <http://example.org/project/interpretation/0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating> sci:freshnessState "needs-review" ;
         sci:profile "core" ;
@@ -15438,8 +15490,9 @@
             <http://example.org/project/task/t064>,
             <http://example.org/project/task/t065>,
             <http://example.org/project/task/t066>,
-            <http://example.org/project/task/t068> ;
-        sci:upstreamChangeAt "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+            <http://example.org/project/task/t068>,
+            <http://example.org/project/task/t103> ;
+        sci:upstreamChangeAt "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:Question ;
         skos:prefLabel "Is there a molecular signature that is both shared across PAIS triggers (SARS-CoV-2, Borrelia, EBV, dengue) and specific to failed recovery versus full recovery?" ;
         skos:related <http://example.org/project/discussion/0002-cross-pathogen-pais-signature-convergence>,
@@ -15742,8 +15795,10 @@
         sci:projectStatus "active" ;
         sci:scope "project" ;
         sci:triggeredBy <http://example.org/project/source-snapshot/1a2f9aad6be2cdb4>,
-            <http://example.org/project/source-snapshot/45a27b92dfaca8dd> ;
-        sci:upstreamChangeAt "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+            <http://example.org/project/source-snapshot/45a27b92dfaca8dd>,
+            <http://example.org/project/task/t103>,
+            <http://example.org/project/task/t104> ;
+        sci:upstreamChangeAt "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:Question ;
         skos:prefLabel "Are deflationary alternatives better supported than a shared post-infectious pathophysiology?" ;
         skos:related <http://example.org/project/discussion/0002-cross-pathogen-pais-signature-convergence>,
@@ -16077,6 +16132,7 @@
         sci:scope "project" ;
         a sci:Question ;
         skos:prefLabel "Glymphatic clearance failure as a self-amplifying mechanism for post-infectious neurocognitive symptoms" ;
+        skos:related <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor> ;
         schema:identifier "question:0048-glymphatic-clearance-failure-post-infectious-neurocognitive" .
     <http://example.org/project/question/0049-two-day-cpet-multiomic-pem-assay-across-pais> sci:freshnessState "fresh" ;
         sci:profile "core" ;
@@ -16084,7 +16140,9 @@
         sci:scope "project" ;
         a sci:Question ;
         skos:prefLabel "Standardized 2-day CPET with concurrent multi-omic sampling as mechanistic PEM assay across PAIS" ;
-        skos:related <http://example.org/project/question/0011-mitochondrial-basis-of-pem>,
+        skos:related <http://example.org/project/hypothesis/0017-pem-overdiagnosed-via-self-report-nonspecific>,
+            <http://example.org/project/question/0011-mitochondrial-basis-of-pem>,
+            <http://example.org/project/question/0015-does-pem-requirement-improve-cross-study-comparability>,
             <http://example.org/project/question/0028-ambulatory-within-person-wearable-ema-protocol-for-pem-phenotyping> ;
         schema:identifier "question:0049-two-day-cpet-multiomic-pem-assay-across-pais" .
     <http://example.org/project/question/0050-cross-pathogen-co-enrollment-harmonized-multiomics-design> sci:freshnessState "fresh" ;
@@ -16093,7 +16151,9 @@
         sci:scope "project" ;
         a sci:Question ;
         skos:prefLabel "Prospective cross-pathogen co-enrollment design with harmonized multi-omic protocols to distinguish shared from trigger-specific PAIS mechanisms" ;
-        skos:related <http://example.org/project/question/0001-shared-molecular-signature-across-triggers> ;
+        skos:related <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor>,
+            <http://example.org/project/question/0001-shared-molecular-signature-across-triggers>,
+            <http://example.org/project/question/0017-deflationary-alternatives-vs-shared-pathophysiology> ;
         schema:identifier "question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design" .
     <http://example.org/project/question/0051-prior-symptomatic-ebv-mononucleosis-as-pais-risk-amplifier> sci:freshnessState "fresh" ;
         sci:profile "core" ;
@@ -16101,6 +16161,8 @@
         sci:scope "project" ;
         a sci:Question ;
         skos:prefLabel "Prior symptomatic EBV mononucleosis as a risk amplifier for subsequent PAIS" ;
+        skos:related <http://example.org/project/hypothesis/0015-ebv-reactivation-consequence-not-cause-of-pais>,
+            <http://example.org/project/question/0054-ebv-reactivation-autoantibody-emergence-temporal-ordering> ;
         schema:identifier "question:0051-prior-symptomatic-ebv-mononucleosis-as-pais-risk-amplifier" .
     <http://example.org/project/question/0052-acute-clearance-rate-as-cross-pathogen-pais-trajectory-predictor> sci:freshnessState "fresh" ;
         sci:profile "core" ;
@@ -16108,7 +16170,8 @@
         sci:scope "project" ;
         a sci:Question ;
         skos:prefLabel "Acute pathogen clearance rate as a cross-pathogen predictor of PAIS trajectory" ;
-        skos:related <http://example.org/project/question/0003-acute-severity-threshold-for-self-sustaining-pais> ;
+        skos:related <http://example.org/project/hypothesis/0004-acute-severity-threshold>,
+            <http://example.org/project/question/0003-acute-severity-threshold-for-self-sustaining-pais> ;
         schema:identifier "question:0052-acute-clearance-rate-as-cross-pathogen-pais-trajectory-predictor" .
     <http://example.org/project/question/0053-gut-microbiome-normalization-kinetics-leading-vs-lagging> sci:freshnessState "fresh" ;
         sci:profile "core" ;
@@ -16116,7 +16179,8 @@
         sci:scope "project" ;
         a sci:Question ;
         skos:prefLabel "Gut microbiome normalization kinetics as leading or lagging indicator of PAIS resolution" ;
-        skos:related <http://example.org/project/question/0045-temporal-causal-ordering-of-homeostatic-domain-failure-in-the-post-acute> ;
+        skos:related <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor>,
+            <http://example.org/project/question/0045-temporal-causal-ordering-of-homeostatic-domain-failure-in-the-post-acute> ;
         schema:identifier "question:0053-gut-microbiome-normalization-kinetics-leading-vs-lagging" .
     <http://example.org/project/question/0054-ebv-reactivation-autoantibody-emergence-temporal-ordering> sci:freshnessState "fresh" ;
         sci:profile "core" ;
@@ -16124,7 +16188,10 @@
         sci:scope "project" ;
         a sci:Question ;
         skos:prefLabel "Causal temporal ordering of EBV reactivation and autoantibody emergence in PAIS" ;
-        skos:related <http://example.org/project/question/0045-temporal-causal-ordering-of-homeostatic-domain-failure-in-the-post-acute> ;
+        skos:related <http://example.org/project/hypothesis/0015-ebv-reactivation-consequence-not-cause-of-pais>,
+            <http://example.org/project/question/0009-functional-autoantibodies-drive-dysautonomia>,
+            <http://example.org/project/question/0045-temporal-causal-ordering-of-homeostatic-domain-failure-in-the-post-acute>,
+            <http://example.org/project/question/0051-prior-symptomatic-ebv-mononucleosis-as-pais-risk-amplifier> ;
         schema:identifier "question:0054-ebv-reactivation-autoantibody-emergence-temporal-ordering" .
     <http://example.org/project/report/0001-bias-audit-menopause-pais-total-effect> sci:bearsOn <http://example.org/project/discussion/0001-menopause-timing-pais-rival-models>,
             <http://example.org/project/report/0002-t029-second-pass-menopause-pais-pre-registration-review>,
@@ -16664,6 +16731,7 @@
     <http://example.org/project/source-snapshot/4c0a61b620db5098> sci:bearsOn <http://example.org/project/paper/douaud2022> .
     <http://example.org/project/source-snapshot/4c5066ff5a238c27> sci:bearsOn <http://example.org/project/proposition/0026-lc-jakstat-exhaustion-loop-is-proximal-driver> .
     <http://example.org/project/source-snapshot/4d3166e7f7c6dcf2> sci:bearsOn <http://example.org/project/proposition/0019-pais-sfn-immunomodulation-modifies-lesion-trajectory> .
+    <http://example.org/project/source-snapshot/4d9817e3d0f27935> sci:bearsOn <http://example.org/project/theme/0001-deflationary-nulls-and-biomarker-vs-driver> .
     <http://example.org/project/source-snapshot/4e2f73a38c0de467> sci:bearsOn <http://example.org/project/evidence-line/0029-xie2022-ambulatory-male-vte-excess-survives-low-severity-stratum>,
             <http://example.org/project/proposition/0012-vascular-hard-endpoint-male-reversal-survives-severity-adjustment> .
     <http://example.org/project/source-snapshot/4e3bb5e0308d72bb> sci:bearsOn <http://example.org/project/search/0009-pre-infection-autoimmune-diathesis-sex-longcovid-pais> .
@@ -17306,6 +17374,7 @@
     <http://example.org/project/source-snapshot/e04744ecbe27b971> sci:bearsOn <http://example.org/project/evidence-line/0004-mishra2020-acute-covid-adjustment-attenuation-disputes-stage-threshold>,
             <http://example.org/project/proposition/0001-reproductive-stage-transition-shifts-the-failed-recovery-threshold> .
     <http://example.org/project/source-snapshot/e09a1e9d4f7b11e7> sci:bearsOn <http://example.org/project/paper/seo2025> .
+    <http://example.org/project/source-snapshot/e135649e0878979e> sci:bearsOn <http://example.org/project/theme/0002-temporal-ordering-and-causal-kinetics> .
     <http://example.org/project/source-snapshot/e13cd166c6fcf3e8> sci:bearsOn <http://example.org/project/paper/huang2025> .
     <http://example.org/project/source-snapshot/e1970032d341a9ec> sci:bearsOn <http://example.org/project/interpretation/0008-t019-hrt-evidence-audit-no-admissible-pais-test>,
             <http://example.org/project/paper/stewart2021> .
@@ -17764,6 +17833,8 @@
     <http://example.org/project/source/entities_synthesis_0007-autoimmune-sfn-peripheral-dysautonomia-substrate.md> sci:bearsOn <http://example.org/project/synthesis/0007-autoimmune-sfn-peripheral-dysautonomia-substrate> .
     <http://example.org/project/source/entities_synthesis_0008-project-synthesis-rollup.md> sci:bearsOn <http://example.org/project/synthesis/0008-project-synthesis-rollup> .
     <http://example.org/project/source/entities_synthesis_0009-emergent-threads.md> sci:bearsOn <http://example.org/project/synthesis/0009-emergent-threads> .
+    <http://example.org/project/source/entities_themes_0001-deflationary-nulls-and-biomarker-vs-driver.md> sci:bearsOn <http://example.org/project/theme/0001-deflationary-nulls-and-biomarker-vs-driver> .
+    <http://example.org/project/source/entities_themes_0002-temporal-ordering-and-causal-kinetics.md> sci:bearsOn <http://example.org/project/theme/0002-temporal-ordering-and-causal-kinetics> .
     <http://example.org/project/synthesis/0001-shared-dysregulated-attractor> sci:freshnessState "needs-review" ;
         sci:profile "core" ;
         sci:projectStatus "active" ;
@@ -18688,6 +18759,72 @@
         a sci:Task ;
         skos:prefLabel "Backfill lens_views on explore-2026-07-04 entities" ;
         schema:identifier "task:t102" .
+    <http://example.org/project/task/t103> sci:bearsOn <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor>,
+            <http://example.org/project/question/0001-shared-molecular-signature-across-triggers>,
+            <http://example.org/project/question/0017-deflationary-alternatives-vs-shared-pathophysiology>,
+            <http://example.org/project/question/0050-cross-pathogen-co-enrollment-harmonized-multiomics-design> ;
+        sci:profile "core" ;
+        sci:projectStatus "proposed" ;
+        sci:scope "project" ;
+        sci:tests <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor>,
+            <http://example.org/project/question/0001-shared-molecular-signature-across-triggers>,
+            <http://example.org/project/question/0017-deflationary-alternatives-vs-shared-pathophysiology>,
+            <http://example.org/project/question/0050-cross-pathogen-co-enrollment-harmonized-multiomics-design> ;
+        a sci:Task ;
+        skos:prefLabel "Scope/feasibility of the ≥3-trigger harmonized cross-pathogen co-enrollment study (q0050)" ;
+        schema:identifier "task:t103" .
+    <http://example.org/project/task/t104> sci:bearsOn <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor>,
+            <http://example.org/project/question/0017-deflationary-alternatives-vs-shared-pathophysiology> ;
+        sci:profile "core" ;
+        sci:projectStatus "proposed" ;
+        sci:scope "project" ;
+        sci:tests <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor>,
+            <http://example.org/project/question/0017-deflationary-alternatives-vs-shared-pathophysiology> ;
+        a sci:Task ;
+        skos:prefLabel "Score new deflationary nulls (h0015-h0018) against h0001 in next bias-audit" ;
+        skos:related <http://example.org/project/theme/0001-deflationary-nulls-and-biomarker-vs-driver> ;
+        schema:identifier "task:t104" .
+    <http://example.org/project/task/t105> sci:profile "core" ;
+        sci:projectStatus "proposed" ;
+        sci:scope "project" ;
+        a sci:Task ;
+        skos:prefLabel "Ground 2026-07-06 explore entities: add key anchor papers to bib/paper entities" ;
+        skos:related <http://example.org/project/theme/0001-deflationary-nulls-and-biomarker-vs-driver>,
+            <http://example.org/project/theme/0002-temporal-ordering-and-causal-kinetics> ;
+        schema:identifier "task:t105" .
+    <http://example.org/project/theme/0001-deflationary-nulls-and-biomarker-vs-driver> sci:freshnessState "fresh" ;
+        sci:profile "core" ;
+        sci:projectStatus "active" ;
+        sci:scope "project" ;
+        a sci:Theme ;
+        skos:prefLabel "Deflationary nulls and biomarker-versus-driver adjudication" ;
+        skos:related <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor>,
+            <http://example.org/project/hypothesis/0010-the-pais-attractor-is-a-slow-heterogeneous-recovery-gradient-not-a>,
+            <http://example.org/project/hypothesis/0011-acute-illness-severity-does-not-predict-chronic-fatigue-in-pais-only>,
+            <http://example.org/project/hypothesis/0012-pais-fatigue-cognitive-symptoms-are-a-trigger-nonspecific-neuroimmune>,
+            <http://example.org/project/hypothesis/0015-ebv-reactivation-consequence-not-cause-of-pais>,
+            <http://example.org/project/hypothesis/0016-fibrinaloid-microclots-nonspecific-inflammatory-marker>,
+            <http://example.org/project/hypothesis/0017-pem-overdiagnosed-via-self-report-nonspecific>,
+            <http://example.org/project/hypothesis/0018-circulating-antigen-as-severity-biomarker-not-driver>,
+            <http://example.org/project/question/0017-deflationary-alternatives-vs-shared-pathophysiology>,
+            <http://example.org/project/question/0022-immune-state-displacement-mediator-vs-co-traveler>,
+            <http://example.org/project/topic/measurement-ascertainment-artifacts-in-pais> ;
+        schema:identifier "theme:0001-deflationary-nulls-and-biomarker-vs-driver" .
+    <http://example.org/project/theme/0002-temporal-ordering-and-causal-kinetics> sci:freshnessState "fresh" ;
+        sci:profile "core" ;
+        sci:projectStatus "active" ;
+        sci:scope "project" ;
+        a sci:Theme ;
+        skos:prefLabel "Temporal ordering and causal kinetics of PAIS onset and resolution" ;
+        skos:related <http://example.org/project/hypothesis/0010-the-pais-attractor-is-a-slow-heterogeneous-recovery-gradient-not-a>,
+            <http://example.org/project/question/0036-critical-slowing-down-fingerprints-as-pre-chronification-early-warning>,
+            <http://example.org/project/question/0037-latent-homeostatic-fragility-after-pais-recovery-lower-re-entry>,
+            <http://example.org/project/question/0045-temporal-causal-ordering-of-homeostatic-domain-failure-in-the-post-acute>,
+            <http://example.org/project/question/0046-mechanistic-basis-of-the-time-limited-acute-phase-intervention-window>,
+            <http://example.org/project/question/0052-acute-clearance-rate-as-cross-pathogen-pais-trajectory-predictor>,
+            <http://example.org/project/question/0053-gut-microbiome-normalization-kinetics-leading-vs-lagging>,
+            <http://example.org/project/question/0054-ebv-reactivation-autoantibody-emergence-temporal-ordering> ;
+        schema:identifier "theme:0002-temporal-ordering-and-causal-kinetics" .
     <http://example.org/project/topic/antigen-pathogen-persistence> sci:profile "core" ;
         sci:projectStatus "active" ;
         sci:scope "project" ;
@@ -24699,10 +24836,10 @@
         prov:wasDerivedFrom <http://example.org/project/paper/eatonfitch2024>,
             <http://example.org/project/source/entities_evidence-lines_0089-eatonfitch2024-mecfs-longcovid-exhaustion-panel-supports-cross-pais-axis.md> .
     <http://example.org/project/graph_revision> a prov:Entity ;
-        schema:dateModified "2026-07-06T12:30:09+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        schema:dateModified "2026-07-06T21:39:42+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
         schema:name "graph-revision" ;
-        schema:sha256 "8e3a0082318bbe23de9c8dc769d03de4c9fddf14c8d3531176519c1187e89a6e" ;
-        schema:text "{\"AGENTS.md\":{\"mtime_ns\":1783341009670946606,\"sha256\":\"5f0bf6c7a760a68ec5ac6c1f9fe0b992cf34c348f4319e683de11e8a7131a6a4\"},\"CLAUDE.md\":{\"mtime_ns\":1781147463250691381,\"sha256\":\"336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49\"},\"README.md\":{\"mtime_ns\":1781147663204698837,\"sha256\":\"f0f899d877fc4aabd7b61ee78ae1ff175565dc5b50cb2363393fd2572e31bccb\"},\"code/menopause_dag/adjustment_sets_v2.txt\":{\"mtime_ns\":1782047312048964239,\"sha256\":\"14599e14869c439fba20e73bd3da5eeb1a979eb56ac16433133b6478278043f1\"},\"code/menopause_dag/check_adjustment_sets_fresh.py\":{\"mtime_ns\":1782485284724417861,\"sha256\":\"465e38d70f9cba27af3992dd068183e747f1c7440d69b389529f77184b939e56\"},\"code/menopause_dag/derive_adjustment_sets.py\":{\"mtime_ns\":1782387175759936704,\"sha256\":\"3968823d5953db127043d6e92eba6ffe2c47b675b9d21b737d7192f2f8bec2a9\"},\"code/notebooks/.gitkeep\":{\"mtime_ns\":1781147422769689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/notebooks/pyproject.toml\":{\"mtime_ns\":1781899798260793972,\"sha256\":\"2b42c8d904796817391a5bb60258cd5452a93af6de07cca8c15eab3f0e2453bf\"},\"code/notebooks/uv.lock\":{\"mtime_ns\":1781899809390092264,\"sha256\":\"52f03631f51792685609210bb7470a2fd43ff392aa9c900aec584b920f47ea2b\"},\"code/notebooks/viz.py\":{\"mtime_ns\":1782387175760604036,\"sha256\":\"129cd77d253bff9796aac84758f3ad3f88c3999e0bf2925b6ea33ef46179b0d1\"},\"code/scripts/.gitkeep\":{\"mtime_ns\":1781147422770689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/scripts/__pycache__/_verdict_lib.cpython-312.pyc\":{\"mtime_ns\":1782035646208261650,\"sha256\":\"ff5a7f597d6e3d17945ae08e338bc9a966fffe83c2362da5b281ab5c72a82ddf\"},\"code/scripts/__pycache__/_verdict_lib.cpython-313.pyc\":{\"mtime_ns\":1782035561507997020,\"sha256\":\"26d19b5c75152cc7a072f024a3f378888aab3fb5a9bb6505ff80e21f0dd78f9d\"},\"code/scripts/__pycache__/acquire_common.cpython-312.pyc\":{\"mtime_ns\":1782481088599624770,\"sha256\":\"13ede5b932b427369c63b7decba71036d6794e03fc7bbc92227f7bea913d6505\"},\"code/scripts/__pycache__/acquire_common.cpython-313.pyc\":{\"mtime_ns\":1782480923435176166,\"sha256\":\"d3fa5e9e2b2ac50350c54fe5d232cac01164b14178a26e155ae1c6052b23477f\"},\"code/scripts/__pycache__/acquire_common.cpython-314.pyc\":{\"mtime_ns\":1781985082077708443,\"sha256\":\"8ccd0ef0fab0fe7d8324cea653b4aff4db12899f756e52a5dd5be7617321e508\"},\"code/scripts/__pycache__/compartment.cpython-313.pyc\":{\"mtime_ns\":1782035561513975111,\"sha256\":\"d8ea787f191bf0a18dbc6389de0b89e44dd9100fd9fe1669c8b1ae7800e286ea\"},\"code/scripts/__pycache__/db_robustness.cpython-313.pyc\":{\"mtime_ns\":1782035561513323479,\"sha256\":\"92aa74cd72dc8b0d2c84552940388392c3025f07eebcbc7d97b6c8d03b27cc38\"},\"code/scripts/__pycache__/emit_clean_base_datapackages.cpython-313.pyc\":{\"mtime_ns\":1782488570327259503,\"sha256\":\"19101e748dcfe48ea4f3a449174c6623c7306925f8e237574eb74fa210de9221\"},\"code/scripts/__pycache__/emit_results_datapackage.cpython-313.pyc\":{\"mtime_ns\":1782486625626601318,\"sha256\":\"38d2dcc3800b73166d60389328ab52471b0ccb92bc46fc02f05f2d1514098d15\"},\"code/scripts/__pycache__/extract_gse130353.cpython-314.pyc\":{\"mtime_ns\":1781985082066476521,\"sha256\":\"ec51ff1194340147b3f4a5b95b75dda2be6cf99b80307e6316d87a0d4ef62a6c\"},\"code/scripts/__pycache__/parse_gse14577.cpython-314.pyc\":{\"mtime_ns\":1781985082090113676,\"sha256\":\"992c93a2986e886762da5114f5c5acca154a588c49abf29bc77b5fee1bf9bb0c\"},\"code/scripts/__pycache__/qa_checkpoint.cpython-313.pyc\":{\"mtime_ns\":1782481059068902956,\"sha256\":\"a04524fe0d54a542033911078e3ae38daf80f322f3895d837ffdd27d2424226c\"},\"code/scripts/__pycache__/qa_results.cpython-313.pyc\":{\"mtime_ns\":1782481838511262287,\"sha256\":\"d9aff3d82c4fff7f29e3a3f250bb363c9a585607620961f0c56137b52098eb0c\"},\"code/scripts/__pycache__/specificity.cpython-313.pyc\":{\"mtime_ns\":1782035561509162957,\"sha256\":\"94c4ea50f714c04bd7851d5b47692748459e18440bae2a46188cbdc06a458169\"},\"code/scripts/__pycache__/theme_rollup.cpython-313.pyc\":{\"mtime_ns\":1782035561512435824,\"sha256\":\"c5b4ef711a471ffb2d013c5240ac1237dd81473a2a456f020934cccbf9e24111\"},\"code/scripts/__pycache__/verdict.cpython-313.pyc\":{\"mtime_ns\":1782042417325499258,\"sha256\":\"c465619118a4c06aa8f97e97dd935396033165d0870dd79acb512db7c055b327\"},\"code/scripts/_verdict_lib.py\":{\"mtime_ns\":1782495804406864251,\"sha256\":\"23e73795dd8df17be199560ecc59a59775e0ff74696cbd84428266168b0ee275\"},\"code/scripts/acquire_common.py\":{\"mtime_ns\":1782495804407766222,\"sha256\":\"c707de8057358793f4f1f1bd050cd4af229da4691bdb03882902c8b043cb09b6\"},\"code/scripts/collapse_probes.R\":{\"mtime_ns\":1782495804429405191,\"sha256\":\"d3ff15609e6100a1c39d61c0427fb56b93d579f8aec25c4b69cf698d4060ec84\"},\"code/scripts/compartment.py\":{\"mtime_ns\":1782495804408514065,\"sha256\":\"9316f04fab3921c67ae11565b68a760551ae44e97633f6e93908bdd654197822\"},\"code/scripts/concordance.py\":{\"mtime_ns\":1782495804408857679,\"sha256\":\"4cb2f98b542df05968461b7581c47729b9fa63cc8317741fd0f7acb3c8d32108\"},\"code/scripts/db_robustness.py\":{\"mtime_ns\":1782495804409723318,\"sha256\":\"7abefee9d668f5ec250ccc0bce93cb59c0db4bb09779f7d2686c164cc17c9bb9\"},\"code/scripts/emit_clean_base_datapackages.py\":{\"mtime_ns\":1782497347570638283,\"sha256\":\"2aecfa8c851d70d28ba57aaf6ede50a2cc8f0dee0d92ca7320274f041aae23a7\"},\"code/scripts/emit_datapackage.py\":{\"mtime_ns\":1782495804414779464,\"sha256\":\"f71f9ad0e5e52931294b8c7cea3eb4306ce2d71d91e66f6ba2c4a9781c8e29ca\"},\"code/scripts/emit_results_datapackage.py\":{\"mtime_ns\":1782495804415506878,\"sha256\":\"55eea22b62e1f2d51d70e63d3ae9e4fb408ed4055b634bd756402951545fd4c8\"},\"code/scripts/emit_theme_spec.py\":{\"mtime_ns\":1782495804416209065,\"sha256\":\"ba11ec81c2f7be5ed4b02ec77e9a815909b2d2a753184f18af28e2b11ea6216f\"},\"code/scripts/emit_workflow_run_qa_audit_package.py\":{\"mtime_ns\":1782495804416916231,\"sha256\":\"fb50cc7de5c9045ae75af6874d98ebe45b5aad83281f6c8ec005f0f254ae64dc\"},\"code/scripts/extract_gse130353.py\":{\"mtime_ns\":1782495804417335808,\"sha256\":\"9dabb71ad750d99d6f26d02d99fe7f326f8dba5cc31c2ca8965f92227eafbdab\"},\"code/scripts/fetch_url.py\":{\"mtime_ns\":1782495804417854861,\"sha256\":\"939781978c8f4af4dff9359db3a4d0ac6d6e629de3efcf23fa9cf87974d663a0\"},\"code/scripts/fgsea_enrich.R\":{\"mtime_ns\":1782495804429865764,\"sha256\":\"fc01fbba442328a13abc1ed70b7348301d871f9d65ddbeda361ad9979da8f05f\"},\"code/scripts/g1_acquire.py\":{\"mtime_ns\":1782495804418360168,\"sha256\":\"36c7659c18f5b1d8225f17259a68fcbae8dc7d1d358f9a331aeb934340b39270\"},\"code/scripts/genesets_reference.R\":{\"mtime_ns\":1782495804434016057,\"sha256\":\"372d95e52d8937100b8483aae643c98f16fbb61b4b2f5d5b07043980620d1018\"},\"code/scripts/harmonize_gse130353.py\":{\"mtime_ns\":1782495804418693353,\"sha256\":\"8c9991f42c06093df72712b7d8a6768fde455990e9ba1804fdc962ae4a0afcf3\"},\"code/scripts/harmonize_gse14577.R\":{\"mtime_ns\":1782495804434723317,\"sha256\":\"f8c108d9898cb3bf2a8c5951b16b409558e9f00655d5115be742ce1e2896c7b7\"},\"code/scripts/limma_de.R\":{\"mtime_ns\":1782495804435708070,\"sha256\":\"32ba64c4b148a83bcbe14d91cd2402223f99a053675824e9df8f06710e5dff07\"},\"code/scripts/near_zero_filter.py\":{\"mtime_ns\":1782495804421723318,\"sha256\":\"5ce937e31166ecb3bea70401c7092276ba1808884b272317c2959f518bc3e055\"},\"code/scripts/parse_gse14577.py\":{\"mtime_ns\":1782495804423721061,\"sha256\":\"5c7baa41538c08fabb108383e7de52ff9dc71b967d35d2a4092072dc8975a0af\"},\"code/scripts/permutation_null.R\":{\"mtime_ns\":1782495804437723317,\"sha256\":\"d107e6691f2b2225ff2fecd9cab1b84a5bac6e1bb222b4cd72052e63c57e851b\"},\"code/scripts/prepare_genesets.R\":{\"mtime_ns\":1782496956546659831,\"sha256\":\"cc42a947c8a1c74e20656eee8f0e18c8edd0a7b0adf67d886d412e811bcb8237\"},\"code/scripts/qa_checkpoint.py\":{\"mtime_ns\":1782495874523719455,\"sha256\":\"07e1c9f16ffdb38e022b7fc1b2bf59d80bb04ec1213c030a40c17b020319ff75\"},\"code/scripts/qa_genesets.R\":{\"mtime_ns\":1782497271793642459,\"sha256\":\"c6f60a6168959c213bb1ae0429ef88f393c1f30edf9fcacbd24a282a7612719e\"},\"code/scripts/qa_results.py\":{\"mtime_ns\":1782495875326719410,\"sha256\":\"cfc85c1cef289a874843d3c0047cc2b6f6c7de1e58842a9453d901cc4b62db3a\"},\"code/scripts/specificity.py\":{\"mtime_ns\":1782495804426826355,\"sha256\":\"3bd2faef85a45505cfdd0ac9480b2ddeb109ef1a05243d10417ff6d35f3b1c5a\"},\"code/scripts/theme_rollup.py\":{\"mtime_ns\":1782495804427448591,\"sha256\":\"0112f1c9d0400a4663d43499f7ba591a031569f9248824c9e5d595bf09ba5874\"},\"code/scripts/verdict.py\":{\"mtime_ns\":1782495804427880652,\"sha256\":\"25fce8ec079e229f37582f6c3e43b455a49edb63e2ff2f55151d78051407c9e8\"},\"code/scripts/verify_sha256.py\":{\"mtime_ns\":1782495804428810155,\"sha256\":\"f080f531366bc96cfcf893e35c9836109a90783ed5128808d013473f485fc940\"},\"code/tests/test_qa_checkpoint.py\":{\"mtime_ns\":1782387175766807579,\"sha256\":\"61b8da3c8ee146c1373724c86e88f71b59622655b76e0e10549f34831a2e999e\"},\"code/tests/test_verdict_mechanics.py\":{\"mtime_ns\":1782387175767060734,\"sha256\":\"746e9aa4b012e44caa3bb16308658723278dcfa8c226f63a125eefeacc99ad84\"},\"code/workflows/.gitkeep\":{\"mtime_ns\":1781147422772689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/workflows/Snakefile\":{\"mtime_ns\":1782496927101661453,\"sha256\":\"810bf66f2acd2b85d301eb6cd8589d4cbd1f7a49f2735972aa585f4c3296baea\"},\"code/workflows/config.yaml\":{\"mtime_ns\":1782480822946652053,\"sha256\":\"09e7a75e711977234480542a41d09fdfbc58169bc5fc067789b9feef7f24f348\"},\"code/workflows/envs/py.conda-lock.yml\":{\"mtime_ns\":1781983013699507352,\"sha256\":\"e511411ee467e2020b489784bcd435b36da20dce445c07a24bb5956a99f5aa8e\"},\"code/workflows/envs/py.yaml\":{\"mtime_ns\":1781982449310538453,\"sha256\":\"fa88b4a99a24fdd3cf2d5ce5057a0b1472f3853449b25498e37349561eb4740f\"},\"code/workflows/envs/r-bioc.conda-lock.yml\":{\"mtime_ns\":1781983603164474870,\"sha256\":\"604651cf5bb985aa7fdb1fed55e76001939e04d6d4d53dc57e47e9de3565746e\"},\"code/workflows/envs/r-bioc.yaml\":{\"mtime_ns\":1781983513715479799,\"sha256\":\"6bcebe04fd8d2742a81fedd4668c20535e3cafb488562a1a3fc6fa41d5a8a6ed\"},\"code/workflows/rules/acquire.smk\":{\"mtime_ns\":1782495804444850073,\"sha256\":\"432238f5c27ecb50e73b73e7f8617b1751af8fd448a05f8f28a144ee0ccf024e\"},\"code/workflows/rules/common.smk\":{\"mtime_ns\":1782495804445464866,\"sha256\":\"cf64920e64782c1063ace887f8ac94c15e8c887362ce3c9b55546671ec687aa4\"},\"code/workflows/rules/enrich.smk\":{\"mtime_ns\":1782495804445836744,\"sha256\":\"8f852b0df71ead32a9cbc5c3065acb786c7010211dbcb1ed0606b0da964d2f65\"},\"code/workflows/rules/harmonize.smk\":{\"mtime_ns\":1782495804446044273,\"sha256\":\"ce1946e7588c1479da698e69dcfec328358dedcf41d9855f5f2cc1a3d99ac208\"},\"code/workflows/rules/prepare.smk\":{\"mtime_ns\":1782496926357661494,\"sha256\":\"5372e2d601058914ba7b2c3bb0f101941e1f344d70b9d8c6c2d319c33d476d5d\"},\"code/workflows/rules/qa.smk\":{\"mtime_ns\":1782496926742661473,\"sha256\":\"e4742939e36381e5b8ca285cb82388c9978921756ae359d178fbc94457d0dc1a\"},\"code/workflows/rules/verdict.smk\":{\"mtime_ns\":1782495876168719364,\"sha256\":\"2a19d52ed3c34596a8eafe258f60f8c8c19cf20e5dfb9df2e2a91647a8315fab\"},\"code/workflows/rules/verify.smk\":{\"mtime_ns\":1782495804449692113,\"sha256\":\"61f627ea37159824ab15895de3575ad1cea33fd811e89d652521f34f9993d9c8\"},\"code/workflows/wave1-mr-hormone/Snakefile\":{\"mtime_ns\":1783254329462211249,\"sha256\":\"4dd65fdaefdced2988d2c761292dd0bbb2f020cb9d7862be00fec0c8a188b43a\"},\"code/workflows/wave1-mr-hormone/config.yaml\":{\"mtime_ns\":1783254329462211249,\"sha256\":\"fccc4bf2b725905c4617c1c97b4c2543aa1b904b512f99e41b2fa045f0e32bce\"},\"code/workflows/wave1-mr-hormone/envs/r-mr.conda-lock.yml\":{\"mtime_ns\":1783203254537306657,\"sha256\":\"dee85ca57bd465dab91bf92ee1aa4d304c91e6afd1140b011c7b072f6a884995\"},\"code/workflows/wave1-mr-hormone/envs/r-mr.yaml\":{\"mtime_ns\":1783203254537306657,\"sha256\":\"8cdf09f0701ff82d19f03f31b5074acef123fb86a79a6bec76144d81798f5136\"},\"code/workflows/wave1-mr-hormone/envs/stage.yaml\":{\"mtime_ns\":1783182233151522767,\"sha256\":\"136a91eb25a2eb4af45b0c59e2187ad58982c6a34e068259c9e1cb162e9d5bcd\"},\"code/workflows/wave1-mr-hormone/scripts/__pycache__/acquire_sumstats.cpython-313.pyc\":{\"mtime_ns\":1783191539896729088,\"sha256\":\"30887d46f855099bf3a14ee4acbf92bf6c4fea4c4052f294845504f5d92f15c8\"},\"code/workflows/wave1-mr-hormone/scripts/__pycache__/acquire_sumstats.cpython-314.pyc\":{\"mtime_ns\":1783182290459517049,\"sha256\":\"94185ad0bfcd076696ccb52b514df599e91ff86eab5876a917a4df51af650846\"},\"code/workflows/wave1-mr-hormone/scripts/__pycache__/stage_ld.cpython-314.pyc\":{\"mtime_ns\":1783182290461485981,\"sha256\":\"f0275cf517143ac0e15024d9e2c503cb256957de137701e3692a918c92648f9e\"},\"code/workflows/wave1-mr-hormone/scripts/__pycache__/stage_ldsc_ref.cpython-313.pyc\":{\"mtime_ns\":1783190636104328317,\"sha256\":\"948a4db2e9515a975df0900f21a7049285face318836c88a871091d3e0061aba\"},\"code/workflows/wave1-mr-hormone/scripts/__pycache__/stage_ldsc_ref.cpython-314.pyc\":{\"mtime_ns\":1783182893892022657,\"sha256\":\"93aecf885d914759c17647821344951eba947b471776f863198c6869309d2cdf\"},\"code/workflows/wave1-mr-hormone/scripts/acquire_sumstats.py\":{\"mtime_ns\":1783191490525867975,\"sha256\":\"8f063c1966606f1e45d0b8b9281bf843dce7a537cdeeecd616b85bb97e7873b8\"},\"code/workflows/wave1-mr-hormone/scripts/aggregate_instruments.py\":{\"mtime_ns\":1783203254537306657,\"sha256\":\"13f49df2f9d25a13fd39efd14d1fea365d05ad0f686bb90043a0f7901ec3ae70\"},\"code/workflows/wave1-mr-hormone/scripts/aggregate_mr.py\":{\"mtime_ns\":1783254329462211249,\"sha256\":\"5db6db3682ba78a534211977ac2f408d84049b46602048735ce0ba179f796f4f\"},\"code/workflows/wave1-mr-hormone/scripts/build_instrument.R\":{\"mtime_ns\":1783203254537306657,\"sha256\":\"990e8e49857c53e6a4477c1754b056769649fe6783808262547d8ced00ac5d5b\"},\"code/workflows/wave1-mr-hormone/scripts/harmonize_estimate.R\":{\"mtime_ns\":1783254329462211249,\"sha256\":\"57c1dc8446b63646dd42ef46c86b321b454a99b64cd24a3aea12d4e6a0bc25a0\"},\"code/workflows/wave1-mr-hormone/scripts/setup_twosamplemr.R\":{\"mtime_ns\":1783203254537306657,\"sha256\":\"6e959e6f333404ac11634491c333e697a4ab06b617b8638cf564cc3d432019b7\"},\"code/workflows/wave1-mr-hormone/scripts/stage_ld.py\":{\"mtime_ns\":1783182208009521829,\"sha256\":\"537d2109e4f7e5ef679325760b9fead8c6690fbd9a7e2a27d8af1af6bfbdd1d5\"},\"code/workflows/wave1-mr-hormone/scripts/stage_ldsc_ref.py\":{\"mtime_ns\":1783190354355825608,\"sha256\":\"c4ce1f0256a45af8631cf5a11cd6116277ca04489bf3cf414f62a3f8826386fa\"},\"code/workflows/wave1-mr-hormone/tests/test_guards.sh\":{\"mtime_ns\":1783254329462211249,\"sha256\":\"ed2f08b4c6e02b244fa461288407aa1a8839ba6e87f4f5d073bf0eb51cb0b37c\"},\"code/workflows/wave1-mr/Snakefile\":{\"mtime_ns\":1783168458015009090,\"sha256\":\"fb71a0afdc472bf722d2b789b0a01fef226e28141a246aae5b0759ff6cca3386\"},\"code/workflows/wave1-mr/config.yaml\":{\"mtime_ns\":1783169650161053545,\"sha256\":\"b119d5dc1184754ec11d540fb5b77ccbd60c3b5cddd05f14deda02bc2b9bb038\"},\"code/workflows/wave1-mr/envs/r-mr.conda-lock.yml\":{\"mtime_ns\":1783171467685121321,\"sha256\":\"dee85ca57bd465dab91bf92ee1aa4d304c91e6afd1140b011c7b072f6a884995\"},\"code/workflows/wave1-mr/envs/r-mr.yaml\":{\"mtime_ns\":1783171389137118392,\"sha256\":\"8cdf09f0701ff82d19f03f31b5074acef123fb86a79a6bec76144d81798f5136\"},\"code/workflows/wave1-mr/scripts/__pycache__/acquire_sumstats.cpython-313.pyc\":{\"mtime_ns\":1783169190003610803,\"sha256\":\"24aceae232682901e2c77a1b37abf3377d4ba071d1d5627c6e115041c119a3df\"},\"code/workflows/wave1-mr/scripts/__pycache__/emit_datapackage_qa.cpython-313.pyc\":{\"mtime_ns\":1783169190006036386,\"sha256\":\"b2a600b46bee8bd51381fc78292ae29c5a08d1e3168bdf8eec1abf79739038e0\"},\"code/workflows/wave1-mr/scripts/__pycache__/stage_ld.cpython-313.pyc\":{\"mtime_ns\":1783169772362652481,\"sha256\":\"adfc986fd6062db72a6f8839e61765fa0b82119b441fd34b08ab500653dd96ba\"},\"code/workflows/wave1-mr/scripts/acquire_sumstats.py\":{\"mtime_ns\":1783168962877027916,\"sha256\":\"fa05126ae3f22c1fc5bdd601f060f77147f5f10782caf74bcd226b54a5859e69\"},\"code/workflows/wave1-mr/scripts/build_instrument.R\":{\"mtime_ns\":1783169051119031207,\"sha256\":\"65e06623423e5468d43f7288350d4ac8f44799d44dff0baba25fed988291ee30\"},\"code/workflows/wave1-mr/scripts/emit_datapackage_qa.py\":{\"mtime_ns\":1783169174908035823,\"sha256\":\"473fbbef21efca4a57043cd928f32d0b66a497f919f855a6fdfce5838d373b82\"},\"code/workflows/wave1-mr/scripts/harmonize_estimate.R\":{\"mtime_ns\":1783169138673034471,\"sha256\":\"7917185b83dfffe732d8d043be449586ce530452331c3a60122530d217339b9b\"},\"code/workflows/wave1-mr/scripts/setup_twosamplemr.R\":{\"mtime_ns\":1783169006635029548,\"sha256\":\"abbad19fa72f9ce22bb81d4d2b93ad6c2db2290414a24e083b6204c18599d322\"},\"code/workflows/wave1-mr/scripts/stage_ld.py\":{\"mtime_ns\":1783169680118241497,\"sha256\":\"2e292250e4a03350d73d9f2c6f9aa4cc219fbb157a6270633f1179fef2d93efd\"},\"doc/audits/pipeline-refactor/findings.md\":{\"mtime_ns\":1782479737983711839,\"sha256\":\"6e5f9583d14ec7cf0ae7c8a8dfeb81ab8ec479cb37cb720f382b82aef631b977\"},\"doc/audits/pipeline-refactor/inventory.json\":{\"mtime_ns\":1782479665429715837,\"sha256\":\"f82cd8efb8ea86ef91bf89b5cb5dbe00268383a3775f812d4cd33333d1a06b19\"},\"doc/audits/pipeline-refactor/inventory.md\":{\"mtime_ns\":1782479665029715859,\"sha256\":\"e5d3c62cc412b1732157d2576c53d1826459f88f7a10a583d84f1c54c30c57d5\"},\"doc/audits/pipeline-refactor/synthesis.md\":{\"mtime_ns\":1782479886067703679,\"sha256\":\"02af1a8ef26b1438e353bbe0ad891fc9c7a40995899ddc68d912f25ecaf02a9f\"},\"doc/datasets/.gitkeep\":{\"mtime_ns\":1781147422777689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/datasets/2026-06-20-public-cross-trigger-geo-sets.md\":{\"mtime_ns\":1782747062393295182,\"sha256\":\"896491628d1e4aebcfa845fac7e9d2cd187a812fb9e23c79218301926149a0b2\"},\"doc/discussions/.gitkeep\":{\"mtime_ns\":1781147422779689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/inquiries/assets/menopause-pais-causal-dag.dot\":{\"mtime_ns\":1782047261781967009,\"sha256\":\"82ee4dfcd8d80add6d5579c0079c8e58cc3e65ac180193073fc19dba1f43363d\"},\"doc/inquiries/assets/menopause-pais-causal-dag.png\":{\"mtime_ns\":1782047431937957633,\"sha256\":\"32761cd443636a8d6ad1388b3a4518b8a4e4880631c59998b8d3a2648dc46c86\"},\"doc/inquiries/menopause-pais-causal-dag-critique.md\":{\"mtime_ns\":1782388851190720089,\"sha256\":\"2050926063f63190870ad2ad2e8992720c2678072b206a8b1c19c623d6ee9ff3\"},\"doc/inquiries/menopause-pais-causal-dag.md\":{\"mtime_ns\":1782171070507138829,\"sha256\":\"24474cec501f76672a91a9beae01e5e887f750d8ba49b4f9c74a1cd4f55ac768\"},\"doc/interpretations/.gitkeep\":{\"mtime_ns\":1781147422781689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/.gitkeep\":{\"mtime_ns\":1781147422782689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/2026-06-10-paper-import-manifest.tsv\":{\"mtime_ns\":1781147861348775000,\"sha256\":\"25ffe958f9e64ed9ef78a963e5e2d09a6098db15d60c5fa9115c5b28739a9bf3\"},\"doc/meta/2026-06-10-paper-import-triage.md\":{\"mtime_ns\":1782747273569303057,\"sha256\":\"48b15a2f92a125a6b418d2740441126a1612b939db9a55db6b69545952953e95\"},\"doc/meta/2026-06-19-case-definition-crosswalk.md\":{\"mtime_ns\":1782747274005303073,\"sha256\":\"597788ff22da4da9208263377737a83f35a4ca73dfd89d505086cce7a060d813\"},\"doc/meta/2026-06-19-case-definition-crosswalk.tsv\":{\"mtime_ns\":1781904882273812727,\"sha256\":\"c8c92a6cd5ea7e0dcc7e01df65b064165ed9f80dfbc5df28cfc7c964ad75920b\"},\"doc/meta/2026-06-19-next-steps.md\":{\"mtime_ns\":1782171070507503082,\"sha256\":\"9e9ba26ef2dbe460dfa49a4b02a1b1349d0c25105dd5f122d64b24370eb9e111\"},\"doc/meta/2026-06-19-session-summary.md\":{\"mtime_ns\":1782171070507688560,\"sha256\":\"38a7bcff01dd71cb267ebd8dcc56b3ecb34930bd588464f0eaf9ebb447a3f440\"},\"doc/meta/2026-07-01-t079-vehicle-feasibility-memo.md\":{\"mtime_ns\":1782931349741167285,\"sha256\":\"377d6f0b68d0b7202d64731ab3e4c0953199a15cad3b125ab792a74bc2a350ac\"},\"doc/methods/.gitkeep\":{\"mtime_ns\":1781147422784689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/plans/.gitkeep\":{\"mtime_ns\":1781147422786689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/plans/0003-cross-trigger-pathway-overlap-pipeline-review.md\":{\"mtime_ns\":1782747353802306048,\"sha256\":\"7ddeb9dd8914c59a1b9976950647a8e8c3ee6a643709e7890e1319c9bb4934ee\"},\"doc/plans/2026-07-03-capability-vocabulary.md\":{\"mtime_ns\":1783121654155263766,\"sha256\":\"f8430ed7df97584caeeada40c97ec0ef99c2d588169d15924180a0981df0ec56\"},\"doc/plans/2026-07-03-data-catalog-expansion-design.md\":{\"mtime_ns\":1783121654155263766,\"sha256\":\"db9f796fcb214ffc467c815043031c227328a3bcccf94e7ca2205424017f4be0\"},\"doc/plans/2026-07-03-data-catalog-wave1-plan.md\":{\"mtime_ns\":1783111825583003106,\"sha256\":\"1fea4198e65610c9a54a5c79023d27318225da9ff78fdffedfe2e4432550c3bc\"},\"doc/plans/2026-07-03-gate0-triage.md\":{\"mtime_ns\":1783121654155263766,\"sha256\":\"0541acf3821100047f7a587a88a12369f84c99b6b879718c9af037f6b2fd0266\"},\"doc/plans/2026-07-03-gwas-mr-ingestion-handoff.md\":{\"mtime_ns\":1783176662336315030,\"sha256\":\"c084af84ad418534b08b0bb62e9b95bcb2e5164966f39bd73d911b74a4c6c903\"},\"doc/plans/2026-07-03-wave1-checkpoint.md\":{\"mtime_ns\":1783121654155263766,\"sha256\":\"2c31dbe8b89feff6838767db8d941602ff7182bdc12c2792a08f7f3904684014\"},\"doc/plans/2026-07-03-wave1-gwas-mr-estimand.md\":{\"mtime_ns\":1783176658555314889,\"sha256\":\"665487f0ab9ac7fc60a1a0e369c28ef3850b7385728148447a4fc9d109ab97c2\"},\"doc/plans/2026-07-04-plan0009-task2-hormone-instruments.md\":{\"mtime_ns\":1783203254537306657,\"sha256\":\"d4f30d51a64bb1067def0bdc263c82a39f9b31e145a8267f7856c049d9c00264\"},\"doc/plans/2026-07-04-wave1-mr-pilot-result.md\":{\"mtime_ns\":1783172036976142550,\"sha256\":\"ab3468644dc84d302550e9dfa1202eb2d4aae1a52863cbeb146ca49743ff0283\"},\"doc/plans/2026-07-05-plan0009-task3-naive-mr.md\":{\"mtime_ns\":1783254329462211249,\"sha256\":\"3494ed169ace16597b9d827d6aff6eabf1a480dc1a8bc3e5c0072c4afd98560b\"},\"doc/plans/coverage-baseline-2026-07-03.json\":{\"mtime_ns\":1783121654156263766,\"sha256\":\"08fa53099c698aafef08bd720b97e08fbdf282ca82517301cb1357e84af1da4c\"},\"doc/plans/coverage-postgate0-2026-07-03.json\":{\"mtime_ns\":1783121654156263766,\"sha256\":\"2eb8de53e61d7a51c4fd9c6b23314d54bedf3ce5abdf68ed6c6f1d45bdca0c74\"},\"doc/reports/.gitkeep\":{\"mtime_ns\":1781147422788689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/reviews/0007-wave1-mr-autoimmune-longcovid-pilot-pipeline-review.md\":{\"mtime_ns\":1783166507507936355,\"sha256\":\"f9645b762561a46ace9ecd94d4bfb35bd5eaa8d6930f54b44031c0403de311f3\"},\"doc/reviews/0009-wave1-mr-hormone-pilot-pipeline-review.md\":{\"mtime_ns\":1783180531761459321,\"sha256\":\"f3c08895fb791bc17b7b5f33253ca9b29db00c26b485ec2ec8228ec25c582e46\"},\"doc/reviews/0009-wave1-mr-hormone-pilot-task1-review.md\":{\"mtime_ns\":1783190714637839042,\"sha256\":\"7f36fc364cdd358c8ab9b9ffcfd0b7e450cde581d46919d0fbc7c047be31298a\"},\"doc/reviews/2026-07-05-plan0009-task3-naive-mr-pipeline-review.md\":{\"mtime_ns\":1783254329462211249,\"sha256\":\"e127196900ae52c2fe469a686736bca82e8e6fa1a2839ee00f024fa852856edc\"},\"doc/searches/.gitkeep\":{\"mtime_ns\":1781147422790689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/searches/0009-pre-infection-autoimmune-diathesis-sex-longcovid-pais.json\":{\"mtime_ns\":1782875149038071553,\"sha256\":\"9823071672f4f90c88cea083a249fbc82be4581f10338df7582abb153b5789b8\"},\"doc/searches/2026-06-19-hormone-menopause-pais-cohorts.json\":{\"mtime_ns\":1781906373409730559,\"sha256\":\"2d5cb054fb5c6833c3b47b7fe8bfe60b9c0b9138025a221b3edd2776e855d7ad\"},\"doc/searches/2026-06-20-cross-pathogen-pais-signatures.json\":{\"mtime_ns\":1781950756605284856,\"sha256\":\"50c417a563a88872d7692d1b33b096620aa885371395afbf4a204f7799ead4d1\"},\"doc/searches/2026-06-20-mitochondrial-bioenergetics-pem.json\":{\"mtime_ns\":1781950888650277579,\"sha256\":\"4537afdbf7b66d2b0f24dfb902a74f5b1f536eef256f0ff1ea87bbc07fabab22\"},\"doc/searches/2026-06-20-post-dengue-qfs-postsars-omics-gap.json\":{\"mtime_ns\":1781964537210525486,\"sha256\":\"7a3fd08fd51c5bff68f09f8b495990c197da18c50c0aa7b9fad4abe3741f945e\"},\"doc/searches/2026-06-20-therapeutics-clinical-trials-longcovid-mecfs.json\":{\"mtime_ns\":1781950950575274167,\"sha256\":\"f38639a774345719de1dd1814e0de4fdb5b525542fe80e8f25834597a2e25c37\"},\"doc/searches/2026-06-20-therapeutics-clinical-trials-longcovid-mecfs.md\":{\"mtime_ns\":1782171070507892132,\"sha256\":\"efd9c1938cf8a8fe6f2b0c5f41435e5fd09d51040204697182c97a86fe901465\"},\"doc/themes/.gitkeep\":{\"mtime_ns\":1781147422791689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"knowledge/sources/local/.gitkeep\":{\"mtime_ns\":1781147422800689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"knowledge/sources/local/mappings.yaml\":{\"mtime_ns\":1782171189619636164,\"sha256\":\"c4099b32fba083f877fe249ff628a00ade871f5bcea5a29fecfb6c8e296efc43\"},\"science.yaml\":{\"mtime_ns\":1783332967505597285,\"sha256\":\"8dc1ef638e64de4c86cdef070ee786d6e2dc0240447686ea132f611c7335b978\"},\"specs/scope-boundaries.md\":{\"mtime_ns\":1782171070507998451,\"sha256\":\"894d11666862e972a79de400185391211ae2f9de612bb6093cbc379337937b89\"},\"tasks/.tasks.lock\":{\"mtime_ns\":1783245089186866678,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"tasks/active.md\":{\"mtime_ns\":1783254329463211249,\"sha256\":\"1fa17d8e930b5439c09410c7894370f0cccd8e67e1bce96025b97a37ba52a49e\"},\"tasks/done/2026-06.md\":{\"mtime_ns\":1782875551814036959,\"sha256\":\"0b88a3dbc0d3df462c31ed232fa7ab61327ffde35b0d2027d66d81908df7147b\"},\"tasks/done/2026-07.md\":{\"mtime_ns\":1783253220218214619,\"sha256\":\"01b61b556c32a72c5bc10cc1a8355bf9e071cfc783f4c0f7138d81310706aa5a\"}}" .
+        schema:sha256 "9c2f86813bae08394074294dc37d58164b0a25242410bfbd0072be1e93920a4d" ;
+        schema:text "{\"AGENTS.md\":{\"mtime_ns\":1783341009670946606,\"sha256\":\"5f0bf6c7a760a68ec5ac6c1f9fe0b992cf34c348f4319e683de11e8a7131a6a4\"},\"CLAUDE.md\":{\"mtime_ns\":1781147463250691381,\"sha256\":\"336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49\"},\"README.md\":{\"mtime_ns\":1781147663204698837,\"sha256\":\"f0f899d877fc4aabd7b61ee78ae1ff175565dc5b50cb2363393fd2572e31bccb\"},\"code/menopause_dag/adjustment_sets_v2.txt\":{\"mtime_ns\":1782047312048964239,\"sha256\":\"14599e14869c439fba20e73bd3da5eeb1a979eb56ac16433133b6478278043f1\"},\"code/menopause_dag/check_adjustment_sets_fresh.py\":{\"mtime_ns\":1782485284724417861,\"sha256\":\"465e38d70f9cba27af3992dd068183e747f1c7440d69b389529f77184b939e56\"},\"code/menopause_dag/derive_adjustment_sets.py\":{\"mtime_ns\":1782387175759936704,\"sha256\":\"3968823d5953db127043d6e92eba6ffe2c47b675b9d21b737d7192f2f8bec2a9\"},\"code/notebooks/.gitkeep\":{\"mtime_ns\":1781147422769689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/notebooks/pyproject.toml\":{\"mtime_ns\":1781899798260793972,\"sha256\":\"2b42c8d904796817391a5bb60258cd5452a93af6de07cca8c15eab3f0e2453bf\"},\"code/notebooks/uv.lock\":{\"mtime_ns\":1781899809390092264,\"sha256\":\"52f03631f51792685609210bb7470a2fd43ff392aa9c900aec584b920f47ea2b\"},\"code/notebooks/viz.py\":{\"mtime_ns\":1782387175760604036,\"sha256\":\"129cd77d253bff9796aac84758f3ad3f88c3999e0bf2925b6ea33ef46179b0d1\"},\"code/scripts/.gitkeep\":{\"mtime_ns\":1781147422770689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/scripts/__pycache__/_verdict_lib.cpython-312.pyc\":{\"mtime_ns\":1782035646208261650,\"sha256\":\"ff5a7f597d6e3d17945ae08e338bc9a966fffe83c2362da5b281ab5c72a82ddf\"},\"code/scripts/__pycache__/_verdict_lib.cpython-313.pyc\":{\"mtime_ns\":1782035561507997020,\"sha256\":\"26d19b5c75152cc7a072f024a3f378888aab3fb5a9bb6505ff80e21f0dd78f9d\"},\"code/scripts/__pycache__/acquire_common.cpython-312.pyc\":{\"mtime_ns\":1782481088599624770,\"sha256\":\"13ede5b932b427369c63b7decba71036d6794e03fc7bbc92227f7bea913d6505\"},\"code/scripts/__pycache__/acquire_common.cpython-313.pyc\":{\"mtime_ns\":1782480923435176166,\"sha256\":\"d3fa5e9e2b2ac50350c54fe5d232cac01164b14178a26e155ae1c6052b23477f\"},\"code/scripts/__pycache__/acquire_common.cpython-314.pyc\":{\"mtime_ns\":1781985082077708443,\"sha256\":\"8ccd0ef0fab0fe7d8324cea653b4aff4db12899f756e52a5dd5be7617321e508\"},\"code/scripts/__pycache__/compartment.cpython-313.pyc\":{\"mtime_ns\":1782035561513975111,\"sha256\":\"d8ea787f191bf0a18dbc6389de0b89e44dd9100fd9fe1669c8b1ae7800e286ea\"},\"code/scripts/__pycache__/db_robustness.cpython-313.pyc\":{\"mtime_ns\":1782035561513323479,\"sha256\":\"92aa74cd72dc8b0d2c84552940388392c3025f07eebcbc7d97b6c8d03b27cc38\"},\"code/scripts/__pycache__/emit_clean_base_datapackages.cpython-313.pyc\":{\"mtime_ns\":1782488570327259503,\"sha256\":\"19101e748dcfe48ea4f3a449174c6623c7306925f8e237574eb74fa210de9221\"},\"code/scripts/__pycache__/emit_results_datapackage.cpython-313.pyc\":{\"mtime_ns\":1782486625626601318,\"sha256\":\"38d2dcc3800b73166d60389328ab52471b0ccb92bc46fc02f05f2d1514098d15\"},\"code/scripts/__pycache__/extract_gse130353.cpython-314.pyc\":{\"mtime_ns\":1781985082066476521,\"sha256\":\"ec51ff1194340147b3f4a5b95b75dda2be6cf99b80307e6316d87a0d4ef62a6c\"},\"code/scripts/__pycache__/parse_gse14577.cpython-314.pyc\":{\"mtime_ns\":1781985082090113676,\"sha256\":\"992c93a2986e886762da5114f5c5acca154a588c49abf29bc77b5fee1bf9bb0c\"},\"code/scripts/__pycache__/qa_checkpoint.cpython-313.pyc\":{\"mtime_ns\":1782481059068902956,\"sha256\":\"a04524fe0d54a542033911078e3ae38daf80f322f3895d837ffdd27d2424226c\"},\"code/scripts/__pycache__/qa_results.cpython-313.pyc\":{\"mtime_ns\":1782481838511262287,\"sha256\":\"d9aff3d82c4fff7f29e3a3f250bb363c9a585607620961f0c56137b52098eb0c\"},\"code/scripts/__pycache__/specificity.cpython-313.pyc\":{\"mtime_ns\":1782035561509162957,\"sha256\":\"94c4ea50f714c04bd7851d5b47692748459e18440bae2a46188cbdc06a458169\"},\"code/scripts/__pycache__/theme_rollup.cpython-313.pyc\":{\"mtime_ns\":1782035561512435824,\"sha256\":\"c5b4ef711a471ffb2d013c5240ac1237dd81473a2a456f020934cccbf9e24111\"},\"code/scripts/__pycache__/verdict.cpython-313.pyc\":{\"mtime_ns\":1782042417325499258,\"sha256\":\"c465619118a4c06aa8f97e97dd935396033165d0870dd79acb512db7c055b327\"},\"code/scripts/_verdict_lib.py\":{\"mtime_ns\":1782495804406864251,\"sha256\":\"23e73795dd8df17be199560ecc59a59775e0ff74696cbd84428266168b0ee275\"},\"code/scripts/acquire_common.py\":{\"mtime_ns\":1782495804407766222,\"sha256\":\"c707de8057358793f4f1f1bd050cd4af229da4691bdb03882902c8b043cb09b6\"},\"code/scripts/collapse_probes.R\":{\"mtime_ns\":1782495804429405191,\"sha256\":\"d3ff15609e6100a1c39d61c0427fb56b93d579f8aec25c4b69cf698d4060ec84\"},\"code/scripts/compartment.py\":{\"mtime_ns\":1782495804408514065,\"sha256\":\"9316f04fab3921c67ae11565b68a760551ae44e97633f6e93908bdd654197822\"},\"code/scripts/concordance.py\":{\"mtime_ns\":1782495804408857679,\"sha256\":\"4cb2f98b542df05968461b7581c47729b9fa63cc8317741fd0f7acb3c8d32108\"},\"code/scripts/db_robustness.py\":{\"mtime_ns\":1782495804409723318,\"sha256\":\"7abefee9d668f5ec250ccc0bce93cb59c0db4bb09779f7d2686c164cc17c9bb9\"},\"code/scripts/emit_clean_base_datapackages.py\":{\"mtime_ns\":1782497347570638283,\"sha256\":\"2aecfa8c851d70d28ba57aaf6ede50a2cc8f0dee0d92ca7320274f041aae23a7\"},\"code/scripts/emit_datapackage.py\":{\"mtime_ns\":1782495804414779464,\"sha256\":\"f71f9ad0e5e52931294b8c7cea3eb4306ce2d71d91e66f6ba2c4a9781c8e29ca\"},\"code/scripts/emit_results_datapackage.py\":{\"mtime_ns\":1782495804415506878,\"sha256\":\"55eea22b62e1f2d51d70e63d3ae9e4fb408ed4055b634bd756402951545fd4c8\"},\"code/scripts/emit_theme_spec.py\":{\"mtime_ns\":1782495804416209065,\"sha256\":\"ba11ec81c2f7be5ed4b02ec77e9a815909b2d2a753184f18af28e2b11ea6216f\"},\"code/scripts/emit_workflow_run_qa_audit_package.py\":{\"mtime_ns\":1782495804416916231,\"sha256\":\"fb50cc7de5c9045ae75af6874d98ebe45b5aad83281f6c8ec005f0f254ae64dc\"},\"code/scripts/extract_gse130353.py\":{\"mtime_ns\":1782495804417335808,\"sha256\":\"9dabb71ad750d99d6f26d02d99fe7f326f8dba5cc31c2ca8965f92227eafbdab\"},\"code/scripts/fetch_url.py\":{\"mtime_ns\":1782495804417854861,\"sha256\":\"939781978c8f4af4dff9359db3a4d0ac6d6e629de3efcf23fa9cf87974d663a0\"},\"code/scripts/fgsea_enrich.R\":{\"mtime_ns\":1782495804429865764,\"sha256\":\"fc01fbba442328a13abc1ed70b7348301d871f9d65ddbeda361ad9979da8f05f\"},\"code/scripts/g1_acquire.py\":{\"mtime_ns\":1782495804418360168,\"sha256\":\"36c7659c18f5b1d8225f17259a68fcbae8dc7d1d358f9a331aeb934340b39270\"},\"code/scripts/genesets_reference.R\":{\"mtime_ns\":1782495804434016057,\"sha256\":\"372d95e52d8937100b8483aae643c98f16fbb61b4b2f5d5b07043980620d1018\"},\"code/scripts/harmonize_gse130353.py\":{\"mtime_ns\":1782495804418693353,\"sha256\":\"8c9991f42c06093df72712b7d8a6768fde455990e9ba1804fdc962ae4a0afcf3\"},\"code/scripts/harmonize_gse14577.R\":{\"mtime_ns\":1782495804434723317,\"sha256\":\"f8c108d9898cb3bf2a8c5951b16b409558e9f00655d5115be742ce1e2896c7b7\"},\"code/scripts/limma_de.R\":{\"mtime_ns\":1782495804435708070,\"sha256\":\"32ba64c4b148a83bcbe14d91cd2402223f99a053675824e9df8f06710e5dff07\"},\"code/scripts/near_zero_filter.py\":{\"mtime_ns\":1782495804421723318,\"sha256\":\"5ce937e31166ecb3bea70401c7092276ba1808884b272317c2959f518bc3e055\"},\"code/scripts/parse_gse14577.py\":{\"mtime_ns\":1782495804423721061,\"sha256\":\"5c7baa41538c08fabb108383e7de52ff9dc71b967d35d2a4092072dc8975a0af\"},\"code/scripts/permutation_null.R\":{\"mtime_ns\":1782495804437723317,\"sha256\":\"d107e6691f2b2225ff2fecd9cab1b84a5bac6e1bb222b4cd72052e63c57e851b\"},\"code/scripts/prepare_genesets.R\":{\"mtime_ns\":1782496956546659831,\"sha256\":\"cc42a947c8a1c74e20656eee8f0e18c8edd0a7b0adf67d886d412e811bcb8237\"},\"code/scripts/qa_checkpoint.py\":{\"mtime_ns\":1782495874523719455,\"sha256\":\"07e1c9f16ffdb38e022b7fc1b2bf59d80bb04ec1213c030a40c17b020319ff75\"},\"code/scripts/qa_genesets.R\":{\"mtime_ns\":1782497271793642459,\"sha256\":\"c6f60a6168959c213bb1ae0429ef88f393c1f30edf9fcacbd24a282a7612719e\"},\"code/scripts/qa_results.py\":{\"mtime_ns\":1782495875326719410,\"sha256\":\"cfc85c1cef289a874843d3c0047cc2b6f6c7de1e58842a9453d901cc4b62db3a\"},\"code/scripts/specificity.py\":{\"mtime_ns\":1782495804426826355,\"sha256\":\"3bd2faef85a45505cfdd0ac9480b2ddeb109ef1a05243d10417ff6d35f3b1c5a\"},\"code/scripts/theme_rollup.py\":{\"mtime_ns\":1782495804427448591,\"sha256\":\"0112f1c9d0400a4663d43499f7ba591a031569f9248824c9e5d595bf09ba5874\"},\"code/scripts/verdict.py\":{\"mtime_ns\":1782495804427880652,\"sha256\":\"25fce8ec079e229f37582f6c3e43b455a49edb63e2ff2f55151d78051407c9e8\"},\"code/scripts/verify_sha256.py\":{\"mtime_ns\":1782495804428810155,\"sha256\":\"f080f531366bc96cfcf893e35c9836109a90783ed5128808d013473f485fc940\"},\"code/tests/test_qa_checkpoint.py\":{\"mtime_ns\":1782387175766807579,\"sha256\":\"61b8da3c8ee146c1373724c86e88f71b59622655b76e0e10549f34831a2e999e\"},\"code/tests/test_verdict_mechanics.py\":{\"mtime_ns\":1782387175767060734,\"sha256\":\"746e9aa4b012e44caa3bb16308658723278dcfa8c226f63a125eefeacc99ad84\"},\"code/workflows/.gitkeep\":{\"mtime_ns\":1781147422772689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"code/workflows/Snakefile\":{\"mtime_ns\":1782496927101661453,\"sha256\":\"810bf66f2acd2b85d301eb6cd8589d4cbd1f7a49f2735972aa585f4c3296baea\"},\"code/workflows/config.yaml\":{\"mtime_ns\":1782480822946652053,\"sha256\":\"09e7a75e711977234480542a41d09fdfbc58169bc5fc067789b9feef7f24f348\"},\"code/workflows/envs/py.conda-lock.yml\":{\"mtime_ns\":1781983013699507352,\"sha256\":\"e511411ee467e2020b489784bcd435b36da20dce445c07a24bb5956a99f5aa8e\"},\"code/workflows/envs/py.yaml\":{\"mtime_ns\":1781982449310538453,\"sha256\":\"fa88b4a99a24fdd3cf2d5ce5057a0b1472f3853449b25498e37349561eb4740f\"},\"code/workflows/envs/r-bioc.conda-lock.yml\":{\"mtime_ns\":1781983603164474870,\"sha256\":\"604651cf5bb985aa7fdb1fed55e76001939e04d6d4d53dc57e47e9de3565746e\"},\"code/workflows/envs/r-bioc.yaml\":{\"mtime_ns\":1781983513715479799,\"sha256\":\"6bcebe04fd8d2742a81fedd4668c20535e3cafb488562a1a3fc6fa41d5a8a6ed\"},\"code/workflows/rules/acquire.smk\":{\"mtime_ns\":1782495804444850073,\"sha256\":\"432238f5c27ecb50e73b73e7f8617b1751af8fd448a05f8f28a144ee0ccf024e\"},\"code/workflows/rules/common.smk\":{\"mtime_ns\":1782495804445464866,\"sha256\":\"cf64920e64782c1063ace887f8ac94c15e8c887362ce3c9b55546671ec687aa4\"},\"code/workflows/rules/enrich.smk\":{\"mtime_ns\":1782495804445836744,\"sha256\":\"8f852b0df71ead32a9cbc5c3065acb786c7010211dbcb1ed0606b0da964d2f65\"},\"code/workflows/rules/harmonize.smk\":{\"mtime_ns\":1782495804446044273,\"sha256\":\"ce1946e7588c1479da698e69dcfec328358dedcf41d9855f5f2cc1a3d99ac208\"},\"code/workflows/rules/prepare.smk\":{\"mtime_ns\":1782496926357661494,\"sha256\":\"5372e2d601058914ba7b2c3bb0f101941e1f344d70b9d8c6c2d319c33d476d5d\"},\"code/workflows/rules/qa.smk\":{\"mtime_ns\":1782496926742661473,\"sha256\":\"e4742939e36381e5b8ca285cb82388c9978921756ae359d178fbc94457d0dc1a\"},\"code/workflows/rules/verdict.smk\":{\"mtime_ns\":1782495876168719364,\"sha256\":\"2a19d52ed3c34596a8eafe258f60f8c8c19cf20e5dfb9df2e2a91647a8315fab\"},\"code/workflows/rules/verify.smk\":{\"mtime_ns\":1782495804449692113,\"sha256\":\"61f627ea37159824ab15895de3575ad1cea33fd811e89d652521f34f9993d9c8\"},\"code/workflows/wave1-mr-hormone/Snakefile\":{\"mtime_ns\":1783254329462211249,\"sha256\":\"4dd65fdaefdced2988d2c761292dd0bbb2f020cb9d7862be00fec0c8a188b43a\"},\"code/workflows/wave1-mr-hormone/config.yaml\":{\"mtime_ns\":1783254329462211249,\"sha256\":\"fccc4bf2b725905c4617c1c97b4c2543aa1b904b512f99e41b2fa045f0e32bce\"},\"code/workflows/wave1-mr-hormone/envs/r-mr.conda-lock.yml\":{\"mtime_ns\":1783203254537306657,\"sha256\":\"dee85ca57bd465dab91bf92ee1aa4d304c91e6afd1140b011c7b072f6a884995\"},\"code/workflows/wave1-mr-hormone/envs/r-mr.yaml\":{\"mtime_ns\":1783203254537306657,\"sha256\":\"8cdf09f0701ff82d19f03f31b5074acef123fb86a79a6bec76144d81798f5136\"},\"code/workflows/wave1-mr-hormone/envs/stage.yaml\":{\"mtime_ns\":1783182233151522767,\"sha256\":\"136a91eb25a2eb4af45b0c59e2187ad58982c6a34e068259c9e1cb162e9d5bcd\"},\"code/workflows/wave1-mr-hormone/scripts/__pycache__/acquire_sumstats.cpython-313.pyc\":{\"mtime_ns\":1783191539896729088,\"sha256\":\"30887d46f855099bf3a14ee4acbf92bf6c4fea4c4052f294845504f5d92f15c8\"},\"code/workflows/wave1-mr-hormone/scripts/__pycache__/acquire_sumstats.cpython-314.pyc\":{\"mtime_ns\":1783182290459517049,\"sha256\":\"94185ad0bfcd076696ccb52b514df599e91ff86eab5876a917a4df51af650846\"},\"code/workflows/wave1-mr-hormone/scripts/__pycache__/stage_ld.cpython-314.pyc\":{\"mtime_ns\":1783182290461485981,\"sha256\":\"f0275cf517143ac0e15024d9e2c503cb256957de137701e3692a918c92648f9e\"},\"code/workflows/wave1-mr-hormone/scripts/__pycache__/stage_ldsc_ref.cpython-313.pyc\":{\"mtime_ns\":1783190636104328317,\"sha256\":\"948a4db2e9515a975df0900f21a7049285face318836c88a871091d3e0061aba\"},\"code/workflows/wave1-mr-hormone/scripts/__pycache__/stage_ldsc_ref.cpython-314.pyc\":{\"mtime_ns\":1783182893892022657,\"sha256\":\"93aecf885d914759c17647821344951eba947b471776f863198c6869309d2cdf\"},\"code/workflows/wave1-mr-hormone/scripts/acquire_sumstats.py\":{\"mtime_ns\":1783191490525867975,\"sha256\":\"8f063c1966606f1e45d0b8b9281bf843dce7a537cdeeecd616b85bb97e7873b8\"},\"code/workflows/wave1-mr-hormone/scripts/aggregate_instruments.py\":{\"mtime_ns\":1783203254537306657,\"sha256\":\"13f49df2f9d25a13fd39efd14d1fea365d05ad0f686bb90043a0f7901ec3ae70\"},\"code/workflows/wave1-mr-hormone/scripts/aggregate_mr.py\":{\"mtime_ns\":1783254329462211249,\"sha256\":\"5db6db3682ba78a534211977ac2f408d84049b46602048735ce0ba179f796f4f\"},\"code/workflows/wave1-mr-hormone/scripts/build_instrument.R\":{\"mtime_ns\":1783203254537306657,\"sha256\":\"990e8e49857c53e6a4477c1754b056769649fe6783808262547d8ced00ac5d5b\"},\"code/workflows/wave1-mr-hormone/scripts/harmonize_estimate.R\":{\"mtime_ns\":1783254329462211249,\"sha256\":\"57c1dc8446b63646dd42ef46c86b321b454a99b64cd24a3aea12d4e6a0bc25a0\"},\"code/workflows/wave1-mr-hormone/scripts/setup_twosamplemr.R\":{\"mtime_ns\":1783203254537306657,\"sha256\":\"6e959e6f333404ac11634491c333e697a4ab06b617b8638cf564cc3d432019b7\"},\"code/workflows/wave1-mr-hormone/scripts/stage_ld.py\":{\"mtime_ns\":1783182208009521829,\"sha256\":\"537d2109e4f7e5ef679325760b9fead8c6690fbd9a7e2a27d8af1af6bfbdd1d5\"},\"code/workflows/wave1-mr-hormone/scripts/stage_ldsc_ref.py\":{\"mtime_ns\":1783190354355825608,\"sha256\":\"c4ce1f0256a45af8631cf5a11cd6116277ca04489bf3cf414f62a3f8826386fa\"},\"code/workflows/wave1-mr-hormone/tests/test_guards.sh\":{\"mtime_ns\":1783254329462211249,\"sha256\":\"ed2f08b4c6e02b244fa461288407aa1a8839ba6e87f4f5d073bf0eb51cb0b37c\"},\"code/workflows/wave1-mr/Snakefile\":{\"mtime_ns\":1783168458015009090,\"sha256\":\"fb71a0afdc472bf722d2b789b0a01fef226e28141a246aae5b0759ff6cca3386\"},\"code/workflows/wave1-mr/config.yaml\":{\"mtime_ns\":1783169650161053545,\"sha256\":\"b119d5dc1184754ec11d540fb5b77ccbd60c3b5cddd05f14deda02bc2b9bb038\"},\"code/workflows/wave1-mr/envs/r-mr.conda-lock.yml\":{\"mtime_ns\":1783171467685121321,\"sha256\":\"dee85ca57bd465dab91bf92ee1aa4d304c91e6afd1140b011c7b072f6a884995\"},\"code/workflows/wave1-mr/envs/r-mr.yaml\":{\"mtime_ns\":1783171389137118392,\"sha256\":\"8cdf09f0701ff82d19f03f31b5074acef123fb86a79a6bec76144d81798f5136\"},\"code/workflows/wave1-mr/scripts/__pycache__/acquire_sumstats.cpython-313.pyc\":{\"mtime_ns\":1783169190003610803,\"sha256\":\"24aceae232682901e2c77a1b37abf3377d4ba071d1d5627c6e115041c119a3df\"},\"code/workflows/wave1-mr/scripts/__pycache__/emit_datapackage_qa.cpython-313.pyc\":{\"mtime_ns\":1783169190006036386,\"sha256\":\"b2a600b46bee8bd51381fc78292ae29c5a08d1e3168bdf8eec1abf79739038e0\"},\"code/workflows/wave1-mr/scripts/__pycache__/stage_ld.cpython-313.pyc\":{\"mtime_ns\":1783169772362652481,\"sha256\":\"adfc986fd6062db72a6f8839e61765fa0b82119b441fd34b08ab500653dd96ba\"},\"code/workflows/wave1-mr/scripts/acquire_sumstats.py\":{\"mtime_ns\":1783168962877027916,\"sha256\":\"fa05126ae3f22c1fc5bdd601f060f77147f5f10782caf74bcd226b54a5859e69\"},\"code/workflows/wave1-mr/scripts/build_instrument.R\":{\"mtime_ns\":1783169051119031207,\"sha256\":\"65e06623423e5468d43f7288350d4ac8f44799d44dff0baba25fed988291ee30\"},\"code/workflows/wave1-mr/scripts/emit_datapackage_qa.py\":{\"mtime_ns\":1783169174908035823,\"sha256\":\"473fbbef21efca4a57043cd928f32d0b66a497f919f855a6fdfce5838d373b82\"},\"code/workflows/wave1-mr/scripts/harmonize_estimate.R\":{\"mtime_ns\":1783169138673034471,\"sha256\":\"7917185b83dfffe732d8d043be449586ce530452331c3a60122530d217339b9b\"},\"code/workflows/wave1-mr/scripts/setup_twosamplemr.R\":{\"mtime_ns\":1783169006635029548,\"sha256\":\"abbad19fa72f9ce22bb81d4d2b93ad6c2db2290414a24e083b6204c18599d322\"},\"code/workflows/wave1-mr/scripts/stage_ld.py\":{\"mtime_ns\":1783169680118241497,\"sha256\":\"2e292250e4a03350d73d9f2c6f9aa4cc219fbb157a6270633f1179fef2d93efd\"},\"doc/audits/pipeline-refactor/findings.md\":{\"mtime_ns\":1782479737983711839,\"sha256\":\"6e5f9583d14ec7cf0ae7c8a8dfeb81ab8ec479cb37cb720f382b82aef631b977\"},\"doc/audits/pipeline-refactor/inventory.json\":{\"mtime_ns\":1782479665429715837,\"sha256\":\"f82cd8efb8ea86ef91bf89b5cb5dbe00268383a3775f812d4cd33333d1a06b19\"},\"doc/audits/pipeline-refactor/inventory.md\":{\"mtime_ns\":1782479665029715859,\"sha256\":\"e5d3c62cc412b1732157d2576c53d1826459f88f7a10a583d84f1c54c30c57d5\"},\"doc/audits/pipeline-refactor/synthesis.md\":{\"mtime_ns\":1782479886067703679,\"sha256\":\"02af1a8ef26b1438e353bbe0ad891fc9c7a40995899ddc68d912f25ecaf02a9f\"},\"doc/datasets/.gitkeep\":{\"mtime_ns\":1781147422777689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/datasets/2026-06-20-public-cross-trigger-geo-sets.md\":{\"mtime_ns\":1782747062393295182,\"sha256\":\"896491628d1e4aebcfa845fac7e9d2cd187a812fb9e23c79218301926149a0b2\"},\"doc/discussions/.gitkeep\":{\"mtime_ns\":1781147422779689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/inquiries/assets/menopause-pais-causal-dag.dot\":{\"mtime_ns\":1782047261781967009,\"sha256\":\"82ee4dfcd8d80add6d5579c0079c8e58cc3e65ac180193073fc19dba1f43363d\"},\"doc/inquiries/assets/menopause-pais-causal-dag.png\":{\"mtime_ns\":1782047431937957633,\"sha256\":\"32761cd443636a8d6ad1388b3a4518b8a4e4880631c59998b8d3a2648dc46c86\"},\"doc/inquiries/menopause-pais-causal-dag-critique.md\":{\"mtime_ns\":1782388851190720089,\"sha256\":\"2050926063f63190870ad2ad2e8992720c2678072b206a8b1c19c623d6ee9ff3\"},\"doc/inquiries/menopause-pais-causal-dag.md\":{\"mtime_ns\":1782171070507138829,\"sha256\":\"24474cec501f76672a91a9beae01e5e887f750d8ba49b4f9c74a1cd4f55ac768\"},\"doc/interpretations/.gitkeep\":{\"mtime_ns\":1781147422781689871,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/.gitkeep\":{\"mtime_ns\":1781147422782689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/meta/2026-06-10-paper-import-manifest.tsv\":{\"mtime_ns\":1781147861348775000,\"sha256\":\"25ffe958f9e64ed9ef78a963e5e2d09a6098db15d60c5fa9115c5b28739a9bf3\"},\"doc/meta/2026-06-10-paper-import-triage.md\":{\"mtime_ns\":1782747273569303057,\"sha256\":\"48b15a2f92a125a6b418d2740441126a1612b939db9a55db6b69545952953e95\"},\"doc/meta/2026-06-19-case-definition-crosswalk.md\":{\"mtime_ns\":1782747274005303073,\"sha256\":\"597788ff22da4da9208263377737a83f35a4ca73dfd89d505086cce7a060d813\"},\"doc/meta/2026-06-19-case-definition-crosswalk.tsv\":{\"mtime_ns\":1781904882273812727,\"sha256\":\"c8c92a6cd5ea7e0dcc7e01df65b064165ed9f80dfbc5df28cfc7c964ad75920b\"},\"doc/meta/2026-06-19-next-steps.md\":{\"mtime_ns\":1782171070507503082,\"sha256\":\"9e9ba26ef2dbe460dfa49a4b02a1b1349d0c25105dd5f122d64b24370eb9e111\"},\"doc/meta/2026-06-19-session-summary.md\":{\"mtime_ns\":1782171070507688560,\"sha256\":\"38a7bcff01dd71cb267ebd8dcc56b3ecb34930bd588464f0eaf9ebb447a3f440\"},\"doc/meta/2026-07-01-t079-vehicle-feasibility-memo.md\":{\"mtime_ns\":1782931349741167285,\"sha256\":\"377d6f0b68d0b7202d64731ab3e4c0953199a15cad3b125ab792a74bc2a350ac\"},\"doc/methods/.gitkeep\":{\"mtime_ns\":1781147422784689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/plans/.gitkeep\":{\"mtime_ns\":1781147422786689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/plans/0003-cross-trigger-pathway-overlap-pipeline-review.md\":{\"mtime_ns\":1782747353802306048,\"sha256\":\"7ddeb9dd8914c59a1b9976950647a8e8c3ee6a643709e7890e1319c9bb4934ee\"},\"doc/plans/2026-07-03-capability-vocabulary.md\":{\"mtime_ns\":1783121654155263766,\"sha256\":\"f8430ed7df97584caeeada40c97ec0ef99c2d588169d15924180a0981df0ec56\"},\"doc/plans/2026-07-03-data-catalog-expansion-design.md\":{\"mtime_ns\":1783121654155263766,\"sha256\":\"db9f796fcb214ffc467c815043031c227328a3bcccf94e7ca2205424017f4be0\"},\"doc/plans/2026-07-03-data-catalog-wave1-plan.md\":{\"mtime_ns\":1783111825583003106,\"sha256\":\"1fea4198e65610c9a54a5c79023d27318225da9ff78fdffedfe2e4432550c3bc\"},\"doc/plans/2026-07-03-gate0-triage.md\":{\"mtime_ns\":1783121654155263766,\"sha256\":\"0541acf3821100047f7a587a88a12369f84c99b6b879718c9af037f6b2fd0266\"},\"doc/plans/2026-07-03-gwas-mr-ingestion-handoff.md\":{\"mtime_ns\":1783176662336315030,\"sha256\":\"c084af84ad418534b08b0bb62e9b95bcb2e5164966f39bd73d911b74a4c6c903\"},\"doc/plans/2026-07-03-wave1-checkpoint.md\":{\"mtime_ns\":1783121654155263766,\"sha256\":\"2c31dbe8b89feff6838767db8d941602ff7182bdc12c2792a08f7f3904684014\"},\"doc/plans/2026-07-03-wave1-gwas-mr-estimand.md\":{\"mtime_ns\":1783176658555314889,\"sha256\":\"665487f0ab9ac7fc60a1a0e369c28ef3850b7385728148447a4fc9d109ab97c2\"},\"doc/plans/2026-07-04-plan0009-task2-hormone-instruments.md\":{\"mtime_ns\":1783203254537306657,\"sha256\":\"d4f30d51a64bb1067def0bdc263c82a39f9b31e145a8267f7856c049d9c00264\"},\"doc/plans/2026-07-04-wave1-mr-pilot-result.md\":{\"mtime_ns\":1783172036976142550,\"sha256\":\"ab3468644dc84d302550e9dfa1202eb2d4aae1a52863cbeb146ca49743ff0283\"},\"doc/plans/2026-07-05-plan0009-task3-naive-mr.md\":{\"mtime_ns\":1783254329462211249,\"sha256\":\"3494ed169ace16597b9d827d6aff6eabf1a480dc1a8bc3e5c0072c4afd98560b\"},\"doc/plans/coverage-baseline-2026-07-03.json\":{\"mtime_ns\":1783121654156263766,\"sha256\":\"08fa53099c698aafef08bd720b97e08fbdf282ca82517301cb1357e84af1da4c\"},\"doc/plans/coverage-postgate0-2026-07-03.json\":{\"mtime_ns\":1783121654156263766,\"sha256\":\"2eb8de53e61d7a51c4fd9c6b23314d54bedf3ce5abdf68ed6c6f1d45bdca0c74\"},\"doc/reports/.gitkeep\":{\"mtime_ns\":1781147422788689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/reviews/0007-wave1-mr-autoimmune-longcovid-pilot-pipeline-review.md\":{\"mtime_ns\":1783166507507936355,\"sha256\":\"f9645b762561a46ace9ecd94d4bfb35bd5eaa8d6930f54b44031c0403de311f3\"},\"doc/reviews/0009-wave1-mr-hormone-pilot-pipeline-review.md\":{\"mtime_ns\":1783180531761459321,\"sha256\":\"f3c08895fb791bc17b7b5f33253ca9b29db00c26b485ec2ec8228ec25c582e46\"},\"doc/reviews/0009-wave1-mr-hormone-pilot-task1-review.md\":{\"mtime_ns\":1783190714637839042,\"sha256\":\"7f36fc364cdd358c8ab9b9ffcfd0b7e450cde581d46919d0fbc7c047be31298a\"},\"doc/reviews/2026-07-05-plan0009-task3-naive-mr-pipeline-review.md\":{\"mtime_ns\":1783254329462211249,\"sha256\":\"e127196900ae52c2fe469a686736bca82e8e6fa1a2839ee00f024fa852856edc\"},\"doc/searches/.gitkeep\":{\"mtime_ns\":1781147422790689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"doc/searches/0009-pre-infection-autoimmune-diathesis-sex-longcovid-pais.json\":{\"mtime_ns\":1782875149038071553,\"sha256\":\"9823071672f4f90c88cea083a249fbc82be4581f10338df7582abb153b5789b8\"},\"doc/searches/2026-06-19-hormone-menopause-pais-cohorts.json\":{\"mtime_ns\":1781906373409730559,\"sha256\":\"2d5cb054fb5c6833c3b47b7fe8bfe60b9c0b9138025a221b3edd2776e855d7ad\"},\"doc/searches/2026-06-20-cross-pathogen-pais-signatures.json\":{\"mtime_ns\":1781950756605284856,\"sha256\":\"50c417a563a88872d7692d1b33b096620aa885371395afbf4a204f7799ead4d1\"},\"doc/searches/2026-06-20-mitochondrial-bioenergetics-pem.json\":{\"mtime_ns\":1781950888650277579,\"sha256\":\"4537afdbf7b66d2b0f24dfb902a74f5b1f536eef256f0ff1ea87bbc07fabab22\"},\"doc/searches/2026-06-20-post-dengue-qfs-postsars-omics-gap.json\":{\"mtime_ns\":1781964537210525486,\"sha256\":\"7a3fd08fd51c5bff68f09f8b495990c197da18c50c0aa7b9fad4abe3741f945e\"},\"doc/searches/2026-06-20-therapeutics-clinical-trials-longcovid-mecfs.json\":{\"mtime_ns\":1781950950575274167,\"sha256\":\"f38639a774345719de1dd1814e0de4fdb5b525542fe80e8f25834597a2e25c37\"},\"doc/searches/2026-06-20-therapeutics-clinical-trials-longcovid-mecfs.md\":{\"mtime_ns\":1782171070507892132,\"sha256\":\"efd9c1938cf8a8fe6f2b0c5f41435e5fd09d51040204697182c97a86fe901465\"},\"doc/themes/.gitkeep\":{\"mtime_ns\":1781147422791689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"knowledge/sources/local/.gitkeep\":{\"mtime_ns\":1781147422800689872,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"knowledge/sources/local/mappings.yaml\":{\"mtime_ns\":1782171189619636164,\"sha256\":\"c4099b32fba083f877fe249ff628a00ade871f5bcea5a29fecfb6c8e296efc43\"},\"science.yaml\":{\"mtime_ns\":1783332967505597285,\"sha256\":\"8dc1ef638e64de4c86cdef070ee786d6e2dc0240447686ea132f611c7335b978\"},\"specs/scope-boundaries.md\":{\"mtime_ns\":1782171070507998451,\"sha256\":\"894d11666862e972a79de400185391211ae2f9de612bb6093cbc379337937b89\"},\"tasks/.tasks.lock\":{\"mtime_ns\":1783373918311173774,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"},\"tasks/active.md\":{\"mtime_ns\":1783373982845727800,\"sha256\":\"a4094d47cf7a721ebf8af73faed0d77a0f287018d9b10347993ca134e079dcfc\"},\"tasks/done/2026-06.md\":{\"mtime_ns\":1782875551814036959,\"sha256\":\"0b88a3dbc0d3df462c31ed232fa7ab61327ffde35b0d2027d66d81908df7147b\"},\"tasks/done/2026-07.md\":{\"mtime_ns\":1783253220218214619,\"sha256\":\"01b61b556c32a72c5bc10cc1a8355bf9e071cfc783f4c0f7138d81310706aa5a\"}}" .
     <http://example.org/project/hypothesis/0001-shared-dysregulated-attractor> prov:wasDerivedFrom <http://example.org/project/source/entities_hypotheses_0001-shared-dysregulated-attractor.md> .
     <http://example.org/project/hypothesis/0002-tissue-reservoir-antigen-fragment> prov:wasDerivedFrom <http://example.org/project/source/entities_hypotheses_0002-tissue-reservoir-antigen-fragment.md> .
     <http://example.org/project/hypothesis/0003-immune-exhaustion-feedback> prov:wasDerivedFrom <http://example.org/project/source/entities_hypotheses_0003-immune-exhaustion-feedback.md> .
@@ -25987,6 +26124,9 @@
     <http://example.org/project/source-change/062803ab112406ff> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "e153b0677ccd7f2a97db69b8474234657fa0033274af7a0d450edd09e137233a" .
+    <http://example.org/project/source-change/066c69ebeb3db1e6> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "eb9f7a4ca7dfb7a9ff51e0fb65d1f53daab82d6b616a751e5d1799058863bc0f" .
     <http://example.org/project/source-change/06be6fcace5f5f50> sci:observedOn "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "7cf25f250b09061093914f40ca8e4ca512e601fa181c373768d492b346d69b6f" .
@@ -26032,6 +26172,9 @@
     <http://example.org/project/source-change/0cda70d38f11087d> sci:observedOn "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "578f76d42d46c21e6f0008e30a19b54a23d28e921a6deb04995c2e5881302687" .
+    <http://example.org/project/source-change/0d13e204bbea8588> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "1ea8e6a1e4d0e406a35c386e29b433e51c23c4c7518733129a4f8e92e066c2e2" .
     <http://example.org/project/source-change/0d609c3e656e3869> sci:observedOn "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "ba668b5f916b8dc1ae91b93b5071f25128b42d40cc0dd6893b9e76301e120fd3" .
@@ -26134,6 +26277,9 @@
     <http://example.org/project/source-change/1a6cc00caf697cf9> sci:observedOn "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "33022ccea9dc77f661694ecbe45bc6dd0c6e8b43717210c62d6e0027032b26ff" .
+    <http://example.org/project/source-change/1b3e08654229df77> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "d78b7d3effc04dad160d1982ea2234c36f686ccceb6c95ae273591b8f11729c5" .
     <http://example.org/project/source-change/1b486451aa0024f2> sci:observedOn "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "42ee42e5b14539adc06332438d7b2b1c0de0c43c32b43b39a32881877c38915a" .
@@ -26158,6 +26304,9 @@
     <http://example.org/project/source-change/1e9960edb2d397f5> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "09b27fda8f91b7fc659543ec48b0318e4c29ffe378bde69264b66e1eae024857" .
+    <http://example.org/project/source-change/1ea4d4d2a223bbda> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "6d30a825027b499836c5cf0856e3ca5c0e4d5b8be6b6d9e9b5eb69235b16d075" .
     <http://example.org/project/source-change/1f4aa7be4ab2f213> sci:observedOn "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "d0e94cec046fe656b9af4d325872f877af5448cd6be4133628f7166d7c0a3b07" .
@@ -26221,6 +26370,9 @@
     <http://example.org/project/source-change/280b8b8f7feb92e5> sci:observedOn "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "17a4d6e839b4fdd8ac1517a93c2359a545f28eb163eaaed4564ce7032bd59db4" .
+    <http://example.org/project/source-change/28baad2f83e09332> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "b2a5eb491a28f98a30e497c73a93a1197a1db81382382b903ed4b6ade0925e50" .
     <http://example.org/project/source-change/2a17e1c1be5263a5> sci:observedOn "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "817f135dcb8a66ff37dff3cb6dbeb7ae0c282f1e359b49d592cb67fa63f34429" .
@@ -26419,6 +26571,9 @@
     <http://example.org/project/source-change/4cdd2eea37db430d> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "df234f8cdc8ca2fa2cde1ed487f4bd70e0ecbf82a7271a76635e740e0581c46e" .
+    <http://example.org/project/source-change/4d305a7ba9d50644> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "3925bcbafdea5c3fb7896ec90b67a75954751a68941644132131f3a09df129ac" .
     <http://example.org/project/source-change/4d6d5b1d5afc7afc> sci:observedOn "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "f1a75576fa7e07a68102c93d890c0655f0b8d625bd2e41e31c848adedbe10fe9" .
@@ -26446,6 +26601,9 @@
     <http://example.org/project/source-change/50b3dcbf7e7b37f6> sci:observedOn "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "92e639867ca4e87bafba33d3818a286d999adf7d4dd3df401cbe00049406ac63" .
+    <http://example.org/project/source-change/5390ea5985c82a66> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "f386b6fb7a6e8f5df87734bdfa66ccd1d9ab77c7ab685534c53f50250b081491" .
     <http://example.org/project/source-change/5429f610cbc38b0d> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "640b49a23f155ad44bfb1e1106c027281d360ddbd36a66e7100cb98d9174e0d3" .
@@ -26461,6 +26619,9 @@
     <http://example.org/project/source-change/552b9732d024e61b> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "3e75f1e47b1b041e13d3e637077b84c2a801b37cb24d04b3c8382759fa5d0d0b" .
+    <http://example.org/project/source-change/55879a27b1f3643c> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "1b7109b72ca48d924068273105bb03e453ee9b5d09d1c68dae280153ac1bbed5" .
     <http://example.org/project/source-change/55f7816196c84a69> sci:observedOn "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "e70990d3441200699c7d73927e7307f932403a1a100cd0a71996d7f637aeccb7" .
@@ -26794,6 +26955,9 @@
     <http://example.org/project/source-change/8355a0d1cffc77f2> sci:observedOn "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "e490775afc5f332dbc2e7bb05af55932dea2df7c930414d78ee18e08b4924fde" .
+    <http://example.org/project/source-change/840d360c7c9271f4> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "a0116a2ebaf27f9c11eb422f802aeea1e5ae1361acfc1f47cdd716532eaf4216" .
     <http://example.org/project/source-change/841a4d11c1a6c4ec> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "7f4bf0aa9af90db4b98a6bc46e6d8681a48191cad18a2b5ab20401c24ec66ee3" .
@@ -27019,6 +27183,9 @@
     <http://example.org/project/source-change/a6cffa08081bb0bd> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "6da51c167673e5f2c7e77b5e7504cecbaf0ba598199157d104fbdb6433ad3b32" .
+    <http://example.org/project/source-change/a74624494af13c40> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "62f96a95d53f73e4cbce8021050372cbdb5caf2fa84efd9432b9e1cd44acc9db" .
     <http://example.org/project/source-change/a8512968d0954d36> sci:observedOn "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "9a73b8e98c00327c748aa0c69ebea620ba65d2a2bd04e8cf7f095bafe2df27f1" .
@@ -27268,6 +27435,9 @@
     <http://example.org/project/source-change/cac8ba2e17a9c2d5> sci:observedOn "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "52d9e0a0ac7aeb67ad82f0a50ac2d154bf270275caed372c37ccb3fce0a9a2f9" .
+    <http://example.org/project/source-change/cad7587024ff83cf> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "4479d23f4907e33033756a23e867ad666c2d3307b7a93272c4c0fd5bc04b94dc" .
     <http://example.org/project/source-change/cb04e4e9393416aa> sci:observedOn "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "df945b091d7a72ca5b0967e8555ef8ca4a382ce0f126d16a97d44df3466fcfb6" .
@@ -27322,6 +27492,9 @@
     <http://example.org/project/source-change/d14b0cdc396263a7> sci:observedOn "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "341e1fd2bb1daf408b62ffefd412e1e41b31c8e322a774d9fb4ee00d443f84a9" .
+    <http://example.org/project/source-change/d1d375ddd62045d4> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "aa634af44a8df2c333099fb11644701857bb1769556d9a98c65fe09242463045" .
     <http://example.org/project/source-change/d20f7a4e762d97f0> sci:observedOn "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "0f9c44d10638d7654ff6c9a1d9c65681cd371764fe14b4c1acca6d0482979b0b" .
@@ -27355,6 +27528,9 @@
     <http://example.org/project/source-change/d8683e483455acbb> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "7b306dcef94c92cc9e1d24b323e8e8f33542969cd44c6b6c7d46a64b838e5313" .
+    <http://example.org/project/source-change/d8abbe14ef61954a> sci:observedOn "2026-07-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        a sci:SourceChange ;
+        schema:sha256 "85023d24dddd3d89f4fa3df5f0df239b791129de7a5149a9ad09542d89cce096" .
     <http://example.org/project/source-change/d9497dd31d72c295> sci:observedOn "2026-07-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
         a sci:SourceChange ;
         schema:sha256 "472c297e9536b482de9700526224aae2c00419d18fe8b745abc5f3c35db5ff9f" .
@@ -27610,9 +27786,10 @@
         sci:sourcePath "entities/papers/Fedorchenko2023.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "3564d93fb6d939d603694b8f29d60cfe17dd2e9604b45a6ef3211cab924976e5" .
-    <http://example.org/project/source-snapshot/046a7c4cd545062f> sci:sourcePath "entities/questions/0053-gut-microbiome-normalization-kinetics-leading-vs-lagging.md" ;
+    <http://example.org/project/source-snapshot/046a7c4cd545062f> sci:latestSourceChange <http://example.org/project/source-change/840d360c7c9271f4> ;
+        sci:sourcePath "entities/questions/0053-gut-microbiome-normalization-kinetics-leading-vs-lagging.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "121acef68a58d016c5188a3df1c8d56e79caa730b154a4436406cc86d8e1fe28" .
+        schema:sha256 "a0116a2ebaf27f9c11eb422f802aeea1e5ae1361acfc1f47cdd716532eaf4216" .
     <http://example.org/project/source-snapshot/047c907f93234220> sci:latestSourceChange <http://example.org/project/source-change/d20f7a4e762d97f0> ;
         sci:sourcePath "entities/datasets/gse130353-qfs-cfs-prepared-gene-matrix.md" ;
         a sci:SourceSnapshot ;
@@ -27629,9 +27806,10 @@
         sci:sourcePath "entities/questions/0042-is-the-cross-trigger-1020-chronic-fraction-an-artifact-of-shared-case.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "1f132e7d8789037a1828b0f0c8f862f102e41f8843b0d78913c943b8f87b50da" .
-    <http://example.org/project/source-snapshot/058dabf579ff33cf> sci:sourcePath "entities/questions/0054-ebv-reactivation-autoantibody-emergence-temporal-ordering.md" ;
+    <http://example.org/project/source-snapshot/058dabf579ff33cf> sci:latestSourceChange <http://example.org/project/source-change/5390ea5985c82a66> ;
+        sci:sourcePath "entities/questions/0054-ebv-reactivation-autoantibody-emergence-temporal-ordering.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "7d4422666432319260f0b7fe46d237f9e7d9c170faa5faa5341c63919d6a1135" .
+        schema:sha256 "f386b6fb7a6e8f5df87734bdfa66ccd1d9ab77c7ab685534c53f50250b081491" .
     <http://example.org/project/source-snapshot/05bbcc9b6cec65d9> sci:latestSourceChange <http://example.org/project/source-change/dfa83eba0c2a58fb> ;
         sci:sourcePath "entities/datasets/dengue-postinfective-fatigue-meta.md" ;
         a sci:SourceSnapshot ;
@@ -27720,9 +27898,10 @@
         sci:sourcePath "entities/papers/Ramundo2025.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "f7890bc1dc2442deea0e1f205c44b74890517f72d13b45c17513c3435fd98ffe" .
-    <http://example.org/project/source-snapshot/11b9072782ce4153> sci:sourcePath "entities/hypotheses/0014-nk-failure-clear-senescent-endothelium-sasp-propagation.md" ;
+    <http://example.org/project/source-snapshot/11b9072782ce4153> sci:latestSourceChange <http://example.org/project/source-change/1ea4d4d2a223bbda> ;
+        sci:sourcePath "entities/hypotheses/0014-nk-failure-clear-senescent-endothelium-sasp-propagation.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "e980eef98eb4e8ce9bd42e62e153329c0f6d049fe3dfa81ac15ed985f39f1a66" .
+        schema:sha256 "6d30a825027b499836c5cf0856e3ca5c0e4d5b8be6b6d9e9b5eb69235b16d075" .
     <http://example.org/project/source-snapshot/11bbf44598474e2e> sci:latestSourceChange <http://example.org/project/source-change/7f787490ec1ab6f1> ;
         sci:sourcePath "entities/reports/0005-t038-impacc-gabernet2025-m1-mediator-compatibility.md" ;
         a sci:SourceSnapshot ;
@@ -27759,9 +27938,10 @@
         sci:sourcePath "entities/questions/0039-negative-control-outcome-designs-to-bound-healthcare-utilization.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "b4c52ab305d6db3b7864cfa1916b8b01b3e4ac97249277c00c4e232554316875" .
-    <http://example.org/project/source-snapshot/15471e58456a88c3> sci:sourcePath "entities/hypotheses/0017-pem-overdiagnosed-via-self-report-nonspecific.md" ;
+    <http://example.org/project/source-snapshot/15471e58456a88c3> sci:latestSourceChange <http://example.org/project/source-change/28baad2f83e09332> ;
+        sci:sourcePath "entities/hypotheses/0017-pem-overdiagnosed-via-self-report-nonspecific.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "9431c3ac61b4f72aad401fc1d95e178c0c690c39a3d79bf67d0dd2596d70d04e" .
+        schema:sha256 "b2a5eb491a28f98a30e497c73a93a1197a1db81382382b903ed4b6ade0925e50" .
     <http://example.org/project/source-snapshot/15af71d629255d18> sci:latestSourceChange <http://example.org/project/source-change/745891b64e1988ba> ;
         sci:sourcePath "entities/evidence-lines/0031-abubasheer2025-meta-male-hard-endpoint-excess-direction.md" ;
         a sci:SourceSnapshot ;
@@ -27802,16 +27982,18 @@
         sci:sourcePath "entities/interpretations/0010-t006-functional-gpcr-autoantibody-ingestion.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "f401f90f8395c208ec74c0fb434e6870ac60fb7093ee4e855d4e33c169b7cff2" .
-    <http://example.org/project/source-snapshot/1912da767c9e34e1> sci:sourcePath "entities/questions/0051-prior-symptomatic-ebv-mononucleosis-as-pais-risk-amplifier.md" ;
+    <http://example.org/project/source-snapshot/1912da767c9e34e1> sci:latestSourceChange <http://example.org/project/source-change/a74624494af13c40> ;
+        sci:sourcePath "entities/questions/0051-prior-symptomatic-ebv-mononucleosis-as-pais-risk-amplifier.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "857dc0efed32eede710bc54fe4c2deb39f46ad97617fa93c66534bba3bbc86cd" .
+        schema:sha256 "62f96a95d53f73e4cbce8021050372cbdb5caf2fa84efd9432b9e1cd44acc9db" .
     <http://example.org/project/source-snapshot/19769a8afe001d40> sci:latestSourceChange <http://example.org/project/source-change/144b850cf54add70> ;
         sci:sourcePath "entities/papers/Joseph2023.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "08a806b0c01b7b5139f3880a5b69d2ee9ef6984b1b0cfebccf3864b072befe8a" .
-    <http://example.org/project/source-snapshot/1995c4dfc59a1383> sci:sourcePath "entities/questions/0050-cross-pathogen-co-enrollment-harmonized-multiomics-design.md" ;
+    <http://example.org/project/source-snapshot/1995c4dfc59a1383> sci:latestSourceChange <http://example.org/project/source-change/cad7587024ff83cf> ;
+        sci:sourcePath "entities/questions/0050-cross-pathogen-co-enrollment-harmonized-multiomics-design.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "145caf67647347bbeb77b2f27e006b86f29bd56e868386f576037f712ad2bb01" .
+        schema:sha256 "4479d23f4907e33033756a23e867ad666c2d3307b7a93272c4c0fd5bc04b94dc" .
     <http://example.org/project/source-snapshot/1a2f9aad6be2cdb4> sci:latestSourceChange <http://example.org/project/source-change/69915a0255474780> ;
         sci:sourcePath "entities/pre-registrations/0002-cross-trigger-pathway-overlap.md" ;
         a sci:SourceSnapshot ;
@@ -27900,9 +28082,10 @@
         sci:sourcePath "entities/propositions/0009-dysautonomia-female-skew-is-baseline-carried-not-pais-amplified.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "af36c9f1cb419a3a7a2b01ef98b3e4f18a4fbb9098a63b4c11797a20db81c74e" .
-    <http://example.org/project/source-snapshot/22e40c9210e2e1ef> sci:sourcePath "entities/hypotheses/0015-ebv-reactivation-consequence-not-cause-of-pais.md" ;
+    <http://example.org/project/source-snapshot/22e40c9210e2e1ef> sci:latestSourceChange <http://example.org/project/source-change/d8abbe14ef61954a> ;
+        sci:sourcePath "entities/hypotheses/0015-ebv-reactivation-consequence-not-cause-of-pais.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "260beca96f804694b38ab24f37a5e5b6b61c6633c53c6940d46ac84bcb466223" .
+        schema:sha256 "85023d24dddd3d89f4fa3df5f0df239b791129de7a5149a9ad09542d89cce096" .
     <http://example.org/project/source-snapshot/2315b67b8b31459f> sci:latestSourceChange <http://example.org/project/source-change/3120d220d272fe54> ;
         sci:sourcePath "entities/questions/0037-latent-homeostatic-fragility-after-pais-recovery-lower-re-entry.md" ;
         a sci:SourceSnapshot ;
@@ -28023,9 +28206,10 @@
         sci:sourcePath "entities/evidence-lines/0086-appelman2024-no-occlusion-weakly-disputes-simple-ischemic-p2.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "1ff26a1b68b87981dbbbb38a85971fc33439ed0edeb9ab1755f8045cc96b2414" .
-    <http://example.org/project/source-snapshot/3056c6a3fa1e5576> sci:sourcePath "entities/hypotheses/0016-fibrinaloid-microclots-nonspecific-inflammatory-marker.md" ;
+    <http://example.org/project/source-snapshot/3056c6a3fa1e5576> sci:latestSourceChange <http://example.org/project/source-change/d1d375ddd62045d4> ;
+        sci:sourcePath "entities/hypotheses/0016-fibrinaloid-microclots-nonspecific-inflammatory-marker.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "2081434c6f60a6a9d87c434d816753390bfd42e4d9d0991d48b24bacdff01cc2" .
+        schema:sha256 "aa634af44a8df2c333099fb11644701857bb1769556d9a98c65fe09242463045" .
     <http://example.org/project/source-snapshot/306f558e9b57b7fb> sci:latestSourceChange <http://example.org/project/source-change/2df241b73adbcab6> ;
         sci:sourcePath "entities/papers/EatonFitch2024.md" ;
         a sci:SourceSnapshot ;
@@ -28186,9 +28370,10 @@
         sci:sourcePath "entities/papers/Joseph2021.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "52fa5064ac553341be2589d56dfca8fb7b5b876ce59335abf583d24241ab832c" .
-    <http://example.org/project/source-snapshot/47a2e4fafddd49fd> sci:sourcePath "entities/questions/0049-two-day-cpet-multiomic-pem-assay-across-pais.md" ;
+    <http://example.org/project/source-snapshot/47a2e4fafddd49fd> sci:latestSourceChange <http://example.org/project/source-change/4d305a7ba9d50644> ;
+        sci:sourcePath "entities/questions/0049-two-day-cpet-multiomic-pem-assay-across-pais.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "3fbd8d46be265a3c145f91e28247a658a52ae1f951f42011141faa60bc627721" .
+        schema:sha256 "3925bcbafdea5c3fb7896ec90b67a75954751a68941644132131f3a09df129ac" .
     <http://example.org/project/source-snapshot/47aea4c092c6b0c4> sci:latestSourceChange <http://example.org/project/source-change/407d6e43c91fa641> ;
         sci:sourcePath "entities/concepts/sex-assigned-at-birth.md" ;
         a sci:SourceSnapshot ;
@@ -28237,6 +28422,9 @@
         sci:sourcePath "entities/propositions/0019-pais-sfn-immunomodulation-modifies-lesion-trajectory.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "7cf25f250b09061093914f40ca8e4ca512e601fa181c373768d492b346d69b6f" .
+    <http://example.org/project/source-snapshot/4d9817e3d0f27935> sci:sourcePath "entities/themes/0001-deflationary-nulls-and-biomarker-vs-driver.md" ;
+        a sci:SourceSnapshot ;
+        schema:sha256 "29b64020a611e4b988d66a78f5fb7ef8cee7b614a3f6c9a76d1ab0ca49f5ffb0" .
     <http://example.org/project/source-snapshot/4e2f73a38c0de467> sci:latestSourceChange <http://example.org/project/source-change/4f296d40aa8fca4a> ;
         sci:sourcePath "entities/evidence-lines/0029-xie2022-ambulatory-male-vte-excess-survives-low-severity-stratum.md" ;
         a sci:SourceSnapshot ;
@@ -28377,9 +28565,10 @@
         sci:sourcePath "entities/papers/Peppercorn2023.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "805274fee6d882daab7a62bd08d4f12153d1b891226d1690232d7d5933da7050" .
-    <http://example.org/project/source-snapshot/5c5633c3350b9ff7> sci:sourcePath "entities/hypotheses/0018-circulating-antigen-as-severity-biomarker-not-driver.md" ;
+    <http://example.org/project/source-snapshot/5c5633c3350b9ff7> sci:latestSourceChange <http://example.org/project/source-change/1b3e08654229df77> ;
+        sci:sourcePath "entities/hypotheses/0018-circulating-antigen-as-severity-biomarker-not-driver.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "7fdc7b3e368f70c0cbd26eded1dbb07219495fb9376943ec106c0416d721e51a" .
+        schema:sha256 "d78b7d3effc04dad160d1982ea2234c36f686ccceb6c95ae273591b8f11729c5" .
     <http://example.org/project/source-snapshot/5c777082bcfa7722> sci:latestSourceChange <http://example.org/project/source-change/b7507d86ea2cb087> ;
         sci:sourcePath "entities/propositions/0012-vascular-hard-endpoint-male-reversal-survives-severity-adjustment.md" ;
         a sci:SourceSnapshot ;
@@ -28856,9 +29045,10 @@
         sci:sourcePath "entities/propositions/0017-pais-sfn-cross-trigger-convergence.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "463c85bd283ba8701abc86cdff198437426576a5e074f28cb8df48df3a648046" .
-    <http://example.org/project/source-snapshot/8bda5aaaafe099e0> sci:sourcePath "entities/questions/0052-acute-clearance-rate-as-cross-pathogen-pais-trajectory-predictor.md" ;
+    <http://example.org/project/source-snapshot/8bda5aaaafe099e0> sci:latestSourceChange <http://example.org/project/source-change/0d13e204bbea8588> ;
+        sci:sourcePath "entities/questions/0052-acute-clearance-rate-as-cross-pathogen-pais-trajectory-predictor.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "f49734b07ea24e1fb1775b17d4f7e512a4e4e5952a58b775f79b9c5502e11ac7" .
+        schema:sha256 "1ea8e6a1e4d0e406a35c386e29b433e51c23c4c7518733129a4f8e92e066c2e2" .
     <http://example.org/project/source-snapshot/8c34c52663358984> sci:latestSourceChange <http://example.org/project/source-change/cc7beab812877371> ;
         sci:sourcePath "entities/questions/0002-antigen-clearance-rescues-symptoms.md" ;
         a sci:SourceSnapshot ;
@@ -28967,9 +29157,10 @@
         sci:sourcePath "entities/concepts/immune-metabolic-feedback-loop.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "5cb12f567b29f9ece3142f85c2225289311dedd622e7c3fac8db288499112145" .
-    <http://example.org/project/source-snapshot/9865a6df6cb11411> sci:sourcePath "entities/questions/0048-glymphatic-clearance-failure-post-infectious-neurocognitive.md" ;
+    <http://example.org/project/source-snapshot/9865a6df6cb11411> sci:latestSourceChange <http://example.org/project/source-change/55879a27b1f3643c> ;
+        sci:sourcePath "entities/questions/0048-glymphatic-clearance-failure-post-infectious-neurocognitive.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "643ab5e903715fb11c56da3fc301ba36066282996bb055aa813ef5af5f9b9248" .
+        schema:sha256 "1b7109b72ca48d924068273105bb03e453ee9b5d09d1c68dae280153ac1bbed5" .
     <http://example.org/project/source-snapshot/987255a1e4b85d99> sci:latestSourceChange <http://example.org/project/source-change/5ef57fc79e38a0fa> ;
         sci:sourcePath "entities/papers/Naviaux2016.md" ;
         a sci:SourceSnapshot ;
@@ -29574,6 +29765,9 @@
         sci:sourcePath "entities/papers/Seo2025.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "de0bd1327d68c7d09447a3f35c213c2b39eaf5345029004b4d29969b26d7136d" .
+    <http://example.org/project/source-snapshot/e135649e0878979e> sci:sourcePath "entities/themes/0002-temporal-ordering-and-causal-kinetics.md" ;
+        a sci:SourceSnapshot ;
+        schema:sha256 "42e6ddd82ff32ebae9851967a9ea945e01d5beb7bc02c8f30feee2ba5c343b13" .
     <http://example.org/project/source-snapshot/e13cd166c6fcf3e8> sci:latestSourceChange <http://example.org/project/source-change/24e3ec10ab93ecbf> ;
         sci:sourcePath "entities/papers/Huang2025.md" ;
         a sci:SourceSnapshot ;
@@ -29658,9 +29852,10 @@
         sci:sourcePath "entities/evidence-lines/0044-adler2024-ptlds-leg-cross-syndrome-framing-supports-p4.md" ;
         a sci:SourceSnapshot ;
         schema:sha256 "b9cba47f293f573868876739001cd4a299dd263ba53dacb223fcc106f44f2b1e" .
-    <http://example.org/project/source-snapshot/ecbd20554b0d9c27> sci:sourcePath "entities/hypotheses/0013-ido1-ido2-bistable-tryptophan-metabolic-trap.md" ;
+    <http://example.org/project/source-snapshot/ecbd20554b0d9c27> sci:latestSourceChange <http://example.org/project/source-change/066c69ebeb3db1e6> ;
+        sci:sourcePath "entities/hypotheses/0013-ido1-ido2-bistable-tryptophan-metabolic-trap.md" ;
         a sci:SourceSnapshot ;
-        schema:sha256 "0784d7441a582cb3b82acd18bc07db5a395a0dbec686dc4d303f8447a89de1f5" .
+        schema:sha256 "eb9f7a4ca7dfb7a9ff51e0fb65d1f53daab82d6b616a751e5d1799058863bc0f" .
     <http://example.org/project/source-snapshot/ed10d14756feb407> sci:latestSourceChange <http://example.org/project/source-change/9667679dff53a2eb> ;
         sci:sourcePath "entities/hypotheses/0010-the-pais-attractor-is-a-slow-heterogeneous-recovery-gradient-not-a.md" ;
         a sci:SourceSnapshot ;
@@ -31055,6 +31250,10 @@
         schema:identifier "entities/synthesis/0008-project-synthesis-rollup.md" .
     <http://example.org/project/source/entities_synthesis_0009-emergent-threads.md> a prov:Entity ;
         schema:identifier "entities/synthesis/0009-emergent-threads.md" .
+    <http://example.org/project/source/entities_themes_0001-deflationary-nulls-and-biomarker-vs-driver.md> a prov:Entity ;
+        schema:identifier "entities/themes/0001-deflationary-nulls-and-biomarker-vs-driver.md" .
+    <http://example.org/project/source/entities_themes_0002-temporal-ordering-and-causal-kinetics.md> a prov:Entity ;
+        schema:identifier "entities/themes/0002-temporal-ordering-and-causal-kinetics.md" .
     <http://example.org/project/source/entities_topics_antigen-pathogen-persistence.md> a prov:Entity ;
         schema:identifier "entities/topics/antigen-pathogen-persistence.md" .
     <http://example.org/project/source/entities_topics_biomarkers-and-objective-endpoints.md> a prov:Entity ;
@@ -31208,6 +31407,11 @@
     <http://example.org/project/task/t100> prov:wasDerivedFrom <http://example.org/project/source/tasks_active.md> .
     <http://example.org/project/task/t101> prov:wasDerivedFrom <http://example.org/project/source/tasks_active.md> .
     <http://example.org/project/task/t102> prov:wasDerivedFrom <http://example.org/project/source/tasks_done_2026-07.md> .
+    <http://example.org/project/task/t103> prov:wasDerivedFrom <http://example.org/project/source/tasks_active.md> .
+    <http://example.org/project/task/t104> prov:wasDerivedFrom <http://example.org/project/source/tasks_active.md> .
+    <http://example.org/project/task/t105> prov:wasDerivedFrom <http://example.org/project/source/tasks_active.md> .
+    <http://example.org/project/theme/0001-deflationary-nulls-and-biomarker-vs-driver> prov:wasDerivedFrom <http://example.org/project/source/entities_themes_0001-deflationary-nulls-and-biomarker-vs-driver.md> .
+    <http://example.org/project/theme/0002-temporal-ordering-and-causal-kinetics> prov:wasDerivedFrom <http://example.org/project/source/entities_themes_0002-temporal-ordering-and-causal-kinetics.md> .
     <http://example.org/project/topic/antigen-pathogen-persistence> prov:wasDerivedFrom <http://example.org/project/source/entities_topics_antigen-pathogen-persistence.md> .
     <http://example.org/project/topic/biomarkers-and-objective-endpoints> prov:wasDerivedFrom <http://example.org/project/source/entities_topics_biomarkers-and-objective-endpoints.md> .
     <http://example.org/project/topic/gut-microbiome-barrier-axis> prov:wasDerivedFrom <http://example.org/project/source/entities_topics_gut-microbiome-barrier-axis.md> .
@@ -31464,7 +31668,9 @@
             <http://example.org/project/proposition/0039-immune-state-displacement-mediates-vs-marks-pais-symptoms>,
             <http://example.org/project/proposition/0040-vascular-metabolic-sfn-axes-plausible-effectors>,
             <http://example.org/project/proposition/0041-feedback-maintenance-requires-dynamical-treatment-outside-dag>,
-            <http://example.org/project/task/t033> ;
+            <http://example.org/project/task/t033>,
+            <http://example.org/project/task/t103>,
+            <http://example.org/project/task/t104> ;
         sci:neighborhoodPolicy "local-closure-v1" ;
         sci:patchScope "local" ;
         sci:policyVersion "local-closure-v1" ;
@@ -31482,6 +31688,24 @@
         sci:derivationReason "closure" ;
         sci:member <http://example.org/project/pre-registration/0002-cross-trigger-pathway-overlap> ;
         sci:memberKind "pre-registration" ;
+        sci:memberRole "member" ;
+        sci:patch <http://example.org/project/patch-definition/immune-state-shift-causal-landscape> ;
+        sci:policyVersion "local-closure-v1" ;
+        a sci:PatchMembership .
+    <http://example.org/project/patch-membership/20423015101aa50f> sci:derivationDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:derivationPredicate sci:bearsOn ;
+        sci:derivationReason "closure" ;
+        sci:member <http://example.org/project/task/t103> ;
+        sci:memberKind "task" ;
+        sci:memberRole "member" ;
+        sci:patch <http://example.org/project/patch-definition/immune-state-shift-causal-landscape> ;
+        sci:policyVersion "local-closure-v1" ;
+        a sci:PatchMembership .
+    <http://example.org/project/patch-membership/230a3a0038eacc36> sci:derivationDepth "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+        sci:derivationPredicate sci:bearsOn ;
+        sci:derivationReason "closure" ;
+        sci:member <http://example.org/project/task/t104> ;
+        sci:memberKind "task" ;
         sci:memberRole "member" ;
         sci:patch <http://example.org/project/patch-definition/immune-state-shift-causal-landscape> ;
         sci:policyVersion "local-closure-v1" ;
@@ -31659,6 +31883,8 @@
     <http://example.org/project/proposition/0040-vascular-metabolic-sfn-axes-plausible-effectors> sci:inPatch <http://example.org/project/patch-definition/immune-state-shift-causal-landscape> .
     <http://example.org/project/proposition/0041-feedback-maintenance-requires-dynamical-treatment-outside-dag> sci:inPatch <http://example.org/project/patch-definition/immune-state-shift-causal-landscape> .
     <http://example.org/project/task/t033> sci:inPatch <http://example.org/project/patch-definition/immune-state-shift-causal-landscape> .
+    <http://example.org/project/task/t103> sci:inPatch <http://example.org/project/patch-definition/immune-state-shift-causal-landscape> .
+    <http://example.org/project/task/t104> sci:inPatch <http://example.org/project/patch-definition/immune-state-shift-causal-landscape> .
 }
 
 <http://example.org/project/patch-definition/menopause-pais-causal-dag> {

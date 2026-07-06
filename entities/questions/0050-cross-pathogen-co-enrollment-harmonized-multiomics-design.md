@@ -13,6 +13,8 @@ origins:
   ref: explore-ideas-methodology
 related:
 - question:0001-shared-molecular-signature-across-triggers
+- question:0017-deflationary-alternatives-vs-shared-pathophysiology
+- hypothesis:0001-shared-dysregulated-attractor
 created: '2026-07-06'
 updated: '2026-07-06'
 added_by: explore-ideas:claude-opus-4-8:cand-methodology-cross-pathogen-harmonized-design
@@ -31,38 +33,61 @@ lens_views:
 
 ## Summary
 
-<!-- What is being asked and why it is important. -->
+Would a prospective multi-arm study **co-enrolling** patients 4–12 weeks after *serologically confirmed*
+acute COVID-19, Lyme disease, influenza, EBV, and Q-fever — using **identical multi-omic sampling
+protocols** and matched uninfected controls — be feasible, and would it produce molecular signatures
+that finally resolve the shared-versus-trigger-specific mechanism question? This is the concrete design
+form of the discriminating experiment the project repeatedly names but does not yet have: the
+"harmonized ≥3-trigger multi-omics with full-recovery controls" that `hypothesis:0001` and
+`question:0017` both hinge on.
 
 ## Why It Matters
 
-<!-- Bulleted list. Cover at least:
-- the decision this question affects
-- the risk if the question is left unanswered
--->
+- **Decision it affects:** whether such a study is *feasible* and worth prioritizing/funding — the crux
+  is logistics and power, not desirability. It is the single experiment most able to adjudicate the
+  project's core thesis (shared attractor, `hypothesis:0001`) against the finite-repertoire-coincidence
+  and ascertainment-artifact nulls (`question:0017`).
+- **Risk if unanswered:** the shared-vs-trigger-specific question stays unresolvable on the public,
+  design-heterogeneous, 2-cohort data that has repeatedly returned non-arbitrating nulls (the t035
+  pathway-overlap reanalysis, `interpretation:0001-...`). Shared-mechanism therapeutics and cross-trigger
+  biomarker transfer cannot be justified until this design exists.
 
 ## Current Evidence
 
-<!-- Bulleted list. Cover at least:
-- supporting evidence
-- conflicting evidence
--->
+- **Supporting:** Trautmann2025 reviews shared and divergent PAIS features and explicitly notes that
+  mechanistic comparison is limited by *incompatible study designs* — directly motivating a single
+  harmonized protocol. Thomas2026 (the MELLOW dense-sampling multi-omic protocol for ME/CFS and long
+  COVID) demonstrates that cross-condition harmonized omics is operationally feasible.
+- **Conflicting / limiting:** co-enrolling five serologically-confirmed acute triggers within a common
+  4–12 week window is a major recruitment and logistics challenge (incidence, timing, confirmation
+  assays differ per pathogen); matched-control and power requirements are demanding; and the strong
+  covariate sensitivity of PAIS (severity, age, sex, timing, prior immunity) must be designed in, not
+  adjusted for post hoc.
 
 ## Thoughts
 
-<!-- Bulleted list. Cover at least:
-- the best current interpretation
-- the major remaining uncertainty
--->
+- **Best current interpretation:** feasibility — not scientific value — is the binding constraint; a
+  staged design (start with the 2–3 highest-incidence, most-confirmable triggers) may be the realistic
+  path to the ≥3-trigger bar.
+- **Major uncertainty:** whether achievable sample sizes and harmonization would actually yield
+  signatures that *separate* shared from trigger-specific biology, rather than another underpowered
+  non-arbitrating result.
 
 ## Connections to Project
 
-- Related hypotheses:
-- Required datasets: list dataset IDs in frontmatter `datasets:`.
-- Required analyses:
-- Priority level:
+- Related hypotheses: `hypothesis:0001-shared-dysregulated-attractor` (the thesis under test);
+  `question:0017-deflationary-alternatives-vs-shared-pathophysiology` (the null bundle it would score
+  against); `question:0001-shared-molecular-signature-across-triggers` (the positive signature it seeks).
+- Required datasets: a new prospective co-enrollment cohort; MELLOW/Trautmann anchor feasibility and
+  design precedent.
+- Required analyses: pre-registered shared-vs-trigger-specific signature test with full-recovery
+  controls and a specified power/feasibility model.
+- Priority level: P2 — the highest-leverage design question, gated on a feasibility assessment.
 
 ## Related
 
-- Topic notes:
-- Article notes:
-- Methods/Datasets:
+- Topic notes: `topic:shared-failure-mode-across-pais`, `topic:mecfs-long-covid-convergence`.
+- Article notes: Trautmann2025 (incompatible designs limit comparison), Thomas2026 (MELLOW harmonized
+  multi-omics feasibility).
+- Methods/Datasets: contrasts with public 2-cohort GEO pairings shown inadequate by the t035 reanalysis
+  (`pre-registration:0002`, `interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating`).

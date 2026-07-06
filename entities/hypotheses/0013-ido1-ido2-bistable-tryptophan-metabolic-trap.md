@@ -11,6 +11,7 @@ origins:
   ref: explore-ideas-mechanism
 related:
 - question:0025-ifn-i-tryptophan-malabsorption-platelet-serotonin-depletion-vagal
+- hypothesis:0001-shared-dysregulated-attractor
 created: '2026-07-06'
 updated: '2026-07-06'
 added_by: explore-ideas:claude-opus-4-8:cand-mechanism-ido-tryptophan-bistable-trap
@@ -33,78 +34,101 @@ lens_views:
 
 ## Organizing Conjecture
 
-<!--
-High-level research idea.
-State the overarching conjecture in plain language.
-This is the umbrella idea, not the final unit of evidence aggregation.
--->
+The IDO1–IDO2 tryptophan-degradation system can behave as a **bistable switch**. IDO1 undergoes
+*substrate inhibition* at high tryptophan concentrations, and IDO2 — the low-affinity backup enzyme — is
+inactivated by common loss-of-function polymorphisms in a substantial fraction of the population. In
+individuals carrying inactivating IDO2 variants, a triggering elevation of tryptophan during acute
+infection can push the system into a **self-sustaining pathological attractor** — high tryptophan, low
+kynurenine, and depleted NAD⁺ precursors — that persists for months even after tryptophan inputs
+normalize. The conjecture is that this cell-intrinsic "metabolic trap" is a **trigger-nonspecific**
+route into PAIS with an explicit **genetic-susceptibility axis** (IDO2 genotype), distinct from the
+IFN-driven gut-malabsorption chain the project already tracks.
 
 ## Proposition Bundle
 
-<!--
-List the key propositions that make up this hypothesis.
-Prefer explicit sub-propositions, especially those with explicit S-P-O structure:
-- subject
-- predicate
-- object
--->
-
 ### Core Propositions
 
-<!-- Propositions that must be roughly true for the hypothesis to survive. -->
+- IDO1 exhibits substrate inhibition, so at elevated tryptophan its flux *falls* rather than rises.
+- IDO2 loss-of-function polymorphisms remove the backup pathway in a substantial population fraction.
+- The combination admits a **bistable** regime: a perturbation can lock the system in a high-Trp /
+  low-Kyn / low-NAD⁺ state that persists after inputs normalize (mathematical-model prediction).
+- The trap is **trigger-nonspecific** — it can be entered from any acute infection that transiently
+  raises tryptophan, generalizing across PAIS.
 
 ### Supporting Or Auxiliary Propositions
 
-<!-- Propositions that strengthen or elaborate the hypothesis but are not essential. -->
+- IDO2 genotype stratifies PAIS susceptibility (a testable genetic prediction absent from most cohorts).
+- The mechanism is *distinct from* the IFN-I → tryptophan-malabsorption → serotonin-depletion chain of
+  `question:0025`: a cell-intrinsic enzymatic bistability with genetic susceptibility, not gut
+  malabsorption. The two make **opposite** predictions about the direction of the Trp/Kyn imbalance.
 
 ## Current Uncertainty
 
-<!--
-What makes this hypothesis currently fragile, contested, or underspecified?
-Note whether support is sparse, single-source, indirect, literature-only, etc.
--->
+The hypothesis is a **mathematical-model conjecture** (the IDO "metabolic trap," proposed for ME/CFS),
+not an empirically demonstrated attractor. The predicted bistable metabolite signature has not been
+directly measured in PAIS cohorts, and the IDO2-genotype association is untested. Available human
+metabolomics is cross-sectional endophenotyping, not longitudinal evidence of persistence/hysteresis.
+Support is therefore literature-and-model only.
 
 ## Predictions
 
-<!--
-What should we observe if the core claims are true?
-Distinguish strong discriminating predictions from weaker corollaries.
--->
+**Strong / discriminating:**
+
+- PAIS cases carrying inactivating IDO2 variants show the paradoxical **high-tryptophan / low-kynurenine**
+  pattern — the opposite direction to the IFN-driven low-Trp/high-Kyn signature predicted by
+  `question:0025` — which cleanly separates the two mechanisms.
+- The metabolite state persists **independent of concurrent inflammation markers** (evidence of an
+  autonomous trap rather than an inflammation-driven readout).
+- IDO2 loss-of-function genotypes are enriched among PAIS cases across multiple triggers.
+
+**Weaker / corollaries:**
+
+- NAD⁺-precursor depletion accompanies the trap state.
+- Interventions that bypass the trap (e.g. downstream kynurenine-pathway or NAD⁺ repletion) shift
+  symptoms, whereas tryptophan supplementation does not.
 
 ## Falsifiability
 
-<!--
-What results would materially lower confidence in the core claims?
-Be specific about what would force revision.
--->
+Confidence would be materially reduced if:
+
+- PAIS cohorts show **normal** Trp/Kyn ratios, or the **IFN-type low-Trp/high-Kyn** direction, rather
+  than the trap's predicted high-Trp/low-Kyn pattern (note: Al-Hakeim2023 already reports the low-Trp
+  direction in long COVID — see Disputing Evidence).
+- There is **no IDO2-genotype enrichment** in PAIS cases across triggers.
+- The metabolite state tracks (is not decoupled from) concurrent inflammation, i.e. no evidence of an
+  autonomous bistable attractor.
+- Longitudinal metabolomics shows simple monotonic normalization with no hysteresis.
 
 ## Supporting Evidence
 
-<!--
-Existing evidence that supports one or more propositions in this bundle.
-Note evidence type where possible:
-- literature
-- empirical-data
-- simulation
-- benchmark
--->
+- **Kashi2019 (literature / mathematical model):** proposes the IDO1–IDO2 bistable tryptophan metabolic
+  trap, driven by inactivating IDO2 variants, as an ME/CFS etiology — the core mechanism, but restricted
+  to ME/CFS and untested across other PAIS triggers.
+- **Al-Hakeim2023 (literature, cross-sectional):** a long-COVID endophenotype with disturbed
+  tryptophan-catabolite metabolism maps onto CFS and affective burden — supports that the Trp–Kyn axis is
+  symptom-relevant in PASC (see caveat below on *direction*).
 
 ## Disputing Evidence
 
-<!--
-Existing evidence that weakens or contests one or more propositions.
-Include null or conflicting findings here.
--->
+- **Al-Hakeim2023 direction of effect:** reports **low tryptophan / elevated kynurenine** in long COVID —
+  the IFN-driven pattern of `question:0025`, which is the **opposite** of the metabolic trap's predicted
+  high-Trp / low-Kyn signature. It supports "the Trp–Kyn axis matters" but is in tension with the trap as
+  the operative mechanism in long COVID specifically.
+- No study has demonstrated the bistability (hysteresis / persistence-after-normalization) the hypothesis
+  requires; the metabolic-trap model remains unconfirmed even in ME/CFS.
 
 ## Evidence Needed To Shift Belief
 
-<!--
-What evidence would most efficiently increase or decrease confidence?
-What is the most discriminating next test?
--->
+- **Most efficient upward:** PAIS metabolomics stratified by IDO2 genotype showing the high-Trp/low-Kyn
+  trap signature in loss-of-function carriers, decoupled from inflammation.
+- **Most efficient downward:** the same design showing no genotype effect, or the IFN-type direction.
+- **Most discriminating next test:** a joint IDO2-genotype × longitudinal-Trp/Kyn design that can detect
+  hysteresis and separate this route from the `question:0025` malabsorption chain.
 
 ## Related Work
 
-<!--
-Papers, topics, inquiries, and other hypotheses that bear on this hypothesis.
--->
+- `question:0025-ifn-i-tryptophan-malabsorption-platelet-serotonin-depletion-vagal` — the sibling/rival
+  tryptophan route, making opposite directional predictions.
+- `hypothesis:0001-shared-dysregulated-attractor` — parent frame; this is a candidate cell-intrinsic
+  bistable realization of the attractor with an explicit genetic-susceptibility axis.
+- Kashi2019 (ME/CFS metabolic-trap model), Al-Hakeim2023 (long-COVID tryptophan-catabolite endophenotype).

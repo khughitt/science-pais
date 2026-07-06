@@ -11,6 +11,8 @@ origins:
   ref: explore-ideas-contrarian
 related:
 - question:0015-does-pem-requirement-improve-cross-study-comparability
+- question:0049-two-day-cpet-multiomic-pem-assay-across-pais
+- question:0017-deflationary-alternatives-vs-shared-pathophysiology
 created: '2026-07-06'
 updated: '2026-07-06'
 added_by: explore-ideas:claude-opus-4-8:cand-contrarian-pem-overdiagnosed-nonspecific
@@ -30,78 +32,95 @@ lens_views:
 
 ## Organizing Conjecture
 
-<!--
-High-level research idea.
-State the overarching conjecture in plain language.
-This is the umbrella idea, not the final unit of evidence aggregation.
--->
+Post-exertional malaise (PEM), while **reported** by a majority of long-COVID patients, is **objectively
+demonstrable in only a small minority** on standardized physiological testing, and PEM-like phenomena
+occur broadly across severe chronic illness **regardless of post-infectious etiology**. The deflationary
+claim is that self-reported PEM has **low specificity**, undermining its status as a mechanistically
+discriminating or pathognomonic feature of PAIS — and that case definitions requiring self-reported PEM
+inflate apparent cross-syndrome convergence. This is a *measurement/ascertainment* hypothesis, and it is
+deliberately two-sided (see Disputing Evidence: objective post-exertional pathology does exist).
 
 ## Proposition Bundle
 
-<!--
-List the key propositions that make up this hypothesis.
-Prefer explicit sub-propositions, especially those with explicit S-P-O structure:
-- subject
-- predicate
-- object
--->
-
 ### Core Propositions
 
-<!-- Propositions that must be roughly true for the hypothesis to survive. -->
+- Self-reported PEM prevalence in long COVID **greatly exceeds** objectively-confirmed PEM on
+  standardized testing.
+- PEM-like phenomena occur in **non-post-infectious** chronic illness (e.g. cancer-related fatigue).
+- Therefore self-reported PEM has **low specificity** as a PAIS-defining criterion.
 
 ### Supporting Or Auxiliary Propositions
 
-<!-- Propositions that strengthen or elaborate the hypothesis but are not essential. -->
+- Case definitions that require self-reported PEM inflate apparent cross-trigger convergence — an
+  instance of the ascertainment-artifact account in `question:0017` and the comparability concern in
+  `question:0015`.
+- Self-reported PEM may partly track general symptom burden / symptom-focused appraisal rather than a
+  specific exertional lesion.
 
 ## Current Uncertainty
 
-<!--
-What makes this hypothesis currently fragile, contested, or underspecified?
-Note whether support is sparse, single-source, indirect, literature-only, etc.
--->
+The hypothesis hinges on what counts as **"objective PEM"** — and that measure is itself contested. The
+project's own `question:0049` argues 2-day-CPET physiology may *miss* molecular PEM biology, so a low
+objective-confirmation rate on CPET may reflect an insensitive assay rather than absent PEM. The
+hypothesis is therefore genuinely fragile: it is strongest as a claim about *self-report specificity* and
+weakest as a claim that PEM lacks an objective basis.
 
 ## Predictions
 
-<!--
-What should we observe if the core claims are true?
-Distinguish strong discriminating predictions from weaker corollaries.
--->
+**Strong / discriminating:**
+
+- Objective PEM-confirmation rates remain **low** and **non-specific** across conditions on standardized
+  testing.
+- Requiring **objective** PEM (rather than self-report) substantially **shrinks** long-COVID cohorts and
+  shifts apparent prevalence / convergence estimates.
+
+**Weaker / corollaries:**
+
+- Self-reported PEM correlates with general symptom burden or symptom-focused appraisal measures.
 
 ## Falsifiability
 
-<!--
-What results would materially lower confidence in the core claims?
-Be specific about what would force revision.
--->
+Confidence would be materially reduced if:
+
+- A sensitive **objective PEM assay** (e.g. the paired multi-omic 2-day-CPET protocol of `question:0049`)
+  shows **high specificity** to PAIS and **high concordance** with self-report.
+- Objective post-exertional pathology is **absent** in non-post-infectious fatigue but reliably present
+  in PAIS on that assay (i.e. PEM *is* discriminating once measured well).
+- The molecular signature of PEM proves reproducible and PAIS-specific — reframing the low CPET-confirmation
+  rate as an assay-sensitivity problem, not overdiagnosis.
 
 ## Supporting Evidence
 
-<!--
-Existing evidence that supports one or more propositions in this bundle.
-Note evidence type where possible:
-- literature
-- empirical-data
-- simulation
-- benchmark
--->
+- **Stussman2025 (literature, empirical):** ~67% self-reported PEM in long COVID versus ~5.9% objective
+  PEM on CPET, and milder than ME/CFS — direct support for overdiagnosis-via-self-report.
+- **Twomey2020 (literature, empirical):** PEM-like phenomena in up to ~33% of cancer-related-fatigue
+  patients with no post-infectious illness — establishes PEM non-specificity across etiologies.
 
 ## Disputing Evidence
 
-<!--
-Existing evidence that weakens or contests one or more propositions.
-Include null or conflicting findings here.
--->
+- **Appelman2024:** objective skeletal-muscle mitochondrial/metabolic pathology *worsens after* PEM in
+  long COVID — PEM has a demonstrable objective basis, so low CPET-confirmation reflects the *assay*, not
+  the *phenomenon*.
+- **Keller2014:** reproducible 2-day-CPET workload/VO₂ decrement in ME/CFS — an objective PEM correlate
+  does exist. Together these make the "no objective basis" reading untenable; the live claim is narrowly
+  about self-report specificity.
 
 ## Evidence Needed To Shift Belief
 
-<!--
-What evidence would most efficiently increase or decrease confidence?
-What is the most discriminating next test?
--->
+- **Most efficient upward (toward this hypothesis):** matched-condition testing showing objective PEM is
+  rare and non-specific, and that objective-PEM criteria reshape cohort composition.
+- **Most efficient downward:** a sensitive, specific objective PEM assay concordant with self-report
+  (`question:0049`).
+- **Most discriminating next test:** deploy the paired multi-omic 2-day-CPET assay across PAIS and
+  non-PAIS fatigue and measure specificity + self-report concordance directly.
 
 ## Related Work
 
-<!--
-Papers, topics, inquiries, and other hypotheses that bear on this hypothesis.
--->
+- `question:0015-does-pem-requirement-improve-cross-study-comparability` — the comparability question this
+  hypothesis pressures.
+- `question:0049-two-day-cpet-multiomic-pem-assay-across-pais` — the objective assay that could confirm
+  or refute it.
+- `question:0017-deflationary-alternatives-vs-shared-pathophysiology` — this is a PEM-specific member of
+  the project's deflationary/ascertainment-artifact program.
+- Stussman2025 (self-report vs objective PEM), Twomey2020 (PEM in cancer fatigue), Appelman2024 /
+  Keller2014 (objective PEM correlates — disputing).

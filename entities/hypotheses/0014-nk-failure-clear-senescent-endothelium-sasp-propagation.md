@@ -11,6 +11,8 @@ origins:
   ref: explore-ideas-mechanism
 related:
 - question:0010-vascular-microclot-subphenotype
+- hypothesis:0001-shared-dysregulated-attractor
+- hypothesis:0003-immune-exhaustion-feedback
 created: '2026-07-06'
 updated: '2026-07-06'
 added_by: explore-ideas:claude-opus-4-8:cand-mechanism-nk-clearance-endothelial-senescence-pais
@@ -31,78 +33,94 @@ lens_views:
 
 ## Organizing Conjecture
 
-<!--
-High-level research idea.
-State the overarching conjecture in plain language.
-This is the umbrella idea, not the final unit of evidence aggregation.
--->
+The transition from acute post-infectious endothelial dysfunction to persistent PAIS is determined **not
+primarily by the initial burden** of virus-induced endothelial senescence, but by the **cytotoxic failure
+of NK cells and macrophages to clear senescent endothelial cells**. When clearance fails, senescent cells
+persist and drive **SASP-mediated paracrine propagation** of senescence to neighboring endothelium,
+maintaining a procoagulant, proinflammatory, and vasoconstrictive vascular state across tissues. The key
+reframing: persistence is a *clearance-capacity* problem, not an *injury-magnitude* problem — which
+predicts that PAIS severity tracks immune cytotoxic function and that **senolytic response is
+NK-endotype-stratified**.
 
 ## Proposition Bundle
 
-<!--
-List the key propositions that make up this hypothesis.
-Prefer explicit sub-propositions, especially those with explicit S-P-O structure:
-- subject
-- predicate
-- object
--->
-
 ### Core Propositions
 
-<!-- Propositions that must be roughly true for the hypothesis to survive. -->
+- Acute infection induces endothelial cell senescence (virus-driven, established in principle).
+- Senescent endothelial cells propagate senescence to neighbors via SASP paracrine signaling.
+- Clearance of senescent endothelium depends on NK-cell / macrophage cytotoxicity.
+- **Clearance failure — not initial senescent-cell burden — determines** whether the vascular state
+  persists into PAIS.
 
 ### Supporting Or Auxiliary Propositions
 
-<!-- Propositions that strengthen or elaborate the hypothesis but are not essential. -->
+- Terminal-NK / cytotoxic deficits reported in ME/CFS provide a candidate clearance-failure substrate.
+- The persistent senescent endothelium sustains the microclot / thromboinflammatory subphenotype tracked
+  in `question:0010`, linking this mechanism to the project's endothelial-dysfunction thread.
+- Senolytic therapy should benefit the NK-low / clearance-failure endotype preferentially (a stratified
+  prediction, not a blanket one).
 
 ## Current Uncertainty
 
-<!--
-What makes this hypothesis currently fragile, contested, or underspecified?
-Note whether support is sparse, single-source, indirect, literature-only, etc.
--->
+The unifying proposal (virus-induced endothelial senescence + dysfunctional immune clearance as a PAIS
+driver) is a recent **mechanistic review/model**, not a demonstrated pathway. NK/macrophage clearance of
+senescent *endothelial* cells has not been directly measured in PAIS; the claim that clearance capacity
+(not burden) is rate-limiting is untested; and the senolytic-response prediction is entirely prospective.
+Support is literature-and-model, with the NK-deficit leg resting on an inconsistent ME/CFS literature.
 
 ## Predictions
 
-<!--
-What should we observe if the core claims are true?
-Distinguish strong discriminating predictions from weaker corollaries.
--->
+**Strong / discriminating:**
+
+- PAIS severity and *persistence* track **NK/macrophage cytotoxic function** more tightly than they track
+  initial endothelial-injury markers.
+- Senescent-endothelial-cell and SASP markers are **elevated and persistent** in PAIS, not merely
+  transiently raised during the acute phase.
+- Senolytics (or NK-augmenting therapy) improve outcomes **selectively in the NK-low endotype**.
+
+**Weaker / corollaries:**
+
+- Spatial/temporal spread of senescence markers consistent with paracrine propagation.
+- Correlation between clearance-function measures and the microclot subphenotype (`question:0010`).
 
 ## Falsifiability
 
-<!--
-What results would materially lower confidence in the core claims?
-Be specific about what would force revision.
--->
+Confidence would be materially reduced if:
+
+- PAIS persistence tracks **initial injury burden** and is *independent* of NK/macrophage cytotoxic
+  function.
+- Senescent-endothelial / SASP markers are **not** elevated or not persistent in PAIS.
+- Senolytic or NK-augmenting therapy shows **no** benefit, or benefit unrelated to NK endotype.
+- NK cytotoxic function is **normal** in persistent PAIS cohorts.
 
 ## Supporting Evidence
 
-<!--
-Existing evidence that supports one or more propositions in this bundle.
-Note evidence type where possible:
-- literature
-- empirical-data
-- simulation
-- benchmark
--->
+- **Nunes2026 (literature / mechanistic model):** proposes virus-induced endothelial senescence plus a
+  dysfunctional immune system as a cause and driving factor for ME/CFS and long COVID — the anchoring
+  synthesis. This hypothesis *sharpens* it by naming NK/macrophage cytotoxic failure as the specific
+  clearance determinant and adding the NK-endotype-stratified senolytic prediction.
+- NK-cytotoxicity deficits reported in ME/CFS (literature) as a candidate clearance-failure substrate.
 
 ## Disputing Evidence
 
-<!--
-Existing evidence that weakens or contests one or more propositions.
-Include null or conflicting findings here.
--->
+- NK-cytotoxicity findings in ME/CFS are **inconsistent** across studies (assay-dependent), so the
+  clearance-failure substrate is not securely established.
+- Persistent senescent-endothelial burden has not yet been demonstrated in PAIS tissue; the propagation
+  claim is inferred from general senescence biology, not PAIS data.
 
 ## Evidence Needed To Shift Belief
 
-<!--
-What evidence would most efficiently increase or decrease confidence?
-What is the most discriminating next test?
--->
+- **Most efficient upward:** direct measurement of senescent-endothelial burden + SASP markers alongside
+  NK/macrophage cytotoxic function in a PAIS cohort, showing persistence tracks clearance capacity.
+- **Most efficient downward:** persistence explained by initial burden with no clearance-function
+  dependence.
+- **Most discriminating next test:** an NK-endotype-stratified senolytic pilot with senescence-marker and
+  vascular-function readouts.
 
 ## Related Work
 
-<!--
-Papers, topics, inquiries, and other hypotheses that bear on this hypothesis.
--->
+- `question:0010-vascular-microclot-subphenotype` — the downstream vascular subphenotype this mechanism
+  would sustain.
+- `hypothesis:0001-shared-dysregulated-attractor` — parent frame; a candidate endothelial-compartment
+  maintenance loop. `hypothesis:0003-immune-exhaustion-feedback` — adjacent immune-failure mechanism.
+- Nunes2026 (virus-induced endothelial senescence + immune-clearance failure in ME/CFS and long COVID).
