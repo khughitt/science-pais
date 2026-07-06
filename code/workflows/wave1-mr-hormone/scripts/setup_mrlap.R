@@ -34,16 +34,18 @@ cfg <- yaml::read_yaml(config_path)
 # raise it generously so a slow-but-working download is not aborted mid-stream.
 options(timeout = max(600, getOption("timeout")))
 
-# --- install in dependency order (idempotent + verify-gated retry) -----------
-# The three GitHub installs are the flaky, network-bound step. Each is SKIPPED
-# when the package is already present at the pinned SHA/version (so a re-run
-# fetches only what is missing), and RETRIED otherwise. Crucially the retry
-# gates on the ACTUAL installed state (the package resolves at the pinned
-# SHA/version afterwards) rather than on whether install_github threw — remotes
-# does not always re-raise a download failure as a catchable error, so a
-# throw-gated retry would silently pass a half-installed library through. The
-# four hard-fail asserts below remain the reproducibility gate; this only
-# changes HOW we reach a correctly-pinned library, never WHETHER we verify it.
+# --- install in dependency order (idempotent; install_github -> codeload fallback) --
+# ALL THREE GitHub packages can hit this environment's intermittent api.github.com
+# connect timeout (~10s) whenever the conda env is rebuilt from scratch (e.g. a new
+# SNAKEMAKE_CONDA_PREFIX or a cleaned .snakemake/conda). For each package we:
+#   (1) SKIP when already satisfied at the pinned ref (an intact env re-runs instantly),
+#   (2) try install_github once (best case: records GithubSHA1),
+#   (3) else fall back to a DIRECT codeload.github.com tarball at the SAME pinned ref
+#       (bypassing api.github.com) + install_local, retried.
+# install_local does NOT populate GithubSHA1, so for that path the pin is enforced by
+# the SHA-keyed download URL and the tarball sha256 is recorded as content provenance.
+# A single per-package `satisfied()` predicate is the gate — a half-installed or
+# wrong-pin library is never passed through. The final asserts remain the hard gate.
 retries <- 4L
 retry_sleep_s <- 20
 
@@ -56,102 +58,85 @@ installed_version <- function(pkg) {
   if (!requireNamespace(pkg, quietly = TRUE)) return(NA_character_)
   as.character(utils::packageVersion(pkg))
 }
+file_sha256 <- function(path) tryCatch(unname(tools::sha256sum(path)), error = function(e) NA_character_)
 
-# install_fn: a nullary closure that performs the install.
-# verify_fn:  a nullary predicate that is TRUE iff the package is now present at
-#             the pinned SHA/version. Retry until verify_fn holds; HALT after N.
-ensure <- function(install_fn, verify_fn, what) {
-  if (isTRUE(verify_fn())) {
-    message(sprintf("setup_mrlap: %s already satisfied — skipping", what))
-    return(invisible(TRUE))
+# provenance recorded per GitHub package: $method + (for install_local) $tarball_sha256
+install_info <- list()
+
+# satisfied(pkg, ref, expected_version):
+#   TRUE iff pkg is importable AND consistent with its pin —
+#     * if it carries a GithubSHA1, that must equal `ref` (catches a wrong install_github);
+#     * if no GithubSHA1 (install_local), presence is accepted (we only ever install_local
+#       from the pinned-SHA codeload URL);
+#     * if expected_version is given, the installed version must also match.
+satisfied <- function(pkg, ref = NULL, expected_version = NULL) {
+  if (!requireNamespace(pkg, quietly = TRUE)) return(FALSE)
+  if (!is.null(expected_version) && !identical(installed_version(pkg), expected_version)) return(FALSE)
+  sha <- installed_sha(pkg)
+  if (!is.na(sha) && !is.null(ref) && sha != substr(ref, 1, 40)) return(FALSE)
+  TRUE
+}
+
+# ensure_github: idempotent skip -> install_github once -> codeload install_local (retried) -> HALT.
+ensure_github <- function(pkg, repo, ref, expected_version = NULL) {
+  ok <- function() satisfied(pkg, ref, expected_version)
+  if (isTRUE(ok())) {
+    method <- if (is.na(installed_sha(pkg))) "install_local_codeload" else "install_github"
+    install_info[[pkg]] <<- list(method = method, tarball_sha256 = NA_character_)
+    message(sprintf("setup_mrlap: %s already satisfied (%s) — skipping", pkg, method))
+    return(invisible())
   }
+  # one install_github attempt (best case: records GithubSHA1)
+  tryCatch(
+    remotes::install_github(paste0(repo, "@", ref), upgrade = "never", dependencies = TRUE),
+    error = function(e) message(sprintf("setup_mrlap: %s install_github errored: %s", pkg, conditionMessage(e))))
+  if (isTRUE(ok())) {
+    install_info[[pkg]] <<- list(method = "install_github", tarball_sha256 = NA_character_)
+    message(sprintf("setup_mrlap: %s via install_github @ pinned ref", pkg))
+    return(invisible())
+  }
+  # codeload fallback (bypasses api.github.com), retried
+  message(sprintf("setup_mrlap: %s install_github did not satisfy pin; falling back to codeload tarball + install_local", pkg))
+  url  <- sprintf("https://codeload.github.com/%s/tar.gz/%s", repo, ref)
+  dest <- file.path(dirname(sentinel), paste0(gsub("/", "_", repo), "-", substr(ref, 1, 40), ".tar.gz"))
+  dir.create(dirname(dest), recursive = TRUE, showWarnings = FALSE)
   for (attempt in seq_len(retries)) {
-    tryCatch(install_fn(), error = function(e)
-      message(sprintf("setup_mrlap: %s install attempt %d/%d errored: %s",
-                      what, attempt, retries, conditionMessage(e))))
-    if (isTRUE(verify_fn())) {
-      message(sprintf("setup_mrlap: %s installed (attempt %d/%d)", what, attempt, retries))
-      return(invisible(TRUE))
+    sha256 <- tryCatch({
+      utils::download.file(url, dest, mode = "wb", quiet = FALSE)   # options(timeout=600) applies
+      s <- file_sha256(dest)
+      remotes::install_local(dest, upgrade = "never", force = TRUE, dependencies = TRUE)
+      s
+    }, error = function(e) {
+      message(sprintf("setup_mrlap: %s codeload attempt %d/%d errored: %s", pkg, attempt, retries, conditionMessage(e)))
+      NA_character_
+    })
+    if (isTRUE(ok())) {
+      install_info[[pkg]] <<- list(method = "install_local_codeload", tarball_sha256 = sha256)
+      message(sprintf("setup_mrlap: %s via codeload install_local (attempt %d/%d, sha256 %s)", pkg, attempt, retries, sha256))
+      return(invisible())
     }
-    message(sprintf("setup_mrlap: %s not present after attempt %d/%d", what, attempt, retries))
+    message(sprintf("setup_mrlap: %s not satisfied after codeload attempt %d/%d", pkg, attempt, retries))
     if (attempt < retries) Sys.sleep(retry_sleep_s)
   }
-  stop(sprintf("setup_mrlap: %s not installed at pinned ref after %d attempts — HALT",
-               what, retries))
+  stop(sprintf("setup_mrlap: %s not installed at pinned ref after install_github + %d codeload attempts — HALT", pkg, retries))
 }
 
-# 1. ieugwasr (CRAN) — transitive dep of TwoSampleMR; install if absent so its
-#    version is captured. (TwoSampleMR's install also pulls it, but do it first.)
-ensure(
-  function() remotes::install_cran("ieugwasr", upgrade = "never"),
-  function() requireNamespace("ieugwasr", quietly = TRUE),
-  "ieugwasr (CRAN)")
-
-# 2. TwoSampleMR @ pinned tag (transitive engine MRlap calls; dependencies=TRUE).
-ensure(
-  function() remotes::install_github(
-    paste0(cfg$mrlap_env$twosamplemr_repo, "@", cfg$mrlap_env$twosamplemr_ref),
-    upgrade = "never", dependencies = TRUE),
-  function() identical(installed_version("TwoSampleMR"), cfg$mrlap_env$twosamplemr_version_expected),
-  "TwoSampleMR (GitHub)")
-
-# 3. GenomicSEM @ pinned commit (MRlap's internal cross-trait LDSC engine).
-ensure(
-  function() remotes::install_github(
-    paste0(cfg$mrlap_env$genomicsem_repo, "@", cfg$mrlap_env$genomicsem_ref),
-    upgrade = "never"),
-  function() identical(installed_sha("GenomicSEM"), substr(cfg$mrlap_env$genomicsem_ref, 1, 40)),
-  "GenomicSEM (GitHub)")
-
-# 4. MRlap @ pinned commit. Primary path: install_github (records GithubSHA1).
-#    Fallback: this environment intermittently cannot establish a connection to
-#    api.github.com within remotes' ~10s connect window for MRlap's (larger)
-#    tarball endpoint — so if install_github does not yield MRlap at the pinned
-#    SHA, download the tarball DIRECTLY from codeload.github.com at the SAME
-#    pinned SHA (bypassing api.github.com) and install_local. The pin is
-#    preserved by the SHA-keyed download URL; the tarball's sha256 is recorded as
-#    content provenance (install_local does not populate GithubSHA1).
-want_mrlap <- substr(cfg$mrlap_env$mrlap_ref, 1, 40)
-mrlap_install_method <- NA_character_
-mrlap_tarball_sha256 <- NA_character_
-
-file_sha256 <- function(path) {
-  tryCatch(unname(tools::sha256sum(path)), error = function(e) NA_character_)
+# 1. ieugwasr (CRAN) — transitive dep of TwoSampleMR; install if absent (retried).
+for (attempt in seq_len(retries)) {
+  if (requireNamespace("ieugwasr", quietly = TRUE)) break
+  tryCatch(remotes::install_cran("ieugwasr", upgrade = "never"),
+           error = function(e) message(sprintf("setup_mrlap: ieugwasr (CRAN) attempt %d/%d errored: %s",
+                                                attempt, retries, conditionMessage(e))))
+  if (!requireNamespace("ieugwasr", quietly = TRUE) && attempt < retries) Sys.sleep(retry_sleep_s)
 }
+if (!requireNamespace("ieugwasr", quietly = TRUE))
+  stop("setup_mrlap: ieugwasr (CRAN) not installed after retries — HALT")
 
-install_mrlap_codeload <- function() {
-  url  <- sprintf("https://codeload.github.com/%s/tar.gz/%s",
-                  cfg$mrlap_env$mrlap_repo, cfg$mrlap_env$mrlap_ref)
-  dest <- file.path(dirname(sentinel), paste0("MRlap-", want_mrlap, ".tar.gz"))
-  dir.create(dirname(dest), recursive = TRUE, showWarnings = FALSE)
-  utils::download.file(url, dest, mode = "wb", quiet = FALSE)   # options(timeout=600) applies
-  sha256 <- file_sha256(dest)
-  remotes::install_local(dest, upgrade = "never", force = TRUE)
-  if (requireNamespace("MRlap", quietly = TRUE)) {
-    mrlap_tarball_sha256 <<- sha256
-    mrlap_install_method <<- "install_local_codeload"
-  }
-}
-
-if (identical(installed_sha("MRlap"), want_mrlap)) {
-  message("setup_mrlap: MRlap @ pinned SHA already installed (install_github) — skipping")
-  mrlap_install_method <- "install_github"
-} else {
-  # one install_github attempt (best case: sets GithubSHA1), then codeload fallback.
-  tryCatch(
-    remotes::install_github(paste0(cfg$mrlap_env$mrlap_repo, "@", cfg$mrlap_env$mrlap_ref),
-                            upgrade = "never"),
-    error = function(e) message("setup_mrlap: MRlap install_github errored: ", conditionMessage(e)))
-  if (identical(installed_sha("MRlap"), want_mrlap)) {
-    mrlap_install_method <- "install_github"
-    message("setup_mrlap: MRlap installed via install_github @ pinned SHA")
-  } else {
-    message("setup_mrlap: install_github did not yield MRlap@pin; falling back to codeload tarball + install_local")
-    ensure(install_mrlap_codeload,
-           function() requireNamespace("MRlap", quietly = TRUE),
-           "MRlap (codeload install_local)")
-  }
-}
+# 2-4. the three GitHub packages, in dependency order.
+ensure_github("TwoSampleMR", cfg$mrlap_env$twosamplemr_repo, cfg$mrlap_env$twosamplemr_ref,
+              expected_version = cfg$mrlap_env$twosamplemr_version_expected)
+ensure_github("GenomicSEM",  cfg$mrlap_env$genomicsem_repo,  cfg$mrlap_env$genomicsem_ref)
+ensure_github("MRlap",       cfg$mrlap_env$mrlap_repo,       cfg$mrlap_env$mrlap_ref)
 
 suppressPackageStartupMessages({
   library(TwoSampleMR)
@@ -160,43 +145,30 @@ suppressPackageStartupMessages({
   library(MRlap)
 })
 
-# --- commit-SHA assert (hard-fail) -------------------------------------------
-# GenomicSEM is always install_github -> assert GithubSHA1 strictly.
-gsem_sha <- utils::packageDescription("GenomicSEM")$GithubSHA1
-if (is.null(gsem_sha) || substr(gsem_sha, 1, 40) != substr(cfg$mrlap_env$genomicsem_ref, 1, 40))
-  stop(sprintf("setup_mrlap: GenomicSEM GithubSHA1 %s != pinned %s — HALT",
-               gsem_sha, cfg$mrlap_env$genomicsem_ref))
-
-# MRlap: assert GithubSHA1 when install_github succeeded; for the codeload
-# install_local fallback (no GithubSHA1 field) the pin is enforced by the
-# SHA-keyed download URL + the recorded tarball sha256, and the package must load.
-mrlap_gh_sha <- utils::packageDescription("MRlap")$GithubSHA1
-if (identical(mrlap_install_method, "install_github")) {
-  if (is.null(mrlap_gh_sha) || substr(mrlap_gh_sha, 1, 40) != want_mrlap)
-    stop(sprintf("setup_mrlap: MRlap GithubSHA1 %s != pinned %s — HALT", mrlap_gh_sha, want_mrlap))
-} else if (identical(mrlap_install_method, "install_local_codeload")) {
-  # Pin enforced by the SHA-keyed codeload URL; the package must load. The tarball
-  # sha256 is recorded-if-computable (bonus content provenance), not gated on.
-  if (!requireNamespace("MRlap", quietly = TRUE))
-    stop("setup_mrlap: MRlap codeload install_local did not yield a loadable package — HALT")
-  message(sprintf("setup_mrlap: MRlap via codeload tarball (url-pinned ref %s, sha256 %s); GithubSHA1 unavailable for install_local — provenance recorded",
-                  want_mrlap, mrlap_tarball_sha256))
-} else {
-  stop("setup_mrlap: MRlap install method unresolved (neither install_github nor codeload succeeded) — HALT")
-}
-
-# --- transitive-engine version assert (hard-fail) ----------------------------
+# --- final pin asserts (hard-fail) -------------------------------------------
+# Uniform re-check via satisfied() for the SHA-pinned engines (asserts GithubSHA1
+# when install_github was used; for the codeload install_local path the pin is
+# enforced by the SHA-keyed URL and presence is required), plus explicit version
+# asserts for the version-pinned engines.
+if (!satisfied("GenomicSEM", cfg$mrlap_env$genomicsem_ref))
+  stop(sprintf("setup_mrlap: GenomicSEM not satisfied at pinned ref %s — HALT", cfg$mrlap_env$genomicsem_ref))
+if (!satisfied("MRlap", cfg$mrlap_env$mrlap_ref))
+  stop(sprintf("setup_mrlap: MRlap not satisfied at pinned ref %s — HALT", cfg$mrlap_env$mrlap_ref))
 for (pv in list(c("TwoSampleMR", cfg$mrlap_env$twosamplemr_version_expected),
                 c("ieugwasr",   cfg$mrlap_env$ieugwasr_version_expected))) {
   got <- as.character(utils::packageVersion(pv[[1]]))
   if (got != pv[[2]])
     stop(sprintf("setup_mrlap: %s %s != pinned %s — HALT", pv[[1]], got, pv[[2]]))
 }
+message(sprintf("setup_mrlap: install methods -> TwoSampleMR:%s GenomicSEM:%s MRlap:%s",
+                install_info[["TwoSampleMR"]]$method, install_info[["GenomicSEM"]]$method,
+                install_info[["MRlap"]]$method))
 
 # --- sentinel -----------------------------------------------------------------
 mrlap_sha <- utils::packageDescription("MRlap")$GithubSHA1        # NULL for install_local
 if (is.null(mrlap_sha)) mrlap_sha <- NA_character_
 genomicsem_sha <- utils::packageDescription("GenomicSEM")$GithubSHA1
+if (is.null(genomicsem_sha)) genomicsem_sha <- NA_character_
 twosamplemr_version <- as.character(utils::packageVersion("TwoSampleMR"))
 ieugwasr_version <- as.character(utils::packageVersion("ieugwasr"))
 
@@ -205,12 +177,18 @@ sessionInfo_pkgs <- setNames(
   lapply(installed_pkgs, function(p) as.character(utils::packageVersion(p))),
   installed_pkgs
 )
+github_install_methods <- setNames(
+  lapply(c("TwoSampleMR", "GenomicSEM", "MRlap"), function(p) install_info[[p]]$method),
+  c("TwoSampleMR", "GenomicSEM", "MRlap")
+)
 
 sentinel_data <- list(
   mrlap_sha = mrlap_sha,
-  mrlap_install_method = mrlap_install_method,
-  mrlap_tarball_sha256 = mrlap_tarball_sha256,
+  mrlap_install_method = install_info[["MRlap"]]$method,
+  mrlap_tarball_sha256 = install_info[["MRlap"]]$tarball_sha256,
   genomicsem_sha = genomicsem_sha,
+  genomicsem_install_method = install_info[["GenomicSEM"]]$method,
+  github_install_methods = github_install_methods,
   mrlap_ref_expected = cfg$mrlap_env$mrlap_ref,
   genomicsem_ref_expected = cfg$mrlap_env$genomicsem_ref,
   twosamplemr_version = twosamplemr_version,
