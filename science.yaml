@@ -39,6 +39,12 @@ refs:
   - doc/searches
   - entities/papers
   - entities/searches
+labnote:
+  views:
+    research_question:
+      label: Research Questions
+    patch_definition:
+      label: Patch Definitions
 aspects:
 - hypothesis-testing
 - computational-analysis
