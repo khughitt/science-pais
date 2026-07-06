@@ -43,9 +43,9 @@ related:
 - proposition:0031-pais-gut-dysbiosis-scfa-depletion
 - hypothesis:0009-post-infectious-immune-set-point-shift-drives-long-term-autoimmune
 required_capabilities:
-  - modality: transcriptomics
+- modality: transcriptomics
 created: '2026-06-11'
-updated: '2026-07-01'
+updated: '2026-07-06'
 ---
 # Hypothesis: Post-acute infection syndromes are a shared dysregulated attractor reachable from many triggers, not merely a shared symptom repertoire
 
@@ -171,3 +171,5 @@ Confidence would be materially reduced if:
   (upstream forcings, parallel actors, downstream effectors, DAG-inexpressible maintenance loops) is
   sketched in `patch-definition:immune-state-shift-causal-landscape`. Reframe requested/ratified by the
   user; status stays `proposed`.
+
+- 2026-07-06: Candidate maintenance mechanism (speculative): the attractor's persistence in the autonomic/HPA domain may be a neuroimmune allostatic setpoint shift — chronic immune/cytokine drive sensitizes the counterregulatory opponent-process, which overshoots on pathogen clearance and locks the ANS/HPA at a new setpoint independent of antigen; testable via whether allostatic-normalizing interventions (vagal nerve stimulation, low-dose corticosteroid taper, IL-10 augmentation) restore setpoints. (explore-ideas 2026-07-06 · cand-analogy-allostatic-setpoint-shift; anchors in meta:explore-2026-07-06)

@@ -23,9 +23,8 @@ related:
 - topic:shared-failure-mode-across-pais
 - interpretation:0024-t011-delayed-viral-dynamics-models
 created: '2026-06-11'
-updated: '2026-06-25'
+updated: '2026-07-06'
 ---
-
 # Can the mutually reinforcing vicious-cycle model of PAIS be formalized as a dynamical-systems or causal-graph hypothesis that makes discriminating predictions distinguishing chronification from recovery?
 
 ## Summary
@@ -68,3 +67,7 @@ The "mutually reinforcing physiological vicious cycles" framing (Komaroff2025, K
 - Methods notes: `interpretation:0024-t011-delayed-viral-dynamics-models`; Perevaryukha2021, Wang2007,
   Xie2010, WangHuLiao2014.
 - Methods/Datasets: candidate longitudinal multi-omic PAIS cohorts; latent-transition modeling (Gusinow2026) as an empirical state-structure anchor.
+
+## Notes
+
+- 2026-07-06: Concrete discriminating prediction for the attractor model: test for hysteresis in coupled gut-microbiome / immune-cell composition (community state at matched exposures differs by approach direction, health-to-disease vs disease-to-health) — the ecological signature of an alternative stable state rather than a reversible perturbation, implying active 'tipping' interventions may be required. (explore-ideas 2026-07-06 · cand-analogy-gut-immune-regime-shift; anchors in meta:explore-2026-07-06)

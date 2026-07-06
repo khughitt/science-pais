@@ -11,7 +11,7 @@ origins:
   ref: explore-ideas-population
 related: []
 created: '2026-07-04'
-updated: '2026-07-05'
+updated: '2026-07-06'
 added_by: explore-ideas:claude-opus-4-8:cand-population-immunosuppressed-host-pais
 lens_views:
 - lens: population
@@ -64,3 +64,7 @@ lens_views:
 - Topic notes:
 - Article notes:
 - Methods/Datasets:
+
+## Notes
+
+- 2026-07-06: Sharper design: solid-organ-transplant recipients on calcineurin-/mTOR-inhibitor immunosuppression as a human test of the immune-activation requirement — severity-matched vs immunocompetent controls with an immunosuppression-intensity gradient (existing SOT PASC studies report 35-49% but lack matched comparators / dose-gradient). (explore-ideas 2026-07-06 · cand-population-transplant-immunosuppression; anchors in meta:explore-2026-07-06)

@@ -15,7 +15,7 @@ origins:
   independent: true
 related: []
 created: '2026-07-04'
-updated: '2026-07-05'
+updated: '2026-07-06'
 added_by: explore-ideas:claude-opus-4-8:cand-mechanism-hspc-epigenetic-trained-immunity
 lens_views:
 - lens: mechanism
@@ -81,3 +81,7 @@ lens_views:
 - Topic notes:
 - Article notes:
 - Methods/Datasets:
+
+## Notes
+
+- 2026-07-06: Cross-pathogen extension to test: does the IL-6/STAT3 HSPC-imprinting circuit generalize beyond SARS-CoV-2 to other IL-6-high acute infections — post-Lyme (Borrelia), post-Q-fever (Coxiella), post-sepsis — and does acute IL-6 peak magnitude predict PAIS persistence? (explore-ideas 2026-07-06 · cand-mechanism-hspc-trained-immunity-cross-pais; anchors in meta:explore-2026-07-06)

@@ -11,7 +11,7 @@ origins:
   ref: explore-ideas-population
 related: []
 created: '2026-07-04'
-updated: '2026-07-05'
+updated: '2026-07-06'
 added_by: explore-ideas:claude-opus-4-8:cand-population-pregnancy-peripartum-pais
 lens_views:
 - lens: population
@@ -63,3 +63,7 @@ lens_views:
 - Topic notes:
 - Article notes:
 - Methods/Datasets:
+
+## Notes
+
+- 2026-07-06: Timing-window natural experiment: distinguish the peripartum immune-remodeling window (third-trimester tolerance vs rapid postpartum reconstitution) as the explanatory variable — infection during the tolerance phase vs reconstitution phase vs outside pregnancy — categorically distinct from steady-state sex-hormone modulation. (explore-ideas 2026-07-06 · cand-population-peripartum-immune-remodeling; anchors in meta:explore-2026-07-06)

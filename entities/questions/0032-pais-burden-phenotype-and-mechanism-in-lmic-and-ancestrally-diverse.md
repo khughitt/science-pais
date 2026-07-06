@@ -11,7 +11,7 @@ origins:
   ref: explore-ideas-population
 related: []
 created: '2026-07-04'
-updated: '2026-07-05'
+updated: '2026-07-06'
 added_by: explore-ideas:claude-opus-4-8:cand-population-lmic-ancestral-diversity-pais
 lens_views:
 - lens: population
@@ -64,3 +64,7 @@ lens_views:
 - Topic notes:
 - Article notes:
 - Methods/Datasets:
+
+## Notes
+
+- 2026-07-06: Foreground sub-Saharan African populations and their specific immunological modifiers — HIV co-infection, helminth-driven Th2 skewing, endemic malaria — as mechanistic effect-modifiers of PAIS, not merely a burden-description gap. (explore-ideas 2026-07-06 · cand-population-lmic-sub-saharan-africa; anchors in meta:explore-2026-07-06)

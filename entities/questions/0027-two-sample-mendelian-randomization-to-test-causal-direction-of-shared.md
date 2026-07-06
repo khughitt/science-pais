@@ -12,7 +12,7 @@ origins:
   ref: explore-ideas-methodology
 related: []
 created: '2026-07-04'
-updated: '2026-07-05'
+updated: '2026-07-06'
 added_by: explore-ideas:claude-opus-4-8:cand-methodology-mr-cross-trigger-causal-mechanisms
 lens_views:
 - lens: methodology
@@ -65,3 +65,7 @@ lens_views:
 - Topic notes:
 - Article notes:
 - Methods/Datasets:
+
+## Notes
+
+- 2026-07-06: Run as a systematic screen across the full candidate-mechanism space (EBV-reactivation susceptibility, coagulation/fibrinolysis traits, anti-GPCR-autoantibody propensity, mitochondrial-function markers), assigning per-mechanism causal-genetic-support to prioritize experimental follow-up, and test cross-phenotype generalizability; design around infection-context MR pitfalls (collider bias, immune-locus pleiotropy). (explore-ideas 2026-07-06 · cand-methodology-two-sample-mr-pais-mechanisms; anchors in meta:explore-2026-07-06)

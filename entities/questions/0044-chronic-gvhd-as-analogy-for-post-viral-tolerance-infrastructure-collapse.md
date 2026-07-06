@@ -12,7 +12,7 @@ origins:
   ref: explore-ideas-analogy
 related: []
 created: '2026-07-04'
-updated: '2026-07-05'
+updated: '2026-07-06'
 added_by: explore-ideas:claude-opus-4-8:cand-analogy-cgvhd-post-viral-tolerance-collapse
 lens_views:
 - lens: analogy
@@ -65,3 +65,7 @@ lens_views:
 - Topic notes:
 - Article notes:
 - Methods/Datasets:
+
+## Notes
+
+- 2026-07-06: Complementary transplant-tolerance framing: post-infectious autoimmunity as Treg-exhaustion-driven chronic rejection of self, with functional Treg recovery (not effector-count normalization) as the rate-limiting checkpoint separating resolving from persistent PAIS; testable with the transplant field's Treg-expansion / low-dose-IL-2 tolerance toolkit. (explore-ideas 2026-07-06 · cand-analogy-treg-tolerance-chronic-rejection; anchors in meta:explore-2026-07-06)

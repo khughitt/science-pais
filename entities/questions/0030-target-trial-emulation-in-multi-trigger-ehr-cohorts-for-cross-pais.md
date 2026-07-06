@@ -12,7 +12,7 @@ origins:
   ref: explore-ideas-methodology
 related: []
 created: '2026-07-04'
-updated: '2026-07-05'
+updated: '2026-07-06'
 added_by: explore-ideas:claude-opus-4-8:cand-methodology-target-trial-emulation-cross-trigger
 lens_views:
 - lens: methodology
@@ -64,3 +64,7 @@ lens_views:
 - Topic notes:
 - Article notes:
 - Methods/Datasets:
+
+## Notes
+
+- 2026-07-06: Mechanism-proximal extension: beyond comparative effectiveness, emulate target trials of specific mechanism-proximal interventions (prophylactic anticoagulation, immunomodulators, vaccination timing relative to infection) and extend to non-SARS-CoV-2 triggers (post-Lyme, post-dengue, post-flu) where treatment-practice variation is quasi-experimental. (explore-ideas 2026-07-06 · cand-methodology-tte-pais-mechanism; anchors in meta:explore-2026-07-06)

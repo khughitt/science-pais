@@ -53,9 +53,8 @@ related:
 - paper:Brown2015
 - paper:Bizjak2024
 created: '2026-06-11'
-updated: '2026-06-26'
+updated: '2026-07-06'
 ---
-
 # What is the mitochondrial/bioenergetic basis of post-exertional malaise, and is it shared across PAIS?
 
 ## Summary
@@ -119,3 +118,7 @@ equivalence.
 - Topic notes: `topic:mecfs-long-covid-convergence`, `topic:biomarkers-and-objective-endpoints`, `topic:shared-failure-mode-across-pais`.
 - Article notes: Che2025, Bateman2023, Hanson2023, McGregor2019.
 - Methods/Datasets: cardiopulmonary exercise testing (CPET, two-day protocols); pre/post-exertion metabolomics and proteomics; ex-vivo immune-stimulation assays.
+
+## Notes
+
+- 2026-07-06: Quantitative-modeling framing (speculative): model PEM cumulative damage as materials-fatigue — repeated exertion cycles accumulate endothelial/mitochondrial/inflammatory damage per a Paris-law-like propagation rule rather than recovering adaptively (cf. the ME/CFS two-day-CPET Day-2 decline), converting expert-opinion pacing into an individualized dose (amplitude x cycle-count) response model. (explore-ideas 2026-07-06 · cand-analogy-material-fatigue-pem; anchors in meta:explore-2026-07-06)

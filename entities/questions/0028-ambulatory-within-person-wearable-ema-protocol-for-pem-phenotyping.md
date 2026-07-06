@@ -12,7 +12,7 @@ origins:
   ref: explore-ideas-methodology
 related: []
 created: '2026-07-04'
-updated: '2026-07-05'
+updated: '2026-07-06'
 added_by: explore-ideas:claude-opus-4-8:cand-methodology-wearable-ema-pem-ambulatory
 lens_views:
 - lens: methodology
@@ -64,3 +64,7 @@ lens_views:
 - Topic notes:
 - Article notes:
 - Methods/Datasets:
+
+## Notes
+
+- 2026-07-06: Trial-endpoint extension: validate a composite wearable score (continuous HRV, resting HR, skin temperature, activity cadence) as an objective, responsive PRIMARY endpoint for PAIS trials — establishing minimal clinically important difference and responsiveness to benchmark against subjective PROMs, addressing the field's endpoint gap. (explore-ideas 2026-07-06 · cand-methodology-wearable-hrv-trial-endpoint; anchors in meta:explore-2026-07-06)
