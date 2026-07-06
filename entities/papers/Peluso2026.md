@@ -1,30 +1,30 @@
 ---
 id: paper:Peluso2026
 kind: paper
-title: "A phase 2a double-blind, placebo-controlled randomized trial of the SARS-CoV-2-specific monoclonal antibody AER002 in people with Long COVID"
+title: A phase 2a double-blind, placebo-controlled randomized trial of the SARS-CoV-2-specific
+  monoclonal antibody AER002 in people with Long COVID
 status: active
 ontology_terms:
-  - long COVID
-  - SARS-CoV-2 monoclonal antibody
-  - antigen persistence
-  - viral reservoir
-  - randomized controlled trial
-  - AER002
-  - post-acute sequelae of COVID-19 (PASC)
-  - "[18F]F-AraG PET imaging"
-  - pharmacokinetics
+- long COVID
+- SARS-CoV-2 monoclonal antibody
+- antigen persistence
+- viral reservoir
+- randomized controlled trial
+- AER002
+- post-acute sequelae of COVID-19 (PASC)
+- '[18F]F-AraG PET imaging'
+- pharmacokinetics
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Peluso2026
+- cite:Peluso2026
 related:
-  - topic:antigen-pathogen-persistence
-  - topic:therapeutics-and-clinical-trials
-  - topic:biomarkers-and-objective-endpoints
-  - topic:long-covid-immune-dysregulation
-  - hypothesis:0002-tissue-reservoir-antigen-fragment
-  - question:0002-antigen-clearance-rescues-symptoms
-  - paper:Peluso2024
+- topic:antigen-pathogen-persistence
+- topic:therapeutics-and-clinical-trials
+- topic:biomarkers-and-objective-endpoints
+- topic:long-covid-immune-dysregulation
+- hypothesis:0002-tissue-reservoir-antigen-fragment
+- question:0002-antigen-clearance-rescues-symptoms
+- paper:Peluso2024
 created: '2026-06-20'
 updated: '2026-06-20'
 ---

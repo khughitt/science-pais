@@ -5,16 +5,15 @@ title: 'Global prevalence and risk factors of fatigue and post-infectious fatigu
   among patients with dengue: a systematic review and meta-analysis'
 status: active
 ontology_terms:
-  - post-infectious fatigue
-  - dengue virus infection
-  - convalescent phase
-  - systematic review and meta-analysis
-  - post-viral fatigue syndrome
-  - immune dysregulation
-  - dengue hemorrhagic fever
-  - sex differences in immune response
+- post-infectious fatigue
+- dengue virus infection
+- convalescent phase
+- systematic review and meta-analysis
+- post-viral fatigue syndrome
+- immune dysregulation
+- dengue hemorrhagic fever
+- sex differences in immune response
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Hertanti2025
 related:

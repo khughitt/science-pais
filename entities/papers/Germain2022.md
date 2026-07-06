@@ -5,25 +5,24 @@ title: Plasma metabolomics reveals disrupted response and recovery following max
   exercise in myalgic encephalomyelitis/chronic fatigue syndrome
 status: active
 ontology_terms:
-  - ME/CFS
-  - metabolomics
-  - post-exertional malaise
-  - maximal exercise
-  - bioenergetics
-  - recovery
-  - CPET
-  - glutamate metabolism
-  - carnitine metabolism
-  - lipid metabolism
+- ME/CFS
+- metabolomics
+- post-exertional malaise
+- maximal exercise
+- bioenergetics
+- recovery
+- CPET
+- glutamate metabolism
+- carnitine metabolism
+- lipid metabolism
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Germain2022
+- cite:Germain2022
 related:
-  - question:0011-mitochondrial-basis-of-pem
-  - topic:mecfs-long-covid-convergence
-  - topic:biomarkers-and-objective-endpoints
-  - hypothesis:0001-shared-dysregulated-attractor
+- question:0011-mitochondrial-basis-of-pem
+- topic:mecfs-long-covid-convergence
+- topic:biomarkers-and-objective-endpoints
+- hypothesis:0001-shared-dysregulated-attractor
 created: '2026-06-20'
 updated: '2026-06-20'
 ---

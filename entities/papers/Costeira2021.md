@@ -4,20 +4,19 @@ kind: paper
 title: Estrogen and COVID-19 symptoms
 status: active
 ontology_terms:
-  - estrogen
-  - menopause
-  - hormone replacement therapy
-  - acute COVID-19
-  - COVID Symptom Study
+- estrogen
+- menopause
+- hormone replacement therapy
+- acute COVID-19
+- COVID Symptom Study
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Costeira2021
+- cite:Costeira2021
 related:
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
-  - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
-  - topic:menopause-sex-hormones-and-pais-risk
+- question:0007-mechanism-of-female-predominance-in-pais
+- question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- hypothesis:0005-reproductive-stage-immune-homeostatic-margin
+- topic:menopause-sex-hormones-and-pais-risk
 created: '2026-06-19'
 updated: '2026-06-19'
 ---

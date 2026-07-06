@@ -4,16 +4,15 @@ kind: paper
 title: Fibromyalgia and myalgic encephalomyelitis/chronic fatigue syndrome
 status: active
 ontology_terms:
-  - fibromyalgia
-  - myalgic encephalomyelitis/chronic fatigue syndrome
-  - postexertional malaise
-  - central sensitization
-  - small fiber neuropathy
-  - orthostatic intolerance
-  - neuroinflammation
-  - postinfectious fatigue syndrome
+- fibromyalgia
+- myalgic encephalomyelitis/chronic fatigue syndrome
+- postexertional malaise
+- central sensitization
+- small fiber neuropathy
+- orthostatic intolerance
+- neuroinflammation
+- postinfectious fatigue syndrome
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Bateman2023
 related: []

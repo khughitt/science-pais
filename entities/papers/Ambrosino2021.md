@@ -1,7 +1,8 @@
 ---
 id: paper:Ambrosino2021
 kind: paper
-title: "Persistent Endothelial Dysfunction in Post-Acute COVID-19 Syndrome: A Case-Control Study"
+title: 'Persistent Endothelial Dysfunction in Post-Acute COVID-19 Syndrome: A Case-Control
+  Study'
 status: active
 ontology_terms:
 - endothelial dysfunction
@@ -12,7 +13,6 @@ ontology_terms:
 - thromboinflammation
 - vascular function
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Ambrosino2021
 related:
@@ -21,8 +21,8 @@ related:
 - question:0007-mechanism-of-female-predominance-in-pais
 - question:0010-vascular-microclot-subphenotype
 - topic:thromboinflammation-and-endothelial-dysfunction
-created: "2026-06-22"
-updated: "2026-06-22"
+created: '2026-06-22'
+updated: '2026-06-22'
 ---
 
 # Persistent Endothelial Dysfunction in Post-Acute COVID-19 Syndrome: A Case-Control Study

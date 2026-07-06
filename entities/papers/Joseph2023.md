@@ -5,21 +5,20 @@ title: Exercise Pathophysiology in Myalgic Encephalomyelitis/Chronic Fatigue Syn
   and Postacute Sequelae of SARS-CoV-2
 status: active
 ontology_terms:
-  - ME/CFS
-  - post-acute sequelae of SARS-CoV-2
-  - invasive cardiopulmonary exercise test
-  - preload failure
-  - oxygen extraction
-  - exercise intolerance
+- ME/CFS
+- post-acute sequelae of SARS-CoV-2
+- invasive cardiopulmonary exercise test
+- preload failure
+- oxygen extraction
+- exercise intolerance
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Joseph2023
+- cite:Joseph2023
 related:
-  - question:0011-mitochondrial-basis-of-pem
-  - topic:mecfs-long-covid-convergence
-  - topic:biomarkers-and-objective-endpoints
-  - hypothesis:0001-shared-dysregulated-attractor
+- question:0011-mitochondrial-basis-of-pem
+- topic:mecfs-long-covid-convergence
+- topic:biomarkers-and-objective-endpoints
+- hypothesis:0001-shared-dysregulated-attractor
 created: '2026-06-20'
 updated: '2026-06-25'
 ---

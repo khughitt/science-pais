@@ -14,7 +14,6 @@ ontology_terms:
 - immune dysregulation
 - post-infectious autoimmune syndrome
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Ursini2023
 related: []

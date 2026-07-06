@@ -1,30 +1,30 @@
 ---
 id: paper:Vernon2024
 kind: paper
-title: "Incidence and Prevalence of Post-COVID-19 Myalgic Encephalomyelitis: A Report from the Observational RECOVER-Adult Study"
+title: 'Incidence and Prevalence of Post-COVID-19 Myalgic Encephalomyelitis: A Report
+  from the Observational RECOVER-Adult Study'
 status: active
 ontology_terms:
-  - myalgic encephalomyelitis/chronic fatigue syndrome
-  - post-acute sequelae of SARS-CoV-2
-  - post-exertional malaise
-  - orthostatic intolerance
-  - long COVID
-  - incidence rate
-  - case definition
-  - cohort study
-  - post-infectious fatigue syndrome
+- myalgic encephalomyelitis/chronic fatigue syndrome
+- post-acute sequelae of SARS-CoV-2
+- post-exertional malaise
+- orthostatic intolerance
+- long COVID
+- incidence rate
+- case definition
+- cohort study
+- post-infectious fatigue syndrome
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Vernon2024
+- cite:Vernon2024
 related:
-  - topic:mecfs-long-covid-convergence
-  - topic:pais-case-definition-heterogeneity
-  - topic:shared-failure-mode-across-pais
-  - question:0015-does-pem-requirement-improve-cross-study-comparability
-  - question:0014-which-pais-case-definition-is-most-biologically-coherent
-  - hypothesis:0001-shared-dysregulated-attractor
-  - paper:Bateman2023
+- topic:mecfs-long-covid-convergence
+- topic:pais-case-definition-heterogeneity
+- topic:shared-failure-mode-across-pais
+- question:0015-does-pem-requirement-improve-cross-study-comparability
+- question:0014-which-pais-case-definition-is-most-biologically-coherent
+- hypothesis:0001-shared-dysregulated-attractor
+- paper:Bateman2023
 created: '2026-06-20'
 updated: '2026-06-20'
 ---

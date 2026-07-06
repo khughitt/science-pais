@@ -1,26 +1,26 @@
 ---
 id: paper:Brown2015
 kind: paper
-title: Abnormalities of AMPK activation and glucose uptake in cultured skeletal muscle cells from individuals with chronic fatigue syndrome
+title: Abnormalities of AMPK activation and glucose uptake in cultured skeletal muscle
+  cells from individuals with chronic fatigue syndrome
 status: active
 ontology_terms:
-  - ME/CFS
-  - chronic fatigue syndrome
-  - skeletal muscle cells
-  - AMPK
-  - glucose uptake
-  - electrical pulse stimulation
-  - exercise model
-  - IL-6
+- ME/CFS
+- chronic fatigue syndrome
+- skeletal muscle cells
+- AMPK
+- glucose uptake
+- electrical pulse stimulation
+- exercise model
+- IL-6
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Brown2015
+- cite:Brown2015
 related:
-  - question:0011-mitochondrial-basis-of-pem
-  - hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
-  - proposition:0030-mecfs-exercise-provoked-skeletal-muscle-bioenergetic-abnormality
-  - task:t056
+- question:0011-mitochondrial-basis-of-pem
+- hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
+- proposition:0030-mecfs-exercise-provoked-skeletal-muscle-bioenergetic-abnormality
+- task:t056
 created: '2026-06-25'
 updated: '2026-06-25'
 ---

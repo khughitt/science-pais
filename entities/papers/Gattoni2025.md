@@ -5,24 +5,23 @@ title: Two-day cardiopulmonary exercise testing in long COVID post-exertional ma
   diagnosis
 status: active
 ontology_terms:
-  - cardiopulmonary exercise test
-  - post-exertional malaise
-  - long COVID
-  - ME/CFS
-  - exercise intolerance
-  - aerobic deconditioning
-  - gas exchange threshold
-  - VO2 peak
-  - two-day CPET
-  - cross-trigger comparison
+- cardiopulmonary exercise test
+- post-exertional malaise
+- long COVID
+- ME/CFS
+- exercise intolerance
+- aerobic deconditioning
+- gas exchange threshold
+- VO2 peak
+- two-day CPET
+- cross-trigger comparison
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Gattoni2025
+- cite:Gattoni2025
 related:
-  - question:0015-does-pem-requirement-improve-cross-study-comparability
-  - question:0001-shared-molecular-signature-across-triggers
-  - hypothesis:0001-shared-dysregulated-attractor
+- question:0015-does-pem-requirement-improve-cross-study-comparability
+- question:0001-shared-molecular-signature-across-triggers
+- hypothesis:0001-shared-dysregulated-attractor
 created: '2026-06-22'
 updated: '2026-06-22'
 ---

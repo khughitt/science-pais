@@ -4,16 +4,15 @@ kind: paper
 title: Mechanisms of long COVID and the path toward therapeutics
 status: active
 ontology_terms:
-  - long COVID / PASC
-  - post-acute sequelae of SARS-CoV-2
-  - infection-associated chronic condition
-  - viral persistence and reservoir
-  - post-acute inflammation and immune dysregulation
-  - autoimmunity and autoantibodies
-  - thrombosis and microclots
-  - dysautonomia and POTS
+- long COVID / PASC
+- post-acute sequelae of SARS-CoV-2
+- infection-associated chronic condition
+- viral persistence and reservoir
+- post-acute inflammation and immune dysregulation
+- autoimmunity and autoantibodies
+- thrombosis and microclots
+- dysautonomia and POTS
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Peluso2024b
 related:

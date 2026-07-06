@@ -1,17 +1,17 @@
 ---
 id: paper:Pollack2023
 kind: paper
-title: "Female reproductive health impacts of Long COVID and associated illnesses including ME/CFS, POTS, and connective tissue disorders"
+title: Female reproductive health impacts of Long COVID and associated illnesses including
+  ME/CFS, POTS, and connective tissue disorders
 status: active
 ontology_terms:
-  - long COVID
-  - female reproductive health
-  - menopause
-  - menstrual cycle
-  - myalgic encephalomyelitis/chronic fatigue syndrome
-  - postural orthostatic tachycardia syndrome
+- long COVID
+- female reproductive health
+- menopause
+- menstrual cycle
+- myalgic encephalomyelitis/chronic fatigue syndrome
+- postural orthostatic tachycardia syndrome
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Pollack2023
 related:
@@ -19,8 +19,8 @@ related:
 - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
 - question:0013-reproductive-stage-failed-immune-recovery-after-infection
 - topic:menopause-sex-hormones-and-pais-risk
-created: "2026-06-19"
-updated: "2026-06-19"
+created: '2026-06-19'
+updated: '2026-06-19'
 ---
 
 # Female reproductive health impacts of Long COVID and associated illnesses

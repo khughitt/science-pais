@@ -4,16 +4,15 @@ kind: paper
 title: Growing recognition of post-acute infection syndromes
 status: active
 ontology_terms:
-  - post-acute infection syndrome
-  - myalgic encephalomyelitis/chronic fatigue syndrome
-  - long COVID
-  - infection-associated chronic illness
-  - antigen persistence
-  - post-exertional malaise
-  - dysautonomia
-  - autoimmunity
+- post-acute infection syndrome
+- myalgic encephalomyelitis/chronic fatigue syndrome
+- long COVID
+- infection-associated chronic illness
+- antigen persistence
+- post-exertional malaise
+- dysautonomia
+- autoimmunity
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Komaroff2025
 related:

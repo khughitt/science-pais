@@ -5,16 +5,15 @@ title: Two neurocognitive domains identified for patients with myalgic encephalo
   fatigue syndrome and post-acute sequelae of COVID-19
 status: active
 ontology_terms:
-  - neurocognitive impairment
-  - brain fog
-  - ME/CFS
-  - post-acute sequelae of SARS-CoV-2 (PASC)
-  - salience network
-  - sensory hypersensitivity
-  - exploratory factor analysis
-  - default mode network
+- neurocognitive impairment
+- brain fog
+- ME/CFS
+- post-acute sequelae of SARS-CoV-2 (PASC)
+- salience network
+- sensory hypersensitivity
+- exploratory factor analysis
+- default mode network
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Sandoval2025
 related:

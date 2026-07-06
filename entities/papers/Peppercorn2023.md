@@ -6,16 +6,15 @@ title: A pilot study on the immune cell proteome of long COVID patients shows ch
   fatigue syndrome
 status: active
 ontology_terms:
-  - long COVID
-  - myalgic encephalomyelitis/chronic fatigue syndrome
-  - peripheral blood mononuclear cells
-  - quantitative proteomics
-  - immune dysregulation
-  - mitochondrial dysfunction
-  - post-viral fatigue syndrome
-  - SWATH mass spectrometry
+- long COVID
+- myalgic encephalomyelitis/chronic fatigue syndrome
+- peripheral blood mononuclear cells
+- quantitative proteomics
+- immune dysregulation
+- mitochondrial dysfunction
+- post-viral fatigue syndrome
+- SWATH mass spectrometry
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Peppercorn2023
 related: []

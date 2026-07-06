@@ -1,32 +1,32 @@
 ---
 id: paper:Gabernet2025
 kind: paper
-title: 'A multiomics recovery factor predicts long COVID in the IMPACC study'
+title: A multiomics recovery factor predicts long COVID in the IMPACC study
 status: active
 ontology_terms:
-  - post-acute sequelae of SARS-CoV-2 (PASC)
-  - long COVID (LC)
-  - androgenic steroids
-  - DHEA-S (dehydroepiandrosterone sulfate)
-  - androsterone sulfate
-  - heme metabolism
-  - stress erythropoiesis
-  - anemia of inflammation
-  - multiomics factor analysis (MOFA)
-  - SPEAR (Supervised Principal components via Expectation-maximization and Augmented Regression)
-  - immune dysregulation
-  - plasma metabolomics
-  - PBMC transcriptomics
-  - Olink proteomics
-  - CyTOF mass cytometry
-  - IMPACC cohort
+- post-acute sequelae of SARS-CoV-2 (PASC)
+- long COVID (LC)
+- androgenic steroids
+- DHEA-S (dehydroepiandrosterone sulfate)
+- androsterone sulfate
+- heme metabolism
+- stress erythropoiesis
+- anemia of inflammation
+- multiomics factor analysis (MOFA)
+- SPEAR (Supervised Principal components via Expectation-maximization and Augmented
+  Regression)
+- immune dysregulation
+- plasma metabolomics
+- PBMC transcriptomics
+- Olink proteomics
+- CyTOF mass cytometry
+- IMPACC cohort
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Gabernet2025
+- cite:Gabernet2025
 related:
-  - paper:Ozonoff2024
-  - paper:Talla2023
+- paper:Ozonoff2024
+- paper:Talla2023
 created: '2026-06-21'
 updated: '2026-06-21'
 ---

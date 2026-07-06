@@ -1,18 +1,18 @@
 ---
-id: "paper:Raijmakers2018"
-kind: "paper"
-title: "Interferon-γ and CXCL10 responses related to complaints in patients with Q fever fatigue syndrome"
-status: "active"
+id: paper:Raijmakers2018
+kind: paper
+title: "Interferon-\u03B3 and CXCL10 responses related to complaints in patients with\
+  \ Q fever fatigue syndrome"
+status: active
 ontology_terms: []
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Raijmakers2018
+- cite:Raijmakers2018
 related:
-  - question:0001-shared-molecular-signature-across-triggers
-  - discussion:0002-cross-pathogen-pais-signature-convergence
-created: "2026-06-20"
-updated: "2026-06-20"
+- question:0001-shared-molecular-signature-across-triggers
+- discussion:0002-cross-pathogen-pais-signature-convergence
+created: '2026-06-20'
+updated: '2026-06-20'
 ---
 
 # Interferon-γ and CXCL10 responses related to complaints in patients with Q fever fatigue syndrome

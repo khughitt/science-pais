@@ -4,21 +4,20 @@ kind: paper
 title: Long COVID risk - a signal to address sex hormones and women health
 status: active
 ontology_terms:
-  - long COVID
-  - sex hormones
-  - menopause
-  - hormone replacement therapy
-  - women health
+- long COVID
+- sex hormones
+- menopause
+- hormone replacement therapy
+- women health
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Stewart2021
+- cite:Stewart2021
 related:
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
-  - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
-  - topic:menopause-sex-hormones-and-pais-risk
-  - topic:shared-failure-mode-across-pais
+- question:0007-mechanism-of-female-predominance-in-pais
+- question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- hypothesis:0005-reproductive-stage-immune-homeostatic-margin
+- topic:menopause-sex-hormones-and-pais-risk
+- topic:shared-failure-mode-across-pais
 created: '2026-06-19'
 updated: '2026-06-19'
 ---

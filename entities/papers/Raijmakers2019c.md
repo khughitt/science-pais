@@ -1,23 +1,23 @@
 ---
 id: paper:Raijmakers2019c
 kind: paper
-title: Long-Lasting Transcriptional Changes in Circulating Monocytes of Acute Q Fever Patients
+title: Long-Lasting Transcriptional Changes in Circulating Monocytes of Acute Q Fever
+  Patients
 status: active
 ontology_terms:
-  - trained immunity
-  - epigenetic reprogramming
-  - monocyte transcriptome
-  - Q fever
-  - Coxiella burnetii
-  - post-infectious fatigue
-  - cytokine dysregulation
+- trained immunity
+- epigenetic reprogramming
+- monocyte transcriptome
+- Q fever
+- Coxiella burnetii
+- post-infectious fatigue
+- cytokine dysregulation
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Raijmakers2019c
+- cite:Raijmakers2019c
 related:
-  - question:0001-shared-molecular-signature-across-triggers
-  - discussion:0002-cross-pathogen-pais-signature-convergence
+- question:0001-shared-molecular-signature-across-triggers
+- discussion:0002-cross-pathogen-pais-signature-convergence
 created: '2026-06-20'
 updated: '2026-06-20'
 ---

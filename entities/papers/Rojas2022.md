@@ -4,16 +4,15 @@ kind: paper
 title: Autoimmunity is a hallmark of post-COVID syndrome
 status: active
 ontology_terms:
-  - autoimmunity
-  - post-COVID syndrome
-  - autoantibodies
-  - latent autoimmunity
-  - polyautoimmunity
-  - interferon antibodies
-  - SARS-CoV-2 humoral response
-  - bystander activation
+- autoimmunity
+- post-COVID syndrome
+- autoantibodies
+- latent autoimmunity
+- polyautoimmunity
+- interferon antibodies
+- SARS-CoV-2 humoral response
+- bystander activation
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Rojas2022
 related: []

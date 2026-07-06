@@ -5,16 +5,15 @@ title: Antihistamines improve cardiovascular manifestations and other symptoms o
   long-COVID attributed to mast cell activation
 status: active
 ontology_terms:
-  - mast cell activation syndrome
-  - histamine receptor blockade
-  - long COVID
-  - dysautonomia
-  - postural tachycardia
-  - neuroinflammation
-  - post-acute infection syndrome
-  - cardiovascular autonomic dysfunction
+- mast cell activation syndrome
+- histamine receptor blockade
+- long COVID
+- dysautonomia
+- postural tachycardia
+- neuroinflammation
+- post-acute infection syndrome
+- cardiovascular autonomic dysfunction
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Salvucci2023
 related: []

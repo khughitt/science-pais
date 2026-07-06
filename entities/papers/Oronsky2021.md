@@ -4,16 +4,15 @@ kind: paper
 title: A Review of Persistent Post-COVID Syndrome (PPCS)
 status: active
 ontology_terms:
-  - post-acute COVID-19 syndrome
-  - transforming growth factor beta
-  - persistent inflammation immunosuppression and catabolism syndrome
-  - pulmonary fibrosis
-  - immunoparalysis
-  - compensatory anti-inflammatory response syndrome
-  - post-sepsis syndrome
-  - organ fibrosis
+- post-acute COVID-19 syndrome
+- transforming growth factor beta
+- persistent inflammation immunosuppression and catabolism syndrome
+- pulmonary fibrosis
+- immunoparalysis
+- compensatory anti-inflammatory response syndrome
+- post-sepsis syndrome
+- organ fibrosis
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Oronsky2021
 related: []

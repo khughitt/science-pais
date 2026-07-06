@@ -5,16 +5,15 @@ title: 'Post-Acute COVID-19 Joint Pain and New Onset of Rheumatic Musculoskeleta
   Diseases: A Systematic Review'
 status: active
 ontology_terms:
-  - post-acute COVID-19 syndrome
-  - arthralgia
-  - inflammatory arthritis
-  - fibromyalgia
-  - autoantibodies
-  - molecular mimicry
-  - rheumatoid factor
-  - anti-citrullinated protein antibodies
+- post-acute COVID-19 syndrome
+- arthralgia
+- inflammatory arthritis
+- fibromyalgia
+- autoantibodies
+- molecular mimicry
+- rheumatoid factor
+- anti-citrullinated protein antibodies
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Ciaffi2023
 related:

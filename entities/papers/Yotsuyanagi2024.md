@@ -1,20 +1,19 @@
 ---
 id: paper:Yotsuyanagi2024
 kind: paper
-title: 'Prevention of post COVID-19 condition by early treatment with ensitrelvir in
-  the phase 3 SCORPIO-SR trial'
+title: Prevention of post COVID-19 condition by early treatment with ensitrelvir in
+  the phase 3 SCORPIO-SR trial
 status: active
 ontology_terms:
-  - ensitrelvir
-  - 3C-like protease inhibitor
-  - post-COVID-19 condition
-  - prevention
-  - antiviral therapy
-  - randomized controlled trial
-  - post-acute infection syndrome
-  - SCORPIO-SR
+- ensitrelvir
+- 3C-like protease inhibitor
+- post-COVID-19 condition
+- prevention
+- antiviral therapy
+- randomized controlled trial
+- post-acute infection syndrome
+- SCORPIO-SR
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Yotsuyanagi2024
 related:

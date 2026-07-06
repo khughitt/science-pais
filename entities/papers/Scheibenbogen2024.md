@@ -1,30 +1,30 @@
 ---
 id: paper:Scheibenbogen2024
 kind: paper
-title: "Key Pathophysiological Role of Skeletal Muscle Disturbance in Post COVID and Myalgic Encephalomyelitis/Chronic Fatigue Syndrome (ME/CFS): Accumulated Evidence"
+title: 'Key Pathophysiological Role of Skeletal Muscle Disturbance in Post COVID and
+  Myalgic Encephalomyelitis/Chronic Fatigue Syndrome (ME/CFS): Accumulated Evidence'
 status: active
 ontology_terms:
-  - skeletal muscle pathophysiology
-  - post-exertional malaise
-  - mitochondrial dysfunction
-  - sodium-calcium overload
-  - hypoperfusion
-  - vascular dysfunction
-  - long COVID
-  - myalgic encephalomyelitis/chronic fatigue syndrome
-  - ion transport dysregulation
+- skeletal muscle pathophysiology
+- post-exertional malaise
+- mitochondrial dysfunction
+- sodium-calcium overload
+- hypoperfusion
+- vascular dysfunction
+- long COVID
+- myalgic encephalomyelitis/chronic fatigue syndrome
+- ion transport dysregulation
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Scheibenbogen2024
+- cite:Scheibenbogen2024
 related:
-  - question:0011-mitochondrial-basis-of-pem
-  - question:0010-vascular-microclot-subphenotype
-  - topic:mecfs-long-covid-convergence
-  - topic:thromboinflammation-and-endothelial-dysfunction
-  - topic:shared-failure-mode-across-pais
-  - hypothesis:0001-shared-dysregulated-attractor
-  - paper:Appelman2024
+- question:0011-mitochondrial-basis-of-pem
+- question:0010-vascular-microclot-subphenotype
+- topic:mecfs-long-covid-convergence
+- topic:thromboinflammation-and-endothelial-dysfunction
+- topic:shared-failure-mode-across-pais
+- hypothesis:0001-shared-dysregulated-attractor
+- paper:Appelman2024
 created: '2026-06-20'
 updated: '2026-06-20'
 ---

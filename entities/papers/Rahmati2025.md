@@ -5,16 +5,15 @@ title: 'Long-Term Sequelae of COVID-19: A Systematic Review and Meta-Analysis of
   3 Years Post-SARS-CoV-2 Infection'
 status: active
 ontology_terms:
-  - post-acute sequelae of SARS-CoV-2 infection
-  - long COVID
-  - post-infectious fatigue syndrome
-  - pulmonary diffusion impairment
-  - neuropsychiatric sequelae
-  - dysautonomia
-  - immune dysregulation
-  - systematic review and meta-analysis
+- post-acute sequelae of SARS-CoV-2 infection
+- long COVID
+- post-infectious fatigue syndrome
+- pulmonary diffusion impairment
+- neuropsychiatric sequelae
+- dysautonomia
+- immune dysregulation
+- systematic review and meta-analysis
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Rahmati2025
 related: []

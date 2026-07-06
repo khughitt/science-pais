@@ -1,25 +1,25 @@
 ---
 id: paper:Xiong2023
 kind: paper
-title: Multi-'omics of gut microbiome-host interactions in short- and long-term myalgic encephalomyelitis/chronic fatigue syndrome patients
+title: Multi-'omics of gut microbiome-host interactions in short- and long-term myalgic
+  encephalomyelitis/chronic fatigue syndrome patients
 status: active
 ontology_terms:
-  - ME/CFS
-  - gut microbiome
-  - plasma metabolomics
-  - butyrate
-  - bile acids
-  - disease duration
-  - host-microbiome interactions
+- ME/CFS
+- gut microbiome
+- plasma metabolomics
+- butyrate
+- bile acids
+- disease duration
+- host-microbiome interactions
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Xiong2023
+- cite:Xiong2023
 related:
-  - search:0007-microbiome-gut-brain-pais
-  - proposition:0031-pais-gut-dysbiosis-scfa-depletion
-  - topic:gut-microbiome-barrier-axis
-  - topic:mecfs-long-covid-convergence
+- search:0007-microbiome-gut-brain-pais
+- proposition:0031-pais-gut-dysbiosis-scfa-depletion
+- topic:gut-microbiome-barrier-axis
+- topic:mecfs-long-covid-convergence
 created: '2026-06-25'
 updated: '2026-06-25'
 ---

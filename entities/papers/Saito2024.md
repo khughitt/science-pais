@@ -1,34 +1,34 @@
 ---
-id: "paper:Saito2024"
-kind: "paper"
-title: "Metabolomic and immune alterations in long COVID patients with chronic fatigue syndrome"
+id: paper:Saito2024
+kind: paper
+title: Metabolomic and immune alterations in long COVID patients with chronic fatigue
+  syndrome
 status: active
 ontology_terms:
-  - metabolomics
-  - long-COVID
-  - ME/CFS
-  - plasma-metabolites
-  - cytokines
-  - ATP
-  - sarcosine
-  - serine
-  - neuroinflammation
+- metabolomics
+- long-COVID
+- ME/CFS
+- plasma-metabolites
+- cytokines
+- ATP
+- sarcosine
+- serine
+- neuroinflammation
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Saito2024
+- cite:Saito2024
 related:
-  - topic:mecfs-long-covid-convergence
-  - topic:long-covid-immune-dysregulation
-  - topic:biomarkers-and-objective-endpoints
-  - topic:shared-failure-mode-across-pais
-  - question:0011-mitochondrial-basis-of-pem
-  - question:0001-shared-molecular-signature-across-triggers
-  - hypothesis:0001-shared-dysregulated-attractor
-  - hypothesis:0003-immune-exhaustion-feedback
-  - paper:Naviaux2016
-created: "2026-06-20"
-updated: "2026-06-20"
+- topic:mecfs-long-covid-convergence
+- topic:long-covid-immune-dysregulation
+- topic:biomarkers-and-objective-endpoints
+- topic:shared-failure-mode-across-pais
+- question:0011-mitochondrial-basis-of-pem
+- question:0001-shared-molecular-signature-across-triggers
+- hypothesis:0001-shared-dysregulated-attractor
+- hypothesis:0003-immune-exhaustion-feedback
+- paper:Naviaux2016
+created: '2026-06-20'
+updated: '2026-06-20'
 ---
 
 # Metabolomic and immune alterations in long COVID patients with chronic fatigue syndrome

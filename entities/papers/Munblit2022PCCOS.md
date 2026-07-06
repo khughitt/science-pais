@@ -1,26 +1,26 @@
 ---
 id: paper:Munblit2022PCCOS
 kind: paper
-title: "A core outcome set for post-COVID-19 condition in adults for use in clinical practice and research"
+title: A core outcome set for post-COVID-19 condition in adults for use in clinical
+  practice and research
 status: active
 ontology_terms:
-  - post-COVID condition
-  - long COVID
-  - core outcome set
-  - Delphi consensus
-  - outcome harmonization
-  - clinical research
+- post-COVID condition
+- long COVID
+- core outcome set
+- Delphi consensus
+- outcome harmonization
+- clinical research
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Munblit2022PCCOS
+- cite:Munblit2022PCCOS
 related:
-  - task:t026
-  - topic:pais-case-definition-heterogeneity
-  - topic:biomarkers-and-objective-endpoints
-  - question:0014-which-pais-case-definition-is-most-biologically-coherent
-created: "2026-06-25"
-updated: "2026-06-25"
+- task:t026
+- topic:pais-case-definition-heterogeneity
+- topic:biomarkers-and-objective-endpoints
+- question:0014-which-pais-case-definition-is-most-biologically-coherent
+created: '2026-06-25'
+updated: '2026-06-25'
 ---
 
 # A core outcome set for post-COVID-19 condition in adults for use in clinical practice and research

@@ -1,26 +1,26 @@
 ---
 id: paper:Green2025
 kind: paper
-title: A systematic review and meta-analysis of the impact of vaccination on prevention of long COVID
+title: A systematic review and meta-analysis of the impact of vaccination on prevention
+  of long COVID
 status: active
 ontology_terms:
-  - long COVID
-  - vaccination
-  - booster vaccination
-  - Omicron
-  - systematic review
-  - meta-analysis
+- long COVID
+- vaccination
+- booster vaccination
+- Omicron
+- systematic review
+- meta-analysis
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Green2025
+- cite:Green2025
 related:
-  - task:t010
-  - question:0012-prevention-vaccination-antiviral-reduces-pais
-  - hypothesis:0004-acute-severity-threshold
-  - topic:therapeutics-and-clinical-trials
-created: "2026-06-25"
-updated: "2026-06-25"
+- task:t010
+- question:0012-prevention-vaccination-antiviral-reduces-pais
+- hypothesis:0004-acute-severity-threshold
+- topic:therapeutics-and-clinical-trials
+created: '2026-06-25'
+updated: '2026-06-25'
 ---
 
 # A systematic review and meta-analysis of the impact of vaccination on prevention of long COVID

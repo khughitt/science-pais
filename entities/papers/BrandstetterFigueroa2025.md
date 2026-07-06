@@ -1,7 +1,8 @@
 ---
 id: paper:BrandstetterFigueroa2025
 kind: paper
-title: Viral Burden and Illness Severity During Acute SARS-CoV-2 Infection Predict Persistent Long COVID Symptoms
+title: Viral Burden and Illness Severity During Acute SARS-CoV-2 Infection Predict
+  Persistent Long COVID Symptoms
 status: active
 ontology_terms:
 - long COVID
@@ -10,7 +11,6 @@ ontology_terms:
 - acute illness severity
 - prospective cohort
 dataset_usage: []
-datasets: []
 source_refs: []
 related:
 - hypothesis:0002-tissue-reservoir-antigen-fragment

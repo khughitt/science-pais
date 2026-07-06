@@ -1,19 +1,19 @@
 ---
 id: paper:Vreeman2025
 kind: paper
-title: 'Post-COVID pulmonary sequelae: Mechanisms and potential targets to reduce persistent fibrosis'
+title: 'Post-COVID pulmonary sequelae: Mechanisms and potential targets to reduce
+  persistent fibrosis'
 status: active
 ontology_terms:
-  - post-COVID-19 pulmonary fibrosis
-  - extracellular matrix remodeling
-  - TGF-beta signaling
-  - ACE2 downregulation
-  - epithelial-to-mesenchymal transition
-  - anti-fibrotic therapy
-  - lung function impairment
-  - SARS-CoV-2 sequelae
+- post-COVID-19 pulmonary fibrosis
+- extracellular matrix remodeling
+- TGF-beta signaling
+- ACE2 downregulation
+- epithelial-to-mesenchymal transition
+- anti-fibrotic therapy
+- lung function impairment
+- SARS-CoV-2 sequelae
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Vreeman2025
 related:

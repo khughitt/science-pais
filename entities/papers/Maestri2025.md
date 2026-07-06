@@ -1,7 +1,7 @@
 ---
 id: paper:Maestri2025
 kind: paper
-title: "Systems Immunology of Long Covid: Insights from the STOP-PASC Clinical Trial"
+title: 'Systems Immunology of Long Covid: Insights from the STOP-PASC Clinical Trial'
 status: active
 ontology_terms:
 - plasma proteomics
@@ -17,7 +17,6 @@ ontology_terms:
 - IL1R2
 - leptin
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Maestri2025
 related:

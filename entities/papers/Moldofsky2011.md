@@ -5,16 +5,15 @@ title: Chronic widespread musculoskeletal pain, fatigue, depression and disorder
   sleep in chronic post-SARS syndrome; a case-controlled study
 status: active
 ontology_terms:
-  - post-SARS syndrome
-  - fibromyalgia syndrome
-  - chronic fatigue syndrome
-  - polysomnography
-  - alpha EEG sleep anomaly
-  - cyclical alternating pattern
-  - nonrestorative sleep
-  - post-viral fatigue
+- post-SARS syndrome
+- fibromyalgia syndrome
+- chronic fatigue syndrome
+- polysomnography
+- alpha EEG sleep anomaly
+- cyclical alternating pattern
+- nonrestorative sleep
+- post-viral fatigue
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Moldofsky2011
 related:

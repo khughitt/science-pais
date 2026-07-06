@@ -1,21 +1,20 @@
 ---
 id: paper:Krumholz2024
 kind: paper
-title: 'The PAX LC Trial: A Decentralized, Phase 2, Randomized, Double-Blind Study of
-  Nirmatrelvir/Ritonavir Compared with Placebo/Ritonavir for Long COVID'
+title: 'The PAX LC Trial: A Decentralized, Phase 2, Randomized, Double-Blind Study
+  of Nirmatrelvir/Ritonavir Compared with Placebo/Ritonavir for Long COVID'
 status: active
 ontology_terms:
-  - nirmatrelvir
-  - ritonavir
-  - long COVID
-  - randomized controlled trial
-  - decentralized clinical trial
-  - antiviral therapy
-  - post-acute infection syndrome
-  - PROMIS-29
-  - immunophenotyping
+- nirmatrelvir
+- ritonavir
+- long COVID
+- randomized controlled trial
+- decentralized clinical trial
+- antiviral therapy
+- post-acute infection syndrome
+- PROMIS-29
+- immunophenotyping
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Krumholz2024
 related:

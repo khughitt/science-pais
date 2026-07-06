@@ -1,31 +1,31 @@
 ---
-id: "paper:Bland2024"
-kind: "paper"
-title: "Profiles of objective and subjective cognitive function in Post-COVID Syndrome, COVID-19 recovered, and COVID-19 naive individuals"
+id: paper:Bland2024
+kind: paper
+title: Profiles of objective and subjective cognitive function in Post-COVID Syndrome,
+  COVID-19 recovered, and COVID-19 naive individuals
 status: active
 ontology_terms:
-  - cognitive dysfunction
-  - brain fog
-  - post-COVID syndrome
-  - subjective cognition
-  - objective cognition
-  - fatigue
-  - perceived stress
-  - long COVID
-  - neuropsychological assessment
+- cognitive dysfunction
+- brain fog
+- post-COVID syndrome
+- subjective cognition
+- objective cognition
+- fatigue
+- perceived stress
+- long COVID
+- neuropsychological assessment
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Bland2024
+- cite:Bland2024
 related:
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - task:t018
-  - topic:long-covid-immune-dysregulation
-  - topic:shared-failure-mode-across-pais
-  - paper:Cheetham2023
-  - paper:DelgadoAlonso2023
-created: "2026-06-22"
-updated: "2026-06-22"
+- question:0007-mechanism-of-female-predominance-in-pais
+- task:t018
+- topic:long-covid-immune-dysregulation
+- topic:shared-failure-mode-across-pais
+- paper:Cheetham2023
+- paper:DelgadoAlonso2023
+created: '2026-06-22'
+updated: '2026-06-22'
 ---
 
 # Profiles of objective and subjective cognitive function in Post-COVID Syndrome, COVID-19 recovered, and COVID-19 naive individuals

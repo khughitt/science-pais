@@ -4,20 +4,19 @@ kind: paper
 title: A Scoping Review of Long COVID and Menopause
 status: active
 ontology_terms:
-  - long COVID
-  - menopause
-  - scoping review
-  - symptom overlap
-  - biomarkers
+- long COVID
+- menopause
+- scoping review
+- symptom overlap
+- biomarkers
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Humphreys2025
+- cite:Humphreys2025
 related:
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
-  - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
-  - topic:menopause-sex-hormones-and-pais-risk
+- question:0007-mechanism-of-female-predominance-in-pais
+- question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- hypothesis:0005-reproductive-stage-immune-homeostatic-margin
+- topic:menopause-sex-hormones-and-pais-risk
 created: '2026-06-19'
 updated: '2026-06-19'
 ---

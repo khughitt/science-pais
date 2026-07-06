@@ -4,16 +4,15 @@ kind: paper
 title: Reactive arthritis before and after the onset of the COVID-19 pandemic
 status: active
 ontology_terms:
-  - reactive arthritis
-  - post-infectious arthritis
-  - spondyloarthritis
-  - HLA-B27
-  - molecular mimicry
-  - post-COVID-19 musculoskeletal sequelae
-  - infection-triggered autoimmunity
-  - post-vaccination inflammatory arthritis
+- reactive arthritis
+- post-infectious arthritis
+- spondyloarthritis
+- HLA-B27
+- molecular mimicry
+- post-COVID-19 musculoskeletal sequelae
+- infection-triggered autoimmunity
+- post-vaccination inflammatory arthritis
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Bekaryssova2022
 related: []

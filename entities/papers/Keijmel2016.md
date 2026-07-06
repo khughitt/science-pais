@@ -1,18 +1,17 @@
 ---
 id: paper:Keijmel2016
 kind: paper
-title: 'Altered interferon-γ response in patients with Q-fever fatigue syndrome'
+title: "Altered interferon-\u03B3 response in patients with Q-fever fatigue syndrome"
 status: active
 ontology_terms:
-  - Q-fever fatigue syndrome
-  - interferon-gamma
-  - Coxiella burnetii
-  - post-acute infection syndrome
-  - cell-mediated immunity
-  - interleukin-2
-  - ex-vivo whole blood stimulation
-  - post-Q-fever fatigue
-datasets: []
+- Q-fever fatigue syndrome
+- interferon-gamma
+- Coxiella burnetii
+- post-acute infection syndrome
+- cell-mediated immunity
+- interleukin-2
+- ex-vivo whole blood stimulation
+- post-Q-fever fatigue
 dataset_usage: []
 source_refs:
 - cite:Keijmel2016

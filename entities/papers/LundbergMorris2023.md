@@ -1,24 +1,24 @@
 ---
 id: paper:LundbergMorris2023
 kind: paper
-title: "Covid-19 vaccine effectiveness against post-covid-19 condition among 589 722 individuals in Sweden: population based cohort study"
+title: 'Covid-19 vaccine effectiveness against post-covid-19 condition among 589 722
+  individuals in Sweden: population based cohort study'
 status: active
 ontology_terms:
-  - long COVID
-  - post-COVID condition
-  - vaccination
-  - Swedish registers
-  - SCIFI-PEARL
+- long COVID
+- post-COVID condition
+- vaccination
+- Swedish registers
+- SCIFI-PEARL
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:LundbergMorris2023
+- cite:LundbergMorris2023
 related:
-  - task:t010
-  - question:0012-prevention-vaccination-antiviral-reduces-pais
-  - hypothesis:0004-acute-severity-threshold
-created: "2026-06-25"
-updated: "2026-06-25"
+- task:t010
+- question:0012-prevention-vaccination-antiviral-reduces-pais
+- hypothesis:0004-acute-severity-threshold
+created: '2026-06-25'
+updated: '2026-06-25'
 ---
 
 # Covid-19 vaccine effectiveness against post-covid-19 condition among 589 722 individuals in Sweden

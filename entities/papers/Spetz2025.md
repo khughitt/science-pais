@@ -1,7 +1,8 @@
 ---
 id: paper:Spetz2025
 kind: paper
-title: Covid-19 and cardiovascular disease in a total population-study of long-term effects, social factors and Covid-19-vaccination
+title: Covid-19 and cardiovascular disease in a total population-study of long-term
+  effects, social factors and Covid-19-vaccination
 status: active
 ontology_terms:
 - COVID-19
@@ -13,7 +14,6 @@ ontology_terms:
 - post-acute cardiovascular outcomes
 - SCIFI-PEARL
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Spetz2025
 related:

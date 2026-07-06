@@ -5,16 +5,15 @@ title: 'Post-Infectious Fatigue and Depression Following Dengue: A Systematic Re
   and Meta-Analysis of Associated Factors'
 status: active
 ontology_terms:
-  - post-infectious fatigue syndrome
-  - post-dengue depression
-  - dengue virus infection
-  - systematic review and meta-analysis
-  - sex differences in immune response
-  - dengue hemorrhagic fever
-  - thrombocytopaenia
-  - myalgic encephalomyelitis/chronic fatigue syndrome
+- post-infectious fatigue syndrome
+- post-dengue depression
+- dengue virus infection
+- systematic review and meta-analysis
+- sex differences in immune response
+- dengue hemorrhagic fever
+- thrombocytopaenia
+- myalgic encephalomyelitis/chronic fatigue syndrome
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Conde2026
 related:

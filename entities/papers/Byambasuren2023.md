@@ -4,21 +4,20 @@ kind: paper
 title: Effect of covid-19 vaccination on long covid
 status: active
 ontology_terms:
-  - long COVID
-  - vaccination
-  - recovery
-  - systematic review
-  - observational evidence
+- long COVID
+- vaccination
+- recovery
+- systematic review
+- observational evidence
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Byambasuren2023
+- cite:Byambasuren2023
 related:
-  - task:t010
-  - question:0012-prevention-vaccination-antiviral-reduces-pais
-  - topic:therapeutics-and-clinical-trials
-created: "2026-06-25"
-updated: "2026-06-25"
+- task:t010
+- question:0012-prevention-vaccination-antiviral-reduces-pais
+- topic:therapeutics-and-clinical-trials
+created: '2026-06-25'
+updated: '2026-06-25'
 ---
 
 # Effect of covid-19 vaccination on long covid

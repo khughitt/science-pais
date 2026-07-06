@@ -4,23 +4,22 @@ kind: paper
 title: Muscle abnormalities worsen after post-exertional malaise in long COVID
 status: active
 ontology_terms:
-  - post-exertional malaise
-  - long COVID
-  - skeletal muscle
-  - mitochondrial dysfunction
-  - bioenergetics
-  - exercise intolerance
-  - myopathy
-  - amyloid deposits
-  - metabolomics
+- post-exertional malaise
+- long COVID
+- skeletal muscle
+- mitochondrial dysfunction
+- bioenergetics
+- exercise intolerance
+- myopathy
+- amyloid deposits
+- metabolomics
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Appelman2024
+- cite:Appelman2024
 related:
-  - question:0011-mitochondrial-basis-of-pem
-  - topic:mecfs-long-covid-convergence
-  - topic:biomarkers-and-objective-endpoints
+- question:0011-mitochondrial-basis-of-pem
+- topic:mecfs-long-covid-convergence
+- topic:biomarkers-and-objective-endpoints
 created: '2026-06-20'
 updated: '2026-06-25'
 ---

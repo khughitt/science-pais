@@ -1,19 +1,19 @@
 ---
 id: paper:AlcaldeHerraiz2025
 kind: paper
-title: "Sociodemographic factors, biomarkers and comorbidities associated with post-acute COVID-19 sequelae in UK Biobank"
+title: Sociodemographic factors, biomarkers and comorbidities associated with post-acute
+  COVID-19 sequelae in UK Biobank
 status: active
 ontology_terms:
-  - long COVID
-  - post-acute complications of SARS-CoV-2
-  - sex hormone-binding globulin
-  - UK Biobank
-  - biomarker risk factors
-  - post-acute sequelae of SARS-CoV-2
-  - sex differences
-  - case-control study
+- long COVID
+- post-acute complications of SARS-CoV-2
+- sex hormone-binding globulin
+- UK Biobank
+- biomarker risk factors
+- post-acute sequelae of SARS-CoV-2
+- sex differences
+- case-control study
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:AlcaldeHerraiz2025
 related:
@@ -22,8 +22,8 @@ related:
 - task:t017
 - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
 - topic:menopause-sex-hormones-and-pais-risk
-created: "2026-06-19"
-updated: "2026-06-19"
+created: '2026-06-19'
+updated: '2026-06-19'
 ---
 
 # Sociodemographic factors, biomarkers and comorbidities associated with post-acute COVID-19 sequelae in UK Biobank

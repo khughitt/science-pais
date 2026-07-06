@@ -5,16 +5,15 @@ title: The peptidoglycan of Borrelia burgdorferi can persist in discrete tissues
   cause systemic responses consistent with chronic illness
 status: active
 ontology_terms:
-  - peptidoglycan
-  - antigen-persistence
-  - post-treatment-lyme-disease-syndrome
-  - Borrelia-burgdorferi
-  - Kupffer-cells
-  - PAMP-persistence
-  - liver-pathogen-clearance
-  - post-infectious-immune-activation
+- peptidoglycan
+- antigen-persistence
+- post-treatment-lyme-disease-syndrome
+- Borrelia-burgdorferi
+- Kupffer-cells
+- PAMP-persistence
+- liver-pathogen-clearance
+- post-infectious-immune-activation
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:McClune2025
 related: []

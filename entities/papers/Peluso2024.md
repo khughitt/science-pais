@@ -4,18 +4,17 @@ kind: paper
 title: Plasma-based antigen persistence in the post-acute phase of COVID-19
 status: active
 ontology_terms:
-  - SARS-CoV-2 antigen persistence
-  - long COVID
-  - Simoa single-molecule array
-  - viral reservoir
-  - spike protein
-  - nucleocapsid protein
-  - post-acute sequelae of COVID-19 (PASC)
-  - antigen-driven immune activation
+- SARS-CoV-2 antigen persistence
+- long COVID
+- Simoa single-molecule array
+- viral reservoir
+- spike protein
+- nucleocapsid protein
+- post-acute sequelae of COVID-19 (PASC)
+- antigen-driven immune activation
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Peluso2024
+- cite:Peluso2024
 related: []
 created: '2026-06-11'
 updated: '2026-06-11'

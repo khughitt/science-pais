@@ -1,19 +1,18 @@
 ---
 id: paper:Nicolai2023
 kind: paper
-title: "Thromboinflammation in long COVID—the elusive key to postinfection sequelae?"
+title: "Thromboinflammation in long COVID\u2014the elusive key to postinfection sequelae?"
 status: active
 ontology_terms:
-  - thromboinflammation
-  - post-acute sequelae of SARS-CoV-2
-  - endothelial dysfunction
-  - platelet-neutrophil aggregate
-  - neutrophil extracellular trap
-  - microclot
-  - coagulation dysregulation
-  - von Willebrand factor
+- thromboinflammation
+- post-acute sequelae of SARS-CoV-2
+- endothelial dysfunction
+- platelet-neutrophil aggregate
+- neutrophil extracellular trap
+- microclot
+- coagulation dysregulation
+- von Willebrand factor
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Nicolai2023
 related:

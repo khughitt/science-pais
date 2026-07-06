@@ -5,16 +5,15 @@ title: Chronic sequelae complicate convalescence from both dengue and acute vira
   respiratory illness
 status: active
 ontology_terms:
-  - post-acute infection syndrome
-  - post-dengue chronic sequelae
-  - acute viral respiratory infection
-  - convalescence
-  - fatigue
-  - mental health outcomes
-  - SF-12v2 Mental Component Score
-  - mobile health data collection
+- post-acute infection syndrome
+- post-dengue chronic sequelae
+- acute viral respiratory infection
+- convalescence
+- fatigue
+- mental health outcomes
+- SF-12v2 Mental Component Score
+- mobile health data collection
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Kalimuddin2022
 related: []

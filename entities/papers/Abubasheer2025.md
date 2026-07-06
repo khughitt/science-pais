@@ -1,21 +1,21 @@
 ---
 id: paper:Abubasheer2025
 kind: paper
-title: "Sex-Based Differences in Cardiovascular Outcomes Associated With COVID-19: A Systematic Review and Meta-Analysis"
+title: 'Sex-Based Differences in Cardiovascular Outcomes Associated With COVID-19:
+  A Systematic Review and Meta-Analysis'
 status: active
 ontology_terms:
-  - sex differences
-  - cardiovascular outcomes
-  - venous thromboembolism
-  - myocardial infarction
-  - ischemic stroke
-  - thromboinflammation
-  - COVID-19 complications
-  - meta-analysis
-  - ECMO
-  - mortality
+- sex differences
+- cardiovascular outcomes
+- venous thromboembolism
+- myocardial infarction
+- ischemic stroke
+- thromboinflammation
+- COVID-19 complications
+- meta-analysis
+- ECMO
+- mortality
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Abubasheer2025
 related:

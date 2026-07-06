@@ -1,8 +1,8 @@
 ---
 id: paper:Novak2026
 kind: paper
-title: 'Shared autonomic phenotype of long COVID and myalgic encephalomyelitis/chronic
-  fatigue syndrome'
+title: Shared autonomic phenotype of long COVID and myalgic encephalomyelitis/chronic
+  fatigue syndrome
 status: active
 ontology_terms:
 - small fiber neuropathy
@@ -21,7 +21,6 @@ ontology_terms:
 - post-acute infection syndrome
 - cross-trigger convergence
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Novak2026
 related:

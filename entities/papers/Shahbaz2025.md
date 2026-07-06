@@ -1,39 +1,39 @@
 ---
 id: paper:Shahbaz2025
 kind: paper
-title: "Integrated immune, hormonal, and transcriptomic profiling reveals sex-specific dysregulation in long COVID patients with ME/CFS"
+title: Integrated immune, hormonal, and transcriptomic profiling reveals sex-specific
+  dysregulation in long COVID patients with ME/CFS
 status: active
 ontology_terms:
-  - long COVID
-  - ME/CFS
-  - sex differences
-  - immune dysregulation
-  - sex hormones
-  - testosterone
-  - estradiol
-  - cortisol
-  - myelopoiesis
-  - regulatory T cells
-  - neuroinflammation
-  - gut barrier dysfunction
-  - transcriptomics
-  - post-acute infection syndrome
+- long COVID
+- ME/CFS
+- sex differences
+- immune dysregulation
+- sex hormones
+- testosterone
+- estradiol
+- cortisol
+- myelopoiesis
+- regulatory T cells
+- neuroinflammation
+- gut barrier dysfunction
+- transcriptomics
+- post-acute infection syndrome
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Shahbaz2025
+- cite:Shahbaz2025
 related:
-  - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
-  - hypothesis:0001-shared-dysregulated-attractor
-  - hypothesis:0003-immune-exhaustion-feedback
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - question:0011-mitochondrial-basis-of-pem
-  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
-  - question:0016-oxidative-stress-upstream-driver-of-bioenergetic
-  - topic:long-covid-immune-dysregulation
-  - topic:menopause-sex-hormones-and-pais-risk
-created: "2026-06-21"
-updated: "2026-06-21"
+- hypothesis:0005-reproductive-stage-immune-homeostatic-margin
+- hypothesis:0001-shared-dysregulated-attractor
+- hypothesis:0003-immune-exhaustion-feedback
+- question:0007-mechanism-of-female-predominance-in-pais
+- question:0011-mitochondrial-basis-of-pem
+- question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- question:0016-oxidative-stress-upstream-driver-of-bioenergetic
+- topic:long-covid-immune-dysregulation
+- topic:menopause-sex-hormones-and-pais-risk
+created: '2026-06-21'
+updated: '2026-06-21'
 ---
 # Integrated immune, hormonal, and transcriptomic profiling reveals sex-specific dysregulation in long COVID patients with ME/CFS
 

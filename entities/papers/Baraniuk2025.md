@@ -1,28 +1,28 @@
 ---
 id: paper:Baraniuk2025
 kind: paper
-title: "Cerebrospinal fluid metabolomics, lipidomics and serine pathway dysfunction in myalgic encephalomyelitis/chronic fatigue syndrome (ME/CFS)"
+title: Cerebrospinal fluid metabolomics, lipidomics and serine pathway dysfunction
+  in myalgic encephalomyelitis/chronic fatigue syndrome (ME/CFS)
 status: active
 ontology_terms:
-  - cerebrospinal fluid metabolomics
-  - lipidomics
-  - serine pathway
-  - one-carbon metabolism
-  - post-exertional malaise
-  - bioenergetics
-  - sphingomyelin
-  - myalgic encephalomyelitis/chronic fatigue syndrome
-  - exercise provocation
+- cerebrospinal fluid metabolomics
+- lipidomics
+- serine pathway
+- one-carbon metabolism
+- post-exertional malaise
+- bioenergetics
+- sphingomyelin
+- myalgic encephalomyelitis/chronic fatigue syndrome
+- exercise provocation
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Baraniuk2025
+- cite:Baraniuk2025
 related:
-  - question:0011-mitochondrial-basis-of-pem
-  - question:0001-shared-molecular-signature-across-triggers
-  - topic:mecfs-long-covid-convergence
-  - topic:biomarkers-and-objective-endpoints
-  - hypothesis:0001-shared-dysregulated-attractor
+- question:0011-mitochondrial-basis-of-pem
+- question:0001-shared-molecular-signature-across-triggers
+- topic:mecfs-long-covid-convergence
+- topic:biomarkers-and-objective-endpoints
+- hypothesis:0001-shared-dysregulated-attractor
 created: '2026-06-20'
 updated: '2026-06-20'
 ---

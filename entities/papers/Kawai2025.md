@@ -4,18 +4,17 @@ kind: paper
 title: Viral Infections and Risk of Cardiovascular Disease
 status: active
 ontology_terms:
-  - viral infection
-  - cardiovascular disease
-  - systematic review
-  - meta-analysis
-  - endothelial dysfunction
+- viral infection
+- cardiovascular disease
+- systematic review
+- meta-analysis
+- endothelial dysfunction
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Kawai2025
+- cite:Kawai2025
 related:
-  - topic:thromboinflammation-and-endothelial-dysfunction
-  - topic:shared-failure-mode-across-pais
+- topic:thromboinflammation-and-endothelial-dysfunction
+- topic:shared-failure-mode-across-pais
 created: '2026-06-19'
 updated: '2026-06-19'
 ---

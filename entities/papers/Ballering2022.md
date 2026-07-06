@@ -1,25 +1,25 @@
 ---
 id: paper:Ballering2022
 kind: paper
-title: "Persistence of somatic symptoms after COVID-19 in the Netherlands: an observational cohort study"
+title: 'Persistence of somatic symptoms after COVID-19 in the Netherlands: an observational
+  cohort study'
 status: active
 ontology_terms:
-  - long COVID
-  - Lifelines
-  - pre-infection symptoms
-  - matched controls
-  - population cohort
-  - symptom attribution
+- long COVID
+- Lifelines
+- pre-infection symptoms
+- matched controls
+- population cohort
+- symptom attribution
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Ballering2022
+- cite:Ballering2022
 related:
-  - task:t008
-  - topic:pais-case-definition-heterogeneity
-  - question:0017-deflationary-alternatives-vs-shared-pathophysiology
-created: "2026-06-25"
-updated: "2026-06-25"
+- task:t008
+- topic:pais-case-definition-heterogeneity
+- question:0017-deflationary-alternatives-vs-shared-pathophysiology
+created: '2026-06-25'
+updated: '2026-06-25'
 ---
 
 # Persistence of somatic symptoms after COVID-19 in the Netherlands

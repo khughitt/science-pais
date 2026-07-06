@@ -14,7 +14,6 @@ ontology_terms:
 - thromboinflammation
 - organ-system-sequelae
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Parotto2023
 related: []

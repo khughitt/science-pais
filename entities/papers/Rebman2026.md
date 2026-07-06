@@ -4,18 +4,17 @@ kind: paper
 title: Sex and menopause-based differences in presentation of early Lyme disease
 status: active
 ontology_terms:
-  - Lyme disease
-  - sex differences
-  - menopause
-  - serology
-  - post-treatment Lyme disease
+- Lyme disease
+- sex differences
+- menopause
+- serology
+- post-treatment Lyme disease
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Rebman2026
+- cite:Rebman2026
 related:
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - topic:shared-failure-mode-across-pais
+- question:0007-mechanism-of-female-predominance-in-pais
+- topic:shared-failure-mode-across-pais
 created: '2026-06-19'
 updated: '2026-06-19'
 ---

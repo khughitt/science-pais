@@ -1,31 +1,31 @@
 ---
 id: paper:Sommen2026
 kind: paper
-title: "Long COVID: Deep single-cell immunophenotyping and machine learning reveal a general signature for fatigue"
+title: 'Long COVID: Deep single-cell immunophenotyping and machine learning reveal
+  a general signature for fatigue'
 status: active
 ontology_terms:
-  - long COVID
-  - post-infective fatigue syndrome
-  - mass cytometry CyTOF
-  - natural killer cell dysregulation
-  - terminal NK cells
-  - CD4+ T cell exhaustion
-  - machine learning immune biomarker
-  - adolescent SARS-CoV-2 cohort
-  - cross-condition fatigue immune signature
+- long COVID
+- post-infective fatigue syndrome
+- mass cytometry CyTOF
+- natural killer cell dysregulation
+- terminal NK cells
+- CD4+ T cell exhaustion
+- machine learning immune biomarker
+- adolescent SARS-CoV-2 cohort
+- cross-condition fatigue immune signature
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Sommen2026
+- cite:Sommen2026
 related:
-  - topic:long-covid-immune-dysregulation
-  - topic:mecfs-long-covid-convergence
-  - topic:biomarkers-and-objective-endpoints
-  - topic:shared-failure-mode-across-pais
-  - question:0001-shared-molecular-signature-across-triggers
-  - hypothesis:0001-shared-dysregulated-attractor
-  - hypothesis:0003-immune-exhaustion-feedback
-  - paper:Klein2023
+- topic:long-covid-immune-dysregulation
+- topic:mecfs-long-covid-convergence
+- topic:biomarkers-and-objective-endpoints
+- topic:shared-failure-mode-across-pais
+- question:0001-shared-molecular-signature-across-triggers
+- hypothesis:0001-shared-dysregulated-attractor
+- hypothesis:0003-immune-exhaustion-feedback
+- paper:Klein2023
 created: '2026-06-20'
 updated: '2026-06-20'
 ---

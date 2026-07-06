@@ -1,34 +1,33 @@
 ---
-id: "paper:Shankar2025"
-kind: "paper"
-title: "Oxidative stress is a shared characteristic of ME/CFS and Long COVID"
+id: paper:Shankar2025
+kind: paper
+title: Oxidative stress is a shared characteristic of ME/CFS and Long COVID
 status: active
 ontology_terms:
-  - oxidative stress
-  - reactive oxygen species
-  - mitochondrial dysfunction
-  - T cell hyperproliferation
-  - glutathione
-  - lipid peroxidation
-  - peripheral blood mononuclear cells
-  - post-acute infection syndrome
-  - metformin
+- oxidative stress
+- reactive oxygen species
+- mitochondrial dysfunction
+- T cell hyperproliferation
+- glutathione
+- lipid peroxidation
+- peripheral blood mononuclear cells
+- post-acute infection syndrome
+- metformin
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Shankar2025
+- cite:Shankar2025
 related:
-  - topic:mecfs-long-covid-convergence
-  - topic:biomarkers-and-objective-endpoints
-  - topic:shared-failure-mode-across-pais
-  - question:0011-mitochondrial-basis-of-pem
-  - question:0001-shared-molecular-signature-across-triggers
-  - hypothesis:0001-shared-dysregulated-attractor
-  - hypothesis:0003-immune-exhaustion-feedback
-  - paper:Naviaux2016
-  - paper:Che2025
-created: "2026-06-20"
-updated: "2026-06-20"
+- topic:mecfs-long-covid-convergence
+- topic:biomarkers-and-objective-endpoints
+- topic:shared-failure-mode-across-pais
+- question:0011-mitochondrial-basis-of-pem
+- question:0001-shared-molecular-signature-across-triggers
+- hypothesis:0001-shared-dysregulated-attractor
+- hypothesis:0003-immune-exhaustion-feedback
+- paper:Naviaux2016
+- paper:Che2025
+created: '2026-06-20'
+updated: '2026-06-20'
 ---
 
 # Oxidative stress is a shared characteristic of ME/CFS and Long COVID

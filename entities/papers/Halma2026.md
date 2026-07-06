@@ -1,30 +1,30 @@
 ---
-id: "paper:Halma2026"
-kind: "paper"
-title: "Autoimmunity, Vascular Dysfunction and Metabolic Alterations: A Trifecta of Impacts in Postacute COVID-19 Vaccination Syndrome (PACVS)"
-status: "active"
+id: paper:Halma2026
+kind: paper
+title: 'Autoimmunity, Vascular Dysfunction and Metabolic Alterations: A Trifecta of
+  Impacts in Postacute COVID-19 Vaccination Syndrome (PACVS)'
+status: active
 ontology_terms:
-  - post-acute-COVID-19-vaccination-syndrome
-  - functional-autoantibodies
-  - thromboinflammation
-  - mitochondrial-dysfunction
-  - endothelial-dysfunction
-  - G-protein-coupled-receptor-autoantibodies
-  - microclot-formation
-  - metabolic-failure
-  - molecular-mimicry
+- post-acute-COVID-19-vaccination-syndrome
+- functional-autoantibodies
+- thromboinflammation
+- mitochondrial-dysfunction
+- endothelial-dysfunction
+- G-protein-coupled-receptor-autoantibodies
+- microclot-formation
+- metabolic-failure
+- molecular-mimicry
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Halma2026
+- cite:Halma2026
 related:
-  - topic:post-infectious-dysautonomia-and-autoimmunity
-  - topic:thromboinflammation-and-endothelial-dysfunction
-  - topic:shared-failure-mode-across-pais
-  - question:0009-functional-autoantibodies-drive-dysautonomia
-  - hypothesis:0001-shared-dysregulated-attractor
-created: "2026-06-20"
-updated: "2026-06-20"
+- topic:post-infectious-dysautonomia-and-autoimmunity
+- topic:thromboinflammation-and-endothelial-dysfunction
+- topic:shared-failure-mode-across-pais
+- question:0009-functional-autoantibodies-drive-dysautonomia
+- hypothesis:0001-shared-dysregulated-attractor
+created: '2026-06-20'
+updated: '2026-06-20'
 ---
 
 # Autoimmunity, Vascular Dysfunction and Metabolic Alterations: A Trifecta of Impacts in Postacute COVID-19 Vaccination Syndrome (PACVS)

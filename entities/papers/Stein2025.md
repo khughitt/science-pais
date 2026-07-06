@@ -1,21 +1,20 @@
 ---
 id: paper:Stein2025
 kind: paper
-title: 'Efficacy of repeated immunoadsorption in patients with post-COVID myalgic encephalomyelitis/chronic
-  fatigue syndrome and elevated beta2-adrenergic receptor autoantibodies: a prospective
-  cohort study'
+title: 'Efficacy of repeated immunoadsorption in patients with post-COVID myalgic
+  encephalomyelitis/chronic fatigue syndrome and elevated beta2-adrenergic receptor
+  autoantibodies: a prospective cohort study'
 status: active
 ontology_terms:
-  - immunoadsorption
-  - autoantibody
-  - beta2-adrenergic receptor
-  - post-COVID condition
-  - myalgic encephalomyelitis/chronic fatigue syndrome
-  - apheresis
-  - prospective cohort study
-  - post-acute infection syndrome
+- immunoadsorption
+- autoantibody
+- beta2-adrenergic receptor
+- post-COVID condition
+- myalgic encephalomyelitis/chronic fatigue syndrome
+- apheresis
+- prospective cohort study
+- post-acute infection syndrome
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Stein2025
 related:

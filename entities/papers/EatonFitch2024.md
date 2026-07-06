@@ -16,7 +16,6 @@ ontology_terms:
 - Tregs
 - exhausted CD8 cells
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:EatonFitch2024
 related:

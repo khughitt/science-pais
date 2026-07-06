@@ -4,16 +4,15 @@ kind: paper
 title: Distinguishing features of long COVID identified through immune profiling
 status: active
 ontology_terms:
-  - long COVID
-  - immune profiling
-  - post-acute sequelae of SARS-CoV-2
-  - Epstein-Barr virus reactivation
-  - cortisol dysregulation
-  - non-conventional monocytes
-  - machine learning biomarker discovery
-  - T cell exhaustion
+- long COVID
+- immune profiling
+- post-acute sequelae of SARS-CoV-2
+- Epstein-Barr virus reactivation
+- cortisol dysregulation
+- non-conventional monocytes
+- machine learning biomarker discovery
+- T cell exhaustion
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Klein2023
 related: []

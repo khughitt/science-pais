@@ -1,9 +1,10 @@
 ---
-id: "paper:Kharraziha2020"
-kind: "paper"
-title: "Serum Activity Against G Protein-Coupled Receptors and Severity of Orthostatic Symptoms in Postural Orthostatic Tachycardia Syndrome"
-status: "active"
-paper_kind: ""
+id: paper:Kharraziha2020
+kind: paper
+title: Serum Activity Against G Protein-Coupled Receptors and Severity of Orthostatic
+  Symptoms in Postural Orthostatic Tachycardia Syndrome
+status: active
+paper_kind: ''
 ontology_terms:
 - GPCR autoantibody
 - functional bioassay
@@ -13,15 +14,14 @@ ontology_terms:
 - muscarinic receptor
 - orthostatic intolerance
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Kharraziha2020
 related:
 - question:0009-functional-autoantibodies-drive-dysautonomia
 - hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
 - topic:post-infectious-dysautonomia-and-autoimmunity
-created: "2026-06-24"
-updated: "2026-06-24"
+created: '2026-06-24'
+updated: '2026-06-24'
 ---
 
 # Serum Activity Against G Protein-Coupled Receptors and Severity of Orthostatic Symptoms in Postural Orthostatic Tachycardia Syndrome

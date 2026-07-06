@@ -1,32 +1,32 @@
 ---
-id: "paper:Huang2024"
-kind: "paper"
-title: "Discriminating Myalgic Encephalomyelitis/Chronic Fatigue Syndrome and comorbid conditions using metabolomics in UK Biobank"
+id: paper:Huang2024
+kind: paper
+title: Discriminating Myalgic Encephalomyelitis/Chronic Fatigue Syndrome and comorbid
+  conditions using metabolomics in UK Biobank
 status: active
 ontology_terms:
-  - ME/CFS
-  - NMR metabolomics
-  - lipoprotein metabolism
-  - machine learning biomarker
-  - UK Biobank
-  - sex-specific metabolism
-  - VLDL triglycerides
-  - surface lipids
-  - multivariate disease score
+- ME/CFS
+- NMR metabolomics
+- lipoprotein metabolism
+- machine learning biomarker
+- UK Biobank
+- sex-specific metabolism
+- VLDL triglycerides
+- surface lipids
+- multivariate disease score
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Huang2024
+- cite:Huang2024
 related:
-  - topic:mecfs-long-covid-convergence
-  - topic:biomarkers-and-objective-endpoints
-  - topic:menopause-sex-hormones-and-pais-risk
-  - question:0011-mitochondrial-basis-of-pem
-  - question:0001-shared-molecular-signature-across-triggers
-  - hypothesis:0001-shared-dysregulated-attractor
-  - paper:Naviaux2016
-created: "2026-06-20"
-updated: "2026-06-20"
+- topic:mecfs-long-covid-convergence
+- topic:biomarkers-and-objective-endpoints
+- topic:menopause-sex-hormones-and-pais-risk
+- question:0011-mitochondrial-basis-of-pem
+- question:0001-shared-molecular-signature-across-triggers
+- hypothesis:0001-shared-dysregulated-attractor
+- paper:Naviaux2016
+created: '2026-06-20'
+updated: '2026-06-20'
 ---
 
 # Discriminating Myalgic Encephalomyelitis/Chronic Fatigue Syndrome and comorbid conditions using metabolomics in UK Biobank

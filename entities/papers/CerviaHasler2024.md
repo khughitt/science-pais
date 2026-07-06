@@ -5,16 +5,15 @@ title: Persistent complement dysregulation with signs of thromboinflammation in 
   Long Covid
 status: active
 ontology_terms:
-  - complement system dysregulation
-  - terminal complement complex (TCC)
-  - thromboinflammation
-  - long COVID / PASC biomarkers
-  - monocyte-platelet aggregates
-  - herpesvirus reactivation
-  - coagulation dysregulation
-  - serum proteomics (SomaScan)
+- complement system dysregulation
+- terminal complement complex (TCC)
+- thromboinflammation
+- long COVID / PASC biomarkers
+- monocyte-platelet aggregates
+- herpesvirus reactivation
+- coagulation dysregulation
+- serum proteomics (SomaScan)
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:CerviaHasler2024
 related:

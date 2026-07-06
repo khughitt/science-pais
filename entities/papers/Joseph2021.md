@@ -5,18 +5,17 @@ title: Insights From Invasive Cardiopulmonary Exercise Testing of Patients With 
   Encephalomyelitis/Chronic Fatigue Syndrome
 status: active
 ontology_terms:
-  - myalgic encephalomyelitis/chronic fatigue syndrome
-  - small fiber neuropathy
-  - intraepidermal nerve fiber density
-  - skin biopsy
-  - invasive cardiopulmonary exercise testing
-  - dysautonomia
-  - orthostatic intolerance
-  - postexertional malaise
-  - neurovascular dysregulation
-  - preload failure
+- myalgic encephalomyelitis/chronic fatigue syndrome
+- small fiber neuropathy
+- intraepidermal nerve fiber density
+- skin biopsy
+- invasive cardiopulmonary exercise testing
+- dysautonomia
+- orthostatic intolerance
+- postexertional malaise
+- neurovascular dysregulation
+- preload failure
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Joseph2021
 related:

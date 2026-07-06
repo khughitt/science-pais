@@ -5,18 +5,17 @@ title: 'Interventions for the management of long covid (post-covid condition): l
   systematic review'
 status: active
 ontology_terms:
-  - long COVID
-  - post-COVID-19 condition
-  - living systematic review
-  - meta-analysis
-  - randomized controlled trial
-  - certainty of evidence
-  - post-acute infection syndrome
-  - cognitive behavioural therapy
-  - rehabilitation
-  - GRADE
+- long COVID
+- post-COVID-19 condition
+- living systematic review
+- meta-analysis
+- randomized controlled trial
+- certainty of evidence
+- post-acute infection syndrome
+- cognitive behavioural therapy
+- rehabilitation
+- GRADE
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Zeraatkar2024
 related:

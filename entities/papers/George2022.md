@@ -5,16 +5,15 @@ title: A persistent neutrophil-associated immune signature characterizes post-CO
   pulmonary sequelae
 status: active
 ontology_terms:
-  - post-acute sequelae of SARS-CoV-2 infection
-  - neutrophil extracellular traps
-  - pulmonary fibrosis
-  - interstitial lung disease
-  - plasma proteomics
-  - neutrophil-associated inflammation
-  - type I interferon signaling
-  - phosphoproteomics
+- post-acute sequelae of SARS-CoV-2 infection
+- neutrophil extracellular traps
+- pulmonary fibrosis
+- interstitial lung disease
+- plasma proteomics
+- neutrophil-associated inflammation
+- type I interferon signaling
+- phosphoproteomics
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:George2022
 related:

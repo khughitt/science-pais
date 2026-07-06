@@ -5,17 +5,16 @@ title: 'Metformin on the Presence of COVID-19 Symptoms 6 Months after Infection:
   ACTIV-6 Randomized Clinical Trial'
 status: active
 ontology_terms:
-  - metformin
-  - post-COVID-19 condition
-  - prevention
-  - randomized controlled trial
-  - outpatient treatment
-  - ACTIV-6
-  - post-acute sequelae of SARS-CoV-2
-  - Bayesian analysis
-  - mTOR signaling
+- metformin
+- post-COVID-19 condition
+- prevention
+- randomized controlled trial
+- outpatient treatment
+- ACTIV-6
+- post-acute sequelae of SARS-CoV-2
+- Bayesian analysis
+- mTOR signaling
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Bramante2026
 related:

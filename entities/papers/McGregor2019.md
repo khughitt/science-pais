@@ -1,7 +1,8 @@
 ---
 id: paper:McGregor2019
 kind: paper
-title: "Post-Exertional Malaise Is Associated with Hypermetabolism, Hypoacetylation and Purine Metabolism Deregulation in ME/CFS Cases"
+title: Post-Exertional Malaise Is Associated with Hypermetabolism, Hypoacetylation
+  and Purine Metabolism Deregulation in ME/CFS Cases
 status: active
 ontology_terms:
 - post-exertional malaise
@@ -15,14 +16,13 @@ ontology_terms:
 - histone deacetylation
 - PEM-stratified design
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:McGregor2019
 related:
 - question:0015-does-pem-requirement-improve-cross-study-comparability
 - question:0011-mitochondrial-basis-of-pem
-created: "2026-06-22"
-updated: "2026-06-22"
+created: '2026-06-22'
+updated: '2026-06-22'
 ---
 
 # Post-Exertional Malaise Is Associated with Hypermetabolism, Hypoacetylation and Purine Metabolism Deregulation in ME/CFS Cases

@@ -1,8 +1,8 @@
 ---
 id: paper:Galbraith2011
 kind: paper
-title: 'Peripheral blood gene expression in postinfective fatigue syndrome following
-  from three different triggering infections'
+title: Peripheral blood gene expression in postinfective fatigue syndrome following
+  from three different triggering infections
 status: active
 ontology_terms:
 - post-infective fatigue syndrome
@@ -16,7 +16,6 @@ ontology_terms:
 - longitudinal cohort
 - cross-trigger comparison
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Galbraith2011
 related:

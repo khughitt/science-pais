@@ -4,16 +4,15 @@ kind: paper
 title: Data-driven identification of post-acute SARS-CoV-2 infection subphenotypes
 status: active
 ontology_terms:
-  - post-acute sequelae of SARS-CoV-2 infection
-  - long COVID subphenotypes
-  - electronic health records
-  - probabilistic topic modeling
-  - machine learning clustering
-  - ICD-10 diagnosis codes
-  - clinical research network
-  - PAIS heterogeneity
+- post-acute sequelae of SARS-CoV-2 infection
+- long COVID subphenotypes
+- electronic health records
+- probabilistic topic modeling
+- machine learning clustering
+- ICD-10 diagnosis codes
+- clinical research network
+- PAIS heterogeneity
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Zhang2022
 related: []

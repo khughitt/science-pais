@@ -4,22 +4,21 @@ kind: paper
 title: Cytokine profiles in patients with Q fever fatigue syndrome
 status: active
 ontology_terms:
-  - Q-fever fatigue syndrome
-  - chronic fatigue syndrome
-  - cytokine profiling
-  - ex-vivo stimulation
-  - Coxiella burnetii
-  - innate immune activation
-  - circulating cytokines
-  - proximity extension assay
-  - PBMC stimulation
-  - post-acute infection syndrome
-datasets: []
+- Q-fever fatigue syndrome
+- chronic fatigue syndrome
+- cytokine profiling
+- ex-vivo stimulation
+- Coxiella burnetii
+- innate immune activation
+- circulating cytokines
+- proximity extension assay
+- PBMC stimulation
+- post-acute infection syndrome
 source_refs:
-  - cite:Raijmakers2019b
+- cite:Raijmakers2019b
 related:
-  - question:0001-shared-molecular-signature-across-triggers
-  - discussion:0002-cross-pathogen-pais-signature-convergence
+- question:0001-shared-molecular-signature-across-triggers
+- discussion:0002-cross-pathogen-pais-signature-convergence
 created: '2026-06-20'
 updated: '2026-06-20'
 ---

@@ -1,30 +1,30 @@
 ---
 id: paper:Davis2025
 kind: paper
-title: "Dysregulation of lipid metabolism, energy production, and oxidative stress in myalgic encephalomyelitis/chronic fatigue syndrome, Gulf War Syndrome and fibromyalgia"
+title: Dysregulation of lipid metabolism, energy production, and oxidative stress
+  in myalgic encephalomyelitis/chronic fatigue syndrome, Gulf War Syndrome and fibromyalgia
 status: active
 ontology_terms:
-  - ME/CFS
-  - fibromyalgia
-  - Gulf War Syndrome
-  - lipid metabolism
-  - oxidative stress
-  - mitochondrial dysfunction
-  - energy metabolism
-  - metabolomics
-  - post-exertional malaise
+- ME/CFS
+- fibromyalgia
+- Gulf War Syndrome
+- lipid metabolism
+- oxidative stress
+- mitochondrial dysfunction
+- energy metabolism
+- metabolomics
+- post-exertional malaise
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Davis2025
+- cite:Davis2025
 related:
-  - question:0011-mitochondrial-basis-of-pem
-  - question:0001-shared-molecular-signature-across-triggers
-  - topic:mecfs-long-covid-convergence
-  - topic:biomarkers-and-objective-endpoints
-  - topic:shared-failure-mode-across-pais
-  - hypothesis:0001-shared-dysregulated-attractor
-  - paper:Naviaux2016
+- question:0011-mitochondrial-basis-of-pem
+- question:0001-shared-molecular-signature-across-triggers
+- topic:mecfs-long-covid-convergence
+- topic:biomarkers-and-objective-endpoints
+- topic:shared-failure-mode-across-pais
+- hypothesis:0001-shared-dysregulated-attractor
+- paper:Naviaux2016
 created: '2026-06-20'
 updated: '2026-06-20'
 ---

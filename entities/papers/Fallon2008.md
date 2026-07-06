@@ -1,29 +1,29 @@
 ---
 id: paper:Fallon2008
 kind: paper
-title: "A randomized, placebo-controlled trial of repeated IV antibiotic therapy for Lyme encephalopathy"
+title: A randomized, placebo-controlled trial of repeated IV antibiotic therapy for
+  Lyme encephalopathy
 status: active
-paper_kind: ""
+paper_kind: ''
 ontology_terms:
-  - post-treatment Lyme disease syndrome
-  - PTLDS
-  - Lyme encephalopathy
-  - antibiotic retreatment
-  - cognitive impairment
-  - antigen persistence
-  - randomized controlled trial
+- post-treatment Lyme disease syndrome
+- PTLDS
+- Lyme encephalopathy
+- antibiotic retreatment
+- cognitive impairment
+- antigen persistence
+- randomized controlled trial
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Fallon2008
+- cite:Fallon2008
 related:
-  - proposition:0020-antigen-clearance-rescues-established-pais
-  - hypothesis:0002-tissue-reservoir-antigen-fragment
-  - question:0002-antigen-clearance-rescues-symptoms
-  - discussion:0003-antigen-persistence-treatable-vs-fixed
-  - interpretation:0011-t046-antigen-clearance-trials-ingestion
-created: "2026-06-24"
-updated: "2026-06-24"
+- proposition:0020-antigen-clearance-rescues-established-pais
+- hypothesis:0002-tissue-reservoir-antigen-fragment
+- question:0002-antigen-clearance-rescues-symptoms
+- discussion:0003-antigen-persistence-treatable-vs-fixed
+- interpretation:0011-t046-antigen-clearance-trials-ingestion
+created: '2026-06-24'
+updated: '2026-06-24'
 ---
 
 # A randomized, placebo-controlled trial of repeated IV antibiotic therapy for Lyme encephalopathy

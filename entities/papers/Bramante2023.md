@@ -1,23 +1,22 @@
 ---
 id: paper:Bramante2023
 kind: paper
-title: 'Outpatient treatment of COVID-19 and incidence of post-COVID-19 condition over
-  10 months (COVID-OUT): a multicentre, randomised, quadruple-blind, parallel-group,
+title: 'Outpatient treatment of COVID-19 and incidence of post-COVID-19 condition
+  over 10 months (COVID-OUT): a multicentre, randomised, quadruple-blind, parallel-group,
   phase 3 trial'
 status: active
 ontology_terms:
-  - metformin
-  - post-COVID-19 condition
-  - prevention
-  - randomized controlled trial
-  - outpatient treatment
-  - ivermectin
-  - fluvoxamine
-  - post-acute infection syndrome
-  - AMPK
-  - metabolic intervention
+- metformin
+- post-COVID-19 condition
+- prevention
+- randomized controlled trial
+- outpatient treatment
+- ivermectin
+- fluvoxamine
+- post-acute infection syndrome
+- AMPK
+- metabolic intervention
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Bramante2023
 related:

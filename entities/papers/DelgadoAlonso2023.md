@@ -1,24 +1,23 @@
 ---
 id: paper:DelgadoAlonso2023
 kind: paper
-title: "Unraveling brain fog in post-COVID syndrome: Relationship between subjective
-  cognitive complaints and cognitive function, fatigue, and neuropsychiatric symptoms"
+title: 'Unraveling brain fog in post-COVID syndrome: Relationship between subjective
+  cognitive complaints and cognitive function, fatigue, and neuropsychiatric symptoms'
 status: active
 ontology_terms:
-  - brain fog
-  - post-COVID syndrome
-  - subjective cognitive complaints
-  - neuropsychological assessment
-  - fatigue
-  - mediation analysis
-  - sex differences
-  - long COVID
+- brain fog
+- post-COVID syndrome
+- subjective cognitive complaints
+- neuropsychological assessment
+- fatigue
+- mediation analysis
+- sex differences
+- long COVID
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:DelgadoAlonso2023
+- cite:DelgadoAlonso2023
 related:
-  - question:0007-mechanism-of-female-predominance-in-pais
+- question:0007-mechanism-of-female-predominance-in-pais
 created: '2026-06-22'
 updated: '2026-06-22'
 ---

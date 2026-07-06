@@ -1,25 +1,25 @@
 ---
 id: paper:Truong2025
 kind: paper
-title: Six-Month Outcomes in the Long-Term Outcomes After the Multisystem Inflammatory Syndrome in Children Study
+title: Six-Month Outcomes in the Long-Term Outcomes After the Multisystem Inflammatory
+  Syndrome in Children Study
 status: active
 ontology_terms:
-  - MIS-C
-  - pediatric post-infectious inflammation
-  - cardiovascular recovery
-  - MUSIC study
-  - immune resolution
+- MIS-C
+- pediatric post-infectious inflammation
+- cardiovascular recovery
+- MUSIC study
+- immune resolution
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Truong2025
+- cite:Truong2025
 related:
-  - search:0008-pediatric-long-covid-misc
-  - interpretation:0025-t009-pediatric-long-covid-and-misc
-  - topic:pediatric-long-covid-and-misc
-  - topic:long-covid-immune-dysregulation
-created: "2026-06-26"
-updated: "2026-06-26"
+- search:0008-pediatric-long-covid-misc
+- interpretation:0025-t009-pediatric-long-covid-and-misc
+- topic:pediatric-long-covid-and-misc
+- topic:long-covid-immune-dysregulation
+created: '2026-06-26'
+updated: '2026-06-26'
 ---
 # Six-Month Outcomes in the Long-Term Outcomes After the Multisystem Inflammatory Syndrome in Children Study
 

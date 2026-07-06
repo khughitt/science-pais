@@ -14,7 +14,6 @@ ontology_terms:
 - cytokine / chemokine dysregulation
 - diagnostic biomarker panel
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Talla2023
 related: []

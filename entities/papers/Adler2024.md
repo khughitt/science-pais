@@ -5,16 +5,15 @@ title: 'Dysautonomia following Lyme disease: a key component of post-treatment L
   disease syndrome?'
 status: active
 ontology_terms:
-  - dysautonomia
-  - postural orthostatic tachycardia syndrome
-  - post-treatment Lyme disease syndrome
-  - small-fiber neuropathy
-  - autonomic nervous system dysfunction
-  - Borrelia burgdorferi
-  - neuroinflammation
-  - post-acute infection syndrome
+- dysautonomia
+- postural orthostatic tachycardia syndrome
+- post-treatment Lyme disease syndrome
+- small-fiber neuropathy
+- autonomic nervous system dysfunction
+- Borrelia burgdorferi
+- neuroinflammation
+- post-acute infection syndrome
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Adler2024
 related: []

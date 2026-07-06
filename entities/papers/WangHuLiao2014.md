@@ -1,21 +1,21 @@
 ---
 id: paper:WangHuLiao2014
 kind: paper
-title: "Stability and Hopf bifurcation for a virus infection model with delayed humoral immunity response"
+title: Stability and Hopf bifurcation for a virus infection model with delayed humoral
+  immunity response
 status: active
 ontology_terms:
-  - viral dynamics
-  - humoral immunity
-  - immune response delay
-  - Hopf bifurcation
-  - stability analysis
+- viral dynamics
+- humoral immunity
+- immune response delay
+- Hopf bifurcation
+- stability analysis
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:WangHuLiao2014
+- cite:WangHuLiao2014
 related:
-  - task:t011
-  - question:0008-formalize-vicious-cycle-attractor-model
+- task:t011
+- question:0008-formalize-vicious-cycle-attractor-model
 created: '2026-06-25'
 updated: '2026-06-25'
 ---

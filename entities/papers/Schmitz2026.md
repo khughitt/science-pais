@@ -1,9 +1,10 @@
 ---
 id: paper:Schmitz2026
 kind: paper
-title: "Autonomic dysfunction and vasoregulation in long COVID-19 are linked to anti-GPCR autoantibodies"
+title: Autonomic dysfunction and vasoregulation in long COVID-19 are linked to anti-GPCR
+  autoantibodies
 status: active
-paper_kind: ""
+paper_kind: ''
 ontology_terms:
 - anti-GPCR autoantibody
 - long COVID
@@ -21,7 +22,6 @@ ontology_terms:
 - T-cell receptor repertoire
 - post-acute infection syndrome
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Schmitz2026
 related:
@@ -30,8 +30,8 @@ related:
 - proposition:0016-pais-sfn-autoimmune-causation
 - proposition:0018-pais-sfn-anti-gpcr-autoantibody-pathogenicity
 - topic:post-infectious-dysautonomia-and-autoimmunity
-created: "2026-06-24"
-updated: "2026-06-24"
+created: '2026-06-24'
+updated: '2026-06-24'
 ---
 # Autonomic dysfunction and vasoregulation in long COVID-19 are linked to anti-GPCR autoantibodies
 

@@ -1,31 +1,31 @@
 ---
-id: "paper:Wang2026b"
-kind: "paper"
-title: "Taurine supplementation as a therapeutic strategy for cellular senescence and chronic inflammation in long COVID: a systematic review and meta-analysis"
+id: paper:Wang2026b
+kind: paper
+title: 'Taurine supplementation as a therapeutic strategy for cellular senescence
+  and chronic inflammation in long COVID: a systematic review and meta-analysis'
 status: active
 ontology_terms:
-  - taurine
-  - cellular senescence
-  - senescence-associated secretory phenotype
-  - chronic inflammation
-  - post-acute sequelae of COVID-19
-  - oxidative stress
-  - metabolic dysfunction
-  - endothelial dysfunction
-  - inflammaging
+- taurine
+- cellular senescence
+- senescence-associated secretory phenotype
+- chronic inflammation
+- post-acute sequelae of COVID-19
+- oxidative stress
+- metabolic dysfunction
+- endothelial dysfunction
+- inflammaging
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Wang2026b
+- cite:Wang2026b
 related:
-  - topic:therapeutics-and-clinical-trials
-  - topic:biomarkers-and-objective-endpoints
-  - topic:mecfs-long-covid-convergence
-  - question:0011-mitochondrial-basis-of-pem
-  - hypothesis:0001-shared-dysregulated-attractor
-  - hypothesis:0003-immune-exhaustion-feedback
-created: "2026-06-20"
-updated: "2026-06-20"
+- topic:therapeutics-and-clinical-trials
+- topic:biomarkers-and-objective-endpoints
+- topic:mecfs-long-covid-convergence
+- question:0011-mitochondrial-basis-of-pem
+- hypothesis:0001-shared-dysregulated-attractor
+- hypothesis:0003-immune-exhaustion-feedback
+created: '2026-06-20'
+updated: '2026-06-20'
 ---
 
 # Taurine supplementation as a therapeutic strategy for cellular senescence and chronic inflammation in long COVID: a systematic review and meta-analysis

@@ -1,20 +1,19 @@
 ---
 id: paper:Satpathy2026
 kind: paper
-title: 'Single-cell profiling of innate and adaptive immune dysregulation in Long COVID'
+title: Single-cell profiling of innate and adaptive immune dysregulation in Long COVID
 status: active
 ontology_terms:
-  - long COVID
-  - single-cell RNA sequencing
-  - immune dysregulation
-  - T cell exhaustion
-  - NK cell dysfunction
-  - B cell activation
-  - monocyte differentiation
-  - PBMC immunophenotyping
-  - antigen persistence
+- long COVID
+- single-cell RNA sequencing
+- immune dysregulation
+- T cell exhaustion
+- NK cell dysfunction
+- B cell activation
+- monocyte differentiation
+- PBMC immunophenotyping
+- antigen persistence
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Satpathy2026
 related:

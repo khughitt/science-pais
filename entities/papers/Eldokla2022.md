@@ -1,8 +1,8 @@
 ---
 id: paper:Eldokla2022
 kind: paper
-title: "Prevalence and patterns of symptoms of dysautonomia in patients with long-COVID
-  syndrome: A cross-sectional study"
+title: 'Prevalence and patterns of symptoms of dysautonomia in patients with long-COVID
+  syndrome: A cross-sectional study'
 status: active
 ontology_terms:
 - dysautonomia
@@ -12,14 +12,13 @@ ontology_terms:
 - orthostatic intolerance
 - sex differences
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Eldokla2022
 related:
 - question:0007-mechanism-of-female-predominance-in-pais
 - hypothesis:0009-functional-autoantibodies-drive-dysautonomia
-created: "2026-06-22"
-updated: "2026-06-22"
+created: '2026-06-22'
+updated: '2026-06-22'
 ---
 
 # Prevalence and patterns of symptoms of dysautonomia in patients with long-COVID syndrome: A cross-sectional study

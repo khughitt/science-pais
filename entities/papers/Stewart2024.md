@@ -4,18 +4,17 @@ kind: paper
 title: Menopause symptom prevalence in three post-COVID-19 syndrome clinics in England
 status: active
 ontology_terms:
-  - long COVID
-  - menopause
-  - perimenopause
-  - symptom overlap
-  - women health
+- long COVID
+- menopause
+- perimenopause
+- symptom overlap
+- women health
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Stewart2024
+- cite:Stewart2024
 related:
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - topic:shared-failure-mode-across-pais
+- question:0007-mechanism-of-female-predominance-in-pais
+- topic:shared-failure-mode-across-pais
 created: '2026-06-19'
 updated: '2026-06-19'
 ---

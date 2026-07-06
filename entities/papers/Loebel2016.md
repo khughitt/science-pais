@@ -1,10 +1,10 @@
 ---
 id: paper:Loebel2016
 kind: paper
-title: "Antibodies to β adrenergic and muscarinic cholinergic receptors in patients\
+title: "Antibodies to \u03B2 adrenergic and muscarinic cholinergic receptors in patients\
   \ with Chronic Fatigue Syndrome"
 status: active
-paper_kind: ""
+paper_kind: ''
 ontology_terms:
 - autoantibody
 - beta-adrenergic receptor
@@ -17,7 +17,6 @@ ontology_terms:
 - CellTrend ELISA
 - post-acute infection syndrome
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Loebel2016
 related:

@@ -5,23 +5,22 @@ title: A possible role for mitochondrial-derived peptides humanin and MOTS-c in 
   with Q fever fatigue syndrome and chronic fatigue syndrome
 status: active
 ontology_terms:
-  - Q-fever fatigue syndrome
-  - chronic fatigue syndrome
-  - mitochondrial-derived peptides
-  - humanin
-  - MOTS-c
-  - bioenergetics
-  - monocyte transcriptomics
-  - RNA sequencing
+- Q-fever fatigue syndrome
+- chronic fatigue syndrome
+- mitochondrial-derived peptides
+- humanin
+- MOTS-c
+- bioenergetics
+- monocyte transcriptomics
+- RNA sequencing
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Raijmakers2019
+- cite:Raijmakers2019
 related:
-  - question:0001-shared-molecular-signature-across-triggers
-  - question:0011-mitochondrial-basis-of-pem
-  - discussion:0002-cross-pathogen-pais-signature-convergence
-  - hypothesis:0001-shared-dysregulated-attractor
+- question:0001-shared-molecular-signature-across-triggers
+- question:0011-mitochondrial-basis-of-pem
+- discussion:0002-cross-pathogen-pais-signature-convergence
+- hypothesis:0001-shared-dysregulated-attractor
 created: '2026-06-20'
 updated: '2026-06-20'
 ---

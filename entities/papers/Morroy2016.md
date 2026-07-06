@@ -13,7 +13,6 @@ ontology_terms:
 - post-acute infection syndrome (PAIS)
 - health-related quality of life
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Morroy2016
 related: []

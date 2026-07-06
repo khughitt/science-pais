@@ -4,22 +4,21 @@ kind: paper
 title: Peripheral Neuropathy Evaluations of Patients With Prolonged Long COVID
 status: active
 ontology_terms:
-  - small fiber neuropathy
-  - long COVID
-  - post-acute sequelae of SARS-CoV-2 infection
-  - intraepidermal nerve fiber density
-  - skin biopsy
-  - dysautonomia
-  - peripheral neuropathy
-  - IV immunoglobulin
-  - autonomic function testing
-  - non-length-dependent neuropathy
+- small fiber neuropathy
+- long COVID
+- post-acute sequelae of SARS-CoV-2 infection
+- intraepidermal nerve fiber density
+- skin biopsy
+- dysautonomia
+- peripheral neuropathy
+- IV immunoglobulin
+- autonomic function testing
+- non-length-dependent neuropathy
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Oaklander2022
+- cite:Oaklander2022
 related:
-  - paper:Limongelli2026
+- paper:Limongelli2026
 created: '2026-06-24'
 updated: '2026-06-24'
 ---

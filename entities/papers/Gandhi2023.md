@@ -4,16 +4,15 @@ kind: paper
 title: Post-viral sequelae of COVID-19 and influenza
 status: active
 ontology_terms:
-  - post-acute sequelae
-  - post-viral syndrome
-  - long COVID
-  - post-influenza syndrome
-  - encephalitis lethargica
-  - chronic immune activation
-  - multisystem morbidity
-  - ICD-10 outcome ascertainment
+- post-acute sequelae
+- post-viral syndrome
+- long COVID
+- post-influenza syndrome
+- encephalitis lethargica
+- chronic immune activation
+- multisystem morbidity
+- ICD-10 outcome ascertainment
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Gandhi2023
 related: []

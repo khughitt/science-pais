@@ -1,21 +1,20 @@
 ---
 id: paper:Fluge2019
 kind: paper
-title: 'B-Lymphocyte Depletion in Patients With Myalgic Encephalomyelitis/Chronic Fatigue
-  Syndrome: A Randomized, Double-Blind, Placebo-Controlled Trial'
+title: 'B-Lymphocyte Depletion in Patients With Myalgic Encephalomyelitis/Chronic
+  Fatigue Syndrome: A Randomized, Double-Blind, Placebo-Controlled Trial'
 status: active
 ontology_terms:
-  - rituximab
-  - B-lymphocyte depletion
-  - myalgic encephalomyelitis/chronic fatigue syndrome
-  - randomized controlled trial
-  - placebo
-  - autoimmunity
-  - post-acute infection syndrome
-  - null result
-  - open-label bias
+- rituximab
+- B-lymphocyte depletion
+- myalgic encephalomyelitis/chronic fatigue syndrome
+- randomized controlled trial
+- placebo
+- autoimmunity
+- post-acute infection syndrome
+- null result
+- open-label bias
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Fluge2019
 related:

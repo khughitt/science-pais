@@ -1,24 +1,24 @@
 ---
 id: paper:Hadley2024
 kind: paper
-title: Insights from an N3C RECOVER EHR-based cohort study characterizing SARS-CoV-2 reinfections and Long COVID
+title: Insights from an N3C RECOVER EHR-based cohort study characterizing SARS-CoV-2
+  reinfections and Long COVID
 status: active
 ontology_terms:
-  - SARS-CoV-2 reinfection
-  - long COVID
-  - RECOVER
-  - N3C
-  - electronic health records
+- SARS-CoV-2 reinfection
+- long COVID
+- RECOVER
+- N3C
+- electronic health records
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Hadley2024
+- cite:Hadley2024
 related:
-  - task:t010
-  - question:0012-prevention-vaccination-antiviral-reduces-pais
-  - hypothesis:0004-acute-severity-threshold
-created: "2026-06-25"
-updated: "2026-06-25"
+- task:t010
+- question:0012-prevention-vaccination-antiviral-reduces-pais
+- hypothesis:0004-acute-severity-threshold
+created: '2026-06-25'
+updated: '2026-06-25'
 ---
 
 # Insights from an N3C RECOVER EHR-based cohort study characterizing SARS-CoV-2 reinfections and Long COVID

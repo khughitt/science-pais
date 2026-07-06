@@ -1,7 +1,8 @@
 ---
 id: paper:Wang2023b
 kind: paper
-title: "Sequential multi-omics analysis identifies clinical phenotypes and predictive biomarkers for long COVID"
+title: Sequential multi-omics analysis identifies clinical phenotypes and predictive
+  biomarkers for long COVID
 status: active
 ontology_terms:
 - post-acute sequelae of COVID-19
@@ -15,7 +16,6 @@ ontology_terms:
 - platelet degranulation
 - T cell exhaustion
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Wang2023b
 related:

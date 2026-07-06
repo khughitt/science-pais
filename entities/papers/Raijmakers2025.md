@@ -5,26 +5,25 @@ title: 'Immunological associations in post-infective fatigue syndromes including
   COVID: a systematic review and meta-analysis'
 status: active
 ontology_terms:
-  - post-infective fatigue syndrome
-  - Q-fever fatigue syndrome
-  - long COVID
-  - cytokines
-  - chemokines
-  - immune dysregulation
-  - RANTES
-  - TNF-alpha
-  - white blood cell count
-  - persistent immune activation
+- post-infective fatigue syndrome
+- Q-fever fatigue syndrome
+- long COVID
+- cytokines
+- chemokines
+- immune dysregulation
+- RANTES
+- TNF-alpha
+- white blood cell count
+- persistent immune activation
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Raijmakers2025
+- cite:Raijmakers2025
 related:
-  - question:0001-shared-molecular-signature-across-triggers
-  - discussion:0002-cross-pathogen-pais-signature-convergence
-  - hypothesis:0001-shared-dysregulated-attractor
-  - topic:shared-failure-mode-across-pais
-  - topic:mecfs-long-covid-convergence
+- question:0001-shared-molecular-signature-across-triggers
+- discussion:0002-cross-pathogen-pais-signature-convergence
+- hypothesis:0001-shared-dysregulated-attractor
+- topic:shared-failure-mode-across-pais
+- topic:mecfs-long-covid-convergence
 created: '2026-06-20'
 updated: '2026-06-20'
 ---

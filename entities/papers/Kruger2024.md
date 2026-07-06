@@ -1,31 +1,31 @@
 ---
-id: "paper:Kruger2024"
-kind: "paper"
-title: "Vascular Pathogenesis in Acute and Long COVID: Current Insights and Therapeutic Outlook"
+id: paper:Kruger2024
+kind: paper
+title: 'Vascular Pathogenesis in Acute and Long COVID: Current Insights and Therapeutic
+  Outlook'
 status: active
 ontology_terms:
-  - endothelial dysfunction
-  - thromboinflammation
-  - fibrinaloid microclots
-  - hypercoagulability
-  - long COVID
-  - SARS-CoV-2
-  - platelet hyperactivation
-  - flow-mediated dilation
-  - anticoagulation therapy
+- endothelial dysfunction
+- thromboinflammation
+- fibrinaloid microclots
+- hypercoagulability
+- long COVID
+- SARS-CoV-2
+- platelet hyperactivation
+- flow-mediated dilation
+- anticoagulation therapy
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Kruger2024
+- cite:Kruger2024
 related:
-  - topic:thromboinflammation-and-endothelial-dysfunction
-  - topic:therapeutics-and-clinical-trials
-  - topic:biomarkers-and-objective-endpoints
-  - question:0010-vascular-microclot-subphenotype
-  - hypothesis:0001-shared-dysregulated-attractor
-  - paper:CerviaHasler2024
-created: "2026-06-20"
-updated: "2026-06-20"
+- topic:thromboinflammation-and-endothelial-dysfunction
+- topic:therapeutics-and-clinical-trials
+- topic:biomarkers-and-objective-endpoints
+- question:0010-vascular-microclot-subphenotype
+- hypothesis:0001-shared-dysregulated-attractor
+- paper:CerviaHasler2024
+created: '2026-06-20'
+updated: '2026-06-20'
 ---
 
 # Vascular Pathogenesis in Acute and Long COVID: Current Insights and Therapeutic Outlook

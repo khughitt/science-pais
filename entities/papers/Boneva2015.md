@@ -1,28 +1,28 @@
 ---
 id: paper:Boneva2015
 kind: paper
-title: Early menopause and other gynecologic risk indicators for chronic fatigue syndrome in women
+title: Early menopause and other gynecologic risk indicators for chronic fatigue syndrome
+  in women
 status: active
 ontology_terms:
-  - chronic fatigue syndrome
-  - ME/CFS
-  - early menopause
-  - surgical menopause
-  - gynecologic history
-  - reproductive stage
+- chronic fatigue syndrome
+- ME/CFS
+- early menopause
+- surgical menopause
+- gynecologic history
+- reproductive stage
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Boneva2015
+- cite:Boneva2015
 related:
-  - task:t043
-  - interpretation:0026-t043-boneva2015-early-menopause-directionality
-  - interpretation:0003-t018-subphenotype-sex-reproductive-stage
-  - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
-  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
-  - proposition:0001-reproductive-stage-transition-shifts-the-failed-recovery-threshold
-  - proposition:0003-infection-pais-perturbs-the-reproductive-axis-and-menopausal-timing
-  - topic:menopause-sex-hormones-and-pais-risk
+- task:t043
+- interpretation:0026-t043-boneva2015-early-menopause-directionality
+- interpretation:0003-t018-subphenotype-sex-reproductive-stage
+- hypothesis:0005-reproductive-stage-immune-homeostatic-margin
+- question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- proposition:0001-reproductive-stage-transition-shifts-the-failed-recovery-threshold
+- proposition:0003-infection-pais-perturbs-the-reproductive-axis-and-menopausal-timing
+- topic:menopause-sex-hormones-and-pais-risk
 created: '2026-06-26'
 updated: '2026-06-26'
 ---

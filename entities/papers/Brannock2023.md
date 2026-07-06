@@ -1,24 +1,24 @@
 ---
 id: paper:Brannock2023
 kind: paper
-title: Long COVID risk and pre-COVID vaccination in an EHR-based cohort study from the RECOVER program
+title: Long COVID risk and pre-COVID vaccination in an EHR-based cohort study from
+  the RECOVER program
 status: active
 ontology_terms:
-  - long COVID
-  - vaccination
-  - electronic health records
-  - RECOVER
-  - N3C
+- long COVID
+- vaccination
+- electronic health records
+- RECOVER
+- N3C
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Brannock2023
+- cite:Brannock2023
 related:
-  - task:t010
-  - question:0012-prevention-vaccination-antiviral-reduces-pais
-  - hypothesis:0004-acute-severity-threshold
-created: "2026-06-25"
-updated: "2026-06-25"
+- task:t010
+- question:0012-prevention-vaccination-antiviral-reduces-pais
+- hypothesis:0004-acute-severity-threshold
+created: '2026-06-25'
+updated: '2026-06-25'
 ---
 
 # Long COVID risk and pre-COVID vaccination in an EHR-based cohort study from the RECOVER program

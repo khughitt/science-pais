@@ -1,32 +1,32 @@
 ---
-id: "paper:Chowdhury2026"
-kind: "paper"
-title: "Distinct plasma proteome signature at 3 months post-COVID-19 infection irrespective of post-COVID condition"
+id: paper:Chowdhury2026
+kind: paper
+title: Distinct plasma proteome signature at 3 months post-COVID-19 infection irrespective
+  of post-COVID condition
 status: active
 ontology_terms:
-  - plasma proteomics
-  - DIA mass spectrometry
-  - post-COVID condition
-  - oxidative stress
-  - complement activation
-  - coagulation cascade
-  - antioxidant response
-  - biomarker discovery
-  - SARS-CoV-2 convalescence
+- plasma proteomics
+- DIA mass spectrometry
+- post-COVID condition
+- oxidative stress
+- complement activation
+- coagulation cascade
+- antioxidant response
+- biomarker discovery
+- SARS-CoV-2 convalescence
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Chowdhury2026
+- cite:Chowdhury2026
 related:
-  - topic:long-covid-immune-dysregulation
-  - topic:biomarkers-and-objective-endpoints
-  - topic:shared-failure-mode-across-pais
-  - question:0001-shared-molecular-signature-across-triggers
-  - hypothesis:0001-shared-dysregulated-attractor
-  - paper:Talla2023
-  - paper:Klein2023
-created: "2026-06-20"
-updated: "2026-06-20"
+- topic:long-covid-immune-dysregulation
+- topic:biomarkers-and-objective-endpoints
+- topic:shared-failure-mode-across-pais
+- question:0001-shared-molecular-signature-across-triggers
+- hypothesis:0001-shared-dysregulated-attractor
+- paper:Talla2023
+- paper:Klein2023
+created: '2026-06-20'
+updated: '2026-06-20'
 ---
 
 # Distinct plasma proteome signature at 3 months post-COVID-19 infection irrespective of post-COVID condition

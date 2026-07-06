@@ -5,16 +5,15 @@ title: Immune correlates underlying small fiber neuropathy presenting as vaccine
   post-acute SARS-coronavirus syndrome
 status: active
 ontology_terms:
-  - small fiber neuropathy
-  - post-acute sequelae of SARS-CoV-2 vaccination
-  - innate-like T cells
-  - NKG2D
-  - CD34+ inflammatory precursors
-  - anti-idiotype antibodies
-  - dysautonomia
-  - peripheral blood mononuclear cell immunophenotyping
+- small fiber neuropathy
+- post-acute sequelae of SARS-CoV-2 vaccination
+- innate-like T cells
+- NKG2D
+- CD34+ inflammatory precursors
+- anti-idiotype antibodies
+- dysautonomia
+- peripheral blood mononuclear cell immunophenotyping
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Limongelli2026
 related:

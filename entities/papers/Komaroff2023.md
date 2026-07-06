@@ -5,16 +5,15 @@ title: 'ME/CFS and Long COVID share similar symptoms and biological abnormalitie
   road map to the literature'
 status: active
 ontology_terms:
-  - myalgic encephalomyelitis/chronic fatigue syndrome
-  - long COVID
-  - post-exertional malaise
-  - dysautonomia
-  - neuroinflammation
-  - mitochondrial dysfunction
-  - autoantibody
-  - latent herpesvirus reactivation
+- myalgic encephalomyelitis/chronic fatigue syndrome
+- long COVID
+- post-exertional malaise
+- dysautonomia
+- neuroinflammation
+- mitochondrial dysfunction
+- autoantibody
+- latent herpesvirus reactivation
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Komaroff2023
 related: []

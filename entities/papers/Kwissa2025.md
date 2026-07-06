@@ -1,29 +1,29 @@
 ---
 id: paper:Kwissa2025
 kind: paper
-title: Persistent Immune Dysregulation during Post-Acute Sequelae of COVID-19 is Manifested in Antibodies Targeting Envelope and Nucleocapsid Proteins
+title: Persistent Immune Dysregulation during Post-Acute Sequelae of COVID-19 is Manifested
+  in Antibodies Targeting Envelope and Nucleocapsid Proteins
 status: active
 ontology_terms:
-  - post-acute sequelae of SARS-CoV-2 infection
-  - antibody response
-  - antigen persistence
-  - immune dysregulation
-  - MAIT cells
-  - circulating T follicular helper cells
-  - autoantibodies
-  - cytokine signature
-  - longitudinal immunoprofiling
+- post-acute sequelae of SARS-CoV-2 infection
+- antibody response
+- antigen persistence
+- immune dysregulation
+- MAIT cells
+- circulating T follicular helper cells
+- autoantibodies
+- cytokine signature
+- longitudinal immunoprofiling
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Kwissa2025
+- cite:Kwissa2025
 related:
-  - topic:antigen-pathogen-persistence
-  - topic:long-covid-immune-dysregulation
-  - topic:biomarkers-and-objective-endpoints
-  - question:0002-antigen-clearance-rescues-symptoms
-  - hypothesis:0002-tissue-reservoir-antigen-fragment
-  - hypothesis:0003-immune-exhaustion-feedback
+- topic:antigen-pathogen-persistence
+- topic:long-covid-immune-dysregulation
+- topic:biomarkers-and-objective-endpoints
+- question:0002-antigen-clearance-rescues-symptoms
+- hypothesis:0002-tissue-reservoir-antigen-fragment
+- hypothesis:0003-immune-exhaustion-feedback
 created: '2026-06-20'
 updated: '2026-06-20'
 ---

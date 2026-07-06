@@ -5,16 +5,15 @@ title: 'Features of acute COVID-19 associated with post-acute sequelae of SARS-C
   phenotypes: results from the IMPACC study'
 status: active
 ontology_terms:
-  - post-acute sequelae of SARS-CoV-2 (PASC)
-  - patient-reported outcomes (PROs)
-  - latent class mixture modeling (LCMM)
-  - SARS-CoV-2 viral burden
-  - anti-SARS-CoV-2 antibody response
-  - B lymphocyte frequency
-  - fibroblast growth factor 21 (FGF21)
-  - CyTOF mass cytometry
+- post-acute sequelae of SARS-CoV-2 (PASC)
+- patient-reported outcomes (PROs)
+- latent class mixture modeling (LCMM)
+- SARS-CoV-2 viral burden
+- anti-SARS-CoV-2 antibody response
+- B lymphocyte frequency
+- fibroblast growth factor 21 (FGF21)
+- CyTOF mass cytometry
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Ozonoff2024
 related: []

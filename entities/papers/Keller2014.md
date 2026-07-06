@@ -5,23 +5,22 @@ title: Inability of myalgic encephalomyelitis/chronic fatigue syndrome patients 
   reproduce VO2peak indicates functional impairment
 status: active
 ontology_terms:
-  - ME/CFS
-  - two-day cardiopulmonary exercise test
-  - VO2peak
-  - ventilatory threshold
-  - post-exertional malaise
-  - functional impairment
-  - cardiopulmonary exercise testing
-  - aerobic capacity
-  - oxygen consumption
+- ME/CFS
+- two-day cardiopulmonary exercise test
+- VO2peak
+- ventilatory threshold
+- post-exertional malaise
+- functional impairment
+- cardiopulmonary exercise testing
+- aerobic capacity
+- oxygen consumption
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Keller2014
+- cite:Keller2014
 related:
-  - question:0011-mitochondrial-basis-of-pem
-  - topic:biomarkers-and-objective-endpoints
-  - topic:mecfs-long-covid-convergence
+- question:0011-mitochondrial-basis-of-pem
+- topic:biomarkers-and-objective-endpoints
+- topic:mecfs-long-covid-convergence
 created: '2026-06-20'
 updated: '2026-06-25'
 ---

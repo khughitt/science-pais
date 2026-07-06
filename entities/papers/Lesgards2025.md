@@ -1,31 +1,31 @@
 ---
-id: "paper:Lesgards2025"
-kind: "paper"
-title: "Do Long COVID and COVID Vaccine Side Effects Share Pathophysiological Picture and Biochemical Pathways?"
-status: "active"
+id: paper:Lesgards2025
+kind: paper
+title: Do Long COVID and COVID Vaccine Side Effects Share Pathophysiological Picture
+  and Biochemical Pathways?
+status: active
 ontology_terms:
-  - long COVID
-  - post-COVID-19 vaccination syndrome
-  - spike protein toxicity
-  - renin-angiotensin-aldosterone system
-  - kininogen-kinin-kallikrein system
-  - lectin complement pathway
-  - thromboinflammation
-  - oxidative stress
-  - endothelial dysfunction
+- long COVID
+- post-COVID-19 vaccination syndrome
+- spike protein toxicity
+- renin-angiotensin-aldosterone system
+- kininogen-kinin-kallikrein system
+- lectin complement pathway
+- thromboinflammation
+- oxidative stress
+- endothelial dysfunction
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Lesgards2025
+- cite:Lesgards2025
 related:
-  - topic:shared-failure-mode-across-pais
-  - topic:thromboinflammation-and-endothelial-dysfunction
-  - topic:post-infectious-dysautonomia-and-autoimmunity
-  - question:0009-functional-autoantibodies-drive-dysautonomia
-  - question:0001-shared-molecular-signature-across-triggers
-  - hypothesis:0001-shared-dysregulated-attractor
-created: "2026-06-20"
-updated: "2026-06-20"
+- topic:shared-failure-mode-across-pais
+- topic:thromboinflammation-and-endothelial-dysfunction
+- topic:post-infectious-dysautonomia-and-autoimmunity
+- question:0009-functional-autoantibodies-drive-dysautonomia
+- question:0001-shared-molecular-signature-across-triggers
+- hypothesis:0001-shared-dysregulated-attractor
+created: '2026-06-20'
+updated: '2026-06-20'
 ---
 
 # Do Long COVID and COVID Vaccine Side Effects Share Pathophysiological Picture and Biochemical Pathways?

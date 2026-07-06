@@ -1,25 +1,24 @@
 ---
 id: paper:Douaud2022
 kind: paper
-title: "SARS-CoV-2 is associated with changes in brain structure in UK Biobank"
+title: SARS-CoV-2 is associated with changes in brain structure in UK Biobank
 status: active
 ontology_terms:
-  - UK Biobank
-  - brain imaging
-  - pre-infection baseline
-  - repeat MRI
-  - cognition
-  - SARS-CoV-2
+- UK Biobank
+- brain imaging
+- pre-infection baseline
+- repeat MRI
+- cognition
+- SARS-CoV-2
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Douaud2022
+- cite:Douaud2022
 related:
-  - task:t008
-  - topic:biomarkers-and-objective-endpoints
-  - question:0017-deflationary-alternatives-vs-shared-pathophysiology
-created: "2026-06-25"
-updated: "2026-06-25"
+- task:t008
+- topic:biomarkers-and-objective-endpoints
+- question:0017-deflationary-alternatives-vs-shared-pathophysiology
+created: '2026-06-25'
+updated: '2026-06-25'
 ---
 
 # SARS-CoV-2 is associated with changes in brain structure in UK Biobank

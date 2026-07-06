@@ -1,24 +1,24 @@
 ---
 id: paper:Bosworth2023
 kind: paper
-title: "Risk of New-Onset Long COVID Following Reinfection With Severe Acute Respiratory Syndrome Coronavirus 2: A Community-Based Cohort Study"
+title: 'Risk of New-Onset Long COVID Following Reinfection With Severe Acute Respiratory
+  Syndrome Coronavirus 2: A Community-Based Cohort Study'
 status: active
 ontology_terms:
-  - SARS-CoV-2 reinfection
-  - long COVID
-  - community cohort
-  - Omicron
-  - self-report
+- SARS-CoV-2 reinfection
+- long COVID
+- community cohort
+- Omicron
+- self-report
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Bosworth2023
+- cite:Bosworth2023
 related:
-  - task:t010
-  - question:0012-prevention-vaccination-antiviral-reduces-pais
-  - hypothesis:0004-acute-severity-threshold
-created: "2026-06-25"
-updated: "2026-06-25"
+- task:t010
+- question:0012-prevention-vaccination-antiviral-reduces-pais
+- hypothesis:0004-acute-severity-threshold
+created: '2026-06-25'
+updated: '2026-06-25'
 ---
 
 # Risk of New-Onset Long COVID Following Reinfection With SARS-CoV-2

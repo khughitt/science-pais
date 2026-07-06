@@ -5,16 +5,15 @@ title: 'What Makes It Tick: Exploring the Mechanisms of Post-treatment Lyme Dise
   Syndrome'
 status: active
 ontology_terms:
-  - post-treatment Lyme disease syndrome
-  - Borrelia burgdorferi
-  - autoimmune response
-  - neuroinflammation
-  - immune dysregulation
-  - pathogen persistence
-  - co-infection
-  - dysautonomia
+- post-treatment Lyme disease syndrome
+- Borrelia burgdorferi
+- autoimmune response
+- neuroinflammation
+- immune dysregulation
+- pathogen persistence
+- co-infection
+- dysautonomia
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Wester2024
 related:

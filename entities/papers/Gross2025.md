@@ -4,22 +4,21 @@ kind: paper
 title: Characterizing Long COVID Symptoms During Early Childhood
 status: active
 ontology_terms:
-  - pediatric long COVID
-  - early childhood
-  - RECOVER
-  - parent proxy report
-  - PASC research index
+- pediatric long COVID
+- early childhood
+- RECOVER
+- parent proxy report
+- PASC research index
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Gross2025
+- cite:Gross2025
 related:
-  - search:0008-pediatric-long-covid-misc
-  - interpretation:0025-t009-pediatric-long-covid-and-misc
-  - topic:pediatric-long-covid-and-misc
-  - topic:pais-case-definition-heterogeneity
-created: "2026-06-26"
-updated: "2026-06-26"
+- search:0008-pediatric-long-covid-misc
+- interpretation:0025-t009-pediatric-long-covid-and-misc
+- topic:pediatric-long-covid-and-misc
+- topic:pais-case-definition-heterogeneity
+created: '2026-06-26'
+updated: '2026-06-26'
 ---
 # Characterizing Long COVID Symptoms During Early Childhood
 

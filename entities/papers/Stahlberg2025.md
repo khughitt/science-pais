@@ -5,16 +5,15 @@ title: 'Post-Acute COVID-19 Syndrome: Prevalence of Peripheral Microvascular End
   Dysfunction and Associations With NT-ProBNP Dynamics'
 status: active
 ontology_terms:
-  - microvascular endothelial dysfunction
-  - reactive hyperemia index
-  - NT-proBNP
-  - post-acute COVID-19 syndrome
-  - pulse amplitude tonometry
-  - dysautonomia
-  - cardiac remodeling
-  - thromboinflammation
+- microvascular endothelial dysfunction
+- reactive hyperemia index
+- NT-proBNP
+- post-acute COVID-19 syndrome
+- pulse amplitude tonometry
+- dysautonomia
+- cardiac remodeling
+- thromboinflammation
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Stahlberg2025
 related:

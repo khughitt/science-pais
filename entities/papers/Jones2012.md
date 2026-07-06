@@ -1,29 +1,29 @@
 ---
 id: paper:Jones2012
 kind: paper
-title: Loss of capacity to recover from acidosis on repeat exercise in chronic fatigue syndrome
+title: Loss of capacity to recover from acidosis on repeat exercise in chronic fatigue
+  syndrome
 status: active
 ontology_terms:
-  - ME/CFS
-  - chronic fatigue syndrome
-  - post-exertional malaise
-  - skeletal muscle
-  - phosphorus magnetic resonance spectroscopy
-  - muscle bioenergetics
-  - acidosis recovery
-  - exercise provocation
+- ME/CFS
+- chronic fatigue syndrome
+- post-exertional malaise
+- skeletal muscle
+- phosphorus magnetic resonance spectroscopy
+- muscle bioenergetics
+- acidosis recovery
+- exercise provocation
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Jones2012
+- cite:Jones2012
 related:
-  - question:0011-mitochondrial-basis-of-pem
-  - hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
-  - proposition:0030-mecfs-exercise-provoked-skeletal-muscle-bioenergetic-abnormality
-  - proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode
-  - proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific
-  - discussion:0004-pem-shared-muscle-lesion-vs-endpoint-contingency
-  - task:t056
+- question:0011-mitochondrial-basis-of-pem
+- hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
+- proposition:0030-mecfs-exercise-provoked-skeletal-muscle-bioenergetic-abnormality
+- proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode
+- proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific
+- discussion:0004-pem-shared-muscle-lesion-vs-endpoint-contingency
+- task:t056
 created: '2026-06-25'
 updated: '2026-06-25'
 ---

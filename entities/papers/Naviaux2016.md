@@ -4,23 +4,22 @@ kind: paper
 title: Metabolic features of chronic fatigue syndrome
 status: active
 ontology_terms:
-  - ME/CFS
-  - metabolomics
-  - hypometabolism
-  - dauer
-  - cell danger response
-  - bioenergetics
-  - sphingolipid metabolism
-  - purine metabolism
-  - mitochondrial dysfunction
+- ME/CFS
+- metabolomics
+- hypometabolism
+- dauer
+- cell danger response
+- bioenergetics
+- sphingolipid metabolism
+- purine metabolism
+- mitochondrial dysfunction
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Naviaux2016
+- cite:Naviaux2016
 related:
-  - question:0011-mitochondrial-basis-of-pem
-  - topic:mecfs-long-covid-convergence
-  - hypothesis:0001-shared-dysregulated-attractor
+- question:0011-mitochondrial-basis-of-pem
+- topic:mecfs-long-covid-convergence
+- hypothesis:0001-shared-dysregulated-attractor
 created: '2026-06-20'
 updated: '2026-06-25'
 ---

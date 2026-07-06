@@ -4,20 +4,19 @@ kind: paper
 title: COVID-19 and Menstrual Status
 status: active
 ontology_terms:
-  - acute COVID-19
-  - menopause
-  - estrogen
-  - residual symptoms
-  - disease severity
+- acute COVID-19
+- menopause
+- estrogen
+- residual symptoms
+- disease severity
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Mishra2020
+- cite:Mishra2020
 related:
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
-  - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
-  - topic:menopause-sex-hormones-and-pais-risk
+- question:0007-mechanism-of-female-predominance-in-pais
+- question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- hypothesis:0005-reproductive-stage-immune-homeostatic-margin
+- topic:menopause-sex-hormones-and-pais-risk
 created: '2026-06-19'
 updated: '2026-06-19'
 ---

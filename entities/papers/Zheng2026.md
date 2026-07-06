@@ -4,16 +4,15 @@ kind: paper
 title: Longitudinal Landscape of Long Flu and Long COVID
 status: active
 ontology_terms:
-  - post-acute infection syndrome
-  - disease-wide association study
-  - long flu
-  - long COVID
-  - cardiovascular sequelae
-  - neurological sequelae
-  - influenza
-  - post-viral multi-organ morbidity
+- post-acute infection syndrome
+- disease-wide association study
+- long flu
+- long COVID
+- cardiovascular sequelae
+- neurological sequelae
+- influenza
+- post-viral multi-organ morbidity
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Zheng2026
 related:

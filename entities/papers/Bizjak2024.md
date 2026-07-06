@@ -1,29 +1,29 @@
 ---
 id: paper:Bizjak2024
 kind: paper
-title: Functional and morphological differences of muscle mitochondria in chronic fatigue syndrome and post-COVID syndrome
+title: Functional and morphological differences of muscle mitochondria in chronic
+  fatigue syndrome and post-COVID syndrome
 status: active
 ontology_terms:
-  - ME/CFS
-  - chronic fatigue syndrome
-  - post-COVID syndrome
-  - skeletal muscle
-  - mitochondria
-  - oxidative phosphorylation
-  - high-resolution respirometry
-  - electron microscopy
+- ME/CFS
+- chronic fatigue syndrome
+- post-COVID syndrome
+- skeletal muscle
+- mitochondria
+- oxidative phosphorylation
+- high-resolution respirometry
+- electron microscopy
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Bizjak2024
+- cite:Bizjak2024
 related:
-  - question:0011-mitochondrial-basis-of-pem
-  - hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
-  - proposition:0030-mecfs-exercise-provoked-skeletal-muscle-bioenergetic-abnormality
-  - proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode
-  - proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific
-  - discussion:0004-pem-shared-muscle-lesion-vs-endpoint-contingency
-  - task:t056
+- question:0011-mitochondrial-basis-of-pem
+- hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
+- proposition:0030-mecfs-exercise-provoked-skeletal-muscle-bioenergetic-abnormality
+- proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode
+- proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific
+- discussion:0004-pem-shared-muscle-lesion-vs-endpoint-contingency
+- task:t056
 created: '2026-06-25'
 updated: '2026-06-25'
 ---

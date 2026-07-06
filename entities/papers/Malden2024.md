@@ -1,24 +1,24 @@
 ---
 id: paper:Malden2024
 kind: paper
-title: "Post-COVID conditions following COVID-19 vaccination: a retrospective matched cohort study of patients with SARS-CoV-2 infection"
+title: 'Post-COVID conditions following COVID-19 vaccination: a retrospective matched
+  cohort study of patients with SARS-CoV-2 infection'
 status: active
 ontology_terms:
-  - post-COVID condition
-  - vaccination
-  - Vaccine Safety Datalink
-  - electronic health records
-  - matched cohort
+- post-COVID condition
+- vaccination
+- Vaccine Safety Datalink
+- electronic health records
+- matched cohort
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Malden2024
+- cite:Malden2024
 related:
-  - task:t010
-  - question:0012-prevention-vaccination-antiviral-reduces-pais
-  - hypothesis:0004-acute-severity-threshold
-created: "2026-06-25"
-updated: "2026-06-25"
+- task:t010
+- question:0012-prevention-vaccination-antiviral-reduces-pais
+- hypothesis:0004-acute-severity-threshold
+created: '2026-06-25'
+updated: '2026-06-25'
 ---
 
 # Post-COVID conditions following COVID-19 vaccination

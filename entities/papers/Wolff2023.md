@@ -1,7 +1,8 @@
 ---
 id: paper:Wolff2023
 kind: paper
-title: "Allergic diseases as risk factors for Long-COVID symptoms: Systematic review of prospective cohort studies"
+title: 'Allergic diseases as risk factors for Long-COVID symptoms: Systematic review
+  of prospective cohort studies'
 status: active
 ontology_terms:
 - long COVID
@@ -10,7 +11,6 @@ ontology_terms:
 - atopy
 - systematic review
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Wolff2023
 related:

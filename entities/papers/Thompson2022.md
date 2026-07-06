@@ -1,25 +1,25 @@
 ---
 id: paper:Thompson2022
 kind: paper
-title: "Long COVID burden and risk factors in 10 UK longitudinal studies and electronic health records"
+title: Long COVID burden and risk factors in 10 UK longitudinal studies and electronic
+  health records
 status: active
 ontology_terms:
-  - long COVID
-  - longitudinal cohorts
-  - OpenSAFELY
-  - pre-pandemic risk factors
-  - population studies
-  - electronic health records
+- long COVID
+- longitudinal cohorts
+- OpenSAFELY
+- pre-pandemic risk factors
+- population studies
+- electronic health records
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Thompson2022
+- cite:Thompson2022
 related:
-  - task:t008
-  - topic:pais-case-definition-heterogeneity
-  - question:0017-deflationary-alternatives-vs-shared-pathophysiology
-created: "2026-06-25"
-updated: "2026-06-25"
+- task:t008
+- topic:pais-case-definition-heterogeneity
+- question:0017-deflationary-alternatives-vs-shared-pathophysiology
+created: '2026-06-25'
+updated: '2026-06-25'
 ---
 
 # Long COVID burden and risk factors in 10 UK longitudinal studies and electronic health records

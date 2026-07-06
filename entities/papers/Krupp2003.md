@@ -1,18 +1,18 @@
 ---
 id: paper:Krupp2003
 kind: paper
-title: "Study and treatment of post Lyme disease (STOP-LD): a randomized double masked clinical trial"
+title: 'Study and treatment of post Lyme disease (STOP-LD): a randomized double masked
+  clinical trial'
 status: active
 ontology_terms:
-  - post-treatment Lyme disease syndrome
-  - randomized controlled trial
-  - ceftriaxone
-  - fatigue
-  - cognitive function
-  - antibiotic retreatment
-  - post-acute infection syndrome
+- post-treatment Lyme disease syndrome
+- randomized controlled trial
+- ceftriaxone
+- fatigue
+- cognitive function
+- antibiotic retreatment
+- post-acute infection syndrome
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Krupp2003
 related:

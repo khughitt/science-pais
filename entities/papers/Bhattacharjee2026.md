@@ -1,21 +1,20 @@
 ---
 id: paper:Bhattacharjee2026
 kind: paper
-title: 'Exploratory analyses of Immunologic Features in a Randomized, Placebo-Controlled
-  Trial of Nirmatrelvir/Ritonavir for Long COVID'
+title: Exploratory analyses of Immunologic Features in a Randomized, Placebo-Controlled
+  Trial of Nirmatrelvir/Ritonavir for Long COVID
 status: active
 ontology_terms:
-  - nirmatrelvir/ritonavir
-  - long COVID
-  - randomized controlled trial
-  - RANTES/CCL5
-  - SARS-CoV-2 spike protein persistence
-  - antigen persistence
-  - cytokine profiling
-  - immunophenotyping
-  - antiviral treatment
+- nirmatrelvir/ritonavir
+- long COVID
+- randomized controlled trial
+- RANTES/CCL5
+- SARS-CoV-2 spike protein persistence
+- antigen persistence
+- cytokine profiling
+- immunophenotyping
+- antiviral treatment
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Bhattacharjee2026
 related:

@@ -5,16 +5,15 @@ title: 'Advances in Understanding Inflammation and Tissue Damage: Markers of Per
   Sequelae in COVID-19 Patients'
 status: active
 ontology_terms:
-  - post-acute sequelae of SARS-CoV-2
-  - biomarker
-  - chronic inflammation
-  - cytokine storm
-  - neutrophil extracellular trap
-  - soluble urokinase plasminogen activator receptor
-  - neuroinflammation
-  - multisystem inflammatory syndrome in children
+- post-acute sequelae of SARS-CoV-2
+- biomarker
+- chronic inflammation
+- cytokine storm
+- neutrophil extracellular trap
+- soluble urokinase plasminogen activator receptor
+- neuroinflammation
+- multisystem inflammatory syndrome in children
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Patrascu2025
 related:

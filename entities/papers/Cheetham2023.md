@@ -5,21 +5,20 @@ title: 'The effects of COVID-19 on cognitive performance in a community-based co
   a COVID symptom study biobank prospective cohort study'
 status: active
 ontology_terms:
-  - long COVID
-  - brain fog
-  - cognitive impairment
-  - post-acute sequelae
-  - working memory
-  - attention
-  - post-COVID-19 condition
-  - prospective cohort
+- long COVID
+- brain fog
+- cognitive impairment
+- post-acute sequelae
+- working memory
+- attention
+- post-COVID-19 condition
+- prospective cohort
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Cheetham2023
+- cite:Cheetham2023
 related:
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - task:t018
+- question:0007-mechanism-of-female-predominance-in-pais
+- task:t018
 created: '2026-06-22'
 updated: '2026-06-22'
 ---

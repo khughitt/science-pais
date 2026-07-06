@@ -4,16 +4,15 @@ kind: paper
 title: Unexplained post-acute infection syndromes
 status: active
 ontology_terms:
-  - post-acute infection syndrome
-  - myalgic encephalomyelitis/chronic fatigue syndrome
-  - post-exertional malaise
-  - dysautonomia
-  - molecular mimicry
-  - pathogen persistence
-  - autoantibody
-  - immune dysregulation
+- post-acute infection syndrome
+- myalgic encephalomyelitis/chronic fatigue syndrome
+- post-exertional malaise
+- dysautonomia
+- molecular mimicry
+- pathogen persistence
+- autoantibody
+- immune dysregulation
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Choutka2022
 related: []

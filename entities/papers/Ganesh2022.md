@@ -4,16 +4,15 @@ kind: paper
 title: The Female-Predominant Persistent Immune Dysregulation of the Post-COVID Syndrome
 status: active
 ontology_terms:
-  - post-acute sequelae of SARS-CoV-2 infection
-  - central sensitization
-  - interleukin-6
-  - dysautonomia
-  - post-exertional malaise
-  - immune dysregulation
-  - sex differences in immunity
-  - post-COVID syndrome
+- post-acute sequelae of SARS-CoV-2 infection
+- central sensitization
+- interleukin-6
+- dysautonomia
+- post-exertional malaise
+- immune dysregulation
+- sex differences in immunity
+- post-COVID syndrome
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Ganesh2022
 related:

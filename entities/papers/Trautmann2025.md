@@ -13,7 +13,6 @@ ontology_terms:
 - hypothalamus-pituitary-adrenal axis
 - self-sustained inflammatory loop
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Trautmann2025
 related: []

@@ -1,7 +1,8 @@
 ---
 id: paper:Srivatsan2025
 kind: paper
-title: "The Burden of Post-Acute Sequelae of Coronavirus Disease 2019 in Individuals with Rheumatic Diseases"
+title: The Burden of Post-Acute Sequelae of Coronavirus Disease 2019 in Individuals
+  with Rheumatic Diseases
 status: active
 paper_kind: review
 ontology_terms:
@@ -10,7 +11,6 @@ ontology_terms:
 - autoimmune disease
 - long COVID
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Srivatsan2025
 related:

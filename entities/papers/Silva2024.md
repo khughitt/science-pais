@@ -1,32 +1,31 @@
 ---
 id: paper:Silva2024
 kind: paper
-title: "Sex differences in symptomatology and immune profiles of Long COVID"
+title: Sex differences in symptomatology and immune profiles of Long COVID
 status: active
 ontology_terms:
-  - sex differences
-  - long COVID
-  - immune dysregulation
-  - testosterone
-  - exhausted T cells
-  - herpesvirus reactivation
-  - monocytes
-  - NK cells
-  - cytokines
-  - immune-endocrine profiling
-  - MY-LC cohort
+- sex differences
+- long COVID
+- immune dysregulation
+- testosterone
+- exhausted T cells
+- herpesvirus reactivation
+- monocytes
+- NK cells
+- cytokines
+- immune-endocrine profiling
+- MY-LC cohort
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Silva2024
+- cite:Silva2024
 related:
-  - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
-  - topic:long-covid-immune-dysregulation
-  - topic:menopause-sex-hormones-and-pais-risk
-  - topic:shared-failure-mode-across-pais
-  - immunity:topic:sex-as-a-modifier-of-immune-homeostasis
+- hypothesis:0005-reproductive-stage-immune-homeostatic-margin
+- question:0007-mechanism-of-female-predominance-in-pais
+- question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- topic:long-covid-immune-dysregulation
+- topic:menopause-sex-hormones-and-pais-risk
+- topic:shared-failure-mode-across-pais
+- immunity:topic:sex-as-a-modifier-of-immune-homeostasis
 created: '2026-06-21'
 updated: '2026-06-23'
 ---

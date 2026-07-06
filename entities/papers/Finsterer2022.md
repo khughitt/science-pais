@@ -5,16 +5,15 @@ title: Small fiber neuropathy underlying dysautonomia in COVID-19 and in post-SA
   vaccination and long-COVID syndromes
 status: active
 ontology_terms:
-  - small fiber neuropathy
-  - dysautonomia
-  - long COVID
-  - autonomic nervous system dysfunction
-  - Guillain-Barré syndrome
-  - post-infectious neuropathy
-  - SARS-CoV-2 neurological complications
-  - peripheral autonomic neuropathy
+- small fiber neuropathy
+- dysautonomia
+- long COVID
+- autonomic nervous system dysfunction
+- "Guillain-Barr\xE9 syndrome"
+- post-infectious neuropathy
+- SARS-CoV-2 neurological complications
+- peripheral autonomic neuropathy
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Finsterer2022
 related: []

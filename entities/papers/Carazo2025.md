@@ -1,24 +1,24 @@
 ---
 id: paper:Carazo2025
 kind: paper
-title: Effectiveness of COVID-19 Vaccination and Prior Infections to Reduce Long COVID Risk
+title: Effectiveness of COVID-19 Vaccination and Prior Infections to Reduce Long COVID
+  Risk
 status: active
 ontology_terms:
-  - long COVID
-  - vaccination
-  - hybrid immunity
-  - healthcare workers
-  - Omicron
+- long COVID
+- vaccination
+- hybrid immunity
+- healthcare workers
+- Omicron
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Carazo2025
+- cite:Carazo2025
 related:
-  - task:t010
-  - question:0012-prevention-vaccination-antiviral-reduces-pais
-  - hypothesis:0004-acute-severity-threshold
-created: "2026-06-25"
-updated: "2026-06-25"
+- task:t010
+- question:0012-prevention-vaccination-antiviral-reduces-pais
+- hypothesis:0004-acute-severity-threshold
+created: '2026-06-25'
+updated: '2026-06-25'
 ---
 
 # Effectiveness of COVID-19 Vaccination and Prior Infections to Reduce Long COVID Risk

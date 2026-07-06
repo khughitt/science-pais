@@ -14,7 +14,6 @@ ontology_terms:
 - hypothalamic-pituitary-adrenal axis
 - neuroinflammation
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Iqbal2025
 related:

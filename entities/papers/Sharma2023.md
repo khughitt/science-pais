@@ -13,7 +13,6 @@ ontology_terms:
 - bystander-activation
 - epitope-spreading
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Sharma2023
 related: []

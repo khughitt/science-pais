@@ -1,25 +1,25 @@
 ---
 id: paper:Stephenson2024
 kind: paper
-title: A 24-month National Cohort Study examining long-term effects of COVID-19 in children and young people
+title: A 24-month National Cohort Study examining long-term effects of COVID-19 in
+  children and young people
 status: active
 ontology_terms:
-  - pediatric long COVID
-  - CLoCk
-  - longitudinal cohort
-  - post-COVID condition
-  - impairment
+- pediatric long COVID
+- CLoCk
+- longitudinal cohort
+- post-COVID condition
+- impairment
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Stephenson2024
+- cite:Stephenson2024
 related:
-  - search:0008-pediatric-long-covid-misc
-  - interpretation:0025-t009-pediatric-long-covid-and-misc
-  - topic:pediatric-long-covid-and-misc
-  - topic:pais-case-definition-heterogeneity
-created: "2026-06-26"
-updated: "2026-06-26"
+- search:0008-pediatric-long-covid-misc
+- interpretation:0025-t009-pediatric-long-covid-and-misc
+- topic:pediatric-long-covid-and-misc
+- topic:pais-case-definition-heterogeneity
+created: '2026-06-26'
+updated: '2026-06-26'
 ---
 # A 24-month National Cohort Study examining long-term effects of COVID-19 in children and young people
 

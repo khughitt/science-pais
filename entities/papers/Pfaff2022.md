@@ -1,30 +1,30 @@
 ---
 id: paper:Pfaff2022
 kind: paper
-title: "Identifying who has long COVID in the USA: a machine learning approach using N3C data"
+title: 'Identifying who has long COVID in the USA: a machine learning approach using
+  N3C data'
 status: active
 ontology_terms:
-  - long COVID
-  - post-acute sequelae of SARS-CoV-2
-  - computable phenotype
-  - machine learning
-  - XGBoost
-  - N3C
-  - RECOVER
-  - electronic health records
-  - OMOP
-  - healthcare utilization
-  - ascertainment bias
+- long COVID
+- post-acute sequelae of SARS-CoV-2
+- computable phenotype
+- machine learning
+- XGBoost
+- N3C
+- RECOVER
+- electronic health records
+- OMOP
+- healthcare utilization
+- ascertainment bias
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Pfaff2022
+- cite:Pfaff2022
 related:
-  - paper:Hill2022
-  - paper:Brannock2023
-  - hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
-created: "2026-07-01"
-updated: "2026-07-01"
+- paper:Hill2022
+- paper:Brannock2023
+- hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
+created: '2026-07-01'
+updated: '2026-07-01'
 ---
 
 # Identifying who has long COVID in the USA: a machine learning approach using N3C data

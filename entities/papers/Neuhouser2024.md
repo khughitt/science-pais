@@ -1,29 +1,29 @@
 ---
 id: paper:Neuhouser2024
 kind: paper
-title: Risk factors for long COVID syndrome in postmenopausal women with previously reported diagnosis of COVID-19
+title: Risk factors for long COVID syndrome in postmenopausal women with previously
+  reported diagnosis of COVID-19
 status: active
 ontology_terms:
-  - long COVID
-  - post-acute sequelae of SARS-CoV-2
-  - postmenopausal women
-  - Women's Health Initiative
-  - risk factors
-  - machine learning
-  - hormone therapy
+- long COVID
+- post-acute sequelae of SARS-CoV-2
+- postmenopausal women
+- Women's Health Initiative
+- risk factors
+- machine learning
+- hormone therapy
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Neuhouser2024
+- cite:Neuhouser2024
 related:
-  - task:t045
-  - interpretation:0020-t045-neuhouser2024-whi-hrt-gap-triage
-  - interpretation:0008-t019-hrt-evidence-audit-no-admissible-pais-test
-  - interpretation:0003-t018-subphenotype-sex-reproductive-stage
-  - proposition:0006-hormone-therapy-effects-on-pais-are-context-dependent
-  - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
-  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
-  - topic:menopause-sex-hormones-and-pais-risk
+- task:t045
+- interpretation:0020-t045-neuhouser2024-whi-hrt-gap-triage
+- interpretation:0008-t019-hrt-evidence-audit-no-admissible-pais-test
+- interpretation:0003-t018-subphenotype-sex-reproductive-stage
+- proposition:0006-hormone-therapy-effects-on-pais-are-context-dependent
+- hypothesis:0005-reproductive-stage-immune-homeostatic-margin
+- question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- topic:menopause-sex-hormones-and-pais-risk
 created: '2026-06-25'
 updated: '2026-06-25'
 ---

@@ -1,22 +1,22 @@
 ---
 id: paper:Perevaryukha2021
 kind: paper
-title: "A Continuous Model of Three Scenarios of the Infection Process with Delayed Immune Response Factors"
+title: A Continuous Model of Three Scenarios of the Infection Process with Delayed
+  Immune Response Factors
 status: active
 ontology_terms:
-  - viral dynamics
-  - delay differential equation
-  - delayed immune response
-  - chronic infection
-  - bifurcation
+- viral dynamics
+- delay differential equation
+- delayed immune response
+- chronic infection
+- bifurcation
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Perevaryukha2021
+- cite:Perevaryukha2021
 related:
-  - task:t011
-  - question:0008-formalize-vicious-cycle-attractor-model
-  - hypothesis:0001-shared-dysregulated-attractor
+- task:t011
+- question:0008-formalize-vicious-cycle-attractor-model
+- hypothesis:0001-shared-dysregulated-attractor
 created: '2026-06-25'
 updated: '2026-06-25'
 ---

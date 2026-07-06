@@ -1,26 +1,26 @@
 ---
 id: paper:PCCOS2023COMS
 kind: paper
-title: "Core outcome measurement instruments for use in clinical and research settings for adults with post-COVID-19 condition"
+title: Core outcome measurement instruments for use in clinical and research settings
+  for adults with post-COVID-19 condition
 status: active
 ontology_terms:
-  - post-COVID condition
-  - long COVID
-  - core outcome measurement set
-  - Delphi consensus
-  - outcome instruments
-  - measurement harmonization
+- post-COVID condition
+- long COVID
+- core outcome measurement set
+- Delphi consensus
+- outcome instruments
+- measurement harmonization
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:PCCOS2023COMS
+- cite:PCCOS2023COMS
 related:
-  - task:t026
-  - paper:Munblit2022PCCOS
-  - topic:pais-case-definition-heterogeneity
-  - topic:biomarkers-and-objective-endpoints
-created: "2026-06-25"
-updated: "2026-06-25"
+- task:t026
+- paper:Munblit2022PCCOS
+- topic:pais-case-definition-heterogeneity
+- topic:biomarkers-and-objective-endpoints
+created: '2026-06-25'
+updated: '2026-06-25'
 ---
 
 # Core outcome measurement instruments for use in clinical and research settings for adults with post-COVID-19 condition

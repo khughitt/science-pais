@@ -4,16 +4,15 @@ kind: paper
 title: The viral origin of myalgic encephalomyelitis/chronic fatigue syndrome
 status: active
 ontology_terms:
-  - myalgic encephalomyelitis/chronic fatigue syndrome
-  - enterovirus
-  - Epstein-Barr virus
-  - herpesvirus reactivation
-  - viral persistence
-  - post-acute infection syndrome
-  - post-exertional malaise
-  - SARS-CoV-2
+- myalgic encephalomyelitis/chronic fatigue syndrome
+- enterovirus
+- Epstein-Barr virus
+- herpesvirus reactivation
+- viral persistence
+- post-acute infection syndrome
+- post-exertional malaise
+- SARS-CoV-2
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Hanson2023
 related: []

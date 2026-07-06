@@ -1,23 +1,23 @@
 ---
-id: "paper:Berende2016"
-kind: "paper"
-title: "Randomized Trial of Longer-Term Therapy for Symptoms Attributed to Lyme Disease (PLEASE)"
+id: paper:Berende2016
+kind: paper
+title: Randomized Trial of Longer-Term Therapy for Symptoms Attributed to Lyme Disease
+  (PLEASE)
 status: active
-paper_kind: ""
+paper_kind: ''
 ontology_terms:
-  - post-treatment Lyme disease syndrome
-  - PTLDS
-  - antibiotic retreatment
-  - randomized controlled trial
-  - antigen persistence
-  - post-acute infection syndrome
-  - health-related quality of life
-  - Borrelia burgdorferi
-  - ceftriaxone
-  - doxycycline
-  - clarithromycin
+- post-treatment Lyme disease syndrome
+- PTLDS
+- antibiotic retreatment
+- randomized controlled trial
+- antigen persistence
+- post-acute infection syndrome
+- health-related quality of life
+- Borrelia burgdorferi
+- ceftriaxone
+- doxycycline
+- clarithromycin
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Berende2016
 related:
@@ -26,8 +26,8 @@ related:
 - question:0002-antigen-clearance-rescues-symptoms
 - interpretation:0011-t046-antigen-clearance-trials-ingestion
 - topic:antigen-pathogen-persistence
-created: "2026-06-24"
-updated: "2026-06-24"
+created: '2026-06-24'
+updated: '2026-06-24'
 ---
 # Randomized Trial of Longer-Term Therapy for Symptoms Attributed to Lyme Disease (PLEASE)
 

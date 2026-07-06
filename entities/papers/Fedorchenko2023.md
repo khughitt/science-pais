@@ -13,7 +13,6 @@ ontology_terms:
 - viral persistence
 - chronic low-grade inflammation
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Fedorchenko2023
 related: []

@@ -5,16 +5,15 @@ title: Latent transition analysis for longitudinal studies of post-acute infecti
   syndromes
 status: active
 ontology_terms:
-  - latent transition analysis
-  - hidden Markov model
-  - post-COVID condition
-  - longitudinal cohort study
-  - disease phenotyping
-  - health-related quality of life
-  - symptom trajectory
-  - post-acute infection syndrome
+- latent transition analysis
+- hidden Markov model
+- post-COVID condition
+- longitudinal cohort study
+- disease phenotyping
+- health-related quality of life
+- symptom trajectory
+- post-acute infection syndrome
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Gusinow2026
 related: []

@@ -1,25 +1,24 @@
 ---
 id: paper:LopezLeon2022
 kind: paper
-title: "Long-COVID in children and adolescents: a systematic review and meta-analyses"
+title: 'Long-COVID in children and adolescents: a systematic review and meta-analyses'
 status: active
 ontology_terms:
-  - pediatric long COVID
-  - systematic review
-  - meta-analysis
-  - prevalence
-  - heterogeneity
+- pediatric long COVID
+- systematic review
+- meta-analysis
+- prevalence
+- heterogeneity
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:LopezLeon2022
+- cite:LopezLeon2022
 related:
-  - search:0008-pediatric-long-covid-misc
-  - interpretation:0025-t009-pediatric-long-covid-and-misc
-  - topic:pediatric-long-covid-and-misc
-  - topic:pais-case-definition-heterogeneity
-created: "2026-06-26"
-updated: "2026-06-26"
+- search:0008-pediatric-long-covid-misc
+- interpretation:0025-t009-pediatric-long-covid-and-misc
+- topic:pediatric-long-covid-and-misc
+- topic:pais-case-definition-heterogeneity
+created: '2026-06-26'
+updated: '2026-06-26'
 ---
 # Long-COVID in children and adolescents: a systematic review and meta-analyses
 

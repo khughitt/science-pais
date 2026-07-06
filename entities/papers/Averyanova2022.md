@@ -4,18 +4,17 @@ kind: paper
 title: Sex hormones and immune system
 status: active
 ontology_terms:
-  - sex hormones
-  - immune regulation
-  - menopause
-  - menopausal hormone therapy
-  - COVID-19
+- sex hormones
+- immune regulation
+- menopause
+- menopausal hormone therapy
+- COVID-19
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Averyanova2022
+- cite:Averyanova2022
 related:
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - immunity:research-question:immune-homeostasis-and-dysregulation
+- question:0007-mechanism-of-female-predominance-in-pais
+- immunity:research-question:immune-homeostasis-and-dysregulation
 created: '2026-06-19'
 updated: '2026-06-19'
 ---

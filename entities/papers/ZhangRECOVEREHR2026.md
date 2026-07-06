@@ -1,25 +1,25 @@
 ---
 id: paper:ZhangRECOVEREHR2026
 kind: paper
-title: "Long COVID associated with SARS-CoV-2 reinfection among children and adolescents in the omicron era (RECOVER-EHR): a retrospective cohort study"
+title: 'Long COVID associated with SARS-CoV-2 reinfection among children and adolescents
+  in the omicron era (RECOVER-EHR): a retrospective cohort study'
 status: active
 ontology_terms:
-  - pediatric long COVID
-  - reinfection
-  - RECOVER-EHR
-  - PASC diagnosis
-  - Omicron
+- pediatric long COVID
+- reinfection
+- RECOVER-EHR
+- PASC diagnosis
+- Omicron
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:ZhangRECOVEREHR2026
+- cite:ZhangRECOVEREHR2026
 related:
-  - search:0008-pediatric-long-covid-misc
-  - interpretation:0025-t009-pediatric-long-covid-and-misc
-  - topic:pediatric-long-covid-and-misc
-  - interpretation:0022-t010-reinfection-vaccination-risk-recovery
-created: "2026-06-26"
-updated: "2026-06-26"
+- search:0008-pediatric-long-covid-misc
+- interpretation:0025-t009-pediatric-long-covid-and-misc
+- topic:pediatric-long-covid-and-misc
+- interpretation:0022-t010-reinfection-vaccination-risk-recovery
+created: '2026-06-26'
+updated: '2026-06-26'
 ---
 # Long COVID associated with SARS-CoV-2 reinfection among children and adolescents in the omicron era
 

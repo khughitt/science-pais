@@ -1,32 +1,32 @@
 ---
-id: "paper:deGois2026"
-kind: "paper"
-title: "Baseline immune signatures are associated with prospective COVID-19 infection and clinical outcomes in healthcare workers: Evidence from a cohort study in Brazil"
+id: paper:deGois2026
+kind: paper
+title: 'Baseline immune signatures are associated with prospective COVID-19 infection
+  and clinical outcomes in healthcare workers: Evidence from a cohort study in Brazil'
 status: active
 ontology_terms:
-  - immune profiling
-  - serum soluble mediators
-  - cytokines
-  - chemokines
-  - prospective cohort
-  - COVID-19 susceptibility
-  - disease severity biomarkers
-  - pre-infection baseline
-  - healthcare workers
+- immune profiling
+- serum soluble mediators
+- cytokines
+- chemokines
+- prospective cohort
+- COVID-19 susceptibility
+- disease severity biomarkers
+- pre-infection baseline
+- healthcare workers
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:deGois2026
+- cite:deGois2026
 related:
-  - topic:long-covid-immune-dysregulation
-  - topic:biomarkers-and-objective-endpoints
-  - topic:shared-failure-mode-across-pais
-  - question:0003-acute-severity-threshold-for-self-sustaining-pais
-  - question:0001-shared-molecular-signature-across-triggers
-  - hypothesis:0004-acute-severity-threshold
-  - hypothesis:0003-immune-exhaustion-feedback
-created: "2026-06-20"
-updated: "2026-06-20"
+- topic:long-covid-immune-dysregulation
+- topic:biomarkers-and-objective-endpoints
+- topic:shared-failure-mode-across-pais
+- question:0003-acute-severity-threshold-for-self-sustaining-pais
+- question:0001-shared-molecular-signature-across-triggers
+- hypothesis:0004-acute-severity-threshold
+- hypothesis:0003-immune-exhaustion-feedback
+created: '2026-06-20'
+updated: '2026-06-20'
 ---
 
 # Baseline immune signatures are associated with prospective COVID-19 infection and clinical outcomes in healthcare workers: Evidence from a cohort study in Brazil

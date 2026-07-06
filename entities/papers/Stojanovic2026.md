@@ -1,32 +1,32 @@
 ---
-id: "paper:Stojanovic2026"
-kind: "paper"
-title: "Vascular Complications of Long COVID—From Endothelial Dysfunction to Systemic Thrombosis: A Systematic Review"
-status: "active"
+id: paper:Stojanovic2026
+kind: paper
+title: "Vascular Complications of Long COVID\u2014From Endothelial Dysfunction to\
+  \ Systemic Thrombosis: A Systematic Review"
+status: active
 ontology_terms:
-  - "endothelial dysfunction"
-  - "thromboinflammation"
-  - "long COVID"
-  - "coagulopathy"
-  - "microthrombosis"
-  - "antiphospholipid antibodies"
-  - "venous thromboembolism"
-  - "von Willebrand factor"
-  - "neutrophil extracellular traps"
+- endothelial dysfunction
+- thromboinflammation
+- long COVID
+- coagulopathy
+- microthrombosis
+- antiphospholipid antibodies
+- venous thromboembolism
+- von Willebrand factor
+- neutrophil extracellular traps
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Stojanovic2026
+- cite:Stojanovic2026
 related:
-  - topic:thromboinflammation-and-endothelial-dysfunction
-  - topic:biomarkers-and-objective-endpoints
-  - question:0010-vascular-microclot-subphenotype
-  - hypothesis:0001-shared-dysregulated-attractor
-  - paper:Nicolai2023
-  - paper:CerviaHasler2024
-  - paper:Stahlberg2025
-created: "2026-06-20"
-updated: "2026-06-20"
+- topic:thromboinflammation-and-endothelial-dysfunction
+- topic:biomarkers-and-objective-endpoints
+- question:0010-vascular-microclot-subphenotype
+- hypothesis:0001-shared-dysregulated-attractor
+- paper:Nicolai2023
+- paper:CerviaHasler2024
+- paper:Stahlberg2025
+created: '2026-06-20'
+updated: '2026-06-20'
 ---
 
 # Vascular Complications of Long COVID—From Endothelial Dysfunction to Systemic Thrombosis: A Systematic Review

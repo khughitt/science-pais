@@ -1,29 +1,29 @@
 ---
-id: "paper:Bellavite2026"
-kind: "paper"
-title: "Autoimmune Features of Post-COVID-19 Vaccination Syndrome and Their Impacts on the Renin–Angiotensin System"
-status: "active"
+id: paper:Bellavite2026
+kind: paper
+title: "Autoimmune Features of Post-COVID-19 Vaccination Syndrome and Their Impacts\
+  \ on the Renin\u2013Angiotensin System"
+status: active
 ontology_terms:
-  - "post-acute COVID-19 vaccination syndrome"
-  - "renin-angiotensin system"
-  - "functional autoantibodies"
-  - "anti-ACE2 autoantibodies"
-  - "anti-MAS1 autoantibodies"
-  - "GPCR autoantibodies"
-  - "idiotype network"
-  - "dysautonomia"
-  - "endothelial dysfunction"
+- post-acute COVID-19 vaccination syndrome
+- renin-angiotensin system
+- functional autoantibodies
+- anti-ACE2 autoantibodies
+- anti-MAS1 autoantibodies
+- GPCR autoantibodies
+- idiotype network
+- dysautonomia
+- endothelial dysfunction
 dataset_usage: []
-datasets: []
 source_refs:
-  - cite:Bellavite2026
+- cite:Bellavite2026
 related:
-  - topic:post-infectious-dysautonomia-and-autoimmunity
-  - topic:thromboinflammation-and-endothelial-dysfunction
-  - question:0009-functional-autoantibodies-drive-dysautonomia
-  - hypothesis:0001-shared-dysregulated-attractor
-created: "2026-06-20"
-updated: "2026-06-20"
+- topic:post-infectious-dysautonomia-and-autoimmunity
+- topic:thromboinflammation-and-endothelial-dysfunction
+- question:0009-functional-autoantibodies-drive-dysautonomia
+- hypothesis:0001-shared-dysregulated-attractor
+created: '2026-06-20'
+updated: '2026-06-20'
 ---
 
 # Autoimmune Features of Post-COVID-19 Vaccination Syndrome and Their Impacts on the Renin–Angiotensin System

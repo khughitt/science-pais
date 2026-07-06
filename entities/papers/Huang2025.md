@@ -13,7 +13,6 @@ ontology_terms:
 - ACE2 signaling
 - meta-analysis
 dataset_usage: []
-datasets: []
 source_refs:
 - cite:Huang2025
 related: []
