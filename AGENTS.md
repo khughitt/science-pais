@@ -14,6 +14,24 @@ Process-focused research project for **post-acute infection syndromes (PAIS)** i
 uv run --frozen science validate --verbose
 ```
 
+## Worktrees
+
+This project consumes the `science` toolkit through a **relative editable** uv
+source (`science = { path = "../../../science/science" }` in `pyproject.toml`),
+resolved relative to the checkout's location on disk. A git worktree created
+**inside** the repo (the default `.worktrees/<name>/`) sits two directory levels
+deeper than the main checkout, so that path no longer resolves and **every
+`uv run`** — any pre-commit hook, `validate.sh`, and tests — fails with
+`Distribution not found`.
+
+- **Isolated editing / docs-only commits:** a nested `.worktrees/` worktree is
+  fine. The hook failure is expected and unrelated to your change — commit with
+  `git commit --no-verify`, or commit from the main checkout.
+- **When you need `uv` / tests / validation to run inside the worktree:** create
+  it at the **same filesystem depth** as the main checkout (a sibling directory),
+  not nested — e.g. `git worktree add ../post-acute-infection--<branch> <branch>` —
+  so the relative `science` source still resolves.
+
 ## Conventions
 
 - This project is a `process`-role owner for post-acute infection syndromes in the `~/d/health/` family. **Immune-mechanism** inquiry that is not specific to the post-infectious context belongs in `health-immunity` (`~/d/health/processes/immunity`); cross-project synthesis belongs in `health-meta` (`~/d/health/meta`); disease-label comparison belongs in `pan-disease` (`~/d/health/comparisons/pan-disease`).
