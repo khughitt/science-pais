@@ -8,6 +8,7 @@ ontology_terms: []
 datasets: []
 source_refs:
 - cite:Trautmann2025
+- cite:Thomas2026
 origins:
 - type: assistant
   ref: explore-ideas-methodology

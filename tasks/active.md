@@ -319,13 +319,3 @@ The project's named discriminating experiment now has a dedicated entity (q0050)
 - created: 2026-07-06
 
 The 2026-07-06 explore pass added four mechanism-specific nulls: h0015 (EBV reactivation = consequence), h0016 (microclots non-specific), h0017 (PEM overdiagnosed via self-report), h0018 (circulating antigen = severity biomarker). Fold them into the standing /science:bias-audit scoring against the shared-attractor thesis (h0001). For each: record the discriminating test (h0015 -> severity-adjusted assoc + q0054 ordering; h0016 -> matched-inflammatory-control comparison; h0017 -> objective PEM specificity via q0049; h0018 -> antigen-clearance RCT q0002) and the current verdict. Organized by theme:0001.
-
-## [t105] Ground 2026-07-06 explore entities: add key anchor papers to bib/paper entities
-- priority: P3
-- status: proposed
-- aspects: []
-- related: [theme:0001-deflationary-nulls-and-biomarker-vs-driver, theme:0002-temporal-ordering-and-causal-kinetics]
-- group: explore-followups
-- created: 2026-07-06
-
-~18 load-bearing anchors for the 13 new entities are not in the project bib (only Gattoni2025/Appelman2024/Trautmann2025/Peluso2024b resolved at apply time). Add the key ones as references.bib/paper entities so the new q/h carry real source_refs + literature origins instead of assistant-only: Kashi2019, Nunes2026, Mateu2026, Stussman2025, Twomey2020, Herbert2025, Xie2025(gut), Jernbom2024, Chaganti2025, Al-Hakeim2023, Peluso2022, Chen2023, Hunt2024, Kell2022, Butt2024, Davis2023, Altmann2023, Thomas2026. DOIs are in entities/meta/explorations/explore-2026-07-06.md (literature_anchors). Prioritize the 'predates:' anchors (independent literature origins): Kashi2019, Nunes2026, Hunt2024, Stussman2025, Twomey2020, Mateu2026.

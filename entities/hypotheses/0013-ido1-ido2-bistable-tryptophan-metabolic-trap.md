@@ -5,7 +5,9 @@ title: IDO1-IDO2 kinetic imbalance creates a bistable tryptophan metabolic trap 
   PAIS-susceptible individuals
 status: proposed
 phase: active
-source_refs: []
+source_refs:
+- cite:Kashi2019
+- cite:Al-Hakeim2023
 origins:
 - type: assistant
   ref: explore-ideas-mechanism

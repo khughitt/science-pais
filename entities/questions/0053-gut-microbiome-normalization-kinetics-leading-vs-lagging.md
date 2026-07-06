@@ -6,7 +6,9 @@ title: Gut microbiome normalization kinetics as leading or lagging indicator of 
 status: active
 ontology_terms: []
 datasets: []
-source_refs: []
+source_refs:
+- cite:Xie2025
+- cite:Davis2023
 origins:
 - type: assistant
   ref: explore-ideas-temporal

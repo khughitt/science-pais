@@ -5,7 +5,9 @@ title: EBV reactivation in post-COVID fatigue is a consequence of immune disrupt
   not an independent causal mechanism
 status: proposed
 phase: active
-source_refs: []
+source_refs:
+- cite:Peluso2022
+- cite:Chen2023
 origins:
 - type: assistant
   ref: explore-ideas-contrarian

@@ -6,7 +6,9 @@ title: Causal temporal ordering of EBV reactivation and autoantibody emergence i
 status: active
 ontology_terms: []
 datasets: []
-source_refs: []
+source_refs:
+- cite:Peluso2022
+- cite:Jernbom2024
 origins:
 - type: assistant
   ref: explore-ideas-temporal

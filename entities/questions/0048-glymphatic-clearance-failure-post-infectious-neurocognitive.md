@@ -6,7 +6,8 @@ title: Glymphatic clearance failure as a self-amplifying mechanism for post-infe
 status: active
 ontology_terms: []
 datasets: []
-source_refs: []
+source_refs:
+- cite:Chaganti2025
 origins:
 - type: assistant
   ref: explore-ideas-mechanism

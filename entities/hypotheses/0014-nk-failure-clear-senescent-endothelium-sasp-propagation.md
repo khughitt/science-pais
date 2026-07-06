@@ -5,7 +5,8 @@ title: NK-cell failure to clear virus-induced senescent endothelial cells determ
   PAIS persistence via SASP propagation
 status: proposed
 phase: active
-source_refs: []
+source_refs:
+- cite:Nunes2026
 origins:
 - type: assistant
   ref: explore-ideas-mechanism

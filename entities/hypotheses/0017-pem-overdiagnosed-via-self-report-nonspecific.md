@@ -5,7 +5,9 @@ title: Post-exertional malaise is substantially overdiagnosed via self-report in
   COVID and is not mechanistically specific to PAIS
 status: proposed
 phase: active
-source_refs: []
+source_refs:
+- cite:Stussman2025
+- cite:Twomey2020
 origins:
 - type: assistant
   ref: explore-ideas-contrarian

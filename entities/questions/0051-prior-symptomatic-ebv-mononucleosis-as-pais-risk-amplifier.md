@@ -5,7 +5,9 @@ title: Prior symptomatic EBV mononucleosis as a risk amplifier for subsequent PA
 status: active
 ontology_terms: []
 datasets: []
-source_refs: []
+source_refs:
+- cite:Peluso2022
+- cite:Butt2024
 origins:
 - type: assistant
   ref: explore-ideas-population

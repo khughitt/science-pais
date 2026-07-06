@@ -5,7 +5,9 @@ title: Circulating SARS-CoV-2 antigen in long COVID is a severity biomarker, not
   symptom driver
 status: proposed
 phase: active
-source_refs: []
+source_refs:
+- cite:Mateu2026
+- cite:Altmann2023
 origins:
 - type: assistant
   ref: explore-ideas-contrarian

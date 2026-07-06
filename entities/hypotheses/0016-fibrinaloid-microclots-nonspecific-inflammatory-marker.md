@@ -5,7 +5,9 @@ title: Fibrinaloid microclots in long COVID are a non-specific inflammatory mark
   not a disease-specific pathogenic mechanism
 status: proposed
 phase: active
-source_refs: []
+source_refs:
+- cite:Hunt2024
+- cite:Kell2022
 origins:
 - type: assistant
   ref: explore-ideas-contrarian
