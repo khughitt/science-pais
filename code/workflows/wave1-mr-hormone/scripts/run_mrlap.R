@@ -72,12 +72,16 @@ exp_dt <- as.data.frame(data.table::fread(exposure_path))
 out_dt <- as.data.frame(data.table::fread(outcome_path))
 
 # --- resolve every path/config value the isolated process must see to an
-#     ABSOLUTE path *before* setwd() (parent dirs first, so normalizePath can
-#     resolve a not-yet-existing output file) ------------------------------
+#     ABSOLUTE path *before* setwd() -----------------------------------------
+# normalizePath(<file>, mustWork=FALSE) does NOT absolutize a not-yet-existing
+# file on this platform (it returns the input relative path), which after setwd()
+# would write into the tempdir. So absolutize via the PARENT dir (created here,
+# so it exists) + basename — robust for output files that do not exist yet.
 dir.create(dirname(results_out), recursive = TRUE, showWarnings = FALSE)
 dir.create(dirname(dump_out), recursive = TRUE, showWarnings = FALSE)
-results_out_abs <- normalizePath(results_out, mustWork = FALSE)
-dump_out_abs <- normalizePath(dump_out, mustWork = FALSE)
+abs_out <- function(p) file.path(normalizePath(dirname(p), mustWork = TRUE), basename(p))
+results_out_abs <- abs_out(results_out)
+dump_out_abs <- abs_out(dump_out)
 ld_abs <- normalizePath(cfg$mrlap$ld, mustWork = TRUE)
 hm3_abs <- normalizePath(cfg$mrlap$hm3, mustWork = TRUE)
 
@@ -90,8 +94,14 @@ dir.create(work, recursive = TRUE, showWarnings = FALSE)
 old <- setwd(work)
 on.exit(setwd(old), add = TRUE)
 
-# --- the MRlap call (pinned params; NO RNG seed -- corrected SE is analytic,
-#     no bootstrap/resampling in this pinned build) --------------------------
+# --- the MRlap call (pinned params) -----------------------------------------
+# MRlap's corrected-effect SE/covariance are estimated by a Monte-Carlo sampling
+# strategy (get_correction runs thousands of simulations), NOT analytically — so
+# the run IS stochastic. Seed it for reproducibility; the seed is recorded in the
+# per-stratum JSON. (Earlier "analytic SE" assumption was wrong.)
+mrlap_seed <- as.integer(cfg$mrlap$seed)
+if (is.na(mrlap_seed)) stop("run_mrlap: cfg$mrlap$seed missing/non-integer — HALT")
+set.seed(mrlap_seed)
 res <- MRlap::MRlap(
   exposure = exp_dt, outcome = out_dt,
   exposure_name = spec$name, outcome_name = cfg$outcome$name,
@@ -249,7 +259,8 @@ result <- list(
     MR_threshold = as.numeric(cfg$mrlap$MR_threshold),
     MR_pruning_dist = as.numeric(cfg$mrlap$MR_pruning_dist),
     MR_pruning_LD = as.numeric(cfg$mrlap$MR_pruning_LD),
-    MR_reverse = as.numeric(cfg$mrlap$MR_reverse)
+    MR_reverse = as.numeric(cfg$mrlap$MR_reverse),
+    seed = mrlap_seed
   ),
   labels = labels
 )

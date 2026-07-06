@@ -197,6 +197,7 @@ mrlap:
   MR_pruning_dist: 500      # kb — MRlap distance-based pruning window
   MR_pruning_LD: 0          # 0 = pure distance pruning (no LD-based pruning)
   MR_reverse: 1.0e-3        # reverse-causality (Steiger-like) exclusion threshold
+  seed: 20260705            # MRlap corrected-effect SE/cov is Monte-Carlo (get_correction sims) -> seed for reproducibility
   ld: "data/raw/ldsc/eur_w_ld_chr"     # cross-trait LDSC LD-score directory (Task 1)
   hm3: "data/raw/ldsc/w_hm3.snplist"   # HapMap3 SNP list (Task 1)
 
