@@ -363,6 +363,13 @@ rule run_mrlap:                             # fan-out over the six strata
         dump=f"{MRLAP_DIR}/{{stratum}}.mrlap.rds",
     benchmark:
         f"{MRLAP_DIR}/{{stratum}}.benchmark.tsv"    # genome-wide munge + LDSC: wall-clock + max_rss
+    resources:
+        # One MRlap fit on the full genome-wide sumstats peaks ~20-25 GB (fread load
+        # ~3.7 GB measured + tidy copies + write.table of the 16.3M-row frame +
+        # GenomicSEM::munge + the genome-wide exposure/outcome inner_join). Declared
+        # so `--resources mem_mb=<host>` never co-schedules two fits; keep the runner
+        # at `-c1` regardless (this box has 0 swap, so overcommit = a hard crash).
+        mem_mb=30000,
     conda:
         "envs/r-mrlap.yaml"
     params:

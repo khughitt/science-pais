@@ -139,4 +139,46 @@ n_col_with_injected_n="$(zcat "$WORK/c/canonical.tsv.gz" | tail -n +2 | awk -F'\
 
 echo "PASS (c) success: exit=0, 8-col header correct, 3 data rows, N=370125 on every row"
 
+# =============================================================================
+# (d) NA-rsid / NA-effect drop — rows whose rsid is "NA"/"." or whose beta/se is
+#     an NA token must be dropped (the join-key cartesian-bomb guard). Sidecar
+#     records n_dropped_na_rsid.
+# =============================================================================
+mkdir -p "$WORK/d"
+cat > "$WORK/d/config.yaml" <<'EOF'
+exposures:
+  - name: "fake-shbg-combined"
+    n: 370125
+outcome:
+  total_n: 1100445
+EOF
+
+{
+  printf "hm_rsid\thm_chrom\thm_pos\thm_effect_allele\thm_other_allele\thm_beta\tstandard_error\n"
+  printf "rs1\t1\t1000\tA\tG\t0.010\t0.002\n"     # keep
+  printf "NA\t2\t2000\tC\tT\t-0.020\t0.003\n"     # drop: NA rsid
+  printf ".\t3\t3000\tG\tA\t0.005\t0.001\n"       # drop: '.' rsid
+  printf "rs4\t4\t4000\tT\tC\tNA\t0.004\n"        # drop: NA beta (not an na_rsid)
+  printf "rs5\t5\t5000\tA\tT\t0.030\t0.006\n"     # keep
+} | gzip > "$WORK/d/exposure.h.tsv.gz"
+
+set +e
+out_d="$(python3 "$SCRIPT" --config "$WORK/d/config.yaml" --source-family ruth-exposure \
+  --stratum fake-shbg-combined --in "$WORK/d/exposure.h.tsv.gz" \
+  --out "$WORK/d/canonical.tsv.gz" 2>&1)"
+rc_d=$?
+set -e
+
+[[ "$rc_d" -eq 0 ]] || fail "(d) expected exit 0, got $rc_d. Output: $out_d"
+n_data_rows_d="$(zcat "$WORK/d/canonical.tsv.gz" | tail -n +2 | wc -l)"
+[[ "$n_data_rows_d" -eq 2 ]] || fail "(d) expected 2 surviving rows (rs1,rs5), got $n_data_rows_d"
+surviving_ids_d="$(zcat "$WORK/d/canonical.tsv.gz" | tail -n +2 | cut -f1 | sort | tr '\n' ',')"
+[[ "$surviving_ids_d" == "rs1,rs5," ]] || fail "(d) expected surviving rsids 'rs1,rs5,', got '$surviving_ids_d'"
+# no NA token leaked into the join-key column
+zcat "$WORK/d/canonical.tsv.gz" | tail -n +2 | cut -f1 | grep -qiE '^(na|nan|\.|none|null|)$' \
+  && fail "(d) an NA-token rsid leaked into the output" || true
+dropped_na_d="$(python3 -c "import json,sys; print(json.load(open(sys.argv[1]))['n_dropped_na_rsid'])" "$WORK/d/canonical.tsv.gz.canonical.json")"
+[[ "$dropped_na_d" -eq 2 ]] || fail "(d) expected sidecar n_dropped_na_rsid=2, got $dropped_na_d"
+echo "PASS (d) NA-rsid drop: 2 survive (rs1,rs5), n_dropped_na_rsid=2, no NA token in output"
+
 echo "test_canonicalize.sh: ALL PASS"

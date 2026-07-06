@@ -22,11 +22,12 @@ Two source families, each with a fixed column map onto the canonical schema:
 Three hard-stops, all loud non-zero exits (never a silent fallback):
   1. missing column  — any mapped source column absent from the raw header.
   2. unresolved N    — N not resolvable from config, non-integer, or <= 0.
-  3. empty output    — 0 usable data rows survive dropping rows with a missing
-                        rsid/beta/se (the drop count is always logged).
+  3. empty output    — 0 usable data rows survive dropping unusable rows (the drop
+                        count, incl. the NA-rsid subcount, is always logged).
 
-The adapter does no row-level QC beyond dropping unusable rows; MRlap munges
-(strand/allele/NA handling) internally.
+The adapter does no row-level QC beyond dropping unusable rows — a row whose rsid,
+beta, or se is missing or an NA token ("NA"/"NaN"/"."/...) is dropped (see
+_NA_TOKENS). MRlap munges the remaining strand/allele handling internally.
 """
 from __future__ import annotations
 
@@ -51,6 +52,18 @@ HGI_MAP = {  # non-hm GWAS-Catalog harmonised SSF (HGI long-COVID outcome)
 SOURCE_MAPS = {"ruth-exposure": RUTH_MAP, "hgi-outcome": HGI_MAP}
 CANONICAL_COLUMNS = ("rsid", "chr", "pos", "a1", "a2", "beta", "se", "N")
 _MAP_ORDER = ("rsid", "chr", "pos", "a1", "a2", "beta", "se")  # canonical order sans N
+
+# Tokens that must NOT survive as an rsid/beta/se value. Harmonised GWAS-SSF writes
+# the literal string "NA" for variants it could not map to an rsID; data.table::fread
+# then reads "NA" -> real NA, and MRlap's run_MR does dplyr::inner_join(exposure,
+# outcome, by="rsid") with na_matches="na" (NA matches NA) — so NA rsIDs surviving on
+# BOTH sides would cartesian-explode the join (a genome-wide OOM). Dropping them here
+# keeps the join clean and removes junk rows MRlap would process then discard.
+_NA_TOKENS = {"", "na", "nan", ".", "none", "null"}
+
+
+def _is_na(value: str) -> bool:
+    return value.strip().lower() in _NA_TOKENS
 
 
 def resolve_n(cfg: dict, source_family: str, stratum: str) -> int:
@@ -106,6 +119,7 @@ def canonicalize(source_family: str, stratum: str, in_path: str, out_path: str, 
         n_rows_in = 0
         n_rows_out = 0
         n_dropped = 0
+        n_dropped_na_rsid = 0
         out_p = Path(out_path)
         out_p.parent.mkdir(parents=True, exist_ok=True)
         with gzip.open(out_p, "wt", newline="") as out_fh:
@@ -115,10 +129,16 @@ def canonicalize(source_family: str, stratum: str, in_path: str, out_path: str, 
                 if not row:
                     continue
                 n_rows_in += 1
-                rsid = _cell(row, idx["rsid"]).strip()
-                beta = _cell(row, idx["beta"]).strip()
-                se = _cell(row, idx["se"]).strip()
-                if not rsid or not beta or not se:
+                rsid = _cell(row, idx["rsid"])
+                beta = _cell(row, idx["beta"])
+                se = _cell(row, idx["se"])
+                # Drop rows unusable as MR instruments: a missing/NA-token rsid (join
+                # key), or a missing/NA-token beta/se (effect). See _NA_TOKENS above.
+                if _is_na(rsid):
+                    n_dropped += 1
+                    n_dropped_na_rsid += 1
+                    continue
+                if _is_na(beta) or _is_na(se):
                     n_dropped += 1
                     continue
                 out_row = [_cell(row, idx[c]) for c in _MAP_ORDER]
@@ -140,12 +160,13 @@ def canonicalize(source_family: str, stratum: str, in_path: str, out_path: str, 
         "n_rows_in": n_rows_in,
         "n_rows_out": n_rows_out,
         "n_dropped": n_dropped,
+        "n_dropped_na_rsid": n_dropped_na_rsid,
         "columns_mapped": colmap,
     }
     Path(f"{out_path}.canonical.json").write_text(json.dumps(sidecar, indent=2))
     print(
         f"canonicalize: {stratum} ({source_family}) rows_in={n_rows_in} "
-        f"rows_out={n_rows_out} dropped={n_dropped} N={n_injected}"
+        f"rows_out={n_rows_out} dropped={n_dropped} (na_rsid={n_dropped_na_rsid}) N={n_injected}"
     )
     return sidecar
 
