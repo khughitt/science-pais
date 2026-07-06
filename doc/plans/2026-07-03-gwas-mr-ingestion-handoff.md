@@ -140,7 +140,7 @@ not a caveat.
    instrument weight is invalid. Concordance across IVW/Egger/weighted-median is
    the minimum robustness bar; report discordance, do not suppress it.
 3. **Sample-overlap check — UK Biobank, Ruth↔HGI specifically.** Quantify the
-   overlap between the Ruth 2020 SHBG/testosterone GWAS (UK Biobank) and the
+   overlap between the Ruth 2020 [@Ruth2020] SHBG/testosterone GWAS (UK Biobank) and the
    COVID-19 HGI long-COVID outcome GWAS (which pools multiple biobanks, including
    UK Biobank contributions). Overlap biases two-sample MR toward the confounded
    observational association; if overlap cannot be reduced by cohort exclusion,

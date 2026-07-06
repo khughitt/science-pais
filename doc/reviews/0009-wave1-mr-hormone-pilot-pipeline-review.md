@@ -123,7 +123,7 @@ to carry into the write-up:
 
 - **SHBG and total-testosterone are not two independent exposures.** SHBG genetically
   and physiologically determines bioavailable testosterone; their instrument sets
-  overlap and the traits are mechanistically coupled (Ruth 2020 itself foregrounds
+  overlap and the traits are mechanistically coupled (Ruth 2020 [@Ruth2020] itself foregrounds
   this). Running them as two arms risks double-counting a shared signal, and horizontal
   pleiotropy via the broader steroid axis (estradiol, bioavailable T) is plausible.
   MR-Egger + weighted-median partially bound it; state that a "clean" IVW is not

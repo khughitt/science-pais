@@ -57,7 +57,7 @@ D-006; the outcome is the same authorised HGI vehicle).
 
 **Two exposure-side assumption caveats (interpretation, not ceilings):**
 - **SHBG and total testosterone are not independent exposures.** SHBG sets
-  bioavailable testosterone and the two share instrument loci (Ruth 2020), so a shared
+  bioavailable testosterone and the two share instrument loci (Ruth 2020 [@Ruth2020]), so a shared
   signal can be double-counted and steroid-axis horizontal pleiotropy is plausible —
   MR-Egger + weighted-median partially bound it; a "clean" IVW is not pleiotropy-free.
 - **The most decision-relevant stratum is the weakest-instrumented.** The female-only
@@ -69,7 +69,7 @@ D-006; the outcome is the same authorised HGI vehicle).
 ## Approach
 
 Two-sample MR on the pilot's proven `TwoSampleMR` toolchain (`plan:0007` harness,
-extended). Exposures: Ruth 2020 SHBG and total testosterone, three strata each
+extended). Exposures: Ruth 2020 [@Ruth2020] SHBG and total testosterone, three strata each
 (sex-combined, male-only, female-only), instrumented by genome-wide-significant
 SNPs, LD-clumped locally against the staged 1000G-EUR panel (r² < 0.001, 10 Mb).
 Unlike the SLE instrument, hormone GWAS are **not** HLA-dominated, so **no extended-
