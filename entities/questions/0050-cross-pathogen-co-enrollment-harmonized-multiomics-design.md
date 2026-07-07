@@ -73,6 +73,19 @@ form of the discriminating experiment the project repeatedly names but does not 
 - **Major uncertainty:** whether achievable sample sizes and harmonization would actually yield
   signatures that *separate* shared from trigger-specific biology, rather than another underpowered
   non-arbitrating result.
+- **Feasibility gate RESOLVED (t103, 2026-07-07 → `interpretation:0036-t103-cross-pathogen-co-enrollment-feasibility`):**
+  **CONDITIONAL GO — staged.** The simultaneous 5-trigger single-site build is a **NO-GO** (Lyme is
+  endemic/season-locked with early-serology insensitivity; Q-fever is outbreak-gated). The ≥3-trigger bar
+  is reachable via a **Tier-1 COVID-19 + influenza + EBV** triad (year-round acute-care + student-health
+  accrual), with Lyme (Tier 2, EM-clinical entry) and Q-fever (Tier 3, outbreak-gated) added
+  opportunistically. Two design corrections are load-bearing: (a) primary control frame must be
+  **full-recovery (infected-recovered) controls** per `hypothesis:0001`, not the "matched uninfected
+  controls" written above; (b) confirmation is **per-arm SOPs** under one harmonized *omics* protocol, not
+  a single common assay. Power is adequate for the **shared pathway/latent-factor axis** (the level h0001
+  predicts) but not trigger-specific molecular discovery (exploratory-only). Harmonization's core value is
+  removing the between-cohort **bias** ceiling that made the t035 public-data route non-arbitrating
+  (`interpretation:0001`). Next gate: run the power/bias-floor simulation (interp-0001 "Q-A") before any
+  cohort commitment.
 
 ## Connections to Project
 
