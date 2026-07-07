@@ -97,6 +97,12 @@ weak convergence.
 ## Downstream Work
 
 - Recurring bias-audit scoring of the mechanism-specific nulls (h0015–h0018) against `hypothesis:0001`.
+  First pass: `report:0006-bias-audit-deflationary-nulls-vs-shared-attractor` (t104, 2026-07-07) — all four
+  nulls LIVE + currently non-adjudicable (every discriminating test prospective); h0017's "no objective
+  basis" strong form already refuted; h0018 plasma-driver reading under genuine threat (Mateu2026). Answers
+  the convergence question below: nulls **fragment by structure but three of four converge on a shared
+  "severity-index confound" axis** (h0015/h0017/h0018 → h0011/h0008). Scored as *self-audit / internally
+  consistent* — an out-of-lineage `/science:compare-hypotheses` pass is the recommended independent check.
 - The discriminating designs each null implies: antigen-clearance RCT readout (`question:0002`),
   severity-adjusted EBV association + ordering (`question:0054`), matched-inflammatory-control microclot
   comparison, and objective PEM specificity (`question:0049`).
