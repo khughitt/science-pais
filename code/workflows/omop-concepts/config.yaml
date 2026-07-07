@@ -1,0 +1,155 @@
+# =============================================================================
+# config.yaml — OMOP concept_id vocabulary-validity verification (task:t081)
+#
+# SINGLE encoding of the concept-verification inputs. The rule reads these and
+# hard-codes nothing. Changing a value is a deliberate edit.
+#
+# Purpose: resolve each autoimmune-stratum SNOMED SEED code to its OMOP
+# `concept_id` via the public OHDSI ATHENA API and verify it is a Standard,
+# Valid, Condition-domain SNOMED concept — the check the ATHENA 403 blocked
+# when interpretation:0032 (t079/BC-3) was written, leaving the concept_ids
+# `[UNVERIFIED]` on dataset:n3c-recover-longcovid.
+#
+# SCOPE (deliberately narrow, matching t081 + the [UNVERIFIED] marker):
+#   * VERIFY the named SNOMED seed concepts only (10 codes / 8 strata).
+#   * NOT concept-set EXPANSION (descendants, subtype unions, exclude lists).
+#     That is plan:0006 WP1 (task:t082), explicitly code-gated. The a-priori
+#     scoping decisions (vasculitis union, autoimmune-thyroid specific-vs-all-
+#     cause, myositis exclusions) are pre-registration items per
+#     interpretation:0032 — carried here as `scoping_note` annotations only,
+#     NOT resolved.
+#
+# Seed codes + OHDSI Phenotype Library cohort numbers are transcribed from
+# interpretation:0032-t079-bc3-autoimmune-stratum-granularity (Sources section).
+# =============================================================================
+
+vocab_api:
+  # SOURCE: OHDSI ATLAS public demo WebAPI (unauthenticated, security.enabled=false).
+  #
+  # NOT the ATHENA public API: `athena.ohdsi.org/api/v1/concepts` returns a hard
+  # HTTP 403 (Apache "Forbidden", WAF-level — unchanged with browser headers),
+  # re-confirmed 2026-07-07. Only ATHENA's `/vocabularies` is open; concept
+  # *search* is not. This is the same 403 that left the concept_ids [UNVERIFIED]
+  # in interpretation:0032. The ATLAS demo WebAPI `vocabulary/search` is the
+  # public, reproducible substitute and returns the OMOP concept_id plus the
+  # standard/valid/domain flags directly.
+  #
+  # OMOP concept_ids are PERMANENT identifiers — stable across vocabulary
+  # releases — so resolving them against the demo's vocab build (WebAPI 2.14.0,
+  # 2024-09) is version-robust; the build is recorded in the manifest for
+  # provenance. Endpoint: POST {base_url}/vocabulary/search  body
+  # {"QUERY": <snomed_code>, "VOCABULARY_ID": ["SNOMED"]}.
+  base_url: "https://atlas-demo.ohdsi.org/WebAPI"
+  info_endpoint: "info"           # GET — records the WebAPI/vocab build in the manifest
+  search_endpoint: "vocabulary/search"   # POST
+  timeout_s: 60
+  # Verification predicate (a concept "verifies" iff all hold). Recorded so the
+  # pass/flag rule is data, not code. Flags are OMOP WebAPI single-char codes.
+  require:
+    vocabulary: "SNOMED"
+    domain: "Condition"
+    standard_concept: "S"          # STANDARD_CONCEPT: S=Standard, C=Classification, N/null=Non-standard
+    invalid_reason: "V"            # INVALID_REASON: V=Valid, D=Deprecated, U=Updated
+
+paths:
+  results: "results/omop-concept-verification"
+
+# ------------------------------------------------------------- strata --------
+# Eight disease-specific autoimmune strata (interpretation:0032). IBD is ONE
+# stratum built from two disease-specific cohorts (Crohn's + UC). Each `concept`
+# is a SEED anchor to verify, not a finished concept set.
+strata:
+  - stratum: "sle"
+    label: "Systemic lupus erythematosus"
+    tier: "systemic-rheumatic"
+    concepts:
+      - snomed_code: "55464009"
+        role: "seed"
+        ohdsi_cohort: 119          # OHDSI Phenotype Library (chart-validated)
+
+  - stratum: "ra"
+    label: "Rheumatoid arthritis"
+    tier: "systemic-rheumatic"
+    concepts:
+      - snomed_code: "69896004"
+        role: "seed"
+        ohdsi_cohort: 196
+
+  - stratum: "ibd"
+    label: "Inflammatory bowel disease (Crohn's + ulcerative colitis)"
+    tier: "organ-specific"
+    concepts:
+      - snomed_code: "34000006"
+        role: "seed"
+        sublabel: "Crohn's disease"
+        ohdsi_cohort: 198
+      - snomed_code: "64766004"
+        role: "seed"
+        sublabel: "Ulcerative colitis"
+        ohdsi_cohort: 201
+
+  - stratum: "ms"
+    label: "Multiple sclerosis"
+    tier: "organ-specific"
+    concepts:
+      - snomed_code: "24700007"
+        role: "seed"                # author-built; no Phenotype Library cohort
+
+  - stratum: "sjogren"
+    label: "Sjögren's syndrome"
+    tier: "systemic-rheumatic"
+    concepts:
+      - snomed_code: "83901003"
+        role: "seed"
+
+  - stratum: "vasculitis"
+    label: "Systemic vasculitis"
+    tier: "systemic-rheumatic"
+    scoping_note: >
+      A-priori scoping (pre-registration, NOT resolved here): define as
+      any-systemic-vasculitis (subtype union GCA/GPA/MPA/PAN/Takayasu/
+      cryoglobulinaemic) vs a specific subset; decide inclusion of nonspecific
+      "vasculitis, unspecified". GCA is the only subtype interpretation:0032
+      gives a SNOMED code for; the rest resolve at plan:0006 WP1.
+    concepts:
+      # CORRECTION (t081 verification, 2026-07-07): interpretation:0032 named GCA
+      # as SNOMED 195350000, but that code resolves to NO concept in any OMOP
+      # vocabulary (verified against the ATLAS demo WebAPI) — it is not a valid
+      # SNOMED CT code. The correct standard GCA anchor is SNOMED 414341000
+      # (OMOP concept_id 314963, "Giant cell arteritis", Standard/Valid/Condition).
+      # The full vasculitis subtype union (GPA/MPA/PAN/Takayasu/cryoglobulinaemic)
+      # remains plan:0006 WP1 scoping, not resolved here.
+      - snomed_code: "414341000"
+        role: "seed-subtype"
+        sublabel: "Giant cell arteritis (vasculitis-family anchor; corrects interpretation:0032's invalid 195350000)"
+
+  - stratum: "myositis"
+    label: "Inflammatory myositis"
+    tier: "systemic-rheumatic"
+    scoping_note: >
+      A-priori scoping (pre-registration, NOT resolved here): exclude
+      drug-induced and paraneoplastic myopathy; pool PM+DM to match the
+      OpenSAFELY `myositis_cod` grain for cross-vehicle comparability.
+    concepts:
+      - snomed_code: "396230008"
+        role: "seed"
+        sublabel: "Dermatomyositis"
+      - snomed_code: "31384009"
+        role: "seed"
+        sublabel: "Polymyositis"
+
+  - stratum: "autoimmune-thyroid"
+    label: "Autoimmune thyroid disease"
+    tier: "organ-specific"
+    scoping_note: >
+      A-priori scoping (pre-registration, NOT resolved here): primary definition
+      = Graves + explicit Hashimoto/autoimmune-thyroiditis only (autoimmune-
+      specific, low sensitivity); NEVER silently fold all-cause hypothyroidism
+      (ICD-10-CM E03) into the exposure. All-cause-inclusive version is a
+      separate pre-registered sensitivity stratum. interpretation:0032 gives a
+      SNOMED code for the Hashimoto/autoimmune-thyroiditis anchor only; the
+      Graves SNOMED anchor resolves at plan:0006 WP1.
+    concepts:
+      - snomed_code: "21983002"
+        role: "seed"
+        sublabel: "Hashimoto thyroiditis / autoimmune thyroiditis"

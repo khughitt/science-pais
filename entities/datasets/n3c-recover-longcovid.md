@@ -116,6 +116,24 @@ no patient-reported fatigue severity. Single trigger.
   gap). SLE/RA/Crohn's/UC have curated **OHDSI Phenotype Library** cohorts (#119/#196/#198/#201);
   MS/Sjögren/vasculitis/myositis/autoimmune-thyroid are author-buildable from standard SNOMED
   disorders (unvalidated → clinical-review pass before a real estimate). Specific OMOP concept_ids
-  **[UNVERIFIED]** (ATHENA API 403) — confirm under `task:t081`. A-priori scoping needed for
+  **verified under `task:t081`** (2026-07-07; see the log line below, including a GCA code
+  correction). A-priori scoping needed for
   vasculitis (family vs subtype), autoimmune-thyroid (exclude all-cause hypothyroidism E03), and
   myositis (exclude drug-induced/paraneoplastic).
+- 2026-07-07 (agent, `task:t081`): **OMOP concept_ids verified** for all eight autoimmune-stratum
+  SNOMED seeds via the reproducible workflow `code/workflows/omop-concepts/` (results manifest
+  `results/omop-concept-verification/concept_manifest.json`, gitignored/regenerable). The ATHENA
+  public `/concepts` API is a hard **HTTP 403** (the BC-3 block; only ATHENA's `/vocabularies` is
+  open, not concept search); the **OHDSI ATLAS demo WebAPI** (`vocabulary/search`, unauthenticated,
+  WebAPI 2.14.0) is the open, reproducible substitute — OMOP concept_ids are permanent, version-
+  stable identifiers. **10/10 seed concepts verified** Standard/Valid/Condition-domain SNOMED: SLE
+  55464009→**257628**, RA 69896004→**80809**, Crohn's 34000006→**201606**, UC 64766004→**81893**,
+  MS 24700007→**374919**, Sjögren 83901003→**254443**, GCA 414341000→**314963**, dermatomyositis
+  396230008→**80182**, polymyositis 31384009→**80800**, Hashimoto/autoimmune-thyroiditis
+  21983002→**135215**. **Data-quality correction:** `interpretation:0032` named GCA as SNOMED
+  **195350000**, which resolves to **no concept in any OMOP vocabulary** (invalid code); the correct
+  standard anchor is SNOMED **414341000** (concept_id 314963, "Giant cell arteritis"). Scope: seed-
+  concept verification only — concept-set *expansion* (descendants; the full vasculitis subtype
+  union; the autoimmune-thyroid Graves+Hashimoto-specific set with E03 exclusion; myositis
+  drug-induced/paraneoplastic exclusion) stays **`plan:0006` WP1 (`task:t082`)**, and the three
+  a-priori scoping decisions remain pre-registration items.

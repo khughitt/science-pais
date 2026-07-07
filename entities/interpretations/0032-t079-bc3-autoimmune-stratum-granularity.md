@@ -143,9 +143,15 @@ release hash per slug) is a `plan:0006` WP1 bundle-build step, not a BC-3 delive
   cohorts **#119** (SLE), **#196** (RA), **#198** (Crohn's), **#201** (UC). SNOMED standard
   concepts (author-built strata): SLE 55464009, RA 69896004, Crohn's 34000006, UC 64766004,
   MS 24700007, Sjögren 83901003, Hashimoto 21983002, GCA 195350000, DM 396230008, PM 31384009.
-  OMOP `concept_id`s for these are **`[UNVERIFIED]`** — the ATHENA public API
-  (`https://athena.ohdsi.org`) returned **HTTP 403** (needs an authenticated token); confirm
-  interactively under `task:t081`.
+  OMOP `concept_id`s **RESOLVED under `task:t081`** (2026-07-07): SLE→257628, RA→80809,
+  Crohn's→201606, UC→81893, MS→374919, Sjögren→254443, DM→80182, PM→80800, Hashimoto→135215 (all
+  Standard/Valid/Condition SNOMED). **GCA correction:** the code listed here — **195350000 — is
+  invalid** (resolves to no concept in any OMOP vocabulary); the correct standard GCA anchor is
+  SNOMED **414341000 → concept_id 314963**. The ATHENA public `/concepts` API returned **HTTP 403**
+  (re-checked 2026-07-07: a hard WAF block, not merely missing auth — unchanged with browser
+  headers); verification instead used the open **OHDSI ATLAS demo WebAPI** substitute (see the
+  `dataset:n3c-recover-longcovid` t081 log line + the reproducible workflow
+  `code/workflows/omop-concepts/`).
 - **Supporting validation.** SLE EHR-phenotype chart validation: PLOS ONE 2023,
   `doi:10.1371/journal.pone.0281929`.
 
@@ -155,9 +161,11 @@ Not an empirical-results interpretation. The relevant structural data-quality fa
 forward into `plan:0005`:
 - **Autoimmune-thyroid misclassification** (above) — the dominant stratum-level exposure-QA
   hazard; resolved by the conservative Graves+Hashimoto-specific primary definition.
-- **OMOP concept_ids `[UNVERIFIED]`** — the ATHENA public API returned HTTP 403, so specific
-  concept_ids must be confirmed interactively at athena.ohdsi.org. This is exactly **`task:t081`
-  (OMOP Athena vocabulary)** — BC-3 sharpens t081's punch-list rather than duplicating it.
+- **OMOP concept_ids** — **RESOLVED under `task:t081`** (2026-07-07). ATHENA's `/concepts` search
+  is still a hard HTTP 403, so verification used the open **OHDSI ATLAS demo WebAPI** substitute
+  (`code/workflows/omop-concepts/`): 10/10 seed concepts Standard/Valid/Condition, concept_ids
+  recorded on `dataset:n3c-recover-longcovid`. One data-quality fix — the GCA seed **195350000 is
+  an invalid code** (no OMOP concept), corrected to SNOMED **414341000** (concept_id 314963).
 - **EHR under-coding of rarer conditions** (Sjögren, myositis, some vasculitides) reduces
   stratum *sensitivity/sample size* — that is BC-4 (power), distinct from BC-3's
   constructibility clearance.
@@ -202,7 +210,9 @@ and t081 (confirm the OMOP concept_ids).
 
 - **Cell counts untouched.** BC-3 clears *constructibility*, not *estimability*. A confirmed
   refset with 40 patients is still underpowered; that verdict is BC-4's.
-- **OMOP concept_ids unverified** (ATHENA 403) — carried to t081.
+- **OMOP concept_ids verified under t081** (2026-07-07) via the OHDSI ATLAS demo WebAPI (ATHENA
+  `/concepts` stays a hard 403); 10/10 seeds Standard/Valid/Condition, GCA 195350000 found invalid
+  and corrected to 414341000 (concept_id 314963). Concept-set *expansion* remains WP1 (t082).
 - **Vasculitis subtype completeness partial** — GCA/GPA/PAN/Takayasu/cryoglobulinaemic
   refsets confirmed; dedicated MPA and EGPA/Churg-Strauss refsets were not separately verified
   (likely present in the same NHSD family). Resolve at bundle-build (WP1).

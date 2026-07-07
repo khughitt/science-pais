@@ -1,0 +1,11 @@
+# Conda env for task:t081 OMOP concept_id verification (ATHENA query + parse).
+# The fetcher uses only the Python stdlib (urllib, gzip, json) plus PyYAML for
+# config parsing — no external CLI tools. Matches the project's Snakemake
+# --use-conda convention; the ambient uv venv already satisfies these, so the
+# workflow also runs without --use-conda.
+name: omop-concepts-py
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pyyaml>=6

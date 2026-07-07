@@ -121,34 +121,6 @@ Feeds F2 (dataset:n3c-recover-longcovid-synthetic stageability) and gates plan:0
 - 2026-07-01: 2026-07-01: BLOCKED on reproducibility/transparency grounds (user decision, verified 2026-07-01). Keith checked: N3C synthetic data CANNOT be downloaded — it is enclave-only compute, same as the real tier. Combined with the data being access-gated (DUR/DAC), BOTH properties (gated + non-downloadable) break the project's core reproducibility + transparency goals: there is no open substrate to develop or reproduce against, even at the synthetic tier. => The 'open synthetic tier to prototype' premise that made N3C the LOCKED primary vehicle (interpretation:0031, memo headline) is FALSE. Do NOT pursue N3C in future efforts unless N3C changes its access model (e.g. releases a downloadable synthetic package). This blocks plan:0006 (the N3C synthetic prototype pipeline) at its substrate, not just WP0. Reopens the vehicle decision — see t079 note. t081 (Athena, public vocab) is independent and unaffected.
 - 2026-07-01: 2026-07-01: Deferred under D-004 (parent line shelved). N3C stays off the table unless it offers a third-party-reproducible access path (downloadable de-id individual-level data or a truly downloadable synthetic tier).
 
-## [t081] Obtain OMOP Athena vocabulary for concept vocabulary-validity checks (gates plan:0006 WP1)
-- priority: P2
-- status: deferred
-- aspects: []
-- created: 2026-07-01
-
-plan:0006/BC-2 WP1 F3 vocabulary-validity check (every concept resolves in OMOP CONCEPT/CONCEPT_ANCESTOR) requires the OMOP Athena standardized vocabulary (free registration/download at athena.ohdsi.org). Blocks the WP1 vocab-validity DoD. Also feeds BC-3 codelist curation.
-
-### Notes
-
-- 2026-07-01: 2026-07-01: CONCRETE ATHENA VOCABULARY CHECKLIST (grounded in OHDSI Athena / Book of OHDSI docs, web-verified 2026-07-01).
-
-PURPOSE: supply the OMOP standardized vocabulary that plan:0006 WP1's F3 vocabulary-validity check reads (every concept in the strata concept-set bundle must resolve in CONCEPT + expand via CONCEPT_ANCESTOR). Also feeds BC-3 codelist curation and resolves the [UNVERIFIED] OMOP concept_ids from interpretation:0032.
-
-STEPS:
-1. Register/login at athena.ohdsi.org (free individual account).
-2. Select the vocabularies the pipeline needs: SNOMED (autoimmune dx + severity disorders), ICD10CM/ICD9CM + ICD10PCS (source dx/procedures incl. U09.9), RxNorm/ATC (vaccination, drugs), HCPCS, plus the OMOP-native vocabs; ensure CONCEPT, CONCEPT_RELATIONSHIP, and CONCEPT_ANCESTOR are included (CONCEPT_ANCESTOR is REQUIRED for descendant expansion of the strata concept sets).
-3. CPT4 DECISION: CPT4 is gated behind a separate UMLS license + a post-download reconstitution step (run cpt4.jar with a UMLS API key; UMLS licenses are individual-only). For the prototype vocab-validity check the strata are SNOMED/ICD-based and severity is hospitalisation/ICU/vent (ICD/SNOMED) -> CPT4 is very likely NOT needed. RECOMMEND: UNSELECT CPT4 on the Athena selection page to skip the UMLS step entirely (unselecting also cleanly drops CPT4 from concept/concept_relationship/concept_ancestor). Revisit only if a severity/procedure concept turns out CPT-only.
-4. Request download -> Athena emails a link -> download the bundle (CSV vocabulary tables).
-5. (Only if CPT4 was selected) obtain a UMLS API key and run cpt4.jar to reconstitute CPT concepts.
-6. Load the CSVs into the local vocab store the F3 check queries (duckdb over the CSVs is enough); verify CONCEPT_ANCESTOR loaded.
-7. PIN the Athena vocabulary RELEASE VERSION (Athena stamps each bundle with a build date/version) and record it in plan:0006 as the versioned vocabulary input -> this is what makes the WP1 vocab-validity check reproducible.
-
-CRITICAL CROSS-CHECK WITH t080 (add to t081 DoD): the Athena bundle version must be RECONCILED against the N3C enclave's frozen OMOP vocabulary version (t080 step 7). A concept_id valid in Athena's latest release can differ from N3C's pinned vocab, so passing vocab-validity LOCALLY does NOT guarantee it passes IN-ENCLAVE. Record the enclave vocab version once t080 clears and re-run F3 against a matched version, or explicitly document the version delta. This t081<->t080 vocabulary-version reconciliation is the non-obvious engineering trap to catch before WP1 code exists.
-
-Gates plan:0006 WP1 vocab-validity DoD. No participant data involved (public vocabulary).
-- 2026-07-01: 2026-07-01: Deferred under D-004 (parent line shelved). Athena vocab work is orphaned; the public OMOP vocabulary remains freely available if any future third-party-reproducible line needs it.
-
 ## [t082] Scope-boundary decision: does writing runnable pipeline code move PAIS past seed-stage literature-synthesis? (gates all plan:0006 code)
 - priority: P2
 - status: deferred
@@ -192,19 +164,6 @@ The patch (Status & next steps) names this as the next step for the contested ca
 - created: 2026-07-01
 
 The patch parks HPA/cortisol as 'high-plausibility / thin-PAIS-evidence', which may undersell it - hypocortisolism in ME/CFS is a decades-old replicated finding and HPA is a master immune regulator + rhythm-sensitive (ties to the circadian bridge task). Run a focused /science:search-literature pass to calibrate the actual evidence weight and decide whether HPA promotes from prose candidate to an edged upstream forcing node in the landscape, or stays deferred. related: patch:immune-state-shift-causal-landscape, hypothesis:0001.
-
-## [t096] explore-followup batch 2: resolution-failure & thromboinflammatory coupling (q0035,q0038,q0025)
-- priority: P2
-- status: proposed
-- aspects: []
-- group: explore-followups
-- created: 2026-07-04
-
-Entities: q0035 (specialized pro-resolving mediator deficit as distinct endotype - novel), q0038 (NETosis histones/eDNA as microclot scaffold coupling vascular+autoimmune arms), q0025 (IFN-I -> tryptophan malabsorption -> platelet serotonin depletion -> vagal hypofunction cognition chain). Follow-up: research-papers on resolution biology (SPMs/lipoxins) and NET-microclot mechanisms in PAIS.
-
-### Notes
-
-- 2026-07-06: explore-2026-07-06 addition (resolution-failure & thromboinflammatory coupling): + h0014 (NK/macrophage failure to clear virus-induced senescent endothelium -> SASP propagation as PAIS-persistence determinant). NOTE: two other 2026-07-06 mechanism entities open NEW threads not covered by any existing batch and are flagged for a future batch: q0048 (glymphatic clearance failure as self-amplifying neurocognitive loop) and h0013 (IDO1-IDO2 bistable tryptophan metabolic trap).
 
 ## [t098] explore-followup batch 4: causal-inference & measurement methodology (q0027,q0030,q0039,q0028,q0029)
 - priority: P2
@@ -253,16 +212,6 @@ Entities: q0036 (critical-slowing-down premonitory early-warning signals - novel
 - created: 2026-07-04
 
 Cross-domain analogies sharpening existing persistence/autoimmunity topics. Entities: q0043 (bacterial persister-cell bet-hedging as model for stochastic viral dormancy in tissue reservoirs), q0044 (chronic GvHD as analogy for post-viral tolerance-infrastructure collapse). Follow-up: research-papers bridging persister-cell biology and cGvHD tolerance literature into topic:antigen-pathogen-persistence and topic:post-infectious-dysautonomia-and-autoimmunity.
-
-## [t103] Scope/feasibility of the ≥3-trigger harmonized cross-pathogen co-enrollment study (q0050)
-- priority: P2
-- status: proposed
-- aspects: []
-- related: [question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design, question:0001-shared-molecular-signature-across-triggers, question:0017-deflationary-alternatives-vs-shared-pathophysiology, hypothesis:0001-shared-dysregulated-attractor]
-- group: explore-followups
-- created: 2026-07-06
-
-The project's named discriminating experiment now has a dedicated entity (q0050). Assess feasibility of a prospective multi-arm co-enrollment (serologically-confirmed acute COVID-19/Lyme/influenza/EBV/Q-fever within a common 4-12wk window, matched uninfected controls, harmonized multi-omics): recruitment logistics, power, and whether achievable Ns resolve shared-vs-trigger-specific signatures. Deliver a go/no-go + staged-design recommendation (start with highest-incidence/most-confirmable triggers to reach the >=3-trigger bar). Anchors: Trautmann2025 (incompatible designs limit comparison), Thomas2026/MELLOW (harmonized dense-sampling feasible). Contrast with the underpowered public 2-cohort GEO pairings (t035 null).
 
 ## [t106] Seed remaining trained-immunity anchor papers into the innate-memory topic (Gu2023, Bomans2018, Mitroulis2018)
 - priority: P3
@@ -333,3 +282,11 @@ From t109 gap scan. Augustin2025 (DOI 10.1093/ofid/ofae631.2136, PMC11779031) is
 - created: 2026-07-07
 
 From t109 gap scan. Chaudhary et al. medRxiv 2024.10.07.24315052 — multi-ancestry (European/Latinx/African-American) meta-analysis; 3 GW-significant loci incl. BPTF-KPNA2-C17orf58 beyond HLA/ABO; genetic correlations with ME/CFS, fibromyalgia, depression; FOXP4 rs9367106 NOT significant here. Currently cited in topic as a PREPRINT — do not seed as a paper entity until a peer-reviewed version is confirmed. NB: 23andMe cohort is US-based self-report, does NOT close the LMIC-mechanism gap.
+
+## [t116] Power/bias-floor simulation for the harmonized ≥3-trigger shared-axis test (interp-0001 Q-A, gate for q0050 staged GO)
+- priority: P2
+- status: proposed
+- aspects: []
+- created: 2026-07-07
+
+Before any cohort commitment on the interpretation:0036 CONDITIONAL-GO staged design, run the power/bias-floor simulation flagged as Q-A in interpretation:0001 (t035 null). Question: at achievable dense-multi-omic per-arm N (tens, MELLOW-scale) across ≥3 harmonized arms, does a shared-latent-factor test clear the ARBITRATING bar (not merely the Monte-Carlo bar)? Seed with MELLOW-scale multi-omic dispersion + the t035 observed NES dispersion. Deliverable: minimum arm-count × per-arm-N surface that makes the shared pathway-axis contrast arbitrating vs the q0017 null. Gates the go/no-go from feasible→fundable. Refs: interpretation:0036, interpretation:0001, question:0050, hypothesis:0001.

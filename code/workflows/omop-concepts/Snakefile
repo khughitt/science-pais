@@ -1,0 +1,61 @@
+# science:code
+# status: workflow-owned
+# task_ids: [t081]
+# science:end
+
+# =============================================================================
+# Snakefile — OMOP concept_id vocabulary-validity verification (task:t081)
+#
+# Thin orchestrator: reads config.yaml (all inputs), the rule hard-codes nothing.
+# Resolves each autoimmune-stratum SNOMED seed code to its OMOP concept_id via
+# the public OHDSI ATLAS demo WebAPI and verifies it is Standard/Valid/Condition-
+# domain. This is the check the ATHENA 403 blocked for interpretation:0032
+# (t079/BC-3), leaving the concept_ids [UNVERIFIED] on dataset:n3c-recover-longcovid.
+# (ATHENA's own /concepts search is HTTP 403; the ATLAS demo WebAPI is the open,
+# reproducible substitute — see config.yaml `vocab_api`.)
+#
+# Run (ambient uv venv — stdlib + PyYAML only, no conda needed):
+#     uv run --frozen snakemake -s code/workflows/omop-concepts/Snakefile -c1 verify
+# Or with the pinned conda env for reproducibility parity:
+#     uv run snakemake -s code/workflows/omop-concepts/Snakefile --use-conda -c1 verify
+#
+# Output (results/* is gitignored — regenerable evidence, not committed):
+#     results/omop-concept-verification/concept_manifest.json   (provenance record)
+#     results/omop-concept-verification/concept_verification.md  (human summary)
+# The VERIFIED concept_ids are transcribed by the curator into
+# dataset:n3c-recover-longcovid + interpretation:0032 to resolve the marker.
+#
+# Design: interpretation:0032-t079-bc3-autoimmune-stratum-granularity
+# =============================================================================
+from pathlib import Path
+
+# --- invocation contract (invocation-independent, plan:0003 pattern) ---------
+SNAKEFILE_DIR = Path(workflow.basedir).resolve()
+REPO_ROOT = SNAKEFILE_DIR.parent.parent.parent      # omop-concepts → workflows → code → root
+SCRIPTS = Path("code/workflows/omop-concepts/scripts")
+CONFIGFILE = str(SNAKEFILE_DIR / "config.yaml")
+configfile: CONFIGFILE
+workdir: str(REPO_ROOT)
+
+RESULTS = config["paths"]["results"]
+MANIFEST = f"{RESULTS}/concept_manifest.json"
+SUMMARY = f"{RESULTS}/concept_verification.md"
+
+
+rule verify:
+    input:
+        MANIFEST,
+        SUMMARY,
+
+
+rule verify_concepts:
+    output:
+        manifest=MANIFEST,
+        summary=SUMMARY,
+    conda:
+        "envs/py.yaml"
+    params:
+        config=CONFIGFILE,
+    shell:
+        "python {SCRIPTS}/fetch_concepts.py --config {params.config} "
+        "--manifest {output.manifest} --summary {output.summary}"
