@@ -12,10 +12,11 @@ origins:
   ref: explore-ideas-mechanism
 related:
 - question:0010-vascular-microclot-subphenotype
+- question:0038-netosis-released-histones-and-extracellular-dna-as-the-structural
 - hypothesis:0001-shared-dysregulated-attractor
 - hypothesis:0003-immune-exhaustion-feedback
 created: '2026-07-06'
-updated: '2026-07-06'
+updated: '2026-07-07'
 added_by: explore-ideas:claude-opus-4-8:cand-mechanism-nk-clearance-endothelial-senescence-pais
 lens_views:
 - lens: mechanism
