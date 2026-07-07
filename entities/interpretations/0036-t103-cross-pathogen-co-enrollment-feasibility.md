@@ -6,6 +6,8 @@ status: active
 source_refs:
   - cite:Trautmann2025
   - cite:Thomas2026
+  - cite:Lantos2020
+  - cite:Schneeberger2014
 related:
   - task:t103
   - question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design
@@ -38,8 +40,9 @@ acute triggers — COVID-19, Lyme, influenza, EBV, Q-fever — co-enrolled *simu
 4–12-week window at one site) is **NOT feasible** and should not be pursued in that form. But the design
 it stands in for — the "harmonized ≥3-trigger multi-omics with full-recovery controls" that
 `hypothesis:0001` names as its strongest discriminating test — **is feasible in a staged build** that
-reaches the ≥3-trigger bar with the three highest-incidence, most-confirmable, year-round-recruitable
-triggers first: **COVID-19 + influenza + EBV (acute infectious mononucleosis)** as **Tier 1**, with Lyme
+reaches the ≥3-trigger bar with the three highest-incidence, most-confirmable, routine-acute-care/
+student-health-recruitable triggers first (influenza seasonal, the other two year-round):
+**COVID-19 + influenza + EBV (acute infectious mononucleosis)** as **Tier 1**, with Lyme
 (Tier 2, endemic-site + erythema-migrans clinical entry) and Q-fever (Tier 3, outbreak/endemic-gated)
 added opportunistically. The binding constraint is **acute recruitment and confirmation heterogeneity,
 not scientific value and not omics** — and a staged triad routes around it while still clearing the
@@ -66,23 +69,27 @@ Feasibility triage against four axes. The per-trigger recruitment/confirmation s
 | **COVID-19** | Very high, year-round; primary care / test-positive registries | PCR (acute) → anti-N seroconversion; robust | Yes (days) | Broad; spans age/sex | **1** |
 | **Influenza** | High but **strongly seasonal**; acute clinics in winter | PCR/antigen — **acute-window-only** (narrow) | Yes (days) | Broad | **1** |
 | **EBV (acute IM)** | Moderate in adolescents/young adults; **student-health** channel | VCA-IgM⁺ / EBNA-1-IgG⁻ pattern; heterophile; robust | Yes (weeks) | **Young-adult skew** — age-confounded arm | **1** |
-| **Lyme (acute)** | Geographically + seasonally concentrated (endemic NE/upper-Midwest US, parts of EU; late spring–summer) | **Serology insensitive in early disease**; erythema migrans is a *clinical* diagnosis, seroconversion lags | EM gives clinical date; serology window mismatch | Outdoor/occupational skew | **2** |
-| **Q-fever (acute)** | **Rare** outside outbreaks; livestock/abattoir/endemic exposure | Phase-II IgG/IgM seroconversion (paired sera) | Weeks; often retrospective | Strong occupational/male/rural skew | **3** |
+| **Lyme (acute)** | Geographically + seasonally concentrated (endemic NE/upper-Midwest US, parts of EU; late spring–summer) | **Serology insensitive in early disease** (~20–40%); erythema migrans is a *clinical* diagnosis, seroconversion lags [@Lantos2020] | EM gives clinical date; serology window mismatch | Outdoor/occupational skew | **2** |
+| **Q-fever (acute)** | **Rare** outside outbreaks; livestock/abattoir/endemic exposure [@Schneeberger2014] | Phase-II IgG/IgM seroconversion (paired sera) | Weeks; often retrospective | Strong occupational/male/rural skew | **3** |
 
 Axis findings:
 
 - **Recruitment/incidence is the binding constraint.** Three triggers (COVID, influenza, EBV) are
   recruitable through routine acute-care + student-health channels in a single metro region; influenza
   adds only a seasonal window. The remaining two are structurally hard: **Lyme** is endemic-region- and
-  season-locked, and **Q-fever** is essentially outbreak-gated (the classic QFS cohorts derive from the
-  Dutch 2007–2010 outbreak and Australian abattoir settings). A five-arm *simultaneous* enrollment at one
-  site is therefore not realistic; a staged/multi-site accrual is.
+  season-locked, and **Q-fever** is essentially outbreak-gated — the largest Q-fever outbreak ever
+  documented (the Dutch 2007–2010 epidemic, ~4,026 notified cases, dairy-goat/sheep source) is the classic
+  acute-QFS accrual setting, alongside Australian abattoir cohorts [@Schneeberger2014]. A five-arm
+  *simultaneous* enrollment at one site is therefore not realistic; a staged/multi-site accrual is.
 - **Confirmation modality is irreducibly heterogeneous.** The gold standard and the confirmable window
   differ per pathogen (acute PCR for flu; IgM/EBNA pattern for EBV; EM-clinical-plus-convalescent-
   seroconversion for Lyme; paired-sera phase-II for Q-fever). "Confirmed within a common 4–12-wk window"
-  is internally inconsistent for **acute Lyme** specifically (the most-confirmable acute Lyme is EM, which
-  is clinical, while two-tier serology is insensitive early) — this is a design contradiction to fix, not
-  a blocker: use **per-arm confirmation SOPs** under one harmonized *omics* protocol.
+  is internally inconsistent for **acute Lyme** specifically: the IDSA/AAN/ACR 2020 guideline diagnoses
+  erythema migrans **clinically** precisely because standard two-tier serology is too insensitive early
+  (positivity ~20–40%), recommending acute-phase serum with a convalescent follow-up for atypical EM
+  [@Lantos2020] — so the most-confirmable acute Lyme is *not* serologically confirmable at entry. This is a
+  design contradiction to fix, not a blocker: use **per-arm confirmation SOPs** under one harmonized
+  *omics* protocol.
 - **Control frame must be strengthened vs q0050.** `hypothesis:0001` predicts a shared pathway signature
   "present in cases of all triggers **and absent in recovered controls**." Uninfected controls alone
   cannot separate *trigger biology* from *PAIS biology*; infected-recovered controls within each arm can.
@@ -93,10 +100,13 @@ Axis findings:
   co-enrollment design's core value is precisely that it **removes that bias term** (one platform, one
   compartment, one timing window, one SOP), converting "effective n = 2 cohorts" into "effective n = ≥3
   harmonized arms × participants-per-arm." At dense-multi-omic cost (MELLOW-scale ⇒ arms of *tens*, not
-  thousands), achievable N is adequate for the **shared *pathway/latent-factor* axis** — the level
-  `hypothesis:0001` actually operates at (a "degenerately realized" macro-state, not a shared molecule) —
-  but underpowered for **trigger-specific fine-molecular discovery**, which should be pre-registered as
-  exploratory-only.
+  thousands), achievable N is **plausibly aligned with the *shared pathway/latent-factor* estimand** — the
+  level `hypothesis:0001` actually operates at (a "degenerately realized" macro-state, not a shared
+  molecule) — and clearly **wrong-sized for trigger-specific fine-molecular discovery** (⇒ exploratory-only).
+  **This is a directional argument, not a power result:** whether the triad's per-arm N actually clears the
+  *arbitrating* bar for the shared-axis test is precisely what the pending power/bias-floor simulation
+  (Updated Priorities #4) must decide. Until that sim runs, the supported claim is "estimand-aligned and
+  worth simulating," **not** "adequately powered."
 
 ## Evidence Quality
 
@@ -119,12 +129,14 @@ boundary:
   operative lever (bias-not-variance ceiling) and the empirical argument that further public-data pairings
   are the wrong spend.
 
-Incidence and confirmation-window characterizations in the table are general-epidemiology-grade and
-[UNVERIFIED] at the level of exact numbers (no region-specific incidence model was built), but the
-*structural* facts driving the tiering (flu
-seasonality, EBV young-adult/student-health channel, early-Lyme serology insensitivity + EM-as-clinical,
-Q-fever outbreak-concentration) are well-established qualitative constraints and are what the decision
-rests on.
+The two most **decision-load-bearing** structural facts are now guideline-/review-sourced, not asserted:
+early-Lyme two-tier serology insensitivity with EM as a *clinical* diagnosis (IDSA/AAN/ACR 2020,
+[@Lantos2020]) and the outbreak-gated nature of acute-Q-fever accrual (Dutch 2007–2010 epidemiology,
+[@Schneeberger2014]). The remaining tiering inputs — exact per-region incidence, flu seasonality
+magnitude, the EBV young-adult/student-health channel — are general-epidemiology-grade and [UNVERIFIED] at
+the level of precise numbers (no region-specific incidence model was built), but are well-established
+qualitative constraints; a formal incidence/power model is the natural next deliverable if this GO is
+acted on.
 
 ## Data Quality Checks
 
@@ -132,11 +144,12 @@ Not an empirical-results interpretation; no dataset QA was run. The relevant "da
 structural feasibility hazards that feed the staged design:
 
 - **Confirmation-window mismatch (Lyme):** the acute-serology gate is self-contradictory for the most
-  confirmable acute Lyme (EM) — a *design* defect in q0050 as written, resolved by per-arm SOPs.
+  confirmable acute Lyme (EM, a clinical diagnosis; two-tier serology ~20–40% sensitive early) — a
+  *design* defect in q0050 as written, resolved by per-arm SOPs [@Lantos2020].
 - **Seasonality (influenza, Lyme):** neither is year-round-recruitable; the enrollment calendar, not just
   the site, is a constraint.
 - **Outbreak-dependence (Q-fever):** accrual cannot be scheduled — it must be opportunistic on an active
-  outbreak or a standing endemic-region collaboration.
+  outbreak or a standing endemic-region collaboration [@Schneeberger2014].
 - **Demographic confounding by arm (EBV young; Lyme/Q-fever occupational):** arms are intrinsically
   confounded with age/sex/exposure; this must be designed-in (within-trigger recovered controls + explicit
   cross-arm matching/modelling), consistent with Trautmann2025's covariate warning. **No data-quality
@@ -164,16 +177,18 @@ it is constructible in staged form.
   outcome for a hypothesis whose promotion has been held (interp 0001) precisely for lack of an
   arbitrating vehicle.
 - **question:0017 (deflationary bundle) — a design that can *score against it* now exists.** The staged
-  triad, powered at the pathway-axis level with full-recovery controls, is the first vehicle capable of
-  returning an *arbitrating* result (shared-axis present-and-trigger-invariant vs absent), rather than the
-  non-arbitrating null the 2-cohort route is structurally bound to.
+  triad, *aimed at* the pathway-axis level with full-recovery controls, is the first vehicle *structurally
+  capable* of returning an *arbitrating* result (shared-axis present-and-trigger-invariant vs absent) —
+  rather than the non-arbitrating null the 2-cohort route is structurally bound to. Whether it *is*
+  arbitrating at achievable N is the power-sim's call (#4), not yet established here.
 
 ## Evidence vs. Open Questions
 
 - **question:0001 (shared molecular signature) — route unblocked, not answered.** The decisive ≥3-trigger
-  harmonized test is now shown constructible; what it would find is still open. The estimand it can
-  actually deliver is a **pathway/latent-factor shared axis** (well-powered at dense-omic N), not a
-  fine-grained trigger-specific molecular catalog (underpowered — exploratory only).
+  harmonized test is now shown constructible; what it would find is still open. The estimand it is *aimed
+  at* is a **pathway/latent-factor shared axis** (the level achievable dense-omic N is plausibly aligned
+  with — power pending the #4 simulation), not a fine-grained trigger-specific molecular catalog
+  (wrong-sized — exploratory only).
 - **question:0050 — feasibility gate cleared** (staged GO); the empirical question is handed forward to a
   pre-registration + costed protocol.
 - **question:0017 — unchanged standing**, now with a buildable arbitrating vehicle on the horizon.
@@ -201,9 +216,11 @@ it is constructible in staged form.
 - **MELLOW de-risks omics, not acute recruitment.** The single largest residual uncertainty is whether
   *acute* multi-arm accrual (catching confirmed-acute cases inside 4–12 wk across channels) sustains the
   needed per-arm N on a realistic calendar — MELLOW's chronic-condition precedent does not speak to it.
-- **Power verdict is estimand-conditional.** "Feasible/adequately-powered" holds for the *shared
-  pathway-axis* contrast only; a stakeholder wanting trigger-specific molecular discovery would find the
-  achievable N insufficient, and should be told so before funding.
+- **No power result is claimed.** This triage argues the *shared pathway-axis* estimand is the right
+  target and that achievable N is plausibly aligned with it — but "adequately powered" is **not** yet
+  established for any contrast; it is the deliverable of the pending power/bias-floor simulation (#4). A
+  stakeholder wanting trigger-specific molecular discovery would in any case find the achievable N
+  wrong-sized, and should be told so before funding.
 - **This is a feasibility verdict, not a protocol.** No site, IRB, assay panel, sampling cadence, or
   power calculation is committed here; the GO licenses drafting those, not skipping them.
 
@@ -217,7 +234,8 @@ it is constructible in staged form.
    within-trigger PAIS-vs-**recovered** (full-recovery controls per h0001), shared uninfected frame
    secondary; (b) **per-arm confirmation SOPs** under one harmonized multi-omic sampling protocol.
 3. **Pre-register the shared *pathway-axis* signature as primary; trigger-specific molecular discovery as
-   exploratory** — matching the estimand the achievable N can actually carry and the level h0001 predicts.
+   exploratory** — matching the estimand achievable N is plausibly aligned with (power to be confirmed by
+   #4) and the level h0001 predicts.
 4. **Run the power/bias-floor simulation (interp-0001 Q-A) *before* any cohort commitment** — seed it with
    MELLOW-scale dispersion; it is the cheap gate that decides whether even the harmonized triad clears the
    arbitrating bar. Recommend a follow-up task for this simulation.

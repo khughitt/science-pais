@@ -17,7 +17,7 @@ related:
 - question:0017-deflationary-alternatives-vs-shared-pathophysiology
 - hypothesis:0001-shared-dysregulated-attractor
 created: '2026-07-06'
-updated: '2026-07-06'
+updated: '2026-07-07'
 added_by: explore-ideas:claude-opus-4-8:cand-methodology-cross-pathogen-harmonized-design
 lens_views:
 - lens: methodology
@@ -81,8 +81,10 @@ form of the discriminating experiment the project repeatedly names but does not 
   opportunistically. Two design corrections are load-bearing: (a) primary control frame must be
   **full-recovery (infected-recovered) controls** per `hypothesis:0001`, not the "matched uninfected
   controls" written above; (b) confirmation is **per-arm SOPs** under one harmonized *omics* protocol, not
-  a single common assay. Power is adequate for the **shared pathway/latent-factor axis** (the level h0001
-  predicts) but not trigger-specific molecular discovery (exploratory-only). Harmonization's core value is
+  a single common assay. Achievable N is *plausibly aligned with* the **shared pathway/latent-factor axis**
+  (the level h0001 predicts) — but "adequately powered" is **not** yet established; that is the deliverable
+  of the pending power/bias-floor simulation. Trigger-specific molecular discovery is wrong-sized at
+  achievable N (exploratory-only). Harmonization's core value is
   removing the between-cohort **bias** ceiling that made the t035 public-data route non-arbitrating
   (`interpretation:0001`). Next gate: run the power/bias-floor simulation (interp-0001 "Q-A") before any
   cohort commitment.
