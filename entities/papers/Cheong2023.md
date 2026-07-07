@@ -17,12 +17,6 @@ ontology_terms:
 - innate immune memory
 - COVID-19
 - convalescence
-dataset_usage:
-- id: geo:GSE196990
-  role: reanalysis-candidate
-  notes: "snRNA/ATAC-seq (PBMC-PIE workflow) across 168 enrolled participants — severe
-    COVID-19 convalescent (Early + Late), nonCoV critically ill, healthy; raw + processed
-    data deposited; analysis code at Zenodo 10.5281/zenodo.8097411"
 source_refs:
 - cite:Cheong2023
 related:
@@ -128,7 +122,7 @@ Severe SARS-CoV-2 infection durably reprograms hematopoietic stem and progenitor
 
 ## Model / Tool Availability
 
-**Data:** All raw and processed data are deposited at GEO under accession **GSE196990**. This is a reanalysis candidate (snRNA/ATAC-seq across 168 enrolled participants, four clinical groups) — see `dataset_usage` frontmatter.
+**Data:** All raw and processed data are deposited at GEO under accession **GSE196990** (snRNA/ATAC-seq across 168 enrolled participants, four clinical groups) — a reanalysis candidate for the opportunistic HSPC-epigenomics feasibility work (t107). Not yet registered as a `dataset:` entity; register it there if/when it becomes an actual analysis input.
 
 **Code:** Analysis scripts at GitHub (https://github.com/sharmasiddhartha231/Final_Covid19_Scripts) and archived at Zenodo (10.5281/zenodo.8097411). Snakemake used for bulk RNA-seq workflow (STAR + DESeq2).
 
