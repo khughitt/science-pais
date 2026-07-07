@@ -225,19 +225,21 @@ PAIS substrate.
 **In the PAIS context (limited; epidemiological rather than mechanistic):** Hammel et al. (2023) analyzed
 frailty as a PASC risk factor in **245,857** US veterans (July 2021–February 2022) using the **31-item VA
 Frailty Index** (a deficit-accumulation index derived from EHR data — *not* the Fried frailty phenotype)
-and the VA COVID-19 Shared Data Resource [@Hammel2023]. Frailty was associated with a ~40% increase in
-PASC risk (adjusted HR 1.40, 95% CI 1.35–1.47) and pre-frailty with a ~17% increase (aHR 1.17, 95% CI
-1.11–1.19), compared with robust individuals. The association held across both the Delta and Omicron
+and the VA COVID-19 Shared Data Resource [@Hammel2023]. Within 6 months of infection, frailty was
+associated with a ~41% increase in PASC risk (adjusted HR 1.41, 95% CI 1.35–1.47) and pre-frailty with a
+~15% increase (aHR 1.15, 95% CI 1.11–1.19), compared with robust individuals (Table 2 / body values; the
+abstract's "1.40 / 1.17" are internal typos). The association held across both the Delta and Omicron
 periods. This is *consistent with* frailty being a graded PASC predictor — relevant to hypothesis
 h0004 (the threshold/reserve model predicts that those with lower baseline reserve should cross the
-self-sustaining threshold at lower acute severity). **Resolved caveat (t113 full-text check, 2026-07-07):**
-the Cox model's covariate list — age, sex, race, ethnicity, BMI, smoking, primary-care-visit count,
-rurality, vaccination, and wave — does **not** include *acute-illness severity* (hospitalization/ICU/oxygen).
-The "independent of severity" reading that h0004 leaned on is therefore **not supported**: the frailty→PASC
-estimate is unadjusted for the frailty→acute-severity→PASC path, so it does not cleanly separate host reserve
-from acute severity. The graded frailty→PASC dose-response stands; only its independence-from-severity does
-not. (Provenance: Google-indexed Wiley full text via web search; direct agent PDF access 402/403-blocked —
-not a verbatim direct-PDF read.)
+self-sustaining threshold at lower acute severity). **Two resolved caveats (t113 full-text check via
+user-provided PDF, 2026-07-07):** (1) the Cox covariate list — age, sex, race, ethnicity, BMI, smoking,
+primary-care-visit count, rurality, vaccination, and wave — does **not** include *acute-illness severity*
+(hospitalization/ICU/oxygen), so the "independent of severity" reading h0004 leaned on is **not supported**:
+the frailty→PASC estimate is unadjusted for the frailty→acute-severity→PASC path and does not cleanly
+separate host reserve from acute severity. (2) The frailty effect is confined to ≤6 months — the authors'
+own >6-month Cox model found **no** frailty–PASC association (p=0.21 frail, p=0.13 pre-frail), so the reserve
+signal does not extend to the durable state h0004 concerns and may partly reflect early ascertainment. The
+graded early-PASC dose-response stands; its independence-from-severity and its durability do not.
 
 **The bidirectional coupling hypothesis (plausible; essentially untested as a PAIS claim):** PAIS may
 itself deepen frailty — the post-infectious state could accelerate inflammaging, exhaust residual immune
@@ -532,7 +534,7 @@ inclusion in a dataset plan.
 ## Key References
 
 - Vinson2024: N3C propensity-score-matched analysis of PASC in solid organ transplant recipients; establishes paradoxically higher PASC rate in immunosuppressed SOTRs (2.2% vs 1.4%, aOR 1.48); mycophenolate mofetil independently associated (aOR 2.04). (Originally mis-keyed as "Frontera2024" with corrupt identifiers; corrected 2026-07-07.)
-- Hammel2023: frailty as a PASC risk factor in US veterans (N=245,857; Delta and Omicron) using the 31-item VA Frailty Index (deficit-accumulation, NOT Fried); frailty aHR 1.40 (95% CI 1.35–1.47), pre-frailty aHR 1.17. **t113 (2026-07-07) resolved the covariate list: acute-illness severity (hospitalization/ICU/oxygen) was NOT in the adjustment set** — so "independent of severity" is *not supported*; the frailty→PASC estimate is unadjusted for the frailty→acute-severity path. Treat as a graded frailty–PASC association, not a clean reserve-vs-severity separation.
+- Hammel2023: frailty as a PASC risk factor in US veterans (N=245,857; Delta and Omicron) using the 31-item VA Frailty Index (deficit-accumulation, NOT Fried); frailty aHR 1.41 (95% CI 1.35–1.47), pre-frailty aHR 1.15 (≤6-month model; abstract's 1.40/1.17 are typos). **t113 (2026-07-07, full-text PDF) confirmed two limits: (a) acute-illness severity (hospitalization/ICU/oxygen) was NOT in the adjustment set** — "independent of severity" *not supported*, estimate unadjusted for the frailty→acute-severity path; **(b) the frailty effect is confined to ≤6 months** — the authors' >6-month model found no association (p=0.21). PASC = CDC ICD-10 codes (U09.9/U07.1/Z86.16/J12.82), ≥4 wk. Treat as a graded *early*-PASC association, not a clean or durable reserve-vs-severity separation.
 - Jassat2023: Lancet commentary on long COVID as a hidden public health crisis in LMICs; documents research gap and high observed burden in South African cohort.
 - Bruno2024: RECOVER EHR cohort analysis; COVID during pregnancy associated with lower overall PASC but higher cardiac/vascular PASC and lower cognitive/fatigue PASC — a mechanistically informative dissociation.
 - Hickie2006: Dubbo Infection Outcomes Study; foundational prospective cohort establishing that EBV-induced IM (and other pathogens) precipitates CFS-equivalent post-infectious syndromes at ~11%, with illness severity as primary predictor.
