@@ -30,38 +30,28 @@ lens_views:
 
 ## Summary
 
-<!-- What is being asked and why it is important. -->
-
-## Why It Matters
-
-<!-- Bulleted list. Cover at least:
-- the decision this question affects
-- the risk if the question is left unanswered
--->
+Is cytosolic-DNA sensing via cGAS → STING → TBK1 → IRF3 the innate sensor that initiates and *sustains* the persistent type-I IFN signature in PAIS — without requiring active viral replication? Naming this sensor would make the loop pharmacologically actionable (STING antagonists / cGAS inhibitors) without globally suppressing antiviral immunity. It is also engaged by EBV reactivation and Borrelia-induced DNA damage — a candidate shared cross-trigger step.
 
 ## Current Evidence
 
-<!-- Bulleted list. Cover at least:
-- supporting evidence
-- conflicting evidence
--->
+- **Legitimate on general innate-immunology grounds.** mtDNA / micronuclear dsDNA / viral nucleic-acid fragments do activate cGAS-STING → IFN-I independent of replication; SARS-CoV-2 is reported to release mtDNA that engages this axis. The question stands on its own as an "upstream driver of persistent IFN-I" candidate.
+- **Trained-immunity locus grounding was sought and NOT found (t112, 2026-07).** A dedicated literature pass found **no primary study reporting chromatin accessibility or activating histone marks at cGAS / STING (TMEM173) / IRF / ISG loci in trained myeloid cells**. The only primary STING↔trained-immunity link is *functional* (STING agonism, e.g. c-di-AMP-overexpressing BCG, augments training; type-I-IFN signaling gates β-glucan-driven hematopoietic expansion) — no locus-level epigenomic readout at the sensor loci exists.
+- **Consequence:** the earlier framing that trained HSPCs carry elevated STING/IFN-locus accessibility, or that a chronic-STING chromatin imprint sustains IFN-I without ongoing ligand, is a **hypothesis, not an evidenced link**. This sub-branch has been *severed* from the trained-immunity epigenomic axis in `topic:innate-immune-memory-trained-immunity-in-pais` pending primary locus-level evidence.
 
 ## Thoughts
 
-<!-- Bulleted list. Cover at least:
-- the best current interpretation
-- the major remaining uncertainty
--->
+- Best current interpretation: keep q0023 as a general-immunology IFN-I-driver question; do **not** present it as an established trained-immunity epigenomic sub-mechanism.
+- Major remaining uncertainty: whether cGAS-STING is upstream (seeding signal) or downstream (trained-cell output) of any myeloid reprogramming in PAIS — untested.
 
 ## Connections to Project
 
-- Related hypotheses:
-- Required datasets: list dataset IDs in frontmatter `datasets:`.
-- Required analyses:
-- Priority level:
+- Related hypotheses: `hypothesis:0003` (sterile self-sustaining stimulus branch), `question:0006` (JAK-STAT/IFN driver-vs-marker).
+- Required datasets: none yet.
+- Required analyses: none yet.
+- Priority level: P3.
 
 ## Related
 
-- Topic notes:
+- Topic notes: `topic:innate-immune-memory-trained-immunity-in-pais` (q0023 sub-axis, grounding severed)
 - Article notes:
 - Methods/Datasets:
