@@ -193,39 +193,6 @@ The patch (Status & next steps) names this as the next step for the contested ca
 
 The patch parks HPA/cortisol as 'high-plausibility / thin-PAIS-evidence', which may undersell it - hypocortisolism in ME/CFS is a decades-old replicated finding and HPA is a master immune regulator + rhythm-sensitive (ties to the circadian bridge task). Run a focused /science:search-literature pass to calibrate the actual evidence weight and decide whether HPA promotes from prose candidate to an edged upstream forcing node in the landscape, or stays deferred. related: patch:immune-state-shift-causal-landscape, hypothesis:0001.
 
-## [t089] Wave-1: run open GWAS/MR analysis for sex×autoimmune PAIS questions
-- priority: P3
-- status: active
-- aspects: []
-- related: [task:t088]
-- created: 2026-07-03
-
-Execute the MR handoff in doc/plans/2026-07-03-gwas-mr-ingestion-handoff.md. UNBLOCKED by D-005 / completed t088. Scope remains limited to the Wave-1 open GWAS/MR pilot; cataloging/handoff is already done, and the next step is /science:plan-pipeline before any analysis code.
-
-### Notes
-
-- 2026-07-04: Authored plan:0008 (Wave-1 MR full design) — the design the pilot GO pointed to: EUR-matched outcome sourcing ladder (WP1, lifts the ancestry hard-stop), Ruth sex-stratified hormone arm + MRlap Ruth-HGI overlap correction (WP2/WP5), config-driven analysis matrix over the pilot harness (WP3), broad/strict + HLA-inclusive sensitivities (WP4), reverse-direction MR as a shared-liability/directionality sensitivity for q0022 (h0009 contextual only — its acquired-state conversion arrow is not MR-identifiable, KD6) (WP6), pre-registration + acceptance-gate assembly (WP7). Validated PASS.
-- 2026-07-04: WP0 (D-005 authorisation scope gate) discharged by D-006: EUR long-COVID outcome via the Long COVID HGI DF4 distribution (LocusZoom, GRCh38, public) is the same authorised HGI vehicle → in-scope; eur_w_ld_chr + HapMap3 = infrastructure → in-scope; FinnGen held as a distinct vehicle pending separate authorisation + reproducibility check. WP1/WP2 unblocked; FinnGen rung 3 blocked.
-- 2026-07-04: WP1 EUR-outcome sourcing: NEGATIVE (definitive). No EUR-only Long COVID sumstats file is publicly downloadable — HGI DF4 deposited only 4 multi-ancestry (Euro-dominant ~85-90%) strata; the paper's EUR-only analysis was internal, not deposited; NatCardioVasc-2025 reuses multi-ancestry HGI+FinnGen. Ancestry hard-stop not liftable from a downloadable EUR-only HGI file. Fork held for user: accept KD1 demotion (Euro-dominant, ancestry-flagged, non-primary) vs authorise FinnGen r10 (new decision + reproducibility check + Finnish-isolate caveat).
-- 2026-07-04: Re-scope decision (2026-07-04): plan:0008 full reportable-primary design BANKED (deferred) — no matched EUR outcome downloadable, all estimates cap at ancestry-flagged/non-primary. Authored plan:0009 (Arm-B sex-hormone pilot): SHBG + total-testosterone (combined/male/female) -> long-COVID, MRlap overlap-corrected, ancestry-flagged exploratory; the hormone analogue of plan:0007, targeting the central sex/female-predominance question (h0005/q0007/q0013). Revisit trigger to resume plan:0008: a matched EUR long-COVID/PAIS GWAS becomes downloadable.
-- 2026-07-04: Pipeline-reviewed plan:0009 (Arm-B hormone pilot) — Overall WARN (execution-ready for probe goal). Report: doc/reviews/0009-wave1-mr-hormone-pilot-pipeline-review.md. Load-bearing finding (Dim 8, verified vs MRlap README): MRlap runs cross-trait LDSC + munging internally (GenomicSEM, R) from raw sumstats given ld/hm3 paths, and prunes instruments by internal distance — so (a) the separate python ldsc.yaml munge stage is redundant/misspecified, (b) GenomicSEM (GitHub-only) needs pinning, (c) naive-1000G-clumped arm and MRlap arm are not on the same instrument set. Dim 3: eur_w_ld_chr/HapMap3 has no dataset entity yet + canonical source is a fragile UT-Austin Box link (register from archival/checksummed source before Task 4, à la 1000G Zenodo hardening); consumed_by on the 3 datasets omits plan:0009. PASS on identifiability, validation (real-data MRlap scale/resource run mandated), scope, manifest.
-- 2026-07-04: Applied plan:0009 pipeline-review findings (report Resolution 2026-07-04): dropped the redundant python-ldsc/ldsc.yaml munge stage — MRlap does LDSC+munge internally (GenomicSEM) on raw sumstats + ld/hm3 paths; pinned r-genomicsem by commit alongside r-mrlap; pinned MRlap internal pruning params + stated naive↔MRlap instrument-set non-identity; required LDSC/HapMap3 ref from an archival checksummed source (not the UT-Austin Box link) with entity+gate before Task 4 and consumed_by += plan:0009 on the 3 datasets; added SHBG↔testosterone-coupling + weak-female-testosterone caveats. Validate PASS.
-- 2026-07-04: Re-review resolution: added the MRlap canonicalization adapter (hard-stop, total-N injection = case+control not effective N; Task 1 records outcome case/control N) and pinned MR_reverse alongside the other instrument-selection params. plan:0009 now clear for execution. Validate PASS.
-- 2026-07-04: plan:0009 Task 1 (entity-side, no-network parts done): created dataset:eur-ldsc-ld-score-reference — eur_w_ld_chr pinned to DOI-archival Zenodo 8182036 (md5 e2f16343…, CC-BY-4.0), NOT the UT-Austin Box link; w_hm3.snplist archival source to confirm at staging. Added plan:0009 to consumed_by on ruth/hgi/1000g + wired LDSC entity into plan:0009 related+Inputs. Validate PASS. REMAINING Task-1 is network-gated (Bash network blocked in this sandbox): retrieve 6 Ruth strata + GCST90454541 + eur_w_ld_chr + w_hm3.snplist + 1000G panel; record SHA-256/rows/build + outcome case/control N; resolve Ruth assembly + upgrade verification_method; rerun gate.
-- 2026-07-04: plan:0009 Task 1 COMPLETE. Wired a reproducible Snakemake staging workflow (code/workflows/wave1-mr-hormone/) and executed it: 6 Ruth strata (~16.3M rows each, GRCh38) + outcome GCST90454541 (9,442,353 rows, sha bd7e0a06, byte-identical to plan:0007) + MRlap LDSC ref (eur_w_ld_chr 23 chr + w_hm3.snplist 1,217,312 SNPs, both DOI-archival md5-verified) + 1000G-EUR panel — all SHA-256'd. Ruth assembly resolved GRCh38, verification_method upgraded, consumed_by closed, LDSC entity finalized. Outcome total N=1,100,445 (5 case-control cohorts) recorded for MRlap total-N. Data reorg: data/raw+data/processed moved off Dropbox to /data/proj/post-acute-infection and symlinked back; snakemake --touch confirms no rerun. Validate PASS. Residual: per-cohort case/control split not in meta (from HGI DF4 if needed at Task 4).
-- 2026-07-04: Task-1 review (doc/reviews/0009-wave1-mr-hormone-pilot-task1-review.md): closed findings F1-F4. F1: acquire_sumstats.py factors pure extract_total_n() summing nested samples[*].sample_size to machine-recorded sample_size_total=1,100,445 (hard-stop if unresolved; case/control split flagged absent). F2: stage_ldsc_ref.py validates chr 1..22 exactly + M_5_50 sidecars, records extras (6_old) as ignored. F3: build-reconciliation prose corrected (Ruth+HGI GRCh38, LDSC/1000G GRCh37, rsID join); config.yaml hm3 comment de-staled to Zenodo. F4: HGI entity status updated. Manifests regenerated from local checksummed payloads (no re-download); validate PASS; graph rebuilt.
-- 2026-07-04: plan:0009 Task 2 (hormone instruments) executed on branch plan0009-task2-hormone-instruments (worktree). Built 6 Ruth SHBG/testosterone exposure instruments via code/workflows/wave1-mr-hormone/ (r-mr env; TwoSampleMR 0.7.9 / ieugwasr 1.1.0, version-assert passed). p<5e-8 -> local 1000G-EUR clump (rsID, r2<0.001/10Mb, no MHC) -> F=(b/se)^2, tiered gate mean_F>10 AND n>=3. ALL SIX ELIGIBLE, 0 quarantined: SHBG combined 353 (meanF 155), SHBG male 213 (151), SHBG female 201 (121), T combined 160 (90), T male 159 (95), T female 192 (92); min single-instrument F>22 throughout. The a-priori female-testosterone weak-stratum concern did not materialise. Peak RSS ~8.6GB, ~15min at -c1. Caveat for Task 3/4: ~81-87% of genome-wide-sig SNPs absent from the 1000G-EUR panel (16.3M-variant sumstats vs 1.84M-variant panel) -> clumping/instrument selection restricted to panel-covered subset; captured exactly in each sidecar attrition.n_absent_in_panel (fixed from a silent-null; ieugwasr log conflates LD+absence). Subagent-driven: fresh implementer authored Task-1 code (review Approved), controller ran + inspected + fixed. Outputs gitignored under results/wave1-mr-hormone-pilot/instruments_manifest.json. NOT committed to main yet; final whole-branch review pending. Next: Task 3 naive MR (reuses instrument TSVs).
-- 2026-07-05: plan:0009 Task 3 (naive MR comparator) complete. Ran IVW/MR-Egger/weighted-median over the six Task-2 hormone instruments -> long-COVID (GCST90454541), 1000G-EUR-clumped, harmonise action=2, WM seed 20260705 (nboot=1000 enforced). All 6 strata estimated (0 quarantined); finite/sane. IVW log-OR long-COVID per 1-SD hormone: SHBG combined/male/female OR 1.06/1.13/1.17 (p 0.58/0.26/0.15), testosterone 0.96/0.99/0.93 (p 0.74/0.79/0.20) - none significant; Egger intercepts n.s. cross_stratum (bounded KD3, descriptive): SHBG male+female sign-concordant (+), testosterone concordant (-). Every output labelled ancestry-flag/non-primary (KD1) + bounded-sex (KD3) + sample_overlap_uncorrected/naive_comparator_only. Peak RSS 127 MB (outcome streamed by rsID; 56s). Guard fixtures (quarantine skip; <3-harmonised) pass in the r-mr env. Manifest: results/wave1-mr-hormone-pilot/naive_mr_results.json (gitignored). Next: Task 4 MRlap overlap correction.
-
-## [t095] explore-followup batch 1: innate-immune memory / trained immunity (q0023,q0024,q0026)
-- priority: P2
-- status: proposed
-- aspects: []
-- group: explore-followups
-- created: 2026-07-04
-
-Highest-value novel AREA from explore-2026-07-04. Entities: q0023 (cGAS-STING as upstream driver of persistent IFN-I), q0024 (NLRP3/gasdermin-D pyroptosis self-amplifying IL-1b/IL-18 loop), q0026 (IL-6/STAT3 imprinting of hematopoietic progenitors -> hyperreactive monocytes, antigen-independent). Follow-up: research-topic on innate-immune memory / trained immunity in PAIS (this is an under-covered AREA that merits a topic entity, not just questions - see upstream fb-2026-07-04-007), then research-papers to seed it.
-
 ## [t096] explore-followup batch 2: resolution-failure & thromboinflammatory coupling (q0035,q0038,q0025)
 - priority: P2
 - status: proposed
@@ -238,19 +205,6 @@ Entities: q0035 (specialized pro-resolving mediator deficit as distinct endotype
 ### Notes
 
 - 2026-07-06: explore-2026-07-06 addition (resolution-failure & thromboinflammatory coupling): + h0014 (NK/macrophage failure to clear virus-induced senescent endothelium -> SASP propagation as PAIS-persistence determinant). NOTE: two other 2026-07-06 mechanism entities open NEW threads not covered by any existing batch and are flagged for a future batch: q0048 (glymphatic clearance failure as self-amplifying neurocognitive loop) and h0013 (IDO1-IDO2 bistable tryptophan metabolic trap).
-
-## [t097] explore-followup batch 3: population boundary conditions (q0031,q0032,q0033,q0034,q0040)
-- priority: P2
-- status: proposed
-- aspects: []
-- group: explore-followups
-- created: 2026-07-04
-
-Under-covered populations flagged as novel gaps. Entities: q0031 (chronically immunosuppressed hosts), q0032 (LMIC / ancestrally diverse populations), q0033 (frailty/pre-frailty bidirectional), q0034 (pre-existing atopic/MCAS subgroup), q0040 (pregnancy/peripartum immune milieu). Follow-up: research-topic on PAIS population boundary conditions / effect modifiers (merits a topic entity - fb-2026-07-04-007), plus find-datasets for cohorts covering these strata (mind gated-dataset transparency bar).
-
-### Notes
-
-- 2026-07-06: explore-2026-07-06 additions (population boundary conditions): + q0051 (prior symptomatic EBV mononucleosis as a pre-infection PAIS risk amplifier, independent of current reactivation).
 
 ## [t098] explore-followup batch 4: causal-inference & measurement methodology (q0027,q0030,q0039,q0028,q0029)
 - priority: P2
@@ -310,12 +264,72 @@ Cross-domain analogies sharpening existing persistence/autoimmunity topics. Enti
 
 The project's named discriminating experiment now has a dedicated entity (q0050). Assess feasibility of a prospective multi-arm co-enrollment (serologically-confirmed acute COVID-19/Lyme/influenza/EBV/Q-fever within a common 4-12wk window, matched uninfected controls, harmonized multi-omics): recruitment logistics, power, and whether achievable Ns resolve shared-vs-trigger-specific signatures. Deliver a go/no-go + staged-design recommendation (start with highest-incidence/most-confirmable triggers to reach the >=3-trigger bar). Anchors: Trautmann2025 (incompatible designs limit comparison), Thomas2026/MELLOW (harmonized dense-sampling feasible). Contrast with the underpowered public 2-cohort GEO pairings (t035 null).
 
-## [t104] Score new deflationary nulls (h0015-h0018) against h0001 in next bias-audit
+## [t106] Seed remaining trained-immunity anchor papers into the innate-memory topic (Gu2023, Bomans2018, Mitroulis2018)
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [topic:innate-immune-memory-trained-immunity-in-pais]
+- group: explore-followups
+- created: 2026-07-07
+
+Follow-up to t095. Cheong2023 (load-bearing) is being ingested separately; seed the other key anchors as paper entities to ground the topic: Gu2023 (long-COVID trained-immunity review), Bomans2018 (post-sepsis HSPC central training — the non-COVID PAIS parallel), Mitroulis2018 (beta-glucan HSPC myelopoiesis training, foundational central-training evidence). Humer2025 (ME/CFS) is conceptual-only — cite in bib, lower priority to fully summarize. Grounds q0023/q0024/q0026.
+
+## [t107] Opportunistic HSPC-epigenomics feasibility: can archived PAIS-cohort PBMCs support retrospective ATAC-seq? (q0055)
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [question:0055-hspc-epigenomic-imprinting-depth-predicts-pais-persistence]
+- group: explore-followups
+- created: 2026-07-07
+
+Follow-up to t095 / discharges part of q0055. Check whether an existing longitudinal PAIS cohort with banked blood (RECOVER, LIINC) retains sufficient HSPC/progenitor cell numbers in archived PBMCs to run ATAC-seq retrospectively — a high-leverage opportunistic analysis needing no new trial. Deliverable: a short design note on cell-number feasibility + which cohort(s) qualify. Tests the central-training (HSPC-imprinting-depth) prediction against actual PAIS persistence.
+
+## [t108] Cross-PAIS-trigger acute IL-6-peak table as proxy for predicted HSPC-imprinting depth (tests q0026)
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [topic:innate-immune-memory-trained-immunity-in-pais]
+- group: explore-followups
+- created: 2026-07-07
+
+Follow-up to t095. Low-cost desk research: compile acute IL-6 peak levels across PAIS triggers (SARS-CoV-2 vs Borrelia vs Coxiella/Q-fever vs EBV vs dengue) from available cohort data, as a proxy for predicted IL-6/STAT3-driven HSPC central-training depth and thus PAIS-imprinting risk. Gives the q0026 axis its first cross-trigger comparative frame and tests whether low-IL-6 pathogens (which should imprint less) fit the observed PAIS-incidence pattern. Note the severity-bound caveat: Cheong2023 imprinting was shown only in severe/hospitalized disease.
+
+## [t109] Boundary-population PAIS mechanism literature search (immunosuppressed/SOT, frailty, LMIC/ancestral, atopy-MCAS, pregnancy, prior-IM)
 - priority: P2
 - status: proposed
 - aspects: []
-- related: [theme:0001-deflationary-nulls-and-biomarker-vs-driver, hypothesis:0001-shared-dysregulated-attractor, question:0017-deflationary-alternatives-vs-shared-pathophysiology]
+- related: [topic:population-boundary-conditions-and-effect-modifiers-in-pais]
 - group: explore-followups
-- created: 2026-07-06
+- created: 2026-07-07
 
-The 2026-07-06 explore pass added four mechanism-specific nulls: h0015 (EBV reactivation = consequence), h0016 (microclots non-specific), h0017 (PEM overdiagnosed via self-report), h0018 (circulating antigen = severity biomarker). Fold them into the standing /science:bias-audit scoring against the shared-attractor thesis (h0001). For each: record the discriminating test (h0015 -> severity-adjusted assoc + q0054 ordering; h0016 -> matched-inflammatory-control comparison; h0017 -> objective PEM specificity via q0049; h0018 -> antigen-clearance RCT q0002) and the current verdict. Organized by theme:0001.
+Follow-up to t097. No systematic mechanism-paper search has been run for any of the six boundary strata. Run /science:search-literature (or research-papers) for: immunosuppressed/SOT PAIS with mechanism data (biologic DMARDs, HIV, transplant — anchor Frontera2024 SOT-paradox aOR~1.48); frailty + post-COVID mechanism (anchor Hammel2023); LMIC/ancestrally-diverse PAIS cohorts (anchor Jassat2023); atopy/MCAS + long COVID (anchor Wolff2023); pregnancy/peripartum PASC (anchor Bruno2024 RECOVER); prior-IM → ME/CFS/long-COVID risk (anchor Hickie2006 Dubbo). Seed the strongest as paper entities. The SOT paradox in particular needs grounding — it constrains h0004 (noted 2026-07-07).
+
+## [t110] Sync-gated find-datasets pass for the six PAIS boundary strata (D-004 reproducibility filter)
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [topic:population-boundary-conditions-and-effect-modifiers-in-pais]
+- group: explore-followups
+- created: 2026-07-07
+
+Follow-up to t097 (the sync-gated dataset half, deliberately deferred from the topic pass). FIRST run /science:sync (currently 9 days stale) to reuse any boundary-population cohort entities already held in health-immunity/health-cycles/pan-disease, THEN /science:catalog-datasets to identify open/downloadable cohorts for each of the six strata (immunosuppressed, LMIC/ancestral, frailty, atopy-MCAS, pregnancy, prior-IM). Pre-screen every candidate against the D-004 third-party-reproducibility bar: gated/non-downloadable enclave sources (N3C, OpenSAFELY, UKB individual records) must be flagged for an explicit authorization decision, not silently included (see avoid-gated-nondownloadable-datasets lesson; N3C already shelved under D-004).
+
+## [t111] DAG for compound/co-occurring boundary conditions (q0057 interaction structure)
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [question:0057-compound-boundary-conditions-co-occurring-effect-modifiers-in-pais]
+- group: explore-followups
+- created: 2026-07-07
+
+Follow-up to t097 / discharges design side of q0057. Formalize the causal structure of co-occurring effect modifiers (frailty × immunosuppression, pregnancy × MCAS) via /science:sketch-model to spec the interaction terms q0057 needs and to guide future cohort-design requirements. Design-aspiration given current data gaps — defer until at least one boundary stratum has an admissible dataset (depends on the find-datasets pass). Lower priority than the mechanism lit-search.
+
+## [t112] Re-source q0023/q0024 trained-immunity grounding — find a paper that actually reports cGAS-STING / NLRP3 locus accessibility in trained myeloid cells
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [topic:innate-immune-memory-trained-immunity-in-pais]
+- group: explore-followups
+- created: 2026-07-07
+
+Fallout from the Cheong2023 full-text upgrade (0295451): Cheong2023 does NOT report differential ATAC-seq peaks or pathway enrichment at cGAS-STING (MB21D1/STING1) or NLRP3/CASP1/GSDMD loci — its GO terms are generic myeloid-activation, and Domizio2022/Sefik2022 are cited only as background. So q0023 (cGAS-STING) and q0024 (NLRP3) currently rest on the general trained-immunity FRAMEWORK, not a specific empirical anchor. Find and ingest a paper that directly reports epigenetic priming (H3K4me3/ATAC accessibility) at cGAS-STING and/or NLRP3/pro-IL-1b loci in trained monocytes/macrophages (candidate lines: the DAMP-driven-trained-immunity-in-critical-illness review noted in the topic; foundational NLRP3-H3K4me3-priming primary work). Until then, keep the topic's q0023/q0024 sections flagged as mechanistically-coherent-but-unanchored. NOTE: STAT3 leg of q0026 is also motif-inference only (chromVAR/HINT footprinting, IL-6R-blockade-reduced), not ChIP/CUT&RUN occupancy — a STAT3-occupancy experiment would cement q0026.
