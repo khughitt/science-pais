@@ -294,16 +294,6 @@ Follow-up to t095 / discharges part of q0055. Check whether an existing longitud
 
 Follow-up to t095. Low-cost desk research: compile acute IL-6 peak levels across PAIS triggers (SARS-CoV-2 vs Borrelia vs Coxiella/Q-fever vs EBV vs dengue) from available cohort data, as a proxy for predicted IL-6/STAT3-driven HSPC central-training depth and thus PAIS-imprinting risk. Gives the q0026 axis its first cross-trigger comparative frame and tests whether low-IL-6 pathogens (which should imprint less) fit the observed PAIS-incidence pattern. Note the severity-bound caveat: Cheong2023 imprinting was shown only in severe/hospitalized disease.
 
-## [t109] Boundary-population PAIS mechanism literature search (immunosuppressed/SOT, frailty, LMIC/ancestral, atopy-MCAS, pregnancy, prior-IM)
-- priority: P2
-- status: proposed
-- aspects: []
-- related: [topic:population-boundary-conditions-and-effect-modifiers-in-pais]
-- group: explore-followups
-- created: 2026-07-07
-
-Follow-up to t097. No systematic mechanism-paper search has been run for any of the six boundary strata. Run /science:search-literature (or research-papers) for: immunosuppressed/SOT PAIS with mechanism data (biologic DMARDs, HIV, transplant — anchor Frontera2024 SOT-paradox aOR~1.48); frailty + post-COVID mechanism (anchor Hammel2023); LMIC/ancestrally-diverse PAIS cohorts (anchor Jassat2023); atopy/MCAS + long COVID (anchor Wolff2023); pregnancy/peripartum PASC (anchor Bruno2024 RECOVER); prior-IM → ME/CFS/long-COVID risk (anchor Hickie2006 Dubbo). Seed the strongest as paper entities. The SOT paradox in particular needs grounding — it constrains h0004 (noted 2026-07-07).
-
 ## [t110] Sync-gated find-datasets pass for the six PAIS boundary strata (D-004 reproducibility filter)
 - priority: P3
 - status: proposed
@@ -324,12 +314,22 @@ Follow-up to t097 (the sync-gated dataset half, deliberately deferred from the t
 
 Follow-up to t097 / discharges design side of q0057. Formalize the causal structure of co-occurring effect modifiers (frailty × immunosuppression, pregnancy × MCAS) via /science:sketch-model to spec the interaction terms q0057 needs and to guide future cohort-design requirements. Design-aspiration given current data gaps — defer until at least one boundary stratum has an admissible dataset (depends on the find-datasets pass). Lower priority than the mechanism lit-search.
 
-## [t112] Re-source q0023/q0024 trained-immunity grounding — find a paper that actually reports cGAS-STING / NLRP3 locus accessibility in trained myeloid cells
+## [t114] Seed MCAS long-COVID mediator papers as entities: Augustin2025 (OFID, tryptase+ileal spike, n=21 abstract) and Weinstock2021 (IJID, MCA symptom-survey origin)
 - priority: P3
 - status: proposed
 - aspects: []
-- related: [topic:innate-immune-memory-trained-immunity-in-pais]
+- related: [topic:population-boundary-conditions-and-effect-modifiers-in-pais, question:0034-pre-existing-atopic-and-mast-cell-activation-disorders-as-a]
 - group: explore-followups
 - created: 2026-07-07
 
-Fallout from the Cheong2023 full-text upgrade (0295451): Cheong2023 does NOT report differential ATAC-seq peaks or pathway enrichment at cGAS-STING (MB21D1/STING1) or NLRP3/CASP1/GSDMD loci — its GO terms are generic myeloid-activation, and Domizio2022/Sefik2022 are cited only as background. So q0023 (cGAS-STING) and q0024 (NLRP3) currently rest on the general trained-immunity FRAMEWORK, not a specific empirical anchor. Find and ingest a paper that directly reports epigenetic priming (H3K4me3/ATAC accessibility) at cGAS-STING and/or NLRP3/pro-IL-1b loci in trained monocytes/macrophages (candidate lines: the DAMP-driven-trained-immunity-in-critical-illness review noted in the topic; foundational NLRP3-H3K4me3-priming primary work). Until then, keep the topic's q0023/q0024 sections flagged as mechanistically-coherent-but-unanchored. NOTE: STAT3 leg of q0026 is also motif-inference only (chromVAR/HINT footprinting, IL-6R-blockade-reduced), not ChIP/CUT&RUN occupancy — a STAT3-occupancy experiment would cement q0026.
+From t109 gap scan. Augustin2025 (DOI 10.1093/ofid/ofae631.2136, PMC11779031) is the first long-COVID cohort with a tryptase readout + ileal SARS-CoV-2 spike (ties MCAS to antigen persistence) — conference abstract, flag maturity. Weinstock2021 (DOI 10.1016/j.ijid.2021.09.043) is the hypothesis-origin symptom-survey — seed as provenance, explicitly NOT mediator data. Both currently referenced in the topic but not seeded.
+
+## [t115] Seed multi-ancestry long-COVID GWAS (Chaudhary/23andMe) once a peer-reviewed version exists; check for BPTF locus + ME/CFS genetic correlations
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [topic:population-boundary-conditions-and-effect-modifiers-in-pais, question:0032-pais-burden-phenotype-and-mechanism-in-lmic-and-ancestrally-diverse]
+- group: explore-followups
+- created: 2026-07-07
+
+From t109 gap scan. Chaudhary et al. medRxiv 2024.10.07.24315052 — multi-ancestry (European/Latinx/African-American) meta-analysis; 3 GW-significant loci incl. BPTF-KPNA2-C17orf58 beyond HLA/ABO; genetic correlations with ME/CFS, fibromyalgia, depression; FOXP4 rs9367106 NOT significant here. Currently cited in topic as a PREPRINT — do not seed as a paper entity until a peer-reviewed version is confirmed. NB: 23andMe cohort is US-based self-report, does NOT close the LMIC-mechanism gap.
