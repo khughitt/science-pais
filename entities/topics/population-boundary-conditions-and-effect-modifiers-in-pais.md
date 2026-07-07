@@ -228,12 +228,16 @@ Frailty Index** (a deficit-accumulation index derived from EHR data — *not* th
 and the VA COVID-19 Shared Data Resource [@Hammel2023]. Frailty was associated with a ~40% increase in
 PASC risk (adjusted HR 1.40, 95% CI 1.35–1.47) and pre-frailty with a ~17% increase (aHR 1.17, 95% CI
 1.11–1.19), compared with robust individuals. The association held across both the Delta and Omicron
-periods. This is *consistent with* frailty being an independent PASC predictor — the key test for hypothesis
+periods. This is *consistent with* frailty being a graded PASC predictor — relevant to hypothesis
 h0004 (the threshold/reserve model predicts that those with lower baseline reserve should cross the
-self-sustaining threshold at lower acute severity). **Caveat (t109 verification, 2026-07-07):** whether the
-adjustment set explicitly included *acute-illness severity* (hospitalization/oxygen) could **not** be
-confirmed from the abstract (full text was agent-inaccessible); the strong "independent of severity" reading
-that h0004 leans on therefore remains **[UNVERIFIED]** pending a full-text check of the covariate list.
+self-sustaining threshold at lower acute severity). **Resolved caveat (t113 full-text check, 2026-07-07):**
+the Cox model's covariate list — age, sex, race, ethnicity, BMI, smoking, primary-care-visit count,
+rurality, vaccination, and wave — does **not** include *acute-illness severity* (hospitalization/ICU/oxygen).
+The "independent of severity" reading that h0004 leaned on is therefore **not supported**: the frailty→PASC
+estimate is unadjusted for the frailty→acute-severity→PASC path, so it does not cleanly separate host reserve
+from acute severity. The graded frailty→PASC dose-response stands; only its independence-from-severity does
+not. (Provenance: Google-indexed Wiley full text via web search; direct agent PDF access 402/403-blocked —
+not a verbatim direct-PDF read.)
 
 **The bidirectional coupling hypothesis (plausible; essentially untested as a PAIS claim):** PAIS may
 itself deepen frailty — the post-infectious state could accelerate inflammaging, exhaust residual immune
@@ -528,7 +532,7 @@ inclusion in a dataset plan.
 ## Key References
 
 - Vinson2024: N3C propensity-score-matched analysis of PASC in solid organ transplant recipients; establishes paradoxically higher PASC rate in immunosuppressed SOTRs (2.2% vs 1.4%, aOR 1.48); mycophenolate mofetil independently associated (aOR 2.04). (Originally mis-keyed as "Frontera2024" with corrupt identifiers; corrected 2026-07-07.)
-- Hammel2023: frailty as a PASC risk factor in US veterans (N=245,857; Delta and Omicron) using the 31-item VA Frailty Index (deficit-accumulation, NOT Fried); frailty aHR 1.40 (95% CI 1.35–1.47), pre-frailty aHR 1.17. Whether acute-illness severity was in the adjustment set is [UNVERIFIED] from the abstract (full-text follow-up t113); do not assert "independent of severity" until confirmed.
+- Hammel2023: frailty as a PASC risk factor in US veterans (N=245,857; Delta and Omicron) using the 31-item VA Frailty Index (deficit-accumulation, NOT Fried); frailty aHR 1.40 (95% CI 1.35–1.47), pre-frailty aHR 1.17. **t113 (2026-07-07) resolved the covariate list: acute-illness severity (hospitalization/ICU/oxygen) was NOT in the adjustment set** — so "independent of severity" is *not supported*; the frailty→PASC estimate is unadjusted for the frailty→acute-severity path. Treat as a graded frailty–PASC association, not a clean reserve-vs-severity separation.
 - Jassat2023: Lancet commentary on long COVID as a hidden public health crisis in LMICs; documents research gap and high observed burden in South African cohort.
 - Bruno2024: RECOVER EHR cohort analysis; COVID during pregnancy associated with lower overall PASC but higher cardiac/vascular PASC and lower cognitive/fatigue PASC — a mechanistically informative dissociation.
 - Hickie2006: Dubbo Infection Outcomes Study; foundational prospective cohort establishing that EBV-induced IM (and other pathogens) precipitates CFS-equivalent post-infectious syndromes at ~11%, with illness severity as primary predictor.

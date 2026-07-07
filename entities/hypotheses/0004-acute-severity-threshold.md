@@ -85,6 +85,17 @@ The magnitude of the acute-phase insult sets a *threshold* in the host's recover
   the imprinting-dependent component and would *not* explain the common mild-onset PAIS case — reinforcing
   the "severity is one axis among several" reading above rather than a severity-only gate. See
   `topic:innate-immune-memory-trained-immunity-in-pais`.
+- **The largest frailty→PASC anchor does not separate reserve from acute severity (t113, 2026-07-07).**
+  Hammel2023 (N=245,857 US veterans) shows a graded frailty→PASC dose-response (aHR 1.40 frail, 1.17
+  pre-frail), which is often read as host reserve predicting chronicity independent of acute severity — the
+  core separability claim of this hypothesis. A full-text check of its Cox covariate list (age, sex, race,
+  ethnicity, BMI, smoking, primary-care-visit count, rurality, vaccination, wave) found that acute-illness
+  severity — hospitalization/ICU/oxygen — was **not** adjusted for. The frailty effect is therefore
+  unadjusted for the frailty→acute-severity→PASC path and does *not* establish a reserve effect independent
+  of severity. This does not weaken the reserve axis itself, but it means the single strongest epidemiological
+  anchor for reserve-independent-of-severity currently cannot deliver that separation — it must come from a
+  design that adjusts for or stratifies on acute severity. See
+  `topic:population-boundary-conditions-and-effect-modifiers-in-pais` and `paper:Hammel2023`.
 - **Immunosuppressed-host (SOT) paradox constrains the host-reserve reading (t097, 2026-07-07).**
   Solid-organ-transplant / immunosuppressed hosts show *higher* PASC risk (Vinson2024, N3C aOR ~1.48),
   not lower — which sits awkwardly with any naive "less immune activation → less post-infectious illness"

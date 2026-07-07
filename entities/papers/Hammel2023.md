@@ -39,7 +39,7 @@ updated: '2026-07-07'
 
 ## Key Contribution
 
-This retrospective cohort study of 245,857 US veterans demonstrates that pre-existing frailty, measured by the 31-item VA Frailty Index (a deficit-accumulation instrument derived from electronic health records), independently predicts PASC risk within 6 months of SARS-CoV-2 infection. Frail veterans had a 40% increase in PASC risk (aHR 1.40; 95% CI 1.35–1.47) and pre-frail veterans a 17% increase (aHR 1.17; 95% CI 1.11–1.19) relative to robust veterans, after covariate adjustment. This is the cleanest test of the hypothesis that reduced host reserve — not merely acute severity — is an independent predictor of post-acute chronicity, operationalized in a large administrative dataset spanning both the Delta and Omicron waves.
+This retrospective cohort study of 245,857 US veterans demonstrates that pre-existing frailty, measured by the 31-item VA Frailty Index (a deficit-accumulation instrument derived from electronic health records), independently predicts PASC risk within 6 months of SARS-CoV-2 infection. Frail veterans had a 40% increase in PASC risk (aHR 1.40; 95% CI 1.35–1.47) and pre-frail veterans a 17% increase (aHR 1.17; 95% CI 1.11–1.19) relative to robust veterans, after covariate adjustment. It operationalizes reduced host reserve in a large administrative dataset spanning both the Delta and Omicron waves. **Important scope limit (t113 full-text resolution, 2026-07-07):** the Cox model did **not** adjust for acute-illness severity (hospitalization/ICU/oxygen), so this is *not* a clean separation of host reserve from acute severity — frailty's effect may be partly mediated by frail patients' greater acute-illness severity (see Methods).
 
 ## Methods
 
@@ -53,7 +53,7 @@ This retrospective cohort study of 245,857 US veterans demonstrates that pre-exi
 
 **Outcome window:** PASC incidence within 6 months of infection. Median follow-up 143 days (IQR = 101).
 
-**Analysis:** Cox proportional hazards survival model adjusting for covariates. Specific covariates listed in abstract only as "covariates"; whether acute illness severity (e.g., hospitalization, ICU admission, oxygen requirement) was explicitly included as a covariate is [UNVERIFIED] — requires full text to confirm the "independent of severity" claim.
+**Analysis:** Cox proportional hazards survival model. **Covariate list (resolved via full text, t113, 2026-07-07):** age, gender, race, ethnicity, BMI, smoking status, number of primary-care visits in the prior 24 months (0–5 / 6–11 / ≥12), rurality (urban / city-town / small-town-rural), vaccination status (unvaccinated / fully vaccinated / booster), and infection wave (Delta vs Omicron). **Acute-illness severity — hospitalization, ICU admission, oxygen/ventilation, or a severity score — was NOT among the adjusted covariates.** The "independent of acute severity" reading is therefore **not supported** by this model; the frailty→PASC estimate is unadjusted for the frailty→acute-severity→PASC path (frail patients are more likely to be hospitalized, and hospitalization independently predicts PASC — Cai2024). *Provenance:* the covariate list was read from the Google-indexed Wiley full text surfaced via web search (direct agent PDF access is 402/403-blocked); it is internally consistent with the abstract's vaccination/wave categories but is not a verbatim direct-PDF read — a user browser retrieval could confirm it word-for-word if desired.
 
 **Vaccination status:** 40.6% fully vaccinated; 13.6% received booster doses prior to infection.
 
@@ -68,7 +68,7 @@ This retrospective cohort study of 245,857 US veterans demonstrates that pre-exi
 - Fully vaccinated prior to infection: aHR 0.73 (95% CI 0.71–0.75) — 27% reduction in PASC risk.
 - Booster dose prior to infection: aHR 0.66 (95% CI 0.63–0.69) — 34% reduction.
 
-**Wave coverage:** Study period July 2021–February 2022 spans the Delta wave (dominant mid-to-late 2021) and Omicron emergence (late 2021–early 2022). Whether the frailty–PASC association was explicitly tested or reported separately by wave is [UNVERIFIED] — requires full text.
+**Wave coverage:** Study period July 2021–February 2022 spans the Delta wave (dominant mid-to-late 2021) and Omicron emergence (late 2021–early 2022). Wave was included as a covariate, and the frailty–PASC association was reported to hold across **both** the Delta and Omicron periods (t113, 2026-07-07); a separate formal wave×frailty interaction/heterogeneity test is not reported.
 
 ## Relevance
 
@@ -76,7 +76,7 @@ This paper is a primary anchor for `hypothesis:0004-acute-severity-threshold`. T
 
 1. **Host reserve as an independent predictor of PAIS entry.** The frailty gradient (robust → pre-frail → frail producing a clear dose-response in PASC aHR) directly operationalizes the "threshold position is modulated by host reserve" proposition in h0004's Organizing Conjecture. A lower-reserve host (frail) faces a lower threshold to enter the chronic state.
 
-2. **Critical caveat — severity adjustment is unverified.** The "independent of severity" claim requires that acute illness severity was explicitly controlled in the Cox model. The abstract states covariate adjustment but does not itemize covariates. If hospitalization or acute illness severity was not included, the frailty effect could be partially confounded by frailty's association with more severe acute illness — frail patients are more likely to be hospitalized, and hospitalization independently predicts PASC (Cai2024). This is the single most important full-text verification needed.
+2. **Resolved caveat — severity was NOT in the adjustment set (t113, 2026-07-07).** The full-text covariate list (see Methods) shows the Cox model adjusted for demographics, BMI, smoking, primary-care-visit count, rurality, vaccination, and wave — but **not** acute-illness severity (hospitalization/ICU/oxygen). The "independent of severity" reading is therefore **not supported**: frailty's effect is partially confounded/mediated by frailty's association with more severe acute illness (frail patients are more likely to be hospitalized, and hospitalization independently predicts PASC — Cai2024). This weakens Hammel2023 as a *clean* reserve-vs-severity separation for h0004, though the graded frailty→PASC dose-response itself is unaffected.
 
 3. **Scale correction.** The project's prior characterization of this study as ~3,000 veterans is incorrect — the actual N is 245,857. This makes it one of the largest single-cohort frailty–PASC studies in the literature and substantially strengthens the precision of the aHR estimates.
 
@@ -95,7 +95,7 @@ The vaccination findings (27–34% PASC reduction) are consistent with hypothesi
 
 ## Limitations
 
-1. **Severity adjustment unverified.** The most load-bearing claim for hypothesis 0004 — that frailty predicts PASC *independent of acute illness severity* — cannot be confirmed from the abstract. If severity was not included as a covariate, frailty's effect may be partly mediated by hospitalization rates, and the study does not establish independent host-reserve effects. Full-text required to resolve. [UNVERIFIED]
+1. **Severity was NOT adjusted for (resolved, t113).** The most load-bearing claim for hypothesis 0004 — that frailty predicts PASC *independent of acute illness severity* — is **not supported**: the full-text covariate list contains no acute-severity term (hospitalization/ICU/oxygen). Frailty's effect is thus partly mediated by hospitalization rates, and this study does **not** establish a host-reserve effect independent of acute severity. The frailty→PASC association and its dose-response remain valid; only the "independent of severity" property is retracted.
 
 2. **VA cohort demographics.** 87.2% male, predominantly older (mean age 57.5), 68.1% white. Very different from the younger, predominantly female demographics of long-COVID cohorts in population-based studies. Generalizability to women, younger adults, or non-VA settings is uncertain.
 
@@ -105,7 +105,7 @@ The vaccination findings (27–34% PASC reduction) are consistent with hypothesi
 
 5. **6-month follow-up only.** The outcome window is PASC within 6 months (median follow-up 143 days). This does not capture very-long-term PASC (> 6 months), may miss late-onset sequelae, and does not allow characterization of PASC trajectories (recovery vs persistence).
 
-6. **Wave-stratified analysis unconfirmed.** Whether frailty–PASC associations were separately estimated or tested for heterogeneity by wave (Delta vs Omicron) is [UNVERIFIED]. If the analysis pooled both waves without interaction testing, reported estimates average across two variants with different pathogenicity and immune-escape profiles.
+6. **No formal wave-heterogeneity test.** Wave (Delta vs Omicron) was included as a model covariate and the frailty–PASC association was reported to hold across both periods (t113), but a separate formal wave×frailty interaction/heterogeneity test is not reported — so any across-wave difference in effect size is not statistically characterized.
 
 7. **No causal identification.** Observational design; propensity-score or IV approaches to isolate the causal effect of frailty from confounders are not mentioned in the abstract. Residual confounding by unmeasured factors (socioeconomic status, baseline immune function, care access) is possible.
 
@@ -115,10 +115,10 @@ No computational model or software tool released. VA data available through the 
 
 ## Follow-up
 
-**Key full-text verification needed (load-bearing for hypothesis 0004):**
-- Confirm the exact covariate list in the Cox model — specifically whether hospitalization, ICU admission, or an acute severity score was included. This is the single most important unresolved claim.
-- Confirm whether wave-stratified (Delta vs Omicron) analyses were reported.
-- Confirm exact PASC operational definition (ICD codes, composite criteria, minimum symptom duration).
+**Full-text verification status (t113, 2026-07-07):**
+- ✅ *Resolved:* covariate list obtained — the Cox model did **not** adjust for acute-illness severity (hospitalization/ICU/oxygen). "Independent of severity" retracted. (Provenance: Google-indexed Wiley full text via web search; not a verbatim direct-PDF read.)
+- ✅ *Resolved:* frailty–PASC association reported across both Delta and Omicron waves; wave included as a covariate (no separate formal interaction test reported).
+- ⬜ *Still open:* exact PASC operational definition (ICD codes, composite criteria, minimum symptom duration) — not surfaced by the abstract or the indexed methods snippet. [UNVERIFIED]
 
 **Related papers for cross-reference:**
 - Cai2024 — 3-year VA outcomes; same data resource; severity-stratified trajectories; confirms hospitalization as dominant predictor of multi-year burden.
