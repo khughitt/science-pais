@@ -19,6 +19,7 @@ source_refs:
 - paper:Truong2025
 related:
 - topic:shared-failure-mode-across-pais
+- topic:innate-immune-memory-trained-immunity-in-pais
 - question:0003-acute-severity-threshold-for-self-sustaining-pais
 - question:0012-prevention-vaccination-antiviral-reduces-pais
 - hypothesis:0001-shared-dysregulated-attractor
@@ -32,7 +33,7 @@ related:
 - task:t048
 - task:t010
 created: '2026-06-11'
-updated: '2026-06-26'
+updated: '2026-07-07'
 ---
 # Hypothesis: Acute-illness severity sets a homeostatic recovery threshold above which the post-infectious state becomes self-sustaining rather than self-resolving
 
@@ -75,6 +76,14 @@ The magnitude of the acute-phase insult sets a *threshold* in the host's recover
   generally strong recovery by 6 months (Truong2025). This does not refute h0004, but it narrows the
   threshold model: the relevant threshold is not simply "severe inflammation occurred"; it is whether the
   host exits or remains trapped in a chronic dysregulated state.
+- **Trained-immunity substrate offers a candidate — but severity-bounded — threshold mechanism (t095, 2026-07-07).**
+  Central HSPC epigenetic imprinting (Cheong2023) is a molecular candidate for *how* a severity threshold
+  could operate: severe acute IL-6 peaks reprogram bone-marrow progenitors into durable (months-long)
+  myeloid hyperreactivity, plausibly gating attractor entry. But Cheong2023 demonstrated this only in
+  *severe/hospitalized* COVID-19, so if HSPC central training is the substrate it would gate specifically
+  the imprinting-dependent component and would *not* explain the common mild-onset PAIS case — reinforcing
+  the "severity is one axis among several" reading above rather than a severity-only gate. See
+  `topic:innate-immune-memory-trained-immunity-in-pais`.
 
 ## Predictions
 
@@ -135,3 +144,4 @@ Confidence would be materially reduced if:
 - `question:0003-acute-severity-threshold-for-self-sustaining-pais` — the formal test.
 - `hypothesis:0001-shared-dysregulated-attractor` — this threshold is the proposed *gate* for attractor entry.
 - `immunity:research-question:immune-homeostasis-and-dysregulation` — host-reserve/homeostatic-margin biology.
+- `topic:innate-immune-memory-trained-immunity-in-pais` — HSPC central-training as a candidate (severity-bounded) molecular substrate for the threshold.

@@ -12,6 +12,7 @@ related:
 - topic:long-covid-immune-dysregulation
 - topic:shared-failure-mode-across-pais
 - topic:therapeutics-and-clinical-trials
+- topic:innate-immune-memory-trained-immunity-in-pais
 - question:0006-jak-stat-il6-driver-vs-marker
 - hypothesis:0002-tissue-reservoir-antigen-fragment
 - immunity:research-question:immune-homeostasis-and-dysregulation
@@ -26,7 +27,7 @@ related:
 - task:t054
 - task:t060
 created: '2026-06-11'
-updated: '2026-06-25'
+updated: '2026-07-07'
 ---
 # Hypothesis: Post-acute chronicity is sustained by a self-reinforcing loop of unresolved antigenic stimulation and T-cell exhaustion that fails to terminate inflammation
 
@@ -64,6 +65,7 @@ until the causal pillar is tested:
 - The cell source sustaining the IL-6/JAK-STAT signal is unresolved (bulk assays; Aid2025) — see `question:0006`.
 - **IFN tension RESOLVED (t047, `interpretation:0012`).** The apparent conflict between "persistent IFN activation" (Aid2025) and "IFN-I suppression" (Ryan2022) is reconciled as a **dissociated IFN signature**: Aid2025 indexes the *type-II/inflammatory* arm (IFNγ + IL-6/JAK-STAT, PBMC, LC-vs-recovered, >180d) while Ryan2022 indexes the *type-I antiviral-effector* arm (MX1/OAS3/OASL, whole blood, referral-vs-convalescent, 6-mo bifurcation). Persistent inflammatory tone + tolerized type-I effectors is the *predicted* exhausted-innate-sensing signature, so Ryan2022 now **supports** `proposition:0025` rather than disputing it. Residual: the two arms are inferred across studies, not co-measured in the same patients (the discriminating confirmation).
 - Whether the loop is sustained by genuine antigen (hypothesis 0002) or has become antigen-independent (sterile) is unknown and therapeutically pivotal.
+- **Trained immunity offers a candidate antigen-independent maintenance route + a tolerance/training reconciliation (t095, 2026-07-07).** The sterile branch of the antigen-vs-sterile question above has a concrete candidate: central HSPC trained immunity can sustain durable innate hyperreactivity *without* ongoing antigen (Cheong2023), a distinct antigen-independent persistence axis. Separately, post-sepsis shows peripheral immune *tolerance* and central *training* coexisting (Bomans2018), which may *reconcile* rather than contradict h0003's paradoxical persistent-innate-activation + adaptive-exhaustion co-occurrence — marrow-level central training driving inflammation while peripheral compartments show exhaustion/tolerance. See `topic:innate-immune-memory-trained-immunity-in-pais`.
 - **Belief-graph note (t047, 2026-06-24).** h0003's bundle is conjunctive over its core members: `proposition:0025` (descriptive state) is **supported**, but `proposition:0026` (the causal-driver loop) is **untested** and gated on the JAK1 trial — so the conjunction grades h0003 honestly **`speculative`** ("the inflammatory-arm signature is real; the maintenance-engine claim is unproven"). A descriptive state being well-evidenced must not promote the causal loop; that is exactly what `pre-registration:0004` exists to test. (Same honest-conjunction structure as `hypothesis:0002` post-t052.)
 - **Registry-status note (t054, 2026-06-25).** NCT06597396/CLEAR-LC is `ACTIVE_NOT_RECRUITING` with primary completion 2026-03-27 actual and `hasResults: false`; study completion is still estimated for 2026-09-30. The public endpoint list includes fatigue/PASC symptom outcomes and hsCRP, but not a specific IL-6R/JAK-STAT/ISG target-engagement readout. The causal-loop conjunct remains untested; no belief update.
 - **Cross-PAIS note (t060, 2026-06-26).** `proposition:0036` now records the generalizability map: ME/CFS and QFS partially recapitulate IFN/cytokine/exhaustion-axis abnormalities, with EatonFitch2024 providing the cleanest same-panel LC/ME/CFS support line. This is kept local to q0006 and **not** added to the h0003 core bundle, because h0003's grade should still be controlled by the LC descriptive state (`0025`) plus the untested causal-driver conjunct (`0026`).
@@ -112,3 +114,4 @@ Confidence would be materially reduced if:
 - `question:0006-jak-stat-il6-driver-vs-marker` — the driver-vs-marker test.
 - `hypothesis:0002-tissue-reservoir-antigen-fragment` — candidate antigen source feeding this loop; `hypothesis:0001-shared-dysregulated-attractor` — this loop as a maintenance engine of the attractor.
 - `immunity:research-question:immune-homeostasis-and-dysregulation` — non-resolving-inflammation biology.
+- `topic:innate-immune-memory-trained-immunity-in-pais` — candidate antigen-independent (sterile) maintenance route + tolerance/training coexistence.
