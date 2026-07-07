@@ -1,0 +1,71 @@
+# science:code
+# status: workflow-owned
+# task_ids: [t116]
+# science:end
+
+# =============================================================================
+# Snakefile — power / bias-floor design simulation (task:t116)
+#
+# Thin orchestrator: reads config.yaml (ALL design parameters) and runs the
+# deterministic numpy Monte-Carlo that produces the minimum arm-count (K) x
+# per-arm-N ARBITRATING-power surface. The rule hard-codes nothing.
+#
+# Question (interpretation:0001 "Q-A" gate): at achievable dense-multi-omic
+# per-arm N (tens, MELLOW-scale) across K harmonized trigger arms, does the
+# shared-latent-axis test separate hypothesis:0001 (one coordinated attractor
+# axis through all arms) from the concordance-MATCHED question:0017 finite-
+# repertoire null — the ARBITRATING bar — not merely the Monte-Carlo
+# (sampling-only) bar that the t035 within-arm permutation test used?
+#
+# Run (ambient uv venv — numpy + PyYAML only, no conda needed):
+#     uv run --frozen snakemake -s code/workflows/t116-power-bias-floor/Snakefile -c1 all
+# Or with the pinned conda env for reproducibility parity:
+#     uv run snakemake -s code/workflows/t116-power-bias-floor/Snakefile --use-conda -c1 all
+#
+# Output (results/* is gitignored — regenerable evidence, not committed):
+#     results/t116-power-bias-floor-sim/surface.json       (full numeric surface)
+#     results/t116-power-bias-floor-sim/surface.md         (human-readable tables)
+#     results/t116-power-bias-floor-sim/run_metadata.json  (provenance record)
+# The committed reproducibility contract is this workflow, not the outputs.
+#
+# Deliverable: interpretation:0037-t116-power-bias-floor-shared-axis-sim
+# Amends:      interpretation:0001 (Q-A gate), interpretation:0036 (staged design)
+# =============================================================================
+from pathlib import Path
+
+# --- invocation contract (invocation-independent, matches omop-concepts) -----
+# Resolve config next to THIS Snakefile and pin the working directory to the
+# repo root so results/ always targets ONE tree regardless of where snakemake is
+# invoked from. conda:/script paths stay relative to the repo root.
+SNAKEFILE_DIR = Path(workflow.basedir).resolve()
+REPO_ROOT = SNAKEFILE_DIR.parent.parent.parent    # t116-power-bias-floor -> workflows -> code -> root
+SCRIPTS = Path("code/workflows/t116-power-bias-floor/scripts")
+CONFIGFILE = str(SNAKEFILE_DIR / "config.yaml")
+configfile: CONFIGFILE
+workdir: str(REPO_ROOT)
+
+RESULTS = config["paths"]["results"]
+SURFACE_JSON = f"{RESULTS}/surface.json"
+SURFACE_MD = f"{RESULTS}/surface.md"
+RUN_META = f"{RESULTS}/run_metadata.json"
+
+
+rule all:
+    input:
+        SURFACE_JSON,
+        SURFACE_MD,
+        RUN_META,
+
+
+rule simulate:
+    output:
+        surface_json=SURFACE_JSON,
+        surface_md=SURFACE_MD,
+        run_meta=RUN_META,
+    conda:
+        "envs/py.yaml"
+    params:
+        config=CONFIGFILE,
+        outdir=RESULTS,
+    shell:
+        "python {SCRIPTS}/simulate.py --config {params.config} --out {params.outdir}"

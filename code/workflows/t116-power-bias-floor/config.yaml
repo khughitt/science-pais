@@ -1,0 +1,87 @@
+# =============================================================================
+# config.yaml — power / bias-floor design simulation (task:t116)
+#
+# SINGLE encoding of the simulation's design parameters. simulate.py reads these
+# and hard-codes NOTHING; changing a value here is a deliberate edit that
+# re-defines the reported power surface. This file ORIGINATES the design; the
+# script only executes it.
+#
+# The simulation answers the Q-A gate raised in
+# interpretation:0001-...t035-null-nonarbitrating and upgrades the
+# "worth simulating" power claim in
+# interpretation:0036-t103-cross-pathogen-co-enrollment-feasibility:
+#
+#   At achievable dense-multi-omic per-arm N (tens, MELLOW-scale) across K
+#   harmonized trigger arms, does the shared-latent-axis test clear the
+#   ARBITRATING bar — separating hypothesis:0001's coordinated shared attractor
+#   from the question:0017 finite-repertoire coincidence null — not merely the
+#   Monte-Carlo (sampling-only) bar the t035 within-arm permutation test used?
+#
+# Deliverable: interpretation:0037-t116-power-bias-floor-shared-axis-sim.
+# =============================================================================
+
+# ------------------------------------------------------ determinism ----------
+determinism:
+  seed: 1729              # echoes the t035 determinism seed (results/verdict.json)
+  replicates: 8000        # M: Monte-Carlo replicates per (K, N) surface cell
+  power_target: 0.80      # arbitrating-power threshold marking a cell fundable
+
+# ------------------------------------------------------ generative model -----
+# x_k = shared_k + alpha * a_k + e_k   (one length-P NES-like vector per arm k)
+#   shared_k : H1 -> lam * s                (single global attractor axis)
+#              H0 -> kappa * sum_r Z_kr g_r (R generic repertoire axes; q0017)
+#   alpha*a_k: arm-specific systematic bias — does NOT shrink with N (the bias
+#              floor; this is why the t035 2-cohort route was non-arbitrating)
+#   e_k      : within-arm sampling noise, sd = sigma0 / sqrt(N) (shrinks with N)
+model:
+  p_hallmark: 50          # P: pinned primary pathway universe (matches t035 confirmatory DB)
+  lam: 0.70               # true global shared-axis loading under H1
+  alpha: 0.60             # arm-specific systematic bias (N-invariant)
+  sigma0: 1.5             # within-arm NES sampling sd at N=1; effective sd = sigma0/sqrt(N)
+
+# ------------------------------------------------------ surface grid ---------
+grid:
+  k_grid: [2, 3, 4, 5, 6]        # trigger-arm counts (K=2 is structurally non-arbitrating)
+  n_grid: [10, 20, 30, 50, 100]  # per-arm N (tens = MELLOW-scale dense multi-omic)
+
+# ------------------------------------------------------ repertoire regimes ---
+# Plausibility grid over the RANK of the question:0017 finite-repertoire null.
+# Counter-intuitively LOW R is the EASIER null to reject: random loadings over
+# few axes give lumpy, pair-specific overlaps (heterogeneous off-diagonals).
+# HIGH R makes pairwise overlaps CONCENTRATE (CLT) toward a homogeneous value
+# that mimics a single global attractor — the HARDER null. As R -> inf the
+# finite repertoire becomes structurally indistinguishable from a shared
+# attractor by this test (and is arguably itself a shared low-dim manifold).
+regimes:
+  - key: repertoire_R2
+    label: "Lumpy low-rank repertoire (R=2) -- most distinguishable"
+    R: 2
+    note: "Random overlap over 2 generic axes: pair-specific, heterogeneous off-diagonals."
+  - key: repertoire_R4
+    label: "Moderate-rank repertoire (R=4)"
+    R: 4
+    note: "Overlap over 4 generic axes."
+  - key: repertoire_R8
+    label: "High-rank repertoire (R=8) -- pairwise overlaps concentrate"
+    R: 8
+    note: "Overlap over 8 generic axes: off-diagonals begin to homogenize, mimicking one axis."
+  - key: repertoire_R16
+    label: "Near-homogeneous high-rank repertoire (R=16) -- hardest"
+    R: 16
+    note: "Overlap over 16 generic axes: approaches the in-principle-indistinguishable limit."
+
+# ------------------------------------------------------ P sensitivity --------
+# Does a higher-resolution feature universe (Hallmark 50 -> Reactome/GO-BP ~1000)
+# lower the minimum arbitrating arm count? Larger P lowers the concordance
+# sampling floor (~1/sqrt(P-1)), sharpening the structural homogeneity test.
+p_sensitivity:
+  R: 4                    # run against the moderate-rank null
+  N: 30                   # per-arm N held fixed
+  p_grid: [50, 200, 1000] # Hallmark -> curated -> Reactome/GO-BP scale
+  replicates: 6000        # M for the P-sensitivity pass (kept <= determinism.replicates)
+
+# ------------------------------------------------------ paths ----------------
+# results/* is gitignored — regenerable evidence, not committed. The committed
+# reproducibility contract is this workflow (Snakefile + config + simulate.py).
+paths:
+  results: "results/t116-power-bias-floor-sim"

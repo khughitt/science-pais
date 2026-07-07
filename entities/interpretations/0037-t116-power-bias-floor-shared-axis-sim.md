@@ -17,7 +17,7 @@ related:
   - pre-registration:0002-cross-trigger-pathway-overlap
 created: "2026-07-07"
 updated: "2026-07-07"
-input: "In-silico power/bias-floor simulation (code/scripts/t116_power_bias_sim.py; numpy-only, deterministic seed 1729, 8000 reps/cell) seeded with the t035 observed concordance dispersion. Answers the Q-A gate raised in interpretation:0001 and upgrades the 'plausibly estimand-aligned / worth simulating' power claim in interpretation:0036. No participant data; this is a design-power simulation, not an empirical test of hypothesis:0001."
+input: "In-silico power/bias-floor simulation (Snakemake workflow code/workflows/t116-power-bias-floor/; config-driven, numpy-only, deterministic seed 1729, 8000 reps/cell) seeded with the t035 observed concordance dispersion. Answers the Q-A gate raised in interpretation:0001 and upgrades the 'plausibly estimand-aligned / worth simulating' power claim in interpretation:0036. No participant data; this is a design-power simulation, not an empirical test of hypothesis:0001."
 workflow_run: "t116-power-bias-floor-sim"
 prior_interpretations:
   - interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating
@@ -42,7 +42,7 @@ about the DEMONSTRABILITY PATH (what design can adjudicate them), not about thei
 
 ## Findings Summary
 
-Simulation (deterministic, seed 1729, 8000 reps/cell; `code/scripts/t116_power_bias_sim.py`). A generative model puts, on each arm's per-pathway effect vector, a shared component (`hypothesis:0001`: one global attractor axis through all arms // `question:0017`: R generic "finite-repertoire" axes with random per-arm loadings), plus arm-specific systematic bias (does **not** shrink with N) and within-arm sampling noise (shrinks as `sigma0/sqrt(N)`). The `question:0017` null is **concordance-matched** to `hypothesis:0001` per cell — the adversarial case of *identical average cross-arm overlap, different rank*.
+Simulation (deterministic, seed 1729, 8000 reps/cell; Snakemake workflow `code/workflows/t116-power-bias-floor/`, all parameters in its `config.yaml`). A generative model puts, on each arm's per-pathway effect vector, a shared component (`hypothesis:0001`: one global attractor axis through all arms // `question:0017`: R generic "finite-repertoire" axes with random per-arm loadings), plus arm-specific systematic bias (does **not** shrink with N) and within-arm sampling noise (shrinks as `sigma0/sqrt(N)`). The `question:0017` null is **concordance-matched** to `hypothesis:0001` per cell — the adversarial case of *identical average cross-arm overlap, different rank*.
 
 - **Parameter-free calibration holds.** Sampling-null concordance SD at Hallmark P=50, K=2, N=8 = **0.1432**, matching the analytic 1/√(P−1) = 0.1429 and the **t035 observed ρ spread** (six cells ρ∈[−0.65,−0.32], SD ≈ 0.124). The concordance-noise scale is anchored to the real t035 run with **no tuning**. *(methodological, strong)*
 

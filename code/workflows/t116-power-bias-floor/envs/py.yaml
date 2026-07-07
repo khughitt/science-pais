@@ -1,0 +1,12 @@
+# Conda env for task:t116 power/bias-floor design simulation.
+# The simulation uses numpy (vectorized Monte-Carlo) plus PyYAML for config
+# parsing — no external CLI tools, no network, no scipy/matplotlib. Matches the
+# project's Snakemake --use-conda convention; the ambient uv venv already
+# satisfies these, so the workflow also runs without --use-conda.
+name: t116-power-bias-floor-py
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy>=2
+  - pyyaml>=6

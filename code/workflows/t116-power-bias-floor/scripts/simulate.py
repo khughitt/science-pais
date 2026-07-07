@@ -1,14 +1,16 @@
 # science:code
-# status: exploratory
+# status: workflow-owned
 # task_ids: [t116]
 # science:end
 
 #!/usr/bin/env python3
 """t116: Power / bias-floor simulation for the harmonized >=3-trigger shared-axis test.
 
-Answers the Q-A gate raised in interpretation:0001 (t035 null) and upgrades the
-"plausibly estimand-aligned / worth simulating" power claim in interpretation:0036
-(t103 conditional-GO staged design):
+Worker for code/workflows/t116-power-bias-floor/Snakefile. ALL design parameters
+are read from the workflow's config.yaml (--config); this script originates
+nothing. It answers the Q-A gate raised in interpretation:0001 (t035 null) and
+upgrades the "plausibly estimand-aligned / worth simulating" power claim in
+interpretation:0036 (t103 conditional-GO staged design):
 
   At achievable dense-multi-omic per-arm N (tens, MELLOW-scale) across K harmonized
   trigger arms, does the shared-latent-axis test clear the ARBITRATING bar -- separating
@@ -73,8 +75,12 @@ Concordance-noise calibration (parameter-free): with P=50 Hallmark sets the samp
 SD of a single Spearman concordance ~= 1/sqrt(P-1) ~= 0.143, matching the t035 observed
 rho spread (six cells, rho in [-0.65,-0.32], SD ~ 0.12-0.15) with no tuning.
 
-Run:  uv run --frozen python code/scripts/t116_power_bias_sim.py \
-          --out results/t116-power-bias-floor-sim
+Run (via the workflow):
+    uv run --frozen snakemake -s code/workflows/t116-power-bias-floor/Snakefile -c1 all
+Standalone (config required; hard-codes nothing):
+    uv run --frozen python code/workflows/t116-power-bias-floor/scripts/simulate.py \
+        --config code/workflows/t116-power-bias-floor/config.yaml \
+        --out results/t116-power-bias-floor-sim
 """
 from __future__ import annotations
 
@@ -85,36 +91,20 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
+import yaml
 
-SEED = 1729  # echoes the t035 determinism seed (results/verdict.json)
-P_HALLMARK = 50  # pinned primary universe (matches t035 confirmatory DB)
-
-LAM = 0.70     # true global shared-axis loading under H1
-ALPHA = 0.60   # arm-specific systematic bias (does not shrink with N)
-SIGMA0 = 1.5   # within-arm NES sampling sd at N=1 reference; effective sd = SIGMA0/sqrt(N)
-
-# Plausibility grid: the RANK of the finite-repertoire (q0017) null. Counter-intuitively,
-# a repertoire spread over FEW axes (low R) is the EASIER null to reject: random loadings
-# over few axes give lumpy, pair-specific overlaps (heterogeneous off-diagonals). Spreading
-# over MANY axes (high R) makes pairwise overlaps CONCENTRATE (CLT) toward a homogeneous
-# value that mimics a single global attractor -> the HARDER null. As R -> inf the finite
-# repertoire becomes structurally indistinguishable from a shared attractor by this test
-# (and is arguably itself a shared low-dimensional manifold / mechanism).
-REGIMES = [
-    {"key": "repertoire_R2", "label": "Lumpy low-rank repertoire (R=2) -- most distinguishable",
-     "R": 2, "note": "Random overlap over 2 generic axes: pair-specific, heterogeneous off-diagonals."},
-    {"key": "repertoire_R4", "label": "Moderate-rank repertoire (R=4)",
-     "R": 4, "note": "Overlap over 4 generic axes."},
-    {"key": "repertoire_R8", "label": "High-rank repertoire (R=8) -- pairwise overlaps concentrate",
-     "R": 8, "note": "Overlap over 8 generic axes: off-diagonals begin to homogenize, mimicking one axis."},
-    {"key": "repertoire_R16", "label": "Near-homogeneous high-rank repertoire (R=16) -- hardest",
-     "R": 16, "note": "Overlap over 16 generic axes: approaches the in-principle-indistinguishable limit."},
-]
-
-K_GRID = [2, 3, 4, 5, 6]
-N_GRID = [10, 20, 30, 50, 100]
-M = 8000            # replicates per cell
-POWER_TARGET = 0.80
+# --- design parameters: RESOLVED FROM config.yaml at runtime (see main) -------
+# These module names are the single set of knobs the compute functions read.
+# main() binds them from the workflow config; the script originates no value.
+SEED: int = 0
+P_HALLMARK: int = 0
+LAM: float = 0.0
+ALPHA: float = 0.0
+SIGMA0: float = 0.0
+K_GRID: list[int] = []
+N_GRID: list[int] = []
+M: int = 0
+POWER_TARGET: float = 0.0
 
 
 def _fixed_axes(rng: np.random.Generator, p: int, r: int):
@@ -319,32 +309,57 @@ def surface_markdown(regime, cells, mn):
     return "\n".join(lines)
 
 
+def _load_config(path: Path) -> dict:
+    """Bind the module-level design knobs from config.yaml. The script hard-codes
+    no design value; every knob originates here (fail early on a missing key)."""
+    cfg = yaml.safe_load(path.read_text())
+    global SEED, P_HALLMARK, LAM, ALPHA, SIGMA0, K_GRID, N_GRID, M, POWER_TARGET
+    det, mod, grid = cfg["determinism"], cfg["model"], cfg["grid"]
+    SEED = int(det["seed"])
+    M = int(det["replicates"])
+    POWER_TARGET = float(det["power_target"])
+    P_HALLMARK = int(mod["p_hallmark"])
+    LAM = float(mod["lam"])
+    ALPHA = float(mod["alpha"])
+    SIGMA0 = float(mod["sigma0"])
+    K_GRID = list(grid["k_grid"])
+    N_GRID = list(grid["n_grid"])
+    return cfg
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", type=Path, default=Path("results/t116-power-bias-floor-sim"))
-    ap.add_argument("--replicates", type=int, default=M)
+    ap.add_argument("--config", type=Path, required=True,
+                    help="Workflow config.yaml (single source of design parameters).")
+    ap.add_argument("--out", type=Path, required=True,
+                    help="Output directory (results/*, gitignored).")
     args = ap.parse_args()
+
+    cfg = _load_config(args.config)
+    ps_cfg = cfg["p_sensitivity"]
+    regimes = cfg["regimes"]
     args.out.mkdir(parents=True, exist_ok=True)
 
     rng = np.random.default_rng(SEED)
-    calib = calibration_check(rng, P_HALLMARK, args.replicates)
+    calib = calibration_check(rng, P_HALLMARK, M)
 
     surfaces = []
-    for regime in REGIMES:
-        cells = run_surface(rng, regime, K_GRID, N_GRID, P_HALLMARK, args.replicates)
+    for regime in regimes:
+        cells = run_surface(rng, regime, K_GRID, N_GRID, P_HALLMARK, M)
         surfaces.append({"regime": regime, "min_arbitrating": min_arbitrating(cells),
                          "cells": cells})
 
     # Pathway-universe (P) sensitivity: does a higher-resolution feature space lower the
-    # arm-count threshold? Run against the moderate-rank (R=4) null at N=30.
-    psens = p_sensitivity(rng, K_GRID, 30, [50, 200, 1000], R=4, M=min(6000, args.replicates))
+    # arm-count threshold? Run against the moderate-rank null at fixed N.
+    psens = p_sensitivity(rng, K_GRID, int(ps_cfg["N"]), list(ps_cfg["p_grid"]),
+                          R=int(ps_cfg["R"]), M=min(int(ps_cfg["replicates"]), M))
 
     out = {
-        "determinism": {"seed": SEED, "rng": "PCG64 (numpy default_rng)",
-                        "replicates": args.replicates},
+        "determinism": {"seed": SEED, "rng": "PCG64 (numpy default_rng)", "replicates": M},
         "params": {"P_sets": P_HALLMARK, "lam": LAM, "alpha": ALPHA, "sigma0": SIGMA0,
                    "K_grid": K_GRID, "N_grid": N_GRID, "power_target": POWER_TARGET},
         "statistic": "off-diagonal pairwise-concordance SD (single-shared-axis homogeneity test)",
+        "config_source": str(args.config),
         "calibration": calib,
         "surfaces": surfaces,
         "p_sensitivity": psens,
@@ -388,6 +403,8 @@ def main():
 
     meta = {
         "task": "task:t116", "answers": ["interpretation:0001 (Q-A)", "interpretation:0036"],
+        "workflow": "code/workflows/t116-power-bias-floor/Snakefile",
+        "config_source": str(args.config),
         "git_commit": out["provenance"]["git_commit"],
         "created_utc": out["provenance"]["created_utc"],
         "determinism": out["determinism"], "params": out["params"],
