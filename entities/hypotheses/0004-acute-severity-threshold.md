@@ -86,7 +86,7 @@ The magnitude of the acute-phase insult sets a *threshold* in the host's recover
   the "severity is one axis among several" reading above rather than a severity-only gate. See
   `topic:innate-immune-memory-trained-immunity-in-pais`.
 - **Immunosuppressed-host (SOT) paradox constrains the host-reserve reading (t097, 2026-07-07).**
-  Solid-organ-transplant / immunosuppressed hosts show *higher* PASC risk (Frontera2024, N3C aOR ~1.48),
+  Solid-organ-transplant / immunosuppressed hosts show *higher* PASC risk (Vinson2024, N3C aOR ~1.48),
   not lower — which sits awkwardly with any naive "less immune activation → less post-infectious illness"
   intuition and forces the host-reserve axis to be stated as *reserve depletion and/or impaired antigen
   clearance* rather than activation magnitude alone. It is compatible with h0004's reserve framing but

@@ -53,7 +53,7 @@ leave implicit.
 ## Current Evidence
 
 - No published study has formally tested interaction between co-occurring boundary conditions for PAIS.
-- Frailty and immunosuppression co-occur in transplant recipients (Frontera2024 cohort), but frailty
+- Frailty and immunosuppression co-occur in transplant recipients (Vinson2024 cohort), but frailty
   scoring was not reported; the N3C data includes comorbidity indices but not validated frailty phenotypes.
 - Atopy and pregnancy co-occur commonly; the RECOVER EHR pregnancy analysis (Bruno2024) did not stratify
   by atopy/MCAS pre-existing status.

@@ -21,7 +21,7 @@ ontology_terms:
 datasets: []
 source_refs:
   - cite:Hammel2023
-  - cite:Frontera2024
+  - cite:Vinson2024
   - cite:Jassat2023
   - cite:Bruno2024
   - cite:Hickie2006
@@ -126,9 +126,9 @@ de-novo antibody generation. Anti-TNF and other biologic DMARDs variably suppres
 immunity. These agents reduce but do not eliminate T-cell and NK-cell effector functions.
 
 **In the post-infectious/PAIS context (limited; contested):** The most informative current data come from
-solid organ transplant recipients (SOTRs). Frontera et al. (2024), using the National COVID Cohort
+solid organ transplant recipients (SOTRs). Vinson et al. (2024), using the National COVID Cohort
 Collaborative (N3C), found SOTRs had significantly higher PASC rates than non-immunosuppressed patients
-(2.2% vs 1.4%; adjusted OR 1.48, 95% CI 1.09–2.01) after propensity-score matching [@Frontera2024]. This
+(2.2% vs 1.4%; adjusted OR 1.48, 95% CI 1.09–2.01) after propensity-score matching [@Vinson2024]. This
 **counterintuitive result** — higher PASC in immunosuppressed, not lower — is mechanistically important.
 At least three non-exclusive explanations are in play: (1) impaired viral clearance leads to prolonged
 or higher antigen burden, amplifying the persistence mechanism rather than blocking it; (2) baseline
@@ -137,10 +137,30 @@ independent of immunosuppression; (3) mycophenolate mofetil was independently as
 this cohort, possibly via impaired antiviral B-cell responses. None of these explanations has been tested
 in a design with immunosuppression intensity as the primary exposure gradient.
 
-**Biologic-DMARD populations** (patients with RA, IBD, psoriasis, MS) are essentially unstudied for
-post-infectious sequelae beyond acute severity. This is a notable gap given the large exposed population
-and the mechanistic specificity of individual agents (anti-TNF, anti-IL-6R, anti-CD20, JAK inhibitors
-each block distinct immune pathways).
+**Biologic-DMARD populations** (patients with RA, IBD, psoriasis, MS) are partially studied by mechanism
+class, and a t109 literature pass (2026-07-07) retires the "essentially unstudied" flag *for the B-cell-depletion
+and HIV sub-strata specifically*, while it survives intact for the other agents:
+
+- **Anti-CD20 (rituximab) — now has mechanism data.** Chavatza et al. (2025) found that 26/225 (11.6%)
+  rituximab-treated autoimmune-rheumatic-disease patients developed *persistent-relapsing* SARS-CoV-2
+  infection (median ~65 days, up to ~361), with hypogammaglobulinemia in ~68% of events and — most
+  informatively — lower-respiratory viral persistence (BAL PCR-positive in ~70.6%, with ~32.1%
+  BAL-positive/nasopharyngeal-negative discordance) [@Chavatza2025]. This is a clean mechanistic natural
+  experiment: B-cell depletion → impaired humoral clearance → prolonged/compartmentalized antigen
+  persistence. It directly instantiates the *impaired-clearance* explanation for the SOT PASC paradox and
+  links to the project's antigen-persistence frame (h0002). Caveat: the endpoint is persistent-relapsing
+  *infection*, not a chronic-symptom PAIS phenotype.
+- **HIV (chronic immune-exhaustion baseline) — now has mechanism data.** Peluso et al. (2022, AIDS;
+  citekey `Peluso2022a`) found people with HIV on ART had ~4-fold higher odds of PASC (OR ~4.01, 95% CI
+  1.45–11.1; ~82.8% vs ~54.4%), coupled with an exhaustion/dysregulation signature — ~70% lower relative
+  SARS-CoV-2-specific memory CD8+ T cells and higher PD-1+ SARS-CoV-2-specific CD4+ T cells [@Peluso2022a].
+  HIV thus operates as a boundary probe of a pre-existing exhaustion baseline (relevant to h0003) rather
+  than pharmacologic immunosuppression per se.
+- **Still genuinely empty:** anti-TNF, anti-IL-6R (tocilizumab), and JAK-inhibitor populations have **no
+  long-COVID mechanism data** — the evidence for these agents is confined to acute-severity outcomes and
+  attenuated vaccine-antibody responses. "Immunosuppression as a graded exposure" therefore remains
+  unstudied as such for the non-B-cell, non-HIV agents, despite the mechanistic specificity that makes them
+  attractive natural experiments (each blocks a distinct pathway). This residual gap is the priority target.
 
 **Critical design gap:** existing SOT studies lack (a) severity-matched immunocompetent controls with
 fine-grained severity gradients, (b) immunosuppression-intensity gradients as a dose-response variable,
@@ -169,7 +189,14 @@ had the highest age-standardized years lived with disability attributed to COVID
 identified loci in the HLA-DQ/ABO region among the top multi-ancestry associations. These loci are
 not population-specific, but allele frequencies and linkage-disequilibrium structure differ across
 ancestries. GWAS instruments developed in European-ancestry cohorts may not port to other ancestral
-contexts. This is an active methodological limitation of any MR-based analysis of long COVID.
+contexts. This is an active methodological limitation of any MR-based analysis of long COVID. A
+multi-ancestry meta-analysis (Chaudhary et al. / 23andMe, 2024 preprint — European 42,899 cases, Latinx
+8,631, African-American 2,234) reports three genome-wide-significant loci — HLA-DQA1/DQB, ABO, and a
+**BPTF–KPNA2–C17orf58** signal beyond the HLA/ABO pair — plus genetic correlations with ME/CFS,
+fibromyalgia, and depression; notably FOXP4 rs9367106 was *not* significant here. **Maturity caveat:**
+this is a *preprint*, and 23andMe participants are largely US-based self-report — it broadens *ancestral*
+diversity but is **not** an LMIC cohort and does not close the LMIC-mechanism gap (see follow-up task to
+check for a peer-reviewed version before relying on it).
 
 **Tonic immune modifiers in sub-Saharan Africa (mechanistic hypothesis; essentially untested in PAIS
 context):** Populations with high endemic helminth burden have chronically Th2/IL-4/IL-10-skewed immunity
@@ -196,13 +223,17 @@ chronic low-grade inflammation ("inflammaging"), depleted naive T-cell pools, sk
 PAIS substrate.
 
 **In the PAIS context (limited; epidemiological rather than mechanistic):** Hammel et al. (2023) analyzed
-frailty as a PASC risk factor in ~3,000 US veterans using the Fried frailty index and the VA COVID-19
-Shared Data Resource [@Hammel2023]. Frailty was associated with a 41% increase in PASC risk (adjusted
-HR ~1.41) and pre-frailty with a 15% increase, compared with robust individuals, controlling for age,
-comorbidity, and acute illness severity. The association held in both Delta and Omicron waves. This
-establishes frailty as an independent PASC predictor beyond acute severity — which is the key test for
-hypothesis h0004 (the threshold/reserve model predicts that those with lower baseline reserve should
-cross the self-sustaining threshold at lower acute severity).
+frailty as a PASC risk factor in **245,857** US veterans (July 2021–February 2022) using the **31-item VA
+Frailty Index** (a deficit-accumulation index derived from EHR data — *not* the Fried frailty phenotype)
+and the VA COVID-19 Shared Data Resource [@Hammel2023]. Frailty was associated with a ~40% increase in
+PASC risk (adjusted HR 1.40, 95% CI 1.35–1.47) and pre-frailty with a ~17% increase (aHR 1.17, 95% CI
+1.11–1.19), compared with robust individuals. The association held across both the Delta and Omicron
+periods. This is *consistent with* frailty being an independent PASC predictor — the key test for hypothesis
+h0004 (the threshold/reserve model predicts that those with lower baseline reserve should cross the
+self-sustaining threshold at lower acute severity). **Caveat (t109 verification, 2026-07-07):** whether the
+adjustment set explicitly included *acute-illness severity* (hospitalization/oxygen) could **not** be
+confirmed from the abstract (full text was agent-inaccessible); the strong "independent of severity" reading
+that h0004 leans on therefore remains **[UNVERIFIED]** pending a full-text check of the covariate list.
 
 **The bidirectional coupling hypothesis (plausible; essentially untested as a PAIS claim):** PAIS may
 itself deepen frailty — the post-infectious state could accelerate inflammaging, exhaust residual immune
@@ -249,6 +280,18 @@ non-atopic PAIS individuals.
 MCAS specifically. Pre-existing diagnosed MCAS is rare and poorly ascertained in general cohorts. Whether
 elevated IgE or atopy diagnosis prospectively predicts PAIS incidence, rather than just symptom
 *profile*, is not established.
+
+**First mediator-level signal (t109, 2026-07-07; low maturity).** The MCAS-long-COVID literature has been
+predominantly symptom-survey and hypothesis (the Weinstock/Afrin thesis: MCA symptom burden in long COVID
+matches diagnosed MCAS by pattern, but with *no* mediator measurement). One recent study begins to supply
+actual mediator data: Augustin et al. (2025, Open Forum Infectious Diseases, conference abstract) reported
+that post-COVID-syndrome patients (PCS+, n=21) vs PCS− (n=11) had elevated ileal activated mast cells
+(CD117+CD25+, p<0.0001), higher **serum tryptase** (p=0.020) and zonulin (p=0.024), and higher **ileal
+SARS-CoV-2 spike protein** (p=0.014) despite undetectable *serum* spike — tying mast-cell activation to
+gut antigen persistence and barrier dysfunction. **Maturity caveat:** conference abstract, n=21, not yet a
+full peer-reviewed paper; treat as hypothesis-supporting, not confirmatory. It is nonetheless the first
+long-COVID cohort with a tryptase readout and the first to couple the MCAS strand to the antigen-persistence
+frame (h0002). The mediator-confirmed, MCAS-diagnosed long-COVID cohort remains near-absent.
 
 ---
 
@@ -484,7 +527,7 @@ inclusion in a dataset plan.
 
 ## Key References
 
-- Frontera2024: N3C analysis of PASC prevalence in solid organ transplant recipients; establishes paradoxically higher PASC rate in immunosuppressed SOTRs (aOR 1.48 vs non-immunosuppressed).
+- Vinson2024: N3C propensity-score-matched analysis of PASC in solid organ transplant recipients; establishes paradoxically higher PASC rate in immunosuppressed SOTRs (2.2% vs 1.4%, aOR 1.48); mycophenolate mofetil independently associated (aOR 2.04). (Originally mis-keyed as "Frontera2024" with corrupt identifiers; corrected 2026-07-07.)
 - Hammel2023: frailty as independent PASC risk factor in US veterans (Delta and Omicron waves); frailty +41%, pre-frailty +15% vs robust after adjusting for age and acute severity.
 - Jassat2023: Lancet commentary on long COVID as a hidden public health crisis in LMICs; documents research gap and high observed burden in South African cohort.
 - Bruno2024: RECOVER EHR cohort analysis; COVID during pregnancy associated with lower overall PASC but higher cardiac/vascular PASC and lower cognitive/fatigue PASC — a mechanistically informative dissociation.
@@ -493,9 +536,15 @@ inclusion in a dataset plan.
 
 ## Suggested Follow-up Research Tasks
 
-- **Lit search for boundary-population PAIS mechanism papers:** systematic searches for immunosuppressed
-  PAIS (biologic DMARDs, HIV, organ transplant), frailty + post-COVID mechanisms, and LMIC/ancestral
-  diversity PAIS cohorts. None of these has been run for this project. Priority: P2.
+- **Lit search for boundary-population PAIS mechanism papers — DONE (t109, 2026-07-07).** The six anchors
+  were seeded/verified as paper entities (surfacing and correcting a mis-keyed citation: Frontera2024 →
+  Vinson2024, and a Hammel2023 sample-size/instrument error). New mechanism papers were added for the
+  immunosuppressed stratum: Peluso2022a (HIV/exhaustion-baseline) and Chavatza2025 (rituximab/antigen-
+  persistence). **Residual gaps confirmed empty:** no LMIC-based PAIS *mechanism* cohort; no long-COVID
+  mechanism data for anti-TNF / anti-IL-6R / JAK-inhibitor agents; mediator-confirmed MCAS long-COVID
+  cohorts near-absent (one n=21 conference abstract). Follow-ups spun out: seed Augustin2025/Weinstock2021
+  (MCAS) and the Chaudhary2024 multi-ancestry GWAS (pending peer-reviewed version); full-text-verify the
+  Hammel2023 covariate list to resolve the [UNVERIFIED] acute-severity-adjustment that h0004 leans on.
 - **Find-datasets pass (sync-gated, separate task t097):** identify open/downloadable cohorts for each
   of the six boundary strata. Pre-screen for third-party reproducibility compliance per D-004. Flag any
   gated-source candidates for explicit authorization decision.
