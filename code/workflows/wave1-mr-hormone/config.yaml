@@ -39,6 +39,7 @@ exposures:
     harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000/GCST90012111/harmonised/"
     build: "GRCh38"
     expected_sha256: "27c911dd81a8eb81c79e967efa758371a45935bb89447b49e88b73e5d703274d"
+    n: 370125          # GWAS Catalog GCST90012111 initialSampleSize (European UKB continuous trait)
   - name: "ruth-shbg-male"
     accession: "GCST90012109"
     trait: "shbg"
@@ -46,6 +47,7 @@ exposures:
     harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000/GCST90012109/harmonised/"
     build: "GRCh38"
     expected_sha256: "4b71db9a6ebc8a0d51e715f4b6287d457ab4b4451ccda76e29259ee19ee5b8b7"
+    n: 180726          # GWAS Catalog GCST90012109 initialSampleSize (European UKB continuous trait)
   - name: "ruth-shbg-female"
     accession: "GCST90012107"
     trait: "shbg"
@@ -53,6 +55,7 @@ exposures:
     harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000/GCST90012107/harmonised/"
     build: "GRCh38"
     expected_sha256: "39cb79e55f34b8f492d4f59e61a77731dd0da7f51059f653fe245226d5bf9709"
+    n: 189473          # GWAS Catalog GCST90012107 initialSampleSize (European UKB continuous trait)
   - name: "ruth-testosterone-combined"
     accession: "GCST90012114"
     trait: "total-testosterone"
@@ -60,6 +63,7 @@ exposures:
     harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000/GCST90012114/harmonised/"
     build: "GRCh38"
     expected_sha256: "5b74d4ed24504f2868d12b174547439df714aad26409c522fd56188e9664b5fc"
+    n: 425097          # GWAS Catalog GCST90012114 initialSampleSize (European UKB continuous trait)
   - name: "ruth-testosterone-male"
     accession: "GCST90012113"
     trait: "total-testosterone"
@@ -67,6 +71,7 @@ exposures:
     harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000/GCST90012113/harmonised/"
     build: "GRCh38"
     expected_sha256: "39d1648c10e5d5c38265d6bd6a9ad91ea3b53296d05d635873919eb75b115072"
+    n: 194453          # GWAS Catalog GCST90012113 initialSampleSize (European UKB continuous trait)
   - name: "ruth-testosterone-female"
     accession: "GCST90012112"
     trait: "total-testosterone"
@@ -74,6 +79,7 @@ exposures:
     harmonised_dir: "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90012001-GCST90013000/GCST90012112/harmonised/"
     build: "GRCh38"
     expected_sha256: "193d0dc26a77a076cb76bc23dc8e4156bd9e985ea4eb14b68f5301f99b8e4e4a"
+    n: 230454          # GWAS Catalog GCST90012112 initialSampleSize (European UKB continuous trait)
 
 # ---------------------------------------------------------------- outcome ----
 # plan:0009 — same authorised HGI vehicle as plan:0007 (D-006). GCST90454541 =
@@ -88,6 +94,8 @@ outcome:
   build: "GRCh38"
   expected_sha256: "bd7e0a0648608b69cab69b6dd9b6e7919dfcf640b6c035a3533a5d9bd00a6891"
   ancestry_note: "European-dominant multi-ancestry meta; no EUR-only sibling → ancestry flag (plan:0009 KD1, non-primary)."
+  total_n: 1100445     # case+control TOTAL: Σ per-ancestry sample_size from the -meta.yaml
+                       # (179+5725+3536+1090649+356). MRlap wants TOTAL N, not effective N.
 
 # ------------------------------------------------- MRlap LDSC reference -------
 # plan:0009 — dataset:eur-ldsc-ld-score-reference. MRlap runs cross-trait LDSC
@@ -177,3 +185,32 @@ estimate:
   weighted_median_seed: 20260705
   weighted_median_bootstrap_n: 1000
   harmonisation_dropout_warn_frac: 0.5   # quality flag if kept/input instruments < this
+
+# --------------------------------------------------------------- mrlap -------
+# plan:0009 Task 4. MRlap overlap-corrected MR. MRlap munges each raw canonical
+# sumstat and runs cross-trait LDSC internally using the `ld` (eur_w_ld_chr) +
+# `hm3` (w_hm3.snplist) references staged in Task 1. The pruning params below are
+# MRlap's documented defaults, PINNED for reproducibility — and they DIFFER from
+# the naive arm's 1000G LD-clump (naive↔corrected delta is NOT pure overlap bias).
+mrlap:
+  MR_threshold: 5.0e-8      # genome-wide-significant instruments (matches naive p-threshold)
+  MR_pruning_dist: 500      # kb — MRlap distance-based pruning window
+  MR_pruning_LD: 0          # 0 = pure distance pruning (no LD-based pruning)
+  MR_reverse: 1.0e-3        # reverse-causality (Steiger-like) exclusion threshold
+  seed: 20260705            # MRlap corrected-effect SE/cov is Monte-Carlo (get_correction sims) -> seed for reproducibility
+  ld: "data/raw/ldsc/eur_w_ld_chr"     # cross-trait LDSC LD-score directory (Task 1)
+  hm3: "data/raw/ldsc/w_hm3.snplist"   # HapMap3 SNP list (Task 1)
+
+# ------------------------------------------------------------ env (mrlap) ----
+# plan:0009 Task 4. MRlap + GenomicSEM are GitHub-only. setup_mrlap installs each
+# at a PINNED COMMIT into the r-mrlap env and HARD-FAILS unless the installed
+# packageDescription()$GithubSHA1 matches. No Python `ldsc` in the lock set.
+mrlap_env:
+  mrlap_repo: "n-mounier/MRlap"
+  mrlap_ref: "660f026864f8bfbbad5a8206bdff7d58f5d5d05b"        # 2025-01-09
+  genomicsem_repo: "GenomicSEM/GenomicSEM"
+  genomicsem_ref: "0a63ac0ea01b61d28bd17e4a204e0fa561ce5040"  # 2026-06-02
+  twosamplemr_repo: "MRCIEU/TwoSampleMR"                       # TRANSITIVE: MRlap calls TwoSampleMR::mr_ivw()/mr_egger
+  twosamplemr_ref: "v0.7.9"                                    # same pin as the naive arm (r-mr env)
+  twosamplemr_version_expected: "0.7.9"                        # hard-fail if packageVersion != this
+  ieugwasr_version_expected: "1.1.0"                           # hard-fail if packageVersion != this
