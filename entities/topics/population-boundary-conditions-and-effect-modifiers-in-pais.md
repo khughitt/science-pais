@@ -528,7 +528,7 @@ inclusion in a dataset plan.
 ## Key References
 
 - Vinson2024: N3C propensity-score-matched analysis of PASC in solid organ transplant recipients; establishes paradoxically higher PASC rate in immunosuppressed SOTRs (2.2% vs 1.4%, aOR 1.48); mycophenolate mofetil independently associated (aOR 2.04). (Originally mis-keyed as "Frontera2024" with corrupt identifiers; corrected 2026-07-07.)
-- Hammel2023: frailty as independent PASC risk factor in US veterans (Delta and Omicron waves); frailty +41%, pre-frailty +15% vs robust after adjusting for age and acute severity.
+- Hammel2023: frailty as a PASC risk factor in US veterans (N=245,857; Delta and Omicron) using the 31-item VA Frailty Index (deficit-accumulation, NOT Fried); frailty aHR 1.40 (95% CI 1.35–1.47), pre-frailty aHR 1.17. Whether acute-illness severity was in the adjustment set is [UNVERIFIED] from the abstract (full-text follow-up t113); do not assert "independent of severity" until confirmed.
 - Jassat2023: Lancet commentary on long COVID as a hidden public health crisis in LMICs; documents research gap and high observed burden in South African cohort.
 - Bruno2024: RECOVER EHR cohort analysis; COVID during pregnancy associated with lower overall PASC but higher cardiac/vascular PASC and lower cognitive/fatigue PASC — a mechanistically informative dissociation.
 - Hickie2006: Dubbo Infection Outcomes Study; foundational prospective cohort establishing that EBV-induced IM (and other pathogens) precipitates CFS-equivalent post-infectious syndromes at ~11%, with illness severity as primary predictor.

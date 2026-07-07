@@ -19,7 +19,6 @@ ontology_terms:
 - viral clearance
 - immunocompromised host
 source_refs:
-- paper:Chavatza2025
 - cite:Chavatza2025
 related:
 - hypothesis:0002-tissue-reservoir-antigen-fragment
