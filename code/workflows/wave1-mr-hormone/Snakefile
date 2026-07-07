@@ -22,7 +22,19 @@
 # rules (Tasks 2-5) are appended in later increments.
 # =============================================================================
 import json
+import subprocess
 from pathlib import Path
+
+
+def _git_commit() -> str:
+    """Current HEAD SHA for run_metadata provenance; UNKNOWN if git is unavailable."""
+    try:
+        return subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], text=True, stderr=subprocess.DEVNULL
+        ).strip()
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return "UNKNOWN"
+
 
 # --- invocation contract (invocation-independent, plan:0003 pattern) ---------
 SNAKEFILE_DIR = Path(workflow.basedir).resolve()
@@ -395,3 +407,40 @@ rule aggregate_mrlap:
         "python {SCRIPTS}/aggregate_mrlap.py --config {CONFIGFILE} "
         "--results {input.results} --naive {input.naive} "
         "--benchmarks {input.benchmarks} --setup {input.setup} --manifest {output.manifest}"
+
+
+# =============================================================================
+# Task 5 — reproducible bundle (plan:0009). Emit datapackage.json + qa_report.
+# {json,md} + run_metadata.json from the three run-of-record manifests. The
+# scientific write-up (results.md) is authored by hand, not emitted here. Run:
+#
+#     uv run snakemake -s code/workflows/wave1-mr-hormone/Snakefile bundle
+# =============================================================================
+DATAPACKAGE = f"{RESULTS}/datapackage.json"
+QA_REPORT = f"{RESULTS}/qa_report.json"
+RUN_METADATA = f"{RESULTS}/run_metadata.json"
+
+
+rule bundle:                                # Task-5 target
+    input:
+        DATAPACKAGE,
+
+
+rule emit_bundle:
+    input:
+        staging=STAGING_MANIFEST,
+        naive=NAIVE_MR_MANIFEST,
+        mrlap=MRLAP_MANIFEST,
+    output:
+        datapackage=DATAPACKAGE,
+        qa_json=QA_REPORT,
+        qa_md=f"{RESULTS}/qa_report.md",
+        run_metadata=RUN_METADATA,
+    conda:
+        "envs/stage.yaml"
+    params:
+        git_commit=lambda w: _git_commit(),
+    shell:
+        "python {SCRIPTS}/emit_bundle.py --config {CONFIGFILE} "
+        "--staging {input.staging} --naive {input.naive} --mrlap {input.mrlap} "
+        "--outdir {RESULTS} --git-commit {params.git_commit}"
