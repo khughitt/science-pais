@@ -88,6 +88,20 @@ form of the discriminating experiment the project repeatedly names but does not 
   removing the between-cohort **bias** ceiling that made the t035 public-data route non-arbitrating
   (`interpretation:0001`). Next gate: run the power/bias-floor simulation (interp-0001 "Q-A") before any
   cohort commitment.
+- **Power/bias gate RESOLVED (t116, 2026-07-07 → `interpretation:0037-t116-power-bias-floor-shared-axis-sim`):**
+  the design-power simulation (seeded with the t035 concordance dispersion) upgrades the "worth simulating"
+  claim and **relocates the binding constraint away from per-arm N**. Findings: (a) the **mean-concordance
+  statistic** (t035's) is *blind* to the `question:0017` finite-repertoire null — it clears the Monte-Carlo
+  bar trivially (power 1.0) but adjudicates nothing (power ≈ 0 vs a strength-matched null); (b) any **2-arm**
+  design is **structurally non-arbitrating at any N**; (c) the discriminating statistic is **structural** (is
+  there one shared axis through all arms?), needs **K ≥ 3**, and per-arm N in the **tens (MELLOW-scale) is
+  adequate** — N is not the lever; **arm count and feature-space resolution are**; (d) a **high-resolution
+  feature universe (~1000 sets, Reactome/GO-BP-scale)** drops the required arm count from >6 (Hallmark-50) to
+  **K=3**. Net for this design: fundable **with conditions** — commit to K≥3, a ~1000-set feature space, a
+  structural single-factor confirmatory statistic (retire mean concordance), and full-recovery controls; the
+  opportunistic Tier-2/Tier-3 arms (Lyme, Q-fever) become **power margin**, not garnish. Pivotal remaining
+  unknown: the real cross-PAIS repertoire **rank/lumpiness** (Q-C), partly estimable from existing
+  single-trigger multi-omics before any cohort commitment.
 
 ## Connections to Project
 

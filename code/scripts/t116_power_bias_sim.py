@@ -1,0 +1,408 @@
+# science:code
+# status: exploratory
+# task_ids: [t116]
+# science:end
+
+#!/usr/bin/env python3
+"""t116: Power / bias-floor simulation for the harmonized >=3-trigger shared-axis test.
+
+Answers the Q-A gate raised in interpretation:0001 (t035 null) and upgrades the
+"plausibly estimand-aligned / worth simulating" power claim in interpretation:0036
+(t103 conditional-GO staged design):
+
+  At achievable dense-multi-omic per-arm N (tens, MELLOW-scale) across K harmonized
+  trigger arms, does the shared-latent-axis test clear the ARBITRATING bar -- separating
+  hypothesis:0001's coordinated shared attractor from the question:0017 finite-repertoire
+  coincidence null -- not merely the Monte-Carlo (sampling-only) bar that the t035
+  within-arm permutation test used?
+
+Deliverable: a minimum arm-count (K) x per-arm-N surface of ARBITRATING power, across a
+plausibility grid of how diffuse the finite-repertoire null is.
+
+------------------------------------------------------------------------------------
+The crux (why the t035 statistic is structurally blind)
+
+Mean cross-arm pathway concordance CANNOT tell hypothesis:0001 apart from a
+strength-matched question:0017 null: both are "a shared axis." A world with a genuine
+coordinated attractor and a world where every trigger pair happens to share a slice of
+the same finite sickness repertoire can produce IDENTICAL mean concordance. No per-arm N
+and no arm count fixes a statistic that is blind by construction. (t035's permutation test
+is exactly this statistic; it is why interp-0001 records the 2-cohort result as
+non-arbitrating rather than as evidence against h0001.)
+
+What DOES discriminate is STRUCTURE across arms:
+
+  * h0001 (coordinated attractor): ONE global axis runs through ALL arms -> every
+    trigger-pair is concordant to the SAME degree -> the K x K concordance matrix has
+    HOMOGENEOUS off-diagonals (low off-diagonal SD; rank-1-plus-diagonal).
+  * q0017 (finite-repertoire coincidence): different arm-pairs overlap on DIFFERENT
+    generic axes -> pairwise concordances are HETEROGENEOUS (high off-diagonal SD; the
+    shared structure is diffuse / higher-rank), even at the SAME mean concordance.
+
+The discriminating statistic is therefore the SD of the off-diagonal pairwise
+concordances (a single-shared-axis / homogeneity test). It is undefined for K = 2 (one
+off-diagonal -> no variance) -> a 2-arm design is STRUCTURALLY non-arbitrating at ANY N.
+This is the quantitative form of interp-0001's observation that "the effective
+cross-trigger unit is the cohort, and there are only two."
+
+Generative model (per pathway-set NES-like value; one length-P vector per arm k):
+
+    x_k = shared_k + alpha * a_k + e_k
+      shared_k : H1 -> lambda * s          (single global axis, all arms; homogeneous)
+                 H0 -> kappa * sum_r Z_kr g_r  (R generic repertoire axes, nonneg random
+                                                loadings Z_kr; diffuse; heterogeneous)
+      alpha*a_k: arm-specific systematic bias (random direction; does NOT shrink with N)
+      e_k      : within-arm sampling noise, sd = sigma0 / sqrt(N) (shrinks with N)
+
+H0's kappa is CALIBRATED per (K, N) so its realized mean pairwise concordance MATCHES H1's
+(the adversarial null: same average overlap, different rank). Because they are matched, the
+mean-concordance test has ~5% power (non-arbitrating) BY CONSTRUCTION -- reported to show
+the t035 statistic's blindness -- and all discriminating power comes from the off-diagonal
+homogeneity statistic.
+
+Two decision bars:
+  * Monte-Carlo bar : reject the SAMPLING-ONLY null (no shared structure). Blind to the
+                      finite-repertoire alternative; what a permutation test sees.
+  * Arbitrating bar : classify H1 (homogeneous, single attractor) vs the concordance-
+                      MATCHED q0017 finite-repertoire null, controlling the finite-
+                      repertoire false-"it's-a-shared-attractor" rate at 5%.
+
+    arbitrating_power(K,N) = P( offdiag_SD(H1) < q05( offdiag_SD | q0017 null ) )
+
+Concordance-noise calibration (parameter-free): with P=50 Hallmark sets the sampling-null
+SD of a single Spearman concordance ~= 1/sqrt(P-1) ~= 0.143, matching the t035 observed
+rho spread (six cells, rho in [-0.65,-0.32], SD ~ 0.12-0.15) with no tuning.
+
+Run:  uv run --frozen python code/scripts/t116_power_bias_sim.py \
+          --out results/t116-power-bias-floor-sim
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import subprocess
+from datetime import datetime, timezone
+from pathlib import Path
+
+import numpy as np
+
+SEED = 1729  # echoes the t035 determinism seed (results/verdict.json)
+P_HALLMARK = 50  # pinned primary universe (matches t035 confirmatory DB)
+
+LAM = 0.70     # true global shared-axis loading under H1
+ALPHA = 0.60   # arm-specific systematic bias (does not shrink with N)
+SIGMA0 = 1.5   # within-arm NES sampling sd at N=1 reference; effective sd = SIGMA0/sqrt(N)
+
+# Plausibility grid: the RANK of the finite-repertoire (q0017) null. Counter-intuitively,
+# a repertoire spread over FEW axes (low R) is the EASIER null to reject: random loadings
+# over few axes give lumpy, pair-specific overlaps (heterogeneous off-diagonals). Spreading
+# over MANY axes (high R) makes pairwise overlaps CONCENTRATE (CLT) toward a homogeneous
+# value that mimics a single global attractor -> the HARDER null. As R -> inf the finite
+# repertoire becomes structurally indistinguishable from a shared attractor by this test
+# (and is arguably itself a shared low-dimensional manifold / mechanism).
+REGIMES = [
+    {"key": "repertoire_R2", "label": "Lumpy low-rank repertoire (R=2) -- most distinguishable",
+     "R": 2, "note": "Random overlap over 2 generic axes: pair-specific, heterogeneous off-diagonals."},
+    {"key": "repertoire_R4", "label": "Moderate-rank repertoire (R=4)",
+     "R": 4, "note": "Overlap over 4 generic axes."},
+    {"key": "repertoire_R8", "label": "High-rank repertoire (R=8) -- pairwise overlaps concentrate",
+     "R": 8, "note": "Overlap over 8 generic axes: off-diagonals begin to homogenize, mimicking one axis."},
+    {"key": "repertoire_R16", "label": "Near-homogeneous high-rank repertoire (R=16) -- hardest",
+     "R": 16, "note": "Overlap over 16 generic axes: approaches the in-principle-indistinguishable limit."},
+]
+
+K_GRID = [2, 3, 4, 5, 6]
+N_GRID = [10, 20, 30, 50, 100]
+M = 8000            # replicates per cell
+POWER_TARGET = 0.80
+
+
+def _fixed_axes(rng: np.random.Generator, p: int, r: int):
+    """One global axis s and R repertoire axes g (each mean 0, sd 1; mutually orthogonalized)."""
+    A = rng.standard_normal((1 + r, p))
+    A = A - A.mean(axis=1, keepdims=True)
+    # Gram-Schmidt orthogonalization
+    for i in range(A.shape[0]):
+        for j in range(i):
+            A[i] = A[i] - (A[i] @ A[j]) / (A[j] @ A[j]) * A[j]
+        A[i] = A[i] / A[i].std()
+    return A[0], A[1:]  # s (P,), g (R,P)
+
+
+def _ranks(x: np.ndarray) -> np.ndarray:
+    return np.argsort(np.argsort(x, axis=-1), axis=-1).astype(np.float64)
+
+
+def _concord_matrix(x: np.ndarray) -> np.ndarray:
+    """Spearman concordance matrices, one per replicate. x: (M,K,P) -> C: (M,K,K)."""
+    r = _ranks(x)
+    r = r - r.mean(axis=-1, keepdims=True)
+    r = r / np.linalg.norm(r, axis=-1, keepdims=True)
+    return np.einsum("mkp,mjp->mkj", r, r)
+
+
+def _offdiag_mean_sd(C: np.ndarray, K: int):
+    """Mean and SD of off-diagonal entries, per replicate."""
+    iu = np.triu_indices(K, k=1)
+    off = C[:, iu[0], iu[1]]  # (M, n_pairs)
+    return off.mean(axis=1), (off.std(axis=1) if K > 2 else np.zeros(off.shape[0]))
+
+
+def _gen(rng, kind, K, N, P, s, g, kappa, M):
+    a = rng.standard_normal((M, K, P))
+    a = a - a.mean(axis=-1, keepdims=True)
+    a = a / a.std(axis=-1, keepdims=True)
+    e = rng.standard_normal((M, K, P)) * (SIGMA0 / np.sqrt(N))
+    if kind == "H1":
+        shared = LAM * s  # broadcast (P,) -> (M,K,P)
+    elif kind == "H0":
+        R = g.shape[0]
+        Z = np.abs(rng.standard_normal((M, K, R)))  # nonneg repertoire loadings
+        shared = kappa * np.einsum("mkr,rp->mkp", Z, g)
+    else:  # sampling-only null (no shared structure)
+        shared = 0.0
+    return shared + ALPHA * a + e
+
+
+def _match_kappa(rng, K, N, P, s, g, target_rho, M_cal=2500):
+    """Binary-search kappa so H0's realized mean concordance matches target_rho."""
+    lo, hi = 0.0, 5.0
+    for _ in range(16):
+        mid = 0.5 * (lo + hi)
+        C = _concord_matrix(_gen(rng, "H0", K, N, P, s, g, mid, M_cal))
+        mrho, _ = _offdiag_mean_sd(C, K)
+        if mrho.mean() < target_rho:
+            lo = mid
+        else:
+            hi = mid
+    return 0.5 * (lo + hi)
+
+
+def run_surface(rng, regime, k_grid, n_grid, P, M):
+    s, g = _fixed_axes(rng, P, regime["R"])
+    cells = []
+    for K in k_grid:
+        for N in n_grid:
+            # H1: single global attractor axis
+            C_h1 = _concord_matrix(_gen(rng, "H1", K, N, P, s, g, 0.0, M))
+            mrho_h1, sd_h1 = _offdiag_mean_sd(C_h1, K)
+            target = float(mrho_h1.mean())
+
+            # Sampling-only null (for the Monte-Carlo bar)
+            C_samp = _concord_matrix(_gen(rng, "H0", K, N, P, s, g, 0.0, M))  # kappa 0 -> no shared
+            mrho_samp, _ = _offdiag_mean_sd(C_samp, K)
+            q95_mc = float(np.quantile(mrho_samp, 0.95))
+            power_mc = float(np.mean(mrho_h1 > q95_mc))  # mean-concordance vs sampling null
+
+            # q0017 finite-repertoire null, concordance-MATCHED to H1
+            kappa = _match_kappa(rng, K, N, P, s, g, target)
+            C_h0 = _concord_matrix(_gen(rng, "H0", K, N, P, s, g, kappa, M))
+            mrho_h0, sd_h0 = _offdiag_mean_sd(C_h0, K)
+
+            if K < 3:
+                # Structural test undefined (one off-diagonal); non-arbitrating by construction.
+                power_arb = 0.0
+                power_meanconc_vs_q0017 = float(np.mean(
+                    mrho_h1 > np.quantile(mrho_h0, 0.95)))
+                q_crit = None
+            else:
+                # Arbitrating: classify H1 (homogeneous) vs q0017 (heterogeneous) off-diag SD,
+                # controlling the finite-repertoire false-positive at 5%.
+                q_crit = float(np.quantile(sd_h0, 0.05))
+                power_arb = float(np.mean(sd_h1 < q_crit))
+                power_meanconc_vs_q0017 = float(np.mean(
+                    mrho_h1 > np.quantile(mrho_h0, 0.95)))
+
+            cells.append({
+                "K": K, "N": N,
+                "power_arbitrating_structural": round(power_arb, 4),
+                "arbitrating": (K >= 3) and (power_arb >= POWER_TARGET),
+                "power_meanconc_vs_sampling": round(power_mc, 4),   # Monte-Carlo bar
+                "power_meanconc_vs_q0017": round(power_meanconc_vs_q0017, 4),  # ~0.05: blind
+                "matched_mean_rho": round(target, 4),
+                "offdiag_sd_H1": round(float(sd_h1.mean()), 4),
+                "offdiag_sd_q0017": round(float(sd_h0.mean()), 4),
+                "q05_offdiag_sd_q0017": (round(q_crit, 4) if q_crit is not None else None),
+            })
+    return cells
+
+
+def p_sensitivity(rng, k_grid, N, P_grid, R, M):
+    """How the pathway-universe size P (Hallmark 50 -> Reactome/GO-BP ~1000) moves the
+    minimum arbitrating arm count. Larger P lowers the concordance sampling floor
+    (~1/sqrt(P-1)), sharpening the structural homogeneity test."""
+    rows = []
+    for P in P_grid:
+        s, g = _fixed_axes(rng, P, R)
+        for K in k_grid:
+            C_h1 = _concord_matrix(_gen(rng, "H1", K, N, P, s, g, 0.0, M))
+            mrho_h1, sd_h1 = _offdiag_mean_sd(C_h1, K)
+            if K < 3:
+                rows.append({"P": P, "K": K, "N": N, "power_arbitrating_structural": 0.0})
+                continue
+            kappa = _match_kappa(rng, K, N, P, s, g, float(mrho_h1.mean()))
+            _, sd_h0 = _offdiag_mean_sd(_concord_matrix(
+                _gen(rng, "H0", K, N, P, s, g, kappa, M)), K)
+            power = float(np.mean(sd_h1 < np.quantile(sd_h0, 0.05)))
+            rows.append({"P": P, "K": K, "N": N,
+                         "power_arbitrating_structural": round(power, 4),
+                         "sampling_floor_1_over_sqrt_P_minus_1": round(1/np.sqrt(P-1), 4)})
+    # minimum arbitrating K per P
+    min_k = {}
+    for P in P_grid:
+        ok = [r for r in rows if r["P"] == P and r["K"] >= 3
+              and r["power_arbitrating_structural"] >= POWER_TARGET]
+        min_k[P] = (min(r["K"] for r in ok) if ok else None)
+    return {"R": R, "N": N, "P_grid": P_grid, "min_arbitrating_K_by_P": min_k, "rows": rows}
+
+
+def min_arbitrating(cells):
+    ok = [c for c in cells if c["arbitrating"]]
+    if not ok:
+        return None
+    ok.sort(key=lambda c: (c["K"], c["N"]))
+    return {"K": ok[0]["K"], "N": ok[0]["N"],
+            "power_arbitrating_structural": ok[0]["power_arbitrating_structural"]}
+
+
+def calibration_check(rng, P, M):
+    s, g = _fixed_axes(rng, P, 2)
+    C = _concord_matrix(_gen(rng, "H0", 2, 8, P, s, g, 0.0, M))  # sampling-only
+    mrho, _ = _offdiag_mean_sd(C, 2)
+    return {
+        "P": P, "K": 2, "N": 8,
+        "sd_rho_sampling_null": round(float(mrho.std()), 4),
+        "analytic_1_over_sqrt_P_minus_1": round(1.0 / np.sqrt(P - 1), 4),
+        "t035_observed_rho_range": [-0.6535, -0.3209],
+        "t035_observed_rho_sd_across_6_cells": 0.124,
+    }
+
+
+def _git_commit() -> str:
+    try:
+        return subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], text=True, stderr=subprocess.DEVNULL).strip()
+    except Exception:  # noqa: BLE001
+        return "unknown"
+
+
+def surface_markdown(regime, cells, mn):
+    lines = [f"### {regime['label']}  (`{regime['key']}`)", "",
+             f"Finite-repertoire null spread over R = {regime['R']} generic axes. "
+             f"{regime['note']}", ""]
+    if mn:
+        lines.append(f"**Minimum arbitrating footprint:** K = {mn['K']} arms x N = "
+                     f"{mn['N']}/arm (structural arbitrating power "
+                     f"{mn['power_arbitrating_structural']:.2f}).")
+    else:
+        lines.append(f"**No (K, N) in the grid reaches structural arbitrating power >= "
+                     f"{POWER_TARGET:.2f}.**")
+    lines += ["", "Structural arbitrating power (mean-concordance-vs-sampling / "
+              "Monte-Carlo power in parentheses); **bold** = arbitrating "
+              f">= {POWER_TARGET:.2f}:", ""]
+    ns = sorted({c["N"] for c in cells})
+    ks = sorted({c["K"] for c in cells})
+    lines += ["| K \\ N/arm | " + " | ".join(str(n) for n in ns) + " |",
+              "|" + "---|" * (len(ns) + 1)]
+    grid = {(c["K"], c["N"]): c for c in cells}
+    for K in ks:
+        row = [f"| **{K}**"]
+        for N in ns:
+            c = grid[(K, N)]
+            cell = (f"{c['power_arbitrating_structural']:.2f} "
+                    f"({c['power_meanconc_vs_sampling']:.2f})")
+            if c["arbitrating"]:
+                cell = f"**{cell}**"
+            row.append(cell)
+        lines.append(" | ".join(row) + " |")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--out", type=Path, default=Path("results/t116-power-bias-floor-sim"))
+    ap.add_argument("--replicates", type=int, default=M)
+    args = ap.parse_args()
+    args.out.mkdir(parents=True, exist_ok=True)
+
+    rng = np.random.default_rng(SEED)
+    calib = calibration_check(rng, P_HALLMARK, args.replicates)
+
+    surfaces = []
+    for regime in REGIMES:
+        cells = run_surface(rng, regime, K_GRID, N_GRID, P_HALLMARK, args.replicates)
+        surfaces.append({"regime": regime, "min_arbitrating": min_arbitrating(cells),
+                         "cells": cells})
+
+    # Pathway-universe (P) sensitivity: does a higher-resolution feature space lower the
+    # arm-count threshold? Run against the moderate-rank (R=4) null at N=30.
+    psens = p_sensitivity(rng, K_GRID, 30, [50, 200, 1000], R=4, M=min(6000, args.replicates))
+
+    out = {
+        "determinism": {"seed": SEED, "rng": "PCG64 (numpy default_rng)",
+                        "replicates": args.replicates},
+        "params": {"P_sets": P_HALLMARK, "lam": LAM, "alpha": ALPHA, "sigma0": SIGMA0,
+                   "K_grid": K_GRID, "N_grid": N_GRID, "power_target": POWER_TARGET},
+        "statistic": "off-diagonal pairwise-concordance SD (single-shared-axis homogeneity test)",
+        "calibration": calib,
+        "surfaces": surfaces,
+        "p_sensitivity": psens,
+        "provenance": {"git_commit": _git_commit(),
+                       "created_utc": datetime.now(timezone.utc).isoformat()},
+    }
+    (args.out / "surface.json").write_text(json.dumps(out, indent=2))
+
+    md = ["# t116 -- Power / bias-floor surface for the harmonized >=3-trigger shared-axis test",
+          "",
+          "**Arbitrating** = the shared-axis test separates hypothesis:0001 (one coordinated "
+          "attractor axis through all arms) from the concordance-MATCHED question:0017 "
+          "finite-repertoire null, via off-diagonal concordance homogeneity. **Monte-Carlo** "
+          "(parenthetical) = mean concordance beats the sampling-only null -- blind to q0017.",
+          "",
+          "Mean-concordance power against the matched q0017 null is ~0.05 at every cell (the "
+          "t035 statistic is non-arbitrating by construction); all discrimination comes from "
+          "the structural homogeneity statistic, which is undefined at K=2.",
+          "",
+          "## Calibration (parameter-free)", "",
+          f"Sampling-null concordance SD at P={calib['P']}, K=2, N=8: "
+          f"**{calib['sd_rho_sampling_null']}** vs analytic 1/sqrt(P-1) = "
+          f"{calib['analytic_1_over_sqrt_P_minus_1']}; consistent with the t035 observed rho "
+          f"spread (SD ~ {calib['t035_observed_rho_sd_across_6_cells']}).",
+          "", "## Surfaces", ""]
+    for surf in surfaces:
+        md.append(surface_markdown(surf["regime"], surf["cells"], surf["min_arbitrating"]))
+    md += ["## Pathway-universe (P) sensitivity",
+           "",
+           "Minimum arbitrating arm count K vs feature-space size P (moderate-rank R=4 null, "
+           "N=30/arm). A higher-resolution pathway universe lowers the concordance sampling "
+           "floor (~1/sqrt(P-1)) and sharpens the structural test:",
+           "",
+           "| P (sets) | sampling floor | min arbitrating K |",
+           "|---|---|---|"]
+    for P in psens["P_grid"]:
+        mk = psens["min_arbitrating_K_by_P"][P]
+        md.append(f"| {P} | {1/np.sqrt(P-1):.3f} | {mk if mk else '> 6 (none)'} |")
+    md.append("")
+    (args.out / "surface.md").write_text("\n".join(md))
+
+    meta = {
+        "task": "task:t116", "answers": ["interpretation:0001 (Q-A)", "interpretation:0036"],
+        "git_commit": out["provenance"]["git_commit"],
+        "created_utc": out["provenance"]["created_utc"],
+        "determinism": out["determinism"], "params": out["params"],
+        "statistic": out["statistic"],
+        "min_arbitrating_by_regime": {s["regime"]["key"]: s["min_arbitrating"] for s in surfaces},
+        "p_sensitivity_min_K": psens["min_arbitrating_K_by_P"],
+    }
+    (args.out / "run_metadata.json").write_text(json.dumps(meta, indent=2))
+
+    print("calibration:", json.dumps(calib))
+    for s in surfaces:
+        print(f"{s['regime']['key']:>16}: min_arbitrating = {s['min_arbitrating']}")
+    print("p_sensitivity min K by P:", psens["min_arbitrating_K_by_P"])
+    print(f"wrote -> {args.out}/surface.json, surface.md, run_metadata.json")
+
+
+if __name__ == "__main__":
+    main()
