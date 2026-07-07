@@ -6,7 +6,9 @@ title: cGAS-STING cytosolic DNA sensing as upstream driver of persistent type I 
 status: active
 ontology_terms: []
 datasets: []
-source_refs: []
+source_refs:
+- cite:Sun2013
+- cite:Domizio2022
 origins:
 - type: assistant
   ref: explore-ideas-mechanism
@@ -34,7 +36,7 @@ Is cytosolic-DNA sensing via cGAS → STING → TBK1 → IRF3 the innate sensor 
 
 ## Current Evidence
 
-- **Legitimate on general innate-immunology grounds.** mtDNA / micronuclear dsDNA / viral nucleic-acid fragments do activate cGAS-STING → IFN-I independent of replication `[MISSING_CITATION]`; SARS-CoV-2 is reported to release mtDNA that engages this axis `[MISSING_CITATION]`. The question stands on its own as an "upstream driver of persistent IFN-I" candidate. (Because t112 intentionally severed the *trained-immunity locus* grounding, these general cGAS-STING/mtDNA claims still need primary innate-immunology sources — a canonical cGAS-STING reference and a SARS-CoV-2-mtDNA-release paper — to be seeded before the claims are cited as established.)
+- **Legitimate on general innate-immunology grounds (now sourced).** Cytosolic dsDNA activates the cGAS → cGAMP → STING → TBK1 → IRF3 → type-I-IFN axis independent of active viral replication — the canonical cGAS-sensor discovery (Sun et al. 2013) [@Sun2013]. In COVID-19 specifically, Domizio et al. (2022) showed SARS-CoV-2 triggers mitochondrial damage in endothelial cells, releasing **mtDNA** into the cytosol that activates cGAS-STING (established by ρ⁰/mtDNA-depletion and VDAC1-inhibitor experiments), while macrophages engage the same pathway via DNA from engulfed dying endothelial cells; STING inhibition (H-151) reduced IFN-I-driven immunopathology and improved survival *without* affecting viral replication [@Domizio2022]. **Grounding boundary:** Domizio2022 characterizes *acute/severe* COVID endothelial immunopathology — it grounds acute cGAS-STING → IFN-I engagement, whereas the extrapolation to *persistent* IFN-I in PAIS (the actual q0023 claim) remains inferential. The question stands as an "upstream driver of persistent IFN-I" candidate on this footing.
 - **Trained-immunity locus grounding was sought and NOT found (t112, 2026-07).** A dedicated literature pass found **no primary study reporting chromatin accessibility or activating histone marks at cGAS / STING (TMEM173) / IRF / ISG loci in trained myeloid cells**. The only primary STING↔trained-immunity link is *functional* (STING agonism, e.g. c-di-AMP-overexpressing BCG, augments training; type-I-IFN signaling gates β-glucan-driven hematopoietic expansion) — no locus-level epigenomic readout at the sensor loci exists.
 - **Consequence:** the earlier framing that trained HSPCs carry elevated STING/IFN-locus accessibility, or that a chronic-STING chromatin imprint sustains IFN-I without ongoing ligand, is a **hypothesis, not an evidenced link**. This sub-branch has been *severed* from the trained-immunity epigenomic axis in `topic:innate-immune-memory-trained-immunity-in-pais` pending primary locus-level evidence.
 
@@ -52,6 +54,6 @@ Is cytosolic-DNA sensing via cGAS → STING → TBK1 → IRF3 the innate sensor 
 
 ## Related
 
-- Topic notes: `topic:innate-immune-memory-trained-immunity-in-pais` (q0023 sub-axis, grounding severed)
-- Article notes:
+- Topic notes: `topic:innate-immune-memory-trained-immunity-in-pais` (q0023 sub-axis, trained-immunity locus grounding severed)
+- Article notes: `paper:Sun2013` (canonical cGAS→STING→IFN-I pathway), `paper:Domizio2022` (SARS-CoV-2 mtDNA→cGAS-STING→IFN-I immunopathology in acute COVID)
 - Methods/Datasets:
