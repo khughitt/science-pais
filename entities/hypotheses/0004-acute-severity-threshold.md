@@ -20,6 +20,7 @@ source_refs:
 related:
 - topic:shared-failure-mode-across-pais
 - topic:innate-immune-memory-trained-immunity-in-pais
+- topic:population-boundary-conditions-and-effect-modifiers-in-pais
 - question:0003-acute-severity-threshold-for-self-sustaining-pais
 - question:0012-prevention-vaccination-antiviral-reduces-pais
 - hypothesis:0001-shared-dysregulated-attractor
@@ -84,6 +85,14 @@ The magnitude of the acute-phase insult sets a *threshold* in the host's recover
   the imprinting-dependent component and would *not* explain the common mild-onset PAIS case — reinforcing
   the "severity is one axis among several" reading above rather than a severity-only gate. See
   `topic:innate-immune-memory-trained-immunity-in-pais`.
+- **Immunosuppressed-host (SOT) paradox constrains the host-reserve reading (t097, 2026-07-07).**
+  Solid-organ-transplant / immunosuppressed hosts show *higher* PASC risk (Frontera2024, N3C aOR ~1.48),
+  not lower — which sits awkwardly with any naive "less immune activation → less post-infectious illness"
+  intuition and forces the host-reserve axis to be stated as *reserve depletion and/or impaired antigen
+  clearance* rather than activation magnitude alone. It is compatible with h0004's reserve framing but
+  rules out a simple monotonic "activation → chronicity" gate. See
+  `topic:population-boundary-conditions-and-effect-modifiers-in-pais` (fuller treatment + refs when the
+  transplant literature is reviewed).
 
 ## Predictions
 
