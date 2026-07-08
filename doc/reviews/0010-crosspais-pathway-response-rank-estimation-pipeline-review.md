@@ -1,0 +1,178 @@
+---
+reviews:
+  - plan:0010-crosspais-pathway-response-rank-estimation
+  - entities/plans/0010-crosspais-pathway-response-rank-estimation.md
+date: "2026-07-08"
+overall: WARN
+---
+
+# Pipeline Review: t117 cross-PAIS pathway-response rank estimation (plan:0010)
+
+- **Reviews:** `plan:0010-crosspais-pathway-response-rank-estimation` (+ its WP1-verified `dataset:` corpus)
+- **Date:** 2026-07-08
+- **Overall:** WARN
+
+## Summary
+
+This is an unusually honest, well-structured data-analysis plan: it freezes a rotation-invariant estimand,
+pre-locks LODO/LOCO pass/fail semantics, treats correlated-artifact bias as first-class admissibility, and —
+via a real WP1 record-verification pass — has already surfaced its own binding negative result (public
+single-trigger blood data cannot deliver a q0050-grade, long-COVID-out-surviving rank). It earns credit for
+that. But the review finds **two HIGH conceptual gaps the plan does not flag**: (1) the headline "LC-out
+non-identifiable" ceiling rests on an **unsourced `min_contrasts=6` threshold that is not `interpretation:0037`-grounded**
+(t116 grounds *arm count K≥3*, under which LC-out is admissible-but-underpowered, not non-identifiable) —
+a borderline-circular, threshold-driven conclusion; and (2) the plan's primary statistic is a **rank
+estimator (SVD/parallel-analysis)**, whereas t116 characterized the power of a **different** statistic (the
+structural SD-of-off-diagonal-concordances test), so "mapping R onto the t116 R-regime grid" is **not yet
+justified** and lacks the parameter-free calibration t116 itself exemplifies. A third substantive gap: the
+strict matrix **mixes blood compartments** (whole blood / PBMC / sorted monocytes), so a shared cross-trigger
+axis could be **cell-composition shift**, not shared pathway biology — a confound the artifact battery does
+not catch. None invalidate the estimand; all should be closed before the workflow is built.
+
+## Rubric Results
+
+| Dimension | Score | Issues |
+|---|---|---|
+| Evidence coverage | WARN | Stage-3b thresholds (`min_triggers/contrasts/platforms`, R-band ±1, subspace-angle cutoff) are chosen, not sourced; the headline finding hinges on the unsourced `min_contrasts=6`; the "~1000-set" universe resolution (load-bearing per t116) is asserted, not shown |
+| Assumption audit | WARN | Compartment heterogeneity (WB/PBMC/sorted monocytes) → shared axis may be cell-composition shift, not pathway biology; cross-platform NES comparability assumed |
+| Data availability | WARN | Corpus resolves to entities; most `verified: true` / `landing-confirmed` / `last_reviewed: 2026-07-08`; **staging deferred to WP0 (retrieval-probe exception — OK)**; but `consumed_by: plan:0010` backlinks not yet written (WP0 task) |
+| Identifiability | WARN | q0050-grade target honestly reported unreachable, re-scoped target reachable; **but the "non-identifiable" strength is threshold-driven** (see Finding A) — the defensible claim is "low-power/wide-CI", weaker than stated |
+| Reproducibility | WARN | Inherits plan:0003 seed + version-pin discipline; but the **new estimators'** determinism (parallel-analysis permutation seed, CV-SVD fold seed, BicMix MCMC seed/chains/convergence) is unspecified |
+| Validation criteria | WARN | QA checkpoints inherited; **no positive/calibration control that the rank battery recovers a known injected R** (t116 had parameter-free calibration; this plan needs the analogue); no scale/resource run named |
+| Scope check | PASS (note) | Squarely in-scope (PAIS cross-trigger synthesis, feeds q0050/h0001); **but omits the project's designated non-infectious stress-test (GWS/FM read-across, D-003)** for the Q-D attractor-vs-generic-manifold question |
+| Integration boundaries | WARN | "Reuse plan:0003 machinery verbatim" understates a large per-deposit harmonization surface; and the rank estimator ≠ the t116 structural statistic (Finding B) — the grid mapping is an unvalidated boundary |
+| Manifest completeness | WARN | Datapackage discipline inherited from plan:0003, but a `datapackage.json` for the t117 rank-estimation outputs (matrix + R estimates + stability profiles) is not explicitly required |
+
+## Detailed Findings
+
+### Finding A — the headline LC-out ceiling is threshold-driven and not t116-grounded (Dim 1 + Dim 4, HIGH)
+
+The plan's binding result — "LC-out leaves ~4 contrasts < the ≥6 floor → **non-identifiable** → strict result
+capped at hypothesis-grade" — is the most decision-relevant claim in the document. It rests on the Stage-3b
+gate `min_contrasts=6`, which the plan **sets itself** and does **not** source. `interpretation:0037` grounds
+a different quantity: the binding levers are **arm count K≥3** and feature resolution (~1000 sets); "per-arm N
+is not the binding constraint." Under a t116-faithful gate (**≥3 arms/triggers**), the LC-out fold retains
+**4 triggers ≥ 3 → admissible**. The honest statement is therefore weaker than "non-identifiable": LC-out
+estimates a shared-subspace rank from **4 single-trigger columns with no within-trigger replication**, which is
+**low-power with a wide confidence interval** — not structurally unreachable. As written, the plan **defines
+the gate and the gate drives the headline** (borderline circular), and the specific verdict flips with an
+unsourced constant (at `min_contrasts=4`, LC-out is borderline-admissible).
+
+**Recommendation:** re-ground the admissibility gate in `interpretation:0037` (K≥3 arms + ~1000-set features)
+rather than a hand-set contrast count; report the LC-out conclusion as a **sensitivity curve over the
+threshold and over per-fold power** (parallel-analysis CI width), not a binary identifiability verdict. The
+qualitative conclusion ("public data cannot *robustly* pin the cross-PAIS rank once LC is removed") likely
+survives — but it must be shown to survive, not asserted via `min_contrasts=6`.
+
+### Finding B — the rank estimator is not the statistic t116 characterized; the grid mapping is unvalidated (Dim 6 + Dim 8, HIGH)
+
+Stage 3 makes the **effective rank R** (parallel analysis / cross-validated SVD) the primary readout, and
+Stage 5 **maps that R onto "the t116 R-regime grid."** But t116/`interpretation:0037` never studied a rank
+estimator: it varied R as a *generative* parameter and measured the **power of a structural single-shared-axis
+statistic (the SD of off-diagonal pairwise concordances)**. There is no result in t116 that a rank
+*estimator* recovers the generative R at achievable K/N — so the plan's central bridge ("estimate R → read
+off the t116 GO/NO-GO") is a **procedure substitution that has not been validated**. This is also the missing
+positive control: t116's credibility came from a *parameter-free calibration* (concordance SD vs 1/√(P−1)
+matching the t035 run); this plan reports no analogous check that its battery returns the right R on data of
+known rank.
+
+**Recommendation:** either (i) adopt t116's **structural single-factor-adequacy statistic** as the
+confirmatory primary (it is what the grid was built for, and what interp-0037 tells q0050 to pre-register),
+relegating SVD-rank to a descriptive companion; or (ii) **calibrate the rank battery against t116's own
+generative model** — inject matrices at known R (2, 4, 8) with matched concordance and arm-bias, confirm the
+battery recovers R (and its CI) at the corpus's real K/N — *before* any real-data R is mapped to the grid.
+Option (ii) is the cheaper and more informative addition and mirrors the t116 calibration ethos.
+
+### Finding C — compartment heterogeneity is an unmodeled biological confound (Dim 2, HIGH)
+
+The strict matrix mixes **whole blood, PBMC, and sorted monocytes** (QFS `gse130353`). A shared cross-trigger
+axis can then be a **cell-composition-shift axis** (neutrophilia / lymphopenia / monocyte activation) — a
+genuine, reproducible expression signal that is **not** disease-pathway biology and that the artifact battery
+does **not** catch: platform-LOO cannot separate compartment from trigger when a rare trigger has exactly one
+compartment (drop the monocyte set and you drop Q-fever entirely), and housekeeping/GC negative-control sets
+don't flag composition shift because it is real regulation, not a technical artifact. This is arguably the
+single most likely benign explanation for a low-rank cross-PAIS signal.
+
+**Recommendation:** add an explicit **cell-composition control**: estimate leukocyte fractions per sample
+(deconvolution), carry a **composition axis as a named nuisance/negative-control dimension**, and report R
+both before and after composition adjustment. A shared axis that dissolves under composition adjustment is a
+blood-count signature, not an attractor.
+
+### Finding D — the project's designated non-infectious stress-test (GWS/FM) is omitted (Dim 7, MEDIUM)
+
+`specs/scope-boundaries.md` (D-003) names **Gulf War Syndrome / fibromyalgia as "the single best external test
+of the attractor's trigger-agnostic claim"** and PACVS as read-across. The plan's specificity layer uses
+*acute-infection* decoys but omits this designated *non-infectious* read-across — yet it is exactly the lever
+for `interpretation:0037`'s Q-D identifiability ceiling (infection-specific attractor vs generic-sickness
+manifold). If the learned PAIS blood subspace is **equally recovered by non-infectious GWS/FM**, that is strong
+evidence it is a generic fatigue/sickness manifold, not an infection-specific attractor.
+
+**Recommendation:** add a **GWS/FM (and if available PACVS) read-across column** to the triangulation/specificity
+layer, scored as a discriminating test of infection-specificity — not pooled into the primary rank matrix.
+This is in-scope, cheap relative to its value, and directly addresses Q-D.
+
+### Finding E — WP1 may already be the deliverable; weigh the cost of Stages 2–6 (Dim 4, MEDIUM)
+
+WP1 has established the binding negative result on data. Building the full pipeline (stage 10 deposits →
+harmonize → rank battery → sparse FA → artifact adjudication) to produce a **hypothesis-grade descriptive R**
+is a large effort for a heavily caveated output. t117 asks "estimate the rank"; the honest, defensible answer
+may already be *"not robustly estimable from public data — here is the corpus-readiness ceiling and the
+interp-0037 amendment."*
+
+**Recommendation:** insert an explicit **decision gate after Finding A/B are resolved**: is the descriptive R
+(plus the GWS/FM specificity test and artifact adjudication) worth the staging + harmonization cost, or is the
+WP1 finding + a scoped calibration the t117 deliverable? If proceeding, de-scope to the cheapest path that
+yields the descriptive R + the Q-D specificity test.
+
+### Finding F — "reuse plan:0003 machinery" understates the harmonization surface (Dim 8, MEDIUM)
+
+plan:0003's preprocessing is **dataset-specific** (MMSEQ `log_mu` near-zero antimode filter for GSE130353;
+U133A∪B combine for GSE14577). The t117 corpus spans salmon TPM/counts, DESeq/CPM tables, Illumina microarray,
+and MMSEQ across three compartments and ≥5 sequencers. Each deposit needs its own ingest/normalization/gene-id
+path, and NES comparability across e.g. sorted-monocyte-MMSEQ vs PBMC-salmon vs PBL-microarray is **assumed,
+not shown**. "Reuse verbatim" hides most of the real engineering.
+
+**Recommendation:** specify a **per-deposit ingest contract** and an **NES-comparability gate** in WP2 — e.g.
+the two same-tissue LC RNA-seq deposits should produce concordant NES on a matched contrast before any
+cross-compartment comparison is trusted.
+
+### Finding G — provenance backlinks and rank-output manifest (Dim 3 + Dim 9, LOW)
+
+`consumed_by: plan:0010` backlinks are not yet on the datasets (WP0 names this), and no `datapackage.json` is
+specified for the rank-estimation outputs. Both are deferred/acceptable but should be named as DoD items.
+
+## Recommendations (priority order)
+
+1. **Resolve the estimator/statistic mismatch (Finding B)** — calibrate the rank battery against t116's
+   generative model (or adopt t116's structural statistic) before any grid mapping. Highest-leverage: it is
+   the bridge the whole q0050 consequence rides on.
+2. **Re-ground the LC-out ceiling (Finding A)** — replace `min_contrasts=6` with a t116-grounded (K≥3) gate +
+   a threshold/power sensitivity curve; downgrade "non-identifiable" to "low-power/wide-CI" unless the sim
+   calibration says otherwise.
+3. **Add the cell-composition control (Finding C)** — deconvolution + composition-adjusted R; the leading
+   benign rival for a low-rank signal.
+4. **Add the GWS/FM specificity read-across (Finding D)** — the project's own designated test of infection-specificity / Q-D.
+5. **Decide scope (Finding E)** and **specify per-deposit ingest + NES-comparability (Finding F)**; pin the
+   new estimators' seeds/convergence and the rank-output datapackage (Findings G, Repro/Manifest).
+
+## Strengths
+
+- **Intellectual honesty is the plan's defining feature.** It pre-registers LODO/LOCO pass/fail *before*
+  seeing folds, self-reports the long-COVID dominance, and — via a real WP1 pass — surfaces its own binding
+  negative result rather than burying it. The two-matrix verdict rule (strict vs ME/CFS-sensitivity, with
+  hypothesis-grade demotion) is exactly right.
+- **WP1 was executed against real records, not asserted** — and it did work: it demoted two deposits on the
+  ≥4-week floor (removing influenza and chikungunya), corrected GSE251872 (12v15, not 17v21), and caught
+  GSE224615's missing per-sample matrix. Design specifics are now record-checked, not `[UNVERIFIED]`.
+- **Artifact-as-rival is first-class**, correctly importing the t116 pipeline-review's correlated-bias finding
+  as an admissibility criterion rather than cleanup.
+- **The estimand is rotation-invariant and the sparse-FA instrument is correctly relegated** to a
+  replication-gated secondary — the plan resists the temptation to over-model n≈15–40 contrasts.
+
+## Disposition
+
+Overall **WARN** — a sound, honest design with no invalidating defect, but with two HIGH conceptual gaps
+(estimator↔t116-statistic mismatch; threshold-driven headline) and one HIGH confound (compartment/composition)
+that should be closed before the WP0 workflow is built. Recommended path: address Findings A–C (and add the
+Finding D specificity test) as plan amendments, then re-review the amended Stage 3/5 before committing to
+staging.
