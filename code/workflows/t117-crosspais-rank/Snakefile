@@ -723,18 +723,30 @@ rule assemble_matrix:
 # calibration sentinel GATES grid placement (Stage 5).
 # =============================================================================
 rule rank_battery:
+    # WP3: rotation-invariant rank battery (parallel analysis + bi-cross-validation SVD
+    # + split-half) with a row-bootstrap CI, the t116 structural co-primary (off-diagonal
+    # concordance SD), and pre-locked LODO/LOCO + first-class LC-out power/CI curve +
+    # compartment-stratified R. All estimators live in rank_estimators.py — the SAME
+    # module calibration_3c imports (Finding B: calibrated == applied procedure).
     input:
         matrix=f"{PROC}/matrix/{{matrix}}.pathway_by_contrast.tsv",
         grouping=f"{PROC}/matrix/{{matrix}}.grouping.json",
+        script=f"{SCRIPTS}/rank_battery.py",
+        estimators=f"{SCRIPTS}/rank_estimators.py",
+        config=CONFIGFILE,
     output:
         rank=f"{RES}/rank/{{matrix}}.rank.json",          # R + CI from >=3 estimators
         structural=f"{RES}/rank/{{matrix}}.structural.json",  # off-diagonal concordance SD
         stability=f"{RES}/rank/{{matrix}}.stability.json",    # LODO + LOCO + LC-out power curve
-    params:
-        seeds=config["determinism"]["seeds"],
-        folds=config["folds"],
+    log:
+        f"{RES}/logs/rank/{{matrix}}.log",
+    conda:
+        "../envs/py.yaml"
     shell:
-        stub("rank_battery {wildcards.matrix}")
+        "python {input.script} --config {input.config} --matrix {wildcards.matrix} "
+        "--in-matrix {input.matrix} --in-grouping {input.grouping} "
+        "--out-rank {output.rank} --out-structural {output.structural} "
+        "--out-stability {output.stability} > {log} 2>&1"
 
 rule calibration_3c:
     # review Finding B: calibration MUST be against the OBSERVED corpus — the
@@ -746,14 +758,20 @@ rule calibration_3c:
         matrix=f"{PROC}/matrix/strict.pathway_by_contrast.tsv",
         grouping=f"{PROC}/matrix/strict.grouping.json",       # real K (triggers) / N
         structural=f"{RES}/rank/strict.structural.json",      # real off-diagonal concordance
+        script=f"{SCRIPTS}/calibration_3c.py",
+        estimators=f"{SCRIPTS}/rank_estimators.py",
+        config=CONFIGFILE,
     output:
         report=f"{RES}/calibration/calibration.json",
-        sentinel=f"{RES}/calibration/calibration.pass",     # gates grid_placement
-    params:
-        cal=config["calibration_3c"],
-        seed=config["determinism"]["seeds"]["calibration_gen"],
+        sentinel=f"{RES}/calibration/calibration.pass",     # JSON verdict; grid_placement is fail-closed on pass==true
+    log:
+        f"{RES}/logs/calibration/calibration_3c.log",
+    conda:
+        "../envs/py.yaml"
     shell:
-        stub("calibration_3c (inject_R at REAL K/N + matched concordance — Finding B)")
+        "python {input.script} --config {input.config} --in-matrix {input.matrix} "
+        "--in-grouping {input.grouping} --in-structural {input.structural} "
+        "--out-report {output.report} --out-sentinel {output.sentinel} > {log} 2>&1"
 
 # =============================================================================
 # WP4 — artifact + compartment adjudication (Finding C). Named rivals: correlated

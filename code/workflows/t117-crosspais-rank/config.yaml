@@ -857,12 +857,20 @@ nes_comparability:
 # emitted unless this passes; a calibration failure is itself the reported result.
 calibration_3c:
   inject_R: [2, 4, 8]             # known generative ranks to recover
-  match_concordance: true         # match off-diagonal concordance to the real matrix
+  match_concordance: true         # match off-diagonal concordance to the real matrix (operating-point arm)
+  reference_concordance: 0.45     # POSITIVE-CONTROL arm: strong shared signal (~t116's matched ~0.5) at which the battery MUST recover identifiable R — disentangles "battery broken" from "corpus at the identifiability floor"
   arm_bias: 0.60                  # t116 alpha — N-invariant per-arm systematic bias
+  sigma0: 1.5                     # t116 within-arm sampling sd at N=1 (effective = sigma0/sqrt(N_col)); matches t116 model
   replicates: 4000
   ci_coverage_target: 0.90        # nominal CI must cover the injected R at ~this rate
   recovery_tol: 1                 # |R_hat - R_true| <= tol counts as recovered
   regime_band_must_match: true    # structural co-primary must land in the right band
+  match_ensemble: 300             # matrices per kappa evaluation in the concordance binary search
+  match_iters: 16                 # binary-search iterations (t116 _match_kappa)
+  kappa_hi: 5.0                   # kappa search upper bracket (boundary pin => match FAIL)
+  coverage_subset: 400            # replicates on which a row-bootstrap CI is formed for coverage
+  coverage_n_boot: 200            # bootstrap resamples per coverage-subset replicate
+  min_recovery_rate: 0.50         # an identifiable R is "recovered" iff median R_hat within tol AND recovery_rate >= this
 
 # ------------------------------------------------------ LODO / LOCO folds ----
 # Stage 3b pre-locked pass/fail. review Finding A: the ONLY interp-0037-grounded

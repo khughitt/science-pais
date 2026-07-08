@@ -682,19 +682,57 @@ downstream matrix builds on a real contract, not an assumption.
   same-tissue NES-comparability check passes on the informative subset (its all-set dilution is documented,
   not hidden). Run: `snakemake … --use-conda -- data/processed/t117/matrix/{strict,sensitivity}.pathway_by_contrast.tsv`.
 
-### WP3 — Rank estimation battery + stability + t116 calibration
-- **Stage 3c first (gating):** calibrate the battery on t116-generative synthetic matrices at known
-  R ∈ {2,4,8} at the real corpus K/N; confirm recovery + CI calibration; **no grid placement downstream
-  unless this passes** (review Finding B).
-- Parallel analysis, CV/bi-cross-val SVD, split-half, LODO + LOCO on both matrices; **compute the t116
-  structural single-axis statistic as a co-primary** alongside R; report R + uncertainty and the full
-  stability profile.
-- **Report the LC-out fold as a power/CI curve** over the contrast-count / power covariates, not a binary
-  identifiability verdict (review Finding A); state whether the low-power ceiling is demonstrated.
-- **Compartment-stratified R** (WB, PBMC, sorted) + drop-sorted sensitivity (review Finding C).
-- **DoD:** R point estimate + interval per matrix (rank estimator **and** structural co-primary), with
-  LODO/LOCO curves, the LC-out power curve, compartment-stratified R, off-diagonal SD, and a Stage-3c
-  calibration pass/fail record.
+### WP3 — Rank estimation battery + stability + t116 calibration — **DONE 2026-07-08**
+- **Battery (`code/scripts/rank_battery.py` + shared `rank_estimators.py`):** three rotation-invariant
+  estimators — Horn **parallel analysis** (per-column-permuted null; the **primary**, CI-bearing,
+  calibration-validated estimator), **Owen-Perry bi-cross-validation SVD**, and **split-half**
+  subspace-stability (contiguous-run principal-angle rule) — plus a row-**bootstrap CI** on the PA R and
+  a participation-ratio effective dimension. `rank_estimators.py` is the **single source** both the battery
+  and the calibrator import (Finding B: calibrated == applied procedure). Rank estimators run on the
+  **common complete-case** row set (rows complete across all columns → fold subspaces are comparable);
+  the **structural co-primary** (t116 off-diagonal Spearman-concordance SD) uses the pairwise-complete
+  original data.
+- **Result — descriptive R (LC-inclusive), both matrices LOW-rank but FRAGILE:**
+  - **Strict (1153×7, 3 triggers): R_primary = 2** (PA sv 45.4/32.9 > null; bootstrap CI **[2,2]**;
+    bicv=5 **flagged uninformative** — error monotone to the feasible ceiling; split-half=1). Regime =
+    **low [2,4]**.
+  - **Sensitivity (1153×10, 4 triggers): R_primary = 3** (PA passes 3; bootstrap CI **[3,4]**). Regime = low.
+  - **LODO/LOCO fragility:** strict — dropping either strong LC deposit (`gse226260`/`scilifelab`)
+    collapses R to 1 (FAIL); **every LOCO fold is non-identifiable** (only 3 triggers, LC=5 cols → dropping
+    any trigger leaves 2). Sensitivity — only **lyme-out PASSes**; mecfs-/pi-mecfs-/LC-out all FAIL
+    (subspace angle > 20°). So the low-rank is **not** stable under leave-one-out.
+  - **LC-out (first-class):** **strict = NON-IDENTIFIABLE** (retains only PI-ME/CFS + Lyme = 2 triggers,
+    below the t116 K≥3 floor — Ebola omitted at WP1b, QFS is the sorted stratum); **sensitivity =
+    identifiable but FAIL** (R→2, angle 24.5°). Under the two-matrix rule this is **hypothesis-generating,
+    not q0050-grade** — demonstrated on data, not asserted.
+- **Structural co-primary DIVERGES from the SVD rank (first-class, plan Stage 3).** Both matrices show a
+  **near-zero mean off-diagonal concordance (strict −0.064, sensitivity −0.031) with a HIGH SD
+  (0.249 / 0.267)** — the **heterogeneous** (finite-repertoire-like, `question:0017`) signature, **NOT** the
+  t116 single-attractor signature (low SD + high mean). The SVD says "low-rank ≈2–3"; the structural
+  statistic says "no homogeneous shared axis." This divergence is reported, not reconciled.
+- **Stage 3c calibration (`code/scripts/calibration_3c.py`) — FAILS, and the failure IS the finding
+  (fail-closed, review Finding B / Key decision 6).** A **three-arm** design against t116's own generative
+  model at the real K/per-column-N: (0) an **α=0 estimator self-check** (clean rank-R, no bias); (1) a
+  strong-signal **positive control** (ρ=0.45, t116 arm-bias 0.60); (2) the **operating-point** arm matched
+  to the real off-diagonal concordance. Findings: **even the clean α=0 self-check floors at R̂≈1 for a
+  genuine rank-4 signal** → a rotation-invariant SVD rank estimator **cannot resolve rank ≥2 of a t116
+  nonneg-loading repertoire from K=7 columns** — the SVD→t116-grid substitution is **NOT licensed at this
+  corpus width**; and the **matched arm sits at the concordance sampling floor** (real ρ −0.064 ≈ 0 <
+  1/√(P−1)=0.033 → kappa→0, no shared signal to identify). `calibration.pass` carries `pass=false`;
+  **WP6 grid placement is fail-closed on it — no t116-grid verdict may be emitted.**
+- **Compartment-stratified R (Finding C):** strict PBMC (5 cols) R=2, WB (2 cols) R=1; sensitivity PBMC
+  (6 cols) R=3, WB (3 cols) R=1. Full composition-adjustment/deconvolution is WP4.
+- **DoD (met):** R point estimate + bootstrap CI per matrix from **≥3 rotation-invariant estimators**, the
+  **structural co-primary** SD, **LODO + LOCO reported separately**, the **LC-out contrast-count power/CI
+  curve** + first-class LC-out fold, compartment-stratified R, and a **Stage-3c calibration pass/fail
+  record** (FAIL → no grid). Run:
+  `snakemake … --use-conda -- results/t117-crosspais-rank/rank/{strict,sensitivity}.rank.json results/t117-crosspais-rank/calibration/calibration.pass`.
+- **Decision-relevant consequence.** WP3 **demonstrates on data** the WP1 provisional low-power ceiling
+  (now no longer provisional for the rank claim): the existing public single-trigger blood-bulk corpus
+  **cannot deliver a q0050-grade, LC-out-surviving cross-PAIS rank** — both because its cross-contrast
+  concordance is at the noise floor and because its column width (K=7/10) cannot resolve rank ≥2 on the
+  t116 grid. The descriptive low-rank + the SVD-vs-structural divergence are hypothesis-grade. This
+  **strengthens, on data, the case that q0050's harmonized prospective co-enrollment cohort is necessary.**
 
 ### WP4 — Artifact + compartment adjudication
 - Platform-LOO, negative-control sets, recovered-control specificity; subtract the artifact floor;
@@ -755,22 +793,29 @@ downstream matrix builds on a real contract, not an assumption.
       resolved** (both demoted); strict matrix finalized at ~10 contrasts / 5 triggers. Staging (download)
       remains pending WP0. Surfaced the LC-out low-power ceiling as a **provisional, calibration-contingent**
       result (not binding — review Finding A; to be demonstrated by the WP3 power curve).
-- [ ] LODO/LOCO carry **pre-locked pass/fail semantics** (Stage 3b): the identifiability gate is **K≥3
-      triggers only** (t116-grounded — review Finding A), with contrast/platform counts as **reported power
-      covariates, not binary gates**; non-identifiable (K<3) folds excluded from pass/fail; a fixed
-      R-band + regime + subspace-angle PASS rule; and the **LC-out fold reported first-class as a power/CI
-      curve** — a low-rank result that cannot power LC-out is demoted to hypothesis-generating.
-- [ ] **Stage 3c calibration (review Finding B):** the rank battery is validated against t116's generative
-      model at the corpus's real K/N (recovers known R ∈ {2,4,8} with calibrated CI) **before any grid
-      placement**, and the **t116 structural single-axis statistic is reported as a confirmatory co-primary**.
+- [x] **(WP3, 2026-07-08)** LODO/LOCO carry **pre-locked pass/fail semantics** (Stage 3b): the
+      identifiability gate is **K≥3 triggers only** (t116-grounded — review Finding A), with
+      contrast/platform counts as **reported power covariates, not binary gates**; non-identifiable (K<3)
+      folds excluded from pass/fail; a fixed R-band + regime + subspace-angle PASS rule; and the **LC-out
+      fold reported first-class as a power/CI curve** (strict LC-out = non-identifiable at 2 triggers;
+      sensitivity LC-out = identifiable-but-FAIL → hypothesis-generating).
+- [x] **(WP3, 2026-07-08)** **Stage 3c calibration (review Finding B):** the rank battery is calibrated
+      against t116's generative model at the corpus's real K/per-column-N via a three-arm design
+      (α=0 self-check + strong-signal positive control + operating-point matched arm). **Result: the
+      SVD→t116-grid bridge is NOT licensed at this corpus width** (K=7/10 cannot resolve rank ≥2 of a t116
+      nonneg-loading repertoire even on a clean signal) **and** the real concordance is at the sampling
+      floor → `calibration.pass=false`, **no grid placement** (fail-closed). The **t116 structural
+      single-axis statistic is reported as a confirmatory co-primary** and diverges from the SVD rank.
 - [x] **(WP2, 2026-07-08)** One reproducible, QA-gated pathway × contrast matrix per matrix (strict = 1153×7
       built of 9, sensitivity = 1153×10), computed by a single harmonized scale-aware DE→enrichment
       (`de_ranklist.R` voom/log2/direct → `fgsea_enrich.R`) over the pinned Hallmark∪Reactome universe;
       deferred columns (`gse267625`, `gse143549`) recorded as `omitted_columns`; same-tissue LC
       NES-comparability **best-pair screen** on the enriched subset (WB `concordant` ρ=0.50; PBMC
       `best_pair_only` ρ=0.42 with `gse251849` discordant → carried to WP3 `wp3_loo_candidates`).
-- [ ] R is reported with uncertainty from **≥3 rotation-invariant estimators**, and its **leave-one-dataset-out
-      and leave-one-condition-out** stability profiles are reported **separately**.
+- [x] **(WP3, 2026-07-08)** R is reported with uncertainty from **≥3 rotation-invariant estimators**
+      (parallel analysis [primary, bootstrap CI], bi-cross-validation SVD, split-half) + participation
+      ratio, and its **leave-one-dataset-out and leave-one-condition-out** stability profiles are reported
+      **separately** (strict R=2 CI[2,2], sensitivity R=3 CI[3,4]; both LC-inclusive, both LOO-fragile).
 - [ ] The artifact-control battery (platform-LOO, negative-control sets, recovered-control specificity,
       off-diagonal SD) **and the compartment/composition control** (review Finding C: WB/PBMC-only primary,
       compartment-stratified R, drop-sorted sensitivity, composition-adjusted R where deconvolution is valid)

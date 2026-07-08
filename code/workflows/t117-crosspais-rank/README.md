@@ -9,7 +9,24 @@ believability criterion.
 - **Review:** `doc/reviews/0010-crosspais-pathway-response-rank-estimation-pipeline-review.md`
 - **Grounds:** `interpretation:0037` (t116 R-regime grid + the K≥3 identifiability lever)
 
-## Status: WP1 acquisition + WP1b parse (11 deposits PASS) + WP2 (strict+sensitivity matrices) DONE; WP3–WP6 stubbed
+## Status: WP1 + WP1b (11 deposits PASS) + WP2 (matrices) + WP3 (rank battery + Stage-3c calibration) DONE; WP4–WP6 stubbed
+
+**WP3 done (2026-07-08).** `rank_battery.py` (+ shared `rank_estimators.py`) runs three
+rotation-invariant estimators (Horn parallel analysis [primary, bootstrap CI],
+Owen-Perry bi-cross-validation SVD, split-half subspace stability) + the t116 structural
+co-primary (off-diagonal Spearman-concordance SD) + pre-locked LODO/LOCO + a first-class
+LC-out contrast-count power/CI curve + compartment-stratified R. `calibration_3c.py`
+calibrates the battery against t116's own generative model at the real K/per-column-N
+(three arms: α=0 self-check, strong-signal positive control, operating-point matched).
+**Descriptive result:** strict R=2 (CI[2,2]), sensitivity R=3 (CI[3,4]) — both LOW-rank
+but LC-inclusive and LOO-fragile; strict LC-out is **non-identifiable** (2 triggers),
+sensitivity LC-out **FAILs** → hypothesis-grade, not q0050-grade. The structural
+co-primary (mean ρ≈0, SD 0.25–0.27) is **heterogeneous** (finite-repertoire-like), NOT a
+single-attractor signature — it **diverges** from the SVD low-rank reading (reported, not
+reconciled). **Stage-3c FAILS fail-closed:** the SVD→t116-grid bridge is not licensed at
+K=7/10 (even a clean rank-4 signal floors at R̂≈1 from this few columns) and the real
+concordance is at the sampling floor → `calibration.pass=false`, **no grid verdict**
+(gates WP6). This demonstrates, on data, the plan's low-power ceiling.
 
 **WP1 acquisition** (download + checksum + universe build/verify) and **WP1b**
 (config-driven brutally-uniform per-deposit parse via `stage_matrix.py`, 11 deposits
@@ -21,7 +38,7 @@ producing **strict (1153 gene_sets × 7 built cols of 9)** and **sensitivity (11
 `gse143549`) are recorded as `omitted_columns`, never silently dropped; the
 same-tissue LC NES-comparability **best-pair screen** on the enriched subset gives WB
 `concordant` (ρ=0.50) and PBMC `best_pair_only` (ρ=0.42, with `gse251849` discordant
-→ carried to WP3 `wp3_loo_candidates`). The remaining rule bodies (WP3–WP6) are fail-early stubs (`exit 1`, no
+→ carried to WP3 `wp3_loo_candidates`). The remaining rule bodies (WP4–WP6) are fail-early stubs (`exit 1`, no
 silent placeholder output). `config.yaml` encodes **all** design parameters — it
 originates the design; scripts hard-code nothing.
 
@@ -220,8 +237,8 @@ the Stage-2 DE→enrichment reuses `code/scripts/fgsea_enrich.R` verbatim and
 | `acquire_payload` · `acquire_deposit` · `build_universe` · `verify_universe` · salmon chain | WP1 ✅ | pinned+checksummed staging (done); single universe built+verified; SRA `quantify: salmon` wired | — |
 | `stage_matrix` (GEO) · `salmon_gene_matrix` (SRA) | WP1b ✅ framework + tranche 1 | config-driven per-deposit parse → uniform expr + sheet + `clean.qa.pass` + `stage_matrix.qa.json`; `matrix` handler proven (gse251849, scilifelab); microarray/tar/salmon + deferred-metadata deposits named with exact blocker | F |
 | `limma_de` · `fgsea_enrich` · `assemble_matrix` | WP2 | pathway × contrast matrix over the one pinned universe; per-deposit ingest + NES-comparability | F |
-| `rank_battery` | WP3 | ≥3 rotation-invariant estimators + **t116 structural co-primary**; LODO/LOCO; **LC-out power curve** | A, B |
-| `calibration_3c` | WP3 | rank battery calibrated vs t116's generative model at real K/N; **gates grid** | B |
+| `rank_battery` | WP3 ✅ | ≥3 rotation-invariant estimators + **t116 structural co-primary**; LODO/LOCO; **LC-out power curve**; compartment-stratified R (done) | A, B, C |
+| `calibration_3c` | WP3 ✅ | rank battery calibrated vs t116's generative model at real K/N (3-arm); **FAILS fail-closed → no grid** (done) | B |
 | `artifact_adjudication` | WP4 | platform-LOO, negative-control sets, recovered-control specificity, **compartment/composition control** (WB/PBMC-only primary, drop-sorted, composition-adjusted R) | C |
 | `gws_fm_specificity` | WP4b | non-infectious GWS/FM read-across (Q-D infection-specificity); note-only if no admissible deposit | D |
 | `grid_placement` | WP6 | t116 R-regime placement **only if `calibration.pass`** | A, B |
