@@ -16,6 +16,10 @@ related:
 - question:0001-shared-molecular-signature-across-triggers
 - question:0017-deflationary-alternatives-vs-shared-pathophysiology
 - hypothesis:0001-shared-dysregulated-attractor
+required_capabilities:
+  - modality: transcriptomics
+    assay: bulk-rna
+    cohort_design: case-control
 created: '2026-07-06'
 updated: '2026-07-07'
 added_by: explore-ideas:claude-opus-4-8:cand-methodology-cross-pathogen-harmonized-design

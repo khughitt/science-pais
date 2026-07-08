@@ -14,8 +14,16 @@ license: unknown
 access:
   level: public
   availability: available
-  verified: false
+  verified: true
+  verification_method: landing-confirmed
+  last_reviewed: "2026-07-08"
+  verified_by: "agent (t117 WP1)"
   source_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE228320
+  reproducibility:
+    obtainability: public
+    execution: local
+    extractability: full-dataset
+    notes: "Two per-sample matrices downloadable: GSE228320_Raw_counts.txt.gz (1.7 Mb, raw counts) and GSE228320_Counts_Normalized_postCOVID.txt.gz (6.0 Mb, normalized), 50 samples. Staging to disk deferred to workflow execution."
 accessions:
 - GSE228320
 ontology_terms:
@@ -41,7 +49,9 @@ related:
 
 ## What it is
 
-Long COVID selected for a pulmonary-impairment phenotype, whole-blood bulk RNA-seq, ≈25 vs 25 [UNVERIFIED].
+Whole-blood bulk RNA-seq from **COVID-19 ARDS survivors**, contrasting **severe pulmonary diffusion impairment (DLCO < 60%) vs mild/normal (DLCO ≥ 60%)**: **50 GSMs total** (case-vs-control on lung-function stratum; the ~25/25 split is consistent with "50 samples, cases vs matched controls" but the exact per-arm n is not itemised in the record — approximate). Sampled **3 months after hospital discharge** (confirmed). Assay confirmed bulk RNA-seq on Illumina HiSeq 1500 (GPL18460). Title: "Whole blood transcriptional profiling of pulmonary functional sequelae in ARDS secondary to SARS-CoV-2 infection."
+
+**FLAG — contrast is NOT long-COVID-vs-recovered (t117 WP1, 2026-07-08).** Both arms are severe-COVID (ARDS) survivors; the case axis is **residual lung-function impairment (DLCO)**, a pulmonary-sequelae phenotype, not canonical fatigue-dominant long COVID. This is a severity-selected, organ-specific contrast — reinforces the existing LOO-drop caveat. Comparator is infected-recovered with differential pulmonary outcome.
 
 ## Corpus role (t117)
 
@@ -51,4 +61,4 @@ Long COVID selected for a pulmonary-impairment phenotype, whole-blood bulk RNA-s
 
 ## Access / caveats
 
-Public accession (`GSE228320`); per-sample expression matrix downloadability **not yet confirmed** — verification is t117 WP1.
+Verified: per-sample matrices (`GSE228320_Raw_counts.txt.gz` + `GSE228320_Counts_Normalized_postCOVID.txt.gz`, 50 samples) are publicly downloadable → `verified: true`. Data access is clean; the **phenotype**, not the access, is the concern — pulmonary-impairment (DLCO) contrast within ARDS survivors makes this a **LOO-drop / demotion candidate** for a fatigue-dominant long-COVID signature analysis.

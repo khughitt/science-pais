@@ -83,14 +83,18 @@ finding that this is what drops the required arm count to K≈3). The deliverabl
 
 ## Readiness decision
 
-**Design: active. Execution: BLOCKED on WP1.** Every corpus deposit is a `candidate` with
-`access.verified: false` and `[UNVERIFIED]` design specifics; **no rank estimation (Stage 2 onward) runs
-until the WP1 verification + staging gate passes** — i.e. each admitted deposit's per-subject documented
-onset, sampling window (≥4 wk floor), tissue/platform, per-sample-matrix downloadability (or pinned raw-read
-quantification), and case-vs-control explanatory power are confirmed from the record, and the floor-/SRA-
-provisional deposits are explicitly promoted or demoted. This plan is therefore **analysis-ready-to-verify,
-not execution-ready**; WP1 is the readiness checkpoint and its exit is the point at which the strict trigger
-count is finalized. (`status: active` reflects the *design*; the execution gate is this section.)
+**Design: active. WP1 record-verification: COMPLETE (2026-07-08). Execution (Stage 2+): gated on the
+WP0 workflow build + data staging — AND bounded by the corpus-readiness ceiling below.** The WP1
+verification pass (record-checks against GEO/SRA/FigShare) is done: it corrected specifics, demoted two
+deposits (`gse224615` G4, `gse68310` floor), deferred one (`prjna1184005` G4), demoted both floor-gated
+provisionals (`gse68310`, `prjna1001790` — removing influenza and chikungunya as strict triggers), and
+finalized the strict matrix at **~10 contrasts / 5 triggers** (see *Corpus* + *WP1 corpus-readiness
+finding*). What remains before a verdict: **staging** the matrix-ready deposits (download + checksum +
+datapackage via the WP0 workflow), then Stages 2–6. **The binding scientific result of WP1 is the LC-out
+identifiability ceiling**: the strict matrix cannot produce a q0050-grade (LC-out-surviving) rank, so the
+downstream run is scoped to a *descriptive/hypothesis-grade* R + the artifact adjudication + the adjacent
+ME/CFS question — not a q0050 GO/NO-GO. (`status: active` reflects the *design*; this section is the
+execution gate and the honest ceiling on what the run can claim.)
 
 ## Two-matrix design + verdict rule (locked)
 
@@ -159,44 +163,57 @@ the primary matrix (different noise/coverage structure):
   the **specificity layer**: the post-acute subspace should *not* be recovered by an acute-only decoy at
   the same rank.
 
-## Corpus (registered candidates)
+## Corpus (WP1-verified 2026-07-08)
 
-All strict-primary and sensitivity deposits below are registered as `dataset:` candidate entities
-(`tier: evaluate-next` / `track`, `access.verified: false` pending WP1). Design specifics in those
-entities are `[UNVERIFIED]` — WP1 verifies them from the record.
+WP1 verified every registered deposit against its public GEO/SRA/FigShare record (5 parallel record-checks;
+per-deposit findings live in each `dataset:` entity). The result below is the **finalized, record-checked**
+corpus — not the discovery-sweep guess. Two deposits demoted, one deferred, both floor-gated provisionals
+demoted; several `[UNVERIFIED]` specifics corrected.
 
-**Strict-primary matrix — public, blood-bulk, documented trigger, above the ≥4 wk post-acute floor (~13 contrasts, 5 triggers):**
-- Long COVID (8): `gse226260-longcovid-pbmc`, `gse224615-longcovid-wholeblood`,
-  `gse267625-longcovid-wholeblood`, `gse270045-longcovid-mecfs-wholeblood`,
-  `scilifelab-28832492-longcovid-pbmc`, `gse251849-longcovid-pbmc-cognitive` — plus two LOO-conditional:
-  `gse228320-longcovid-wholeblood-pulmonary` (pulmonary-phenotype-selected),
-  `prjna1184005-longcovid-pbmc` (n≈7).
-- PI-ME/CFS (1): `gse251872-pime-cfs-pbmc` (adjudicated).
-- Q-fever/QFS (1): `gse130353-qfs-cfs-monocytes` *(catalogued)*.
-- Post-Ebola (1): `gse143549-post-ebola-wholeblood`.
-- Post-Lyme (1): `gse63085-post-lyme-pbmc` *(conditional — not PTLDS-symptom-selected; post-treatment window is above the floor)*.
+**Strict-primary matrix — WP1-verified, blood-bulk, downloadable per-sample matrix, ≥4 wk floor, documented trigger (~10 contrasts, 5 triggers):**
+- Long COVID (6 matrix-ready): `gse226260-longcovid-pbmc` (≈46 LC vs rich convalescent+healthy controls; 2-platform batch — **strongest**), `gse270045-longcovid-mecfs-wholeblood` (19 LC+ME/CFS vs 17 healthy — **clean**), `scilifelab-28832492-longcovid-pbmc` (60 vs 50, controls are **infected-recovered** — scores well on G3; FigShare-API matrix), `gse251849-longcovid-pbmc-cognitive` (11 vs 12, small — subgroup n 5–7), plus two **heavy-caveat keeps**: `gse267625-longcovid-wholeblood` (matrix public but **no external control** — contrast must be built *within-cohort* in WP2; longitudinal), `gse228320-longcovid-wholeblood-pulmonary` (matrix public but the contrast is a **DLCO pulmonary-severity axis within ARDS survivors**, not fatigue-dominant LC — LOO-drop).
+- PI-ME/CFS (1): `gse251872-pime-cfs-pbmc` — **corrected to 12 cases vs 15 healthy** (the "17 vs 21" was total enrollment); bulk PBMC; 2 sequencing platforms → batch covariate.
+- Q-fever/QFS (1): `gse130353-qfs-cfs-monocytes` *(previously verified/staged; sorted monocytes)*.
+- Post-Ebola (1): `gse143549-post-ebola-wholeblood` — 26 survivors vs 33, ~23 mo, downloadable CPM matrix.
+- Post-Lyme (1): `gse63085-post-lyme-pbmc` — clears the floor via the **V5 6-month** post-treatment arm; not PTLDS-symptom-selected (unselected timecourse).
 
-**Provisional — floor-gated, NOT counted in the strict trigger/K total (promotable only if WP1 finds later post-acute *symptomatic* samples):**
-- Post-influenza: `gse68310-post-influenza-wholeblood` (~3 wk convalescent window — *inside* the ≥4 wk floor; microarray). Absent later samples → routes to the early-convalescent **decoy/specificity** layer, not a primary arm.
-- Post-CHIKV: `prjna1001790-post-chikv-wholeblood` (sampled ~day 21 — *inside* the floor; SRA-only). Absent later samples → routes to the early-convalescent **decoy/specificity** layer.
+**Demoted / deferred by WP1 (out of the primary matrix):**
+- `gse224615-longcovid-wholeblood` — **demoted (G4)**: no downloadable per-sample matrix (DEG summary only), RNA-seq control arm only n≈9. DEG-level triangulation at most.
+- `prjna1184005-longcovid-pbmc` — **deferred (G4)**: SRA raw-reads only, 14 samples, split/window unverifiable → needs the pinned quantification path first.
+- `gse68310-post-influenza-wholeblood` — **demoted**: no ≥4-wk persistently-symptomatic sample (latest within-illness = day 21, expression back to baseline by then). **Removes influenza as a strict trigger**; usable only as an acute-decoy.
+- `prjna1001790-post-chikv-wholeblood` — **demoted**: sequenced post-acute = D21 (~3 wk, below floor), no D90 transcriptome, chronic-vs-recovered contrast, raw-FASTQ-only. **Removes chikungunya as a strict trigger**; candidate for an adjacent chronification-predictor triangulation.
 
-Counting an early-convalescent sample as post-acute would leak acute biology into the rank; hence their exclusion from the strict count (they also cost trigger diversity — influenza and CHIKV are the two triggers this removes from the primary matrix). Their entities keep `matrix: strict-primary` only as a *target* pending the WP1 timepoint check; the plan treats them as provisional here.
-
-**ME/CFS sensitivity additions (undocumented/cohort-level onset):**
-`gse128078-mecfs-wholeblood`, `gse16059-mecfs-twins-pbl`, `gse14577-pi-cfs-pbmc-microarray`
-*(catalogued; cohort-level post-viral, male-only)*.
+**ME/CFS sensitivity additions (WP1-verified):**
+`gse128078-mecfs-wholeblood` (14 vs 11, whole blood, FPKM matrix; multi-timepoint → WP2 collapse),
+`gse16059-mecfs-twins-pbl` (**44 discordant MZ twin pairs**, PBL microarray; WP2 must model within-pair
+correlation), `gse14577-pi-cfs-pbmc-microarray` *(previously verified; cohort-level post-viral, male-only)*.
+All `onset_certainty: unknown-per-subject`.
 
 **Flagged inaccessible (note-only, never sourced):** Dubbo/DIOS (EBV+RRV+QFS, recovered controls — the
 highest-value deposit, author-request), PTLDS dbGaP phs002795 (gated), SARS-1 (Zhao et al., request-only),
-CHIKGene Réunion (no resolvable public accession as of 2026-07-07), Raijmakers QFS multi-omics (request).
+CHIKGene Réunion (no resolvable public accession), Raijmakers QFS multi-omics (request).
 
-**Corpus honesty note.** The strict matrix is long-COVID-dominated (~8 of ~13 columns) and, after the
-floor exclusions, spans only **5 triggers**. Therefore **leave-one-condition-out is a primary readout, not
-merely a robustness check** — with the LC-out fold as the decisive stress test (operationalized in
-Stage 3b) — and the rank must not be an artifact of long-COVID over-representation. R is resolvable in the
-**decision-relevant low range (≈2–4)**;
-the corpus cannot cleanly resolve R≥8 (which is exactly the t116 "non-arbitrating" regime — a NO-GO
-signal for q0050, not a failure of this analysis).
+## WP1 corpus-readiness finding (2026-07-08) — decision-relevant
+
+The finalized strict matrix is **~10 contrasts across 5 triggers, ~8 of them long COVID**, and **each
+non-LC trigger (PI-ME/CFS, QFS, Ebola, Lyme) contributes a single contrast** with no within-trigger
+replication. Applying the plan's own **Stage 3b admissibility gate** (≥3 triggers, ≥6 contrasts, ≥2
+platforms) to the decisive **LC-out fold**: removing long COVID leaves **~4 contrasts across 4 triggers —
+below the ≥6-contrast floor → LC-out is NON-IDENTIFIABLE.** By the pre-locked verdict rule this **caps any
+strict-matrix low-rank result at "conditional on long-COVID inclusion → hypothesis-generating, not
+q0050-grade."** The two provisional deposits that could have restored trigger diversity (influenza, CHIKV)
+**both demoted** on the floor, so **there is no public rescue.**
+
+**Consequence for q0050.** This is itself a data-grounded result: **existing public single-trigger
+blood-bulk transcriptomes cannot deliver a q0050-grade, LC-out-surviving cross-PAIS rank estimate.** The
+strict matrix can still yield (a) a *descriptive, LC-inclusive* R + stability profile (hypothesis-grade),
+and (b) the artifact-vs-biology adjudication; the ME/CFS-sensitivity matrix answers the *adjacent* question.
+But the q0050 GO/NO-GO "is the cross-trigger overlap robustly low-rank" **is not answerable at
+q0050-grade from public data** — which **strengthens, on data, the case that the harmonized prospective
+co-enrollment cohort (q0050) is necessary**, matching the suspicion in `interpretation:0036`/`interpretation:0037`.
+Partial mitigations (deriving >1 contrast per dataset where subgroups/timepoints allow; adding the ME/CFS
+sensitivity arm) raise the *contrast* count but **do not restore non-LC trigger diversity**, so they do not
+lift the LC-out identifiability ceiling. This finding is carried to WP6 and to `question:0050`.
 
 ## Method
 
@@ -308,7 +325,7 @@ to the scoped phrasing when those entities are next edited (tracked in Open Ques
   plan:0010-…`) so Dimension-3 review resolves.
 - **DoD:** `snakemake -n` resolves; envs solve; every corpus dataset carries a `consumed_by` backlink.
 
-### WP1 — Corpus verification + staging (the "verify details / explanatory power" pass) — **readiness gate**
+### WP1 — Corpus verification + staging (the "verify details / explanatory power" pass) — **readiness gate** — *record-verification DONE 2026-07-08; staging pending WP0*
 - For each registered candidate: verify from the record the `[UNVERIFIED]` specifics (N, tissue, platform,
   window, per-sample matrix format, control type), confirm G4 downloadability, and **verify explanatory
   power for the variable of interest** (does a case-vs-control contrast even exist and separate?). Update
@@ -365,9 +382,10 @@ to the scoped phrasing when those entities are next edited (tracked in Open Ques
 
 - [ ] Every corpus input resolves to a `dataset:` entity with `consumed_by: plan:0010-…`; strict vs
       sensitivity membership and `onset_certainty` recorded per deposit.
-- [ ] WP1 verification pass has set `access.verified` per deposit (or demoted it), replacing the
-      `[UNVERIFIED]` specifics with confirmed values; **every floor-/SRA-provisional deposit is promoted or
-      demoted** and the strict trigger/contrast/platform count is finalized before any Stage-2+ run.
+- [x] **WP1 record-verification pass (2026-07-08)** set `access.verified` per deposit (or demoted it),
+      replacing the `[UNVERIFIED]` specifics with confirmed values; **every floor-/SRA-provisional deposit
+      resolved** (both demoted); strict matrix finalized at ~10 contrasts / 5 triggers. Staging (download)
+      remains pending WP0. Recorded the LC-out identifiability ceiling as the binding result.
 - [ ] LODO/LOCO carry **pre-locked pass/fail semantics** (Stage 3b): a fold admissibility gate
       (≥3 triggers, ≥6 contrasts, ≥2 platforms) with non-identifiable folds reported and excluded from
       pass/fail, a fixed R-band + regime + subspace-angle PASS rule, and the **LC-out fold reported

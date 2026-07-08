@@ -16,6 +16,11 @@ access:
   availability: available
   verified: false
   source_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE224615
+  reproducibility:
+    obtainability: public
+    execution: local
+    extractability: none
+    notes: "BLOCKER — no per-sample expression matrix on GEO. The only series-level supplementary is GSE224615_DEGs.xlsx (a differential-expression summary table, not per-sample counts). Per-sample expression is only obtainable from SRA raw reads (GPL20301) requiring a re-alignment/quantification pipeline; series-matrix TXT carries metadata only. Not usable as a drop-in count matrix for t117."
 accessions:
 - GSE224615
 ontology_terms:
@@ -41,14 +46,20 @@ related:
 
 ## What it is
 
-Long COVID whole-blood bulk RNA-seq, ≈27 long-COVID vs 16 recovered [UNVERIFIED], sampled ≈8 months post-infection [UNVERIFIED]. Recovered-control arm is a design strength (scored favourably).
+Long COVID blood bulk RNA-seq from the San Francisco LIINC cohort, **8 months post-infection** (confirmed). Assay confirmed bulk RNA-seq on Illumina HiSeq 4000 (GPL20301). Control arm is **infected-recovered** (non-PASC), a design strength.
+
+**Record-checked corrections (t117 WP1, 2026-07-08):**
+- The RNA-seq series holds **36 GSMs = 27 PASC (Long COVID) vs 9 non-PASC controls** — NOT 27 vs 16. The "16 non-LC" figure is the whole-study (multi-omic: CyTOF/RNAseq/Olink) participant count; the RNA-seq control arm is only **n = 9**. Corrected here.
+- Tissue is recorded only as "blood specimens" — **whole blood vs PBMC not stated in record** (the multi-omic study drew PBMCs for CyTOF). Whole-blood claim is unconfirmed.
+- **No per-sample count matrix is publicly downloadable** — see access block. This is the load-bearing blocker: only a DEGs summary table (`GSE224615_DEGs.xlsx`) is posted; per-sample expression requires SRA re-alignment.
+- Publication: Nat Immunol 2024, PMID 38212464 / DOI 10.1038/s41590-023-01724-6.
 
 ## Corpus role (t117)
 
-- **Matrix:** strict-primary
+- **Matrix:** **DEMOTED from strict-primary (WP1 2026-07-08).** Fails **G4**: no downloadable per-sample expression matrix (only a DEG-summary `.xlsx`; per-sample counts need SRA re-alignment), and the RNA-seq control arm is only n≈9 (the "16" was the whole-study multi-omic count). Retained only as possible **DEG-level triangulation**, not the primary rank matrix.
 - **onset_certainty:** documented
-- **Conditional/LOO flag:** none
+- **Conditional/LOO flag:** out of primary matrix (G4 failure).
 
 ## Access / caveats
 
-Public accession (`GSE224615`); per-sample expression matrix downloadability **not yet confirmed** — verification is t117 WP1.
+Accession resolves and is public, but **per-sample expression is NOT directly downloadable** (only `GSE224615_DEGs.xlsx`, a DEG summary; per-sample counts require SRA re-alignment). Combined with the small control arm (n = 9) and unconfirmed whole-blood tissue, this is a **DEMOTION candidate** for the t117 strict-primary matrix. `verified: false`.

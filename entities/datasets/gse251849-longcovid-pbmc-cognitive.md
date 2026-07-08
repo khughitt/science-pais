@@ -14,8 +14,16 @@ license: unknown
 access:
   level: public
   availability: available
-  verified: false
+  verified: true
+  verification_method: landing-confirmed
+  last_reviewed: "2026-07-08"
+  verified_by: "agent (t117 WP1)"
   source_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE251849
+  reproducibility:
+    obtainability: public
+    execution: local
+    extractability: full-dataset
+    notes: "GEO processed per-sample counts file GSE251849_Counts.txt.gz (+ series matrix) publicly downloadable; staging to disk deferred to workflow execution"
 accessions:
 - GSE251849
 ontology_terms:
@@ -41,7 +49,7 @@ related:
 
 ## What it is
 
-Long COVID with a cognitive/brain-fog phenotype, PBMC bulk RNA-seq, ≈11 vs 12 [UNVERIFIED] (small).
+Long COVID with a cognitive/brain-fog phenotype, **PBMC bulk RNA-seq** (record title: "Blood–brain barrier disruption and sustained systemic inflammation in individuals with long COVID-associated cognitive impairment"). Confirmed against the GEO record (2026-07-08): tissue **PBMC**; assay **bulk RNA-seq** on **GPL24676 (Illumina NovaSeq 6000)**. **23 samples**, four groups: unaffected controls (7), recovered post-COVID (5), Long COVID without brain fog (6), Long COVID with brain fog (5) — i.e. **≈11 Long COVID vs 12 controls** (7 healthy-naive + 5 infected-recovered), matching the claimed split. Case-vs-control contrast exists at sample level but n per subgroup is small (5–7). Time post-infection at sampling **[UNVERIFIED] — not stated in record**.
 
 ## Corpus role (t117)
 
@@ -51,4 +59,4 @@ Long COVID with a cognitive/brain-fog phenotype, PBMC bulk RNA-seq, ≈11 vs 12 
 
 ## Access / caveats
 
-Public accession (`GSE251849`); per-sample expression matrix downloadability **not yet confirmed** — verification is t117 WP1.
+Public accession (`GSE251849`); per-sample expression matrix **confirmed downloadable** (`GSE251849_Counts.txt.gz` processed counts + series matrix) — verified in t117 WP1 (2026-07-08).

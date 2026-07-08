@@ -14,8 +14,16 @@ license: unknown
 access:
   level: public
   availability: available
-  verified: false
+  verified: true
+  verification_method: landing-confirmed
+  last_reviewed: "2026-07-08"
+  verified_by: "agent (t117 WP1)"
   source_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE267625
+  reproducibility:
+    obtainability: public
+    execution: local
+    extractability: full-dataset
+    notes: "Per-sample matrix downloadable: GSE267625_P4O2_COVID_blood_transcriptome.csv.gz (4.8 Mb, CSV, 111 samples). Staging to disk deferred to workflow execution. CAVEAT — cohort is COVID-survivors-only (no external control arm); usable contrast must be defined within-cohort (long-COVID status / lung-function stratum) in WP2, not case-vs-healthy-control."
 accessions:
 - GSE267625
 ontology_terms:
@@ -41,7 +49,9 @@ related:
 
 ## What it is
 
-Long COVID whole-blood bulk RNA-seq, ≈95 subjects [UNVERIFIED], longitudinal, drawn from the P4O2 post-hospitalised COVID cohort.
+Whole-blood bulk RNA-seq from the **P4O2 post-hospitalised COVID cohort**: **95 COVID survivors sampled longitudinally at two timepoints (3–6 mo and 12–15 mo post-infection) → 111 GSMs total** (confirmed). Assay confirmed bulk RNA-seq on Illumina NovaSeq 6000 (GPL24676). Publication PMID 38830512 ("Whole blood transcriptome in long-COVID patients reveals association with lung function and immune response").
+
+**FLAG — no classic case-vs-control design (t117 WP1, 2026-07-08).** The cohort is **COVID-survivors-only**; there is **no external healthy/uninfected control arm**. The record describes unsupervised clustering to associate transcriptome with lung function / long-COVID status. So a usable contrast exists only **within the cohort** (long-COVID vs recovered, or by lung-function stratum), and it is entangled with the longitudinal (within-subject, two-timepoint) structure. The claimed `cohort_design: case-control` is therefore **only conditionally true** — one contrast + timepoint policy must be defined in WP2.
 
 ## Corpus role (t117)
 
@@ -51,4 +61,4 @@ Long COVID whole-blood bulk RNA-seq, ≈95 subjects [UNVERIFIED], longitudinal, 
 
 ## Access / caveats
 
-Public accession (`GSE267625`); per-sample expression matrix downloadability **not yet confirmed** — verification is t117 WP1.
+Verified: per-sample matrix `GSE267625_P4O2_COVID_blood_transcriptome.csv.gz` (4.8 Mb, 111 samples) is publicly downloadable → `verified: true`. **Caveat carried forward:** COVID-survivors-only cohort + longitudinal within-subject structure means the case-vs-control contrast is not clean and must be constructed in WP2.
