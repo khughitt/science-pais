@@ -25,6 +25,9 @@ determinism:
   seed: 1729              # echoes the t035 determinism seed (results/verdict.json)
   replicates: 8000        # M: Monte-Carlo replicates per (K, N) surface cell
   power_target: 0.80      # arbitrating-power threshold marking a cell fundable
+  match_tol: 0.03         # max |achieved - target| mean concordance for the q0017 null match;
+                          # exceeding it means kappa pinned to the search boundary -> HARD FAIL
+                          # (fail early; a mis-matched null makes the power numbers invalid)
 
 # ------------------------------------------------------ generative model -----
 # x_k = shared_k + alpha * a_k + e_k   (one length-P NES-like vector per arm k)
@@ -79,6 +82,24 @@ p_sensitivity:
   N: 30                   # per-arm N held fixed
   p_grid: [50, 200, 1000] # Hallmark -> curated -> Reactome/GO-BP scale
   replicates: 6000        # M for the P-sensitivity pass (kept <= determinism.replicates)
+
+# ------------------------------------------------------ shared-bias probe ----
+# Correlated / SHARED arm-bias confound (t116 pipeline-review finding #1). The
+# main surface models arm bias as INDEPENDENT per arm — the error harmonization
+# reduces. But running one harmonized protocol can INTRODUCE bias correlated
+# ACROSS arms (common platform / pipeline / reference-set artifact): a shared
+# axis on every arm that HOMOGENIZES off-diagonal concordances and thus MIMICS
+# hypothesis:0001 (one shared attractor). The structural test's null is the
+# HETEROGENEOUS question:0017 repertoire; it has NO protection against a
+# homogeneous shared artifact -> false "it's an attractor" verdict. This probe
+# reports that false-arbitration rate vs shared-bias strength, in the R=2 regime
+# and at a cell that DOES arbitrate against q0017 (the test's best case).
+shared_bias_probe:
+  R: 2                    # lumpy regime — where the arbitrating test works best
+  K: 6                    # an arm count that arbitrates against q0017 at R=2
+  N: 30
+  beta_grid: [0.0, 0.25, 0.5, 0.75, 1.0]  # shared-artifact loading as a fraction of the true signal LAM
+  replicates: 6000
 
 # ------------------------------------------------------ paths ----------------
 # results/* is gitignored — regenerable evidence, not committed. The committed

@@ -10,6 +10,7 @@ overall: WARN
 
 - **Reviews:** `interpretation:0037-t116-power-bias-floor-shared-axis-sim` + the Snakemake workflow `code/workflows/t116-power-bias-floor/` that produces it
 - **Date:** 2026-07-07
+- **Status:** RESOLVED 2026-07-07 (see *Resolution* below)
 - **Overall:** WARN
 
 ## Summary
@@ -68,3 +69,14 @@ Credit where due: the concordance-noise **scale** is genuinely parameter-free (f
 - **Two strong built-in validations:** the parameter-free calibration (concordance SD vs 1/√(P−1)) and the by-construction `power_meanconc_vs_q0017 ≈ 0.05` sanity check that the adversarial null is truly concordance-matched.
 - **Intellectual honesty:** the deliverable does not oversell. It explicitly labels itself design-power (not evidence for/against h0001), flags its quantitative thresholds as illustrative, and surfaces its own identifiability ceiling as a new conceptual question (Q-D) rather than burying it.
 - **The core results are structural, not tuned:** mean-concordance blindness and the K=2-undefined result follow from the statistic's algebra and the CLT, so they survive the model-dependence caveats above.
+
+## Resolution (2026-07-07)
+
+All three findings + the reproducibility nit were implemented in the workflow and folded into `interpretation:0037`. The pre-existing power surface, calibration, and P-sensitivity numbers are **byte-identical** after the changes (verified) — the additions are strictly additive, so the reviewed result stands unchanged.
+
+1. **Correlated/shared arm-bias regime (finding #1)** — added `shared_bias_probe` to `simulate.py` (config: `shared_bias_probe`). It adds one shared artifact axis *identical* on every arm (no genuine attractor) at the R=2/K=6/N=30 cell that *does* arbitrate (true-attractor power 0.89). As the artifact grows to signal strength (β=0→λ) the false-"attractor" rate climbs **0.13 → 0.30 → 0.62 → 0.92** and off-diagonal SD collapses 0.136 → 0.082 — confirming the structural test cannot separate a fully shared artifact from a genuine attractor. Result carried into interp-0037 Findings and a fifth condition on `question:0050`.
+2. **kappa-match silent fallback (finding #2)** — added `_assert_matched`: a per-cell fail-early assertion (tolerance `match_tol=0.03`, plus a boundary-pin check) in both `run_surface` and `p_sensitivity`. Observed max match error **0.0048**; per-cell `matched_mean_rho_achieved` + `match_abs_err` now recorded in `surface.json`.
+3. **Manifest (finding #3)** — the workflow now emits `datapackage.json` (Frictionless-style: resources with sizes + sha256, entity/workflow/config sources, deterministic id).
+4. **Reproducibility nit** — `envs/py.yaml` pins `numpy=2.4.6` (was `>=2`).
+
+The shared-bias probe also caught a **modeling bug in the first implementation**: an initial per-arm *random* loading on the shared axis made it heterogeneous (mimicking the q0017 repertoire, not an attractor), inverting the curve; corrected to an identical-per-arm loading matching how H1 builds the genuine attractor.

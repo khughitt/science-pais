@@ -99,9 +99,14 @@ form of the discriminating experiment the project repeatedly names but does not 
   feature universe (~1000 sets, Reactome/GO-BP-scale)** drops the required arm count from >6 (Hallmark-50) to
   **K=3**. Net for this design: fundable **with conditions** — commit to K≥3, a ~1000-set feature space, a
   structural single-factor confirmatory statistic (retire mean concordance), and full-recovery controls; the
-  opportunistic Tier-2/Tier-3 arms (Lyme, Q-fever) become **power margin**, not garnish. Pivotal remaining
-  unknown: the real cross-PAIS repertoire **rank/lumpiness** (Q-C), partly estimable from existing
-  single-trigger multi-omics before any cohort commitment.
+  opportunistic Tier-2/Tier-3 arms (Lyme, Q-fever) become **power margin**, not garnish. A **fifth condition**
+  surfaced by the t116 pipeline review (2026-07-07): the confirmatory statistic has **no protection against a
+  *correlated* (shared) batch/platform artifact** — a common axis on every arm mimics a shared attractor and
+  drives the false-"attractor" rate to ~0.9 at signal strength. So harmonization must control **cross-arm
+  correlated bias specifically** (negative-control features, shared-artifact diagnostics, full-recovery-control
+  contrasts), not just reduce per-arm bias magnitude. Pivotal remaining unknown: the real cross-PAIS repertoire
+  **rank/lumpiness** (Q-C / task:t117), partly estimable from existing single-trigger multi-omics before any
+  cohort commitment.
 
 ## Connections to Project
 

@@ -85,6 +85,7 @@ Standalone (config required; hard-codes nothing):
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import subprocess
 from datetime import datetime, timezone
@@ -105,6 +106,13 @@ K_GRID: list[int] = []
 N_GRID: list[int] = []
 M: int = 0
 POWER_TARGET: float = 0.0
+MATCH_TOL: float = 0.0
+
+# kappa search bracket for the q0017 concordance-match (see _match_kappa). Named
+# so the caller can detect a boundary pin (a failed match) — fail early, never
+# consume a silently mis-matched null.
+KAPPA_LO: float = 0.0
+KAPPA_HI: float = 5.0
 
 
 def _fixed_axes(rng: np.random.Generator, p: int, r: int):
@@ -156,7 +164,7 @@ def _gen(rng, kind, K, N, P, s, g, kappa, M):
 
 def _match_kappa(rng, K, N, P, s, g, target_rho, M_cal=2500):
     """Binary-search kappa so H0's realized mean concordance matches target_rho."""
-    lo, hi = 0.0, 5.0
+    lo, hi = KAPPA_LO, KAPPA_HI
     for _ in range(16):
         mid = 0.5 * (lo + hi)
         C = _concord_matrix(_gen(rng, "H0", K, N, P, s, g, mid, M_cal))
@@ -166,6 +174,25 @@ def _match_kappa(rng, K, N, P, s, g, target_rho, M_cal=2500):
         else:
             hi = mid
     return 0.5 * (lo + hi)
+
+
+def _assert_matched(kappa, target, achieved, ctx):
+    """Fail EARLY if the q0017 finite-repertoire null is not concordance-matched to
+    H1 (pipeline-review finding #2). A binary search pinned to the KAPPA_HI boundary
+    returns an unmatched null, which silently invalidates every power number for the
+    cell. Explicit > defensive: raise, never emit a mis-matched surface that reads as
+    'matched'. Returns the absolute match error for per-cell recording."""
+    err = abs(float(achieved) - float(target))
+    pinned = kappa >= KAPPA_HI - 1e-3
+    if err > MATCH_TOL or pinned:
+        raise RuntimeError(
+            f"q0017 concordance-match FAILED at {ctx}: target mean rho {target:.4f}, "
+            f"achieved {float(achieved):.4f} (|err|={err:.4f}, tol={MATCH_TOL}); "
+            f"kappa={kappa:.4f}"
+            + (f" pinned at the [{KAPPA_LO},{KAPPA_HI}] search boundary — widen the "
+               f"bracket." if pinned else "")
+            + " The null is not concordance-matched; power numbers would be invalid.")
+    return round(err, 4)
 
 
 def run_surface(rng, regime, k_grid, n_grid, P, M):
@@ -188,6 +215,9 @@ def run_surface(rng, regime, k_grid, n_grid, P, M):
             kappa = _match_kappa(rng, K, N, P, s, g, target)
             C_h0 = _concord_matrix(_gen(rng, "H0", K, N, P, s, g, kappa, M))
             mrho_h0, sd_h0 = _offdiag_mean_sd(C_h0, K)
+            match_err = _assert_matched(
+                kappa, target, mrho_h0.mean(),
+                f"K={K},N={N},P={P},R={regime['R']} ({regime['key']})")
 
             if K < 3:
                 # Structural test undefined (one off-diagonal); non-arbitrating by construction.
@@ -210,6 +240,8 @@ def run_surface(rng, regime, k_grid, n_grid, P, M):
                 "power_meanconc_vs_sampling": round(power_mc, 4),   # Monte-Carlo bar
                 "power_meanconc_vs_q0017": round(power_meanconc_vs_q0017, 4),  # ~0.05: blind
                 "matched_mean_rho": round(target, 4),
+                "matched_mean_rho_achieved": round(float(mrho_h0.mean()), 4),
+                "match_abs_err": match_err,   # asserted < MATCH_TOL (fail-early check)
                 "offdiag_sd_H1": round(float(sd_h1.mean()), 4),
                 "offdiag_sd_q0017": round(float(sd_h0.mean()), 4),
                 "q05_offdiag_sd_q0017": (round(q_crit, 4) if q_crit is not None else None),
@@ -230,9 +262,12 @@ def p_sensitivity(rng, k_grid, N, P_grid, R, M):
             if K < 3:
                 rows.append({"P": P, "K": K, "N": N, "power_arbitrating_structural": 0.0})
                 continue
-            kappa = _match_kappa(rng, K, N, P, s, g, float(mrho_h1.mean()))
-            _, sd_h0 = _offdiag_mean_sd(_concord_matrix(
-                _gen(rng, "H0", K, N, P, s, g, kappa, M)), K)
+            target = float(mrho_h1.mean())
+            kappa = _match_kappa(rng, K, N, P, s, g, target)
+            C_h0 = _concord_matrix(_gen(rng, "H0", K, N, P, s, g, kappa, M))
+            mrho_h0, sd_h0 = _offdiag_mean_sd(C_h0, K)
+            _assert_matched(kappa, target, mrho_h0.mean(),
+                            f"P-sensitivity P={P},K={K},N={N},R={R}")
             power = float(np.mean(sd_h1 < np.quantile(sd_h0, 0.05)))
             rows.append({"P": P, "K": K, "N": N,
                          "power_arbitrating_structural": round(power, 4),
@@ -244,6 +279,74 @@ def p_sensitivity(rng, k_grid, N, P_grid, R, M):
               and r["power_arbitrating_structural"] >= POWER_TARGET]
         min_k[P] = (min(r["K"] for r in ok) if ok else None)
     return {"R": R, "N": N, "P_grid": P_grid, "min_arbitrating_K_by_P": min_k, "rows": rows}
+
+
+def shared_bias_probe(rng, R, K, N, P, beta_grid, M):
+    """False-arbitration rate under a SHARED / correlated arm-bias world (pipeline-
+    review finding #1). The main surface models arm bias as INDEPENDENT per arm --
+    the error harmonization REDUCES. But one harmonized protocol can INTRODUCE bias
+    correlated ACROSS arms (a common platform / pipeline / reference-set axis on every
+    arm). Such a shared axis HOMOGENIZES the off-diagonal concordances -> mimics
+    hypothesis:0001 (one shared attractor). The structural test's null is the
+    HETEROGENEOUS question:0017 repertoire; it has NO protection against a homogeneous
+    shared artifact.
+
+    Model (NO genuine attractor; LAM axis absent) — the shared artifact is applied
+    IDENTICALLY to every arm, exactly as H1 applies its genuine attractor axis
+    (shared = LAM * s). This is the point: to this SD-of-off-diagonals statistic a
+    perfectly shared artifact is STRUCTURALLY IDENTICAL to a genuine attractor, so the
+    test cannot separate them.
+        x_k = beta * c + alpha * a_k + e_k
+      c        : one shared artifact axis, IDENTICAL on every arm (fixed direction+loading)
+      alpha*a_k, e_k : the usual independent arm bias + sampling noise
+    beta is swept as a fraction of the true signal LAM; at beta=LAM the artifact matches
+    the true attractor's strength (false rate should approach the true-attractor power).
+    beta=0 is the pure-independent-bias baseline (no shared axis). Reported at a cell that
+    DOES arbitrate against q0017 (the test's best case), so a rising false rate is a genuine
+    vulnerability, not a weak-cell artifact.
+
+    false_arbitration_rate = P( offdiag_SD(shared-bias world) < q05(offdiag_SD | q0017) )
+    """
+    s, g = _fixed_axes(rng, P, R)
+    # Reconstruct this cell's q0017 arbitrating threshold (same construction as the surface).
+    C_h1 = _concord_matrix(_gen(rng, "H1", K, N, P, s, g, 0.0, M))
+    mrho_h1, sd_h1 = _offdiag_mean_sd(C_h1, K)
+    target = float(mrho_h1.mean())
+    kappa = _match_kappa(rng, K, N, P, s, g, target)
+    C_h0 = _concord_matrix(_gen(rng, "H0", K, N, P, s, g, kappa, M))
+    mrho_h0, sd_h0 = _offdiag_mean_sd(C_h0, K)
+    _assert_matched(kappa, target, mrho_h0.mean(), f"shared-bias probe cell K={K},N={N},P={P},R={R}")
+    q_crit = float(np.quantile(sd_h0, 0.05))
+    true_attractor_power = float(np.mean(sd_h1 < q_crit))  # H1's arbitrating power here
+
+    # one shared artifact axis, standardized (fresh; direction-agnostic — the test only sees SD)
+    c = rng.standard_normal(P)
+    c = (c - c.mean()) / c.std()
+    rows = []
+    for frac in beta_grid:
+        beta = frac * LAM
+        a = rng.standard_normal((M, K, P))
+        a = a - a.mean(axis=-1, keepdims=True)
+        a = a / a.std(axis=-1, keepdims=True)
+        e = rng.standard_normal((M, K, P)) * (SIGMA0 / np.sqrt(N))
+        x = beta * c + ALPHA * a + e          # IDENTICAL shared axis on every arm; NO attractor
+        _, sd_sb = _offdiag_mean_sd(_concord_matrix(x), K)
+        rows.append({
+            "beta_frac_of_signal": frac,
+            "beta": round(beta, 4),
+            "offdiag_sd_shared_bias": round(float(sd_sb.mean()), 4),
+            "false_arbitration_rate": round(float(np.mean(sd_sb < q_crit)), 4),
+        })
+    return {
+        "R": R, "K": K, "N": N, "P": P,
+        "q05_offdiag_sd_q0017": round(q_crit, 4),
+        "true_attractor_arbitrating_power": round(true_attractor_power, 4),
+        "note": ("false_arbitration_rate = P(shared-bias-world off-diagonal concordance SD < the "
+                 "q0017 5% arbitrating threshold); beta scaled as a fraction of the true attractor "
+                 "loading LAM. beta=0 recovers the test's proper size (independent bias only). A "
+                 "rising rate shows harmonization must control CORRELATED bias, not just its magnitude."),
+        "rows": rows,
+    }
 
 
 def min_arbitrating(cells):
@@ -274,6 +377,45 @@ def _git_commit() -> str:
             ["git", "rev-parse", "HEAD"], text=True, stderr=subprocess.DEVNULL).strip()
     except Exception:  # noqa: BLE001
         return "unknown"
+
+
+def _sha256(path: Path) -> str:
+    return "sha256:" + hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _emit_datapackage(outdir: Path, resources_meta, config_source: str):
+    """Frictionless-style datapackage.json for manifest parity with the rest of
+    results/ (pipeline-review finding #3). Lists the run's output resources with
+    sizes + sha256, and cross-references the deliverable interpretation, workflow,
+    and config as sources. Regenerable; results/* is gitignored."""
+    resources = []
+    for name, rel, mediatype, group in resources_meta:
+        p = outdir / rel
+        resources.append({
+            "name": name, "path": str(p), "title": str(p),
+            "bytes": p.stat().st_size, "hash": _sha256(p),
+            "mediatype": mediatype, "group": group,
+        })
+    pkg_id = "sha256:" + hashlib.sha256(
+        "".join(sorted(r["hash"] for r in resources)).encode()).hexdigest()
+    pkg = {
+        "name": "t116-power-bias-floor-sim-results",
+        "title": "t116 power/bias-floor shared-axis simulation result bundle",
+        "description": ("Deterministic manifest for the t116 design-power simulation outputs "
+                        "(ARBITRATING-power surface, human tables, shared-bias probe, run "
+                        "provenance). Regenerable; results/* is gitignored."),
+        "profile": "data-package",
+        "id": pkg_id,
+        "sources": [
+            {"title": "interpretation:0037-t116-power-bias-floor-shared-axis-sim",
+             "path": "entities/interpretations/0037-t116-power-bias-floor-shared-axis-sim.md"},
+            {"title": "workflow", "path": "code/workflows/t116-power-bias-floor/Snakefile"},
+            {"title": "config", "path": config_source},
+        ],
+        "resources": resources,
+    }
+    (outdir / "datapackage.json").write_text(json.dumps(pkg, indent=2))
+    return pkg
 
 
 def surface_markdown(regime, cells, mn):
@@ -313,11 +455,12 @@ def _load_config(path: Path) -> dict:
     """Bind the module-level design knobs from config.yaml. The script hard-codes
     no design value; every knob originates here (fail early on a missing key)."""
     cfg = yaml.safe_load(path.read_text())
-    global SEED, P_HALLMARK, LAM, ALPHA, SIGMA0, K_GRID, N_GRID, M, POWER_TARGET
+    global SEED, P_HALLMARK, LAM, ALPHA, SIGMA0, K_GRID, N_GRID, M, POWER_TARGET, MATCH_TOL
     det, mod, grid = cfg["determinism"], cfg["model"], cfg["grid"]
     SEED = int(det["seed"])
     M = int(det["replicates"])
     POWER_TARGET = float(det["power_target"])
+    MATCH_TOL = float(det["match_tol"])
     P_HALLMARK = int(mod["p_hallmark"])
     LAM = float(mod["lam"])
     ALPHA = float(mod["alpha"])
@@ -354,15 +497,26 @@ def main():
     psens = p_sensitivity(rng, K_GRID, int(ps_cfg["N"]), list(ps_cfg["p_grid"]),
                           R=int(ps_cfg["R"]), M=min(int(ps_cfg["replicates"]), M))
 
+    # Correlated / shared arm-bias confound (pipeline-review finding #1): does the
+    # arbitrating test false-positive on a homogeneous shared artifact? Runs AFTER the
+    # surface + p_sensitivity so those draws (and their numbers) are unchanged.
+    sb_cfg = cfg["shared_bias_probe"]
+    shared_bias = shared_bias_probe(
+        rng, R=int(sb_cfg["R"]), K=int(sb_cfg["K"]), N=int(sb_cfg["N"]),
+        P=P_HALLMARK, beta_grid=list(sb_cfg["beta_grid"]),
+        M=min(int(sb_cfg["replicates"]), M))
+
     out = {
         "determinism": {"seed": SEED, "rng": "PCG64 (numpy default_rng)", "replicates": M},
         "params": {"P_sets": P_HALLMARK, "lam": LAM, "alpha": ALPHA, "sigma0": SIGMA0,
-                   "K_grid": K_GRID, "N_grid": N_GRID, "power_target": POWER_TARGET},
+                   "K_grid": K_GRID, "N_grid": N_GRID, "power_target": POWER_TARGET,
+                   "match_tol": MATCH_TOL},
         "statistic": "off-diagonal pairwise-concordance SD (single-shared-axis homogeneity test)",
         "config_source": str(args.config),
         "calibration": calib,
         "surfaces": surfaces,
         "p_sensitivity": psens,
+        "shared_bias_probe": shared_bias,
         "provenance": {"git_commit": _git_commit(),
                        "created_utc": datetime.now(timezone.utc).isoformat()},
     }
@@ -398,7 +552,32 @@ def main():
     for P in psens["P_grid"]:
         mk = psens["min_arbitrating_K_by_P"][P]
         md.append(f"| {P} | {1/np.sqrt(P-1):.3f} | {mk if mk else '> 6 (none)'} |")
-    md.append("")
+    sb = shared_bias
+    md += ["",
+           "## Correlated / shared arm-bias confound",
+           "",
+           f"The main surface models arm bias as **independent** per arm. This probe adds one "
+           f"**shared** artifact axis to every arm (a common platform/pipeline/reference-set "
+           f"effect — what a single harmonized protocol can *introduce*) with **no** genuine "
+           f"attractor, at a cell that DOES arbitrate against the q0017 null (R={sb['R']}, "
+           f"K={sb['K']}, N={sb['N']}, P={sb['P']}; true-attractor arbitrating power "
+           f"{sb['true_attractor_arbitrating_power']:.2f}). A shared axis homogenizes the "
+           f"off-diagonals and **mimics a single attractor**, so the structural test — whose "
+           f"null is only the *heterogeneous* repertoire — false-positives:",
+           "",
+           "| shared-bias beta (frac of signal) | off-diag SD | false-arbitration rate |",
+           "|---|---|---|"]
+    for r in sb["rows"]:
+        md.append(f"| {r['beta_frac_of_signal']:.2f} | {r['offdiag_sd_shared_bias']:.4f} | "
+                  f"{r['false_arbitration_rate']:.2f} |")
+    md += ["",
+           "beta=0 is the pure-independent-bias baseline; as the shared artifact grows toward the "
+           "true signal strength (beta -> LAM) the false-arbitration rate climbs toward the "
+           f"true-attractor arbitrating power ({sb['true_attractor_arbitrating_power']:.2f}) — i.e. a "
+           "perfectly shared artifact is, to this SD statistic, **indistinguishable from a genuine "
+           "attractor**. This is review finding #1: **harmonization must control *correlated* bias, "
+           "not just its magnitude** — full-recovery-control contrasts and shared-artifact "
+           "diagnostics are load-bearing for question:0050, not optional.", ""]
     (args.out / "surface.md").write_text("\n".join(md))
 
     meta = {
@@ -411,14 +590,31 @@ def main():
         "statistic": out["statistic"],
         "min_arbitrating_by_regime": {s["regime"]["key"]: s["min_arbitrating"] for s in surfaces},
         "p_sensitivity_min_K": psens["min_arbitrating_K_by_P"],
+        "shared_bias_false_arbitration": {r["beta_frac_of_signal"]: r["false_arbitration_rate"]
+                                          for r in shared_bias["rows"]},
+        "review_findings_resolved": [
+            "#1 correlated/shared arm-bias regime (shared_bias_probe)",
+            "#2 kappa-match convergence assertion (_assert_matched, fail-early)",
+            "#3 datapackage.json manifest",
+        ],
     }
     (args.out / "run_metadata.json").write_text(json.dumps(meta, indent=2))
+
+    # Manifest (finding #3): emit AFTER the three outputs exist so hashes are final.
+    _emit_datapackage(
+        args.out,
+        [("surface-json", "surface.json", "application/json", "terminal"),
+         ("surface-md", "surface.md", "text/markdown", "terminal"),
+         ("run-metadata-json", "run_metadata.json", "application/json", "provenance")],
+        str(args.config))
 
     print("calibration:", json.dumps(calib))
     for s in surfaces:
         print(f"{s['regime']['key']:>16}: min_arbitrating = {s['min_arbitrating']}")
     print("p_sensitivity min K by P:", psens["min_arbitrating_K_by_P"])
-    print(f"wrote -> {args.out}/surface.json, surface.md, run_metadata.json")
+    print("shared-bias false-arbitration by beta:",
+          {r["beta_frac_of_signal"]: r["false_arbitration_rate"] for r in shared_bias["rows"]})
+    print(f"wrote -> {args.out}/surface.json, surface.md, run_metadata.json, datapackage.json")
 
 
 if __name__ == "__main__":

@@ -8,5 +8,8 @@ channels:
   - conda-forge
 dependencies:
   - python=3.12
-  - numpy>=2
+  # numpy pinned exactly: default_rng/PCG64 value-level reproducibility is
+  # version-sensitive, and this surface is cited as a design-admissibility floor
+  # (pipeline-review finding: reproducibility). Bump deliberately + re-verify.
+  - numpy=2.4.6
   - pyyaml>=6
