@@ -41,13 +41,18 @@ reuses `code/scripts/{limma_de.R,fgsea_enrich.R}` verbatim.
 
 ## Corpus (config `contrasts`, WP1-verified 2026-07-08)
 
-- **strict-primary** (WB/PBMC, documented trigger, ≥4 wk floor): 9 columns —
-  8 long-COVID + PI-ME/CFS, plus Ebola/Lyme single-trigger. 4 documented triggers
-  after the Finding-C compartment split (LC, PI-ME/CFS, Ebola, Lyme).
-- **stratum** (sorted, Finding C): QFS `GSE130353` — compartment-stratified R only,
-  never pooled into the primary matrix.
+- **strict-primary** (WB/PBMC, documented trigger, ≥4 wk floor): **9 columns** —
+  6 long-COVID + PI-ME/CFS + Ebola + Lyme (one contrast per deposit as configured;
+  WP2 may split some LC deposits into within-deposit subgroup contrasts). **4
+  documented triggers** after the Finding-C compartment split (LC, PI-ME/CFS,
+  Ebola, Lyme).
+- **stratum** (sorted, Finding C): QFS `GSE130353` — a **single column**, so it has
+  **no own rank**; held as a separate compartment stratum for the drop-sorted
+  comparison + as a projection target, **never pooled** into the primary matrix.
 - **sensitivity** (probable-PI ME/CFS, unknown per-subject onset): `GSE128078`,
-  `GSE16059` (twins), `GSE14577`.
+  `GSE16059` (twins), `GSE14577`. The sensitivity **rank matrix is NESTED** — the 9
+  strict columns **plus** these 3 ME/CFS additions (12 columns), not an
+  ME/CFS-only matrix (`MATRIX_COMPOSITION` in the Snakefile).
 - **decoy** (acute-infection specificity layer): `GSE68310` (influenza),
   `PRJNA1001790` (CHIKV).
 - **excluded** (G4 blockers): `GSE224615` (DEG summary only), `PRJNA1184005`

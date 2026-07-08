@@ -7,9 +7,11 @@
 # Snakefile — cross-PAIS pathway-response effective-rank estimation (task:t117)
 #
 # Thin orchestrator: reads config.yaml (ALL design parameters) and wires the full
-# DAG. Nothing is hard-coded here; rules read config. Reuses the plan:0003 DE ->
-# enrichment machinery (limma_de.R, fgsea_enrich.R) and the shared conda envs at
-# code/workflows/envs/ (referenced via ../envs/*.yaml).
+# DAG. Nothing is hard-coded here; rules read config. Reuses `fgsea_enrich.R`
+# verbatim; `limma_de.R` is reused ONLY for the two-arm (`~ group`) contrasts —
+# platform-batch / twin-paired / longitudinal / severity-axis contrasts need a WP2
+# model extension (see the `de_models` contract in config). Uses the shared conda
+# envs at code/workflows/envs/ (referenced via ../envs/*.yaml).
 #
 # Design:  entities/plans/0010-crosspais-pathway-response-rank-estimation.md
 # Review:  doc/reviews/0010-crosspais-pathway-response-rank-estimation-pipeline-review.md
@@ -50,13 +52,28 @@ ACCESSIONS = sorted(set(ACC_OF.values()))
 RANK_MATRICES = ["strict", "sensitivity"]        # matrices a rank is estimated on
 UNIVERSE_RDS = config["genesets"]["universe_rds"]
 
-def contrasts_in(matrix):
-    """Contrast columns that compose a given rank matrix (strict | sensitivity)."""
-    return [c for c in CONTRASTS if config["contrasts"][c]["matrix"] == matrix]
+# Two-matrix design (plan:0010 "strict matrix PLUS probable-PI ME/CFS"): the
+# sensitivity rank matrix is NESTED — the strict columns PLUS the ME/CFS
+# additions, NOT an ME/CFS-only matrix. Membership tags in config are composed
+# here so the nesting is explicit, not implied by a name.
+MATRIX_COMPOSITION = {
+    "strict": ("strict",),
+    "sensitivity": ("strict", "sensitivity"),   # nested: strict + ME/CFS additions
+}
+
+def tagged(tag):
+    """Contrasts carrying a given membership tag (strict|sensitivity|stratum|decoy)."""
+    return [c for c in CONTRASTS if config["contrasts"][c]["matrix"] == tag]
+
+def matrix_columns(matrix):
+    """Contrast columns composing a rank matrix, honoring the nested two-matrix
+    design (sensitivity = strict + sensitivity additions)."""
+    tags = MATRIX_COMPOSITION[matrix]
+    return [c for c in CONTRASTS if config["contrasts"][c]["matrix"] in tags]
 
 def matrix_nes(wildcards):
     """NES tables for every contrast column of the requested rank matrix."""
-    return [f"{PROC}/fgsea/{c}.nes.tsv" for c in contrasts_in(wildcards.matrix)]
+    return [f"{PROC}/fgsea/{c}.nes.tsv" for c in matrix_columns(wildcards.matrix)]
 
 def adjudication_extra_nes(wildcards):
     """Extra columns the strict-matrix adjudication consumes but the rank matrix
@@ -65,8 +82,15 @@ def adjudication_extra_nes(wildcards):
     layer. Sensitivity-matrix adjudication pulls no extras."""
     if wildcards.matrix != "strict":
         return []
-    extra = contrasts_in("stratum") + contrasts_in("decoy")
+    extra = tagged("stratum") + tagged("decoy")
     return [f"{PROC}/fgsea/{c}.nes.tsv" for c in extra]
+
+def de_model_of(wildcards):
+    """Per-contrast DE model spec (config `de_models`; falls back to `default`).
+    Carries the design/block/coef and `stock_ok` — whether the plan:0003
+    limma_de.R suffices as-is or WP2 must extend it (review Finding, model
+    contract). limma_de is a STUB in WP0; this threads the contract through now."""
+    return config["de_models"].get(wildcards.contrast, config["de_models"]["default"])
 
 def acc_of(wildcards):
     """Staged expr + sheet for the accession owning a contrast."""
@@ -127,11 +151,19 @@ rule stage_universe:
         stub("stage_universe (verify sha256={params.sha})")
 
 # =============================================================================
-# WP2 — uniform DE -> enrichment over the ONE pinned universe (reuse plan:0003
-# limma_de.R + fgsea_enrich.R). Expression is never merged across datasets; every
-# contrast meets only at the NES level.
+# WP2 — uniform DE -> enrichment over the ONE pinned universe. fgsea_enrich.R is
+# reused verbatim; limma_de.R is reused only for `~ group` contrasts (see the
+# de_models contract — `stock_ok: false` contrasts need a WP2 model extension).
+# Expression is never merged across datasets; every contrast meets only at the
+# NES level.
 # =============================================================================
 rule limma_de:
+    # NOTE: the stock plan:0003 limma_de.R fits only `~ group` (two-arm). Several
+    # t117 contrasts need a different design (platform-batch covariate, twin-paired
+    # blocking, within-cohort longitudinal, continuous severity axis) — see the
+    # `de_models` contract in config. `stock_ok: false` contrasts require WP2 to
+    # extend the script before they are admitted; the contract is threaded here so
+    # that is a deliberate WP2 step, not a silent `~ group` fallback.
     input:
         unpack(acc_of),
         script=f"{SCRIPTS}/limma_de.R",
@@ -139,10 +171,11 @@ rule limma_de:
         ranked=f"{PROC}/de/{{contrast}}.ranked.tsv",
     params:
         seed=config["determinism"]["master_seed"],
+        model=de_model_of,
     conda:
         "../envs/r-bioc.yaml"
     shell:
-        stub("limma_de {wildcards.contrast}")
+        stub("limma_de {wildcards.contrast} (model={params.model[design]}, stock_ok={params.model[stock_ok]})")
 
 rule fgsea_enrich:
     input:
@@ -190,6 +223,15 @@ rule rank_battery:
         stub("rank_battery {wildcards.matrix}")
 
 rule calibration_3c:
+    # review Finding B: calibration MUST be against the OBSERVED corpus — the
+    # synthetic matrices are injected at the real matrix's K/N (from grouping) and
+    # matched to its off-diagonal concordance (from structural). Depending on these
+    # inputs makes it impossible to "pass" calibration independent of the matrix and
+    # still unlock the grid. Uses the strict matrix as the reference geometry.
+    input:
+        matrix=f"{PROC}/matrix/strict.pathway_by_contrast.tsv",
+        grouping=f"{PROC}/matrix/strict.grouping.json",       # real K (triggers) / N
+        structural=f"{RES}/rank/strict.structural.json",      # real off-diagonal concordance
     output:
         report=f"{RES}/calibration/calibration.json",
         sentinel=f"{RES}/calibration/calibration.pass",     # gates grid_placement
@@ -197,7 +239,7 @@ rule calibration_3c:
         cal=config["calibration_3c"],
         seed=config["determinism"]["seeds"]["calibration_gen"],
     shell:
-        stub("calibration_3c (inject_R + recover at real K/N — Finding B)")
+        stub("calibration_3c (inject_R at REAL K/N + matched concordance — Finding B)")
 
 # =============================================================================
 # WP4 — artifact + compartment adjudication (Finding C). Named rivals: correlated
@@ -211,6 +253,12 @@ rule artifact_adjudication:
         extra_nes=adjudication_extra_nes,   # sorted stratum + acute decoys (strict only; Finding C)
     output:
         adjudicated=f"{RES}/artifact/{{matrix}}.adjudicated.json",  # artifact- & composition-adjusted R
+        # Finding C, explicit: R estimated WITHIN each deconvolvable compartment
+        # stratum (WB, PBMC) + the drop-sorted sensitivity + composition-adjusted
+        # R. The sorted stratum is a SINGLE column (QFS) → it has NO own rank; it
+        # enters only as a held-out compartment for the drop-sorted comparison and
+        # as a projection target, never as its own rank matrix.
+        stratified=f"{RES}/artifact/{{matrix}}.compartment_stratified.json",
     params:
         controls=config["artifact_controls"],
     shell:

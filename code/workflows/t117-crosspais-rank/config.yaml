@@ -61,8 +61,11 @@ genesets:
 # marked (WB, partial PBMC) — NOT for sorted compartments.
 compartments:
   primary: [whole_blood, pbmc]     # feed the strict-primary rank matrix
-  stratum_only: [sorted]           # compartment-stratified R only
-  deconvolvable: [whole_blood, pbmc]  # composition-adjustment applies here only
+  stratum_only: [sorted]           # held as a separate stratum in artifact_adjudication;
+                                   # the sole sorted deposit (QFS) is ONE column → it has
+                                   # NO own rank — it enters the drop-sorted comparison +
+                                   # as a projection target only, never the pooled matrix
+  deconvolvable: [whole_blood, pbmc]  # composition-adjustment (deconvolution) valid here only
 
 # ------------------------------------------------------ corpus / contrasts ---
 # WP1-verified (2026-07-08). Each contrast = one case-vs-control column of a
@@ -169,7 +172,7 @@ contrasts:
     matrix: stratum
     control_type: healthy
     loo_flag: sorted-compartment
-    note: "sorted monocytes — compartment-stratified R only, not pooled (Finding C)"
+    note: "sorted monocytes — held as a separate 1-column stratum (no own rank); drop-sorted comparison + projection target only, never pooled (Finding C)"
   # --- ME/CFS sensitivity matrix (probable-PI; unknown per-subject onset) ---
   gse128078_mecfs:
     accession: GSE128078
@@ -225,6 +228,54 @@ contrasts:
 excluded:
   gse224615_lc:  {accession: GSE224615, reason: "G4 — no per-sample matrix (DEG summary only); DEG-level triangulation at most"}
   prjna1184005_lc: {accession: PRJNA1184005, reason: "G4 — SRA raw-reads only, 14 samples, split/window unverifiable; needs quantify path first"}
+
+# ------------------------------------------------------ DE model contract ----
+# review Finding (2026-07-08): "reuse limma_de.R verbatim" is only valid for the
+# simple two-arm `~ group` contrasts. Several corpus contrasts need a DIFFERENT
+# design and CANNOT use the stock script unchanged. This block is the per-contrast
+# MODEL CONTRACT (WP0): it declares the design + the extension each contrast needs
+# so WP2 implements them deliberately, not by silently forcing everything through
+# `~ group`. `stock_ok: true` = the plan:0003 limma_de.R suffices as-is; false =
+# WP2 must extend limma_de.R (or add a variant) before this column is admitted.
+# `design`/`block`/`coef` name the intended model; NES sign convention is fixed
+# (case − control, or increasing-severity for a continuous axis).
+de_models:
+  default:
+    design: "~ group"                 # two-arm case vs control
+    coef: groupcase
+    stock_ok: true
+  # --- contrasts that DIVERGE from the stock two-arm model ---
+  gse226260_lc:
+    design: "~ platform + group"      # 2-platform batch → adjust platform
+    coef: groupcase
+    stock_ok: false                   # stock script has no covariate term
+    note: "2-platform batch covariate"
+  gse251872_pimecfs:
+    design: "~ platform + group"      # 2 sequencing platforms → adjust platform
+    coef: groupcase
+    stock_ok: false
+    note: "2 sequencing platforms (batch)"
+  gse16059_mecfs:
+    design: "~ group"                 # discordant MZ twins
+    block: pair                       # duplicateCorrelation on twin-pair id
+    coef: groupcase
+    stock_ok: false                   # stock script does not model within-pair correlation
+    note: "44 discordant MZ twin pairs — paired/blocked design"
+  gse267625_lc:
+    design: "within-cohort"           # no external control; contrast built within-cohort
+    coef: TODO-WP2-define             # e.g. symptomatic-timepoint vs recovered-timepoint
+    stock_ok: false
+    note: "no external control — WP2 must define the within-cohort contrast (longitudinal)"
+  gse228320_lc:
+    design: "~ dlco"                  # DLCO pulmonary-severity CONTINUOUS axis, not case/control
+    coef: dlco
+    stock_ok: false                   # continuous predictor, not a two-group factor
+    note: "severity-axis (continuous DLCO), LOO-drop; NES = increasing-severity direction"
+  gse128078_mecfs:
+    design: "~ group"                 # multi-timepoint → collapse to one contrast per subject first
+    coef: groupcase
+    stock_ok: true                    # stock model OK AFTER WP2 timepoint collapse
+    note: "multi-timepoint — one-contrast-per-subject collapse upstream of limma"
 
 # ------------------------------------------------------ rank estimators ------
 # Battery of ROTATION-INVARIANT estimators (primary; R must not depend on a

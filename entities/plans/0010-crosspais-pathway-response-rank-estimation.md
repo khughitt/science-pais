@@ -427,8 +427,11 @@ grid bridge is validated, not assumed.
 ### WP0 — Workflow skeleton, corpus link-through, config — **DONE 2026-07-08**
 - Scaffolded `code/workflows/t117-crosspais-rank/` (`Snakefile` + `config.yaml` + `README.md`), the
   self-contained-subdir sibling of `t116-power-bias-floor/`. **Reuses** the shared `code/workflows/envs/`
-  (`r-bioc.yaml` limma+fgsea Bioconductor stack) via `../envs/…` and the `plan:0003` `code/scripts/{limma_de,
-  fgsea_enrich}.R` for Stage 2 — no duplication. `config.yaml` originates **all** design parameters (nothing
+  (`r-bioc.yaml` limma+fgsea Bioconductor stack) via `../envs/…`; `fgsea_enrich.R` is reused verbatim, and
+  `limma_de.R` **only for the two-arm `~ group` contrasts** — the corpus's platform-batch, twin-paired,
+  within-cohort-longitudinal, and continuous-severity-axis contrasts need a WP2 model extension, declared now
+  as a per-contrast **`de_models` model contract** in `config.yaml` (`stock_ok: true|false` per contrast) so
+  the divergence is deliberate, not a silent `~ group` fallback. `config.yaml` originates **all** design parameters (nothing
   hard-coded in rules): pinned universe hash slot, **per-estimator seeds** (parallel-analysis permutation,
   CV-SVD fold, split-half, bootstrap, BicMix MCMC seed/chains/convergence), the LODO/LOCO fold spec with
   **each param's role** (`min_triggers=3` identifiability vs `contrasts`/`platforms` power covariates, Finding
@@ -470,6 +473,11 @@ grid bridge is validated, not assumed.
   three compartments and ≥5 sequencers — "reuse plan:0003 verbatim" understates this). Before any
   cross-compartment comparison is trusted, the two same-tissue LC RNA-seq deposits must produce **concordant
   NES on a matched contrast** — a comparability check, not an assumption.
+- **Per-contrast DE model contract (WP0 `de_models`):** the stock `limma_de.R` fits only `~ group`;
+  `stock_ok: false` contrasts (`gse226260`/`gse251872` platform-batch → `~ platform + group`; `gse16059`
+  twins → `~ group` blocked on `pair`; `gse267625` no-external-control → a within-cohort contrast WP2 must
+  define; `gse228320` → continuous `~ dlco` severity axis) require the script to be **extended before the
+  column is admitted** — the model contract is declared in `config.yaml` so this is a deliberate WP2 step.
 - **DoD:** a single reproducible pathway × contrast matrix (+ condition/platform/**compartment** grouping
   metadata), QA-gated, for both strict and sensitivity matrices; the same-tissue NES-comparability check passes
   (or its failure is surfaced as a harmonization blocker).
