@@ -45,9 +45,10 @@ Post-influenza convalescent whole-blood microarray. Convalescent sampling window
 
 ## Corpus role (t117)
 
-- **Matrix:** strict-primary
+- **Matrix:** strict-primary **(PROVISIONAL — floor-gated)**. The ≈3 wk convalescent window is *inside* the plan's ≥4 wk post-acute floor, so this deposit is **NOT counted in the strict trigger/K total** and does not enter the primary matrix on the discovery-sweep timepoint. `matrix: strict-primary` stands only as a *target* pending the WP1 timepoint check.
 - **onset_certainty:** documented
-- **Conditional/LOO flag:** sampling window ≈3 wk borderline post-acute AND microarray platform — double LOO-drop candidate (platform + window).
+- **WP1 resolution:** promote into the strict count **only if** later post-acute *symptomatic* samples are verified; otherwise **demote** to the early-convalescent decoy/specificity layer (not a primary arm).
+- **Conditional/LOO flag (if promoted):** microarray platform — LOO-drop candidate; feeds the platform-LOO artifact control.
 
 ## Access / caveats
 

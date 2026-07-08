@@ -45,9 +45,10 @@ Post-chikungunya whole-blood bulk RNA-seq, ≈29 vs 25 [UNVERIFIED], sampled ≤
 
 ## Corpus role (t117)
 
-- **Matrix:** strict-primary
+- **Matrix:** strict-primary **(PROVISIONAL — floor-gated)**. Sampled ~day 21 — *inside* the plan's ≥4 wk post-acute floor — so this deposit is **NOT counted in the strict trigger/K total**. `matrix: strict-primary` stands only as a *target* pending the WP1 timepoint check.
 - **onset_certainty:** documented
-- **Conditional/LOO flag:** early sampling window (≤D21) borderline post-acute; SRA-only — LOO-drop candidate.
+- **WP1 resolution:** promote into the strict count **only if** later post-acute *symptomatic* samples are verified; otherwise **demote** to the early-convalescent decoy/specificity layer. Additionally SRA-only → the pinned raw-read quantification path must be verified (G4) before staging.
+- **Conditional/LOO flag (if promoted):** SRA-only platform axis — LOO-drop candidate; feeds the platform-LOO artifact control.
 
 ## Access / caveats
 

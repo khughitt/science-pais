@@ -81,6 +81,17 @@ finding that this is what drops the required arm count to K≈3). The deliverabl
   machinery's DE→enrichment stages (limma→fgsea, the pinned universe, the QA-checkpoint discipline) as the
   uniform effect-vector computer, then adds a **rank-estimation** layer those plans do not have.
 
+## Readiness decision
+
+**Design: active. Execution: BLOCKED on WP1.** Every corpus deposit is a `candidate` with
+`access.verified: false` and `[UNVERIFIED]` design specifics; **no rank estimation (Stage 2 onward) runs
+until the WP1 verification + staging gate passes** — i.e. each admitted deposit's per-subject documented
+onset, sampling window (≥4 wk floor), tissue/platform, per-sample-matrix downloadability (or pinned raw-read
+quantification), and case-vs-control explanatory power are confirmed from the record, and the floor-/SRA-
+provisional deposits are explicitly promoted or demoted. This plan is therefore **analysis-ready-to-verify,
+not execution-ready**; WP1 is the readiness checkpoint and its exit is the point at which the strict trigger
+count is finalized. (`status: active` reflects the *design*; the execution gate is this section.)
+
 ## Two-matrix design + verdict rule (locked)
 
 Post-infectious attribution varies in certainty across the corpus. To keep the primary estimand clean
@@ -107,9 +118,9 @@ matrices**, and the primary verdict is the one that survives both.
 | Gate | Rule | Severity |
 |---|---|---|
 | G1 Compartment | **Primary matrix is blood-bulk only** (whole blood / PBMC / sorted leukocytes). Muscle / other tissue → separate triangulation, never pooled into the rank matrix. | hard for primary |
-| G2 Exposure | Human; single documented trigger (strict matrix) or flagged probable-PI (sensitivity matrix); post-acute **persistent** sampling (≥12 wk target, ≥4 wk floor). | tiering |
+| G2 Exposure | Human; single documented trigger (strict matrix) or flagged probable-PI (sensitivity matrix); post-acute **persistent** sampling (≥12 wk target, **≥4 wk floor — HARD for the strict-primary matrix**). Deposits sampled *inside* the floor (early-convalescent) are **provisional/exploratory**, excluded from the strict trigger/K count, until WP1 verifies later post-acute *symptomatic* samples; otherwise they route to the early-convalescent decoy/specificity layer. | hard floor for primary |
 | G3 Contrast | Case-vs-control at the sample level. **Recovered/full-recovery controls are SCORED heavily, not required.** | tiering (scored) |
-| G4 Downloadable | Per-sample expression matrix is **public and downloadable** — the "learn it ourselves" gate. **Author-request-only and gated/enclave data are analysis-ineligible** (note-only; see `fb-2026-07-07-003`). | hard |
+| G4 Downloadable | A per-sample expression matrix is **public and downloadable**, **or** public raw reads are sufficient to compute one under a **pinned quantification path** (WP1). SRA-only deposits enter the primary matrix **only once that quantification is implemented and verified in WP1** (provisional until then). **Author-request-only and gated/enclave data are analysis-ineligible** (note-only; see `fb-2026-07-07-003`). | hard |
 | G5 Metadata floor | Hard floor: case/control labels, trigger + case definition, sampling window, sample-level matrix, platform, tissue. Scored: age, sex, timing, severity, batch, meds, comorbidity. | mixed |
 | G6 Interpretability | Single-platform rare-trigger contrasts are **included but flagged non-arbitrating for platform-independent biology**; the rank conclusion **must survive dropping them** (leave-one-out). | corpus-level |
 
@@ -126,9 +137,12 @@ following are **admissibility criteria for the R estimate**, evaluated before an
   biology.
 - **Negative-control feature sets** — housekeeping / platform-associated / GC-content-confounded gene sets
   carried through the identical pipeline; shared structure among these is the artifact floor to subtract.
-- **Recovered-control specificity** — where recovered/full-recovery-control contrasts exist (scored under
-  G3), the shared axis must be **stronger in case-vs-recovered than in case-vs-naive** to be attributed to
-  persistent post-acute biology rather than generic infection history.
+- **Recovered-control specificity** (directional, not magnitude) — where recovered/full-recovery-control
+  contrasts exist (scored under G3), the non-recovery shared subspace must remain **detectably present in
+  case-vs-recovered** contrasts and **not be fully explained by** the recovered-vs-healthy (infection-history)
+  axis or an acute-decoy axis. We do **not** require case-vs-recovered to *exceed* case-vs-naive in
+  magnitude — a healthy-control contrast can legitimately be larger because it also carries infection-history
+  and non-recovery differences; the test is **subspace persistence/specificity**, not effect size.
 - **Off-diagonal concordance SD** — reported alongside R as the t116 structural discriminator; a low SD
   with high mean concordance is the shared-artifact signature the review flagged.
 
@@ -151,7 +165,7 @@ All strict-primary and sensitivity deposits below are registered as `dataset:` c
 (`tier: evaluate-next` / `track`, `access.verified: false` pending WP1). Design specifics in those
 entities are `[UNVERIFIED]` — WP1 verifies them from the record.
 
-**Strict-primary matrix — public, blood-bulk, documented trigger (~15 contrasts, 7 triggers):**
+**Strict-primary matrix — public, blood-bulk, documented trigger, above the ≥4 wk post-acute floor (~13 contrasts, 5 triggers):**
 - Long COVID (8): `gse226260-longcovid-pbmc`, `gse224615-longcovid-wholeblood`,
   `gse267625-longcovid-wholeblood`, `gse270045-longcovid-mecfs-wholeblood`,
   `scilifelab-28832492-longcovid-pbmc`, `gse251849-longcovid-pbmc-cognitive` — plus two LOO-conditional:
@@ -160,9 +174,13 @@ entities are `[UNVERIFIED]` — WP1 verifies them from the record.
 - PI-ME/CFS (1): `gse251872-pime-cfs-pbmc` (adjudicated).
 - Q-fever/QFS (1): `gse130353-qfs-cfs-monocytes` *(catalogued)*.
 - Post-Ebola (1): `gse143549-post-ebola-wholeblood`.
-- Post-Lyme (1): `gse63085-post-lyme-pbmc` *(conditional — not PTLDS-symptom-selected)*.
-- Post-influenza (1): `gse68310-post-influenza-wholeblood` *(conditional — ~3 wk window, microarray)*.
-- Post-CHIKV (1): `prjna1001790-post-chikv-wholeblood` *(conditional — ≤day-21 sampling window)*.
+- Post-Lyme (1): `gse63085-post-lyme-pbmc` *(conditional — not PTLDS-symptom-selected; post-treatment window is above the floor)*.
+
+**Provisional — floor-gated, NOT counted in the strict trigger/K total (promotable only if WP1 finds later post-acute *symptomatic* samples):**
+- Post-influenza: `gse68310-post-influenza-wholeblood` (~3 wk convalescent window — *inside* the ≥4 wk floor; microarray). Absent later samples → routes to the early-convalescent **decoy/specificity** layer, not a primary arm.
+- Post-CHIKV: `prjna1001790-post-chikv-wholeblood` (sampled ~day 21 — *inside* the floor; SRA-only). Absent later samples → routes to the early-convalescent **decoy/specificity** layer.
+
+Counting an early-convalescent sample as post-acute would leak acute biology into the rank; hence their exclusion from the strict count (they also cost trigger diversity — influenza and CHIKV are the two triggers this removes from the primary matrix). Their entities keep `matrix: strict-primary` only as a *target* pending the WP1 timepoint check; the plan treats them as provisional here.
 
 **ME/CFS sensitivity additions (undocumented/cohort-level onset):**
 `gse128078-mecfs-wholeblood`, `gse16059-mecfs-twins-pbl`, `gse14577-pi-cfs-pbmc-microarray`
@@ -172,9 +190,11 @@ entities are `[UNVERIFIED]` — WP1 verifies them from the record.
 highest-value deposit, author-request), PTLDS dbGaP phs002795 (gated), SARS-1 (Zhao et al., request-only),
 CHIKGene Réunion (no resolvable public accession as of 2026-07-07), Raijmakers QFS multi-omics (request).
 
-**Corpus honesty note.** The strict matrix is long-COVID-dominated (~8 of ~15 columns). Therefore
-**leave-one-condition-out is a primary readout, not merely a robustness check**: the rank must not be an
-artifact of long-COVID over-representation. R is resolvable in the **decision-relevant low range (≈2–4)**;
+**Corpus honesty note.** The strict matrix is long-COVID-dominated (~8 of ~13 columns) and, after the
+floor exclusions, spans only **5 triggers**. Therefore **leave-one-condition-out is a primary readout, not
+merely a robustness check** — with the LC-out fold as the decisive stress test (operationalized in
+Stage 3b) — and the rank must not be an artifact of long-COVID over-representation. R is resolvable in the
+**decision-relevant low range (≈2–4)**;
 the corpus cannot cleanly resolve R≥8 (which is exactly the t116 "non-arbitrating" regime — a NO-GO
 signal for q0050, not a failure of this analysis).
 
@@ -183,8 +203,10 @@ signal for q0050, not a failure of this analysis).
 ### Stage 1 — Corpus staging (reproducible, checksummed)
 Stage each admitted deposit through a **pinned + checksummed Snakemake acquisition rule** (per project
 convention; ad-hoc network is sandbox-blocked and non-reproducible). SRA-only deposits
-(`prjna*`) require raw-read quantification; FigShare/SciLifeLab deposits use a non-GEO staging path.
-Data payloads land under the gitignored off-Dropbox `data/` symlink.
+(`prjna*`) require a **pinned raw-read quantification path** (salmon + a pinned transcriptome/index,
+recorded as a platform axis for the artifact battery) and are **provisional until that path is verified in
+WP1** (G4); FigShare/SciLifeLab deposits use a non-GEO staging path. Data payloads land under the
+gitignored off-Dropbox `data/` symlink.
 
 ### Stage 2 — Uniform effect-vector computation (reuse plan:0003 machinery)
 One harmonized DE→enrichment per contrast: **limma** moderated-t ranked gene list → **fgsea** NES over the
@@ -205,6 +227,31 @@ estimators**, primary because R must not depend on a factor rotation:
   (unit = contrast; blocks = condition, then platform): **leave-one-dataset-out** AND
   **leave-one-condition-out** are reported **separately** (they are different perturbations given the
   long-COVID dominance), plus a naive-bootstrap comparator only as a lower-bound sanity check.
+
+### Stage 3b — LODO/LOCO operationalization (pre-locked pass/fail)
+Resampling stability is evidence only if its decision rule is fixed **before** seeing the folds. For every
+leave-one-dataset-out (LODO) and leave-one-condition-out (LOCO) fold:
+
+1. **Fold admissibility (structural gate).** A fold is *informative* only if the remaining matrix retains
+   **≥3 distinct triggers, ≥6 contrasts, and ≥2 platforms** — the t116 K≥3 shared-axis requirement below
+   which a rank is simply **not identifiable**. A fold failing any threshold is reported as
+   **non-identifiable / uninformative** and is **excluded from pass/fail** — never scored as either — with
+   the exclusion stated explicitly (no silent drop).
+2. **Pass/fail on admissible folds.** **PASS** iff the artifact-adjusted R point estimate stays within
+   **±1 of the full-corpus R AND within the same t116 regime band** (low ≈2–4 vs high ≥8) **and** the
+   leading shared subspace is stable (principal angle between full-corpus and fold subspaces below a
+   config'd cutoff). **FAIL** iff an admissible fold moves R across the t116 regime boundary.
+3. **The long-COVID-out (LC-out) fold is a first-class, separately reported result** — not one fold among
+   many — because LC supplies ~8 of ~13 columns. If LC-out is admissible **and** passes, the low-rank
+   conclusion is **robust**. If LC-out is **inadmissible** (too few remaining contrasts/triggers) **or**
+   **underpowered** (the parallel-analysis null band overlaps the observed leading eigenvalue), the
+   low-rank conclusion is labelled **conditional on long-COVID inclusion → hypothesis-generating, not
+   q0050-grade** — the same demotion the two-matrix rule applies to sensitivity-only findings.
+4. **Rare-trigger-out folds** (Ebola-out, Lyme-out, QFS-out, PI-ME/CFS-out) retain all of LC and are
+   typically admissible; a robust low-rank claim must **PASS every admissible rare-trigger-out fold**.
+
+Every threshold (`min_triggers=3`, `min_contrasts=6`, `min_platforms=2`, R-band `±1`, subspace-angle
+cutoff, parallel-analysis power rule) lives in `config.yaml` and is committed before any fold is scored.
 
 ### Stage 4 — Sparse latent instrument (replication-gated, secondary)
 The primary R stays rotation-invariant. A **sparse Bayesian factor model** (BicMix/SFAmix family;
@@ -261,13 +308,21 @@ to the scoped phrasing when those entities are next edited (tracked in Open Ques
   plan:0010-…`) so Dimension-3 review resolves.
 - **DoD:** `snakemake -n` resolves; envs solve; every corpus dataset carries a `consumed_by` backlink.
 
-### WP1 — Corpus verification + staging (the "verify details / explanatory power" pass)
+### WP1 — Corpus verification + staging (the "verify details / explanatory power" pass) — **readiness gate**
 - For each registered candidate: verify from the record the `[UNVERIFIED]` specifics (N, tissue, platform,
   window, per-sample matrix format, control type), confirm G4 downloadability, and **verify explanatory
   power for the variable of interest** (does a case-vs-control contrast even exist and separate?). Update
   the dataset entity: set `access.verified: true` + `last_reviewed`, or **demote** on failure.
-- Stage via checksummed acquisition rules (SRA quantification where needed).
-- **DoD:** each admitted deposit has a verified entity + staged matrix + datapackage; demotions recorded.
+- **Resolve every provisional deposit explicitly** (no default-in): for the **floor-gated** deposits
+  (`gse68310`, `prjna1001790`) confirm whether later post-acute *symptomatic* samples exist → **promote**
+  into the strict count, else **demote** to the early-convalescent decoy/specificity layer; for **SRA-only**
+  deposits verify the pinned quantification path produces a per-sample matrix → promote, else hold.
+  **Finalize the strict trigger/K count here.**
+- Stage via checksummed acquisition rules (pinned SRA quantification where needed).
+- **DoD:** each admitted deposit has a verified entity + staged matrix + datapackage; every provisional
+  deposit is promoted or demoted with the decision recorded; the finalized strict trigger/contrast/platform
+  counts are written (so Stage 3b admissibility thresholds can be checked against a real corpus). **No
+  downstream WP runs until this gate closes.**
 
 ### WP2 — Uniform DE→enrichment → pathway × contrast matrix
 - Run Stage-2 machinery over all admitted contrasts on the pinned universe; emit the matrix + per-contrast
@@ -311,7 +366,12 @@ to the scoped phrasing when those entities are next edited (tracked in Open Ques
 - [ ] Every corpus input resolves to a `dataset:` entity with `consumed_by: plan:0010-…`; strict vs
       sensitivity membership and `onset_certainty` recorded per deposit.
 - [ ] WP1 verification pass has set `access.verified` per deposit (or demoted it), replacing the
-      `[UNVERIFIED]` specifics with confirmed values.
+      `[UNVERIFIED]` specifics with confirmed values; **every floor-/SRA-provisional deposit is promoted or
+      demoted** and the strict trigger/contrast/platform count is finalized before any Stage-2+ run.
+- [ ] LODO/LOCO carry **pre-locked pass/fail semantics** (Stage 3b): a fold admissibility gate
+      (≥3 triggers, ≥6 contrasts, ≥2 platforms) with non-identifiable folds reported and excluded from
+      pass/fail, a fixed R-band + regime + subspace-angle PASS rule, and the **LC-out fold reported
+      first-class** — a low-rank result that fails/cannot-power LC-out is demoted to hypothesis-generating.
 - [ ] One reproducible, QA-gated pathway × contrast matrix per matrix (strict, sensitivity), computed by a
       single harmonized DE→enrichment over the pinned `msigdb-2024-1-hs-mapped-pais-gene-set-universe`.
 - [ ] R is reported with uncertainty from **≥3 rotation-invariant estimators**, and its **leave-one-dataset-out
