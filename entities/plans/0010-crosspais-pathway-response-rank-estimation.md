@@ -211,7 +211,7 @@ corpus — not the discovery-sweep guess. Two deposits demoted, one deferred, bo
 demoted; several `[UNVERIFIED]` specifics corrected.
 
 **Strict-primary matrix — WP1-verified, blood-bulk, downloadable per-sample matrix, ≥4 wk floor, documented trigger.** WP1 finalized ~10 contrasts / 5 documented triggers; the post-review G1 amendment (Finding C) then moved sorted-monocyte QFS to a **separate compartment stratum**, so the **WB/PBMC primary matrix is 4 triggers** (LC, PI-ME/CFS, Ebola, Lyme), with QFS entering compartment-stratified R only:
-- Long COVID (6 matrix-ready): `gse226260-longcovid-pbmc` (≈46 LC vs rich convalescent+healthy controls; 2-platform batch — **strongest**), `gse270045-longcovid-mecfs-wholeblood` (19 LC+ME/CFS vs 17 healthy — **clean**), `scilifelab-28832492-longcovid-pbmc` (60 vs 50, controls are **infected-recovered** — scores well on G3; FigShare-API matrix), `gse251849-longcovid-pbmc-cognitive` (11 vs 12, small — subgroup n 5–7), plus two **heavy-caveat keeps**: `gse267625-longcovid-wholeblood` (matrix public but **no external control** — contrast must be built *within-cohort* in WP2; longitudinal), `gse228320-longcovid-wholeblood-pulmonary` (matrix public but the contrast is a **DLCO pulmonary-severity axis within ARDS survivors**, not fatigue-dominant LC — LOO-drop).
+- Long COVID (6 matrix-ready): `gse226260-longcovid-pbmc` (**CORRECTED at WP1b-a-rest — the "≈46 LC vs rich convalescent+healthy controls, 2-platform batch, strongest" catalogue was wrong**: the expr matrix is SINGLE-platform and mixes the PASC cohort with a disjoint 142-sample acute-severity cohort; staged as PASC vs NOPASC = **28 vs 8 subjects** [72 vs 14 samples] with an infected-nonPASC-convalescent, SMALL control arm — see WP2 + config), `gse270045-longcovid-mecfs-wholeblood` (19 LC+ME/CFS vs 17 healthy — **clean**), `scilifelab-28832492-longcovid-pbmc` (60 vs 50, controls are **infected-recovered** — scores well on G3; FigShare-API matrix), `gse251849-longcovid-pbmc-cognitive` (11 vs 12, small — subgroup n 5–7), plus two **heavy-caveat keeps**: `gse267625-longcovid-wholeblood` (matrix public but **no external control** — contrast must be built *within-cohort* in WP2; longitudinal), `gse228320-longcovid-wholeblood-pulmonary` (matrix public but the contrast is a **DLCO pulmonary-severity axis within ARDS survivors**, not fatigue-dominant LC — LOO-drop).
 - PI-ME/CFS (1): `gse251872-pime-cfs-pbmc` — **corrected to 12 cases vs 15 healthy** (the "17 vs 21" was total enrollment); bulk PBMC; 2 sequencing platforms → batch covariate.
 - Q-fever/QFS (1) — **compartment stratum, not primary** (post-review G1, Finding C): `gse130353-qfs-cfs-monocytes` *(previously verified/staged; **sorted monocytes** — held as a separate compartment stratum, no longer pooled into the WB/PBMC primary rank matrix; enters compartment-stratified R only).*
 - Post-Ebola (1): `gse143549-post-ebola-wholeblood` — 26 survivors vs 33, ~23 mo, downloadable CPM matrix.
@@ -651,17 +651,25 @@ downstream matrix builds on a real contract, not an assumption.
   collapse** (`collapse_to: subject` — average each subject's timepoints to one pseudo-sample on the
   model-ready scale, THEN `~ group`; unit = subject, no pseudo-replication) per the plan's "collapse BEFORE
   limma". Unit counts match the corpus (gse226260 28 vs 8 subjects; gse128078 14 vs 11; gse251872 12 vs 15).
+  **Two fail-closed hardenings (review Findings 2, 3):** for non-collapse models the voom mean-variance
+  weights are estimated against the **same covariate-adjusted design** `lmFit` uses (built *before* `voom`,
+  so a batch term is visible to the trend — matters for `gse251872`'s platform term); and a **rank-deficient /
+  non-estimable design HALTs** (as does an all-NA case coefficient) rather than emitting a thin ranked list.
 - **Two matrices assembled (`code/scripts/assemble_matrix.py`):** strict = **1153 gene_sets × 7 built
   columns** (of 9 declared — `gse267625` + `gse143549` **recorded as `omitted_columns` with their blocker**,
   never silently dropped); sensitivity (nested) = **1153 × 10** (strict + the 3 ME/CFS additions). QFS
   sorted stratum + acute decoys are correctly excluded from both rank matrices (they feed WP4 adjudication).
-- **NES-comparability check (DoD) — PASSES on the informative subset, with a decision-relevant caveat.**
+- **NES-comparability — a BEST-PAIR concordance SCREEN (not a proof every column is comparable).**
   Spearman over ALL 1153 sets was near-zero/negative for the same-tissue LC pairs (PBMC −0.15..0.00; WB
   +0.18) — a **noise-dilution artifact** of the ~700 near-zero-NES pathways, NOT genuine discordance. On the
   **enriched subset** (|NES|≥1.5 in either deposit) the best-matched same-tissue LC pairs concord:
-  **PBMC `gse226260`~`scilifelab` ρ=+0.42; WB `gse270045`~`gse228320` ρ=+0.50** (`concern: false`). So the
-  check is computed on the enriched subset and passes a group iff its best assessable pair reaches
-  `min_concordance=0.20` (config `nes_comparability`).
+  **PBMC `gse226260`~`scilifelab` ρ=+0.42 (verdict `best_pair_only`); WB `gse270045`~`gse228320` ρ=+0.50
+  (verdict `concordant`)**. `concern` fires only if a group's *best* pair fails `min_concordance=0.20`
+  (genuine harmonization failure) — here it is **false**. BUT the screen is explicit that PBMC is
+  `best_pair_only`: **`gse251849` (n=11 vs 12, 0 BH<0.05) concords with NEITHER sibling (0.068 / −0.028) and
+  is carried to WP3 as a `wp3_loo_candidate`** (leave-one-out sensitivity column) — it is flagged, never
+  quietly passed (review Finding 1). So harmonization is verified *for the powered same-tissue pairs*; the
+  lone underpowered LC PBMC column is held as a known discordant.
 - **WP2 power finding (decision-relevant, feeds WP1 low-power ceiling):** per-deposit marginal DE power is
   **highly uneven** — `gse270045` 6081 BH<0.05, `gse63085` 515, `gse14577` 341, `scilifelab` 109,
   `gse226260` 52, but **five deposits return 0 BH<0.05** (`gse251849`, `gse228320`, `gse251872`,
@@ -759,7 +767,8 @@ downstream matrix builds on a real contract, not an assumption.
       built of 9, sensitivity = 1153×10), computed by a single harmonized scale-aware DE→enrichment
       (`de_ranklist.R` voom/log2/direct → `fgsea_enrich.R`) over the pinned Hallmark∪Reactome universe;
       deferred columns (`gse267625`, `gse143549`) recorded as `omitted_columns`; same-tissue LC
-      NES-comparability passes on the enriched subset (PBMC ρ=0.42, WB ρ=0.50).
+      NES-comparability **best-pair screen** on the enriched subset (WB `concordant` ρ=0.50; PBMC
+      `best_pair_only` ρ=0.42 with `gse251849` discordant → carried to WP3 `wp3_loo_candidates`).
 - [ ] R is reported with uncertainty from **≥3 rotation-invariant estimators**, and its **leave-one-dataset-out
       and leave-one-condition-out** stability profiles are reported **separately**.
 - [ ] The artifact-control battery (platform-LOO, negative-control sets, recovered-control specificity,

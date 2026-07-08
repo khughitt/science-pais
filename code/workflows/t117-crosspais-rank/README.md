@@ -19,8 +19,9 @@ log_mu/log2_intensity) → `fgsea_enrich.R` (reused verbatim) → `assemble_matr
 producing **strict (1153 gene_sets × 7 built cols of 9)** and **sensitivity (1153 ×
 10, nested)** pathway × contrast matrices. Deferred columns (`gse267625`,
 `gse143549`) are recorded as `omitted_columns`, never silently dropped; the
-same-tissue LC NES-comparability check passes on the enriched subset (PBMC ρ=0.42,
-WB ρ=0.50). The remaining rule bodies (WP3–WP6) are fail-early stubs (`exit 1`, no
+same-tissue LC NES-comparability **best-pair screen** on the enriched subset gives WB
+`concordant` (ρ=0.50) and PBMC `best_pair_only` (ρ=0.42, with `gse251849` discordant
+→ carried to WP3 `wp3_loo_candidates`). The remaining rule bodies (WP3–WP6) are fail-early stubs (`exit 1`, no
 silent placeholder output). `config.yaml` encodes **all** design parameters — it
 originates the design; scripts hard-code nothing.
 
@@ -35,9 +36,11 @@ originates the design; scripts hard-code nothing.
   `collapse_to: subject` (gse226260, gse128078).
 - **NES-comparability + power finding:** the all-set Spearman is diluted to ~0 by
   the ~700 near-zero-NES pathways; on the enriched subset the powered same-tissue LC
-  pairs concord (PBMC 0.42, WB 0.50). Per-deposit marginal power is uneven (6081…0
-  BH<0.05; 5 deposits at 0) — the deposit-level face of the WP1 LC-out low-power
-  ceiling, carried to WP3.
+  pairs concord (PBMC best pair 0.42, WB 0.50). This is a **best-pair screen** — the
+  underpowered `gse251849` (0 BH<0.05) concords with neither PBMC sibling and is a
+  `wp3_loo_candidate`. Per-deposit marginal power is uneven (6081…0 BH<0.05; 5
+  deposits at 0) — the deposit-level face of the WP1 LC-out low-power ceiling, carried
+  to WP3.
 - Run: `snakemake -s code/workflows/t117-crosspais-rank/Snakefile --use-conda
   --conda-prefix /data/snakemake/conda -- data/processed/t117/matrix/{strict,sensitivity}.pathway_by_contrast.tsv`
 

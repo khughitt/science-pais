@@ -149,7 +149,7 @@ def main() -> None:
     # --- grouping metadata (per built column) ------------------------------------
     def col_tags(c: str) -> dict:
         s = cfg["contrasts"][c]
-        return {
+        d = {
             "contrast": c,
             "accession": s["accession"],
             "trigger": s.get("trigger"),
@@ -160,6 +160,16 @@ def main() -> None:
             "control_type": s.get("control_type"),
             "loo_flag": s.get("loo_flag"),
         }
+        # attach marginal DE power from the de_ranklist diagnostics (context for the
+        # comparability screen + the WP3 power curve): n BH<0.05, DE path, units.
+        diag_p = proc / "de" / f"{c}.diag.json"
+        if diag_p.exists():
+            diag = json.loads(diag_p.read_text())
+            d["n_sig_adj_p05"] = diag.get("n_sig_adj_p05")
+            d["de_path"] = diag.get("de_path")
+            d["n_case_units"] = diag.get("n_case_units")
+            d["n_control_units"] = diag.get("n_control_units")
+        return d
 
     columns_meta = [col_tags(c) for c in built]
 
@@ -178,13 +188,20 @@ def main() -> None:
     lc_rnaseq = [c for c in built
                  if cfg["contrasts"][c].get("trigger") == "sars-cov-2"
                  and cfg["contrasts"][c].get("platform") == "rnaseq"]
+    # This is a BEST-PAIR concordance SCREEN, not a proof every column is comparable
+    # (review Finding 1): a same-compartment LC group is `concordant` iff its best
+    # assessable pair reaches min_concordance, but a member that concords with NONE of
+    # its group siblings (max enriched rho < min_concordance) is a `discordant_deposit`
+    # — carried to WP3 as a leave-one-out sensitivity column, never quietly passed.
+    # `concern` fires when a group's BEST pair fails (genuine harmonization failure).
     comparability = {
-        "method": "enriched_subset_spearman",
+        "method": "best_pair_enriched_spearman_screen",
         "enrichment_threshold": enr_thr,
         "min_enriched_sets": min_enr_sets,
         "min_concordance": min_conc,
         "groups": [],
         "concern": False,
+        "wp3_loo_candidates": [],   # discordant/low-power LC columns for WP3 sensitivity
     }
     by_comp: dict[str, list[str]] = {}
     for c in lc_rnaseq:
@@ -193,6 +210,8 @@ def main() -> None:
         if len(members) < 2:
             continue
         pairs, assessable_rhos = [], []
+        # per-member: best enriched rho with ANY sibling (to spot lone discordants)
+        member_best: dict[str, float] = {m: float("nan") for m in members}
         for i in range(len(members)):
             for j in range(i + 1, len(members)):
                 a, b = members[i], members[j]
@@ -210,18 +229,36 @@ def main() -> None:
                 })
                 if assessable:
                     assessable_rhos.append(rho_enr)
+                    for m in (a, b):
+                        member_best[m] = rho_enr if np.isnan(member_best[m]) else max(member_best[m], rho_enr)
         best = round(max(assessable_rhos), 4) if assessable_rhos else None
         low_signal = [m for m in members
                       if int(((np.abs(mat[m].to_numpy()) >= enr_thr)).sum()) < min_enr_sets]
-        group_ok = best is not None and best >= min_conc
+        # a member is discordant if it was assessable against >=1 sibling but reached
+        # min_concordance with NONE of them (the gse251849 case: 0.068 / -0.028).
+        discordant = [m for m in members
+                      if not np.isnan(member_best[m]) and member_best[m] < min_conc]
+        best_pair_only = best is not None and best >= min_conc and bool(discordant)
+        group_ok = best is not None and best >= min_conc and not discordant
+        verdict = ("concordant" if group_ok
+                   else "best_pair_only" if best_pair_only
+                   else "discordant" if best is not None
+                   else "unassessable")
         comparability["groups"].append({
             "compartment": comp, "members": members,
-            "best_enriched_rho": best, "concordant": group_ok,
-            "low_signal_deposits": low_signal, "pairs": pairs,
+            "best_enriched_rho": best, "verdict": verdict,
+            "concordant": group_ok,   # strict: ALL assessable pairs concord
+            "discordant_deposits": discordant,
+            "low_signal_deposits": low_signal,
+            "member_best_enriched_rho": {m: (None if np.isnan(v) else round(v, 4)) for m, v in member_best.items()},
+            "pairs": pairs,
         })
-        # concern only if a group with >=1 assessable pair fails to reach min_concordance
-        if assessable_rhos and not group_ok:
+        # genuine harmonization failure = the BEST pair fails; a lone discordant member
+        # is NOT a hard concern but is carried to WP3.
+        if best is not None and best < min_conc:
             comparability["concern"] = True
+        comparability["wp3_loo_candidates"].extend(d for d in (discordant + low_signal)
+                                                   if d not in comparability["wp3_loo_candidates"])
 
     grouping = {
         "matrix": args.matrix,
@@ -242,7 +279,9 @@ def main() -> None:
     Path(args.out_grouping).write_text(json.dumps(grouping, indent=2) + "\n")
 
     concern = " [COMPARABILITY CONCERN]" if comparability["concern"] else ""
-    best_by_group = {g["compartment"]: g["best_enriched_rho"] for g in comparability["groups"]}
+    best_by_group = {g["compartment"]: (g["best_enriched_rho"], g["verdict"]) for g in comparability["groups"]}
+    if comparability["wp3_loo_candidates"]:
+        concern += f" wp3_loo_candidates={comparability['wp3_loo_candidates']}"
     sys.stderr.write(
         f"[assemble_matrix] {args.matrix}: {mat.shape[0]} gene_sets x {len(built)} built columns "
         f"({len(omitted)} omitted: {[c for c in omitted]}); "

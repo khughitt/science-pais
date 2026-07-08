@@ -164,23 +164,34 @@ n_genes_tested <- nrow(M)
 if (n_genes_tested == 0L)
   stop(sprintf("[de_ranklist] %s: no genes survive the %s filter", contrast, scale))
 
-# --- model-ready matrix (E) : normalize/transform to a linear-model scale ------
-# For voom paths we keep the DGEList so lmFit can use the precision weights (no
-# collapse) OR we take E and average per subject (collapse, weights discarded).
-voom_obj <- NULL
-if (scale %in% COUNT_SCALES) {
-  gfac <- factor(grp, levels = c(control, case))
-  voom_obj <- voom(M, model.matrix(~ gfac))    # logCPM + weights (library-size norm; trend on ~group)
-  E <- voom_obj$E
-} else if (scale %in% LOG_XFORM) {
-  E <- log2(M + 1)
-} else {                                        # ALREADY_LOG
-  E <- M
+# --- design + fit : two branches (collapse vs sample-level) -------------------
+# review Finding 3: fail-closed on a rank-deficient / non-estimable design — never a
+# thin NA ranked list. review Finding 2: for non-collapse models the voom weights are
+# estimated against the SAME design lmFit uses (a batch term must be visible to the
+# mean-variance trend), so the final design is built BEFORE voom below.
+coef_name <- "gcase"
+assert_estimable <- function(design, ctx) {
+  if (qr(design)$rank < ncol(design))
+    stop(sprintf("[de_ranklist] %s: rank-deficient design (rank %d < %d cols {%s}) — non-estimable contrast",
+                 ctx, qr(design)$rank, ncol(design), paste(colnames(design), collapse = ", ")))
+  if (!coef_name %in% colnames(design))
+    stop(sprintf("[de_ranklist] %s: case coef '%s' absent from design cols {%s}",
+                 ctx, coef_name, paste(colnames(design), collapse = ", ")))
 }
 
 design_note <- NULL
 if (!is.null(collapse_col)) {
-  # ---- longitudinal collapse: one pseudo-sample per subject, then ~ group -----
+  # ---- longitudinal collapse: transform, average per subject, then ~ group -----
+  # (collapse never co-occurs with a covariate/block here — asserted above — so the
+  # subject-level design is ~ group; voom weights are discarded by the averaging.)
+  if (scale %in% COUNT_SCALES) {
+    gfac <- factor(grp, levels = c(control, case))
+    E <- voom(M, model.matrix(~ gfac))$E         # sample-level logCPM (library-size norm)
+  } else if (scale %in% LOG_XFORM) {
+    E <- log2(M + 1)
+  } else {                                        # ALREADY_LOG
+    E <- M
+  }
   subj <- as.character(sheet[[collapse_col]][srow])
   # each subject must be entirely within one arm (between-subject factor).
   sg <- unique(data.table(subject = subj, group = grp))
@@ -195,13 +206,13 @@ if (!is.null(collapse_col)) {
   grp_s <- grp[match(subj_levels, subj)]
   g <- factor(grp_s, levels = c(control, case))
   design <- model.matrix(~ g)
+  assert_estimable(design, contrast)
   fit <- lmFit(Es, design)
-  coef_name <- "gcase"
   design_note <- sprintf("~ group on %d subjects (collapsed from %d samples by mean over '%s')",
                          length(subj_levels), length(samples), collapse_col)
   n_unit_case <- sum(grp_s == case); n_unit_control <- sum(grp_s == control)
 } else {
-  # ---- sample-level model: ~ [covariates +] group, optional block correlation --
+  # ---- sample-level: build the FINAL design first, voom against it, then fit -----
   g <- factor(grp, levels = c(control, case))
   fdata <- data.frame(g = g, stringsAsFactors = FALSE)
   rhs <- "g"
@@ -210,11 +221,10 @@ if (!is.null(collapse_col)) {
     rhs <- c(cv, rhs)                            # covariates first, group last
   }
   design <- model.matrix(as.formula(paste("~", paste(rhs, collapse = " + "))), data = fdata)
-  coef_name <- "gcase"
-  if (!coef_name %in% colnames(design))
-    stop(sprintf("[de_ranklist] %s: case coef '%s' absent from design cols {%s}",
-                 contrast, coef_name, paste(colnames(design), collapse = ", ")))
-  fit_input <- if (!is.null(voom_obj)) voom_obj else E
+  assert_estimable(design, contrast)             # Finding 3: fail-closed before any fit
+  # Finding 2: voom weights estimated against the SAME (covariate-adjusted) design.
+  fit_input <- if (scale %in% COUNT_SCALES) voom(M, design) else
+               if (scale %in% LOG_XFORM) log2(M + 1) else M
   if (!is.null(block_col)) {
     blk <- as.character(sheet[[block_col]][srow])
     dc  <- duplicateCorrelation(fit_input, design, block = blk)
@@ -230,6 +240,12 @@ if (!is.null(collapse_col)) {
 
 fit <- eBayes(fit)
 tt <- topTable(fit, coef = coef_name, number = Inf, sort.by = "none")
+
+# Finding 3: fail-closed if the case coefficient is non-estimable (no finite t).
+n_finite_t <- sum(is.finite(tt$t))
+if (n_finite_t == 0L)
+  stop(sprintf("[de_ranklist] %s: case coef '%s' produced no finite moderated-t (non-estimable)",
+               contrast, coef_name))
 
 # --- ranked list (FULL precision on `t` — the fgsea ranking statistic) --------
 ranked <- data.table(
