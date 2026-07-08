@@ -1,0 +1,21 @@
+# science:code
+# status: workflow-owned
+# task_ids: [t117]
+# science:end
+#
+# Salmon selective-alignment quantification env for the t117 SRA-only decoy
+# (PRJNA1001790, CHIKV): raw FASTQ → salmon quant → tximport gene counts. Only
+# the salmon sub-path uses this env; GEO deposits stage via ../envs/py.yaml and
+# enrichment runs under ../envs/r-bioc.yaml. Pinned to a conda-lock alongside the
+# other envs before the quant is executed (WP1b).
+name: t117-salmon
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - salmon=1.10.3          # selective-alignment quantifier (SA mode)
+  - sra-tools=3.1.1        # prefetch + fasterq-dump for SRR run retrieval
+  - pigz=2.8
+  - bioconductor-tximport=1.30.0   # transcript → gene aggregation
+  - bioconductor-tximeta=1.20.0    # tx2gene from the pinned GENCODE annotation
+  - r-base=4.3

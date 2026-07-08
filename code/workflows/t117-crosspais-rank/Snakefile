@@ -107,10 +107,39 @@ def stub(label):
     return (f"echo 'STUB {label} — not yet implemented (WP0 skeleton; "
             f"plan:0010). Implement in its work package before running.' >&2; exit 1")
 
+# --- WP1 acquisition (config-driven; single source is config["acquisition"]) --
+ACQ = config.get("acquisition", {})
+GEO_ACCESSIONS = sorted(ACQ.keys())          # deposits staged by download + verify
+SALMON_ACCESSIONS = sorted({ACC_OF[c] for c in CONTRASTS
+                            if config["contrasts"][c].get("quantify") == "salmon"})
+SALMON_RE = "|".join(SALMON_ACCESSIONS) if SALMON_ACCESSIONS else "^$"   # never-match if none
+REF = config["salmon"]["transcriptome"]["name"]   # e.g. gencode.v44.transcripts
+
+def payloads_of(acc):
+    """Named raw payloads to stage for a GEO/FigShare deposit (config)."""
+    return list(ACQ[acc]["payloads"].keys())
+
+def payload_spec(acc, pay):
+    return ACQ[acc]["payloads"][pay]
+
+def deposit_payload_blobs(wildcards):
+    """Every verified payload blob a deposit's staged.ok aggregates."""
+    acc = wildcards.accession
+    return [f"{RAW}/{acc}/{pay}.data" for pay in payloads_of(acc)]
+
+def salmon_run_quants(wildcards):
+    """Per-run salmon quant.sf for a salmon accession (empty until WP1b resolves
+    the run subset — the path stays wired so the DAG resolves)."""
+    acc = wildcards.accession
+    return [f"{PROC}/salmon/{acc}/{run}/quant.sf"
+            for run in config["salmon"]["runs"].get(acc, {}).get("accessions", [])]
+
 wildcard_constraints:
     contrast="|".join(CONTRASTS),
     accession="|".join(ACCESSIONS),
     matrix="|".join(RANK_MATRICES),
+    payload="[a-z_]+",
+    run="SRR[0-9]+",
 
 # --- terminal target ---------------------------------------------------------
 rule all:
@@ -121,16 +150,170 @@ rule all:
         f"{RES}/datapackage.json",
 
 # =============================================================================
-# WP1 — staging (pinned + checksummed). Acquire rules are DAG roots (no file
-# inputs): a real download rule replaces the stub. SRA-only deposits carry
-# `quantify: salmon` in config and gain a quantification step here in WP1.
+# WP1 — staging (pinned + checksummed). Reuses the plan:0003 fetch_url.py (download
+# + verify against a LOCKED sha256; empty hash or mismatch => HALT, partial removed)
+# and verify_sha256.py (re-verify an on-disk artifact). Each deposit's raw payload(s)
+# are content-addressed by their locked hash; the single universe is BUILT from the
+# two hash-locked clean-base .rds (combine_universe.R) and re-verified. The SRA-only
+# CHIKV decoy stages via the salmon sub-path (wired; heavy steps deferred to WP1b).
+# Acquisition (download + verify) is COMPLETE; per-deposit PARSE is WP1b (stage_matrix).
 # =============================================================================
+
+# --- GEO / FigShare deposits: download + verify each raw payload -------------
+rule acquire_payload:
+    input:
+        # ancient(): payloads are content-addressed by a LOCKED sha256, so a
+        # fetch_url.py edit can never change the verified bytes — don't let code
+        # churn trigger a re-download (dependency still recorded for the DAG).
+        script=ancient(f"{SCRIPTS}/fetch_url.py"),
+        srclib=ancient(f"{SCRIPTS}/acquire_common.py"),
+    output:
+        blob=f"{RAW}/{{accession}}/{{payload}}.data",
+    params:
+        url=lambda wc: payload_spec(wc.accession, wc.payload)["url"],
+        sha256=lambda wc: payload_spec(wc.accession, wc.payload)["sha256"],
+    log:
+        f"{RES}/logs/acquire/{{accession}}.{{payload}}.log",
+    conda:
+        "../envs/py.yaml"
+    shell:
+        "python {input.script} --url '{params.url}' --sha256 {params.sha256} "
+        "--out {output.blob} > {log} 2>&1"
+
 rule acquire_deposit:
+    # a deposit is 'staged' once ALL its payloads are downloaded + hash-verified.
+    input:
+        deposit_payload_blobs,
     output:
         staged=f"{RAW}/{{accession}}/staged.ok",
+    wildcard_constraints:
+        accession="|".join(GEO_ACCESSIONS),
+    params:
+        payloads=lambda wc: ",".join(payloads_of(wc.accession)),
     shell:
-        stub("acquire_deposit {wildcards.accession}")
+        "printf 'staged=%s payloads=%s\\n' {wildcards.accession} '{params.payloads}' "
+        "> {output.staged}"
 
+# --- single pinned universe: BUILD from the clean base, then re-verify --------
+rule build_universe:
+    input:
+        script=f"{SCRIPTS}/combine_universe.R",
+        hallmark=config["genesets"]["source_rds"]["hallmark"]["path"],
+        reactome=config["genesets"]["source_rds"]["reactome"]["path"],
+    output:
+        rds=UNIVERSE_RDS,
+    params:
+        hall_sha=config["genesets"]["source_rds"]["hallmark"]["sha256"],
+        reac_sha=config["genesets"]["source_rds"]["reactome"]["sha256"],
+    log:
+        f"{RES}/logs/build_universe.log",
+    conda:
+        "../envs/r-bioc.yaml"
+    shell:
+        "Rscript {input.script} --in-rds {input.hallmark},{input.reactome} "
+        "--dbs hallmark,reactome --sha256s {params.hall_sha},{params.reac_sha} "
+        "--out-rds {output.rds} > {log} 2>&1"
+
+rule verify_universe:
+    input:
+        rds=UNIVERSE_RDS,
+        script=ancient(f"{SCRIPTS}/verify_sha256.py"),
+        srclib=ancient(f"{SCRIPTS}/acquire_common.py"),
+    output:
+        qa=f"{PROC}/genesets/universe.qa.pass",
+    params:
+        sha=config["genesets"]["universe_sha256"],
+    log:
+        f"{RES}/logs/verify_universe.log",
+    conda:
+        "../envs/py.yaml"
+    shell:
+        "python {input.script} --file {input.rds} --sha256 {params.sha} "
+        "--sentinel {output.qa} > {log} 2>&1"
+
+# --- SRA-only CHIKV decoy: salmon quantification path (WIRED; run deferred) ---
+# The rules resolve the full DAG; the heavy index build + FASTQ retrieval + quant
+# are stubs (fail-early) and the reference hash is HALT-guarded (empty => fetch_url
+# HALTs) until WP1b pins it. salmon_gene_matrix emits the SAME expr contract a GEO
+# deposit does, so the decoy feeds limma_de/fgsea identically.
+rule fetch_transcriptome:
+    input:
+        script=ancient(f"{SCRIPTS}/fetch_url.py"),
+        srclib=ancient(f"{SCRIPTS}/acquire_common.py"),
+    output:
+        fa=f"{RAW}/salmon/{REF}.fa.gz",
+    params:
+        url=config["salmon"]["transcriptome"]["url"],
+        sha256=config["salmon"]["transcriptome"]["sha256"],   # "" => HALT (pin in WP1b)
+    log:
+        f"{RES}/logs/salmon/fetch_transcriptome.log",
+    conda:
+        "../envs/py.yaml"
+    shell:
+        "python {input.script} --url '{params.url}' --sha256 '{params.sha256}' "
+        "--out {output.fa} > {log} 2>&1"
+
+rule salmon_index:
+    input:
+        fa=f"{RAW}/salmon/{REF}.fa.gz",
+    output:
+        idx=directory(f"{PROC}/salmon/index/{REF}"),
+    params:
+        kmer=config["salmon"]["index"]["kmer"],
+    conda:
+        "../envs/salmon.yaml"
+    shell:
+        stub("salmon_index (wire-only; index build deferred to WP1b)")
+
+rule fetch_sra_run:
+    output:
+        r1=f"{RAW}/salmon/{{accession}}/{{run}}_1.fastq.gz",
+        r2=f"{RAW}/salmon/{{accession}}/{{run}}_2.fastq.gz",
+    wildcard_constraints:
+        accession=SALMON_RE,
+    conda:
+        "../envs/salmon.yaml"
+    shell:
+        stub("fetch_sra_run {wildcards.run} (prefetch + fasterq-dump; deferred to WP1b)")
+
+rule salmon_quant:
+    input:
+        idx=f"{PROC}/salmon/index/{REF}",
+        r1=f"{RAW}/salmon/{{accession}}/{{run}}_1.fastq.gz",
+        r2=f"{RAW}/salmon/{{accession}}/{{run}}_2.fastq.gz",
+    output:
+        quant=f"{PROC}/salmon/{{accession}}/{{run}}/quant.sf",
+    wildcard_constraints:
+        accession=SALMON_RE,
+    conda:
+        "../envs/salmon.yaml"
+    shell:
+        stub("salmon_quant {wildcards.accession}/{wildcards.run} (deferred to WP1b)")
+
+rule salmon_gene_matrix:
+    # tximport per-run quant.sf → gene counts → the uniform expr contract. Run
+    # subset is empty until WP1b resolves it; the rule stays wired so the DAG
+    # resolves and the decoy's expr has a producer.
+    input:
+        idx=f"{PROC}/salmon/index/{REF}",
+        quants=salmon_run_quants,
+    output:
+        expr=f"{PROC}/{{accession}}/expr.gene.tsv.gz",
+        sheet=f"{PROC}/{{accession}}/sample_sheet.tsv",
+        qa=f"{PROC}/{{accession}}/clean.qa.pass",
+    wildcard_constraints:
+        accession=SALMON_RE,
+    conda:
+        "../envs/salmon.yaml"
+    shell:
+        stub("salmon_gene_matrix {wildcards.accession} (tximport; deferred to WP1b)")
+
+# --- WP1b: per-deposit parse of the verified raw payload → uniform gene matrix -
+# Acquisition (above) is COMPLETE. Turning each heterogeneous raw payload (counts
+# csv/tsv, RAW.tar of per-sample files, microarray series-matrix / SOFT) into the
+# uniform expr + sample-sheet + QA contract is a per-deposit parser that reads
+# `<payload>.origin.json` to dispatch by `kind`. One stub per GEO/FigShare deposit
+# until WP1b/WP2 implements each; the salmon accession is served by the rule above.
 rule stage_matrix:
     input:
         staged=f"{RAW}/{{accession}}/staged.ok",
@@ -138,17 +321,10 @@ rule stage_matrix:
         expr=f"{PROC}/{{accession}}/expr.gene.tsv.gz",
         sheet=f"{PROC}/{{accession}}/sample_sheet.tsv",
         qa=f"{PROC}/{{accession}}/clean.qa.pass",
+    wildcard_constraints:
+        accession="|".join(GEO_ACCESSIONS),
     shell:
-        stub("stage_matrix {wildcards.accession}")
-
-rule stage_universe:
-    output:
-        rds=UNIVERSE_RDS,
-        qa=f"{PROC}/genesets/universe.qa.pass",
-    params:
-        sha=config["genesets"]["universe_sha256"],
-    shell:
-        stub("stage_universe (verify sha256={params.sha})")
+        stub("stage_matrix {wildcards.accession} (WP1b per-deposit parse of the verified raw payload)")
 
 # =============================================================================
 # WP2 — uniform DE -> enrichment over the ONE pinned universe. fgsea_enrich.R is

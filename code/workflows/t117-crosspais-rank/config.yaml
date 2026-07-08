@@ -41,16 +41,35 @@ determinism:
     rhat_max: 1.05                # Gelman-Rubin convergence gate; exceed -> FAIL
 
 # ------------------------------------------------------ gene-set universe ----
-# ONE pinned high-resolution universe (~1000 sets) — the t116 finding that this
-# resolution is what drops the required arm count to K~=3. NOT a multi-DB fan-out;
-# every contrast meets at the NES level over this single universe.
+# ONE pinned high-resolution universe — the t116 finding that this resolution is
+# what drops the required arm count to K~=3. NOT a multi-DB fan-out; every
+# contrast meets at the NES level over this single universe.
+#
+# Universe decision (2026-07-08): the universe = Hallmark ∪ Reactome (the
+# plan:0003 primary + the high-resolution curated pathway DB), 15-500 filter,
+# GO:BP DROPPED so its ~4200 highly-overlapping ontology terms cannot inflate
+# apparent low-rank structure (the shared-artifact confound the artifact battery
+# guards against). Built by code/scripts/combine_universe.R from the two
+# hash-locked plan:0003 clean-base per-DB .rds; the combined artifact's sha256 is
+# a pure function of those inputs (compress=FALSE, sorted names — reproducible).
 genesets:
-  universe_id: "dataset:msigdb-2024-1-hs-mapped-pais-gene-set-universe"
+  universe_id: "dataset:msigdb-2024-1-hs-hallmark-reactome-rank-universe"
+  universe_source_id: "dataset:msigdb-2024-1-hs-mapped-pais-gene-set-universe"  # parent clean base
+  composition: [hallmark, reactome]     # GO:BP dropped (universe decision)
   msigdb_release: "2024.1.Hs"
   universe_rds: "data/processed/genesets/pais_universe.2024.1.Hs.rds"
-  universe_sha256: "TODO-pin-in-WP1-staging"   # locked hash; verified before consumption
-  size_filter:
-    min: 10
+  universe_sha256: "2a782ac5f1fa9824fbc1ee174542c601da969bc0be762c7d8ac0d5a0eee9b07b"  # locked; verified before consumption
+  universe_bytes: 1927734
+  universe_n_sets: 1153                  # hallmark 50 + reactome 1103
+  source_rds:                            # hash-locked plan:0003 clean-base inputs
+    hallmark:
+      path: "data/processed/genesets/hallmark.rds"
+      sha256: "115b739df1219c57f17365411c590fa202cbdc90097326b4960dd80ad3b7f8d0"
+    reactome:
+      path: "data/processed/genesets/reactome.rds"
+      sha256: "c49cc75b4725e4771f2bd77ac90988c87e063597f40c5fe678aafd82ad97b090"
+  size_filter:                           # matches plan:0003 clean base (15-500)
+    min: 15
     max: 500
 
 # ------------------------------------------------------ compartments ---------
@@ -228,6 +247,121 @@ contrasts:
 excluded:
   gse224615_lc:  {accession: GSE224615, reason: "G4 — no per-sample matrix (DEG summary only); DEG-level triangulation at most"}
   prjna1184005_lc: {accession: PRJNA1184005, reason: "G4 — SRA raw-reads only, 14 samples, split/window unverifiable; needs quantify path first"}
+
+# ------------------------------------------------------ acquisition ----------
+# WP1 pinned + checksummed staging. One entry per GEO/FigShare deposit; each names
+# its raw payload(s) with the direct source URL + LOCKED sha256 + byte size,
+# resolved + downloaded 2026-07-08. fetch_url.py verifies every byte against the
+# locked hash before the payload exists at its final path (empty sha256 => HALT;
+# mismatch => HALT, partial removed — recovery is a deliberate, logged re-pin,
+# never auto-accept). The raw artifact is staged as `<payload>.data` (opaque bytes,
+# content-addressed) + `<payload>.origin.json` (original filename/kind/url/sha);
+# WP1b per-deposit parsers (stage_matrix) read origin.json to parse by `kind`.
+# The SRA-only CHIKV decoy (PRJNA1001790) stages via the `salmon` block, not here.
+acquisition:
+  GSE226260:
+    payloads:
+      expr: {kind: csv.gz, filename: "GSE226260_combined.ExprData.updated.csv.gz", bytes: 7512041,
+             url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE226nnn/GSE226260/suppl/GSE226260_combined.ExprData.updated.csv.gz",
+             sha256: "741fc96681a1d8b96c785a740c8f6d63bac8ea39d68a82324c13690011aa0c29"}
+  GSE270045:
+    payloads:
+      expr: {kind: tsv.gz, filename: "GSE270045_LC_counts.tsv.gz", bytes: 2516221,
+             url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE270nnn/GSE270045/suppl/GSE270045_LC_counts.tsv.gz",
+             sha256: "0e857b2c4fd2278dfc01af9b9078c109804b586e49f0d9e62a714cfb24c435a5"}
+  GSE251849:
+    payloads:
+      expr: {kind: txt.gz, filename: "GSE251849_Counts.txt.gz", bytes: 1209601,
+             url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE251nnn/GSE251849/suppl/GSE251849_Counts.txt.gz",
+             sha256: "c366f9ab11afebb4530ae09e3c74f18922a984f75995e42d5799e4693fde4c2c"}
+  GSE267625:
+    payloads:
+      expr: {kind: csv.gz, filename: "GSE267625_P4O2_COVID_blood_transcriptome.csv.gz", bytes: 5072647,
+             url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE267nnn/GSE267625/suppl/GSE267625_P4O2_COVID_blood_transcriptome.csv.gz",
+             sha256: "937f056bdd0ee9601d6f8ba483880f7223796efd2d90ca6bba7af2411a94d439"}
+  GSE228320:
+    payloads:
+      expr: {kind: txt.gz, filename: "GSE228320_Raw_counts.txt.gz", bytes: 1763745,
+             url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE228nnn/GSE228320/suppl/GSE228320_Raw_counts.txt.gz",
+             sha256: "407226d486ddbbf81cb1cd5bba886b0fca1cbcfaa8748799c12533b64d929642"}
+  GSE251872:
+    payloads:
+      raw_tar: {kind: tar, filename: "GSE251872_RAW.tar", bytes: 5027840,
+                url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE251nnn/GSE251872/suppl/GSE251872_RAW.tar",
+                sha256: "414b0ba8c24b48702b6358f703c16964373e22bedb6cd07322337bab3535fd35"}
+  GSE143549:
+    payloads:
+      expr: {kind: txt.gz, filename: "GSE143549_Normalized_counts_CPM+0.0001_59_samples.txt.gz", bytes: 6518212,
+             url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE143nnn/GSE143549/suppl/GSE143549_Normalized_counts_CPM+0.0001_59_samples.txt.gz",
+             sha256: "ed34102bfecfcac16f3c1d4f181342e3199b11c0a07146c8c789aa9df58250e7"}
+  GSE63085:
+    payloads:
+      raw_tar: {kind: tar, filename: "GSE63085_RAW.tar", bytes: 79237120,
+                url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE63nnn/GSE63085/suppl/GSE63085_RAW.tar",
+                sha256: "7cba6a501504062ede38afe017972858d278af9b0c691fd2dd41e3276a6718c9"}
+  GSE128078:
+    payloads:
+      expr: {kind: txt.gz, filename: "GSE128078_FES_isoforms_FPKM.txt.gz", bytes: 11549371,
+             url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE128nnn/GSE128078/suppl/GSE128078_FES_isoforms_FPKM.txt.gz",
+             sha256: "78e8576f672da4c80ff1ed75c6f0d42e8d2d4de3d7c13c97c35eab782829c276"}
+  GSE16059:
+    payloads:
+      series_matrix: {kind: series_matrix.txt.gz, filename: "GSE16059_series_matrix.txt.gz", bytes: 7297085,
+                      url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE16nnn/GSE16059/matrix/GSE16059_series_matrix.txt.gz",
+                      sha256: "d66ba3698d92be3d718b37f12c732804a298c217c99e8ad100ead2ab5ea715fb"}
+  GSE68310:
+    payloads:
+      expr: {kind: txt.gz, filename: "GSE68310_non-normalized.txt.gz", bytes: 253276917,
+             url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE68nnn/GSE68310/suppl/GSE68310_non-normalized.txt.gz",
+             sha256: "5b16fd0b02335c42f6cc4db0e6a83af0e9eb030c08e7d0f3e7e410aa79a23901"}
+      pheno: {kind: txt.gz, filename: "GSE68310_SubjectPhenotypes1.txt.gz", bytes: 2529,
+              url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE68nnn/GSE68310/suppl/GSE68310_SubjectPhenotypes1.txt.gz",
+              sha256: "9285b14adef0338f41334bb1a75e43d7b4ffa58130eb63583cd4361ee64c6cbe"}
+  # sorted-monocyte QFS stratum + PI-CFS sensitivity: same GEO artifacts as t035,
+  # hashes identical to code/workflows/config.yaml (self-contained re-pin here).
+  GSE130353:
+    payloads:
+      raw_tar: {kind: tar, filename: "GSE130353_RAW.tar", bytes: 99471360,
+                url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE130nnn/GSE130353/suppl/GSE130353_RAW.tar",
+                sha256: "98e6b07b389a922be6b57e564ad300353aac3cacddbccda35a1d84aa50467a4f"}
+  GSE14577:
+    payloads:
+      soft: {kind: soft.gz, filename: "GSE14577_family.soft.gz", bytes: 15613533,
+             url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE14nnn/GSE14577/soft/GSE14577_family.soft.gz",
+             sha256: "a4ca33e1afe9658764e60e124c8af8477bac6ed0f69cce8780681fbca2917180"}
+  PXD-SCILIFELAB-28832492:
+    payloads:                            # FigShare (10.17044/scilifelab.28832492)
+      expr: {kind: tsv, filename: "salmon.merged.gene_counts.tsv", bytes: 22032901,
+             url: "https://ndownloader.figshare.com/files/53859809",
+             sha256: "34e2533d97c5bc21cc0fe04b3c15c35e78d949b313ba5ba46437dc9e8db8889a"}
+      samples: {kind: txt, filename: "SamplesPC.txt", bytes: 3583,
+                url: "https://ndownloader.figshare.com/files/53859806",
+                sha256: "7d22f7581ef2ea8f9196b62f3ebfdeac2e3007fdbb8404b3ff95634b8a18b4f9"}
+
+# ------------------------------------------------------ salmon (SRA decoy) ----
+# WP1 WIRES the SRA-only CHIKV decoy quantification path (PRJNA1001790, raw FASTQ
+# only). The transcriptome + tx2gene + index + per-run quant + tximport rules are
+# fully wired so the DAG resolves; the heavy index build + FASTQ retrieval + quant
+# are DEFERRED to WP1b (env code/workflows/envs/salmon.yaml). Reference hashes are
+# HALT-guarded (empty => fetch_url.py HALTs) and pinned on first verified fetch —
+# the same fail-early discipline as the GEO acquisition above.
+salmon:
+  transcriptome:
+    name: "gencode.v44.transcripts"
+    url: "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_44/gencode.v44.transcripts.fa.gz"
+    sha256: ""                          # HALT-guarded — pinned by WP1b on first verified fetch
+  tx2gene:
+    source: "gencode-fasta-headers"     # ENST→ENSG parsed from transcripts.fa headers (no extra download)
+  index:
+    kmer: 31                            # salmon --index -k
+  runs:
+    PRJNA1001790:
+      source: "ena-filereport:PRJNA1001790"
+      library_strategy: "RNA-Seq"       # the 98 miRNA-Seq single-end runs are a separate modality — excluded
+      library_layout: "PAIRED"
+      n_candidate_runs: 98              # PAIRED RNA-Seq runs in the BioProject (of 196 total)
+      accessions: []                    # WP1b: resolve the day-21 case/recovered subset from SRA BioSample attrs
+      note: "decoy (chronification triangulation); run subset + case/control split deferred to WP1b (needs BioSample metadata)"
 
 # ------------------------------------------------------ DE model contract ----
 # review Finding (2026-07-08): "reuse limma_de.R verbatim" is only valid for the

@@ -15,6 +15,7 @@ related:
   - "plan:0003-cross-trigger-pathway-overlap-pipeline"
   - "pre-registration:0002-cross-trigger-pathway-overlap"
   - "dataset:msigdb-2024-1-hs-mapped-pais-gene-set-universe"
+  - "dataset:msigdb-2024-1-hs-hallmark-reactome-rank-universe"
   - "dataset:gse226260-longcovid-pbmc"
   - "dataset:gse224615-longcovid-wholeblood"
   - "dataset:gse267625-longcovid-wholeblood"
@@ -449,7 +450,7 @@ grid bridge is validated, not assumed.
   dataset carries a `consumed_by` backlink; the `datapackage` rule emits `results/…/datapackage.json` (matrix
   + R estimates + stability profiles).
 
-### WP1 — Corpus verification + staging (the "verify details / explanatory power" pass) — **readiness gate** — *record-verification DONE 2026-07-08; staging pending WP0*
+### WP1 — Corpus verification + staging (the "verify details / explanatory power" pass) — **readiness gate** — *record-verification DONE 2026-07-08; pinned+checksummed acquisition DONE 2026-07-08; per-deposit parse = WP1b*
 - For each registered candidate: verify from the record the `[UNVERIFIED]` specifics (N, tissue, platform,
   window, per-sample matrix format, control type), confirm G4 downloadability, and **verify explanatory
   power for the variable of interest** (does a case-vs-control contrast even exist and separate?). Update
@@ -460,10 +461,27 @@ grid bridge is validated, not assumed.
   deposits verify the pinned quantification path produces a per-sample matrix → promote, else hold.
   **Finalize the strict trigger/K count here.**
 - Stage via checksummed acquisition rules (pinned SRA quantification where needed).
-- **DoD:** each admitted deposit has a verified entity + staged matrix + datapackage; every provisional
-  deposit is promoted or demoted with the decision recorded; the finalized strict trigger/contrast/platform
-  counts are written (so Stage 3b admissibility thresholds can be checked against a real corpus). **No
-  downstream WP runs until this gate closes.**
+- **Acquisition executed (2026-07-08):** the pinned+checksummed staging is implemented and run. Every
+  GEO/FigShare deposit's raw payload was downloaded and **verified against a LOCKED sha256**
+  (`config.acquisition`, reusing `code/scripts/fetch_url.py`; empty hash or mismatch ⇒ HALT — the same
+  fail-early discipline as plan:0003 WP1). 14 deposits staged (`acquire_payload`/`acquire_deposit`); the two
+  reused deposits (QFS `GSE130353`, PI-CFS `GSE14577`) carry their identical t035 hashes. The **single pinned
+  universe** was materialized per the **universe decision** (below) and re-verified (`build_universe` →
+  `verify_universe`, sha256 `2a782ac5…9b07b`, reproducible on rebuild). The **SRA-only CHIKV decoy salmon
+  path is wired** (`config.salmon`, env `../envs/salmon.yaml`) so the DAG resolves; the index build + FASTQ
+  retrieval + quant + the day-21 run/group split are **deferred to WP1b** (reference hash HALT-guarded).
+- **Universe decision (2026-07-08):** the single pinned universe = **Hallmark ∪ Reactome** (1153 sets,
+  15–500 filter; GO:BP dropped so its ~4200 highly-overlapping ontology terms cannot inflate apparent
+  low-rank structure — the shared-artifact confound the artifact battery guards against). Materialized from
+  the two hash-locked plan:0003 clean-base `.rds` by `code/scripts/combine_universe.R` as
+  `dataset:msigdb-2024-1-hs-hallmark-reactome-rank-universe` (derived; parent =
+  `dataset:msigdb-2024-1-hs-mapped-pais-gene-set-universe`). Stage-2 references now resolve to this
+  materialized universe.
+- **DoD:** each admitted deposit has a verified entity + **staged (acquired+hashed) raw payload** + datapackage
+  (✅); every provisional deposit is promoted or demoted with the decision recorded (✅); the finalized strict
+  trigger/contrast/platform counts are written (✅). **Remaining before the gate fully closes:** per-deposit
+  parse (`stage_matrix`, WP1b) turning each verified raw payload into the uniform gene matrix + sample sheet
+  + QA. **No downstream WP (2+) runs until WP1b closes.**
 
 ### WP2 — Uniform DE→enrichment → pathway × contrast matrix
 - Run Stage-2 machinery over all admitted contrasts on the pinned universe; emit the matrix + per-contrast
