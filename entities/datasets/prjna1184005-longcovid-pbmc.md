@@ -6,6 +6,8 @@ title: PRJNA1184005 — Long COVID PBMC (pilot, n=7/7)
 status: candidate
 created: '2026-07-07'
 updated: '2026-07-07'
+consumed_by:
+- plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
 dataset_class: deposit
 source_class: observational

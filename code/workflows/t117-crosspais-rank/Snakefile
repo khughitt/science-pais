@@ -1,0 +1,256 @@
+# science:code
+# status: workflow-owned
+# task_ids: [t117]
+# science:end
+
+# =============================================================================
+# Snakefile — cross-PAIS pathway-response effective-rank estimation (task:t117)
+#
+# Thin orchestrator: reads config.yaml (ALL design parameters) and wires the full
+# DAG. Nothing is hard-coded here; rules read config. Reuses the plan:0003 DE ->
+# enrichment machinery (limma_de.R, fgsea_enrich.R) and the shared conda envs at
+# code/workflows/envs/ (referenced via ../envs/*.yaml).
+#
+# Design:  entities/plans/0010-crosspais-pathway-response-rank-estimation.md
+# Review:  doc/reviews/0010-crosspais-pathway-response-rank-estimation-pipeline-review.md
+# Grounds: interpretation:0037-t116-power-bias-floor-shared-axis-sim
+#
+# WP0 status: SKELETON. Rule I/O is fully wired so `snakemake -n` resolves the
+# complete DAG (acquire -> results/grid + datapackage). Rule bodies are stubs that
+# exit 1 (fail-early; no silent placeholder outputs) until their work package
+# implements them:
+#   WP1 acquire_*/stage_matrix/verify_universe   (staging)
+#   WP2 limma_de/fgsea_enrich/assemble_matrix     (uniform DE -> enrichment)
+#   WP3 rank_battery + calibration_3c             (rank + t116 calibration; Findings A,B)
+#   WP4 artifact_adjudication                     (artifact + compartment; Finding C)
+#   WP4b gws_fm_specificity                       (non-infectious read-across; Finding D)
+#   WP6 grid_placement + datapackage              (t116 grid, gated on 3c)
+#
+# Run (dry-run resolves the DAG without staged data):
+#     uv run --frozen snakemake -s code/workflows/t117-crosspais-rank/Snakefile -n all
+# =============================================================================
+from pathlib import Path
+
+# --- invocation contract (invocation-independent, matches t116 sibling) ------
+SNAKEFILE_DIR = Path(workflow.basedir).resolve()
+REPO_ROOT = SNAKEFILE_DIR.parent.parent.parent   # t117-crosspais-rank -> workflows -> code -> root
+SCRIPTS = str(REPO_ROOT / "code" / "scripts")    # reuse plan:0003 R/py scripts
+CONFIGFILE = str(SNAKEFILE_DIR / "config.yaml")
+configfile: CONFIGFILE
+workdir: str(REPO_ROOT)
+
+RAW = config["paths"]["raw"]
+PROC = config["paths"]["processed"]
+RES = config["paths"]["results"]
+
+# --- config-derived enumerations (single source: config.yaml) ----------------
+CONTRASTS = list(config["contrasts"].keys())
+ACC_OF = {c: config["contrasts"][c]["accession"] for c in CONTRASTS}
+ACCESSIONS = sorted(set(ACC_OF.values()))
+RANK_MATRICES = ["strict", "sensitivity"]        # matrices a rank is estimated on
+UNIVERSE_RDS = config["genesets"]["universe_rds"]
+
+def contrasts_in(matrix):
+    """Contrast columns that compose a given rank matrix (strict | sensitivity)."""
+    return [c for c in CONTRASTS if config["contrasts"][c]["matrix"] == matrix]
+
+def matrix_nes(wildcards):
+    """NES tables for every contrast column of the requested rank matrix."""
+    return [f"{PROC}/fgsea/{c}.nes.tsv" for c in contrasts_in(wildcards.matrix)]
+
+def adjudication_extra_nes(wildcards):
+    """Extra columns the strict-matrix adjudication consumes but the rank matrix
+    does NOT pool (review Finding C): the sorted-compartment stratum (QFS) for
+    compartment-stratified R, and the acute-infection decoys for the specificity
+    layer. Sensitivity-matrix adjudication pulls no extras."""
+    if wildcards.matrix != "strict":
+        return []
+    extra = contrasts_in("stratum") + contrasts_in("decoy")
+    return [f"{PROC}/fgsea/{c}.nes.tsv" for c in extra]
+
+def acc_of(wildcards):
+    """Staged expr + sheet for the accession owning a contrast."""
+    acc = ACC_OF[wildcards.contrast]
+    return {
+        "expr": f"{PROC}/{acc}/expr.gene.tsv.gz",
+        "sheet": f"{PROC}/{acc}/sample_sheet.tsv",
+        "qa": f"{PROC}/{acc}/clean.qa.pass",
+    }
+
+def stub(label):
+    """WP0 skeleton rule body: fail loudly on a real run (no silent placeholder
+    output); `snakemake -n` still resolves the DAG. Replaced per work package."""
+    return (f"echo 'STUB {label} — not yet implemented (WP0 skeleton; "
+            f"plan:0010). Implement in its work package before running.' >&2; exit 1")
+
+wildcard_constraints:
+    contrast="|".join(CONTRASTS),
+    accession="|".join(ACCESSIONS),
+    matrix="|".join(RANK_MATRICES),
+
+# --- terminal target ---------------------------------------------------------
+rule all:
+    input:
+        expand(f"{RES}/grid/{{matrix}}.grid.json", matrix=RANK_MATRICES),
+        f"{RES}/calibration/calibration.pass",
+        f"{RES}/specificity/gws_fm.json",
+        f"{RES}/datapackage.json",
+
+# =============================================================================
+# WP1 — staging (pinned + checksummed). Acquire rules are DAG roots (no file
+# inputs): a real download rule replaces the stub. SRA-only deposits carry
+# `quantify: salmon` in config and gain a quantification step here in WP1.
+# =============================================================================
+rule acquire_deposit:
+    output:
+        staged=f"{RAW}/{{accession}}/staged.ok",
+    shell:
+        stub("acquire_deposit {wildcards.accession}")
+
+rule stage_matrix:
+    input:
+        staged=f"{RAW}/{{accession}}/staged.ok",
+    output:
+        expr=f"{PROC}/{{accession}}/expr.gene.tsv.gz",
+        sheet=f"{PROC}/{{accession}}/sample_sheet.tsv",
+        qa=f"{PROC}/{{accession}}/clean.qa.pass",
+    shell:
+        stub("stage_matrix {wildcards.accession}")
+
+rule stage_universe:
+    output:
+        rds=UNIVERSE_RDS,
+        qa=f"{PROC}/genesets/universe.qa.pass",
+    params:
+        sha=config["genesets"]["universe_sha256"],
+    shell:
+        stub("stage_universe (verify sha256={params.sha})")
+
+# =============================================================================
+# WP2 — uniform DE -> enrichment over the ONE pinned universe (reuse plan:0003
+# limma_de.R + fgsea_enrich.R). Expression is never merged across datasets; every
+# contrast meets only at the NES level.
+# =============================================================================
+rule limma_de:
+    input:
+        unpack(acc_of),
+        script=f"{SCRIPTS}/limma_de.R",
+    output:
+        ranked=f"{PROC}/de/{{contrast}}.ranked.tsv",
+    params:
+        seed=config["determinism"]["master_seed"],
+    conda:
+        "../envs/r-bioc.yaml"
+    shell:
+        stub("limma_de {wildcards.contrast}")
+
+rule fgsea_enrich:
+    input:
+        ranked=f"{PROC}/de/{{contrast}}.ranked.tsv",
+        universe=UNIVERSE_RDS,
+        universe_qa=f"{PROC}/genesets/universe.qa.pass",
+        script=f"{SCRIPTS}/fgsea_enrich.R",
+    output:
+        nes=f"{PROC}/fgsea/{{contrast}}.nes.tsv",
+    params:
+        min_size=config["genesets"]["size_filter"]["min"],
+        max_size=config["genesets"]["size_filter"]["max"],
+        seed=config["determinism"]["master_seed"],
+    conda:
+        "../envs/r-bioc.yaml"
+    shell:
+        stub("fgsea_enrich {wildcards.contrast}")
+
+rule assemble_matrix:
+    input:
+        nes=matrix_nes,
+    output:
+        matrix=f"{PROC}/matrix/{{matrix}}.pathway_by_contrast.tsv",
+        grouping=f"{PROC}/matrix/{{matrix}}.grouping.json",   # condition/platform/compartment
+    shell:
+        stub("assemble_matrix {wildcards.matrix}")
+
+# =============================================================================
+# WP3 — rank battery + t116 structural co-primary + LODO/LOCO (Finding A), and
+# the Stage-3c calibration against t116's generative model (Finding B). The
+# calibration sentinel GATES grid placement (Stage 5).
+# =============================================================================
+rule rank_battery:
+    input:
+        matrix=f"{PROC}/matrix/{{matrix}}.pathway_by_contrast.tsv",
+        grouping=f"{PROC}/matrix/{{matrix}}.grouping.json",
+    output:
+        rank=f"{RES}/rank/{{matrix}}.rank.json",          # R + CI from >=3 estimators
+        structural=f"{RES}/rank/{{matrix}}.structural.json",  # off-diagonal concordance SD
+        stability=f"{RES}/rank/{{matrix}}.stability.json",    # LODO + LOCO + LC-out power curve
+    params:
+        seeds=config["determinism"]["seeds"],
+        folds=config["folds"],
+    shell:
+        stub("rank_battery {wildcards.matrix}")
+
+rule calibration_3c:
+    output:
+        report=f"{RES}/calibration/calibration.json",
+        sentinel=f"{RES}/calibration/calibration.pass",     # gates grid_placement
+    params:
+        cal=config["calibration_3c"],
+        seed=config["determinism"]["seeds"]["calibration_gen"],
+    shell:
+        stub("calibration_3c (inject_R + recover at real K/N — Finding B)")
+
+# =============================================================================
+# WP4 — artifact + compartment adjudication (Finding C). Named rivals: correlated
+# shared artifact (t116) and cell-composition-shift axis.
+# =============================================================================
+rule artifact_adjudication:
+    input:
+        rank=f"{RES}/rank/{{matrix}}.rank.json",
+        structural=f"{RES}/rank/{{matrix}}.structural.json",
+        matrix=f"{PROC}/matrix/{{matrix}}.pathway_by_contrast.tsv",
+        extra_nes=adjudication_extra_nes,   # sorted stratum + acute decoys (strict only; Finding C)
+    output:
+        adjudicated=f"{RES}/artifact/{{matrix}}.adjudicated.json",  # artifact- & composition-adjusted R
+    params:
+        controls=config["artifact_controls"],
+    shell:
+        stub("artifact_adjudication {wildcards.matrix}")
+
+# =============================================================================
+# WP4b — non-infectious GWS/FM specificity read-across (Finding D). Gated on an
+# admissible deposit; else emits a note-only gap (gates NOT relaxed).
+# =============================================================================
+rule gws_fm_specificity:
+    input:
+        strict=f"{RES}/artifact/strict.adjudicated.json",
+    output:
+        report=f"{RES}/specificity/gws_fm.json",
+    params:
+        spec=config["specificity_readacross"],
+    shell:
+        stub("gws_fm_specificity (Q-D infection-specificity; note-only if no deposit)")
+
+# =============================================================================
+# WP6 — t116 grid placement (ONLY if calibration_3c passed) + datapackage.
+# =============================================================================
+rule grid_placement:
+    input:
+        adjudicated=f"{RES}/artifact/{{matrix}}.adjudicated.json",
+        calibration=f"{RES}/calibration/calibration.pass",   # Finding B gate
+        specificity=f"{RES}/specificity/gws_fm.json",
+    output:
+        grid=f"{RES}/grid/{{matrix}}.grid.json",
+    params:
+        grid=config["grid"],
+    shell:
+        stub("grid_placement {wildcards.matrix} (gated on calibration.pass)")
+
+rule datapackage:
+    input:
+        grids=expand(f"{RES}/grid/{{matrix}}.grid.json", matrix=RANK_MATRICES),
+        calibration=f"{RES}/calibration/calibration.json",
+        specificity=f"{RES}/specificity/gws_fm.json",
+    output:
+        datapackage=f"{RES}/datapackage.json",
+    shell:
+        stub("datapackage (matrix + R estimates + stability profiles)")

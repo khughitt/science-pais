@@ -5,6 +5,8 @@ title: "GSE14577 — PI-CFS PBMC microarray"
 status: candidate
 created: "2026-06-26"
 updated: "2026-06-26"
+consumed_by:
+- plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
 dataset_class: deposit
 source_class: observational

@@ -1,0 +1,340 @@
+# =============================================================================
+# config.yaml — cross-PAIS pathway-response effective-rank estimation (task:t117)
+#
+# SINGLE encoding of the analysis's design parameters. The workflow scripts read
+# these and hard-code NOTHING; changing a value here is a deliberate edit that
+# re-defines the reported estimate. This file ORIGINATES the design.
+#
+# Design:  entities/plans/0010-crosspais-pathway-response-rank-estimation.md
+# Review:  doc/reviews/0010-crosspais-pathway-response-rank-estimation-pipeline-review.md
+# Grounds: interpretation:0037-t116-power-bias-floor-shared-axis-sim (the R-regime
+#          grid + the K>=3 identifiability lever this plan re-grounds on)
+#
+# WP0 status: SKELETON. All params are encoded here; the Snakefile wires the full
+# DAG (staged matrices -> results/grid) so `snakemake -n` resolves; rule bodies
+# are fail-early stubs until WP2-WP6 implement them.
+#
+# Estimand (frozen): the reproducible effective rank R of the cross-trigger PAIS
+# pathway-response subspace, from independently derived case-vs-control
+# pathway-effect vectors, uniform DE/enrichment over ONE pinned gene-set universe,
+# with dataset/condition leave-one-out stability as the primary believability
+# criterion.
+# =============================================================================
+
+# ------------------------------------------------------ determinism ----------
+# One master seed + explicit PER-ESTIMATOR substreams (review Finding G / Repro):
+# every stochastic estimator gets its own pinned seed so results are independent
+# of execution order / worker count.
+determinism:
+  master_seed: 1729               # echoes the t116/t035 determinism seed
+  seeds:
+    parallel_analysis_perm: 17290 # Horn parallel-analysis label-permutation null
+    cv_svd_fold: 17291            # bi-cross-validation SVD sub-block hold-out split
+    split_half: 17292             # split-half subspace-stability random halving
+    bootstrap: 17293              # naive-bootstrap lower-bound comparator
+    bicmix_mcmc: 17294            # sparse-FA (BicMix/SFAmix) MCMC seed
+    calibration_gen: 17295        # Stage-3c synthetic-matrix generator (t116 model)
+  bicmix:                         # sparse-FA convergence contract (Stage 4 / WP5)
+    chains: 4
+    iterations: 20000
+    burnin: 10000
+    rhat_max: 1.05                # Gelman-Rubin convergence gate; exceed -> FAIL
+
+# ------------------------------------------------------ gene-set universe ----
+# ONE pinned high-resolution universe (~1000 sets) — the t116 finding that this
+# resolution is what drops the required arm count to K~=3. NOT a multi-DB fan-out;
+# every contrast meets at the NES level over this single universe.
+genesets:
+  universe_id: "dataset:msigdb-2024-1-hs-mapped-pais-gene-set-universe"
+  msigdb_release: "2024.1.Hs"
+  universe_rds: "data/processed/genesets/pais_universe.2024.1.Hs.rds"
+  universe_sha256: "TODO-pin-in-WP1-staging"   # locked hash; verified before consumption
+  size_filter:
+    min: 10
+    max: 500
+
+# ------------------------------------------------------ compartments ---------
+# review Finding C: the PRIMARY matrix is whole-blood / PBMC bulk only. Sorted
+# leukocytes are a SEPARATE compartment stratum, never pooled into the primary
+# rank matrix (a shared cross-trigger axis across mixed compartments can be a
+# cell-composition shift, not pathway biology). Deconvolution is valid only where
+# marked (WB, partial PBMC) — NOT for sorted compartments.
+compartments:
+  primary: [whole_blood, pbmc]     # feed the strict-primary rank matrix
+  stratum_only: [sorted]           # compartment-stratified R only
+  deconvolvable: [whole_blood, pbmc]  # composition-adjustment applies here only
+
+# ------------------------------------------------------ corpus / contrasts ---
+# WP1-verified (2026-07-08). Each contrast = one case-vs-control column of a
+# pathway x contrast matrix. `matrix`: strict | sensitivity | stratum | decoy |
+# triangulation. `onset_certainty`: documented | cohort-level | unknown-per-subject.
+# `loo_flag`: platform/compartment/severity axis flagged for leave-one-out.
+# Staging paths are pinned in WP1; SRA-only deposits carry `quantify: salmon`.
+contrasts:
+  # --- strict-primary (WB/PBMC, documented trigger, >=4wk floor) ---
+  gse226260_lc:
+    accession: GSE226260
+    trigger: sars-cov-2
+    compartment: pbmc
+    platform: rnaseq
+    onset_certainty: documented
+    matrix: strict
+    control_type: convalescent+healthy
+    note: "≈46 LC vs rich controls; 2-platform batch — strongest"
+  gse270045_lc:
+    accession: GSE270045
+    trigger: sars-cov-2
+    compartment: whole_blood
+    platform: rnaseq
+    onset_certainty: documented
+    matrix: strict
+    control_type: healthy
+    note: "19 LC+ME/CFS vs 17 healthy — clean"
+  scilifelab_lc:
+    accession: PXD-SCILIFELAB-28832492
+    trigger: sars-cov-2
+    compartment: pbmc
+    platform: rnaseq
+    onset_certainty: documented
+    matrix: strict
+    control_type: infected-recovered
+    note: "60 vs 50; recovered controls score well on G3; FigShare-API matrix"
+  gse251849_lc:
+    accession: GSE251849
+    trigger: sars-cov-2
+    compartment: pbmc
+    platform: rnaseq
+    onset_certainty: documented
+    matrix: strict
+    control_type: healthy
+    loo_flag: small-n
+    note: "11 vs 12, small (subgroup n 5-7)"
+  gse267625_lc:
+    accession: GSE267625
+    trigger: sars-cov-2
+    compartment: whole_blood
+    platform: rnaseq
+    onset_certainty: documented
+    matrix: strict
+    control_type: within-cohort
+    loo_flag: no-external-control
+    note: "no external control — contrast built WITHIN-cohort in WP2; longitudinal"
+  gse228320_lc:
+    accession: GSE228320
+    trigger: sars-cov-2
+    compartment: whole_blood
+    platform: rnaseq
+    onset_certainty: documented
+    matrix: strict
+    control_type: severity-axis
+    loo_flag: pulmonary-severity-axis
+    note: "DLCO pulmonary-severity axis within ARDS survivors — LOO-drop"
+  gse251872_pimecfs:
+    accession: GSE251872
+    trigger: pi-mecfs
+    compartment: pbmc
+    platform: rnaseq
+    onset_certainty: documented
+    matrix: strict
+    control_type: healthy
+    loo_flag: two-platform-batch
+    note: "12 cases vs 15 healthy (corrected from 17v21); 2 sequencing platforms"
+  gse143549_ebola:
+    accession: GSE143549
+    trigger: ebola
+    compartment: whole_blood
+    platform: rnaseq
+    onset_certainty: documented
+    matrix: strict
+    control_type: healthy
+    loo_flag: rare-trigger-single-platform
+    note: "26 survivors vs 33, ~23 mo, CPM matrix"
+  gse63085_lyme:
+    accession: GSE63085
+    trigger: lyme
+    compartment: pbmc
+    platform: rnaseq
+    onset_certainty: documented
+    matrix: strict
+    control_type: healthy
+    loo_flag: rare-trigger-single-platform
+    note: "V5 6-mo post-treatment arm clears floor; unselected timecourse"
+  # --- compartment stratum (sorted — NOT in primary matrix; Finding C) ---
+  gse130353_qfs:
+    accession: GSE130353
+    trigger: q-fever
+    compartment: sorted
+    platform: rnaseq
+    onset_certainty: documented
+    matrix: stratum
+    control_type: healthy
+    loo_flag: sorted-compartment
+    note: "sorted monocytes — compartment-stratified R only, not pooled (Finding C)"
+  # --- ME/CFS sensitivity matrix (probable-PI; unknown per-subject onset) ---
+  gse128078_mecfs:
+    accession: GSE128078
+    trigger: mecfs
+    compartment: whole_blood
+    platform: rnaseq
+    onset_certainty: unknown-per-subject
+    matrix: sensitivity
+    control_type: healthy
+    note: "14 vs 11, FPKM; multi-timepoint -> WP2 collapse"
+  gse16059_mecfs:
+    accession: GSE16059
+    trigger: mecfs
+    compartment: pbl
+    platform: microarray
+    onset_certainty: unknown-per-subject
+    matrix: sensitivity
+    control_type: discordant-twin
+    loo_flag: microarray+paired
+    note: "44 discordant MZ twin pairs; WP2 models within-pair correlation"
+  gse14577_picfs:
+    accession: GSE14577
+    trigger: pi-mecfs
+    compartment: pbmc
+    platform: microarray
+    onset_certainty: cohort-level
+    matrix: sensitivity
+    control_type: healthy
+    loo_flag: microarray
+    note: "cohort-level post-viral, male-only (previously verified)"
+  # --- acute-infection decoys (specificity layer; NOT in rank matrix) ---
+  gse68310_influenza:
+    accession: GSE68310
+    trigger: influenza
+    compartment: whole_blood
+    platform: microarray
+    onset_certainty: documented
+    matrix: decoy
+    control_type: baseline
+    note: "demoted — no >=4wk symptomatic sample; acute day0-6 decoy only"
+  prjna1001790_chikv:
+    accession: PRJNA1001790
+    trigger: chikv
+    compartment: whole_blood
+    platform: rnaseq
+    quantify: salmon
+    onset_certainty: documented
+    matrix: decoy
+    control_type: recovered
+    note: "demoted — day-21 below floor, raw-FASTQ only; chronification triangulation"
+
+# Deposits catalogued but OUT of every computed matrix (G4 blockers / deferred).
+excluded:
+  gse224615_lc:  {accession: GSE224615, reason: "G4 — no per-sample matrix (DEG summary only); DEG-level triangulation at most"}
+  prjna1184005_lc: {accession: PRJNA1184005, reason: "G4 — SRA raw-reads only, 14 samples, split/window unverifiable; needs quantify path first"}
+
+# ------------------------------------------------------ rank estimators ------
+# Battery of ROTATION-INVARIANT estimators (primary; R must not depend on a
+# factor rotation). >=3 required for the uncertainty envelope.
+rank_battery:
+  parallel_analysis:
+    method: horn                  # eigenvalue vs label-permuted null
+    n_perm: 2000
+    quantile: 0.95                # retain components above the 95th null percentile
+  cv_svd:
+    method: bi-cross-validation   # Owen-Perry hold-out sub-blocks
+    row_folds: 4
+    col_folds: 4
+  split_half:
+    n_splits: 200                 # principal-angle agreement between random halves
+  bootstrap:
+    n_boot: 1000                  # naive comparator — lower-bound sanity check only
+
+# t116 STRUCTURAL single-axis statistic as a confirmatory CO-PRIMARY (Finding B).
+# This — not the SVD rank — is the statistic interp-0037 characterized; it is what
+# the R-regime grid was built for. Reported alongside R; divergence is first-class.
+structural_statistic:
+  name: off_diagonal_concordance_sd
+  concordance: spearman           # per pair of contrast columns
+  # the t116 sampling floor for concordance SD is ~1/sqrt(P-1); a low SD with high
+  # mean concordance is the shared-artifact / single-axis signature.
+
+# ------------------------------------------------------ Stage 3c calibration -
+# review Finding B: the SVD rank estimator is NOT the statistic t116 characterized,
+# so NO real-data R is placed on the t116 grid until the battery is calibrated
+# against t116's OWN generative model at the corpus's real K/N. Inject matrices at
+# KNOWN rank, confirm recovery + CI calibration. A grid verdict (Stage 5) is not
+# emitted unless this passes; a calibration failure is itself the reported result.
+calibration_3c:
+  inject_R: [2, 4, 8]             # known generative ranks to recover
+  match_concordance: true         # match off-diagonal concordance to the real matrix
+  arm_bias: 0.60                  # t116 alpha — N-invariant per-arm systematic bias
+  replicates: 4000
+  ci_coverage_target: 0.90        # nominal CI must cover the injected R at ~this rate
+  recovery_tol: 1                 # |R_hat - R_true| <= tol counts as recovered
+  regime_band_must_match: true    # structural co-primary must land in the right band
+
+# ------------------------------------------------------ LODO / LOCO folds ----
+# Stage 3b pre-locked pass/fail. review Finding A: the ONLY interp-0037-grounded
+# IDENTIFIABILITY threshold is arm count (K>=3 triggers). Contrast/platform counts
+# are POWER covariates attached to each fold's CI — NOT binary gates.
+folds:
+  identifiability:
+    min_triggers: 3               # t116 K>=3 — below this a fold is NON-IDENTIFIABLE
+  power_covariates:               # reported with each fold's CI; NOT gates (Finding A)
+    contrasts: report             # (was a hand-set min_contrasts=6 gate — demoted)
+    platforms: report             # (was a hand-set min_platforms=2 gate — demoted)
+  pass_rule:
+    r_band: 1                     # PASS iff |R_fold - R_full| <= 1 AND ...
+    regime_bands:                 # ... within the same t116 regime band ...
+      low: [2, 4]
+      high: [8, 999]
+    subspace_angle_max_deg: 20    # ... AND leading-subspace principal angle below this
+  lc_out_first_class: true        # long-COVID-out fold reported separately as a
+                                  # power/CI curve (LC supplies ~8 of ~13 columns;
+                                  # WB/PBMC LC-out retains 3 triggers = K=3 floor)
+
+# ------------------------------------------------------ artifact controls ----
+# review Key decision 4: artifact AND compartment controls are ADMISSIBILITY
+# criteria, run BEFORE any biological reading. Two named rivals for a low-rank
+# signal: a correlated shared artifact (t116) and a cell-composition-shift axis.
+artifact_controls:
+  platform_loo: true              # re-estimate R dropping each platform in turn
+  negative_control_sets:          # carried through the identical pipeline; shared
+    - housekeeping                # structure among these is the artifact floor
+    - platform_associated
+    - gc_confounded
+  recovered_control_specificity:  # DIRECTIONAL, not magnitude (plan Artifact section)
+    require_persistence: true     # shared subspace must remain present in case-vs-recovered
+    require_exceed_naive: false   # do NOT require case-vs-recovered > case-vs-naive
+  composition_control:            # review Finding C — three prongs
+    stratified_R: true            # estimate R within each compartment stratum
+    drop_sorted_sensitivity: true # low-rank must survive removing the sorted stratum
+    deconvolution:
+      method: cibersortx-lm22     # WB (+ partial PBMC) only; never sorted
+      report_before_after: true   # R before vs after composition adjustment
+      composition_as_nuisance_axis: true
+
+# ------------------------------------------------------ WP4b specificity -----
+# review Finding D: the project's designated non-infectious stress-test. GWS/FM
+# (D-003) as a SEPARATE non-infectious specificity matrix under the SAME gates +
+# the SAME uniform pipeline — NOT a free-form column. Gated on a public,
+# downloadable, sample-level deposit clearing the gates; else a note-only gap.
+specificity_readacross:
+  enabled: false                  # flip true once an admissible GWS/FM deposit is found
+  candidates: []                  # WP4b discovery sweep (open question #4) fills this
+  gates_same_as_primary: true     # blood-bulk WB/PBMC, public, downloadable, sample-level
+  pipeline_same_as_primary: true  # same DE->enrichment over the same pinned universe
+  test: subspace_recovery_fraction # how much of the PAIS subspace GWS/FM recovers (Q-D)
+  no_deposit_is_note_only: true   # if none admissible: record the gap, do NOT relax gates
+
+# ------------------------------------------------------ t116 grid ------------
+# The R-regime grid (interpretation:0037) the surviving R + structural co-primary
+# are placed on — ONLY after Stage 3c passes (Finding B). Wording is scoped to
+# "achievable arm counts under this test family", not "any N" (Key decision 5).
+grid:
+  low_rank_arbitrable: [2, 4]     # q0050 GO (with the t116 conditions)
+  high_rank_nonarbitrating: [8, 999]  # q0050 NO-GO / redesign
+  straddle_reported: true
+
+# ------------------------------------------------------ paths ----------------
+# data/raw + data/processed are the off-Dropbox gitignored symlinks; results/* is
+# gitignored (regenerable). The committed reproducibility contract is this
+# workflow (Snakefile + config + scripts), not the outputs.
+paths:
+  raw: "data/raw/t117"
+  processed: "data/processed/t117"
+  results: "results/t117-crosspais-rank"

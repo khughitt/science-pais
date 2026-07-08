@@ -424,18 +424,27 @@ grid bridge is validated, not assumed.
 
 ## Work packages
 
-### WP0 — Workflow skeleton, corpus link-through, config
-- Reuse the `plan:0003` Snakemake `envs/` (limma+fgsea+annotation Bioconductor stack) and
-  `qa_checkpoint.py`; scaffold `code/workflows/t117-crosspais-rank/` with a single `config.yaml`
-  (pinned universe hash, **per-estimator seeds** — parallel-analysis permutation, CV-SVD fold split, BicMix
-  MCMC seed/chains/convergence rule — estimator params, LOO/blocking spec with **each fold param's role**
-  [`min_triggers=3` identifiability vs `contrasts`/`platforms` power covariates, review Finding A], the
-  **Stage-3c calibration generator** params [injected R set, concordance/arm-bias, corpus K/N], the
-  **artifact-control set list**, and the **compartment stratum map** [WB / PBMC / sorted] for Finding C).
-- Reciprocally link every admitted `dataset:` to this plan (`science dataset link … consumed_by
-  plan:0010-…`) so Dimension-3 review resolves.
-- **DoD:** `snakemake -n` resolves; envs solve; every corpus dataset carries a `consumed_by` backlink; the
-  rank-estimation output dir emits a `datapackage.json` (matrix + R estimates + stability profiles).
+### WP0 — Workflow skeleton, corpus link-through, config — **DONE 2026-07-08**
+- Scaffolded `code/workflows/t117-crosspais-rank/` (`Snakefile` + `config.yaml` + `README.md`), the
+  self-contained-subdir sibling of `t116-power-bias-floor/`. **Reuses** the shared `code/workflows/envs/`
+  (`r-bioc.yaml` limma+fgsea Bioconductor stack) via `../envs/…` and the `plan:0003` `code/scripts/{limma_de,
+  fgsea_enrich}.R` for Stage 2 — no duplication. `config.yaml` originates **all** design parameters (nothing
+  hard-coded in rules): pinned universe hash slot, **per-estimator seeds** (parallel-analysis permutation,
+  CV-SVD fold, split-half, bootstrap, BicMix MCMC seed/chains/convergence), the LODO/LOCO fold spec with
+  **each param's role** (`min_triggers=3` identifiability vs `contrasts`/`platforms` power covariates, Finding
+  A), the **Stage-3c calibration generator** (injected R∈{2,4,8}, concordance/arm-bias, corpus K/N), the
+  **structural co-primary** (off-diagonal concordance SD, Finding B), the **artifact + compartment control**
+  block (Finding C), the **GWS/FM specificity** block (Finding D, `enabled: false` until a deposit is found),
+  and the **compartment map** (WB/PBMC primary vs sorted stratum).
+- The **Snakefile wires the full DAG** (acquire → results/grid + datapackage; 73 jobs over 15 contrasts) with
+  fail-early stub bodies per work package; `calibration_3c` gates `grid_placement`; the sorted stratum + acute
+  decoys are consumed by `artifact_adjudication` (no silently-dropped config columns).
+- Wrote `consumed_by: plan:0010-…` onto all **18** corpus/universe `dataset:` entities so Dimension-3 review
+  resolves.
+- **DoD (met):** `uv run --frozen snakemake -s code/workflows/t117-crosspais-rank/Snakefile -n all` resolves
+  the complete DAG; envs are the shared already-locked `plan:0003` stack (reused, not re-solved); every corpus
+  dataset carries a `consumed_by` backlink; the `datapackage` rule emits `results/…/datapackage.json` (matrix
+  + R estimates + stability profiles).
 
 ### WP1 — Corpus verification + staging (the "verify details / explanatory power" pass) — **readiness gate** — *record-verification DONE 2026-07-08; staging pending WP0*
 - For each registered candidate: verify from the record the `[UNVERIFIED]` specifics (N, tissue, platform,
@@ -530,8 +539,9 @@ grid bridge is validated, not assumed.
 
 ## Acceptance Criteria
 
-- [ ] Every corpus input resolves to a `dataset:` entity with `consumed_by: plan:0010-…`; strict vs
-      sensitivity membership and `onset_certainty` recorded per deposit.
+- [x] **(WP0, 2026-07-08)** Every corpus input resolves to a `dataset:` entity with `consumed_by: plan:0010-…`
+      (all 18 written); strict vs sensitivity vs stratum vs decoy membership and `onset_certainty` recorded per
+      deposit in `config.yaml`.
 - [x] **WP1 record-verification pass (2026-07-08)** set `access.verified` per deposit (or demoted it),
       replacing the `[UNVERIFIED]` specifics with confirmed values; **every floor-/SRA-provisional deposit
       resolved** (both demoted); strict matrix finalized at ~10 contrasts / 5 triggers. Staging (download)
@@ -561,9 +571,9 @@ grid bridge is validated, not assumed.
       answered separately.
 - [ ] R + uncertainty (rank estimator **and** structural co-primary) are placed on the t116 R-regime grid
       **only after Stage 3c passes**, with the explicit q0050 GO/NO-GO consequence.
-- [ ] Reproducibility: per-estimator seeds (parallel-analysis permutation, CV-SVD fold, BicMix
-      MCMC seed/chains/convergence) are pinned in `config.yaml`, and the rank-estimation outputs emit a
-      `datapackage.json`.
+- [x] **(WP0, 2026-07-08)** Reproducibility: per-estimator seeds (parallel-analysis permutation, CV-SVD fold,
+      split-half, bootstrap, BicMix MCMC seed/chains/convergence) are pinned in `config.yaml`, and the
+      `datapackage` rule emits `results/…/datapackage.json` (implementation deferred to WP6).
 - [ ] The scoped "non-arbitrating at achievable arm counts under this test family" wording is carried into
       `interpretation:0037` and `question:0050` (replacing "at ANY N").
 

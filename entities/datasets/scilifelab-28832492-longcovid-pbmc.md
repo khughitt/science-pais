@@ -6,6 +6,8 @@ title: SciLifeLab 28832492 — Long COVID PBMC (28 mo)
 status: candidate
 created: '2026-07-07'
 updated: '2026-07-07'
+consumed_by:
+- plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
 dataset_class: deposit
 source_class: observational

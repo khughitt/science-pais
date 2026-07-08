@@ -5,6 +5,8 @@ title: "MSigDB 2024.1.Hs mapped PAIS gene-set universe"
 status: active
 created: "2026-06-26"
 updated: "2026-06-26"
+consumed_by:
+- plan:0010-crosspais-pathway-response-rank-estimation
 origin: derived
 dataset_class: deposit
 source_class: reference
