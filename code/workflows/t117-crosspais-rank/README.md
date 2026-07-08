@@ -9,7 +9,7 @@ believability criterion.
 - **Review:** `doc/reviews/0010-crosspais-pathway-response-rank-estimation-pipeline-review.md`
 - **Grounds:** `interpretation:0037` (t116 R-regime grid + the K≥3 identifiability lever)
 
-## Status: WP1 acquisition COMPLETE; WP1b parse framework + tranches 1/(b)/(c) DONE; WP2–WP6 stubbed
+## Status: WP1 acquisition COMPLETE; WP1b parse framework + tranches 1/(b)/(c)/(a-partial) DONE; WP2–WP6 stubbed
 
 `snakemake -n` resolves the DAG (**68 jobs** remaining after WP1 + WP1b-tranche-1).
 **WP1 acquisition is implemented and run** (download + checksum + universe
@@ -65,6 +65,30 @@ design; scripts hard-code nothing.
   > **Repro note:** `envs/r-bioc.conda-lock.yml` postdates the hgu133plus2.db add and
   > needs a `conda-lock` regen (tool absent this session); the pinned `=3.13.0` in
   > `r-bioc.yaml` is the source of truth until then.
+- **Tranche (a) — series-matrix group metadata (partial)** (`parse_geo_metadata.py`,
+  config `parse.*.metadata_payload` + `group_source.mode: sheet`) — several RNA-seq
+  deposits carry case/control ONLY in the series-matrix `!Sample_*` header (not the expr
+  columns). Architecture: the series matrix is added as a **second acquisition payload**
+  (pinned sha256, hash-stable across fetches), `parse_geo_metadata` parses its header into
+  `series_metadata.samples.tsv`, and `stage_matrix`'s `sheet` group_source **joins it to
+  the expr columns** and applies the deposit's `level_map`/`group_regex` (raw condition ->
+  arm). Two group-blocked deposits now **PASS**:
+  `gse270045` (**19 LC / 17 healthy**; join expr cols = `sample_id`, group = title-regex
+  "Healthy Control"/"Long Covid" — no disease-state characteristic exists; symbol map 83%)
+  and `gse128078` (**55 / 44 samples = 14 ME/CFS vs 11 control subjects**; join = title,
+  group = `disease_state`, subject+timepoint covariates carried for the WP2 timepoint
+  collapse; RefSeq map 90%; SENSITIVITY-ONLY per the FPKM caveat). **Data finding:**
+  `gse270045`'s `_LC_counts` file is a MISNOMER — it is fractional EM/pseudo-alignment
+  gene counts (values 1e-8..5e4, library-size-varying column sums), so `estimated_counts`'
+  scale check now tests the real invariant (non-negative + count magnitude), not an
+  integer-fraction proxy that wrongly rejects heavily-fractional EM matrices
+  (tranche-1 `gse251849`/`scilifelab` re-verified unchanged).
+  > **Still deferred (need more than series metadata):** `gse226260` (2 platforms →
+  > internal-id linking + platform batch), `gse267625` (within-cohort, no external
+  > control → WP2 model), `gse228320` (continuous DLCO axis → `~ dlco` model),
+  > `gse143549` (gene-id-blocked, deprioritized). The per-sample **`tar` trio**
+  > (`gse130353`/`gse251872`/`gse63085`) is the next tranche-(a) unit (distinct
+  > mechanism: `tar` handler + per-member merge + group metadata/arm selection).
 
 > **Naming:** `dataset:msigdb-2024-1-hs-hallmark-reactome-rank-universe` is the
 > **rank universe** — the Hallmark ∪ Reactome subset **derived from** the broader

@@ -483,7 +483,7 @@ grid bridge is validated, not assumed.
   parse (`stage_matrix`, WP1b) turning each verified raw payload into the uniform gene matrix + sample sheet
   + QA. **No downstream WP (2+) runs until WP1b closes.**
 
-### WP1b — Per-deposit parse → the uniform expression contract — *framework + tranches 1/(b)/(c) DONE 2026-07-08*
+### WP1b — Per-deposit parse → the uniform expression contract — *framework + tranches 1/(b)/(c) DONE; (a) partial 2026-07-08*
 The executable form of **review Finding F** (per-deposit ingest contract), pulled forward from WP2 so the
 downstream matrix builds on a real contract, not an assumption.
 - **WP0 semantic wiring confirmed/completed first (the pre-parse gate):** (a) the sensitivity rank matrix is
@@ -525,14 +525,12 @@ downstream matrix builds on a real contract, not an assumption.
   hash is committed in `harmonization.map_sha256` + re-verified before use (tampered hash HALTs) — non-Ensembl
   parsing is now **reproducibly consumable**.
 - **Per-deposit status after (b) — three distinct cases, not "group-only":**
-  - `gse270045` (symbol 83% ✓): gene-id resolved; deferred on **group** (CCI/HP/S prefixes ambiguous — needs
-    series-matrix metadata; not inferred from the 19/17 count match).
-  - `gse128078` (RefSeq 90% ✓): gene-id **identity** resolved but **quantitative aggregation UNRESOLVED** —
-    isoform-FPKM→gene `sum` is only approximately additive (recorded as `scale_caveat`; **sensitivity-only**
-    unless re-quantified); also deferred on group.
+  - `gse270045` (symbol 83% ✓): gene-id resolved; group **RESOLVED in tranche (a)** — see below.
+  - `gse128078` (RefSeq 90% ✓): gene-id **identity** resolved; quantitative aggregation stays **sensitivity-only**
+    (isoform-FPKM→gene `sum` approximately additive, `scale_caveat`); group **RESOLVED in tranche (a)** — see below.
   - `gse143549` (gene_name 56% ✗): **still gene-id-blocked** — fails the map-rate guardrail; staging its
     series-matrix metadata alone will **not** unlock the Ebola column (needs a cleaner symbol source / coordinate
-    lift first), then group.
+    lift first), then group. **Deprioritized** per the reviewer.
 - **Tranche (c) — microarray handlers DONE (2026-07-08):** the microarray deposits reach the uniform contract via
   a **compose-the-t035-chain** architecture: dedicated Snakemake rules run the parse→harmonize→collapse scripts as
   upstream producers (probe→gene needs the **platform** annotation `.db`, which can't live in the pure-Python
@@ -553,10 +551,26 @@ downstream matrix builds on a real contract, not an assumption.
   (even the ready `extract_gse130353.py`) cannot PASS them; each needs a **group-metadata payload** acquired first
   (SOFT subject-status for QFS; a metadata payload + V5-arm selection for Lyme). Held as `handler: tar`,
   `status: deferred` naming the exact tranche-(a) blocker.
-- **Remaining WP1b tranches:** **(a)** add the missing GEO series-matrix/SOFT/metadata payloads to `acquisition`
-  (re-pin hashes) so the group-blocked deposits (`gse226260`, `gse228320`, `gse267625`, group side of
-  `gse270045`/`gse128078`, and the tar trio) resolve — plus a cleaner identity source for `gse143549`; **(d)** the
-  salmon/CHIKV decoy quant path (`salmon_gene_matrix`). Priority per the reviewer: **b → c → a** (b, c DONE).
+- **Tranche (a) — series-matrix group metadata (PARTIAL, 2026-07-08):** the RNA-seq deposits whose case/control
+  lives ONLY in the series-matrix `!Sample_*` header get that header staged as a **second acquisition payload**
+  (pinned sha256, verified hash-stable across fetches), parsed by a new **`parse_geo_metadata.py`** into
+  `series_metadata.samples.tsv`; `stage_matrix`'s `sheet` group_source **joins it to the expr columns** and applies
+  the deposit's `level_map`/`group_regex` (raw condition → arm). Two group-blocked deposits now **PASS**:
+  - **`gse270045` (LC, WB):** join expr cols = the `sample_id` characteristic; group = **title-regex** ("Healthy
+    Control"/"Long Covid" — there is NO disease-state characteristic). **PASS: 24036 genes × 36 (19 LC / 17
+    healthy), symbol map 83%.** **Data finding:** the `_LC_counts` file is a MISNOMER — fractional EM/pseudo-align
+    gene counts (1e-8..5e4, library-size-varying column sums), so the `estimated_counts` scale check now tests the
+    real invariant (non-negative + count magnitude), not an integer-fraction proxy that wrongly rejected heavily-
+    fractional EM matrices (tranche-1 `gse251849`/`scilifelab` re-verified unchanged).
+  - **`gse128078` (ME/CFS sensitivity, WB):** join = `title`; group = `disease_state` (ME/CFS/Control);
+    subject+timepoint carried as covariates for the WP2 timepoint collapse. **PASS: 22424 genes × 99 samples
+    (55/44 = 14 ME/CFS vs 11 control subjects), RefSeq 90%. SENSITIVITY-ONLY** (FPKM `scale_caveat`).
+- **Remaining WP1b tranches:** **(a-rest)** the deposits that need MORE than series metadata — `gse226260`
+  (2 platforms → internal-id linking + platform batch), `gse267625` (within-cohort, no external control → WP2
+  model), `gse228320` (continuous DLCO → `~ dlco` model), `gse143549` (gene-id-blocked, deprioritized), and the
+  per-sample **`tar` trio** (`gse130353`/`gse251872`/`gse63085` — distinct mechanism: a `tar` handler + per-member
+  merge + group-metadata/arm-selection, the next tranche-(a) unit); **(d)** the salmon/CHIKV decoy quant path
+  (`salmon_gene_matrix`). Priority per the reviewer: **b → c → a** (b, c DONE; a partial).
 - **DoD:** every deposit has an executable `parse:` contract; each admitted deposit produces the 4 uniform
   outputs with a PASS `stage_matrix.qa.json`; each deferred deposit HALTs naming its blocker. **No WP (2+) runs
   until every strict/sensitivity contrast is parsed (or explicitly demoted).**

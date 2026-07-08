@@ -153,6 +153,27 @@ def prebuilt_input(wildcards):
         ins.append(f"{PROC}/{acc}/{gs['file']}")
     return ins
 
+# --- WP1b (a): RNA-seq deposits whose case/control label lives in the series-matrix
+# metadata (not the expr columns). parse_geo_metadata parses the staged series_matrix
+# payload into series_metadata.samples.tsv; stage_matrix's `sheet` group_source joins it
+# to the expr columns. Distinct from the microarray `prebuilt` chain (those produce a
+# gene matrix; these only supply group metadata for a `matrix`-handler deposit).
+SERIES_META_ACCESSIONS = sorted(
+    acc for acc, p in config.get("parse", {}).items()
+    if p.get("handler") == "matrix" and p.get("metadata_payload")
+    and p.get("group_source", {}).get("mode") == "sheet"
+)
+
+def metadata_sheet_input(wildcards):
+    """For a `matrix` deposit whose group comes from a parse_geo_metadata series-matrix
+    sheet, that sheet (so Snakemake builds it before stage_matrix). Other handlers: []."""
+    acc = wildcards.accession
+    p = config.get("parse", {}).get(acc, {})
+    gs = p.get("group_source", {})
+    if p.get("handler") == "matrix" and gs.get("mode") == "sheet":
+        return [f"{PROC}/{acc}/{gs['file']}"]
+    return []
+
 def salmon_run_quants(wildcards):
     """Per-run salmon quant.sf for a salmon accession (empty until WP1b resolves
     the run subset — the path stays wired so the DAG resolves)."""
@@ -476,6 +497,28 @@ rule collapse_gse14577:
         "--collapse median --dual-chip mean_of_platform_collapsed_log2 "
         "--out-expr {output.expr} --out-audit {output.audit} > {log} 2>&1"
 
+# --- WP1b tranche (a): series-matrix group metadata for RNA-seq deposits ------
+# The case/control label of several RNA-seq deposits lives in the series-matrix header
+# (not the expr columns). parse_geo_metadata parses the STAGED, hash-verified
+# series_matrix payload (header-only; RNA-seq series matrices carry an empty value
+# table) into a tidy samples sheet; stage_matrix's `sheet` group_source joins it to the
+# expr columns and applies the deposit's level_map / group_regex (raw condition -> arm).
+rule parse_geo_metadata:
+    input:
+        staged=f"{RAW}/{{accession}}/staged.ok",
+        blob=lambda wc: f"{RAW}/{wc.accession}/{config['parse'][wc.accession]['metadata_payload']}.data",
+        script=f"{SCRIPTS}/parse_geo_metadata.py",
+    output:
+        samples=f"{PROC}/{{accession}}/series_metadata.samples.tsv",
+    wildcard_constraints:
+        accession="|".join(SERIES_META_ACCESSIONS) if SERIES_META_ACCESSIONS else "^$",
+    log:
+        f"{RES}/logs/metadata/parse_geo_metadata.{{accession}}.log",
+    conda:
+        "../envs/py.yaml"
+    shell:
+        "python {input.script} --in {input.blob} --out-samples {output.samples} > {log} 2>&1"
+
 # --- WP1b: per-deposit parse of the verified raw payload → uniform gene matrix -
 # Acquisition (above) is COMPLETE. `stage_matrix.py` turns each heterogeneous raw
 # payload (counts csv/tsv, RAW.tar of per-sample files, microarray series-matrix /
@@ -493,6 +536,7 @@ rule stage_matrix:
         srclib=ancient(f"{SCRIPTS}/acquire_common.py"),
         gene_map=stage_map_input,   # only for non-Ensembl deposits (else [])
         prebuilt=prebuilt_input,    # only for prebuilt (microarray) deposits (else [])
+        metadata=metadata_sheet_input,  # only for matrix deposits with series-matrix group metadata (else [])
         config=CONFIGFILE,
     output:
         expr=f"{PROC}/{{accession}}/expr.gene.tsv.gz",

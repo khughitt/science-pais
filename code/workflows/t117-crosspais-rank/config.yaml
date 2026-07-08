@@ -269,6 +269,9 @@ acquisition:
       expr: {kind: tsv.gz, filename: "GSE270045_LC_counts.tsv.gz", bytes: 2516221,
              url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE270nnn/GSE270045/suppl/GSE270045_LC_counts.tsv.gz",
              sha256: "0e857b2c4fd2278dfc01af9b9078c109804b586e49f0d9e62a714cfb24c435a5"}
+      series_matrix: {kind: series_matrix.txt.gz, filename: "GSE270045_series_matrix.txt.gz", bytes: 2728,  # WP1b(a): group metadata — sample_id (expr col) -> title (Healthy Control/Long Covid)
+                      url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE270nnn/GSE270045/matrix/GSE270045_series_matrix.txt.gz",
+                      sha256: "c8c963ae95fa84961eeadacb939cc690330edebc64a965b4d26e2a98410eeeea"}
   GSE251849:
     payloads:
       expr: {kind: txt.gz, filename: "GSE251849_Counts.txt.gz", bytes: 1209601,
@@ -304,6 +307,9 @@ acquisition:
       expr: {kind: txt.gz, filename: "GSE128078_FES_isoforms_FPKM.txt.gz", bytes: 11549371,
              url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE128nnn/GSE128078/suppl/GSE128078_FES_isoforms_FPKM.txt.gz",
              sha256: "78e8576f672da4c80ff1ed75c6f0d42e8d2d4de3d7c13c97c35eab782829c276"}
+      series_matrix: {kind: series_matrix.txt.gz, filename: "GSE128078_series_matrix.txt.gz", bytes: 6638,  # WP1b(a): group metadata — title (expr col) -> disease_state (ME/CFS/Control) + subject/timepoint
+                      url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE128nnn/GSE128078/matrix/GSE128078_series_matrix.txt.gz",
+                      sha256: "af6dec55cf1d7134432062897561e634a822bc5c33c84806070c794126ea1e3e"}
   GSE16059:
     payloads:
       series_matrix: {kind: series_matrix.txt.gz, filename: "GSE16059_series_matrix.txt.gz", bytes: 7297085,
@@ -451,21 +457,30 @@ parse:
     payload: expr
     status: deferred
     deferred_reason: "group not in expr header (cols are internal ids p22179-sNNN); needs GSE226260 series matrix for sample->LC/control + the platform batch covariate (de_model ~ platform + group)"
-  GSE270045:                           # gene-id RESOLVED (symbol->Ensembl, 83% map rate — passes guardrail); group remains
+  GSE270045:                           # PASS (WP1b-a): gene-id via symbol map (83%); group from the staged series matrix
     handler: matrix
     payload: expr
+    metadata_payload: series_matrix     # WP1b(a): parse_geo_metadata parses this -> series_metadata.samples.tsv
     sep: "\t"
     gene_id_col: 0
     annotation_cols: []
     gene_id_namespace: symbol
-    expression_scale: estimated_counts
+    expression_scale: estimated_counts   # VERIFIED on real data (WP1b-a): the "_LC_counts" filename is a misnomer
+    scale_caveat: "the GSE270045_LC_counts matrix is NOT integer counts — it is fractional EM/pseudo-alignment gene counts (values 1e-8..5e4, 43% integer-like, library-size-varying column sums 0.6M-8.7M, non-negative). Continuous → limma-only (never a DESeq2/edgeR integer model)."
     duplicate_policy: sum
     case_label: case
     control_label: control
     min_per_arm: 2
     sheet_columns: [sample, group]
-    status: deferred
-    deferred_reason: "GENE-ID RESOLVED via org.Hs.eg.db symbol map (83% map rate, passes guardrail). Remaining blocker: group — CCI/HP/S column prefixes are ambiguous (19 LC+ME/CFS vs 17 healthy); needs the GSE270045 series matrix to map prefix->group (fail-closed: do NOT infer from the 19/17 count match)"
+    group_source:
+      mode: sheet                        # join the series-matrix metadata to the expr columns
+      file: series_metadata.samples.tsv  # produced by parse_geo_metadata from the staged series_matrix
+      sep: "\t"
+      sample_col: sample_id              # the `sample id` characteristic == expr column headers (CCI*/HP*/S*)
+      group_regex_col: title             # group lives ONLY in the title (no disease-state characteristic)
+      group_regex:                       # 17 Healthy Control (CCI/HP) vs 19 Long Covid (S*)
+        - {pattern: "^Healthy Control", group: control}
+        - {pattern: "^Long Covid", group: case}
   GSE267625:
     handler: matrix
     payload: expr
@@ -491,9 +506,10 @@ parse:
     sheet_columns: [sample, group]
     status: deferred
     deferred_reason: "GENE-ID FAILS the fail-closed guardrail: 'Gene Symbol' maps only ~56% (< min_map_rate 0.60) — many NOVEL/non-coding rows (gene_status=NOVEL, 5S_rRNA). Needs a cleaner symbol source or ALIAS/coordinate lift before admission; AND survivor/control grouping from the series matrix (cols are subject ids 101-NNNN-*-J0)"
-  GSE128078:                           # gene-id RESOLVED (RefSeq->Ensembl, 90% map rate; isoforms collapse to gene by sum); group remains
+  GSE128078:                           # PASS (WP1b-a, SENSITIVITY-ONLY): RefSeq->Ensembl (90%); group from the staged series matrix
     handler: matrix
     payload: expr
+    metadata_payload: series_matrix     # WP1b(a): parse_geo_metadata parses this -> series_metadata.samples.tsv
     sep: "\t"
     gene_id_col: 0                     # 'tracking_id' = RefSeq NM_ isoform accession
     annotation_cols: []
@@ -505,8 +521,17 @@ parse:
     control_label: control
     min_per_arm: 2
     sheet_columns: [sample, group, subject, timepoint]
-    status: deferred
-    deferred_reason: "GENE-ID RESOLVED via org.Hs.eg.db RefSeq map (90% map rate, passes guardrail). QUANTITATIVE AGGREGATION UNRESOLVED: isoform-FPKM->gene sum is only approximately additive (see scale_caveat) -> sensitivity-only. Also blocked on group: Sample_G<group>-<rep> -> case/control needs metadata; multi-timepoint collapse (WP2)"
+    group_source:
+      mode: sheet                        # join the series-matrix metadata to the expr columns (title)
+      file: series_metadata.samples.tsv  # produced by parse_geo_metadata from the staged series_matrix
+      sep: "\t"
+      sample_col: title                  # !Sample_title == expr column headers (Sample_G<id>-<day>)
+      condition_col: disease_state       # `disease state: ME/CFS | Control` characteristic
+      level_map: {ME/CFS: case, Control: control}
+      covariate_cols:                    # renamed to the de_models covariate names (subject, timepoint)
+        - {col: individual_identifier, as: subject}   # `individual identifier: G1`
+        - {col: timepoint_day, as: timepoint}          # `timepoint (day): 1|2|3|7` — multi-tp collapse is WP2
+    note: "multi-timepoint (day 1/2/3/7); sheet carries subject+timepoint so WP2 collapses to one contrast per subject BEFORE limma (de_models.gse128078_mecfs stock_ok AFTER collapse). SENSITIVITY-ONLY (FPKM sum caveat)."
   GSE68310:
     handler: matrix
     payload: expr
