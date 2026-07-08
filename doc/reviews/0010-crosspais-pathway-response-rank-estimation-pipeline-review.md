@@ -15,10 +15,13 @@ overall: WARN
 ## Summary
 
 This is an unusually honest, well-structured data-analysis plan: it freezes a rotation-invariant estimand,
-pre-locks LODO/LOCO pass/fail semantics, treats correlated-artifact bias as first-class admissibility, and —
-via a real WP1 record-verification pass — has already surfaced its own binding negative result (public
-single-trigger blood data cannot deliver a q0050-grade, long-COVID-out-surviving rank). It earns credit for
-that. But the review finds **two HIGH conceptual gaps the plan does not flag**: (1) the headline "LC-out
+pre-locks the LODO/LOCO pass/fail *procedure* (the discipline is real, though the threshold *values* are not
+yet calibrated — Finding A), treats correlated-artifact bias as first-class admissibility, and — via a real
+WP1 record-verification pass — has surfaced a **provisional** negative result (public single-trigger blood
+data appear unable to deliver a q0050-grade, long-COVID-out-surviving rank). It earns credit for that — but
+**that ceiling is calibration-contingent, not yet binding**: it currently rests on the unsourced
+`min_contrasts=6` gate (Finding A), so it must not be cited as a settled or deliverable-grade result until the
+Finding A/B calibration is done. But the review finds **two HIGH conceptual gaps the plan does not flag**: (1) the headline "LC-out
 non-identifiable" ceiling rests on an **unsourced `min_contrasts=6` threshold that is not `interpretation:0037`-grounded**
 (t116 grounds *arm count K≥3*, under which LC-out is admissible-but-underpowered, not non-identifiable) —
 a borderline-circular, threshold-driven conclusion; and (2) the plan's primary statistic is a **rank
@@ -62,7 +65,11 @@ unsourced constant (at `min_contrasts=4`, LC-out is borderline-admissible).
 rather than a hand-set contrast count; report the LC-out conclusion as a **sensitivity curve over the
 threshold and over per-fold power** (parallel-analysis CI width), not a binary identifiability verdict. The
 qualitative conclusion ("public data cannot *robustly* pin the cross-PAIS rank once LC is removed") likely
-survives — but it must be shown to survive, not asserted via `min_contrasts=6`.
+survives — but it must be shown to survive, not asserted via `min_contrasts=6`. **Until that calibration is
+done the WP1 ceiling is provisional** and must not be cited as a binding or deliverable-grade negative result
+(this is the governing qualifier for the Summary and Finding E, and it revises the strength of the claim in
+commit `fef2f1c` / the plan's WP1 corpus-readiness section from "non-identifiable" to "low-power, pending
+calibration").
 
 ### Finding B — the rank estimator is not the statistic t116 characterized; the grid mapping is unvalidated (Dim 6 + Dim 8, HIGH)
 
@@ -93,10 +100,17 @@ compartment (drop the monocyte set and you drop Q-fever entirely), and housekeep
 don't flag composition shift because it is real regulation, not a technical artifact. This is arguably the
 single most likely benign explanation for a low-rank cross-PAIS signal.
 
-**Recommendation:** add an explicit **cell-composition control**: estimate leukocyte fractions per sample
-(deconvolution), carry a **composition axis as a named nuisance/negative-control dimension**, and report R
-both before and after composition adjustment. A shared axis that dissolves under composition adjustment is a
-blood-count signature, not an attractor.
+**Recommendation (multi-pronged — deconvolution alone is insufficient).** Cell-fraction estimation is only
+meaningful for **whole blood (and partially PBMC)**; it **cannot** be run on the sorted-monocyte QFS deposit
+and **cannot** make monocyte-only NES directly comparable to whole-blood/PBMC NES. So the control must be
+structural, not just statistical: (i) **compartment-stratified rank estimates** (estimate R within each
+compartment stratum and compare); (ii) a **"drop sorted-compartment" (and ideally a WB/PBMC-only primary)
+sensitivity** — the low-rank conclusion must survive removing the sorted compartment; (iii) where
+deconvolution *is* valid (WB, PBMC), report R **before and after composition adjustment** with a composition
+axis as a named nuisance/negative-control dimension. A shared axis that dissolves under composition adjustment,
+or that only appears when compartments are pooled, is a blood-count/compartment signature, not an attractor.
+Consider making **WB/PBMC-only the primary matrix** and treating sorted-compartment deposits as a separate
+stratum.
 
 ### Finding D — the project's designated non-infectious stress-test (GWS/FM) is omitted (Dim 7, MEDIUM)
 
@@ -107,17 +121,25 @@ for `interpretation:0037`'s Q-D identifiability ceiling (infection-specific attr
 manifold). If the learned PAIS blood subspace is **equally recovered by non-infectious GWS/FM**, that is strong
 evidence it is a generic fatigue/sickness manifold, not an infection-specific attractor.
 
-**Recommendation:** add a **GWS/FM (and if available PACVS) read-across column** to the triangulation/specificity
-layer, scored as a discriminating test of infection-specificity — not pooled into the primary rank matrix.
-This is in-scope, cheap relative to its value, and directly addresses Q-D.
+**Recommendation:** add GWS/FM (and if available PACVS) as a **separate non-infectious specificity matrix /
+read-across analysis** — **not** a free-form column appended to the primary matrix, which would relax the very
+compartment/platform discipline this review demands elsewhere (Finding C, F). It must pass the **same
+admissibility gates** as the primary corpus (blood-bulk, public, downloadable, sample-level case-vs-control)
+and be run through the **same uniform DE→enrichment over the same pinned universe**, then compared to the PAIS
+subspace as a distinct object. Scored as a discriminating test of infection-specificity: if the learned PAIS
+subspace is equally recovered by gated, uniformly-processed non-infectious GWS/FM, that is strong evidence for
+a generic fatigue/sickness manifold over an infection-specific attractor (Q-D).
 
-### Finding E — WP1 may already be the deliverable; weigh the cost of Stages 2–6 (Dim 4, MEDIUM)
+### Finding E — WP1 may (after calibration) already be the deliverable; weigh the cost of Stages 2–6 (Dim 4, MEDIUM)
 
-WP1 has established the binding negative result on data. Building the full pipeline (stage 10 deposits →
-harmonize → rank battery → sparse FA → artifact adjudication) to produce a **hypothesis-grade descriptive R**
-is a large effort for a heavily caveated output. t117 asks "estimate the rank"; the honest, defensible answer
-may already be *"not robustly estimable from public data — here is the corpus-readiness ceiling and the
-interp-0037 amendment."*
+WP1 has surfaced a **provisional, calibration-contingent** negative result whose strength depends on
+Finding A (it currently rests on the unsourced `min_contrasts=6` gate — it is *not yet* an established
+ceiling). **If, and only if, the Finding A/B calibration confirms it**, that negative result — "not robustly
+estimable from public data, here is the corpus-readiness ceiling + the interp-0037 amendment" — is a
+defensible t117 deliverable on its own, and building the full pipeline (stage 10 deposits → harmonize → rank
+battery → sparse FA → artifact adjudication) to produce a heavily-caveated **hypothesis-grade descriptive R**
+would be a large effort for little marginal value. So the cost question is real, but it is *downstream of*
+Finding A, not independent of it.
 
 **Recommendation:** insert an explicit **decision gate after Finding A/B are resolved**: is the descriptive R
 (plus the GWS/FM specificity test and artifact adjudication) worth the staging + harmonization cost, or is the
@@ -157,10 +179,11 @@ specified for the rank-estimation outputs. Both are deferred/acceptable but shou
 
 ## Strengths
 
-- **Intellectual honesty is the plan's defining feature.** It pre-registers LODO/LOCO pass/fail *before*
-  seeing folds, self-reports the long-COVID dominance, and — via a real WP1 pass — surfaces its own binding
-  negative result rather than burying it. The two-matrix verdict rule (strict vs ME/CFS-sensitivity, with
-  hypothesis-grade demotion) is exactly right.
+- **Intellectual honesty is the plan's defining feature.** It pre-registers the LODO/LOCO pass/fail
+  *procedure* before seeing folds — a real methodological discipline, though the credit is for the procedure,
+  not the threshold *content*, which is still uncalibrated (Finding A) — self-reports the long-COVID dominance,
+  and — via a real WP1 pass — surfaces a (provisional) negative result rather than burying it. The two-matrix
+  verdict rule (strict vs ME/CFS-sensitivity, with hypothesis-grade demotion) is exactly right.
 - **WP1 was executed against real records, not asserted** — and it did work: it demoted two deposits on the
   ≥4-week floor (removing influenza and chikungunya), corrected GSE251872 (12v15, not 17v21), and caught
   GSE224615's missing per-sample matrix. Design specifics are now record-checked, not `[UNVERIFIED]`.
