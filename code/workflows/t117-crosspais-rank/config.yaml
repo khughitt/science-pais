@@ -330,6 +330,9 @@ acquisition:
       raw_tar: {kind: tar, filename: "GSE130353_RAW.tar", bytes: 99471360,
                 url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE130nnn/GSE130353/suppl/GSE130353_RAW.tar",
                 sha256: "98e6b07b389a922be6b57e564ad300353aac3cacddbccda35a1d84aa50467a4f"}
+      soft: {kind: soft.gz, filename: "GSE130353_family.soft.gz", bytes: 4462,
+             url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE130nnn/GSE130353/soft/GSE130353_family.soft.gz",
+             sha256: "dcb09ba0824d23bcbc2ca8a768da9ffe0588096d2a88b6ebf763a3b51f789064"}
   GSE14577:
     payloads:
       soft: {kind: soft.gz, filename: "GSE14577_family.soft.gz", bytes: 15613533,
@@ -578,11 +581,34 @@ parse:
       map:
         - {pattern: "^PI-CFS", group: case}
         - {pattern: "^HC", group: control}
-  GSE130353:                           # QFS stratum; t035 has extract_gse130353.py
+  GSE130353:                           # QFS stratum (circulating monocytes); post-Q-fever fatigue
     handler: tar
     payload: raw_tar
-    status: deferred
-    deferred_reason: "WP1b tranche (a): handler code READY (extract_gse130353.py, MMSEQ log_mu) but blocked on group — needs the GSE130353_family.soft.gz payload added to acquisition (group from SOFT subject status, NOT filename). Handler work alone does NOT PASS this."
+    member_glob: "*.gene.mmseq.txt.gz"
+    member_gene_col: feature_id
+    member_value_col: log_mu
+    member_comment: "#"                 # skip MMSEQ's "# Mapped fragments:" preamble line
+    member_agg: sum                      # feature_id is unique -> no-op collapse (guards accidental dups)
+    sample_id_regex: "^(GSM[0-9]+)"      # GSM from the member filename; joins to SOFT `sample`
+    gene_id_namespace: ensembl           # ENSG (Ensembl release 68)
+    expression_scale: log_mu
+    scale_caveat: "MMSEQ posterior mean on the natural-log scale (~30% negative); the depositor 'counts' label is inaccurate — continuous limma only (DESeq2/edgeR inadmissible)."
+    case_label: case
+    control_label: control
+    de_model: default
+    metadata_payload: soft
+    metadata_format: soft                # parse via parse_geo_soft (not the series-matrix parser)
+    group_source:
+      mode: sheet
+      file: soft_metadata.samples.tsv
+      sample_col: sample
+      group_regex_col: subject_status
+      # QFS (post-Q-fever fatigue) vs QS (Q-fever seropositive, recovered = infected-recovered
+      # control). Match the parenthetical code, NOT "Fatigue Syndrom" (a substring of BOTH
+      # "Q Fever Fatigue Syndrom (QFS)" and "Chronic Fatigue Syndrome (FCS)"). HC + CFS drop.
+      group_regex:
+        - {pattern: "\\(QFS\\)", group: case}
+        - {pattern: "\\(QS\\)", group: control}
   GSE251872:                           # PI-ME/CFS RAW.tar (27 members)
     handler: tar
     payload: raw_tar

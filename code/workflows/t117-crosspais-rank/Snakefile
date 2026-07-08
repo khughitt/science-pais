@@ -158,19 +158,31 @@ def prebuilt_input(wildcards):
 # payload into series_metadata.samples.tsv; stage_matrix's `sheet` group_source joins it
 # to the expr columns. Distinct from the microarray `prebuilt` chain (those produce a
 # gene matrix; these only supply group metadata for a `matrix`-handler deposit).
-SERIES_META_ACCESSIONS = sorted(
-    acc for acc, p in config.get("parse", {}).items()
-    if p.get("handler") == "matrix" and p.get("metadata_payload")
-    and p.get("group_source", {}).get("mode") == "sheet"
-)
+# A deposit supplies group metadata via an external payload (series-matrix or family
+# SOFT) parsed into a tidy samples sheet + joined by `sheet` group_source. The
+# metadata_format selects the parser (series_matrix -> parse_geo_metadata; soft ->
+# parse_geo_soft). This is independent of the expr handler: a `matrix` deposit (expr in
+# the payload) and a `tar` deposit (expr split across tar members) both reach group the
+# same way. The `prebuilt` microarray chain builds its own sheet (no metadata_payload).
+def _meta_accessions(fmt):
+    return sorted(
+        acc for acc, p in config.get("parse", {}).items()
+        if p.get("metadata_payload")
+        and p.get("group_source", {}).get("mode") == "sheet"
+        and p.get("metadata_format", "series_matrix") == fmt
+    )
+
+SERIES_META_ACCESSIONS = _meta_accessions("series_matrix")
+SOFT_META_ACCESSIONS = _meta_accessions("soft")
 
 def metadata_sheet_input(wildcards):
-    """For a `matrix` deposit whose group comes from a parse_geo_metadata series-matrix
-    sheet, that sheet (so Snakemake builds it before stage_matrix). Other handlers: []."""
+    """For a deposit whose group comes from an external metadata payload parsed into a
+    samples sheet, that sheet (so Snakemake builds it before stage_matrix). Deposits
+    that carry group elsewhere (prebuilt chain, in-column regex): []."""
     acc = wildcards.accession
     p = config.get("parse", {}).get(acc, {})
     gs = p.get("group_source", {})
-    if p.get("handler") == "matrix" and gs.get("mode") == "sheet":
+    if p.get("metadata_payload") and gs.get("mode") == "sheet":
         return [f"{PROC}/{acc}/{gs['file']}"]
     return []
 
@@ -514,6 +526,28 @@ rule parse_geo_metadata:
         accession="|".join(SERIES_META_ACCESSIONS) if SERIES_META_ACCESSIONS else "^$",
     log:
         f"{RES}/logs/metadata/parse_geo_metadata.{{accession}}.log",
+    conda:
+        "../envs/py.yaml"
+    shell:
+        "python {input.script} --in {input.blob} --out-samples {output.samples} > {log} 2>&1"
+
+# --- WP1b tranche (a2): family-SOFT group metadata for `tar` deposits ---------
+# Sibling of parse_geo_metadata for deposits whose group lives ONLY in the family SOFT
+# (multi-platform deposits whose plain series-matrix URL 404s, or SOFT-only strata like
+# the GSE130353 monocyte QFS/QS arms). parse_geo_soft parses the STAGED, hash-verified
+# soft payload into soft_metadata.samples.tsv; stage_matrix's `sheet` group_source joins
+# it (by the GSM the tar member filename carries) and applies the deposit's group_regex.
+rule parse_geo_soft:
+    input:
+        staged=f"{RAW}/{{accession}}/staged.ok",
+        blob=lambda wc: f"{RAW}/{wc.accession}/{config['parse'][wc.accession]['metadata_payload']}.data",
+        script=f"{SCRIPTS}/parse_geo_soft.py",
+    output:
+        samples=f"{PROC}/{{accession}}/soft_metadata.samples.tsv",
+    wildcard_constraints:
+        accession="|".join(SOFT_META_ACCESSIONS) if SOFT_META_ACCESSIONS else "^$",
+    log:
+        f"{RES}/logs/metadata/parse_geo_soft.{{accession}}.log",
     conda:
         "../envs/py.yaml"
     shell:

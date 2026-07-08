@@ -394,11 +394,93 @@ def parse_prebuilt(proc_dir: Path, parse: dict, hmap: dict | None) -> tuple[pd.D
     return mat, gene_report
 
 
-KIND_HANDLERS = {"matrix", "prebuilt"}
-DEFERRED_KINDS = {
-    "tar": "per-sample RAW.tar handler (reuse extract_gse130353.py pattern) + a group-metadata "
-           "payload (SOFT/series-matrix) — WP1b tranche (a)",
-}
+# ---------------------------------------------------------------------- kind: tar
+def _resolve_col(df: pd.DataFrame, spec) -> str:
+    """A member column spec is a NAME (str) or a POSITIONAL index (int). Positional is
+    required for deposits whose value column is named per-sample (GSE251872 `S###`)."""
+    if isinstance(spec, int):
+        if not (0 <= spec < len(df.columns)):
+            halt(f"member column index {spec} out of range (has {len(df.columns)} cols)")
+        return str(df.columns[spec])
+    if spec not in df.columns:
+        halt(f"member column '{spec}' absent (has {list(df.columns)})")
+    return str(spec)
+
+
+def parse_tar(raw_dir: Path, payload: str, parse: dict, hmap: dict | None) -> tuple[pd.DataFrame, dict]:
+    """Per-sample RAW.tar of gene-level tables -> (Ensembl x samples DataFrame, gene report).
+
+    Each file member matching `member_glob` is ONE sample: its (member_gene_col,
+    member_value_col) become that sample's column, keyed by the sample id pulled from
+    the member basename via `sample_id_regex` (group 1). member_gene_col/value_col are a
+    NAME or a positional int (GSE251872's value column is named per-sample). Duplicate
+    gene ids WITHIN a member (cufflinks emits >1 locus per gene symbol) collapse under
+    `member_agg` before the cross-member merge; the cross-deposit Ensembl collapse then
+    runs on the merged matrix, same as parse_matrix. Group is NOT in the tar — it comes
+    from the metadata sheet (SOFT/series-matrix) via the `sheet` group_source."""
+    import fnmatch
+    import io
+    import re
+    import tarfile
+
+    blob = raw_dir / f"{payload}.data"
+    glob = parse["member_glob"]
+    sid_rx = re.compile(parse["sample_id_regex"])
+    comment = parse.get("member_comment")   # e.g. "#" for MMSEQ's mapped-fragments header
+    agg = parse.get("member_agg", "sum")
+
+    series: dict[str, pd.Series] = {}
+    with tarfile.open(blob, "r") as tf:
+        members = sorted((m for m in tf.getmembers() if m.isfile()), key=lambda m: m.name)
+        for m in members:
+            base = Path(m.name).name
+            if not fnmatch.fnmatch(base, glob):
+                continue
+            mo = sid_rx.search(base)
+            if not mo:
+                halt(f"tar member '{base}' does not match sample_id_regex '{parse['sample_id_regex']}'")
+            sid = mo.group(1)
+            if sid in series:
+                halt(f"tar sample id '{sid}' (from {base}) collides with an earlier member")
+            fobj = tf.extractfile(m)
+            if fobj is None:
+                halt(f"tar member '{base}' is not extractable")
+            raw = fobj.read()
+            reader = gzip.open(io.BytesIO(raw), "rt", encoding="utf-8", errors="replace") \
+                if base.endswith(".gz") else io.StringIO(raw.decode("utf-8", "replace"))
+            df = pd.read_csv(reader, sep=parse.get("member_sep", "\t"),
+                             dtype=str, comment=comment, index_col=False)
+            gcol = _resolve_col(df, parse["member_gene_col"])
+            vcol = _resolve_col(df, parse["member_value_col"])
+            # within-member collapse of duplicate gene ids (cufflinks multi-locus symbols)
+            mv = pd.DataFrame({
+                "gene": pd.Series(df[gcol]).astype(str),
+                "value": pd.to_numeric(pd.Series(df[vcol]), errors="coerce"),
+            })
+            series[sid] = pd.Series(mv.groupby("gene")["value"].agg(agg))
+
+    if not series:
+        halt(f"tar payload matched no members for glob '{glob}'")
+    mat = pd.DataFrame(series)   # outer-join on gene id; samples = columns
+    n_na_cells = int(mat.isna().sum().sum())
+    raw_ids = [str(x) for x in mat.index]
+
+    mapped, gene_report = harmonize_gene_ids(raw_ids, parse["gene_id_namespace"], hmap)
+    mat.index = pd.Index(mapped, name="gene_id")
+    n_unmapped_rows = int(mat.index.isna().sum())
+    mat = mat[mat.index.notna()]
+    mat, n_dup = collapse_duplicates(mat, parse.get("duplicate_policy", "sum"))
+    gene_report["n_out"] = int(mat.shape[0])
+    gene_report["n_unmapped_rows_dropped"] = n_unmapped_rows
+    gene_report["duplicates_collapsed"] = int(n_dup)
+    gene_report["duplicate_policy"] = parse.get("duplicate_policy", "sum")
+    gene_report["n_members"] = len(series)
+    gene_report["n_na_cells_merged"] = n_na_cells
+    return mat, gene_report
+
+
+KIND_HANDLERS = {"matrix", "prebuilt", "tar"}
+DEFERRED_KINDS: dict[str, str] = {}
 
 
 # ------------------------------------------------------------------------- main
@@ -428,6 +510,8 @@ def run(config_path: Path, accession: str, out_expr: Path, out_sheet: Path,
     #     upstream microarray chain's samples sheet).
     if handler == "matrix":
         mat, gene_report = parse_matrix(raw_dir, payload, parse, hmap)
+    elif handler == "tar":
+        mat, gene_report = parse_tar(raw_dir, payload, parse, hmap)
     else:  # prebuilt
         mat, gene_report = parse_prebuilt(proc_dir, parse, hmap)
     all_samples = list(mat.columns)
