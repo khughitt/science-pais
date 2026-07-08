@@ -127,6 +127,18 @@ def deposit_payload_blobs(wildcards):
     acc = wildcards.accession
     return [f"{RAW}/{acc}/{pay}.data" for pay in payloads_of(acc)]
 
+# --- WP1b (b): shared gene-id harmonization map (org.Hs.eg.db, pinned) --------
+HARM = config.get("harmonization", {})
+HMAP_TSV = HARM.get("map_tsv")
+MAP_NAMESPACES = {"symbol", "alias", "refseq"}
+
+def stage_map_input(wildcards):
+    """The harmonization map is a stage_matrix input ONLY for deposits declaring a
+    non-Ensembl gene-id namespace (Ensembl deposits don't need it, so they don't
+    force the r-bioc build)."""
+    ns = config.get("parse", {}).get(wildcards.accession, {}).get("gene_id_namespace")
+    return [HMAP_TSV] if ns in MAP_NAMESPACES and HMAP_TSV else []
+
 def salmon_run_quants(wildcards):
     """Per-run salmon quant.sf for a salmon accession (empty until WP1b resolves
     the run subset — the path stays wired so the DAG resolves)."""
@@ -231,6 +243,28 @@ rule verify_universe:
         "python {input.script} --file {input.rds} --sha256 {params.sha} "
         "--sentinel {output.qa} > {log} 2>&1"
 
+# --- shared gene-id identity map: symbol/alias/RefSeq -> Ensembl (org.Hs.eg.db) -
+# Built from the SAME org.Hs.eg.db the gene sets used (pinned r-bioc env) + the same
+# "first" multimap policy, so identity is commensurable by construction. Its sha256
+# is pinned in config.harmonization.map_sha256 (empty => stage_matrix HALTs) and
+# re-verified before any non-Ensembl deposit consumes it.
+rule build_gene_id_map:
+    input:
+        script=f"{SCRIPTS}/build_gene_id_map.R",
+    output:
+        map=HMAP_TSV,
+        report=HARM.get("report_json", f"{PROC}/genesets/gene_id_map.report.json"),
+    params:
+        keytypes=",".join(HARM.get("keytypes", ["SYMBOL", "ALIAS", "REFSEQ"])),
+        multimap=HARM.get("multimap_policy", "first"),
+    log:
+        f"{RES}/logs/build_gene_id_map.log",
+    conda:
+        "../envs/r-bioc.yaml"
+    shell:
+        "Rscript {input.script} --keytypes {params.keytypes} --multimap {params.multimap} "
+        "--out-tsv {output.map} --out-report {output.report} > {log} 2>&1"
+
 # --- SRA-only CHIKV decoy: salmon quantification path (WIRED; run deferred) ---
 # The rules resolve the full DAG; the heavy index build + FASTQ retrieval + quant
 # are stubs (fail-early) and the reference hash is HALT-guarded (empty => fetch_url
@@ -323,6 +357,7 @@ rule stage_matrix:
         staged=f"{RAW}/{{accession}}/staged.ok",
         script=f"{SCRIPTS}/stage_matrix.py",
         srclib=ancient(f"{SCRIPTS}/acquire_common.py"),
+        gene_map=stage_map_input,   # only for non-Ensembl deposits (else [])
         config=CONFIGFILE,
     output:
         expr=f"{PROC}/{{accession}}/expr.gene.tsv.gz",

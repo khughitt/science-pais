@@ -33,6 +33,14 @@ design; scripts hard-code nothing.
   limma-only). **Gap surfaced:** most GEO deposits' case/control lives in
   series-matrix/SOFT metadata not yet staged → their `parse:` block is
   `status: deferred` naming the exact blocker (metadata payload / harmonization map).
+- **Tranche (b) — shared gene-id identity contract** (`build_gene_id_map.R`,
+  config `harmonization:`) — symbol/alias/RefSeq → Ensembl from the **same**
+  org.Hs.eg.db (3.22.0) + `first` policy as the gene sets, so identity is
+  commensurable by construction. `stage_matrix.py` **fails closed**: map-rate <
+  `min_map_rate` (0.60) or wrong-namespace ⇒ contrast **ineligible**, not a thin
+  matrix. Proven: `gse270045` symbol 83% ✓, `gse128078` RefSeq 90% ✓, `gse143549`
+  gene_name 56% → fails closed. Canonical `map_sha256` HALT-guarded until the pinned
+  r-bioc build. (b) resolves gene-id; those deposits still need group metadata.
 
 > **Naming:** `dataset:msigdb-2024-1-hs-hallmark-reactome-rank-universe` is the
 > **rank universe** — the Hallmark ∪ Reactome subset **derived from** the broader

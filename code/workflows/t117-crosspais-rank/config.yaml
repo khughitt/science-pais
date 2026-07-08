@@ -363,6 +363,28 @@ salmon:
       accessions: []                    # WP1b: resolve the day-21 case/recovered subset from SRA BioSample attrs
       note: "decoy (chronification triangulation); run subset + case/control split deferred to WP1b (needs BioSample metadata)"
 
+# ------------------------------------------------------ harmonization (WP1b b)
+# The SHARED gene-id identity contract: symbol/alias/RefSeq -> Ensembl-gene, built
+# by code/scripts/build_gene_id_map.R from the SAME annotation authority the gene
+# sets used (org.Hs.eg.db, pinned in envs/r-bioc.yaml) and the SAME multimap policy
+# as genesets_reference.R ("first"), so a source symbol resolves to the SAME ENSG on
+# both the expression side and the gene-set side — commensurability by construction,
+# not coincidence. stage_matrix.py hash-verifies the map before use (empty => HALT,
+# like every payload) and FAILS CLOSED per the guardrails: a deposit whose ids map
+# too poorly (min_map_rate) or are the wrong namespace (max_mixed_namespace_frac) is
+# marked contrast-INELIGIBLE, never emitted as a thin matrix the rank code would
+# treat as comparable.
+harmonization:
+  map_tsv: "data/processed/genesets/gene_id_map.2024.1.Hs.tsv"
+  map_sha256: ""                    # HALT-guarded; pinned from the canonical org.Hs.eg.db 3.22.0 build (build_gene_id_map, --use-conda r-bioc)
+  report_json: "data/processed/genesets/gene_id_map.report.json"
+  source: "org.Hs.eg.db 3.22.0"     # MUST match the gene-set annotation authority (harmonize_reference.json)
+  multimap_policy: first            # identical to genesets_reference.R (commensurability)
+  keytypes: [SYMBOL, ALIAS, REFSEQ]
+  guardrails:
+    min_map_rate: 0.60              # < this fraction of source ids resolving -> ineligible (e.g. GSE143549 gene_name ~0.56 fails closed)
+    max_mixed_namespace_frac: 0.05  # declared non-Ensembl but ids look ENSG -> namespace error, ineligible
+
 # ------------------------------------------------------ parse (WP1b) ---------
 # review Finding F, pulled forward into WP1b: the EXECUTABLE per-deposit ingest
 # contract. One entry per GEO/FigShare deposit declaring how stage_matrix.py turns
@@ -427,11 +449,21 @@ parse:
     payload: expr
     status: deferred
     deferred_reason: "group not in expr header (cols are internal ids p22179-sNNN); needs GSE226260 series matrix for sample->LC/control + the platform batch covariate (de_model ~ platform + group)"
-  GSE270045:
+  GSE270045:                           # gene-id RESOLVED (symbol->Ensembl, 83% map rate — passes guardrail); group remains
     handler: matrix
     payload: expr
+    sep: "\t"
+    gene_id_col: 0
+    annotation_cols: []
+    gene_id_namespace: symbol
+    expression_scale: estimated_counts
+    duplicate_policy: sum
+    case_label: case
+    control_label: control
+    min_per_arm: 2
+    sheet_columns: [sample, group]
     status: deferred
-    deferred_reason: "symbol->Ensembl map (gene ids are HGNC symbols, e.g. 5S_rRNA) AND a confirmed CCI/HP/S column-prefix->group mapping (19 LC+ME/CFS vs 17 healthy; prefixes ambiguous)"
+    deferred_reason: "GENE-ID RESOLVED via org.Hs.eg.db symbol map (83% map rate, passes guardrail). Remaining blocker: group — CCI/HP/S column prefixes are ambiguous (19 LC+ME/CFS vs 17 healthy); needs the GSE270045 series matrix to map prefix->group (fail-closed: do NOT infer from the 19/17 count match)"
   GSE267625:
     handler: matrix
     payload: expr
@@ -442,16 +474,36 @@ parse:
     payload: expr
     status: deferred
     deferred_reason: "continuous DLCO pulmonary-severity axis, not a two-arm contrast; needs per-sample DLCO values (series matrix) + a ~ dlco DE path"
-  GSE143549:
+  GSE143549:                           # gene-id map FAILS the guardrail (56% < 0.60) -> ineligible even before group
     handler: matrix
     payload: expr
+    sep: "\t"
+    gene_id_col: 4                     # 'Gene Symbol' column (0=Chromosome..3=Strand,4=Gene Symbol,5=gene_name,6=gene_status)
+    annotation_cols: [0, 1, 2, 3, 5, 6]
+    gene_id_namespace: symbol
+    expression_scale: cpm              # Normalized_counts_CPM+0.0001
+    duplicate_policy: sum
+    case_label: case
+    control_label: control
+    min_per_arm: 2
+    sheet_columns: [sample, group]
     status: deferred
-    deferred_reason: "gene ids are symbols (Gene Symbol/gene_name cols) needing a symbol->Ensembl map; survivor/control grouping needs the series matrix (cols are subject ids 101-NNNN-*-J0)"
-  GSE128078:
+    deferred_reason: "GENE-ID FAILS the fail-closed guardrail: 'Gene Symbol' maps only ~56% (< min_map_rate 0.60) — many NOVEL/non-coding rows (gene_status=NOVEL, 5S_rRNA). Needs a cleaner symbol source or ALIAS/coordinate lift before admission; AND survivor/control grouping from the series matrix (cols are subject ids 101-NNNN-*-J0)"
+  GSE128078:                           # gene-id RESOLVED (RefSeq->Ensembl, 90% map rate; isoforms collapse to gene by sum); group remains
     handler: matrix
     payload: expr
+    sep: "\t"
+    gene_id_col: 0                     # 'tracking_id' = RefSeq NM_ isoform accession
+    annotation_cols: []
+    gene_id_namespace: refseq
+    expression_scale: fpkm             # FES_isoforms_FPKM
+    duplicate_policy: sum              # isoform FPKM -> gene FPKM (sum over NM_ sharing an ENSG)
+    case_label: case
+    control_label: control
+    min_per_arm: 2
+    sheet_columns: [sample, group, subject, timepoint]
     status: deferred
-    deferred_reason: "RefSeq-isoform (NM_*) FPKM needing RefSeq-isoform->Ensembl-gene collapse; Sample_G<group>-<rep> -> case/control mapping unconfirmed; multi-timepoint collapse (WP2)"
+    deferred_reason: "GENE-ID RESOLVED via org.Hs.eg.db RefSeq map (90% map rate, passes guardrail; isoform FPKM summed to gene). Remaining blockers: Sample_G<group>-<rep> -> case/control mapping needs metadata; multi-timepoint one-contrast-per-subject collapse (WP2)"
   GSE68310:
     handler: matrix
     payload: expr

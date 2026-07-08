@@ -48,7 +48,7 @@ from typing import NoReturn
 import pandas as pd
 import yaml
 
-from acquire_common import scale_stats
+from acquire_common import scale_stats, sha256_path
 
 SCRIPT_VERSION = "t117-stage_matrix/1"
 
@@ -75,37 +75,95 @@ def open_maybe_gz(path: Path):
 
 
 # ----------------------------------------------------------------- gene-id map
-def harmonize_gene_ids(ids: list[str], source_ns: str) -> tuple[list[str], dict]:
-    """Map the raw feature ids to the target Ensembl-gene namespace.
+MAP_NAMESPACES = {"symbol", "alias", "refseq"}
 
-    Implemented: `ensembl` (bare ENSG passthrough) and `ensembl_versioned`
-    (ENSG.version -> strip the .version). `symbol` / `refseq` require an external
-    annotation map (not yet wired) -> HALT so no un-harmonized ids leak into the
-    matrix. Returns (mapped_ids, report); mapped_ids has one entry per input row
-    (None where unmappable) so the caller can collapse/drop deterministically.
-    """
+
+def load_harmonization(cfg: dict, source_ns: str) -> dict | None:
+    """Load + hash-verify the org.Hs.eg.db harmonization map for a non-Ensembl ns.
+
+    Returns None for the Ensembl namespaces (no map needed). For symbol/alias/refseq
+    it verifies the map file against the LOCKED config hash (empty => HALT, same
+    fail-early discipline as the payloads) and returns {maps, guardrails, source}.
+    The map is built by build_gene_id_map.R from the SAME org.Hs.eg.db the gene sets
+    used — commensurability is a contract, not a coincidence."""
+    if source_ns in ("ensembl", "ensembl_versioned"):
+        return None
+    if source_ns not in MAP_NAMESPACES:
+        halt(f"gene-id namespace '{source_ns}' unknown (ensembl|ensembl_versioned|symbol|alias|refseq)")
+    h = cfg.get("harmonization")
+    if not h:
+        halt("config.harmonization missing but a deposit declares a non-Ensembl gene-id namespace")
+    map_tsv = Path(h["map_tsv"])
+    if not map_tsv.exists():
+        halt(f"harmonization map {map_tsv} absent — run build_gene_id_map (conda r-bioc) first")
+    locked = h.get("map_sha256", "")
+    if not locked:
+        halt(f"config.harmonization.map_sha256 empty — pin it from the canonical "
+             f"org.Hs.eg.db build (build_gene_id_map) before consuming {map_tsv}")
+    got = sha256_path(map_tsv)
+    if got != locked:
+        halt(f"harmonization map sha256 mismatch (expected {locked}, got {got}) — "
+             f"re-pin from a deliberate rebuild, never auto-accept")
+    maps: dict[str, dict[str, str]] = {}
+    with map_tsv.open() as fh:
+        next(fh)  # header
+        for line in fh:
+            sid, ns, ens = line.rstrip("\n").split("\t")
+            maps.setdefault(ns, {})[sid] = ens
+    return {"maps": maps, "guardrails": h.get("guardrails", {}), "source": h.get("source", "")}
+
+
+def harmonize_gene_ids(ids: list[str], source_ns: str,
+                       hmap: dict | None) -> tuple[list[str], dict]:
+    """Map the raw feature ids to the target Ensembl-gene axis.
+
+    `ensembl` (bare ENSG passthrough) / `ensembl_versioned` (strip .version) map
+    with no external table. `symbol` / `alias` / `refseq` resolve through the
+    hash-verified org.Hs.eg.db map (`hmap`). Returns (mapped_ids, report);
+    mapped_ids has one entry per input row (None where unmappable) so the caller
+    collapses/drops deterministically. The report carries `map_rate` +
+    `map_rate_ok` (fail-closed guardrail) so a deposit dominated by unmappable /
+    wrong-namespace ids is marked ineligible, not emitted as a thin matrix."""
     report = {"source_namespace": source_ns, "target_namespace": "ensembl_gene",
               "n_in": len(ids), "version_stripped": False, "n_unmapped": 0}
     if source_ns in ("ensembl", "ensembl_versioned"):
-        out = []
-        stripped = False
-        unmapped = 0
+        out, stripped, unmapped = [], False, 0
         for x in ids:
             x = str(x)
             if "." in x and x.split(".")[0].startswith("ENSG"):
                 x = x.split(".")[0]
                 stripped = True
             if not x.startswith("ENSG"):
-                out.append(None)
-                unmapped += 1
+                out.append(None); unmapped += 1
             else:
                 out.append(x)
-        report["version_stripped"] = stripped
-        report["n_unmapped"] = unmapped
+        report.update(version_stripped=stripped, n_unmapped=unmapped,
+                      map_rate=round(1 - unmapped / max(len(ids), 1), 4), map_rate_ok=True)
         return out, report
-    halt(f"gene-id namespace '{source_ns}' needs an external annotation map "
-         f"(symbol/RefSeq -> Ensembl) that is not yet wired — declare a resolvable "
-         f"source or add the map before admitting this deposit")
+
+    assert hmap is not None
+    table = hmap["maps"].get(source_ns, {})
+    gr = hmap["guardrails"]
+    out, unmapped, looks_ensembl = [], 0, 0
+    for x in ids:
+        x = str(x).split(".")[0] if source_ns == "refseq" else str(x)  # NM_x.v -> NM_x
+        if x.startswith("ENSG"):
+            looks_ensembl += 1
+        ens = table.get(x)
+        if ens is None:
+            out.append(None); unmapped += 1
+        else:
+            out.append(ens)
+    n = max(len(ids), 1)
+    map_rate = round(1 - unmapped / n, 4)
+    mixed_ns_frac = round(looks_ensembl / n, 4)   # declared non-Ensembl but ids look Ensembl
+    report.update(
+        n_unmapped=unmapped, map_rate=map_rate, min_map_rate=gr.get("min_map_rate", 0.6),
+        mixed_namespace_frac=mixed_ns_frac, max_mixed_namespace_frac=gr.get("max_mixed_namespace_frac", 0.05),
+        harmonization_source=hmap["source"])
+    report["map_rate_ok"] = (map_rate >= gr.get("min_map_rate", 0.6)
+                             and mixed_ns_frac <= gr.get("max_mixed_namespace_frac", 0.05))
+    return out, report
 
 
 def collapse_duplicates(df: pd.DataFrame, policy: str) -> tuple[pd.DataFrame, int]:
@@ -174,7 +232,7 @@ def resolve_groups(samples: list[str], parse: dict, raw_dir: Path) -> tuple[dict
 
 
 # ------------------------------------------------------------------- kind: matrix
-def parse_matrix(raw_dir: Path, payload: str, parse: dict) -> tuple[pd.DataFrame, dict]:
+def parse_matrix(raw_dir: Path, payload: str, parse: dict, hmap: dict | None) -> tuple[pd.DataFrame, dict]:
     """Delimited genes x samples table -> (Ensembl x samples DataFrame, gene report)."""
     blob = raw_dir / f"{payload}.data"
     sep = parse.get("sep", "\t")
@@ -187,7 +245,7 @@ def parse_matrix(raw_dir: Path, payload: str, parse: dict) -> tuple[pd.DataFrame
     sample_cols = [c for c in df.columns if c != gene_col and c not in drop]
     mat = df[sample_cols].apply(pd.to_numeric, errors="coerce")
 
-    mapped, gene_report = harmonize_gene_ids(raw_ids, parse["gene_id_namespace"])
+    mapped, gene_report = harmonize_gene_ids(raw_ids, parse["gene_id_namespace"], hmap)
     mat.index = pd.Index(mapped, name="gene_id")
     n_unmapped_rows = mat.index.isna().sum()
     mat = mat[mat.index.notna()]
@@ -226,9 +284,10 @@ def run(config_path: Path, accession: str, out_expr: Path, out_sheet: Path,
 
     payload = parse["payload"]
     origin = load_origin(raw_dir, payload)
+    hmap = load_harmonization(cfg, parse["gene_id_namespace"])
 
     # --- parse the payload into an Ensembl x samples matrix ------------------
-    mat, gene_report = parse_matrix(raw_dir, payload, parse)
+    mat, gene_report = parse_matrix(raw_dir, payload, parse, hmap)
     all_samples = list(mat.columns)
 
     # --- expression scale: assert the declared scale against the observed data
@@ -280,11 +339,16 @@ def run(config_path: Path, accession: str, out_expr: Path, out_sheet: Path,
         "n_control": n_control,
         "both_arms_present": n_case >= 1 and n_control >= 1,
         "min_per_arm_ok": min(n_case, n_control) >= parse.get("min_per_arm", 2),
+        # fail-closed gene-identity guardrail: a deposit whose ids map too poorly to
+        # Ensembl (or are the wrong namespace) is NOT commensurable — mark ineligible
+        # rather than let a thin matrix reach the rank code as if comparable.
+        "gene_map_rate_ok": gene_report.get("map_rate_ok", True),
     }
     eligibility["eligible"] = (
         eligibility["both_arms_present"]
         and eligibility["min_per_arm_ok"]
         and all(cov_present.values())
+        and eligibility["gene_map_rate_ok"]
     )
 
     # --- write the uniform outputs ------------------------------------------
