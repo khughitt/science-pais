@@ -292,6 +292,9 @@ acquisition:
       raw_tar: {kind: tar, filename: "GSE251872_RAW.tar", bytes: 5027840,
                 url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE251nnn/GSE251872/suppl/GSE251872_RAW.tar",
                 sha256: "414b0ba8c24b48702b6358f703c16964373e22bedb6cd07322337bab3535fd35"}
+      soft: {kind: soft.gz, filename: "GSE251872_family.soft.gz", bytes: 5603,
+             url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE251nnn/GSE251872/soft/GSE251872_family.soft.gz",
+             sha256: "cb5beedeb180be88871f07e9927cdee5cc891c1c8443b1fba739666fb7cebd4e"}
   GSE143549:
     payloads:
       expr: {kind: txt.gz, filename: "GSE143549_Normalized_counts_CPM+0.0001_59_samples.txt.gz", bytes: 6518212,
@@ -612,11 +615,33 @@ parse:
       group_regex:
         - {pattern: "\\(QFS\\)", group: case}
         - {pattern: "\\(QS\\)", group: control}
-  GSE251872:                           # PI-ME/CFS RAW.tar (27 members)
+  GSE251872:                           # PI-ME/CFS RAW.tar (27 PBMC members); 2 seq platforms (batch)
     handler: tar
     payload: raw_tar
-    status: deferred
-    deferred_reason: "WP1b tranche (a): per-sample RAW.tar (27 GSM*_Walitt*.txt.gz) needs per-member merge + a metadata payload for group (12 cases vs 15 healthy) + platform batch covariate. Handler work alone does NOT PASS this (group is not in the tar)."
+    member_glob: "*.txt.gz"
+    member_gene_col: gene_id             # ENSG (fixed col name)
+    member_value_col: 2                  # per-file count column is named per-sample (S###) -> positional
+    member_agg: sum
+    sample_id_regex: "^(GSM[0-9]+)"      # GSM from filename; joins to SOFT `sample`
+    gene_id_namespace: ensembl
+    expression_scale: counts
+    case_label: case
+    control_label: control
+    de_model: gse251872_pimecfs          # ~ platform + group (stock_ok:false; WP2 model extension)
+    metadata_payload: soft               # series-matrix URL 404s (multi-platform) -> family SOFT
+    metadata_format: soft
+    group_source:
+      mode: sheet
+      file: soft_metadata.samples.tsv
+      sample_col: sample
+      # group is in the title: "..., HV, ..." (healthy volunteer) vs "..., PI-ME/CFS, ...".
+      # (sex 12M/15F is a coincidental count, NOT the group.) platform batch carried as a
+      # covariate for the ~ platform + group model.
+      group_regex_col: title
+      group_regex:
+        - {pattern: "PI-ME/CFS", group: case}
+        - {pattern: ", HV,", group: control}
+      covariate_cols: [platform]
   GSE63085:                            # Lyme/PTLDS RAW.tar (97 cufflinks members, PBMC); V5 = 6-mo post-treatment
     handler: tar
     payload: raw_tar
