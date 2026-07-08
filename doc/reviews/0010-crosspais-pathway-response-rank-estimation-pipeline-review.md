@@ -199,3 +199,30 @@ Overall **WARN** — a sound, honest design with no invalidating defect, but wit
 that should be closed before the WP0 workflow is built. Recommended path: address Findings A–C (and add the
 Finding D specificity test) as plan amendments, then re-review the amended Stage 3/5 before committing to
 staging.
+
+## Re-review (2026-07-08, post-amendment — plan commit `4776934` + consistency follow-up)
+
+The plan was amended to fold in Findings A–G. Re-checking the affected dimensions:
+
+| Finding | Status | Resolution in `plan:0010` |
+|---|---|---|
+| A — threshold-driven LC-out headline | **Resolved (procedurally)** | Fold-admissibility gate re-grounded to **K≥3 triggers only** (t116); `min_contrasts`/`min_platforms` demoted to reported **power covariates**; the binary "NON-IDENTIFIABLE" headline **withdrawn** and reframed as an admissible-but-low-power fold whose verdict is a **WP3 power/CI curve**. Residual is *execution*: WP3 must actually produce the curve; until then the ceiling is explicitly **provisional**, consistently across Readiness / Stage 3b / WP1-finding / AC. |
+| B — estimator ≠ t116 structural statistic | **Resolved** | New **Stage 3c** calibrates the battery against t116's generative model at the corpus K/N *before* any grid placement (Stage 5 hard-gated on it); the **t116 structural single-axis statistic** is carried as a confirmatory co-primary; new Key decision 6. Residual dependency: Stage 3c presumes interp-0037's generative model is re-implementable — reasonable, but a real WP3 prerequisite. |
+| C — compartment/composition confound | **Resolved** | **WB/PBMC-only primary** (G1); sorted-monocyte QFS held as a **separate compartment stratum**; three-pronged control (stratified R + drop-sorted + composition-adjusted R where deconvolution is valid) in the artifact battery and WP4. |
+| D — non-infectious GWS/FM read-across | **Resolved (scoped)** | New **WP4b**: a separate, identically-gated GWS/FM (±PACVS) specificity matrix, same uniform pipeline; open question #4 tracks deposit availability; note-only fallback if no admissible deposit (gates not relaxed). |
+| E — WP1 may be the deliverable | **Addressed** | Explicit **decision gate** in WP6 *after* the Finding A/B calibration, sequenced downstream of A (not independent of it). |
+| F — harmonization surface understated | **Addressed** | WP2 now carries a **per-deposit ingest contract** + a **same-tissue NES-comparability gate** before cross-compartment comparison is trusted. |
+| G — backlinks + rank-output manifest | **Addressed** | `consumed_by` backlinks + `datapackage.json` + per-estimator seeds are now WP0 DoD + AC items. |
+
+**New interaction surfaced by the re-review (Finding A × Finding C).** Making the primary matrix WB/PBMC-only
+(Finding C) removes the sorted-monocyte QFS deposit — the *only* Q-fever trigger — from the primary matrix,
+dropping the WB/PBMC strict-primary from 5 to **4 documented triggers** and the **LC-out fold to exactly 3
+triggers (PI-ME/CFS, Ebola, Lyme)** — right at the t116 K=3 identifiability floor. This *tightens* rather than
+breaks the low-power story (one fewer LC-out column), and the plan's Corpus / WP1-finding / Stage 3b arithmetic
+were reconciled to state it explicitly. It does mean the WB/PBMC LC-out fold is at the **minimum admissible K**,
+so the WP3 power curve is now doing even more load-bearing work — worth watching, not a defect.
+
+**Re-review disposition:** the three HIGH findings are **closed at the plan level**; what remains is genuinely
+*execution* (Stage 3c calibration, the WP3 LC-out power curve, WB/PBMC-only rank runs, a GWS/FM deposit
+search). No new blocking defect. The plan is ready for **WP0 workflow build** on the understanding that the
+provisional WP1 ceiling is not citable as settled until Stage 3c + the WP3 power curve land.

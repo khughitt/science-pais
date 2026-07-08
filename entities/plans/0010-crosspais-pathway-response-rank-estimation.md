@@ -209,10 +209,10 @@ per-deposit findings live in each `dataset:` entity). The result below is the **
 corpus — not the discovery-sweep guess. Two deposits demoted, one deferred, both floor-gated provisionals
 demoted; several `[UNVERIFIED]` specifics corrected.
 
-**Strict-primary matrix — WP1-verified, blood-bulk, downloadable per-sample matrix, ≥4 wk floor, documented trigger (~10 contrasts, 5 triggers):**
+**Strict-primary matrix — WP1-verified, blood-bulk, downloadable per-sample matrix, ≥4 wk floor, documented trigger.** WP1 finalized ~10 contrasts / 5 documented triggers; the post-review G1 amendment (Finding C) then moved sorted-monocyte QFS to a **separate compartment stratum**, so the **WB/PBMC primary matrix is 4 triggers** (LC, PI-ME/CFS, Ebola, Lyme), with QFS entering compartment-stratified R only:
 - Long COVID (6 matrix-ready): `gse226260-longcovid-pbmc` (≈46 LC vs rich convalescent+healthy controls; 2-platform batch — **strongest**), `gse270045-longcovid-mecfs-wholeblood` (19 LC+ME/CFS vs 17 healthy — **clean**), `scilifelab-28832492-longcovid-pbmc` (60 vs 50, controls are **infected-recovered** — scores well on G3; FigShare-API matrix), `gse251849-longcovid-pbmc-cognitive` (11 vs 12, small — subgroup n 5–7), plus two **heavy-caveat keeps**: `gse267625-longcovid-wholeblood` (matrix public but **no external control** — contrast must be built *within-cohort* in WP2; longitudinal), `gse228320-longcovid-wholeblood-pulmonary` (matrix public but the contrast is a **DLCO pulmonary-severity axis within ARDS survivors**, not fatigue-dominant LC — LOO-drop).
 - PI-ME/CFS (1): `gse251872-pime-cfs-pbmc` — **corrected to 12 cases vs 15 healthy** (the "17 vs 21" was total enrollment); bulk PBMC; 2 sequencing platforms → batch covariate.
-- Q-fever/QFS (1): `gse130353-qfs-cfs-monocytes` *(previously verified/staged; sorted monocytes)*.
+- Q-fever/QFS (1) — **compartment stratum, not primary** (post-review G1, Finding C): `gse130353-qfs-cfs-monocytes` *(previously verified/staged; **sorted monocytes** — held as a separate compartment stratum, no longer pooled into the WB/PBMC primary rank matrix; enters compartment-stratified R only).*
 - Post-Ebola (1): `gse143549-post-ebola-wholeblood` — 26 survivors vs 33, ~23 mo, downloadable CPM matrix.
 - Post-Lyme (1): `gse63085-post-lyme-pbmc` — clears the floor via the **V5 6-month** post-treatment arm; not PTLDS-symptom-selected (unselected timecourse).
 
@@ -234,13 +234,19 @@ CHIKGene Réunion (no resolvable public accession), Raijmakers QFS multi-omics (
 
 ## WP1 corpus-readiness finding (2026-07-08) — decision-relevant
 
-The finalized strict matrix is **~10 contrasts across 5 triggers, ~8 of them long COVID**, and **each
-non-LC trigger (PI-ME/CFS, QFS, Ebola, Lyme) contributes a single contrast** with no within-trigger
-replication. Removing long COVID leaves **~4 contrasts across 4 triggers**.
+The finalized strict matrix is **~10 contrasts across 5 documented triggers, ~8 of them long COVID**, and
+**each non-LC trigger (PI-ME/CFS, QFS, Ebola, Lyme) contributes a single contrast** with no within-trigger
+replication. **The post-review G1 amendment (Finding C) moves sorted-monocyte QFS to a separate compartment
+stratum**, so the **WB/PBMC primary matrix carries 4 triggers** (LC, PI-ME/CFS, Ebola, Lyme). Removing long
+COVID from the WB/PBMC primary therefore leaves **~3 contrasts across 3 triggers** (PI-ME/CFS, Ebola, Lyme).
 
 **Provisional, calibration-contingent — not a settled non-identifiability verdict (review Finding A).** The
-LC-out fold retains **4 triggers ≥ 3**, so under the re-grounded (t116-faithful) admissibility gate it is
-**admissible but low-power**, *not* "non-identifiable." The earlier "< ≥6-contrast floor → NON-IDENTIFIABLE"
+LC-out fold retains **3 triggers ≥ 3** — so under the re-grounded (t116-faithful) admissibility gate it is
+**still admissible, but now at the K=3 identifiability floor and even lower-power** (3 single-trigger columns),
+*not* "non-identifiable." (The QFS→stratum move under Finding C tightens, rather than breaks, the low-power
+story: it removes a fourth column from the LC-out fold, so the case that the WB/PBMC primary cannot *robustly*
+pin the rank once LC is removed is strengthened — but it remains a power/CI claim to be **shown** in WP3, not a
+structural impossibility.) The earlier "< ≥6-contrast floor → NON-IDENTIFIABLE"
 headline rested on the hand-set `min_contrasts=6` gate, which is **not `interpretation:0037`-grounded** (t116
 grounds arm count K≥3, not a contrast count) — so that binary verdict is **withdrawn** pending the Stage-3c
 calibration + the WP3 LC-out **power/CI curve**. The defensible statement today is weaker: *LC-out estimates a
@@ -338,16 +344,19 @@ leave-one-dataset-out (LODO) and leave-one-condition-out (LOCO) fold:
    leading shared subspace is stable (principal angle between full-corpus and fold subspaces below a
    config'd cutoff). **FAIL** iff an admissible fold moves R across the t116 regime boundary.
 3. **The long-COVID-out (LC-out) fold is a first-class, separately reported result** — not one fold among
-   many — because LC supplies ~8 of ~13 columns. Under the re-grounded gate LC-out retains **4 triggers ≥ 3 →
-   admissible**, so it is **not** declared "non-identifiable"; it is an **admissible-but-low-power** fold
-   (4 single-trigger columns, no within-trigger replication) whose verdict is read off a **power/CI curve**,
+   many — because LC supplies ~8 of ~13 columns. Under the re-grounded gate LC-out retains **≥ 3 triggers →
+   admissible** (WB/PBMC primary: PI-ME/CFS, Ebola, Lyme = 3, at the K=3 floor after QFS moves to the
+   compartment stratum per Finding C), so it is **not** declared "non-identifiable"; it is an
+   **admissible-but-low-power** fold (3 single-trigger columns, no within-trigger replication) whose verdict is
+   read off a **power/CI curve**,
    not a binary gate (review Finding A). If LC-out passes with a CI that stays inside one t116 regime, the
    low-rank conclusion is **robust**. If the LC-out parallel-analysis null band overlaps the observed leading
    eigenvalue, or the R CI spans the low/high regime boundary, the low-rank conclusion is labelled
    **conditional on long-COVID inclusion → hypothesis-generating, not q0050-grade** — the same demotion the
    two-matrix rule applies to sensitivity-only findings, but now **demonstrated by the fold's own power
    profile** rather than asserted from a hand-set contrast floor.
-4. **Rare-trigger-out folds** (Ebola-out, Lyme-out, QFS-out, PI-ME/CFS-out) retain all of LC and are
+4. **Rare-trigger-out folds** (Ebola-out, Lyme-out, PI-ME/CFS-out in the WB/PBMC primary; QFS-out applies to
+   the compartment-stratified estimate, not the WB/PBMC primary, per Finding C) retain all of LC and are
    typically admissible; a robust low-rank claim must **PASS every admissible rare-trigger-out fold**.
 
 Config lives in `config.yaml`, committed before any fold is scored, with each parameter's **role** explicit:
