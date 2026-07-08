@@ -9,14 +9,36 @@ believability criterion.
 - **Review:** `doc/reviews/0010-crosspais-pathway-response-rank-estimation-pipeline-review.md`
 - **Grounds:** `interpretation:0037` (t116 R-regime grid + the K≥3 identifiability lever)
 
-## Status: WP1 acquisition COMPLETE; WP1b+ parse/analysis stubbed
+## Status: WP1 acquisition COMPLETE; WP1b parse framework + tranche 1 DONE; WP2–WP6 stubbed
 
-`snakemake -n` resolves the complete **75-job** DAG. **WP1 acquisition is
-implemented and run** (download + checksum + universe build/verify); the remaining
-rule bodies (WP1b per-deposit parse, WP2–WP6) are fail-early stubs (`exit 1`, no
-silent placeholder output) until their work package implements them. `config.yaml`
-encodes **all** design parameters — it originates the design; scripts hard-code
-nothing.
+`snakemake -n` resolves the DAG (**68 jobs** remaining after WP1 + WP1b-tranche-1).
+**WP1 acquisition is implemented and run** (download + checksum + universe
+build/verify); **WP1b is implemented** as a config-driven, brutally-uniform
+per-deposit parser (`stage_matrix.py`) with **tranche 1 parsed + proven on real
+data**; the remaining rule bodies (WP1b tranches 2–6, WP2–WP6) are fail-early stubs
+(`exit 1`, no silent placeholder output) or `parse: deferred` HALTs naming their
+exact blocker. `config.yaml` encodes **all** design parameters — it originates the
+design; scripts hard-code nothing.
+
+**WP1b done (2026-07-08):**
+- **WP0 semantic wiring confirmed/completed** — sensitivity matrix nested (`strict`
+  + ME/CFS additions via `MATRIX_COMPOSITION`); `calibration_3c` depends on the real
+  assembled matrix/grouping/structural stats; per-contrast DE specs explicit in
+  `de_models`, each now declaring the exact `covariates` its sample sheet must carry.
+- **Uniform contract** (`code/scripts/stage_matrix.py`, config `parse:`) — every
+  deposit emits `expr.gene.tsv.gz` + `sample_sheet.tsv` + `clean.qa.pass` +
+  `stage_matrix.qa.json` (the per-deposit ingest contract; review Finding F).
+- **Tranche 1 proven** — `gse251849_lc` (62710 Ensembl × 23) + `scilifelab_lc`
+  (60669 × 110) parse to PASS; both are salmon/RSEM `estimated_counts` (continuous,
+  limma-only). **Gap surfaced:** most GEO deposits' case/control lives in
+  series-matrix/SOFT metadata not yet staged → their `parse:` block is
+  `status: deferred` naming the exact blocker (metadata payload / harmonization map).
+
+> **Naming:** `dataset:msigdb-2024-1-hs-hallmark-reactome-rank-universe` is the
+> **rank universe** — the Hallmark ∪ Reactome subset **derived from** the broader
+> clean base (`dataset:msigdb-2024-1-hs-mapped-pais-gene-set-universe`, which also
+> carries GO:BP). It is *not* "the full PAIS gene-set universe"; keep the distinction
+> so pathway-coverage claims are read against the rank universe, not the clean base.
 
 **WP1 done (2026-07-08):**
 - **Pinned + checksummed acquisition** — every GEO/FigShare deposit's raw payload
@@ -34,7 +56,7 @@ nothing.
   (reference hash HALT-guarded until first verified fetch).
 
 ```bash
-# dry-run — resolves the DAG (75 jobs)
+# dry-run — resolves the DAG (68 jobs remaining after WP1 + WP1b tranche 1)
 uv run --frozen snakemake -s code/workflows/t117-crosspais-rank/Snakefile -n all
 # WP1 acquisition + universe (implemented rules; runs in the current env)
 uv run --frozen snakemake -s code/workflows/t117-crosspais-rank/Snakefile -j4 \
@@ -56,7 +78,7 @@ the Stage-2 DE→enrichment reuses `code/scripts/fgsea_enrich.R` verbatim and
 | Stage (rule) | WP | Deliverable | Review finding wired in |
 |---|---|---|---|
 | `acquire_payload` · `acquire_deposit` · `build_universe` · `verify_universe` · salmon chain | WP1 ✅ | pinned+checksummed staging (done); single universe built+verified; SRA `quantify: salmon` wired | — |
-| `stage_matrix` (GEO) · `salmon_gene_matrix` (SRA) | WP1b | per-deposit parse of the verified raw payload → uniform gene matrix | F |
+| `stage_matrix` (GEO) · `salmon_gene_matrix` (SRA) | WP1b ✅ framework + tranche 1 | config-driven per-deposit parse → uniform expr + sheet + `clean.qa.pass` + `stage_matrix.qa.json`; `matrix` handler proven (gse251849, scilifelab); microarray/tar/salmon + deferred-metadata deposits named with exact blocker | F |
 | `limma_de` · `fgsea_enrich` · `assemble_matrix` | WP2 | pathway × contrast matrix over the one pinned universe; per-deposit ingest + NES-comparability | F |
 | `rank_battery` | WP3 | ≥3 rotation-invariant estimators + **t116 structural co-primary**; LODO/LOCO; **LC-out power curve** | A, B |
 | `calibration_3c` | WP3 | rank battery calibrated vs t116's generative model at real K/N; **gates grid** | B |

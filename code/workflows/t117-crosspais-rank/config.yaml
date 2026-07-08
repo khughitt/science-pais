@@ -363,6 +363,126 @@ salmon:
       accessions: []                    # WP1b: resolve the day-21 case/recovered subset from SRA BioSample attrs
       note: "decoy (chronification triangulation); run subset + case/control split deferred to WP1b (needs BioSample metadata)"
 
+# ------------------------------------------------------ parse (WP1b) ---------
+# review Finding F, pulled forward into WP1b: the EXECUTABLE per-deposit ingest
+# contract. One entry per GEO/FigShare deposit declaring how stage_matrix.py turns
+# its verified raw payload into the uniform expr + sample_sheet + QA. Fields:
+#   handler            matrix | series_matrix | soft | tar   (dispatch by payload kind)
+#   payload            which acquisition payload key to parse
+#   gene_id_namespace  ensembl | ensembl_versioned | symbol | refseq  (target = Ensembl gene)
+#   expression_scale   counts | cpm | fpkm | tpm | log2_intensity | log_mu  (ASSERTED vs data)
+#   duplicate_policy   sum | mean | max_total   (collapse rows sharing an Ensembl id)
+#   group_source       column_regex | companion | deferred   (sample -> group)
+#   case_label/control_label + min_per_arm + sheet_columns
+#   status: deferred + deferred_reason  -> stage_matrix HALTs naming the EXACT missing
+#     piece (a metadata payload not yet acquired, or a symbol/RefSeq->Ensembl map),
+#     so the contract is executable, never a fabricated case/control label.
+# Resolvable NOW from on-disk data (group derivable without extra metadata):
+# GSE251849 (col-name prefixes) + PXD-SCILIFELAB (companion SamplesPC.txt). The
+# rest are deferred with their blocker named; PRJNA1001790 is served by salmon_gene_matrix.
+parse:
+  GSE251849:                           # ENSG counts; group in the column-name prefix
+    handler: matrix
+    payload: expr
+    sep: "\t"
+    gene_id_col: 0
+    annotation_cols: []
+    gene_id_namespace: ensembl
+    expression_scale: estimated_counts
+    duplicate_policy: sum
+    case_label: case
+    control_label: control
+    min_per_arm: 2
+    sheet_columns: [sample, group]
+    group_source:
+      mode: column_regex               # 11 LongCOVID vs 12 (7 Control + 5 Convalescent), per plan "11 vs 12"
+      map:
+        - {pattern: "^LongCOVID", group: case}
+        - {pattern: "^Control", group: control}
+        - {pattern: "^Convalescent", group: control}   # pooled into control (plan corpus note)
+  PXD-SCILIFELAB-28832492:             # ENSG.version counts; group in companion SamplesPC.txt
+    handler: matrix
+    payload: expr
+    sep: "\t"
+    gene_id_col: 0
+    annotation_cols: [1]               # drop the gene_name column
+    gene_id_namespace: ensembl_versioned
+    expression_scale: estimated_counts
+    duplicate_policy: sum
+    case_label: case
+    control_label: control
+    min_per_arm: 2
+    sheet_columns: [sample, group]
+    group_source:
+      mode: companion
+      payload: samples
+      sep: "\t"
+      sample_col: SampleName
+      condition_col: Condition
+      level_map: {PAT: case, CTL: control}   # 60 PAT vs 50 CTL
+      covariate_cols: [Wave, Score, Dyspnoea]
+  # --- deferred: each names the EXACT blocker (metadata payload or harmonization map) ---
+  GSE226260:
+    handler: matrix
+    payload: expr
+    status: deferred
+    deferred_reason: "group not in expr header (cols are internal ids p22179-sNNN); needs GSE226260 series matrix for sample->LC/control + the platform batch covariate (de_model ~ platform + group)"
+  GSE270045:
+    handler: matrix
+    payload: expr
+    status: deferred
+    deferred_reason: "symbol->Ensembl map (gene ids are HGNC symbols, e.g. 5S_rRNA) AND a confirmed CCI/HP/S column-prefix->group mapping (19 LC+ME/CFS vs 17 healthy; prefixes ambiguous)"
+  GSE267625:
+    handler: matrix
+    payload: expr
+    status: deferred
+    deferred_reason: "no external control — WP2 must define the within-cohort contrast (subject + timepoint); needs per-sample longitudinal metadata"
+  GSE228320:
+    handler: matrix
+    payload: expr
+    status: deferred
+    deferred_reason: "continuous DLCO pulmonary-severity axis, not a two-arm contrast; needs per-sample DLCO values (series matrix) + a ~ dlco DE path"
+  GSE143549:
+    handler: matrix
+    payload: expr
+    status: deferred
+    deferred_reason: "gene ids are symbols (Gene Symbol/gene_name cols) needing a symbol->Ensembl map; survivor/control grouping needs the series matrix (cols are subject ids 101-NNNN-*-J0)"
+  GSE128078:
+    handler: matrix
+    payload: expr
+    status: deferred
+    deferred_reason: "RefSeq-isoform (NM_*) FPKM needing RefSeq-isoform->Ensembl-gene collapse; Sample_G<group>-<rep> -> case/control mapping unconfirmed; multi-timepoint collapse (WP2)"
+  GSE68310:
+    handler: matrix
+    payload: expr
+    status: deferred
+    deferred_reason: "Illumina microarray in wide AVG_Signal/Detection-Pval pairs needing probe->gene collapse + reshape; acute-influenza decoy (baseline vs day0-6), not a >=4wk contrast"
+  GSE16059:                            # metadata (diagnosis + twin pair) IS inline on disk
+    handler: series_matrix
+    payload: series_matrix
+    status: deferred
+    deferred_reason: "microarray series-matrix probe->gene collapse (collapse_probes.R) — WP1b tranche 2; group (unaffected/CFS/ICF) + pair (twin pair id) are resolvable inline"
+  GSE14577:                            # SOFT is on disk (t035 has parse_gse14577.py)
+    handler: soft
+    payload: soft
+    status: deferred
+    deferred_reason: "GEO SOFT microarray — reuse parse_gse14577.py + harmonize_gse14577.R (probe->gene, log2 intensity); group from Sample_characteristics — WP1b tranche 2"
+  GSE130353:                           # QFS stratum; t035 has extract_gse130353.py
+    handler: tar
+    payload: raw_tar
+    status: deferred
+    deferred_reason: "per-sample RAW.tar of MMSEQ (log_mu) — reuse extract_gse130353.py; needs the GSE130353_family.soft.gz payload (group from SOFT subject status, NOT filename) — add to acquisition"
+  GSE251872:                           # PI-ME/CFS RAW.tar (27 members)
+    handler: tar
+    payload: raw_tar
+    status: deferred
+    deferred_reason: "per-sample RAW.tar (27 GSM*_Walitt*.txt.gz) needing per-member merge + a metadata payload for group (12 cases vs 15 healthy) + platform batch covariate"
+  GSE63085:                            # Lyme RAW.tar (97 members, cufflinks timecourse)
+    handler: tar
+    payload: raw_tar
+    status: deferred
+    deferred_reason: "per-sample RAW.tar (97 GSM*_*_V<n>_cuff.txt.gz, FPKM timecourse V1-V5) needing per-member merge + the V5 6-mo post-treatment arm selection + a metadata payload for group"
+
 # ------------------------------------------------------ DE model contract ----
 # review Finding (2026-07-08): "reuse limma_de.R verbatim" is only valid for the
 # simple two-arm `~ group` contrasts. Several corpus contrasts need a DIFFERENT
@@ -374,40 +494,51 @@ salmon:
 # `design`/`block`/`coef` name the intended model; NES sign convention is fixed
 # (case − control, or increasing-severity for a continuous axis).
 de_models:
+  # `covariates` names the EXACT extra sample_sheet columns (beyond sample+group)
+  # this contrast's design needs. It is the contract WP1b parsers build the sheet
+  # against (stage_matrix records covariate coverage in contrast_eligibility), so
+  # the model spec is EXPLICIT here, not implied by the `~ group` stock script.
   default:
     design: "~ group"                 # two-arm case vs control
     coef: groupcase
+    covariates: []
     stock_ok: true
   # --- contrasts that DIVERGE from the stock two-arm model ---
   gse226260_lc:
     design: "~ platform + group"      # 2-platform batch → adjust platform
     coef: groupcase
+    covariates: [platform]            # sheet MUST carry a per-sample platform label
     stock_ok: false                   # stock script has no covariate term
     note: "2-platform batch covariate"
   gse251872_pimecfs:
     design: "~ platform + group"      # 2 sequencing platforms → adjust platform
     coef: groupcase
+    covariates: [platform]
     stock_ok: false
     note: "2 sequencing platforms (batch)"
   gse16059_mecfs:
     design: "~ group"                 # discordant MZ twins
     block: pair                       # duplicateCorrelation on twin-pair id
     coef: groupcase
+    covariates: [pair]                # sheet MUST carry the twin-pair id
     stock_ok: false                   # stock script does not model within-pair correlation
     note: "44 discordant MZ twin pairs — paired/blocked design"
   gse267625_lc:
     design: "within-cohort"           # no external control; contrast built within-cohort
     coef: TODO-WP2-define             # e.g. symptomatic-timepoint vs recovered-timepoint
+    covariates: [subject, timepoint]  # within-cohort contrast needs subject + timepoint
     stock_ok: false
     note: "no external control — WP2 must define the within-cohort contrast (longitudinal)"
   gse228320_lc:
     design: "~ dlco"                  # DLCO pulmonary-severity CONTINUOUS axis, not case/control
     coef: dlco
+    covariates: [dlco]                # sheet MUST carry the continuous DLCO value
     stock_ok: false                   # continuous predictor, not a two-group factor
     note: "severity-axis (continuous DLCO), LOO-drop; NES = increasing-severity direction"
   gse128078_mecfs:
     design: "~ group"                 # multi-timepoint → collapse to one contrast per subject first
     coef: groupcase
+    covariates: [subject, timepoint]  # needed to collapse to one contrast per subject
     stock_ok: true                    # stock model OK AFTER WP2 timepoint collapse
     note: "multi-timepoint — one-contrast-per-subject collapse upstream of limma"
 

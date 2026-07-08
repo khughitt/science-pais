@@ -483,6 +483,42 @@ grid bridge is validated, not assumed.
   parse (`stage_matrix`, WP1b) turning each verified raw payload into the uniform gene matrix + sample sheet
   + QA. **No downstream WP (2+) runs until WP1b closes.**
 
+### WP1b — Per-deposit parse → the uniform expression contract — *framework + tranche 1 DONE 2026-07-08*
+The executable form of **review Finding F** (per-deposit ingest contract), pulled forward from WP2 so the
+downstream matrix builds on a real contract, not an assumption.
+- **WP0 semantic wiring confirmed/completed first (the pre-parse gate):** (a) the sensitivity rank matrix is
+  **nested** — `MATRIX_COMPOSITION` composes it as *strict columns + the 3 ME/CFS additions* (12 cols), not an
+  ME/CFS-only matrix; (b) `calibration_3c` depends on the **real** assembled strict matrix + grouping + structural
+  stats (it cannot "pass" independent of the observed matrix and still unlock the grid); (c) the per-contrast DE
+  model specs are **explicit** in `de_models`, and each now declares the exact `covariates` (platform / pair /
+  dlco / subject+timepoint) the sample sheet must carry — so parsers build the right sheet, not a `~ group` default.
+- **Brutally uniform output contract (`code/scripts/stage_matrix.py`, config `parse:` block):** every deposit
+  emits exactly `expr.gene.tsv.gz` (Ensembl-gene × retained samples) + `sample_sheet.tsv` (sample, group, +
+  declared covariates) + `clean.qa.pass` + `stage_matrix.qa.json`. The QA json is the per-deposit ingest
+  contract: source payload (hash/url/kind), parser + handler, gene-id namespace (source → Ensembl, version-strip,
+  duplicates collapsed + policy), expression scale (declared vs observed, `continuous_only` flag), samples
+  retained/dropped + reasons + per-group counts, duplicate handling, and contrast eligibility (arms + de_model
+  covariate coverage). Fail-early: an unresolved namespace / scale mismatch / missing group source / uncovered
+  covariate HALTs — never a fabricated label or partial output.
+- **Tranche 1 parsed + PROVEN on real data (`matrix` handler):** `gse251849_lc` (62710 Ensembl genes × 23; 11
+  LongCOVID vs 12 pooled Control+Convalescent; group from column-name prefixes) and `scilifelab_lc` (60669 × 110;
+  60 PAT vs 50 CTL; group from the companion `SamplesPC.txt`). Both surfaced that the depositor "counts" are
+  **salmon/RSEM estimated counts** (fractional, ~78–85% integer) → a distinct `estimated_counts` scale class
+  (continuous, limma-only), the same imprecise-label nuance t035's G2 check caught for MMSEQ `log_mu`.
+- **Metadata-payload gap (decision-relevant finding):** for **most** GEO deposits the case/control mapping is
+  **not in the expression supplement** that WP1 staged — it lives in the GEO **series-matrix / SOFT** metadata,
+  which was not acquired. Each such deposit's `parse:` block is `status: deferred` naming its **exact** blocker
+  (a metadata payload to add to acquisition, or a symbol/RefSeq→Ensembl harmonization map), so Finding F is an
+  executable contract, not a guess. Remaining WP1b tranches: **(2)** add the missing GEO series-matrix/SOFT
+  metadata payloads to `acquisition` (re-pin hashes) so the deferred RNA-seq deposits (`gse226260`, `gse228320`,
+  `gse267625`) resolve; **(3)** symbol/RefSeq→Ensembl harmonization map for `gse270045`/`gse143549`/`gse128078`;
+  **(4)** microarray handlers (`series_matrix`, `soft` — reuse `collapse_probes.R` / `parse_gse14577.py`) for
+  `gse16059`/`gse14577`; **(5)** per-sample `tar` handler (reuse `extract_gse130353.py`) for
+  `gse130353`/`gse251872`/`gse63085`; **(6)** the salmon/CHIKV decoy quant path (`salmon_gene_matrix`).
+- **DoD:** every deposit has an executable `parse:` contract; each admitted deposit produces the 4 uniform
+  outputs with a PASS `stage_matrix.qa.json`; each deferred deposit HALTs naming its blocker. **No WP (2+) runs
+  until every strict/sensitivity contrast is parsed (or explicitly demoted).**
+
 ### WP2 — Uniform DE→enrichment → pathway × contrast matrix
 - Run Stage-2 machinery over all admitted contrasts on the pinned universe; emit the matrix + per-contrast
   QA. Longitudinal/paired one-contrast-per-unit policy applied.

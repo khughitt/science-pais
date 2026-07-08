@@ -309,22 +309,36 @@ rule salmon_gene_matrix:
         stub("salmon_gene_matrix {wildcards.accession} (tximport; deferred to WP1b)")
 
 # --- WP1b: per-deposit parse of the verified raw payload → uniform gene matrix -
-# Acquisition (above) is COMPLETE. Turning each heterogeneous raw payload (counts
-# csv/tsv, RAW.tar of per-sample files, microarray series-matrix / SOFT) into the
-# uniform expr + sample-sheet + QA contract is a per-deposit parser that reads
-# `<payload>.origin.json` to dispatch by `kind`. One stub per GEO/FigShare deposit
-# until WP1b/WP2 implements each; the salmon accession is served by the rule above.
+# Acquisition (above) is COMPLETE. `stage_matrix.py` turns each heterogeneous raw
+# payload (counts csv/tsv, RAW.tar of per-sample files, microarray series-matrix /
+# SOFT) into the BRUTALLY UNIFORM expr + sample-sheet + QA contract, driven ENTIRELY
+# by the deposit's `parse:` block in config (ingest contract) + its `de_models` entry
+# (the covariate columns the sheet must carry). It reads `<payload>.origin.json` for
+# provenance and dispatches by the declared `handler`. Deferred deposits HALT naming
+# their exact blocker (metadata payload / harmonization map) — never a fabricated
+# label. The extra `stage_matrix.qa.json` is the executable per-deposit ingest
+# contract (review Finding F). The salmon accession is served by salmon_gene_matrix.
 rule stage_matrix:
     input:
         staged=f"{RAW}/{{accession}}/staged.ok",
+        script=f"{SCRIPTS}/stage_matrix.py",
+        srclib=ancient(f"{SCRIPTS}/acquire_common.py"),
+        config=CONFIGFILE,
     output:
         expr=f"{PROC}/{{accession}}/expr.gene.tsv.gz",
         sheet=f"{PROC}/{{accession}}/sample_sheet.tsv",
+        qa_json=f"{PROC}/{{accession}}/stage_matrix.qa.json",
         qa=f"{PROC}/{{accession}}/clean.qa.pass",
     wildcard_constraints:
         accession="|".join(GEO_ACCESSIONS),
+    log:
+        f"{RES}/logs/stage_matrix/{{accession}}.log",
+    conda:
+        "../envs/py.yaml"
     shell:
-        stub("stage_matrix {wildcards.accession} (WP1b per-deposit parse of the verified raw payload)")
+        "python {input.script} --config {input.config} --accession {wildcards.accession} "
+        "--out-expr {output.expr} --out-sheet {output.sheet} --out-qa {output.qa_json} "
+        "--qa-pass {output.qa} > {log} 2>&1"
 
 # =============================================================================
 # WP2 — uniform DE -> enrichment over the ONE pinned universe. fgsea_enrich.R is
