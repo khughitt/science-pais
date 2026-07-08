@@ -9,7 +9,7 @@ believability criterion.
 - **Review:** `doc/reviews/0010-crosspais-pathway-response-rank-estimation-pipeline-review.md`
 - **Grounds:** `interpretation:0037` (t116 R-regime grid + the K≥3 identifiability lever)
 
-## Status: WP1 acquisition COMPLETE; WP1b parse framework + tranches 1/(b)/(c)/(a)/(a2 tar trio) DONE; WP2–WP6 stubbed
+## Status: WP1 acquisition COMPLETE; WP1b parse framework + tranches 1/(b)/(c)/(a)/(a2 tar trio)/(a-rest) DONE — 11 deposits PASS; WP2–WP6 stubbed
 
 `snakemake -n` resolves the DAG (**68 jobs** remaining after WP1 + WP1b-tranche-1).
 **WP1 acquisition is implemented and run** (download + checksum + universe
@@ -83,10 +83,27 @@ design; scripts hard-code nothing.
   scale check now tests the real invariant (non-negative + count magnitude), not an
   integer-fraction proxy that wrongly rejects heavily-fractional EM matrices
   (tranche-1 `gse251849`/`scilifelab` re-verified unchanged).
-  > **Still deferred (need more than series metadata):** `gse226260` (2 platforms →
-  > internal-id linking + platform batch), `gse267625` (within-cohort, no external
-  > control → WP2 model), `gse228320` (continuous DLCO axis → `~ dlco` model),
-  > `gse143549` (gene-id-blocked, deprioritized).
+- **Tranche (a-rest) — deposits needing MORE than series metadata DONE** (2026-07-08).
+  Investigation corrected the catalog's premises (Explicit > Defensive); 2 now **PASS**,
+  1 stays deferred with a sharpened blocker:
+  `gse226260` (LC, PBMC) — **CATALOG CORRECTED**: the combined expr matrix is
+  **single-platform** (all 228 cols GPL24676; the catalogued "2-platform batch" made the
+  `~ platform + group` model degenerate) and mixes the PASC cohort with a **disjoint
+  142-sample acute-severity cohort** (dropped). Group + subject/timepoint from the family
+  SOFT (`parse_geo_soft`; 2-platform → plain series-matrix 404s), join = `title`. Staged
+  **PASC vs NOPASC → 24203 ENSG × 86 (72 / 14 = 28 vs 8 subjects)**, de_model `~ group`
+  (no platform term), subject+timepoint carried for the WP2 collapse; control =
+  infected-nonPASC-convalescent (small arm). `gse228320` (LC, WB) — **CATALOG
+  CORRECTED**: titles carry a **binary control/sequela** label (not continuous-only), so
+  staged as **control vs sequela → 60683 ENSG × 50 (18 / 32)** on the stock `~ group`;
+  continuous DLCO carried in the sheet for a later severity-axis sensitivity. The expr id
+  `MC1_N` is embedded in the free-text title, handled by a new optional
+  **`sample_col_regex`** join-key extractor (leaves the original column intact so the same
+  title still yields the group).
+  > **Still deferred (sharpened):** `gse267625` — deposited metadata has **no
+  > case/control or symptom label** (only subject `AA*`/`VV*` prefix + timepoint,
+  > all WT/untreated); the within-cohort contrast needs the **paper** to define it, not a
+  > metadata-only prefix guess. `gse143549` — gene-id-blocked (56% < 0.60), deprioritized.
 - **Tranche (a2) — per-sample `tar` trio DONE** (`parse_tar` in `stage_matrix.py` +
   `parse_geo_soft.py`, config `handler: tar`). Each RAW.tar member is one sample: its
   `(member_gene_col, member_value_col)` — name OR positional index — becomes that

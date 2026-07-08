@@ -483,7 +483,7 @@ grid bridge is validated, not assumed.
   parse (`stage_matrix`, WP1b) turning each verified raw payload into the uniform gene matrix + sample sheet
   + QA. **No downstream WP (2+) runs until WP1b closes.**
 
-### WP1b — Per-deposit parse → the uniform expression contract — *framework + tranches 1/(b)/(c)/(a)/(a2 tar trio) DONE 2026-07-08*
+### WP1b — Per-deposit parse → the uniform expression contract — *framework + tranches 1/(b)/(c)/(a)/(a2 tar trio)/(a-rest) DONE 2026-07-08 — 11 deposits PASS; only (d) salmon + gse267625/gse143549 remain*
 The executable form of **review Finding F** (per-deposit ingest contract), pulled forward from WP2 so the
 downstream matrix builds on a real contract, not an assumption.
 - **WP0 semantic wiring confirmed/completed first (the pre-parse gate):** (a) the sensitivity rank matrix is
@@ -601,11 +601,35 @@ downstream matrix builds on a real contract, not an assumption.
   - **`gse128078` (ME/CFS sensitivity, WB):** join = `title`; group = `disease_state` (ME/CFS/Control);
     subject+timepoint carried as covariates for the WP2 timepoint collapse. **PASS: 22424 genes × 99 samples
     (55/44 = 14 ME/CFS vs 11 control subjects), RefSeq 90%. SENSITIVITY-ONLY** (FPKM `scale_caveat`).
-- **Remaining WP1b tranches:** **(a-rest)** the deposits that need MORE than series metadata — `gse226260`
-  (2 platforms → internal-id linking + platform batch), `gse267625` (within-cohort, no external control → WP2
-  model), `gse228320` (continuous DLCO → `~ dlco` model), `gse143549` (gene-id-blocked, deprioritized); **(d)** the
-  salmon/CHIKV decoy quant path (`salmon_gene_matrix`). Priority per the reviewer: **b → c → a** (b, c, a
-  series-matrix pair, a2 tar trio all DONE; only (a-rest) + (d) remain).
+- **Tranche (a-rest) — the deposits needing MORE than series metadata (DONE 2026-07-08):** investigation showed
+  the catalog's premises were wrong for all three; corrected in the SAME tranche (Explicit > Defensive). Two now
+  **PASS**, one stays deferred with a sharpened blocker:
+  - **`gse226260` (LC, PBMC) — CATALOG CORRECTED, PASS:** first catalogued as "2-platform, ≈46 LC vs rich
+    controls, strongest". On inspection the combined expr matrix is **single-platform** (all 228 cols GPL24676;
+    the 103 GPL34284 samples are ABSENT — the `~ platform + group` model was degenerate) and mixes the **PASC
+    cohort (86 samples)** with a **disjoint 142-sample acute-severity cohort** (no `pasc status` → dropped).
+    Group + subject/timepoint come from the **family SOFT** (2-platform → the plain series-matrix URL 404s), via
+    `parse_geo_soft`; join = `title` (== expr col). Staged as **PASC vs NOPASC** (`level_map`): **24203 ENSG ×
+    86 (72 PASC / 14 NOPASC = 28 vs 8 SUBJECTS)**. de_model corrected to `~ group` (no platform term) with
+    subject+timepoint carried for the WP2 one-contrast-per-subject collapse. **control_type =
+    infected-nonPASC-convalescent** (NOT rich/healthy); SMALL control arm flagged. (Gene space: 17345 rows carry
+    a BLANK id — unlabeled features, unmappable → dropped; hence the soft map_rate 0.58, not a symbol-lookup fail.)
+  - **`gse228320` (LC, WB) — CATALOG CORRECTED, PASS:** first catalogued continuous-`~ dlco`-only. Titles
+    actually carry a **binary `control`/`sequela`** label AND continuous DLCO. Staged as the **two-arm
+    control-vs-sequela** column (stock `~ group`); DLCO carried in the sheet for a **later severity-axis
+    sensitivity**, not the primary contrast (per user decision — keep the primary matrix in the case/control
+    contract, don't block on continuous-design machinery). The expr id `MC1_N` is EMBEDDED in the free-text title,
+    so `stage_matrix` grew an optional **`sample_col_regex`** join-key extractor (leaves the original column intact
+    so the same title still supplies the group). **60683 ENSG × 50 (18 sequela / 32 control).**
+  - **`gse267625` (LC, WB) — STAYS DEFERRED (sharpened blocker):** the deposited metadata carries **NO
+    case/control or symptom label** — only subject id (`AA*`/`VV*` prefix), timepoint (3 mnd / 12 mnd), all
+    WT/untreated. A within-cohort contrast cannot be defined without inferring phenotype from an unlabeled prefix
+    (an artifact risk). Deferred until the **GSE267625 publication** is read as a deliberate contrast-definition
+    step — not a metadata-only guess. `gse143549` remains gene-id-blocked (56% < 0.60), deprioritized.
+- **Remaining WP1b tranche:** only **(d)** the salmon/CHIKV decoy quant path (`salmon_gene_matrix`: index build +
+  FASTQ retrieval + day-21 run/group split) + `gse267625` (pending its paper) + `gse143549` (gene-id). Priority per
+  the reviewer was **b → c → a**; b, c, a series-matrix pair, a2 tar trio, and a-rest are all DONE — **11 deposits
+  now PASS the uniform contract** (326 case / 258 control across 5 expression scales; see the reconciliation).
 - **DoD:** every deposit has an executable `parse:` contract; each admitted deposit produces the 4 uniform
   outputs with a PASS `stage_matrix.qa.json`; each deferred deposit HALTs naming its blocker. **No WP (2+) runs
   until every strict/sensitivity contrast is parsed (or explicitly demoted).**

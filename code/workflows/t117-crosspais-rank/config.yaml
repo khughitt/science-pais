@@ -101,8 +101,9 @@ contrasts:
     platform: rnaseq
     onset_certainty: documented
     matrix: strict
-    control_type: convalescent+healthy
-    note: "≈46 LC vs rich controls; 2-platform batch — strongest"
+    control_type: infected-nonPASC-convalescent   # CORRECTED: NOPASC convalescent only, NOT rich/healthy
+    loo_flag: small-control-longitudinal
+    note: "CORRECTED (a-rest): PASC vs NOPASC = 28 vs 8 SUBJECTS (72 vs 14 samples), longitudinal (WP2 collapse). SINGLE-platform in expr (not the 2-platform batch first catalogued). Combined matrix also holds a disjoint 142-sample acute-severity cohort (dropped). Small control arm."
   gse270045_lc:
     accession: GSE270045
     trigger: sars-cov-2
@@ -148,9 +149,9 @@ contrasts:
     platform: rnaseq
     onset_certainty: documented
     matrix: strict
-    control_type: severity-axis
-    loo_flag: pulmonary-severity-axis
-    note: "DLCO pulmonary-severity axis within ARDS survivors — LOO-drop"
+    control_type: post-covid-recovered            # CORRECTED: binary control (recovered) vs sequela
+    loo_flag: dlco-severity-axis-available
+    note: "CORRECTED (a-rest): staged as BINARY control vs sequela (18 sequela / 32 control), whole blood post-COVID-19. Continuous DLCO carried in the sheet for a later severity-axis sensitivity, not the primary contrast."
   gse251872_pimecfs:
     accession: GSE251872
     trigger: pi-mecfs
@@ -264,6 +265,9 @@ acquisition:
       expr: {kind: csv.gz, filename: "GSE226260_combined.ExprData.updated.csv.gz", bytes: 7512041,
              url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE226nnn/GSE226260/suppl/GSE226260_combined.ExprData.updated.csv.gz",
              sha256: "741fc96681a1d8b96c785a740c8f6d63bac8ea39d68a82324c13690011aa0c29"}
+      soft: {kind: soft.gz, filename: "GSE226260_family.soft.gz", bytes: 23947,  # WP1b(a-rest): group (pasc status) + subject/timepoint metadata; 2-platform -> plain series-matrix URL 404s, family SOFT carries all samples
+             url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE226nnn/GSE226260/soft/GSE226260_family.soft.gz",
+             sha256: "fb6fb9406ea90af888ae0d9ab7b4e48fd9973a713d60239b57e8e6b42cce1d72"}
   GSE270045:
     payloads:
       expr: {kind: tsv.gz, filename: "GSE270045_LC_counts.tsv.gz", bytes: 2516221,
@@ -287,6 +291,9 @@ acquisition:
       expr: {kind: txt.gz, filename: "GSE228320_Raw_counts.txt.gz", bytes: 1763745,
              url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE228nnn/GSE228320/suppl/GSE228320_Raw_counts.txt.gz",
              sha256: "407226d486ddbbf81cb1cd5bba886b0fca1cbcfaa8748799c12533b64d929642"}
+      series_matrix: {kind: series_matrix.txt.gz, filename: "GSE228320_series_matrix.txt.gz", bytes: 5899,  # WP1b(a-rest): binary control/sequela group (in title) + DLCO covariate; expr col MC1_N is embedded in the title
+                      url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE228nnn/GSE228320/matrix/GSE228320_series_matrix.txt.gz",
+                      sha256: "0a8d3d81780a65e506f3fadf342d9d725b1a85e0bf45fcb820735e8c3d066d2f"}
   GSE251872:
     payloads:
       raw_tar: {kind: tar, filename: "GSE251872_RAW.tar", bytes: 5027840,
@@ -461,11 +468,36 @@ parse:
       level_map: {PAT: case, CTL: control}   # 60 PAT vs 50 CTL
       covariate_cols: [Wave, Score, Dyspnoea]
   # --- deferred: each names the EXACT blocker (metadata payload or harmonization map) ---
-  GSE226260:
+  GSE226260:                            # PASS (WP1b-a-rest): PASC vs NOPASC; group + subject/timepoint from the family SOFT
     handler: matrix
     payload: expr
-    status: deferred
-    deferred_reason: "group not in expr header (cols are internal ids p22179-sNNN); needs GSE226260 series matrix for sample->LC/control + the platform batch covariate (de_model ~ platform + group)"
+    metadata_payload: soft               # 2-platform -> plain series-matrix 404s; family SOFT carries all samples
+    metadata_format: soft                # parse via parse_geo_soft (not the series-matrix parser)
+    sep: ","
+    gene_id_col: 0
+    annotation_cols: []
+    gene_id_namespace: ensembl           # bare ENSG
+    expression_scale: counts             # 100% integer "read count matrix" (SOFT: supplementary = read count matrix)
+    duplicate_policy: sum
+    case_label: case
+    control_label: control
+    min_per_arm: 2
+    sheet_columns: [sample, group, subject, timepoint]
+    group_source:
+      mode: sheet
+      file: soft_metadata.samples.tsv    # produced by parse_geo_soft from the staged family SOFT
+      sep: "\t"
+      sample_col: title                  # !Sample_title == the expr column header (p22179-sNNN_...)
+      condition_col: pasc_status         # `pasc status: PASC | NOPASC` characteristic
+      # PASC (long COVID) vs NOPASC (infected, non-PASC convalescent control). The 142
+      # acute-severity samples in the SAME combined matrix carry NO `pasc status` (only
+      # `pasc severity`) -> unmapped -> DROPPED here (they are an acute-severity cohort,
+      # not the LC contrast). Contrast is 72 PASC vs 14 NOPASC samples = 28 vs 8 SUBJECTS.
+      level_map: {PASC: case, NOPASC: control}
+      covariate_cols:                    # longitudinal: carry subject+timepoint so WP2 collapses to one contrast/subject
+        - {col: subject_id, as: subject}
+        - {col: timepoint, as: timepoint}
+    note: "CATALOG CORRECTED (a-rest): single-platform in the expr matrix (all 228 cols GPL24676; the 103 GPL34284 samples are ABSENT — no platform batch), combined matrix mixes the PASC cohort (86 samples) with a disjoint 142-sample acute-severity cohort (dropped). control_type = infected-nonPASC-convalescent (NOT rich/healthy controls). SMALL control arm (8 subjects). Longitudinal -> WP2 one-contrast-per-subject collapse BEFORE limma (de_models.gse226260_lc stock_ok AFTER collapse). Gene space: 24203 labeled ENSG retained; the matrix ALSO carries 17345 rows with a BLANK gene id (9511 non-zero) — unlabeled/unannotated features that cannot be mapped, so dropped (this is why reconciliation soft-warns map_rate 0.58; it is unlabeled rows, not failed symbol lookups)."
   GSE270045:                           # PASS (WP1b-a): gene-id via symbol map (83%); group from the staged series matrix
     handler: matrix
     payload: expr
@@ -494,12 +526,39 @@ parse:
     handler: matrix
     payload: expr
     status: deferred
-    deferred_reason: "no external control — WP2 must define the within-cohort contrast (subject + timepoint); needs per-sample longitudinal metadata"
-  GSE228320:
+    deferred_reason: "DEFERRED (a-rest, sharpened): the deposited metadata carries NO case/control or symptom label — only subject id (AA*/VV* prefix), timepoint (3 mnd vs 12 mnd), all genotype=WT / treatment=none. The within-cohort contrast (what AA vs VV means; whether 3->12mo is a recovery axis) CANNOT be defined from deposited metadata without inferring phenotype from an unlabeled prefix (an artifact risk). Requires reading the GSE267625 publication as a deliberate contrast-definition step (then a defensible label), NOT a metadata-only guess."
+  GSE228320:                            # PASS (WP1b-a-rest): binary control vs sequela; DLCO carried for sensitivity
     handler: matrix
     payload: expr
-    status: deferred
-    deferred_reason: "continuous DLCO pulmonary-severity axis, not a two-arm contrast; needs per-sample DLCO values (series matrix) + a ~ dlco DE path"
+    metadata_payload: series_matrix      # single series matrix; carries group (in title) + DLCO
+    metadata_format: series_matrix       # parse via parse_geo_metadata
+    sep: "\t"
+    gene_id_col: 0
+    annotation_cols: []
+    gene_id_namespace: ensembl           # bare ENSG
+    expression_scale: counts             # 100% integer, non-negative (filename "Raw_counts")
+    duplicate_policy: sum
+    case_label: case
+    control_label: control
+    min_per_arm: 2
+    sheet_columns: [sample, group, dlco, sex]
+    group_source:
+      mode: sheet
+      file: series_metadata.samples.tsv  # produced by parse_geo_metadata from the staged series_matrix
+      sep: "\t"
+      # the expr column id (MC1_N) is EMBEDDED in the free-text title
+      # ("WB, post-COVID-19, sequela MC1_7") — extract it for the join; the SAME title
+      # also carries the control/sequela group label (group_regex_col below).
+      sample_col: title
+      sample_col_regex: "(MC1_[0-9]+)"
+      group_regex_col: title             # 18 sequela (case) vs 32 control
+      group_regex:
+        - {pattern: "sequela", group: case}
+        - {pattern: "control", group: control}
+      covariate_cols:                    # DLCO carried for a LATER continuous sensitivity (not in the primary ~ group model)
+        - {col: dlco_of_predicted, as: dlco}
+        - {col: sex, as: sex}
+    note: "CATALOG CORRECTED (a-rest): titles carry a BINARY control/sequela label (not continuous-only as first catalogued). Staged as the two-arm control-vs-sequela column; continuous DLCO is carried in the sheet for a later severity-axis sensitivity, NOT the primary contrast."
   GSE143549:                           # gene-id map FAILS the guardrail (56% < 0.60) -> ineligible even before group
     handler: matrix
     payload: expr
@@ -709,11 +768,11 @@ de_models:
     stock_ok: true
   # --- contrasts that DIVERGE from the stock two-arm model ---
   gse226260_lc:
-    design: "~ platform + group"      # 2-platform batch → adjust platform
+    design: "~ group"                 # CORRECTED: single-platform in expr (no platform term); PASC vs NOPASC
     coef: groupcase
-    covariates: [platform]            # sheet MUST carry a per-sample platform label
-    stock_ok: false                   # stock script has no covariate term
-    note: "2-platform batch covariate"
+    covariates: [subject, timepoint]  # longitudinal: needed to collapse to one contrast per subject
+    stock_ok: true                    # stock model OK AFTER WP2 timepoint collapse (like gse128078)
+    note: "CORRECTED (a-rest): the first-catalogued `~ platform + group` was wrong — the expr matrix is single-platform (platform term degenerate). PASC vs NOPASC, multi-timepoint -> one-contrast-per-subject collapse upstream of limma. Small control arm (8 subjects)."
   gse251872_pimecfs:
     design: "~ platform + group"      # 2 sequencing platforms → adjust platform
     coef: groupcase
@@ -734,11 +793,11 @@ de_models:
     stock_ok: false
     note: "no external control — WP2 must define the within-cohort contrast (longitudinal)"
   gse228320_lc:
-    design: "~ dlco"                  # DLCO pulmonary-severity CONTINUOUS axis, not case/control
-    coef: dlco
-    covariates: [dlco]                # sheet MUST carry the continuous DLCO value
-    stock_ok: false                   # continuous predictor, not a two-group factor
-    note: "severity-axis (continuous DLCO), LOO-drop; NES = increasing-severity direction"
+    design: "~ group"                 # CORRECTED: binary control vs sequela (title carries the label)
+    coef: groupcase
+    covariates: []                    # DLCO is carried in the sheet for a later sensitivity, NOT required by the primary model
+    stock_ok: true                    # stock two-arm model suffices
+    note: "CORRECTED (a-rest): staged binary control-vs-sequela (stock `~ group`). Continuous DLCO available in the sheet for a later `~ dlco` severity-axis sensitivity (would need the continuous-design extension then, not now)."
   gse128078_mecfs:
     design: "~ group"                 # multi-timepoint → collapse to one contrast per subject first
     coef: groupcase

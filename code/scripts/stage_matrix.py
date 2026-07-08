@@ -264,7 +264,9 @@ def _groups_from_table(df: pd.DataFrame, gs: dict) -> tuple[dict, dict, dict]:
     Shared by `companion` (raw metadata payload) and `sheet` (a processed samples table
     — the microarray chain OR a parse_geo_metadata series-matrix sheet). The join key is
     `sample_col` (the metadata column whose values ARE the expr column names — often
-    differs from the GSM `sample` column, e.g. GSE270045 joins on `sample_id`). Raw
+    differs from the GSM `sample` column, e.g. GSE270045 joins on `sample_id`); an
+    optional `sample_col_regex` extracts the expr id from a free-text `sample_col` when
+    the two are not identical (e.g. GSE228320 title "..., sequela MC1_7" -> "MC1_7"). Raw
     condition -> contrast arm is applied HERE (stage_matrix is the sole place that maps
     condition -> arm), never in the parser, via EITHER:
       * `condition_col` + `level_map`   exact map of a characteristic (disease_state)
@@ -278,6 +280,29 @@ def _groups_from_table(df: pd.DataFrame, gs: dict) -> tuple[dict, dict, dict]:
     if key not in df.columns:
         halt(f"metadata join column '{key}' absent (has {list(df.columns)})")
     covs = _covariate_spec(gs, list(df.columns))
+
+    # optional: the expr-matching sample id is EMBEDDED in a free-text metadata column
+    # (e.g. GSE228320 title "WB, post-COVID-19, sequela MC1_7" -> the expr column "MC1_7").
+    # `sample_col_regex` extracts group(1) from `sample_col` into a DERIVED join key without
+    # disturbing the original column — which may ALSO carry the group signal (group_regex_col
+    # == sample_col == title). A row whose value has no match becomes non-joinable (dropped),
+    # so a mis-declared pattern shows up as an empty arm, not a silent mis-join.
+    join_key_col = key
+    n_regex_unmatched = 0
+    if gs.get("sample_col_regex"):
+        import re
+        krx = re.compile(gs["sample_col_regex"])
+
+        def _extract_key(v: object) -> str | None:
+            if v is None:
+                return None
+            m = krx.search(str(v))
+            return m.group(1) if m else None
+
+        df = df.copy()
+        df["__join_key__"] = df[key].map(_extract_key)
+        n_regex_unmatched = int(df["__join_key__"].isna().sum())
+        join_key_col = "__join_key__"
 
     if "condition_col" in gs:
         val, level_map = gs["condition_col"], gs["level_map"]
@@ -311,7 +336,7 @@ def _groups_from_table(df: pd.DataFrame, gs: dict) -> tuple[dict, dict, dict]:
     # duplicates. Drop them (recorded) BEFORE the dup-key check so a repeated empty key
     # (e.g. the 6 blank SampleName rows in the PXD companion sheet) is not mis-flagged as
     # an ambiguous duplicate — a false HALT that hides the real, clean 1:1 join.
-    key_series = df[key].astype("string")
+    key_series = df[join_key_col].astype("string")
     joinable = key_series.notna() & key_series.str.strip().ne("")
     n_nonjoinable = int((~joinable).sum())
     df = pd.DataFrame(df[joinable])   # pd.DataFrame(...) keeps the type a DataFrame (mask widens it)
@@ -319,15 +344,15 @@ def _groups_from_table(df: pd.DataFrame, gs: dict) -> tuple[dict, dict, dict]:
     # fail-closed: the metadata sheet is the label authority, so a duplicated (real) join
     # key is ambiguous (which row's group/covariates win?) — HALT rather than let the
     # last-seen row silently overwrite.
-    key_vals = list(df[key])
+    key_vals = list(df[join_key_col])
     dups = sorted({v for v in key_vals if key_vals.count(v) > 1})
     if dups:
-        halt(f"metadata join column '{key}' has duplicate values {dups} "
+        halt(f"metadata join column '{gs['sample_col']}' has duplicate join keys {dups} "
              f"— cannot resolve group/covariates unambiguously")
 
     group_of, covariates_of, sel_hits = {}, {}, {}
     for _, row in df.iterrows():
-        s = row[key]
+        s = row[join_key_col]
         g, sel = _derive(row)
         if g is not None:
             group_of[s] = g
@@ -335,6 +360,9 @@ def _groups_from_table(df: pd.DataFrame, gs: dict) -> tuple[dict, dict, dict]:
         covariates_of[s] = {dst: row[src] for src, dst in covs}
     resolution = _resolution_report(gs["mode"], selectors, sel_hits, len(df))
     resolution["n_nonjoinable_keys_dropped"] = n_nonjoinable
+    if gs.get("sample_col_regex"):
+        resolution["sample_col_regex"] = gs["sample_col_regex"]
+        resolution["n_join_key_regex_unmatched"] = n_regex_unmatched
     return group_of, covariates_of, resolution
 
 
