@@ -39,9 +39,13 @@ kind-handlers implemented here:
             `column_regex` (patient-key prefix) or a `sheet` (the chain's samples.tsv).
             probe->gene + platform probe->Ensembl mapping happened upstream (needs the
             platform .db, not the org.Hs.eg.db symbol map).
-The per-sample `tar` handler is declared but fail-early (`parse.status: deferred` names
-its exact blocker — a group-metadata payload) so the contract is executable, not
-fabricated.
+  tar       a per-sample RAW.tar of gene-level tables — each file member is ONE sample's
+            column, keyed by a sample id pulled from the member filename; group is NOT in
+            the tar and comes from an external metadata sheet (SOFT / series-matrix) via
+            the `sheet` group_source.
+A deposit whose group source cannot yet be resolved stays fail-early (`parse.status:
+deferred` names its exact blocker — e.g. a group-metadata payload) so the contract is
+executable, not fabricated.
 """
 from __future__ import annotations
 
@@ -239,8 +243,23 @@ def _covariate_spec(gs: dict, columns: list[str]) -> list[tuple[str, str]]:
     return specs
 
 
-def _groups_from_table(df: pd.DataFrame, gs: dict) -> tuple[dict, dict]:
-    """sample -> group (+ covariates) from a metadata table.
+def _resolution_report(mode: str, selectors: list[tuple[str, str]],
+                       sel_hits: dict, n_seen: int) -> dict:
+    """Per-selector capture counts for `_validate_arm_partition` (and the QA record).
+
+    `selectors` is the ORDERED list of declared (selector, group) rules; `sel_hits` maps
+    a selector to how many samples it actually captured (first-match-wins). n_seen is the
+    number of candidate samples/rows the derive saw."""
+    return {
+        "mode": mode,
+        "n_seen": int(n_seen),
+        "rules": [{"selector": sel, "group": grp, "n_matched": int(sel_hits.get(sel, 0))}
+                  for sel, grp in selectors],
+    }
+
+
+def _groups_from_table(df: pd.DataFrame, gs: dict) -> tuple[dict, dict, dict]:
+    """sample -> group (+ covariates) from a metadata table, plus a RESOLUTION report.
 
     Shared by `companion` (raw metadata payload) and `sheet` (a processed samples table
     — the microarray chain OR a parse_geo_metadata series-matrix sheet). The join key is
@@ -251,7 +270,10 @@ def _groups_from_table(df: pd.DataFrame, gs: dict) -> tuple[dict, dict]:
       * `condition_col` + `level_map`   exact map of a characteristic (disease_state)
       * `group_regex_col` + `group_regex`  ordered {pattern, group} regex on a column
         (for deposits whose only group signal is in a free-text column, e.g. GSE270045
-        title "Healthy Control"/"Long Covid" with no disease-state characteristic)."""
+        title "Healthy Control"/"Long Covid" with no disease-state characteristic).
+    The resolution report records, per declared selector, how many samples it captured —
+    so `_validate_arm_partition` can fail-early on an empty arm (a too-loose sibling
+    pattern silently emptying the other arm via first-match-wins — the QFS/CFS trap)."""
     key = gs["sample_col"]
     if key not in df.columns:
         halt(f"metadata join column '{key}' absent (has {list(df.columns)})")
@@ -261,25 +283,40 @@ def _groups_from_table(df: pd.DataFrame, gs: dict) -> tuple[dict, dict]:
         val, level_map = gs["condition_col"], gs["level_map"]
         if val not in df.columns:
             halt(f"metadata condition column '{val}' absent (has {list(df.columns)})")
+        selectors = [(str(k), g) for k, g in level_map.items()]
 
-        def _derive(row: pd.Series) -> str | None:
-            return level_map.get(row[val])   # unmapped condition -> excluded
+        def _derive(row: pd.Series) -> tuple[str | None, str | None]:
+            g = level_map.get(row[val])   # unmapped condition -> excluded
+            return (g, str(row[val])) if g is not None else (None, None)
     elif "group_regex_col" in gs:
         import re
         col, rules = gs["group_regex_col"], gs["group_regex"]
         if col not in df.columns:
             halt(f"metadata group_regex column '{col}' absent (has {list(df.columns)})")
+        compiled = [(re.compile(r["pattern"]), r["pattern"], r["group"]) for r in rules]
+        selectors = [(r["pattern"], r["group"]) for r in rules]
 
-        def _derive(row: pd.Series) -> str | None:
-            for rule in rules:
-                if re.search(rule["pattern"], str(row[col])):
-                    return rule["group"]
-            return None
+        def _derive(row: pd.Series) -> tuple[str | None, str | None]:
+            s = str(row[col])
+            for rx, pat, g in compiled:
+                if rx.search(s):
+                    return g, pat
+            return None, None
     else:
         halt("sheet/companion group_source needs `condition_col`+`level_map` "
              "or `group_regex_col`+`group_regex`")
 
-    # fail-closed: the metadata sheet is the label authority, so a duplicated join
+    # rows whose join key is NaN/blank cannot join to ANY expr column — they are
+    # non-joinable metadata rows (trailing blanks, unmapped samples), NOT ambiguous
+    # duplicates. Drop them (recorded) BEFORE the dup-key check so a repeated empty key
+    # (e.g. the 6 blank SampleName rows in the PXD companion sheet) is not mis-flagged as
+    # an ambiguous duplicate — a false HALT that hides the real, clean 1:1 join.
+    key_series = df[key].astype("string")
+    joinable = key_series.notna() & key_series.str.strip().ne("")
+    n_nonjoinable = int((~joinable).sum())
+    df = pd.DataFrame(df[joinable])   # pd.DataFrame(...) keeps the type a DataFrame (mask widens it)
+
+    # fail-closed: the metadata sheet is the label authority, so a duplicated (real) join
     # key is ambiguous (which row's group/covariates win?) — HALT rather than let the
     # last-seen row silently overwrite.
     key_vals = list(df[key])
@@ -288,24 +325,29 @@ def _groups_from_table(df: pd.DataFrame, gs: dict) -> tuple[dict, dict]:
         halt(f"metadata join column '{key}' has duplicate values {dups} "
              f"— cannot resolve group/covariates unambiguously")
 
-    group_of, covariates_of = {}, {}
+    group_of, covariates_of, sel_hits = {}, {}, {}
     for _, row in df.iterrows():
         s = row[key]
-        g = _derive(row)
+        g, sel = _derive(row)
         if g is not None:
             group_of[s] = g
+            sel_hits[sel] = sel_hits.get(sel, 0) + 1
         covariates_of[s] = {dst: row[src] for src, dst in covs}
-    return group_of, covariates_of
+    resolution = _resolution_report(gs["mode"], selectors, sel_hits, len(df))
+    resolution["n_nonjoinable_keys_dropped"] = n_nonjoinable
+    return group_of, covariates_of, resolution
 
 
-def resolve_groups(samples: list[str], parse: dict, raw_dir: Path, proc_dir: Path) -> tuple[dict, dict]:
+def resolve_groups(samples: list[str], parse: dict, raw_dir: Path,
+                   proc_dir: Path) -> tuple[dict, dict, dict]:
     """sample -> group (+ optional covariates) from the declared `group_source`.
 
-    Returns (group_of, covariates_of). The metadata source dir depends on the MODE, not
-    the handler: `companion` reads a raw payload (raw_dir); `sheet` reads a PROCESSED
-    samples table (proc_dir) — either the microarray chain's samples.tsv (prebuilt) or a
-    parse_geo_metadata series-matrix sheet (matrix handler, group in series metadata).
-    `deferred` HALTs naming the exact missing payload."""
+    Returns (group_of, covariates_of, resolution). The metadata source dir depends on the
+    MODE, not the handler: `companion` reads a raw payload (raw_dir); `sheet` reads a
+    PROCESSED samples table (proc_dir) — either the microarray chain's samples.tsv
+    (prebuilt) or a parse_geo_metadata series-matrix sheet (matrix handler, group in
+    series metadata). `deferred` HALTs naming the exact missing payload. `resolution`
+    carries per-selector capture counts for `_validate_arm_partition`."""
     gs = parse["group_source"]
     mode = gs["mode"]
     if mode == "deferred":
@@ -314,13 +356,17 @@ def resolve_groups(samples: list[str], parse: dict, raw_dir: Path, proc_dir: Pat
     elif mode == "column_regex":
         import re
         rules = gs["map"]  # ordered list of {pattern, group}
+        compiled = [(re.compile(r["pattern"]), r["pattern"], r["group"]) for r in rules]
+        selectors = [(r["pattern"], r["group"]) for r in rules]
         group_of: dict[str, str] = {}
+        sel_hits: dict[str, int] = {}
         for s in samples:
-            for rule in rules:
-                if re.search(rule["pattern"], s):
-                    group_of[s] = rule["group"]
+            for rx, pat, g in compiled:
+                if rx.search(s):
+                    group_of[s] = g
+                    sel_hits[pat] = sel_hits.get(pat, 0) + 1
                     break
-        return group_of, {}
+        return group_of, {}, _resolution_report(mode, selectors, sel_hits, len(samples))
     elif mode == "companion":
         meta = raw_dir / f"{gs['payload']}.data"
         if not meta.exists():
@@ -333,6 +379,40 @@ def resolve_groups(samples: list[str], parse: dict, raw_dir: Path, proc_dir: Pat
                  f"— microarray chain or parse_geo_metadata — first)")
         return _groups_from_table(pd.read_csv(meta, sep=gs.get("sep", "\t"), dtype=str), gs)
     halt(f"unknown group_source mode '{mode}' (column_regex|companion|sheet|deferred)")
+
+
+def _validate_arm_partition(resolution: dict, arms: set[str], accession: str) -> dict:
+    """Fail-early on a mis-declared group source BEFORE it silently corrupts the contrast.
+
+    The downstream eligibility check flags a too-thin arm as a REVIEW verdict, but frames
+    it as 'not eligible' and can miss the ROOT CAUSE: a declared arm rule that captured
+    the WRONG samples or none at all. plan:0010 review (the GSE130353 QFS/CFS trap): a
+    pattern loose enough to match both arms empties the other arm via first-match-wins,
+    yet the surviving arm alone still passes the non-empty retain check. So HALT when a
+    declared contrast ARM matched 0 samples, naming the dead selector(s) as the
+    diagnostic. Rules mapping to a deliberately-excluded (non-arm) group may legitimately
+    match 0 — those are recorded as `dead_excluded_rules`, not fatal. Returns the
+    resolution annotated with those non-fatal dead rules (for the QA record)."""
+    rules = resolution.get("rules", [])
+    empty = {}
+    for a in sorted(arms):
+        arm_rules = [r for r in rules if r["group"] == a]
+        if sum(r["n_matched"] for r in arm_rules) == 0:
+            empty[a] = arm_rules
+    if empty:
+        detail = "; ".join(
+            f"arm {a!r}: " + (", ".join(f"{r['selector']!r}->0" for r in rs) or "no declared rule")
+            for a, rs in empty.items())
+        halt(f"{accession}: contrast arm(s) {sorted(empty)} matched 0 of "
+             f"{resolution.get('n_seen')} samples via the declared group source "
+             f"(mode={resolution.get('mode')}) — {detail}. A one-armed contrast (a "
+             f"too-loose sibling pattern capturing the other arm, or a typo'd field/level) "
+             f"is refused here rather than surfacing later as a silent mis-label.")
+    resolution = dict(resolution)
+    resolution["dead_excluded_rules"] = [
+        {"selector": r["selector"], "group": r["group"]}
+        for r in rules if r["group"] not in arms and r["n_matched"] == 0]
+    return resolution
 
 
 # ------------------------------------------------------------------- kind: matrix
@@ -522,9 +602,13 @@ def run(config_path: Path, accession: str, out_expr: Path, out_sheet: Path,
     # --- resolve groups + retain only the contrast arms ----------------------
     # group source dir is chosen by MODE inside resolve_groups (companion->raw_dir,
     # sheet->proc_dir), so both are handed in regardless of the parse handler.
-    group_of, cov_of = resolve_groups(all_samples, parse, raw_dir, proc_dir)
+    group_of, cov_of, resolution = resolve_groups(all_samples, parse, raw_dir, proc_dir)
     case, control = parse["case_label"], parse["control_label"]
     arms = {case, control}
+    # fail-early: a declared arm that captured 0 samples (a too-loose sibling pattern or
+    # a typo'd field) is a mis-declared group source, not a thin-cohort REVIEW — HALT with
+    # the dead selector named, before the one-armed matrix reaches eligibility.
+    resolution = _validate_arm_partition(resolution, arms, accession)
     retained, dropped = [], []
     for s in all_samples:
         g = group_of.get(s)
@@ -613,6 +697,7 @@ def run(config_path: Path, accession: str, out_expr: Path, out_sheet: Path,
             "group_counts": {g: int((sheet["group"] == g).sum()) for g in sorted(arms)},
             "dropped": dropped,
             "group_source": parse["group_source"]["mode"],
+            "group_resolution": resolution,   # per-selector capture counts (arm-partition audit)
         },
         "duplicate_handling": {
             "policy": gene_report["duplicate_policy"],

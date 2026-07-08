@@ -566,6 +566,27 @@ downstream matrix builds on a real contract, not an assumption.
     batch covariate carried. **PASS: 18369 × 27 (12 case / 15 control), map_rate 1.0, scale=counts PASS.**
   - **Fail-closed guardrails added (review of a1):** duplicate metadata join keys HALT; covariate completeness gates
     on `notna()` (a `NaN`→`"nan"` string no longer passes); ragged GEO characteristic rows HALT.
+- **Post-tranche hardening (project self-review, 2026-07-08):**
+  - **(#1) Arm-partition guard** in `stage_matrix.resolve_groups`: a declared contrast **arm** that captures **0
+    samples** HALTs, naming the dead selector — the too-loose sibling pattern that empties the other arm via
+    first-match-wins (the `gse130353` QFS/CFS substring trap) is now caught structurally at group-resolution time,
+    not left to surface as a REVIEW-verdict mis-attribution downstream. Enforced per-**arm**, so legitimate
+    multi-selector arms (`gse251849` control = `^Control` ∪ `^Convalescent`) pass. Per-selector capture counts are
+    recorded in `stage_matrix.qa.json` (`samples.group_resolution`). Also fixed a false-HALT in the a1 dup-key
+    guard: `NaN`/blank join keys are non-joinable rows (they match no expr column) and are dropped as such
+    (recorded, `n_nonjoinable_keys_dropped`), not mis-flagged as ambiguous duplicates — restores the clean 1:1 join
+    on `scilifelab` (6 blank `SampleName` rows). All 9 ready deposits re-verified PASS; a QFS/CFS-trap unit check
+    confirms the guard HALTs.
+  - **(#3) Cross-deposit QA reconciliation** (`reconcile_qa.py` + Snakefile `reconcile_qa` rule): rolls every ready
+    deposit's `stage_matrix.qa.json` into one sheet
+    (`results/…/reconciliation/stage_matrix.reconciliation.{tsv,json}`) surfacing the pre-rank heterogeneity —
+    **5 distinct expression scales** (`counts`/`estimated_counts`/`fpkm`/`log2_intensity`/`log_mu`), 4 gene-id
+    namespaces (all → `ensembl_gene`), arm balance (236 case / 212 control across 9), gene-count spread
+    (18369–62710), + a `warnings` list. `scale_heterogeneity` is flagged explicitly: deposits pool only at the NES
+    level, so mixed scales are admissible **iff** each deposit's DE contrast absorbs its own scale — the sheet makes
+    that assumption reviewable. Standalone QA target (not in `rule all`).
+  - **(#2) DEFERRED to a task:** config-schema validation of each `parse:` block at DAG-load (a typo'd knob today
+    silently defaults). Tracked in `tasks` for before the `a-rest` deposit count climbs.
 - **Tranche (a) — series-matrix group metadata (series-matrix pair DONE, 2026-07-08):** the RNA-seq deposits whose case/control
   lives ONLY in the series-matrix `!Sample_*` header get that header staged as a **second acquisition payload**
   (pinned sha256, verified hash-stable across fetches), parsed by a new **`parse_geo_metadata.py`** into

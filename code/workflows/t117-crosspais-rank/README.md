@@ -110,6 +110,28 @@ design; scripts hard-code nothing.
   > ambiguity); covariate completeness gates on `notna()` (a `NaN`→`"nan"` string no
   > longer counts as present); ragged GEO characteristic rows HALT (no silent
   > provenance loss).
+  > **Arm-partition guard (project-review #1):** a declared contrast arm that matches
+  > **0 samples** HALTs, naming the dead selector — a too-loose sibling pattern that
+  > empties the other arm via first-match-wins (the QFS/CFS substring trap) is refused
+  > at group-resolution time, not surfaced later as a silent mis-label. Per-**arm**
+  > (not per-selector) so multi-selector arms (`gse251849` control = `^Control` ∪
+  > `^Convalescent`) are fine. `NaN`/blank join keys are dropped as non-joinable
+  > (recorded), not mis-flagged as ambiguous duplicates (fixes a false HALT on the
+  > 6 blank `SampleName` rows of the `scilifelab` companion sheet). Each deposit's
+  > per-selector capture counts are recorded in `stage_matrix.qa.json`
+  > (`samples.group_resolution`).
+
+**Cross-deposit QA reconciliation (project-review #3):** `reconcile_qa` rolls every ready
+deposit's `stage_matrix.qa.json` into ONE sheet
+(`results/…/reconciliation/stage_matrix.reconciliation.{tsv,json}`) so the heterogeneity
+that matters **before** the rank step is reviewable at a glance: mixed expression scales,
+mixed gene-id namespaces, arm balance, covariate coverage, gene-count spread, plus a
+`warnings` list (scale-verdict, soft-low map rate, incomplete covariates, thin arms, scale
+caveats). It flags `scale_heterogeneity` explicitly — the rank pipeline pools deposits only
+at the NES level, so >1 expression scale is admissible **only if** each deposit's DE
+contrast absorbs its own scale; the sheet surfaces that assumption rather than hiding it.
+Standalone QA target (not in `rule all`):
+`snakemake -s code/workflows/t117-crosspais-rank/Snakefile reconcile_qa`.
 
 > **Naming:** `dataset:msigdb-2024-1-hs-hallmark-reactome-rank-universe` is the
 > **rank universe** — the Hallmark ∪ Reactome subset **derived from** the broader

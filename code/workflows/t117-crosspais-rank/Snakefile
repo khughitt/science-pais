@@ -175,6 +175,14 @@ def _meta_accessions(fmt):
 SERIES_META_ACCESSIONS = _meta_accessions("series_matrix")
 SOFT_META_ACCESSIONS = _meta_accessions("soft")
 
+# Deposits that stage_matrix turns into the uniform contract AND are ready now (not
+# `status: deferred`, and a stage_matrix handler — the salmon decoy is served by
+# salmon_gene_matrix instead). These are the rows the QA reconciliation rolls up.
+STAGE_MATRIX_ACCESSIONS = sorted(
+    acc for acc, p in config.get("parse", {}).items()
+    if p.get("status") != "deferred" and p.get("handler") in {"matrix", "tar", "prebuilt"}
+)
+
 def metadata_sheet_input(wildcards):
     """For a deposit whose group comes from an external metadata payload parsed into a
     samples sheet, that sheet (so Snakemake builds it before stage_matrix). Deposits
@@ -587,6 +595,29 @@ rule stage_matrix:
         "python {input.script} --config {input.config} --accession {wildcards.accession} "
         "--out-expr {output.expr} --out-sheet {output.sheet} --out-qa {output.qa_json} "
         "--qa-pass {output.qa} > {log} 2>&1"
+
+# --- WP1b: cross-deposit QA reconciliation (standalone review target) ----------
+# Rolls every ready deposit's per-deposit stage_matrix.qa.json up into ONE sheet so the
+# heterogeneity that matters BEFORE the rank step — mixed expression scales, mixed gene-id
+# namespaces, arm balance, covariate coverage — is reviewable at a glance. NOT in `rule
+# all` (it is a QA artifact, not a pipeline dependency); run it explicitly:
+#     uv run --frozen snakemake -s code/workflows/t117-crosspais-rank/Snakefile reconcile_qa
+# It depends on each deposit's qa.json, which stage_matrix emits only on a PASS — so a
+# deposit that fails its ingest contract blocks the reconciliation (no silent gap).
+rule reconcile_qa:
+    input:
+        qa=[f"{PROC}/{acc}/stage_matrix.qa.json" for acc in STAGE_MATRIX_ACCESSIONS],
+        script=f"{SCRIPTS}/reconcile_qa.py",
+    output:
+        tsv=f"{RES}/reconciliation/stage_matrix.reconciliation.tsv",
+        summary=f"{RES}/reconciliation/stage_matrix.reconciliation.json",
+    log:
+        f"{RES}/logs/reconcile_qa.log",
+    conda:
+        "../envs/py.yaml"
+    shell:
+        "python {input.script} --qa {input.qa} --out-tsv {output.tsv} "
+        "--out-json {output.summary} > {log} 2>&1"
 
 # =============================================================================
 # WP2 — uniform DE -> enrichment over the ONE pinned universe. fgsea_enrich.R is
