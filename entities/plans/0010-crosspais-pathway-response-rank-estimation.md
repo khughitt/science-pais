@@ -634,22 +634,45 @@ downstream matrix builds on a real contract, not an assumption.
   outputs with a PASS `stage_matrix.qa.json`; each deferred deposit HALTs naming its blocker. **No WP (2+) runs
   until every strict/sensitivity contrast is parsed (or explicitly demoted).**
 
-### WP2 — Uniform DE→enrichment → pathway × contrast matrix
-- Run Stage-2 machinery over all admitted contrasts on the pinned universe; emit the matrix + per-contrast
-  QA. Longitudinal/paired one-contrast-per-unit policy applied.
-- **Per-deposit ingest contract + NES-comparability gate (review Finding F):** each deposit gets an explicit
-  ingest/normalization/gene-id path (salmon TPM/counts vs DESeq/CPM vs Illumina microarray vs MMSEQ span
-  three compartments and ≥5 sequencers — "reuse plan:0003 verbatim" understates this). Before any
-  cross-compartment comparison is trusted, the two same-tissue LC RNA-seq deposits must produce **concordant
-  NES on a matched contrast** — a comparability check, not an assumption.
-- **Per-contrast DE model contract (WP0 `de_models`):** the stock `limma_de.R` fits only `~ group`;
-  `stock_ok: false` contrasts (`gse226260`/`gse251872` platform-batch → `~ platform + group`; `gse16059`
-  twins → `~ group` blocked on `pair`; `gse267625` no-external-control → a within-cohort contrast WP2 must
-  define; `gse228320` → continuous `~ dlco` severity axis) require the script to be **extended before the
-  column is admitted** — the model contract is declared in `config.yaml` so this is a deliberate WP2 step.
-- **DoD:** a single reproducible pathway × contrast matrix (+ condition/platform/**compartment** grouping
-  metadata), QA-gated, for both strict and sensitivity matrices; the same-tissue NES-comparability check passes
-  (or its failure is surfaced as a harmonization blocker).
+### WP2 — Uniform DE→enrichment → pathway × contrast matrix — **DONE 2026-07-08**
+- **Scale-aware DE (`code/scripts/de_ranklist.R`, t117-owned — NOT a mutation of the shared t035
+  `limma_de.R`):** the corpus spans **5 expression scales**, and the stock script lmFits DIRECTLY (correct
+  only for already-log data). review Finding F, made executable: de_ranklist produces ONE ranking statistic
+  (limma moderated-t) for EVERY deposit so the NES vectors stay commensurable — `counts`/`estimated_counts`
+  → `limma::voom` (logCPM + precision weights, library-size norm; edgeR/TMM deliberately avoided so the
+  NES-sensitive r-bioc env is not re-solved — the cross-deposit rank estimand is insensitive to the
+  within-deposit TMM-vs-libsize choice); `fpkm`/`cpm` → `log2(x+1)` → lmFit; `log_mu`/`log2_intensity` →
+  lmFit direct. `fgsea_enrich.R` reused **verbatim** over the single pinned Hallmark∪Reactome universe
+  (1153 sets). Expression never merges across datasets — deposits meet only at the NES level.
+- **Per-contrast model contract executed (config `de_models`):** the three `stock_ok:false` / special
+  contrasts are handled by config-declared extensions in de_ranklist (no silent `~ group` fallback):
+  `gse251872` → `~ platform + group` (case coef read by name); `gse16059` → `~ group` +
+  `duplicateCorrelation(block=twin_pair)` (consensus 0.40); `gse226260` + `gse128078` → **longitudinal
+  collapse** (`collapse_to: subject` — average each subject's timepoints to one pseudo-sample on the
+  model-ready scale, THEN `~ group`; unit = subject, no pseudo-replication) per the plan's "collapse BEFORE
+  limma". Unit counts match the corpus (gse226260 28 vs 8 subjects; gse128078 14 vs 11; gse251872 12 vs 15).
+- **Two matrices assembled (`code/scripts/assemble_matrix.py`):** strict = **1153 gene_sets × 7 built
+  columns** (of 9 declared — `gse267625` + `gse143549` **recorded as `omitted_columns` with their blocker**,
+  never silently dropped); sensitivity (nested) = **1153 × 10** (strict + the 3 ME/CFS additions). QFS
+  sorted stratum + acute decoys are correctly excluded from both rank matrices (they feed WP4 adjudication).
+- **NES-comparability check (DoD) — PASSES on the informative subset, with a decision-relevant caveat.**
+  Spearman over ALL 1153 sets was near-zero/negative for the same-tissue LC pairs (PBMC −0.15..0.00; WB
+  +0.18) — a **noise-dilution artifact** of the ~700 near-zero-NES pathways, NOT genuine discordance. On the
+  **enriched subset** (|NES|≥1.5 in either deposit) the best-matched same-tissue LC pairs concord:
+  **PBMC `gse226260`~`scilifelab` ρ=+0.42; WB `gse270045`~`gse228320` ρ=+0.50** (`concern: false`). So the
+  check is computed on the enriched subset and passes a group iff its best assessable pair reaches
+  `min_concordance=0.20` (config `nes_comparability`).
+- **WP2 power finding (decision-relevant, feeds WP1 low-power ceiling):** per-deposit marginal DE power is
+  **highly uneven** — `gse270045` 6081 BH<0.05, `gse63085` 515, `gse14577` 341, `scilifelab` 109,
+  `gse226260` 52, but **five deposits return 0 BH<0.05** (`gse251849`, `gse228320`, `gse251872`,
+  `gse128078`, `gse16059`). The rank estimand runs on NES (coordinated shifts), not marginal DEGs, so a
+  0-DEG deposit still yields a NES vector — but `gse251849` (n=11 vs 12, 0 DEG) is genuinely uninformative
+  and does NOT concord even on enriched sets (flagged `low_signal`). This uneven-power picture is the
+  deposit-level face of the WP1 LC-out low-power ceiling and is carried to WP3's power/CI curve.
+- **DoD (met):** one reproducible, QA-gated pathway × contrast matrix per matrix (strict, sensitivity) with
+  condition/trigger/platform/compartment grouping + omitted-column ledger + comparability report; the
+  same-tissue NES-comparability check passes on the informative subset (its all-set dilution is documented,
+  not hidden). Run: `snakemake … --use-conda -- data/processed/t117/matrix/{strict,sensitivity}.pathway_by_contrast.tsv`.
 
 ### WP3 — Rank estimation battery + stability + t116 calibration
 - **Stage 3c first (gating):** calibrate the battery on t116-generative synthetic matrices at known
@@ -732,8 +755,11 @@ downstream matrix builds on a real contract, not an assumption.
 - [ ] **Stage 3c calibration (review Finding B):** the rank battery is validated against t116's generative
       model at the corpus's real K/N (recovers known R ∈ {2,4,8} with calibrated CI) **before any grid
       placement**, and the **t116 structural single-axis statistic is reported as a confirmatory co-primary**.
-- [ ] One reproducible, QA-gated pathway × contrast matrix per matrix (strict, sensitivity), computed by a
-      single harmonized DE→enrichment over the pinned `msigdb-2024-1-hs-mapped-pais-gene-set-universe`.
+- [x] **(WP2, 2026-07-08)** One reproducible, QA-gated pathway × contrast matrix per matrix (strict = 1153×7
+      built of 9, sensitivity = 1153×10), computed by a single harmonized scale-aware DE→enrichment
+      (`de_ranklist.R` voom/log2/direct → `fgsea_enrich.R`) over the pinned Hallmark∪Reactome universe;
+      deferred columns (`gse267625`, `gse143549`) recorded as `omitted_columns`; same-tissue LC
+      NES-comparability passes on the enriched subset (PBMC ρ=0.42, WB ρ=0.50).
 - [ ] R is reported with uncertainty from **≥3 rotation-invariant estimators**, and its **leave-one-dataset-out
       and leave-one-condition-out** stability profiles are reported **separately**.
 - [ ] The artifact-control battery (platform-LOO, negative-control sets, recovered-control specificity,

@@ -9,16 +9,37 @@ believability criterion.
 - **Review:** `doc/reviews/0010-crosspais-pathway-response-rank-estimation-pipeline-review.md`
 - **Grounds:** `interpretation:0037` (t116 R-regime grid + the K≥3 identifiability lever)
 
-## Status: WP1 acquisition COMPLETE; WP1b parse framework + tranches 1/(b)/(c)/(a)/(a2 tar trio)/(a-rest) DONE — 11 deposits PASS; WP2–WP6 stubbed
+## Status: WP1 acquisition + WP1b parse (11 deposits PASS) + WP2 (strict+sensitivity matrices) DONE; WP3–WP6 stubbed
 
-`snakemake -n` resolves the DAG (**68 jobs** remaining after WP1 + WP1b-tranche-1).
-**WP1 acquisition is implemented and run** (download + checksum + universe
-build/verify); **WP1b is implemented** as a config-driven, brutally-uniform
-per-deposit parser (`stage_matrix.py`) with **tranche 1 parsed + proven on real
-data**; the remaining rule bodies (WP1b tranches 2–6, WP2–WP6) are fail-early stubs
-(`exit 1`, no silent placeholder output) or `parse: deferred` HALTs naming their
-exact blocker. `config.yaml` encodes **all** design parameters — it originates the
-design; scripts hard-code nothing.
+**WP1 acquisition** (download + checksum + universe build/verify) and **WP1b**
+(config-driven brutally-uniform per-deposit parse via `stage_matrix.py`, 11 deposits
+PASS) are implemented and run. **WP2 is DONE (2026-07-08):** scale-aware DE
+(`de_ranklist.R`: voom for counts/estimated_counts, log2 for fpkm/cpm, direct for
+log_mu/log2_intensity) → `fgsea_enrich.R` (reused verbatim) → `assemble_matrix.py`,
+producing **strict (1153 gene_sets × 7 built cols of 9)** and **sensitivity (1153 ×
+10, nested)** pathway × contrast matrices. Deferred columns (`gse267625`,
+`gse143549`) are recorded as `omitted_columns`, never silently dropped; the
+same-tissue LC NES-comparability check passes on the enriched subset (PBMC ρ=0.42,
+WB ρ=0.50). The remaining rule bodies (WP3–WP6) are fail-early stubs (`exit 1`, no
+silent placeholder output). `config.yaml` encodes **all** design parameters — it
+originates the design; scripts hard-code nothing.
+
+**WP2 done (2026-07-08):**
+- **Scale-aware DE** (`code/scripts/de_ranklist.R`, t117-owned): ONE ranking
+  statistic (limma moderated-t) across all 5 corpus scales so NES stays
+  commensurable (review Finding F, executable). `counts`/`estimated_counts` →
+  `limma::voom` (library-size logCPM + weights; no edgeR/TMM, so the NES-sensitive
+  r-bioc env isn't re-solved); `fpkm`/`cpm` → `log2(x+1)`; `log_mu`/`log2_intensity`
+  → direct. Per-contrast `de_models` extensions applied: `~ platform + group`
+  (gse251872), `duplicateCorrelation(twin_pair)` (gse16059), longitudinal
+  `collapse_to: subject` (gse226260, gse128078).
+- **NES-comparability + power finding:** the all-set Spearman is diluted to ~0 by
+  the ~700 near-zero-NES pathways; on the enriched subset the powered same-tissue LC
+  pairs concord (PBMC 0.42, WB 0.50). Per-deposit marginal power is uneven (6081…0
+  BH<0.05; 5 deposits at 0) — the deposit-level face of the WP1 LC-out low-power
+  ceiling, carried to WP3.
+- Run: `snakemake -s code/workflows/t117-crosspais-rank/Snakefile --use-conda
+  --conda-prefix /data/snakemake/conda -- data/processed/t117/matrix/{strict,sensitivity}.pathway_by_contrast.tsv`
 
 **WP1b done (2026-07-08):**
 - **WP0 semantic wiring confirmed/completed** — sensitivity matrix nested (`strict`

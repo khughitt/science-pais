@@ -71,9 +71,23 @@ def matrix_columns(matrix):
     tags = MATRIX_COMPOSITION[matrix]
     return [c for c in CONTRASTS if config["contrasts"][c]["matrix"] in tags]
 
+def is_buildable(contrast):
+    """A contrast column is buildable NOW iff its accession produced the uniform
+    expr contract (stage_matrix PASS) — i.e. its parse block is not `deferred`.
+    The salmon decoy is buildable only once its run subset is resolved (WP1b d).
+    Deferred columns (gse267625, gse143549) are NOT dropped silently: they are
+    recorded in the matrix grouping as `omitted_columns` with their blocker."""
+    acc = ACC_OF[contrast]
+    if config["contrasts"][contrast].get("quantify") == "salmon":
+        return bool(config["salmon"]["runs"].get(acc, {}).get("accessions"))
+    return acc in STAGE_MATRIX_ACCESSIONS
+
 def matrix_nes(wildcards):
-    """NES tables for every contrast column of the requested rank matrix."""
-    return [f"{PROC}/fgsea/{c}.nes.tsv" for c in matrix_columns(wildcards.matrix)]
+    """NES tables for every BUILDABLE contrast column of the requested rank matrix.
+    Deferred columns are excluded here (no producer yet) and surfaced explicitly by
+    assemble_matrix as omitted_columns — never a silent gap (plan:0010 discipline)."""
+    return [f"{PROC}/fgsea/{c}.nes.tsv"
+            for c in matrix_columns(wildcards.matrix) if is_buildable(c)]
 
 def adjudication_extra_nes(wildcards):
     """Extra columns the strict-matrix adjudication consumes but the rank matrix
@@ -627,24 +641,36 @@ rule reconcile_qa:
 # NES level.
 # =============================================================================
 rule limma_de:
-    # NOTE: the stock plan:0003 limma_de.R fits only `~ group` (two-arm). Several
-    # t117 contrasts need a different design (platform-batch covariate, twin-paired
-    # blocking, within-cohort longitudinal, continuous severity axis) — see the
-    # `de_models` contract in config. `stock_ok: false` contrasts require WP2 to
-    # extend the script before they are admitted; the contract is threaded here so
-    # that is a deliberate WP2 step, not a silent `~ group` fallback.
+    # WP2: SCALE-AWARE moderated-t via de_ranklist.R (t117-owned; NOT the stock t035
+    # limma_de.R, which lmFits DIRECTLY and only fits `~ group` — correct only for
+    # already-log data). de_ranklist voom-normalizes counts/estimated_counts, log2s
+    # fpkm/cpm, and lmFits already-log scales directly, so EVERY contrast yields the
+    # SAME ranking statistic (moderated-t) and the NES vectors stay commensurable.
+    # It also applies the per-contrast `de_models` extensions declared in config:
+    # `collapse_to` (longitudinal one-contrast-per-subject), `design_covariates`
+    # (e.g. platform batch), and `block` (twin-pair duplicateCorrelation) — so the
+    # divergence from `~ group` is deliberate, driven by config, never a silent fallback.
     input:
         unpack(acc_of),
-        script=f"{SCRIPTS}/limma_de.R",
+        script=f"{SCRIPTS}/de_ranklist.R",
     output:
         ranked=f"{PROC}/de/{{contrast}}.ranked.tsv",
+        diag=f"{PROC}/de/{{contrast}}.diag.json",
     params:
         seed=config["determinism"]["master_seed"],
-        model=de_model_of,
+        scale=lambda wc: config["parse"].get(ACC_OF[wc.contrast], {}).get("expression_scale", "NONE"),
+        collapse=lambda wc: de_model_of(wc).get("collapse_to", "NONE"),
+        covs=lambda wc: ",".join(de_model_of(wc).get("design_covariates", [])) or "NONE",
+        block=lambda wc: de_model_of(wc).get("block", "NONE"),
+    log:
+        f"{RES}/logs/de/{{contrast}}.log",
     conda:
         "../envs/r-bioc.yaml"
     shell:
-        stub("limma_de {wildcards.contrast} (model={params.model[design]}, stock_ok={params.model[stock_ok]})")
+        "Rscript {input.script} --dataset {wildcards.contrast} --contrast {wildcards.contrast} "
+        "--expr {input.expr} --sheet {input.sheet} --scale {params.scale} "
+        "--collapse-col {params.collapse} --design-covariates {params.covs} --block {params.block} "
+        "--seed {params.seed} --out-ranked {output.ranked} --out-diag {output.diag} > {log} 2>&1"
 
 rule fgsea_enrich:
     input:
@@ -655,22 +681,41 @@ rule fgsea_enrich:
     output:
         nes=f"{PROC}/fgsea/{{contrast}}.nes.tsv",
     params:
+        db="+".join(config["genesets"]["composition"]),   # single combined universe (hallmark+reactome)
         min_size=config["genesets"]["size_filter"]["min"],
         max_size=config["genesets"]["size_filter"]["max"],
         seed=config["determinism"]["master_seed"],
+    log:
+        f"{RES}/logs/fgsea/{{contrast}}.log",
     conda:
         "../envs/r-bioc.yaml"
     shell:
-        stub("fgsea_enrich {wildcards.contrast}")
+        "Rscript {input.script} --db {params.db} --contrast {wildcards.contrast} "
+        "--ranked {input.ranked} --geneset {input.universe} "
+        "--min-size {params.min_size} --max-size {params.max_size} "
+        "--seed {params.seed} --out-nes {output.nes} > {log} 2>&1"
 
 rule assemble_matrix:
+    # WP2: pivot the BUILDABLE columns' NES vectors into ONE pathway x contrast
+    # matrix + grouping metadata. assemble_matrix.py reconstructs the rank matrix's
+    # columns from config (single source), records DEFERRED columns explicitly as
+    # omitted_columns (never a silent drop), and runs the same-tissue LC RNA-seq
+    # NES-comparability check (WP2 DoD). Expression never merges across datasets —
+    # deposits meet only here, at the NES level.
     input:
         nes=matrix_nes,
+        config=CONFIGFILE,
+        script=f"{SCRIPTS}/assemble_matrix.py",
     output:
         matrix=f"{PROC}/matrix/{{matrix}}.pathway_by_contrast.tsv",
-        grouping=f"{PROC}/matrix/{{matrix}}.grouping.json",   # condition/platform/compartment
+        grouping=f"{PROC}/matrix/{{matrix}}.grouping.json",   # condition/platform/compartment + omitted + comparability
+    log:
+        f"{RES}/logs/assemble_matrix/{{matrix}}.log",
+    conda:
+        "../envs/py.yaml"
     shell:
-        stub("assemble_matrix {wildcards.matrix}")
+        "python {input.script} --config {input.config} --matrix {wildcards.matrix} "
+        "--proc {PROC} --out-matrix {output.matrix} --out-grouping {output.grouping} > {log} 2>&1"
 
 # =============================================================================
 # WP3 — rank battery + t116 structural co-primary + LODO/LOCO (Finding A), and

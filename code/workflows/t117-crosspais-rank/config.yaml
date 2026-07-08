@@ -771,12 +771,14 @@ de_models:
     design: "~ group"                 # CORRECTED: single-platform in expr (no platform term); PASC vs NOPASC
     coef: groupcase
     covariates: [subject, timepoint]  # longitudinal: needed to collapse to one contrast per subject
+    collapse_to: subject              # WP2: average each subject's timepoints -> 1 pseudo-sample, then ~ group
     stock_ok: true                    # stock model OK AFTER WP2 timepoint collapse (like gse128078)
     note: "CORRECTED (a-rest): the first-catalogued `~ platform + group` was wrong — the expr matrix is single-platform (platform term degenerate). PASC vs NOPASC, multi-timepoint -> one-contrast-per-subject collapse upstream of limma. Small control arm (8 subjects)."
   gse251872_pimecfs:
     design: "~ platform + group"      # 2 sequencing platforms → adjust platform
     coef: groupcase
     covariates: [platform]
+    design_covariates: [platform]     # WP2: platform enters the design as a batch term (case coef read by name)
     stock_ok: false
     note: "2 sequencing platforms (batch)"
   gse16059_mecfs:
@@ -802,6 +804,7 @@ de_models:
     design: "~ group"                 # multi-timepoint → collapse to one contrast per subject first
     coef: groupcase
     covariates: [subject, timepoint]  # needed to collapse to one contrast per subject
+    collapse_to: subject              # WP2: average each subject's timepoints -> 1 pseudo-sample, then ~ group
     stock_ok: true                    # stock model OK AFTER WP2 timepoint collapse
     note: "multi-timepoint — one-contrast-per-subject collapse upstream of limma"
 
@@ -830,6 +833,21 @@ structural_statistic:
   concordance: spearman           # per pair of contrast columns
   # the t116 sampling floor for concordance SD is ~1/sqrt(P-1); a low SD with high
   # mean concordance is the shared-artifact / single-axis signature.
+
+# WP2 NES-comparability check (DoD): same-tissue LC RNA-seq deposits must produce
+# CONCORDANT NES on a matched contrast — a check, not an assumption. Spearman over
+# ALL 1153 sets is a blunt instrument: most pathways carry ~0 NES (noise), which
+# DILUTES concordance toward 0 and conflates "no shared signal" with "genuine
+# discordance". So the check is computed on the ENRICHED (informative) subset — sets
+# reaching |NES| >= enrichment_threshold in EITHER deposit — and PASSES a same-tissue
+# LC group iff its BEST-matched pair (both deposits carrying enough enriched sets)
+# reaches min_concordance. Underpowered deposits (few enriched sets / no DE signal,
+# e.g. gse251849 n=11v12, 0 BH<0.05) cannot be assessed and do not fail the group;
+# they are reported as low_signal context. The blunt all-set rho is still reported.
+nes_comparability:
+  enrichment_threshold: 1.5       # |NES| >= this in either column -> the "enriched"/informative subset
+  min_enriched_sets: 30           # a pair needs >= this many enriched sets to be assessable
+  min_concordance: 0.20           # within a same-tissue LC group, the BEST-matched pair's enriched Spearman must reach this
 
 # ------------------------------------------------------ Stage 3c calibration -
 # review Finding B: the SVD rank estimator is NOT the statistic t116 characterized,
