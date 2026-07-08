@@ -4,7 +4,7 @@ kind: "plan"
 title: "Analysis plan: learn the reproducible effective rank of the cross-PAIS blood pathway-response subspace from primary data (t117, q0050 Q-C gate)"
 status: "active"
 created: "2026-07-07"
-updated: "2026-07-07"
+updated: "2026-07-08"
 related:
   - "task:t117"
   - "interpretation:0037-t116-power-bias-floor-shared-axis-sim"
@@ -90,11 +90,29 @@ deposits (`gse224615` G4, `gse68310` floor), deferred one (`prjna1184005` G4), d
 provisionals (`gse68310`, `prjna1001790` — removing influenza and chikungunya as strict triggers), and
 finalized the strict matrix at **~10 contrasts / 5 triggers** (see *Corpus* + *WP1 corpus-readiness
 finding*). What remains before a verdict: **staging** the matrix-ready deposits (download + checksum +
-datapackage via the WP0 workflow), then Stages 2–6. **The binding scientific result of WP1 is the LC-out
-identifiability ceiling**: the strict matrix cannot produce a q0050-grade (LC-out-surviving) rank, so the
+datapackage via the WP0 workflow), then Stages 2–6. **The provisional scientific result of WP1 is the LC-out
+low-power ceiling**: the strict matrix appears unable to produce a q0050-grade (LC-out-surviving) rank, so the
 downstream run is scoped to a *descriptive/hypothesis-grade* R + the artifact adjudication + the adjacent
-ME/CFS question — not a q0050 GO/NO-GO. (`status: active` reflects the *design*; this section is the
-execution gate and the honest ceiling on what the run can claim.)
+ME/CFS question — not a q0050 GO/NO-GO. **This ceiling is calibration-contingent, not yet binding** (review
+Finding A): its current strength rests on the Stage-3b `min_contrasts=6` gate, which is hand-set, not
+`interpretation:0037`-grounded; under a t116-faithful gate (K≥3 triggers) LC-out is *admissible but
+underpowered* (4 single-trigger columns, wide CI), not *non-identifiable*. WP3 must convert the binary
+"non-identifiable" verdict into a **threshold/power sensitivity curve** before the ceiling is cited as
+settled (see Stage 3b + WP1 corpus-readiness finding, both re-grounded 2026-07-08). (`status: active` reflects
+the *design*; this section is the execution gate and the honest — now explicitly provisional — ceiling on
+what the run can claim.)
+
+**Post-review amendments (2026-07-08).** This plan was critically reviewed
+(`doc/reviews/0010-crosspais-pathway-response-rank-estimation-pipeline-review.md`, overall WARN). Four
+findings are folded in below: **A** (re-ground the LC-out gate in t116's K≥3, report a power curve not a
+binary verdict — Readiness decision, Stage 3b, WP1 corpus-readiness finding); **B** (the SVD rank estimator
+is *not* the statistic t116 characterized — add a t116-generative calibration of the battery, and adopt
+t116's structural single-axis statistic as a confirmatory co-primary, before any grid mapping — Stage 3/3c/5,
+WP3); **C** (the strict matrix mixes blood compartments — make WB/PBMC-only the primary matrix, add
+compartment-stratified + drop-sorted + composition-adjusted R — G1, artifact controls, Stage 4/5, WP4); **D**
+(add the project's designated non-infectious GWS/FM read-across as a separate, identically-gated specificity
+matrix — triangulation layers, WP4b). These are conceptual/scope hardening, not a change to the frozen
+estimand.
 
 ## Two-matrix design + verdict rule (locked)
 
@@ -121,7 +139,7 @@ matrices**, and the primary verdict is the one that survives both.
 
 | Gate | Rule | Severity |
 |---|---|---|
-| G1 Compartment | **Primary matrix is blood-bulk only** (whole blood / PBMC / sorted leukocytes). Muscle / other tissue → separate triangulation, never pooled into the rank matrix. | hard for primary |
+| G1 Compartment | **Primary matrix is whole-blood / PBMC bulk only** (review Finding C). **Sorted-leukocyte deposits (e.g. sorted-monocyte QFS `gse130353`) are a *separate compartment stratum*, not pooled into the primary rank matrix** — a shared cross-trigger axis across mixed compartments can be a cell-composition shift, not pathway biology, and cannot be composition-adjusted the same way. Muscle / other tissue → separate triangulation. | hard for primary |
 | G2 Exposure | Human; single documented trigger (strict matrix) or flagged probable-PI (sensitivity matrix); post-acute **persistent** sampling (≥12 wk target, **≥4 wk floor — HARD for the strict-primary matrix**). Deposits sampled *inside* the floor (early-convalescent) are **provisional/exploratory**, excluded from the strict trigger/K count, until WP1 verifies later post-acute *symptomatic* samples; otherwise they route to the early-convalescent decoy/specificity layer. | hard floor for primary |
 | G3 Contrast | Case-vs-control at the sample level. **Recovered/full-recovery controls are SCORED heavily, not required.** | tiering (scored) |
 | G4 Downloadable | A per-sample expression matrix is **public and downloadable**, **or** public raw reads are sufficient to compute one under a **pinned quantification path** (WP1). SRA-only deposits enter the primary matrix **only once that quantification is implemented and verified in WP1** (provisional until then). **Author-request-only and gated/enclave data are analysis-ineligible** (note-only; see `fb-2026-07-07-003`). | hard |
@@ -139,6 +157,16 @@ following are **admissibility criteria for the R estimate**, evaluated before an
 - **Platform leave-one-out** — re-estimate R dropping each platform in turn (RNA-seq vs microarray;
   whole-blood vs PBMC vs sorted). A rank that collapses when a platform is removed is a platform axis, not
   biology.
+- **Compartment / cell-composition control** (review Finding C — a *biological* rival the platform/negative-set
+  controls do **not** catch, because composition shift is real regulation). Three prongs, because deconvolution
+  alone is insufficient across a mixed-compartment corpus: (i) **compartment-stratified R** — estimate R within
+  each compartment stratum (WB, PBMC, sorted) and compare, since NES is not directly comparable across
+  compartments; (ii) **drop-sorted-compartment sensitivity** — the low-rank conclusion must survive removing the
+  sorted stratum (and WB/PBMC-only is the *primary* matrix per G1); (iii) where deconvolution is valid (WB, and
+  partially PBMC — **not** sorted monocytes), estimate leukocyte fractions and report R **before and after
+  composition adjustment**, with the composition axis carried as a named nuisance/negative-control dimension. A
+  shared axis that dissolves under composition adjustment, or that appears *only* when compartments are pooled,
+  is a blood-count/compartment signature, not an attractor.
 - **Negative-control feature sets** — housekeeping / platform-associated / GC-content-confounded gene sets
   carried through the identical pipeline; shared structure among these is the artifact floor to subtract.
 - **Recovered-control specificity** (directional, not magnitude) — where recovered/full-recovery-control
@@ -162,6 +190,17 @@ the primary matrix (different noise/coverage structure):
 - **Acute-infection decoys** (dengue, acute CHIKV/Zika, acute sepsis, acute COVID, Q-fever infection) →
   the **specificity layer**: the post-acute subspace should *not* be recovered by an acute-only decoy at
   the same rank.
+- **Non-infectious read-across (GWS/FM)** — the project's designated infection-specificity stress-test
+  (review Finding D; `specs/scope-boundaries.md` D-003 names Gulf War Syndrome / fibromyalgia as "the single
+  best external test of the attractor's trigger-agnostic claim", with PACVS as a further read-across). Built
+  as a **separate non-infectious specificity matrix**, held to the **same admissibility gates** as the primary
+  corpus (blood-bulk WB/PBMC, public, downloadable, sample-level case-vs-control) and computed through the
+  **same uniform DE→enrichment over the same pinned universe**, then compared to the PAIS subspace as a
+  distinct object — **not** a free-form column appended to the primary matrix (which would relax the very
+  compartment/platform discipline enforced elsewhere). This is the direct lever on the t116 Q-D identifiability
+  ceiling (infection-specific attractor vs generic-sickness manifold): if the learned PAIS blood subspace is
+  **equally recovered by non-infectious GWS/FM**, that is strong evidence for a generic fatigue/sickness
+  manifold, not an infection-specific attractor. See WP4b.
 
 ## Corpus (WP1-verified 2026-07-08)
 
@@ -181,7 +220,7 @@ demoted; several `[UNVERIFIED]` specifics corrected.
 - `gse224615-longcovid-wholeblood` — **demoted (G4)**: no downloadable per-sample matrix (DEG summary only), RNA-seq control arm only n≈9. DEG-level triangulation at most.
 - `prjna1184005-longcovid-pbmc` — **deferred (G4)**: SRA raw-reads only, 14 samples, split/window unverifiable → needs the pinned quantification path first.
 - `gse68310-post-influenza-wholeblood` — **demoted**: no ≥4-wk persistently-symptomatic sample (latest within-illness = day 21, expression back to baseline by then). **Removes influenza as a strict trigger**; usable only as an acute-decoy.
-- `prjna1001790-post-chikv-wholeblood` — **demoted**: sequenced post-acute = D21 (~3 wk, below floor), no D90 transcriptome, chronic-vs-recovered contrast, raw-FASTQ-only. **Removes chikungunya as a strict trigger**; candidate for an adjacent chronification-predictor triangulation.
+- `prjna1001790-post-chikv-wholeblood` — **demoted**: sequenced post-acute = day-21 (~3 wk, below floor), no day-90 transcriptome, chronic-vs-recovered contrast, raw-FASTQ-only. **Removes chikungunya as a strict trigger**; candidate for an adjacent chronification-predictor triangulation.
 
 **ME/CFS sensitivity additions (WP1-verified):**
 `gse128078-mecfs-wholeblood` (14 vs 11, whole blood, FPKM matrix; multi-timepoint → WP2 collapse),
@@ -197,23 +236,36 @@ CHIKGene Réunion (no resolvable public accession), Raijmakers QFS multi-omics (
 
 The finalized strict matrix is **~10 contrasts across 5 triggers, ~8 of them long COVID**, and **each
 non-LC trigger (PI-ME/CFS, QFS, Ebola, Lyme) contributes a single contrast** with no within-trigger
-replication. Applying the plan's own **Stage 3b admissibility gate** (≥3 triggers, ≥6 contrasts, ≥2
-platforms) to the decisive **LC-out fold**: removing long COVID leaves **~4 contrasts across 4 triggers —
-below the ≥6-contrast floor → LC-out is NON-IDENTIFIABLE.** By the pre-locked verdict rule this **caps any
-strict-matrix low-rank result at "conditional on long-COVID inclusion → hypothesis-generating, not
-q0050-grade."** The two provisional deposits that could have restored trigger diversity (influenza, CHIKV)
-**both demoted** on the floor, so **there is no public rescue.**
+replication. Removing long COVID leaves **~4 contrasts across 4 triggers**.
 
-**Consequence for q0050.** This is itself a data-grounded result: **existing public single-trigger
-blood-bulk transcriptomes cannot deliver a q0050-grade, LC-out-surviving cross-PAIS rank estimate.** The
-strict matrix can still yield (a) a *descriptive, LC-inclusive* R + stability profile (hypothesis-grade),
-and (b) the artifact-vs-biology adjudication; the ME/CFS-sensitivity matrix answers the *adjacent* question.
-But the q0050 GO/NO-GO "is the cross-trigger overlap robustly low-rank" **is not answerable at
-q0050-grade from public data** — which **strengthens, on data, the case that the harmonized prospective
-co-enrollment cohort (q0050) is necessary**, matching the suspicion in `interpretation:0036`/`interpretation:0037`.
-Partial mitigations (deriving >1 contrast per dataset where subgroups/timepoints allow; adding the ME/CFS
-sensitivity arm) raise the *contrast* count but **do not restore non-LC trigger diversity**, so they do not
-lift the LC-out identifiability ceiling. This finding is carried to WP6 and to `question:0050`.
+**Provisional, calibration-contingent — not a settled non-identifiability verdict (review Finding A).** The
+LC-out fold retains **4 triggers ≥ 3**, so under the re-grounded (t116-faithful) admissibility gate it is
+**admissible but low-power**, *not* "non-identifiable." The earlier "< ≥6-contrast floor → NON-IDENTIFIABLE"
+headline rested on the hand-set `min_contrasts=6` gate, which is **not `interpretation:0037`-grounded** (t116
+grounds arm count K≥3, not a contrast count) — so that binary verdict is **withdrawn** pending the Stage-3c
+calibration + the WP3 LC-out **power/CI curve**. The defensible statement today is weaker: *LC-out estimates a
+cross-PAIS rank from 4 single-trigger columns with no within-trigger replication — low-power, wide-CI, likely
+unable to robustly pin the rank once LC is removed, but this must be **shown** by the power curve, not asserted
+from a contrast floor.* The two provisional deposits that could have restored trigger diversity (influenza,
+CHIKV) **both demoted** on the floor, so **there is no public rescue of the contrast count** — but note that,
+because the gate is triggers not contrasts, this does not by itself change the K=4 admissibility.
+
+**Consequence for q0050 (qualitative, likely to survive calibration).** Even re-grounded, the qualitative
+conclusion is expected to hold: **existing public single-trigger blood-bulk transcriptomes are unlikely to
+deliver a q0050-grade, LC-out-surviving cross-PAIS rank estimate** — but this is now framed as a
+low-power/wide-CI ceiling to be **demonstrated in WP3**, not a structural impossibility. Whether it rises to a
+citable negative result is **gated on Stage 3c/WP3** (review Finding A/B); until then it is provisional.
+
+Regardless of how the ceiling resolves, the strict matrix can still yield (a) a *descriptive, LC-inclusive* R
++ stability profile (hypothesis-grade), and (b) the artifact-vs-biology (and compartment) adjudication; the
+ME/CFS-sensitivity matrix answers the *adjacent* question; and the GWS/FM read-across (WP4b) answers the Q-D
+infection-specificity question. If WP3's LC-out power curve confirms the low-power ceiling, it
+**strengthens, on data, the case that the harmonized prospective co-enrollment cohort (q0050) is necessary**,
+matching the suspicion in `interpretation:0036`/`interpretation:0037`. Partial mitigations (deriving >1
+contrast per dataset where subgroups/timepoints allow; adding the ME/CFS sensitivity arm) raise the *contrast*
+count and thus per-fold power, but **do not restore non-LC trigger diversity** (the K≥3 identifiability lever),
+so they help the CI without changing LC-out admissibility. This finding — as a **calibration-contingent
+provisional ceiling**, not a settled verdict — is carried to WP6 and to `question:0050`.
 
 ## Method
 
@@ -233,7 +285,7 @@ checkpoints as `plan:0003`. Output: the **pathway × contrast** matrix (columns 
 groupable by condition/trigger/platform). **Expression is never merged across datasets** — deposits meet
 only at the NES level.
 
-### Stage 3 — Rank estimation (rotation-invariant primary)
+### Stage 3 — Rank estimation (rotation-invariant primary) + t116 structural co-primary
 Estimate the effective rank of the shared column subspace with a **battery of rotation-invariant
 estimators**, primary because R must not depend on a factor rotation:
 - **Parallel analysis (Horn)** against a label-permuted null that preserves per-contrast marginals.
@@ -245,30 +297,64 @@ estimators**, primary because R must not depend on a factor rotation:
   **leave-one-condition-out** are reported **separately** (they are different perturbations given the
   long-COVID dominance), plus a naive-bootstrap comparator only as a lower-bound sanity check.
 
+**t116 structural statistic as confirmatory co-primary (review Finding B).** The SVD/parallel-analysis rank
+estimator above is **not** the statistic `interpretation:0037` characterized: t116 varied R as a *generative*
+parameter and measured the power of a **structural single-shared-axis statistic — the SD of off-diagonal
+pairwise concordances** — so mapping an estimated R onto "the t116 R-regime grid" is a procedure substitution
+that must be justified, not assumed. Therefore the **t116 structural single-axis-adequacy statistic is
+computed as a confirmatory co-primary** alongside R (it is what the grid was built for and what t116 tells
+q0050 to pre-register), and R is read against the grid **only after** the Stage-3c calibration below confirms
+the battery recovers a known generative R at the corpus's real arm count / N. Where the two disagree
+(low structural SD but moderate SVD rank, or vice-versa), the disagreement is reported as first-class evidence
+about attractor-vs-repertoire, not reconciled away.
+
+### Stage 3c — Rank-battery calibration against the t116 generative model (pre-grid, review Finding B)
+Before any real-data R is placed on the t116 grid, **calibrate the battery on synthetic matrices drawn from
+t116's own generative model** (`interpretation:0037`): inject pathway × contrast matrices at **known rank
+R ∈ {2, 4, 8}** with matched off-diagonal concordance and arm-count bias, at the **real corpus's K (triggers)
+and per-contrast N**, and confirm the estimators recover R and a well-calibrated CI — and that the structural
+co-primary lands in the correct t116 regime band. This is the positive/calibration control the plan otherwise
+lacks (t116's own credibility came from a parameter-free concordance-SD calibration; this is its analogue).
+**A grid placement (Stage 5) is not emitted unless Stage 3c passes**; if the battery cannot recover R at the
+corpus's real K/N, that is itself the finding (the corpus cannot identify the rank), reported in place of a
+grid verdict. All synthetic-generator params live in `config.yaml` with the estimator seeds.
+
 ### Stage 3b — LODO/LOCO operationalization (pre-locked pass/fail)
 Resampling stability is evidence only if its decision rule is fixed **before** seeing the folds. For every
 leave-one-dataset-out (LODO) and leave-one-condition-out (LOCO) fold:
 
-1. **Fold admissibility (structural gate).** A fold is *informative* only if the remaining matrix retains
-   **≥3 distinct triggers, ≥6 contrasts, and ≥2 platforms** — the t116 K≥3 shared-axis requirement below
-   which a rank is simply **not identifiable**. A fold failing any threshold is reported as
-   **non-identifiable / uninformative** and is **excluded from pass/fail** — never scored as either — with
-   the exclusion stated explicitly (no silent drop).
+1. **Fold admissibility (structural gate) — re-grounded in t116 (review Finding A).** The **only
+   `interpretation:0037`-grounded identifiability threshold is arm count: a fold is *non-identifiable* iff the
+   remaining matrix retains `< 3 distinct triggers` (K<3)** — the t116 shared-axis requirement. Contrast count
+   and platform count are **power dimensions, not identifiability gates**: a fold with K≥3 but few
+   contrasts/one platform is **admissible-but-low-power** (wide CI), *not* non-identifiable. The earlier
+   hand-set `min_contrasts=6` / `min_platforms=2` thresholds are **demoted from binary gates to reported power
+   covariates** — they parameterize a **power/CI curve**, they do not by themselves declare a fold
+   uninformative. A K<3 fold is reported as **non-identifiable** and excluded from pass/fail (stated
+   explicitly, no silent drop); a K≥3-but-underpowered fold is **scored with its CI width and
+   parallel-analysis power flag attached**, not excluded.
 2. **Pass/fail on admissible folds.** **PASS** iff the artifact-adjusted R point estimate stays within
    **±1 of the full-corpus R AND within the same t116 regime band** (low ≈2–4 vs high ≥8) **and** the
    leading shared subspace is stable (principal angle between full-corpus and fold subspaces below a
    config'd cutoff). **FAIL** iff an admissible fold moves R across the t116 regime boundary.
 3. **The long-COVID-out (LC-out) fold is a first-class, separately reported result** — not one fold among
-   many — because LC supplies ~8 of ~13 columns. If LC-out is admissible **and** passes, the low-rank
-   conclusion is **robust**. If LC-out is **inadmissible** (too few remaining contrasts/triggers) **or**
-   **underpowered** (the parallel-analysis null band overlaps the observed leading eigenvalue), the
-   low-rank conclusion is labelled **conditional on long-COVID inclusion → hypothesis-generating, not
-   q0050-grade** — the same demotion the two-matrix rule applies to sensitivity-only findings.
+   many — because LC supplies ~8 of ~13 columns. Under the re-grounded gate LC-out retains **4 triggers ≥ 3 →
+   admissible**, so it is **not** declared "non-identifiable"; it is an **admissible-but-low-power** fold
+   (4 single-trigger columns, no within-trigger replication) whose verdict is read off a **power/CI curve**,
+   not a binary gate (review Finding A). If LC-out passes with a CI that stays inside one t116 regime, the
+   low-rank conclusion is **robust**. If the LC-out parallel-analysis null band overlaps the observed leading
+   eigenvalue, or the R CI spans the low/high regime boundary, the low-rank conclusion is labelled
+   **conditional on long-COVID inclusion → hypothesis-generating, not q0050-grade** — the same demotion the
+   two-matrix rule applies to sensitivity-only findings, but now **demonstrated by the fold's own power
+   profile** rather than asserted from a hand-set contrast floor.
 4. **Rare-trigger-out folds** (Ebola-out, Lyme-out, QFS-out, PI-ME/CFS-out) retain all of LC and are
    typically admissible; a robust low-rank claim must **PASS every admissible rare-trigger-out fold**.
 
-Every threshold (`min_triggers=3`, `min_contrasts=6`, `min_platforms=2`, R-band `±1`, subspace-angle
-cutoff, parallel-analysis power rule) lives in `config.yaml` and is committed before any fold is scored.
+Config lives in `config.yaml`, committed before any fold is scored, with each parameter's **role** explicit:
+`min_triggers=3` is the **identifiability gate** (t116 K≥3); `contrasts`/`platforms` counts are **power
+covariates** attached to each fold's CI (not binary gates — review Finding A); R-band `±1`, subspace-angle
+cutoff, and the parallel-analysis power rule are the pass/fail parameters. The Stage-3c calibration params
+(injected R set, concordance/arm-bias, corpus K/N) live here too.
 
 ### Stage 4 — Sparse latent instrument (replication-gated, secondary)
 The primary R stays rotation-invariant. A **sparse Bayesian factor model** (BicMix/SFAmix family;
@@ -280,12 +366,16 @@ for three specific jobs:
 - **sparse feature-loadings** for artifact attribution (which sets carry a shared axis).
 Deep disentanglement (sparse VAEs) is **deferred** — n≈15–40 contrasts cannot support it.
 
-### Stage 5 — Artifact adjudication + t116-grid placement
-Run the Stage-"artifact controls" battery (platform-LOO, negative-control sets, recovered-control
-specificity, off-diagonal SD). **Separate biology-shared from artifact-shared** before reading R. Then map
-the surviving R + uncertainty onto the **t116 R-regime grid** (`interpretation:0037`): does the estimate
-land in the arbitrable low-rank regime (q0050 GO with the t116 conditions), the non-arbitrating high-rank
-regime (q0050 NO-GO / redesign), or straddle?
+### Stage 5 — Artifact adjudication + t116-grid placement (gated on Stage 3c)
+Run the full Stage-"artifact controls" battery (platform-LOO, **compartment/composition control**,
+negative-control sets, recovered-control specificity, off-diagonal SD). **Separate biology-shared from
+artifact-shared — and compartment-shared (review Finding C) — before reading R.** Then, **and only if Stage 3c
+calibration passed** (review Finding B — otherwise no grid verdict is emitted, the calibration failure is the
+result), map the surviving R + uncertainty **and the t116 structural co-primary** onto the **t116 R-regime
+grid** (`interpretation:0037`): does the estimate land in the arbitrable low-rank regime (q0050 GO with the
+t116 conditions), the non-arbitrating high-rank regime (q0050 NO-GO / redesign), or straddle? The grid verdict
+is reported jointly for the rank estimator and the structural statistic; a divergence between them is carried
+forward, not averaged.
 
 ## Key decisions
 
@@ -304,10 +394,12 @@ one-contrast-per-unit policy defined in Stage 2.
 scRNA-pseudobulk, proteomics, metabolomics, and tissue are **separate matrices** compared for consistency
 of R, **never pooled** into the primary rank matrix.
 
-### Key decision 4 — artifact controls gate the estimate
-Platform-LOO, negative-control sets, recovered-control specificity, and off-diagonal concordance SD are
-**admissibility criteria**, run before biological interpretation. The shared-artifact alternative is the
-named rival for any low-rank finding.
+### Key decision 4 — artifact *and compartment* controls gate the estimate
+Platform-LOO, negative-control sets, recovered-control specificity, off-diagonal concordance SD, **and the
+compartment/composition control (review Finding C)** are **admissibility criteria**, run before biological
+interpretation. Two rivals are named for any low-rank finding: a **correlated shared artifact** (t116) and a
+**cell-composition-shift axis** across mixed blood compartments — the latter is why the primary matrix is
+WB/PBMC-only with sorted deposits held as a separate stratum.
 
 ### Key decision 5 — "non-arbitrating" is scoped to the achievable test family, not literally "any N"
 The t116 high-rank regime is **non-arbitrating at achievable arm counts under this pathway-vector
@@ -315,15 +407,26 @@ structural-test family** — *not* literally at any N. This plan adopts that sco
 correction owed:** `interpretation:0037` and `question:0050` currently say "at ANY N"; this must be softened
 to the scoped phrasing when those entities are next edited (tracked in Open Questions).
 
+### Key decision 6 — the rank estimator must be calibrated to t116 before the grid is read
+The SVD/parallel-analysis rank estimator is **not** the statistic t116 characterized (review Finding B). No
+real-data R is placed on the t116 grid until the battery is calibrated against t116's generative model
+(Stage 3c), and the **t116 structural single-axis statistic is carried as a confirmatory co-primary**. The
+grid bridge is validated, not assumed.
+
 ## Work packages
 
 ### WP0 — Workflow skeleton, corpus link-through, config
 - Reuse the `plan:0003` Snakemake `envs/` (limma+fgsea+annotation Bioconductor stack) and
   `qa_checkpoint.py`; scaffold `code/workflows/t117-crosspais-rank/` with a single `config.yaml`
-  (pinned universe hash, seed, estimator params, LOO/blocking spec, artifact-control set list).
+  (pinned universe hash, **per-estimator seeds** — parallel-analysis permutation, CV-SVD fold split, BicMix
+  MCMC seed/chains/convergence rule — estimator params, LOO/blocking spec with **each fold param's role**
+  [`min_triggers=3` identifiability vs `contrasts`/`platforms` power covariates, review Finding A], the
+  **Stage-3c calibration generator** params [injected R set, concordance/arm-bias, corpus K/N], the
+  **artifact-control set list**, and the **compartment stratum map** [WB / PBMC / sorted] for Finding C).
 - Reciprocally link every admitted `dataset:` to this plan (`science dataset link … consumed_by
   plan:0010-…`) so Dimension-3 review resolves.
-- **DoD:** `snakemake -n` resolves; envs solve; every corpus dataset carries a `consumed_by` backlink.
+- **DoD:** `snakemake -n` resolves; envs solve; every corpus dataset carries a `consumed_by` backlink; the
+  rank-estimation output dir emits a `datapackage.json` (matrix + R estimates + stability profiles).
 
 ### WP1 — Corpus verification + staging (the "verify details / explanatory power" pass) — **readiness gate** — *record-verification DONE 2026-07-08; staging pending WP0*
 - For each registered candidate: verify from the record the `[UNVERIFIED]` specifics (N, tissue, platform,
@@ -344,18 +447,51 @@ to the scoped phrasing when those entities are next edited (tracked in Open Ques
 ### WP2 — Uniform DE→enrichment → pathway × contrast matrix
 - Run Stage-2 machinery over all admitted contrasts on the pinned universe; emit the matrix + per-contrast
   QA. Longitudinal/paired one-contrast-per-unit policy applied.
-- **DoD:** a single reproducible pathway × contrast matrix (+ condition/platform grouping metadata),
-  QA-gated, for both strict and sensitivity matrices.
+- **Per-deposit ingest contract + NES-comparability gate (review Finding F):** each deposit gets an explicit
+  ingest/normalization/gene-id path (salmon TPM/counts vs DESeq/CPM vs Illumina microarray vs MMSEQ span
+  three compartments and ≥5 sequencers — "reuse plan:0003 verbatim" understates this). Before any
+  cross-compartment comparison is trusted, the two same-tissue LC RNA-seq deposits must produce **concordant
+  NES on a matched contrast** — a comparability check, not an assumption.
+- **DoD:** a single reproducible pathway × contrast matrix (+ condition/platform/**compartment** grouping
+  metadata), QA-gated, for both strict and sensitivity matrices; the same-tissue NES-comparability check passes
+  (or its failure is surfaced as a harmonization blocker).
 
-### WP3 — Rank estimation battery + stability
-- Parallel analysis, CV/bi-cross-val SVD, split-half, LODO + LOCO on both matrices; report R + uncertainty
-  and the full stability profile.
-- **DoD:** R point estimate + interval per matrix, with LODO/LOCO curves and off-diagonal SD.
+### WP3 — Rank estimation battery + stability + t116 calibration
+- **Stage 3c first (gating):** calibrate the battery on t116-generative synthetic matrices at known
+  R ∈ {2,4,8} at the real corpus K/N; confirm recovery + CI calibration; **no grid placement downstream
+  unless this passes** (review Finding B).
+- Parallel analysis, CV/bi-cross-val SVD, split-half, LODO + LOCO on both matrices; **compute the t116
+  structural single-axis statistic as a co-primary** alongside R; report R + uncertainty and the full
+  stability profile.
+- **Report the LC-out fold as a power/CI curve** over the contrast-count / power covariates, not a binary
+  identifiability verdict (review Finding A); state whether the low-power ceiling is demonstrated.
+- **Compartment-stratified R** (WB, PBMC, sorted) + drop-sorted sensitivity (review Finding C).
+- **DoD:** R point estimate + interval per matrix (rank estimator **and** structural co-primary), with
+  LODO/LOCO curves, the LC-out power curve, compartment-stratified R, off-diagonal SD, and a Stage-3c
+  calibration pass/fail record.
 
-### WP4 — Artifact adjudication
+### WP4 — Artifact + compartment adjudication
 - Platform-LOO, negative-control sets, recovered-control specificity; subtract the artifact floor;
   re-report R.
-- **DoD:** artifact-adjusted R; explicit statement of how much of the shared structure survives.
+- **Compartment/composition control (review Finding C):** WB/PBMC-only primary R; drop-sorted sensitivity;
+  where deconvolution is valid (WB, partial PBMC — not sorted monocytes), report R before/after
+  composition adjustment with the composition axis as a named nuisance dimension.
+- **DoD:** artifact- **and composition-**adjusted R; explicit statement of how much of the shared structure
+  survives each; whether the low-rank signal dissolves under composition adjustment or compartment stratification.
+
+### WP4b — Non-infectious specificity read-across (GWS/FM) — review Finding D
+- Assemble a **separate non-infectious specificity matrix** (Gulf War Syndrome / fibromyalgia blood-bulk
+  WB/PBMC; PACVS if a public downloadable deposit exists) under the **same admissibility gates** as the
+  primary corpus and the **same uniform DE→enrichment over the same pinned universe**; compute its
+  pathway × contrast matrix as a distinct object.
+- Project the PAIS subspace onto it (and vice-versa): quantify how much of the learned PAIS shared subspace
+  is **recovered by non-infectious GWS/FM** — the direct test of the t116 Q-D infection-specific-attractor vs
+  generic-sickness-manifold ceiling.
+- **This WP is itself gated on a public, downloadable, sample-level GWS/FM deposit clearing the gates** — if
+  none exists, record that as a note-only gap (do not relax the gates), mirroring the inaccessible-deposit
+  discipline.
+- **DoD:** a GWS/FM specificity readout (subspace-recovery fraction) or an explicit "no admissible
+  non-infectious deposit" note; carried to WP6 and `question:0050`.
 
 ### WP5 — Sparse-FA instrument (replication-gated)
 - Fit BicMix/SFAmix; cross-check active-factor count; classify attractor vs trigger/platform-specific
@@ -364,11 +500,16 @@ to the scoped phrasing when those entities are next edited (tracked in Open Ques
 - **DoD:** a secondary factor-count + attractor/specific decomposition, flagged secondary.
 
 ### WP6 — t116-grid placement + interpretation + doc corrections
-- Map R + uncertainty onto the t116 R-regime grid; state the q0050 GO/NO-GO consequence and the verdict
-  under both matrices per the two-matrix rule. Write the interpretation entity; carry the scoped
-  "achievable arm counts" wording into `interpretation:0037` and `question:0050`.
-- **DoD:** an `interpretation:` deliverable answering t117 + the q0050 consequence; the two "any N"
-  corrections landed.
+- **Decision gate (review Finding E), after WP3 Stage-3c/LC-out power curve:** if the calibration confirms
+  the low-power ceiling, decide whether the descriptive R + GWS/FM specificity + composition adjudication is
+  worth the full staging/harmonization cost, or whether the **WP1 finding + the scoped calibration is itself
+  the t117 deliverable**. Record the decision.
+- Map R + uncertainty (rank estimator **and** structural co-primary) onto the t116 R-regime grid **only if
+  Stage 3c passed**; state the q0050 GO/NO-GO consequence and the verdict under both matrices per the
+  two-matrix rule, plus the **GWS/FM infection-specificity** result. Write the interpretation entity; carry
+  the scoped "achievable arm counts" wording into `interpretation:0037` and `question:0050`.
+- **DoD:** an `interpretation:` deliverable answering t117 + the q0050 consequence + the Q-D specificity
+  read-across; the Finding-E scope decision recorded; the two "any N" corrections landed.
 
 ## Non-Goals
 
@@ -385,21 +526,35 @@ to the scoped phrasing when those entities are next edited (tracked in Open Ques
 - [x] **WP1 record-verification pass (2026-07-08)** set `access.verified` per deposit (or demoted it),
       replacing the `[UNVERIFIED]` specifics with confirmed values; **every floor-/SRA-provisional deposit
       resolved** (both demoted); strict matrix finalized at ~10 contrasts / 5 triggers. Staging (download)
-      remains pending WP0. Recorded the LC-out identifiability ceiling as the binding result.
-- [ ] LODO/LOCO carry **pre-locked pass/fail semantics** (Stage 3b): a fold admissibility gate
-      (≥3 triggers, ≥6 contrasts, ≥2 platforms) with non-identifiable folds reported and excluded from
-      pass/fail, a fixed R-band + regime + subspace-angle PASS rule, and the **LC-out fold reported
-      first-class** — a low-rank result that fails/cannot-power LC-out is demoted to hypothesis-generating.
+      remains pending WP0. Surfaced the LC-out low-power ceiling as a **provisional, calibration-contingent**
+      result (not binding — review Finding A; to be demonstrated by the WP3 power curve).
+- [ ] LODO/LOCO carry **pre-locked pass/fail semantics** (Stage 3b): the identifiability gate is **K≥3
+      triggers only** (t116-grounded — review Finding A), with contrast/platform counts as **reported power
+      covariates, not binary gates**; non-identifiable (K<3) folds excluded from pass/fail; a fixed
+      R-band + regime + subspace-angle PASS rule; and the **LC-out fold reported first-class as a power/CI
+      curve** — a low-rank result that cannot power LC-out is demoted to hypothesis-generating.
+- [ ] **Stage 3c calibration (review Finding B):** the rank battery is validated against t116's generative
+      model at the corpus's real K/N (recovers known R ∈ {2,4,8} with calibrated CI) **before any grid
+      placement**, and the **t116 structural single-axis statistic is reported as a confirmatory co-primary**.
 - [ ] One reproducible, QA-gated pathway × contrast matrix per matrix (strict, sensitivity), computed by a
       single harmonized DE→enrichment over the pinned `msigdb-2024-1-hs-mapped-pais-gene-set-universe`.
 - [ ] R is reported with uncertainty from **≥3 rotation-invariant estimators**, and its **leave-one-dataset-out
       and leave-one-condition-out** stability profiles are reported **separately**.
 - [ ] The artifact-control battery (platform-LOO, negative-control sets, recovered-control specificity,
-      off-diagonal SD) is reported, and the artifact-adjusted R is stated.
+      off-diagonal SD) **and the compartment/composition control** (review Finding C: WB/PBMC-only primary,
+      compartment-stratified R, drop-sorted sensitivity, composition-adjusted R where deconvolution is valid)
+      are reported, and the artifact- and composition-adjusted R are stated.
+- [ ] **Non-infectious specificity read-across (review Finding D):** a GWS/FM (± PACVS) matrix under the same
+      gates + same pipeline is projected against the PAIS subspace (Q-D infection-specificity test), **or** an
+      explicit "no admissible non-infectious deposit" note is recorded (gates not relaxed).
 - [ ] The two-matrix verdict rule is applied: the q0050-grade R comes from the strict matrix; any
       sensitivity-only low-rank result is labelled hypothesis-generating; the adjacent ME/CFS question is
       answered separately.
-- [ ] R + uncertainty are placed on the t116 R-regime grid with the explicit q0050 GO/NO-GO consequence.
+- [ ] R + uncertainty (rank estimator **and** structural co-primary) are placed on the t116 R-regime grid
+      **only after Stage 3c passes**, with the explicit q0050 GO/NO-GO consequence.
+- [ ] Reproducibility: per-estimator seeds (parallel-analysis permutation, CV-SVD fold, BicMix
+      MCMC seed/chains/convergence) are pinned in `config.yaml`, and the rank-estimation outputs emit a
+      `datapackage.json`.
 - [ ] The scoped "non-arbitrating at achievable arm counts under this test family" wording is carried into
       `interpretation:0037` and `question:0050` (replacing "at ANY N").
 
@@ -412,6 +567,10 @@ to the scoped phrasing when those entities are next edited (tracked in Open Ques
    known shared-axis risk; these are LOO-conditional and feed the platform-LOO control directly.
 3. **Longitudinal/paired contrast policy** (`gse267625`, `gse16059`) — define the single representative
    contrast per subject/timepoint in WP2 to avoid pseudo-replication inflating apparent rank.
+4. **GWS/FM deposit availability (WP4b feasibility, review Finding D).** WP4b needs a *public, downloadable,
+   sample-level* GWS or fibromyalgia blood-bulk (WB/PBMC) case-vs-control deposit clearing the same gates as
+   the primary corpus. A discovery sweep for such a deposit is unstarted; if none is admissible the Q-D
+   infection-specificity read-across becomes a note-only gap (gates not relaxed), not a free-form column.
 
 ## Notes on reusable infrastructure
 
