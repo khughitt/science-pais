@@ -89,7 +89,11 @@ def parse(path: Path) -> tuple[list[str], dict[str, dict[str, str]]]:
     # characteristics: one column per distinct key; key detected from the "key: value" cells.
     for cells in char_lines:
         if len(cells) != n:
-            continue   # ragged characteristic line -> skip rather than misalign
+            # fail-closed: a series matrix must carry exactly one characteristics cell
+            # per sample. A ragged line means the file is truncated/corrupt or our split
+            # is wrong — silently skipping it is invisible provenance loss.
+            sys.exit(f"[parse_geo_metadata] HALT: ragged !Sample_characteristics_ch1 line "
+                     f"({len(cells)} cells, expected {n}) — malformed series matrix")
         keys = [c.split(":", 1)[0].strip() for c in cells if ":" in c]
         if not keys:
             continue

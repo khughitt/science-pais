@@ -279,6 +279,15 @@ def _groups_from_table(df: pd.DataFrame, gs: dict) -> tuple[dict, dict]:
         halt("sheet/companion group_source needs `condition_col`+`level_map` "
              "or `group_regex_col`+`group_regex`")
 
+    # fail-closed: the metadata sheet is the label authority, so a duplicated join
+    # key is ambiguous (which row's group/covariates win?) — HALT rather than let the
+    # last-seen row silently overwrite.
+    key_vals = list(df[key])
+    dups = sorted({v for v in key_vals if key_vals.count(v) > 1})
+    if dups:
+        halt(f"metadata join column '{key}' has duplicate values {dups} "
+             f"— cannot resolve group/covariates unambiguously")
+
     group_of, covariates_of = {}, {}
     for _, row in df.iterrows():
         s = row[key]
@@ -464,8 +473,14 @@ def run(config_path: Path, accession: str, out_expr: Path, out_sheet: Path,
     n_control = int((sheet["group"] == control).sum())
     needed_cov = de_model.get("covariates", [])
     # bool(...) coerces numpy.bool_ (from .all()) to a JSON-serializable Python bool.
-    cov_present = {c: bool(c in sheet.columns and sheet[c].astype(str).str.len().gt(0).all())
-                   for c in needed_cov}
+    # notna() first: a missing value stringifies to "nan" (len 3), which .str.len() would
+    # wrongly count as present — so a required covariate could be incomplete yet pass.
+    def _cov_complete(c: str) -> bool:
+        if c not in sheet.columns:
+            return False
+        col = pd.Series(sheet[c])
+        return bool((col.notna() & col.astype(str).str.strip().ne("")).all())
+    cov_present = {c: _cov_complete(c) for c in needed_cov}
     eligibility = {
         "de_model_design": de_model.get("design"),
         "de_model_stock_ok": de_model.get("stock_ok"),
