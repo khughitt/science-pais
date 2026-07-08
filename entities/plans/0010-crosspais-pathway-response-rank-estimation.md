@@ -517,18 +517,29 @@ downstream matrix builds on a real contract, not an assumption.
   failure). `stage_matrix.py` hash-verifies the map and **fails closed**: map-rate < `min_map_rate` or a
   wrong-namespace fraction > `max_mixed_namespace_frac` marks the contrast **ineligible** rather than emitting a
   thin matrix. Proven on real ids: `gse270045` symbol 83% ✓, `gse128078` RefSeq 90% ✓, **`gse143549` gene_name
-  56% → fails closed** (NOVEL/non-coding rows; needs a cleaner symbol source before admission). The map's
-  canonical sha256 is HALT-guarded until the first pinned r-bioc build (`build_gene_id_map --use-conda`), the
-  same discipline as the salmon reference. **Note:** (b) resolves the *gene-id* blocker; `gse270045`/`gse128078`
-  still need their *group* metadata (below), so they stay deferred on group only.
-- **Remaining WP1b tranches:** **(a)** add the missing GEO series-matrix/SOFT metadata payloads to `acquisition`
-  (re-pin hashes) so the deferred RNA-seq deposits (`gse226260`, `gse228320`, `gse267625`, and the group side of
-  `gse270045`/`gse143549`/`gse128078`) resolve; **(b·pin)** run the canonical org.Hs.eg.db-3.22.0 map build +
-  pin `harmonization.map_sha256`; **(c)** microarray handlers (`series_matrix`, `soft` — reuse
+  56% → fails closed** (NOVEL/non-coding rows). The guardrail also fails closed on a **mostly-ambiguous** map
+  (of the mapped ids, the fraction whose source resolves to ≥2 ENSG > `max_ambiguous_mapped_frac`) — the map
+  carries a per-id `n_targets` so this is enforced per deposit, not just as a global census. The map's canonical
+  sha256 is HALT-guarded until the first pinned r-bioc build (`build_gene_id_map --use-conda`), the same
+  discipline as the salmon reference; **until that pin, non-Ensembl parsing is specified + proven but not yet
+  reproducibly consumable.**
+- **Per-deposit status after (b) — three distinct cases, not "group-only":**
+  - `gse270045` (symbol 83% ✓): gene-id resolved; deferred on **group** (CCI/HP/S prefixes ambiguous — needs
+    series-matrix metadata; not inferred from the 19/17 count match).
+  - `gse128078` (RefSeq 90% ✓): gene-id **identity** resolved but **quantitative aggregation UNRESOLVED** —
+    isoform-FPKM→gene `sum` is only approximately additive (recorded as `scale_caveat`; **sensitivity-only**
+    unless re-quantified); also deferred on group.
+  - `gse143549` (gene_name 56% ✗): **still gene-id-blocked** — fails the map-rate guardrail; staging its
+    series-matrix metadata alone will **not** unlock the Ebola column (needs a cleaner symbol source / coordinate
+    lift first), then group.
+- **Remaining WP1b tranches:** **(b·pin)** run the canonical org.Hs.eg.db-3.22.0 map build + pin
+  `harmonization.map_sha256` (makes non-Ensembl parsing consumable); **(a)** add the missing GEO
+  series-matrix/SOFT metadata payloads to `acquisition` (re-pin hashes) so the group-blocked deposits
+  (`gse226260`, `gse228320`, `gse267625`, group side of `gse270045`/`gse128078`) resolve — plus a cleaner
+  identity source for `gse143549`; **(c)** microarray handlers (`series_matrix`, `soft` — reuse
   `collapse_probes.R` / `parse_gse14577.py`) for `gse16059`/`gse14577` and the per-sample `tar` handler (reuse
   `extract_gse130353.py`) for `gse130353`/`gse251872`/`gse63085`; **(d)** the salmon/CHIKV decoy quant path
-  (`salmon_gene_matrix`). Priority per the reviewer: **b → c → a** (identity contract first, then the LC-out
-  non-LC spine, then the mostly-LC metadata additions).
+  (`salmon_gene_matrix`). Priority per the reviewer: **b → c → a**.
 - **DoD:** every deposit has an executable `parse:` contract; each admitted deposit produces the 4 uniform
   outputs with a PASS `stage_matrix.qa.json`; each deferred deposit HALTs naming its blocker. **No WP (2+) runs
   until every strict/sensitivity contrast is parsed (or explicitly demoted).**

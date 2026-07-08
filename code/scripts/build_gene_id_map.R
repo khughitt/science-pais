@@ -61,15 +61,24 @@ for (kt in keytypes) {
   # first-ENSG per source id (deterministic under a pinned org.Hs.eg.db)
   first_map <- suppressWarnings(mapIds(org.Hs.eg.db, keys = keys_kt, column = "ENSEMBL",
                                        keytype = kt, multiVals = "first"))
-  # ambiguity census (1:many) — recorded, not policy
+  # full target list per source id -> per-id ambiguity (n distinct ENSG targets IN
+  # universe). n_targets>=2 means the "first" pick is ambiguous; emitted PER ID so a
+  # deposit dominated by ambiguous ids can be failed closed (not just a global count).
   list_map <- suppressWarnings(mapIds(org.Hs.eg.db, keys = keys_kt, column = "ENSEMBL",
                                       keytype = kt, multiVals = "list"))
-  n_ambiguous <- sum(vapply(list_map, function(x) sum(!is.na(x)) > 1L, logical(1)))
+  # per-id ambiguity = number of distinct ENSG targets (non-NA). >=2 => the "first"
+  # pick is ambiguous. (Distinct targets, not universe-filtered — a cheap, slightly
+  # conservative flag; the emitted rows are still universe-filtered via first_map.)
+  n_targets_all <- lengths(lapply(list_map, function(x) unique(x[!is.na(x)])))
+  n_ambiguous <- sum(n_targets_all > 1L)
 
-  mapped <- first_map[!is.na(first_map) & first_map %in% universe]
+  keep <- !is.na(first_map) & first_map %in% universe
+  mapped <- first_map[keep]
   if (length(mapped)) {
     rows[[kt]] <- data.frame(source_id = names(mapped), source_ns = ns_tag(kt),
-                             ensembl_gene = unname(mapped), stringsAsFactors = FALSE)
+                             ensembl_gene = unname(mapped),
+                             n_targets = n_targets_all[names(mapped)],
+                             stringsAsFactors = FALSE)
   }
   stats[[kt]] <- list(keytype = kt, n_keys = length(keys_kt),
                       n_mapped_in_universe = length(mapped), n_ambiguous_1_to_many = n_ambiguous)
@@ -82,8 +91,8 @@ tab <- tab[order(tab$source_ns, tab$source_id), ]
 dir.create(dirname(out_tsv), recursive = TRUE, showWarnings = FALSE)
 # stable, header-first, no row names -> byte-reproducible for a fixed annotation.
 con <- file(out_tsv, "w")
-writeLines("source_id\tsource_ns\tensembl_gene", con)
-writeLines(sprintf("%s\t%s\t%s", tab$source_id, tab$source_ns, tab$ensembl_gene), con)
+writeLines("source_id\tsource_ns\tensembl_gene\tn_targets", con)
+writeLines(sprintf("%s\t%s\t%s\t%d", tab$source_id, tab$source_ns, tab$ensembl_gene, tab$n_targets), con)
 close(con)
 
 report <- list(

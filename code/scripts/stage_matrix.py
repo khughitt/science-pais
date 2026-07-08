@@ -58,6 +58,14 @@ def halt(msg: str) -> NoReturn:
     sys.exit(f"[stage_matrix] HALT: {msg}")
 
 
+def _atomic_text(path: Path, text: str) -> None:
+    """Write text via a temp sibling + rename so a partial write never satisfies an output."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(path.name + ".tmp")
+    tmp.write_text(text)
+    tmp.replace(path)
+
+
 def load_origin(raw_dir: Path, payload: str) -> dict:
     p = raw_dir / f"{payload}.origin.json"
     if not p.exists():
@@ -104,12 +112,16 @@ def load_harmonization(cfg: dict, source_ns: str) -> dict | None:
     if got != locked:
         halt(f"harmonization map sha256 mismatch (expected {locked}, got {got}) — "
              f"re-pin from a deliberate rebuild, never auto-accept")
-    maps: dict[str, dict[str, str]] = {}
+    # maps[ns][source_id] = (ensembl_gene, n_targets); n_targets>=2 => ambiguous "first" pick
+    maps: dict[str, dict[str, tuple[str, int]]] = {}
     with map_tsv.open() as fh:
-        next(fh)  # header
+        header = next(fh).rstrip("\n").split("\t")
+        if header[:4] != ["source_id", "source_ns", "ensembl_gene", "n_targets"]:
+            halt(f"harmonization map header {header} != expected "
+                 f"[source_id, source_ns, ensembl_gene, n_targets] — rebuild build_gene_id_map")
         for line in fh:
-            sid, ns, ens = line.rstrip("\n").split("\t")
-            maps.setdefault(ns, {})[sid] = ens
+            sid, ns, ens, n_targets = line.rstrip("\n").split("\t")
+            maps.setdefault(ns, {})[sid] = (ens, int(n_targets))
     return {"maps": maps, "guardrails": h.get("guardrails", {}), "source": h.get("source", "")}
 
 
@@ -144,25 +156,36 @@ def harmonize_gene_ids(ids: list[str], source_ns: str,
     assert hmap is not None
     table = hmap["maps"].get(source_ns, {})
     gr = hmap["guardrails"]
-    out, unmapped, looks_ensembl = [], 0, 0
+    out, unmapped, looks_ensembl, ambiguous_mapped = [], 0, 0, 0
     for x in ids:
         x = str(x).split(".")[0] if source_ns == "refseq" else str(x)  # NM_x.v -> NM_x
         if x.startswith("ENSG"):
             looks_ensembl += 1
-        ens = table.get(x)
-        if ens is None:
+        hit = table.get(x)
+        if hit is None:
             out.append(None); unmapped += 1
         else:
+            ens, n_targets = hit
             out.append(ens)
+            if n_targets >= 2:
+                ambiguous_mapped += 1   # id resolves to >=2 ENSG; "first" picked one
     n = max(len(ids), 1)
-    map_rate = round(1 - unmapped / n, 4)
+    n_mapped = n - unmapped
+    map_rate = round(n_mapped / n, 4)
     mixed_ns_frac = round(looks_ensembl / n, 4)   # declared non-Ensembl but ids look Ensembl
+    ambiguous_frac = round(ambiguous_mapped / max(n_mapped, 1), 4)  # of the MAPPED ids
+    min_map_rate = gr.get("min_map_rate", 0.6)
+    max_mixed = gr.get("max_mixed_namespace_frac", 0.05)
+    max_ambiguous = gr.get("max_ambiguous_mapped_frac", 0.20)
     report.update(
-        n_unmapped=unmapped, map_rate=map_rate, min_map_rate=gr.get("min_map_rate", 0.6),
-        mixed_namespace_frac=mixed_ns_frac, max_mixed_namespace_frac=gr.get("max_mixed_namespace_frac", 0.05),
+        n_unmapped=unmapped, map_rate=map_rate, min_map_rate=min_map_rate,
+        mixed_namespace_frac=mixed_ns_frac, max_mixed_namespace_frac=max_mixed,
+        ambiguous_mapped_frac=ambiguous_frac, max_ambiguous_mapped_frac=max_ambiguous,
         harmonization_source=hmap["source"])
-    report["map_rate_ok"] = (map_rate >= gr.get("min_map_rate", 0.6)
-                             and mixed_ns_frac <= gr.get("max_mixed_namespace_frac", 0.05))
+    # fail closed on ANY of: too few mapped, wrong namespace, or mapped-but-mostly-ambiguous.
+    report["map_rate_ok"] = (map_rate >= min_map_rate
+                             and mixed_ns_frac <= max_mixed
+                             and ambiguous_frac <= max_ambiguous)
     return out, report
 
 
@@ -351,13 +374,9 @@ def run(config_path: Path, accession: str, out_expr: Path, out_sheet: Path,
         and eligibility["gene_map_rate_ok"]
     )
 
-    # --- write the uniform outputs ------------------------------------------
-    out_expr.parent.mkdir(parents=True, exist_ok=True)
+    # --- decide verdict BEFORE writing any expr/sheet (no-partial-output contract)
     mat_out = mat_out.sort_index()
-    mat_out.to_csv(out_expr, sep="\t", index=True, index_label="gene_id",
-                   compression="gzip")
-    sheet.to_csv(out_sheet, sep="\t", index=False)
-
+    verdict = "PASS" if eligibility["eligible"] and scale_report["verdict"] == "PASS" else "REVIEW"
     qa = {
         "dataset": accession,
         "parser": {"script": "code/scripts/stage_matrix.py", "version": SCRIPT_VERSION,
@@ -386,15 +405,28 @@ def run(config_path: Path, accession: str, out_expr: Path, out_sheet: Path,
         },
         "contrast_eligibility": eligibility,
         "expr_out": {"rows": int(mat_out.shape[0]), "cols": int(mat_out.shape[1]),
+                     "written": verdict == "PASS",
                      "sha256_note": "hash emitted by the datapackage step, not here"},
-        "verdict": "PASS" if eligibility["eligible"] and scale_report["verdict"] == "PASS" else "REVIEW",
+        "verdict": verdict,
     }
-    out_qa.write_text(json.dumps(qa, indent=2) + "\n")
 
-    if qa["verdict"] != "PASS":
+    # A stale PASS sentinel must never survive a now-failing re-run.
+    out_expr.parent.mkdir(parents=True, exist_ok=True)
+    out_pass.unlink(missing_ok=True)
+    # qa.json is the DIAGNOSTIC — always emitted (atomically) so a REVIEW is inspectable.
+    _atomic_text(out_qa, json.dumps(qa, indent=2) + "\n")
+
+    if verdict != "PASS":
+        # no expr/sheet/pass written -> no thin matrix can leak into a direct run.
         halt(f"{accession}: contract not PASS "
              f"(eligibility={eligibility['eligible']}, scale={scale_report['verdict']}) "
              f"— see {out_qa}; resolve before writing clean.qa.pass")
+
+    # PASS: emit the matrix + sheet atomically, THEN the sentinel (write-order = gate).
+    tmp_expr = out_expr.with_name(out_expr.name + ".tmp")
+    mat_out.to_csv(tmp_expr, sep="\t", index=True, index_label="gene_id", compression="gzip")
+    tmp_expr.replace(out_expr)
+    _atomic_text(out_sheet, sheet.to_csv(sep="\t", index=False))
     out_pass.write_text(
         f"OK {accession} expr={mat_out.shape[0]}x{mat_out.shape[1]} "
         f"case={n_case} control={n_control} handler={handler}\n")
@@ -433,9 +465,13 @@ def _scale_verdict(mat: pd.DataFrame, parse: dict) -> dict:
     else:
         halt(f"unknown declared expression_scale '{declared}' "
              f"(counts|estimated_counts|cpm|fpkm|tpm|log2_intensity|log_mu)")
-    return {"declared": declared, "observed": stats,
-            "continuous_only": declared != "counts",   # limma-only where not true integer counts
-            "verdict": "PASS" if ok else "MISMATCH"}
+    out = {"declared": declared, "observed": stats,
+           "continuous_only": declared != "counts",   # limma-only where not true integer counts
+           "verdict": "PASS" if ok else "MISMATCH"}
+    caveat = parse.get("scale_caveat")
+    if caveat:
+        out["caveat"] = caveat   # e.g. FPKM isoform->gene sum only approximately additive (sensitivity-only)
+    return out
 
 
 def main() -> int:

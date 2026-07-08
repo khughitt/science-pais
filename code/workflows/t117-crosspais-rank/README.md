@@ -36,11 +36,17 @@ design; scripts hard-code nothing.
 - **Tranche (b) — shared gene-id identity contract** (`build_gene_id_map.R`,
   config `harmonization:`) — symbol/alias/RefSeq → Ensembl from the **same**
   org.Hs.eg.db (3.22.0) + `first` policy as the gene sets, so identity is
-  commensurable by construction. `stage_matrix.py` **fails closed**: map-rate <
-  `min_map_rate` (0.60) or wrong-namespace ⇒ contrast **ineligible**, not a thin
-  matrix. Proven: `gse270045` symbol 83% ✓, `gse128078` RefSeq 90% ✓, `gse143549`
-  gene_name 56% → fails closed. Canonical `map_sha256` HALT-guarded until the pinned
-  r-bioc build. (b) resolves gene-id; those deposits still need group metadata.
+  commensurable by construction. `stage_matrix.py` **fails closed** on any of:
+  map-rate < `min_map_rate` (0.60), wrong-namespace fraction, or mostly-ambiguous
+  map (per-id `n_targets` ≥ 2 fraction > `max_ambiguous_mapped_frac`) ⇒ contrast
+  **ineligible**, not a thin matrix. Proven: `gse270045` symbol 83% ✓,
+  `gse128078` RefSeq 90% ✓ (but isoform-FPKM→gene sum is only approximate →
+  sensitivity-only), `gse143549` gene_name 56% → fails closed. **Status:** the
+  identity contract is specified + proven but the canonical `map_sha256` is still
+  HALT-guarded (empty) — so non-Ensembl parsing is **not reproducibly consumable
+  until the pinned r-bioc build pins the hash (tranche b·pin)**. (b) resolves
+  gene-id only; `gse270045`/`gse128078` still need group metadata, and `gse143549`
+  is still gene-id-blocked (a cleaner symbol source, not group, unlocks it).
 
 > **Naming:** `dataset:msigdb-2024-1-hs-hallmark-reactome-rank-universe` is the
 > **rank universe** — the Hallmark ∪ Reactome subset **derived from** the broader

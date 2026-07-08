@@ -384,6 +384,7 @@ harmonization:
   guardrails:
     min_map_rate: 0.60              # < this fraction of source ids resolving -> ineligible (e.g. GSE143549 gene_name ~0.56 fails closed)
     max_mixed_namespace_frac: 0.05  # declared non-Ensembl but ids look ENSG -> namespace error, ineligible
+    max_ambiguous_mapped_frac: 0.20 # of the MAPPED ids, fraction whose source resolves to >=2 ENSG (the "first" pick is ambiguous); a deposit mapping well but mostly through ambiguous aliases/RefSeq fails closed
 
 # ------------------------------------------------------ parse (WP1b) ---------
 # review Finding F, pulled forward into WP1b: the EXECUTABLE per-deposit ingest
@@ -497,13 +498,14 @@ parse:
     annotation_cols: []
     gene_id_namespace: refseq
     expression_scale: fpkm             # FES_isoforms_FPKM
-    duplicate_policy: sum              # isoform FPKM -> gene FPKM (sum over NM_ sharing an ENSG)
+    duplicate_policy: sum              # isoform FPKM -> gene (APPROXIMATE: FPKM is not cleanly additive across isoforms)
+    scale_caveat: "isoform-FPKM summed to gene is only approximately additive (FPKM normalizes by transcript length); ADMIT SENSITIVITY-ONLY unless re-quantified from reads to gene-level, or justify the sum vs a length-weighted aggregation"
     case_label: case
     control_label: control
     min_per_arm: 2
     sheet_columns: [sample, group, subject, timepoint]
     status: deferred
-    deferred_reason: "GENE-ID RESOLVED via org.Hs.eg.db RefSeq map (90% map rate, passes guardrail; isoform FPKM summed to gene). Remaining blockers: Sample_G<group>-<rep> -> case/control mapping needs metadata; multi-timepoint one-contrast-per-subject collapse (WP2)"
+    deferred_reason: "GENE-ID RESOLVED via org.Hs.eg.db RefSeq map (90% map rate, passes guardrail). QUANTITATIVE AGGREGATION UNRESOLVED: isoform-FPKM->gene sum is only approximately additive (see scale_caveat) -> sensitivity-only. Also blocked on group: Sample_G<group>-<rep> -> case/control needs metadata; multi-timepoint collapse (WP2)"
   GSE68310:
     handler: matrix
     payload: expr
