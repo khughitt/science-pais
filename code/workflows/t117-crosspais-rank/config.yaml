@@ -302,6 +302,9 @@ acquisition:
       raw_tar: {kind: tar, filename: "GSE63085_RAW.tar", bytes: 79237120,
                 url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE63nnn/GSE63085/suppl/GSE63085_RAW.tar",
                 sha256: "7cba6a501504062ede38afe017972858d278af9b0c691fd2dd41e3276a6718c9"}
+      series_matrix: {kind: series_matrix.gz, filename: "GSE63085_series_matrix.txt.gz", bytes: 6283,
+                      url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE63nnn/GSE63085/matrix/GSE63085_series_matrix.txt.gz",
+                      sha256: "dbc69ac26edb1dd7e20bcbc4c6e9a4215b9377cf0f16e241726354e7dad14e3a"}
   GSE128078:
     payloads:
       expr: {kind: txt.gz, filename: "GSE128078_FES_isoforms_FPKM.txt.gz", bytes: 11549371,
@@ -614,11 +617,33 @@ parse:
     payload: raw_tar
     status: deferred
     deferred_reason: "WP1b tranche (a): per-sample RAW.tar (27 GSM*_Walitt*.txt.gz) needs per-member merge + a metadata payload for group (12 cases vs 15 healthy) + platform batch covariate. Handler work alone does NOT PASS this (group is not in the tar)."
-  GSE63085:                            # Lyme RAW.tar (97 members, cufflinks timecourse)
+  GSE63085:                            # Lyme/PTLDS RAW.tar (97 cufflinks members, PBMC); V5 = 6-mo post-treatment
     handler: tar
     payload: raw_tar
-    status: deferred
-    deferred_reason: "WP1b tranche (a): per-sample RAW.tar (97 GSM*_*_V<n>_cuff.txt.gz, FPKM timecourse V1-V5) needs per-member merge + the V5 6-mo post-treatment arm selection + a metadata payload for group. Handler work alone does NOT PASS this."
+    member_glob: "*_cuff.txt.gz"
+    member_gene_col: gene_id             # cufflinks gene_short_name (symbol; == gene_id col)
+    member_value_col: FPKM
+    member_agg: sum                      # >1 locus/TSS per gene symbol -> sum FPKM before merge
+    sample_id_regex: "^(GSM[0-9]+)"      # GSM from filename; joins to series-matrix `sample`
+    gene_id_namespace: symbol            # resolves through the org.Hs.eg.db symbol map
+    expression_scale: fpkm
+    case_label: case
+    control_label: control
+    de_model: default
+    metadata_payload: series_matrix
+    metadata_format: series_matrix
+    group_source:
+      mode: sheet
+      file: series_metadata.samples.tsv
+      sample_col: sample
+      # `time` alone selects the arm AND the visit: only Lyme has V-numbered visits and
+      # controls carry time="control". V5 = 6 months post-treatment (the PTLDS-relevant
+      # timepoint). Lyme V1 (acute) / V2 (3wk post-tx) drop as unmapped -> case is the
+      # residual 6-mo signature vs healthy controls.
+      group_regex_col: time
+      group_regex:
+        - {pattern: "\\(V5\\)", group: case}
+        - {pattern: "^control$", group: control}
 
 # ------------------------------------------------------ microarray chain (WP1b c)
 # The probe->gene chain feeding the `prebuilt` stage_matrix handler for the two
