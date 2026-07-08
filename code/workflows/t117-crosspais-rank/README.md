@@ -9,7 +9,7 @@ believability criterion.
 - **Review:** `doc/reviews/0010-crosspais-pathway-response-rank-estimation-pipeline-review.md`
 - **Grounds:** `interpretation:0037` (t116 R-regime grid + the K≥3 identifiability lever)
 
-## Status: WP1 acquisition COMPLETE; WP1b parse framework + tranches 1/(b)/(c)/(a-partial) DONE; WP2–WP6 stubbed
+## Status: WP1 acquisition COMPLETE; WP1b parse framework + tranches 1/(b)/(c)/(a)/(a2 tar trio) DONE; WP2–WP6 stubbed
 
 `snakemake -n` resolves the DAG (**68 jobs** remaining after WP1 + WP1b-tranche-1).
 **WP1 acquisition is implemented and run** (download + checksum + universe
@@ -60,8 +60,8 @@ design; scripts hard-code nothing.
   (8 PI-CFS / 7 HC)**; `gse16059` (GPL570; **hgu133plus2.db** added to the pinned
   r-bioc env, annotation-only/NES-neutral) → **20338 genes × 76 samples (32 CFS / 44
   unaffected; 12 ICF excluded)**, `twin_pair` block covariate carried. The per-sample
-  **`tar` trio** (`gse130353`/`gse251872`/`gse63085`) is **tranche (a), not (c)** —
-  handler code alone can't PASS them; they need a group-metadata payload first.
+  **`tar` trio** (`gse130353`/`gse251872`/`gse63085`) is **tranche (a2), not (c)** —
+  handler code alone can't PASS them; they need a group-metadata payload first (now DONE).
   > **Repro note:** `envs/r-bioc.conda-lock.yml` postdates the hgu133plus2.db add and
   > needs a `conda-lock` regen (tool absent this session); the pinned `=3.13.0` in
   > `r-bioc.yaml` is the source of truth until then.
@@ -86,9 +86,30 @@ design; scripts hard-code nothing.
   > **Still deferred (need more than series metadata):** `gse226260` (2 platforms →
   > internal-id linking + platform batch), `gse267625` (within-cohort, no external
   > control → WP2 model), `gse228320` (continuous DLCO axis → `~ dlco` model),
-  > `gse143549` (gene-id-blocked, deprioritized). The per-sample **`tar` trio**
-  > (`gse130353`/`gse251872`/`gse63085`) is the next tranche-(a) unit (distinct
-  > mechanism: `tar` handler + per-member merge + group metadata/arm selection).
+  > `gse143549` (gene-id-blocked, deprioritized).
+- **Tranche (a2) — per-sample `tar` trio DONE** (`parse_tar` in `stage_matrix.py` +
+  `parse_geo_soft.py`, config `handler: tar`). Each RAW.tar member is one sample: its
+  `(member_gene_col, member_value_col)` — name OR positional index — becomes that
+  sample's column, keyed by `sample_id_regex` on the member basename; duplicate gene ids
+  WITHIN a member collapse under `member_agg` before the cross-deposit Ensembl collapse.
+  Group is NOT in the tar — it comes from a metadata sheet (`series_matrix` via
+  `parse_geo_metadata` OR `soft` via the new `parse_geo_soft`, selected by
+  `metadata_format`) joined by the GSM the member filename carries. All three **PASS**:
+  `gse130353` (post-Q-fever fatigue, monocytes; MMSEQ `log_mu`) → **56625 × 20 (10 QFS
+  case / 10 QS infected-recovered control)**, group from SOFT `subject status` via
+  parenthetical-code regex `\(QFS\)`/`\(QS\)` (HC + CFS drop; `Fatigue Syndrom` alone
+  would mis-match both QFS and CFS), 0 NaN cells, scale `log_mu` PASS (limma-only);
+  `gse63085` (Lyme/PTLDS, cufflinks FPKM; 97 PBMC members) → **20214 × 42 (29 Lyme-V5
+  case / 13 control)**, arm+visit selected by the series-matrix `time` characteristic
+  (`\(V5\)` = 6-mo post-treatment → case, `^control$` → control; Lyme V1/V2 drop),
+  symbol map 86%; `gse251872` (PI-ME/CFS PBMC; 27 members, 2 seq platforms) → **18369 ×
+  27 (12 case / 15 control)**, value column named per-sample (`S###`) → positional
+  index 2, series-matrix URL 404s so group comes from the family SOFT title
+  (`, HV,`/`PI-ME/CFS`), `platform` batch covariate carried for `~ platform + group`.
+  > **Fail-closed guardrails (review):** duplicate metadata join keys HALT (last-write
+  > ambiguity); covariate completeness gates on `notna()` (a `NaN`→`"nan"` string no
+  > longer counts as present); ragged GEO characteristic rows HALT (no silent
+  > provenance loss).
 
 > **Naming:** `dataset:msigdb-2024-1-hs-hallmark-reactome-rank-universe` is the
 > **rank universe** — the Hallmark ∪ Reactome subset **derived from** the broader
