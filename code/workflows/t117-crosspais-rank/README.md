@@ -41,12 +41,13 @@ design; scripts hard-code nothing.
   map (per-id `n_targets` ≥ 2 fraction > `max_ambiguous_mapped_frac`) ⇒ contrast
   **ineligible**, not a thin matrix. Proven: `gse270045` symbol 83% ✓,
   `gse128078` RefSeq 90% ✓ (but isoform-FPKM→gene sum is only approximate →
-  sensitivity-only), `gse143549` gene_name 56% → fails closed. **Status:** the
-  identity contract is specified + proven but the canonical `map_sha256` is still
-  HALT-guarded (empty) — so non-Ensembl parsing is **not reproducibly consumable
-  until the pinned r-bioc build pins the hash (tranche b·pin)**. (b) resolves
-  gene-id only; `gse270045`/`gse128078` still need group metadata, and `gse143549`
-  is still gene-id-blocked (a cleaner symbol source, not group, unlocks it).
+  sensitivity-only), `gse143549` gene_name 56% → fails closed. **b·pin DONE:** the
+  canonical map is built by the pinned org.Hs.eg.db **3.22.0** r-bioc env
+  (`--use-conda`), is **deterministic** (identical sha256 on rebuild), and its
+  `map_sha256` (`d07f65bd…`) is committed in config + re-verified before use — so
+  non-Ensembl parsing is now **reproducibly consumable**. (b) resolves gene-id
+  only; `gse270045`/`gse128078` still need group metadata, and `gse143549` is still
+  gene-id-blocked (a cleaner symbol source, not group, unlocks it).
 
 > **Naming:** `dataset:msigdb-2024-1-hs-hallmark-reactome-rank-universe` is the
 > **rank universe** — the Hallmark ∪ Reactome subset **derived from** the broader

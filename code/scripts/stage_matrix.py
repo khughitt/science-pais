@@ -410,9 +410,12 @@ def run(config_path: Path, accession: str, out_expr: Path, out_sheet: Path,
         "verdict": verdict,
     }
 
-    # A stale PASS sentinel must never survive a now-failing re-run.
+    # A stale PASS sentinel — AND a prior PASS's expr/sheet — must never survive a
+    # now-failing re-run, so "qa.json only" holds even after an earlier PASS.
     out_expr.parent.mkdir(parents=True, exist_ok=True)
     out_pass.unlink(missing_ok=True)
+    out_expr.unlink(missing_ok=True)
+    out_sheet.unlink(missing_ok=True)
     # qa.json is the DIAGNOSTIC — always emitted (atomically) so a REVIEW is inspectable.
     _atomic_text(out_qa, json.dumps(qa, indent=2) + "\n")
 

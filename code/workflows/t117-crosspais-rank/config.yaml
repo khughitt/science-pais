@@ -376,7 +376,8 @@ salmon:
 # treat as comparable.
 harmonization:
   map_tsv: "data/processed/genesets/gene_id_map.2024.1.Hs.tsv"
-  map_sha256: ""                    # HALT-guarded; pinned from the canonical org.Hs.eg.db 3.22.0 build (build_gene_id_map, --use-conda r-bioc)
+  map_sha256: "d07f65bdc32652064eb9f6fafd9467c5dcf0addd8530a9924eb0d2a9864eb01a"  # PINNED from the canonical org.Hs.eg.db 3.22.0 build (build_gene_id_map --use-conda r-bioc); reproducible on rebuild
+  map_bytes: 20806997               # 575186 rows (SYMBOL 39386 + ALIAS 102224 + REFSEQ 433576)
   report_json: "data/processed/genesets/gene_id_map.report.json"
   source: "org.Hs.eg.db 3.22.0"     # MUST match the gene-set annotation authority (harmonize_reference.json)
   multimap_policy: first            # identical to genesets_reference.R (commensurability)

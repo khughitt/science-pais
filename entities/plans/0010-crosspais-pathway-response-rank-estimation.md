@@ -519,10 +519,11 @@ downstream matrix builds on a real contract, not an assumption.
   thin matrix. Proven on real ids: `gse270045` symbol 83% ✓, `gse128078` RefSeq 90% ✓, **`gse143549` gene_name
   56% → fails closed** (NOVEL/non-coding rows). The guardrail also fails closed on a **mostly-ambiguous** map
   (of the mapped ids, the fraction whose source resolves to ≥2 ENSG > `max_ambiguous_mapped_frac`) — the map
-  carries a per-id `n_targets` so this is enforced per deposit, not just as a global census. The map's canonical
-  sha256 is HALT-guarded until the first pinned r-bioc build (`build_gene_id_map --use-conda`), the same
-  discipline as the salmon reference; **until that pin, non-Ensembl parsing is specified + proven but not yet
-  reproducibly consumable.**
+  carries a per-id `n_targets` so this is enforced per deposit, not just as a global census. **b·pin DONE
+  (2026-07-08):** the canonical map was built by the pinned org.Hs.eg.db **3.22.0** r-bioc env
+  (`build_gene_id_map --use-conda`), is **deterministic** (identical sha256 `d07f65bd…` on rebuild), and its
+  hash is committed in `harmonization.map_sha256` + re-verified before use (tampered hash HALTs) — non-Ensembl
+  parsing is now **reproducibly consumable**.
 - **Per-deposit status after (b) — three distinct cases, not "group-only":**
   - `gse270045` (symbol 83% ✓): gene-id resolved; deferred on **group** (CCI/HP/S prefixes ambiguous — needs
     series-matrix metadata; not inferred from the 19/17 count match).
@@ -532,8 +533,7 @@ downstream matrix builds on a real contract, not an assumption.
   - `gse143549` (gene_name 56% ✗): **still gene-id-blocked** — fails the map-rate guardrail; staging its
     series-matrix metadata alone will **not** unlock the Ebola column (needs a cleaner symbol source / coordinate
     lift first), then group.
-- **Remaining WP1b tranches:** **(b·pin)** run the canonical org.Hs.eg.db-3.22.0 map build + pin
-  `harmonization.map_sha256` (makes non-Ensembl parsing consumable); **(a)** add the missing GEO
+- **Remaining WP1b tranches:** **(a)** add the missing GEO
   series-matrix/SOFT metadata payloads to `acquisition` (re-pin hashes) so the group-blocked deposits
   (`gse226260`, `gse228320`, `gse267625`, group side of `gse270045`/`gse128078`) resolve — plus a cleaner
   identity source for `gse143549`; **(c)** microarray handlers (`series_matrix`, `soft` — reuse
