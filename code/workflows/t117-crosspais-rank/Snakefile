@@ -139,6 +139,20 @@ def stage_map_input(wildcards):
     ns = config.get("parse", {}).get(wildcards.accession, {}).get("gene_id_namespace")
     return [HMAP_TSV] if ns in MAP_NAMESPACES and HMAP_TSV else []
 
+def prebuilt_input(wildcards):
+    """For a `prebuilt` deposit, the upstream microarray chain's gene matrix (+ its
+    samples sheet when group comes from a `sheet`). stage_matrix ADOPTS these into the
+    uniform contract; other handlers get []."""
+    acc = wildcards.accession
+    p = config.get("parse", {}).get(acc, {})
+    if p.get("handler") != "prebuilt":
+        return []
+    ins = [f"{PROC}/{acc}/{p['prebuilt_expr']}"]
+    gs = p.get("group_source", {})
+    if gs.get("mode") == "sheet":
+        ins.append(f"{PROC}/{acc}/{gs['file']}")
+    return ins
+
 def salmon_run_quants(wildcards):
     """Per-run salmon quant.sf for a salmon accession (empty until WP1b resolves
     the run subset — the path stays wired so the DAG resolves)."""
@@ -342,6 +356,126 @@ rule salmon_gene_matrix:
     shell:
         stub("salmon_gene_matrix {wildcards.accession} (tximport; deferred to WP1b)")
 
+# --- WP1b tranche (c): microarray probe→gene chain feeding the `prebuilt` handler --
+# The two microarray deposits carry their case/control grouping INLINE (series-matrix /
+# SOFT header), so they PASS without an extra metadata payload. probe→Ensembl uses the
+# PLATFORM annotation .db (r-bioc env), NOT the tranche-b org.Hs.eg.db symbol map. Each
+# chain writes microarray.gene.tsv.gz (+ a samples sheet where group needs one) under the
+# deposit's PROC dir; stage_matrix's `prebuilt` handler adopts it into the uniform contract
+# (so stage_matrix stays the SOLE producer of expr.gene.tsv.gz). GSE14577 reuses the t035
+# scripts verbatim; GSE16059 (GPL570) uses the generic parse_series_matrix + harmonize_microarray.
+MICRO = config.get("microarray", {})
+
+# GSE16059 (GPL570 discordant-twin ME/CFS): series-matrix → probe×sample + inline samples
+rule parse_series_matrix_gse16059:
+    input:
+        raw=f"{RAW}/GSE16059/staged.ok",
+        blob=f"{RAW}/GSE16059/series_matrix.data",
+        script=f"{SCRIPTS}/parse_series_matrix.py",
+    output:
+        expr=f"{PROC}/GSE16059/microarray.probe_x_sample.tsv.gz",
+        samples=f"{PROC}/GSE16059/microarray.samples.tsv",
+    log:
+        f"{RES}/logs/microarray/parse_gse16059.log",
+    conda:
+        "../envs/py.yaml"
+    shell:
+        "python {input.script} --in {input.blob} --out-expr {output.expr} "
+        "--out-samples {output.samples} > {log} 2>&1"
+
+rule harmonize_gse16059:
+    input:
+        probe=f"{PROC}/GSE16059/microarray.probe_x_sample.tsv.gz",
+        script=f"{SCRIPTS}/harmonize_microarray.R",
+    output:
+        harmonized=f"{PROC}/GSE16059/microarray.harmonized.tsv.gz",
+        report=f"{PROC}/GSE16059/microarray.harmonize_report.json",
+    params:
+        db=MICRO.get("gse16059", {}).get("platform_db", "hgu133plus2.db"),
+        platform=MICRO.get("gse16059", {}).get("platform", "GPL570"),
+        multimap=MICRO.get("multimap_policy", "first"),
+    log:
+        f"{RES}/logs/microarray/harmonize_gse16059.log",
+    conda:
+        "../envs/r-bioc.yaml"
+    shell:
+        "Rscript {input.script} --db {params.db} --platform {params.platform} "
+        "--multimap {params.multimap} --probe-expr {input.probe} "
+        "--out-harmonized {output.harmonized} --out-report {output.report} > {log} 2>&1"
+
+rule collapse_gse16059:
+    input:
+        harmonized=f"{PROC}/GSE16059/microarray.harmonized.tsv.gz",
+        script=f"{SCRIPTS}/collapse_probes.R",
+    output:
+        expr=f"{PROC}/GSE16059/microarray.gene.tsv.gz",
+        audit=f"{PROC}/GSE16059/microarray.cohort_audit.json",
+    log:
+        f"{RES}/logs/microarray/collapse_gse16059.log",
+    conda:
+        "../envs/r-bioc.yaml"
+    shell:
+        "Rscript {input.script} --dataset GSE16059 --harmonized {input.harmonized} "
+        "--collapse median --dual-chip mean_of_platform_collapsed_log2 "
+        "--out-expr {output.expr} --out-audit {output.audit} > {log} 2>&1"
+
+# GSE14577 (U133A∪B PI-CFS sensitivity): t035 SOFT chain reused VERBATIM
+rule parse_gse14577:
+    input:
+        raw=f"{RAW}/GSE14577/staged.ok",
+        blob=f"{RAW}/GSE14577/soft.data",
+        script=f"{SCRIPTS}/parse_gse14577.py",
+    output:
+        gpl96=f"{PROC}/GSE14577/expr_GPL96.probe_x_sample.tsv.gz",
+        gpl97=f"{PROC}/GSE14577/expr_GPL97.probe_x_sample.tsv.gz",
+        meta=f"{PROC}/GSE14577/sample_metadata.tsv",
+    log:
+        f"{RES}/logs/microarray/parse_gse14577.log",
+    conda:
+        "../envs/py.yaml"
+    shell:
+        "python {input.script} --soft {input.blob} --out-dir {PROC}/GSE14577 > {log} 2>&1"
+
+rule harmonize_gse14577:
+    input:
+        gpl96=f"{PROC}/GSE14577/expr_GPL96.probe_x_sample.tsv.gz",
+        gpl97=f"{PROC}/GSE14577/expr_GPL97.probe_x_sample.tsv.gz",
+        meta=f"{PROC}/GSE14577/sample_metadata.tsv",
+        reference=MICRO.get("reference_json", f"{PROC}/genesets/harmonize_reference.json"),
+        script=f"{SCRIPTS}/harmonize_gse14577.R",
+    output:
+        harmonized=f"{PROC}/GSE14577/microarray.harmonized.tsv.gz",
+        sentinel=f"{PROC}/GSE14577/microarray.harmonize.qa.pass",
+        report=f"{PROC}/GSE14577/microarray.harmonize_report.json",
+    params:
+        multimap=MICRO.get("multimap_policy", "first"),
+        coverage_warn=MICRO.get("coverage_warn", 0.30),
+    log:
+        f"{RES}/logs/microarray/harmonize_gse14577.log",
+    conda:
+        "../envs/r-bioc.yaml"
+    shell:
+        "Rscript {input.script} --gpl96 {input.gpl96} --gpl97 {input.gpl97} "
+        "--meta {input.meta} --reference {input.reference} --multimap {params.multimap} "
+        "--coverage-warn {params.coverage_warn} --out-harmonized {output.harmonized} "
+        "--sentinel {output.sentinel} --out-report {output.report} > {log} 2>&1"
+
+rule collapse_gse14577:
+    input:
+        harmonized=f"{PROC}/GSE14577/microarray.harmonized.tsv.gz",
+        script=f"{SCRIPTS}/collapse_probes.R",
+    output:
+        expr=f"{PROC}/GSE14577/microarray.gene.tsv.gz",
+        audit=f"{PROC}/GSE14577/microarray.cohort_audit.json",
+    log:
+        f"{RES}/logs/microarray/collapse_gse14577.log",
+    conda:
+        "../envs/r-bioc.yaml"
+    shell:
+        "Rscript {input.script} --dataset GSE14577 --harmonized {input.harmonized} "
+        "--collapse median --dual-chip mean_of_platform_collapsed_log2 "
+        "--out-expr {output.expr} --out-audit {output.audit} > {log} 2>&1"
+
 # --- WP1b: per-deposit parse of the verified raw payload → uniform gene matrix -
 # Acquisition (above) is COMPLETE. `stage_matrix.py` turns each heterogeneous raw
 # payload (counts csv/tsv, RAW.tar of per-sample files, microarray series-matrix /
@@ -358,6 +492,7 @@ rule stage_matrix:
         script=f"{SCRIPTS}/stage_matrix.py",
         srclib=ancient(f"{SCRIPTS}/acquire_common.py"),
         gene_map=stage_map_input,   # only for non-Ensembl deposits (else [])
+        prebuilt=prebuilt_input,    # only for prebuilt (microarray) deposits (else [])
         config=CONFIGFILE,
     output:
         expr=f"{PROC}/{{accession}}/expr.gene.tsv.gz",

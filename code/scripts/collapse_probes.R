@@ -1,11 +1,12 @@
 # science:code
 # status: exploratory
-# task_ids: [t035]
+# task_ids: [t035, t117]
 # science:end
 
 #!/usr/bin/env Rscript
 # =============================================================================
 # collapse_probes.R — WP4 (GSE14577): probe→gene median collapse + locked
+# (t117 WP1b-c reuses this for GSE16059 too via the optional --dataset label.)
 # U133A∪B dual-chip combine. (pre-reg:0002 3rd amendment; plan:0003 KD9.)
 #
 # Input is the WP3 harmonized table (platform, probe, ensembl_gene_id, then one
@@ -38,6 +39,8 @@ parse_args <- function() {
 args <- parse_args()
 collapse_rule <- args[["collapse"]]
 combine_rule  <- args[["dual-chip"]]
+# dataset label is cosmetic (audit + message only); default keeps t035 callers unchanged.
+dataset_label <- if (is.null(args[["dataset"]])) "GSE14577" else args[["dataset"]]
 # locked, verdict-affecting rules (config preprocessing.*) — fail-early on drift.
 if (is.null(collapse_rule) || collapse_rule != "median")
   stop(sprintf("probe_collapse '%s' not implemented — only 'median' (fail-early)", collapse_rule))
@@ -88,7 +91,7 @@ write.table(as.data.frame(genes), con, sep = "\t", quote = FALSE,
 close(con)
 
 audit <- list(
-  dataset = "GSE14577",
+  dataset = dataset_label,
   canonical_axis = "ensembl_gene_id",
   independent_unit = "patient",
   n_patients = length(patient_cols),
@@ -109,5 +112,5 @@ audit <- list(
 write_json(audit, args[["out-audit"]], auto_unbox = TRUE, pretty = TRUE)
 
 message(sprintf(
-  "[collapse_probes] PASS GSE14577: %d probes (%d unmapped dropped) -> GPL96 %d / GPL97 %d genes -> %d genes (%d dual-chip), %d patients",
-  n_probes_in, n_unmapped, n_gpl96, n_gpl97, nrow(genes), n_dual_chip, length(patient_cols)))
+  "[collapse_probes] PASS %s: %d probes (%d unmapped dropped) -> GPL96 %d / GPL97 %d genes -> %d genes (%d dual-chip), %d samples",
+  dataset_label, n_probes_in, n_unmapped, n_gpl96, n_gpl97, nrow(genes), n_dual_chip, length(patient_cols)))

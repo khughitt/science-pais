@@ -512,31 +512,79 @@ parse:
     payload: expr
     status: deferred
     deferred_reason: "Illumina microarray in wide AVG_Signal/Detection-Pval pairs needing probe->gene collapse + reshape; acute-influenza decoy (baseline vs day0-6), not a >=4wk contrast"
-  GSE16059:                            # metadata (diagnosis + twin pair) IS inline on disk
-    handler: series_matrix
-    payload: series_matrix
-    status: deferred
-    deferred_reason: "microarray series-matrix probe->gene collapse (collapse_probes.R) — WP1b tranche 2; group (unaffected/CFS/ICF) + pair (twin pair id) are resolvable inline"
-  GSE14577:                            # SOFT is on disk (t035 has parse_gse14577.py)
-    handler: soft
-    payload: soft
-    status: deferred
-    deferred_reason: "GEO SOFT microarray — reuse parse_gse14577.py + harmonize_gse14577.R (probe->gene, log2 intensity); group from Sample_characteristics — WP1b tranche 2"
+  GSE16059:                            # microarray PASS (group + twin pair INLINE in series matrix)
+    handler: prebuilt                  # stage_matrix ADOPTS the upstream microarray chain's gene matrix
+    payload: series_matrix             # raw provenance for origin.json
+    prebuilt_expr: microarray.gene.tsv.gz
+    upstream: "parse_series_matrix.py -> harmonize_microarray.R (hgu133plus2.db / GPL570) -> collapse_probes.R (median)"
+    sep: "\t"
+    gene_id_col: 0
+    gene_id_namespace: ensembl         # collapsed genes are bare ENSG (probe->gene done upstream)
+    expression_scale: log2_intensity   # GPL570 normalized log2 intensities
+    duplicate_policy: mean             # log2 intensities average (defensive; none expected post-collapse)
+    case_label: case
+    control_label: control
+    min_per_arm: 2
+    sheet_columns: [sample, group, twin_pair]
+    group_source:
+      mode: sheet                      # the chain's samples.tsv carries group + twin pair inline
+      file: microarray.samples.tsv
+      sep: "\t"
+      sample_col: sample
+      condition_col: diagnonsis        # [sic] source spelling; values unaffected/CFS/ICF
+      level_map: {unaffected: control, CFS: case}   # ICF (idiopathic CF, milder) EXCLUDED — not the CFS contrast
+      covariate_cols: [twin_pair]      # discordant-twin block covariate (de_models ~ group block twin_pair)
+  GSE14577:                            # microarray PASS (group INLINE; t035 chain reused verbatim)
+    handler: prebuilt
+    payload: soft                      # raw provenance for origin.json
+    prebuilt_expr: microarray.gene.tsv.gz
+    upstream: "parse_gse14577.py -> harmonize_gse14577.R (hgu133a/b.db) -> collapse_probes.R (median + U133A∪B mean)"
+    sep: "\t"
+    gene_id_col: 0
+    gene_id_namespace: ensembl         # collapsed genes are bare ENSG
+    expression_scale: log2_intensity
+    duplicate_policy: mean
+    case_label: case
+    control_label: control
+    min_per_arm: 2
+    sheet_columns: [sample, group]
+    group_source:
+      mode: column_regex               # collapsed columns are patient_key = <group>_<n> (t035 axis)
+      map:
+        - {pattern: "^PI-CFS", group: case}
+        - {pattern: "^HC", group: control}
   GSE130353:                           # QFS stratum; t035 has extract_gse130353.py
     handler: tar
     payload: raw_tar
     status: deferred
-    deferred_reason: "per-sample RAW.tar of MMSEQ (log_mu) — reuse extract_gse130353.py; needs the GSE130353_family.soft.gz payload (group from SOFT subject status, NOT filename) — add to acquisition"
+    deferred_reason: "WP1b tranche (a): handler code READY (extract_gse130353.py, MMSEQ log_mu) but blocked on group — needs the GSE130353_family.soft.gz payload added to acquisition (group from SOFT subject status, NOT filename). Handler work alone does NOT PASS this."
   GSE251872:                           # PI-ME/CFS RAW.tar (27 members)
     handler: tar
     payload: raw_tar
     status: deferred
-    deferred_reason: "per-sample RAW.tar (27 GSM*_Walitt*.txt.gz) needing per-member merge + a metadata payload for group (12 cases vs 15 healthy) + platform batch covariate"
+    deferred_reason: "WP1b tranche (a): per-sample RAW.tar (27 GSM*_Walitt*.txt.gz) needs per-member merge + a metadata payload for group (12 cases vs 15 healthy) + platform batch covariate. Handler work alone does NOT PASS this (group is not in the tar)."
   GSE63085:                            # Lyme RAW.tar (97 members, cufflinks timecourse)
     handler: tar
     payload: raw_tar
     status: deferred
-    deferred_reason: "per-sample RAW.tar (97 GSM*_*_V<n>_cuff.txt.gz, FPKM timecourse V1-V5) needing per-member merge + the V5 6-mo post-treatment arm selection + a metadata payload for group"
+    deferred_reason: "WP1b tranche (a): per-sample RAW.tar (97 GSM*_*_V<n>_cuff.txt.gz, FPKM timecourse V1-V5) needs per-member merge + the V5 6-mo post-treatment arm selection + a metadata payload for group. Handler work alone does NOT PASS this."
+
+# ------------------------------------------------------ microarray chain (WP1b c)
+# The probe->gene chain feeding the `prebuilt` stage_matrix handler for the two
+# microarray deposits (group is INLINE, so these PASS without an extra metadata
+# payload — unlike the RAW.tar deposits). probe->Ensembl uses the PLATFORM annotation
+# .db (pinned in envs/r-bioc.yaml), DISTINCT from the tranche-b org.Hs.eg.db symbol
+# map. GSE14577 reuses the t035 scripts verbatim (parse_gse14577 + harmonize_gse14577
+# + collapse_probes); GSE16059 (GPL570) uses the generic parse_series_matrix +
+# harmonize_microarray. Chain outputs land as microarray.* under the deposit's PROC
+# dir; stage_matrix's `prebuilt` handler adopts microarray.gene.tsv.gz.
+microarray:
+  coverage_warn: 0.30                 # harmonize_gse14577.R Hallmark-coverage WARN threshold (informational)
+  reference_json: "data/processed/genesets/harmonize_reference.json"  # t035 shared: hallmark genes_ensembl for the coverage note
+  multimap_policy: first              # probe->Ensembl "first" (matches genesets_reference.R / build_gene_id_map.R)
+  gse16059:
+    platform: GPL570
+    platform_db: hgu133plus2.db       # pinned in envs/r-bioc.yaml (annotation-only add)
 
 # ------------------------------------------------------ DE model contract ----
 # review Finding (2026-07-08): "reuse limma_de.R verbatim" is only valid for the
@@ -573,11 +621,11 @@ de_models:
     note: "2 sequencing platforms (batch)"
   gse16059_mecfs:
     design: "~ group"                 # discordant MZ twins
-    block: pair                       # duplicateCorrelation on twin-pair id
+    block: twin_pair                  # duplicateCorrelation on twin-pair id (sheet col from series matrix)
     coef: groupcase
-    covariates: [pair]                # sheet MUST carry the twin-pair id
+    covariates: [twin_pair]           # sheet MUST carry the twin-pair id
     stock_ok: false                   # stock script does not model within-pair correlation
-    note: "44 discordant MZ twin pairs — paired/blocked design"
+    note: "44 discordant MZ twin pairs — paired/blocked design; ICF excluded so 12 control co-twins are unpaired (WP2 duplicateCorrelation handles unbalanced blocks)"
   gse267625_lc:
     design: "within-cohort"           # no external control; contrast built within-cohort
     coef: TODO-WP2-define             # e.g. symptomatic-timepoint vs recovered-timepoint

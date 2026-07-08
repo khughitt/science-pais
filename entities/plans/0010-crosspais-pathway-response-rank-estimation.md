@@ -483,7 +483,7 @@ grid bridge is validated, not assumed.
   parse (`stage_matrix`, WP1b) turning each verified raw payload into the uniform gene matrix + sample sheet
   + QA. **No downstream WP (2+) runs until WP1b closes.**
 
-### WP1b — Per-deposit parse → the uniform expression contract — *framework + tranche 1 DONE 2026-07-08*
+### WP1b — Per-deposit parse → the uniform expression contract — *framework + tranches 1/(b)/(c) DONE 2026-07-08*
 The executable form of **review Finding F** (per-deposit ingest contract), pulled forward from WP2 so the
 downstream matrix builds on a real contract, not an assumption.
 - **WP0 semantic wiring confirmed/completed first (the pre-parse gate):** (a) the sensitivity rank matrix is
@@ -533,13 +533,30 @@ downstream matrix builds on a real contract, not an assumption.
   - `gse143549` (gene_name 56% ✗): **still gene-id-blocked** — fails the map-rate guardrail; staging its
     series-matrix metadata alone will **not** unlock the Ebola column (needs a cleaner symbol source / coordinate
     lift first), then group.
-- **Remaining WP1b tranches:** **(a)** add the missing GEO
-  series-matrix/SOFT metadata payloads to `acquisition` (re-pin hashes) so the group-blocked deposits
-  (`gse226260`, `gse228320`, `gse267625`, group side of `gse270045`/`gse128078`) resolve — plus a cleaner
-  identity source for `gse143549`; **(c)** microarray handlers (`series_matrix`, `soft` — reuse
-  `collapse_probes.R` / `parse_gse14577.py`) for `gse16059`/`gse14577` and the per-sample `tar` handler (reuse
-  `extract_gse130353.py`) for `gse130353`/`gse251872`/`gse63085`; **(d)** the salmon/CHIKV decoy quant path
-  (`salmon_gene_matrix`). Priority per the reviewer: **b → c → a**.
+- **Tranche (c) — microarray handlers DONE (2026-07-08):** the microarray deposits reach the uniform contract via
+  a **compose-the-t035-chain** architecture: dedicated Snakemake rules run the parse→harmonize→collapse scripts as
+  upstream producers (probe→gene needs the **platform** annotation `.db`, which can't live in the pure-Python
+  `stage_matrix`), and a new **`prebuilt`** `stage_matrix` handler ADOPTS the resulting gene matrix + inline group
+  into the 4 uniform outputs — so `stage_matrix` stays the SOLE producer of `expr.gene.tsv.gz`. Both deposits carry
+  case/control **inline** (no extra metadata payload), so both **PASS**:
+  - **`gse14577` (PI-CFS sensitivity, U133A∪B):** t035 chain reused **verbatim** (`parse_gse14577.py` →
+    `harmonize_gse14577.R` [hgu133a/b.db, already pinned] → `collapse_probes.R`), group from the `patient_key`
+    prefix. **PASS: 18371 genes × 15 patients (8 PI-CFS vs 7 HC), log2.** No env change.
+  - **`gse16059` (discordant-twin ME/CFS, GPL570):** new generic `parse_series_matrix.py` + `harmonize_microarray.R`
+    (probe→Ensembl via **hgu133plus2.db**, added to the pinned r-bioc env — an annotation-only, NES-neutral add) →
+    `collapse_probes.R`. Group `diagnonsis`[sic] `unaffected→control`, `CFS→case`, **`ICF` excluded**; `twin_pair`
+    carried as the block covariate. **PASS: 20338 genes × 76 samples (32 CFS vs 44 unaffected; 12 ICF dropped),
+    log2**, probe-map 79% (GPL570). *Repro note: the `r-bioc.conda-lock.yml` postdates hgu133plus2.db and needs a
+    `conda-lock` regen (tool absent this session) — the pinned `=3.13.0` yaml is the source of truth meanwhile.*
+- **Tar trio is tranche (a), not (c) (reviewer's ledger caution, confirmed):** the per-sample RAW.tar deposits
+  (`gse130353` QFS, `gse251872` PI-ME/CFS, `gse63085` Lyme) carry **no group in the tar** — handler code alone
+  (even the ready `extract_gse130353.py`) cannot PASS them; each needs a **group-metadata payload** acquired first
+  (SOFT subject-status for QFS; a metadata payload + V5-arm selection for Lyme). Held as `handler: tar`,
+  `status: deferred` naming the exact tranche-(a) blocker.
+- **Remaining WP1b tranches:** **(a)** add the missing GEO series-matrix/SOFT/metadata payloads to `acquisition`
+  (re-pin hashes) so the group-blocked deposits (`gse226260`, `gse228320`, `gse267625`, group side of
+  `gse270045`/`gse128078`, and the tar trio) resolve — plus a cleaner identity source for `gse143549`; **(d)** the
+  salmon/CHIKV decoy quant path (`salmon_gene_matrix`). Priority per the reviewer: **b → c → a** (b, c DONE).
 - **DoD:** every deposit has an executable `parse:` contract; each admitted deposit produces the 4 uniform
   outputs with a PASS `stage_matrix.qa.json`; each deferred deposit HALTs naming its blocker. **No WP (2+) runs
   until every strict/sensitivity contrast is parsed (or explicitly demoted).**

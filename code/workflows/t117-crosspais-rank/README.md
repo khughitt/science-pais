@@ -9,7 +9,7 @@ believability criterion.
 - **Review:** `doc/reviews/0010-crosspais-pathway-response-rank-estimation-pipeline-review.md`
 - **Grounds:** `interpretation:0037` (t116 R-regime grid + the K≥3 identifiability lever)
 
-## Status: WP1 acquisition COMPLETE; WP1b parse framework + tranche 1 DONE; WP2–WP6 stubbed
+## Status: WP1 acquisition COMPLETE; WP1b parse framework + tranches 1/(b)/(c) DONE; WP2–WP6 stubbed
 
 `snakemake -n` resolves the DAG (**68 jobs** remaining after WP1 + WP1b-tranche-1).
 **WP1 acquisition is implemented and run** (download + checksum + universe
@@ -48,6 +48,23 @@ design; scripts hard-code nothing.
   non-Ensembl parsing is now **reproducibly consumable**. (b) resolves gene-id
   only; `gse270045`/`gse128078` still need group metadata, and `gse143549` is still
   gene-id-blocked (a cleaner symbol source, not group, unlocks it).
+- **Tranche (c) — microarray handlers DONE** (`parse_series_matrix.py`,
+  `harmonize_microarray.R`, config `microarray:` + `parse.*.handler: prebuilt`) —
+  microarray probe→gene needs the **platform** annotation `.db` (not the tranche-b
+  symbol map), so it can't live in the pure-Python `stage_matrix`. Architecture:
+  dedicated rules run the **parse→harmonize→collapse** chain as upstream producers,
+  and a new **`prebuilt`** `stage_matrix` handler ADOPTS the resulting gene matrix +
+  inline group into the uniform contract (stage_matrix stays the SOLE producer of
+  `expr.gene.tsv.gz`). Both microarray deposits carry group **inline** → both **PASS**:
+  `gse14577` (t035 chain reused verbatim; hgu133a/b.db) → **18371 genes × 15 patients
+  (8 PI-CFS / 7 HC)**; `gse16059` (GPL570; **hgu133plus2.db** added to the pinned
+  r-bioc env, annotation-only/NES-neutral) → **20338 genes × 76 samples (32 CFS / 44
+  unaffected; 12 ICF excluded)**, `twin_pair` block covariate carried. The per-sample
+  **`tar` trio** (`gse130353`/`gse251872`/`gse63085`) is **tranche (a), not (c)** —
+  handler code alone can't PASS them; they need a group-metadata payload first.
+  > **Repro note:** `envs/r-bioc.conda-lock.yml` postdates the hgu133plus2.db add and
+  > needs a `conda-lock` regen (tool absent this session); the pinned `=3.13.0` in
+  > `r-bioc.yaml` is the source of truth until then.
 
 > **Naming:** `dataset:msigdb-2024-1-hs-hallmark-reactome-rank-universe` is the
 > **rank universe** — the Hallmark ∪ Reactome subset **derived from** the broader

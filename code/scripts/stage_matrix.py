@@ -29,12 +29,19 @@ provenance) from the config it is handed. Fail-early / no silent fallback
 mismatch, a missing group source, or a de_model covariate the sheet cannot carry
 is a HALT with a precise message — never a guessed label or a partial output.
 
-kind-handlers implemented here (WP1b tranche 1): the `matrix` family — a delimited
-genes x samples table (csv/tsv/txt, optionally gzipped) whose group is resolvable
-from on-disk data (`column_regex` or a `companion` metadata payload). The microarray
-(`series_matrix`, `soft`) + per-sample `tar` handlers and the symbol/RefSeq -> Ensembl
-harmonization map are declared but fail-early (their `parse.status: deferred` names
-the exact missing piece) so the contract is executable, not fabricated.
+kind-handlers implemented here:
+  matrix    a delimited genes x samples table (csv/tsv/txt, optionally gzipped) whose
+            group is resolvable from on-disk data (`column_regex` or a `companion`
+            metadata payload). Gene ids are symbol/RefSeq/Ensembl (tranche b map).
+  prebuilt  a gene x sample matrix ALREADY produced by the upstream microarray chain
+            (parse_series_matrix/parse_gse14577 -> harmonize -> collapse_probes); this
+            handler adopts it into the uniform contract, resolving group from a
+            `column_regex` (patient-key prefix) or a `sheet` (the chain's samples.tsv).
+            probe->gene + platform probe->Ensembl mapping happened upstream (needs the
+            platform .db, not the org.Hs.eg.db symbol map).
+The per-sample `tar` handler is declared but fail-early (`parse.status: deferred` names
+its exact blocker — a group-metadata payload) so the contract is executable, not
+fabricated.
 """
 from __future__ import annotations
 
@@ -213,11 +220,36 @@ def collapse_duplicates(df: pd.DataFrame, policy: str) -> tuple[pd.DataFrame, in
 
 
 # ----------------------------------------------------------------- group source
-def resolve_groups(samples: list[str], parse: dict, raw_dir: Path) -> tuple[dict, dict]:
+def _groups_from_table(df: pd.DataFrame, gs: dict) -> tuple[dict, dict]:
+    """sample -> group (+ covariates) from a metadata table via a `level_map`.
+
+    Shared by `companion` (raw metadata payload) and `sheet` (a processed samples
+    table from the microarray chain). Raw condition -> contrast arm is applied HERE
+    (stage_matrix is the sole place that maps condition -> arm), never in the parser."""
+    key, val = gs["sample_col"], gs["condition_col"]
+    if key not in df.columns or val not in df.columns:
+        halt(f"metadata missing column(s) {key}/{val}; has {list(df.columns)}")
+    level_map = gs["level_map"]  # raw condition -> group (unmapped conditions -> excluded)
+    cov_cols = gs.get("covariate_cols", [])
+    for c in cov_cols:
+        if c not in df.columns:
+            halt(f"declared covariate column '{c}' absent from metadata (has {list(df.columns)})")
+    group_of, covariates_of = {}, {}
+    for _, row in df.iterrows():
+        s = row[key]
+        cond = row[val]
+        if cond in level_map:
+            group_of[s] = level_map[cond]
+        covariates_of[s] = {c: row[c] for c in cov_cols}
+    return group_of, covariates_of
+
+
+def resolve_groups(samples: list[str], parse: dict, base_dir: Path) -> tuple[dict, dict]:
     """sample -> group (+ optional covariates) from the declared `group_source`.
 
-    Returns (group_of, covariates_of). Only the two on-disk-resolvable modes are
-    implemented; `deferred` HALTs naming the exact missing payload."""
+    Returns (group_of, covariates_of). `base_dir` is the raw dir for the `matrix`
+    handler (companion payload) and the processed dir for `prebuilt` (samples sheet).
+    `deferred` HALTs naming the exact missing payload."""
     gs = parse["group_source"]
     mode = gs["mode"]
     if mode == "deferred":
@@ -234,24 +266,16 @@ def resolve_groups(samples: list[str], parse: dict, raw_dir: Path) -> tuple[dict
                     break
         return group_of, {}
     elif mode == "companion":
-        meta = raw_dir / f"{gs['payload']}.data"
+        meta = base_dir / f"{gs['payload']}.data"
         if not meta.exists():
             halt(f"companion metadata payload {meta} absent (acquire '{gs['payload']}' first)")
-        df = pd.read_csv(meta, sep=gs.get("sep", "\t"), dtype=str)
-        key, val = gs["sample_col"], gs["condition_col"]
-        if key not in df.columns or val not in df.columns:
-            halt(f"companion metadata missing column(s) {key}/{val}; has {list(df.columns)}")
-        level_map = gs["level_map"]  # raw condition -> group
-        group_of, covariates_of = {}, {}
-        cov_cols = gs.get("covariate_cols", [])
-        for _, row in df.iterrows():
-            s = row[key]
-            cond = row[val]
-            if cond in level_map:
-                group_of[s] = level_map[cond]
-            covariates_of[s] = {c: row[c] for c in cov_cols if c in df.columns}
-        return group_of, covariates_of
-    halt(f"unknown group_source mode '{mode}' (column_regex|companion|deferred)")
+        return _groups_from_table(pd.read_csv(meta, sep=gs.get("sep", "\t"), dtype=str), gs)
+    elif mode == "sheet":
+        meta = base_dir / gs["file"]
+        if not meta.exists():
+            halt(f"prebuilt samples sheet {meta} absent (run the upstream microarray parse rule first)")
+        return _groups_from_table(pd.read_csv(meta, sep=gs.get("sep", "\t"), dtype=str), gs)
+    halt(f"unknown group_source mode '{mode}' (column_regex|companion|sheet|deferred)")
 
 
 # ------------------------------------------------------------------- kind: matrix
@@ -280,11 +304,43 @@ def parse_matrix(raw_dir: Path, payload: str, parse: dict, hmap: dict | None) ->
     return mat, gene_report
 
 
-KIND_HANDLERS = {"matrix"}
+# ---------------------------------------------------------------- kind: prebuilt
+def parse_prebuilt(proc_dir: Path, parse: dict, hmap: dict | None) -> tuple[pd.DataFrame, dict]:
+    """Adopt a gene x sample matrix ALREADY produced by the upstream microarray chain
+    (parse_series_matrix/parse_gse14577 -> harmonize -> collapse_probes) into the
+    uniform contract. The probe->gene collapse + platform probe->Ensembl mapping
+    happened upstream (needs the platform .db, not the org.Hs.eg.db symbol map), so
+    here the feature ids are bare Ensembl genes — run the passthrough harmonizer only
+    to strip versions + validate, then a defensive dup-collapse (there should be none
+    post-collapse). This keeps stage_matrix the SOLE producer of expr.gene.tsv.gz."""
+    blob = proc_dir / parse["prebuilt_expr"]
+    if not blob.exists():
+        halt(f"prebuilt expr {blob} absent — run the upstream microarray parse/harmonize/collapse rules first")
+    sep = parse.get("sep", "\t")
+    with open_maybe_gz(blob) as fh:
+        df = pd.read_csv(fh, sep=sep, dtype=str, index_col=False)
+    gene_col = df.columns[parse.get("gene_id_col", 0)]
+    raw_ids = df[gene_col].tolist()
+    sample_cols = [c for c in df.columns if c != gene_col]
+    mat = df[sample_cols].apply(pd.to_numeric, errors="coerce")
+
+    mapped, gene_report = harmonize_gene_ids(raw_ids, parse["gene_id_namespace"], hmap)
+    mat.index = pd.Index(mapped, name="gene_id")
+    n_unmapped_rows = int(mat.index.isna().sum())
+    mat = mat[mat.index.notna()]
+    mat, n_dup = collapse_duplicates(mat, parse.get("duplicate_policy", "mean"))
+    gene_report["n_out"] = int(mat.shape[0])
+    gene_report["n_unmapped_rows_dropped"] = n_unmapped_rows
+    gene_report["duplicates_collapsed"] = int(n_dup)
+    gene_report["duplicate_policy"] = parse.get("duplicate_policy", "mean")
+    gene_report["prebuilt_expr"] = parse["prebuilt_expr"]
+    return mat, gene_report
+
+
+KIND_HANDLERS = {"matrix", "prebuilt"}
 DEFERRED_KINDS = {
-    "series_matrix": "microarray series-matrix handler (probe->gene collapse via collapse_probes.R) — WP1b tranche 2",
-    "soft": "GEO SOFT microarray handler (reuse parse_gse14577.py pattern) — WP1b tranche 2",
-    "tar": "per-sample RAW.tar handler (reuse extract_gse130353.py pattern) — WP1b tranche 2",
+    "tar": "per-sample RAW.tar handler (reuse extract_gse130353.py pattern) + a group-metadata "
+           "payload (SOFT/series-matrix) — WP1b tranche (a)",
 }
 
 
@@ -306,18 +362,26 @@ def run(config_path: Path, accession: str, out_expr: Path, out_sheet: Path,
         halt(f"{accession}: unknown parse handler '{handler}'")
 
     payload = parse["payload"]
-    origin = load_origin(raw_dir, payload)
+    origin = load_origin(raw_dir, payload)   # provenance = the RAW payload (csv/tsv/series_matrix/soft)
     hmap = load_harmonization(cfg, parse["gene_id_namespace"])
+    proc_dir = Path(cfg["paths"]["processed"]) / accession
 
-    # --- parse the payload into an Ensembl x samples matrix ------------------
-    mat, gene_report = parse_matrix(raw_dir, payload, parse, hmap)
+    # --- parse into an Ensembl x samples matrix; group resolution reads from the
+    #     raw dir (matrix: companion payload) or the processed dir (prebuilt: the
+    #     upstream microarray chain's samples sheet).
+    if handler == "matrix":
+        mat, gene_report = parse_matrix(raw_dir, payload, parse, hmap)
+        group_base = raw_dir
+    else:  # prebuilt
+        mat, gene_report = parse_prebuilt(proc_dir, parse, hmap)
+        group_base = proc_dir
     all_samples = list(mat.columns)
 
     # --- expression scale: assert the declared scale against the observed data
     scale_report = _scale_verdict(mat, parse)
 
     # --- resolve groups + retain only the contrast arms ----------------------
-    group_of, cov_of = resolve_groups(all_samples, parse, raw_dir)
+    group_of, cov_of = resolve_groups(all_samples, parse, group_base)
     case, control = parse["case_label"], parse["control_label"]
     arms = {case, control}
     retained, dropped = [], []
@@ -351,7 +415,8 @@ def run(config_path: Path, accession: str, out_expr: Path, out_sheet: Path,
     n_case = int((sheet["group"] == case).sum())
     n_control = int((sheet["group"] == control).sum())
     needed_cov = de_model.get("covariates", [])
-    cov_present = {c: (c in sheet.columns and sheet[c].astype(str).str.len().gt(0).all())
+    # bool(...) coerces numpy.bool_ (from .all()) to a JSON-serializable Python bool.
+    cov_present = {c: bool(c in sheet.columns and sheet[c].astype(str).str.len().gt(0).all())
                    for c in needed_cov}
     eligibility = {
         "de_model_design": de_model.get("design"),
@@ -380,7 +445,10 @@ def run(config_path: Path, accession: str, out_expr: Path, out_sheet: Path,
     qa = {
         "dataset": accession,
         "parser": {"script": "code/scripts/stage_matrix.py", "version": SCRIPT_VERSION,
-                   "handler": handler},
+                   "handler": handler,
+                   # for prebuilt: the upstream parse->harmonize->collapse chain that
+                   # produced the adopted gene matrix (probe->gene happened there).
+                   "upstream": parse.get("upstream")},
         "source_payload": {
             "payload": payload,
             "original_filename": origin.get("original_filename"),

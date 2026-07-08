@@ -5,6 +5,12 @@
 # empirical co-solve (conda-forge + bioconda) and pinned; envs/r-bioc.conda-lock.yml
 # is the byte-level reproducibility artifact. Bioconductor 3.22 / R 4.5 stack.
 #
+# LOCK DRIFT (t117 WP1b-c, 2026-07-08): hgu133plus2.db (added below for GSE16059/
+# GPL570) POSTDATES r-bioc.conda-lock.yml — regenerate the lock with `conda-lock`
+# (absent that session) to restore byte-level repro. The add is annotation-only, so
+# it does NOT touch the NES-critical limma/fgsea/org.Hs.eg.db pins; this yaml (pinned
+# =3.13.0) is the source of truth meanwhile.
+#
 # COHERENCE FINDING (former Open Q2, made concrete at WP0 lock):
 #   The conda `r-msigdbr` that bundles MSigDB *2024.1.Hs* is 24.1.0, built for
 #   R 4.3 — it does NOT co-solve with the R 4.5 annotation .db packages
@@ -26,6 +32,7 @@ dependencies:
   - bioconductor-annotationdbi=1.72.0
   - bioconductor-hgu133a.db=3.13.0
   - bioconductor-hgu133b.db=3.13.0
+  - bioconductor-hgu133plus2.db=3.13.0  # GPL570 (GSE16059 discordant-twin ME/CFS) probe→Ensembl; annotation-only add (no limma/fgsea/org.Hs.eg.db version change → NES-neutral)
   - bioconductor-biocparallel=1.44.0   # L'Ecuyer-CMRG permutation substreams
   - r-msigdbr=26.1.0                    # collection helper ONLY; 2024.1.Hs via hashed GMT (see note)
   - r-data.table=1.17.8
