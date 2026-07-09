@@ -849,8 +849,17 @@ downstream matrix builds on a real contract, not an assumption.
   (coheres with the Stage-3c FAIL / heterogeneous structural co-primary), so FM's partial recovery is read
   against a weak, non-trigger-general baseline, not an absolute specificity claim. That baseline is moreover
   **under-identified**: with 3 strict triggers each leave-one-trigger-out reference is built from only 2
-  triggers, below the K≥3 floor (`trigger_loo_identifiability_pass: false`). The reverse projection (build U
-  from ≥2 non-infectious columns, project PAIS) is **deferred** to the queued replication panel.
+  triggers, below the K≥3 floor (`trigger_loo_identifiability_pass: false`).
+- **Update (2026-07-09b) — 2nd non-infectious column built (`GSE67311`) + reverse projection implemented.**
+  The FM whole-blood-microarray column (60 FM/68 HC, `hugene11sttranscriptcluster.db` chain) was built and
+  the **reverse projection** (build U from the non-infectious columns, project PAIS) implemented. Outcome:
+  **not a clean replication** — two confounds surfaced. **(a) Compartment/platform confound:** WB-microarray
+  FM recovers the PAIS subspace at **0.234** (0.965× ceiling) vs the PBMC-RNAseq flagship's **0.045** — a ~5×
+  same-condition gap tracking compartment (strict corpus = 5 PBMC + 2 WB), so the high WB recovery is
+  plausibly blood composition, not FM biology. **(b) Reverse under-resolved at 2 columns:** rank-matched
+  ceiling caps at r_eff=1 < PAIS R=2 → `under_resolved_need_more_noninfectious_columns` (the reverse analogue
+  of the K=2 degeneracy); a 3rd+ cross-condition, compartment-matched column is required. Read-across stays
+  **`exploratory_flagship`** with an explicit compartment confound + under-resolution gate.
 - **DoD (met):** a GWS/FM specificity readout (subspace-recovery fraction vs random-null and held-out-PAIS
   references) emitted at `results/…/specificity/gws_fm.json`, with the admissible panel + queued replication
   (`GSE67311`/`E-MEXP-2069`/`GSE286345`) + the PACVS note-only gap recorded; carried to WP6 and

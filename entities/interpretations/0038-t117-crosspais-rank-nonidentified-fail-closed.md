@@ -20,6 +20,7 @@ related:
   - interpretation:0036-t103-cross-pathogen-co-enrollment-feasibility
   - interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating
   - dataset:gse221921-fibromyalgia-pbmc
+  - dataset:gse67311-fibromyalgia-wholeblood
 created: "2026-07-09"
 updated: "2026-07-09"
 input: "Uniform re-computation across the strict (1153×7 WB/PBMC) and sensitivity (10-column) cross-PAIS pathway×contrast matrices (Snakemake workflow code/workflows/t117-crosspais-rank/; DE→fgsea over a pinned Hallmark∪Reactome universe, NES pooled only at the gene-set level, expression never merged). Reads: the rank battery + structural co-primary (rank/*.rank.json), the Stage-3c t116 calibration (calibration/calibration.json), the artifact/compartment adjudication (artifact/strict.adjudicated.json), and the WP4b non-infectious GWS/FM specificity read-across (specificity/gws_fm.json). This is a rank/subspace-geometry estimand, NOT an empirical test of hypothesis:0001; R is a design parameter, not the verdict."
@@ -79,6 +80,8 @@ The GWS/FM non-infectious read-across (WP4b, `exploratory_flagship`) returns **`
 
 - **Q-F (empirical, P3):** Would a **purpose-recruited K≥3 harmonized** cohort (COVID-19 + influenza + EBV, ~1000-set features) lift the off-diagonal concordance above the identification floor, or is the ≤-floor concordance a property of PAIS pathway-response geometry itself (genuinely diffuse)? This is the q0050 cohort's core deliverable and the only lever left after t117.
 - **Q-G (methodological, P3):** Does the GWS/FM `partially_recovered_indeterminate` verdict survive the queued replication panel (`GSE67311` WB-microarray FM, `E-MEXP-2069` / `GSE286345` GWI, `GSE182503` IEI) and the reverse projection (build U from ≥2 non-infectious columns, project PAIS)? Only then does the infection-specificity read-across become `validated_specificity`.
+
+> **Update (2026-07-09b) — 2nd non-infectious column built (`GSE67311`), reverse projection activated:** Building the FM whole-blood-microarray column (60 FM / 68 HC) did **not** cleanly replicate the flagship — it surfaced two confounds. **(1) Compartment/platform confound (forward):** the WB-microarray FM column recovers the PAIS subspace at **0.234** (0.965× the trigger-LOO ceiling) versus the PBMC-RNAseq flagship's **0.045** — a ~5× *same-condition* gap that tracks compartment (the strict corpus is 5 PBMC + 2 whole-blood), so the high WB recovery is plausibly shared blood **composition**, not FM biology. A compartment-matched read-across is a prerequisite for any biological reading. **(2) Reverse projection is under-resolved at 2 columns:** the two FM cohorts' case-vs-control axes barely agree (leave-one-out 0.039), and with only 2 columns the rank-matched leave-one-non-infectious-out ceiling caps at r_eff=1 < PAIS R=2 → verdict `under_resolved_need_more_noninfectious_columns` (the reverse analogue of `interpretation:0037`'s K=2 degeneracy). A **3rd+ cross-condition, compartment-matched** non-infectious column (`E-MEXP-2069` GWI / `GSE182503` IEI) is required before the reverse test — and hence `validated_specificity` — is reachable. The specificity read-across therefore remains **`exploratory_flagship`**, now with an explicit compartment confound and an under-resolution gate recorded.
 
 ## User Questions
 
