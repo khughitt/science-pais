@@ -9,7 +9,30 @@ believability criterion.
 - **Review:** `doc/reviews/0010-crosspais-pathway-response-rank-estimation-pipeline-review.md`
 - **Grounds:** `interpretation:0037` (t116 R-regime grid + the K≥3 identifiability lever)
 
-## Status: WP1 + WP1b (11 deposits PASS) + WP2 (matrices) + WP3 (rank battery + Stage-3c calibration) + WP4 (artifact + compartment adjudication) DONE; WP4b/WP5/WP6 stubbed
+## Status: WP1 + WP1b (11 deposits PASS) + WP2 (matrices) + WP3 (rank battery + Stage-3c calibration) + WP4 (artifact + compartment adjudication) + WP4b (non-infectious FM/GWI specificity) DONE; WP5/WP6 stubbed
+
+**WP4b done (2026-07-09).** Discovery sweep (Open Question #4) found **admissible public
+non-infectious deposits** (NOT the note-only branch): fibromyalgia `GSE221921` (flagship) +
+`GSE67311`, GWI `E-MEXP-2069` + `GSE286345`, IEI `GSE182503`; **PACVS has none public** (note-only
+gap). `gws_fm_specificity.py` builds the PAIS shared subspace U_ref from the strict matrix (same
+standardize + leading-r left-singular-vector construction as the WP4 recovered-control prong — the
+`read_nes`/`projection_fraction` primitives are imported verbatim) and projects the non-infectious
+column onto it. The flagship `GSE221921` (96 FM / 93 HC, PBMC NovaSeq, "log of normalized TPM" →
+`log2_intensity`, symbol map 86%) rides the **same** stage→DE→fgsea path via a `matrix: specificity`
+tag that is **absent from `MATRIX_COMPOSITION` and the adjudication extras** — so it enters no rank
+matrix and no artifact control; it meets the PAIS matrix only at the NES level, then is projected.
+**Result — `exploratory_flagship`, `partially_recovered_indeterminate`:** the FM column recovers
+**0.045** of its variance in the strict PAIS rank-2 subspace — **~18× the random-direction null
+(0.0025)** so FM loads on the shared axis well above chance, but only **0.28× the held-out-PAIS mean
+(0.16)** so it is well below a genuine leave-one-out PAIS trigger. Neither cleanly **infection-specific**
+(not at the random floor) nor a full **generic-sickness manifold** (below a real PAIS trigger), and read
+under the standing caveat that the PAIS subspace is itself **weakly identified** (Stage-3c FAIL,
+LOO-fragile). The queued replication panel (`GSE67311` WB-microarray, `E-MEXP-2069` GWI-microarray,
+`GSE286345` GWI-RNA-seq pending a GWI/FM co-carry check) + the reverse projection (needs ≥2 non-infectious
+columns) are recorded, not built. **Infra:** `acquire_payload` now emits the `origin.json` provenance
+sidecar `stage_matrix` requires (previously written only during the WP1 run), so a fresh acquire of any
+deposit stages reproducibly. Run:
+`snakemake … --use-conda -- results/t117-crosspais-rank/specificity/gws_fm.json`.
 
 **WP4 done (2026-07-08).** `artifact_adjudication.py` reuses the WP3 battery **verbatim**
 (imports `rank_battery` + `rank_estimators`) and runs the artifact + compartment
@@ -269,7 +292,7 @@ the Stage-2 DE→enrichment reuses `code/scripts/fgsea_enrich.R` verbatim and
 | `rank_battery` | WP3 ✅ | ≥3 rotation-invariant estimators + **t116 structural co-primary**; LODO/LOCO; **LC-out power curve**; compartment-stratified R (done) | A, B, C |
 | `calibration_3c` | WP3 ✅ | rank battery calibrated vs t116's generative model at real K/N (3-arm); **FAILS fail-closed → no grid** (done) | B |
 | `artifact_adjudication` | WP4 ✅ | platform-LOO, negative-control sets, recovered-control specificity, **compartment/composition control** (compartment-stratified R, drop-sorted, composition-adjust deferred); reuses the WP3 battery verbatim (done) | C |
-| `gws_fm_specificity` | WP4b | non-infectious GWS/FM read-across (Q-D infection-specificity); note-only if no admissible deposit | D |
+| `gws_fm_specificity` | WP4b ✅ | non-infectious FM/GWI read-across (Q-D infection-specificity): projects the PAIS subspace onto a non-infectious column; flagship GSE221921 built, panel queued (done) | D |
 | `grid_placement` | WP6 | t116 R-regime placement **only if `calibration.pass`** | A, B |
 | `datapackage` | WP6 | manifest: matrix + R estimates + stability profiles | G |
 

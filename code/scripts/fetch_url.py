@@ -23,6 +23,7 @@ matches, so a halted/interrupted fetch never satisfies a Snakemake output.
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 
@@ -33,7 +34,8 @@ from acquire_common import sha256_path
 CHUNK = 1 << 20  # 1 MiB
 
 
-def fetch(url: str, out: Path, expected_sha256: str) -> None:
+def fetch(url: str, out: Path, expected_sha256: str, origin_out: Path | None = None,
+          origin: dict | None = None) -> None:
     if not expected_sha256:
         sys.exit(
             f"[fetch] HALT: empty expected sha256 for {out.name} "
@@ -60,6 +62,14 @@ def fetch(url: str, out: Path, expected_sha256: str) -> None:
             f"locked hash — never auto-accept.)"
         )
     tmp.replace(out)
+    # Provenance sidecar (stage_matrix reads `<payload>.origin.json` to parse the opaque
+    # content-addressed blob by its ORIGINAL filename/kind). Written only after the hash
+    # verifies, so a sidecar never claims provenance for unverified bytes. Optional +
+    # backward-compatible: callers that don't pass --origin-out just get the blob (t035).
+    if origin_out is not None:
+        rec = dict(origin or {})
+        rec.update({"url": url, "sha256": got, "bytes": out.stat().st_size})
+        origin_out.write_text(json.dumps(rec, indent=2))
     print(f"[fetch] OK {out} sha256={got} bytes={out.stat().st_size}", file=sys.stderr)
 
 
@@ -68,8 +78,19 @@ def main() -> int:
     ap.add_argument("--url", required=True)
     ap.add_argument("--out", required=True, type=Path)
     ap.add_argument("--sha256", required=True, help="locked expected hash (empty => HALT)")
+    # optional provenance sidecar (stage_matrix's per-payload origin.json contract)
+    ap.add_argument("--origin-out", type=Path, default=None,
+                    help="if set, write a provenance sidecar JSON here after verify")
+    ap.add_argument("--accession", default=None)
+    ap.add_argument("--payload", default=None)
+    ap.add_argument("--original-filename", default=None)
+    ap.add_argument("--kind", default=None)
     args = ap.parse_args()
-    fetch(args.url, args.out, args.sha256)
+    origin = None
+    if args.origin_out is not None:
+        origin = {"accession": args.accession, "payload": args.payload,
+                  "original_filename": args.original_filename, "kind": args.kind}
+    fetch(args.url, args.out, args.sha256, origin_out=args.origin_out, origin=origin)
     return 0
 
 

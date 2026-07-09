@@ -243,6 +243,23 @@ contrasts:
     matrix: decoy
     control_type: recovered
     note: "demoted — day-21 below floor, raw-FASTQ only; chronification triangulation"
+  # --- non-infectious specificity (WP4b, review Finding D; a SEPARATE matrix, NEVER
+  #     pooled into strict/sensitivity). The `specificity` tag is absent from
+  #     MATRIX_COMPOSITION and from the adjudication extras, so this column rides the
+  #     shared stage->DE->fgsea path (same uniform pipeline over the same pinned
+  #     universe) but enters NO rank matrix and NO artifact adjudication — it is only
+  #     projected onto the learned PAIS subspace by gws_fm_specificity (Q-D
+  #     infection-specificity read-across). Only gse221921_fm is `build_now`; the rest
+  #     of the admissible panel is queued replication (see specificity_readacross). ---
+  gse221921_fm:
+    accession: GSE221921
+    trigger: fibromyalgia              # NON-infectious (idiopathic) — the D-003 designated stress-test
+    compartment: pbmc                  # matches the identifiable strict PAIS stratum
+    platform: rnaseq
+    onset_certainty: non-infectious    # no infectious onset (this is the specificity comparator)
+    matrix: specificity
+    control_type: healthy
+    note: "WP4b flagship: 96 FM vs 93 HC, PBMC NovaSeq RNA-seq. PBMC+RNA-seq deliberately match the PAIS strict stratum that IS identifiable (WP3/WP4). Built as a separate non-infectious specificity column, projected onto the PAIS subspace — never pooled."
 
 # Deposits catalogued but OUT of every computed matrix (G4 blockers / deferred).
 excluded:
@@ -336,6 +353,22 @@ acquisition:
       pheno: {kind: txt.gz, filename: "GSE68310_SubjectPhenotypes1.txt.gz", bytes: 2529,
               url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE68nnn/GSE68310/suppl/GSE68310_SubjectPhenotypes1.txt.gz",
               sha256: "9285b14adef0338f41334bb1a75e43d7b4ffa58130eb63583cd4361ee64c6cbe"}
+  # WP4b non-infectious specificity flagship (GSE221921, FM PBMC RNA-seq). sha256 +
+  # bytes DISCOVERED then LOCKED via the sanctioned fetch flow (dummy hash -> fetch
+  # HALTs printing `got` -> lock). Per-sample expression is guaranteed by RAW.tar +
+  # series matrix + SRA (PRJNA916731); the processed xlsx is NOT staged (undescribed
+  # internal structure — the fail-closed stage_matrix contract parses the RAW.tar).
+  GSE221921:
+    payloads:
+      raw_tar: {kind: tar, filename: "GSE221921_RAW.tar", bytes: 55889920,
+                url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE221nnn/GSE221921/suppl/GSE221921_RAW.tar",
+                sha256: "79ff6dcbebcbbb50202b86996f5c5f95ab30b483a62044e0cca85b5402c9b795"}
+      series_matrix: {kind: series_matrix.txt.gz, filename: "GSE221921_series_matrix.txt.gz", bytes: 10801,
+                      url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE221nnn/GSE221921/matrix/GSE221921_series_matrix.txt.gz",
+                      sha256: "22f332b8d584091a4334a1eea884556f7260d8c0d7bfc742842d9ea5b1d5bc13"}
+      soft: {kind: soft.gz, filename: "GSE221921_family.soft.gz", bytes: 13626,
+             url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE221nnn/GSE221921/soft/GSE221921_family.soft.gz",
+             sha256: "4f14035c97433a08535aead793ab282dc874740c9b728f5957267f4c9d6b9cf7"}
   # sorted-monocyte QFS stratum + PI-CFS sensitivity: same GEO artifacts as t035,
   # hashes identical to code/workflows/config.yaml (self-contained re-pin here).
   GSE130353:
@@ -728,6 +761,35 @@ parse:
       group_regex:
         - {pattern: "\\(V5\\)", group: case}
         - {pattern: "^control$", group: control}
+  GSE221921:                           # WP4b FM specificity flagship (96 FM / 93 HC, PBMC); per-sample RAW.tar
+    handler: tar
+    payload: raw_tar
+    member_glob: "*.txt.gz"            # 189 members: GSM..._Sample_NNN.txt.gz, one per sample
+    member_sep: "\\s+"                 # members are SPACE-delimited (not tab), with a trailing space
+    member_gene_col: gene              # HGNC symbol (MT-RNR2, ABCC1, ...) — resolves via the org.Hs.eg.db map
+    member_value_col: 1                # 0-based: [gene, Sample_NNN.txt]; value col is named per-sample -> positional
+    member_agg: mean                   # LOG scale -> AVERAGE duplicate source symbols within a member (summing logs is wrong)
+    sample_id_regex: "^(GSM[0-9]+)"    # GSM from the member filename; joins the series-matrix `sample`
+    gene_id_namespace: symbol
+    expression_scale: log2_intensity   # GEO: "Log of normalized transcripts per million" (StringTie TPM -> TMM -> log)
+    scale_caveat: "Already-log normalized TPM -> limma DIRECT (log2_intensity class); NOT counts/cpm (voom/log2 would double-transform). Log base unspecified by the depositor (rank-invariant for the moderated-t statistic)."
+    duplicate_policy: mean             # symbol->ENSG collapse also on the log scale -> mean, not sum
+    case_label: case
+    control_label: control
+    de_model: default                  # ~ group (single-platform NovaSeq; sex available in the sheet but unmodeled, matching the corpus default)
+    metadata_payload: series_matrix
+    metadata_format: series_matrix
+    group_source:
+      mode: sheet
+      file: series_metadata.samples.tsv
+      sample_col: sample               # GSM (geo_accession); joins the tar member GSM
+      # disease-state characteristic: "... patient (FMA)" (fibromyalgia; note the depositor's
+      # 'Fibromylagia' misspelling) vs "Healthy patient (CONTROL)". Match the parenthetical
+      # code, not the misspelled word. _norm_key("disease state") -> disease_state.
+      group_regex_col: disease_state
+      group_regex:
+        - {pattern: "\\(FMA\\)", group: case}
+        - {pattern: "\\(CONTROL\\)", group: control}
 
 # ------------------------------------------------------ microarray chain (WP1b c)
 # The probe->gene chain feeding the `prebuilt` stage_matrix handler for the two
@@ -927,12 +989,45 @@ artifact_controls:
 # the SAME uniform pipeline — NOT a free-form column. Gated on a public,
 # downloadable, sample-level deposit clearing the gates; else a note-only gap.
 specificity_readacross:
-  enabled: false                  # flip true once an admissible GWS/FM deposit is found
-  candidates: []                  # WP4b discovery sweep (open question #4) fills this
+  enabled: true                   # WP4b discovery sweep (2026-07-09) found admissible deposits
   gates_same_as_primary: true     # blood-bulk WB/PBMC, public, downloadable, sample-level
   pipeline_same_as_primary: true  # same DE->enrichment over the same pinned universe
-  test: subspace_recovery_fraction # how much of the PAIS subspace GWS/FM recovers (Q-D)
+  test: subspace_recovery_fraction # how much of the PAIS subspace the non-infectious column recovers (Q-D)
   no_deposit_is_note_only: true   # if none admissible: record the gap, do NOT relax gates
+  status_label: exploratory_flagship  # NOT validated_specificity — one non-infectious column projected
+                                      # onto a PAIS subspace WP3/WP4 showed is itself weakly identified
+  reference_matrix: strict        # build the PAIS subspace U_ref from the strict matrix
+  build_now: [gse221921_fm]       # only the flagship is built this pass; rest are queued replication
+  recovery:                       # thresholds for the qualitative subspace-recovery verdict
+    null_multiple: 3.0            # recovery must exceed this * (r/P) random-direction floor to count as > random
+    generic_manifold_frac: 0.70   # recovery >= this * mean HELD-OUT PAIS projection => recovered like a real PAIS trigger
+  # --- adjudicated admissible panel (WP4b sweep, 2026-07-09). build: now | queued_replication.
+  #     Held to the SAME gates as the primary corpus (blood-bulk WB/PBMC, public, downloadable,
+  #     sample-level case-vs-control, gene-expression). Sorted-cell + methylation/miRNA + gated
+  #     deposits are NOT listed (failed a gate). ---
+  candidates:
+    - {id: gse221921_fm, accession: GSE221921, condition: fibromyalgia, trigger_class: idiopathic,
+       tissue: pbmc, platform: rnaseq, n_case: 96, n_control: 93, verdict: admissible, build: now,
+       note: "flagship — PBMC+RNA-seq match the identifiable PAIS strict stratum; largest FM bulk-blood set"}
+    - {id: gse67311_fm, accession: GSE67311, condition: fibromyalgia, trigger_class: idiopathic,
+       tissue: whole_blood, platform: microarray_hugene11st, n_case: 70, n_control: 70,
+       verdict: admissible, build: queued_replication,
+       note: "independent WHOLE-BLOOD MICROARRAY FM — cross-platform + cross-compartment robustness check"}
+    - {id: emexp2069_gwi, accession: E-MEXP-2069, condition: gulf_war_illness, trigger_class: chemical,
+       tissue: pbmc, platform: microarray_u133plus2, n_case: 9, n_control: 11,
+       verdict: admissible, build: queued_replication,
+       note: "independent NON-infectious TRIGGER (organophosphate); microarray; small N; baseline arm of an exercise design"}
+    - {id: gse286345_gwi, accession: GSE286345, condition: gulf_war_illness, trigger_class: chemical,
+       tissue: pbmc, platform: rnaseq, n_case: 44, n_control: 40,
+       verdict: admissible_pending, build: queued_replication,
+       note: "largest GWI RNA-seq; RESOLVE the GWI/FM co-carry concern first (suppl named ..._GWI_FM.csv). Same lab lineage as GSE168409 (not independent)."}
+    - {id: gse182503_iei, accession: GSE182503, condition: idiopathic_environmental_intolerance,
+       trigger_class: environmental, tissue: pbmc, platform: microarray_agilent, n_case: 17, n_control: 21,
+       verdict: admissible, build: queued_replication,
+       note: "third independent non-infectious trigger; small N; separate adult-onset-asthma arm to exclude"}
+  sorted_stratum_note: "FM sorted-neutrophil sets (GSE334369 n=126, GSE229750) are a SEPARATE sorted stratum, not bulk — held out like the QFS sorted stratum (G1), not admitted to the specificity matrix."
+  pacvs_gap: "No admissible PACVS blood transcriptome exists publicly (the field is serum/autoantibody/clinical; the only GEO hit, GSE178962, is embargoed to 2026-12 with an unverified/likely-spurious PACVS label). The PACVS Q-D read-across is a NOTE-ONLY gap — gates NOT relaxed (mirrors the inaccessible-deposit discipline)."
+  reverse_projection: "deferred — build U from >=2 non-infectious columns (queued replication) then project PAIS; a single FM column cannot define a >1-dim non-infectious subspace"
 
 # ------------------------------------------------------ t116 grid ------------
 # The R-regime grid (interpretation:0037) the surviving R + structural co-primary

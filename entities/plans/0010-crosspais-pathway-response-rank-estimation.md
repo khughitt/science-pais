@@ -799,19 +799,41 @@ downstream matrix builds on a real contract, not an assumption.
   unavailable control (set-based negative controls, CIBERSORTx composition adjustment, acute-decoy specificity)
   recorded note-only with its blocker.
 
-### WP4b — Non-infectious specificity read-across (GWS/FM) — review Finding D
-- Assemble a **separate non-infectious specificity matrix** (Gulf War Syndrome / fibromyalgia blood-bulk
-  WB/PBMC; PACVS if a public downloadable deposit exists) under the **same admissibility gates** as the
-  primary corpus and the **same uniform DE→enrichment over the same pinned universe**; compute its
-  pathway × contrast matrix as a distinct object.
-- Project the PAIS subspace onto it (and vice-versa): quantify how much of the learned PAIS shared subspace
-  is **recovered by non-infectious GWS/FM** — the direct test of the t116 Q-D infection-specific-attractor vs
-  generic-sickness-manifold ceiling.
-- **This WP is itself gated on a public, downloadable, sample-level GWS/FM deposit clearing the gates** — if
-  none exists, record that as a note-only gap (do not relax the gates), mirroring the inaccessible-deposit
-  discipline.
-- **DoD:** a GWS/FM specificity readout (subspace-recovery fraction) or an explicit "no admissible
-  non-infectious deposit" note; carried to WP6 and `question:0050`.
+### WP4b — Non-infectious specificity read-across (GWS/FM) — review Finding D — **DONE 2026-07-09**
+- **Discovery sweep (resolves Open Question #4).** Three blind parallel sweeps (GWI, fibromyalgia, PACVS +
+  other non-infectious) against GEO/ArrayExpress/SRA/literature, each adjudicated against the **same
+  admissibility gates** as the primary corpus. Outcome: **NOT the note-only branch — multiple admissible
+  public deposits exist** across two independent non-infectious triggers and both platforms. Adjudicated
+  panel (config `specificity_readacross.candidates`; each a `dataset:` entity):
+  **fibromyalgia (idiopathic)** — `GSE221921` (96 FM/93 HC, PBMC RNA-seq — **flagship**), `GSE67311`
+  (70/70, WB microarray); **Gulf War Illness (chemical)** — `E-MEXP-2069` (9/11, PBMC microarray),
+  `GSE286345` (44/40, PBMC RNA-seq, *admissible-pending* a GWI/FM co-carry check); **IEI (environmental)** —
+  `GSE182503` (17/21, PBMC microarray). FM sorted-neutrophil sets (`GSE334369`/`GSE229750`) are a separate
+  sorted stratum (held out, G1). **PACVS: no admissible public blood transcriptome exists** (serum/
+  autoantibody field; the one GEO hit is embargoed with a spurious label) → a **note-only gap**, gates not
+  relaxed.
+- **Separate non-infectious specificity column, NEVER pooled.** The flagship rides the **same** uniform
+  DE→enrichment over the **same** pinned universe as the primary corpus (config `matrix: specificity` — a tag
+  absent from `MATRIX_COMPOSITION` and the adjudication extras, so it enters no rank matrix and no artifact
+  control), then is **projected onto the learned PAIS subspace** (`gws_fm_specificity.py`). Flagship built
+  end-to-end (`GSE221921`: RAW.tar 189 per-sample members → 96/93, log-normalized-TPM `log2_intensity`
+  scale, symbol→Ensembl map 86%, NES over the 1153-set universe). *(Infra: closed a latent reproducibility
+  gap — `acquire_payload` now emits the `origin.json` provenance sidecar `stage_matrix` requires, so a fresh
+  acquire of any deposit stages reproducibly, not just deposits carried over from the WP1 run.)*
+- **Result — the PAIS subspace is PARTIALLY recovered by non-infectious fibromyalgia (`exploratory_flagship`,
+  not `validated_specificity`).** The FM case-vs-control column projects **0.045** of its variance onto the
+  strict PAIS rank-2 subspace: **~18× the random-direction null** (0.0025) — so FM loads on the shared axis
+  **well above chance** — but only **0.28× the held-out-PAIS mean** (0.16; a genuine leave-one-out PAIS
+  trigger recovers ~3.6× more) → verdict **`partially_recovered_indeterminate`**: **neither cleanly
+  infection-specific** (FM is not at the random floor) **nor a full generic-sickness manifold** (FM is well
+  below a real PAIS trigger). This is read under the standing caveat that **the PAIS subspace itself is
+  weakly identified** (Stage-3c FAIL, LOO-fragile, heterogeneous structural co-primary), so the readout is
+  relative to a weak baseline, not an absolute specificity claim. The reverse projection (build U from ≥2
+  non-infectious columns, project PAIS) is **deferred** to the queued replication panel.
+- **DoD (met):** a GWS/FM specificity readout (subspace-recovery fraction vs random-null and held-out-PAIS
+  references) emitted at `results/…/specificity/gws_fm.json`, with the admissible panel + queued replication
+  (`GSE67311`/`E-MEXP-2069`/`GSE286345`) + the PACVS note-only gap recorded; carried to WP6 and
+  `question:0050`. Non-infectious-deposit *availability* is no longer a gap; the **weak-U_ref** caveat is.
 
 ### WP5 — Sparse-FA instrument (replication-gated)
 - Fit BicMix/SFAmix; cross-check active-factor count; classify attractor vs trigger/platform-specific
@@ -886,9 +908,13 @@ downstream matrix builds on a real contract, not an assumption.
       estimate (strict 2 / sensitivity 3) is the **random-structure-null-adjusted** R_primary — **no artifact
       floor was subtracted** (set-based negative controls, CIBERSORTx composition adjustment, and acute-decoy
       specificity are all **note-only deferred** with their blockers).
-- [ ] **Non-infectious specificity read-across (review Finding D):** a GWS/FM (± PACVS) matrix under the same
-      gates + same pipeline is projected against the PAIS subspace (Q-D infection-specificity test), **or** an
-      explicit "no admissible non-infectious deposit" note is recorded (gates not relaxed).
+- [x] **(WP4b, 2026-07-09) Non-infectious specificity read-across (review Finding D):** the discovery sweep
+      found admissible public deposits (fibromyalgia `GSE221921`/`GSE67311`, GWI `E-MEXP-2069`/`GSE286345`,
+      IEI `GSE182503`; PACVS = note-only gap, none public). The FM flagship (`GSE221921`, 96/93 PBMC RNA-seq)
+      was built through the same pipeline and projected onto the strict PAIS subspace: **recovery 0.045 =
+      ~18× the random null but only 0.28× the held-out-PAIS mean → `partially_recovered_indeterminate`**
+      (neither infection-specific nor a full generic-sickness manifold), read under the weak-U_ref caveat.
+      `exploratory_flagship`; the rest of the panel is queued replication.
 - [ ] The two-matrix verdict rule is applied: the q0050-grade R comes from the strict matrix; any
       sensitivity-only low-rank result is labelled hypothesis-generating; the adjacent ME/CFS question is
       answered separately.
@@ -909,10 +935,15 @@ downstream matrix builds on a real contract, not an assumption.
    known shared-axis risk; these are LOO-conditional and feed the platform-LOO control directly.
 3. **Longitudinal/paired contrast policy** (`gse267625`, `gse16059`) — define the single representative
    contrast per subject/timepoint in WP2 to avoid pseudo-replication inflating apparent rank.
-4. **GWS/FM deposit availability (WP4b feasibility, review Finding D).** WP4b needs a *public, downloadable,
-   sample-level* GWS or fibromyalgia blood-bulk (WB/PBMC) case-vs-control deposit clearing the same gates as
-   the primary corpus. A discovery sweep for such a deposit is unstarted; if none is admissible the Q-D
-   infection-specificity read-across becomes a note-only gap (gates not relaxed), not a free-form column.
+4. **GWS/FM deposit availability (WP4b feasibility, review Finding D) — RESOLVED 2026-07-09.** The discovery
+   sweep found **multiple admissible** public, downloadable, sample-level non-infectious blood-bulk WB/PBMC
+   case-vs-control deposits (fibromyalgia `GSE221921`/`GSE67311`, GWI `E-MEXP-2069`/`GSE286345`, IEI
+   `GSE182503`), so the read-across is a **real object, not a note-only gap** — the FM flagship is built and
+   projected (`partially_recovered_indeterminate`). Only **PACVS** has no public deposit (note-only gap,
+   gates not relaxed). Remaining open sub-questions are now execution items, not feasibility: (a) resolve the
+   `GSE286345` GWI/FM co-carry before building it; (b) the queued microarray deposits need probe→gene
+   annotation adds (`hugene11sttranscriptcluster.db` for `GSE67311`, Agilent for `GSE182503`); (c) the
+   reverse projection needs ≥2 non-infectious columns.
 
 ## Notes on reusable infrastructure
 

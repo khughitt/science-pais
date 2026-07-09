@@ -141,9 +141,13 @@ def payload_spec(acc, pay):
     return ACQ[acc]["payloads"][pay]
 
 def deposit_payload_blobs(wildcards):
-    """Every verified payload blob a deposit's staged.ok aggregates."""
+    """Every verified payload blob a deposit's staged.ok aggregates — the content-
+    addressed bytes AND their provenance sidecar (stage_matrix reads `<payload>.origin.json`
+    to parse the opaque blob by original filename/kind; declaring it here keeps that
+    dependency in the DAG rather than hidden inside the parser)."""
     acc = wildcards.accession
-    return [f"{RAW}/{acc}/{pay}.data" for pay in payloads_of(acc)]
+    return ([f"{RAW}/{acc}/{pay}.data" for pay in payloads_of(acc)]
+            + [f"{RAW}/{acc}/{pay}.origin.json" for pay in payloads_of(acc)])
 
 # --- WP1b (b): shared gene-id harmonization map (org.Hs.eg.db, pinned) --------
 HARM = config.get("harmonization", {})
@@ -254,16 +258,23 @@ rule acquire_payload:
         srclib=ancient(f"{SCRIPTS}/acquire_common.py"),
     output:
         blob=f"{RAW}/{{accession}}/{{payload}}.data",
+        # provenance sidecar (stage_matrix reads it to parse the opaque blob by its
+        # original filename/kind); written by fetch_url.py only after the hash verifies.
+        origin=f"{RAW}/{{accession}}/{{payload}}.origin.json",
     params:
         url=lambda wc: payload_spec(wc.accession, wc.payload)["url"],
         sha256=lambda wc: payload_spec(wc.accession, wc.payload)["sha256"],
+        filename=lambda wc: payload_spec(wc.accession, wc.payload)["filename"],
+        kind=lambda wc: payload_spec(wc.accession, wc.payload)["kind"],
     log:
         f"{RES}/logs/acquire/{{accession}}.{{payload}}.log",
     conda:
         "../envs/py.yaml"
     shell:
         "python {input.script} --url '{params.url}' --sha256 {params.sha256} "
-        "--out {output.blob} > {log} 2>&1"
+        "--out {output.blob} --origin-out {output.origin} "
+        "--accession {wildcards.accession} --payload {wildcards.payload} "
+        "--original-filename '{params.filename}' --kind {params.kind} > {log} 2>&1"
 
 rule acquire_deposit:
     # a deposit is 'staged' once ALL its payloads are downloaded + hash-verified.
@@ -824,15 +835,45 @@ rule artifact_adjudication:
 # WP4b — non-infectious GWS/FM specificity read-across (Finding D). Gated on an
 # admissible deposit; else emits a note-only gap (gates NOT relaxed).
 # =============================================================================
+# WP4b (Finding D): project the learned PAIS subspace onto a NON-infectious
+# specificity column (fibromyalgia / GWI) — the t116 Q-D infection-specific-attractor
+# vs generic-sickness-manifold test. The non-infectious deposit(s) ride the SAME
+# stage->DE->fgsea path (config `matrix: specificity` tag — absent from
+# MATRIX_COMPOSITION and the adjudication extras, so NEVER pooled into a rank matrix
+# or scored as an artifact control) and meet the PAIS matrix only here, at the NES
+# level. Only `build_now` columns are built this pass; the rest of the admissible
+# panel is queued replication (recorded in the report, not built).
+SPEC_REF_MATRIX = config.get("specificity_readacross", {}).get("reference_matrix", "strict")
+
+def specificity_build_now_nes(wildcards):
+    """NES tables for the non-infectious specificity columns marked `build_now`. Only
+    buildable ones enter the DAG; a build_now column with no producer HALTs in
+    gws_fm_specificity.py (never a silent gap — mirrors matrix_nes discipline)."""
+    bn = config.get("specificity_readacross", {}).get("build_now", [])
+    return [f"{PROC}/fgsea/{c}.nes.tsv" for c in bn if c in CONTRASTS and is_buildable(c)]
+
 rule gws_fm_specificity:
     input:
-        strict=f"{RES}/artifact/strict.adjudicated.json",
+        pais_matrix=f"{PROC}/matrix/{SPEC_REF_MATRIX}.pathway_by_contrast.tsv",
+        pais_grouping=f"{PROC}/matrix/{SPEC_REF_MATRIX}.grouping.json",
+        pais_rank=f"{RES}/rank/{SPEC_REF_MATRIX}.rank.json",
+        spec_nes=specificity_build_now_nes,
+        script=f"{SCRIPTS}/gws_fm_specificity.py",
+        estimators=f"{SCRIPTS}/rank_estimators.py",
+        battery=f"{SCRIPTS}/rank_battery.py",
+        adjud=f"{SCRIPTS}/artifact_adjudication.py",   # read_nes + projection_fraction reused verbatim
+        config=CONFIGFILE,
     output:
         report=f"{RES}/specificity/gws_fm.json",
-    params:
-        spec=config["specificity_readacross"],
+    log:
+        f"{RES}/logs/specificity/gws_fm.log",
+    conda:
+        "../envs/py.yaml"
     shell:
-        stub("gws_fm_specificity (Q-D infection-specificity; note-only if no deposit)")
+        "python {input.script} --config {input.config} "
+        "--pais-matrix {input.pais_matrix} --pais-grouping {input.pais_grouping} "
+        "--pais-rank {input.pais_rank} --spec-nes {input.spec_nes} "
+        "--out {output.report} > {log} 2>&1"
 
 # =============================================================================
 # WP6 — t116 grid placement (ONLY if calibration_3c passed) + datapackage.
