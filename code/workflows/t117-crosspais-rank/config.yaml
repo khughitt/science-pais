@@ -910,6 +910,9 @@ artifact_controls:
   recovered_control_specificity:  # DIRECTIONAL, not magnitude (plan Artifact section)
     require_persistence: true     # shared subspace must remain present in case-vs-recovered
     require_exceed_naive: false   # do NOT require case-vs-recovered > case-vs-naive
+    min_persistence_frac: 0.30    # a recovered column PERSISTS iff it captures >= this
+                                  # share of its variance in the naive shared subspace
+                                  # (AND >> the random-direction null r/P)
   composition_control:            # review Finding C — three prongs
     stratified_R: true            # estimate R within each compartment stratum
     drop_sorted_sensitivity: true # low-rank must survive removing the sorted stratum

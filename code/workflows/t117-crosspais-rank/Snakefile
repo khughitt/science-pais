@@ -23,8 +23,8 @@
 # implements them:
 #   WP1 acquire_*/stage_matrix/verify_universe   (staging)
 #   WP2 limma_de/fgsea_enrich/assemble_matrix     (uniform DE -> enrichment)
-#   WP3 rank_battery + calibration_3c             (rank + t116 calibration; Findings A,B)
-#   WP4 artifact_adjudication                     (artifact + compartment; Finding C)
+#   WP3 rank_battery + calibration_3c             (rank + t116 calibration; Findings A,B) — DONE
+#   WP4 artifact_adjudication                     (artifact + compartment; Finding C) — DONE
 #   WP4b gws_fm_specificity                       (non-infectious read-across; Finding D)
 #   WP6 grid_placement + datapackage              (t116 grid, gated on 3c)
 #
@@ -91,13 +91,17 @@ def matrix_nes(wildcards):
 
 def adjudication_extra_nes(wildcards):
     """Extra columns the strict-matrix adjudication consumes but the rank matrix
-    does NOT pool (review Finding C): the sorted-compartment stratum (QFS) for
-    compartment-stratified R, and the acute-infection decoys for the specificity
-    layer. Sensitivity-matrix adjudication pulls no extras."""
+    does NOT pool (review Finding C): the sorted-compartment stratum (QFS) for the
+    drop-sorted comparison, and the acute-infection decoys for the specificity layer.
+    Only BUILDABLE extras enter the DAG (mirrors matrix_nes) — the sorted QFS stratum
+    is buildable; both decoys (gse68310 parse-deferred, chikv salmon-deferred) are
+    NOT, so they are excluded here and recorded by artifact_adjudication.py as an
+    omitted-decoy ledger with each blocker (never a silent gap). Sensitivity-matrix
+    adjudication pulls no extras."""
     if wildcards.matrix != "strict":
         return []
     extra = tagged("stratum") + tagged("decoy")
-    return [f"{PROC}/fgsea/{c}.nes.tsv" for c in extra]
+    return [f"{PROC}/fgsea/{c}.nes.tsv" for c in extra if is_buildable(c)]
 
 def de_model_of(wildcards):
     """Per-contrast DE model spec (config `de_models`; falls back to `default`).
@@ -778,23 +782,43 @@ rule calibration_3c:
 # shared artifact (t116) and cell-composition-shift axis.
 # =============================================================================
 rule artifact_adjudication:
+    # WP4: the artifact + compartment battery, run BEFORE any biological reading of R
+    # (Key decision 4). Reuses the WP3 battery verbatim (imports rank_battery +
+    # rank_estimators) so any within-stratum / pooled / platform-drop R is the
+    # IDENTICAL procedure the headline R used. Consumes the rank/structural outputs +
+    # grouping (column control_type/compartment/platform) + the assembled matrix + the
+    # buildable sorted-stratum NES (strict only). Unavailable prongs (set-based
+    # negative controls; CIBERSORTx composition adjustment; acute-decoy specificity)
+    # are recorded note-only with their exact blocker — never a silent skip.
     input:
         rank=f"{RES}/rank/{{matrix}}.rank.json",
         structural=f"{RES}/rank/{{matrix}}.structural.json",
+        grouping=f"{PROC}/matrix/{{matrix}}.grouping.json",
         matrix=f"{PROC}/matrix/{{matrix}}.pathway_by_contrast.tsv",
-        extra_nes=adjudication_extra_nes,   # sorted stratum + acute decoys (strict only; Finding C)
+        script=f"{SCRIPTS}/artifact_adjudication.py",
+        estimators=f"{SCRIPTS}/rank_estimators.py",
+        battery=f"{SCRIPTS}/rank_battery.py",
+        config=CONFIGFILE,
+        extra_nes=adjudication_extra_nes,   # buildable sorted stratum (strict only; Finding C)
     output:
-        adjudicated=f"{RES}/artifact/{{matrix}}.adjudicated.json",  # artifact- & composition-adjusted R
+        adjudicated=f"{RES}/artifact/{{matrix}}.adjudicated.json",  # artifact-adjudicated R + controls
         # Finding C, explicit: R estimated WITHIN each deconvolvable compartment
         # stratum (WB, PBMC) + the drop-sorted sensitivity + composition-adjusted
         # R. The sorted stratum is a SINGLE column (QFS) → it has NO own rank; it
         # enters only as a held-out compartment for the drop-sorted comparison and
         # as a projection target, never as its own rank matrix.
         stratified=f"{RES}/artifact/{{matrix}}.compartment_stratified.json",
-    params:
-        controls=config["artifact_controls"],
+    log:
+        f"{RES}/logs/artifact/{{matrix}}.log",
+    conda:
+        "../envs/py.yaml"
     shell:
-        stub("artifact_adjudication {wildcards.matrix}")
+        "python {input.script} --config {input.config} --matrix {wildcards.matrix} "
+        "--in-matrix {input.matrix} --in-grouping {input.grouping} "
+        "--in-rank {input.rank} --in-structural {input.structural} "
+        "--extra-nes {input.extra_nes} "
+        "--out-adjudicated {output.adjudicated} --out-stratified {output.stratified} "
+        "> {log} 2>&1"
 
 # =============================================================================
 # WP4b — non-infectious GWS/FM specificity read-across (Finding D). Gated on an

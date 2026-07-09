@@ -9,7 +9,28 @@ believability criterion.
 - **Review:** `doc/reviews/0010-crosspais-pathway-response-rank-estimation-pipeline-review.md`
 - **Grounds:** `interpretation:0037` (t116 R-regime grid + the K≥3 identifiability lever)
 
-## Status: WP1 + WP1b (11 deposits PASS) + WP2 (matrices) + WP3 (rank battery + Stage-3c calibration) DONE; WP4–WP6 stubbed
+## Status: WP1 + WP1b (11 deposits PASS) + WP2 (matrices) + WP3 (rank battery + Stage-3c calibration) + WP4 (artifact + compartment adjudication) DONE; WP4b/WP5/WP6 stubbed
+
+**WP4 done (2026-07-08).** `artifact_adjudication.py` reuses the WP3 battery **verbatim**
+(imports `rank_battery` + `rank_estimators`) and runs the artifact + compartment
+battery before any biological reading of R. **Result — the adjudication reinforces,
+on data, the WP3 fragility.** (i) **Compartment-stratified R DIFFERS across
+compartments** (strict PBMC 2 vs WB 1; sensitivity PBMC 3 vs WB 1) → the shared axis
+is **compartment-entangled**, not a compartment-invariant biology rank. (ii)
+**Drop-sorted:** pooling the sorted QFS stratum keeps strict R=2 but **rotates the
+leading subspace 26.7° (> 20° cutoff)** → the on-data justification for the G1 sorted
+exclusion. (iii) **Platform-LOO:** strict is **single-platform → platform-independence
+is untestable** (a limitation); sensitivity drop-microarray R=3 survives, drop-rnaseq
+collapses to R=1 (2 cols). (iv) **Recovered-control specificity:** the naive-defined
+shared subspace is **largely absent in case-vs-recovered** (projection 0.09 < 0.30 vs
+in-sample 0.71) → the leading axis is mostly a **case-vs-healthy / infection-history
+axis**. **Composition adjustment (CIBERSORTx-LM22), set-based negative controls, and
+acute-decoy specificity are note-only deferred** with their exact blockers; the
+artifact floor already applied is the parallel-analysis per-column-permuted null (only
+2 SVs above it) + the off-diagonal-SD sampling floor. Artifact-adjudicated R = the
+null-adjusted R_primary (strict 2 / sensitivity 3). This coheres with the structural
+heterogeneity (mean≈0, high SD) and the Stage-3c FAIL. Run:
+`snakemake … --use-conda -- results/t117-crosspais-rank/artifact/{strict,sensitivity}.adjudicated.json`.
 
 **WP3 done (2026-07-08).** `rank_battery.py` (+ shared `rank_estimators.py`) runs three
 rotation-invariant estimators (Horn parallel analysis [primary, bootstrap CI],
@@ -241,7 +262,7 @@ the Stage-2 DE→enrichment reuses `code/scripts/fgsea_enrich.R` verbatim and
 | `limma_de` · `fgsea_enrich` · `assemble_matrix` | WP2 | pathway × contrast matrix over the one pinned universe; per-deposit ingest + NES-comparability | F |
 | `rank_battery` | WP3 ✅ | ≥3 rotation-invariant estimators + **t116 structural co-primary**; LODO/LOCO; **LC-out power curve**; compartment-stratified R (done) | A, B, C |
 | `calibration_3c` | WP3 ✅ | rank battery calibrated vs t116's generative model at real K/N (3-arm); **FAILS fail-closed → no grid** (done) | B |
-| `artifact_adjudication` | WP4 | platform-LOO, negative-control sets, recovered-control specificity, **compartment/composition control** (WB/PBMC-only primary, drop-sorted, composition-adjusted R) | C |
+| `artifact_adjudication` | WP4 ✅ | platform-LOO, negative-control sets, recovered-control specificity, **compartment/composition control** (compartment-stratified R, drop-sorted, composition-adjust deferred); reuses the WP3 battery verbatim (done) | C |
 | `gws_fm_specificity` | WP4b | non-infectious GWS/FM read-across (Q-D infection-specificity); note-only if no admissible deposit | D |
 | `grid_placement` | WP6 | t116 R-regime placement **only if `calibration.pass`** | A, B |
 | `datapackage` | WP6 | manifest: matrix + R estimates + stability profiles | G |
