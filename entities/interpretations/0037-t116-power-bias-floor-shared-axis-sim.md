@@ -15,8 +15,9 @@ related:
   - interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating
   - interpretation:0036-t103-cross-pathogen-co-enrollment-feasibility
   - pre-registration:0002-cross-trigger-pathway-overlap
+  - interpretation:0038-t117-crosspais-rank-nonidentified-fail-closed
 created: "2026-07-07"
-updated: "2026-07-07"
+updated: "2026-07-09"
 input: "In-silico power/bias-floor simulation (Snakemake workflow code/workflows/t116-power-bias-floor/; config-driven, numpy-only, deterministic seed 1729, 8000 reps/cell) seeded with the t035 observed concordance dispersion. Answers the Q-A gate raised in interpretation:0001 and upgrades the 'plausibly estimand-aligned / worth simulating' power claim in interpretation:0036. No participant data; this is a design-power simulation, not an empirical test of hypothesis:0001."
 workflow_run: "t116-power-bias-floor-sim"
 prior_interpretations:
@@ -37,6 +38,8 @@ about the DEMONSTRABILITY PATH (what design can adjudicate them), not about thei
 # Interpretation: t116 — power/bias-floor of the harmonized ≥3-trigger shared-axis test
 
 ## Verdict
+
+> **Scope correction + Q-C answered (2026-07-09, plan:0010 Key decision 5 / `interpretation:0038-t117-crosspais-rank-nonidentified-fail-closed`, `sci:amends`).** Two updates from the t117 real-data probe. **(1) "any N" is scoped.** The **2-arm** and **mean-concordance** non-arbitration below is genuinely *at any N* — the SD-of-off-diagonals is structurally *undefined* for one off-diagonal, and mean concordance is blind *by construction*; no per-arm N repairs either. But the **high-rank / finite-repertoire** non-arbitration (R≥8 → no arm count ≤6 arbitrates) is scoped to **achievable arm counts under this pathway-vector structural-test family (≤6 arms simulated), NOT literally any N** — more arms could in principle arbitrate. **(2) Q-C is answered from data.** t117 estimated the real cross-PAIS repertoire from existing single-trigger deposits: the strict WB/PBMC matrix off-diagonal concordance is **−0.064 (≤ the sampling floor 0.033), SD 0.249** — a diffuse/heterogeneous regime with **no recoverable low-rank shared axis** at K=5 triggers, confirming this simulation's low-power ceiling from the real-data side. The public single-trigger route cannot settle the R regime; only the q0050 K≥3 cohort can.
 
 **Verdict:** [~] Conditional — the harmonized shared-axis test **can** be arbitrating, but only along axes the project had not been costing: it requires a **structural** (single-shared-axis homogeneity) statistic run across **K ≥ 3 arms** on a **high-resolution feature universe (~1000 sets)**. Any **2-arm** design (the t035 route) and the **mean-concordance statistic itself** are **non-arbitrating at any per-arm N** — mean concordance is *blind by construction* to the `question:0017` finite-repertoire null (power ≈ 0.00 against a strength-matched null) while trivially clearing the Monte-Carlo bar (power = 1.00). Per-arm N (tens, MELLOW-scale) is **adequate and not the binding constraint**; **arm count and feature-space resolution are**.
 

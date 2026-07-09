@@ -9,7 +9,7 @@ believability criterion.
 - **Review:** `doc/reviews/0010-crosspais-pathway-response-rank-estimation-pipeline-review.md`
 - **Grounds:** `interpretation:0037` (t116 R-regime grid + the K≥3 identifiability lever)
 
-## Status: WP1 + WP1b (11 deposits PASS) + WP2 (matrices) + WP3 (rank battery + Stage-3c calibration) + WP4 (artifact + compartment adjudication) + WP4b (non-infectious FM/GWI specificity) DONE; WP5/WP6 stubbed
+## Status: WP1 + WP1b (11 deposits PASS) + WP2 (matrices) + WP3 (rank battery + Stage-3c calibration) + WP4 (artifact + compartment adjudication) + WP4b (non-infectious FM/GWI specificity) + WP6 (grid placement fail-closed + datapackage manifest → interpretation:0038) DONE; WP5 (sparse-FA, secondary/replication-gated) not built
 
 **WP4b done (2026-07-09).** Discovery sweep (Open Question #4) found **admissible public
 non-infectious deposits** (NOT the note-only branch): fibromyalgia `GSE221921` (flagship) +
@@ -99,8 +99,9 @@ producing **strict (1153 gene_sets × 7 built cols of 9)** and **sensitivity (11
 `gse143549`) are recorded as `omitted_columns`, never silently dropped; the
 same-tissue LC NES-comparability **best-pair screen** on the enriched subset gives WB
 `concordant` (ρ=0.50) and PBMC `best_pair_only` (ρ=0.42, with `gse251849` discordant
-→ carried to WP3 `wp3_loo_candidates`). The remaining rule bodies (WP4–WP6) are fail-early stubs (`exit 1`, no
-silent placeholder output). `config.yaml` encodes **all** design parameters — it
+→ carried to WP3 `wp3_loo_candidates`). The only unimplemented rule body is WP5 (sparse-FA, a
+secondary/replication-gated instrument), kept as a fail-early stub (`exit 1`, no silent placeholder
+output); WP1–WP4b + WP6 are implemented. `config.yaml` encodes **all** design parameters — it
 originates the design; scripts hard-code nothing.
 
 **WP2 done (2026-07-08):**
@@ -302,8 +303,8 @@ the Stage-2 DE→enrichment reuses `code/scripts/fgsea_enrich.R` verbatim and
 | `calibration_3c` | WP3 ✅ | rank battery calibrated vs t116's generative model at real K/N (3-arm); **FAILS fail-closed → no grid** (done) | B |
 | `artifact_adjudication` | WP4 ✅ | platform-LOO, negative-control sets, recovered-control specificity, **compartment/composition control** (compartment-stratified R, drop-sorted, composition-adjust deferred); reuses the WP3 battery verbatim (done) | C |
 | `gws_fm_specificity` | WP4b ✅ | non-infectious FM/GWI read-across (Q-D infection-specificity): projects the PAIS subspace onto a non-infectious column; flagship GSE221921 built, panel queued (done) | D |
-| `grid_placement` | WP6 | t116 R-regime placement **only if `calibration.pass`** | A, B |
-| `datapackage` | WP6 | manifest: matrix + R estimates + stability profiles | G |
+| `grid_placement` | WP6 ✅ | t116 R-regime placement **only if `calibration.pass` AND `artifact_controls_pass`**; both false here → `fail_closed_no_verdict` (no R on grid) | A, B |
+| `datapackage` | WP6 ✅ | frictionless manifest: 11 result resources (sha256) + 7 entity cross-refs → `interpretation:0038` (done) | G |
 
 ## Corpus (config `contrasts`, WP1-verified 2026-07-08)
 

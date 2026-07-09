@@ -850,17 +850,25 @@ downstream matrix builds on a real contract, not an assumption.
   R within tolerance.
 - **DoD:** a secondary factor-count + attractor/specific decomposition, flagged secondary.
 
-### WP6 — t116-grid placement + interpretation + doc corrections
-- **Decision gate (review Finding E), after WP3 Stage-3c/LC-out power curve:** if the calibration confirms
-  the low-power ceiling, decide whether the descriptive R + GWS/FM specificity + composition adjudication is
-  worth the full staging/harmonization cost, or whether the **WP1 finding + the scoped calibration is itself
-  the t117 deliverable**. Record the decision.
-- Map R + uncertainty (rank estimator **and** structural co-primary) onto the t116 R-regime grid **only if
-  Stage 3c passed**; state the q0050 GO/NO-GO consequence and the verdict under both matrices per the
-  two-matrix rule, plus the **GWS/FM infection-specificity** result. Write the interpretation entity; carry
-  the scoped "achievable arm counts" wording into `interpretation:0037` and `question:0050`.
-- **DoD:** an `interpretation:` deliverable answering t117 + the q0050 consequence + the Q-D specificity
-  read-across; the Finding-E scope decision recorded; the two "any N" corrections landed.
+### WP6 — t116-grid placement + interpretation + doc corrections — **DONE 2026-07-09**
+- **Decision gate (review Finding E) — RECORDED (`interpretation:0038`, User Questions).** Stage-3c confirmed
+  the low-power ceiling, so the decision was taken: the **full descriptive analysis is retained and reported as
+  the t117 deliverable**, but framed as a **DEMONSTRATION of the identification ceiling + supporting non-grid
+  readouts**, not a grid verdict. Rationale: the descriptive pass produced three decision-relevant results the
+  lean (WP1-only) alternative would have missed — the empirical Q-C answer (corpus concordance ≤ floor), the
+  GWS/FM specificity read-across, and the artifact/compartment adjudication. **No further staging/harmonization
+  of the public single-trigger corpus is warranted** (the ceiling is corpus-intrinsic); the next lever is the
+  q0050 K≥3 cohort.
+- **Grid placement is FAIL-CLOSED.** Stage 3c FAILED (`calibration.json: pass=false`, two independent grounds),
+  so no R was placed on the t116 grid. The interpretation reports the descriptive R (strict 2 / sensitivity 3)
+  and the structural co-primary (off-diag concordance −0.064 ≤ floor 0.033, SD 0.249) explicitly non-grid, the
+  q0050 GO/NO-GO consequence (fundable-with-conditions; public data cannot substitute), the two-matrix verdict
+  (q0050-grade R = strict; sensitivity = hypothesis-generating), and the GWS/FM read-across
+  (`partially_recovered_indeterminate`). The scoped "achievable arm counts, not any N" wording was landed in
+  `interpretation:0037` and `question:0050`.
+- **DoD (met):** `interpretation:0038-t117-crosspais-rank-nonidentified-fail-closed` answers t117 + the q0050
+  consequence + the Q-D/GWS-FM specificity read-across; the Finding-E scope decision is recorded; the two
+  "any N" corrections landed in 0037 + q0050.
 
 ## Non-Goals
 
@@ -927,16 +935,22 @@ downstream matrix builds on a real contract, not an assumption.
       trigger-LOO ceiling is itself heterogeneous, LC-out low → subspace not trigger-general, and
       under-identified: 3 triggers → 2-trigger references, `trigger_loo_identifiability_pass: false`).
       `exploratory_flagship`; the rest of the panel is queued replication.
-- [ ] The two-matrix verdict rule is applied: the q0050-grade R comes from the strict matrix; any
-      sensitivity-only low-rank result is labelled hypothesis-generating; the adjacent ME/CFS question is
-      answered separately.
-- [ ] R + uncertainty (rank estimator **and** structural co-primary) are placed on the t116 R-regime grid
-      **only after Stage 3c passes**, with the explicit q0050 GO/NO-GO consequence.
+- [x] **(WP6, 2026-07-09)** The two-matrix verdict rule is applied (`interpretation:0038`): the q0050-grade R
+      comes from the **strict** matrix (R=2, band `low`, `artifact_controls_pass=false`); the **sensitivity**
+      R=3 (K=10) is labelled **hypothesis-generating**; the adjacent ME/CFS question is answered separately and
+      does not feed the q0050 grade.
+- [x] **(WP6, 2026-07-09)** R + uncertainty (rank estimator **and** structural co-primary) are **NOT** placed on
+      the t116 R-regime grid — Stage 3c FAILED (`calibration.json: pass=false`), so grid placement is
+      **fail-closed** (the pre-locked "only after Stage 3c passes" rule); the descriptive R + structural
+      co-primary are reported non-grid, with the explicit q0050 GO/NO-GO consequence (fundable-with-conditions).
 - [x] **(WP0, 2026-07-08)** Reproducibility: per-estimator seeds (parallel-analysis permutation, CV-SVD fold,
       split-half, bootstrap, BicMix MCMC seed/chains/convergence) are pinned in `config.yaml`, and the
       `datapackage` rule emits `results/…/datapackage.json` (implementation deferred to WP6).
-- [ ] The scoped "non-arbitrating at achievable arm counts under this test family" wording is carried into
-      `interpretation:0037` and `question:0050` (replacing "at ANY N").
+- [x] **(WP6, 2026-07-09)** The scoped "non-arbitrating at achievable arm counts under this test family"
+      wording is carried into `interpretation:0037` and `question:0050`: the 2-arm / mean-concordance
+      non-arbitration is kept as genuinely *any N* (structurally undefined / blind by construction), while the
+      high-rank finite-repertoire non-arbitration is scoped to achievable arm counts (≤6 arms), not literally
+      any N.
 
 ## Open questions
 

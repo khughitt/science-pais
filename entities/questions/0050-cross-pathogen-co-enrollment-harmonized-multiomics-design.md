@@ -111,6 +111,18 @@ form of the discriminating experiment the project repeatedly names but does not 
   contrasts), not just reduce per-arm bias magnitude. Pivotal remaining unknown: the real cross-PAIS repertoire
   **rank/lumpiness** (Q-C / task:t117), partly estimable from existing single-trigger multi-omics before any
   cohort commitment.
+- **Q-C RESOLVED from data + "any N" scoped (t117, 2026-07-09 → `interpretation:0038-t117-crosspais-rank-nonidentified-fail-closed`).**
+  The uniform cross-PAIS rank probe over the strict WB/PBMC matrix (7 columns, 5 triggers) returns
+  off-diagonal concordance **−0.064 (≤ sampling floor 0.033), SD 0.249** — a **diffuse/heterogeneous
+  regime with no recoverable low-rank shared axis**, so Stage-3c calibration is fail-closed and no rank is
+  placed on the t116 grid. This **confirms the low-power ceiling from real data**: the **public single-trigger
+  route cannot settle the R regime and cannot substitute for the cohort** (the ceiling is signal-level at
+  fixed trigger diversity, not fixable by adding more public deposits). **Scope correction (Key decision 5):**
+  the earlier phrasing "structurally non-arbitrating **at any N**" applies exactly to **2-arm** designs and the
+  **mean-concordance** statistic (undefined / blind by construction); the **high-rank finite-repertoire**
+  non-arbitration is scoped to **achievable arm counts under this structural-test family (≤6 arms), not
+  literally any N**. Net: the go/no-go stays **fundable-with-conditions**, now with real-data backing for the
+  "public data cannot substitute for a K≥3 harmonized cohort" clause.
 
 ## Connections to Project
 
