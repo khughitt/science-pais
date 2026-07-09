@@ -35,8 +35,13 @@ co-primary shows no homogeneous shared axis). So the emitted status is
 `exploratory_flagship`, NOT `validated_specificity`, and a "recovers like PAIS"
 reading is only meaningful RELATIVE to the (weak) held-out PAIS baseline, which is
 reported alongside. The reverse projection (build U from >=2 non-infectious columns,
-project PAIS) is DEFERRED until the queued replication panel is built — one FM
-column cannot define a >1-dim non-infectious subspace.
+project PAIS) ACTIVATES once >=2 columns are built (currently gse221921_fm PBMC-RNAseq
++ gse67311_fm WB-microarray) but is UNDER-RESOLVED at 2 columns: the rank-matched
+leave-one-out ceiling caps at r_eff=min(R,n_noninf-1)=1 < PAIS R, so its verdict is
+`under_resolved_need_more_noninfectious_columns` until a 3rd cross-condition,
+compartment-matched column is built. NB the 2 FM columns differ in compartment (PBMC
+vs whole blood) and platform, and forward recovery tracks compartment — a confound
+flagged in the caveats, not FM biology.
 
 All knobs originate in config.yaml; this script hard-codes no design value.
 Fail-early: a requested specificity NES that is absent/malformed HALTs; an

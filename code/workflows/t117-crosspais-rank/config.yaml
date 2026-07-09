@@ -249,8 +249,9 @@ contrasts:
   #     shared stage->DE->fgsea path (same uniform pipeline over the same pinned
   #     universe) but enters NO rank matrix and NO artifact adjudication — it is only
   #     projected onto the learned PAIS subspace by gws_fm_specificity (Q-D
-  #     infection-specificity read-across). Only gse221921_fm is `build_now`; the rest
-  #     of the admissible panel is queued replication (see specificity_readacross). ---
+  #     infection-specificity read-across). build_now = gse221921_fm + gse67311_fm (2nd
+  #     non-infectious column, built 2026-07-09b — activates the reverse projection); the
+  #     rest of the admissible panel is queued replication (see specificity_readacross). ---
   gse221921_fm:
     accession: GSE221921
     trigger: fibromyalgia              # NON-infectious (idiopathic) — the D-003 designated stress-test
@@ -1057,9 +1058,9 @@ specificity_readacross:
        tissue: pbmc, platform: rnaseq, n_case: 96, n_control: 93, verdict: admissible, build: now,
        note: "flagship — PBMC+RNA-seq match the identifiable PAIS strict stratum; largest FM bulk-blood set"}
     - {id: gse67311_fm, accession: GSE67311, condition: fibromyalgia, trigger_class: idiopathic,
-       tissue: whole_blood, platform: microarray_hugene11st, n_case: 70, n_control: 70,
-       verdict: admissible, build: queued_replication,
-       note: "independent WHOLE-BLOOD MICROARRAY FM — cross-platform + cross-compartment robustness check"}
+       tissue: whole_blood, platform: microarray_hugene11st, n_case: 60, n_control: 68,
+       verdict: admissible, build: now,
+       note: "BUILT 2026-07-09 (2nd non-infectious column; 60 FM/68 HC after dropping 14 _2 technical replicates; deposited 70/70). Independent WHOLE-BLOOD MICROARRAY FM — but its ~5x higher forward recovery than the PBMC flagship tracks COMPARTMENT/platform, not FM biology (confound); activates the reverse projection (under-resolved at 2 cols)."}
     - {id: emexp2069_gwi, accession: E-MEXP-2069, condition: gulf_war_illness, trigger_class: chemical,
        tissue: pbmc, platform: microarray_u133plus2, n_case: 9, n_control: 11,
        verdict: admissible, build: queued_replication,
@@ -1074,7 +1075,7 @@ specificity_readacross:
        note: "third independent non-infectious trigger; small N; separate adult-onset-asthma arm to exclude"}
   sorted_stratum_note: "FM sorted-neutrophil sets (GSE334369 n=126, GSE229750) are a SEPARATE sorted stratum, not bulk — held out like the QFS sorted stratum (G1), not admitted to the specificity matrix."
   pacvs_gap: "No admissible PACVS blood transcriptome exists publicly (the field is serum/autoantibody/clinical; the only GEO hit, GSE178962, is embargoed to 2026-12 with an unverified/likely-spurious PACVS label). The PACVS Q-D read-across is a NOTE-ONLY gap — gates NOT relaxed (mirrors the inaccessible-deposit discipline)."
-  reverse_projection: "deferred — build U from >=2 non-infectious columns (queued replication) then project PAIS; a single FM column cannot define a >1-dim non-infectious subspace"
+  reverse_projection: "ACTIVE but UNDER-RESOLVED (2026-07-09b): 2 non-infectious columns built (gse221921_fm PBMC-RNAseq + gse67311_fm WB-microarray), so U is defined and PAIS is projected onto it — but the rank-matched leave-one-out ceiling caps at r_eff=min(R,n_noninf-1)=1 < PAIS R=2, so the reverse verdict is under_resolved_need_more_noninfectious_columns. A 3rd+ cross-condition, compartment-matched column (emexp2069_gwi / gse182503_iei) is required for a full-rank test."
 
 # ------------------------------------------------------ t116 grid ------------
 # The R-regime grid (interpretation:0037) the surviving R + structural co-primary
