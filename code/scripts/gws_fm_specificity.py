@@ -247,6 +247,93 @@ def specificity_for(spec_id, nes_path, X, R, cols, triggers, rec_cfg, seed):
     }
 
 
+def reverse_projection_for(spec_paths, X, R, cols, rec_cfg, seed):
+    """Reverse read-across: build a NON-INFECTIOUS subspace U_noninf from >=2 standardized
+    non-infectious columns (its leading-r left-singular vectors), project each PAIS column onto
+    it, and ask how well PAIS recovers the non-infectious axis. This is the symmetric complement
+    to the forward projection and — crucially — does NOT depend on the weakly-identified PAIS
+    subspace: U is defined by the non-infectious columns themselves.
+
+      * NULL: row-permute each projected PAIS column (breaks alignment, keeps marginal NES).
+      * CEILING: leave-one-non-infectious-out — how well a genuine HELD-OUT non-infectious column
+        recovers U built from the OTHER non-infectious columns (the fair "in-domain" reference; a
+        PAIS column recovering U as well as a held-out non-infectious one ⇒ shared axis).
+    Reading: PAIS ≈ ceiling ⇒ PAIS lies in the non-infectious subspace (generic-sickness manifold);
+    PAIS ≈ null ⇒ the PAIS axis is distinct (infection-specific)."""
+    ids = list(spec_paths.keys())
+    if len(ids) < 2:
+        return {"applicable": False,
+                "reason": f"reverse projection needs >=2 non-infectious columns; have {len(ids)} "
+                          f"({ids}) — build more of the queued replication panel to activate it"}
+    Zcols = {sid: read_nes(Path(p), sid, _GENE_SETS) for sid, p in spec_paths.items()}
+    noninf = np.column_stack([Zcols[s] for s in ids])            # P_full x k (pinned gene-set index)
+    rows = (~np.isnan(X).any(axis=1)) & (~np.isnan(noninf).any(axis=1))
+    P = int(rows.sum())
+    if P < len(ids) + 1:
+        return {"applicable": False,
+                "reason": f"only {P} rows usable across PAIS-complete AND all {len(ids)} non-infectious "
+                          f"columns non-NaN — too few to build a rank-{R} non-infectious subspace"}
+    Nr = re.standardize_columns(noninf[rows])
+    r_noninf = max(1, min(R, Nr.shape[1], P))
+    U_noninf = np.linalg.svd(Nr, full_matrices=False)[0][:, :r_noninf]
+
+    Xr = X[rows]
+    rng = np.random.default_rng(seed)
+    n_perm = int(rec_cfg.get("n_perm_null", 2000))
+    per_pais = {}
+    for j in range(X.shape[1]):
+        zj = _standardize_vec(Xr[:, j])
+        rec = projection_fraction(U_noninf, zj)
+        draws = np.fromiter((projection_fraction(U_noninf, rng.permutation(zj)) for _ in range(n_perm)),
+                            dtype=float, count=n_perm)
+        per_pais[cols[j]] = {
+            "recovery": round(rec, 4),
+            "empirical_p": round((int(np.sum(draws >= rec)) + 1) / (n_perm + 1), 5),
+            "null_p95": round(float(np.quantile(draws, 0.95)), 5),
+        }
+    # leave-one-non-infectious-out ceiling
+    loo = {}
+    for i, sid in enumerate(ids):
+        others = [k for k in range(len(ids)) if k != i]
+        Uo = np.linalg.svd(re.standardize_columns(noninf[rows][:, others]), full_matrices=False)[0]
+        Uo = Uo[:, :max(1, min(R, len(others), P))]
+        loo[sid] = round(projection_fraction(Uo, _standardize_vec(noninf[rows][:, i])), 4)
+    ceiling = round(float(np.mean(list(loo.values()))), 4) if loo else None
+
+    recs = {c: v["recovery"] for c, v in per_pais.items()}
+    mean_pais = round(float(np.mean(list(recs.values()))), 4)
+    above = {c: bool(v["recovery"] > v["null_p95"] and v["empirical_p"] < 0.05)
+             for c, v in per_pais.items()}
+    n_above = int(sum(above.values()))
+    generic_frac = rec_cfg.get("generic_manifold_frac", 0.70)
+    like_noninf = bool(ceiling and ceiling > 0 and mean_pais >= generic_frac * ceiling and n_above >= 1)
+    if n_above == 0:
+        verdict = "pais_not_in_noninfectious_subspace_infection_specific_consistent"
+    elif like_noninf:
+        verdict = "pais_recovers_noninfectious_subspace_generic_manifold_consistent"
+    else:
+        verdict = "partially_recovered_indeterminate"
+    return {
+        "applicable": True,
+        "method": "U_noninf = leading-r left-singular vectors of the standardized non-infectious "
+                  "column block; project each PAIS column onto it (independent of the PAIS subspace)",
+        "n_noninfectious_columns": len(ids),
+        "noninfectious_columns": ids,
+        "n_rows_used": P,
+        "noninf_subspace_rank_r": int(r_noninf),
+        "per_pais_recovery": per_pais,
+        "mean_pais_recovery": mean_pais,
+        "n_pais_above_null": n_above,
+        "leave_one_noninfectious_out_ceiling": loo,
+        "ceiling_mean": ceiling,
+        "mean_pais_vs_ceiling": (round(mean_pais / ceiling, 3) if ceiling else None),
+        "verdict": verdict,
+        "caveat": "single-condition U (all fibromyalgia) tests recovery of the FM axis specifically; "
+                  "a cross-condition U (FM+GWI+IEI) tests the generic non-infectious axis — read the "
+                  "verdict against noninfectious_columns' condition diversity.",
+    }
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", type=Path, required=True)
@@ -284,6 +371,10 @@ def main():
     columns = {c: specificity_for(c, provided[c], X, R, cols, triggers, rec_cfg, seed)
                for c in build_now}
 
+    # reverse read-across (activates once >=2 non-infectious columns are built)
+    spec_paths = {c: provided[c] for c in build_now}
+    reverse = reverse_projection_for(spec_paths, X, R, cols, rec_cfg, seed)
+
     # verdict rollup over the built columns (only the flagship this pass)
     verdicts = {c: v["verdict"] for c, v in columns.items()}
     candidates = spec_cfg.get("candidates", [])
@@ -311,7 +402,8 @@ def main():
         "queued_replication": queued,
         "sorted_stratum_note": spec_cfg.get("sorted_stratum_note"),
         "pacvs_gap": spec_cfg.get("pacvs_gap"),
-        "reverse_projection": spec_cfg.get("reverse_projection"),
+        "reverse_projection": reverse,
+        "reverse_projection_config_note": spec_cfg.get("reverse_projection"),
         "caveats": [
             "exploratory_flagship: ONE non-infectious column (fibromyalgia, GSE221921) built; the "
             "rest of the admissible panel is queued replication (see queued_replication).",
