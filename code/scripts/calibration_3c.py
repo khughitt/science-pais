@@ -267,30 +267,52 @@ def main():
     # identify a rank at its operating concordance (plan:0010 Stage 3c / Finding B).
     passed = bool(battery_validated and corpus_identifiable)
 
+    def per_R_recovery_phrase(arm):
+        """Precise, DATA-DRIVEN per-R recovery summary (not a coarse 'R~1-2'): recovery
+        (|R_hat_med - R| <= tol) and CI coverage are reported separately, so a rank that
+        is weakly recovered but under-covered is not conflated with an outright miss."""
+        parts = []
+        for r in arm["per_injected_R"]:
+            R, med, cov = r["injected_R"], r["R_hat_median"], r["ci_coverage"]
+            if not r["identifiable_at_corpus_K"]:
+                parts.append(f"R={R} non-identifiable (R>=K)")
+            elif r["recovered"] and r["coverage_ok"]:
+                parts.append(f"R={R} recovered (R_hat_med={med:.1f}, coverage {cov:.2f})")
+            elif r["recovered"]:
+                parts.append(f"R={R} only weakly recovered (R_hat_med={med:.1f} within +-tol) "
+                             f"but UNDER-COVERED (CI coverage {cov:.2f} < target)")
+            else:
+                parts.append(f"R={R} NOT recovered (R_hat_med={med:.1f})")
+        return "; ".join(parts)
+
+    # Reasons are ADDITIVE and INDEPENDENT: each failure mode that holds is recorded, so a
+    # sentinel that fails for two independent reasons (estimator-width limit AND corpus at
+    # the concordance floor) says so — "both independently mean no grid" (review Finding 1).
     reasons = []
     if not estimator_correct:
         reasons.append(
-            "ESTIMATOR-vs-CORPUS-WIDTH LIMIT: even a CLEAN rank-R signal (no arm bias) at "
-            f"strong concordance is not recovered beyond R~1-2 from the corpus's K={K} "
-            "columns — a rotation-invariant SVD rank estimator cannot resolve the "
-            "sub-dominant shared axes of a t116 nonneg-loading repertoire at this corpus "
-            "WIDTH. The SVD-rank -> t116-grid substitution (Finding B) is therefore NOT "
-            "licensed at K="+str(K)+".")
-    if estimator_correct and not battery_validated:
+            "ESTIMATOR-vs-CORPUS-WIDTH LIMIT: on a CLEAN rank-R signal (no arm bias) at strong "
+            f"concordance the battery does not cleanly recover the injected rank at K={K} columns "
+            f"[{per_R_recovery_phrase(selfcheck)}] — a rotation-invariant SVD rank estimator "
+            "cannot resolve the sub-dominant shared axes of a t116 nonneg-loading repertoire at "
+            f"this corpus WIDTH. The SVD-rank -> t116-grid substitution (Finding B) is NOT "
+            f"licensed at K={K}.")
+    elif not battery_validated:
         reasons.append("ARM-BIAS SWAMPS SUB-DOMINANT AXES: the estimator recovers R on a clean "
-                       "signal but not at the t116 arm-bias level (0.60) — independent per-arm "
-                       "bias masks all but the leading shared axis at this K.")
-    if battery_validated and not corpus_identifiable:
+                       f"signal but not at the t116 arm-bias level ({cal['arm_bias']}) "
+                       f"[{per_R_recovery_phrase(reference)}] — independent per-arm bias masks all "
+                       "but the leading shared axis at this K.")
+    if not corpus_identifiable:
         reasons.append(
-            "CORPUS BELOW IDENTIFIABILITY FLOOR: the battery is validated at strong signal, "
-            f"but the real matrix's off-diagonal concordance ({real_rho:.3f}) is "
-            + ("at/below the sampling floor "
-               f"(1/sqrt(P-1)={floor:.3f}) so a t116 shared-axis structure injected at the "
-               "matched concordance is negligible" if signal_at_floor else
-               "too low for the injected rank to be recovered")
-            + " -> the corpus cannot identify a cross-PAIS rank at its signal level. This is "
-              "the plan's low-power ceiling, DEMONSTRATED (review Finding A/B); no grid verdict "
-              "is emitted (fail-closed).")
+            f"CORPUS AT ITS OPERATING POINT DOES NOT IDENTIFY A RANK: the real matrix's "
+            f"off-diagonal concordance ({real_rho:.3f}) is "
+            + (f"at/below the sampling floor (1/sqrt(P-1)={floor:.3f}), so a t116 shared-axis "
+               "structure injected at the matched concordance is negligible (kappa->0)"
+               if signal_at_floor else "too low for the injected rank to be recovered")
+            + f" [{per_R_recovery_phrase(matched)}] -> the corpus cannot identify a cross-PAIS "
+              "rank at its signal level. This is an INDEPENDENT ground for no grid verdict (holds "
+              "regardless of the estimator-width limit above) — the plan's low-power ceiling, "
+              "DEMONSTRATED (review Finding A/B). No grid verdict is emitted (fail-closed).")
 
     if passed:
         interp = (f"Battery validated (recovers R up to {reference['max_identifiable_recovered_R']} "

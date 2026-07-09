@@ -211,21 +211,20 @@ def lc_out_power_curve(Xc, colmeta, cfg, seeds):
     pa = cfg["rank_battery"]["parallel_analysis"]
     min_trig = cfg["folds"]["identifiability"]["min_triggers"]
     n_sub = cfg["rank_battery"].get("power_curve_subsets", 200)
+    # Each column subset has its OWN marginal distributions, so its per-column-permuted
+    # PA null band differs — recompute the band PER SUBSET (not once per K') so a subset's
+    # R is scored against its own null (review Finding 2). Uses a reduced permutation count
+    # for tractability; this is a coarse power/CI curve, not the headline R.
+    pc_perm = cfg["rank_battery"].get("power_curve_n_perm", 300)
     curve = []
-    # PA-only (fast) with a per-K' null band cached once from a representative subset —
-    # the band depends on shape+marginals, not on which columns are drawn, so reusing it
-    # across the K'-subset draws is faithful and keeps the curve tractable.
     for Kp in range(3, K + 1):
-        band_rng = np.random.default_rng(seeds["parallel_analysis_perm"] + Kp)
-        rep_idx = band_rng.choice(K, size=Kp, replace=False)
-        band = re.pa_null_band(re.standardize_columns(Xcc[:, rep_idx]),
-                               pa["n_perm"], pa["quantile"], band_rng)
         Rs, ident = [], 0
         for _ in range(n_sub):
             idx = rng.choice(K, size=Kp, replace=False)
             n_tr = len({colmeta[i]["trigger"] for i in idx})
-            R = re.parallel_analysis(re.standardize_columns(Xcc[:, idx]), 0,
-                                     pa["quantile"], rng, band=band)["R"]
+            Zsub = re.standardize_columns(Xcc[:, idx])
+            band = re.pa_null_band(Zsub, pc_perm, pa["quantile"], rng)
+            R = re.parallel_analysis(Zsub, 0, pa["quantile"], rng, band=band)["R"]
             Rs.append(R)
             if n_tr >= min_trig:
                 ident += 1

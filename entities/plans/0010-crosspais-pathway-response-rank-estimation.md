@@ -714,12 +714,15 @@ downstream matrix builds on a real contract, not an assumption.
   (fail-closed, review Finding B / Key decision 6).** A **three-arm** design against t116's own generative
   model at the real K/per-column-N: (0) an **α=0 estimator self-check** (clean rank-R, no bias); (1) a
   strong-signal **positive control** (ρ=0.45, t116 arm-bias 0.60); (2) the **operating-point** arm matched
-  to the real off-diagonal concordance. Findings: **even the clean α=0 self-check floors at R̂≈1 for a
-  genuine rank-4 signal** → a rotation-invariant SVD rank estimator **cannot resolve rank ≥2 of a t116
-  nonneg-loading repertoire from K=7 columns** — the SVD→t116-grid substitution is **NOT licensed at this
-  corpus width**; and the **matched arm sits at the concordance sampling floor** (real ρ −0.064 ≈ 0 <
-  1/√(P−1)=0.033 → kappa→0, no shared signal to identify). `calibration.pass` carries `pass=false`;
-  **WP6 grid placement is fail-closed on it — no t116-grid verdict may be emitted.**
+  to the real off-diagonal concordance. **Two INDEPENDENT grounds for no grid** (both recorded additively
+  in `calibration.pass`): **(1) estimator-vs-corpus-width limit** — on the clean α=0 signal the battery
+  **only weakly recovers R=2** (R̂≈1, within the ±1 tol but **CI coverage 0.54 ≪ 0.90 → under-covered**) and
+  **does not recover R=4** (R̂≈1) from K=7 columns → a rotation-invariant SVD rank estimator cannot cleanly
+  resolve rank ≥2 of a t116 nonneg-loading repertoire at this corpus **width**, so the SVD→t116-grid
+  substitution is **not licensed at K=7**; **(2) corpus at its operating point** — the matched arm sits at
+  the concordance **sampling floor** (real ρ −0.064 ≈ 0 < 1/√(P−1)=0.033 → kappa→0, no shared signal to
+  identify), which alone (independent of ground 1) means no rank is identifiable. `calibration.pass` carries
+  `pass=false`; **WP6 grid placement is fail-closed on it — no t116-grid verdict may be emitted.**
 - **Compartment-stratified R (Finding C):** strict PBMC (5 cols) R=2, WB (2 cols) R=1; sensitivity PBMC
   (6 cols) R=3, WB (3 cols) R=1. Full composition-adjustment/deconvolution is WP4.
 - **DoD (met):** R point estimate + bootstrap CI per matrix from **≥3 rotation-invariant estimators**, the
@@ -801,11 +804,13 @@ downstream matrix builds on a real contract, not an assumption.
       sensitivity LC-out = identifiable-but-FAIL → hypothesis-generating).
 - [x] **(WP3, 2026-07-08)** **Stage 3c calibration (review Finding B):** the rank battery is calibrated
       against t116's generative model at the corpus's real K/per-column-N via a three-arm design
-      (α=0 self-check + strong-signal positive control + operating-point matched arm). **Result: the
-      SVD→t116-grid bridge is NOT licensed at this corpus width** (K=7/10 cannot resolve rank ≥2 of a t116
-      nonneg-loading repertoire even on a clean signal) **and** the real concordance is at the sampling
-      floor → `calibration.pass=false`, **no grid placement** (fail-closed). The **t116 structural
-      single-axis statistic is reported as a confirmatory co-primary** and diverges from the SVD rank.
+      (α=0 self-check + strong-signal positive control + operating-point matched arm). **Result — two
+      INDEPENDENT grounds for no grid** (additively recorded): (1) on a clean α=0 signal the battery only
+      weakly recovers R=2 (R̂≈1, under-covered: CI coverage 0.54) and does not recover R=4 → the SVD→t116-grid
+      bridge is not licensed at the corpus width K=7/10; (2) the real concordance is at the sampling floor →
+      no rank identifiable at the operating point. `calibration.pass=false`, **no grid placement**
+      (fail-closed). The **t116 structural single-axis statistic is reported as a confirmatory co-primary**
+      and diverges from the SVD rank.
 - [x] **(WP2, 2026-07-08)** One reproducible, QA-gated pathway × contrast matrix per matrix (strict = 1153×7
       built of 9, sensitivity = 1153×10), computed by a single harmonized scale-aware DE→enrichment
       (`de_ranklist.R` voom/log2/direct → `fgsea_enrich.R`) over the pinned Hallmark∪Reactome universe;

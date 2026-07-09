@@ -824,6 +824,11 @@ rank_battery:
     n_splits: 200                 # principal-angle agreement between random halves
   bootstrap:
     n_boot: 1000                  # naive comparator — lower-bound sanity check only
+  # LC-out contrast-count power/CI curve (Finding A): the PA null band is recomputed PER
+  # column subset (each subset's marginals differ — Finding 2), at a reduced permutation
+  # count since this is a coarse power curve, not the headline R.
+  power_curve_subsets: 200        # random column subsets drawn per contrast-count K'
+  power_curve_n_perm: 300         # per-subset PA-null permutations for the power curve
 
 # t116 STRUCTURAL single-axis statistic as a confirmatory CO-PRIMARY (Finding B).
 # This — not the SVD rank — is the statistic interp-0037 characterized; it is what

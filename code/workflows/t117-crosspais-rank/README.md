@@ -23,9 +23,11 @@ but LC-inclusive and LOO-fragile; strict LC-out is **non-identifiable** (2 trigg
 sensitivity LC-out **FAILs** → hypothesis-grade, not q0050-grade. The structural
 co-primary (mean ρ≈0, SD 0.25–0.27) is **heterogeneous** (finite-repertoire-like), NOT a
 single-attractor signature — it **diverges** from the SVD low-rank reading (reported, not
-reconciled). **Stage-3c FAILS fail-closed:** the SVD→t116-grid bridge is not licensed at
-K=7/10 (even a clean rank-4 signal floors at R̂≈1 from this few columns) and the real
-concordance is at the sampling floor → `calibration.pass=false`, **no grid verdict**
+reconciled). **Stage-3c FAILS fail-closed, on two INDEPENDENT grounds** (both recorded
+additively): (1) on a clean α=0 signal the battery only weakly recovers R=2 (R̂≈1, CI
+coverage 0.54 — under-covered) and does not recover R=4 → the SVD→t116-grid bridge is not
+licensed at the corpus width K=7/10; (2) the real concordance is at the sampling floor →
+no rank identifiable at the operating point. `calibration.pass=false`, **no grid verdict**
 (gates WP6). This demonstrates, on data, the plan's low-power ceiling.
 
 **WP1 acquisition** (download + checksum + universe build/verify) and **WP1b**
