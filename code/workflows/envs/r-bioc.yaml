@@ -33,6 +33,7 @@ dependencies:
   - bioconductor-hgu133a.db=3.13.0
   - bioconductor-hgu133b.db=3.13.0
   - bioconductor-hgu133plus2.db=3.13.0  # GPL570 (GSE16059 discordant-twin ME/CFS) probe→Ensembl; annotation-only add (no limma/fgsea/org.Hs.eg.db version change → NES-neutral)
+  - bioconductor-hugene11sttranscriptcluster.db=8.8.0  # GPL11532 HuGene 1.1 ST (GSE67311 FM WP4b replication) transcript-cluster→Ensembl; Bioc 3.13 vintage, annotation-only add (NES-neutral)
   - bioconductor-biocparallel=1.44.0   # L'Ecuyer-CMRG permutation substreams
   - r-msigdbr=26.1.0                    # collection helper ONLY; 2024.1.Hs via hashed GMT (see note)
   - r-data.table=1.17.8

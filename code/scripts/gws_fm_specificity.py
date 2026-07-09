@@ -273,9 +273,17 @@ def reverse_projection_for(spec_paths, X, R, cols, rec_cfg, seed):
         return {"applicable": False,
                 "reason": f"only {P} rows usable across PAIS-complete AND all {len(ids)} non-infectious "
                           f"columns non-NaN — too few to build a rank-{R} non-infectious subspace"}
+    # RANK-FAIRNESS (review of the 2-column result): the leave-one-non-infectious-out ceiling
+    # projects a held-out column onto a subspace built from the REMAINING (len-1) columns, so it
+    # can only support rank <= len(ids)-1. Projecting PAIS onto a HIGHER-rank U than the ceiling
+    # can reach makes PAIS beat the ceiling by construction (rank-2 vs rank-1 with 2 columns —
+    # exactly the K=2 degeneracy interpretation:0037 names in the forward direction). So cap BOTH
+    # the PAIS projection and the ceiling at r_eff = min(R, len(ids)-1); when r_eff < R the reverse
+    # test is UNDER-RESOLVED (cannot reach the PAIS rank R) and its verdict is not trustworthy.
+    r_eff = max(1, min(R, len(ids) - 1, P))
+    underresolved = bool(r_eff < R)
     Nr = re.standardize_columns(noninf[rows])
-    r_noninf = max(1, min(R, Nr.shape[1], P))
-    U_noninf = np.linalg.svd(Nr, full_matrices=False)[0][:, :r_noninf]
+    U_noninf = np.linalg.svd(Nr, full_matrices=False)[0][:, :r_eff]
 
     Xr = X[rows]
     rng = np.random.default_rng(seed)
@@ -291,12 +299,12 @@ def reverse_projection_for(spec_paths, X, R, cols, rec_cfg, seed):
             "empirical_p": round((int(np.sum(draws >= rec)) + 1) / (n_perm + 1), 5),
             "null_p95": round(float(np.quantile(draws, 0.95)), 5),
         }
-    # leave-one-non-infectious-out ceiling
+    # leave-one-non-infectious-out ceiling — rank-matched to the PAIS projection (r_eff)
     loo = {}
     for i, sid in enumerate(ids):
         others = [k for k in range(len(ids)) if k != i]
         Uo = np.linalg.svd(re.standardize_columns(noninf[rows][:, others]), full_matrices=False)[0]
-        Uo = Uo[:, :max(1, min(R, len(others), P))]
+        Uo = Uo[:, :max(1, min(r_eff, len(others)))]
         loo[sid] = round(projection_fraction(Uo, _standardize_vec(noninf[rows][:, i])), 4)
     ceiling = round(float(np.mean(list(loo.values()))), 4) if loo else None
 
@@ -305,32 +313,56 @@ def reverse_projection_for(spec_paths, X, R, cols, rec_cfg, seed):
     above = {c: bool(v["recovery"] > v["null_p95"] and v["empirical_p"] < 0.05)
              for c, v in per_pais.items()}
     n_above = int(sum(above.values()))
+    ratio = (round(mean_pais / ceiling, 3) if ceiling else None)
     generic_frac = rec_cfg.get("generic_manifold_frac", 0.70)
     like_noninf = bool(ceiling and ceiling > 0 and mean_pais >= generic_frac * ceiling and n_above >= 1)
-    if n_above == 0:
+    if underresolved:
+        # cannot reach the PAIS rank R with only len(ids) columns → verdict not trustworthy
+        verdict = "under_resolved_need_more_noninfectious_columns"
+    elif n_above == 0:
         verdict = "pais_not_in_noninfectious_subspace_infection_specific_consistent"
+    elif ratio is not None and ratio > 1.0:
+        # PAIS recovers U better than the non-infectious columns recover it themselves — the
+        # non-infectious axis is not reproducible (degenerate ceiling), so no manifold claim holds
+        verdict = "noninfectious_axis_not_reproducible_indeterminate"
     elif like_noninf:
         verdict = "pais_recovers_noninfectious_subspace_generic_manifold_consistent"
     else:
         verdict = "partially_recovered_indeterminate"
     return {
         "applicable": True,
-        "method": "U_noninf = leading-r left-singular vectors of the standardized non-infectious "
-                  "column block; project each PAIS column onto it (independent of the PAIS subspace)",
+        "method": "U_noninf = leading-r_eff left-singular vectors of the standardized non-infectious "
+                  "column block; project each PAIS column onto it (independent of the PAIS subspace). "
+                  "r_eff = min(R, n_noninf-1) so the leave-one-out ceiling is rank-matched.",
         "n_noninfectious_columns": len(ids),
         "noninfectious_columns": ids,
         "n_rows_used": P,
-        "noninf_subspace_rank_r": int(r_noninf),
+        "pais_R": int(R),
+        "noninf_subspace_rank_r_eff": int(r_eff),
+        "identifiability_pass": (not underresolved),
+        "identifiability_note": (
+            f"r_eff={r_eff} (=min(R={R}, n_noninf-1={len(ids)-1})); "
+            + ("UNDER-RESOLVED: with only "
+               f"{len(ids)} non-infectious columns the subspace rank is capped BELOW the PAIS R={R}, so "
+               "the reverse verdict is not trustworthy — build a 3rd+ non-infectious column (queued "
+               "replication) for a full-rank, rank-matched test." if underresolved else
+               "rank-matched to the PAIS R.")),
         "per_pais_recovery": per_pais,
         "mean_pais_recovery": mean_pais,
         "n_pais_above_null": n_above,
         "leave_one_noninfectious_out_ceiling": loo,
         "ceiling_mean": ceiling,
-        "mean_pais_vs_ceiling": (round(mean_pais / ceiling, 3) if ceiling else None),
+        "ceiling_is_noninfectious_axis_reproducibility": (
+            "low ceiling ⇒ the non-infectious columns disagree (their case-vs-control axis is not "
+            "reproducible across cohort/compartment); a ratio>1 means PAIS recovers U better than the "
+            "non-infectious columns recover it themselves — an incoherent 'manifold' comparison."),
+        "mean_pais_vs_ceiling": ratio,
         "verdict": verdict,
-        "caveat": "single-condition U (all fibromyalgia) tests recovery of the FM axis specifically; "
-                  "a cross-condition U (FM+GWI+IEI) tests the generic non-infectious axis — read the "
-                  "verdict against noninfectious_columns' condition diversity.",
+        "caveat": "single-condition U (all fibromyalgia here: PBMC-RNAseq + WB-microarray) tests recovery "
+                  "of the FM axis specifically, and the two FM cohorts differ in COMPARTMENT (PBMC vs whole "
+                  "blood) — forward recovery tracks compartment (WB 0.23 vs PBMC 0.04), so recovery is "
+                  "confounded by blood composition. A cross-condition, compartment-matched U (>=3 columns) "
+                  "is required before any generic-non-infectious-manifold reading.",
     }
 
 
@@ -405,12 +437,20 @@ def main():
         "reverse_projection": reverse,
         "reverse_projection_config_note": spec_cfg.get("reverse_projection"),
         "caveats": [
-            "exploratory_flagship: ONE non-infectious column (fibromyalgia, GSE221921) built; the "
+            f"exploratory_flagship: {len(build_now)} non-infectious column(s) built ({build_now}); the "
             "rest of the admissible panel is queued replication (see queued_replication).",
+            "REVERSE PROJECTION is UNDER-RESOLVED at 2 columns (r_eff=1 < PAIS R=2 — the leave-one-out "
+            "ceiling can only reach rank n_noninf-1); a 3rd+ non-infectious column is required for a "
+            "full-rank, rank-matched reverse test. See reverse_projection.identifiability_note.",
+            "COMPARTMENT/PLATFORM CONFOUND: the two FM columns differ in compartment (GSE221921 PBMC vs "
+            "GSE67311 whole blood) AND platform (RNA-seq vs microarray) and give ~5x different FORWARD "
+            "recovery (0.045 vs 0.234); the strict PAIS corpus is 5 PBMC + 2 whole-blood, so the WB-FM's "
+            "high recovery is plausibly shared blood COMPOSITION, not FM biology. Compartment-matched "
+            "read-across is a prerequisite for any biological reading.",
             "The PAIS reference subspace is weakly identified (Stage-3c FAIL) — see "
             "pais_reference_subspace.weak_identification_caveat.",
             "NES pooled only at the gene-set level over the same pinned Hallmark∪Reactome universe; "
-            "expression never merged. The non-infectious deposit passed the SAME admissibility gates "
+            "expression never merged. Each non-infectious deposit passed the SAME admissibility gates "
             "as the primary corpus (blood-bulk WB/PBMC, public, downloadable, sample-level case-vs-control).",
         ],
     }

@@ -121,10 +121,27 @@ def _write_gz(path: Path, text: str) -> None:
         gz.write(text.encode("utf-8"))
 
 
-def run(in_path: Path, out_expr: Path, out_samples: Path) -> None:
+def run(in_path: Path, out_expr: Path, out_samples: Path,
+        exclude_title_regex: str | None = None) -> None:
     if not in_path.exists():
         sys.exit(f"[parse_series_matrix] HALT: missing {in_path}")
     sample_order, meta, _probe_header, probe_rows = parse(in_path)
+
+    # optional: drop samples whose title matches (e.g. `_2$` technical replicates) — filtered
+    # from BOTH the samples sheet and the value-table columns so they stay aligned (fail-early:
+    # a regex that matches nothing is a no-op, a regex that drops everything HALTs below).
+    if exclude_title_regex:
+        pat = re.compile(exclude_title_regex)
+        kept_idx = [i for i, s in enumerate(sample_order)
+                    if not pat.search(meta[s].get("title", ""))]
+        n_drop = len(sample_order) - len(kept_idx)
+        if not kept_idx:
+            sys.exit(f"[parse_series_matrix] HALT: --exclude-title-regex /{exclude_title_regex}/ "
+                     f"dropped ALL {len(sample_order)} samples")
+        sample_order = [sample_order[i] for i in kept_idx]
+        probe_rows = [[row[0]] + [row[i + 1] for i in kept_idx] for row in probe_rows]
+        print(f"[parse_series_matrix] excluded {n_drop} samples matching /{exclude_title_regex}/ "
+              f"by title; {len(sample_order)} remain", file=sys.stderr)
 
     # probe x sample matrix (as-deposited)
     lines = ["\t".join(["ID_REF"] + sample_order) + "\n"]
@@ -153,8 +170,10 @@ def main() -> int:
     ap.add_argument("--in", dest="in_path", required=True, type=Path)
     ap.add_argument("--out-expr", required=True, type=Path)
     ap.add_argument("--out-samples", required=True, type=Path)
+    ap.add_argument("--exclude-title-regex", default=None,
+                    help="drop samples whose !Sample_title matches this regex (e.g. '_2$' replicates)")
     args = ap.parse_args()
-    run(args.in_path, args.out_expr, args.out_samples)
+    run(args.in_path, args.out_expr, args.out_samples, args.exclude_title_regex)
     return 0
 
 

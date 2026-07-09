@@ -260,6 +260,15 @@ contrasts:
     matrix: specificity
     control_type: healthy
     note: "WP4b flagship: 96 FM vs 93 HC, PBMC NovaSeq RNA-seq. PBMC+RNA-seq deliberately match the PAIS strict stratum that IS identifiable (WP3/WP4). Built as a separate non-infectious specificity column, projected onto the PAIS subspace — never pooled."
+  gse67311_fm:
+    accession: GSE67311
+    trigger: fibromyalgia              # NON-infectious (idiopathic) — same trigger as the flagship
+    compartment: whole_blood           # INDEPENDENT compartment vs the flagship's PBMC
+    platform: microarray               # INDEPENDENT platform (GPL11532 HuGene 1.1 ST) vs NovaSeq RNA-seq
+    onset_certainty: non-infectious
+    matrix: specificity
+    control_type: healthy
+    note: "WP4b replication: 70 FM vs 70 HC, PAXgene whole blood, Affymetrix HuGene 1.1 ST (GPL11532). Cross-compartment + cross-platform robustness of the FM subspace-recovery reading; the 2nd non-infectious column that activates the reverse projection. Built as a separate specificity column, projected onto the PAIS subspace — never pooled."
 
 # Deposits catalogued but OUT of every computed matrix (G4 blockers / deferred).
 excluded:
@@ -345,6 +354,15 @@ acquisition:
       series_matrix: {kind: series_matrix.txt.gz, filename: "GSE16059_series_matrix.txt.gz", bytes: 7297085,
                       url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE16nnn/GSE16059/matrix/GSE16059_series_matrix.txt.gz",
                       sha256: "d66ba3698d92be3d718b37f12c732804a298c217c99e8ad100ead2ab5ea715fb"}
+  # WP4b non-infectious specificity replication (GSE67311, FM whole-blood microarray,
+  # GPL11532 HuGene 1.1 ST, 70 FM / 70 HC). Series matrix carries the RMA-normalized
+  # probeset x sample values (no RAW.tar/CEL needed). sha256 + bytes DISCOVERED then
+  # LOCKED via the sanctioned dummy-hash fetch flow (fetch HALTs printing `got`).
+  GSE67311:
+    payloads:
+      series_matrix: {kind: series_matrix.txt.gz, filename: "GSE67311_series_matrix.txt.gz", bytes: 15719858,
+                      url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE67nnn/GSE67311/matrix/GSE67311_series_matrix.txt.gz",
+                      sha256: "959735bda3741051500e52f74886dfbcb80304c907e6bb3ac2a836d172b1c353"}
   GSE68310:
     payloads:
       expr: {kind: txt.gz, filename: "GSE68310_non-normalized.txt.gz", bytes: 253276917,
@@ -660,6 +678,27 @@ parse:
       condition_col: diagnonsis        # [sic] source spelling; values unaffected/CFS/ICF
       level_map: {unaffected: control, CFS: case}   # ICF (idiopathic CF, milder) EXCLUDED — not the CFS contrast
       covariate_cols: [twin_pair]      # discordant-twin block covariate (de_models ~ group block twin_pair)
+  GSE67311:                            # WP4b FM replication microarray PASS (group INLINE: diagnosis characteristic)
+    handler: prebuilt
+    payload: series_matrix
+    prebuilt_expr: microarray.gene.tsv.gz
+    upstream: "parse_series_matrix.py (--exclude-title-regex '_2$' drops 14 technical-replicate samples) -> harmonize_microarray.R (hugene11sttranscriptcluster.db / GPL11532 HuGene 1.1 ST) -> collapse_probes.R (median)"
+    sep: "\t"
+    gene_id_col: 0
+    gene_id_namespace: ensembl         # collapsed genes are bare ENSG (transcript-cluster->gene done upstream)
+    expression_scale: log2_intensity   # GPL11532 RMA-normalized log2 (embedded in the series matrix)
+    duplicate_policy: mean
+    case_label: case
+    control_label: control
+    min_per_arm: 2
+    sheet_columns: [sample, group]
+    group_source:
+      mode: sheet                      # the chain's samples.tsv carries the diagnosis characteristic
+      file: microarray.samples.tsv
+      sep: "\t"
+      sample_col: sample
+      condition_col: diagnosis         # `diagnosis: healthy control` / `diagnosis: fibromyalgia`
+      level_map: {healthy control: control, fibromyalgia: case}
   GSE14577:                            # microarray PASS (group INLINE; t035 chain reused verbatim)
     handler: prebuilt
     payload: soft                      # raw provenance for origin.json
@@ -811,6 +850,10 @@ microarray:
   gse16059:
     platform: GPL570
     platform_db: hgu133plus2.db       # pinned in envs/r-bioc.yaml (annotation-only add)
+  gse67311:
+    platform: GPL11532
+    platform_db: hugene11sttranscriptcluster.db   # HuGene 1.1 ST transcript-cluster->Ensembl (Bioc 3.13 vintage; annotation-only add)
+    exclude_title_regex: "_2$"        # drop the 14 technical-replicate samples (independence) at parse time
 
 # ------------------------------------------------------ DE model contract ----
 # review Finding (2026-07-08): "reuse limma_de.R verbatim" is only valid for the
@@ -1001,7 +1044,7 @@ specificity_readacross:
   status_label: exploratory_flagship  # NOT validated_specificity — one non-infectious column projected
                                       # onto a PAIS subspace WP3/WP4 showed is itself weakly identified
   reference_matrix: strict        # build the PAIS subspace U_ref from the strict matrix
-  build_now: [gse221921_fm]       # only the flagship is built this pass; rest are queued replication
+  build_now: [gse221921_fm, gse67311_fm]   # flagship + 1st replication (activates the reverse projection); rest still queued
   recovery:                       # thresholds for the qualitative subspace-recovery verdict
     n_perm_null: 2000             # row-permutation empirical null draws for "above chance" (Finding 3; NOT the analytic r/P floor)
     generic_manifold_frac: 0.70   # recovery >= this * mean TRIGGER-LOO PAIS projection => recovered like a real (trigger-independent) PAIS trigger (Finding 1)

@@ -489,6 +489,63 @@ rule collapse_gse16059:
         "--collapse median --dual-chip mean_of_platform_collapsed_log2 "
         "--out-expr {output.expr} --out-audit {output.audit} > {log} 2>&1"
 
+# GSE67311 (GPL11532 HuGene 1.1 ST, FM WP4b replication): series-matrix → probe×sample
+# (drops `_2$` technical replicates) → transcript-cluster→Ensembl → gene median collapse.
+# Same generic parse_series_matrix + harmonize_microarray chain as GSE16059, different .db.
+rule parse_series_matrix_gse67311:
+    input:
+        raw=f"{RAW}/GSE67311/staged.ok",
+        blob=f"{RAW}/GSE67311/series_matrix.data",
+        script=f"{SCRIPTS}/parse_series_matrix.py",
+    output:
+        expr=f"{PROC}/GSE67311/microarray.probe_x_sample.tsv.gz",
+        samples=f"{PROC}/GSE67311/microarray.samples.tsv",
+    params:
+        exclude=MICRO.get("gse67311", {}).get("exclude_title_regex", ""),
+    log:
+        f"{RES}/logs/microarray/parse_gse67311.log",
+    conda:
+        "../envs/py.yaml"
+    shell:
+        "python {input.script} --in {input.blob} --out-expr {output.expr} "
+        "--out-samples {output.samples} --exclude-title-regex '{params.exclude}' > {log} 2>&1"
+
+rule harmonize_gse67311:
+    input:
+        probe=f"{PROC}/GSE67311/microarray.probe_x_sample.tsv.gz",
+        script=f"{SCRIPTS}/harmonize_microarray.R",
+    output:
+        harmonized=f"{PROC}/GSE67311/microarray.harmonized.tsv.gz",
+        report=f"{PROC}/GSE67311/microarray.harmonize_report.json",
+    params:
+        db=MICRO.get("gse67311", {}).get("platform_db", "hugene11sttranscriptcluster.db"),
+        platform=MICRO.get("gse67311", {}).get("platform", "GPL11532"),
+        multimap=MICRO.get("multimap_policy", "first"),
+    log:
+        f"{RES}/logs/microarray/harmonize_gse67311.log",
+    conda:
+        "../envs/r-bioc.yaml"
+    shell:
+        "Rscript {input.script} --db {params.db} --platform {params.platform} "
+        "--multimap {params.multimap} --probe-expr {input.probe} "
+        "--out-harmonized {output.harmonized} --out-report {output.report} > {log} 2>&1"
+
+rule collapse_gse67311:
+    input:
+        harmonized=f"{PROC}/GSE67311/microarray.harmonized.tsv.gz",
+        script=f"{SCRIPTS}/collapse_probes.R",
+    output:
+        expr=f"{PROC}/GSE67311/microarray.gene.tsv.gz",
+        audit=f"{PROC}/GSE67311/microarray.cohort_audit.json",
+    log:
+        f"{RES}/logs/microarray/collapse_gse67311.log",
+    conda:
+        "../envs/r-bioc.yaml"
+    shell:
+        "Rscript {input.script} --dataset GSE67311 --harmonized {input.harmonized} "
+        "--collapse median --dual-chip mean_of_platform_collapsed_log2 "
+        "--out-expr {output.expr} --out-audit {output.audit} > {log} 2>&1"
+
 # GSE14577 (U133A∪B PI-CFS sensitivity): t035 SOFT chain reused VERBATIM
 rule parse_gse14577:
     input:
