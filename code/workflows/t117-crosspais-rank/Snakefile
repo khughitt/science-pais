@@ -838,6 +838,10 @@ rule gws_fm_specificity:
 # WP6 — t116 grid placement (ONLY if calibration_3c passed) + datapackage.
 # =============================================================================
 rule grid_placement:
+    # WP6 (stub): places R on the t116 grid ONLY if calibration_3c passed. It MUST also
+    # consume the adjudicated summary's `artifact_controls_pass` / `interpretation_status`
+    # (WP4 Finding 3) — a `false` there means the R is limited/non-arbitrating and cannot
+    # be read as a clean adjudicated estimate, regardless of the calibration gate.
     input:
         adjudicated=f"{RES}/artifact/{{matrix}}.adjudicated.json",
         calibration=f"{RES}/calibration/calibration.pass",   # Finding B gate

@@ -104,28 +104,45 @@ def compartment_adjudication(X, Xc, cols, colmeta, gene_sets, cfg, seeds,
     comp_cfg = cfg["artifact_controls"]["composition_control"]
     deconvolvable = set(cfg["compartments"]["deconvolvable"])
     bands = {k: tuple(v) for k, v in cfg["folds"]["pass_rule"]["regime_bands"].items()}
+    min_trig = cfg["folds"]["identifiability"]["min_triggers"]
     K = len(cols)
 
     # ---- prong (i): compartment-stratified R (deconvolution-free composition control)
+    # Each stratum is held to the SAME K>=3 identifiability rule as the LODO/LOCO folds
+    # (review WP4 Finding 1): a <3-trigger stratum is NON-IDENTIFIABLE — its R is
+    # reported for reference but is NOT interpretable, and it cannot establish (or
+    # refute) compartment invariance.
     stratified = {}
     for comp in sorted({c["compartment"] for c in colmeta}):
         idx = [j for j in range(K) if colmeta[j]["compartment"] == comp]
+        n_trig = len({colmeta[j]["trigger"] for j in idx})
+        identifiable = n_trig >= min_trig
         res, _ = stratum_R(Xc[:, idx], cfg, seeds, X[:, idx])
         stratified[comp] = {
             "n_columns": len(idx),
-            "n_triggers": len({colmeta[j]["trigger"] for j in idx}),
+            "n_triggers": n_trig,
+            "identifiable": identifiable,
+            "verdict": ("identifiable" if identifiable else "non_identifiable"),
             "contrasts": [cols[j] for j in idx],
             "R_primary": res.get("R_primary"),
             "R_consensus": res.get("R_consensus"),
+            "R_interpretable": (res.get("R_primary") if identifiable else None),
             "regime_band": (rb.regime_of(res["R_primary"], bands)
-                            if res.get("R_primary") is not None else None),
+                            if (identifiable and res.get("R_primary") is not None) else None),
             "structural_offdiag_sd": res["structural_offdiag_concordance"]["sd"],
             "deconvolvable": comp in deconvolvable,
         }
-    # does R agree across compartments? disagreement => the shared axis is not
-    # compartment-invariant (a composition-shift rival is live).
-    comp_Rs = [v["R_primary"] for v in stratified.values() if v["R_primary"] is not None]
-    r_agree = (len(set(comp_Rs)) <= 1) if comp_Rs else None
+    # Compartment invariance is judged ONLY over strata that clear K>=3. With <2
+    # identifiable strata we CANNOT compare -> invariance NOT ESTABLISHED (neither
+    # confirmed nor refuted), NOT "R differs -> entangled" (Finding 1).
+    ident = {c: v for c, v in stratified.items() if v["identifiable"]}
+    ident_Rs = [v["R_primary"] for v in ident.values() if v["R_primary"] is not None]
+    if len(ident_Rs) < 2:
+        r_agree, comp_status = None, "not_established"
+    elif len(set(ident_Rs)) <= 1:
+        r_agree, comp_status = True, "invariant"
+    else:
+        r_agree, comp_status = False, "differs"
 
     # ---- prong (ii): drop-sorted sensitivity (strict only — the sorted stratum) ----
     # The primary matrix is ALREADY WB/PBMC-only (G1), so the primary R IS the
@@ -194,19 +211,33 @@ def compartment_adjudication(X, Xc, cols, colmeta, gene_sets, cfg, seeds,
                     "IS prong (i): compartment-stratified R already shows whether the "
                     "shared axis is compartment-invariant."),
         "deconvolution_free_control": "compartment_stratified_R (prong i)",
-        "compartment_R_agrees": r_agree,
+        "compartment_invariance_status": comp_status,
     }
 
+    note_by_status = {
+        "not_established": (
+            f"compartment invariance NOT ESTABLISHED: only {len(ident)} stratum/strata "
+            f"clear K>={min_trig} (the rest are 1-2 trigger, non-identifiable), so a "
+            "cell-composition-shift rival can be neither confirmed nor refuted from these "
+            "data — this is an underpowered control, not evidence of entanglement"),
+        "invariant": f"R agrees across the identifiable (K>={min_trig}) compartments",
+        "differs": (f"R DIFFERS across identifiable (K>={min_trig}) compartments -> shared "
+                    "axis is compartment-entangled (a cell-composition-shift rival is live; "
+                    "the pooled R is not a single compartment-invariant biology rank)"),
+    }
     return {
         "matrix": matrix,
         "finding": "C (compartment/composition control)",
+        "identifiability_rule": {
+            "min_triggers": min_trig,
+            "grounding": ("t116 K>=3 (same as the LODO/LOCO folds); a <3-trigger stratum "
+                          "is non-identifiable and cannot establish compartment invariance"),
+        },
         "compartment_stratified_R": stratified,
+        "n_identifiable_strata": len(ident),
+        "compartment_invariance_status": comp_status,
         "compartment_R_agrees": r_agree,
-        "R_compartment_invariant_note": (
-            "R agrees across compartments" if r_agree else
-            "R DIFFERS across compartments -> shared axis is compartment-entangled "
-            "(a cell-composition-shift rival is live; the pooled R is not a single "
-            "compartment-invariant biology rank)"),
+        "R_compartment_invariant_note": note_by_status[comp_status],
         "drop_sorted_sensitivity": drop_sorted,
         "composition_adjustment": composition_adjustment,
     }
@@ -217,46 +248,70 @@ def platform_loo(X, Xc, cols, colmeta, cfg, seeds, full_rank):
     platform is removed is a platform axis, not biology. A single-platform corpus
     CANNOT test platform-confounding — recorded as a limitation, not a pass."""
     bands = {k: tuple(v) for k, v in cfg["folds"]["pass_rule"]["regime_bands"].items()}
+    min_trig = cfg["folds"]["identifiability"]["min_triggers"]
+    r_band = cfg["folds"]["pass_rule"]["r_band"]
     platforms = sorted({c["platform"] for c in colmeta})
     K = len(cols)
     if len(platforms) < 2:
         return {"applicable": False, "n_platforms": len(platforms),
                 "platforms": platforms,
+                "platform_invariance_status": "untestable_single_platform",
                 "note": ("single-platform corpus: platform-LOO cannot test platform-"
                          "confounding, so the low-rank signal CANNOT be shown platform-"
                          "independent here (a limitation carried to the grid verdict)."),
                 "R_full": full_rank.get("R_primary")}
+    # Each platform-drop fold is held to the SAME K>=3 identifiability rule as the
+    # LODO/LOCO folds (review WP4 Finding 1): a drop leaving <3 triggers is
+    # NON-IDENTIFIABLE — its R is untestable, so a low R there is NOT a "collapse".
     drops = []
     for p in platforms:
         keep = [j for j in range(K) if colmeta[j]["platform"] != p]
-        if len(keep) < 2:
-            drops.append({"dropped_platform": p, "n_remaining": len(keep),
-                          "R": None, "note": "<2 columns remain"})
+        n_trig = len({colmeta[j]["trigger"] for j in keep})
+        identifiable = n_trig >= min_trig and len(keep) >= 2
+        entry = {"dropped_platform": p, "n_remaining": len(keep),
+                 "n_triggers_remaining": n_trig, "identifiable": identifiable,
+                 "remaining_contrasts": [cols[j] for j in keep]}
+        if not identifiable:
+            entry.update({"R": None, "verdict": "non_identifiable",
+                          "note": (f"retains {n_trig} < {min_trig} triggers (K>=3 floor)"
+                                   if n_trig < min_trig else "<2 columns remain")
+                          + " -> platform invariance untestable on this drop"})
+            drops.append(entry)
             continue
         res, _ = rb.estimate_rank(Xc[:, keep], cfg, seeds, with_ci=False,
                                   struct_cols=X[:, keep])
         R = res.get("R_primary")
-        drops.append({
-            "dropped_platform": p, "n_remaining": len(keep),
-            "remaining_contrasts": [cols[j] for j in keep],
-            "R": R,
-            "regime_band": (rb.regime_of(R, bands) if R is not None else None),
-            "n_triggers_remaining": len({colmeta[j]["trigger"] for j in keep}),
-        })
+        entry.update({"R": R, "verdict": "identifiable",
+                      "regime_band": (rb.regime_of(R, bands) if R is not None else None)})
+        drops.append(entry)
     R_full = full_rank.get("R_primary")
-    survives = all(d["R"] is not None and abs(d["R"] - R_full) <= cfg["folds"]["pass_rule"]["r_band"]
-                   for d in drops if d["R"] is not None) if R_full is not None else None
+    ident_drops = [d for d in drops if d["identifiable"] and d["R"] is not None]
+    if not ident_drops or R_full is None:
+        survives, status = None, "not_established"
+    else:
+        survives = all(abs(d["R"] - R_full) <= r_band for d in ident_drops)
+        any_nonident = any(not d["identifiable"] for d in drops)
+        # invariance is only ESTABLISHED if every drop is identifiable AND survives;
+        # if some drops are non-identifiable it is at most PARTIAL (Finding 1).
+        status = ("established" if (survives and not any_nonident)
+                  else "partial" if survives else "not_established")
     return {"applicable": True, "n_platforms": len(platforms), "platforms": platforms,
-            "R_full": R_full, "platform_drops": drops,
-            "rank_survives_every_platform_drop": survives}
+            "R_full": R_full, "identifiability_min_triggers": min_trig,
+            "platform_drops": drops,
+            "platform_invariance_status": status,
+            "rank_survives_every_identifiable_platform_drop": survives}
 
 
 def recovered_control_specificity(Xc, cols, colmeta, cfg, full_rank):
     """Directional (not magnitude) specificity: does the leading shared subspace
     defined by the case-vs-NAIVE (healthy) columns PERSIST in the case-vs-RECOVERED
     columns? Persistence = the recovered columns still project heavily onto the naive
-    shared subspace (not fully explained by the infection-history axis). require_exceed
-    is FALSE by config: we do not require case-vs-recovered to exceed case-vs-naive."""
+    shared subspace. require_exceed is FALSE by config: we do not require case-vs-
+    recovered to exceed case-vs-naive. NOTE the reference is IN-SAMPLE (built from the
+    naive columns) and the recovered columns differ by dataset/control composition, so
+    a low projection supports only 'the naive-defined subspace is not strongly present
+    in the recovered-control contrasts' — NOT a claim that the axis is 'infection-
+    history' or 'case-vs-healthy' (review WP4 Finding 5, conservative wording)."""
     spec_cfg = cfg["artifact_controls"]["recovered_control_specificity"]
     K = len(cols)
     naive_idx = [j for j in range(K) if colmeta[j].get("control_type") in NAIVE_LIKE]
@@ -304,11 +359,17 @@ def recovered_control_specificity(Xc, cols, colmeta, cfg, full_rank):
         "min_persistence_frac": min_persist,
         "require_persistence": spec_cfg.get("require_persistence"),
         "require_exceed_naive": spec_cfg.get("require_exceed_naive"),
+        "n_recovered_triggers": len({colmeta[j]["trigger"] for j in rec_idx}),
         "shared_subspace_persists_in_case_vs_recovered": persists,
         "unclassified_control_types": other,
+        "conservative_reading": (
+            "supports only: the naive-defined shared subspace is NOT strongly present in "
+            "the recovered-control contrasts. It does NOT by itself prove the axis is "
+            "'infection-history' or 'case-vs-healthy' — the reference is in-sample and the "
+            "recovered columns differ by dataset/control composition (Finding 5)."),
         "note": ("directional persistence, not magnitude: a healthy-control contrast "
-                 "can legitimately be larger; the test is whether the shared subspace "
-                 "remains present in case-vs-recovered."),
+                 "can legitimately be larger; the test is whether the naive-defined shared "
+                 "subspace remains present in case-vs-recovered."),
     }
 
 
@@ -316,15 +377,23 @@ def negative_control_floor(full_rank, structural, cfg):
     """The artifact floor. The pinned universe is Hallmark∪Reactome (biology only):
     housekeeping / platform-associated / GC-confounded negative-control gene sets were
     deliberately NOT scored, so the assembled NES matrix carries no control rows to
-    subtract set-wise. Record that as the exact blocker, and report the artifact floor
-    that IS available and already applied: the parallel-analysis per-column-permuted
-    null (which R_primary already subtracts) + the off-diagonal-SD sampling floor."""
+    subtract set-wise. Record that as the exact blocker. Separately report the ONE null
+    that IS applied — the parallel-analysis per-column-permuted null — but do NOT call it
+    an artifact floor (review WP4 Finding 2): it removes only RANDOM cross-column
+    structure, and does NOT control correlated platform/batch/control-type/composition
+    artifacts. The genuine artifact floor (negative-control / platform / composition) is
+    deferred/underpowered here."""
     pa = full_rank.get("parallel_analysis_detail", {})
     sv = pa.get("singular_values", [])
     band = pa.get("null_band", [])
     n_above = int(sum(1 for s, b in zip(sv, band) if s > b))
     return {
         "negative_control_sets_requested": cfg["artifact_controls"]["negative_control_sets"],
+        "artifact_floor_status": "not_available",
+        "artifact_floor_note": ("no set-based negative-control, platform, or composition "
+                                "artifact floor was subtracted (all deferred/underpowered). "
+                                "The only null applied is the random-structure null below, "
+                                "which is NOT an artifact floor."),
         "set_based_subtraction": {
             "status": "deferred_note_only",
             "blocker": ("the pinned universe is Hallmark∪Reactome (biological pathways "
@@ -333,11 +402,15 @@ def negative_control_floor(full_rank, structural, cfg):
                         "NES matrix to subtract. Implementing this needs a WP2 re-run "
                         "appending declared negative-control sets to the universe."),
         },
-        "artifact_floor_applied": {
+        "random_structure_null_floor": {
             "method": "parallel_analysis_per_column_permuted_null",
-            "note": ("R_primary is ALREADY artifact-floor-adjusted: only singular values "
-                     "exceeding the per-column-permuted null (which destroys cross-contrast "
-                     "structure, preserves marginals) are counted as shared directions."),
+            "controls_for": "random cross-column structure (column permutation) ONLY",
+            "does_not_control": ("correlated platform / batch / control-type / "
+                                 "cell-composition artifacts — those need the deferred "
+                                 "set-based/platform/composition controls"),
+            "note": ("R_primary counts only singular values exceeding this per-column-"
+                     "permuted null. This is a RANDOM-STRUCTURE floor, NOT an artifact "
+                     "floor — it does not subtract correlated (shared) artifacts."),
             "n_singular_values_above_null": n_above,
             "observed_singular_values": sv,
             "null_band": band,
@@ -397,12 +470,15 @@ def main():
     X, cols, gene_sets = rb.load_matrix(args.in_matrix, grouping)
     Xc, _, _ = re.complete_case(X)
 
-    # declared stratum/decoy columns for THIS matrix's adjudication (strict pulls the
-    # sorted stratum + acute decoys; sensitivity pulls none — mirrors the Snakefile).
+    # declared stratum/decoy columns for THIS matrix's adjudication. The sorted stratum
+    # (drop-sorted comparison) is a STRICT-only pooled-column test (mirrors the
+    # Snakefile extra_nes). The acute-decoy specificity layer is GLOBAL — it applies to
+    # both matrices, so the decoy ledger is recorded for sensitivity too (review WP4
+    # Finding 4), never left silently empty.
     def tagged(tag):
         return [c for c in cfg["contrasts"] if cfg["contrasts"][c].get("matrix") == tag]
-    extra_declared = ({"stratum": tagged("stratum"), "decoy": tagged("decoy")}
-                      if args.matrix == "strict" else {"stratum": [], "decoy": []})
+    extra_declared = {"stratum": tagged("stratum") if args.matrix == "strict" else [],
+                      "decoy": tagged("decoy")}
     # map provided (buildable) NES paths back to their contrast by basename
     extra_nes = {}
     for p in args.extra_nes:
@@ -423,26 +499,48 @@ def main():
 
     bands = {k: tuple(v) for k, v in cfg["folds"]["pass_rule"]["regime_bands"].items()}
     R_full = full_rank.get("R_primary")
-    # the artifact-adjudicated R the grid reads: R_primary is already null-adjusted; no
-    # further set-based floor is available (see negative_control_floor). Carry the
-    # compartment + platform + recovered verdicts so WP6 can gate honestly.
-    adjudicated_R = R_full
+    # R_point_estimate is the random-structure-null-adjusted R_primary — NOT a clean
+    # artifact-adjudicated estimate (Finding 2/3). The binding available controls are
+    # compartment invariance, platform invariance, and recovered-control persistence;
+    # the set-based negative-control floor + acute-decoy specificity are unavailable.
+    comp_status = comp["compartment_invariance_status"]
+    plat_status = ploo.get("platform_invariance_status")
+    recovered_persists = rec.get("shared_subspace_persists_in_case_vs_recovered")
+    set_based_available = False
+    acute_decoy_available = decoys["status"] == "available"
+    # artifact_controls_pass is TRUE only if every available binding control passes AND
+    # the deferred controls are actually available. Here they are not -> false. WP6
+    # grid placement MUST consume this, not R_point_estimate alone (Finding 3).
+    controls_pass = bool(
+        comp_status == "invariant" and plat_status == "established"
+        and recovered_persists and set_based_available and acute_decoy_available)
+    interpretation_status = "arbitrable" if controls_pass else "limited_or_nonarbitrating"
     summary = {
-        "artifact_adjudicated_R": adjudicated_R,
-        "regime_band": (rb.regime_of(adjudicated_R, bands) if adjudicated_R is not None else None),
+        "R_point_estimate": R_full,
+        "R_point_estimate_basis": "random_structure_null_adjusted_R_primary (NOT artifact-floor-adjusted)",
+        "regime_band": (rb.regime_of(R_full, bands) if R_full is not None else None),
         "structural_offdiag_sd": structural.get("sd"),
-        "survives_platform_loo": ploo.get("rank_survives_every_platform_drop"),
+        "artifact_controls_pass": controls_pass,
+        "interpretation_status": interpretation_status,
+        "platform_invariance_status": plat_status,
         "platform_loo_applicable": ploo.get("applicable"),
+        "compartment_invariance_status": comp_status,
         "compartment_R_agrees": comp["compartment_R_agrees"],
-        "shared_subspace_persists_in_case_vs_recovered":
-            rec.get("shared_subspace_persists_in_case_vs_recovered"),
-        "set_based_negative_control_available": False,
-        "acute_decoy_specificity_available": decoys["status"] == "available",
+        "shared_subspace_persists_in_case_vs_recovered": recovered_persists,
+        "set_based_negative_control_available": set_based_available,
+        "artifact_floor_available": False,
+        "acute_decoy_specificity_available": acute_decoy_available,
         "verdict_note": (
-            "artifact-adjudicated R equals the null-adjusted R_primary; no set-based "
-            "negative-control floor or acute-decoy specificity is available (both note-"
-            "only with blockers). The compartment control (stratified R) and platform-LOO "
-            "are the binding controls here — read the grid verdict against their limits."),
+            "R_point_estimate is the random-structure-null-adjusted R_primary, NOT a "
+            "clean artifact-adjudicated estimate — no set-based negative-control, "
+            "platform, or composition artifact floor was subtracted. Of the available "
+            "binding controls, compartment invariance is "
+            f"'{comp_status}', platform invariance is '{plat_status}', and the naive "
+            "shared subspace "
+            f"{'persists' if recovered_persists else 'does NOT persist'} in case-vs-"
+            "recovered. artifact_controls_pass=false -> interpretation_status="
+            f"'{interpretation_status}': WP6 grid placement must consume this flag, not "
+            "R_point_estimate alone."),
     }
     adjudicated = {
         "matrix": args.matrix,
@@ -452,16 +550,17 @@ def main():
         "recovered_control_specificity": rec,
         "negative_control_floor": neg,
         "compartment_control_ref": f"{args.matrix}.compartment_stratified.json",
+        "compartment_invariance_status": comp_status,
         "compartment_R_agrees": comp["compartment_R_agrees"],
         "drop_sorted_sensitivity": comp["drop_sorted_sensitivity"],
         "acute_decoy_specificity": decoys,
     }
     args.out_adjudicated.write_text(json.dumps(adjudicated, indent=2))
 
-    print(f"[artifact_adjudication:{args.matrix}] adjudicated_R={adjudicated_R} "
-          f"regime={summary['regime_band']} platform_loo_applicable={ploo.get('applicable')} "
-          f"compartment_R_agrees={comp['compartment_R_agrees']} "
-          f"recovered_persists={rec.get('shared_subspace_persists_in_case_vs_recovered')}")
+    print(f"[artifact_adjudication:{args.matrix}] R_point_estimate={R_full} "
+          f"controls_pass={controls_pass} status={interpretation_status} "
+          f"compartment_invariance={comp_status} platform_invariance={plat_status} "
+          f"recovered_persists={recovered_persists}")
 
 
 if __name__ == "__main__":

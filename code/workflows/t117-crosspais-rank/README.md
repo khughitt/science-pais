@@ -13,23 +13,29 @@ believability criterion.
 
 **WP4 done (2026-07-08).** `artifact_adjudication.py` reuses the WP3 battery **verbatim**
 (imports `rank_battery` + `rank_estimators`) and runs the artifact + compartment
-battery before any biological reading of R. **Result — the adjudication reinforces,
-on data, the WP3 fragility.** (i) **Compartment-stratified R DIFFERS across
-compartments** (strict PBMC 2 vs WB 1; sensitivity PBMC 3 vs WB 1) → the shared axis
-is **compartment-entangled**, not a compartment-invariant biology rank. (ii)
-**Drop-sorted:** pooling the sorted QFS stratum keeps strict R=2 but **rotates the
-leading subspace 26.7° (> 20° cutoff)** → the on-data justification for the G1 sorted
-exclusion. (iii) **Platform-LOO:** strict is **single-platform → platform-independence
-is untestable** (a limitation); sensitivity drop-microarray R=3 survives, drop-rnaseq
-collapses to R=1 (2 cols). (iv) **Recovered-control specificity:** the naive-defined
-shared subspace is **largely absent in case-vs-recovered** (projection 0.09 < 0.30 vs
-in-sample 0.71) → the leading axis is mostly a **case-vs-healthy / infection-history
-axis**. **Composition adjustment (CIBERSORTx-LM22), set-based negative controls, and
-acute-decoy specificity are note-only deferred** with their exact blockers; the
-artifact floor already applied is the parallel-analysis per-column-permuted null (only
-2 SVs above it) + the off-diagonal-SD sampling floor. Artifact-adjudicated R = the
-null-adjusted R_primary (strict 2 / sensitivity 3). This coheres with the structural
-heterogeneity (mean≈0, high SD) and the Stage-3c FAIL. Run:
+battery before any biological reading of R, **holding every stratum/drop to the same
+K≥3 identifiability rule as the LODO/LOCO folds**. **Result —
+`artifact_controls_pass = false` / `interpretation_status = limited_or_nonarbitrating`
+for both matrices** (the available controls are underpowered/incomplete; they neither
+rescue nor refute the low-rank): (i) **Compartment invariance NOT established** — only
+the PBMC stratum clears K≥3 (strict PBMC R=2; WB 1-trigger non-identifiable), so a
+composition-shift rival can be neither confirmed nor refuted (underpowered, **not**
+evidence of entanglement). (ii) **Drop-sorted:** pooling the sorted QFS stratum keeps
+strict R=2 but **rotates the leading subspace 26.7° (> 20° cutoff)** → the on-data
+justification for the G1 sorted exclusion. (iii) **Platform-LOO:** strict is
+**single-platform → untestable**; sensitivity drop-microarray R=3 survives
+(identifiable), drop-rnaseq is **non-identifiable** (2 triggers < K=3) → invariance
+`partial`. (iv) **Recovered-control specificity (conservative):** the naive-defined
+shared subspace is **weakly present in case-vs-recovered** (projection 0.09 < 0.30) —
+this supports only "not strongly present," **not** a "case-vs-healthy/infection-history
+axis" claim. **No artifact floor was subtracted:** the only null applied is the
+parallel-analysis per-column-permuted null — a **`random_structure_null_floor`, NOT an
+artifact floor** (it controls random cross-column structure only). Set-based negative
+controls, CIBERSORTx-LM22 composition adjustment, and acute-decoy specificity (both
+decoys, both matrices) are **note-only deferred** with their blockers. The R point
+estimate (strict 2 / sensitivity 3) is the random-structure-null-adjusted R_primary,
+**not** a clean adjudicated estimate. This coheres with the structural heterogeneity
+(mean≈0, high SD) and the Stage-3c FAIL. Run:
 `snakemake … --use-conda -- results/t117-crosspais-rank/artifact/{strict,sensitivity}.adjudicated.json`.
 
 **WP3 done (2026-07-08).** `rank_battery.py` (+ shared `rank_estimators.py`) runs three

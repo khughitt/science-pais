@@ -744,48 +744,60 @@ downstream matrix builds on a real contract, not an assumption.
   assembled matrix + the buildable sorted-stratum NES. Emits `{matrix}.compartment_stratified.json` and
   `{matrix}.adjudicated.json`. Unavailable prongs are recorded **note-only with the exact blocker**, never a
   silent skip or fabricated adjustment (Explicit > Defensive).
+- **Every stratum/drop is held to the SAME K≥3 identifiability rule as the LODO/LOCO folds** (review WP4
+  Finding 1): a <3-trigger stratum is **non-identifiable** — its R is reported for reference but is **not
+  interpretable**, and it cannot establish (or refute) invariance. This is what keeps the underpowered controls
+  from being read as decisive.
 - **Compartment/composition control (Finding C), three prongs:**
-  - **(i) compartment-stratified R** (deconvolution-free composition control): **strict PBMC R=2 vs WB R=1**
-    (WB below_low; K=2 so structural SD undefined); **sensitivity PBMC R=3 vs WB R=1** (PBL is a single
-    column → no own rank). **R DIFFERS across compartments in both matrices → the shared axis is
-    compartment-entangled** (a cell-composition-shift rival is live; the pooled R is not a single
-    compartment-invariant biology rank).
+  - **(i) compartment-stratified R** (deconvolution-free composition control): **strict PBMC R=2 (3 triggers,
+    identifiable) vs WB (1 trigger, NON-identifiable, R=1 uninterpretable); sensitivity PBMC R=3 (3 triggers) vs
+    WB (2 triggers, non-identifiable) vs PBL (1 col).** In both matrices **only the PBMC stratum clears K≥3**,
+    so **compartment invariance is NOT ESTABLISHED** (`compartment_invariance_status: not_established`) — a
+    cell-composition-shift rival can be **neither confirmed nor refuted**; this is an **underpowered control,
+    not evidence of entanglement** (corrected from the first pass, which over-claimed "R differs → entangled").
   - **(ii) drop-sorted sensitivity** (strict): the primary is already WB/PBMC-only (G1), so R_drop-sorted ==
     primary R=2; **pooling the sorted QFS stratum keeps R=2 but rotates the leading subspace 26.7° (> the 20°
-    cutoff)** → pooling perturbs the subspace, the **on-data justification for holding sorted out**.
-    (Sensitivity: not applicable — no sorted stratum.)
+    cutoff)** → pooling perturbs the subspace, the **on-data justification for holding sorted out** (the pooled
+    matrix has ≥3 triggers, so this rotation test is identifiable). (Sensitivity: not applicable — no sorted
+    stratum.)
   - **(iii) composition adjustment (CIBERSORTx-LM22 deconvolution): note-only deferred** — needs a gated
     signature tool + per-sample re-DE; the pooled NES matrix cannot be composition-adjusted post-hoc. Prong (i)
-    is the available deconvolution-free composition control.
+    is the available deconvolution-free composition control (here underpowered).
 - **Artifact controls:**
-  - **Platform-LOO:** **strict is single-platform (rnaseq) → not applicable**: the low-rank **cannot be shown
-    platform-independent** (a limitation carried to the grid). **Sensitivity (2 platforms):** drop-microarray
-    R=3 **survives** (8 rnaseq cols, 4 triggers); drop-rnaseq **collapses to R=1** (2 microarray cols) → the
-    rank is carried by the RNA-seq columns (partly a K-too-small artifact of dropping the majority platform,
-    reported with `n_remaining`).
+  - **Platform-LOO:** **strict is single-platform (rnaseq) → `untestable_single_platform`**: the low-rank
+    **cannot be shown platform-independent** (a limitation carried to the grid). **Sensitivity (2 platforms):**
+    drop-microarray R=3 **survives** (8 rnaseq cols, 4 triggers — identifiable); **drop-rnaseq is
+    NON-identifiable** (2 microarray cols, 2 triggers < K=3), so its low R is **untestable, not a "collapse"**
+    → `platform_invariance_status: partial` (survives the one identifiable drop; the other cannot be tested).
   - **Recovered-control specificity (directional, not magnitude):** the shared subspace defined by the
-    case-vs-**naive** columns (strict r=2 from 4 naive cols) is **NOT robustly present in the case-vs-recovered
-    columns** — mean projection fraction **0.09 < min 0.30** (vs the in-sample naive 0.71; random-direction
-    null ≈0.002). So the leading shared axis is largely a **case-vs-healthy / infection-history axis**, only
-    weakly loaded by the infection-recovered-control contrasts. (Same verdict on sensitivity.)
-  - **Negative-control-set subtraction: note-only deferred** — the pinned Hallmark∪Reactome universe carries no
-    housekeeping/platform/GC-confounded rows to subtract (needs a WP2 re-run appending declared control sets).
-    The artifact floor **already applied** is the parallel-analysis per-column-permuted null (R_primary counts
-    only the 2 SVs above it) + the off-diagonal-SD sampling floor (0.033); both reported.
-  - **Acute-decoy specificity: note-only deferred** — both decoys unbuildable (GSE68310 parse-deferred; CHIKV
-    salmon-deferred WP1b-d); recorded per-decoy with its blocker.
-- **Result — the adjudication reinforces, on data, the WP3 fragility.** Every *binding* control undermines a
-  compartment/platform/control-invariant low-rank attractor: the low-rank is **compartment-entangled** (R
-  differs WB vs PBMC), **cannot be shown platform-independent** in the strict matrix (single-platform), and is
-  **largely a case-vs-healthy axis** weakly present against recovered controls. The artifact-adjudicated R
-  equals the null-adjusted R_primary (strict 2 / sensitivity 3); the three unavailable controls are recorded
-  note-only with blockers. This coheres with the structural heterogeneity (mean≈0, high SD) and the Stage-3c
-  FAIL — the descriptive low-rank does not survive as a robust shared attractor.
-- **DoD (met):** artifact-adjudicated R + compartment-stratified R + drop-sorted sensitivity + platform-LOO +
-  recovered-control specificity reported per matrix, with an explicit statement of how much shared structure
-  survives each control and which controls are note-only-deferred with their blocker. The composition-adjusted
-  R (deconvolution) is the one deferred prong; the compartment-stratified R is its deconvolution-free stand-in
-  and already shows the shared axis is **not** compartment-invariant.
+    case-vs-**naive** columns (strict r=2 from 4 naive cols, 3 triggers) is **NOT strongly present in the
+    case-vs-recovered columns** — mean projection fraction **0.09 < min 0.30** (vs the in-sample naive 0.71;
+    random-direction null ≈0.002). **Conservative reading:** this supports only *the naive-defined subspace is
+    weakly present in the recovered-control contrasts* — it does **not** by itself prove the axis is
+    "infection-history"/"case-vs-healthy" (the reference is in-sample; the recovered columns differ by
+    dataset/control composition). (Same verdict on sensitivity.)
+  - **No artifact floor was subtracted** (review WP4 Finding 2): the pinned Hallmark∪Reactome universe carries
+    no housekeeping/platform/GC-confounded rows to subtract (set-based subtraction **note-only deferred**, needs
+    a WP2 universe re-run). The **only null applied is the parallel-analysis per-column-permuted null**, which
+    controls **random cross-column structure ONLY** — it is a **`random_structure_null_floor`, NOT an artifact
+    floor** (it does not subtract correlated platform/batch/control-type/composition artifacts). R_primary
+    counts the 2 SVs above it; the off-diagonal-SD sampling floor (0.033) is reported alongside.
+  - **Acute-decoy specificity: note-only deferred** for **both** matrices — both decoys unbuildable (GSE68310
+    parse-deferred; CHIKV salmon-deferred WP1b-d); recorded per-decoy with its blocker.
+- **Result — the adjudication does NOT rescue the low-rank as a robust attractor, and the available controls
+  are underpowered/incomplete.** `artifact_controls_pass = false` → `interpretation_status =
+  limited_or_nonarbitrating` for both matrices: compartment invariance **not established** (only PBMC
+  identifiable), platform invariance **untestable** (strict) / **partial** (sensitivity), the naive shared
+  subspace **weakly present** against recovered controls, and no set-based / composition / acute-decoy artifact
+  floor is available. The R point estimate (strict 2 / sensitivity 3) is the **random-structure-null-adjusted**
+  R_primary, **not** a clean artifact-adjudicated estimate. This coheres with the structural heterogeneity
+  (mean≈0, high SD) and the Stage-3c FAIL — the descriptive low-rank is **neither confirmed as compartment/
+  platform-invariant nor refuted**; it is not q0050-grade and not cleanly biologically readable.
+- **DoD (met):** R point estimate + compartment-stratified R + drop-sorted sensitivity + platform-LOO +
+  recovered-control specificity reported per matrix, each held to the K≥3 identifiability rule, with an explicit
+  `artifact_controls_pass` / `interpretation_status` the WP6 grid placement must consume (Finding 3), and every
+  unavailable control (set-based negative controls, CIBERSORTx composition adjustment, acute-decoy specificity)
+  recorded note-only with its blocker.
 
 ### WP4b — Non-infectious specificity read-across (GWS/FM) — review Finding D
 - Assemble a **separate non-infectious specificity matrix** (Gulf War Syndrome / fibromyalgia blood-bulk
@@ -865,13 +877,15 @@ downstream matrix builds on a real contract, not an assumption.
 - [x] **(WP4, 2026-07-08)** The artifact-control battery (platform-LOO, negative-control sets,
       recovered-control specificity, off-diagonal SD) **and the compartment/composition control** (review
       Finding C: WB/PBMC-only primary, compartment-stratified R, drop-sorted sensitivity, composition-adjusted R
-      where deconvolution is valid) are reported, and the artifact-adjudicated R is stated (strict 2 /
-      sensitivity 3). **Result:** R is **compartment-entangled** (strict PBMC 2 vs WB 1; sensitivity PBMC 3 vs
-      WB 1), strict is **single-platform so platform-independence is untestable**, and the shared subspace is
-      **largely a case-vs-healthy axis** (recovered-control projection 0.09 < 0.30). Composition adjustment
-      (CIBERSORTx), set-based negative controls, and acute-decoy specificity are **note-only deferred** with
-      their blockers; the artifact floor already applied is the parallel-analysis null + the off-diagonal-SD
-      sampling floor.
+      where deconvolution is valid) are reported, each held to the **K≥3 identifiability rule** used by the
+      LODO/LOCO folds. **Result — `artifact_controls_pass = false` / `interpretation_status =
+      limited_or_nonarbitrating`:** compartment invariance **NOT established** (only the PBMC stratum clears
+      K≥3; WB/PBL non-identifiable), platform invariance **untestable** (strict single-platform) / **partial**
+      (sensitivity: drop-microarray survives, drop-rnaseq non-identifiable), and the naive shared subspace is
+      **weakly present** in case-vs-recovered (projection 0.09 < 0.30, conservative reading only). The R point
+      estimate (strict 2 / sensitivity 3) is the **random-structure-null-adjusted** R_primary — **no artifact
+      floor was subtracted** (set-based negative controls, CIBERSORTx composition adjustment, and acute-decoy
+      specificity are all **note-only deferred** with their blockers).
 - [ ] **Non-infectious specificity read-across (review Finding D):** a GWS/FM (± PACVS) matrix under the same
       gates + same pipeline is projected against the PAIS subspace (Q-D infection-specificity test), **or** an
       explicit "no admissible non-infectious deposit" note is recorded (gates not relaxed).
