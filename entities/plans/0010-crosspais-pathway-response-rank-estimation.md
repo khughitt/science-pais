@@ -827,14 +827,18 @@ downstream matrix builds on a real contract, not an assumption.
   pathways — the analytic isotropic floor r/P=0.0025 is reported for orientation only, not as calibrated
   specificity; review Finding 3). The **replication ceiling is the trigger-INDEPENDENT leave-one-*trigger*-out
   projection** (review Finding 1 — column-LOO would let a held-out long-COVID column reuse the other LC
-  columns): FM sits at **0.27× the trigger-LOO mean (0.16)**. Verdict **`partially_recovered_indeterminate`**:
+  columns), averaged **per-trigger not per-column** (follow-up review Finding — 5 of 7 strict columns are
+  SARS-CoV-2, so column-weighting understates the ceiling at 0.16 vs the per-trigger mean **0.24**): FM sits
+  at **0.185× the trigger-weighted trigger-LOO mean**. Verdict **`partially_recovered_indeterminate`**:
   **neither cleanly infection-specific** (FM is well above its permutation null) **nor a full generic-sickness
   manifold** (FM is well below a trigger-held-out PAIS trigger). **Sharper caveat surfaced by trigger-LOO:**
-  that ceiling is itself **heterogeneous (0.02–0.35), with the long-COVID-out projections LOW** — i.e. the
-  PAIS subspace is **not even trigger-general within PAIS** (coheres with the Stage-3c FAIL / heterogeneous
-  structural co-primary), so FM's partial recovery is read against a weak, non-trigger-general baseline, not
-  an absolute specificity claim. The reverse projection (build U from ≥2 non-infectious columns, project
-  PAIS) is **deferred** to the queued replication panel.
+  that ceiling is itself **heterogeneous (per-trigger 0.11 SARS-CoV-2 / 0.27 PI-ME/CFS / 0.35 Lyme), with the
+  long-COVID-out projections LOW** — i.e. the PAIS subspace is **not even trigger-general within PAIS**
+  (coheres with the Stage-3c FAIL / heterogeneous structural co-primary), so FM's partial recovery is read
+  against a weak, non-trigger-general baseline, not an absolute specificity claim. That baseline is moreover
+  **under-identified**: with 3 strict triggers each leave-one-trigger-out reference is built from only 2
+  triggers, below the K≥3 floor (`trigger_loo_identifiability_pass: false`). The reverse projection (build U
+  from ≥2 non-infectious columns, project PAIS) is **deferred** to the queued replication panel.
 - **DoD (met):** a GWS/FM specificity readout (subspace-recovery fraction vs random-null and held-out-PAIS
   references) emitted at `results/…/specificity/gws_fm.json`, with the admissible panel + queued replication
   (`GSE67311`/`E-MEXP-2069`/`GSE286345`) + the PACVS note-only gap recorded; carried to WP6 and
@@ -917,10 +921,11 @@ downstream matrix builds on a real contract, not an assumption.
       found admissible public deposits (fibromyalgia `GSE221921`/`GSE67311`, GWI `E-MEXP-2069`/`GSE286345`,
       IEI `GSE182503`; PACVS = note-only gap, none public). The FM flagship (`GSE221921`, 96/93 PBMC RNA-seq)
       was built through the same pipeline and projected onto the strict PAIS subspace: **recovery 0.045,
-      above its row-permutation null (empirical p=0.0005) but only 0.27× the trigger-independent
-      (leave-one-trigger-out) PAIS ceiling (0.16) → `partially_recovered_indeterminate`** (neither
-      infection-specific nor a full generic-sickness manifold), read under the weak-U_ref caveat (the
-      trigger-LOO ceiling is itself heterogeneous, LC-out low → subspace not trigger-general).
+      above its row-permutation null (empirical p=0.0005) but only 0.185× the trigger-independent
+      (leave-one-trigger-out, per-trigger-weighted) PAIS ceiling (0.24) → `partially_recovered_indeterminate`**
+      (neither infection-specific nor a full generic-sickness manifold), read under the weak-U_ref caveat (the
+      trigger-LOO ceiling is itself heterogeneous, LC-out low → subspace not trigger-general, and
+      under-identified: 3 triggers → 2-trigger references, `trigger_loo_identifiability_pass: false`).
       `exploratory_flagship`; the rest of the panel is queued replication.
 - [ ] The two-matrix verdict rule is applied: the q0050-grade R comes from the strict matrix; any
       sensitivity-only low-rank result is labelled hypothesis-generating; the adjacent ME/CFS question is

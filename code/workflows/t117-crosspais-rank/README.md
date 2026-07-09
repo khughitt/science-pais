@@ -26,12 +26,17 @@ matrix and no artifact control; it meets the PAIS matrix only at the NES level, 
 row-permutation null** (permute the FM column across pathways, reproject; null mean 0.0025, p95 0.0074,
 **empirical p=0.0005** over 2000 draws — the analytic r/P floor is reported for orientation only, not as
 calibrated specificity). The replication ceiling is the **trigger-INDEPENDENT leave-one-*trigger*-out**
-projection (not column-LOO, which would let a held-out long-COVID column reuse the other LC columns): FM
-sits at **0.27× the trigger-LOO mean (0.16)**. Neither cleanly **infection-specific** (well above its
+projection (not column-LOO, which would let a held-out long-COVID column reuse the other LC columns), and
+that ceiling is averaged **per-trigger, not per-column** — with 5 of 7 strict columns being SARS-CoV-2,
+column-weighting understates the ceiling (0.16) versus the per-trigger mean (**0.24**): FM sits at
+**0.185× the trigger-weighted trigger-LOO mean**. Neither cleanly **infection-specific** (well above its
 permutation null) nor a full **generic-sickness manifold** (well below a trigger-held-out PAIS trigger).
-Caveat sharpened by trigger-LOO: that ceiling is **heterogeneous (0.02–0.35) with the LC-out projections
-low** — the PAIS subspace is **not even trigger-general within PAIS** (coheres with the Stage-3c FAIL /
-LOO-fragility), so FM is read against a weak, non-trigger-general baseline. The queued replication panel (`GSE67311` WB-microarray, `E-MEXP-2069` GWI-microarray,
+Caveat sharpened by trigger-LOO: that ceiling is **heterogeneous (per-trigger 0.11 SARS-CoV-2 / 0.27
+PI-ME/CFS / 0.35 Lyme; per-column 0.02–0.35) with the LC-out projections low** — the PAIS subspace is
+**not even trigger-general within PAIS** (coheres with the Stage-3c FAIL / LOO-fragility), so FM is read
+against a weak, non-trigger-general baseline. That baseline is also **under-identified**: with 3 strict
+triggers, each leave-one-trigger-out reference is built from only 2 triggers, below the K≥3 floor
+(`trigger_loo_identifiability_pass: false`). The queued replication panel (`GSE67311` WB-microarray, `E-MEXP-2069` GWI-microarray,
 `GSE286345` GWI-RNA-seq pending a GWI/FM co-carry check) + the reverse projection (needs ≥2 non-infectious
 columns) are recorded, not built. **Infra:** `acquire_payload` now emits the `origin.json` provenance
 sidecar `stage_matrix` requires (previously written only during the WP1 run), so a fresh acquire of any

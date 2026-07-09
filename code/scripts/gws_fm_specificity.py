@@ -87,23 +87,34 @@ def _loo_projection(Zr: np.ndarray, R: int, groups, labels=None) -> dict:
         wholly-novel non-infectious trigger). USE THIS for infection-specificity."""
     K = Zr.shape[1]
     fracs, meta = {}, {}
+    group_fracs = {}  # held-out group label -> [per-column fractions in that group]
     for gi, g in enumerate(groups):
         others = [i for i in range(K) if i not in g]
         if len(others) < 1 or not g:
             continue
         Uo, r_o = _leading_subspace(Zr[:, others], R)
+        glabel = labels[gi] if labels else gi
         for j in g:
-            fracs[j] = round(projection_fraction(Uo, Zr[:, j]), 4)
+            f = round(projection_fraction(Uo, Zr[:, j]), 4)
+            fracs[j] = f
             meta[j] = {"n_ref_columns": len(others), "ref_rank_r": int(r_o),
-                       "held_out_group": (labels[gi] if labels else gi)}
+                       "held_out_group": glabel}
+            group_fracs.setdefault(str(glabel), []).append(f)
     if not fracs:
         return {"applicable": False, "note": "no leave-out group projectable"}
     vals = list(fracs.values())
+    # per-group (per-trigger for trigger-LOO) mean, then average GROUPS with equal weight
+    # so a trigger contributing many columns (e.g. LC = 5 of 7 strict cols) does NOT
+    # dominate the ceiling. For column-LOO (singleton groups) group- == column-weighted.
+    per_group_mean = {k: round(float(np.mean(v)), 4) for k, v in group_fracs.items()}
     return {
         "applicable": True,
         "per_column_fraction": fracs,
         "per_column_meta": meta,
-        "mean": round(float(np.mean(vals)), 4),
+        "per_group_mean": per_group_mean,
+        "n_groups": len(per_group_mean),
+        "column_weighted_mean": round(float(np.mean(vals)), 4),
+        "group_weighted_mean": round(float(np.mean(list(per_group_mean.values()))), 4),
         "min": round(float(np.min(vals)), 4),
         "max": round(float(np.max(vals)), 4),
         "n_projected": len(vals),
@@ -173,10 +184,16 @@ def specificity_for(spec_id, nes_path, X, R, cols, triggers, rec_cfg, seed):
     generic_frac = rec_cfg.get("generic_manifold_frac", 0.70)
     # "above chance" = the empirical permutation null, not the analytic floor
     above_random = bool(recovery > perm["null_p95"] and perm["empirical_p"] < 0.05)
-    # generic-manifold reading is judged against the TRIGGER-INDEPENDENT ceiling
-    ceiling = trig_loo.get("mean")
+    # generic-manifold reading is judged against the TRIGGER-INDEPENDENT ceiling, weighted
+    # per-TRIGGER (not per-column) so the LC-dominated column count does not inflate it
+    # (review Finding: 5 of 7 strict cols are SARS-CoV-2; column-weighting overstates the mean).
+    ceiling = trig_loo.get("group_weighted_mean")
     recovers_like_pais = bool(
         above_random and ceiling is not None and ceiling > 0 and recovery >= generic_frac * ceiling)
+    # identifiability of the ceiling itself: each leave-one-trigger-out reference is built from
+    # (n_triggers - 1) triggers; below the project's K>=3 trigger floor the ceiling is under-identified.
+    n_trig = trig_loo.get("n_groups", 0)
+    trigger_loo_identifiability_pass = bool((n_trig - 1) >= 3)
     if not above_random:
         verdict = "not_recovered_infection_specific_consistent"
     elif recovers_like_pais:
@@ -194,11 +211,20 @@ def specificity_for(spec_id, nes_path, X, R, cols, triggers, rec_cfg, seed):
         "above_random": above_random,
         "analytic_isotropic_null_rp": round(analytic_null, 5),  # orientation only, see Finding 3
         "trigger_loo_ceiling": trig_loo,          # PRIMARY comparator (trigger-independent)
+        "trigger_loo_ceiling_used": "group_weighted_mean",  # per-trigger, not per-column (see note)
+        "trigger_loo_identifiability_pass": trigger_loo_identifiability_pass,
+        "trigger_loo_identifiability_note": (
+            f"leave-one-trigger-out references are built from {max(n_trig - 1, 0)} triggers "
+            f"(n_triggers={n_trig}); below the K>=3 trigger floor, so the trigger-LOO ceiling is "
+            f"itself under-identified — read it as an upper-bound-ish reference, not a calibrated ceiling."),
         "recovery_vs_trigger_loo_mean": (round(recovery / ceiling, 3)
-                                         if ceiling else None),
+                                         if ceiling else None),  # vs GROUP-weighted (per-trigger) mean
+        "recovery_vs_trigger_loo_column_weighted": (
+            round(recovery / trig_loo["column_weighted_mean"], 3)
+            if trig_loo.get("column_weighted_mean") else None),  # context: vs the LC-inflated mean
         "column_loo_reference": col_loo,          # SECONDARY (overstates the ceiling; context only)
-        "recovery_vs_column_loo_mean": (round(recovery / col_loo["mean"], 3)
-                                        if col_loo.get("mean") else None),
+        "recovery_vs_column_loo_mean": (round(recovery / col_loo["column_weighted_mean"], 3)
+                                        if col_loo.get("column_weighted_mean") else None),
         "insample_pais_projection_context": insample,
         "recovers_like_trigger_loo_pais": recovers_like_pais,
         "verdict": verdict,
@@ -300,8 +326,8 @@ def main():
     args.out.write_text(json.dumps(out, indent=2))
     line = " ".join(f"{c}=recovery{columns[c]['subspace_recovery_fraction']}"
                     f"(perm_p={columns[c]['permutation_null']['empirical_p']},"
-                    f"trigLOO_mean={columns[c]['trigger_loo_ceiling'].get('mean')},"
-                    f"colLOO_mean={columns[c]['column_loo_reference'].get('mean')},"
+                    f"trigLOO_grpmean={columns[c]['trigger_loo_ceiling'].get('group_weighted_mean')},"
+                    f"trigLOO_colmean={columns[c]['trigger_loo_ceiling'].get('column_weighted_mean')},"
                     f"{verdicts[c]})" for c in build_now)
     print(f"[gws_fm_specificity] status={out['status']} {line}")
 
