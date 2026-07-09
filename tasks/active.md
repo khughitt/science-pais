@@ -283,15 +283,6 @@ From t109 gap scan. Augustin2025 (DOI 10.1093/ofid/ofae631.2136, PMC11779031) is
 
 From t109 gap scan. Chaudhary et al. medRxiv 2024.10.07.24315052 — multi-ancestry (European/Latinx/African-American) meta-analysis; 3 GW-significant loci incl. BPTF-KPNA2-C17orf58 beyond HLA/ABO; genetic correlations with ME/CFS, fibromyalgia, depression; FOXP4 rs9367106 NOT significant here. Currently cited in topic as a PREPRINT — do not seed as a paper entity until a peer-reviewed version is confirmed. NB: 23andMe cohort is US-based self-report, does NOT close the LMIC-mechanism gap.
 
-## [t117] Estimate the effective rank/diffuseness of cross-PAIS pathway-response overlap from existing single-trigger multi-omics (t116 Q-C gate for q0050)
-- priority: P2
-- status: proposed
-- aspects: []
-- related: [interpretation:0037-t116-power-bias-floor-shared-axis-sim, question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design, question:0017-deflationary-alternatives-vs-shared-pathophysiology, hypothesis:0001-shared-dysregulated-attractor]
-- created: 2026-07-07
-
-Pivotal go/no-go probe for the harmonized cross-pathogen co-enrollment design (question:0050). interpretation:0037 (t116 power/bias-floor sim) showed the >=3-trigger shared-axis test's arbitrating power is governed almost entirely by which finite-repertoire regime we are actually in: a lumpy low-rank overlap is rejectable at achievable arm count K, but a homogeneous high-rank overlap (R>=8) is structurally indistinguishable from a single shared attractor at ANY N. That effective rank is currently unknown yet is partly estimable NOW, without a new cohort, by factor/rank analysis of per-condition pathway-effect (NES-like) vectors from existing single-trigger multi-omic deposits (COVID/flu/EBV/etc). Deliverable: an empirical estimate (and uncertainty) of the cross-PAIS pathway-overlap rank, mapped onto the t116 R-regime grid, converting the q0050 GO/NO-GO from assumption to data. Cheapest highest-leverage next probe on the whole design question. Note the identifiability ceiling flagged as Q-D (high-rank shared manifold vs attractor) and the case-definition/covariate heterogeneity across the source deposits.
-
 ## [t118] Config-schema validation of t117 parse: blocks at DAG-load (project-review #2)
 - priority: P2
 - status: proposed
