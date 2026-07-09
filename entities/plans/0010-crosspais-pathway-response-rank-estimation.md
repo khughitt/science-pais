@@ -37,6 +37,17 @@ related:
 
 # Analysis plan: learn the reproducible effective rank of the cross-PAIS blood pathway-response subspace from primary data (t117)
 
+> **✅ t117 COMPLETE (2026-07-09) — deliverable `interpretation:0038-t117-crosspais-rank-nonidentified-fail-closed`.**
+> WP0–WP4b + WP6 are DONE; all acceptance criteria are met; WP5 (sparse-FA) is left unbuilt as moot (its
+> replication gate cannot pass under the fail-closed finding — see WP5). **Outcome (fail-closed):** the public
+> single-trigger PAIS corpus does **not** identify a cross-trigger pathway-response rank at its operating point
+> (off-diagonal concordance −0.064 ≤ sampling floor 0.033; Stage-3c calibration `pass=false`), so **no R is
+> placed on the t116 grid**. Descriptive R (strict 2 / sensitivity 3) is reported non-grid; the GWS/FM
+> read-across is `partially_recovered_indeterminate`; artifact controls fail (`limited_or_nonarbitrating`).
+> This is the empirical answer to `interpretation:0037`'s Q-C and reinforces the `question:0050` go/no-go: the
+> public route cannot settle the R regime — only a purpose-built K≥3 harmonized cohort can. Status kept
+> `active` (the project reserves `archived` for shelved/abandoned plans; this one delivered).
+
 ## Purpose
 
 `interpretation:0037` (the t116 power/bias-floor simulation) showed that the arbitrating power of the
@@ -844,11 +855,18 @@ downstream matrix builds on a real contract, not an assumption.
   (`GSE67311`/`E-MEXP-2069`/`GSE286345`) + the PACVS note-only gap recorded; carried to WP6 and
   `question:0050`. Non-infectious-deposit *availability* is no longer a gap; the **weak-U_ref** caveat is.
 
-### WP5 — Sparse-FA instrument (replication-gated)
+### WP5 — Sparse-FA instrument (replication-gated) — **NOT BUILT (moot under fail-closed) 2026-07-09**
 - Fit BicMix/SFAmix; cross-check active-factor count; classify attractor vs trigger/platform-specific
   factors; sparse feature-loadings for artifact attribution. Report only where it replicates the Stage-3
   R within tolerance.
-- **DoD:** a secondary factor-count + attractor/specific decomposition, flagged secondary.
+- **Disposition:** the replication gate **cannot pass**. Stage-3c demonstrated the corpus does not identify a
+  rank at its operating point (off-diag concordance −0.064 ≤ floor 0.033; injected ranks not recovered) and
+  the SVD battery is width-limited at K=7 — so a sparse-FA active-factor count has nothing stable to replicate
+  *to*, and any decomposition would be reported non-replicating/secondary and non-load-bearing. Building it
+  would not change the t117 verdict (`interpretation:0038`, fail-closed). Left unbuilt; revisit only if the
+  q0050 K≥3 cohort lifts the corpus above the identification floor.
+- **DoD (waived):** a secondary factor-count + attractor/specific decomposition, flagged secondary — waived as
+  moot; the failure is recorded here and in `interpretation:0038` (Limitations).
 
 ### WP6 — t116-grid placement + interpretation + doc corrections — **DONE 2026-07-09**
 - **Decision gate (review Finding E) — RECORDED (`interpretation:0038`, User Questions).** Stage-3c confirmed
