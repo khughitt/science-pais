@@ -822,14 +822,19 @@ downstream matrix builds on a real contract, not an assumption.
   acquire of any deposit stages reproducibly, not just deposits carried over from the WP1 run.)*
 - **Result — the PAIS subspace is PARTIALLY recovered by non-infectious fibromyalgia (`exploratory_flagship`,
   not `validated_specificity`).** The FM case-vs-control column projects **0.045** of its variance onto the
-  strict PAIS rank-2 subspace: **~18× the random-direction null** (0.0025) — so FM loads on the shared axis
-  **well above chance** — but only **0.28× the held-out-PAIS mean** (0.16; a genuine leave-one-out PAIS
-  trigger recovers ~3.6× more) → verdict **`partially_recovered_indeterminate`**: **neither cleanly
-  infection-specific** (FM is not at the random floor) **nor a full generic-sickness manifold** (FM is well
-  below a real PAIS trigger). This is read under the standing caveat that **the PAIS subspace itself is
-  weakly identified** (Stage-3c FAIL, LOO-fragile, heterogeneous structural co-primary), so the readout is
-  relative to a weak baseline, not an absolute specificity claim. The reverse projection (build U from ≥2
-  non-infectious columns, project PAIS) is **deferred** to the queued replication panel.
+  strict PAIS rank-2 subspace. **Above chance** is established by an **empirical row-permutation null**
+  (null mean 0.0025, p95 0.0074, **empirical p = 0.0005** over 2000 permutations of the FM column across
+  pathways — the analytic isotropic floor r/P=0.0025 is reported for orientation only, not as calibrated
+  specificity; review Finding 3). The **replication ceiling is the trigger-INDEPENDENT leave-one-*trigger*-out
+  projection** (review Finding 1 — column-LOO would let a held-out long-COVID column reuse the other LC
+  columns): FM sits at **0.27× the trigger-LOO mean (0.16)**. Verdict **`partially_recovered_indeterminate`**:
+  **neither cleanly infection-specific** (FM is well above its permutation null) **nor a full generic-sickness
+  manifold** (FM is well below a trigger-held-out PAIS trigger). **Sharper caveat surfaced by trigger-LOO:**
+  that ceiling is itself **heterogeneous (0.02–0.35), with the long-COVID-out projections LOW** — i.e. the
+  PAIS subspace is **not even trigger-general within PAIS** (coheres with the Stage-3c FAIL / heterogeneous
+  structural co-primary), so FM's partial recovery is read against a weak, non-trigger-general baseline, not
+  an absolute specificity claim. The reverse projection (build U from ≥2 non-infectious columns, project
+  PAIS) is **deferred** to the queued replication panel.
 - **DoD (met):** a GWS/FM specificity readout (subspace-recovery fraction vs random-null and held-out-PAIS
   references) emitted at `results/…/specificity/gws_fm.json`, with the admissible panel + queued replication
   (`GSE67311`/`E-MEXP-2069`/`GSE286345`) + the PACVS note-only gap recorded; carried to WP6 and
@@ -911,9 +916,11 @@ downstream matrix builds on a real contract, not an assumption.
 - [x] **(WP4b, 2026-07-09) Non-infectious specificity read-across (review Finding D):** the discovery sweep
       found admissible public deposits (fibromyalgia `GSE221921`/`GSE67311`, GWI `E-MEXP-2069`/`GSE286345`,
       IEI `GSE182503`; PACVS = note-only gap, none public). The FM flagship (`GSE221921`, 96/93 PBMC RNA-seq)
-      was built through the same pipeline and projected onto the strict PAIS subspace: **recovery 0.045 =
-      ~18× the random null but only 0.28× the held-out-PAIS mean → `partially_recovered_indeterminate`**
-      (neither infection-specific nor a full generic-sickness manifold), read under the weak-U_ref caveat.
+      was built through the same pipeline and projected onto the strict PAIS subspace: **recovery 0.045,
+      above its row-permutation null (empirical p=0.0005) but only 0.27× the trigger-independent
+      (leave-one-trigger-out) PAIS ceiling (0.16) → `partially_recovered_indeterminate`** (neither
+      infection-specific nor a full generic-sickness manifold), read under the weak-U_ref caveat (the
+      trigger-LOO ceiling is itself heterogeneous, LC-out low → subspace not trigger-general).
       `exploratory_flagship`; the rest of the panel is queued replication.
 - [ ] The two-matrix verdict rule is applied: the q0050-grade R comes from the strict matrix; any
       sensitivity-only low-rank result is labelled hypothesis-generating; the adjacent ME/CFS question is

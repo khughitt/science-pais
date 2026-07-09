@@ -22,12 +22,16 @@ column onto it. The flagship `GSE221921` (96 FM / 93 HC, PBMC NovaSeq, "log of n
 tag that is **absent from `MATRIX_COMPOSITION` and the adjudication extras** — so it enters no rank
 matrix and no artifact control; it meets the PAIS matrix only at the NES level, then is projected.
 **Result — `exploratory_flagship`, `partially_recovered_indeterminate`:** the FM column recovers
-**0.045** of its variance in the strict PAIS rank-2 subspace — **~18× the random-direction null
-(0.0025)** so FM loads on the shared axis well above chance, but only **0.28× the held-out-PAIS mean
-(0.16)** so it is well below a genuine leave-one-out PAIS trigger. Neither cleanly **infection-specific**
-(not at the random floor) nor a full **generic-sickness manifold** (below a real PAIS trigger), and read
-under the standing caveat that the PAIS subspace is itself **weakly identified** (Stage-3c FAIL,
-LOO-fragile). The queued replication panel (`GSE67311` WB-microarray, `E-MEXP-2069` GWI-microarray,
+**0.045** of its variance in the strict PAIS rank-2 subspace. "Above chance" rests on an **empirical
+row-permutation null** (permute the FM column across pathways, reproject; null mean 0.0025, p95 0.0074,
+**empirical p=0.0005** over 2000 draws — the analytic r/P floor is reported for orientation only, not as
+calibrated specificity). The replication ceiling is the **trigger-INDEPENDENT leave-one-*trigger*-out**
+projection (not column-LOO, which would let a held-out long-COVID column reuse the other LC columns): FM
+sits at **0.27× the trigger-LOO mean (0.16)**. Neither cleanly **infection-specific** (well above its
+permutation null) nor a full **generic-sickness manifold** (well below a trigger-held-out PAIS trigger).
+Caveat sharpened by trigger-LOO: that ceiling is **heterogeneous (0.02–0.35) with the LC-out projections
+low** — the PAIS subspace is **not even trigger-general within PAIS** (coheres with the Stage-3c FAIL /
+LOO-fragility), so FM is read against a weak, non-trigger-general baseline. The queued replication panel (`GSE67311` WB-microarray, `E-MEXP-2069` GWI-microarray,
 `GSE286345` GWI-RNA-seq pending a GWI/FM co-carry check) + the reverse projection (needs ≥2 non-infectious
 columns) are recorded, not built. **Infra:** `acquire_payload` now emits the `origin.json` provenance
 sidecar `stage_matrix` requires (previously written only during the WP1 run), so a fresh acquire of any

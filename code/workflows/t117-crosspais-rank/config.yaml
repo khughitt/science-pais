@@ -790,6 +790,10 @@ parse:
       group_regex:
         - {pattern: "\\(FMA\\)", group: case}
         - {pattern: "\\(CONTROL\\)", group: control}
+      # sex is carried into the staged sample sheet for the covariate LEDGER (FM is
+      # strongly female-biased) but NOT modeled — de_model stays `default` (~ group) so
+      # NES stays commensurable with the primary corpus. review WP4b Finding 2.
+      covariate_cols: [sex]
 
 # ------------------------------------------------------ microarray chain (WP1b c)
 # The probe->gene chain feeding the `prebuilt` stage_matrix handler for the two
@@ -999,8 +1003,8 @@ specificity_readacross:
   reference_matrix: strict        # build the PAIS subspace U_ref from the strict matrix
   build_now: [gse221921_fm]       # only the flagship is built this pass; rest are queued replication
   recovery:                       # thresholds for the qualitative subspace-recovery verdict
-    null_multiple: 3.0            # recovery must exceed this * (r/P) random-direction floor to count as > random
-    generic_manifold_frac: 0.70   # recovery >= this * mean HELD-OUT PAIS projection => recovered like a real PAIS trigger
+    n_perm_null: 2000             # row-permutation empirical null draws for "above chance" (Finding 3; NOT the analytic r/P floor)
+    generic_manifold_frac: 0.70   # recovery >= this * mean TRIGGER-LOO PAIS projection => recovered like a real (trigger-independent) PAIS trigger (Finding 1)
   # --- adjudicated admissible panel (WP4b sweep, 2026-07-09). build: now | queued_replication.
   #     Held to the SAME gates as the primary corpus (blood-bulk WB/PBMC, public, downloadable,
   #     sample-level case-vs-control, gene-expression). Sorted-cell + methylation/miRNA + gated

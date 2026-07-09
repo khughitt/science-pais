@@ -74,28 +74,66 @@ def _leading_subspace(Z: np.ndarray, R: int) -> tuple[np.ndarray, int]:
     return U, r
 
 
-def heldout_pais_projection(Zr: np.ndarray, R: int) -> dict:
-    """Fair in-domain ceiling: project each PAIS column onto U_ref rebuilt from the
-    OTHER PAIS columns (leave-one-column-out). Returns per-column fractions + summary."""
+def _loo_projection(Zr: np.ndarray, R: int, groups, labels=None) -> dict:
+    """In-domain replication ceiling: for each leave-out GROUP of column indices, build
+    U_ref from the columns NOT in the group and project each column IN the group. The
+    group partitions decide what "held out" means:
+      - column-LOO: singleton groups (each column its own group) — a within-trigger
+        column can still project onto a subspace containing its OWN trigger's other
+        columns, so with LC dominating this OVERSTATES the trigger-independent ceiling;
+      - trigger-LOO: groups = all columns of a trigger — the held-out trigger's columns
+        project onto a subspace built ONLY from the OTHER triggers, i.e. a genuinely
+        trigger-independent replication ceiling (the fair comparator for an external,
+        wholly-novel non-infectious trigger). USE THIS for infection-specificity."""
     K = Zr.shape[1]
-    if K < 2:
-        return {"applicable": False, "note": "need >=2 PAIS columns for a held-out projection"}
-    fracs = {}
-    for j in range(K):
-        others = [i for i in range(K) if i != j]
-        Uj, _ = _leading_subspace(Zr[:, others], R)
-        fracs[j] = round(projection_fraction(Uj, Zr[:, j]), 4)
+    fracs, meta = {}, {}
+    for gi, g in enumerate(groups):
+        others = [i for i in range(K) if i not in g]
+        if len(others) < 1 or not g:
+            continue
+        Uo, r_o = _leading_subspace(Zr[:, others], R)
+        for j in g:
+            fracs[j] = round(projection_fraction(Uo, Zr[:, j]), 4)
+            meta[j] = {"n_ref_columns": len(others), "ref_rank_r": int(r_o),
+                       "held_out_group": (labels[gi] if labels else gi)}
+    if not fracs:
+        return {"applicable": False, "note": "no leave-out group projectable"}
     vals = list(fracs.values())
     return {
         "applicable": True,
         "per_column_fraction": fracs,
+        "per_column_meta": meta,
         "mean": round(float(np.mean(vals)), 4),
         "min": round(float(np.min(vals)), 4),
         "max": round(float(np.max(vals)), 4),
+        "n_projected": len(vals),
     }
 
 
-def specificity_for(spec_id, nes_path, X, R, cols, rec_cfg):
+def _permutation_null(U_ref: np.ndarray, z: np.ndarray, obs_recovery: float,
+                      n_perm: int, seed: int) -> dict:
+    """Empirical null for the recovery fraction: permute the column's entries ACROSS
+    pathways (breaking its alignment with U_ref while preserving its marginal NES
+    distribution), reproject, repeat. Much harder to misread than the analytic
+    isotropic floor r/P — a real column that merely has heavy-tailed NES will project
+    above r/P by construction, but a permuted version of ITSELF will not exceed the
+    observed recovery unless the observed alignment is genuine (review Finding 3)."""
+    rng = np.random.default_rng(seed)
+    draws = np.empty(n_perm)
+    for i in range(n_perm):
+        draws[i] = projection_fraction(U_ref, rng.permutation(z))
+    obs_ge = int(np.sum(draws >= obs_recovery))
+    return {
+        "n_perm": int(n_perm),
+        "null_mean": round(float(draws.mean()), 5),
+        "null_p95": round(float(np.quantile(draws, 0.95)), 5),
+        "null_max": round(float(draws.max()), 5),
+        "empirical_p": round((obs_ge + 1) / (n_perm + 1), 5),  # add-one (never 0)
+        "method": "row-permutation of the projected column over the common pathways",
+    }
+
+
+def specificity_for(spec_id, nes_path, X, R, cols, triggers, rec_cfg, seed):
     """Project one non-infectious specificity NES column onto the PAIS subspace."""
     z_full = read_nes(Path(nes_path), spec_id, _GENE_SETS)
     pais_ok = ~np.isnan(X).any(axis=1)
@@ -114,18 +152,31 @@ def specificity_for(spec_id, nes_path, X, R, cols, rec_cfg):
 
     U_ref, r = _leading_subspace(Zr, R)
     recovery = projection_fraction(U_ref, zr_s)
-    null_expectation = r / P
+    analytic_null = r / P  # isotropic floor — orientation only, NOT calibrated (Finding 3)
 
-    heldout = heldout_pais_projection(Zr, R)
+    # empirical null (row-permutation) — the defensible "above chance" test (Finding 3)
+    perm = _permutation_null(U_ref, zr_s, recovery, rec_cfg.get("n_perm_null", 2000), seed)
+
+    # in-domain replication ceilings (Finding 1): column-LOO OVERSTATES the ceiling when
+    # one trigger dominates (a held-out LC column still sees the other LC columns);
+    # trigger-LOO is the trigger-INDEPENDENT ceiling and the fair comparator for a wholly
+    # novel external non-infectious trigger. The verdict uses TRIGGER-LOO.
+    K = Zr.shape[1]
+    col_loo = _loo_projection(Zr, R, [[j] for j in range(K)],
+                              labels=[cols[j] for j in range(K)])
+    uniq_trig = sorted({t for t in triggers})
+    trig_groups = [[j for j in range(K) if triggers[j] == t] for t in uniq_trig]
+    trig_loo = _loo_projection(Zr, R, trig_groups, labels=uniq_trig)
     insample = {cols[j]: round(projection_fraction(U_ref, Zr[:, j]), 4)
-                for j in range(Zr.shape[1])}  # context: PAIS cols on their own subspace
+                for j in range(K)}  # context: PAIS cols on their own (all-column) subspace
 
-    null_mult = rec_cfg.get("null_multiple", 3.0)
     generic_frac = rec_cfg.get("generic_manifold_frac", 0.70)
-    above_random = bool(recovery > null_mult * null_expectation)
-    mean_heldout = heldout.get("mean")
+    # "above chance" = the empirical permutation null, not the analytic floor
+    above_random = bool(recovery > perm["null_p95"] and perm["empirical_p"] < 0.05)
+    # generic-manifold reading is judged against the TRIGGER-INDEPENDENT ceiling
+    ceiling = trig_loo.get("mean")
     recovers_like_pais = bool(
-        above_random and mean_heldout is not None and recovery >= generic_frac * mean_heldout)
+        above_random and ceiling is not None and ceiling > 0 and recovery >= generic_frac * ceiling)
     if not above_random:
         verdict = "not_recovered_infection_specific_consistent"
     elif recovers_like_pais:
@@ -139,27 +190,33 @@ def specificity_for(spec_id, nes_path, X, R, cols, rec_cfg):
         "n_rows_used": P,
         "reference_subspace_rank_r": int(r),
         "subspace_recovery_fraction": round(recovery, 4),
-        "random_direction_null_expectation": round(null_expectation, 5),
-        "recovery_vs_null_ratio": round(recovery / null_expectation, 3) if null_expectation else None,
-        "heldout_pais_projection": heldout,
-        "recovery_vs_mean_heldout_ratio": (round(recovery / mean_heldout, 3)
-                                           if mean_heldout else None),
-        "insample_pais_projection_context": insample,
+        "permutation_null": perm,
         "above_random": above_random,
-        "recovers_like_heldout_pais": recovers_like_pais,
+        "analytic_isotropic_null_rp": round(analytic_null, 5),  # orientation only, see Finding 3
+        "trigger_loo_ceiling": trig_loo,          # PRIMARY comparator (trigger-independent)
+        "recovery_vs_trigger_loo_mean": (round(recovery / ceiling, 3)
+                                         if ceiling else None),
+        "column_loo_reference": col_loo,          # SECONDARY (overstates the ceiling; context only)
+        "recovery_vs_column_loo_mean": (round(recovery / col_loo["mean"], 3)
+                                        if col_loo.get("mean") else None),
+        "insample_pais_projection_context": insample,
+        "recovers_like_trigger_loo_pais": recovers_like_pais,
         "verdict": verdict,
         "verdict_reading": {
             "not_recovered_infection_specific_consistent":
-                "the non-infectious column does NOT recover the PAIS subspace beyond a random "
-                "direction — consistent with an infection-specific axis (but see caveats: the "
-                "PAIS subspace is weakly identified, so this is not a strong positive claim).",
+                "the non-infectious column does NOT recover the PAIS subspace beyond its own "
+                "row-permutation null — consistent with an infection-specific axis (but the PAIS "
+                "subspace is weakly identified, so this is not a strong positive claim).",
             "recovered_like_pais_generic_manifold_consistent":
                 "the non-infectious column recovers the PAIS subspace about as well as a genuine "
-                "HELD-OUT PAIS trigger — consistent with a GENERIC sickness/fatigue manifold "
-                "rather than an infection-specific attractor (the t116 Q-D ceiling).",
+                "TRIGGER-held-out PAIS trigger — consistent with a GENERIC sickness/fatigue "
+                "manifold rather than an infection-specific attractor (the t116 Q-D ceiling).",
             "partially_recovered_indeterminate":
-                "recovery is above random but below the held-out-PAIS ceiling — indeterminate; "
-                "neither cleanly infection-specific nor a full generic-manifold recovery.",
+                "recovery is above the permutation null but below the TRIGGER-independent PAIS "
+                "ceiling — indeterminate; neither cleanly infection-specific nor a full "
+                "generic-manifold recovery. NB if the trigger-LOO ceiling is itself low, the PAIS "
+                "subspace is not even trigger-general within PAIS (coheres with the Stage-3c FAIL "
+                "/ heterogeneous structural co-primary), and the comparison is correspondingly weak.",
         }[verdict],
     }
 
@@ -185,6 +242,8 @@ def main():
     full_rank = json.loads(args.pais_rank.read_text())
     R = full_rank.get("R_primary") or 1
     X, cols, gene_sets = rb.load_matrix(args.pais_matrix, grouping)
+    triggers = [c.get("trigger") for c in grouping["columns"]]  # per-column trigger (for trigger-LOO)
+    seed = int(cfg.get("determinism", {}).get("master_seed", 0))
     global _GENE_SETS
     _GENE_SETS = gene_sets  # read_nes aligns each extra column to this pinned index
 
@@ -196,7 +255,8 @@ def main():
         halt(f"build_now columns have no NES producer wired: {missing} "
              f"(provided: {sorted(provided)})")
 
-    columns = {c: specificity_for(c, provided[c], X, R, cols, rec_cfg) for c in build_now}
+    columns = {c: specificity_for(c, provided[c], X, R, cols, triggers, rec_cfg, seed)
+               for c in build_now}
 
     # verdict rollup over the built columns (only the flagship this pass)
     verdicts = {c: v["verdict"] for c, v in columns.items()}
@@ -238,9 +298,10 @@ def main():
     }
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(out, indent=2))
-    line = " ".join(f"{c}={columns[c]['subspace_recovery_fraction']}"
-                    f"(null={columns[c]['random_direction_null_expectation']},"
-                    f"heldout_mean={columns[c]['heldout_pais_projection'].get('mean')},"
+    line = " ".join(f"{c}=recovery{columns[c]['subspace_recovery_fraction']}"
+                    f"(perm_p={columns[c]['permutation_null']['empirical_p']},"
+                    f"trigLOO_mean={columns[c]['trigger_loo_ceiling'].get('mean')},"
+                    f"colLOO_mean={columns[c]['column_loo_reference'].get('mean')},"
                     f"{verdicts[c]})" for c in build_now)
     print(f"[gws_fm_specificity] status={out['status']} {line}")
 

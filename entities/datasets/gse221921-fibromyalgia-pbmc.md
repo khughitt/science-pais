@@ -87,8 +87,8 @@ counts/CPM treatment would double-transform). Case/control labels live in the se
 Public (`GSE221921`), per-sample RAW.tar staged + hash-locked (t117 WP4b, 2026-07-09). Caveats:
 (1) the projection target — the PAIS subspace — is itself **weakly identified** (Stage-3c FAIL,
 LOO-fragile), so the WP4b readout is **`exploratory_flagship`, not `validated_specificity`**;
-(2) FM is strongly female-biased and the cohort carries a sex imbalance — **sex is available in the
-sample sheet but left unmodeled** (`~ group`), matching the primary corpus's default treatment for
-NES-comparability; (3) symbol→Ensembl harmonization via the pinned org.Hs.eg.db map (some
+(2) FM is strongly female-biased and the cohort carries a sex imbalance — **sex is carried into the
+staged sample sheet as a QA-ledger covariate (`covariate_cols: [sex]`) but left unmodeled** (`~ group`),
+matching the primary corpus's default treatment for NES-comparability; (3) symbol→Ensembl harmonization via the pinned org.Hs.eg.db map (some
 non-coding/novel symbols drop); (4) FM is a chronic widespread-pain syndrome — a **non-infectious**
 comparator, not a PAIS case (never counted as an in-scope post-acute case).
