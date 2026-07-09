@@ -19,6 +19,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 
 
@@ -61,6 +62,10 @@ def main():
     ap.add_argument("--out", type=Path, required=True)
     args = ap.parse_args()
 
+    # Snakemake runs with cwd == repo root; make the config source repo-relative for portability
+    # and to match the (already repo-relative) resource paths — no absolute Dropbox paths leak.
+    config_rel = os.path.relpath(args.config, os.getcwd())
+
     resources = []
     for name, rel, mediatype, group in _resources_meta(args.results):
         p = Path(rel)
@@ -89,7 +94,7 @@ def main():
             {"title": "plan:0010-crosspais-pathway-response-rank-estimation",
              "path": "entities/plans/0010-crosspais-pathway-response-rank-estimation.md"},
             {"title": "workflow", "path": "code/workflows/t117-crosspais-rank/Snakefile"},
-            {"title": "config", "path": args.config},
+            {"title": "config", "path": config_rel},
         ],
         "entities": [
             "task:t117",

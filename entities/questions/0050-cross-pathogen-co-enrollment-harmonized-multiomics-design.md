@@ -112,7 +112,8 @@ form of the discriminating experiment the project repeatedly names but does not 
   **rank/lumpiness** (Q-C / task:t117), partly estimable from existing single-trigger multi-omics before any
   cohort commitment.
 - **Q-C RESOLVED from data + "any N" scoped (t117, 2026-07-09 → `interpretation:0038-t117-crosspais-rank-nonidentified-fail-closed`).**
-  The uniform cross-PAIS rank probe over the strict WB/PBMC matrix (7 columns, 5 triggers) returns
+  The uniform cross-PAIS rank probe over the strict WB/PBMC matrix (7 columns across **3 triggers** — 5
+  SARS-CoV-2/LC, 1 PI-ME/CFS, 1 Lyme) returns
   off-diagonal concordance **−0.064 (≤ sampling floor 0.033), SD 0.249** — a **diffuse/heterogeneous
   regime with no recoverable low-rank shared axis**, so Stage-3c calibration is fail-closed and no rank is
   placed on the t116 grid. This **confirms the low-power ceiling from real data**: the **public single-trigger

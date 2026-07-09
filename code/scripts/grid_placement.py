@@ -84,14 +84,24 @@ def main():
             f"the band (low_rank_arbitrable => the harmonized design can arbitrate at achievable arm "
             f"counts; high_rank_nonarbitrating => it cannot).")
 
+    # Stage-3c is calibrated ONCE, on the q0050-grade strict/primary matrix; it is NOT re-run
+    # per matrix. Name that scope explicitly so the shared calibration_reasons (which quote the
+    # strict K) are not misread as a separate sensitivity-matrix calibration (review Finding).
+    matrix_role = "q0050_primary" if args.matrix == "strict" else "hypothesis_generating_sensitivity"
     out = {
         "finding": "WP6 t116 R-regime-grid placement (plan:0010 Key decision 6; fail-closed on the "
                    "pre-locked calibration + artifact-control gates)",
         "matrix": args.matrix,
+        "matrix_role": matrix_role,
         "placed_on_grid": placed,
         "status": status,
         "grid_band": band,
         "grid_bands_config": grid,
+        "calibration_scope": (
+            "strict_primary_matrix — Stage-3c is calibrated ONCE on the q0050-grade strict/primary "
+            "matrix (the calibration_reasons below quote that matrix's dimensions, e.g. K=7); it is NOT "
+            "re-run per matrix. The sensitivity matrix is never independently Stage-3c calibrated and any "
+            "sensitivity rank is hypothesis-generating only (two-matrix rule)."),
         "gates": {
             "calibration_pass": cal_pass,
             "artifact_controls_pass": acp,

@@ -100,8 +100,9 @@ WP0 workflow build + data staging — AND bounded by the corpus-readiness ceilin
 verification pass (record-checks against GEO/SRA/FigShare) is done: it corrected specifics, demoted two
 deposits (`gse224615` G4, `gse68310` floor), deferred one (`prjna1184005` G4), demoted both floor-gated
 provisionals (`gse68310`, `prjna1001790` — removing influenza and chikungunya as strict triggers), and
-finalized the strict matrix at **~10 contrasts / 5 triggers** (see *Corpus* + *WP1 corpus-readiness
-finding*). What remains before a verdict: **staging** the matrix-ready deposits (download + checksum +
+finalized the strict matrix at **~10 contrasts / 5 triggers** *(WP1 admissibility tally; the runtime-built
+strict matrix is **7 columns / 3 triggers** — SARS-CoV-2, PI-ME/CFS, Lyme — after further deposits failed
+staging/QA)* (see *Corpus* + *WP1 corpus-readiness finding*). What remains before a verdict: **staging** the matrix-ready deposits (download + checksum +
 datapackage via the WP0 workflow), then Stages 2–6. **The provisional scientific result of WP1 is the LC-out
 low-power ceiling**: the strict matrix appears unable to produce a q0050-grade (LC-out-surviving) rank, so the
 downstream run is scoped to a *descriptive/hypothesis-grade* R + the artifact adjudication + the adjacent
@@ -903,7 +904,8 @@ downstream matrix builds on a real contract, not an assumption.
       deposit in `config.yaml`.
 - [x] **WP1 record-verification pass (2026-07-08)** set `access.verified` per deposit (or demoted it),
       replacing the `[UNVERIFIED]` specifics with confirmed values; **every floor-/SRA-provisional deposit
-      resolved** (both demoted); strict matrix finalized at ~10 contrasts / 5 triggers. Staging (download)
+      resolved** (both demoted); strict matrix finalized at ~10 contrasts / 5 triggers *(admissibility tally;
+      runtime-built = 7 columns / 3 triggers after further staging/QA attrition)*. Staging (download)
       remains pending WP0. Surfaced the LC-out low-power ceiling as a **provisional, calibration-contingent**
       result (not binding — review Finding A; to be demonstrated by the WP3 power curve).
 - [x] **(WP3, 2026-07-08)** LODO/LOCO carry **pre-locked pass/fail semantics** (Stage 3b): the

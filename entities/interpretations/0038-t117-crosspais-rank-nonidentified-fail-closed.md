@@ -34,7 +34,7 @@ relations:
 
 ## Verdict
 
-**[~] Fail-closed — the corpus does not identify a cross-PAIS pathway-response rank at its operating point, so NO t116 R-regime-grid verdict is emitted.** The strict WB/PBMC matrix (7 columns, 5 triggers) yields a descriptive rank point estimate **R = 2** (consensus of parallel-analysis 2 / BiCV-SVD 5 / split-half 1; estimator disagreement range 4), sensitivity (10 columns) **R = 3** — but the **Stage-3c calibration FAILED on two independent grounds** (`calibration.json: pass=false`), so these R values are **descriptive geometry only** and are NOT placed on the `interpretation:0037` t116 grid (Key decision 6: the grid bridge must be validated, not assumed).
+**[~] Fail-closed — the corpus does not identify a cross-PAIS pathway-response rank at its operating point, so NO t116 R-regime-grid verdict is emitted.** The strict WB/PBMC matrix (7 columns across **3 triggers** — 5 SARS-CoV-2/LC, 1 PI-ME/CFS, 1 Lyme) yields a descriptive rank point estimate **R = 2** (consensus of parallel-analysis 2 / BiCV-SVD 5 / split-half 1; estimator disagreement range 4), sensitivity (10 columns) **R = 3** — but the **Stage-3c calibration FAILED on two independent grounds** (`calibration.json: pass=false`), so these R values are **descriptive geometry only** and are NOT placed on the `interpretation:0037` t116 grid (Key decision 6: the grid bridge must be validated, not assumed).
 
 The headline t117 deliverable is therefore **not an R value** but the **empirically demonstrated identification ceiling**: the real matrix's off-diagonal pairwise concordance is **mean −0.064, SD 0.249 over 21 pairs** — the mean is *at or below* the sampling floor `1/√(P−1) = 0.033`, so a t116 shared-axis structure injected at the matched concordance is negligible (κ→0) and **no injected rank is recovered** (R=2→R̂=0, R=4→R̂=0). This is the design-level low-power ceiling of `interpretation:0037` **confirmed from real data** — and it is the answer to that interpretation's own **Q-C** ("estimate the real cross-PAIS repertoire rank from existing single-trigger deposits").
 
@@ -61,7 +61,7 @@ The GWS/FM non-infectious read-across (WP4b, `exploratory_flagship`) returns **`
 
 ## Proposition-Level Updates
 
-- The proposition "a low-rank shared cross-PAIS pathway-response axis is recoverable from public single-trigger blood-transcriptome deposits" is **downgraded**: not recoverable at this corpus's operating point (concordance ≤ identification floor). The obstacle is **corpus-intrinsic** (signal at/below the sampling floor over K=5 triggers / 7 columns), not a tuning or estimator choice.
+- The proposition "a low-rank shared cross-PAIS pathway-response axis is recoverable from public single-trigger blood-transcriptome deposits" is **downgraded**: not recoverable at this corpus's operating point (concordance ≤ identification floor). The obstacle is **corpus-intrinsic** (signal at/below the sampling floor over 3 triggers / 7 columns), not a tuning or estimator choice.
 - "Per-arm N is the binding lever" — **further disconfirmed from the data side**: the binding constraint is arm count / trigger count and feature-space resolution, consistent with `interpretation:0037`; the strict corpus fails on trigger count and signal level, not sample depth.
 
 ## Hypothesis-Level Implications
@@ -71,7 +71,7 @@ The GWS/FM non-infectious read-across (WP4b, `exploratory_flagship`) returns **`
 
 ## Evidence vs. Open Questions
 
-- **Q-C (was open in `interpretation:0037`) — now ANSWERED from data:** the real cross-PAIS repertoire, as sampled by this corpus, sits **at/below the identification floor** — a diffuse/heterogeneous regime, no recoverable low-rank shared axis at K=5 triggers. This is the cheapest-possible probe `interpretation:0037` asked for, and it returns "the public single-trigger route cannot settle the R regime." Recorded as a `sci:amends` edge onto 0037.
+- **Q-C (was open in `interpretation:0037`) — now ANSWERED from data:** the real cross-PAIS repertoire, as sampled by this corpus, sits **at/below the identification floor** — a diffuse/heterogeneous regime, no recoverable low-rank shared axis at only 3 triggers (7 columns). This is the cheapest-possible probe `interpretation:0037` asked for, and it returns "the public single-trigger route cannot settle the R regime." Recorded as a `sci:amends` edge onto 0037.
 - **q0050 GO/NO-GO consequence:** **reinforced, unchanged in direction.** The t117 real-data ceiling confirms the simulation: fund only a **K≥3, ~1000-set-feature, structural-statistic, full-recovery-control** harmonized design. The public single-trigger corpus is **not** a substitute and cannot be made one by adding more such deposits (the ceiling is signal-level, not count-level, at fixed trigger diversity). The t035 two-cohort route stays closed.
 - **Two-matrix verdict rule applied:** the q0050-grade R is the **strict** matrix (R=2, regime band `low`, `artifact_controls_pass=false`); the **sensitivity** R=3 (K=10, includes the ME/CFS-sensitivity columns) is **hypothesis-generating only**. The adjacent "does the ME/CFS-inclusive matrix change the rank" question is answered separately and does not feed the q0050 grade.
 
