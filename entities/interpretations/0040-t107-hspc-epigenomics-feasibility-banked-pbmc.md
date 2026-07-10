@@ -220,7 +220,10 @@ interpretation:0036 and interpretation:0039: proxy/feasibility work mints no bel
 1. **Adopt the target pivot as the operative form of q0055's direct test:** primary readout =
    **monocyte-progeny (CD14⁺) ATAC-seq from banked PBMC** (abundant, all-platform, the transmitted imprint
    and q0026 effector locus). This is the feasible, high-leverage opportunistic analysis the serum-IL-6
-   negative (interpretation:0039) pointed to.
+   negative (interpretation:0039) pointed to. **Now operationalized as
+   `pre-registration:0006-monocyte-atac-hspc-imprint-pais-persistence` (data-gated; task t120)** — the
+   estimand + belief-update rule are committed there, with platform/N/power deferred to a specimen-access
+   decision.
 2. **Source it from RECOVER first** (open BAC application; viable PBMC; longitudinal 0/90/180 d + yearly;
    **full acute-severity spectrum** — the design-critical property [@Horwitz2023]); **UK ME/CFS Biobank** as
    the ME/CFS-arm parallel (open cost-reimbursement, documented ~20 PBMC vials/contact [@Lacerda2018]).
