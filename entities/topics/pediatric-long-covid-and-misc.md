@@ -20,6 +20,9 @@ related:
   - interpretation:0025-t009-pediatric-long-covid-and-misc
   - search:0008-pediatric-long-covid-misc
 source_refs:
+  - cite:Furgier2026
+  - cite:Park2025
+  - cite:Munro2025
   - cite:Gross2024
   - cite:Gross2025
   - cite:Stephenson2024
@@ -28,7 +31,7 @@ source_refs:
   - cite:LopezLeon2022
   - cite:Patrascu2025
 created: "2026-06-26"
-updated: "2026-06-26"
+updated: '2026-07-10'
 ---
 # Pediatric Long COVID and MIS-C
 

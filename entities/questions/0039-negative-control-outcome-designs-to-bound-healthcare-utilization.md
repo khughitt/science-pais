@@ -6,7 +6,8 @@ title: Negative-control outcome designs to bound healthcare-utilization confound
 status: active
 ontology_terms: []
 datasets: []
-source_refs: []
+source_refs:
+- cite:Nilforoshan2026
 origins:
 - type: assistant
   ref: explore-ideas-methodology

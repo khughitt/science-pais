@@ -16,6 +16,10 @@ ontology_terms:
 - post-acute infection syndrome
 datasets: []
 source_refs:
+- cite:Tsergas2025
+- cite:Crotty2026
+- cite:Vacharathit2025
+- cite:Munro2025
 - cite:Netea2016
 - cite:Cheng2014
 - cite:Arts2016
