@@ -860,6 +860,19 @@ downstream matrix builds on a real contract, not an assumption.
   ceiling caps at r_eff=1 < PAIS R=2 → `under_resolved_need_more_noninfectious_columns` (the reverse analogue
   of the K=2 degeneracy); a 3rd+ cross-condition, compartment-matched column is required. Read-across stays
   **`exploratory_flagship`** with an explicit compartment confound + under-resolution gate.
+- **Update (2026-07-10) — 3rd non-infectious column built (`E-MEXP-2069` GWI PBMC), reverse FULL-RANK.**
+  The compartment-matched GWI column (9/11, PBMC, HG-U133 Plus 2.0, baseline arm; raw CEL → **pure-R RMA**,
+  limma normexp + limma quantile + `medpolish`, because affy/preprocessCore threaded C fails on this host with
+  `pthread_create()=22`; → 20,338 genes) lifts the reverse projection to **`r_eff = min(R=2, n_noninf−1=2) = 2`**
+  (`identifiability_pass=true`), resolving the 2-column under-resolution. **Reverse verdict:
+  `noninfectious_axis_not_reproducible_indeterminate`** — the leave-one-non-infectious-out ceiling is LOW
+  (0.053), so even across FM and GWI the non-infectious axis does not reproduce (PAIS recovers U 0.072 > ceiling,
+  ratio 1.37): no coherent generic-non-infectious manifold exists to test against. **The GWI column also
+  disentangles the forward confound:** being PBMC (compartment-matched) it still recovers **0.213** — like the
+  WB-microarray FM (0.234) and ~5× the PBMC-RNAseq FM flagship (0.045), so the forward gap tracks **PLATFORM
+  (microarray 0.224 vs RNA-seq 0.045), NOT compartment** and NOT condition (tiny-N microarray recovers high;
+  large-N RNA-seq does not) — a technical confound. Both results reinforce `exploratory_flagship` and neither
+  licenses `validated_specificity`; the next lever remains the purpose-built K≥3 cohort (`question:0050`).
 - **DoD (met):** a GWS/FM specificity readout (subspace-recovery fraction vs random-null and held-out-PAIS
   references) emitted at `results/…/specificity/gws_fm.json`, with the admissible panel + queued replication
   (`GSE67311`/`E-MEXP-2069`/`GSE286345`) + the PACVS note-only gap recorded; carried to WP6 and

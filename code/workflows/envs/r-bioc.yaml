@@ -34,6 +34,8 @@ dependencies:
   - bioconductor-hgu133b.db=3.13.0
   - bioconductor-hgu133plus2.db=3.13.0  # GPL570 (GSE16059 discordant-twin ME/CFS) probe→Ensembl; annotation-only add (no limma/fgsea/org.Hs.eg.db version change → NES-neutral)
   - bioconductor-hugene11sttranscriptcluster.db=8.8.0  # GPL11532 HuGene 1.1 ST (GSE67311 FM WP4b replication) transcript-cluster→Ensembl; Bioc 3.13 vintage, annotation-only add (NES-neutral)
+  - bioconductor-affy=1.88.0            # raw-CEL RMA for E-MEXP-2069 (GWI WP4b 3rd column); ArrayExpress ships only raw CEL. Bioc 3.22 / R 4.5 build. Parser add (rma_celfiles.R front-end) — does NOT touch the limma/fgsea/org.Hs.eg.db NES pins
+  - bioconductor-hgu133plus2cdf=2.18.0  # HG-U133 Plus 2.0 CDF env affy::rma needs to summarize the E-MEXP-2069 CELs; static data package (probe->probeset), NES-neutral
   - bioconductor-biocparallel=1.44.0   # L'Ecuyer-CMRG permutation substreams
   - r-msigdbr=26.1.0                    # collection helper ONLY; 2024.1.Hs via hashed GMT (see note)
   - r-data.table=1.17.8

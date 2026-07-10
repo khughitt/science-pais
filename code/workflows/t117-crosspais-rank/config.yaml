@@ -270,6 +270,15 @@ contrasts:
     matrix: specificity
     control_type: healthy
     note: "WP4b replication: 70 FM vs 70 HC, PAXgene whole blood, Affymetrix HuGene 1.1 ST (GPL11532). Cross-compartment + cross-platform robustness of the FM subspace-recovery reading; the 2nd non-infectious column that activates the reverse projection. Built as a separate specificity column, projected onto the PAIS subspace — never pooled."
+  emexp2069_gwi:
+    accession: E-MEXP-2069
+    trigger: gulf_war_illness           # NON-infectious (organophosphate/chemical) — a DIFFERENT non-infectious axis than FM
+    compartment: pbmc                   # matches the flagship's PBMC — the compartment-matched 3rd column (breaks the WB confound)
+    platform: microarray                # INDEPENDENT platform (GPL570 HG-U133 Plus 2.0, raw CEL -> RMA) — reuses the pinned hgu133plus2.db chain
+    onset_certainty: non-infectious
+    matrix: specificity
+    control_type: healthy
+    note: "WP4b 3rd non-infectious column: 9 GWI vs 11 Gulf-War-era controls, PBMC, Affymetrix HG-U133 Plus 2.0 (GPL570), baseline (before-exercise) arm of Whistler2009 (E-MEXP-2069). Independent chemical TRIGGER + PBMC compartment-match to the flagship — the column that lifts the reverse projection to full rank (r_eff=2) and separates trigger from compartment. Small N. Built as a separate specificity column, projected onto the PAIS subspace — never pooled."
 
 # Deposits catalogued but OUT of every computed matrix (G4 blockers / deferred).
 excluded:
@@ -364,6 +373,78 @@ acquisition:
       series_matrix: {kind: series_matrix.txt.gz, filename: "GSE67311_series_matrix.txt.gz", bytes: 15719858,
                       url: "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE67nnn/GSE67311/matrix/GSE67311_series_matrix.txt.gz",
                       sha256: "959735bda3741051500e52f74886dfbcb80304c907e6bb3ac2a836d172b1c353"}
+  # WP4b non-infectious specificity 3rd column (E-MEXP-2069, GWI PBMC microarray,
+  # GPL570 HG-U133 Plus 2.0). ArrayExpress ships ONLY raw .CEL (no processed matrix),
+  # so the BASELINE (before-exercise) arm — 9 GWI (GWS-*A) + 11 control (Con-*A) — is
+  # staged as individual CEL blobs + the SDRF, RMA-normalized by rma_celfiles.R, then
+  # fed the pinned hgu133plus2.db harmonize chain. sha256 + bytes DISCOVERED then LOCKED
+  # via the sanctioned dummy-hash fetch flow (fetch HALTs printing `got`). URLs 302 to
+  # the BioStudies FIRE CDN (requests follows the redirect).
+  E-MEXP-2069:
+    payloads:
+      gws_1a: {kind: cel, filename: "GWS-1A.CEL", bytes: 13551571,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/GWS-1A.CEL",
+        sha256: "1c48fcb32582ca005c5c3ae7bde5e9439e97f9b0008232ac630db525be4570f1"}
+      gws_2a: {kind: cel, filename: "GWS-2A.CEL", bytes: 13553279,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/GWS-2A.CEL",
+        sha256: "735d57b57d425c5187dc79cd009724d8c433db51d8f5faa09d58392574454876"}
+      gws_3a: {kind: cel, filename: "GWS-3A.CEL", bytes: 13556551,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/GWS-3A.CEL",
+        sha256: "15666fc3229156751aea6694e627bdb05046d945fed5d14372521f6fd61a5ebb"}
+      gws_4a: {kind: cel, filename: "GWS-4A.CEL", bytes: 13554711,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/GWS-4A.CEL",
+        sha256: "6ae1c5f13c6709b90153e9a832ef3677dbe9c328c5a785ffa99a26564ace926a"}
+      gws_5a: {kind: cel, filename: "GWS-5A.CEL", bytes: 13556751,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/GWS-5A.CEL",
+        sha256: "b5c5151f3ea27f3fef2280f8e553675648aec9c3384832eff928d4eecac66d40"}
+      gws_6a: {kind: cel, filename: "GWS-6A.CEL", bytes: 13552732,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/GWS-6A.CEL",
+        sha256: "2947c18ac9c38be470ff92dea5a671aec7ee81bf5afe85dbcf8873c2c435c417"}
+      gws_7a: {kind: cel, filename: "GWS-7A.CEL", bytes: 13559755,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/GWS-7A.CEL",
+        sha256: "f17b7093f8a58e414cb24dde7bd2d4682ddefd3c0cf2920e90d1118d52e99dcf"}
+      gws_8a: {kind: cel, filename: "GWS-8A.CEL", bytes: 13557471,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/GWS-8A.CEL",
+        sha256: "742cbc98dcf04d6275e0cf163d60a8a54c07e458e4f270154c476ddc3ded492d"}
+      gws_9a: {kind: cel, filename: "GWS-9A.CEL", bytes: 13550460,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/GWS-9A.CEL",
+        sha256: "60527a297be71567edf14e6dae98892b053bb40c291f3f0210c6c83c707bb282"}
+      con_1a: {kind: cel, filename: "Con-1A.CEL", bytes: 13554967,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/Con-1A.CEL",
+        sha256: "f3b99ccb5be193bd7227ccda4c1f3833ba52a6782a0786c89fef16d16f80c25c"}
+      con_2a: {kind: cel, filename: "Con-2A.CEL", bytes: 13550708,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/Con-2A.CEL",
+        sha256: "264bf4b7f17008f431997aeb296cf30a51ff9f7cccf6ac2b1ecd2142f03b18c1"}
+      con_3a: {kind: cel, filename: "Con-3A.CEL", bytes: 13551347,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/Con-3A.CEL",
+        sha256: "705f0823bc3185ee3022cd8d82dc4a3989bf08b953bf34812782bc593e9c0456"}
+      con_4a: {kind: cel, filename: "Con-4A.CEL", bytes: 13550684,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/Con-4A.CEL",
+        sha256: "88923aae4fc09563d297cefea84c78cf4a75389fde9f97770b57e7f39e13fd84"}
+      con_5a: {kind: cel, filename: "Con-5A.CEL", bytes: 13550612,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/Con-5A.CEL",
+        sha256: "1faba9636c3d734ba15e575d6f8567e6576f79af928daa88c21884814922f272"}
+      con_6a: {kind: cel, filename: "Con-6A.CEL", bytes: 13550839,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/Con-6A.CEL",
+        sha256: "3106c9bf245e0162ea50bd4a9294e325f90f3fdeb4e9284a3f3064ff39ac8ff7"}
+      con_7a: {kind: cel, filename: "Con-7A.CEL", bytes: 13550803,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/Con-7A.CEL",
+        sha256: "08df92058947e97115db58cd7c871552f57c5c0e6aece306e2db48dd3592f5e7"}
+      con_8a: {kind: cel, filename: "Con-8A.CEL", bytes: 13550903,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/Con-8A.CEL",
+        sha256: "4558c6ffc5c2c19b3d3ee8ae652a0c71bf9fe74bb042ab5545799f15bfa79f6e"}
+      con_9a: {kind: cel, filename: "Con-9A.CEL", bytes: 13550780,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/Con-9A.CEL",
+        sha256: "b6dd2e6957ab3ac33dda758433c36310819e2bb4c57fc5504057d1e3f74bc627"}
+      con_10a: {kind: cel, filename: "Con-10A.CEL", bytes: 13550863,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/Con-10A.CEL",
+        sha256: "7be1d9b9e6bb46b99afeed8c6ac025fe91d428f19c0d13bad0584a97bb8b203f"}
+      con_11a: {kind: cel, filename: "Con-11A.CEL", bytes: 13551039,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/Con-11A.CEL",
+        sha256: "cd8221c2f8c39d620af8664f86f74548e186abc2236ca8c35c6fb22d458b8438"}
+      sdrf: {kind: sdrf, filename: "E-MEXP-2069.sdrf.txt", bytes: 43423,
+        url: "https://www.ebi.ac.uk/biostudies/files/E-MEXP-2069/E-MEXP-2069.sdrf.txt",
+        sha256: "6ef73cb4fdef27c33e4d960145b9356648239459b48de4deab0819aa5b376055"}
   GSE68310:
     payloads:
       expr: {kind: txt.gz, filename: "GSE68310_non-normalized.txt.gz", bytes: 253276917,
@@ -700,6 +781,27 @@ parse:
       sample_col: sample
       condition_col: diagnosis         # `diagnosis: healthy control` / `diagnosis: fibromyalgia`
       level_map: {healthy control: control, fibromyalgia: case}
+  E-MEXP-2069:                          # WP4b GWI 3rd column microarray PASS (raw CEL -> RMA; group from the SDRF-derived sheet)
+    handler: prebuilt
+    payload: sdrf                       # raw provenance for origin.json (the deposit's MAGE-TAB SDRF)
+    prebuilt_expr: microarray.gene.tsv.gz
+    upstream: "rma_celfiles.R (affy RMA of the 20 baseline CEL blobs) -> harmonize_microarray.R (hgu133plus2.db / GPL570 HG-U133 Plus 2.0) -> collapse_probes.R (median)"
+    sep: "\t"
+    gene_id_col: 0
+    gene_id_namespace: ensembl         # collapsed genes are bare ENSG (probe->gene done upstream)
+    expression_scale: log2_intensity   # RMA-normalized log2 (rma_celfiles.R)
+    duplicate_policy: mean
+    case_label: case
+    control_label: control
+    min_per_arm: 2
+    sheet_columns: [sample, group]
+    group_source:
+      mode: sheet                      # rma_celfiles.R writes the samples.tsv (sample, disease, platform)
+      file: microarray.samples.tsv
+      sep: "\t"
+      sample_col: sample
+      condition_col: disease           # SDRF Characteristics[disease]: `gulf war illness` / `normal`
+      level_map: {gulf war illness: case, normal: control}
   GSE14577:                            # microarray PASS (group INLINE; t035 chain reused verbatim)
     handler: prebuilt
     payload: soft                      # raw provenance for origin.json
@@ -855,6 +957,9 @@ microarray:
     platform: GPL11532
     platform_db: hugene11sttranscriptcluster.db   # HuGene 1.1 ST transcript-cluster->Ensembl (Bioc 3.13 vintage; annotation-only add)
     exclude_title_regex: "_2$"        # drop the 14 technical-replicate samples (independence) at parse time
+  emexp2069:
+    platform: GPL570
+    platform_db: hgu133plus2.db       # SAME pinned package as GSE16059 (GPL570 HG-U133 Plus 2.0) — no new annotation add
 
 # ------------------------------------------------------ DE model contract ----
 # review Finding (2026-07-08): "reuse limma_de.R verbatim" is only valid for the
@@ -1045,7 +1150,7 @@ specificity_readacross:
   status_label: exploratory_flagship  # NOT validated_specificity — one non-infectious column projected
                                       # onto a PAIS subspace WP3/WP4 showed is itself weakly identified
   reference_matrix: strict        # build the PAIS subspace U_ref from the strict matrix
-  build_now: [gse221921_fm, gse67311_fm]   # flagship + 1st replication (activates the reverse projection); rest still queued
+  build_now: [gse221921_fm, gse67311_fm, emexp2069_gwi]   # flagship + FM WB replication + GWI PBMC 3rd column (lifts the reverse projection to full rank r_eff=2)
   recovery:                       # thresholds for the qualitative subspace-recovery verdict
     n_perm_null: 2000             # row-permutation empirical null draws for "above chance" (Finding 3; NOT the analytic r/P floor)
     generic_manifold_frac: 0.70   # recovery >= this * mean TRIGGER-LOO PAIS projection => recovered like a real (trigger-independent) PAIS trigger (Finding 1)
@@ -1063,8 +1168,8 @@ specificity_readacross:
        note: "BUILT 2026-07-09 (2nd non-infectious column; 60 FM/68 HC after dropping 14 _2 technical replicates; deposited 70/70). Independent WHOLE-BLOOD MICROARRAY FM — but its ~5x higher forward recovery than the PBMC flagship tracks COMPARTMENT/platform, not FM biology (confound); activates the reverse projection (under-resolved at 2 cols)."}
     - {id: emexp2069_gwi, accession: E-MEXP-2069, condition: gulf_war_illness, trigger_class: chemical,
        tissue: pbmc, platform: microarray_u133plus2, n_case: 9, n_control: 11,
-       verdict: admissible, build: queued_replication,
-       note: "independent NON-infectious TRIGGER (organophosphate); microarray; small N; baseline arm of an exercise design"}
+       verdict: admissible, build: now,
+       note: "BUILT — 3rd non-infectious column (9 GWI/11 controls, PBMC, HG-U133 Plus 2.0, baseline arm of the E-MEXP-2069 exercise design; raw CEL -> affy RMA -> pinned hgu133plus2.db chain). Independent chemical (organophosphate) TRIGGER + PBMC compartment-match to the flagship: lifts the reverse projection to full rank (r_eff=2) and separates trigger from the WB/PBMC compartment confound. Small N."}
     - {id: gse286345_gwi, accession: GSE286345, condition: gulf_war_illness, trigger_class: chemical,
        tissue: pbmc, platform: rnaseq, n_case: 44, n_control: 40,
        verdict: admissible_pending, build: queued_replication,
@@ -1075,7 +1180,7 @@ specificity_readacross:
        note: "third independent non-infectious trigger; small N; separate adult-onset-asthma arm to exclude"}
   sorted_stratum_note: "FM sorted-neutrophil sets (GSE334369 n=126, GSE229750) are a SEPARATE sorted stratum, not bulk — held out like the QFS sorted stratum (G1), not admitted to the specificity matrix."
   pacvs_gap: "No admissible PACVS blood transcriptome exists publicly (the field is serum/autoantibody/clinical; the only GEO hit, GSE178962, is embargoed to 2026-12 with an unverified/likely-spurious PACVS label). The PACVS Q-D read-across is a NOTE-ONLY gap — gates NOT relaxed (mirrors the inaccessible-deposit discipline)."
-  reverse_projection: "ACTIVE but UNDER-RESOLVED (2026-07-09b): 2 non-infectious columns built (gse221921_fm PBMC-RNAseq + gse67311_fm WB-microarray), so U is defined and PAIS is projected onto it — but the rank-matched leave-one-out ceiling caps at r_eff=min(R,n_noninf-1)=1 < PAIS R=2, so the reverse verdict is under_resolved_need_more_noninfectious_columns. A 3rd+ cross-condition, compartment-matched column (emexp2069_gwi / gse182503_iei) is required for a full-rank test."
+  reverse_projection: "FULL-RANK (2026-07-10): 3 non-infectious columns built (gse221921_fm FM PBMC-RNAseq + gse67311_fm FM WB-microarray + emexp2069_gwi GWI PBMC-microarray), so r_eff=min(R,n_noninf-1)=2 = PAIS R=2 (identifiability_pass), resolving the 2-column under-resolution. RESULT: verdict noninfectious_axis_not_reproducible_indeterminate — the leave-one-non-infectious-out ceiling is LOW (0.053), i.e. even across FM and GWI the non-infectious case-vs-control axis does not reproduce, so there is no coherent generic-non-infectious manifold to test PAIS against (PAIS recovers U 0.072 > ceiling, ratio 1.37). Separately, the compartment-matched GWI column disentangles the FORWARD confound: microarray columns recover ~0.22 vs RNA-seq 0.045 -> the gap tracks PLATFORM, not compartment. A compartment-matched cross-condition panel (>=4 cols, e.g. gse182503_iei / gse286345_gwi RNA-seq) could push further, but the low ceiling already shows the axis is not reproducible."
 
 # ------------------------------------------------------ t116 grid ------------
 # The R-regime grid (interpretation:0037) the surviving R + structural co-primary

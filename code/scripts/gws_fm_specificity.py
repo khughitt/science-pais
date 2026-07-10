@@ -35,13 +35,18 @@ co-primary shows no homogeneous shared axis). So the emitted status is
 `exploratory_flagship`, NOT `validated_specificity`, and a "recovers like PAIS"
 reading is only meaningful RELATIVE to the (weak) held-out PAIS baseline, which is
 reported alongside. The reverse projection (build U from >=2 non-infectious columns,
-project PAIS) ACTIVATES once >=2 columns are built (currently gse221921_fm PBMC-RNAseq
-+ gse67311_fm WB-microarray) but is UNDER-RESOLVED at 2 columns: the rank-matched
-leave-one-out ceiling caps at r_eff=min(R,n_noninf-1)=1 < PAIS R, so its verdict is
-`under_resolved_need_more_noninfectious_columns` until a 3rd cross-condition,
-compartment-matched column is built. NB the 2 FM columns differ in compartment (PBMC
-vs whole blood) and platform, and forward recovery tracks compartment — a confound
-flagged in the caveats, not FM biology.
+project PAIS) is now FULL-RANK at 3 columns (gse221921_fm FM PBMC-RNAseq + gse67311_fm
+FM WB-microarray + emexp2069_gwi GWI PBMC-microarray): r_eff=min(R,n_noninf-1)=2 = PAIS
+R, resolving the 2-column under-resolution. The RESULT is a low leave-one-non-infectious-
+out ceiling (~0.05) with PAIS recovering U above it (ratio>1) -> verdict
+`noninfectious_axis_not_reproducible_indeterminate`: the FM/GWI columns share no
+reproducible case-vs-control axis, so there is no coherent generic-non-infectious
+manifold to test PAIS against (not a specificity result). Separately, the compartment-
+matched GWI column DISENTANGLES the forward-recovery confound: the two MICROARRAY columns
+(WB-FM 0.23, PBMC-GWI 0.21) recover ~5x the PBMC-RNAseq FM flagship (0.04) despite
+differing in compartment and condition — so the forward gap tracks PLATFORM (microarray
+vs RNA-seq), a technical confound, NOT compartment/blood-composition (the earlier 2-column
+reading) and NOT FM biology. Flagged in the caveats.
 
 All knobs originate in config.yaml; this script hard-codes no design value.
 Fail-early: a requested specificity NES that is absent/malformed HALTs; an
@@ -252,7 +257,7 @@ def specificity_for(spec_id, nes_path, X, R, cols, triggers, rec_cfg, seed):
     }
 
 
-def reverse_projection_for(spec_paths, X, R, cols, rec_cfg, seed):
+def reverse_projection_for(spec_paths, X, R, cols, rec_cfg, seed, col_meta=None):
     """Reverse read-across: build a NON-INFECTIOUS subspace U_noninf from >=2 standardized
     non-infectious columns (its leading-r left-singular vectors), project each PAIS column onto
     it, and ask how well PAIS recovers the non-infectious axis. This is the symmetric complement
@@ -363,12 +368,32 @@ def reverse_projection_for(spec_paths, X, R, cols, rec_cfg, seed):
             "non-infectious columns recover it themselves — an incoherent 'manifold' comparison."),
         "mean_pais_vs_ceiling": ratio,
         "verdict": verdict,
-        "caveat": "single-condition U (all fibromyalgia here: PBMC-RNAseq + WB-microarray) tests recovery "
-                  "of the FM axis specifically, and the two FM cohorts differ in COMPARTMENT (PBMC vs whole "
-                  "blood) — forward recovery tracks compartment (WB 0.23 vs PBMC 0.04), so recovery is "
-                  "confounded by blood composition. A cross-condition, compartment-matched U (>=3 columns) "
-                  "is required before any generic-non-infectious-manifold reading.",
+        "caveat": _reverse_caveat(ids, col_meta, ceiling, ratio),
     }
+
+
+def _reverse_caveat(ids, col_meta, ceiling, ratio):
+    """Caveat text describing what U actually spans (conditions + compartments) and what
+    the leave-one-out ceiling implies — built from the column metadata so it stays honest
+    as the panel grows (never a stale single-condition string)."""
+    cm = col_meta or {}
+    conds = sorted({cm.get(i, {}).get("condition") for i in ids} - {None})
+    tissues = sorted({cm.get(i, {}).get("tissue") for i in ids} - {None})
+    cross_condition = len(conds) >= 2
+    span = (f"U spans {len(ids)} non-infectious columns across "
+            f"{len(conds)} condition(s) ({', '.join(conds) or 'unlabeled'}) and "
+            f"compartment(s) ({', '.join(tissues) or 'unlabeled'}).")
+    if cross_condition:
+        return (span + f" The leave-one-non-infectious-out ceiling is LOW ({ceiling}): even ACROSS "
+                "conditions the non-infectious case-vs-control axis does not reproduce, so there is no "
+                "coherent 'generic non-infectious manifold' for PAIS to be tested against "
+                f"(ratio {ratio}>1 ⇒ indeterminate, not a specificity result). Note also that FORWARD "
+                "recovery tracks PLATFORM, not compartment (see the platform-confound caveat): the two "
+                "microarray columns recover the PAIS subspace ~5x more than the RNA-seq column despite "
+                "differing in compartment and condition.")
+    return (span + f" This is still effectively single-condition; the ceiling ({ceiling}) and the "
+            "PBMC-vs-whole-blood compartment split confound any generic-manifold reading. A "
+            "cross-condition, compartment-matched U is required.")
 
 
 def main():
@@ -409,13 +434,40 @@ def main():
                for c in build_now}
 
     # reverse read-across (activates once >=2 non-infectious columns are built)
+    candidates = spec_cfg.get("candidates", [])
+    col_meta = {c["id"]: {"condition": c.get("condition"), "tissue": c.get("tissue"),
+                          "platform": c.get("platform")} for c in candidates if c.get("id")}
     spec_paths = {c: provided[c] for c in build_now}
-    reverse = reverse_projection_for(spec_paths, X, R, cols, rec_cfg, seed)
+    reverse = reverse_projection_for(spec_paths, X, R, cols, rec_cfg, seed, col_meta=col_meta)
 
     # verdict rollup over the built columns (only the flagship this pass)
     verdicts = {c: v["verdict"] for c, v in columns.items()}
-    candidates = spec_cfg.get("candidates", [])
     queued = [c for c in candidates if c.get("build") != "now"]
+
+    # FORWARD-recovery platform-confound read (disentangled by the compartment-matched GWI
+    # column): group the built columns by platform family and show the split. Data-driven so
+    # it stays honest as the panel grows.
+    def _is_microarray(cid):
+        return "microarray" in (col_meta.get(cid, {}).get("platform") or "")
+    fwd = {c: columns[c]["subspace_recovery_fraction"] for c in build_now}
+    micro = [c for c in build_now if _is_microarray(c)]
+    rseq = [c for c in build_now if not _is_microarray(c)]
+    per_col = "; ".join(
+        f"{c} ({col_meta.get(c, {}).get('condition')}/{col_meta.get(c, {}).get('tissue')}/"
+        f"{col_meta.get(c, {}).get('platform')})={fwd[c]}" for c in build_now)
+    micro_mean = round(sum(fwd[c] for c in micro) / len(micro), 4) if micro else None
+    rseq_mean = round(sum(fwd[c] for c in rseq) / len(rseq), 4) if rseq else None
+    platform_confound_caveat = (
+        f"FORWARD-RECOVERY PLATFORM CONFOUND: per-column forward recovery — {per_col}. "
+        f"microarray mean={micro_mean} vs RNA-seq mean={rseq_mean}. The compartment-matched GWI "
+        "column (PBMC microarray) recovers the PAIS subspace like the WB-microarray FM column and ~5x "
+        "the PBMC-RNA-seq FM flagship — so the recovery gap tracks PLATFORM (microarray vs RNA-seq), "
+        "NOT compartment/blood-composition (the earlier 2-column reading) and NOT condition: a tiny-N "
+        "(9v11) microarray column still recovers high while a large-N (96v93) RNA-seq column does not. "
+        "This is a technical (platform/enrichment-structure) confound on FORWARD recovery, independent "
+        "of the reverse test's non-reproducibility verdict."
+        if (micro and rseq) else
+        f"FORWARD-RECOVERY per-column — {per_col} (single platform family; platform split not testable).")
 
     out = {
         "finding": "WP4b non-infectious specificity read-across (plan:0010 review Finding D; "
@@ -444,14 +496,13 @@ def main():
         "caveats": [
             f"exploratory_flagship: {len(build_now)} non-infectious column(s) built ({build_now}); the "
             "rest of the admissible panel is queued replication (see queued_replication).",
-            "REVERSE PROJECTION is UNDER-RESOLVED at 2 columns (r_eff=1 < PAIS R=2 — the leave-one-out "
-            "ceiling can only reach rank n_noninf-1); a 3rd+ non-infectious column is required for a "
-            "full-rank, rank-matched reverse test. See reverse_projection.identifiability_note.",
-            "COMPARTMENT/PLATFORM CONFOUND: the two FM columns differ in compartment (GSE221921 PBMC vs "
-            "GSE67311 whole blood) AND platform (RNA-seq vs microarray) and give ~5x different FORWARD "
-            "recovery (0.045 vs 0.234); the strict PAIS corpus is 5 PBMC + 2 whole-blood, so the WB-FM's "
-            "high recovery is plausibly shared blood COMPOSITION, not FM biology. Compartment-matched "
-            "read-across is a prerequisite for any biological reading.",
+            "REVERSE PROJECTION is now FULL-RANK at 3 columns (r_eff=2 = PAIS R=2; identifiability_pass), "
+            "resolving the 2-column under-resolution. Result: the leave-one-non-infectious-out ceiling is "
+            "LOW (~0.05) and PAIS recovers U ABOVE it (ratio>1), so the non-infectious case-vs-control "
+            "axis is NOT reproducible across the FM/GWI columns — verdict "
+            "noninfectious_axis_not_reproducible_indeterminate (no coherent generic-sickness manifold to "
+            "test against, NOT a specificity result). See reverse_projection.verdict/caveat.",
+            platform_confound_caveat,
             "The PAIS reference subspace is weakly identified (Stage-3c FAIL) — see "
             "pais_reference_subspace.weak_identification_caveat.",
             "NES pooled only at the gene-set level over the same pinned Hallmark∪Reactome universe; "

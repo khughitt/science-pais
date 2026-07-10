@@ -227,7 +227,7 @@ wildcard_constraints:
     contrast="|".join(CONTRASTS),
     accession="|".join(ACCESSIONS),
     matrix="|".join(RANK_MATRICES),
-    payload="[a-z_]+",
+    payload="[a-z0-9_]+",   # digits allowed for per-CEL payload keys (e.g. gws_1a, con_11a)
     run="SRR[0-9]+",
 
 # --- terminal target ---------------------------------------------------------
@@ -543,6 +543,96 @@ rule collapse_gse67311:
         "../envs/r-bioc.yaml"
     shell:
         "Rscript {input.script} --dataset GSE67311 --harmonized {input.harmonized} "
+        "--collapse median --dual-chip mean_of_platform_collapsed_log2 "
+        "--out-expr {output.expr} --out-audit {output.audit} > {log} 2>&1"
+
+# E-MEXP-2069 (GPL570 HG-U133 Plus 2.0, GWI WP4b 3rd column): raw CEL → affy RMA →
+# probe×sample log2 (rma_celfiles.R) → SAME hgu133plus2.db harmonize + median collapse
+# as GSE16059. ArrayExpress ships only raw CEL, so the front-end normalizes from raw
+# (vs the series-matrix deposits' embedded RMA); the baseline (before-exercise) arm =
+# 9 GWI + 11 controls. disease is derived from the CEL filename prefix (asserted) and
+# matches the SDRF Characteristics[disease] level_map keys the `prebuilt` sheet reads.
+def _emexp_cels():
+    """Aligned (blob_path, sample, disease) for the E-MEXP-2069 baseline CEL payloads,
+    sorted by payload key for a deterministic column order. disease is derived from the
+    filename prefix and ASSERTED (fail-early on an unexpected name)."""
+    acc = "E-MEXP-2069"
+    pays = ACQ.get(acc, {}).get("payloads", {})
+    rows = []
+    for key in sorted(pays):
+        spec = pays[key]
+        if spec.get("kind") != "cel":
+            continue
+        fn = spec["filename"]
+        sample = fn[:-4] if fn.upper().endswith(".CEL") else fn
+        if fn.startswith("GWS"):
+            disease = "gulf war illness"
+        elif fn.startswith("Con"):
+            disease = "normal"
+        else:
+            raise ValueError(f"[emexp2069] unexpected CEL filename '{fn}' — cannot derive group")
+        rows.append((f"{RAW}/{acc}/{key}.data", sample, disease))
+    if not rows:
+        raise ValueError("[emexp2069] no CEL payloads found in acquisition config")
+    return rows
+
+rule rma_emexp2069:
+    input:
+        staged=f"{RAW}/E-MEXP-2069/staged.ok",
+        cels=[r[0] for r in _emexp_cels()],
+        script=f"{SCRIPTS}/rma_celfiles.R",
+    output:
+        expr=f"{PROC}/E-MEXP-2069/microarray.probe_x_sample.tsv.gz",
+        samples=f"{PROC}/E-MEXP-2069/microarray.samples.tsv",
+        report=f"{PROC}/E-MEXP-2069/microarray.rma_report.json",
+    params:
+        cel=lambda wc: ",".join(r[0] for r in _emexp_cels()),
+        sample=lambda wc: ",".join(r[1] for r in _emexp_cels()),
+        disease=lambda wc: ",".join(r[2] for r in _emexp_cels()),
+        platform=MICRO.get("emexp2069", {}).get("platform", "GPL570"),
+    log:
+        f"{RES}/logs/microarray/rma_emexp2069.log",
+    conda:
+        "../envs/r-bioc.yaml"
+    shell:
+        "Rscript {input.script} --cel '{params.cel}' --sample '{params.sample}' "
+        "--disease '{params.disease}' --platform {params.platform} "
+        "--out-expr {output.expr} --out-samples {output.samples} "
+        "--out-report {output.report} > {log} 2>&1"
+
+rule harmonize_emexp2069:
+    input:
+        probe=f"{PROC}/E-MEXP-2069/microarray.probe_x_sample.tsv.gz",
+        script=f"{SCRIPTS}/harmonize_microarray.R",
+    output:
+        harmonized=f"{PROC}/E-MEXP-2069/microarray.harmonized.tsv.gz",
+        report=f"{PROC}/E-MEXP-2069/microarray.harmonize_report.json",
+    params:
+        db=MICRO.get("emexp2069", {}).get("platform_db", "hgu133plus2.db"),
+        platform=MICRO.get("emexp2069", {}).get("platform", "GPL570"),
+        multimap=MICRO.get("multimap_policy", "first"),
+    log:
+        f"{RES}/logs/microarray/harmonize_emexp2069.log",
+    conda:
+        "../envs/r-bioc.yaml"
+    shell:
+        "Rscript {input.script} --db {params.db} --platform {params.platform} "
+        "--multimap {params.multimap} --probe-expr {input.probe} "
+        "--out-harmonized {output.harmonized} --out-report {output.report} > {log} 2>&1"
+
+rule collapse_emexp2069:
+    input:
+        harmonized=f"{PROC}/E-MEXP-2069/microarray.harmonized.tsv.gz",
+        script=f"{SCRIPTS}/collapse_probes.R",
+    output:
+        expr=f"{PROC}/E-MEXP-2069/microarray.gene.tsv.gz",
+        audit=f"{PROC}/E-MEXP-2069/microarray.cohort_audit.json",
+    log:
+        f"{RES}/logs/microarray/collapse_emexp2069.log",
+    conda:
+        "../envs/r-bioc.yaml"
+    shell:
+        "Rscript {input.script} --dataset E-MEXP-2069 --harmonized {input.harmonized} "
         "--collapse median --dual-chip mean_of_platform_collapsed_log2 "
         "--out-expr {output.expr} --out-audit {output.audit} > {log} 2>&1"
 
