@@ -36,7 +36,12 @@ from pathlib import Path
 # --- invocation contract (invocation-independent, matches t116 sibling) ------
 SNAKEFILE_DIR = Path(workflow.basedir).resolve()
 REPO_ROOT = SNAKEFILE_DIR.parent.parent.parent   # t117-crosspais-rank -> workflows -> code -> root
-SCRIPTS = str(REPO_ROOT / "code" / "scripts")    # reuse plan:0003 R/py scripts
+# `workdir: REPO_ROOT` (below) makes repo-relative paths repo-anchored at runtime,
+# so SCRIPTS is defined via a code-root-relative literal — identical resolution to
+# `REPO_ROOT / "code" / "scripts"`, but statically resolvable by the workflow-ref
+# scanner (code.orphaned-executable) which cannot trace the runtime workflow.basedir.
+CODE = Path("code")                              # scanner anchor (Path-literal)
+SCRIPTS = CODE / "scripts"                       # reuse plan:0003 R/py scripts
 CONFIGFILE = str(SNAKEFILE_DIR / "config.yaml")
 configfile: CONFIGFILE
 workdir: str(REPO_ROOT)
