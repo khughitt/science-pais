@@ -42,10 +42,11 @@ related:
 - proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode
 - proposition:0031-pais-gut-dysbiosis-scfa-depletion
 - hypothesis:0009-post-infectious-immune-set-point-shift-drives-long-term-autoimmune
+- question:0042-is-the-cross-trigger-1020-chronic-fraction-an-artifact-of-shared-case
 required_capabilities:
 - modality: transcriptomics
 created: '2026-06-11'
-updated: '2026-07-06'
+updated: '2026-07-10'
 ---
 # Hypothesis: Post-acute infection syndromes are a shared dysregulated attractor reachable from many triggers, not merely a shared symptom repertoire
 

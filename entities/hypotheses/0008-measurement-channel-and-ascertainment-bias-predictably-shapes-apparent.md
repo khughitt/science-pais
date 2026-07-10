@@ -32,10 +32,12 @@ related:
 - proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific
 - pre-registration:0005-harmonized-provoked-muscle-endpoint
 - task:t058
+- question:0041-is-female-predominance-in-pais-substantially-an-ascertainment-and
+- question:0042-is-the-cross-trigger-1020-chronic-fraction-an-artifact-of-shared-case
 required_capabilities:
-  - modality: clinical-ehr
+- modality: clinical-ehr
 created: '2026-06-24'
-updated: '2026-06-24'
+updated: '2026-07-10'
 ---
 # Hypothesis: Measurement-channel and ascertainment bias predictably shapes apparent PAIS group differences
 

@@ -276,7 +276,27 @@ The per-deposit config.parse[acc] block has become the de-facto program for stag
 - status: proposed
 - aspects: []
 - related: [pre-registration:0006-monocyte-atac-hspc-imprint-pais-persistence, question:0055-hspc-epigenomic-imprinting-depth-predicts-pais-persistence, interpretation:0040-t107-hspc-epigenomics-feasibility-banked-pbmc]
-- group: explore-followups
+- group: specimen-acquisition
 - created: 2026-07-10
 
 Collect the biorepository parameters that operationalize pre-registration:0006's deferred execution and its G1/G2 admissibility gates, so platform (bulk vs single-cell), per-arm N, and power can be fixed. PER COHORT (RECOVER LC arm; UK ME/CFS Biobank; LIINC bone-marrow arm): (G1 substrate) confirmed viable cryopreserved PBMC counts per aliquot, number of vials/timepoint, expected CD14+ monocyte yield post-thaw, and processing/batch metadata (freeze date, site, isolation protocol) for batch-confound modeling; (G2 severity) the acute-severity variable(s) recorded and their distribution by case vs control arm, incl. hospitalization/oxygen/ICU where available — the fields needed to prove both arms span mild->severe rather than assert it; (G3/G4) availability of infected-recovered (not uninfected-only) control labels and a locked 12+ month PAIS case definition (WHO/CDC for LC; CCC/ICC for ME/CFS); sampling timing (post-acute + longitudinal 3->12mo). Deliverable: a per-cohort parameter table feeding the deferred power calc; flag any cohort that cannot satisfy G1/G2/G3 (e.g. narrow-severity or uninfected-only) as non-qualifying. Blocks execution of pre-registration:0006.
+
+## [t122] Secure a pre-registration:0003-admissible cross-syndrome paired-biopsy vehicle (Novak-group amendment: add idiopathic-POTS arm + percentile re-scoring)
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [pre-registration:0003-cross-syndrome-paired-biopsy-primary-dysautonomia-controls, hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate, question:0004-convergent-small-fiber-neuropathy-substrate]
+- group: specimen-acquisition
+- created: 2026-07-10
+
+Operational vehicle hunt for pre-registration:0003. Per the t050 audit (interpretation:0013), the Novak group is the most probable near-term source and is one amendment from admissibility: add an idiopathic-POTS (clean primary-dysautonomia) arm and re-score to percentile cutoffs, enabling within-subject NLD classification (validated by interpretation:0014). Deliverable: confirm whether the Novak group (or an equivalent paired-site biopsy program) will add a G2 primary-dysautonomia arm and co-measure functional anti-GPCR serology (G5) in the same subjects. Blocks the antibody-to-lesion bridge test and both h0007 promotion criteria.
+
+## [t123] Identify a pre-registration:0005-qualifying harmonized provoked-muscle-endpoint vehicle (serial LC+ME/CFS post-exertional biopsy time-course)
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [pre-registration:0005-harmonized-provoked-muscle-endpoint, hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem, question:0011-mitochondrial-basis-of-pem]
+- group: specimen-acquisition
+- created: 2026-07-10
+
+Operational vehicle hunt for pre-registration:0005 (the A1-vs-M3 adjudicator for h0006). No published study reproduces the Appelman-type provoked pre/post/recovery OXPHOS/SDH muscle-biopsy time-course under a protocol harmonized across long COVID and ME/CFS. Deliverable: identify a cohort/biobank able to run serial post-exertional muscle biopsies in matched LC + ME/CFS arms (or confirm none exists and specify the minimal prospective study). Promotion of P2-P4 also needs an independent (non-Scheibenbogen-group) replication of elevated intracellular muscle Na+ or provoked mitochondrial escalation.

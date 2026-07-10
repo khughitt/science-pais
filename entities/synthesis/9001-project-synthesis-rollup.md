@@ -1,5 +1,5 @@
 ---
-id: "synthesis:0008-project-synthesis-rollup"
+id: "synthesis:9001-project-synthesis-rollup"
 kind: "synthesis"
 title: "Project synthesis - health-post-acute-infection"
 status: "active"
@@ -119,4 +119,4 @@ No knowledge gaps detected this run.
 
 ## Emergent threads
 
-See `entities/synthesis/0009-emergent-threads.md`. Nine questions are genuinely cross-hypothesis (each bridging ≥2 hypotheses at `inverse` confidence — notably `question:0010` at the three-way microclot intersection of h0006/h0014/h0016, and the omnibus `question:0017` spanning the four-hypothesis deflationary cluster). **19 orphan questions** (up from 1 last cycle, driven by the q0023–q0047 expansion batch) sit outside the hypothesis lattice; there are **0 orphan interpretations**. The orphans cluster into two candidate frames the project does not yet own — upstream innate nucleic-acid sensing (cGAS-STING / NLRP3 pyroptosis, `question:0023`, `question:0024`) and a shared host-immune-baseline vulnerability gate (`question:0031`–`question:0034`, `question:0040`) — both flagged in the emergent-threads report as warranting new hypotheses.
+See `entities/synthesis/9000-emergent-threads.md`. Nine questions are genuinely cross-hypothesis (each bridging ≥2 hypotheses at `inverse` confidence — notably `question:0010` at the three-way microclot intersection of h0006/h0014/h0016, and the omnibus `question:0017` spanning the four-hypothesis deflationary cluster). **19 orphan questions** (up from 1 last cycle, driven by the q0023–q0047 expansion batch) sit outside the hypothesis lattice; there are **0 orphan interpretations**. The orphans cluster into two candidate frames the project does not yet own — upstream innate nucleic-acid sensing (cGAS-STING / NLRP3 pyroptosis, `question:0023`, `question:0024`) and a shared host-immune-baseline vulnerability gate (`question:0031`–`question:0034`, `question:0040`) — both flagged in the emergent-threads report as warranting new hypotheses.

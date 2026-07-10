@@ -26,8 +26,9 @@ related:
 - task:t052
 - task:t053
 - task:t059
+- question:0043-bacterial-persister-cell-bet-hedging-as-a-model-for-stochastic-viral
 created: '2026-06-11'
-updated: '2026-06-25'
+updated: '2026-07-10'
 ---
 # Hypothesis: A persisting pathogen-fragment reservoir in tissue-resident macrophages is a pathogen-agnostic initiator of chronic post-infectious illness
 

@@ -12,16 +12,16 @@ related:
 - question:0005-latent-to-overt-autoimmunity-conversion
 - hypothesis:0001-shared-dysregulated-attractor
 - hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
+- question:0044-chronic-gvhd-as-analogy-for-post-viral-tolerance-infrastructure-collapse
 required_capabilities:
 - analysis_role: mr_exposure
   trait: autoimmune-disease
 created: '2026-07-01'
-updated: '2026-07-03'
+updated: '2026-07-10'
 datasets:
 - dataset:bentham-2015-sle-gwas
 - dataset:covid19-hgi-longcovid-gwas
 ---
-
 # Hypothesis: Post-infectious immune-set-point shift drives long-term autoimmune conversion
 
 ## Organizing Conjecture
@@ -168,7 +168,7 @@ reverse-arrow work.
 ## Notes
 
 - 2026-07-01: Created as `phase: candidate` to house the orphan `question:0005` (flagged in
-  `synthesis:0009-emergent-threads` as the sole orphan question with a drafted-but-uncreated candidate
+  `synthesis:9000-emergent-threads` as the sole orphan question with a drafted-but-uncreated candidate
   hypothesis). Promotion of this candidate was ratified in the 2026-07-01 next-steps review
   (`meta:0001-next-steps-2026-07-01`). Kept explicitly distinct from the t079 reverse-arrow diathesis
   work.

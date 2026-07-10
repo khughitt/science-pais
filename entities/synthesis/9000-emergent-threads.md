@@ -1,5 +1,5 @@
 ---
-id: "synthesis:0009-emergent-threads"
+id: "synthesis:9000-emergent-threads"
 kind: "synthesis"
 title: "Emergent threads - health-post-acute-infection"
 status: "active"
