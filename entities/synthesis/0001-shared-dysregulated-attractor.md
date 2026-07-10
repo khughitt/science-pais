@@ -1,53 +1,35 @@
 ---
-id: synthesis:0001-shared-dysregulated-attractor
-kind: synthesis
+id: "synthesis:0001-shared-dysregulated-attractor"
+kind: "synthesis"
 title: "Synthesis: 0001-shared-dysregulated-attractor"
 status: "active"
-report_kind: hypothesis-synthesis
-hypothesis: hypothesis:0001-shared-dysregulated-attractor
-generated_at: 2026-06-24T19:16:12Z
-source_commit: 05a785bf71096ea8cc4d486b93f3f920a481cd74
+report_kind: "hypothesis-synthesis"
+hypothesis: "hypothesis:0001-shared-dysregulated-attractor"
+generated_at: "2026-07-10T18:59:35Z"
+source_commit: "3fdeec933ba2432408611cc17a462bed7e105161"
 created: "2026-06-24"
-updated: "2026-06-25"
-provenance_coverage: partial
+updated: "2026-07-10"
+provenance_coverage: "high"
 ---
 
 ## State
 
-`hypothesis:0001-shared-dysregulated-attractor` posits that long COVID, ME/CFS, PTLDS, post-dengue, post-Q-fever fatigue, and related syndromes converge on a single stable dysregulated attractor in immune-autonomic-metabolic space, reachable from many distinct infectious triggers. Status remains `proposed`; primary support derives from narrative and symptom-convergence literature (hypothesis frontmatter: Komaroff2023, Komaroff2025, Trautmann2025, Bai2023) rather than molecularly confirmed mechanism.
+`hypothesis:0001-shared-dysregulated-attractor` posits a **persistent post-infectious immune-state displacement** — maintained by immune-autonomic-metabolic feedback and potentially realized through heterogeneous molecular configurations — rather than a single shared bioenergetic lesion. Status: **proposed**. `proposition:0038-persistent-immune-state-displacement-occurs-in-pais` is descriptively aligned with narrative and symptom-convergence literature (Komaroff2023, Komaroff2025, Trautmann2025, Bai2023); no molecularly confirmed shared signature has been obtained.
 
-Two investigative threads constrain the hypothesis without refuting it. First, `interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating` returned a non-arbitrating null: NES rank-concordance between PI-CFS and Q-fever fatigue was anti-concordant (`rho = -0.563`, `p_perm = 0.949`) uniformly across six pair × database cells (Hallmark, Reactome, GO-BP). Because the test was underpowered (`2` cohorts, `n = 7-10/group`, cross-platform, cross-compartment), it is recorded only as a marginal downward nudge on demonstrability-so-far, not a verdict against the conjecture. Second, `interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation` establishes that PEM's objective correlate is trigger- and endpoint-specific: the ME/CFS whole-body two-day CPET decrement (Keller2014) does not transfer to long COVID at that endpoint (Gattoni2025), while long-COVID PEM does carry a peripheral-muscle OXPHOS lesion (Appelman2024). This is formalized as `proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode`. A weak blood-proteome increment (IL1RL1/IL1R2) was added by `interpretation:0007-t044-stop-pasc-pem-proteome-severity-unadjusted-gap-stands` but is severity-unadjusted and held at weak. The organizing conjecture survives; a "single shared bioenergetic lesion" reading does not [@Keller2014; @Gattoni2025; @Appelman2024].
-
-Decisive open tests: `question:0001-shared-molecular-signature-across-triggers` (harmonized ≥3-trigger multi-omics with full-recovery controls) and `question:0008-formalize-vicious-cycle-attractor-model` (bistability/hysteresis/critical-slowing against longitudinal data).
-
----
+A June 2026 evidence-bar clarification encoded in `proposition:0037-shared-analyte-signature-not-required-for-immune-state-displacement` specifies that shared-analyte nulls weaken "shared molecular signature" but not "shared persistent state displacement." `proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode` constrains a strong shared-lesion reading: the ME/CFS whole-body two-day CPET decrement (`evidence-line:0026`) does not transfer to long COVID at that endpoint (`evidence-line:0027`), while long-COVID PEM retains a peripheral-muscle OXPHOS lesion (`evidence-line:0028`). A suggestive blood-proteome PEM increment in STOP-PASC/Maestri2025 (`evidence-line:0036`) is one-source and severity-unadjusted, confirming the gap remains open. Small-fiber neuropathy recurrence across PTLDS, long COVID, and ME/CFS is consistent with the shared-state frame (`proposition:0017-pais-sfn-cross-trigger-convergence`). Vascular, metabolic, and SFN axes are plausible downstream effectors (`proposition:0040-vascular-metabolic-sfn-axes-plausible-effectors`); feedback maintenance is expected to require dynamical-systems treatment outside the acyclic DAG (`proposition:0041-feedback-maintenance-requires-dynamical-treatment-outside-dag`). The `gaps_slice` flags `evidential_fragility(contested)`. Three decisive open questions remain: `question:0001-shared-molecular-signature-across-triggers`, `question:0008-formalize-vicious-cycle-attractor-model`, and `question:0022-immune-state-displacement-mediator-vs-co-traveler`.
 
 ## Arc
 
-The hypothesis originated from convergence-of-triggers observations: that symptom overlap across PAIS reflects shared physiology, not a coincidental repertoire of organ-system failures. Initial framing drew on narrative synthesis reviews (Komaroff2023, Komaroff2025, Trautmann2025) and cross-trigger symptom counts (Bai2023), leaving the attractor language qualitative and the deflationary rival (`question:0017-deflationary-alternatives-vs-shared-pathophysiology`) genuinely competitive.
+The investigation opened with narrative/symptom-convergence reviews as its only empirical base. In June 2026, task t035 (`interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating`) ran the first computational probe: NES rank-concordance between PI-CFS and Q-fever fatigue was uniformly null across six pathway-database cells (ρ = −0.563, p_perm = 0.949) — non-arbitrating at 2 cohorts, recorded as a marginal downward nudge on demonstrability only. Concurrently, `interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation` found that the within-cohort PEM-stratified molecular comparison does not exist, minting `proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode` as a constraint. A late June 2026 reframe dropped the shared-analyte requirement, adopting a degenerate-realization reading that separates the descriptive (state-shifted) from causal-hub (immune-state-mediates-symptoms) claims.
 
-Task `t001` executed the first literature-level cross-pathogen signature review, yielding a working model of "convergent domains, unproven shared molecules" and confirming that no harmonized ≥3-trigger multi-omics with full-recovery controls exists. The residual evidence gap was handed to `t033`, which deep-read Galbraith2011 (confirmed: gene-level negative across EBV/RRV/Q-fever), executed the post-dengue/QFS/post-SARS omics gap search (confirmed true vacuum for post-dengue; QFS partly closed by the Nijmegen cluster), and re-pointed the public-data reanalysis to `t035`.
+Scope-clearing passes established structural context: `interpretation:0023-t007-microbiome-gut-brain-axis` positioned gut dysbiosis/SCFA depletion as a plausible reinforcing loop node (`proposition:0031-pais-gut-dysbiosis-scfa-depletion`) but not a standalone cause; `interpretation:0024-t011-delayed-viral-dynamics-models` classified ODE/DDE papers as mathematical motifs for `question:0008-formalize-vicious-cycle-attractor-model` only; `interpretation:0025-t009-pediatric-long-covid-and-misc` placed pediatric PASC within the failed-recovery frame as compatible but non-promoting; `interpretation:0021-t026-pc-cos-adoption-policy` set PC-COS domains as minimum dimensional reporting for future cross-trigger outcome harmonization.
 
-The first empirical probe, `interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating`, ran against GSE14577 + GSE130353 in June 2026. The pre-registered locked resolution order halted at step 2 (uniform anti-concordance). Per the pre-committed asymmetric reading, status held at `proposed`; the run's concrete contribution was an empirical demonstration that 2-cohort, cross-platform, cross-compartment public data cannot adjudicate.
+The design front then resolved the demonstrability path. `interpretation:0036-t103-cross-pathogen-co-enrollment-feasibility` gave CONDITIONAL GO on a staged COVID+influenza+EBV triad for `question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design`, with full-recovery controls and per-arm confirmation SOPs as load-bearing design corrections. `interpretation:0037-t116-power-bias-floor-shared-axis-sim` showed via power simulation that K ≥ 3 arms and ~1000-set feature resolution are the binding levers — not per-arm N — and that mean concordance is blind to the `question:0017-deflationary-alternatives-vs-shared-pathophysiology` finite-repertoire null by construction. `interpretation:0038-t117-crosspais-rank-nonidentified-fail-closed` confirmed this from real data: the public corpus off-diagonal concordance sits at/below the identification floor (mean −0.064, SD 0.249 over 21 pairs), fail-closed. On the HSPC-imprint front, `interpretation:0039-t108-cross-pais-il6-peak-vs-pais-risk` showed that acute serum IL-6 does not rank cross-pathogen fatigue risk (severity is the through-line, per Hickie2006/Dubbo); `interpretation:0040-t107-hspc-epigenomics-feasibility-banked-pbmc` then specified monocyte-progeny ATAC-seq from banked PBMC as the feasible vehicle, operationalized via task t120. The attractor conjecture is intact but not molecularly advanced; promotion remains held against the `question:0017-deflationary-alternatives-vs-shared-pathophysiology` bundle.
 
-Concurrently, `interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation` found that the within-cohort PEM-stratified molecular comparison does not exist in any accessible PASC cohort, and formalized the three-arm CPET dissociation as `proposition:0011`. `interpretation:0007-t044-stop-pasc-pem-proteome-severity-unadjusted-gap-stands` attempted route (a) toward a severity-adjusted PEM proteome contrast, found it blocked (STOP-PASC/Maestri2025 models severity-unadjusted; individual-level data gated), and added a weak blood-proteome anchor to `proposition:0011`.
+## Research Fronts
 
-Current epistemic position: cross-trigger convergence is supported at symptom and narrative review level; not yet at shared mechanism. The deflationary rival remains genuinely competitive.
+Live questions under this hypothesis: `question:0001-shared-molecular-signature-across-triggers` (the decisive positive test, gated on a K ≥ 3 harmonized cohort via `question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design`); `question:0008-formalize-vicious-cycle-attractor-model` (longitudinal bistability/critical-slowing test; no data yet); `question:0022-immune-state-displacement-mediator-vs-co-traveler` (abrocitinib JAK1 readout, live); `question:0055-hspc-epigenomic-imprinting-depth-predicts-pais-persistence` (vehicle specified: monocyte ATAC-seq from banked PBMC per pre-registration:0006-monocyte-atac-hspc-imprint-pais-persistence); `question:0056-pharmacological-reversal-of-innate-immune-training-in-pais` (open); and `question:0053-gut-microbiome-normalization-kinetics-leading-vs-lagging` (open; framed by `interpretation:0023-t007-microbiome-gut-brain-axis`).
 
----
+Open task: `t121` (proposed) — query RECOVER / UK ME/CFS Biobank / LIINC for specimen-access and severity-gate parameters unblocking pre-registration:0006-monocyte-atac-hspc-imprint-pais-persistence.
 
-## Research fronts
-
-**Live questions:**
-
-- `question:0001-shared-molecular-signature-across-triggers` — the decisive unanswered test; no harmonized ≥3-trigger multi-omics with full-recovery controls exists.
-- `question:0008-formalize-vicious-cycle-attractor-model` — the attractor claim is qualitative; bistability/hysteresis/critical-slowing not yet tested against longitudinal data.
-- `question:0017-deflationary-alternatives-vs-shared-pathophysiology` — coincidence-of-repertoire rival; explicitly not arbitrated by the t035 null.
-- `question:0014-which-pais-case-definition-is-most-biologically-coherent` and `question:0015-does-pem-requirement-improve-cross-study-comparability` — upstream of any harmonized cross-trigger design; PEM's status as mechanism vs. severity marker is untested at the molecular level.
-- `question:0016-oxidative-stress-upstream-driver-of-bioenergetic` and `question:0011-mitochondrial-basis-of-pem` — candidate loop-maintenance mechanisms, both open.
-
-**Open tasks:**
-
-- `t011` [P3, proposed] — Evaluate four quarantined viral-dynamics ODE papers as mathematical substrate for attractor formalization (`question:0008`).
-
-**Knowledge gaps:** The `topic_gaps` slice for this hypothesis is empty. The `uncertainty_slice` returned no flagged uncertainty nodes specific to this hypothesis.
+Key gap: the `gaps_slice` records `evidential_fragility(contested)` on this hypothesis — the attractor claim rests on narrative/synthesis reviews and symptom overlap without molecular confirmation. `question:0017-deflationary-alternatives-vs-shared-pathophysiology` remains competitive; the heterogeneous concordance pattern in `interpretation:0038-t117-crosspais-rank-nonidentified-fail-closed` is descriptively consistent with the finite-repertoire account but cannot adjudicate under the demonstrated identification ceiling.

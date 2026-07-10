@@ -1,107 +1,35 @@
 ---
-id: synthesis:0002-tissue-reservoir-antigen-fragment
-kind: synthesis
+id: "synthesis:0002-tissue-reservoir-antigen-fragment"
+kind: "synthesis"
 title: "Synthesis: 0002-tissue-reservoir-antigen-fragment"
 status: "active"
-report_kind: hypothesis-synthesis
-hypothesis: hypothesis:0002-tissue-reservoir-antigen-fragment
-generated_at: 2026-06-24T19:16:12Z
-source_commit: 05a785bf71096ea8cc4d486b93f3f920a481cd74
+report_kind: "hypothesis-synthesis"
+hypothesis: "hypothesis:0002-tissue-reservoir-antigen-fragment"
+generated_at: "2026-07-10T18:59:35Z"
+source_commit: "3fdeec933ba2432408611cc17a462bed7e105161"
 created: "2026-06-24"
-updated: "2026-06-25"
-provenance_coverage: thin
+updated: "2026-07-10"
+provenance_coverage: "high"
 ---
 
 ## State
 
-`hypothesis:0002-tissue-reservoir-antigen-fragment` is **proposed** and **active**, grading **speculative** at
-the conjunctive-bundle level. Its canonical claim is that degradation-resistant pathogen-derived fragments
-persist in tissue-resident macrophages (Kupffer cells, microglia, alveolar and other macrophages), forming a
-reservoir that chronically engages innate sensing (e.g. TLR2), suppresses cellular energy metabolism, and
-seeds the downstream dysregulation common across PAIS — pathogen-agnostically. The hypothesis is a
-**conjunction** of three core propositions; it caps at the weakest member.
+`hypothesis:0002-tissue-reservoir-antigen-fragment` is **proposed** and active, grading **speculative** at the conjunctive-bundle level. The core claim is that degradation-resistant pathogen fragments accumulate in tissue-resident macrophages, chronically engage innate sensing, and seed chronic PAIS — with retained fragment duration, not initial pathogen load, as the key chronicity determinant.
 
-The persistence-and-bioactivity pillar (`proposition:0022`) is the one supported conjunct: Borrelia pPG^Bb
-persists in liver via Kupffer-cell retention and suppresses PBMC energy metabolism with molecular overlap to
-the long COVID signature (`evidence-line:0058`, McClune2025, moderate) and SARS-CoV-2 spike/S1/N is
-detectable in roughly 25% of survivors at up to 14 months (`evidence-line:0059`, Peluso2024, weak). Both
-lines evidence persistence only. The two distinctive pillars still hold the conjunction at
-**speculative** after task:t053 (2026-06-25): cross-pathogen tissue/macrophage-reservoir generalization
-(`proposition:0023`) now has one weak partial supporting line (`evidence-line:0072`, Goh2022, n=2
-long-COVID tissue case report with SARS-CoV-2 nucleocapsid/RNA and CD68 co-localization), while retained-
-fragment burden predicting chronicity over initial pathogen load (`proposition:0024`) has no supporting
-line and one weak model-criticism line (`evidence-line:0073`, BrandstetterFigueroa2025, acute N-antigen
-predicts 9-month symptoms). Neither discharges the promotion criteria.
-
-The graph also surfaces `hypothesis:0002` as **contested**: the evidence signal registers support_count=2,
-dispute_count=4. The four disputing lines are concentrated on `proposition:0020` (clearing antigen rescues
-established PAIS), which is a **background corollary**, not a core conjunct. Three long-COVID
-antigen-clearing RCTs are null on clinical endpoints (`evidence-line:0053` Geng2024/STOP-PASC,
-`evidence-line:0054` Bhattacharjee2026/PAX-LC, `evidence-line:0055` Peluso2026/outSMART-LC), and a
-consolidated PTLDS antibiotic-retreatment line (`evidence-line:0060`, covering Klempner2001, Krupp2003/STOP-LD,
-Fallon2008, Berende2016/PLEASE) adds a bacterial-trigger parallel. Crucially, per
-`interpretation:0011-t046-antigen-clearance-trials-ingestion`, **none of these trials demonstrated antigen
-target-engagement** — PAX-LC showed NMV/r left circulating Spike unchanged — so they are uninterpretable
-nulls, not disconfirmations. The honest contest-signal headline: four weak disputes on a background corollary
-via broken tests; the persistence pillar itself is not disputed. The open decisive question is
-`question:0002-antigen-clearance-rescues-symptoms`.
-
----
+The three core propositions carry unequal support. `proposition:0022-degradation-resistant-fragments-persist-and-are-bioactive` (fragment persistence and bioactivity) is **supported**: `evidence-line:0058` (McClune2025) demonstrates Borrelia peptidoglycan persisting in Kupffer cells post-clearance with proteome and PBMC-metabolic consequences; `evidence-line:0059` (Peluso2024) corroborates SARS-CoV-2 antigen persistence in ~25% of survivors at 14 months (detection only, no mechanistic link). `proposition:0023-cross-pathogen-tissue-macrophage-reservoir-generalization` (cross-pathogen macrophage-reservoir generalization) is **speculative with one weak partial line**: `evidence-line:0072` (Goh2022) shows nucleocapsid/CD68 co-localization in two long-COVID tissue samples but lacks controlled prevalence, degradation-resistant chemistry, or host-signature overlap. `proposition:0024-retained-fragment-burden-predicts-chronicity-over-initial-load` (retained fragment burden predicts chronicity over initial load) is **untested and weakly contested**: no prospective burden-vs-load cohort exists, and `evidence-line:0073` (BrandstetterFigueroa2025) shows acute nucleocapsid antigen predicts 9-month long-COVID symptoms (aOR 3.0, 95% CI 1.1–8.0), keeping initial load alive as an independent predictor. The gaps slice flags both `proposition:0020-antigen-clearance-rescues-established-pais` (clearing antigen rescues established PAIS) and `proposition:0024-retained-fragment-burden-predicts-chronicity-over-initial-load` as evidentially contested. The weakest-link conjunction caps the hypothesis at speculative even though one pillar is now supported.
 
 ## Arc
 
-Arc reconstruction is limited because `interpretation:0011` carries no `prior_interpretations` chain and the
-hypothesis was seeded in a single authoring pass on 2026-06-11 with no earlier interpretation record.
+`hypothesis:0002-tissue-reservoir-antigen-fragment` entered the project as a prose-only conjecture (claim_count=0). Task t046 (`interpretation:0011-t046-antigen-clearance-trials-ingestion`) produced the first formalized evidence base: five evidence lines across two proposition types, establishing that established-disease clearance trials — STOP-PASC (`evidence-line:0053`), PAX-LC (`evidence-line:0054`), outSMART-LC (`evidence-line:0055`), and the consolidated PTLDS antibiotic-retreatment arm (`evidence-line:0060`) — are null but **uninterpretable** for want of antigen target-engagement (`evidence-line:0054` proved NMV/r left circulating Spike unchanged), while acute metformin prevention RCTs (`evidence-line:0056`, `evidence-line:0057`) show PAIS incidence can be halved. This treatment-null/prevention-positive pattern grounded the fixed-risk-factor-at-onset reconciliation: antigen acts as a determinant at onset, not a reversible maintenance target once chronic disease is self-sustaining.
 
-The hypothesis opened on 2026-06-11 as a structured conjecture drawing three source papers (McClune2025,
-Peluso2024, Morroy2016) across three pathogen classes (Borrelia, SARS-CoV-2, Coxiella) into a
-pathogen-agnostic persistence frame. At creation, `hypothesis:0002` had claim_count=0 — the entire
-proposition bundle existed only as prose.
+Task t053 ran a promotion audit (`interpretation:0017-t053-h0002-promotion-audit`), surfacing `evidence-line:0072` (Goh2022) as the closest available non-Borrelia tissue/macrophage result and `evidence-line:0073` (BrandstetterFigueroa2025) as model criticism against `proposition:0024-retained-fragment-burden-predicts-chronicity-over-initial-load`; promotion was declined. Task t059 (`interpretation:0028-t059-h0002-promotion-vehicle-hunt`) confirmed with a wider re-screen of plasma antigen and Coxiella literature that no admissible vehicle existed, and specified the exact study designs required to lift each unsupported conjunct. Running in parallel, `interpretation:0023-t007-microbiome-gut-brain-axis` framed gut dysbiosis (`proposition:0031-pais-gut-dysbiosis-scfa-depletion`) as a recurring PAIS loop node and a contextual read-across for h0002's reservoir/barrier interface, but not promoting evidence for the core conjuncts. The current epistemic position is: one supported pillar; the full pathogen-agnostic initiator hypothesis remains unproven.
 
-The first major investigative move was task:t046, which formalized the antigen-clearance trial literature as
-graph evidence. `interpretation:0011-t046-antigen-clearance-trials-ingestion` (created 2026-06-24) ingested
-five trials, coding the established-disease nulls as weak disputes on `proposition:0020` (not core) and the
-two metformin prevention RCTs (`evidence-line:0056` Bramante2023/COVID-OUT, `evidence-line:0057`
-Bramante2026/ACTIV-6) as weak support on `proposition:0021`. The structural finding was the
-treatment-null-plus-prevention-positive pattern: consistent with antigen acting as a fixed risk factor at
-onset that becomes non-operative once the chronic self-sustaining state is established — the
-"fixed-risk-factor reconciliation" (`discussion:0003`).
+## Research fronts
 
-The second move was task:t051, which added the Borrelia/PTLDS clearance arm (`evidence-line:0060`) and
-decoupled `proposition:0021` from the hypothesis belief-graph to prevent mechanism-agnostic metformin
-prevention lines from inflating the antigen-mechanism credit (interpretation:0011 records this correction).
+The primary live question is `question:0002-antigen-clearance-rescues-symptoms` (inverse confidence 0.8) — the decisive test of whether clearing antigen rescues symptoms in established PAIS. Existing nulls (`evidence-line:0053`, `evidence-line:0055`, `evidence-line:0060`) are uninterpretable because no completed trial demonstrated antigen clearance; an antigen-positive-enriched, clearance-confirmed trial with symptom endpoints remains unrun.
 
-The third move was task:t052 (2026-06-24), which coded h0002's three prose core conjuncts as graph
-propositions. This resolved the hypothesis to its current honest state: one supported pillar
-(`proposition:0022`), two untested pillars (`proposition:0023`, `proposition:0024`), conjunctive bundle
-grades **speculative**. The contested signal on the all-discusses surface is incidental, not load-bearing.
+Two conjunct-level promotion gaps define the structural research frontier:
+- **`proposition:0023-cross-pathogen-tissue-macrophage-reservoir-generalization`** requires a controlled non-Borrelia PAIS tissue-reservoir study localizing clearance-refractory fragments to tissue-resident macrophages with host-signature overlap, as specified by `interpretation:0028-t059-h0002-promotion-vehicle-hunt`.
+- **`proposition:0024-retained-fragment-burden-predicts-chronicity-over-initial-load`** requires a prospective same-subject design measuring retained post-clearance fragment burden vs acute pathogen load against PAIS diagnosis; `evidence-line:0073` has already shown acute burden predicts 9-month symptoms, making the head-to-head design mandatory.
 
-The fourth move was task:t053 (2026-06-25), which audited whether the two untested promotion pillars had
-admissible evidence. It did not promote the hypothesis. Goh2022 weakly supports the non-Borrelia
-tissue/macrophage arm of 0023 but is only a two-case, uncontrolled, partial tissue-localization result.
-BrandstetterFigueroa2025 weakly contests the strong version of 0024 because acute viral burden predicts
-later long-COVID symptoms; no prospective retained-burden-vs-initial-load comparison was found.
-
----
-
-## Research Fronts
-
-**Open decisive question.** `question:0002-antigen-clearance-rescues-symptoms` remains unanswered and
-precisely characterized: the existing antigen-clearing trials are null but uninterpretable for want of
-target-engagement demonstration. Per `interpretation:0011-t046-antigen-clearance-trials-ingestion`, the
-missing experiment is an antigen-positive-enriched, clearance-demonstrated, symptom-endpoint trial with a
-timing arm (early/transitional versus established disease).
-
-**Open promotion criteria after t053.** task:t053 closed as a no-promotion audit. Moving h0002 out of
-speculative still requires: (a) a controlled non-Borrelia PAIS tissue-reservoir study demonstrating
-fragment retention in tissue-resident macrophages with overlapping host signature — a stronger supporting
-line on `proposition:0023`; (b) a prospective cohort showing retained-fragment burden out-predicts initial
-pathogen load for chronic-illness onset — a supporting line on `proposition:0024`. Also recorded as a
-pre-registration target in the hypothesis file: TLR2-blockade ex vivo (innate-sensing/transduction step).
-
-**Evidential fragility flag.** The graph gaps command returns `evidential_fragility(contested)` for
-`hypothesis:0002`, matching the 2-support / 4-dispute signal. The disputed entity also flagged in that
-output is `proposition:0020-antigen-clearance-rescues-established-pais`, which rests entirely on
-uninterpretable nulls and should not harden to "refuted" absent a clearance-demonstrated trial.
-`interpretation:0011` encodes a target-engagement admissibility gate on `question:0002` to prevent future
-nulls from being misfiled as disconfirmations.
+Additional unpursued targets include TLR2-blockade ex vivo testing of fragment-induced metabolic suppression and host clearance-gene burden analysis across PAIS cohorts.

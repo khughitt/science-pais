@@ -1,81 +1,76 @@
 ---
-id: synthesis:0009-emergent-threads
-kind: synthesis
+id: "synthesis:0009-emergent-threads"
+kind: "synthesis"
 title: "Emergent threads - health-post-acute-infection"
 status: "active"
-report_kind: emergent-threads
-generated_at: 2026-06-24T19:16:12Z
-source_commit: 05a785bf71096ea8cc4d486b93f3f920a481cd74
+report_kind: "emergent-threads"
+generated_at: "2026-07-10T18:59:35Z"
+source_commit: "3fdeec933ba2432408611cc17a462bed7e105161"
 created: "2026-06-24"
-updated: "2026-06-25"
-orphan_question_count: 1
+updated: "2026-07-10"
+orphan_question_count: 19
 orphan_interpretation_count: 0
-orphan_ids: ["question:0005-latent-to-overt-autoimmunity-conversion"]
+orphan_ids:
+  - "question:0023-cgas-sting-cytosolic-dna-sensing-as-upstream-driver-of-persistent-type-i"
+  - "question:0024-nlrp3-inflammasome-and-gasdermin-d-pyroptosis-as-a-self-amplifying-il-1"
+  - "question:0027-two-sample-mendelian-randomization-to-test-causal-direction-of-shared"
+  - "question:0028-ambulatory-within-person-wearable-ema-protocol-for-pem-phenotyping"
+  - "question:0029-tissue-resolved-spatial-multi-omics-and-molecular-imaging-to-localize"
+  - "question:0030-target-trial-emulation-in-multi-trigger-ehr-cohorts-for-cross-pais"
+  - "question:0031-pais-incidence-and-mechanism-in-chronically-immunosuppressed-hosts"
+  - "question:0032-pais-burden-phenotype-and-mechanism-in-lmic-and-ancestrally-diverse"
+  - "question:0033-frailty-and-pre-frailty-as-an-independent-pais-boundary-condition-with"
+  - "question:0034-pre-existing-atopic-and-mast-cell-activation-disorders-as-a"
+  - "question:0039-negative-control-outcome-designs-to-bound-healthcare-utilization"
+  - "question:0040-pregnancy-state-immune-milieu-as-a-modifier-of-pais-risk-and-trajectory"
+  - "question:0041-is-female-predominance-in-pais-substantially-an-ascertainment-and"
+  - "question:0042-is-the-cross-trigger-1020-chronic-fraction-an-artifact-of-shared-case"
+  - "question:0043-bacterial-persister-cell-bet-hedging-as-a-model-for-stochastic-viral"
+  - "question:0044-chronic-gvhd-as-analogy-for-post-viral-tolerance-infrastructure-collapse"
+  - "question:0045-temporal-causal-ordering-of-homeostatic-domain-failure-in-the-post-acute"
+  - "question:0046-mechanistic-basis-of-the-time-limited-acute-phase-intervention-window"
+  - "question:0047-menstrual-cycle-and-ultradian-symptom-periodicity-as-a-mechanistic"
 ---
 
 ## Cross-hypothesis questions
 
-Four questions show cross-hypothesis reach at confidence `inverse`, `back-inverse`, or `transitive`
-across at least two distinct hypotheses.
+Nine questions carry ≥2 hypothesis matches at confidence `inverse` this run.
 
-**`question:0009-functional-autoantibodies-drive-dysautonomia`** resolves primarily to
-`hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate` and carries a back-inverse link to
-`hypothesis:0001-shared-dysregulated-attractor`. The cross-cutting nature is significant: functional
-GPCR autoantibodies are both a candidate mechanism for the autonomous peripheral-neuropathy substrate
-(h0007) and a potential self-sustaining loop within the broader attractor (h0001), making this
-question the sharpest current bridge between the structural-lesion frame and the systemic-feedback
-frame. The assay-dependent evidence split — functional-assay correlations survive (Kharraziha2020)
-while binding-ELISA seropositivity does not discriminate (Hall2022) — means the cross-hypothesis
-reach tracks different evidence standards than either hypothesis alone requires.
+**`question:0001-shared-molecular-signature-across-triggers`** links `hypothesis:0001-shared-dysregulated-attractor` and `hypothesis:0012-pais-fatigue-cognitive-symptoms-are-a-trigger-nonspecific-neuroimmune`: it is the discriminating empirical bridge between the claim that cross-trigger molecular convergence reflects a shared immunological attractor and the competing account that the signal is a nonspecific neuroimmune stress response common to any prolonged illness.
 
-**`question:0011-mitochondrial-basis-of-pem`** resolves primarily to
-`hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem` and carries a back-inverse link to
-`hypothesis:0001-shared-dysregulated-attractor`. It sits at the seam between a focal muscle-ischemia
-account and the shared-attractor account: if the mitochondrial deficit is confined to skeletal muscle
-under ischemic microclot load, h0006 is confirmed; if it is systemic (metabolic reprogramming of
-immune cells), it feeds into h0001. The two hypotheses make different predictions on whether
-mitochondrial dysfunction normalises with microclot clearance or persists independently.
+**`question:0002-antigen-clearance-rescues-symptoms`** links `hypothesis:0002-tissue-reservoir-antigen-fragment` and `hypothesis:0018-circulating-antigen-as-severity-biomarker-not-driver`: the question operationalises the driver-vs-epiphenomenon fork exactly — antigen clearance that rescues symptoms confirms h0002; failure to rescue (even with demonstrated target engagement) would support h0018's severity-biomarker reading.
 
-**`question:0007-mechanism-of-female-predominance-in-pais`** resolves primarily to
-`hypothesis:0005-reproductive-stage-immune-homeostatic-margin` with a transitive link to
-`hypothesis:0004-acute-severity-threshold`. The male-biased reversal on cardiovascular hard endpoints
-(`interpretation:0005-t042-vascular-male-reversal-survives-severity-adjustment`,
-`proposition:0012-vascular-hard-endpoint-male-reversal-survives-severity-adjustment`) forces the
-severity-threshold account into the same explanatory space as the sex-hormone account, because the
-female fatigue excess and the male vascular excess are co-present in the same post-acute window and
-require both hypotheses to be explained.
+**`question:0003-acute-severity-threshold-for-self-sustaining-pais`** links `hypothesis:0004-acute-severity-threshold` and `hypothesis:0011-acute-illness-severity-does-not-predict-chronic-fatigue-in-pais-only`: these two hypotheses agree that severity matters during the acute phase but disagree on whether it gates the specifically *chronic fatigue* phenotype, and the question is the direct test of that disagreement across multiple triggers.
 
-**`question:0019-male-biased-vascular-signal-pasc-persistence`** resolves primarily to
-`hypothesis:0004-acute-severity-threshold` and also reaches
-`hypothesis:0005-reproductive-stage-immune-homeostatic-margin`. It bridges these two hypotheses by
-asking whether the male post-acute cardiovascular excess (documented in Kopp2024 at 18 months within
-a hospitalized-only stratum) reflects a severity carryover or a genuinely sex-differentiated vascular
-repair biology — a distinction h0004 and h0005 cannot individually resolve. The companion question
-`question:0021-male-vascular-reversal-covid-specific-vs-baseline-carryover` adds a further
-complication: none of the current evidence lines include an uninfected comparator, so the
-infection-attributable fraction of the male vascular signal remains unidentified, conditioning both
-hypotheses simultaneously.
+**`question:0008-formalize-vicious-cycle-attractor-model`** links `hypothesis:0001-shared-dysregulated-attractor` and `hypothesis:0010-the-pais-attractor-is-a-slow-heterogeneous-recovery-gradient-not-a`: both hypotheses use attractor-dynamics language but differ on whether PAIS is a discrete locked state or a continuous slow-recovery gradient, making this question the shared theoretical substrate that either unifies or differentiates them.
+
+**`question:0010-vascular-microclot-subphenotype`** links `hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem`, `hypothesis:0014-nk-failure-clear-senescent-endothelium-sasp-propagation`, and `hypothesis:0016-fibrinaloid-microclots-nonspecific-inflammatory-marker`: microclots sit at a three-way intersection — a causal ischemia mechanism (h0006), a SASP-propagation scaffold (h0014), and a deflationary nonspecific-marker reading (h0016) — and the vascular-subphenotype question is what would distinguish them.
+
+**`question:0015-does-pem-requirement-improve-cross-study-comparability`** links `hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent` and `hypothesis:0017-pem-overdiagnosed-via-self-report-nonspecific`: it straddles the measurement-improvement question (does adding PEM as a case-definition criterion reduce ascertainment noise, as h0008 would predict?) and the skeptical reading that self-reported PEM itself is the noisy channel (h0017).
+
+**`question:0017-deflationary-alternatives-vs-shared-pathophysiology`** links four hypotheses at `inverse`: `hypothesis:0011-acute-illness-severity-does-not-predict-chronic-fatigue-in-pais-only`, `hypothesis:0012-pais-fatigue-cognitive-symptoms-are-a-trigger-nonspecific-neuroimmune`, `hypothesis:0016-fibrinaloid-microclots-nonspecific-inflammatory-marker`, and `hypothesis:0017-pem-overdiagnosed-via-self-report-nonspecific`; it is the omnibus adversarial question that collectively tests the deflationary cluster against the positive accounts (`hypothesis:0001-shared-dysregulated-attractor`, `hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem`), functioning as the meta-level bridge across all four deflation hypotheses simultaneously.
+
+**`question:0022-immune-state-displacement-mediator-vs-co-traveler`** links `hypothesis:0001-shared-dysregulated-attractor`, `hypothesis:0012-pais-fatigue-cognitive-symptoms-are-a-trigger-nonspecific-neuroimmune`, and `hypothesis:0015-ebv-reactivation-consequence-not-cause-of-pais`: the mediation question is cross-cutting because immune-state displacement is causally central in h0001, epiphenomenal in h0012, and a permissive condition for EBV reactivation (not a direct symptom driver) in h0015 — the same observable evidence must satisfy three different causal roles.
+
+**`question:0038-netosis-released-histones-and-extracellular-dna-as-the-structural`** links `hypothesis:0014-nk-failure-clear-senescent-endothelium-sasp-propagation` and `hypothesis:0016-fibrinaloid-microclots-nonspecific-inflammatory-marker`: NETosis products could mechanistically bridge the NK-cell/senescent-endothelium arm (h0014) and the microclot arm (h0016), either linking them into a unified vascular-inflammatory axis or, under h0016's deflationary reading, constituting another nonspecific inflammatory consequence rather than a structural driver.
 
 ---
 
 ## Orphan questions
 
-Total: **1**
+Total: **19** (matches the dispatcher's count of 19 research orphans this run).
 
-**`question:0005-latent-to-overt-autoimmunity-conversion`** asks what fraction of post-infectious
-latent autoimmunity converts to overt autoimmune disease over a 5–10 year horizon and which
-autoantibody subsets (particularly anti-cytokine/anti-IFN specificities) mark the highest-risk
-patients. The resolver assigns no hypothesis because no current hypothesis frames the *longitudinal
-progression* from latent to clinical autoimmunity: `hypothesis:0001-shared-dysregulated-attractor`
-mentions autoimmunity as one attractor-state input but does not predict conversion rates or risk
-stratification; the remaining hypotheses operate on mechanism rather than prognosis. The question's
-home topic is `topic:post-infectious-dysautonomia-and-autoimmunity`, where Rojas2022 (83% latent
-autoimmunity, only ~3% with overt disease at 7 months) and Sharma2023 (elevated new-onset
-autoimmune-disease hazard ratios in large retrospective cohorts) establish the phenomenon without
-resolving the conversion trajectory [@Rojas2022; @Sharma2023]. What would give this question a hypothesis home: a formal
-hypothesis that "post-infectious immune-set-point shift in a minority subset results in clinical
-autoimmune conversion over years, with anti-cytokine autoantibody breadth as the stratifying
-predictor" — extending h0001 into the longitudinal autoimmune-prognosis domain.
+Questions are clustered by inferred topic. See frontmatter `orphan_ids` for the full enumeration.
+
+**Upstream innate nucleic-acid sensing and cell-death pathways** — `question:0023-cgas-sting-cytosolic-dna-sensing-as-upstream-driver-of-persistent-type-i`, `question:0024-nlrp3-inflammasome-and-gasdermin-d-pyroptosis-as-a-self-amplifying-il-1`: these two questions ask whether cGAS-STING and NLRP3/pyroptosis serve as upstream molecular triggers of chronic PAIS immune activation, a mechanistic layer upstream of all current hypotheses that none of them yet formally claim.
+
+**Disease analogies and systems framing** — `question:0043-bacterial-persister-cell-bet-hedging-as-a-model-for-stochastic-viral`, `question:0044-chronic-gvhd-as-analogy-for-post-viral-tolerance-infrastructure-collapse`, `question:0045-temporal-causal-ordering-of-homeostatic-domain-failure-in-the-post-acute`, `question:0046-mechanistic-basis-of-the-time-limited-acute-phase-intervention-window`: these questions develop mechanistic frameworks and cross-disease analogies (bacterial persister bet-hedging, chronic GvHD as tolerance-collapse model) that could inform hypothesis formalisation but are not yet anchored to any existing hypothesis.
+
+**Causal inference and study design methods** — `question:0027-two-sample-mendelian-randomization-to-test-causal-direction-of-shared`, `question:0028-ambulatory-within-person-wearable-ema-protocol-for-pem-phenotyping`, `question:0029-tissue-resolved-spatial-multi-omics-and-molecular-imaging-to-localize`, `question:0030-target-trial-emulation-in-multi-trigger-ehr-cohorts-for-cross-pais`, `question:0039-negative-control-outcome-designs-to-bound-healthcare-utilization`: methodological and study-design questions whose answers would serve multiple hypotheses but which are not owned by any single one.
+
+**Host-modifier and population boundary conditions** — `question:0031-pais-incidence-and-mechanism-in-chronically-immunosuppressed-hosts`, `question:0032-pais-burden-phenotype-and-mechanism-in-lmic-and-ancestrally-diverse`, `question:0033-frailty-and-pre-frailty-as-an-independent-pais-boundary-condition-with`, `question:0034-pre-existing-atopic-and-mast-cell-activation-disorders-as-a`, `question:0040-pregnancy-state-immune-milieu-as-a-modifier-of-pais-risk-and-trajectory`: questions about distinct host populations and pre-existing immune states that modulate PAIS risk, none of which is housed under a hypothesis that formally claims host-immune-baseline as a risk modifier.
+
+**Ascertainment, case-definition, and cyclical biological signal** — `question:0041-is-female-predominance-in-pais-substantially-an-ascertainment-and`, `question:0042-is-the-cross-trigger-1020-chronic-fraction-an-artifact-of-shared-case`, `question:0047-menstrual-cycle-and-ultradian-symptom-periodicity-as-a-mechanistic`: these questions challenge whether observed PAIS patterns (female excess, cross-trigger incidence floor, symptom periodicity) are biological or artefactual, topics that fall between `hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent` and `hypothesis:0005-reproductive-stage-immune-homeostatic-margin` without being clearly owned by either.
 
 ---
 
@@ -83,35 +78,12 @@ predictor" — extending h0001 into the longitudinal autoimmune-prognosis domain
 
 Total: **0**
 
-All 14 active interpretations carry at least one direct or transitive `hypothesis:` link via their
-`related:` fields. No orphan interpretations exist in this run.
+All 40 active interpretations carry at least one direct hypothesis link via their `related:` fields. No orphan interpretations exist in this run.
 
 ---
 
 ## Candidate hypotheses
 
-**Post-infectious immune-set-point shift and long-term autoimmune conversion.** The sole orphan
-question (`question:0005`) concerns a longitudinal-prognosis claim that sits between
-`hypothesis:0001-shared-dysregulated-attractor` (attractor-state framing) and the autoimmunity
-material in `topic:post-infectious-dysautonomia-and-autoimmunity`, but is addressed by neither.
-Rojas2022's near-universal latent autoimmunity and the unexplained gap between 83% autoantibody
-prevalence and ~3% overt disease at 7 months is precisely the unhoused empirical kernel. A candidate
-hypothesis: "In a minority post-infectious subset, latent autoimmunity reflects durable immune
-reprogramming rather than a transient mimicry response, with anti-cytokine/anti-IFN autoantibody
-breadth predicting clinical conversion over a multi-year horizon" [@Rojas2022]. Promoting this to a formal
-hypothesis would require a long-term prospective cohort design and would pull in Sharma2023, Rojas2022,
-and Ciaffi2023 as founding evidence lines.
+**Upstream innate nucleic-acid sensing as the proximal PAIS inflammatory driver.** Both `question:0023-cgas-sting-cytosolic-dna-sensing-as-upstream-driver-of-persistent-type-i` and `question:0024-nlrp3-inflammasome-and-gasdermin-d-pyroptosis-as-a-self-amplifying-il-1` ask about specific molecular upstream triggers — cGAS-STING-driven type-I IFN persistence and NLRP3/gasdermin-D-driven IL-1β amplification — that sit one mechanistic layer above all existing positive hypotheses. A candidate hypothesis: "Persistent cytosolic nucleic-acid sensing via cGAS-STING and/or NLRP3 inflammasome activation by viral RNA/DNA fragments constitutes the proximal molecular driver of the chronic type-I IFN and IL-1β phenotype in PAIS, upstream of the immune-exhaustion feedback and the shared-attractor state." This would give q0023 and q0024 a formal home and integrate with `hypothesis:0003-immune-exhaustion-feedback` and `hypothesis:0001-shared-dysregulated-attractor` as downstream effectors.
 
-**Measurement-ascertainment axis as a standing hypothesis-constraint.** Not a new hypothesis, but
-`topic:measurement-ascertainment-artifacts-in-pais` now has sufficient grounded structure — spanning
-`hypothesis:0001`, `hypothesis:0005`, `hypothesis:0006`, and `hypothesis:0007` — that it functions
-as a cross-hypothesis meta-constraint. The SFN skin-biopsy harmonization case
-(`interpretation:0014-sfn-prevalence-metric-harmonization-reanalysis`) shows that an apparent 0%–91%
-prevalence range across Walitt2024, Novak2026, Oaklander2022, and Joseph2021 is largely decomposable
-into modality breadth, trigger (LC vs ME/CFS), and referral enrichment rather than biological
-heterogeneity. This pattern recurs across cognition (`proposition:0010`), PEM endpoints
-(`proposition:0011`), and dysautonomia sex-skew (`proposition:0009`). Formalising the measurement-
-channel axis as an explicit methodological hypothesis — "apparent group or cross-trigger differences
-in PAIS phenotypes will preferentially concentrate in self-report or referral-enriched channels and
-attenuate or reverse under objective, trigger-matched measurement" — would give it testable content
-and prevent downstream over-interpretation of new signals before ascertainment is controlled [@Walitt2024; @Novak2026; @Oaklander2022; @Joseph2021].
+**Pre-existing host immune-baseline perturbation as a shared PAIS vulnerability gate.** Five orphan questions — `question:0031-pais-incidence-and-mechanism-in-chronically-immunosuppressed-hosts`, `question:0032-pais-burden-phenotype-and-mechanism-in-lmic-and-ancestrally-diverse`, `question:0033-frailty-and-pre-frailty-as-an-independent-pais-boundary-condition-with`, `question:0034-pre-existing-atopic-and-mast-cell-activation-disorders-as-a`, and `question:0040-pregnancy-state-immune-milieu-as-a-modifier-of-pais-risk-and-trajectory` — all concern distinct host populations whose pre-existing immune state (immunosuppression, frailty/inflammaging, atopy/mast-cell priming, pregnancy milieu, ancestral immune architecture) is hypothesised to modulate PAIS risk or phenotype. No current hypothesis frames these as instances of a shared mechanism. A candidate hypothesis: "Pre-existing perturbations that reduce post-infection immune homeostatic reserve — chronic immunosuppression, frailty-related inflammaging, atopic/mast-cell hyperreactivity, and pregnancy-phase immune remodelling — gate PAIS risk through a common mechanism of lowered threshold for immune-state lock-in, regardless of pathogen trigger." This would unify the host-modifier cluster and make testable predictions about PAIS incidence rank-ordering across host strata.

@@ -1,84 +1,40 @@
 ---
-id: synthesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
-kind: synthesis
+id: "synthesis:0006-skeletal-muscle-ischemic-mitochondrial-pem"
+kind: "synthesis"
 title: "Synthesis: 0006-skeletal-muscle-ischemic-mitochondrial-pem"
 status: "active"
-report_kind: hypothesis-synthesis
-hypothesis: hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
-generated_at: 2026-06-24T19:16:12Z
-source_commit: 05a785bf71096ea8cc4d486b93f3f920a481cd74
+report_kind: "hypothesis-synthesis"
+hypothesis: "hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem"
+generated_at: "2026-07-10T18:59:35Z"
+source_commit: "3fdeec933ba2432408611cc17a462bed7e105161"
 created: "2026-06-24"
-updated: "2026-06-25"
-provenance_coverage: thin
+updated: "2026-07-10"
+provenance_coverage: "partial"
 ---
 
 ## State
 
-`hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem` is a **candidate** frame proposing that
-PEM's primary substrate is a lesion in skeletal muscle: microvascular hypoperfusion produces ischemia,
-ionic dysregulation (Na⁺ overload → reverse-mode Na⁺/Ca²⁺ exchange → Ca²⁺ overload) damages
-mitochondria, and the resulting vicious cycle — the "acquired ischemic mitochondrial myopathy" (AIMM) —
-accounts for PEM's delayed onset and slow recovery in both post-COVID and ME/CFS.
+`hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem` is a **candidate** frame positing that PEM's primary substrate is a skeletal-muscle ischemic-ionic cascade. Four core propositions structure the claim: P1 (`proposition:0032-pem-bioenergetic-deficit-localizes-to-skeletal-muscle`) — bioenergetic deficit localizes to skeletal muscle; P2 (`proposition:0033-microvascular-hypoperfusion-drives-pem-muscle-bioenergetic-failure`) — microvascular hypoperfusion drives that failure; P3 (`proposition:0034-ionic-na-ca-overload-mediates-pem-muscle-mitochondrial-injury`) — Na⁺/Ca²⁺ overload mediates the step to mitochondrial damage; P4 (`proposition:0035-pem-muscle-lesion-is-self-perpetuating`) — the lesion is self-perpetuating (AIMM).
 
-The strongest independent empirical anchor is the Appelman2024 finding, incorporated into
-`proposition:0011-objective-pem-correlates-are-trigger-and-endpoint-specific-not-one-shared-failure-mode`
-via `interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation`: long-COVID
-muscle OXPHOS is impaired at baseline and worsens after provoked PEM, with a selective post-exertional fall
-in Complex II activity. Invasive-CPET evidence for impaired peripheral O₂ extraction in ME/CFS and PASC
-(noted in the hypothesis body under Joseph2023) is consistent with propositions P1 (muscle localization)
-and P2 (ischemic cause).
-
-The ionic-cascade core (P3) and the self-perpetuation claim (P4) remain single-group and unreplicated
-(Scheibenbogen/Wirth; COI disclosed). `interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation`
-further qualifies the picture via `proposition:0011`: PEM's objective correlate dissociates by trigger and
-endpoint — the ME/CFS whole-body 2-day-CPET decrement does not appear in long COVID at the same
-endpoint even where a muscle-level lesion does, which means the muscle hypothesis is plausible for long
-COVID but cannot be assumed to generalize as a single unified failure mode across PAIS. The competing
-central "effort-preference" frame (Walitt2024, cited in the hypothesis body) continues to pressure P1;
-`question:0017-deflationary-alternatives-vs-shared-pathophysiology` tracks this rivalry.
+Evidence is asymmetric. `evidence-line:0083-appelman-joseph-t056-muscle-localization-supports-h0006-p1` consolidates Appelman2024 (provoked long-COVID biopsy), Joseph2023 (peripheral physiology), and the ME/CFS muscle body in support of P1/localization; `evidence-line:0075-mecfs-muscle-bioenergetics-supports-0030` adds ME/CFS exercise/contraction abnormalities (`proposition:0030-mecfs-exercise-provoked-skeletal-muscle-bioenergetic-abnormality`). `evidence-line:0084-walitt2024-central-resting-null-weakly-disputes-h0006-p1` registers a weak counter via Walitt2024's central effort-preference framing and resting nulls. P2/ischemic upstream: `evidence-line:0085-joseph2023-peripheral-extraction-weakly-supports-h0006-p2` is suggestive, while `evidence-line:0086-appelman2024-no-occlusion-weakly-disputes-simple-ischemic-p2` argues against a simple capillary-occlusion variant. P3 and P4 rest on `evidence-line:0087-scheibenbogen2024-na-ca-cascade-weakly-supports-h0006-p3` and `evidence-line:0088-scheibenbogen2024-aimm-feedback-weakly-supports-h0006-p4` — both from a one-source, model-heavy account (Scheibenbogen2024) with disclosed COI. `evidence-line:0077-bizjak2024-cross-trigger-muscle-biopsy-disputes-simple-same-lesion-reading` cautions that CFS and post-COVID mitochondrial phenotypes differ at the biopsy level, complicating a simple same-lesion cross-trigger reading.
 
 ## Arc
 
-Arc reconstruction is limited because only one interpretation reaches this hypothesis and it was
-primarily framed for `hypothesis:0001`; the arc is therefore partly borrowed rather than generated by
-direct investigative work on hypothesis:0006.
+Investigation opened with the AIMM synthesis (Scheibenbogen2024) and Appelman2024's provoked long-COVID biopsy as anchors, framing PEM as a muscle lesion shared across PAIS triggers. `interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation` established the first structural constraint: PEM's objective correlate is trigger- and endpoint-specific. The ME/CFS whole-body 2-day-CPET decrement (Keller2014) does not transfer to long-COVID (Gattoni2025 null), while long-COVID PEM expresses as a peripheral muscle-endpoint lesion (Appelman2024). This narrowed h0006's cross-trigger sharing claim from a symptom-level assumption to a testable muscle-endpoint form.
 
-`hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem` was created 2026-06-20 as a tissue-specific
-instantiation of `hypothesis:0001-shared-dysregulated-attractor`, narrowing the PEM-substrate claim to
-skeletal muscle. It entered as candidate because the AIMM model was recognised from the outset as
-single-group and assembled from individually plausible steps without end-to-end validation.
+`task:t056` then surveyed ME/CFS muscle bioenergetics. `interpretation:0019-t056-mecfs-muscle-bioenergetics-ingestion` retired the "no ME/CFS muscle datum" premise: Jones2012 (31P-MRS acidosis and recovery delay), Wong1992 (in-vivo ATP at exhaustion), and Brown2015 (contraction-stimulated AMPK failure in CFS muscle cultures) together grounded `proposition:0030-mecfs-exercise-provoked-skeletal-muscle-bioenergetic-abnormality`. The decisive gap shifted from total absence to endpoint-harmonization — no ME/CFS arm has reproduced the Appelman-type post-exertional OXPHOS/SDH biopsy time-course under a harmonized protocol.
 
-The first substantive interpretive work touching this hypothesis came through `task:t025`, findings
-recorded in `interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation`.
-That task set out to locate within-cohort PEM-stratified molecular contrasts; instead it found that the
-decisive design does not yet exist, and that PEM's objective correlate dissociates by trigger and endpoint.
-The Appelman2024 muscle result, incorporated into `proposition:0011`, is the strongest current empirical
-anchor for the muscle-localization claim. The current epistemic position: muscle-level bioenergetic
-pathology after provoked PEM in long COVID is supported by independent data, but the ischemic-ionic
-cascade (P3), self-perpetuation (P4), and cross-PAIS generalization (A1) are not independently confirmed.
+`task:t057` tightened `question:0016-oxidative-stress-upstream-driver-of-bioenergetic`, repositioning ROS as a possible reciprocal node in P4 rather than an independent upstream driver. `task:t058` pre-registered the adjudication protocol (`pre-registration:0005-harmonized-provoked-muscle-endpoint`), data-gated on a qualifying serial muscle-endpoint vehicle. Current position: P1/localization is supported but contested; P2 through P4 remain weak, model-inferred, and not independently validated.
 
 ## Research fronts
 
 **Live questions:**
 
-- `question:0011-mitochondrial-basis-of-pem` — What is the mitochondrial/bioenergetic basis of PEM, and
-  is it shared across PAIS? The muscle endpoint is partially anchored (Appelman2024, via
-  `interpretation:0004-t025-pem-stratified-molecular-gap-and-cross-trigger-cpet-dissociation`) but the
-  whole-body CPET signal does not transfer to long COVID (Gattoni2025, held at weak/underpowered in
-  `proposition:0011`), and the ionic-cascade mechanism (P3) is unreplicated.
-- `question:0010-vascular-microclot-subphenotype` — The microclot/capillary-occlusion variant of P2/A2
-  is complicated by Appelman2024's finding that muscle amyloid deposits are extravascular.
-- `question:0017-deflationary-alternatives-vs-shared-pathophysiology` — Deconditioning and
-  central/effort-preference accounts (Walitt2024) remain live rivals; Appelman2024 and invasive CPET
-  constrain but do not eliminate them.
+- `question:0011-mitochondrial-basis-of-pem` — is the muscle mitochondrial lesion the proximate cause of PEM or a secondary site? A provoked pre/post/recovery muscle-biopsy time-course in matched ME/CFS and long-COVID cohorts is the decisive missing design.
+- `question:0016-oxidative-stress-upstream-driver-of-bioenergetic` — does ROS drive or reciprocally maintain the P4 AIMM feedback? Admissible evidence requires provoked-muscle temporal precedence or redox-target engagement with downstream improvement in muscle and PEM endpoints.
+- `question:0010-vascular-microclot-subphenotype` — does fibrinaloid microclot-driven capillary occlusion contribute to P2? Complicated by Appelman2024's extravascular amyloid placement.
+- `question:0017-deflationary-alternatives-vs-shared-pathophysiology` — deconditioning and central alternatives (Walitt2024 effort-preference frame) remain standing competitors; Walitt2024's resting-null findings are a structural counter pending a provoked-state test.
 
-**Promotion criteria (from hypothesis body):** candidate advances to active when (1) an independent
-group replicates elevated intracellular muscle Na⁺ or post-exertional escalation of muscle mitochondrial
-damage in a PEM-positive cohort with matched controls, and (2) peripheral O₂ extraction is shown to
-limit day-2 CPET in at least two independent cohorts. In short, the ischemic-ionic core (P2+P3) needs
-at least one independent confirmation outside the originating group.
+**Promotion gate:** `pre-registration:0005-harmonized-provoked-muscle-endpoint` (data-gated) specifies the harmonized LC+ME/CFS muscle-endpoint protocol as the A1-vs-M3 adjudicator. Promotion to active also requires an independent (non-Scheibenbogen group) replication of elevated intracellular muscle Na⁺ or provoked mitochondrial escalation, and peripheral O₂ extraction confirmed as the day-2 CPET limiter in ≥2 cohorts.
 
-**Discriminating next test:** an independent provoked muscle-biopsy time-course (pre / immediately post /
-24–48 h post standardized exertion) measuring mitochondrial function and ionic markers paired with
-peripheral-vs-central CPET decomposition, in a PEM-positive cohort with matched controls. A perfusion-
-or ionic-targeted intervention trial with a muscle target-engagement readout would test P2/P3 causally.
+**Structural gap:** P3/P4 rest on a single-group model with disclosed COI; no Appelman-equivalent ME/CFS post-PEM OXPHOS/SDH biopsy time-course is published.
