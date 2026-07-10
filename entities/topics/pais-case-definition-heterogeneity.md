@@ -16,6 +16,9 @@ ontology_terms:
 - post-intensive care syndrome
 datasets: []
 source_refs:
+- cite:Hou2025
+- cite:Nilforoshan2026
+- cite:Kahlert2023
 - cite:WHO2021LongCOVID
 - cite:NASEM2024LongCOVID
 - cite:Thaweethai2023
@@ -49,7 +52,7 @@ related:
 - interpretation:0025-t009-pediatric-long-covid-and-misc
 - topic:pediatric-long-covid-and-misc
 created: "2026-06-19"
-updated: "2026-06-26"
+updated: '2026-07-10'
 ---
 
 # PAIS Case-Definition Heterogeneity and Harmonization

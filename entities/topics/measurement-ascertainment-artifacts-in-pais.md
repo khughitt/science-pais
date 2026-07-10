@@ -27,9 +27,14 @@ related:
 - proposition:0027-pais-group-differences-attenuate-under-objective-re-measurement
 - proposition:0028-pais-heterogeneity-explained-by-ascertainment-and-scoring
 - proposition:0029-pais-objective-correlate-is-endpoint-and-trigger-specific
-source_refs: []
+source_refs:
+  - cite:Nilforoshan2026
+  - cite:Sudre2024
+  - cite:Kahlert2023
+  - cite:Hou2025
+  - cite:Azhir2026
 created: '2026-06-24'
-updated: '2026-06-24'
+updated: '2026-07-10'
 ---
 # Measurement-channel and ascertainment artifacts in PAIS
 

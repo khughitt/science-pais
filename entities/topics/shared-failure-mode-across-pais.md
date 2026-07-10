@@ -21,6 +21,10 @@ related:
 - topic:post-infectious-dysautonomia-and-autoimmunity
 - topic:pediatric-long-covid-and-misc
 source_refs:
+- cite:Russell2023
+- cite:Skaarup2023
+- cite:Chaulagain2026
+- cite:Tsergas2025
 - cite:Choutka2022
 - cite:Komaroff2025
 - cite:Komaroff2023
@@ -38,7 +42,7 @@ source_refs:
 - cite:Stephenson2024
 - cite:Truong2025
 created: '2026-06-11'
-updated: '2026-06-26'
+updated: '2026-07-10'
 ---
 # Shared Failure Mode Across Post-Acute Infection Syndromes
 

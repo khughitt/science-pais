@@ -18,6 +18,9 @@ related:
 - topic:long-covid-immune-dysregulation
 - immunity:research-question:immune-homeostasis-and-dysregulation
 source_refs:
+- cite:Nitz2025
+- cite:Chaulagain2026
+- cite:Mak2025
 - cite:Adler2024
 - cite:Finsterer2022
 - cite:Rojas2022
@@ -27,7 +30,7 @@ source_refs:
 - cite:Stahlberg2025
 - cite:Ciaffi2023
 created: '2026-06-11'
-updated: '2026-06-11'
+updated: '2026-07-10'
 ---
 # Post-Infectious Dysautonomia, Organ-Specific Sequelae, and Autoimmunity
 

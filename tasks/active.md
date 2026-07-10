@@ -300,3 +300,57 @@ Operational vehicle hunt for pre-registration:0003. Per the t050 audit (interpre
 - created: 2026-07-10
 
 Operational vehicle hunt for pre-registration:0005 (the A1-vs-M3 adjudicator for h0006). No published study reproduces the Appelman-type provoked pre/post/recovery OXPHOS/SDH muscle-biopsy time-course under a protocol harmonized across long COVID and ME/CFS. Deliverable: identify a cohort/biobank able to run serial post-exertional muscle biopsies in matched LC + ME/CFS arms (or confirm none exists and specify the minimal prospective study). Promotion of P2-P4 also needs an independent (non-Scheibenbogen-group) replication of elevated intracellular muscle Na+ or provoked mitochondrial escalation.
+
+## [t124] Intake Al-Aly 2025 830K-veteran post-COVID infection-vulnerability study (cited by Tsergas2025, absent from project)
+- priority: P1
+- status: proposed
+- aspects: []
+- related: [hypothesis:0003-immune-exhaustion-feedback]
+- created: 2026-07-10
+
+
+
+## [t125] Decompose female PASC bias into hormone-axis (h0005) vs X-chromosome-dosage/XIST (Chaulagain2026)
+- priority: P1
+- status: proposed
+- aspects: []
+- related: [hypothesis:0005-reproductive-stage-immune-homeostatic-margin, question:0080-sex-chromosome-vs-hormone-decomposition-pais]
+- created: 2026-07-10
+
+
+
+## [t126] Scope-boundary adjudication for vaccine-adverse-event papers (Nitz2025): write ruling in specs/scope-boundaries.md (infection-vs-vaccine, acute-vs-persistent)
+- priority: P1
+- status: proposed
+- aspects: []
+- related: [question:0081-infection-vs-vaccination-cv-risk-ratio-antigen]
+- created: 2026-07-10
+
+
+
+## [t127] Cross-design reconciliation: Nilforoshan2026 test-based long-COVID estimates vs RECOVER clinical-cohort fractions (design-sensitivity)
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent, question:0085-subgroup-residual-long-covid-beyond-one-year-under]
+- created: 2026-07-10
+
+
+
+## [t128] Propose marker panel (cGAMP/p-TBK1/ISGs + antigen/viral load) to split h0019 sterile-innate from h0002 antigen-driven on persistent IP-10
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [hypothesis:0019-cgas-sting-nlrp3-sterile-innate-sensing-driver, question:0076-ip10-cxcl10-omicron-persistence-antigen-vs-sterile]
+- created: 2026-07-10
+
+
+
+## [t129] Assess post-RSV/GAS/streptococcal PAIS incidence after 2021-2023 immunity-debt waves (ARF/PANDAS in pandemic-born cohorts)
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [question:0078-post-streptococcal-autoimmune-pais-post-npi-surge]
+- created: 2026-07-10
+
+

@@ -24,6 +24,9 @@ related:
   - cycles:topic:reproductive-aging-and-menopause
   - interpretation:0008-t019-hrt-evidence-audit-no-admissible-pais-test
 source_refs:
+  - cite:Chaulagain2026
+  - cite:Sudre2024
+  - cite:Hou2025
   - cite:Stewart2024
   - cite:Wang2026
   - cite:Mishra2020
@@ -38,7 +41,7 @@ source_refs:
   - cite:Shah2025
   - cite:Boneva2015
 created: '2026-06-19'
-updated: '2026-06-26'
+updated: '2026-07-10'
 ---
 # Menopause Status, Sex Hormones, and PAIS Risk
 

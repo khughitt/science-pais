@@ -16,6 +16,9 @@ related:
 - topic:long-covid-immune-dysregulation
 - hypothesis:0001-shared-dysregulated-attractor
 source_refs:
+- cite:Skaarup2023
+- cite:Nitz2025
+- cite:Russell2023
 - cite:CerviaHasler2024
 - cite:Nicolai2023
 - cite:Stahlberg2025
@@ -24,7 +27,7 @@ source_refs:
 - cite:Ganesh2022
 - paper:Spetz2025
 created: '2026-06-11'
-updated: '2026-06-25'
+updated: '2026-07-10'
 ---
 # Thromboinflammation, Microclots, and Endothelial Dysfunction in Long COVID
 

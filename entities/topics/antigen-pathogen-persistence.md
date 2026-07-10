@@ -18,6 +18,10 @@ related:
 - topic:long-covid-immune-dysregulation
 - immunity:research-question:immune-homeostasis-and-dysregulation
 source_refs:
+- cite:Mak2025
+- cite:Skaarup2023
+- cite:Vacharathit2025
+- cite:Tsergas2025
 - cite:Peluso2024
 - cite:McClune2025
 - cite:Skevaki2025
@@ -26,7 +30,7 @@ source_refs:
 - cite:Vreeman2025
 - cite:Peluso2024b
 created: '2026-06-11'
-updated: '2026-06-11'
+updated: '2026-07-10'
 ---
 # Antigen and Pathogen Persistence as a Driver of Chronic Post-Infectious Illness
 

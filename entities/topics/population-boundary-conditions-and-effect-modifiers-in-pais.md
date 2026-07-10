@@ -20,6 +20,11 @@ ontology_terms:
   - generalizability
 datasets: []
 source_refs:
+  - cite:Russell2023
+  - cite:Azhir2026
+  - cite:Chaulagain2026
+  - cite:Hou2025
+  - cite:Sudre2024
   - cite:Hammel2023
   - cite:Vinson2024
   - cite:Jassat2023
@@ -47,7 +52,7 @@ related:
   - topic:shared-failure-mode-across-pais
   - topic:long-covid-immune-dysregulation
 created: "2026-07-07"
-updated: "2026-07-07"
+updated: '2026-07-10'
 added_by: "llm:claude-opus-4-8:research-topic"
 ---
 # Population Boundary Conditions and Effect Modifiers of PAIS Risk, Phenotype, and Mechanism

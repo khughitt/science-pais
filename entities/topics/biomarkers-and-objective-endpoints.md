@@ -16,6 +16,8 @@ related:
 - topic:mecfs-long-covid-convergence
 - question:0001-shared-molecular-signature-across-triggers
 source_refs:
+- cite:Vacharathit2025
+- cite:Mak2025
 - cite:Patrascu2025
 - cite:Talla2023
 - cite:CerviaHasler2024
@@ -25,7 +27,7 @@ source_refs:
 - cite:Che2025
 - cite:Moldofsky2011
 created: '2026-06-11'
-updated: '2026-06-11'
+updated: '2026-07-10'
 ---
 # Biomarkers and Objective Endpoints for Post-Acute Infection Syndromes
 

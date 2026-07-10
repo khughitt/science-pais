@@ -19,6 +19,10 @@ related:
 - topic:pediatric-long-covid-and-misc
 - immunity:research-question:immune-homeostasis-and-dysregulation
 source_refs:
+- cite:Vacharathit2025
+- cite:Mak2025
+- cite:Chaulagain2026
+- cite:Tsergas2025
 - cite:Klein2023
 - cite:Aid2025
 - cite:Talla2023
@@ -29,7 +33,7 @@ source_refs:
 - cite:Patrascu2025
 - cite:Truong2025
 created: '2026-06-11'
-updated: '2026-06-26'
+updated: '2026-07-10'
 ---
 # Long COVID Immune Dysregulation and Inflammatory Signatures
 
