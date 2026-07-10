@@ -15,7 +15,7 @@ origins:
   independent: true
 related: []
 created: '2026-07-04'
-updated: '2026-07-06'
+updated: '2026-07-10'
 added_by: explore-ideas:claude-opus-4-8:cand-mechanism-hspc-epigenetic-trained-immunity
 lens_views:
 - lens: mechanism

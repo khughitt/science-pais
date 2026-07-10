@@ -43,7 +43,7 @@ related:
 - question:0055-hspc-epigenomic-imprinting-depth-predicts-pais-persistence
 - question:0056-pharmacological-reversal-of-innate-immune-training-in-pais
 created: '2026-07-07'
-updated: '2026-07-07'
+updated: '2026-07-10'
 added_by: "llm:claude-sonnet-4-6:research-topic"
 ---
 
