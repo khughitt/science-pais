@@ -17,6 +17,7 @@ ontology_terms:
 dataset_usage:
 - ref: dataset:n3c-recover-longcovid
   role: analyzed
+  overlap: full
 source_refs:
 - cite:Vinson2024
 related:

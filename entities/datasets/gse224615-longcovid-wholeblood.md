@@ -5,7 +5,7 @@ kind: dataset
 title: GSE224615 — Long COVID whole-blood transcriptome (8 mo)
 status: candidate
 created: '2026-07-07'
-updated: '2026-07-07'
+updated: '2026-07-10'
 consumed_by:
 - plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
@@ -22,7 +22,20 @@ access:
     obtainability: public
     execution: local
     extractability: none
-    notes: "BLOCKER — no per-sample expression matrix on GEO. The only series-level supplementary is GSE224615_DEGs.xlsx (a differential-expression summary table, not per-sample counts). Per-sample expression is only obtainable from SRA raw reads (GPL20301) requiring a re-alignment/quantification pipeline; series-matrix TXT carries metadata only. Not usable as a drop-in count matrix for t117."
+    notes: BLOCKER — no per-sample expression matrix on GEO. The only series-level
+      supplementary is GSE224615_DEGs.xlsx (a differential-expression summary table,
+      not per-sample counts). Per-sample expression is only obtainable from SRA raw
+      reads (GPL20301) requiring a re-alignment/quantification pipeline; series-matrix
+      TXT carries metadata only. Not usable as a drop-in count matrix for t117.
+  verification_method: ''
+  exception:
+    mode: scope-reduced
+    decision_date: '2026-07-10'
+    rationale: 'Evaluated by plan:0010 (t117) and DEMOTED (G4): accession is public
+      but no downloadable per-sample expression matrix (DEG summary only, GSE224615_DEGs.xlsx);
+      RNA-seq control arm n~9. Usable at most for DEG-level triangulation, not the
+      per-sample rank matrix. Role reduced accordingly; not in the delivered t117
+      matrix.'
 accessions:
 - GSE224615
 ontology_terms:
@@ -31,10 +44,10 @@ ontology_terms:
 - whole-blood
 - rna-seq
 provided_capabilities:
-  - modality: transcriptomics
-    assay: bulk-rna
-    trigger: sars-cov-2
-    cohort_design: case-control
+- modality: transcriptomics
+  assay: bulk-rna
+  trigger: sars-cov-2
+  cohort_design: case-control
 related:
 - task:t117
 - question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design
@@ -65,3 +78,7 @@ Long COVID blood bulk RNA-seq from the San Francisco LIINC cohort, **8 months po
 ## Access / caveats
 
 Accession resolves and is public, but **per-sample expression is NOT directly downloadable** (only `GSE224615_DEGs.xlsx`, a DEG summary; per-sample counts require SRA re-alignment). Combined with the small control arm (n = 9) and unconfirmed whole-blood tissue, this is a **DEMOTION candidate** for the t117 strict-primary matrix. `verified: false`.
+
+## Access verification log
+
+- 2026-07-10 (keith@2026-07-10): scope-reduced — Evaluated by plan:0010 (t117) and DEMOTED (G4): accession is public but no downloadable per-sample expression matrix (DEG summary only, GSE224615_DEGs.xlsx); RNA-seq control arm n~9. Usable at most for DEG-level triangulation, not the per-sample rank matrix. Role reduced accordingly; not in the delivered t117 matrix.

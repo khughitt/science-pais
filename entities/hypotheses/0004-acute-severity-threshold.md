@@ -33,6 +33,9 @@ related:
 - topic:pediatric-long-covid-and-misc
 - task:t048
 - task:t010
+required_capabilities:
+- modality: clinical-ehr
+- modality: epidemiology
 created: '2026-06-11'
 updated: '2026-07-07'
 ---
