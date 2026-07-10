@@ -52,12 +52,16 @@ PBMCs"). Three substrates, sharply different feasibility:
    reach (bulk, scATAC, Multiome). Crucially this is **not a consolation target**: Cheong2023's central
    finding is that the HSPC imprint is **transmitted to and read out in the monocyte progeny**
    [@Cheong2023], which is also the **q0026 effector locus** (hyperreactive monocytes sustaining PAIS
-   inflammation). The monocyte epigenome is the **causally downstream, functionally decisive** readout —
-   one step removed from the HSPC source, but the step that matters for symptoms.
+   inflammation). The monocyte epigenome is the **mechanistically downstream, functionally relevant
+   candidate readout** — one step removed from the HSPC source, and the compartment through which any
+   imprint would act on peripheral inflammation. (Cheong2023 demonstrates *transmission* of the imprint to
+   monocytes, not that the monocyte imprint *causes* PAIS symptoms — that link remains inferential; see
+   Limitations.)
 
-3. **Marrow HSPC ATAC-seq — the definitive test — exists in exactly one PAIS biobank.** Only **LIINC's
-   banked bone marrow** provides HSPC-rich, same-compartment material matching Cheong2023; access is
-   **consortium/LCRC-mediated**, not open-application.
+3. **Marrow HSPC ATAC-seq — the definitive test — has one identified PAIS-biobank source.** The **LIINC
+   PASC Tissue Program** is the only PAIS cohort found in the sweep with a *public bone-marrow tissue arm*
+   — HSPC-rich, same-compartment material matching Cheong2023 (absence of a comparable marrow arm elsewhere
+   is not established, only unobserved); access is **consortium/LCRC-mediated**, not open-application.
 
 **Access is not the binding constraint for the top tier.** RECOVER (open Biospecimen-Access-Committee
 application, viable PBMC, longitudinal 0/90/180 d + yearly to ~4 y, full acute-severity spectrum
@@ -91,11 +95,13 @@ Axis findings:
   debris/background** [@Desoutter2019]. So the freeze-thaw penalty falls **hardest on the rare population
   we can least afford to lose**, and mandates dead-cell/granulocyte depletion before sorting. Monocytes,
   abundant and hardier, absorb this penalty easily.
-- **The compartment the imprint lives in is only banked by LIINC.** Cheong2023 measured **bone-marrow**
-  HSPCs and their monocyte output [@Cheong2023]. No PAIS cohort banks *sorted* HSPCs, and peripheral CD34⁺
-  are a different compartment from marrow HSPC. The only same-compartment substrate in any PAIS biobank is
-  **LIINC's bone-marrow tissue arm** — highest scientific fidelity, highest access friction (LCRC/PolyBio
-  collaboration, no open portal).
+- **The compartment the imprint lives in has one identified banked source.** Cheong2023 measured
+  **bone-marrow** HSPCs and their monocyte output [@Cheong2023]. No PAIS cohort found in the sweep banks
+  *sorted* HSPCs, and peripheral CD34⁺ are a different compartment from marrow HSPC. The only
+  same-compartment substrate *identified* is **LIINC's bone-marrow tissue arm** (PolyBio LIINC PASC Tissue
+  Program) — highest scientific fidelity, highest access friction (LCRC/PolyBio collaboration, no open
+  portal); a comparable marrow arm at another PAIS biobank was not found, but its absence is not
+  established.
 - **Severity selection is the inherited design trap.** Cheong2023's imprint was shown **only in
   severe/hospitalized COVID**, yet long COVID arises predominantly after **mild** acute disease — the same
   severity-through-line that sank the serum-IL-6 proxy in `interpretation:0039`. An opportunistic study
@@ -182,7 +188,7 @@ interpretation:0036 and interpretation:0039: proxy/feasibility work mints no bel
 ## New Questions Raised
 
 - **(feasibility/access, P2):** Can a LIINC/LCRC (PolyBio) collaboration be secured to reach the **banked
-  bone-marrow** arm — the only same-compartment HSPC substrate — or should the design commit to the
+  bone-marrow** arm — the only *identified* same-compartment HSPC substrate — or should the design commit to the
   monocyte-progeny readout as its permanent feasible form? *Not reserved as a standalone `question:`* — it
   is a design fork for q0055, folded into Updated Priorities.
 - **(design, P2):** What is the minimum severity-stratified per-arm N (PAIS-persistent vs recovered, both

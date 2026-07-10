@@ -15,6 +15,10 @@ datasets: []
 source_refs:
 - cite:Cheong2023
 - cite:Mitroulis2018
+- cite:Corces2017
+- cite:Desoutter2019
+- cite:Horwitz2023
+- cite:Lacerda2018
 origins:
 - type: assistant
   ref: research-topic
@@ -54,8 +58,13 @@ Cheong et al. 2023 (Cell) demonstrated that severe SARS-CoV-2 infection imprints
 ## Connections to Project
 
 - Related hypotheses: `hypothesis:0001-shared-dysregulated-attractor` (HSPC imprinting as a candidate attractor maintenance mechanism).
-- Required datasets: a prospective PAIS inception cohort with blood sampling at 3 and 12 months post-infection, PAIS case ascertainment, and sufficient HSPC cell numbers for ATAC-seq (or single-cell multiome). Large RECOVER-style biobank with sorted HSPC would be ideal.
-- Required analyses: differential chromatin accessibility (ATAC-seq peaks) and H3K4me3 ChIP-seq at innate immune gene loci (NLRP3, TNF, IL6, CXCL8, IFN-stimulated genes) in HSPCs stratified by PAIS status at 12 months; regression of PAIS outcome on imprinting depth score.
+- Required datasets (revised per t107 → `interpretation:0040`, which showed the HSPC-first framing is not the feasible opportunistic route):
+  - **Primary opportunistic readout — CD14⁺ monocyte ATAC-seq on banked PBMC.** A longitudinal PAIS cohort with cryopreserved *viable* PBMC, PAIS case ascertainment, and coverage of the **full acute-severity spectrum**; monocytes (~10–20% of PBMC) give ample cells on any platform, and carry the *transmitted* imprint (Cheong2023). Realistic sources: **RECOVER** (open BAC application, longitudinal to ~4 y [@Horwitz2023]) and the **UK ME/CFS Biobank** (open cost-reimbursement, ~20 PBMC vials/contact [@Lacerda2018]).
+  - **Definitive source-localization — marrow HSPC ATAC-seq.** Same-compartment as Cheong2023, but the only *identified* banked PAIS source is **LIINC's bone-marrow tissue arm** (consortium/LCRC-mediated access).
+  - Direct circulating-CD34⁺ HSPC ATAC from banked PBMC is *marginal* (~0.05% of PBMC ⇒ single-vial bulk Omni-ATAC only [@Corces2017], CD34-preferential thaw loss [@Desoutter2019]) and compartment-mismatched — not the recommended primary.
+- Required analyses:
+  - **Primary:** differential chromatin accessibility (ATAC-seq peaks) at innate-immune gene loci (NLRP3, TNF, IL6, CXCL8, IFN-stimulated genes) in **CD14⁺ monocytes**, **severity-stratified**, within-trigger (PAIS-persistent vs infected-recovered); regression of PAIS persistence on a monocyte imprint-depth score with acute severity modeled, not adjusted post hoc.
+  - **Definitive (LIINC marrow arm):** the same accessibility/H3K4me3 contrast in sorted marrow HSPCs, as the fidelity check localizing whether a monocyte difference originates in the HSPC compartment.
 - Priority level: P2 — mechanistically important but requires specialized primary data collection not currently available in public datasets.
 
 ## Related
