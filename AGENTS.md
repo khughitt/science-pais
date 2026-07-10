@@ -67,7 +67,12 @@ deeper than the main checkout, so that path no longer resolves and **every
 <!-- One bullet per active decision in core/decisions.md, phrased as an
 imperative rule. The "why" stays in core/decisions.md. -->
 
-- _none yet - populated by `/science:curate` once `core/decisions.md` has entries._
+- **D-001:** Scope — keep clinical post-infectious-syndrome work here; route general immune-mechanism / autoimmunity / tolerance to `health-immunity`, frame-changing cross-project conclusions to `health-meta`, and disease-label-vs-biology questions to `pan-disease`. Summarize bridging papers once and share via `science commons promote`.
+- **D-002:** Pacing over GET — for PEM-positive phenotypes, treat pacing / energy-management as the default activity frame and flag fixed-increment graded-exercise-therapy designs and endpoints as contested / contraindicated; keep provoked-exertion diagnostics (2-day CPET, iCPET) endorsed under PEM-crash-risk consent. Always stratify PEM-positive vs PEM-absent before applying.
+- **D-003:** Infection-trigger primary scope — admit a syndrome to primary scope only if its trigger is an acute infection. Hold PACVS and non-infectious GWS/FM as boundary-monitor / read-across — never counted as PAIS cases or as independent cross-trigger support for `hypothesis:0001` — and label any GWS/FM-leaning convergence claim as a *non-infectious* read-across.
+- **D-004:** No gated-EHR estimands — do not execute the autoimmune×sex×PASC EHR estimand or any line requiring population-scale, gated, non-downloadable patient EHR (N3C / OpenSAFELY sit below the third-party-reproducible bar). Bank the transparent design residue and the `hypothesis:0008` synthesis instead.
+- **D-005:** Seed-stage computational gate — post-seed computational work is authorized only for the specific Wave-1 open GWAS/MR pilot (public summary-statistic vehicles, IVW primary + the committed sensitivity checklist); any other computational line needs its own scope decision.
+- **D-006:** Wave-1 MR maintenance boundary — treat `plan:0008`'s reportable-grade Wave-1 MR promotion as direct maintenance of the D-005 pilot (HGI EUR outcome + LD-score / HapMap3 infrastructure are in-scope); do not use FinnGen or any non-HGI outcome vehicle without a fresh scope decision plus a third-party-reproducibility check.
 
 <!-- END: load-bearing-constraints -->
 
