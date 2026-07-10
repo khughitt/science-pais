@@ -23,7 +23,7 @@ related:
 - question:0026-acute-infection-il-6-stat3-imprinting-of-hematopoietic-progenitors
 - hypothesis:0001-shared-dysregulated-attractor
 created: '2026-07-07'
-updated: '2026-07-07'
+updated: '2026-07-10'
 added_by: "llm:claude-sonnet-4-6:research-topic"
 ---
 
@@ -63,3 +63,7 @@ Cheong et al. 2023 (Cell) demonstrated that severe SARS-CoV-2 infection imprints
 - Topic notes: `topic:innate-immune-memory-trained-immunity-in-pais`
 - Article notes: Cheong2023, Mitroulis2018.
 - Methods/Datasets: RECOVER-VITAL biobank; LIINC; sorted HSPCs from peripheral blood (low frequency, requires enrichment); single-cell multiome (snRNA + ATAC-seq).
+
+## Notes
+
+- 2026-07-10: **Opportunistic-feasibility triage done (t107 → `interpretation:0040-t107-hspc-epigenomics-feasibility-banked-pbmc`): CONDITIONAL GO, but the direct test is buildable on banked PAIS blood only after a target pivot.** The literal route — circulating CD34⁺ HSPC ATAC-seq from archived PBMC — is *marginal* (CD34⁺ ≈ 0.01–0.1% of PBMC → only ~a few hundred–2,000 usable HSPCs per frozen vial after CD34-preferential thaw apoptosis [@Desoutter2019] + sort loss ⇒ bulk low-input/Omni-ATAC single-vial only [@Corces2017]; scATAC/Multiome need multi-vial pooling) *and* compartment-mismatched to the **bone-marrow** HSPCs Cheong2023 imprinted. The **feasible, high-leverage** readout is instead **monocyte-progeny (CD14⁺) ATAC-seq** — abundant (~10–20% of PBMC, all-platform), and the imprint's *transmitted* readout + q0026 effector locus per Cheong2023, so a faithful (not fallback) target. The **definitive same-compartment** test needs **LIINC's banked bone marrow** (consortium/LCRC access). Access is *not* the binding constraint: RECOVER (open BAC application, viable PBMC, longitudinal to ~4 y, full acute-severity spectrum [@Horwitz2023]) and the UK ME/CFS Biobank (open cost-reimbursement, ~20 PBMC vials/contact [@Lacerda2018]) are realistically obtainable — cell-number/compartment and severity-selection (Cheong2023 severe-only) are. Recommended form: severity-stratified, within-trigger (PAIS-persistent vs infected-recovered) monocyte-ATAC on RECOVER + UK-ME/CFS PBMC, LIINC marrow as the fidelity check.
