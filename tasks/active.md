@@ -223,26 +223,6 @@ Cross-domain analogies sharpening existing persistence/autoimmunity topics. Enti
 
 Follow-up to t095. Cheong2023 (load-bearing) is being ingested separately; seed the other key anchors as paper entities to ground the topic: Gu2023 (long-COVID trained-immunity review), Bomans2018 (post-sepsis HSPC central training — the non-COVID PAIS parallel), Mitroulis2018 (beta-glucan HSPC myelopoiesis training, foundational central-training evidence). Humer2025 (ME/CFS) is conceptual-only — cite in bib, lower priority to fully summarize. Grounds q0023/q0024/q0026.
 
-## [t107] Opportunistic HSPC-epigenomics feasibility: can archived PAIS-cohort PBMCs support retrospective ATAC-seq? (q0055)
-- priority: P3
-- status: proposed
-- aspects: []
-- related: [question:0055-hspc-epigenomic-imprinting-depth-predicts-pais-persistence]
-- group: explore-followups
-- created: 2026-07-07
-
-Follow-up to t095 / discharges part of q0055. Check whether an existing longitudinal PAIS cohort with banked blood (RECOVER, LIINC) retains sufficient HSPC/progenitor cell numbers in archived PBMCs to run ATAC-seq retrospectively — a high-leverage opportunistic analysis needing no new trial. Deliverable: a short design note on cell-number feasibility + which cohort(s) qualify. Tests the central-training (HSPC-imprinting-depth) prediction against actual PAIS persistence.
-
-## [t108] Cross-PAIS-trigger acute IL-6-peak table as proxy for predicted HSPC-imprinting depth (tests q0026)
-- priority: P3
-- status: proposed
-- aspects: []
-- related: [topic:innate-immune-memory-trained-immunity-in-pais]
-- group: explore-followups
-- created: 2026-07-07
-
-Follow-up to t095. Low-cost desk research: compile acute IL-6 peak levels across PAIS triggers (SARS-CoV-2 vs Borrelia vs Coxiella/Q-fever vs EBV vs dengue) from available cohort data, as a proxy for predicted IL-6/STAT3-driven HSPC central-training depth and thus PAIS-imprinting risk. Gives the q0026 axis its first cross-trigger comparative frame and tests whether low-IL-6 pathogens (which should imprint less) fit the observed PAIS-incidence pattern. Note the severity-bound caveat: Cheong2023 imprinting was shown only in severe/hospitalized disease.
-
 ## [t110] Sync-gated find-datasets pass for the six PAIS boundary strata (D-004 reproducibility filter)
 - priority: P3
 - status: proposed
@@ -290,3 +270,13 @@ From t109 gap scan. Chaudhary et al. medRxiv 2024.10.07.24315052 — multi-ances
 - created: 2026-07-08
 
 The per-deposit config.parse[acc] block has become the de-facto program for stage_matrix (member_glob, positional col indices, level_map, ordered group_regex rules, covariate specs, metadata_format). Today a typo'd knob name silently defaults or is ignored — a fail-early violation. Add a schema (jsonschema or pydantic) validating each deposit's parse block (+ its group_source shape and de_models covariate coupling) BEFORE Snakemake builds the DAG (or at stage_matrix entry), so a malformed contract HALTs at load with a precise per-deposit message instead of silently mis-parsing. Do this before the a-rest deposit count climbs (gse226260/gse267625/gse228320). Surfaced in the 2026-07-08 project self-review alongside #1 (arm-partition guard, DONE) and #3 (QA reconciliation, DONE). Plan: entities/plans/0010-crosspais-pathway-response-rank-estimation.md.
+
+## [t121] Query RECOVER / UK ME/CFS Biobank / LIINC for specimen-access + severity-gate parameters that unblock pre-registration:0006 (G1/G2)
+- priority: P2
+- status: proposed
+- aspects: []
+- related: [pre-registration:0006-monocyte-atac-hspc-imprint-pais-persistence, question:0055-hspc-epigenomic-imprinting-depth-predicts-pais-persistence, interpretation:0040-t107-hspc-epigenomics-feasibility-banked-pbmc]
+- group: explore-followups
+- created: 2026-07-10
+
+Collect the biorepository parameters that operationalize pre-registration:0006's deferred execution and its G1/G2 admissibility gates, so platform (bulk vs single-cell), per-arm N, and power can be fixed. PER COHORT (RECOVER LC arm; UK ME/CFS Biobank; LIINC bone-marrow arm): (G1 substrate) confirmed viable cryopreserved PBMC counts per aliquot, number of vials/timepoint, expected CD14+ monocyte yield post-thaw, and processing/batch metadata (freeze date, site, isolation protocol) for batch-confound modeling; (G2 severity) the acute-severity variable(s) recorded and their distribution by case vs control arm, incl. hospitalization/oxygen/ICU where available — the fields needed to prove both arms span mild->severe rather than assert it; (G3/G4) availability of infected-recovered (not uninfected-only) control labels and a locked 12+ month PAIS case definition (WHO/CDC for LC; CCC/ICC for ME/CFS); sampling timing (post-acute + longitudinal 3->12mo). Deliverable: a per-cohort parameter table feeding the deferred power calc; flag any cohort that cannot satisfy G1/G2/G3 (e.g. narrow-severity or uninfected-only) as non-qualifying. Blocks execution of pre-registration:0006.
