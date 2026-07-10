@@ -3,7 +3,7 @@ id: "workflow-run:t035-cross-trigger-pathway-overlap-verdict"
 kind: "workflow-run"
 title: "t035 cross-trigger pathway-overlap verdict run"
 status: "complete"
-workflow: "t035-cross-trigger-pathway-overlap"
+workflow: "workflow:t035-cross-trigger-pathway-overlap"
 manifest_path: "results/workflow-runs/t035-cross-trigger-pathway-overlap-verdict/datapackage.yaml"
 supersedes: []
 produces:
