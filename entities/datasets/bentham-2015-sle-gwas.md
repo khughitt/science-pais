@@ -58,7 +58,7 @@ identity_context:
     resolution_status: declared_unresolved
 ---
 
-# Bentham 2015 systemic lupus erythematosus GWAS summary statistics (European ancestry)
+# Bentham 2015 [@Bentham2015] systemic lupus erythematosus GWAS summary statistics (European ancestry)
 
 **Candidate dataset.** `status: candidate` — catalogued but not yet acquired.
 

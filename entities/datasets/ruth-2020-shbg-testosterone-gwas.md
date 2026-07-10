@@ -70,7 +70,7 @@ identity_context:
     resolution_status: declared_unresolved
 ---
 
-# Ruth 2020 SHBG and testosterone GWAS summary statistics (sex-specific, European ancestry)
+# Ruth 2020 [@Ruth2020] SHBG and testosterone GWAS summary statistics (sex-specific, European ancestry)
 
 **Candidate dataset.** `status: candidate` — the six MR-exposure strata (SHBG +
 total testosterone × combined/male/female) are **acquired + checksummed** for

@@ -1,10 +1,10 @@
 ---
 id: dataset:n3c-recover-longcovid
 kind: dataset
-title: "N3C — National COVID Cohort Collaborative (+ RECOVER-EHR)"
+title: N3C — National COVID Cohort Collaborative (+ RECOVER-EHR)
 status: candidate
-created: "2026-06-21"
-updated: "2026-07-01"
+created: '2026-06-21'
+updated: '2026-07-10'
 origin: external
 source_class: observational
 tier: evaluate-next
@@ -13,39 +13,59 @@ access:
   level: mixed
   availability: available
   verified: false
-  source_url: "https://covid.cd2h.org/dashboard/recover"
+  source_url: https://covid.cd2h.org/dashboard/recover
   reproducibility:
     obtainability: approved-project
     execution: trusted-environment
     extractability: aggregate-reviewed
-    notes: "Describes the De-identified/Limited (enclave) route — the real-signal tier this mixed umbrella now represents (the open synthetic tier is broken out as dataset:n3c-recover-longcovid-synthetic). Access is DUA + institutional + approved-project onboarding; compute is enclave-only (Palantir Foundry); only export-reviewed aggregates leave. Below the third-party-reproducible bar (D-004). Refines D-004's informal 'insider-only' label to the precise lattice class trust-based-output (reviewed aggregates DO leave — not extract:none, not custodian-run)."
+    notes: Describes the De-identified/Limited (enclave) route — the real-signal tier
+      this mixed umbrella now represents (the open synthetic tier is broken out as
+      dataset:n3c-recover-longcovid-synthetic). Access is DUA + institutional + approved-project
+      onboarding; compute is enclave-only (Palantir Foundry); only export-reviewed
+      aggregates leave. Below the third-party-reproducible bar (D-004). Refines D-004's
+      informal 'insider-only' label to the precise lattice class trust-based-output
+      (reviewed aggregates DO leave — not extract:none, not custodian-run).
+  verification_method: ''
+  exception:
+    mode: scope-reduced
+    decision_date: '2026-07-10'
+    rationale: Gated N3C/RECOVER enclave (DUA + institutional + approved-project onboarding;
+      Palantir Foundry enclave compute; only export-reviewed aggregates leave). Below
+      the third-party-reproducible bar per decision D-004; held as boundary-monitor/read-across,
+      never executed. Access cannot be independently verified by design.
 accessions: []
-ontology_terms: [long-covid, sars-cov-2, ehr, computable-phenotype, sex-differences]
+ontology_terms:
+- long-covid
+- sars-cov-2
+- ehr
+- computable-phenotype
+- sex-differences
 provided_capabilities:
-  - modality: clinical-ehr
-    assay: ehr-coded
-    trigger: sars-cov-2
-    cohort_design: prospective-longitudinal
-    case_definition: who-lc
-    stratification: sex
+- modality: clinical-ehr
+  assay: ehr-coded
+  trigger: sars-cov-2
+  cohort_design: prospective-longitudinal
+  case_definition: who-lc
+  stratification: sex
 related:
-  - task:t013
-  - task:t079
-  - plan:0005-autoimmune-diathesis-sex-modifier-pais-analysis-plan
-  - interpretation:0031-t079-n3c-vs-opensafely-vehicle-decision
-  - interpretation:0032-t079-bc3-autoimmune-stratum-granularity
-  - interpretation:0033-t079-bc5-pasc-case-definition-lock
-  - interpretation:0034-t079-bc6-acute-severity-dateability
-  - interpretation:0035-t079-bc7-individual-utilisation
-  - paper:Pfaff2022
-  - paper:Thaweethai2023
-  - dataset:opensafely-longcovid
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - question:0003-acute-severity-threshold-for-self-sustaining-pais
+- task:t013
+- task:t079
+- plan:0005-autoimmune-diathesis-sex-modifier-pais-analysis-plan
+- interpretation:0031-t079-n3c-vs-opensafely-vehicle-decision
+- interpretation:0032-t079-bc3-autoimmune-stratum-granularity
+- interpretation:0033-t079-bc5-pasc-case-definition-lock
+- interpretation:0034-t079-bc6-acute-severity-dateability
+- interpretation:0035-t079-bc7-individual-utilisation
+- paper:Pfaff2022
+- paper:Thaweethai2023
+- dataset:opensafely-longcovid
+- question:0007-mechanism-of-female-predominance-in-pais
+- question:0003-acute-severity-threshold-for-self-sustaining-pais
 consumed_by:
-  - task:t079
+- task:t079
 siblings:
-  - dataset:n3c-recover-longcovid-synthetic
+- dataset:n3c-recover-longcovid-synthetic
+dataset_class: deposit
 ---
 
 # N3C — National COVID Cohort Collaborative (+ RECOVER-EHR)
@@ -137,3 +157,4 @@ no patient-reported fatigue severity. Single trigger.
   union; the autoimmune-thyroid Graves+Hashimoto-specific set with E03 exclusion; myositis
   drug-induced/paraneoplastic exclusion) stays **`plan:0006` WP1 (`task:t082`)**, and the three
   a-priori scoping decisions remain pre-registration items.
+- 2026-07-10 (keith@2026-07-10): scope-reduced — Gated N3C/RECOVER enclave (DUA + institutional + approved-project onboarding; Palantir Foundry enclave compute; only export-reviewed aggregates leave). Below the third-party-reproducible bar per decision D-004; held as boundary-monitor/read-across, never executed. Access cannot be independently verified by design.
