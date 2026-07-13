@@ -16,21 +16,26 @@ uv run --frozen science validate --verbose
 
 ## Worktrees
 
-This project consumes the `science` toolkit through a **relative editable** uv
-source (`science = { path = "../../../science/science" }` in `pyproject.toml`),
-resolved relative to the checkout's location on disk. A git worktree created
-**inside** the repo (the default `.worktrees/<name>/`) sits two directory levels
-deeper than the main checkout, so that path no longer resolves and **every
-`uv run`** — any pre-commit hook, `validate.sh`, and tests — fails with
-`Distribution not found`.
+This project installs the `science` toolkit from its public Git source, with the
+exact revision pinned in `uv.lock`. The dependency is location-independent, so
+nested worktrees under `.worktrees/<name>/` are the preferred default and run
+the same project-local toolchain as the main checkout.
 
-- **Isolated editing / docs-only commits:** a nested `.worktrees/` worktree is
-  fine. The hook failure is expected and unrelated to your change — commit with
-  `git commit --no-verify`, or commit from the main checkout.
-- **When you need `uv` / tests / validation to run inside the worktree:** create
-  it at the **same filesystem depth** as the main checkout (a sibling directory),
-  not nested — e.g. `git worktree add ../post-acute-infection--<branch> <branch>` —
-  so the relative `science` source still resolves.
+After creating a worktree, initialize it from that checkout:
+
+```bash
+uv sync --frozen
+uv run --frozen science --version
+bash validate.sh --verbose
+```
+
+Do not route commands through the main checkout's `.venv`, rewrite the source
+path, or move the worktree outside the repository. When deliberately testing
+uncommitted toolkit code, overlay it for that invocation only:
+
+```bash
+uv run --with-editable ~/d/science/science <command>
+```
 
 ## Conventions
 

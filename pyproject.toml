@@ -18,7 +18,7 @@ pipeline = [
 ]
 
 [tool.uv.sources]
-science = { path = "../../../science/science", editable = true }
+science = { git = "https://github.com/khughitt/science.git", subdirectory = "science" }
 
 # code/scripts/ holds rule-callable CLI scripts that import sibling modules
 # (e.g. acquire_common). At runtime the script's own dir is on sys.path[0];
