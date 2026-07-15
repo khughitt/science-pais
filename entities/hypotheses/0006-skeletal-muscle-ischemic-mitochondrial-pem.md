@@ -1,10 +1,8 @@
 ---
 id: hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
 kind: hypothesis
-title: Skeletal-muscle ischemic-mitochondrial lesion as the primary substrate of post-exertional
-  malaise
-status: proposed
-phase: candidate
+title: Skeletal-muscle ischemic-mitochondrial lesion as the primary substrate of post-exertional malaise
+status: draft
 source_refs:
 - cite:Scheibenbogen2024
 - cite:Appelman2024
@@ -38,14 +36,11 @@ related:
 - task:t056
 - task:t057
 - task:t058
-created: '2026-06-20'
-updated: '2026-06-26'
+created: "2026-06-20"
+updated: "2026-06-26"
 review_state:
   last_reviewed: '2026-06-26'
-  last_review_note: 't057: question:0016 now carries the redox-directionality
-    specification for P4. h0006 treats ROS as a possible feedback/maintenance node
-    only if temporal precedence or redox target engagement links it to the provoked
-    muscle trajectory.'
+  last_review_note: 't057: question:0016 now carries the redox-directionality specification for P4. h0006 treats ROS as a possible feedback/maintenance node only if temporal precedence or redox target engagement links it to the provoked muscle trajectory.'
 ---
 # Hypothesis: Skeletal-muscle ischemic-mitochondrial lesion as the primary substrate of post-exertional malaise
 

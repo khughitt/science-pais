@@ -1,10 +1,8 @@
 ---
 id: hypothesis:0013-ido1-ido2-bistable-tryptophan-metabolic-trap
 kind: hypothesis
-title: IDO1-IDO2 kinetic imbalance creates a bistable tryptophan metabolic trap in
-  PAIS-susceptible individuals
-status: proposed
-phase: active
+title: IDO1-IDO2 kinetic imbalance creates a bistable tryptophan metabolic trap in PAIS-susceptible individuals
+status: active
 source_refs:
 - cite:Kashi2019
 - cite:Al-Hakeim2023
@@ -14,22 +12,12 @@ origins:
 related:
 - question:0025-ifn-i-tryptophan-malabsorption-platelet-serotonin-depletion-vagal
 - hypothesis:0001-shared-dysregulated-attractor
-created: '2026-07-06'
-updated: '2026-07-06'
+created: "2026-07-06"
+updated: "2026-07-06"
 added_by: explore-ideas:claude-opus-4-8:cand-mechanism-ido-tryptophan-bistable-trap
 lens_views:
 - lens: mechanism
-  rationale: 'The IDO1-IDO2 system exhibits bistable kinetics: IDO1 undergoes substrate
-    inhibition at high tryptophan concentrations, while IDO2 (the low-affinity backup
-    enzyme) is inactivated by common polymorphisms in ~30% of the population. Mathematical
-    modeling shows that a triggering elevation of tryptophan, combined with IDO2 loss-of-function,
-    can drive the system into a self-sustaining pathological attractor persisting
-    for months even after tryptophan inputs normalize. This mechanism is distinct
-    from the PEM-centered metabolic framing and predicts genetic susceptibility (IDO2
-    genotype) that would stratify PAIS risk across triggers. It has not been tested
-    in PTLDS, post-Q-fever, or post-sepsis cohorts. It is also distinct from the project''s
-    existing IFN-driven tryptophan-malabsorption chain (question:0025): a cell-intrinsic
-    enzymatic bistability with a genetic susceptibility axis, not gut malabsorption.'
+  rationale: 'The IDO1-IDO2 system exhibits bistable kinetics: IDO1 undergoes substrate inhibition at high tryptophan concentrations, while IDO2 (the low-affinity backup enzyme) is inactivated by common polymorphisms in ~30% of the population. Mathematical modeling shows that a triggering elevation of tryptophan, combined with IDO2 loss-of-function, can drive the system into a self-sustaining pathological attractor persisting for months even after tryptophan inputs normalize. This mechanism is distinct from the PEM-centered metabolic framing and predicts genetic susceptibility (IDO2 genotype) that would stratify PAIS risk across triggers. It has not been tested in PTLDS, post-Q-fever, or post-sepsis cohorts. It is also distinct from the project''s existing IFN-driven tryptophan-malabsorption chain (question:0025): a cell-intrinsic enzymatic bistability with a genetic susceptibility axis, not gut malabsorption.'
   origin_ref: explore-ideas-mechanism
 ---
 # Hypothesis: IDO1-IDO2 kinetic imbalance creates a bistable tryptophan metabolic trap in PAIS-susceptible individuals

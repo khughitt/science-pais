@@ -1,10 +1,8 @@
 ---
 id: hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
 kind: hypothesis
-title: Measurement-channel and ascertainment bias predictably shapes apparent PAIS
-  group differences
-status: proposed
-phase: candidate
+title: Measurement-channel and ascertainment bias predictably shapes apparent PAIS group differences
+status: draft
 source_refs:
 - cite:Walitt2024
 - cite:Novak2026
@@ -36,8 +34,8 @@ related:
 - question:0042-is-the-cross-trigger-1020-chronic-fraction-an-artifact-of-shared-case
 required_capabilities:
 - modality: clinical-ehr
-created: '2026-06-24'
-updated: '2026-07-10'
+created: "2026-06-24"
+updated: "2026-07-10"
 ---
 # Hypothesis: Measurement-channel and ascertainment bias predictably shapes apparent PAIS group differences
 

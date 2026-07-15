@@ -1,10 +1,8 @@
 ---
 id: hypothesis:0019-cgas-sting-nlrp3-sterile-innate-sensing-driver
 kind: hypothesis
-title: Upstream cytosolic nucleic-acid sensing (cGAS-STING / NLRP3) as a sterile self-sustaining
-  PAIS driver
-status: proposed
-phase: candidate
+title: Upstream cytosolic nucleic-acid sensing (cGAS-STING / NLRP3) as a sterile self-sustaining PAIS driver
+status: draft
 source_refs:
 - cite:Sun2013
 - cite:Domizio2022
@@ -20,8 +18,8 @@ related:
 - question:0006-jak-stat-il6-driver-vs-marker
 - hypothesis:0001-shared-dysregulated-attractor
 - hypothesis:0003-immune-exhaustion-feedback
-created: '2026-07-10'
-updated: '2026-07-10'
+created: "2026-07-10"
+updated: "2026-07-10"
 added_by: user
 ---
 # Hypothesis: Upstream cytosolic nucleic-acid sensing (cGAS-STING / NLRP3) as a sterile self-sustaining PAIS driver

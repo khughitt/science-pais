@@ -2,8 +2,7 @@
 id: hypothesis:0020-host-immune-baseline-reserve-gate
 kind: hypothesis
 title: Pre-infection host immune-baseline reserve gates PAIS risk across host strata
-status: proposed
-phase: candidate
+status: draft
 source_refs:
 - cite:Vinson2024
 - cite:Peluso2022a
@@ -20,8 +19,8 @@ related:
 - question:0040-pregnancy-state-immune-milieu-as-a-modifier-of-pais-risk-and-trajectory
 - hypothesis:0004-acute-severity-threshold
 - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
-created: '2026-07-10'
-updated: '2026-07-10'
+created: "2026-07-10"
+updated: "2026-07-10"
 added_by: user
 ---
 # Hypothesis: Pre-infection host immune-baseline reserve gates PAIS risk across host strata

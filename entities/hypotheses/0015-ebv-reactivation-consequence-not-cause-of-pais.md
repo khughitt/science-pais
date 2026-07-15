@@ -1,10 +1,8 @@
 ---
 id: hypothesis:0015-ebv-reactivation-consequence-not-cause-of-pais
 kind: hypothesis
-title: EBV reactivation in post-COVID fatigue is a consequence of immune disruption,
-  not an independent causal mechanism
-status: proposed
-phase: active
+title: EBV reactivation in post-COVID fatigue is a consequence of immune disruption, not an independent causal mechanism
+status: active
 source_refs:
 - cite:Peluso2022
 - cite:Chen2023
@@ -15,20 +13,12 @@ related:
 - question:0022-immune-state-displacement-mediator-vs-co-traveler
 - question:0054-ebv-reactivation-autoantibody-emergence-temporal-ordering
 - question:0051-prior-symptomatic-ebv-mononucleosis-as-pais-risk-amplifier
-created: '2026-07-06'
-updated: '2026-07-06'
+created: "2026-07-06"
+updated: "2026-07-06"
 added_by: explore-ideas:claude-opus-4-8:cand-contrarian-ebv-reactivation-epiphenomenon
 lens_views:
 - lens: contrarian
-  rationale: EBV is ubiquitous and reactivates during any immune stress, making it
-    plausibly a consequence rather than a cause of post-infectious immune disruption.
-    Peluso found EBV-marker associations with long COVID fatigue/cognitive symptoms,
-    but cross-sectionally, unable to establish directionality or exclude severity
-    confounding; mechanistic reviews call the pathway 'enigmatic.' No trial shows
-    suppressing EBV resolves symptoms, and the field has not established whether the
-    EBV signal survives adjustment for overall immune activation. This targets the
-    EBV-reactivation leg specifically, complementing the project's general question:0022
-    (mediator vs co-traveler).
+  rationale: EBV is ubiquitous and reactivates during any immune stress, making it plausibly a consequence rather than a cause of post-infectious immune disruption. Peluso found EBV-marker associations with long COVID fatigue/cognitive symptoms, but cross-sectionally, unable to establish directionality or exclude severity confounding; mechanistic reviews call the pathway 'enigmatic.' No trial shows suppressing EBV resolves symptoms, and the field has not established whether the EBV signal survives adjustment for overall immune activation. This targets the EBV-reactivation leg specifically, complementing the project's general question:0022 (mediator vs co-traveler).
   origin_ref: explore-ideas-contrarian
 ---
 # Hypothesis: EBV reactivation in post-COVID fatigue is a consequence of immune disruption, not an independent causal mechanism

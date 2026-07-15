@@ -1,10 +1,8 @@
 ---
 id: hypothesis:0017-pem-overdiagnosed-via-self-report-nonspecific
 kind: hypothesis
-title: Post-exertional malaise is substantially overdiagnosed via self-report in long
-  COVID and is not mechanistically specific to PAIS
-status: proposed
-phase: active
+title: Post-exertional malaise is substantially overdiagnosed via self-report in long COVID and is not mechanistically specific to PAIS
+status: active
 source_refs:
 - cite:Stussman2025
 - cite:Twomey2020
@@ -15,19 +13,12 @@ related:
 - question:0015-does-pem-requirement-improve-cross-study-comparability
 - question:0049-two-day-cpet-multiomic-pem-assay-across-pais
 - question:0017-deflationary-alternatives-vs-shared-pathophysiology
-created: '2026-07-06'
-updated: '2026-07-06'
+created: "2026-07-06"
+updated: "2026-07-06"
 added_by: explore-ideas:claude-opus-4-8:cand-contrarian-pem-overdiagnosed-nonspecific
 lens_views:
 - lens: contrarian
-  rationale: 'PEM is treated as near-pathognomonic for ME/CFS and increasingly used
-    as a required PAIS subclassification criterion. Stussman 2025 found 67% of long
-    COVID self-reported PEM but only 5.9% showed objective post-exertional deterioration
-    on CPET, milder than ME/CFS; PEM-like phenomena occur in up to 33% of cancer-related-fatigue
-    patients with no post-infectious illness. This large self-report/objective dissociation
-    directly bears on the project''s question:0015 (does requiring PEM improve comparability):
-    if PEM reflects generic symptom attribution, PEM-gated case definitions may not
-    enrich mechanistic signal as assumed.'
+  rationale: 'PEM is treated as near-pathognomonic for ME/CFS and increasingly used as a required PAIS subclassification criterion. Stussman 2025 found 67% of long COVID self-reported PEM but only 5.9% showed objective post-exertional deterioration on CPET, milder than ME/CFS; PEM-like phenomena occur in up to 33% of cancer-related-fatigue patients with no post-infectious illness. This large self-report/objective dissociation directly bears on the project''s question:0015 (does requiring PEM improve comparability): if PEM reflects generic symptom attribution, PEM-gated case definitions may not enrich mechanistic signal as assumed.'
   origin_ref: explore-ideas-contrarian
 ---
 # Hypothesis: Post-exertional malaise is substantially overdiagnosed via self-report in long COVID and is not mechanistically specific to PAIS

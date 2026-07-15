@@ -1,10 +1,8 @@
 ---
 id: hypothesis:0003-immune-exhaustion-feedback
 kind: hypothesis
-title: Post-acute chronicity is sustained by a self-reinforcing loop of unresolved
-  antigenic stimulation and T-cell exhaustion that fails to terminate inflammation
-status: proposed
-phase: active
+title: Post-acute chronicity is sustained by a self-reinforcing loop of unresolved antigenic stimulation and T-cell exhaustion that fails to terminate inflammation
+status: active
 source_refs:
 - cite:Aid2025
 - cite:Ryan2022
@@ -26,8 +24,8 @@ related:
 - task:t047
 - task:t054
 - task:t060
-created: '2026-06-11'
-updated: '2026-07-07'
+created: "2026-06-11"
+updated: "2026-07-07"
 ---
 # Hypothesis: Post-acute chronicity is sustained by a self-reinforcing loop of unresolved antigenic stimulation and T-cell exhaustion that fails to terminate inflammation
 

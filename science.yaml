@@ -244,3 +244,4 @@ health:
     - hypothesis/0006-skeletal-muscle-ischemic-mitochondrial-pem
     - belief_state flips
     reason: Reviewed in task:t076; the h0006 bundle honestly remains asymmetric, with localization support but weak/contested ischemic, ionic, and self-perpetuation legs.
+entity_schema_version: 2

@@ -1,10 +1,8 @@
 ---
 id: hypothesis:0018-circulating-antigen-as-severity-biomarker-not-driver
 kind: hypothesis
-title: Circulating SARS-CoV-2 antigen in long COVID is a severity biomarker, not a
-  symptom driver
-status: proposed
-phase: active
+title: Circulating SARS-CoV-2 antigen in long COVID is a severity biomarker, not a symptom driver
+status: active
 source_refs:
 - cite:Mateu2026
 - cite:Altmann2023
@@ -14,19 +12,12 @@ origins:
 related:
 - question:0002-antigen-clearance-rescues-symptoms
 - hypothesis:0002-tissue-reservoir-antigen-fragment
-created: '2026-07-06'
-updated: '2026-07-06'
+created: "2026-07-06"
+updated: "2026-07-06"
 added_by: explore-ideas:claude-opus-4-8:cand-contrarian-antigen-severity-marker
 lens_views:
 - lens: contrarian
-  rationale: The dominant narrative treats spike-antigen persistence as a likely driver
-    of chronic immune activation. A blinded 2-year longitudinal cohort found antigenemia
-    uncorrelated with symptom count, type, antibody titers, or vaccination status,
-    and detectable in recovered individuals; a separate large null found no differential
-    adaptive immune response by symptom status. This is the sharp null flip of the
-    project's question:0002 (does clearing antigen rescue symptoms) - if antigenemia
-    merely indexes acute severity, antigen-reduction strategies would be unlikely
-    to resolve post-acute symptoms.
+  rationale: The dominant narrative treats spike-antigen persistence as a likely driver of chronic immune activation. A blinded 2-year longitudinal cohort found antigenemia uncorrelated with symptom count, type, antibody titers, or vaccination status, and detectable in recovered individuals; a separate large null found no differential adaptive immune response by symptom status. This is the sharp null flip of the project's question:0002 (does clearing antigen rescue symptoms) - if antigenemia merely indexes acute severity, antigen-reduction strategies would be unlikely to resolve post-acute symptoms.
   origin_ref: explore-ideas-contrarian
 ---
 # Hypothesis: Circulating SARS-CoV-2 antigen in long COVID is a severity biomarker, not a symptom driver

@@ -1,10 +1,8 @@
 ---
 id: hypothesis:0016-fibrinaloid-microclots-nonspecific-inflammatory-marker
 kind: hypothesis
-title: Fibrinaloid microclots in long COVID are a non-specific inflammatory marker,
-  not a disease-specific pathogenic mechanism
-status: proposed
-phase: active
+title: Fibrinaloid microclots in long COVID are a non-specific inflammatory marker, not a disease-specific pathogenic mechanism
+status: active
 source_refs:
 - cite:Hunt2024
 - cite:Kell2022
@@ -16,19 +14,12 @@ related:
 - question:0038-netosis-released-histones-and-extracellular-dna-as-the-structural
 - question:0017-deflationary-alternatives-vs-shared-pathophysiology
 - hypothesis:0001-shared-dysregulated-attractor
-created: '2026-07-06'
-updated: '2026-07-06'
+created: "2026-07-06"
+updated: "2026-07-06"
 added_by: explore-ideas:claude-opus-4-8:cand-contrarian-microclots-nonspecific
 lens_views:
 - lens: contrarian
-  rationale: 'The thromboinflammation/microclot hypothesis drives calls for costly
-    anticoagulation and apheresis. Hunt et al. 2024 concluded the evidence base is
-    insufficient, citing methodological limitations and absent rigorous controls in
-    foundational studies; microclots are documented in sepsis, DIC, rheumatoid arthritis,
-    and other chronic inflammatory conditions. This challenges the premise of the
-    project''s question:0010 (vascular microclot subphenotype) and question:0038 (NETosis
-    microclot scaffold): if microclots are a non-specific inflammatory by-product,
-    targeting them would be misguided and potentially harmful.'
+  rationale: 'The thromboinflammation/microclot hypothesis drives calls for costly anticoagulation and apheresis. Hunt et al. 2024 concluded the evidence base is insufficient, citing methodological limitations and absent rigorous controls in foundational studies; microclots are documented in sepsis, DIC, rheumatoid arthritis, and other chronic inflammatory conditions. This challenges the premise of the project''s question:0010 (vascular microclot subphenotype) and question:0038 (NETosis microclot scaffold): if microclots are a non-specific inflammatory by-product, targeting them would be misguided and potentially harmful.'
   origin_ref: explore-ideas-contrarian
 ---
 # Hypothesis: Fibrinaloid microclots in long COVID are a non-specific inflammatory marker, not a disease-specific pathogenic mechanism

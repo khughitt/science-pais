@@ -1,10 +1,8 @@
 ---
 id: hypothesis:0014-nk-failure-clear-senescent-endothelium-sasp-propagation
 kind: hypothesis
-title: NK-cell failure to clear virus-induced senescent endothelial cells determines
-  PAIS persistence via SASP propagation
-status: proposed
-phase: active
+title: NK-cell failure to clear virus-induced senescent endothelial cells determines PAIS persistence via SASP propagation
+status: active
 source_refs:
 - cite:Nunes2026
 origins:
@@ -15,20 +13,12 @@ related:
 - question:0038-netosis-released-histones-and-extracellular-dna-as-the-structural
 - hypothesis:0001-shared-dysregulated-attractor
 - hypothesis:0003-immune-exhaustion-feedback
-created: '2026-07-06'
-updated: '2026-07-07'
+created: "2026-07-06"
+updated: "2026-07-07"
 added_by: explore-ideas:claude-opus-4-8:cand-mechanism-nk-clearance-endothelial-senescence-pais
 lens_views:
 - lens: mechanism
-  rationale: Acute viral infection can drive endothelial cells into premature senescence;
-    normally NK cells and macrophages clear senescent cells via perforin-granzyme
-    and efferocytosis. PAIS features documented NK cytotoxic dysfunction, which would
-    impair senescent-cell clearance specifically. The resulting SASP (IL-6, IL-8,
-    MMPs, PAI-1) both propagates senescence and activates the coagulation/inflammatory
-    circuits already described in PAIS (microclots, endothelial dysfunction). This
-    distinguishes persisters from resolvers by NK cytotoxic activity against senescent
-    targets - a testable endotype - and predicts senolytics work best in NK-dysfunction
-    individuals, not universally.
+  rationale: Acute viral infection can drive endothelial cells into premature senescence; normally NK cells and macrophages clear senescent cells via perforin-granzyme and efferocytosis. PAIS features documented NK cytotoxic dysfunction, which would impair senescent-cell clearance specifically. The resulting SASP (IL-6, IL-8, MMPs, PAI-1) both propagates senescence and activates the coagulation/inflammatory circuits already described in PAIS (microclots, endothelial dysfunction). This distinguishes persisters from resolvers by NK cytotoxic activity against senescent targets - a testable endotype - and predicts senolytics work best in NK-dysfunction individuals, not universally.
   origin_ref: explore-ideas-mechanism
 ---
 # Hypothesis: NK-cell failure to clear virus-induced senescent endothelial cells determines PAIS persistence via SASP propagation

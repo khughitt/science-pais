@@ -2,8 +2,7 @@
 id: hypothesis:0009-post-infectious-immune-set-point-shift-drives-long-term-autoimmune
 kind: hypothesis
 title: Post-infectious immune-set-point shift drives long-term autoimmune conversion
-status: proposed
-phase: candidate
+status: draft
 source_refs:
 - cite:Rojas2022
 - cite:Sharma2023
@@ -16,8 +15,8 @@ related:
 required_capabilities:
 - analysis_role: mr_exposure
   trait: autoimmune-disease
-created: '2026-07-01'
-updated: '2026-07-10'
+created: "2026-07-01"
+updated: "2026-07-10"
 datasets:
 - dataset:bentham-2015-sle-gwas
 - dataset:covid19-hgi-longcovid-gwas

@@ -1,10 +1,8 @@
 ---
 id: hypothesis:0005-reproductive-stage-immune-homeostatic-margin
 kind: hypothesis
-title: Reproductive-stage transitions alter immune homeostatic margin and modify risk
-  of failed post-infectious recovery
-status: proposed
-phase: active
+title: Reproductive-stage transitions alter immune homeostatic margin and modify risk of failed post-infectious recovery
+status: active
 source_refs:
 - cite:Shah2025
 - cite:Stewart2024
@@ -38,8 +36,8 @@ related:
 required_capabilities:
 - analysis_role: mr_exposure
   trait: sex-hormone-biomarker
-created: '2026-06-19'
-updated: '2026-07-10'
+created: "2026-06-19"
+updated: "2026-07-10"
 datasets:
 - dataset:ruth-2020-shbg-testosterone-gwas
 - dataset:covid19-hgi-longcovid-gwas

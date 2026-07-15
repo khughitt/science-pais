@@ -1,10 +1,8 @@
 ---
 id: hypothesis:0001-shared-dysregulated-attractor
 kind: hypothesis
-title: Post-acute infection syndromes are a shared dysregulated attractor reachable
-  from many triggers, not merely a shared symptom repertoire
-status: proposed
-phase: active
+title: Post-acute infection syndromes are a shared dysregulated attractor reachable from many triggers, not merely a shared symptom repertoire
+status: active
 source_refs:
 - cite:Komaroff2023
 - cite:Trautmann2025
@@ -45,8 +43,8 @@ related:
 - question:0042-is-the-cross-trigger-1020-chronic-fraction-an-artifact-of-shared-case
 required_capabilities:
 - modality: transcriptomics
-created: '2026-06-11'
-updated: '2026-07-10'
+created: "2026-06-11"
+updated: "2026-07-10"
 ---
 # Hypothesis: Post-acute infection syndromes are a shared dysregulated attractor reachable from many triggers, not merely a shared symptom repertoire
 

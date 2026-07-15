@@ -1,10 +1,8 @@
 ---
 id: hypothesis:0007-autoimmune-sfn-peripheral-dysautonomia-substrate
 kind: hypothesis
-title: Non-length-dependent autoimmune small-fiber neuropathy as a shared peripheral
-  substrate of PAIS dysautonomia
-status: proposed
-phase: candidate
+title: Non-length-dependent autoimmune small-fiber neuropathy as a shared peripheral substrate of PAIS dysautonomia
+status: draft
 source_refs:
 - cite:Oaklander2022
 - cite:Joseph2021
@@ -35,8 +33,8 @@ related:
 required_capabilities:
 - analysis_role: mr_exposure
   trait: autoimmune-disease
-created: '2026-06-24'
-updated: '2026-07-03'
+created: "2026-06-24"
+updated: "2026-07-03"
 datasets:
 - dataset:bentham-2015-sle-gwas
 - dataset:covid19-hgi-longcovid-gwas

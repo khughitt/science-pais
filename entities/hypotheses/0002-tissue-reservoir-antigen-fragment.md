@@ -1,10 +1,8 @@
 ---
 id: hypothesis:0002-tissue-reservoir-antigen-fragment
 kind: hypothesis
-title: A persisting pathogen-fragment reservoir in tissue-resident macrophages is
-  a pathogen-agnostic initiator of chronic post-infectious illness
-status: proposed
-phase: active
+title: A persisting pathogen-fragment reservoir in tissue-resident macrophages is a pathogen-agnostic initiator of chronic post-infectious illness
+status: active
 source_refs:
 - cite:McClune2025
 - cite:Peluso2024
@@ -31,8 +29,8 @@ required_capabilities:
 - modality: proteomics
   assay: tissue-antigen-detection
   sample_type: tissue
-created: '2026-06-11'
-updated: '2026-07-10'
+created: "2026-06-11"
+updated: "2026-07-10"
 ---
 # Hypothesis: A persisting pathogen-fragment reservoir in tissue-resident macrophages is a pathogen-agnostic initiator of chronic post-infectious illness
 
