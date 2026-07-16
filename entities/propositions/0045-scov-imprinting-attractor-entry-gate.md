@@ -8,10 +8,20 @@ claim_layer: mechanistic_narrative
 identification_strength: observational
 proxy_directness: indirect
 supports_scope: hypothesis_bundle
+measurement_model:
+  observed_entity: serum antibody ELISAs — S1-specific vs. HKU1/OC43-cross-reactive IgG/IgA titers and the IgM/IgG ratio — in cross-sectional post-infection long-COVID vs. control sera
+  latent_construct: prior seasonal-coronavirus immune imprinting acting as an attractor-entry gate via impaired SARS-CoV-2 clearance and prolonged antigen exposure
+  measurement_relation: imprinting is a latent B-cell-repertoire property proxied indirectly by serology, not the direct readout (BCR clonotyping / affinity mapping); cross-sectional titers conflate pre-existing imprint, waning, and post-infection boosting, so elevated HKU1/OC43 IgG is consistent with but not diagnostic of an entry-gating imprint
+  known_failure_modes:
+  - Mak2025 blood-draw timing mismatch (LC ~280d vs HC ~596d) confounds variant exposure and antibody waning
+  - cross-sectional design cannot establish that imprinting preceded LC rather than being shaped by it (arrow direction unproven)
+  - the identifying prediction (pre-COVID HKU1/OC43 serology to PAIS) is untested; the discriminating design needs pre-infection serology linked to prospective PAIS outcome, ideally with clonotyping
 discusses:
 - hypothesis:0001-shared-dysregulated-attractor
 related:
 - hypothesis:0001-shared-dysregulated-attractor
+- proposition:0021-acute-antigen-burden-determines-pais-incidence
+- proposition:0024-retained-fragment-burden-predicts-chronicity-over-initial-load
 source_refs:
 - paper:Mak2025
 - paper:Crotty2026
@@ -35,3 +45,7 @@ Mak2025's central confound is a blood-draw timing mismatch (LC sampled at median
 ## Measurement Model
 
 "Imprinting" is a latent B-cell-repertoire property operationalized here **indirectly** through serum antibody ELISAs (S1-specific vs. HKU1/OC43-cross-reactive IgG/IgA titers and the IgM/IgG ratio), not through the direct readout (BCR clonotyping / affinity mapping showing recall of seasonal-coronavirus clones against SARS-CoV-2 antigen). Cross-sectional post-infection titers conflate three sources — pre-existing imprint, waning, and post-infection boosting — so elevated HKU1/OC43 IgG in LC is consistent with, but not diagnostic of, an entry-gating imprint. The discriminating measurement is **pre-infection** seasonal-coronavirus serology (or banked pre-COVID samples) linked to prospective PAIS outcome, ideally with clonotyping to show suboptimal-epitope recall; only that design converts this proxy-based mechanistic narrative into a directional causal test.
+
+## Lower-Layer Support
+
+This mechanistic narrative rests on an empirical lower layer: its central causal step — impaired clearance **prolonging antigen exposure** and thereby lowering the attractor-entry threshold — is the claim the antigen-burden/persistence propositions establish directly. `proposition:0021` (acute antigen burden determines PAIS incidence) and `proposition:0024` (retained-fragment burden predicts chronicity over initial load) supply that grounding; this proposition adds a specific *upstream cause* (seasonal-coronavirus imprinting) for the prolonged-exposure step rather than re-deriving it.

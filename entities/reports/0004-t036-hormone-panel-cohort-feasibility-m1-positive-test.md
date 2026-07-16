@@ -2,7 +2,7 @@
 id: "report:0004-t036-hormone-panel-cohort-feasibility-m1-positive-test"
 kind: "report"
 title: "t036 dataset-feasibility: hormone-panel triangulation cohorts for the M1 positive test of h0005"
-status: "proposed"
+status: "draft"
 source_refs:
   - task:t036
   - hypothesis:0005-reproductive-stage-immune-homeostatic-margin

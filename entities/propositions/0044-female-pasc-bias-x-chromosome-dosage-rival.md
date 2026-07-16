@@ -8,6 +8,14 @@ claim_layer: mechanistic_narrative
 identification_strength: observational
 proxy_directness: indirect
 supports_scope: hypothesis_bundle
+measurement_model:
+  observed_entity: female-PASC association read against two usually-confounded proxy sets — menopausal stage / measured E2-FSH-AMH (hormone axis) and molecular X-dosage readouts (XIST expression, TLR7 biallelic expression, XCI-escape gene dosage)
+  latent_construct: whether the female PASC excess is carried by gonadal-steroid timing versus sex-chromosome dosage
+  measurement_relation: age, menopausal transition, and X-dosage all co-vary with female sex, so a female-PASC association alone (indirect) cannot attribute causation to either axis; the axes are only separable by a design that measures hormones and genetic-sex markers in the same subjects
+  known_failure_modes:
+  - the 40–55 female peak is jointly consistent with a perimenopausal window and with X-dosage effects
+  - X-dosage evidence (XIST/TLR7) is molecular and largely cross-sectional, with indirect link to the PASC phenotype
+  - no hormone-measured, genetically-resolved longitudinal PAIS cohort isolates either axis
 discusses:
 - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
 related:

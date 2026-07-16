@@ -244,4 +244,28 @@ health:
     - hypothesis/0006-skeletal-muscle-ischemic-mitochondrial-pem
     - belief_state flips
     reason: Reviewed in task:t076; the h0006 bundle honestly remains asymmetric, with localization support but weak/contested ischemic, ionic, and self-perpetuation legs.
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - proposition/0042-care-seeking-shared-confounder-test-negative-designs
+    - belief_state flips
+    reason: Reviewed 2026-07-15 health triage; this structural confounding claim rests decisively on the Nilforoshan2026 negative-control-exposure demonstration, with Sudre2024 corroborating direction through a different (self-report) channel at different residual magnitude rather than as an independent same-strength line. It is to be strengthened only by a genuinely independent negative-control replication, not by relabeling.
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - proposition/0043-host-reserve-dominates-acute-severity-gate
+    - belief_state flips
+    reason: Reviewed 2026-07-15 health triage; the reserve-dominance magnitude rests on the single strong Azhir2026 EHR causal-mediation result, while Russell2023 supplies mechanistic vocabulary rather than an independent effect estimate. Intentionally fragile until a second cohort with a pre-infection biological-reserve measure exists; the proxy-conditional magnitude must not be relabeled as stronger.
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - proposition/0045-scov-imprinting-attractor-entry-gate
+    - belief_state flips
+    reason: Reviewed 2026-07-15 health triage; the imprinting-gate instance rests on the single Mak2025 cross-sectional serology, with Crotty2026 analogical (vaccine-memory durability) rather than a PAIS measurement. Arrow direction is unproven and the identifying pre-infection-serology test is untested (question:0071), so single-line fragility is the honest state until that test runs.
+  - rule: belief.fragile-single-line
+    severity: warning
+    message_contains:
+    - hypothesis/0020-host-immune-baseline-reserve-gate
+    - belief_state flips
+    reason: Reviewed 2026-07-15 health triage; the bundle's well_supported state hinges on the same single Azhir2026 mediation line as proposition:0043, and is intentionally held fragile because its rank-ordering prediction (P3) across host strata is untested and no independent pre-infection reserve axis has been measured.
 entity_schema_version: 2

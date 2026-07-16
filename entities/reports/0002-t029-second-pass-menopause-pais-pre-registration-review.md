@@ -2,7 +2,7 @@
 id: "report:0002-t029-second-pass-menopause-pais-pre-registration-review"
 kind: "report"
 title: "t029 second-pass review: unreviewed pre-reg surface and second-precedent cross-read"
-status: "proposed"
+status: "draft"
 source_refs:
   - pre-registration:0001-menopause-pais-total-effect
   - report:0001-bias-audit-menopause-pais-total-effect

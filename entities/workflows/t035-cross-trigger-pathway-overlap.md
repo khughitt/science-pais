@@ -3,7 +3,6 @@ id: workflow:t035-cross-trigger-pathway-overlap
 kind: workflow
 title: "t035 cross-trigger pathway-overlap Snakemake workflow"
 status: active
-method: "snakemake"
 outputs:
   - slug: gse14577-pi-cfs-prepared-gene-matrix
     title: "GSE14577 prepared PI-CFS gene-expression clean base"

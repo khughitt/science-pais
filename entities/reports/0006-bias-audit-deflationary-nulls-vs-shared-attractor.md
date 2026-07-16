@@ -2,7 +2,7 @@
 id: "report:0006-bias-audit-deflationary-nulls-vs-shared-attractor"
 kind: "report"
 title: "Bias Audit: deflationary mechanism-specific nulls (h0015–h0018) scored against the shared-attractor thesis"
-status: "proposed"
+status: "draft"
 source_refs:
 - cite:Peluso2022
 - cite:Chen2023

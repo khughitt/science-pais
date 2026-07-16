@@ -7,6 +7,15 @@ claim_layer: causal_effect
 identification_strength: observational
 proxy_directness: indirect
 supports_scope: hypothesis_bundle
+measurement_model:
+  observed_entity: administrative EHR proxies — Charlson comorbidity index / comorbidity counts (reserve) and care-setting hospitalization/ICU (acute severity) — in a causal mediation decomposition
+  latent_construct: pre-infection host immunological/physiological reserve as the dominant gate on PAIS risk, with acute severity subordinate
+  measurement_relation: reserve and severity are both indirect billing-derived proxies; the 145%-vs-12% mediation split decomposes proxy-measured reserve against proxy-measured severity, so the direction is proxy-robust but the magnitude is proxy-conditional
+  known_failure_modes:
+  - Charlson under-captures sub-clinical immunological margin and over-weights mortality-salient conditions
+  - care-setting severity is ascertainment-shaped and entangled with care-seeking (hypothesis:0008)
+  - inconsistent mediation is sensitive to the adjustment set and unmeasured confounding
+  - no pre-infection biological-reserve measure (inflammatory tone, naive-T fraction) is used
 discusses:
 - hypothesis:0020-host-immune-baseline-reserve-gate
 related:
