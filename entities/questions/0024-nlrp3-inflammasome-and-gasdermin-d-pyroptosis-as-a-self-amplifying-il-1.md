@@ -12,9 +12,10 @@ source_refs:
 origins:
 - type: assistant
   ref: explore-ideas-mechanism
-related: []
+related:
+- hypothesis:0019-cgas-sting-nlrp3-sterile-innate-sensing-driver
 created: '2026-07-04'
-updated: '2026-07-05'
+updated: '2026-07-16'
 added_by: explore-ideas:claude-opus-4-8:cand-mechanism-nlrp3-pyroptosis-selfamplify
 lens_views:
 - lens: mechanism

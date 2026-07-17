@@ -10,9 +10,10 @@ source_refs: []
 origins:
 - type: assistant
   ref: explore-ideas-analogy
-related: []
+related:
+- hypothesis:0002-tissue-reservoir-antigen-fragment
 created: '2026-07-04'
-updated: '2026-07-05'
+updated: '2026-07-16'
 added_by: explore-ideas:claude-opus-4-8:cand-analogy-persister-cell-viral-dormancy-pais
 lens_views:
 - lens: analogy

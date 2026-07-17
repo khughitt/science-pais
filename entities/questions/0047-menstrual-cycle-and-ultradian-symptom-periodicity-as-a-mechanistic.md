@@ -10,9 +10,10 @@ source_refs: []
 origins:
 - type: assistant
   ref: explore-ideas-temporal
-related: []
+related:
+- hypothesis:0005-reproductive-stage-immune-homeostatic-margin
 created: '2026-07-04'
-updated: '2026-07-05'
+updated: '2026-07-16'
 added_by: explore-ideas:claude-opus-4-8:cand-temporal-menstrual-ultradian-probe
 lens_views:
 - lens: temporal

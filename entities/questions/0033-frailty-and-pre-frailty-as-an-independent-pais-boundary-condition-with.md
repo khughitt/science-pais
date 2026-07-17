@@ -10,9 +10,10 @@ source_refs: []
 origins:
 - type: assistant
   ref: explore-ideas-population
-related: []
+related:
+- hypothesis:0020-host-immune-baseline-reserve-gate
 created: '2026-07-04'
-updated: '2026-07-05'
+updated: '2026-07-16'
 added_by: explore-ideas:claude-opus-4-8:cand-population-frailty-pais-bidirectional
 lens_views:
 - lens: population

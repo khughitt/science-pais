@@ -10,9 +10,10 @@ source_refs: []
 origins:
 - type: assistant
   ref: explore-ideas-analogy
-related: []
+related:
+- hypothesis:0009-post-infectious-immune-set-point-shift-drives-long-term-autoimmune
 created: '2026-07-04'
-updated: '2026-07-06'
+updated: '2026-07-16'
 added_by: explore-ideas:claude-opus-4-8:cand-analogy-cgvhd-post-viral-tolerance-collapse
 lens_views:
 - lens: analogy

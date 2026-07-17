@@ -354,3 +354,28 @@ Operational vehicle hunt for pre-registration:0005 (the A1-vs-M3 adjudicator for
 - created: 2026-07-10
 
 
+
+## [t130] Promote the four cross-trigger stub papers to summarized entities (Broderick2012, Ramundo2025, Sanford2026, Watton2026)
+- priority: P3
+- status: proposed
+- aspects: []
+- related: [hypothesis:0001-shared-dysregulated-attractor]
+- created: 2026-07-17
+
+From curation sweep 2026-07-16 (PD-3 / FI-1). Four papers sit at status:stub but are already load-bearing: search:0002 and discussion:0002 cite them to grade the NON-COVID trigger legs of the cross-trigger convergence claim (search:0002 rates post-Ebola 'Thin-but-present | Sanford2026'; post-chikungunya 'Moderate ... but arthralgia-dominant'). Those gradings feed hypothesis:0001 (highest attention weight in project, open_question_debt=35) and D-003 infection-trigger scope discipline, yet rest on entities with no summary body. Trigger legs: Broderick2012 = post-mononucleosis cytokine imbalance; Ramundo2025 = post-chikungunya transcriptomics; Sanford2026 = post-Ebola metabolomics (PREPRINT - hold at that evidence level per project convention on preprints); Watton2026 = ME/CFS unified mechanistic model (synthesis review, not primary evidence). Use /science:research-papers (paper-researcher subagent) per paper. Side effect: clears the 4 paper.status-vocabulary warnings, but see the PD-4 task first - the vocabulary decision may change what status these land on. Sibling to t106/t114/t115 seeding tasks.
+
+## [t131] Decide the status-vocabulary convention for kind:paper (stub) and kind:plan (ready-with-caveats, not-ready)
+- priority: P3
+- status: proposed
+- aspects: []
+- created: 2026-07-17
+
+From curation sweep 2026-07-16 (PD-4 / DR-2). Seven of the project's 21 validation warnings are undeclared status values that encode REAL conventions, not typos. paper.status-vocabulary x4: 'stub' not in (active, retired) - Broderick2012, Ramundo2025, Sanford2026, Watton2026; 'stub' usefully distinguishes 'seeded, not yet read' from 'active'. plan.status-vocabulary x3: 'ready-with-caveats' (plan:0002, plan:2026-06-19-menopause-pais-total-effect-analysis) and 'not-ready' (plan:0005) not in (active, archived, complete, draft, retired, superseded). DO NOT flatten these to 'draft': the readiness verdicts are load-bearing - plan:0005's 'not-ready' IS the record of the D-004 gated-EHR ruling, and collapsing it would erase a decision. Options: (a) declare the values in the kind vocabularies if project-extensible, (b) move readiness into a dedicated field (e.g. readiness:) and keep status canonical, (c) accept + suppress via science.yaml health.accepted_validation with a documented reason, as already done for the belief.fragile-single-line rulings. Decide once; it governs t130's landing status.
+
+## [t132] Decide the source_refs convention for reanalysis/audit interpretations
+- priority: P3
+- status: proposed
+- aspects: []
+- created: 2026-07-17
+
+Carry-over from curation sweep 2026-07-10 (PD-3 there), re-verified unresolved in the 2026-07-16 sweep - unchanged across both, hence filed as a task rather than carried a third time. Nine artifacts lack source_refs: interpretation:0010-t006-functional-gpcr-autoantibody-ingestion, 0011-t046-antigen-clearance-trials-ingestion, 0012-t047-h0003-ifn-reconciliation, 0013-t050-novak2026-ingestion, 0014-sfn-prevalence-metric-harmonization-reanalysis, 0015-t055-measurement-channel-audit, 0016-t054-abrocitinib-trial-status-snapshot, 0017-t053-h0002-promotion-audit, plus paper:BrandstetterFigueroa2025. The 2026-07-10 sweep judged this a provenance-FIELD-PLACEMENT issue, not missing provenance: these entities do carry provenance, via related:/input: paper edges rather than source_refs. Decide: (a) backfill source_refs from the existing related: paper edges on the 8 interpretations, or (b) ratify related:/input: as the provenance channel for the reanalysis/audit interpretation class and suppress the inventory signal. Note interpretation:0015 is load-bearing for hypothesis:0008 (the t055 measurement-channel audit), so its provenance should be legible whichever way this lands. BrandstetterFigueroa2025 is a paper, not an interpretation - triage it separately; it may be a plain omission.

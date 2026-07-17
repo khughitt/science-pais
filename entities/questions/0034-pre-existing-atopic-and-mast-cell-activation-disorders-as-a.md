@@ -14,9 +14,10 @@ origins:
   ref: paper:Wolff2023
   date: '2023-11-01'
   independent: true
-related: []
+related:
+- hypothesis:0020-host-immune-baseline-reserve-gate
 created: '2026-07-04'
-updated: '2026-07-05'
+updated: '2026-07-16'
 added_by: explore-ideas:claude-opus-4-8:cand-population-atopic-mcas-pais-subgroup
 lens_views:
 - lens: population

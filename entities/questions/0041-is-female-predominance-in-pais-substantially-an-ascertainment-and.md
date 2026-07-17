@@ -10,9 +10,10 @@ source_refs: []
 origins:
 - type: assistant
   ref: explore-ideas-contrarian
-related: []
+related:
+- hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
 created: '2026-07-04'
-updated: '2026-07-05'
+updated: '2026-07-16'
 added_by: explore-ideas:claude-opus-4-8:cand-contrarian-female-ascertainment
 lens_views:
 - lens: contrarian
