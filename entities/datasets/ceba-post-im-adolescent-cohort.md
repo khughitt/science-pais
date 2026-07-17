@@ -32,9 +32,14 @@ access:
       terms; not third-party retrievable, so below the D-004 bar. Held as the best-matched
       IM->fatigue vehicle for question:0051: 200 IM adolescents + 70 controls, prospective
       to 6-month chronic-fatigue outcome, with PBMC stimulation panels, plasma cytokines,
-      hair cortisol. Barrier is an author request rather than an enclave, so it sits
-      ABOVE N3C/OpenSAFELY on the transparency ladder -- an authorization/contact
-      decision is plausible rather than foreclosed.'
+      hair cortisol. Author-request availability is DEAD/MISSING data, not a lighter
+      gate: no defined procedure, no enforcement, no appeal, and unfalsifiable (it
+      cannot be shown to be closed). It fails third-party reproducibility on the same
+      ground as an enclave -- arguably harder, since an enclave at least publishes a
+      followable procedure with a decidable outcome. Must NOT be ranked above
+      credential-gated/enclave sources on tractability, must not satisfy coverage for
+      question:0051, and must not justify deferring the search for a deposited
+      alternative. Scientific value is real; availability is not.'
     followup_task: task:t110
 accessions: []
 ontology_terms:
@@ -75,14 +80,23 @@ same subjects.
 decision.**
 
 Barrier: **no repository deposit exists.** The data-availability statement is author-request
-("available by the authors, without undue reservation") under Norwegian REK/consent terms, so it is
-not third-party retrievable as it stands.
+("available by the authors, without undue reservation") under Norwegian REK/consent terms.
 
-**Ladder position matters here:** the barrier is an **author request, not an enclave**. Unlike
-N3C/OpenSAFELY — where the gating is structural and export-reviewed by design — a contact/
-authorization decision here is **plausible rather than foreclosed**. That makes CEBA the most
-tractable gated asset in this sweep, and the one most worth an actual decision.
+**Treat this as dead / missing data, not as a lighter gate.** "Available from the authors on
+reasonable request" is a publication formality, not an access path: it has no defined procedure, no
+enforcement, no SLA, and no appeal, and it empirically resolves to data almost never (non-response,
+departed authors, lost media, refusal without stated cause, indefinite delay). It therefore fails
+third-party reproducibility on the **same** ground as an enclave — and arguably harder, since an
+enclave at least publishes a followable procedure with a decidable outcome. Author-request
+availability is *unfalsifiable*: it cannot be shown to be closed, so it lingers as a false option
+and inflates apparent coverage.
+
+Accordingly CEBA must **not** be ranked above credential-gated or enclave sources on tractability,
+must not satisfy any coverage requirement for `question:0051`, and must not justify deferring the
+search for a genuinely deposited alternative. Its scientific value is real; its availability is not.
 
 ## Access verification log
 
-- 2026-07-17 (agent (verify-access)): scope-reduced — No repository deposit exists. Data-availability statement is author-request ('available by the authors, without undue reservation') under Norwegian REK/consent terms; not third-party retrievable, so below the D-004 bar. Held as the best-matched IM->fatigue vehicle for question:0051: 200 IM adolescents + 70 controls, prospective to 6-month chronic-fatigue outcome, with PBMC stimulation panels, plasma cytokines, hair cortisol. Barrier is an author request rather than an enclave, so it sits ABOVE N3C/OpenSAFELY on the transparency ladder -- an authorization/contact decision is plausible rather than foreclosed.
+- 2026-07-17 (agent (verify-access)): scope-reduced — No repository deposit exists. Data-availability statement is author-request ('available by the authors, without undue reservation') under Norwegian REK/consent terms; not third-party retrievable, so below the D-004 bar. Held as the best-matched IM->fatigue vehicle for question:0051: 200 IM adolescents + 70 controls, prospective to 6-month chronic-fatigue outcome, with PBMC stimulation panels, plasma cytokines, hair cortisol. Barrier is an author request rather than an enclave.
+
+- 2026-07-17 (curator correction, per user): the preceding line's ladder reasoning is WRONG and is retracted. Author-request availability does not sit above an enclave on tractability -- it is DEAD/MISSING data. "Available from the authors on reasonable request" is a publication formality with no defined procedure, no enforcement, no SLA and no appeal, and it empirically resolves to data almost never. It is unfalsifiable availability: it cannot be shown to be closed, so it lingers as a false option and inflates apparent coverage. Correct disposition is scope-reduced (held, not pursued) or substituted -- never expanded-to-acquire. See feedback fb-2026-07-17-010.

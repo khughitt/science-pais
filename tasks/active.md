@@ -378,14 +378,6 @@ Carry-over from curation sweep 2026-07-10 (PD-3 there), re-verified unresolved i
 
 t110 found the LMIC/ancestral stratum has exactly one ancestry-stratified vehicle and it is gated: dataset:23andme-multiancestry-longcovid-gwas (proprietary DTA, sumstats not in GWAS Catalog; reportedly the only well-powered non-EUR long-COVID GWAS, with Latinx and African-American arms). The only OPEN non-EUR vehicle (dataset:bbj-jctf-severe-covid-gwas) measures ACUTE SEVERITY, not PAIS. So question:0032 currently reads coverage_state=covered-pointer / only-gated. This tension is NOT resolvable by more searching -- it resolves only by (a) authorizing the 23andMe route as a D-004 exception, or (b) accepting acute-severity as a proxy exposure with the transferability caveat stated, or (c) accepting the stratum stays uncovered. Also: the reported case counts are [UNVERIFIED] (medRxiv full text 403'd) -- confirm before any power calculation.
 
-## [t134] Decide whether to make an author-data request to the CEBA post-IM adolescent cohort (question:0051)
-- priority: P3
-- status: proposed
-- aspects: []
-- created: 2026-07-17
-
-t110 identified dataset:ceba-post-im-adolescent-cohort (NCT02335437; 200 IM adolescents + 70 controls, prospective to 6-month chronic-fatigue outcome, PBMC stimulation panels + cytokines + hair cortisol) as the best-matched IM->fatigue design in existence for question:0051. It has NO repository deposit -- data availability is author-request under Norwegian REK/consent terms, so it sits below the D-004 bar as-is. BUT the barrier is an author request, not an enclave: unlike N3C/OpenSAFELY the gating is not structural, so an authorization/contact decision is plausible rather than foreclosed. This is the most tractable gated asset from the t110 sweep. Decide: contact, or leave shelved.
-
 ## [t135] Scope decision (D-005): does the t110 boundary-strata catalog authorize any new computational line?
 - priority: P2
 - status: proposed
