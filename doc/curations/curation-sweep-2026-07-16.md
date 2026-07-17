@@ -251,10 +251,30 @@ Fixes. Approved in-session; applied verbatim as drafted, graph rematerialized,
 verified. Its blocking relationship to PD-2 is now discharged.
 
 **PD-2 (medium): regenerate `9000`/`9001` (+ add per-hypothesis synthesis for
-`hypothesis:0019` and `hypothesis:0020`) via `/science:big-picture`.** Owner
-decision — **now unblocked**, since PD-1 landed and the graph is rebuilt, so a
-regeneration will read correct orphan counts (expect 7, not 19). Must overwrite
-`9000`/`9001` in place — see DR-1.
+`hypothesis:0019` and `hypothesis:0020`) via `/science:big-picture` — ✅ APPLIED
+2026-07-17.** Ran at `f6365a3`. `9000`/`9001` overwritten **in place** (DR-1
+honored — the resolver `science big-picture synthesis-path` confirmed the
+numbered-entity convention, which is exactly the duplicate-entity trap the
+command warns about); `entities/synthesis/0019-*.md` and `0020-*.md` created.
+
+The predicted orphan count was **confirmed exactly**: `list_research_orphans`
+returns **7**, and the 7 are precisely the ones this sweep classified as real
+(`q0027`–`q0030` theme-only; `q0039`/`q0045`/`q0046` no hypothesis backlink).
+No orphan-specific edit was made between the prediction and the run, so this is
+an independent check that PD-1's backfill was correct rather than merely
+count-reducing. `9000` and `9001` both record the 19 → 7 drop as a **metadata
+correction, not research progress**.
+
+FI-1 is now closed in the artifact itself: the previous `9000` proposed creating
+a hypothesis that already existed as `hypothesis:0020`, and the regenerated
+`9000` records that one-directional promotion edges made prior synthesis work
+invisible to the next run.
+
+Verification: `big-picture validate` exit 0; `science validate` PASSED at the
+unchanged 21-warning baseline (13 bare-author-year, 4 paper.status-vocabulary,
+3 plan.status-vocabulary, 1 unresolved_markers); `graph diff` empty;
+`synthesized_from` 20/20 entries non-stale with `orphan_question_count`
+agreeing with the resolver in both `9000` and `9001`.
 
 **PD-3 (medium): promote the four cross-trigger stub papers — ✅ TRACKED as
 `task:t130` (P3), 2026-07-16.**
