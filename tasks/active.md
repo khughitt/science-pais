@@ -223,16 +223,6 @@ Cross-domain analogies sharpening existing persistence/autoimmunity topics. Enti
 
 Follow-up to t095. Cheong2023 (load-bearing) is being ingested separately; seed the other key anchors as paper entities to ground the topic: Gu2023 (long-COVID trained-immunity review), Bomans2018 (post-sepsis HSPC central training — the non-COVID PAIS parallel), Mitroulis2018 (beta-glucan HSPC myelopoiesis training, foundational central-training evidence). Humer2025 (ME/CFS) is conceptual-only — cite in bib, lower priority to fully summarize. Grounds q0023/q0024/q0026.
 
-## [t110] Sync-gated find-datasets pass for the six PAIS boundary strata (D-004 reproducibility filter)
-- priority: P3
-- status: proposed
-- aspects: []
-- related: [topic:population-boundary-conditions-and-effect-modifiers-in-pais]
-- group: explore-followups
-- created: 2026-07-07
-
-Follow-up to t097 (the sync-gated dataset half, deliberately deferred from the topic pass). FIRST run /science:sync (currently 9 days stale) to reuse any boundary-population cohort entities already held in health-immunity/health-cycles/pan-disease, THEN /science:catalog-datasets to identify open/downloadable cohorts for each of the six strata (immunosuppressed, LMIC/ancestral, frailty, atopy-MCAS, pregnancy, prior-IM). Pre-screen every candidate against the D-004 third-party-reproducibility bar: gated/non-downloadable enclave sources (N3C, OpenSAFELY, UKB individual records) must be flagged for an explicit authorization decision, not silently included (see avoid-gated-nondownloadable-datasets lesson; N3C already shelved under D-004).
-
 ## [t111] DAG for compound/co-occurring boundary conditions (q0057 interaction structure)
 - priority: P3
 - status: proposed
@@ -379,3 +369,35 @@ From curation sweep 2026-07-16 (PD-4 / DR-2). Seven of the project's 21 validati
 - created: 2026-07-17
 
 Carry-over from curation sweep 2026-07-10 (PD-3 there), re-verified unresolved in the 2026-07-16 sweep - unchanged across both, hence filed as a task rather than carried a third time. Nine artifacts lack source_refs: interpretation:0010-t006-functional-gpcr-autoantibody-ingestion, 0011-t046-antigen-clearance-trials-ingestion, 0012-t047-h0003-ifn-reconciliation, 0013-t050-novak2026-ingestion, 0014-sfn-prevalence-metric-harmonization-reanalysis, 0015-t055-measurement-channel-audit, 0016-t054-abrocitinib-trial-status-snapshot, 0017-t053-h0002-promotion-audit, plus paper:BrandstetterFigueroa2025. The 2026-07-10 sweep judged this a provenance-FIELD-PLACEMENT issue, not missing provenance: these entities do carry provenance, via related:/input: paper edges rather than source_refs. Decide: (a) backfill source_refs from the existing related: paper edges on the 8 interpretations, or (b) ratify related:/input: as the provenance channel for the reanalysis/audit interpretation class and suppress the inventory signal. Note interpretation:0015 is load-bearing for hypothesis:0008 (the t055 measurement-channel audit), so its provenance should be legible whichever way this lands. BrandstetterFigueroa2025 is a paper, not an interpretation - triage it separately; it may be a plain omission.
+
+## [t133] Scope decision: authorize or decline the 23andMe multi-ancestry long-COVID GWAS for question:0032 (D-004 exception)
+- priority: P2
+- status: proposed
+- aspects: []
+- created: 2026-07-17
+
+t110 found the LMIC/ancestral stratum has exactly one ancestry-stratified vehicle and it is gated: dataset:23andme-multiancestry-longcovid-gwas (proprietary DTA, sumstats not in GWAS Catalog; reportedly the only well-powered non-EUR long-COVID GWAS, with Latinx and African-American arms). The only OPEN non-EUR vehicle (dataset:bbj-jctf-severe-covid-gwas) measures ACUTE SEVERITY, not PAIS. So question:0032 currently reads coverage_state=covered-pointer / only-gated. This tension is NOT resolvable by more searching -- it resolves only by (a) authorizing the 23andMe route as a D-004 exception, or (b) accepting acute-severity as a proxy exposure with the transferability caveat stated, or (c) accepting the stratum stays uncovered. Also: the reported case counts are [UNVERIFIED] (medRxiv full text 403'd) -- confirm before any power calculation.
+
+## [t134] Decide whether to make an author-data request to the CEBA post-IM adolescent cohort (question:0051)
+- priority: P3
+- status: proposed
+- aspects: []
+- created: 2026-07-17
+
+t110 identified dataset:ceba-post-im-adolescent-cohort (NCT02335437; 200 IM adolescents + 70 controls, prospective to 6-month chronic-fatigue outcome, PBMC stimulation panels + cytokines + hair cortisol) as the best-matched IM->fatigue design in existence for question:0051. It has NO repository deposit -- data availability is author-request under Norwegian REK/consent terms, so it sits below the D-004 bar as-is. BUT the barrier is an author request, not an enclave: unlike N3C/OpenSAFELY the gating is not structural, so an authorization/contact decision is plausible rather than foreclosed. This is the most tractable gated asset from the t110 sweep. Decide: contact, or leave shelved.
+
+## [t135] Scope decision (D-005): does the t110 boundary-strata catalog authorize any new computational line?
+- priority: P2
+- status: proposed
+- aspects: []
+- created: 2026-07-17
+
+t110 catalogued 15 datasets across the six boundary strata, all verified obtainable-or-flagged. The /science:catalog-datasets Step-6 handoff to /science:plan-pipeline was DELIBERATELY NOT EXECUTED because D-005 authorizes post-seed computational work only for the specific Wave-1 open GWAS/MR pilot over three named vehicles (covid19-hgi-longcovid-gwas, bentham-2015-sle-gwas, ruth-2020-shbg-testosterone-gwas). Every t110 candidate is outside that set. Three concrete lines are now READY-BUT-UNAUTHORIZED, each needing its own scope decision: (1) atopy->PAIS MR: dataset:gcst005038-allergic-disease-gwas exposure x HGI long-COVID or DecodeME outcome -- NOTE power is the live risk, check BEFORE committing, small EUR case count; (2) IM-history->PAIS MR: dataset:finngen-r12-im-gwas + dataset:gcst90473069-ukb-wgs-im-gwas exposures x DecodeME outcome -- D-006(c) holds FinnGen as a distinct vehicle needing a separate scope decision even though here it is an EXPOSURE not the long-COVID outcome D-006 addressed; (3) frailty signature projection: learn a frailty signature from dataset:gse157007-aging-frailty-pbmc-scrna / dataset:gse196793-frailty-influenza-vaccine-pbmc and project onto existing long-COVID/ME-CFS deposits -- the only DUA-free route to a frailty x PAIS contrast.
+
+## [t136] Residual structural gaps after t110: pregnancy (q0040) is blocked-by-access, not under-searched; compound strata (q0057) has no candidate at all
+- priority: P3
+- status: proposed
+- aspects: []
+- created: 2026-07-17
+
+Two strata survived the t110 sweep uncovered, for DIFFERENT reasons, and the distinction is decision-relevant. (1) question:0040 pregnancy reads capability-mismatch: every public pregnancy deposit found is placenta/decidua/cord-blood collected AT DELIVERY (GSE181238, GSE246536, GSE318446, GSE185557 and ~8 more). Not one has a post-acute maternal timepoint, so none stratifies pregnancy as an effect modifier of PAIS trajectory. The cohorts that COULD answer it (RECOVER-Pregnancy, PRIORITY, COPS, MOACC-19, the Spanish ~92-week obstetric cohort) were all built inside DUAs/enclaves. This is a STRUCTURAL access gap, not a search failure -- more searching will not fix it. (2) question:0057 (compound/co-occurring boundary conditions) reads no-candidate: it needs datasets stratifying TWO boundary variables jointly, and no single-stratum deposit qualifies, so it cannot inherit coverage from the others. Consider whether q0040/q0057 should be reframed toward what open data CAN support, or explicitly parked as access-blocked.

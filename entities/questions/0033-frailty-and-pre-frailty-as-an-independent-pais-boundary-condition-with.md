@@ -5,13 +5,19 @@ title: Frailty and pre-frailty as an independent PAIS boundary condition with bi
   coupling
 status: active
 ontology_terms: []
-datasets: []
+datasets:
+- dataset:gse196793-frailty-influenza-vaccine-pbmc
+- dataset:gse217906-pics-pbmc-scrna
+- dataset:gse252331-post-septic-myeloid-citeseq
+- dataset:gse157007-aging-frailty-pbmc-scrna
 source_refs: []
 origins:
 - type: assistant
   ref: explore-ideas-population
 related:
 - hypothesis:0020-host-immune-baseline-reserve-gate
+required_capabilities:
+  - stratification: frailty
 created: '2026-07-04'
 updated: '2026-07-16'
 added_by: explore-ideas:claude-opus-4-8:cand-population-frailty-pais-bidirectional
@@ -27,6 +33,7 @@ lens_views:
     '
   origin_ref: explore-ideas-population
 ---
+
 # Frailty and pre-frailty as an independent PAIS boundary condition with bidirectional coupling
 
 ## Summary

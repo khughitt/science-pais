@@ -26,6 +26,7 @@ provided_capabilities:
     assay: olink
     trigger: sars-cov-2
     cohort_design: prospective-longitudinal
+    stratification: immunosuppression
   - modality: transcriptomics
     assay: bulk-rna
     trigger: sars-cov-2

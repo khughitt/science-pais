@@ -4,7 +4,13 @@ kind: question
 title: Prior symptomatic EBV mononucleosis as a risk amplifier for subsequent PAIS
 status: active
 ontology_terms: []
-datasets: []
+datasets:
+- dataset:finngen-r12-im-gwas
+- dataset:decodeme-gwas-sumstats-osf
+- dataset:gse45924-primary-ebv-longitudinal
+- dataset:gcst90473069-ukb-wgs-im-gwas
+- dataset:ceba-post-im-adolescent-cohort
+- dataset:dubbo-infection-outcomes-study
 source_refs:
 - cite:Peluso2022
 - cite:Butt2024
@@ -14,6 +20,8 @@ origins:
 related:
 - hypothesis:0015-ebv-reactivation-consequence-not-cause-of-pais
 - question:0054-ebv-reactivation-autoantibody-emergence-temporal-ordering
+required_capabilities:
+  - stratification: im-history
 created: '2026-07-06'
 updated: '2026-07-06'
 added_by: explore-ideas:claude-opus-4-8:cand-population-prior-ebv-mononucleosis
@@ -28,6 +36,7 @@ lens_views:
     serology and has not been performed.
   origin_ref: explore-ideas-population
 ---
+
 # Prior symptomatic EBV mononucleosis as a risk amplifier for subsequent PAIS
 
 ## Summary

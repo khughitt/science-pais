@@ -4,13 +4,18 @@ kind: question
 title: PAIS burden, phenotype, and mechanism in LMIC and ancestrally diverse populations
 status: active
 ontology_terms: []
-datasets: []
+datasets:
+- dataset:gse240694-omicron-ba2-6mo-china
+- dataset:bbj-jctf-severe-covid-gwas
+- dataset:23andme-multiancestry-longcovid-gwas
 source_refs: []
 origins:
 - type: assistant
   ref: explore-ideas-population
 related:
 - hypothesis:0020-host-immune-baseline-reserve-gate
+required_capabilities:
+  - stratification: ancestry
 created: '2026-07-04'
 updated: '2026-07-16'
 added_by: explore-ideas:claude-opus-4-8:cand-population-lmic-ancestral-diversity-pais
@@ -26,6 +31,7 @@ lens_views:
     '
   origin_ref: explore-ideas-population
 ---
+
 # PAIS burden, phenotype, and mechanism in LMIC and ancestrally diverse populations
 
 ## Summary

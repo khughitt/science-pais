@@ -4,7 +4,9 @@ kind: question
 title: PAIS incidence and mechanism in chronically immunosuppressed hosts
 status: active
 ontology_terms: []
-datasets: []
+datasets:
+- dataset:gse303888-immunocompromised-gi-covid-reservoir
+- dataset:impacc-immunophenotyping-covid
 source_refs:
 - cite:Vinson2024
 - cite:Peluso2022a
@@ -14,6 +16,8 @@ origins:
   ref: explore-ideas-population
 related:
 - hypothesis:0020-host-immune-baseline-reserve-gate
+required_capabilities:
+  - stratification: immunosuppression
 created: '2026-07-04'
 updated: '2026-07-16'
 added_by: explore-ideas:claude-opus-4-8:cand-population-immunosuppressed-host-pais
@@ -29,6 +33,7 @@ lens_views:
     '
   origin_ref: explore-ideas-population
 ---
+
 # PAIS incidence and mechanism in chronically immunosuppressed hosts
 
 ## Summary

@@ -5,7 +5,11 @@ title: Pre-existing atopic and mast-cell activation disorders as a mechanistical
   distinct PAIS subgroup
 status: active
 ontology_terms: []
-datasets: []
+datasets:
+- dataset:gcst005038-allergic-disease-gwas
+- dataset:covid19-hgi-longcovid-gwas
+- dataset:decodeme-gwas-sumstats-osf
+- dataset:gse272645-chronic-urticaria-post-mrna-vaccine
 source_refs: []
 origins:
 - type: assistant
@@ -16,6 +20,8 @@ origins:
   independent: true
 related:
 - hypothesis:0020-host-immune-baseline-reserve-gate
+required_capabilities:
+  - stratification: atopy
 created: '2026-07-04'
 updated: '2026-07-16'
 added_by: explore-ideas:claude-opus-4-8:cand-population-atopic-mcas-pais-subgroup
@@ -32,6 +38,7 @@ lens_views:
     '
   origin_ref: explore-ideas-population
 ---
+
 # Pre-existing atopic and mast-cell activation disorders as a mechanistically distinct PAIS subgroup
 
 ## Summary
