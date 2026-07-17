@@ -357,17 +357,46 @@ project has no evidence at all. *Smallest fix:* if `cross_paper_evidence` is
 superseded by evidence-lines, drop it from the health payload or mark it
 `not_adopted` rather than reporting a uniformly-empty belief table.
 
-**6. The ledger is a graph input, which contradicts what the ledger says it is.**
+**6. The ledger was a graph input, contradicting what the ledger says it is. —
+✅ FIXED 2026-07-16; reported as `fb-2026-07-17-001`.**
 This file opens with a comment stating it is "not materialized into the knowledge
-graph" — yet `science graph diff` tracks
-`doc/curations/curation-sweep-2026-07-16.md` and flags `hash_changed`, so every
-edit to the sweep log re-stales the graph and adds a `[graph]` warning to
-`validate`. I had to run `graph build` twice: once for the real entity edits, once
-purely because I'd updated this log afterward. That noise will hit every future
-sweep that writes its ledger after rebuilding. *Smallest fix:* exclude
-`doc/curations/**` (or anything with `doc_kind: curation-sweep`) from the graph
-input manifest — the relocation to `doc/` was meant to achieve exactly this, and
-the hash tracker didn't get the memo.
+graph" — which was half true. It contributes no triples, but `graph.trig` embeds a
+revision manifest (880 entries) that **did** hash `doc/curations/*.md`, so every
+edit to the sweep log re-staled the graph and added a `[graph]` warning to
+`validate`. I ran `graph build` three times this sweep: once for the real entity
+edits, twice purely because I'd updated this log afterward. The natural order —
+edit entities, rebuild, *then* write the ledger recording what you did —
+**guarantees** a dirty graph, because the ledger is necessarily written last.
+
+*Fix applied:* a knob already ships for this
+(`science_tool/graph/io.py::_revision_manifest_excludes`); it just wasn't set.
+`science.yaml` now carries:
+
+```yaml
+graph:
+  revision_manifest_excludes:
+  - doc/curations/*.md
+  - doc/meta/*-next-steps.md
+```
+
+Verified: manifest 880 → 876 (exactly the 2 sweep ledgers + 2 next-steps files);
+editing this ledger no longer stales the graph (`graph diff` empty, `validate`
+unchanged at 21 warnings). The pattern is deliberately
+`doc/meta/*-next-steps.md`, **not** `doc/meta/*`: that directory mixes transient
+ledgers with durable reference artifacts (`case-definition-crosswalk.md/.tsv`,
+`t079-vehicle-feasibility-memo.md`, `paper-import-manifest.tsv`), all three of
+which were confirmed still tracked after the change.
+
+*Left deliberately unfixed:* ledgers remain **version-controlled**. The owner's
+preference is that transient artifacts stay out of VCS, but `/science:curate`
+Phase 1 depends on reading the prior ledger for carry-overs — `task:t132` above
+exists only because the 2026-07-10 ledger was readable — so gitignoring them today
+would silently reintroduce the fb-2026-05-01-003 failure, especially in worktrees.
+`fb-2026-07-17-001` carries the design question upstream: the transient-state layer
+needs a home that is out of VCS *and* reachable from worktrees (either in-tree and
+untracked, resolved via `git rev-parse --git-common-dir`, or centralized under
+`XDG_STATE_HOME` keyed by `science.yaml`'s `id:` — notably **not** `~/.cache`,
+which may be deleted, nor `~/.config`, which is for configuration).
 
 **7. Minor:** `science tasks list --format json` returns `{format, rows, meta}`
 while `curate inventory` returns bare top-level keys and `graph attention-sample`

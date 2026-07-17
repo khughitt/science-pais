@@ -33,6 +33,16 @@ ontologies:
 - biology
 knowledge_profiles:
   local: local
+graph:
+  # Transient ledger docs contribute NO triples to the graph, but were still
+  # hashed into the revision manifest — so editing a sweep log flipped the graph
+  # to stale and made `science validate` warn about a file the graph does not
+  # contain. Curation sweeps are necessarily written *after* the entity edits
+  # they record, so the natural workflow guaranteed a dirty graph every time.
+  # See fb-2026-07-17-001 and doc/curations/curation-sweep-2026-07-16.md.
+  revision_manifest_excludes:
+  - doc/curations/*.md
+  - doc/meta/*-next-steps.md
 refs:
   doi_pmid_exempt_dirs:
   - doc/papers
