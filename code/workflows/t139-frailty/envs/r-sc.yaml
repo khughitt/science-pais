@@ -1,0 +1,26 @@
+# R/Bioconductor env for the t139 frailty pseudobulk + limma-voom signature.
+#
+# SEPARATE from code/workflows/envs/r-bioc.yaml on purpose: that env's limma/
+# fgsea/org.Hs.eg.db versions are NES-critical and locked; this workflow needs
+# edgeR (DGEList/calcNormFactors/filterByExpr) + Matrix (readMM for the OH .mtx
+# libraries), so it gets its own pinned env rather than perturbing that lock.
+# Bioconductor 3.22 / R 4.5 stack, matching the project toolchain.
+name: t139-r-sc
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  # Bioc 3.22 / R 4.5 stack. limma + org.Hs.eg.db are pinned (they set the DE
+  # algorithm + the gene-map content); edgeR/Matrix build strings are resolved
+  # against r-base=4.5.3 rather than hard-pinned (the 4.4-built wheels conflict).
+  # A conda-lock is generated after the first good solve for byte-repro.
+  - r-base=4.5.3
+  - bioconductor-limma=3.66.0       # voom, lmFit, eBayes, topTable (matches r-bioc pin)
+  - bioconductor-edger              # DGEList, calcNormFactors(TMM), filterByExpr (Bioc 3.22)
+  - bioconductor-org.hs.eg.db=3.22.0  # deterministic gene-map generation (Ensembl<->symbol)
+  - bioconductor-annotationdbi=1.72.0
+  - r-matrix                        # readMM for the OH submission's .mtx.gz libraries
+  - r-data.table=1.17.8
+  - r-jsonlite=2.0.0
+  - r-yaml=2.3.10                   # read config.yaml in the R scripts
+  - r-matrixstats=1.5.0
