@@ -165,19 +165,6 @@ The patch (Status & next steps) names this as the next step for the contested ca
 
 The patch parks HPA/cortisol as 'high-plausibility / thin-PAIS-evidence', which may undersell it - hypocortisolism in ME/CFS is a decades-old replicated finding and HPA is a master immune regulator + rhythm-sensitive (ties to the circadian bridge task). Run a focused /science:search-literature pass to calibrate the actual evidence weight and decide whether HPA promotes from prose candidate to an edged upstream forcing node in the landscape, or stays deferred. related: patch:immune-state-shift-causal-landscape, hypothesis:0001.
 
-## [t099] explore-followup batch 5: contrarian null-hypothesis probes (h0010,h0011,q0041,h0012,q0042)
-- priority: P3
-- status: proposed
-- aspects: []
-- group: explore-followups
-- created: 2026-07-04
-
-Sharpens-existing contrarian challenges to core project assumptions. Entities: h0010 (attractor is a slow heterogeneous recovery gradient, not a stable state), h0011 (acute severity does NOT predict chronic fatigue - only objective organ sequelae), q0041 (female predominance as ascertainment artifact), h0012 (fatigue/cognitive symptoms as trigger-nonspecific sickness-behavior, not trigger-specific pathology), q0042 (cross-trigger ~10-20% chronic fraction as case-definition artifact). Follow-up: research-papers / targeted re-analysis to stress-test each null against existing longitudinal + controlled evidence.
-
-### Notes
-
-- 2026-07-06: explore-2026-07-06 additions (contrarian null-hypothesis probes): + h0015 (EBV reactivation = consequence not cause), h0016 (fibrinaloid microclots = non-specific inflammatory marker), h0017 (PEM overdiagnosed via self-report), h0018 (circulating antigen = severity biomarker not driver). These four are organized by the new theme:0001-deflationary-nulls-and-biomarker-vs-driver and scored via t104.
-
 ## [t100] explore-followup batch 6: temporal dynamics & timing (q0036,q0037,q0045,q0046,q0047)
 - priority: P3
 - status: proposed
