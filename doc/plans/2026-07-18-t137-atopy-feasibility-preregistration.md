@@ -31,6 +31,20 @@ q0034's stronger atopy/MCAS-subgroup question; MCAS has no capturable footprint 
 - **LD panel:** `dataset:1000g-eur-ld-panel` (Zenodo 6614170), EUR — ancestry-matched to the EUR
   exposure. Outcome is multi-ancestry, which is one reason the estimate is mechanics-grade.
 
+### Pinned acquisition targets (Step 2, resolved 2026-07-18)
+
+| role | accession | file | md5 | size | build |
+|---|---|---|---|---|---|
+| exposure | GCST005038 | `29083406-GCST005038-EFO_0003785.h.tsv.gz` | `e861def041c81a74b5df95963d7ca1fa` | 266M | GRCh38 (harmonised) |
+| outcome | GCST90454541 | `covid19-hgi-longcovid-broad-population.GCST90454541.h.tsv.gz` | *already staged (Wave-1 hormone pilot)* | — | GRCh38 |
+| LD panel | — | `1000G_EUR.{bed,bim,fam}` | *already staged (Zenodo 6614170)* | — | GRCh37 |
+
+Exposure URL: `https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST005001-GCST006000/GCST005038/harmonised/29083406-GCST005038-EFO_0003785.h.tsv.gz`.
+Outcome and LD panel are reused in place from the Wave-1 staging (no re-download); the
+outcome-freshness check reduces to confirming `GCST90454541` is the current HGI broad-population
+freeze and recording its hash. Exposure staged to `data/raw/gwas/t137-atopy/` (off-Dropbox big
+disk), md5-verified against the pin above before use.
+
 ## Frozen parameters
 
 1. **Instrument scale (binary exposure).** Primary scale = **per-SD of latent liability**. Per-allele
