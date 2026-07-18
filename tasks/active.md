@@ -385,11 +385,3 @@ t110 found the LMIC/ancestral stratum has exactly one ancestry-stratified vehicl
 - created: 2026-07-17
 
 Two strata survived the t110 sweep uncovered, for DIFFERENT reasons, and the distinction is decision-relevant. (1) question:0040 pregnancy reads capability-mismatch: every public pregnancy deposit found is placenta/decidua/cord-blood collected AT DELIVERY (GSE181238, GSE246536, GSE318446, GSE185557 and ~8 more). Not one has a post-acute maternal timepoint, so none stratifies pregnancy as an effect modifier of PAIS trajectory. The cohorts that COULD answer it (RECOVER-Pregnancy, PRIORITY, COPS, MOACC-19, the Spanish ~92-week obstetric cohort) were all built inside DUAs/enclaves. This is a STRUCTURAL access gap, not a search failure -- more searching will not fix it. (2) question:0057 (compound/co-occurring boundary conditions) reads no-candidate: it needs datasets stratifying TWO boundary variables jointly, and no single-stratum deposit qualifies, so it cannot inherit coverage from the others. Consider whether q0040/q0057 should be reframed toward what open data CAN support, or explicitly parked as access-blocked.
-
-## [t138] Scope decision (D-005): frailty signature-projection line
-- priority: P3
-- status: proposed
-- aspects: []
-- created: 2026-07-18
-
-Carried over from t135; NOT decided by D-007 (which covered atopy only). Frailty line = learn a frailty signature from dataset:gse157007-aging-frailty-pbmc-scrna / dataset:gse196793-frailty-influenza-vaccine-pbmc and project onto existing long-COVID/ME-CFS deposits — the only DUA-free route to a frailty×PAIS contrast. This is a NEW-MODALITY computational line (scRNA staging + projection, not MR over public sumstats), so it needs its own D-005 scope decision distinct from D-007. Best biology of the three t110 lines but the largest ask.
