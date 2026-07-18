@@ -1,10 +1,10 @@
 # t139 — frailty signature-projection feasibility packet (workflow)
 
 Isolated Snakemake pipeline for **`task:t139`** / **D-008**. This directory
-implements **Step 2 only** of the frozen pre-registration:
+implements **Step 2 + Step 2b** of the frozen pre-registration (both pre-target):
 
 - **Frozen spec:** `doc/plans/2026-07-18-t139-frailty-projection-feasibility-preregistration.md`
-  (re-frozen after Amendment 1)
+  (re-frozen after Amendment 1, then **Amendment 2**)
 - **Scope decision:** `core/decisions.md` → **D-008** (feasibility packet only;
   reportable projection gated on a later **D-008b**)
 
@@ -30,6 +30,24 @@ uv run --frozen --group pipeline snakemake \
 ```
 
 Targets: `step2` builds signature + provenance + LODO + the two pinned refs.
+`step2b` builds the **batch-adjusted** signature and the **Gate-1a-adj** verdict
+(depends on the frozen `step2` primary signature; run `step2` first).
+
+## Step 2b — batch-adjusted learnability gate (Amendment 2, pre-target)
+
+Refits the frozen pipeline with the submission batch as a covariate
+(`~ frailty` → `~ submission + frailty`) and re-checks learnability + overlap with
+the frozen primary, using the **same** LODO thresholds. This catches a
+**training-side** submission-batch confound that the frozen Gates 3–4 cannot
+(Gate 3b tests target-local technicals; unrestricted Gate 4a permutations break
+batch exchangeability). **Failure ⇒ NO-GO; borderline ⇒ INCONCLUSIVE** — either
+halts the packet before Step 3. Amendment 2 also restricts Gate 4a permutations to
+**within submission batch** (applied at Step 5).
+
+**Outcome (2026-07-18):** adjusted LODO clears (Jaccard 0.521) but signed overlap
+with the primary is **0.311** (95/200 primary genes survive) ⇒ **INCONCLUSIVE
+(borderline)**; Step 3 not cleared. See
+`doc/plans/2026-07-18-t139-step2b-batch-adjusted-verdict.md`.
 
 ## Verified inputs (checksums locked in config.yaml)
 

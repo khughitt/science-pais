@@ -2,7 +2,7 @@
 
 - **Date frozen:** 2026-07-18
 - **Task:** `task:t139` · **Authorized by:** D-008 (feasibility packet only; a **reportable** projection is gated on a later **D-008b** ratification)
-- **Status:** Step 1 (freeze), **re-frozen after Amendment 1**. Steps 2–5 execute against it and may not silently amend the frozen choices below.
+- **Status:** Step 1 (freeze), **re-frozen after Amendment 1**, then **re-frozen after Amendment 2** (pre-target training-side gate added). Steps 2–5 execute against it and may not silently amend the frozen choices below.
 
 ## Amendment 1 (pre-execution, 2026-07-18)
 
@@ -28,6 +28,49 @@ The affected inline text below has been reconciled and tagged `[A1]`.
 4. **Operationalised the three under-defined quantities** (Gates 1a, 3, 4b) — `r_platform`, the Jaccard
    denominator + reproducibility frequency, and the random-control *distribution* + across-cohort
    aggregation — are now given exact frozen definitions in-line.
+
+## Amendment 2 (pre-target, 2026-07-18): batch-adjusted learnability gate
+
+Recorded **after Step 2 but before any target/PAIS label is opened** (Step 3 held). Step 2 surfaced a
+**submission-batch ↔ contrast confound** in the training cohort itself: all **5 frail + 3 of 6
+healthy-old** donors are the **F0xx** submission (GSM4750xxx); the other **3 healthy-old** are the later
+**OH** submission (GSM5684xxx), which is also systematically deeper (~12k vs 2.5–8k cells/donor). So the
+frozen frail-vs-old contrast is **partly a between-submission contrast**, and this is a *training-side*
+validity threat that the frozen Gates 3–4 **cannot** detect:
+
+- **Gate 3b** (target-local `r_platform`) diagnoses *target-side* composition/depth artifacts — it does
+  **not** diagnose a signature that is *already* submission-batch-driven at training time.
+- **Gate 4a** label permutations, if drawn **unrestricted**, permute frailty labels *across* the two
+  submission batches and so **destroy the batch block structure** — an **exchangeability violation** that
+  makes the null too easy to beat and would spuriously "confirm" a batch signal.
+- A submission-batch-derived **inflammatory** signature can be **biologically coherent** (IL6/CSF up) and
+  can still **transfer** to PAIS cohorts (which are themselves inflammatory). Face validity and transfer
+  therefore **do not** rule the confound out.
+
+This amendment **adds one pre-target gate and tightens Gate 4a's null**; both *remove* researcher degrees
+of freedom (they constrain the null and add a stopping condition) rather than adding outcome-dependent
+choices. **Within D-008 — no new scope decision.** No PAIS/target label is inspected at Step 2b.
+
+1. **Refit with `~ submission + frailty`.** Re-run the frozen Frozen-parameter-2 pipeline adding the
+   submission batch as a covariate. Because OH is old-only, the **frailty coefficient is identified chiefly
+   by the within-F0xx 5-frail-vs-3-old contrast** (OH donors load on the submission term, contributing no
+   frailty variation). The design is full-rank (F0xx carries both arms) and stays full-rank under any single
+   donor drop.
+2. **Adjusted LODO + comparison to the frozen primary.** Repeat the Gate-1a leave-one-donor-out check
+   under the adjusted model, and compare the adjusted **signed** signature to the **frozen primary**
+   signature — both judged against the **existing Gate-1a Jaccard / gene-count thresholds** (median
+   pairwise Jaccard ≥ 0.50 clears, < 0.30 NO-GO; ≥ 20 shared/reproducible genes).
+3. **Within-submission-batch permutations (Gate 4a exchangeability correction).** Gate 4a's label
+   permutations are **restricted to within submission batch**: frail/old labels are permuted only among the
+   **8 F0xx donors**; the **3 OH donors are old-only and contribute no frailty-label permutation**. The
+   frozen across-cohort aggregation is unchanged. (Applied when Gate 4 runs at Step 5.)
+4. **Decision rule.** **Failure** of batch-adjusted learnability is a **NO-GO** (the primary signature was
+   substantially submission-driven, not a frailty signal); a **borderline** adjusted result is
+   **INCONCLUSIVE**; only a **clear pass** lets Step 3 proceed. Until Gate 1a-adj passes, the attractive
+   cytokine panel (CSF3/IL6/CSF2/IRG1/…) is **non-adjudicating face validity — not evidence**.
+
+Gate **1a-adj** is evaluated at a new **Step 2b** (pre-target), and its NO-GO **halts the packet before
+Step 3**. It is recorded in the gates table, operational definitions, and GO/NO-GO rule below.
 
 ## Epistemic status (read first)
 
@@ -114,10 +157,11 @@ acute-infection trigger and its donors are never counted as PAIS cases.
 | # | Gate | PASS threshold | Hard NO-GO trigger |
 |---|---|---|---|
 | **1a** | Training power (learnability) | LODO signature re-selection **median pairwise Jaccard ≥ 0.50** and **≥ 20 genes** at selection-frequency **≥ 0.8** (def. below) | LODO Jaccard < 0.30 **or** < 20 reproducible genes ⇒ signature not learnable from 5v6 donors |
+| **1a-adj** | `[A2]` Batch-adjusted learnability (**pre-target, Step 2b**) | Under `~ submission + frailty`: adjusted LODO **median pairwise Jaccard ≥ 0.50** and **≥ 20** reproducible genes, **and** the adjusted signed signature overlaps the frozen primary at **signed Jaccard ≥ 0.50** with **≥ 20 shared** signed genes (def. below) | Adjusted LODO Jaccard < 0.30 / < 20 reproducible genes, **or** signed overlap with primary < 0.30 ⇒ the primary signature was **submission-batch-driven** ⇒ **NO-GO (halts packet before Step 3)** |
 | **1b** | Validation labels recoverable | Per-donor Fried status recovered for **≥ 20/28** GSE196793 donors | `[A1]` < 20 recovered **and** no substitute bulk transfer cohort ⇒ **INCONCLUSIVE** (LODO cannot stand in for bulk transfer; no D-008b) |
 | **2** | Feature compatibility | **≥ 70%** of signature genes measurable in **≥ 80%** of retained target cohorts | A target with < 50% of signature genes measurable is dropped (logged); if **> half** of targets drop ⇒ NO-GO |
 | **3** | Cross-cohort / platform-transfer robustness | `[A1]` **3a** bulk-transfer validation **AUC ≥ 0.70** (GSE196793 frail-vs-nonfrail — the scRNA→bulk demonstration; **no LODO fallback**); **and 3b** composition/technical check `r_frailty > r_platform` (def. below) in a **majority** of retained PBMC targets | 3a AUC ≤ 0.60 **or** 3b fails (technical axis dominates) ⇒ transfer failed |
-| **4** | Negative controls | `[A1]` (a) **permuted-label null:** real 3a AUC > **95th pct** of ≥ 200 full-pipeline label permutations (**p < 0.05**); (b) **matched-random-set null:** real aggregate AUC > **95th pct** of a **distribution of N = 1000** size- and expression-matched random signatures (def. below) | Real AUC inside the label null (p ≥ 0.05) **or** inside the random-set null (p ≥ 0.05) ⇒ the "signal" is a confound |
+| **4** | Negative controls | `[A1]` (a) **permuted-label null:** real 3a AUC > **95th pct** of ≥ 200 full-pipeline label permutations (**p < 0.05**), `[A2]` **permutations restricted to within submission batch** (def. below); (b) **matched-random-set null:** real aggregate AUC > **95th pct** of a **distribution of N = 1000** size- and expression-matched random signatures (def. below) | Real AUC inside the label null (p ≥ 0.05) **or** inside the random-set null (p ≥ 0.05) ⇒ the "signal" is a confound |
 | **5** | Non-causal framing | Every output stated as cross-sectional signature-overlap; no causal language; D-003 vaccine-challenge exclusion honoured | (editorial gate — a violation is corrected, not a NO-GO) |
 
 ### Operational definitions (Amendment 1, frozen)
@@ -128,6 +172,25 @@ acute-infection trigger and its donors are never counted as PAIS cases.
   denominator). **Selection frequency** of a gene = fraction of the 11 folds whose signature contains it;
   "reproducible" = frequency **≥ 0.8** (≥ 9/11 folds). Gate 1a needs median pairwise Jaccard ≥ 0.50 **and**
   ≥ 20 genes at frequency ≥ 0.8.
+- **Gate 1a-adj — batch-adjusted learnability (`[A2]`, Step 2b).** `submission` ∈ {F0xx, OH} is assigned
+  per donor from its GEO submission block (F0xx = GSM4750xxx / 5 frail + 3 healthy-old; OH = GSM5684xxx /
+  3 healthy-old), asserted at run time (HALT on drift). The frozen DE pipeline is refit with
+  `design = model.matrix(~ submission + frailty)` (ref levels: submission = F0xx, frailty = healthy-old),
+  the frailty coefficient extracted, and the signature re-derived under the **identical** frozen thresholds
+  + cap. **Adjusted LODO** repeats the 11-fold leave-one-donor-out under this adjusted model (median
+  pairwise Jaccard over C(11,2)=55 fold pairs, union denominator; reproducible = frequency ≥ 0.8) — reusing
+  the Gate-1a thresholds. **Signed-overlap-to-primary** = Jaccard of the adjusted vs frozen-primary
+  signature counting a gene shared **only if present in both with the same direction**; also reported: the
+  raw (unsigned) Jaccard, the shared-gene count, and the direction-concordance among shared genes. Gate
+  1a-adj **clears** iff adjusted LODO Jaccard ≥ 0.50 **and** ≥ 20 reproducible genes **and** signed overlap
+  ≥ 0.50 **and** ≥ 20 shared signed genes; **trips NO-GO** iff adjusted LODO Jaccard < 0.30, or < 20
+  reproducible genes, or signed overlap < 0.30; anything between is **borderline ⇒ INCONCLUSIVE**.
+- **Gate 4a — within-submission-batch label permutation (`[A2]`).** The ≥ 200 label permutations of Gate 4a
+  are drawn **within submission batch**: the frail/old labels are permuted only among the **8 F0xx donors**
+  (5 frail + 3 old); the **3 OH donors keep their old label** (old-only batch ⇒ no frailty-label swap). This
+  preserves the batch block structure so the null reflects the true (batch-restricted) exchangeability. The
+  full pipeline (incl. gene selection) is re-run per permutation; the frozen across-cohort aggregation is
+  unchanged.
 - **Gate 3b — `r_frailty` and `r_platform`.** Within each retained PBMC target cohort: `r_frailty` =
   |point-biserial correlation| between the donor projection score and case/control status; `r_platform`
   = the **maximum** |Pearson correlation| between the projection score and each frozen technical/composition
@@ -152,18 +215,23 @@ a technical axis. This check overrides an otherwise-passing Gate 3.
 
 ## GO / NO-GO decision rule (frozen, evaluated at Step 5)
 
-- **GO** (→ draft D-008b for a reportable projection) **iff ALL** of: Gate 1a PASS; **a genuine bulk
-  transfer validation exists** (Gate 1b PASS, or a substitute bulk frailty-labelled cohort added by
-  amendment); Gate 2 PASS; Gate 3 PASS (both 3a and 3b); Gate 4 PASS (both 4a and 4b); Gate 5 adhered;
-  and the too-good-to-be-true check does **not** fire.
+- **`[A2]` Gate 1a-adj is a pre-target precondition.** It is evaluated at **Step 2b, before any target
+  label is opened**. If it trips NO-GO the packet **stops there** — Steps 3–5 do not run. If it is
+  borderline the packet is **INCONCLUSIVE** and Steps 3–5 do not run. Only a clear pass clears Step 3.
+- **GO** (→ draft D-008b for a reportable projection) **iff ALL** of: Gate 1a PASS; **`[A2]` Gate 1a-adj
+  PASS**; **a genuine bulk transfer validation exists** (Gate 1b PASS, or a substitute bulk
+  frailty-labelled cohort added by amendment); Gate 2 PASS; Gate 3 PASS (both 3a and 3b); Gate 4 PASS
+  (both 4a and 4b); Gate 5 adhered; and the too-good-to-be-true check does **not** fire.
 - **NO-GO** (→ shelve the frailty line, joining IM and atopy; **no t110 boundary-strata line then
   survives** and the boundary-conditions program closes on public data) if **any** hard NO-GO trigger
-  above fires — in particular **insufficient power** (Gate 1a) or **failed transfer** (Gate 3a AUC ≤ 0.60
-  / Gate 3b technical dominance), the two most likely outcomes given 5 vs 6 training donors.
+  above fires — in particular `[A2]` **batch-driven signature** (Gate 1a-adj), **insufficient power**
+  (Gate 1a), or **failed transfer** (Gate 3a AUC ≤ 0.60 / Gate 3b technical dominance), the most likely
+  outcomes given 5 vs 6 training donors partly split across two submissions.
 - **INCONCLUSIVE** (report as method-undemonstrated; do **not** draft D-008b) when transfer cannot be
   *tested* rather than being tested-and-failed: **`[A1]` Gate 1b fails and no substitute bulk cohort is
-  specified** (scRNA-only LODO cannot discharge D-008's scRNA→bulk transfer requirement), or for
-  borderline results that neither clearly pass all gates nor trip a hard NO-GO trigger.
+  specified** (scRNA-only LODO cannot discharge D-008's scRNA→bulk transfer requirement), **`[A2]` a
+  borderline Gate 1a-adj result**, or for other borderline results that neither clearly pass all gates nor
+  trip a hard NO-GO trigger.
 
 Even a GO authorises (via D-008b) only a **cross-sectional, non-causal signature-overlap** report — never
 a causal frailty→PAIS claim, and never admission of GSE196793 as a PAIS case set (D-003).
@@ -171,7 +239,9 @@ a causal frailty→PAIS claim, and never admission of GSE196793 as a PAIS case s
 ## Deliverables (Step 5 packet)
 
 A single GO/NO-GO record carrying: the pseudobulk + signature pipeline provenance and hashes; the
-signature gene table (symbol, direction, log2FC, p); LODO Jaccard and gene count (Gate 1a); GSE196793
+signature gene table (symbol, direction, log2FC, p); LODO Jaccard and gene count (Gate 1a); `[A2]` the
+batch-adjusted (`~ submission + frailty`) signature, its adjusted-LODO Jaccard/gene count, and its
+signed-overlap-to-primary (Gate 1a-adj verdict, Step 2b); GSE196793
 label-recovery count (Gate 1b); per-target feature-intersection fractions (Gate 2); per-cohort
 within-cohort case-vs-control AUC + bulk-transfer validation AUC (3a) + per-cohort `r_frailty`/`r_platform`
 (3b); the label-permutation null (4a) and the N=1000 matched-random-set null of aggregate AUC (4b); the too-good-to-be-true

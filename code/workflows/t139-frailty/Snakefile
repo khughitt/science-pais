@@ -47,6 +47,11 @@ SIGNATURE = f"{RESULTS}/signature.tsv"
 SIG_PROVENANCE = f"{RESULTS}/signature_provenance.json"
 LODO_JSON = f"{RESULTS}/gate1a_lodo.json"
 
+# Step 2b (Amendment 2): batch-adjusted learnability gate (Gate 1a-adj), pre-target.
+SIGNATURE_ADJ = f"{RESULTS}/signature_adjusted.tsv"
+SIG_ADJ_PROVENANCE = f"{RESULTS}/signature_adjusted_provenance.json"
+GATE1A_ADJ_JSON = f"{RESULTS}/gate1a_adj_verdict.json"
+
 
 # Step-2 terminal target: signature + provenance + Gate-1a LODO + pinned refs.
 rule step2:
@@ -56,6 +61,15 @@ rule step2:
         LODO_JSON,
         DECONV_PANEL,
         GENE_MAP,
+
+
+# Step-2b terminal target: batch-adjusted signature + Gate-1a-adj verdict.
+# PRE-TARGET (no PAIS projection). Depends on the frozen Step-2 primary signature.
+rule step2b:
+    input:
+        SIGNATURE_ADJ,
+        SIG_ADJ_PROVENANCE,
+        GATE1A_ADJ_JSON,
 
 
 # --- acquisition (checksum-pinned; record-or-verify) -------------------------
@@ -153,3 +167,27 @@ rule signature:
         "Rscript {SCRIPTS}/signature.R --counts {input.counts} --donors {input.donors} "
         "--config {params.config} --signature-out {output.signature} "
         "--provenance-out {output.provenance} --lodo-out {output.lodo}"
+
+
+# --- Step 2b: batch-adjusted signature (~ submission + frailty) + Gate 1a-adj -
+# Refits the frozen pipeline with submission as a covariate and re-checks
+# learnability + overlap with the frozen primary. Pre-target; NO projection.
+rule signature_adjusted:
+    input:
+        counts=PSEUDOBULK,
+        donors=PSEUDOBULK_META,
+        genes=f"{PROC}/pseudobulk.genes.tsv",
+        primary=SIGNATURE,
+    output:
+        signature=SIGNATURE_ADJ,
+        provenance=SIG_ADJ_PROVENANCE,
+        verdict=GATE1A_ADJ_JSON,
+    params:
+        config=CONFIGFILE,
+    conda:
+        "envs/r-sc.yaml"
+    shell:
+        "Rscript {SCRIPTS}/signature_adjusted.R --counts {input.counts} --donors {input.donors} "
+        "--config {params.config} --primary-signature {input.primary} "
+        "--signature-out {output.signature} --provenance-out {output.provenance} "
+        "--verdict-out {output.verdict}"
