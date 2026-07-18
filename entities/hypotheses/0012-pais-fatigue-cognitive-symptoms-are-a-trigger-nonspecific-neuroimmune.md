@@ -5,6 +5,8 @@ title: PAIS fatigue/cognitive symptoms are a trigger-nonspecific neuroimmune sic
 status: active
 source_refs:
 - paper:Komaroff2023
+- cite:Dantzer2008
+- cite:Dantzer2018
 origins:
 - type: assistant
   ref: explore-ideas-contrarian
@@ -15,7 +17,7 @@ related:
 - question:0001-shared-molecular-signature-across-triggers
 - theme:0001-deflationary-nulls-and-biomarker-vs-driver
 created: "2026-07-04"
-updated: "2026-07-06"
+updated: "2026-07-18"
 added_by: explore-ideas:claude-opus-4-8:cand-contrarian-sickness-behavior-common-path
 lens_views:
 - lens: contrarian
@@ -105,9 +107,13 @@ Confidence would be materially reduced if:
 - **Komaroff2023 (paper, literature):** synthesizes the ME/CFS–long-COVID convergence and the
   neuroinflammatory / central-fatigue framing consistent with a shared sickness-behavior final common
   pathway (`source_refs`).
-- **Dantzer sickness-behavior program (literature, mechanistic):** cytokine-induced sickness behavior
-  reproduces the exact fatigue/cognitive/anhedonia cluster and is a conserved, trigger-nonspecific central
-  response — the mechanistic backbone of this hypothesis.
+- **Dantzer sickness-behavior program (`cite:Dantzer2008`, `cite:Dantzer2018`; literature, mechanistic):**
+  cytokine-induced sickness behavior reproduces the exact fatigue/cognitive/anhedonia cluster and is a
+  conserved, trigger-nonspecific central response — the mechanistic backbone of this hypothesis. Note the
+  canonical statement (`cite:Dantzer2008`) frames a sickness-behavior→depression continuum from *acute*
+  inflammation; extending it to *chronic* post-infectious fatigue is the inferential step this hypothesis
+  makes, and the weak link is direct evidence of *persistent* CNS neuroinflammation driving the chronic
+  phase (see Current Uncertainty).
 
 ## Disputing Evidence
 
@@ -139,5 +145,5 @@ Confidence would be materially reduced if:
   this sharpens (trigger-specific drivers as co-travelers of inflammatory magnitude).
 - `theme:0001-deflationary-nulls-and-biomarker-vs-driver` — this is the common-final-path member of the
   deflationary-null program.
-- `paper:Komaroff2023`; Dantzer sickness-behavior / neuroinflammation program (literature anchor, pending
-  bib entry — see literature-grounding task).
+- `paper:Komaroff2023`; `cite:Dantzer2008` (canonical cytokine-induced sickness-behavior framework),
+  `cite:Dantzer2018` (broader neuroimmune-signaling review) — bib entries grounded 2026-07-18 (t099).

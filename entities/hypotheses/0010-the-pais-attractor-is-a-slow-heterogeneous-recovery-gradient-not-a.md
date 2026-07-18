@@ -3,7 +3,9 @@ id: hypothesis:0010-the-pais-attractor-is-a-slow-heterogeneous-recovery-gradient
 kind: hypothesis
 title: The PAIS 'attractor' is a slow heterogeneous recovery gradient, not a stable chronic state
 status: active
-source_refs: []
+source_refs:
+- cite:Thaweethai2025
+- cite:Prashar2026
 origins:
 - type: assistant
   ref: explore-ideas-contrarian
@@ -15,11 +17,11 @@ related:
 - theme:0002-temporal-ordering-and-causal-kinetics
 - theme:0001-deflationary-nulls-and-biomarker-vs-driver
 created: "2026-07-04"
-updated: "2026-07-06"
+updated: "2026-07-18"
 added_by: explore-ideas:claude-opus-4-8:cand-contrarian-pais-recovery-gradient
 lens_views:
 - lens: contrarian
-  rationale: 'Directly stress-tests hypothesis:0001 and question:0008. RECOVER-Adult (8 trajectories: 36% minimal by 15 months, 5% persistently high, 14% late-worsening) and a 4-year UK cohort (33% satisfactory recovery, continued slow improvement) are hard to reconcile with a single stable attractor. A slow recovery gradient mislabeled as "chronic" at 3–12 months implies pacing/patience interventions over loop-breaking immunotherapy. Sharpens the attractor claim into a falsifiable competing dynamical hypothesis.
+  rationale: 'Directly stress-tests hypothesis:0001 and question:0008. RECOVER-Adult (8 trajectories: 36% minimal by 15 months, 5% persistently high, ~6% delayed-worsening) shows trajectory heterogeneity hard to reconcile with a single stable attractor. [Grounding correction 2026-07-18: the original candidate also cited a "4-year UK cohort (33% satisfactory recovery, continued slow improvement)"; on grounding, the ~33% figure traces to Prashar2026, a specialist-clinic cohort reporting LOW recovery / minimal change, which does not support continued improvement — see body Disputing Evidence.] A slow recovery gradient mislabeled as "chronic" at 3–12 months implies pacing/patience interventions over loop-breaking immunotherapy. Sharpens the attractor claim into a falsifiable competing dynamical hypothesis.
 
     '
   origin_ref: explore-ideas-contrarian
@@ -98,13 +100,15 @@ Confidence in the gradient account would be materially reduced if:
 
 ## Supporting Evidence
 
-- **RECOVER-Adult trajectory analysis (literature, empirical):** clustering of long-COVID symptom
-  trajectories recovers **multiple distinct classes** — a large minority (~36%) minimal/resolving by ~15
-  months, a small (~5%) persistently-high group, and a ~14% late-worsening group — consistent with a
-  *mixture of trajectories* rather than one uniform chronic state.
-- **4-year UK post-COVID cohort (literature, empirical):** ~33% reporting satisfactory recovery with
-  **continued slow improvement** over four years — consistent with an ongoing shallow gradient rather than
-  a plateau.
+- **RECOVER-Adult trajectory analysis (`cite:Thaweethai2025`, literature/empirical):** latent-class
+  modeling of long-COVID symptom-burden trajectories over 15 months recovers **eight distinct classes** —
+  a ~36% minimal-to-none group, a small (~5%) persistent-high group, a ~6% delayed-worsening group, and
+  the remaining majority distributed across improving / low-burden classes — consistent with a *mixture
+  of trajectories* rather than one uniform chronic state. (An earlier draft of this note quoted the
+  late-worsening class as ~14%; the delayed-worsening class is actually ~6% — corrected against the
+  published class table.) Note this anchor establishes *heterogeneity of trajectory shape*, which the
+  mixture claim needs, but the 15-month horizon does not by itself separate a slow gradient from a
+  shallow-but-stable basin (see Current Uncertainty).
 
 ## Disputing Evidence
 
@@ -113,6 +117,14 @@ Confidence in the gradient account would be materially reduced if:
   stratum proves genuinely flat over many years, it is a fixed point.
 - Reports of **relapse/PEM-driven step-downs** and non-linear crashes are more naturally read as
   state-transitions than as smooth-gradient noise, and are the observations `hypothesis:0001` is built on.
+- **A "recovery" anchor that does not survive checking (`cite:Prashar2026`):** the ~33% "satisfactory
+  recovery" figure an earlier draft cited *as* continued slow improvement comes from a single-centre
+  specialist post-COVID clinic cohort that in fact reported **low overall functional recovery and minimal
+  change** on fatigue (FAS) and quality of life (EQ-5D) over follow-up (with short per-patient horizon,
+  median ~136 days). Read correctly it does **not** support a monotonic gradient; its minimal-change
+  signal is, if anything, mildly more consistent with a persistent non-recovering stratum. It cannot
+  actually adjudicate gradient-vs-plateau (short horizon), so it enters here as a corrected mis-citation
+  and a weak lean *against* the gradient, not as support for it.
 
 ## Evidence Needed To Shift Belief
 
@@ -137,5 +149,7 @@ Confidence in the gradient account would be materially reduced if:
 - `theme:0002-temporal-ordering-and-causal-kinetics` — this hypothesis is the trajectory-shape member of
   the temporal-kinetics program; `theme:0001-deflationary-nulls-and-biomarker-vs-driver` — it is the
   whole-syndrome structural null of the attractor thesis.
-- RECOVER-Adult trajectory clustering; 4-year UK post-COVID recovery cohort (literature anchors,
-  pending bib entry — see literature-grounding task).
+- `cite:Thaweethai2025` (RECOVER-Adult 8-class trajectory analysis — supporting: trajectory
+  heterogeneity, small persistent-high stratum); `cite:Prashar2026` (specialist-clinic recovery cohort —
+  low recovery / minimal change; a corrected mis-citation, weak lean against the gradient). Grounded
+  2026-07-18 (t099).

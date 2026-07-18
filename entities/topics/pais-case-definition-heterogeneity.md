@@ -48,11 +48,12 @@ related:
 - question:0013-reproductive-stage-failed-immune-recovery-after-infection
 - question:0014-which-pais-case-definition-is-most-biologically-coherent
 - question:0015-does-pem-requirement-improve-cross-study-comparability
+- question:0042-is-the-cross-trigger-1020-chronic-fraction-an-artifact-of-shared-case
 - interpretation:0021-t026-pc-cos-adoption-policy
 - interpretation:0025-t009-pediatric-long-covid-and-misc
 - topic:pediatric-long-covid-and-misc
 created: "2026-06-19"
-updated: '2026-07-10'
+updated: '2026-07-18'
 ---
 
 # PAIS Case-Definition Heterogeneity and Harmonization

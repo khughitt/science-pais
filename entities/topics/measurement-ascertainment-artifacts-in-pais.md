@@ -22,6 +22,8 @@ related:
 - question:0015-does-pem-requirement-improve-cross-study-comparability
 - question:0030-target-trial-emulation-in-multi-trigger-ehr-cohorts-for-cross-pais
 - question:0039-negative-control-outcome-designs-to-bound-healthcare-utilization
+- question:0041-is-female-predominance-in-pais-substantially-an-ascertainment-and
+- question:0042-is-the-cross-trigger-1020-chronic-fraction-an-artifact-of-shared-case
 - paper:Novak2026
 - paper:Oaklander2022
 - paper:Joseph2021
