@@ -394,6 +394,10 @@ Two strata survived the t110 sweep uncovered, for DIFFERENT reasons, and the dis
 
 D-007-authorized, feasibility/screening ONLY (MR execution gated on D-007b). Deliverables on public sumstats (dataset:gcst005038-allergic-disease-gwas × dataset:covid19-hgi-longcovid-gwas), no gated data: (1) construct + clump the atopy instrument; (2) empirical LIABILITY-SCALE instrument R² (not the disease-specific 3.2/3.8/1.2% figures); (3) quantify UKB↔HGI sample overlap (HGI shares UKB; must be handled); (4) define the binary-exposure scale (per-SD latent liability). Pre-registered detectable floor OR≳1.2. Outputs are the go/no-go inputs for the D-007b execution ratification. If no EUR-specific HGI stratum (same WP1 question as plan:0008 KD1), estimate is mechanics/robustness-only. Estimand = broad allergic-disease liability, NOT q0034's atopy/MCAS subgroup.
 
+### Notes
+
+- 2026-07-18: Step 1 (freeze) complete 2026-07-18: doc/plans/2026-07-18-t137-atopy-feasibility-preregistration.md. Frozen: estimand (log-OR long-COVID per SD allergic-disease liability, broad-composite only); per-SD-liability scale + Lee-2011 observed→liability R² transform; prevalence grid K∈{0.20,0.30,0.40}; clumping p<5e-8 / r²<0.001 / 10Mb vs 1000G-EUR (Zenodo 6614170); a priori MHC exclusion chr6:25-34Mb primary, HLA-inclusive sensitivity; OR≥1.20/SD floor; F≥10; GO/NO-GO rule (≥5 instruments post-MHC, mean F≥10, ≥80% power@OR1.20 at K=0.30, UKB↔HGI overlap negligible-or-MRlap-correctable). Outcome fixed as mechanics/robustness-only (WP1 established no public EUR HGI stratum) — Step 2 does a release-freshness check only, not a fresh WP1. Next: Step 2 construct+clump.
+
 ## [t138] Scope decision (D-005): frailty signature-projection line
 - priority: P3
 - status: proposed
