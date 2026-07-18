@@ -10,7 +10,9 @@ datasets:
 - dataset:covid19-hgi-longcovid-gwas
 - dataset:decodeme-gwas-sumstats-osf
 - dataset:gse272645-chronic-urticaria-post-mrna-vaccine
-source_refs: []
+source_refs:
+- cite:Weinstock2021
+- cite:Augustin2025
 origins:
 - type: assistant
   ref: explore-ideas-population
@@ -20,6 +22,8 @@ origins:
   independent: true
 related:
 - hypothesis:0020-host-immune-baseline-reserve-gate
+- paper:Weinstock2021
+- paper:Augustin2025
 required_capabilities:
   - stratification: atopy
 created: '2026-07-04'

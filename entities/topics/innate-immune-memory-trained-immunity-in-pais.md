@@ -33,6 +33,7 @@ source_refs:
 origins:
 - type: user
 related:
+- paper:Gu2023
 - topic:long-covid-immune-dysregulation
 - topic:shared-failure-mode-across-pais
 - topic:antigen-pathogen-persistence
@@ -46,6 +47,7 @@ related:
 - question:0002-antigen-clearance-rescues-symptoms
 - question:0055-hspc-epigenomic-imprinting-depth-predicts-pais-persistence
 - question:0056-pharmacological-reversal-of-innate-immune-training-in-pais
+- paper:Bomans2018
 created: '2026-07-07'
 updated: '2026-07-10'
 added_by: "llm:claude-sonnet-4-6:research-topic"

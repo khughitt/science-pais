@@ -200,16 +200,6 @@ Entities: q0036 (critical-slowing-down premonitory early-warning signals - novel
 
 Cross-domain analogies sharpening existing persistence/autoimmunity topics. Entities: q0043 (bacterial persister-cell bet-hedging as model for stochastic viral dormancy in tissue reservoirs), q0044 (chronic GvHD as analogy for post-viral tolerance-infrastructure collapse). Follow-up: research-papers bridging persister-cell biology and cGvHD tolerance literature into topic:antigen-pathogen-persistence and topic:post-infectious-dysautonomia-and-autoimmunity.
 
-## [t106] Seed remaining trained-immunity anchor papers into the innate-memory topic (Gu2023, Bomans2018, Mitroulis2018)
-- priority: P3
-- status: proposed
-- aspects: []
-- related: [topic:innate-immune-memory-trained-immunity-in-pais]
-- group: explore-followups
-- created: 2026-07-07
-
-Follow-up to t095. Cheong2023 (load-bearing) is being ingested separately; seed the other key anchors as paper entities to ground the topic: Gu2023 (long-COVID trained-immunity review), Bomans2018 (post-sepsis HSPC central training — the non-COVID PAIS parallel), Mitroulis2018 (beta-glucan HSPC myelopoiesis training, foundational central-training evidence). Humer2025 (ME/CFS) is conceptual-only — cite in bib, lower priority to fully summarize. Grounds q0023/q0024/q0026.
-
 ## [t111] DAG for compound/co-occurring boundary conditions (q0057 interaction structure)
 - priority: P3
 - status: proposed
@@ -220,16 +210,6 @@ Follow-up to t095. Cheong2023 (load-bearing) is being ingested separately; seed 
 
 Follow-up to t097 / discharges design side of q0057. Formalize the causal structure of co-occurring effect modifiers (frailty × immunosuppression, pregnancy × MCAS) via /science:sketch-model to spec the interaction terms q0057 needs and to guide future cohort-design requirements. Design-aspiration given current data gaps — defer until at least one boundary stratum has an admissible dataset (depends on the find-datasets pass). Lower priority than the mechanism lit-search.
 
-## [t114] Seed MCAS long-COVID mediator papers as entities: Augustin2025 (OFID, tryptase+ileal spike, n=21 abstract) and Weinstock2021 (IJID, MCA symptom-survey origin)
-- priority: P3
-- status: proposed
-- aspects: []
-- related: [topic:population-boundary-conditions-and-effect-modifiers-in-pais, question:0034-pre-existing-atopic-and-mast-cell-activation-disorders-as-a]
-- group: explore-followups
-- created: 2026-07-07
-
-From t109 gap scan. Augustin2025 (DOI 10.1093/ofid/ofae631.2136, PMC11779031) is the first long-COVID cohort with a tryptase readout + ileal SARS-CoV-2 spike (ties MCAS to antigen persistence) — conference abstract, flag maturity. Weinstock2021 (DOI 10.1016/j.ijid.2021.09.043) is the hypothesis-origin symptom-survey — seed as provenance, explicitly NOT mediator data. Both currently referenced in the topic but not seeded.
-
 ## [t115] Seed multi-ancestry long-COVID GWAS (Chaudhary/23andMe) once a peer-reviewed version exists; check for BPTF locus + ME/CFS genetic correlations
 - priority: P3
 - status: proposed
@@ -239,6 +219,10 @@ From t109 gap scan. Augustin2025 (DOI 10.1093/ofid/ofae631.2136, PMC11779031) is
 - created: 2026-07-07
 
 From t109 gap scan. Chaudhary et al. medRxiv 2024.10.07.24315052 — multi-ancestry (European/Latinx/African-American) meta-analysis; 3 GW-significant loci incl. BPTF-KPNA2-C17orf58 beyond HLA/ABO; genetic correlations with ME/CFS, fibromyalgia, depression; FOXP4 rs9367106 NOT significant here. Currently cited in topic as a PREPRINT — do not seed as a paper entity until a peer-reviewed version is confirmed. NB: 23andMe cohort is US-based self-report, does NOT close the LMIC-mechanism gap.
+
+### Notes
+
+- 2026-07-18: Peer-review status re-checked (WebSearch). Chaudhary et al. multi-ancestry long-COVID GWAS (medRxiv 2024.10.07.24315052) is STILL a preprint — no peer-reviewed journal version found as of 2026-07-18. Preprint loci confirmed: HLA-DQA1/DQB, ABO, BPTF-KPNA2-C17orf58; genetic correlations reported with ME/CFS, fibromyalgia, depression; FOXP4 rs9367106 NOT significant. Cohort = 23andMe EUR+Latinx+African-American, US self-report (does NOT close LMIC-mechanism gap). REMAINS BLOCKED on its stated condition. Re-check trigger: a journal-published version appears.
 
 ## [t118] Config-schema validation of t117 parse: blocks at DAG-load (project-review #2)
 - priority: P2

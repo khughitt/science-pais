@@ -31,6 +31,8 @@ source_refs:
   - cite:Bruno2024
   - cite:Hickie2006
   - cite:Wolff2023
+  - cite:Augustin2025
+  - cite:Weinstock2021
 origins:
   - type: user
 related:
