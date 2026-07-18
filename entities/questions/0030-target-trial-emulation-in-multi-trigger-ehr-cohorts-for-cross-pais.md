@@ -56,10 +56,12 @@ pathogen biology or shared host markers.
 
 ## Current Evidence
 
-- **TTE is mature and validated for COVID.** Preiss2025 emulated Paxlovid → long-COVID onset at
-  445,738-patient scale (N3C/RECOVER); Bajema2023 provides a clone-censor-weight TTE template for
-  post-COVID conditions in the VA. Hansford2023 catalogs the reporting elements needed to harmonize
-  emulations for cross-trigger comparison.
+- **TTE is well-developed and has been implemented at scale for COVID — implementation, not validation
+  against randomized evidence.** Preiss2025 emulated Paxlovid → long-COVID onset at 445,738-patient
+  scale (N3C/RECOVER), explicitly noting that causal interpretation still depends on having controlled
+  every confounder; Bajema2023 provides a VA target-trial-emulation template for post-COVID outcomes.
+  Hansford2023's systematic review documents **substantial protocol/reporting omissions across published
+  TTEs** — precisely the elements that would need harmonizing before cross-trigger comparison is sound.
 - **Gap:** no TTE has been run for a non-COVID PAIS trigger.
 
 ## Thoughts

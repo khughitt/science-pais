@@ -54,8 +54,10 @@ the most reproducible-tier causal vehicle in the `theme:0003` design set.
 
 - **Decision it affects:** which candidate mechanisms deserve scarce experimental/cohort follow-up. A
   germline-liability mechanism with cross-trigger MR support is a stronger prior for the
-  shared-attractor thesis (`hypothesis:0001`); a trigger-specific or null signal argues against a
-  single shared pathway.
+  shared-attractor thesis (`hypothesis:0001`); and — **conditional on adequate power, valid instruments,
+  and a matched-ancestry outcome** — a trigger-specific or null signal would argue against a single
+  shared pathway. (An underpowered, ancestry-flagged screen's null does not: absence of a detectable
+  effect there is uninformative, not evidence against.)
 - **Serves** `question:0001` (shared vs trigger-specific) and `question:0022` (mediator vs
   co-traveller) by supplying a confounding-robust directionality test the observational corpus cannot.
 - **Risk if unanswered:** the project keeps ranking mechanisms on association strength alone, unable to
@@ -71,7 +73,8 @@ the most reproducible-tier causal vehicle in the `theme:0003` design set.
   step but none runs one instrument set across ≥2 PAIS triggers.
 - **The project has already executed the vehicle, twice, and mapped its ceiling.** `plan:0007`
   (autoimmune/SLE → long COVID) and `plan:0009` (SHBG/testosterone → long COVID) were run end-to-end
-  (IVW primary; MR-Egger/weighted-median; MRlap sample-overlap correction). Both returned **no
+  (IVW primary; MR-Egger/weighted-median), with `plan:0009` additionally applying MRlap sample-overlap
+  correction (`plan:0007` left overlap correction explicitly out of scope). Both returned **no
   reportable signal** and — load-bearing — both are ancestry-flagged / non-primary (KD1) because **no
   matched EUR-only long-COVID outcome GWAS is publicly downloadable** (HGI DF4 deposits only
   multi-ancestry strata; the paper's EUR-only analysis was never deposited). That is a hard

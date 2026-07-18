@@ -40,8 +40,10 @@ ascertainment / multimorbidity confounders but have **no plausible post-infectio
 calibrate reported PAIS incidence and risk-factor associations in observational EHR/claims cohorts. A
 negative-control-calibrated difference-in-differences (NC-DiD) estimator quantifies how much of the
 reported excess PAIS burden is attributable to differential health-seeking, surveillance intensity, or
-pre-existing multimorbidity rather than genuine pathophysiology. This is the concrete design that
-converts `hypothesis:0008`'s qualitative ascertainment claim into a numerical bound.
+pre-existing multimorbidity rather than genuine pathophysiology. This **extends** the numerical
+bounding of `hypothesis:0008` that Nilforoshan2026 has already begun for long COVID (test-based
+prospective design + NC-outcome bias benchmarking) toward a cross-trigger, DiD-based, reproducible
+form.
 
 ## Why It Matters
 
@@ -55,22 +57,33 @@ converts `hypothesis:0008`'s qualitative ascertainment claim into a numerical bo
 - **The method is mature and directly applicable.** Yang2024 provides a taxonomy of negative-control
   exposure/outcome/population designs for bounding unmeasured confounding; Zhang2025 gives an
   NC-calibrated DiD estimator applicable to infected-vs-uninfected PAIS incidence comparisons.
-- **The gap is documented and unfilled.** Hua2024's umbrella review of long-COVID observational studies
-  catalogs ascertainment/utilization/self-report biases and notes that **no study has deployed formal
-  negative-control outcomes** to bound them. Nilforoshan2026 (already project-held) is the adjacency
-  anchor on the measurement axis.
+- **Formal NCs have already been deployed for long COVID — h0008 is partly bounded, not unbounded.**
+  Hua2024's umbrella review (2024 cutoff) noted the field had *not yet* deployed formal negative
+  controls; but Nilforoshan2026 (already project-held) subsequently did, at 245M-patient claims scale:
+  49 negative-control outcomes (e.g. firearm injury, lightning/drowning) benchmark bias, showing the
+  **conventional design falsely detects 53.1% of NC outcomes as significant** while a test-based
+  prospective design drops this to 4.1% — and correcting the long-COVID attributable burden downward by
+  roughly an order of magnitude. So the ascertainment-inflation that `hypothesis:0008` predicts is
+  already empirically demonstrated for long COVID.
+- **The remaining gap is narrower** than "no NCs anywhere": (a) no PAIS-specific NC-*calibrated DiD*
+  (Zhang2025's estimator, distinct from Nilforoshan's test-based / synthetic-control design); (b) no
+  cross-trigger implementation (post-Lyme / post-sepsis / post-dengue); (c) no **open,
+  third-party-reproducible** data vehicle — Nilforoshan used proprietary Komodo claims.
 
 ## Thoughts
 
-- **Best current interpretation:** unlike `question:0030`'s TTE, an NC-DiD can in principle run on a
-  downloadable claims/EHR sample, making it the most *admissible* of the ascertainment-bounding vehicles
-  — the concrete operationalization of `hypothesis:0008` rather than a new hypothesis.
+- **Best current interpretation:** unlike `question:0030`'s TTE, an NC-DiD can *in principle* run on a
+  downloadable claims/EHR sample, making it the most *admissible* of the ascertainment-bounding
+  vehicles. Its value now is not to establish that ascertainment inflation exists (Nilforoshan2026
+  already showed that for long COVID) but to **refine and generalize** that bound — a complementary
+  DiD estimator, cross-trigger, on an open vehicle.
 - **Major remaining uncertainty:** choice of valid negative-control outcomes (they must share the
-  confounder structure without post-infectious biology — a domain-judgment, falsification-checked step),
-  and whether a transparent, third-party-reproducible cohort with the needed exposure/outcome structure
-  is obtainable within D-004 (NC-DiD on a public claims sample is the target).
-- **Priority:** P2 — highest-leverage, most-admissible bias-bounding design; it directly numeric-izes
-  `hypothesis:0008`.
+  confounder structure without post-infectious biology — a domain-judgment, falsification-checked step);
+  and — the binding constraint — whether a transparent, third-party-reproducible cohort with the needed
+  exposure/outcome structure exists at all, since Nilforoshan's own demonstration ran on proprietary
+  data (the open-vehicle gap, not the method, is what blocks this within D-004).
+- **Priority:** P2 — high-leverage and the most-admissible bias-bounding design; it refines rather than
+  originates the numerical bound on `hypothesis:0008`.
 
 ## Connections to Project
 

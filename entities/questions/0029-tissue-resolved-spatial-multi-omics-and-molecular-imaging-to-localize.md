@@ -7,7 +7,7 @@ status: active
 ontology_terms: []
 datasets: []
 source_refs:
-- cite:Peluso2023
+- cite:Peluso2024c
 origins:
 - type: assistant
   ref: explore-ideas-methodology
@@ -52,11 +52,12 @@ PAIS pathology actually resides.
 
 ## Current Evidence
 
-- **The tissue-resolved paradigm is established at single-pathogen scale.** Peluso2023 ([18F]F-AraG
-  whole-body PET, n=24) found elevated activated-T-cell tracer uptake up to ~2.5 years post-COVID across
-  brain stem, spinal cord, bone marrow, lymphoid tissue, cardiopulmonary tissue and gut wall, with gut
-  viral-RNA persistence — demonstrating tissue-based activation invisible to routine blood assays. This
-  is the anchor the question proposes to extend cross-trigger with matched blood controls.
+- **The tissue-resolved paradigm is established at single-pathogen scale.** Peluso2024c (Sci Transl Med;
+  multimodal — [18F]F-AraG whole-body PET + gut biopsy + blood, n=24) found elevated activated-T-cell
+  tracer uptake up to ~2 years post-COVID across brain stem, spinal cord, bone marrow, lymphoid tissue,
+  cardiopulmonary tissue and gut wall, with gut viral-RNA persistence to ~676 days — demonstrating
+  tissue-based activation invisible to routine blood assays. This is the anchor the question proposes to
+  extend cross-trigger with matched blood controls.
 - **Gap:** no cross-trigger spatial multi-omics/imaging exists; PAIS spatial transcriptomics/proteomics
   of DRG/muscle/marrow is essentially absent, and the tissue-to-blood surrogate gap is unquantified.
 
@@ -65,7 +66,8 @@ PAIS pathology actually resides.
 - **Best current interpretation:** this is the highest-resolution but **least tractable** vehicle in
   `theme:0003` — the demonstrability ceiling here is *tissue access* (DRG, marrow, gut biopsy are
   invasive and rarely banked cross-trigger), not analysis. [18F]F-AraG is also a T-cell-activation
-  tracer of limited specificity, and the evidence is single-cohort, single-trigger, imaging-only.
+  tracer of limited specificity, and the evidence — though multimodal (PET + gut biopsy + blood) — is
+  single-cohort, single-trigger, and observational.
 - **Major remaining uncertainty:** whether tissue signatures are shared across triggers (supporting
   `hypothesis:0001`/`hypothesis:0002`) or trigger-specific, and whether any accessible tissue (e.g.
   skin-biopsy small-fibre, or banked marrow from `question:0055` / `pre-registration:0006`) can serve as
@@ -87,5 +89,5 @@ PAIS pathology actually resides.
 ## Related
 
 - Topic notes: `theme:0003-demonstrability-ceiling-cross-pathogen-design`.
-- Article notes: `cite:Peluso2023`.
+- Article notes: `cite:Peluso2024c`.
 - Methods/Datasets: `pre-registration:0006` (banked-marrow HSPC ATAC as an accessible tissue readout).

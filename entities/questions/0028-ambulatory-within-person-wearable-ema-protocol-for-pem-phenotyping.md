@@ -61,9 +61,11 @@ risk, and excludes the severely ill.
 
 ## Current Evidence
 
-- **Wearable HRV can track PEM-relevant thresholds — single-cohort, preprint.** Ruijgt2025 reports
-  wearable HRV identifying autonomic dysfunction and PEM thresholds aligned with CPET VT1 in long COVID
-  (preprint; concordance shown in one cohort, not cross-validated across triggers).
+- **Wearable HRV can distinguish autonomic dysfunction and yields a *candidate* exertion threshold —
+  single-cohort preprint, PEM-validity not established.** Ruijgt2025 reports wearable HRV separating
+  autonomic dysfunction in long COVID and operationalizes an HRV-derived threshold as a **putative** VT1
+  proxy — but the study did not record PEM episodes or symptom questionnaires, and the authors present
+  the threshold as a hypothesis requiring controlled study, not a validated PEM marker.
 - **Long-horizon wearable feasibility in ME/CFS is established.** Rekeland2022 showed 6-month Fitbit
   activity monitoring is feasible in ME/CFS with step/HR tracking severity — supporting the
   ambulatory-adherence premise.
@@ -76,9 +78,10 @@ risk, and excludes the severely ill.
 
 ## Thoughts
 
-- **Best current interpretation:** the components (HRV thresholds, long-horizon adherence, ML deviation
-  detection) are individually demonstrated; the novel, unmet step is integration into one cross-trigger,
-  challenge-free instrument with an objective-PEM ground truth.
+- **Best current interpretation:** autonomic-recovery differences, long-horizon wearable feasibility,
+  and ML-based deviation detection are demonstrated; the HRV-derived **PEM-threshold validity is not**
+  (Ruijgt2025 is a single-cohort preprint with no PEM validation). The novel, unmet step is integration
+  into one cross-trigger, challenge-free instrument benchmarked against an objective-PEM ground truth.
 - **Major remaining uncertainty:** a wearable composite risks conflating **deconditioning** with
   **PEM**, and confounds activity with symptom-driven avoidance. Anchoring to an objective-PEM reference
   — the 2-day CPET multi-omic assay (`question:0049`) — is needed to license the "objective PEM" claim;

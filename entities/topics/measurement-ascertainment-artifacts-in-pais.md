@@ -36,7 +36,7 @@ source_refs:
   - cite:Hou2025
   - cite:Azhir2026
 created: '2026-06-24'
-updated: '2026-07-10'
+updated: '2026-07-18'
 ---
 # Measurement-channel and ascertainment artifacts in PAIS
 
