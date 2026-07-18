@@ -69,19 +69,42 @@ outcome) or `dataset:decodeme-gwas-sumstats-osf`.
   MCAS specifically has essentially no genetic or omics footprint (see this entity's sibling
   search residue) — hereditary alpha-tryptasemia (TPSAB1 copy number) is **not capturable** from
   standard GWAS arrays or sumstats, so it cannot be recovered through this vehicle.
-- **Power is the live risk**, not availability — quantified 2026-07-18. Against an HGI long-COVID
-  outcome (~6,450 EUR cases; controls ≫ cases so N_eff ≈ case count, and power ≈
-  N_cases·R²·(lnOR)²), this line is *conditionally* viable:
-  - Best case (instrument R²≈3.7%, full 6,450-case arm): 80% power down to **OR 1.20/SD**.
-  - Realistic (R²≈2%, ~3,500 cases): floor rises to **OR ~1.40**; power at OR 1.20 is only ~0.54.
-  - Published atopy→disease MR effects run OR 1.1–1.2, so this sits at the edge. Proceed only with
-    a **pre-registered detectable floor (OR ≳ 1.2)** and empirical confirmation the instrument
-    explains ~3–4%; a null below that floor is uninformative, not evidence of no effect. This is
-    the **surviving MR line** after IM was shelved (underpowered + HLA-pleiotropy-invalid, see
-    `dataset:finngen-r12-im-gwas`).
+- **Power is the live risk**, not availability — power-**screened** 2026-07-18. Status: a
+  **provisional power-screen survivor**, *not* "conditionally viable" and not a committed line.
+  Model: against an HGI long-COVID outcome the control pool (~1.09M) ≫ cases, so N_eff ≈ case
+  count and power ≈ N_cases·R²·(lnOR)². Minimum detectable effects (80% power, α=0.05):
+  - R²≈3.7% / 6,450 cases → OR **1.20/SD**; R²≈2% / 3,500 cases → floor OR **~1.40** (power at
+    OR 1.20 there is only ≈**0.33** — the ≈0.54 figure belongs to 6,450 cases at R²=2%, or 3,500
+    at R²=3.7%, not 3,500 at R²=2%).
 
-**Scope (D-005).** Execution is **not authorised** — an atopy → long-COVID MR is a new
-computational line over a new exposure vehicle, outside the D-005 Wave-1 pilot.
+  Four unresolved issues keep this provisional, and none is discharged yet:
+  - **No EUR-only outcome exists.** The 6,450-case file (`GCST90454541`) is the European-*dominant*
+    **multi-ancestry** meta (6,450 broad-definition cases / 1,093,995 population controls); the
+    project has established there is no EUR-only HGI long-COVID file. This **fails D-006's
+    ancestry-matched-primary gate**, so any run here is **mechanics / sensitivity only, never
+    reportable primary MR**. "Pull the actual EUR-arm case count" is therefore not a real step.
+  - **Exposure scale unresolved.** Atopy is *binary*; "OR/SD" is meaningful only as an effect per
+    SD of **latent liability**, with the instrument R² transformed onto that same liability scale.
+    Standard binary-outcome MR power assumes a standardized continuous exposure — without the
+    liability framing the estimand is a different quantity.
+  - **The 3.7% R² is not the composite instrument's empirical liability R².** Ferreira's supplement
+    reports *disease-specific* variance for the lead loci (~3.2% asthma, ~3.8% hay fever, ~1.2%
+    eczema), not a transferable broad-composite liability R². The empirical liability-scale R² must
+    be computed from these public sumstats before any power claim stands.
+  - **Sample overlap.** UKB plausibly contributes to both an atopy instrument and the HGI outcome;
+    the two-sample overlap must be checked and handled, or it biases toward the confounded
+    observational estimate.
+
+  Scope of the estimand: even if all four resolve, this vehicle speaks only to **broad
+  allergic-disease liability**, not q0034's stronger "mechanistically distinct atopy/MCAS subgroup"
+  question (MCAS has no capturable footprint here — see the sibling caveat above). It is
+  nonetheless the **only surviving MR candidate** after IM was shelved (see
+  `dataset:finngen-r12-im-gwas`).
+
+**Scope (D-005 / D-006).** Execution is **not authorised**. Ruling (2026-07-18): *a new exposure
+against the authorized HGI outcome is a new computational line requiring a fresh D-005 decision;
+D-006 maintenance covers promotion of the named Wave-1 vehicle, not arbitrary new exposure
+vehicles.* The ancestry-matched-primary gate above is an independent D-006 bar on the outcome.
 
 ## Access verification log
 
