@@ -70,12 +70,14 @@ re-analyse this file, so it is third-party-reproducible and is *not* shelved alo
 - Registry/ICD-coded IM: medically-attended only; the same control-contamination issue as FinnGen
   (asymptomatic seroconverters sit in the control group).
 - WGS-scan output — instrument selection/tuning needed before MR use.
-- **Same underpowered + pleiotropy-invalid verdict as FinnGen (power calc 2026-07-18):** at
+- **Same underpowered + likely-uninterpretable verdict as FinnGen (power-screen 2026-07-18):** at
   3,621 cases the exposure GWAS yields a weak, HLA-dominated instrument; against an HGI long-COVID
-  outcome it detects only OR ≥ ~1.4–1.6/SD at 80% power, and the HLA-dominated instrument violates
-  the exclusion restriction. Held only as an *independent replication* instrument should the atopy
-  line proceed and an IM contrast later become defensible — not a standalone MR line. See
-  `dataset:finngen-r12-im-gwas`.
+  outcome it detects only OR ≥ ~1.4–1.6/SD at 80% power, and an HLA-inclusive instrument is not
+  credibly exclusion-restriction-valid (shelve unless a strong non-HLA instrument survives clumping).
+- **Sample overlap.** This is a **UKB-derived** exposure and the HGI long-COVID outcome **includes
+  UKB**, so a two-sample IM→long-COVID MR would carry direct sample overlap that must be handled.
+  Retained **only if the IM estimand is later revived with a defensible (non-HLA) instrument** — not
+  tied to the atopy line. See `dataset:finngen-r12-im-gwas`.
 
 ## Access verification log
 

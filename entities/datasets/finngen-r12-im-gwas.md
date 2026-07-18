@@ -73,16 +73,22 @@ use the manifest figure for the sumstat file.
 - Registry-coded IM captures **medically-attended** mononucleosis only; mild symptomatic cases are
   misclassified as controls.
 - Controls collapse **asymptomatic seroconverters with the EBV-naive** — precisely the contrast
-  `question:0051` cares about. This biases toward the null rather than manufacturing an effect.
+  `question:0051` cares about. This **attenuates the SNP–IM associations and weakens the
+  instrument**; confine the "toward null" intuition to that exposure-GWAS association strength — it
+  does *not* cleanly bias the downstream MR ratio toward null (a weak instrument can distort the
+  ratio's scale and induce weak-instrument bias).
 - Finnish-only; bottlenecked population, transferability limits.
-- **Underpowered as an MR exposure (power calc 2026-07-18).** With an HGI long-COVID outcome
-  (~6,450 EUR cases, controls ≫ cases so N_eff ≈ case count), an IM instrument explaining even
-  R²=1% detects only OR ≥ 1.42/SD at 80% power (OR ≥ 1.64 at a realistic R²≈0.5%); power at a
-  plausible OR 1.30 is ~0.56. **Second, independent invalidity:** the IM-liability signal is
-  HLA-dominated, and HLA is broadly pleiotropic for immune/infectious outcomes, so the exclusion
-  restriction is not credible — a "hit" would not be interpretable as causal. IM→long-COVID MR is
-  therefore shelved: underpowered *and* pleiotropy-invalid. See `dataset:gcst005038-allergic-disease-gwas`
-  (atopy) for the surviving MR line.
+- **Underpowered as an MR exposure (power-screen 2026-07-18).** Against an HGI long-COVID outcome
+  (6,450 broad-definition multi-ancestry cases, controls ≫ cases so N_eff ≈ case count), an IM
+  instrument explaining even R²=1% detects only OR ≥ 1.42/SD at 80% power (≥ 1.64 at a realistic
+  R²≈0.5%); power at OR 1.30 is ≈0.56. "OR/SD" here presupposes a per-SD **latent-liability**
+  exposure with R² on that scale — IM is binary, so this framing must be made explicit before the
+  estimate is interpretable. **Likely-uninterpretable instrument:** if the usable instrument is
+  HLA-dominated (expected for medically-attended IM), the exclusion restriction is not credible.
+  **Verdict: shelve** on power grounds, and on validity grounds *unless a sufficiently strong
+  non-HLA instrument survives clumping* — settling that needs an acquired/clumped instrument report
+  (association results), not yet in hand. `dataset:gcst005038-allergic-disease-gwas` (atopy) is the
+  only surviving MR candidate.
 
 **Scope (D-005 / D-006).** Cataloguing is unrestricted; **execution is not authorised.** D-006(c)
 holds FinnGen as a *distinct measured-phenotype vehicle* requiring (i) a scope decision and (ii)
@@ -93,6 +99,10 @@ of which discharges D-006 on its own:
 - On (ii): D-006 flagged the *form/email-mediated* `finngen.fi` path as unverified. The **R12 public
   bulk-download channel used here is a different channel** and was verified anonymous on
   2026-07-17. That is evidence toward (ii) for this channel; it does not substitute for (i).
+
+Ruling (2026-07-18): independent of D-006(c), *a new exposure against the authorized HGI outcome is
+a new computational line requiring a fresh D-005 decision; D-006 maintenance covers promotion of the
+named Wave-1 vehicle only, not arbitrary new exposure vehicles.*
 
 ## Access verification log
 
