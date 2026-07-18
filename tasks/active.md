@@ -165,19 +165,6 @@ The patch (Status & next steps) names this as the next step for the contested ca
 
 The patch parks HPA/cortisol as 'high-plausibility / thin-PAIS-evidence', which may undersell it - hypocortisolism in ME/CFS is a decades-old replicated finding and HPA is a master immune regulator + rhythm-sensitive (ties to the circadian bridge task). Run a focused /science:search-literature pass to calibrate the actual evidence weight and decide whether HPA promotes from prose candidate to an edged upstream forcing node in the landscape, or stays deferred. related: patch:immune-state-shift-causal-landscape, hypothesis:0001.
 
-## [t100] explore-followup batch 6: temporal dynamics & timing (q0036,q0037,q0045,q0046,q0047)
-- priority: P3
-- status: proposed
-- aspects: []
-- group: explore-followups
-- created: 2026-07-04
-
-Entities: q0036 (critical-slowing-down premonitory early-warning signals - novel), q0037 (latent homeostatic fragility / lower re-entry threshold on reinfection - novel), q0045 (temporal causal ordering of homeostatic domain failure), q0046 (mechanistic basis of the time-limited acute-phase intervention window), q0047 (menstrual/ultradian periodicity as subphenotype discriminator). Follow-up: research-papers on time-series/dynamical-systems methods and longitudinal PAIS trajectories; identify densely-sampled cohorts for CSD testing.
-
-### Notes
-
-- 2026-07-06: explore-2026-07-06 additions (temporal dynamics & timing): + q0052 (acute pathogen clearance rate as cross-pathogen trajectory predictor), q0053 (gut-microbiome normalization kinetics leading vs lagging symptom resolution), q0054 (EBV-reactivation vs autoantibody-emergence temporal ordering). All three organized by the new theme:0002-temporal-ordering-and-causal-kinetics.
-
 ## [t101] explore-followup batch 7: persistence, dormancy & tolerance-collapse analogies (q0043,q0044)
 - priority: P3
 - status: proposed
