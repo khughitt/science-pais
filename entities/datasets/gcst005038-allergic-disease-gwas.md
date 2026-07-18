@@ -101,6 +101,17 @@ outcome) or `dataset:decodeme-gwas-sumstats-osf`.
   nonetheless the **only surviving MR candidate** after IM was shelved (see
   `dataset:finngen-r12-im-gwas`).
 
+**Feasibility result (t137, 2026-07-18): NO-GO.** The D-007 feasibility packet ran on public
+sumstats and shelved the line. The instrument is **strong** — 63 independent instruments after MHC
+exclusion, mean F = 62 — but its **liability-scale R² is only ~2–2.5%** (logit-latent 1.96%;
+Lee-2011 normal-liability 2.14–2.53% across K∈{0.20,0.30,0.40}; the naïve Σ2p(1−p)β²=6.56% overstates
+and is excluded). Against the ancestry-capped ~6,450-case HGI outcome that gives only **0.57–0.64
+power at OR 1.20/SD** (minimum detectable OR ≈ 1.25), below the pre-registered 80%/OR-1.20 floor. The
+limit is the outcome's case count, not the exposure. **D-007b is not raised**; atopy joins IM as
+shelved; no boundary-strata MR line survives. Revisit only if a EUR-matched or larger long-COVID
+outcome appears (the built instrument would be reusable). Full packet:
+`doc/plans/2026-07-18-t137-atopy-feasibility-result.md`.
+
 **Scope (D-005 / D-006 / D-007).** The 2026-07-18 ruling — *a new exposure against the authorized
 HGI outcome is a new computational line requiring a fresh D-005 decision; D-006 maintenance covers
 promotion of the named Wave-1 vehicle, not arbitrary new exposure vehicles* — was taken up as

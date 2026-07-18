@@ -20,7 +20,7 @@ q0034's stronger atopy/MCAS-subgroup question; MCAS has no capturable footprint 
 
 ## Vehicles (frozen)
 
-- **Exposure:** `dataset:gcst005038-allergic-disease-gwas` (Ferreira 2017; 180,129 EUR cases /
+- **Exposure:** `dataset:gcst005038-allergic-disease-gwas` (Ferreira, PMID 29083406; 180,129 EUR cases /
   180,709 EUR controls; full sumstats, 23andMe stratum excluded from the public file). Sample
   case-fraction **P = 180129 / 360838 = 0.4992**.
 - **Outcome:** `dataset:covid19-hgi-longcovid-gwas` (HGI long COVID; European-*dominant*
