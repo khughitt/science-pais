@@ -62,9 +62,12 @@ attractor. It is the epidemiological-pillar instance of `hypothesis:0008`.
 
 **Supporting the artifact reading (definition- and control-dependence is large):**
 
-- **Prevalence spans ~0–93% by definition (`cite:Woodrow2023`).** A systematic review of 120 studies
-  found persistent-symptom prevalence ranging **0%–93%** (pooled 42.1%, 95% PI 6.8–87.9), explicitly
-  concluding that *how* long COVID is defined and measured drives the estimate.
+- **Prevalence spans ~0–93% across studies (`cite:Woodrow2023`).** A systematic review of 120 studies
+  found persistent-symptom prevalence ranging **0%–93%** (pooled 42.1%, 95% PI 6.8–87.9). **Attribution
+  caveat:** this full range reflects heterogeneity in *populations, study designs, follow-up length,
+  case definitions, and measurement methods together* — not definition alone. The clean
+  *definition-only, single-population* signal is narrower (see the ONS example below); the 0–93% figure
+  bounds total methodological variability, not the definitional component in isolation.
 - **Data source moves the number several-fold (`cite:Woodrow2023`).** Within the same review, pooled
   prevalence was **13.6% by clinical/coded records vs 43.9% by self-report** (and 51.7% under systematic
   assessment). *Attribution note:* this record-vs-self-report gap is a **between-study pooled**
@@ -82,27 +85,35 @@ attractor. It is the epidemiological-pillar instance of `hypothesis:0008`.
 
 **Conflicting evidence (the convergence is not purely a definitional artifact):**
 
-- **Dubbo — convergence under a *fixed* definition and confirmed infection (`cite:Hickie2006`).** The
-  Dubbo Infection Outcomes Study prospectively followed people with three unrelated confirmed acute
-  infections (EBV, *Coxiella burnetii*/Q fever, Ross River virus) using a **single case definition and
-  clinician-assessed caseness**, and found **~11% (28/253)** met post-infective fatigue-syndrome
-  criteria at 6 months, at *similar incidence after each pathogen*. Because the definition is held
-  constant while the trigger varies, this convergence cannot be a shared-definition artifact — it is
-  genuine cross-pathogen convergence.
-- Notably, Dubbo's ~11% and Ballouz's ~17% *control-adjusted excess* are of the same order — so once you
-  demand controlled, uniformly-defined estimates, a real cross-trigger fraction in the low-to-mid teens
-  survives.
+- **Dubbo — internally-standardized similarity across three triggers (`cite:Hickie2006`).** The Dubbo
+  Infection Outcomes Study prospectively followed people with three unrelated confirmed acute infections
+  (EBV, *Coxiella burnetii*/Q fever, Ross River virus) using a **single case definition and
+  clinician-assessed caseness**, and found **~11% (28/253)** met post-infective fatigue-syndrome criteria
+  at 6 months, at *similar incidence after each pathogen*. Holding the definition constant while varying
+  the trigger, this **cross-pathogen similarity cannot be a shared-definition artifact** — it is genuine
+  internally-standardized convergence across three infections. **Scope limit:** Dubbo has **no uninfected
+  control arm**, so its ~11% is not an infection-*attributable* (excess-over-background) estimate.
 
 ## Thoughts
 
-- **Best current interpretation:** the question splits cleanly. The **uncontrolled, self-reported,
-  definition-variable** prevalence figures (which dominate the long-COVID literature) *are* substantially
-  artifactual — they span 0–93%, move several-fold by data source, shift ~9 points by definition alone in
-  one population, and largely reflect belief and background symptom burden. **But the "~10–20% cross-
-  trigger convergence" claim, when anchored to controlled, uniformly-defined estimates (Dubbo ~11%,
-  Ballouz ~17% excess), is real** and is not a shared-definition artifact. The correct project move is to
-  **re-anchor the convergence argument to controlled/uniform estimates and stop citing uncontrolled
-  self-report prevalence as if it were the same quantity.**
+- **Best current interpretation:** the **uncontrolled, self-reported, definition-variable** prevalence
+  figures that dominate the long-COVID literature *are* substantially artifact-prone — total across-study
+  variability spans 0–93%, prevalence moves several-fold by data source, shifts ~9 points by definition
+  alone in one population (ONS), and partly reflects belief and background symptom burden. **The
+  "~10–20% cross-trigger constant survives" claim is *not* established, however, because the two
+  best-controlled anchors measure non-comparable estimands and cannot be combined:**
+    - **Dubbo (`cite:Hickie2006`)** gives ~11% under *one clinician-assessed definition across three
+      pathogens* — strong evidence of genuine cross-trigger *similarity*, but **uncontrolled** (no
+      uninfected arm) and limited to EBV / Q-fever / Ross River virus.
+    - **Ballouz (`cite:Ballouz2023`)** gives ~17% *infection-attributable excess over uninfected
+      controls* — but for **SARS-CoV-2 alone** and a **broad "any symptom" outcome**, a different quantity
+      from Dubbo's PIFS caseness.
+  The two are neither jointly cross-trigger nor jointly controlled+uniformly-defined, so their rough
+  numerical proximity does **not** demonstrate a controlled cross-trigger low-teens constant. What is
+  defensible: (a) uncontrolled self-report prevalence should not anchor mechanistic inference, and (b) at
+  least one internally-standardized study (Dubbo) shows real cross-pathogen similarity. **No single study
+  yet delivers a jointly controlled + cross-trigger + uniformly-defined estimate** — that is the missing
+  design, not a settled fact.
 - **Major remaining uncertainty:** whether a *uniformly-defined, control-adjusted* chronic fraction is
   actually stable across the full trigger set the project cares about (post-sepsis, post-dengue,
   post-Lyme), or whether Dubbo's three-pathogen convergence is the exception. Most non-COVID triggers

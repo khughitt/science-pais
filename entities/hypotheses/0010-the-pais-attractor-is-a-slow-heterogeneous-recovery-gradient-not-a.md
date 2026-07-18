@@ -100,15 +100,17 @@ Confidence in the gradient account would be materially reduced if:
 
 ## Supporting Evidence
 
-- **RECOVER-Adult trajectory analysis (`cite:Thaweethai2025`, literature/empirical):** latent-class
-  modeling of long-COVID symptom-burden trajectories over 15 months recovers **eight distinct classes** —
-  a ~36% minimal-to-none group, a small (~5%) persistent-high group, a ~6% delayed-worsening group, and
-  the remaining majority distributed across improving / low-burden classes — consistent with a *mixture
-  of trajectories* rather than one uniform chronic state. (An earlier draft of this note quoted the
-  late-worsening class as ~14%; the delayed-worsening class is actually ~6% — corrected against the
-  published class table.) Note this anchor establishes *heterogeneity of trajectory shape*, which the
-  mixture claim needs, but the 15-month horizon does not by itself separate a slow gradient from a
-  shallow-but-stable basin (see Current Uncertainty).
+- **RECOVER-Adult trajectory analysis (`cite:Thaweethai2025`, literature/empirical) — supports
+  heterogeneity only.** Latent-class modeling of long-COVID symptom-burden trajectories over 15 months
+  recovers **eight distinct classes**, establishing *heterogeneity of trajectory shape*, which the
+  mixture-of-trajectories proposition needs. At the full-infected-cohort level (n=3,659) most participants
+  sit in minimal/low/improving classes (~36% minimal-to-none; ~5% persistent-high), with worsening-type
+  profiles totalling **~14%** (worsening-moderate ~8% *plus* delayed-worsening ~6%). **But the
+  full-cohort denominator is the wrong lens for this hypothesis's core claim,** which is specifically
+  about people who are *already chronic early* — and on that conditional denominator the anchor leans the
+  other way (see Disputing Evidence). (An earlier draft quoted "~14% late-worsening" as a single class
+  and then used only the ~6% delayed-worsening figure; corrected — worsening totals ~14% across two
+  classes, and the 15-month horizon does not separate a slow gradient from a shallow-but-stable basin.)
 
 ## Disputing Evidence
 
@@ -117,6 +119,15 @@ Confidence in the gradient account would be materially reduced if:
   stratum proves genuinely flat over many years, it is a fixed point.
 - Reports of **relapse/PEM-driven step-downs** and non-linear crashes are more naturally read as
   state-transitions than as smooth-gradient noise, and are the observations `hypothesis:0001` is built on.
+- **RECOVER conditional-on-early-chronic denominator (`cite:Thaweethai2025`) — leans against the core
+  proposition.** Restricting to the 377 participants who actually met Long COVID criteria at 3 months
+  (not the full infected cohort), **46% were persistent-high, 35% intermittently high, and only ~19%
+  improved/recovered** over 15 months. Among the early-chronic stratum this hypothesis is actually about,
+  the *modal* trajectory is persistent, not slow-improving — directly against the "most early-chronic
+  patients continue to improve" core proposition. The gradient reading survives only if 15 months is too
+  short to see eventual improvement (the Current-Uncertainty escape); on the observed window this is
+  disputing, not supporting, evidence. This is the correction to an earlier draft that read the
+  full-cohort 5%-persistent figure as support.
 - **A "recovery" anchor that does not survive checking (`cite:Prashar2026`):** the ~33% "satisfactory
   recovery" figure an earlier draft cited *as* continued slow improvement comes from a single-centre
   specialist post-COVID clinic cohort that in fact reported **low overall functional recovery and minimal
@@ -149,7 +160,9 @@ Confidence in the gradient account would be materially reduced if:
 - `theme:0002-temporal-ordering-and-causal-kinetics` — this hypothesis is the trajectory-shape member of
   the temporal-kinetics program; `theme:0001-deflationary-nulls-and-biomarker-vs-driver` — it is the
   whole-syndrome structural null of the attractor thesis.
-- `cite:Thaweethai2025` (RECOVER-Adult 8-class trajectory analysis — supporting: trajectory
-  heterogeneity, small persistent-high stratum); `cite:Prashar2026` (specialist-clinic recovery cohort —
-  low recovery / minimal change; a corrected mis-citation, weak lean against the gradient). Grounded
-  2026-07-18 (t099).
+- `cite:Thaweethai2025` (RECOVER-Adult 8-class trajectory analysis — supports trajectory *heterogeneity*
+  at the full-cohort level, but the conditional-on-3-month-LC denominator [46% persistent / 35%
+  intermittent / 19% improving] leans *against* the improving-majority core proposition);
+  `cite:Prashar2026` (specialist-clinic recovery cohort — low recovery / minimal change; a corrected
+  mis-citation, weak lean against the gradient). Grounded 2026-07-18 (t099); net effect of the anchors is
+  more disputing than supporting on the observed 15-month/short horizons.

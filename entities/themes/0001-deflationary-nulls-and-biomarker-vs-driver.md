@@ -73,11 +73,14 @@ weak convergence.
   `question:0022-immune-state-displacement-mediator-vs-co-traveler` (the mediator-vs-co-traveler split).
 - **Ascertainment-artifact nulls (grounded 2026-07-06 → 2026-07-18, t099):**
   `question:0041` (is female predominance substantially an ascertainment / healthcare-seeking artifact —
-  answer: ascertainment inflates and reshapes but does not manufacture the female excess) and
-  `question:0042` (is the cross-trigger ~10–20% chronic fraction a shared-case-definition artifact —
-  answer: uncontrolled self-report prevalence is definition-driven, but the convergence survives when
-  anchored to controlled, uniformly-defined estimates like Dubbo ~11% and Ballouz ~17% excess). Both are
-  sex/epidemiology-specific instances of `hypothesis:0008`.
+  answer: ascertainment *plausibly inflates* the observed excess [cleanest as a *mechanism* in
+  fibromyalgia, a non-infectious D-003 read-across], but the *biological-vs-reporting composition of the
+  residual is unresolved* — not "real biology persists") and `question:0042` (is the cross-trigger
+  ~10–20% chronic fraction a shared-case-definition artifact — answer: uncontrolled self-report prevalence
+  is heterogeneity/definition-driven and overstates the attributable fraction; a controlled + cross-
+  trigger + uniformly-defined constant is *not* established because the best anchors [Dubbo ~11%
+  uncontrolled/3-pathogen; Ballouz ~17% controlled/COVID-only-broad-outcome] measure non-comparable
+  estimands). Both are sex/epidemiology-specific instances of `hypothesis:0008`.
 - **Structural / whole-syndrome nulls:**
   `hypothesis:0010-the-pais-attractor-is-a-slow-heterogeneous-recovery-gradient-not-a`,
   `hypothesis:0011-acute-illness-severity-does-not-predict-chronic-fatigue-in-pais-only`,

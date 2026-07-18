@@ -96,11 +96,20 @@ Confidence would be materially reduced if:
 
 ## Supporting Evidence
 
-- **Pires2025 (literature, empirical):** chronic fatigue burden **higher after mild** acute illness than
-  after severe (mild ~17.7 vs. severe ~13.3 on the reported scale) — a prima facie inverse
-  severity–fatigue relationship inconsistent with a single injury-magnitude threshold.
+- **Pires2025 (`cite:Pires2025`, literature, empirical):** chronic fatigue burden **higher after mild**
+  acute illness than after severe (mild ~17.7 vs. severe ~13.3 on the reported scale) — a prima facie
+  inverse severity–fatigue *association* in one observational cohort, inconsistent with a single
+  injury-magnitude threshold.
 - General clinical pattern (literature): objective organ sequelae (pulmonary fibrosis, cardiac/thrombotic
-  damage) **do** track acute severity, supporting the split between an injury arm and a fatigue arm.
+  damage) **do** track acute severity — consistent with an injury arm existing.
+- **Calibration — what this evidence does and does not establish.** `cite:Pires2025` is a **single
+  observational cohort** supplying an *association* (mild > severe fatigue), which is confounded by
+  selection/survivorship (see Current Uncertainty). It does **not** establish the hypothesis's stronger
+  claims: that the fatigue and organ-damage arms have **distinct upstream drivers**, or the title's
+  **"only objective organ sequelae"** framing. Those remain **explicit conjectures** to be tested
+  (phenotype-resolved, selection-adjusted designs with fatigue-arm mechanistic markers), not conclusions
+  supported by the current evidence. The defensible supported claim is the weak form — *severity does not
+  monotonically predict fatigue* — not the mechanistic split.
 
 ## Disputing Evidence
 
