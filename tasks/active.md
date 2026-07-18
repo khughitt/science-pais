@@ -165,19 +165,6 @@ The patch (Status & next steps) names this as the next step for the contested ca
 
 The patch parks HPA/cortisol as 'high-plausibility / thin-PAIS-evidence', which may undersell it - hypocortisolism in ME/CFS is a decades-old replicated finding and HPA is a master immune regulator + rhythm-sensitive (ties to the circadian bridge task). Run a focused /science:search-literature pass to calibrate the actual evidence weight and decide whether HPA promotes from prose candidate to an edged upstream forcing node in the landscape, or stays deferred. related: patch:immune-state-shift-causal-landscape, hypothesis:0001.
 
-## [t098] explore-followup batch 4: causal-inference & measurement methodology (q0027,q0030,q0039,q0028,q0029)
-- priority: P2
-- status: proposed
-- aspects: []
-- group: explore-followups
-- created: 2026-07-04
-
-Entities: q0027 (two-sample MR for causal direction across triggers), q0030 (target trial emulation in multi-trigger EHR), q0039 (negative-control outcome designs to bound utilization confounding), q0028 (wearable+EMA ambulatory PEM phenotyping), q0029 (tissue-resolved spatial multi-omics). Follow-up: find-datasets / catalog-datasets for GWAS+outcome instruments (MR), multi-trigger EHR (TTE/negative-control), and wearable cohorts; scope method feasibility per candidate.
-
-### Notes
-
-- 2026-07-06: explore-2026-07-06 additions (causal-inference & measurement methodology): + q0049 (2-day CPET with paired multi-omic sampling as an objective PEM assay across PAIS) and q0050 (prospective >=3-trigger harmonized cross-pathogen co-enrollment design). q0050 also has a dedicated feasibility task, t103.
-
 ## [t099] explore-followup batch 5: contrarian null-hypothesis probes (h0010,h0011,q0041,h0012,q0042)
 - priority: P3
 - status: proposed
