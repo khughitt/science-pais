@@ -75,25 +75,26 @@ PAIS-prevention window closing as a function of any one mechanism.
 
 - **Metformin (`paper:Bramante2023`, COVID-OUT RCT).** Outpatient metformin during acute COVID-19 reduced
   provider-diagnosed long COVID over 10 months: overall **HR 0.59 (95% CI 0.39–0.89)**. The timing signal
-  is a **prespecified subgroup**: benefit was larger with **earlier initiation**, early-start **HR ≈ 0.37
-  (95% CI 0.15–0.95)**. **Estimand caveats (load-bearing):** (i) long COVID here is a **provider-diagnosed
-  label** self-reported via survey and EHR-confirmed — a *secondary* outcome, not a research symptom
-  criterion; (ii) the early-start result is a **small subgroup with a wide CI barely excluding 1**; (iii)
-  **the exact day-threshold is in tension** — the project's PDF-sourced `paper:Bramante2023` entity records
-  the cut as **<4 days** (with ≥4 days HR 0.66), while a secondary-source verification pass read the cut as
-  **<3 days** and could not confirm the ≥4-day figure. Treat the *existence of an early-start gradient* as
-  the supported claim and the **precise day-cut as [UNVERIFIED pending primary-text reconciliation]** — do
-  not build a mechanism on the 3-vs-4-day distinction.
+  is a **prespecified subgroup**: the point estimate was lower with earlier initiation — **≤3 days HR 0.37
+  (95% CI 0.15–0.95)** vs **≥4 days HR 0.66** (figure; the body text reports 0.64 for the ≥4-day cell — an
+  internal point-estimate discrepancy, not a competing day cut; "within 3 days"/"≤3 days"/"<4 days" all
+  denote the *same* subgroup). **Estimand caveats (load-bearing):** (i) long COVID here is a
+  **provider-diagnosed label** self-reported via survey and EHR-confirmed — a *secondary* outcome, not a
+  research symptom criterion; (ii) the early-start cell is **small with a wide CI barely excluding 1**; and
+  decisively (iii) **the timing interaction was not significant (p_interaction = 0.27)** — so this is a
+  **suggestive subgroup point-estimate difference *without* demonstrated effect modification**, not an
+  established early-start gradient. Do not treat an early-start gradient as supported.
 - **Nirmatrelvir (`cite:Xie2023nirmatrelvir`).** Observational VA cohort (target-trial-style, IPTW):
   nirmatrelvir started **within 5 days** vs no antiviral reduced a 13-component EHR-defined post-COVID
   composite, **RR 0.74 (95% CI 0.72–0.77)**. **Estimand:** observational (healthy-user/indication
   confounding is the main threat), EHR-algorithm outcome; bounded to a **≤5-day window** but with **no
   within-window day-by-day gradient** — it shows an acute antiviral helps, consistent with an interruptible
   window, not the shape of its closure.
-- **Gap:** the strongest day-resolved *timing gradient* with a PASC endpoint is the metformin subgroup, not
-  an antiviral; a dedicated study contrasting **day-of-onset strata** of antiviral start against a PASC
-  outcome was **not found [UNVERIFIED / likely a genuine gap]** — itself relevant, since empirical
-  day-of-onset kinetics for PASC prevention are largely absent.
+- **Gap:** even the metformin timing subgroup shows only a non-significant point-estimate difference (above),
+  so there is **no statistically demonstrated day-resolved gradient** with a PASC endpoint. A dedicated study
+  contrasting **day-of-onset strata** of antiviral start against a PASC outcome was **not found** —
+  `[UNVERIFIED]`; on the searching done this appears to be a genuine gap, and empirical day-of-onset kinetics
+  for PASC prevention are largely absent.
 
 **Mechanistic — why a pharmacologic window would be narrow (viral kinetics).**
 
@@ -110,19 +111,21 @@ PAIS-prevention window closing as a function of any one mechanism.
   tissue reservoirs for months–years — a candidate PASC driver. If early antivirals act by preventing
   reservoir establishment, the window closes once seeding completes. **Mechanism plausibility only** (DOI
   verified; PMID [UNVERIFIED]); does not itself demonstrate a time-limited seeding window.
-- **Affinity maturation timeline (`cite:Turner2021`).** SARS-CoV-2 antigen drives a persistent germinal-
-  center response lasting **≥6 months** with ongoing affinity maturation. Supplies the **autoreactive-clone
-  maturation** closure candidate (once GC-driven maturation is established, an acute interruption may no
-  longer reverse it). **Timeline plausibility only** — this is vaccine-antigen GC kinetics, not a
-  demonstration that autoreactive-clone maturation closes a PAIS-prevention window.
+- **Affinity maturation timeline (`cite:Turner2021`).** mRNA-vaccine antigen drives a persistent germinal-
+  centre response lasting **at least 12 weeks** after the second dose, with ongoing affinity maturation
+  (the ≥6-month maturation result is a *later* paper). Supplies the **autoreactive-clone maturation** closure
+  candidate (once GC-driven maturation is established, an acute interruption may no longer reverse it).
+  **Timeline plausibility only** — this is *vaccine-antigen* GC kinetics, not a demonstration that
+  autoreactive-clone maturation closes a PAIS-prevention window.
 - **Interruptible-window framing (`paper:Peluso2024b`).** Frames SARS-CoV-2 as targetable in a distinct
   acute phase but does **not** quantify closure determinants — it motivates the question, not answers it.
 
 ## Thoughts
 
 - **Best current interpretation:** an acute-phase intervention window **plausibly exists and plausibly
-  closes early**, but the evidence is a *suggestive* gradient (`paper:Bramante2023` early-start subgroup,
-  wide CI, secondary endpoint) plus a bounded-but-not-day-resolved antiviral benefit
+  closes early**, but the evidence is a *suggestive subgroup point-estimate difference without demonstrated
+  effect modification* (`paper:Bramante2023` early-start subgroup, wide CI, non-significant timing
+  interaction, secondary endpoint) plus a bounded-but-not-day-resolved antiviral benefit
   (`cite:Xie2023nirmatrelvir`), grounded on early/brief viral kinetics (`cite:Killingley2022`,
   `cite:Cevik2021`). The **closure mechanism is unidentified**: viral-replication, reservoir-seeding
   (`cite:Proal2025`), and affinity-maturation (`cite:Turner2021`) timelines are all early/time-structured
@@ -152,7 +155,8 @@ PAIS-prevention window closing as a function of any one mechanism.
 
 - Topic notes: `theme:0002-temporal-ordering-and-causal-kinetics` (intervention-window member);
   `topic:therapeutics-and-clinical-trials`.
-- Article notes: `paper:Bramante2023` (early-start gradient; wide-CI subgroup; day-cut [UNVERIFIED]),
+- Article notes: `paper:Bramante2023` (early-start subgroup point-estimate difference, wide CI,
+  non-significant timing interaction p=0.27 — not a demonstrated gradient),
   `cite:Xie2023nirmatrelvir` (≤5-day antiviral window, no within-window gradient); `cite:Killingley2022`,
   `cite:Cevik2021` (early/brief viral kinetics = narrow antiviral window); `cite:Proal2025`,
   `cite:Turner2021` (reservoir-seeding / affinity-maturation closure candidates — plausibility only);

@@ -54,7 +54,8 @@ predominance mechanism question (`question:0007`).
 
 **Scope discipline:** circadian/chronobiology in general is `health-cycles` territory; this question is
 in-scope **only** because periodicity is used as a **PAIS mechanistic discriminator**. And the honest status
-is that the evidence tier is **low**: a real perimenstrual-worsening signal is now documented, but the
+is that the evidence tier is **low**: a **prospective app-based association** of perimenstrual worsening is
+now reported (with the largest study's *primary* total-symptom comparison actually null; see below), but the
 finer "which fingerprint ⇒ which mechanism" discrimination — and any use of it to *subtype* patients — is
 **unrealized and, as framed, novel**.
 
@@ -74,23 +75,24 @@ finer "which fingerprint ⇒ which mechanism" discrimination — and any use of 
 
 ## Current Evidence
 
-**Prospective within-person diaries — the real (but small, low-tier) signal.**
+**App-based within-person diaries — a small, low-tier prospective *association* (not a validated signal).**
 
 - **Long COVID, phase-dependent exacerbation (`cite:Maybin2025`).** Two parts: (a) retrospective survey
   N=12,187 links LC to self-reported menstrual disturbance (**association only**); (b) **prospective daily
-  app diary N=54 (930 cycle-days, 29 symptoms)** with symptom severity **highest perimenstrual and
-  proliferative** (fatigue, headache, muscle aches, PEM, dizziness). **Estimand:** the diary is genuine
-  within-person time-series and the **strongest single anchor** for a phase-locked fingerprint — but small
-  N, self-selected app users, **phase inferred from app/self-report (not confirmed hormones)**, and **no
-  mechanism stratification**. Licenses "perimenstrual exacerbation is real and within-person," **not**
-  "distinct mechanisms produce distinct fingerprints."
-- **Cross-condition (LC + ME/CFS) diary (`cite:Goodship2025`, preprint).** Prospectively-collected
-  Visible-app data, **N=948** cycling users: menstruation worsens symptoms in both LC and ME/CFS;
-  combined-hormonal-contraception users report **lower** burden. **Estimand:** within-person prospective,
-  and the contraception contrast is the **nearest thing to using hormone state to stratify** — but
-  observational (confounded by indication/user characteristics), self-selected, self-reported diagnoses,
-  **preprint**. Closest paper to this question's cross-condition periodicity-as-probe framing; does **not**
-  subtype by mechanism.
+  app diary N=54 (930 cycle-days, 29 symptoms)**. **Estimand caveat (load-bearing):** the **primary total
+  symptom-count comparison across cycle phases was NULL** — only **selected symptom-severity models** showed
+  phase associations (highest perimenstrual/proliferative: fatigue, headache, muscle aches, PEM, dizziness),
+  in a **small, self-selected** cohort with **phase inferred from app/self-report (not confirmed hormones)**
+  and **no mechanism stratification**. So it licenses a **prospective app *association* for some symptoms**,
+  **not** "perimenstrual exacerbation is an established within-person fact," and certainly not "distinct
+  mechanisms produce distinct fingerprints."
+- **Cross-condition (LC + ME/CFS) diary (`cite:Goodship2025`, preprint).** A **retrospective analysis of
+  prospectively-collected** Visible-app data, **N=948** cycling users: symptoms worse perimenstrually and
+  better in early luteal phase in both LC and ME/CFS; combined-hormonal-contraception users report **lower**
+  burden. **Estimand:** the contraception contrast is the **nearest thing to using hormone state to
+  stratify** — but observational (confounded by indication/user characteristics), self-selected,
+  self-reported diagnoses, **preprint**. Closest paper to this question's cross-condition periodicity-as-probe
+  framing; does **not** subtype by mechanism.
 
 **Supplementary / context (lower tier or off-target).**
 
@@ -131,15 +133,17 @@ discrimination — so the discriminator hypothesis is, as framed, **novel**.
 
 ## Thoughts
 
-- **Best current interpretation:** perimenstrual symptom worsening in LC and ME/CFS is now a **real,
-  prospectively-observed** within-person signal (`cite:Maybin2025`, `cite:Goodship2025`), and there is
-  solid general grounding for *why* a cyclic immune/mast-cell/HPA fingerprint could exist
-  (`cite:Notbohm2023`, `cite:Lavery2019`, `cite:Nater2008`). **But** the specific claim — that the *shape*
-  of the fingerprint discriminates underlying mechanisms *within a person* — is **unrealized and untested**,
-  and current measurements (app/self-report phase, no confirmed hormones, no mechanism readouts) **cannot
-  resolve** the fine phase-timing distinctions the discrimination requires. So the defensible verdict is:
-  *the periodic signal is real and the discriminator design is worth building; the fingerprint→mechanism
-  map itself is not yet evidence, it is the hypothesis.*
+- **Best current interpretation:** perimenstrual symptom worsening in LC and ME/CFS is now a **prospective
+  app-based association** (`cite:Maybin2025`, `cite:Goodship2025`) — real enough to take seriously, but with
+  the largest study's *primary* total-symptom comparison null and only selected symptom models positive, in
+  small self-selected app cohorts with self-report phasing. There is solid general grounding for *why* a
+  cyclic immune/mast-cell/HPA fingerprint could exist (`cite:Notbohm2023`, `cite:Lavery2019`,
+  `cite:Nater2008`). **But** the specific claim — that the *shape* of the fingerprint discriminates
+  underlying mechanisms *within a person* — is **unrealized and untested**, and current measurements
+  (app/self-report phase, no confirmed hormones, no mechanism readouts) **cannot resolve** the fine
+  phase-timing distinctions the discrimination requires. So the defensible verdict is: *there is a prospective
+  perimenstrual-worsening association worth building a discriminator design on; the fingerprint→mechanism map
+  itself is not yet evidence, it is the hypothesis.*
 - **The discriminating design:** prospective daily symptom + wearable-physiology diaries with
   **hormone-confirmed** cycle phase and **paired mechanism readouts** (perimenstrual inflammatory markers,
   autonomic/HRV, mast-cell mediators, cortisol amplitude), tested for whether distinct fingerprint shapes

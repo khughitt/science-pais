@@ -99,13 +99,15 @@ prediction, not domain ordering.**
   **Estimand:** genuine within-person longitudinal, but profiles the **immune compartment only**, so it
   cannot rank *which domain* leads. Preprint — cite cautiously.
 
-**The nearest formal ordering attempt, and the review consensus that ordering is unresolved.**
+**A proposed (unvalidated) ordering *framework*, and the review consensus that ordering is unresolved.**
 
-- **Dynamic Bayesian network on long-COVID data (`cite:PerezChacon2026`).** Applies the *class* of method
-  this question calls for (a formal temporal/causal-ordering estimator). **Estimand:** models
-  **symptom → organ-dysfunction** structure across timepoints, **not** the multi-omic mechanism domains —
-  a framework/proof-of-concept, so it does not itself resolve which molecular domain deviates first. (2026;
-  verify at source.)
+- **Causal-modelling framework (`cite:PerezChacon2026`).** Proposes a **qualitatively parameterized dynamic
+  Bayesian network built from literature review and expert knowledge**, demonstrated with **illustrative
+  scenarios/simulations** — **not applied to real longitudinal patient data**. **Estimand:** the authors
+  explicitly state it "has yet to be validated using data from randomised controlled trials or non-randomised
+  studies of interventions." So it is a *proposed framework for reasoning about ordering*, **not** an
+  empirical ordering result and not evidence that symptom persistence predicts anything — its existence, if
+  anything, **reinforces** the headline (even the dedicated causal-modelling paper is unvalidated on data).
 - **Review framing (`cite:Faghy2026`, `paper:Peluso2024b`).** Mechanisms are catalogued but their
   **temporal/causal sequence is explicitly unresolved**; both call for dense longitudinal, omics-integrated
   sampling. `paper:Peluso2024b`'s upstream/downstream two-tier map is a *conceptual* ordering, not a
@@ -113,8 +115,9 @@ prediction, not domain ordering.**
 
 **Honest negative.** No published study runs a cross-lagged-panel / Granger / mediation analysis across
 **longitudinal PAIS mechanism-domain time series** (immune ↔ autonomic ↔ metabolic ↔ microbiome ↔
-endothelial) to infer lead/lag. `cite:PerezChacon2026` is the closest real ordering method but on
-symptoms/organ dysfunction, not multi-omic domains. This gap is real and strengthens the question's novelty.
+endothelial) to infer lead/lag. `cite:PerezChacon2026` proposes the *class* of causal-modelling framework
+that could, but is unvalidated on real data and scoped to symptoms/organ dysfunction, not the multi-omic
+domains. This gap is real and strengthens the question's novelty.
 
 ## Thoughts
 
@@ -122,7 +125,8 @@ symptoms/organ dysfunction, not multi-omic domains. This gap is real and strengt
   rich characterization of established PAIS is cross-sectional (`paper:Walitt2024`, `cite:Klein2023`) and
   cannot order; the real longitudinal cohorts (`cite:Su2022`; IMPACC `cite:DirayArce2023`/`cite:Gabernet2025`;
   `cite:Talla2021`) are sparse, acute-window-only, or single-domain and answer *prediction*, not *ordering*.
-  The methods to do it exist (`cite:PerezChacon2026`) but have not been applied to multi-omic domain data.
+  A causal-modelling *framework* has been proposed (`cite:PerezChacon2026`) but is unvalidated on real data,
+  so no *empirical* domain-ordering exists.
 - **The discriminating design:** a cohort sampled **from the first weeks**, **densely**, across **all
   candidate domains in parallel**, analyzed with a **formal ordering estimator** (cross-lagged panel /
   dynamic Bayesian network / Granger-type), with severity co-modeled (acute severity co-varies with several
@@ -151,7 +155,8 @@ symptoms/organ dysfunction, not multi-omic domains. This gap is real and strengt
   `topic:shared-failure-mode-across-pais` (the causal-priority open question this sharpens).
 - Article notes: `paper:Walitt2024`, `cite:Klein2023` (cross-sectional — cannot order); `cite:Su2022`,
   `cite:DirayArce2023`, `cite:Gabernet2025`, `cite:Talla2021` (longitudinal but sparse/acute/single-domain,
-  predictive); `cite:PerezChacon2026` (nearest formal ordering method, on symptoms not domains);
+  predictive); `cite:PerezChacon2026` (proposed causal-modelling framework, unvalidated on real data, scoped
+  to symptoms/organ dysfunction not multi-omic domains);
   `cite:Faghy2026`, `paper:Peluso2024b` (order unresolved; dense longitudinal omics needed).
 - Methods/Datasets: cross-lagged / dynamic-Bayesian-network domain-ordering on dense longitudinal
   multi-omics — the missing design.
