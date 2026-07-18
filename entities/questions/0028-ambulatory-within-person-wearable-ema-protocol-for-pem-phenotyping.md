@@ -6,13 +6,23 @@ title: Ambulatory within-person wearable + EMA protocol for PEM phenotyping with
 status: active
 ontology_terms: []
 datasets: []
-source_refs: []
+source_refs:
+- cite:Ruijgt2025
+- cite:Rekeland2022
+- cite:Borhani2025
+- cite:Che2025
 origins:
 - type: assistant
   ref: explore-ideas-methodology
-related: []
+related:
+- question:0011-mitochondrial-basis-of-pem
+- question:0015-does-pem-requirement-improve-cross-study-comparability
+- question:0049-two-day-cpet-multiomic-pem-assay-across-pais
+- hypothesis:0006-skeletal-muscle-ischemic-mitochondrial-pem
+- topic:measurement-ascertainment-artifacts-in-pais
+- theme:0003-demonstrability-ceiling-cross-pathogen-design
 created: '2026-07-04'
-updated: '2026-07-06'
+updated: '2026-07-18'
 added_by: explore-ideas:claude-opus-4-8:cand-methodology-wearable-ema-pem-ambulatory
 lens_views:
 - lens: methodology
@@ -29,41 +39,72 @@ lens_views:
 
 ## Summary
 
-<!-- What is being asked and why it is important. -->
+An ambulatory, within-person protocol combining continuous multi-modal wearable physiology (HRV,
+accelerometry / step cadence, resting HR, skin temperature, SpO₂) with ecological momentary assessment
+(EMA) over 14–28 days, proposed as an objective PEM-phenotyping method that does **not** require a
+provoked cardiopulmonary exercise challenge. The target readouts are HRV-derived personalized exertion
+thresholds and multi-day "crash" signatures that discriminate PAIS from recovered controls and
+reproduce across long COVID, ME/CFS and PTLDS. It is attractive because the project's gold-standard PEM
+operationalization (2-day CPET, via Che2025) demands clinic attendance, carries post-exertional-harm
+risk, and excludes the severely ill.
 
 ## Why It Matters
 
-<!-- Bulleted list. Cover at least:
-- the decision this question affects
-- the risk if the question is left unanswered
--->
+- **Decision it affects:** whether PEM can be measured objectively at scale and used as a trial-ready
+  endpoint — bearing on `question:0015` (does a PEM requirement improve cross-study comparability) and
+  `question:0011` (mitochondrial basis of PEM).
+- **Measurement-channel stakes:** it aims to separate *whether the PEM phenotype is real* from *how it
+  is measured*, a reproducibility bottleneck the project repeatedly flags
+  (`topic:measurement-ascertainment-artifacts-in-pais`).
+- **Risk if unanswered:** PEM stays anchored to a low-throughput, harm-risking, severe-excluding assay,
+  and cross-trigger comparability stays hostage to self-report.
 
 ## Current Evidence
 
-<!-- Bulleted list. Cover at least:
-- supporting evidence
-- conflicting evidence
--->
+- **Wearable HRV can track PEM-relevant thresholds — single-cohort, preprint.** Ruijgt2025 reports
+  wearable HRV identifying autonomic dysfunction and PEM thresholds aligned with CPET VT1 in long COVID
+  (preprint; concordance shown in one cohort, not cross-validated across triggers).
+- **Long-horizon wearable feasibility in ME/CFS is established.** Rekeland2022 showed 6-month Fitbit
+  activity monitoring is feasible in ME/CFS with step/HR tracking severity — supporting the
+  ambulatory-adherence premise.
+- **ML can detect persistent post-COVID physiological deviation from wearable streams** (Borhani2025),
+  supporting a data-driven crash-signature detector — though on post-COVID physiology generally, not a
+  validated PEM label.
+- **Gap:** no protocol has validated a within-person composite that reproduces objective PEM across
+  LC/ME/CFS/PTLDS without a challenge, and none has established minimal clinically important difference
+  / responsiveness for use as a primary endpoint.
 
 ## Thoughts
 
-<!-- Bulleted list. Cover at least:
-- the best current interpretation
-- the major remaining uncertainty
--->
+- **Best current interpretation:** the components (HRV thresholds, long-horizon adherence, ML deviation
+  detection) are individually demonstrated; the novel, unmet step is integration into one cross-trigger,
+  challenge-free instrument with an objective-PEM ground truth.
+- **Major remaining uncertainty:** a wearable composite risks conflating **deconditioning** with
+  **PEM**, and confounds activity with symptom-driven avoidance. Anchoring to an objective-PEM reference
+  — the 2-day CPET multi-omic assay (`question:0049`) — is needed to license the "objective PEM" claim;
+  otherwise the design imports the very self-report ambiguity it aims to escape (cf.
+  `proposition:0011`: objective PEM correlates are trigger/endpoint-specific, not one shared failure mode).
+- **Priority:** P2 as the tractable, low-harm complement to `question:0049`; strongest if run paired
+  with a CPET-anchored subsample.
 
 ## Connections to Project
 
-- Related hypotheses:
-- Required datasets: list dataset IDs in frontmatter `datasets:`.
-- Required analyses:
-- Priority level:
+- Related hypotheses: `hypothesis:0006` (skeletal-muscle ischemic/mitochondrial PEM — the physiology
+  the wearable would proxy).
+- Related questions / topic / theme: `question:0011`, `question:0015`, `question:0049`;
+  `topic:measurement-ascertainment-artifacts-in-pais`; `theme:0003` (named vehicle).
+- Required datasets: prospective wearable+EMA cohorts with PAIS phenotyping (none project-held yet).
+- Required analyses: within-person threshold estimation; crash-signature detection; cross-trigger
+  reproducibility; MCID/responsiveness vs PROMs and vs CPET.
+- Priority level: P2.
 
 ## Related
 
-- Topic notes:
-- Article notes:
-- Methods/Datasets:
+- Topic notes: `topic:measurement-ascertainment-artifacts-in-pais`;
+  `theme:0003-demonstrability-ceiling-cross-pathogen-design`.
+- Article notes: `cite:Ruijgt2025`, `cite:Rekeland2022`, `cite:Borhani2025`; `cite:Che2025` (CPET
+  reference standard).
+- Methods/Datasets: `question:0049` (2-day CPET multi-omic assay as objective-PEM anchor).
 
 ## Notes
 

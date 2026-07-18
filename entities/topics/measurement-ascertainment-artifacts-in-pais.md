@@ -20,6 +20,8 @@ related:
 - question:0004-convergent-small-fiber-neuropathy-substrate
 - question:0014-which-pais-case-definition-is-most-biologically-coherent
 - question:0015-does-pem-requirement-improve-cross-study-comparability
+- question:0030-target-trial-emulation-in-multi-trigger-ehr-cohorts-for-cross-pais
+- question:0039-negative-control-outcome-designs-to-bound-healthcare-utilization
 - paper:Novak2026
 - paper:Oaklander2022
 - paper:Joseph2021
