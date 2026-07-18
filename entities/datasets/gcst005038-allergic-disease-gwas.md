@@ -69,8 +69,16 @@ outcome) or `dataset:decodeme-gwas-sumstats-osf`.
   MCAS specifically has essentially no genetic or omics footprint (see this entity's sibling
   search residue) — hereditary alpha-tryptasemia (TPSAB1 copy number) is **not capturable** from
   standard GWAS arrays or sumstats, so it cannot be recovered through this vehicle.
-- **Power is the live risk**, not availability: the long-COVID outcome arm's EUR case count is
-  small, so a modest atopy effect may be undetectable. Power should be checked *before* committing.
+- **Power is the live risk**, not availability — quantified 2026-07-18. Against an HGI long-COVID
+  outcome (~6,450 EUR cases; controls ≫ cases so N_eff ≈ case count, and power ≈
+  N_cases·R²·(lnOR)²), this line is *conditionally* viable:
+  - Best case (instrument R²≈3.7%, full 6,450-case arm): 80% power down to **OR 1.20/SD**.
+  - Realistic (R²≈2%, ~3,500 cases): floor rises to **OR ~1.40**; power at OR 1.20 is only ~0.54.
+  - Published atopy→disease MR effects run OR 1.1–1.2, so this sits at the edge. Proceed only with
+    a **pre-registered detectable floor (OR ≳ 1.2)** and empirical confirmation the instrument
+    explains ~3–4%; a null below that floor is uninformative, not evidence of no effect. This is
+    the **surviving MR line** after IM was shelved (underpowered + HLA-pleiotropy-invalid, see
+    `dataset:finngen-r12-im-gwas`).
 
 **Scope (D-005).** Execution is **not authorised** — an atopy → long-COVID MR is a new
 computational line over a new exposure vehicle, outside the D-005 Wave-1 pilot.

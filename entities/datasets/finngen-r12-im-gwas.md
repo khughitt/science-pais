@@ -75,6 +75,14 @@ use the manifest figure for the sumstat file.
 - Controls collapse **asymptomatic seroconverters with the EBV-naive** — precisely the contrast
   `question:0051` cares about. This biases toward the null rather than manufacturing an effect.
 - Finnish-only; bottlenecked population, transferability limits.
+- **Underpowered as an MR exposure (power calc 2026-07-18).** With an HGI long-COVID outcome
+  (~6,450 EUR cases, controls ≫ cases so N_eff ≈ case count), an IM instrument explaining even
+  R²=1% detects only OR ≥ 1.42/SD at 80% power (OR ≥ 1.64 at a realistic R²≈0.5%); power at a
+  plausible OR 1.30 is ~0.56. **Second, independent invalidity:** the IM-liability signal is
+  HLA-dominated, and HLA is broadly pleiotropic for immune/infectious outcomes, so the exclusion
+  restriction is not credible — a "hit" would not be interpretable as causal. IM→long-COVID MR is
+  therefore shelved: underpowered *and* pleiotropy-invalid. See `dataset:gcst005038-allergic-disease-gwas`
+  (atopy) for the surviving MR line.
 
 **Scope (D-005 / D-006).** Cataloguing is unrestricted; **execution is not authorised.** D-006(c)
 holds FinnGen as a *distinct measured-phenotype vehicle* requiring (i) a scope decision and (ii)
