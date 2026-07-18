@@ -13,6 +13,7 @@ related:
 - question:0036-critical-slowing-down-fingerprints-as-pre-chronification-early-warning
 - question:0037-latent-homeostatic-fragility-after-pais-recovery-lower-re-entry
 - question:0046-mechanistic-basis-of-the-time-limited-acute-phase-intervention-window
+- question:0047-menstrual-cycle-and-ultradian-symptom-periodicity-as-a-mechanistic
 - hypothesis:0010-the-pais-attractor-is-a-slow-heterogeneous-recovery-gradient-not-a
 source_refs: []
 origins: []
@@ -66,8 +67,9 @@ entry and exit.
   domain fails first is genuinely unresolved.** Every rich characterization of established PAIS is
   *cross-sectional* and cannot order (Walitt2024, Klein2023); the real longitudinal cohorts are *sparse
   (2–3 timepoints), acute-window-only, or single-domain* and framed as *prediction* not domain lead/lag
-  (Su2022; IMPACC DirayArce2023/Gabernet2025; Talla2021). The ordering *methods* exist (PerezChacon2026
-  dynamic Bayesian network) but have not been applied to multi-omic domain data — the unfilled niche.
+  (Su2022; IMPACC DirayArce2023/Gabernet2025; Talla2021). A causal-modelling *framework* has been proposed
+  (PerezChacon2026 — a literature/expert-informed dynamic Bayesian network, explicitly **unvalidated on real
+  data**) but no *empirical* domain-ordering exists — the unfilled niche.
 - **Kinetics / lead-lag (2026-07-06 pass):**
   `question:0052-acute-clearance-rate-as-cross-pathogen-pais-trajectory-predictor`,
   `question:0053-gut-microbiome-normalization-kinetics-leading-vs-lagging`,
@@ -79,13 +81,15 @@ entry and exit.
   documented false positives [Jager2019, Wilkat2019] and violated timescale-separation [Dablander2022]);
   `question:0037` (latent re-entry fragility on reinfection — **plausible but effectively untested**:
   population reinfection data show *lower* per-infection new-onset risk and *exclude* the remitted stratum
-  [Bosworth2023, Hadley2024], answering a different estimand; only uncontrolled patient surveys are on
-  point [Soares2024]; durable-trace mechanism is read-across [Netea2016, post-sepsis PICS]);
+  [Bosworth2023, Hadley2024], answering a different estimand; a controlled cohort finds reinfection not
+  associated with worsening [Peghin2023] but does not isolate the remitted-stratum estimand; only
+  uncontrolled patient surveys are directly on point [Soares2024]; durable-trace mechanism is *in-scope*
+  post-infectious read-across [Netea2016; post-sepsis PICS Prescott2018/Wang2014]);
   `question:0046` (mechanistic basis of the acute intervention window — **a closing window is suggested but
-  not mechanistically pinned**: the day-resolved signal is a small wide-CI prespecified subgroup on a
-  provider-diagnosed endpoint [Bramante2023; day-cut <3-vs-<4-days unreconciled], and viral-kinetics,
-  reservoir-seeding, and affinity-maturation closure clocks are all mutually consistent with the data —
-  not yet discriminated).
+  not mechanistically pinned**: the timing signal is a small wide-CI prespecified subgroup on a
+  provider-diagnosed endpoint with a **non-significant interaction (p=0.27)** [Bramante2023] — a suggestive
+  point-estimate difference without demonstrated effect modification — and viral-kinetics, reservoir-seeding,
+  and affinity-maturation closure clocks are all mutually consistent with the data — not yet discriminated).
 - **Trajectory hypothesis under test:**
   `hypothesis:0010-the-pais-attractor-is-a-slow-heterogeneous-recovery-gradient-not-a` (monotonic
   gradient vs. bistable attractor is a *temporal* discriminator against `hypothesis:0001`; the `question:0036`

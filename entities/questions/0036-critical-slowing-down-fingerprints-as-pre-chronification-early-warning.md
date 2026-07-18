@@ -113,8 +113,10 @@ bifurcation at all; that CSD would be specific enough to detect it) are currentl
 **Evidence that the method can fail — directly relevant to the bifurcation-vs-graded question.**
 
 - **Systematic false positives (`cite:Jager2019`):** whole classes of systems show rising EWS statistics
-  *without* any critical transition. CSD is **necessary-not-sufficient**: a positive signal does not
-  establish an imminent bifurcation.
+  *without* any critical transition — a positive signal does not establish an imminent bifurcation.
+  Conversely, transitions can be **silent** (a genuine bifurcation with no detectable CSD, e.g. for
+  fast/stochastic transitions or the wrong observable), so CSD is neither strictly necessary nor sufficient
+  — its presence/absence is diagnostic only for *restricted* bifurcation classes and well-chosen observables.
 - **A clinical negative (`cite:Wilkat2019`):** in 28 subjects / 105 seizures, no CSD was detected before
   seizures — a presumed physiological bifurcation showed no premonitory signature. (Corollary: *absence*
   of CSD does not prove absence of a transition, and the presumed bifurcation may not be one.)
@@ -144,8 +146,12 @@ The method is imported and, for this question, **untested**.
 - **What would make it real (and what would sink it):** a purpose-built, densely-sampled prospective
   early-convalescent cohort (symptom + wearable-physiology, ideally jointly with the molecular domains of
   `question:0045`) analyzed for CSD *and* a pre-registered null — with surrogate/detrending controls to
-  guard against false positives. A negative (no CSD, continuous decline) would be substantive evidence
-  *for* the slow-gradient reading (`hypothesis:0010`), not merely an inconclusive null.
+  guard against false positives. A negative (no CSD, continuous decline) would be *consistent with* the
+  slow-gradient reading (`hypothesis:0010`) but **not decisive**, because a genuine bifurcation can be
+  silent (fast/stochastic transition, or CSD absent in the measured observable); a positive is likewise only
+  *suggestive* given the false-positive rate. CSD thus **sharpens** the attractor-vs-gradient question but,
+  on its own, cannot settle it — corroborating dynamical hallmarks (hysteresis, bimodality, re-entry
+  threshold via `question:0037`) are needed alongside.
 - **Major remaining uncertainty:** whether PAIS chronification is bifurcation-like at all, and whether any
   realistically-samplable convalescent time series is dense enough and stationary enough for CSD statistics
   to be trustworthy. Both are live risks flagged by the critique literature above.
