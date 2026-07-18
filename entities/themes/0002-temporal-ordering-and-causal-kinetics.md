@@ -18,7 +18,7 @@ source_refs: []
 origins: []
 evidence_refs: []
 created: '2026-07-06'
-updated: '2026-07-06'
+updated: '2026-07-18'
 ---
 # Theme: Temporal ordering and causal kinetics of PAIS onset and resolution
 
@@ -61,18 +61,35 @@ entry and exit.
 
 ## Current Project Links
 
-- **Ordering hub:** `question:0045-temporal-causal-ordering-of-homeostatic-domain-failure-in-the-post-acute`.
+- **Ordering hub — grounded (2026-07-18, t100):**
+  `question:0045-temporal-causal-ordering-of-homeostatic-domain-failure-in-the-post-acute` — **which
+  domain fails first is genuinely unresolved.** Every rich characterization of established PAIS is
+  *cross-sectional* and cannot order (Walitt2024, Klein2023); the real longitudinal cohorts are *sparse
+  (2–3 timepoints), acute-window-only, or single-domain* and framed as *prediction* not domain lead/lag
+  (Su2022; IMPACC DirayArce2023/Gabernet2025; Talla2021). The ordering *methods* exist (PerezChacon2026
+  dynamic Bayesian network) but have not been applied to multi-omic domain data — the unfilled niche.
 - **Kinetics / lead-lag (2026-07-06 pass):**
   `question:0052-acute-clearance-rate-as-cross-pathogen-pais-trajectory-predictor`,
   `question:0053-gut-microbiome-normalization-kinetics-leading-vs-lagging`,
   `question:0054-ebv-reactivation-autoantibody-emergence-temporal-ordering`.
-- **Dynamical-systems fingerprints & windows:**
-  `question:0036-critical-slowing-down-fingerprints-as-pre-chronification-early-warning`,
-  `question:0037-latent-homeostatic-fragility-after-pais-recovery-lower-re-entry`,
-  `question:0046-mechanistic-basis-of-the-time-limited-acute-phase-intervention-window`.
+- **Dynamical-systems fingerprints & windows — grounded (2026-07-18, t100):**
+  `question:0036` (critical-slowing-down pre-chronification EWS — **an imported, untested method: NO
+  application of CSD/EWS/dynamical-network-biomarkers to PAIS chronification exists**; both premises
+  unestablished — that the transition is a bifurcation at all, and that CSD is specific enough given
+  documented false positives [Jager2019, Wilkat2019] and violated timescale-separation [Dablander2022]);
+  `question:0037` (latent re-entry fragility on reinfection — **plausible but effectively untested**:
+  population reinfection data show *lower* per-infection new-onset risk and *exclude* the remitted stratum
+  [Bosworth2023, Hadley2024], answering a different estimand; only uncontrolled patient surveys are on
+  point [Soares2024]; durable-trace mechanism is read-across [Netea2016, post-sepsis PICS]);
+  `question:0046` (mechanistic basis of the acute intervention window — **a closing window is suggested but
+  not mechanistically pinned**: the day-resolved signal is a small wide-CI prespecified subgroup on a
+  provider-diagnosed endpoint [Bramante2023; day-cut <3-vs-<4-days unreconciled], and viral-kinetics,
+  reservoir-seeding, and affinity-maturation closure clocks are all mutually consistent with the data —
+  not yet discriminated).
 - **Trajectory hypothesis under test:**
   `hypothesis:0010-the-pais-attractor-is-a-slow-heterogeneous-recovery-gradient-not-a` (monotonic
-  gradient vs. bistable attractor is a *temporal* discriminator against `hypothesis:0001`).
+  gradient vs. bistable attractor is a *temporal* discriminator against `hypothesis:0001`; the `question:0036`
+  CSD test and the `question:0037` re-entry-threshold test are the two designs that would adjudicate it).
 
 ## Guardrails
 

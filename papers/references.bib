@@ -3313,3 +3313,355 @@
   pmcid   = {PMC10230608},
   note    = {Zurich cohort, 1106 infected vs 628 uninfected controls; adjusted EXCESS risk of any symptom at 6 months 17.0\% (95\% CI 11.5-22.4); demonstrates uncontrolled prevalence overstates infection-attributable fraction}
 }
+
+% ==== t100 explore-followup batch 6: temporal dynamics & timing (q0036,q0037,q0045,q0046,q0047) ====
+
+% --- q0036: critical-slowing-down / early-warning-signal theory (all imported analogy; NO PAIS application exists) ---
+@article{Scheffer2009,
+  author  = {Scheffer, Marten and Bascompte, Jordi and Brock, William A. and Brovkin, Victor and Carpenter, Stephen R. and Dakos, Vasilis and Held, Hermann and van Nes, Egbert H. and Rietkerk, Max and Sugihara, George},
+  title   = {Early-warning signals for critical transitions},
+  journal = {Nature},
+  year    = {2009},
+  volume  = {461},
+  number  = {7260},
+  pages   = {53--59},
+  doi     = {10.1038/nature08227},
+  pmid    = {19727193},
+  note    = {Foundational review: generic indicators (rising lag-1 autocorrelation, variance, slowed recovery from perturbation) precede fold-bifurcation critical transitions across ecological/climate/financial/physiological model systems. Theory only; licenses the concept, not any human post-infectious prediction. Imported analogy.}
+}
+@article{Dakos2012,
+  author  = {Dakos, Vasilis and Carpenter, Stephen R. and Brock, William A. and Ellison, Aaron M. and Guttal, Vishwesha and Ives, Anthony R. and K{\'e}fi, Sonia and Livina, Valerie and Seekell, David A. and van Nes, Egbert H. and Scheffer, Marten},
+  title   = {Methods for detecting early warnings of critical transitions in time series illustrated using simulated ecological data},
+  journal = {PLoS ONE},
+  year    = {2012},
+  volume  = {7},
+  number  = {7},
+  pages   = {e41010},
+  doi     = {10.1371/journal.pone.0041010},
+  pmcid   = {PMC3398887},
+  note    = {Methods toolbox (variance, AR(1), skewness, DFA; detrending sensitivity) benchmarked on simulated ecological series; basis of the earlywarnings R package. Simulation only; no clinical or PAIS data.}
+}
+@article{Chen2012dnb,
+  author  = {Chen, Luonan and Liu, Rui and Liu, Zhi-Ping and Li, Meiyi and Aihara, Kazuyuki},
+  title   = {Detecting early-warning signals for sudden deterioration of complex diseases by dynamical network biomarkers},
+  journal = {Scientific Reports},
+  year    = {2012},
+  volume  = {2},
+  pages   = {342},
+  doi     = {10.1038/srep00342},
+  pmid    = {22461973},
+  pmcid   = {PMC3320707},
+  note    = {Proposes dynamical network biomarkers (DNB): a node group whose within-group correlation/variance spikes at a pre-disease critical state. Applications to date are cancer/hepatitis/differentiation models, NOT long COVID / ME/CFS / post-infectious chronification.}
+}
+@article{vandeLeemput2014,
+  author  = {van de Leemput, Ingrid A. and Wichers, Marieke and Cramer, Ang{\'e}lique O. J. and Borsboom, Denny and Tuerlinckx, Francis and Kuppens, Peter and van Nes, Egbert H. and Viechtbauer, Wolfgang and Giltay, Erik J. and Aggen, Steven H. and Derom, Catherine and Jacobs, Nele and Kendler, Kenneth S. and van der Maas, Han L. J. and Neale, Michael C. and Peeters, Frenk and Thiery, Evert and Zachar, Peter and Scheffer, Marten},
+  title   = {Critical slowing down as early warning for the onset and termination of depression},
+  journal = {Proceedings of the National Academy of Sciences},
+  year    = {2014},
+  volume  = {111},
+  number  = {1},
+  pages   = {87--92},
+  doi     = {10.1073/pnas.1312114110},
+  pmid    = {24324144},
+  note    = {The closest clinical analogue: elevated autocorrelation/variance/cross-emotion correlation in self-rated momentary-emotion (EMA) series relate to upcoming mood-state transitions. Contested (Bos \& De Jonge PNAS 2014 critique); psychopathology, not infection.}
+}
+@article{Jager2019,
+  author  = {J{\"a}ger, Georg and F{\"u}llsack, Manfred},
+  title   = {Systematically false positives in early warning signal analysis},
+  journal = {PLoS ONE},
+  year    = {2019},
+  volume  = {14},
+  number  = {2},
+  pages   = {e0211072},
+  doi     = {10.1371/journal.pone.0211072},
+  pmid    = {30726240},
+  pmcid   = {PMC6364907},
+  note    = {Whole classes of systems display EWS without any critical transition -- systematic false positives. CSD is not specific: rising AR/variance does not prove an imminent bifurcation.}
+}
+@article{Wilkat2019,
+  author  = {Wilkat, Thorsten and Rings, Thorsten and Lehnertz, Klaus},
+  title   = {No evidence for critical slowing down prior to human epileptic seizures},
+  journal = {Chaos},
+  year    = {2019},
+  volume  = {29},
+  number  = {9},
+  pages   = {091104},
+  doi     = {10.1063/1.5122759},
+  pmid    = {31575135},
+  note    = {28 subjects / 105 seizures: no CSD detected before seizures. A presumed clinical bifurcation showed no early-warning signature -- absence of CSD does not imply absence of a transition.}
+}
+@article{Helmich2024,
+  author  = {Helmich, Marieke A. and Schreuder, Marieke J. and Bringmann, Laura F. and Riese, Harri{\"e}tte and Snippe, Evelien and Smit, Arnout C.},
+  title   = {Slow down and be critical before using early warning signals in psychopathology},
+  journal = {Nature Reviews Psychology},
+  year    = {2024},
+  volume  = {3},
+  number  = {11},
+  pages   = {767--780},
+  doi     = {10.1038/s44159-024-00369-y},
+  note    = {Critical review: little support for clinical use of CSD-based EWS in psychopathology; enumerates preconditions (sampling density, stationarity, timescale separation, appropriate transition type) clinical series routinely violate.}
+}
+@article{Dablander2022,
+  author  = {Dablander, Fabian and Heesterbeek, Hans and Borsboom, Denny and Drake, John M.},
+  title   = {Overlapping timescales obscure early warning signals of the second COVID-19 wave},
+  journal = {Proceedings of the Royal Society B},
+  year    = {2022},
+  volume  = {289},
+  number  = {1968},
+  pages   = {20211809},
+  doi     = {10.1098/rspb.2021.1809},
+  pmid    = {35135355},
+  pmcid   = {PMC8825995},
+  note    = {EWS indicators DECREASED rather than rose before the second COVID-19 wave; the epidemic violates the timescale-separation assumption CSD requires. Population transmission dynamics, not within-patient chronification. Cautionary.}
+}
+
+% --- q0037: reinfection / latent post-illness fragility (Bosworth2023, Hickie2006, Netea2016 already in bib) ---
+@article{Bowe2022,
+  author  = {Bowe, Benjamin and Xie, Yan and Al-Aly, Ziyad},
+  title   = {Acute and postacute sequelae associated with SARS-CoV-2 reinfection},
+  journal = {Nature Medicine},
+  year    = {2022},
+  volume  = {28},
+  number  = {11},
+  pages   = {2398--2405},
+  doi     = {10.1038/s41591-022-02051-3},
+  pmid    = {36357676},
+  note    = {US VA EHR cohort (reinfected >=2 n=40,947 vs 1 infection n=443,588 vs noninfected n=5.3M). Estimates the ADDITIVE burden of an extra infection (reinfected vs not-reinfected), NOT per-infection hazard and NOT conditioned on prior-syndrome status; older/male. Do not read as per-event escalation.}
+}
+@article{Prescott2018,
+  author  = {Prescott, Hallie C. and Angus, Derek C.},
+  title   = {Enhancing recovery from sepsis: a review},
+  journal = {JAMA},
+  year    = {2018},
+  volume  = {319},
+  number  = {1},
+  pages   = {62--75},
+  doi     = {10.1001/jama.2017.17687},
+  pmid    = {29297082},
+  pmcid   = {PMC5839473},
+  note    = {Post-sepsis survivors carry durable fragility (persistent functional/cognitive/immune impairment; elevated recurrent-infection risk 11.9\% vs 8.0\% matched). Read-across for durable post-illness vulnerability (PICS); non-infectious-syndrome analogue.}
+}
+@article{Wang2014sepsis,
+  author  = {Wang, Tao and Derhovanessian, Anna and De Cruz, Sharon and Belperio, John A. and Deng, Jane C. and Hoo, Guy Soo},
+  title   = {Subsequent infections in survivors of sepsis: epidemiology and outcomes},
+  journal = {Journal of Intensive Care Medicine},
+  year    = {2014},
+  volume  = {29},
+  number  = {2},
+  pages   = {87--95},
+  doi     = {10.1177/0885066612467162},
+  pmid    = {23753224},
+  note    = {Retrospective case-control (78 sepsis survivors vs 50 non-infectious critically ill); surviving sepsis was the strongest predictor of subsequent infection (RR 2.83) and infection-rehospitalization (RR 3.78). Read-across: prior severe infection leaves durable heightened susceptibility to the next.}
+}
+@article{Soares2024,
+  author  = {Soares, Lisa and Assaf, Gina and McCorkell, Lisa and Davis, Hannah and Cohen, A. K. and Moen, J. K. and Shoemaker, L. G. and others},
+  title   = {Long COVID and associated outcomes following COVID-19 reinfections: insights from an international patient-led survey},
+  journal = {Research Square (preprint)},
+  year    = {2024},
+  doi     = {10.21203/rs.3.rs-4909082/v1},
+  note    = {PREPRINT, not peer-reviewed. Self-selected international online survey (Patient-Led Research Collaborative), self-report throughout, no controls, LC-enriched. Hypothesis-generating for recurrence phenomenology; cannot estimate risk or isolate a remitted-stratum effect.}
+}
+
+% --- q0045: temporal ordering of domain failure (Walitt2024, Peluso2024b, Klein2023, Gabernet2025 already in bib) ---
+@article{Su2022,
+  author  = {Su, Yapeng and Yuan, Dan and Chen, Daniel G. and Ng, Rachel H. and Wang, Kai and Choi, Jongchan and Li, Sarah and others},
+  title   = {Multiple early factors anticipate post-acute COVID-19 sequelae},
+  journal = {Cell},
+  year    = {2022},
+  volume  = {185},
+  number  = {5},
+  pages   = {881--895},
+  doi     = {10.1016/j.cell.2022.01.014},
+  pmid    = {35216672},
+  pmcid   = {PMC8786632},
+  note    = {309 patients, deep multi-omics at 3 discrete timepoints (diagnosis, acute, 2-3mo convalescent). Four acute-phase factors (type 2 diabetes, SARS-CoV-2 RNAemia, EBV viremia, autoantibodies) ANTICIPATE PASC phenotypes. Predictor->outcome association; sparse sampling cannot resolve lead/lag AMONG mechanism domains.}
+}
+@article{DirayArce2023,
+  author  = {Diray-Arce, Joann and others (IMPACC Network)},
+  title   = {Multi-omic longitudinal study reveals immune correlates of clinical course among hospitalized COVID-19 patients},
+  journal = {Cell Reports Medicine},
+  year    = {2023},
+  volume  = {4},
+  number  = {6},
+  pages   = {101079},
+  doi     = {10.1016/j.xcrm.2023.101079},
+  pmid    = {37327781},
+  pmcid   = {PMC10203880},
+  note    = {IMPACC: >15,000 longitudinal samples, serial sampling across the first 28 days from admission, 14 assays, 5 trajectory groups. True within-person ACUTE immune trajectory, but hospitalized-only, severity/mortality-focused; does not track the convalescent transition where PAIS domains diverge.}
+}
+@article{Talla2021,
+  author  = {Talla, Aarthi and Vasaikar, Suhas V. and Lemos, Maria P. and others},
+  title   = {Longitudinal immune dynamics of mild COVID-19 define signatures of recovery and persistence},
+  journal = {bioRxiv (preprint)},
+  year    = {2021},
+  doi     = {10.1101/2021.05.26.442666},
+  note    = {PREPRINT (peer-reviewed journal version unconfirmed; PMID 34075380 mapping to verify). Mild-COVID outpatients, within-person longitudinal 1-15d through >100d. Profiles the IMMUNE compartment only, so cannot rank which DOMAIN leads.}
+}
+@article{PerezChacon2026,
+  author  = {P{\'e}rez Chac{\'o}n, Gladymar and others},
+  title   = {Dynamic Bayesian network modelling of pathways from acute COVID-19 to long-COVID symptoms},
+  journal = {Communications Medicine},
+  year    = {2026},
+  doi     = {10.1038/s43856-026-01488-8},
+  pmid    = {41826684},
+  pmcid   = {PMC13125656},
+  note    = {Uses dynamic Bayesian networks (a formal temporal/causal-ordering method) over multi-timepoint symptom/clinical data; symptom persistence predicts chronic organ dysfunction. Models symptom->organ-dysfunction structure, NOT the multi-omic mechanism domains. 2026; verify at source.}
+}
+@article{Faghy2026,
+  author  = {Faghy, Mark A. and others},
+  title   = {Long COVID: current mechanistic understanding and the case for longitudinal omics-integrated study},
+  journal = {Communications Medicine},
+  year    = {2026},
+  doi     = {10.1038/s43856-025-01300-z},
+  note    = {Mechanistic review supporting the framing that long-COVID mechanisms are catalogued but their temporal/causal SEQUENCE is unresolved, and dense longitudinal omics is needed. Full text paywalled; verify exact claim before quoting.}
+}
+
+% --- q0046: time-limited acute intervention window (Bramante2023, Peluso2024b already in bib) ---
+@article{Xie2023nirmatrelvir,
+  author  = {Xie, Yan and Choi, Taeyoung and Al-Aly, Ziyad},
+  title   = {Association of treatment with nirmatrelvir and the risk of post-COVID-19 condition},
+  journal = {JAMA Internal Medicine},
+  year    = {2023},
+  volume  = {183},
+  number  = {6},
+  pages   = {554--564},
+  doi     = {10.1001/jamainternmed.2023.0743},
+  pmid    = {36951829},
+  pmcid   = {PMC10037200},
+  note    = {Observational VA cohort (IPTW target-trial-style): nirmatrelvir n=35,717 started within 5 days vs no-antiviral n=246,076; PCC composite of 13 EHR-defined sequelae RR 0.74 (0.72-0.77). Bounded to a <=5-day acute window; no within-window day-by-day gradient. Confounding (healthy-user/indication) is the main threat.}
+}
+@article{Killingley2022,
+  author  = {Killingley, Ben and Mann, Alex J. and Kalinova, Mariya and Boyers, Alison and Goonawardane, Niluka and Zhou, Jie and Lindsell, Kate and others and Barclay, Wendy S. and Catchpole, Andrew P. and Chiu, Christopher},
+  title   = {Safety, tolerability and viral kinetics during SARS-CoV-2 human challenge in young adults},
+  journal = {Nature Medicine},
+  year    = {2022},
+  volume  = {28},
+  number  = {5},
+  pages   = {1031--1041},
+  doi     = {10.1038/s41591-022-01780-9},
+  pmid    = {35361992},
+  note    = {First SARS-CoV-2 human challenge: viral load rose steeply and peaked ~5 days post-inoculation; viable virus short-lived. Grounds a narrow antiviral window -- replication-directed drugs must start early to blunt viral-load-driven downstream pathology.}
+}
+@article{Cevik2021,
+  author  = {Cevik, Muge and Tate, Matthew and Lloyd, Ollie and Maraolo, Alberto Enrico and Schafers, Jenna and Ho, Antonia},
+  title   = {SARS-CoV-2, SARS-CoV, and MERS-CoV viral load dynamics, duration of viral shedding, and infectiousness: a systematic review and meta-analysis},
+  journal = {The Lancet Microbe},
+  year    = {2021},
+  volume  = {2},
+  number  = {1},
+  pages   = {e13--e22},
+  doi     = {10.1016/S2666-5247(20)30172-5},
+  pmid    = {33521734},
+  note    = {Meta-analysis: SARS-CoV-2 upper-respiratory viral load peaks in the first week of illness; viable (culturable) virus short-lived even when RNA shedding is prolonged. The replication-competent window is early and brief.}
+}
+@article{Turner2021,
+  author  = {Turner, Jackson S. and O'Halloran, Jane A. and Kalaidina, Elizaveta and Kim, Wooseob and Schmitz, Aaron J. and Zhou, Julian Q. and Lei, Tingting and Thapa, Mahima and Chen, Rita E. and Case, James Brett and Amanat, Fatima and Rauseo, Adriana M. and Haile, Alem and Xie, Xuping and Klebert, Michael K. and Suessen, Teresa and Middleton, William D. and Shi, Pei-Yong and Krammer, Florian and Teefey, Sharlene A. and Diamond, Michael S. and Presti, Rachel M. and Ellebedy, Ali H.},
+  title   = {SARS-CoV-2 infection induces long-lived bone marrow plasma cells in humans},
+  journal = {Nature},
+  year    = {2021},
+  volume  = {596},
+  number  = {7870},
+  pages   = {109--113},
+  doi     = {10.1038/s41586-021-03738-2},
+  pmid    = {34182569},
+  pmcid   = {PMC8935394},
+  note    = {Human draining-lymph-node data: antigen drives a persistent germinal-center response lasting >=6 months with ongoing affinity maturation. Candidate closure-mechanism TIMELINE (once GC-driven clone maturation is established an acute interruption may no longer reverse it); mechanism plausibility, not evidence of a PAIS-prevention window.}
+}
+@article{Proal2025,
+  author  = {Proal, Amy D. and Aleman, Soo and Bomsel, Morgane and Brodin, Petter and Buggert, Marcus and Cherry, Sara and Chertow, Daniel S. and others and Peluso, Michael J.},
+  title   = {Targeting the SARS-CoV-2 reservoir in long COVID},
+  journal = {The Lancet Infectious Diseases},
+  year    = {2025},
+  doi     = {10.1016/S1473-3099(24)00769-2},
+  note    = {Reviews evidence that SARS-CoV-2 antigen/RNA persists in tissue reservoirs for months-years, a candidate PASC driver. Supplies the antigen-archiving / reservoir-seeding closure mechanism. DOI verified; PMID [UNVERIFIED]. Mechanism plausibility only.}
+}
+
+% --- q0047: menstrual/ultradian periodicity as PAIS subphenotype discriminator ---
+@article{Maybin2025,
+  author  = {Maybin, Jacqueline A. and Walker, Catherine and Watters, Marianne and Homer, Natalie Z. and Simpson, Joanna P. and Robb, Claire and Gibson, Douglas A. and Jeanjean, Lucy and Critchley, Hilary O. D. and Kountourides, Gabriella and Olszewska, Zuzanna and Alvergne, Alexandra},
+  title   = {Long COVID is associated with heavier menstruation and phase-dependent symptom exacerbation},
+  journal = {Nature Communications},
+  year    = {2025},
+  doi     = {10.1038/s41467-025-62965-7},
+  pmid    = {40957873},
+  pmcid   = {PMC12441152},
+  note    = {(a) Retrospective survey N=12,187 links LC to self-reported menstrual disturbance (association only). (b) Prospective daily app diary N=54, 930 cycle-days, 29 symptoms: severity highest perimenstrual/proliferative. Strongest single anchor for a phase-locked fingerprint; phases app/self-report-inferred (not confirmed-hormone), no mechanism stratification.}
+}
+@article{Goodship2025,
+  author  = {Goodship, Anna and Preston, Rebecca and Hicks, J. T. and Leeming, H. and Morgenstern, C. and Male, Victoria},
+  title   = {The menstrual cycle and symptoms of long COVID and ME/CFS},
+  journal = {medRxiv (preprint)},
+  year    = {2025},
+  doi     = {10.1101/2025.01.24.25321092},
+  note    = {PREPRINT. Prospectively collected Visible-app data, N=948 cycling users (LC, ME/CFS, or both); menstruation worsens symptoms in both; combined-hormonal-contraception users report lower burden. Closest paper to the cross-condition periodicity-as-probe framing; contraception contrast is observational (confounded by indication). Self-selected, self-reported diagnoses.}
+}
+@article{Sakurada2024,
+  author  = {Sakurada, Yasue and Matsuda, Yui and Motohashi, Kazuki and Hasegawa, Toru and Otsuka, Yuki and Nakano, Yasuhiro and Tokumasu, Kazuki and Yamamoto, Koichiro and Sunada, Naruhiko and Honda, Hiroyuki and Hagiya, Hideharu and Ueda, Keigo and Otsuka, Fumio},
+  title   = {Clinical characteristics of female long COVID patients with menstrual symptoms},
+  journal = {Journal of Psychosomatic Obstetrics \& Gynaecology},
+  year    = {2024},
+  volume  = {45},
+  number  = {1},
+  pages   = {2305899},
+  doi     = {10.1080/0167482X.2024.2305899},
+  pmid    = {38270210},
+  note    = {Retrospective chart review N=223, single Japanese clinic: 19.7\% (44/223) had menstrual symptoms (mostly cycle irregularity), with worse QOL and elevated cortisol. Cross-sectional, referral-selected, no controls, no within-cycle tracking. Descriptive prevalence only.}
+}
+@article{Boneva2011,
+  author  = {Boneva, Roumiana S. and Maloney, Elizabeth M. and Lin, Jin-Mann and Jones, James F. and Wieser, Friedrich and Nater, Urs M. and Heim, Christine M. and Reeves, William C.},
+  title   = {Gynecological history in chronic fatigue syndrome: a population-based case-control study},
+  journal = {Journal of Women's Health},
+  year    = {2011},
+  volume  = {20},
+  number  = {1},
+  pages   = {21--28},
+  doi     = {10.1089/jwh.2009.1900},
+  pmcid   = {PMC3017420},
+  note    = {Population-based case-control (36 CFS / 48 controls, Wichita), retrospective gynecological-history questionnaire: higher pelvic pain, endometriosis, amenorrhea, gynecological surgery in CFS. Comorbidity association, NOT within-cycle symptom periodicity. Small N, recall-based.}
+}
+@article{Edelman2022,
+  author  = {Edelman, Alison and Boniface, Emily R. and Benhar, Eleonora and Han, Leo and Matteson, Kristen A. and Favaro, Carlotta and Pearson, Jack T. and Darney, Blair G.},
+  title   = {Association between menstrual cycle length and coronavirus disease 2019 (COVID-19) vaccination},
+  journal = {Obstetrics \& Gynecology},
+  year    = {2022},
+  volume  = {139},
+  number  = {4},
+  pages   = {481--489},
+  doi     = {10.1097/AOG.0000000000004695},
+  pmid    = {34991109},
+  note    = {Retrospective cohort of prospectively collected Natural Cycles app data, N=3,959; COVID-19 vaccination linked to a small (~1 day), temporary, self-resolving increase in cycle length. Establishes the reproductive axis is perturbable by immune activation -- CONTEXT (vaccine, not infection), not the PAIS discriminator.}
+}
+@article{Notbohm2023,
+  author  = {Notbohm, Hannah L. and Feuerbacher, Joshua F. and Papassotiriou, Ioannis and Friedmann-Bette, Birgit and Bloch, Wilhelm and Schumann, Moritz},
+  title   = {Menstrual cycle effects on immune and inflammatory markers: a systematic review and meta-analysis},
+  journal = {Acta Physiologica},
+  year    = {2023},
+  volume  = {238},
+  number  = {4},
+  pages   = {e14013},
+  doi     = {10.1111/apha.14013},
+  pmid    = {37309068},
+  note    = {PRISMA meta-analysis (159 qualitative / 110 meta-analyzed studies, healthy menstruating women): immune/inflammatory markers vary across phases (luteal pro-inflammatory shift; peri-ovulatory estrogen anti-inflammatory). General mechanistic premise that a periodic immune fingerprint would exist; NOT PAIS-specific, not symptom data.}
+}
+@article{Lavery2019,
+  author  = {Lavery, William J. and Bernstein, Jonathan A.},
+  title   = {Cyclical hypersensitivity, anaphylaxis, and related hormonal reactions},
+  journal = {Annals of Allergy, Asthma \& Immunology},
+  year    = {2019},
+  volume  = {122},
+  number  = {2},
+  pages   = {140--147},
+  doi     = {10.1016/j.anai.2018.11.010},
+  note    = {CME review + case literature on catamenial anaphylaxis / progestogen-estrogen hypersensitivity: symptom peaks tied to perimenstrual hormone withdrawal; estrogen upregulates and progesterone suppresses mast-cell activity. Lowest evidence tier (review + case reports); plausibility of a hormone-phase-locked mast-cell fingerprint only. DOI from PII, verify.}
+}
+@article{Nater2008,
+  author  = {Nater, Urs M. and Maloney, Elizabeth and Boneva, Roumiana S. and Gurbaxani, Brian M. and Lin, Jin-Mann and Jones, James F. and Reeves, William C. and Heim, Christine},
+  title   = {Attenuated morning salivary cortisol concentrations in a population-based study of persons with chronic fatigue syndrome and well controls},
+  journal = {Journal of Clinical Endocrinology \& Metabolism},
+  year    = {2008},
+  volume  = {93},
+  number  = {3},
+  pages   = {703--709},
+  doi     = {10.1210/jc.2007-1747},
+  note    = {Population-based case-control: CFS cases show lower morning and flattened diurnal salivary cortisol amplitude. DIURNAL (not menstrual) periodicity -- in-scope only as one candidate temporal fingerprint; HPA findings in ME/CFS are heterogeneous (subgroup, not universal). DOI standard-format inferred, verify.}
+}
