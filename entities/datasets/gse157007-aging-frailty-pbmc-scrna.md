@@ -70,6 +70,18 @@ preference for signatures re-computed from primary data over published tables.
 - Projection across platforms (scRNA → bulk long-COVID deposits) carries its own transfer
   assumptions that must be stated wherever it is used.
 
+**Scope (D-005 / D-008).** The frailty signature-projection line was ruled a **new-modality**
+computational line requiring its own D-005 decision (distinct from the D-005/D-006 MR vehicle and
+D-007's atopy MR). Taken up as **D-008 (2026-07-18)**: the **feasibility packet only** is authorised
+— learn a frailty signature from this deposit (and/or `dataset:gse196793-frailty-influenza-vaccine-pbmc`)
+and project it onto the project's public long-COVID / ME-CFS transcriptomic deposits, on public GEO
+data only. A **reportable** frailty×PAIS projection is **not** authorised; it is gated on a follow-up
+ratification (**D-008b**) once the packet clears five pre-registered gates: (1) training power +
+frailty labels (the 5-frail/17-donor n is a hard power question), (2) feature compatibility across
+training/target platforms, (3) cross-cohort validation + batch/platform robustness (the dominant
+failure mode), (4) negative-control projections, (5) explicit non-causal framing. Full reasoning:
+`core/decisions.md` → D-008.
+
 ## Access verification log
 
 - 2026-07-17 (agent (verify-access)): GEO landing page confirmed public 2026-07-17: 48 samples / 17 donors (3 cord blood, 3 young, 6 healthy old, 5 frail), scRNA + TCR + CITE, NovaSeq 6000, 706.4Mb TAR + SRA. Frail-vs-healthy-old baseline reference; NO infection arm -- signature source only.

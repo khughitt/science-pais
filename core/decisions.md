@@ -26,48 +26,14 @@ Each entry follows the format below. Number entries sequentially.
 
 ## D-003: Post-infectious trigger is the in-scope rule; PACVS and GWS/fibromyalgia are boundary-monitor / read-across, not primary scope
 
-- **Date:** 2026-06-21
-- **Status:** active
-- **Decision:** The `hypothesis:0001` shared dysregulated attractor is held as **post-infection-specific for primary scope**. The headline inclusion rule is **trigger-type: a syndrome is in primary scope only if its trigger is an acute infection.** Two adjacent syndrome classes that fail this rule are ruled **boundary-monitor / read-across** — retained as mechanism evidence to stress-test cross-trigger claims, but **not** counted as in-scope PAIS cases: (a) **post-COVID-vaccination syndrome (PACVS)**, and (b) **non-infectious fatigue syndromes — Gulf War Syndrome (GWS) and fibromyalgia (FM)**. Recorded in `specs/scope-boundaries.md` (new "Boundary-Monitor / Read-Across" section). Trigger: a 2026-06 ingest of five papers (Halma2026, Bellavite2026, Lesgards2025 for PACVS; Davis2025 for GWS/FM) that each independently forced the question, three of them explicitly requesting this adjudication.
-
-**Why:**
-- **Trigger-type, not mechanism-overlap, is the discriminating criterion.** Three candidate criteria were tested against the boundary cases: *infection-trigger-required* (excludes PACVS, GWS, FM by one rule; matches the project name), *mechanism-overlap* (admits all three but is over-permissive — it would admit essentially any oxidative/mitochondrial/dysautonomic condition and collapse the boundary), and *PEM-presence* (admits GWS/FM, excludes PACVS). Infection-trigger is the only rule that cleanly bounds primary scope; mechanism-overlap is therefore explicitly rejected as an *admission* criterion (it remains the basis for read-across *retention*).
-- **PACVS is excluded by the rule AND sits at the lowest evidence tier.** Its entire PACVS-specific empirical base reduces to one uncontrolled n≈17 ELISA case series reused across three author-overlapping (Bellavite/Di Fede/Halma), COI-disclosed or advocacy-funded narrative reviews; every cross-condition equivalence claim is self-flagged as speculation. The shared-spike-effector idea (same antigen via infection vs. vaccine) is a genuine same-antigen/different-route discriminator and worth monitoring, but is untested by controlled comparison. Admitting it as primary would let the volume of three non-independent papers be mistaken for corroboration.
-- **GWS/FM are excluded by the rule but carry mainstream-tier evidence and are the best non-infectious stress-test of `hypothesis:0001`.** Davis2025 documents a shared metabolic/mitochondrial/oxidative lesion plus the PEM metabolic signature (two-CPET) across ME/CFS, GWS, and FM despite non-infectious triggers. GWS — a toxic-chemical trigger reaching the same downstream signature — is the single best external probe of the attractor's trigger-agnostic claim, so it earns read-across retention rather than hard exclusion (which would discard that probe). PEM-presence is the secondary criterion that discriminates GWS/FM (retain) from PACVS (hold at arm's length) within the read-across set.
-
-**Alternatives considered and rejected:**
-- **Admit either class as in-scope** (via mechanism-overlap, or mechanism+PEM for GWS/FM) — rejected: redefines the project away from "post-acute *infection*," and for PACVS would import the weakest, most-contested evidence tier as primary subject matter.
-- **Hard-exclude all three** (not even monitored) — rejected: discards the PACVS same-antigen/different-route discriminator and the GWS non-infectious stress-test, both of which bear directly on whether `hypothesis:0001`'s trigger-agnostic claim holds. Read-across retains their probative value at the correct (non-primary) weight.
-
-**Implications:**
-- Scope-boundaries carries the read-across set; PACVS/GWS/FM papers are summarized as read-across mechanism evidence, never tallied as PAIS cases or as independent cross-trigger support for `hypothesis:0001`.
-- Any cross-trigger convergence claim that leans on GWS/FM must state it is a *non-infectious* read-across, and flag the unresolved metabolite-direction conflicts (sphingomyelin/tryptophan/taurine sign flips across conditions).
-- PACVS shared-spike claims are represented as hypothesis-to-test with their evidence tier (single uncontrolled case series) stated inline.
-
-**Revisit if:**
-- A controlled **PACVS-vs-PASC** biomarker comparison appears (would reopen PACVS for possible admission), or a powered design resolves the GWS/FM metabolite-direction conflicts and establishes a shared-attractor signature on causal (not cross-sectional) footing.
+- **Date:** 2026-06-21 · **Status:** active · **Full reasoning:** `doc/decisions/D-003.md`
+- **Decision:** `hypothesis:0001`'s shared attractor is **post-infection-specific for primary scope**; the inclusion rule is **trigger-type — a syndrome is in primary scope only if its trigger is an acute infection.** Two classes that fail it are **boundary-monitor / read-across** (mechanism evidence to stress-test cross-trigger claims, never counted as PAIS cases or as independent cross-trigger support for `hypothesis:0001`): (a) **PACVS** (lowest evidence tier; monitor the same-antigen/different-route discriminator) and (b) **non-infectious GWS / FM** (mainstream-tier; the best non-infectious stress-test — any GWS/FM-leaning convergence claim must be labelled a *non-infectious* read-across). Recorded in `specs/scope-boundaries.md`.
 
 ## D-004: Shelve the autoimmune × sex × PASC vehicle-based estimand as infeasible-under-transparency-standards
 
-- **Date:** 2026-07-01
-- **Status:** active
+- **Date:** 2026-07-01 · **Status:** active · **Full reasoning:** `doc/decisions/D-004.md`
 - **Supersedes:** the operative "N3C primary" verdict in `interpretation:0031` (marked SUPERSEDED).
-- **Decision:** The `task:t078`/`task:t079` autoimmune-diathesis × sex × PASC effect-modifier estimand is **shelved, not executed.** It requires population-scale, individual-level patient EHR (rare autoimmune-stratum × sex power — the binding BC-4 gate), which is a **categorically access-gated, non-downloadable data class.** N3C (the locked primary vehicle) was found gated **and** non-downloadable *even at the synthetic tier* (enclave-only compute); OpenSAFELY carries the same real-data gating (insider-only execution, only disclosure-controlled aggregates leave) despite a more transparent code model. No admissible vehicle can produce this estimate as **third-party-reproducible** knowledge, so the line is shelved rather than run. The **design work is banked** — the two-estimand contrast (total vs controlled-direct + mediation), DAGs, adjustment sets, negative-control + bracketing design, and especially the **`hypothesis:0008` measurement/ascertainment synthesis** remain valid and reusable.
-
-**Why:**
-Durable scientific knowledge in this ecosystem must be independently re-runnable and verifiable by an arbitrary third party (see [[avoid-gated-nondownloadable-datasets]] in agent memory). Gated + non-downloadable data breaks this even in the best case: an OpenSAFELY-style result is reproducible only by credentialed insiders behind a manual output-review gate, producing a "gray-zone" knowledge patch — *someone with access ran it and got a number; everyone else can only trust them.* The problem is the **data class**, not the vehicle choice: population-scale patient EHR is inherently gated, so no vehicle swap rescues the estimand. The multi-BC feasibility investment was not wasted — it produced the transparent design residue and the first two entries for a forthcoming reproducibility inventory.
-
-**Alternatives considered and rejected:**
-- **Promote OpenSAFELY to primary** — rejected: same real-data gating, still insider-only/trust-based, and it reintroduces the coded-long-COVID differential under-recording problem (`interpretation:0033`/BC-5) that had made it replication-not-primary.
-- **Accept gated-execution vehicles** ("open code + gated data + aggregate outputs" is good enough) — rejected: it violates the third-party-reproducibility bar and normalises gray-zone patches into the knowledge base.
-
-**Implications:**
-- `task:t079` → deferred (shelved); `plan:0005` stays `not-ready` (it never became viable) with a SHELVED banner; `plan:0006` → archived; `interpretation:0031` → superseded; the `doc:` feasibility memo carries a SHELVED banner. `task:t080`/`t081`/`t082` → deferred.
-- N3C and OpenSAFELY are to be recorded as **below-bar / non-third-party-reproducible** in the reproducibility inventory scoped in `~/d/science` — specifically `trust-based-output` (TRE / aggregate-output vehicles: reviewed aggregates *do* leave, so they are **not** `insider-only`). This is the change that would have flagged N3C at *plan* time. (Wording refined 2026-07-01: the formal Five-Safes classifier yields `trust-based-output`, one notch above the informal "insider-only" first written here; both sit below the third-party-reproducible bar, so the shelve conclusion is unchanged.)
-- The `hypothesis:0008` synthesis is the durable residue and remains live for other lines.
-
-**Revisit if:**
-- A population-scale EHR vehicle offers a genuinely **third-party-reproducible** access path (downloadable de-identified individual-level data, or a truly open/downloadable synthetic tier), **or** the estimand is reformulated so it no longer requires population-scale gated EHR.
+- **Decision:** The `task:t078`/`t079` autoimmune × sex × PASC effect-modifier estimand is **shelved, not executed** — it needs population-scale individual-level patient EHR, a **categorically access-gated, non-downloadable data class** (N3C enclave-only even at the synthetic tier; OpenSAFELY insider-only aggregate-output). No admissible vehicle makes it **third-party-reproducible** (the D-004 transparency bar; the problem is the data class, not the vehicle). The **design residue is banked** — two-estimand contrast, DAGs, adjustment/negative-control/bracketing design, and the `hypothesis:0008` measurement/ascertainment synthesis remain reusable.
 
 ## D-005: Authorize only the Wave-1 open GWAS/MR pilot as the first post-seed computational analysis
 
@@ -148,3 +114,32 @@ The 2026-07-18 power screen left atopy as the only surviving MR candidate among 
 
 **Revisit if:**
 - The packet clears thresholds (→ raise D-007b for execution); or the R²/overlap/scale work shows the line cannot detect the pre-registered floor (OR≳1.2) (→ shelve atopy too); or a EUR-matched HGI outcome becomes available (→ revisit the ancestry cap).
+
+## D-008: Authorize the frailty signature-projection *feasibility packet* only (public scRNA/bulk-RNA); full projection gated on a follow-up ratification
+
+- **Date:** 2026-07-18
+- **Status:** active
+- **Extends:** D-005 (does not supersede). A **new-modality** computational line (scRNA/bulk signature learning + cross-platform projection) — distinct from the D-005/D-006 MR vehicle and from D-007's atopy MR — so it takes its own scope decision. Resolves `task:t138`.
+- **Decision:** The project may run a **feasibility packet** for the frailty × PAIS signature-projection line: learn a frailty immune signature from `dataset:gse157007-aging-frailty-pbmc-scrna` (scRNA frail-vs-healthy-old baseline) and/or `dataset:gse196793-frailty-influenza-vaccine-pbmc` (bulk RNA, Fried-phenotype × timed vaccine challenge), then project it onto the project's existing **public** long-COVID / ME-CFS transcriptomic deposits — on public GEO data only. This authorises the feasibility/screening work **only**. A **reportable** frailty×PAIS projection result is **not** authorised here; it is gated on a follow-up ratification (**D-008b**) once the packet clears the five pre-registered gates below. This is the **only DUA-free route** to a frailty×PAIS contrast (both frailty vehicles lack an infection arm; the PAIS deposits lack frailty labels), so a learn-here / score-there projection is structurally required — and therefore structurally at risk of cross-platform artifact, which is exactly what the packet must rule out before any result stands.
+- **Feasibility-packet gates (all five must pass for a GO → D-008b):**
+  1. **Training power + labels** — donor-level N and the frailty ascertainment (Fried 5-item vs source-study definition) are sufficient and stated explicitly; the small frail-n (GSE157007: 5 frail / 17 donors) is a hard power question, not a footnote.
+  2. **Feature compatibility** — the signature's cell types / genes are measurable in *both* the training layer (scRNA / bulk) and the target PAIS deposits (bulk); pseudobulk and feature-intersection choices are frozen before projection.
+  3. **Cross-cohort validation + batch/platform robustness** — the signature validates across the two frailty vehicles (or across held-out donors) and survives platform transfer (scRNA→bulk, cross-instrument batch); a signature that only reproduces within one platform fails.
+  4. **Negative-control projections** — the signature is projected onto matched non-frailty / permuted-label / unrelated-axis controls and must separate frailty from those, or the projection is uninterpretable.
+  5. **Explicit non-causal framing** — every output is a cross-sectional signature-overlap association, never a frailty→PAIS causal effect; D-003 additionally bars counting GSE196793's vaccine challenge as a PAIS case.
+
+**Why:**
+Frailty is the best biology of the three t110 boundary strata but the largest ask, and — unlike the IM and atopy MR lines — it has no summary-statistic shortcut: the signal only exists by learning on one platform and scoring on another. That transfer is the dominant failure mode (batch/platform confound masquerading as a frailty signal), and it is cheap to interrogate on fully public GEO data before committing to any reportable claim. Authorising the packet and only the packet tests whether a transferable, non-artifactual signature exists without pre-committing to a result; every input is public and third-party-retrievable (D-004 intact), and the five gates are the same "screen, not green-light" discipline that made t137 decidable.
+
+**Alternatives considered and rejected:**
+- Authorise the full projection now — rejected as premature: cross-platform artifact is the dominant, still-unassessed risk; the result's credibility *is* gates 3–4.
+- Decline all effort until a frailty-labelled PAIS deposit exists — rejected: the packet is cheap, fully public, and the learned signature is reusable whenever such a deposit appears; deferring discards that at no transparency saving.
+- Treat it as D-006-style maintenance — rejected: it is a new modality and new vehicles, which the recorded ruling classes as a new line.
+
+**Implications:**
+- `task:t138` is resolved (scope decision taken): feasibility-only authorised, full/reportable projection deferred to D-008b.
+- A feasibility-packet task carries the five gates as deliverables; its outputs are the GO/NO-GO inputs to the D-008b ratification.
+- Scope of estimand: a cross-sectional frailty-signature-overlap association in PAIS transcriptomes, not a causal frailty→PAIS effect; no gated data, no reportable claim, no new outcome vehicle authorised.
+
+**Revisit if:**
+- The packet clears all five gates (→ raise D-008b for reportable projection); or it fails on power/transfer/negative-control (→ shelve the frailty line too, at which point **no t110 boundary-strata line survives** and the boundary-conditions program closes on public data); or a PAIS deposit with native frailty labels appears (→ learn-there/score-here projection is no longer required).
