@@ -16,12 +16,14 @@ related:
 - hypothesis:0017-pem-overdiagnosed-via-self-report-nonspecific
 - hypothesis:0018-circulating-antigen-as-severity-biomarker-not-driver
 - question:0022-immune-state-displacement-mediator-vs-co-traveler
+- question:0041-is-female-predominance-in-pais-substantially-an-ascertainment-and
+- question:0042-is-the-cross-trigger-1020-chronic-fraction-an-artifact-of-shared-case
 - topic:measurement-ascertainment-artifacts-in-pais
 source_refs: []
 origins: []
 evidence_refs: []
 created: '2026-07-06'
-updated: '2026-07-06'
+updated: '2026-07-18'
 ---
 # Theme: Deflationary nulls and biomarker-versus-driver adjudication
 
@@ -69,6 +71,13 @@ weak convergence.
   deflationary bundle scored against the project's positive claims.
 - **Thesis under test:** `hypothesis:0001-shared-dysregulated-attractor`;
   `question:0022-immune-state-displacement-mediator-vs-co-traveler` (the mediator-vs-co-traveler split).
+- **Ascertainment-artifact nulls (grounded 2026-07-06 → 2026-07-18, t099):**
+  `question:0041` (is female predominance substantially an ascertainment / healthcare-seeking artifact —
+  answer: ascertainment inflates and reshapes but does not manufacture the female excess) and
+  `question:0042` (is the cross-trigger ~10–20% chronic fraction a shared-case-definition artifact —
+  answer: uncontrolled self-report prevalence is definition-driven, but the convergence survives when
+  anchored to controlled, uniformly-defined estimates like Dubbo ~11% and Ballouz ~17% excess). Both are
+  sex/epidemiology-specific instances of `hypothesis:0008`.
 - **Structural / whole-syndrome nulls:**
   `hypothesis:0010-the-pais-attractor-is-a-slow-heterogeneous-recovery-gradient-not-a`,
   `hypothesis:0011-acute-illness-severity-does-not-predict-chronic-fatigue-in-pais-only`,

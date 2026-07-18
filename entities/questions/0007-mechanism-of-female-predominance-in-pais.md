@@ -41,6 +41,7 @@ related:
 - proposition:0013-immune-domain-partial-hormone-mediated-objective-exception
 - interpretation:0006-t041-objective-female-biased-subphenotype-search
 - question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- question:0041-is-female-predominance-in-pais-substantially-an-ascertainment-and
 - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
 - topic:shared-failure-mode-across-pais
 - topic:menopause-sex-hormones-and-pais-risk
@@ -52,7 +53,7 @@ related:
 required_capabilities:
   - stratification: sex
 created: '2026-06-11'
-updated: '2026-06-23'
+updated: '2026-07-18'
 ---
 
 # What mechanism underlies the consistent female predominance of post-infectious fatigue across PAIS, and does it genuinely track somatic fatigue more than post-infectious depression?

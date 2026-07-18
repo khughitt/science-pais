@@ -14,7 +14,7 @@ related:
 - question:0017-deflationary-alternatives-vs-shared-pathophysiology
 - theme:0001-deflationary-nulls-and-biomarker-vs-driver
 created: "2026-07-04"
-updated: "2026-07-06"
+updated: "2026-07-18"
 added_by: explore-ideas:claude-opus-4-8:cand-contrarian-severity-fatigue-null
 lens_views:
 - lens: contrarian
@@ -131,5 +131,7 @@ Confidence would be materially reduced if:
   mild-greater signal).
 - `theme:0001-deflationary-nulls-and-biomarker-vs-driver` — this is the severity-threshold member of the
   project's deflationary-null program.
-- Pires2025 (mild-greater-than-severe chronic fatigue; literature anchor, pending bib entry — see
-  literature-grounding task).
+- `cite:Pires2025` (acute COVID severity vs long-COVID fatigue/QoL; mild-greater-than-severe chronic
+  fatigue signal; bib entry grounded). The mild>severe signal must itself survive the selection/
+  survivorship null (see Disputing Evidence) before it counts as more than "severity does not
+  monotonically predict fatigue."
