@@ -43,7 +43,7 @@ updated: '2026-07-18'
 
 ## Key Contribution
 
-**HYPOTHESIS ORIGIN, NOT MECHANISTIC EVIDENCE.** This cross-sectional self-report symptom survey is the founding empirical document for the claim that mast cell activation (MCA) / mast cell activation syndrome (MCAS) symptoms are common in long COVID (LC) and that pre-existing or SARS-CoV-2-triggered MCAS may underlie LC pathophysiology. It does not measure mast cell mediators in LC patients, does not establish a diagnosis of MCAS in the LC group, and does not test any causal mechanism. What it demonstrates — using the Mast Cell Mediator Release Syndrome (MCMRS) questionnaire — is that post-COVID symptom burden in a self-selected Facebook-recruited LC cohort (N=136) was statistically indistinguishable from a clinically diagnosed MCAS comparison group (N=80), while pre-COVID symptom burden of the same LC respondents was statistically indistinguishable from general-population controls (N=136). The authors explicitly state that these results "support, but do not provide definitive proof" of their prior hypothesis (Afrin et al. 2020). This paper's role in the project is as **provenance for the MCAS-long-COVID hypothesis line**, not as evidence that MCAS mediates long COVID.
+**HYPOTHESIS ORIGIN, NOT MECHANISTIC EVIDENCE.** This cross-sectional self-report symptom survey is the founding empirical document for the claim that mast cell activation (MCA) / mast cell activation syndrome (MCAS) symptoms are common in long COVID (LC) and that pre-existing or SARS-CoV-2-triggered MCAS may underlie LC pathophysiology. It does not measure mast cell mediators in LC patients, does not establish a diagnosis of MCAS in the LC group, and does not test any causal mechanism. What it demonstrates — using the Mast Cell Mediator Release Syndrome (MCMRS) questionnaire — is that for post-COVID symptom burden in a self-selected Facebook-recruited LC cohort (N=136), no statistically significant difference was detected from a clinically diagnosed MCAS comparison group (N=80) on composite measures, while for pre-COVID symptom burden of the same LC respondents, no statistically significant difference was detected from general-population controls (N=136). (These are ordinary null significance tests, not equivalence tests — non-significance here is failure to detect a difference, not demonstrated equivalence, and is subject to this study's modest N and recall design.) The authors explicitly state that these results "support, but do not provide definitive proof" of their prior hypothesis (Afrin et al. 2020). This paper's role in the project is as **provenance for the MCAS-long-COVID hypothesis line**, not as evidence that MCAS mediates long COVID.
 
 ## Methods
 
@@ -60,7 +60,7 @@ updated: '2026-07-18'
 
 ## Key Findings
 
-**Pre-COVID LC vs controls — statistically equivalent baseline:**
+**Pre-COVID LC vs controls — no significant baseline difference detected:**
 - MCMRS score: 11.4 (SD 7.5) vs 10.2 (controls) — not significant (p=0.08)
 - MCMRS cumulative severity: 47.2 vs 47.9 — not significant (p=0.9)
 - Only 3 of 51 symptoms differed significantly at baseline (controls had more chest pain and brain fog; LC had more constipation)
@@ -75,7 +75,7 @@ updated: '2026-07-18'
 - QOL: 75.6 → 40.5 (SD 21.7), p<0.0001
 - Mean severity increased significantly for 50 of 51 symptoms (all except seizures)
 
-**Post-COVID LC vs MCAS patients (pre-treatment) — statistically equivalent on composite measures:**
+**Post-COVID LC vs MCAS patients (pre-treatment) — no significant difference detected on composite measures:**
 - MCMRS score: 21.1 vs 20.1 (MCAS), not significant (p=0.4)
 - MCMRS cumulative severity: 154.1 vs 161.0 (MCAS), not significant (p=0.6)
 - MCMRS system count: 8.3 vs 8.0 (MCAS), not significant (p=0.3)

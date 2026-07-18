@@ -169,8 +169,10 @@ support a causal antigen-persistence claim.
 The most novel conceptual contribution of this abstract is combining both signals —
 mast cell activation (tryptase) and antigen persistence (ileal spike) — in the same
 cohort. Prior MCAS-long-COVID literature (Weinstock/Afrin thesis) relied on
-symptom-pattern matching, not mediator measurement. This abstract moves toward
-biomarker-confirmed MCAS activity in parallel with tissue antigen evidence. The
+symptom-pattern matching, not mediator measurement. This abstract adds a group-level
+mediator signal (elevated tryptase) in parallel with tissue antigen evidence —
+a preliminary mast-cell-activation signal, not confirmation of MCAS (which requires
+per-patient consensus diagnostic criteria this abstract does not apply). The
 tryptase–ileal-TCM correlation further suggests a gut-tissue immune axis, not just
 two independent findings.
 
@@ -187,7 +189,7 @@ comparing pre-existing vs de novo mast cell activation would need.
 | Paper Concept | Project Concept | Notes |
 |---|---|---|
 | CD117+CD25+ ileal activated mast cells elevated in PCS+ | Mast cell activation as a post-infectious PAIS mediator | First ileal MC count in a controlled LC cohort; abstract-level only |
-| Serum tryptase elevated in PCS+ (p=0.0196) | Biomarker-confirmed systemic MC degranulation in PCS | First serum tryptase readout in long-COVID vs non-LC comparison; n=21 |
+| Serum tryptase elevated in PCS+ (p=0.0196) | Preliminary group-level signal of systemic MC activation in PCS (not MCAS confirmation) | First serum tryptase readout in long-COVID vs non-LC comparison; n=21; group-level elevation, no per-patient MCAS diagnosis |
 | Ileal S protein detectable in PCS+ but not in serum | Tissue-compartment antigen persistence (gut reservoir) | Corroborates h0002 gut compartment; abstract-level; mechanism unresolved |
 | Serum zonulin elevated in PCS+ | Intestinal barrier dysfunction in PCS | Supports PAIS gut axis; zonulin assay methodologically contested [UNVERIFIED] |
 | Tryptase–ileal TCM correlation (r=0.7407) | Mast-cell/adaptive-immune coupling in gut tissue | Suggestive of MC–T-cell feedback in PCS gut; post-hoc correlation, small N |
