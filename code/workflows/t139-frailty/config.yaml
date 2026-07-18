@@ -90,6 +90,28 @@ lodo:
   jaccard_nogo_max: 0.30
   min_reproducible_genes: 20
 
+# -------------------------------------------------- step 2b (Amendment 2) ----
+# Batch-adjusted learnability gate (Gate 1a-adj), evaluated PRE-TARGET. Refit
+# the frozen DE pipeline as ~ submission + frailty and re-check learnability +
+# overlap with the frozen primary, using the SAME lodo thresholds above. The
+# submission batch is a training-side confound surfaced at Step 2: F0xx submission
+# = 5 frail + 3 healthy-old (GSM4750xxx); OH submission = 3 healthy-old, old-only
+# (GSM5684xxx). Failure => NO-GO (primary signature was submission-driven);
+# borderline => INCONCLUSIVE. See the pre-reg Amendment 2 for the full rationale.
+step2b:
+  # submission derived per donor and asserted against this expected cross-tab
+  # (HALT on drift — the whole gate hinges on this structure):
+  submission_levels: ["F0xx", "OH"]        # ref = F0xx (carries both arms)
+  expected_crosstab:                        # submission -> {group: n_donors}
+    F0xx: {frail: 5, healthy-old: 3}
+    OH:   {frail: 0, healthy-old: 3}
+  # Gate 1a-adj clears iff adjusted-LODO clears (lodo thresholds) AND the adjusted
+  # signed signature overlaps the frozen primary at signed Jaccard >= this AND
+  # >= min_shared_signed_genes shared signed genes; < nogo => NO-GO.
+  signed_overlap_pass_min: 0.50
+  signed_overlap_nogo_max: 0.30
+  min_shared_signed_genes: 20
+
 # ------------------------------------------------------------ determinism ----
 determinism:
   seed: 20260718
