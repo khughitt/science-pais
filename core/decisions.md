@@ -159,3 +159,26 @@ D-005 already contemplates "direct maintenance of this pilot" as not needing a f
 
 **Revisit if:**
 - No EUR outcome can be sourced from the HGI vehicle and FinnGen (or another vehicle) becomes necessary; or any authorised input's access path drops below the third-party-reproducible bar.
+
+## D-007: Authorize the atopy→long-COVID MR *feasibility packet* only (public sumstats); MR execution gated on a follow-up ratification
+
+- **Date:** 2026-07-18
+- **Status:** active
+- **Extends:** D-005 (does not supersede). Applies the 2026-07-18 ruling that a **new exposure** against the authorised HGI outcome is a new computational line requiring a fresh D-005 decision (not D-006 maintenance).
+- **Decision:** The project may run the **feasibility packet** for an atopy→long-COVID two-sample MR — `dataset:gcst005038-allergic-disease-gwas` (exposure) × `dataset:covid19-hgi-longcovid-gwas` (outcome): (1) instrument construction/clumping, (2) empirical **liability-scale** instrument R², (3) UKB↔HGI **sample-overlap** quantification, (4) binary-exposure **scale** definition — all on public summary statistics. This authorises the feasibility/screening work **only**. MR **execution** (IVW-primary + sensitivity checklist) is **not** authorised here and needs a **follow-up ratification (D-007b)** once the packet clears pre-registered thresholds. The outcome's ancestry status is the **same WP1 question** as `plan:0008` KD1 / D-006(a); if no EUR-specific HGI stratum exists, any eventual estimate inherits the **mechanics/robustness-only demotion** — this is not a reportable-primary MR vehicle on the current outcome file.
+
+**Why:**
+The 2026-07-18 power screen left atopy as the only surviving MR candidate among the t110 boundary-strata instruments, but a *provisional* survivor with four undischarged, public-data prerequisites. Those prerequisites are the cheap, transparent work that turns "provisional" into a decidable yes/no; authorising them and only them tests feasibility without pre-committing to an execution whose reportable status is already ancestry-capped. Every input is public and third-party-retrievable (D-004 intact), and the estimand is the same germline-liability IV class D-005 authorised.
+
+**Alternatives considered and rejected:**
+- Authorise the full line (feasibility + execution) now — rejected as premature: reportable status is ancestry-capped, and three of four prerequisites (R², overlap, scale) could still sink the line; execution authorisation should follow the evidence.
+- Decline/defer all effort until a EUR-matched outcome exists — rejected: the packet is cheap, fully public, and its outputs (instrument strength, overlap, scale) are reusable whenever a matched outcome appears; deferring discards that at no transparency saving.
+- Treat it as D-006-style maintenance needing no decision — rejected: it adds a new exposure vehicle, which the recorded ruling classes as a new line.
+
+**Implications:**
+- `task:t135` is resolved (scope decision taken): feasibility-only authorised, execution deferred.
+- A feasibility-packet task carries the four deliverables; its outputs are the go/no-go inputs for the D-007b execution ratification.
+- Scope of estimand: this vehicle speaks only to **broad allergic-disease liability**, not q0034's stronger atopy/MCAS-subgroup question. No gated data, no execution, no new outcome vehicle authorised.
+
+**Revisit if:**
+- The packet clears thresholds (→ raise D-007b for execution); or the R²/overlap/scale work shows the line cannot detect the pre-registered floor (OR≳1.2) (→ shelve atopy too); or a EUR-matched HGI outcome becomes available (→ revisit the ancestry cap).

@@ -378,19 +378,6 @@ Carry-over from curation sweep 2026-07-10 (PD-3 there), re-verified unresolved i
 
 t110 found the LMIC/ancestral stratum has exactly one ancestry-stratified vehicle and it is gated: dataset:23andme-multiancestry-longcovid-gwas (proprietary DTA, sumstats not in GWAS Catalog; reportedly the only well-powered non-EUR long-COVID GWAS, with Latinx and African-American arms). The only OPEN non-EUR vehicle (dataset:bbj-jctf-severe-covid-gwas) measures ACUTE SEVERITY, not PAIS. So question:0032 currently reads coverage_state=covered-pointer / only-gated. This tension is NOT resolvable by more searching -- it resolves only by (a) authorizing the 23andMe route as a D-004 exception, or (b) accepting acute-severity as a proxy exposure with the transferability caveat stated, or (c) accepting the stratum stays uncovered. Also: the reported case counts are [UNVERIFIED] (medRxiv full text 403'd) -- confirm before any power calculation.
 
-## [t135] Scope decision (D-005): does the t110 boundary-strata catalog authorize any new computational line?
-- priority: P2
-- status: proposed
-- aspects: []
-- created: 2026-07-17
-
-t110 catalogued 15 datasets across the six boundary strata, all verified obtainable-or-flagged. The /science:catalog-datasets Step-6 handoff to /science:plan-pipeline was DELIBERATELY NOT EXECUTED because D-005 authorizes post-seed computational work only for the specific Wave-1 open GWAS/MR pilot over three named vehicles (covid19-hgi-longcovid-gwas, bentham-2015-sle-gwas, ruth-2020-shbg-testosterone-gwas). Every t110 candidate is outside that set. Three concrete lines are now READY-BUT-UNAUTHORIZED, each needing its own scope decision: (1) atopy->PAIS MR: dataset:gcst005038-allergic-disease-gwas exposure x HGI long-COVID or DecodeME outcome -- NOTE power is the live risk, check BEFORE committing, small EUR case count; (2) IM-history->PAIS MR: dataset:finngen-r12-im-gwas + dataset:gcst90473069-ukb-wgs-im-gwas exposures x DecodeME outcome -- D-006(c) holds FinnGen as a distinct vehicle needing a separate scope decision even though here it is an EXPOSURE not the long-COVID outcome D-006 addressed; (3) frailty signature projection: learn a frailty signature from dataset:gse157007-aging-frailty-pbmc-scrna / dataset:gse196793-frailty-influenza-vaccine-pbmc and project onto existing long-COVID/ME-CFS deposits -- the only DUA-free route to a frailty x PAIS contrast.
-
-### Notes
-
-- 2026-07-18: Power calc 2026-07-18 (two-sample MR; N_eff≈HGI long-COVID case count since controls≫cases; power≈N_cases·R²·(lnOR)²) reprioritizes the three lines. (1) ATOPY→long-COVID is the SURVIVING MR line — conditionally viable: 80% power to OR 1.20/SD only under best case (R²≈3.7%, full ~6,450 EUR cases); realistic R²≈2%/~3,500 cases pushes the floor to OR~1.40. Proceed only with a pre-registered detectable floor (OR≳1.2) + empirical instrument-R² check; a null below that is uninformative. (2) FRAILTY signature projection unchanged — best biology, but a new-modality (not MR) ask. (3) IM-history→long-COVID MR SHELVED: double-no — underpowered (floor OR≥1.42 at generous R²=1%/6,450 cases; ≥1.64 realistic) AND the HLA-dominated IM instrument violates the exclusion restriction; proximity to the D-006 envelope does not rescue it. UKB IM held only as replication if atopy proceeds. Verdicts recorded in the three dataset entities.
-- 2026-07-18: Correction 2026-07-18 (supersedes the prior note's overstated framing). SCOPE RULING: a new exposure against the authorized HGI outcome is a NEW computational line requiring a fresh D-005 decision; D-006 maintenance covers promotion of the named Wave-1 vehicle, not arbitrary new exposure vehicles. ATOPY is a PROVISIONAL POWER-SCREEN SURVIVOR, not 'conditionally viable' — four issues undischarged: (a) no EUR-only HGI file exists; the 6,450-case GCST90454541 is European-DOMINANT MULTI-ANCESTRY, so it fails D-006's ancestry-matched-primary gate → mechanics/sensitivity only, never reportable primary MR; (b) binary-exposure scale unresolved (OR/SD only meaningful as per-SD latent liability with R² transformed to that scale); (c) the 3.7% is disease-specific (asthma 3.2 / hay fever 3.8 / eczema 1.2%), NOT the empirical composite liability R² — must be computed from the sumstats; (d) UKB–HGI sample overlap must be handled. It also bears only on BROAD allergic-disease liability, not q0034's stronger atopy/MCAS-subgroup estimand. ARITHMETIC FIX: power@OR1.20 for 3,500 cases at R²=2% is ≈0.33 (the ≈0.54 is 6,450 cases at R²=2%). IM SHELVED on power; validity phrased CONDITIONALLY (HLA-inclusive instrument likely uninterpretable; shelve unless a strong non-HLA instrument survives clumping — needs a clumped-instrument report). UKB IM retained only if the IM estimand is revived with a defensible instrument — NOT tied to the atopy line. Verdicts recorded in the three dataset entities.
-
 ## [t136] Residual structural gaps after t110: pregnancy (q0040) is blocked-by-access, not under-searched; compound strata (q0057) has no candidate at all
 - priority: P3
 - status: proposed
@@ -398,3 +385,19 @@ t110 catalogued 15 datasets across the six boundary strata, all verified obtaina
 - created: 2026-07-17
 
 Two strata survived the t110 sweep uncovered, for DIFFERENT reasons, and the distinction is decision-relevant. (1) question:0040 pregnancy reads capability-mismatch: every public pregnancy deposit found is placenta/decidua/cord-blood collected AT DELIVERY (GSE181238, GSE246536, GSE318446, GSE185557 and ~8 more). Not one has a post-acute maternal timepoint, so none stratifies pregnancy as an effect modifier of PAIS trajectory. The cohorts that COULD answer it (RECOVER-Pregnancy, PRIORITY, COPS, MOACC-19, the Spanish ~92-week obstetric cohort) were all built inside DUAs/enclaves. This is a STRUCTURAL access gap, not a search failure -- more searching will not fix it. (2) question:0057 (compound/co-occurring boundary conditions) reads no-candidate: it needs datasets stratifying TWO boundary variables jointly, and no single-stratum deposit qualifies, so it cannot inherit coverage from the others. Consider whether q0040/q0057 should be reframed toward what open data CAN support, or explicitly parked as access-blocked.
+
+## [t137] Atopy→long-COVID MR feasibility packet (D-007)
+- priority: P2
+- status: proposed
+- aspects: []
+- created: 2026-07-18
+
+D-007-authorized, feasibility/screening ONLY (MR execution gated on D-007b). Deliverables on public sumstats (dataset:gcst005038-allergic-disease-gwas × dataset:covid19-hgi-longcovid-gwas), no gated data: (1) construct + clump the atopy instrument; (2) empirical LIABILITY-SCALE instrument R² (not the disease-specific 3.2/3.8/1.2% figures); (3) quantify UKB↔HGI sample overlap (HGI shares UKB; must be handled); (4) define the binary-exposure scale (per-SD latent liability). Pre-registered detectable floor OR≳1.2. Outputs are the go/no-go inputs for the D-007b execution ratification. If no EUR-specific HGI stratum (same WP1 question as plan:0008 KD1), estimate is mechanics/robustness-only. Estimand = broad allergic-disease liability, NOT q0034's atopy/MCAS subgroup.
+
+## [t138] Scope decision (D-005): frailty signature-projection line
+- priority: P3
+- status: proposed
+- aspects: []
+- created: 2026-07-18
+
+Carried over from t135; NOT decided by D-007 (which covered atopy only). Frailty line = learn a frailty signature from dataset:gse157007-aging-frailty-pbmc-scrna / dataset:gse196793-frailty-influenza-vaccine-pbmc and project onto existing long-COVID/ME-CFS deposits — the only DUA-free route to a frailty×PAIS contrast. This is a NEW-MODALITY computational line (scRNA staging + projection, not MR over public sumstats), so it needs its own D-005 scope decision distinct from D-007. Best biology of the three t110 lines but the largest ask.
