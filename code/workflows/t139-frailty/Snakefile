@@ -1,0 +1,155 @@
+# science:code
+# status: workflow-owned
+# task_ids: [t139]
+# science:end
+
+# =============================================================================
+# Snakefile — t139 frailty signature-projection feasibility packet (Step 2)
+#
+# Isolated per-task pipeline (wave1-mr pattern). STEP-2 SCOPE ONLY:
+#   acquire (checksum-pinned) -> parse donor map -> pseudobulk (GEX) -> signature
+#   (+ LODO provenance). NO PAIS projection, NO target-label inspection (D-008).
+#
+# Run reproducibly (network fetches go through Snakemake, not ad-hoc shell):
+#   uv run --frozen --group pipeline snakemake \
+#     -s code/workflows/t139-frailty/Snakefile --use-conda -c1 <target>
+#
+# Frozen spec (re-frozen after Amendment 1):
+#   doc/plans/2026-07-18-t139-frailty-projection-feasibility-preregistration.md
+# Scope: core/decisions.md -> D-008
+# =============================================================================
+from pathlib import Path
+
+# --- invocation contract (invocation-independent; plan:0003 pattern) ---------
+SNAKEFILE_DIR = Path(workflow.basedir).resolve()
+REPO_ROOT = SNAKEFILE_DIR.parent.parent.parent          # t139-frailty -> workflows -> code -> root
+# Repo-relative Path LITERAL (not derived from basedir) so the workflow-reference
+# scanner resolves {SCRIPTS}/x; resolves at runtime because workdir is the root.
+SCRIPTS = Path("code/workflows/t139-frailty/scripts")
+CONFIGFILE = str(SNAKEFILE_DIR / "config.yaml")
+configfile: CONFIGFILE
+workdir: str(REPO_ROOT)
+
+RAW = config["paths"]["raw"]
+PROC = config["paths"]["processed"]
+RESULTS = config["paths"]["results"]
+
+SERIES = config["geo"]["series"]
+RAW_TAR = f"{RAW}/{config['geo']['targets']['raw_tar']['filename']}"
+SERIES_MATRIX = f"{RAW}/{config['geo']['targets']['series_matrix']['filename']}"
+DECONV_PANEL = f"{RAW}/{config['refs']['deconv_panel']['filename']}"
+GENE_MAP = f"{PROC}/{config['refs']['gene_map']['out_rel']}"
+
+DONOR_MAP = f"{PROC}/donor_map.tsv"
+PSEUDOBULK = f"{PROC}/pseudobulk.counts.tsv.gz"
+PSEUDOBULK_META = f"{PROC}/pseudobulk.donors.tsv"
+SIGNATURE = f"{RESULTS}/signature.tsv"
+SIG_PROVENANCE = f"{RESULTS}/signature_provenance.json"
+LODO_JSON = f"{RESULTS}/gate1a_lodo.json"
+
+
+# Step-2 terminal target: signature + provenance + Gate-1a LODO + pinned refs.
+rule step2:
+    input:
+        SIGNATURE,
+        SIG_PROVENANCE,
+        LODO_JSON,
+        DECONV_PANEL,
+        GENE_MAP,
+
+
+# --- acquisition (checksum-pinned; record-or-verify) -------------------------
+# Scripts are referenced as {SCRIPTS}/<name> in the shell (not via an input=)
+# so the static workflow-reference scanner resolves them (wave1-mr convention);
+# referencing them only through `input.script` hides the literal and trips
+# code.orphaned-executable.
+rule acquire_series_matrix:
+    output:
+        payload=SERIES_MATRIX,
+        manifest=f"{RAW}/acquire.series_matrix.json",
+    params:
+        config=CONFIGFILE,
+    shell:
+        "python {SCRIPTS}/acquire_geo.py --config {params.config} "
+        "--only series_matrix --manifest {output.manifest}"
+
+
+rule acquire_raw_tar:
+    output:
+        payload=RAW_TAR,
+        manifest=f"{RAW}/acquire.raw_tar.json",
+    params:
+        config=CONFIGFILE,
+    shell:
+        "python {SCRIPTS}/acquire_geo.py --config {params.config} "
+        "--only raw_tar --manifest {output.manifest}"
+
+
+rule acquire_deconv_panel:
+    output:
+        payload=DECONV_PANEL,
+        manifest=f"{RAW}/acquire.deconv_panel.json",
+    params:
+        config=CONFIGFILE,
+    shell:
+        "python {SCRIPTS}/acquire_geo.py --config {params.config} "
+        "--only deconv_panel --manifest {output.manifest}"
+
+
+# --- donor map: series matrix -> per-sample table (GEX/frail/old selection) ---
+rule parse_metadata:
+    input:
+        series_matrix=SERIES_MATRIX,
+    output:
+        donor_map=DONOR_MAP,
+    shell:
+        "python {SCRIPTS}/parse_metadata.py --series-matrix {input.series_matrix} "
+        "--out {output.donor_map}"
+
+
+# --- pinned gene-map: deterministic Ensembl<->symbol from org.Hs.eg.db --------
+rule build_genemap:
+    output:
+        gene_map=GENE_MAP,
+        provenance=f"{PROC}/refs/gene_map_provenance.json",
+    conda:
+        "envs/r-sc.yaml"
+    shell:
+        "Rscript {SCRIPTS}/build_genemap.R --out {output.gene_map} "
+        "--provenance {output.provenance}"
+
+
+# --- pseudobulk: sum raw scRNA GEX counts per donor (handles tsv + mtx) -------
+rule pseudobulk:
+    input:
+        donor_map=DONOR_MAP,
+        raw_tar=RAW_TAR,
+    output:
+        counts=PSEUDOBULK,
+        donors=PSEUDOBULK_META,
+        genes=f"{PROC}/pseudobulk.genes.tsv",
+    shell:
+        "python {SCRIPTS}/pseudobulk.py "
+        "--donor-map {input.donor_map} --raw-tar {input.raw_tar} "
+        "--counts-out {output.counts} --donors-out {output.donors} "
+        "--genes-out {output.genes}"
+
+
+# --- signature (limma-voom) + Gate-1a LODO diagnostic + provenance -----------
+rule signature:
+    input:
+        counts=PSEUDOBULK,
+        donors=PSEUDOBULK_META,
+        genes=f"{PROC}/pseudobulk.genes.tsv",
+    output:
+        signature=SIGNATURE,
+        provenance=SIG_PROVENANCE,
+        lodo=LODO_JSON,
+    params:
+        config=CONFIGFILE,
+    conda:
+        "envs/r-sc.yaml"
+    shell:
+        "Rscript {SCRIPTS}/signature.R --counts {input.counts} --donors {input.donors} "
+        "--config {params.config} --signature-out {output.signature} "
+        "--provenance-out {output.provenance} --lodo-out {output.lodo}"
