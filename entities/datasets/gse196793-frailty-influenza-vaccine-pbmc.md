@@ -73,6 +73,17 @@ frailty-as-boundary-condition claim requires.
   `trigger: non-infectious-vaccine-challenge`.
 - n=28, single site.
 
+**Scope (D-005 / D-008).** The frailty signature-projection line was ruled a **new-modality**
+computational line requiring its own D-005 decision. Taken up as **D-008 (2026-07-18)**: the
+**feasibility packet only** is authorised — this deposit is the timed-challenge / longitudinal
+training layer (paired with `dataset:gse157007-aging-frailty-pbmc-scrna`) whose learned signature is
+projected onto the project's public long-COVID / ME-CFS deposits, on public GEO data only.
+Processed-counts-only (raw FASTQ withheld) fixes the upstream pipeline, which the packet's
+feature-compatibility and batch-robustness gates must accommodate. A **reportable** projection is
+gated on **D-008b** after the five pre-registered gates pass; and per **D-003** the vaccine challenge
+here is *not* an acute-infection trigger, so this deposit can never be counted as a PAIS case set.
+Full reasoning: `core/decisions.md` → D-008.
+
 ## Access verification log
 
 - 2026-07-17 (agent (verify-access)): GEO landing page confirmed public 2026-07-17: 84 samples / 28 subjects, pre-vaccination plus day 3 and day 7 post inactivated influenza vaccine, NextSeq 500. htseq counts (3.5Mb) downloadable; raw FASTQ deliberately withheld by authors for privacy -- processed layer only.
