@@ -101,10 +101,15 @@ outcome) or `dataset:decodeme-gwas-sumstats-osf`.
   nonetheless the **only surviving MR candidate** after IM was shelved (see
   `dataset:finngen-r12-im-gwas`).
 
-**Scope (D-005 / D-006).** Execution is **not authorised**. Ruling (2026-07-18): *a new exposure
-against the authorized HGI outcome is a new computational line requiring a fresh D-005 decision;
-D-006 maintenance covers promotion of the named Wave-1 vehicle, not arbitrary new exposure
-vehicles.* The ancestry-matched-primary gate above is an independent D-006 bar on the outcome.
+**Scope (D-005 / D-006 / D-007).** The 2026-07-18 ruling — *a new exposure against the authorized
+HGI outcome is a new computational line requiring a fresh D-005 decision; D-006 maintenance covers
+promotion of the named Wave-1 vehicle, not arbitrary new exposure vehicles* — was taken up as
+**D-007 (2026-07-18)**: the **feasibility packet only** is authorised (instrument construction +
+clumping, empirical liability-scale R², UKB↔HGI overlap, binary-exposure scale; public sumstats,
+no gated data — `task:t137`). MR **execution is still not authorised** — it is gated on a follow-up
+ratification (**D-007b**) once the packet clears pre-registered thresholds (detectable floor
+OR≳1.2). The ancestry-matched-primary gate remains an independent D-006 bar: if no EUR-specific HGI
+stratum exists, any estimate is mechanics/robustness-only, not reportable-primary.
 
 ## Access verification log
 
