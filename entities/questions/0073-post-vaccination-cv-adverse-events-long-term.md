@@ -12,8 +12,9 @@ related:
 - hypothesis:0001-shared-dysregulated-attractor
 - question:0012-prevention-vaccination-antiviral-reduces-pais
 - paper:Bellavite2026
+- spec:scope-boundaries
 created: '2026-07-10'
-updated: '2026-07-10'
+updated: '2026-07-19'
 ---
 
 # Do any post-COVID-19-vaccination cardiovascular adverse events persist beyond six months as chronic sequelae analogous to PAIS?
@@ -25,7 +26,7 @@ Nitz2025 found that all cardiovascular adverse events following COVID-19 vaccina
 ## Why It Matters
 
 - If any post-vaccination CV adverse event subset persists beyond 6 months, this would constitute a "post-acute COVID-19 vaccination syndrome" (PACVS) cardiovascular phenotype and would require revision of clinical follow-up protocols.
-- The answer constrains the project's scope-boundaries decision: whether vaccine-adverse-event papers are boundary/comparator cases or belong within the project's core PAIS framing.
+- The answer constrains the project's scope-boundaries decision: whether vaccine-adverse-event papers are boundary/comparator cases or belong within the project's core PAIS framing. **(Scope adjudicated 2026-07-19, `D-009` / t126, without waiting on this answer: vaccine papers cap at boundary-monitor regardless of persistence because the trigger axis fails — this question therefore governs only whether a phenotype moves from the acute-vaccine *comparator-only* cell into the persistent-vaccine *boundary-monitor* cell, never into primary scope.)**
 - If chronic vaccine-associated cardiac or thrombotic sequelae exist, they would share antigen (spike protein) with post-infection PAIS and could be mechanistically informative for the `hypothesis:0001` attractor frame.
 - Risk if unanswered: clinicians and registries may be under-ascertaining chronic post-vaccination cardiopathy by closing follow-up at 3–6 months.
 

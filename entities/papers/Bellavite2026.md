@@ -22,8 +22,9 @@ related:
 - topic:thromboinflammation-and-endothelial-dysfunction
 - question:0009-functional-autoantibodies-drive-dysautonomia
 - hypothesis:0001-shared-dysregulated-attractor
+- spec:scope-boundaries
 created: '2026-06-20'
-updated: '2026-06-20'
+updated: '2026-07-19'
 ---
 
 # Autoimmune Features of Post-COVID-19 Vaccination Syndrome and Their Impacts on the Renin–Angiotensin System
@@ -35,7 +36,7 @@ updated: '2026-06-20'
 - **BibTeX key:** Bellavite2026
 - **Source:** Full-text PDF (papers/pdfs/2026_Bellavite_autoimmune-features-post-covid-vaccination-syndrome-ras.pdf), read 2026-06-20.
 
-> **Scope note:** This paper addresses post-acute COVID-19 *vaccination* syndrome (PACVS/PACVS), not post-acute infection syndrome (PAIS) arising from natural SARS-CoV-2 infection. It is read here as a mechanistic comparator because it proposes the same anti-ACE2 / anti-MAS1 / GPCR-autoantibody pathway invoked in long COVID PAIS, and because the review explicitly discusses the partial overlap between the two syndromes. Whether PACVS falls within scope for this project should be adjudicated against `specs/scope-boundaries.md` before committing this paper to primary synthesis.
+> **Scope note:** This paper addresses post-acute COVID-19 *vaccination* syndrome (PACVS/PACVS), not post-acute infection syndrome (PAIS) arising from natural SARS-CoV-2 infection. It is read here as a mechanistic comparator because it proposes the same anti-ACE2 / anti-MAS1 / GPCR-autoantibody pathway invoked in long COVID PAIS, and because the review explicitly discusses the partial overlap between the two syndromes. **Adjudicated (2026-07-19, `D-009`):** under the *trigger × persistence test* in `specs/scope-boundaries.md`, PACVS occupies the **persistent-vaccine** cell — it fails only the trigger axis (non-infectious) and so stays **boundary-monitor / read-across** per `D-003`, never primary scope and never a PAIS case. Contrast the acute-vaccine cell (`paper:Nitz2025`), which fails both axes and is comparator-only.
 
 ## Key Contribution
 
