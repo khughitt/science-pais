@@ -10,9 +10,11 @@ source_refs:
 - cite:Vacharathit2025
 related:
 - hypothesis:0019-cgas-sting-nlrp3-sterile-innate-sensing-driver
+- hypothesis:0002-tissue-reservoir-antigen-fragment
 - hypothesis:0001-shared-dysregulated-attractor
+- interpretation:0044-t128-ip10-antigen-vs-sterile-discriminating-panel
 created: '2026-07-10'
-updated: '2026-07-10'
+updated: '2026-07-19'
 ---
 
 # Is persistent IP-10/CXCL10 elevation after mild Omicron breakthrough driven by residual antigen or sterile innate sensing?
@@ -37,6 +39,7 @@ Vacharathit 2025 (cite:Vacharathit2025) documents persistent IP-10/CXCL10 elevat
 
 - **Best current interpretation:** The temporal profile (7–10× baseline at 6–8 months in mild, largely symptom-resolved individuals) favors a sterile sensing component — but antigen persistence and vaccine-mediated innate priming are not excluded and may co-operate. The most parsimonious reading is that mRNA vaccination upregulates an IL-15–IFN-γ–IP-10 innate axis that prolongs IP-10 expression even after antigen clearance; whether this is beneficial (adaptive resolution) or creates a sub-clinical risk state is unknown.
 - **Major uncertainty:** No study has yet measured cGAMP, phospho-TBK1/IRF3, cleaved gasdermin-D, or SARS-CoV-2 antigen/RNA persistence simultaneously with IP-10 in the same mild Omicron breakthrough cohort. Until such data exist, the antigen-driven vs. sterile-sensing distinction cannot be empirically adjudicated.
+- **Discriminating panel proposed (`interpretation:0044` / t128, 2026-07-19):** a longitudinal co-measurement panel with a **sterile-sensing arm** (cGAMP/phospho-TBK1, SIGLEC-1/CD169 + ISG-I, IL-18/GSDMD-N, cell-free mtDNA) and an **antigen-persistence arm** (Simoa spike/S1/N, subgenomic vs total RNA, antigen-specific T-cell IFN-γ), anchored to IP-10, with the **type-I-vs-type-II interferon class** driving IP-10 as the single sharpest discriminator (IFN-I → h0019; IFN-γ → h0002). It is a **triage + relative-contribution screen, not identifying** — it can falsify either arm if that arm's markers are absent in IP-10-high subjects, but the decisive adjudication stays interventional (h0019 P3 sensor-selective inhibitor; h0002 `question:0002` antigen clearance). Operationalizes h0019 promotion criterion #1. Banked design (seed-stage; not a `D-005` line).
 
 ## Connections to Project
 

@@ -16,10 +16,13 @@ related:
 - question:0023-cgas-sting-cytosolic-dna-sensing-as-upstream-driver-of-persistent-type-i
 - question:0024-nlrp3-inflammasome-and-gasdermin-d-pyroptosis-as-a-self-amplifying-il-1
 - question:0006-jak-stat-il6-driver-vs-marker
+- question:0076-ip10-cxcl10-omicron-persistence-antigen-vs-sterile
 - hypothesis:0001-shared-dysregulated-attractor
 - hypothesis:0003-immune-exhaustion-feedback
+- hypothesis:0002-tissue-reservoir-antigen-fragment
+- interpretation:0044-t128-ip10-antigen-vs-sterile-discriminating-panel
 created: "2026-07-10"
-updated: "2026-07-10"
+updated: "2026-07-19"
 added_by: user
 ---
 # Hypothesis: Upstream cytosolic nucleic-acid sensing (cGAS-STING / NLRP3) as a sterile self-sustaining PAIS driver
