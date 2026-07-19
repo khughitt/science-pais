@@ -22,10 +22,12 @@ related:
 - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
 - proposition:0001-reproductive-stage-transition-shifts-the-failed-recovery-threshold
 - proposition:0002-reproductive-stage-transition-modifies-immune-regulatory-pathways
+- interpretation:0042-t125-sex-chromosome-vs-hormone-pasc-decomposition
+- question:0080-sex-chromosome-vs-hormone-decomposition-pais
 source_refs:
 - paper:Chaulagain2026
 created: '2026-07-10'
-updated: '2026-07-10'
+updated: '2026-07-19'
 ---
 # Proposition: Female PASC bias may be driven by X-chromosome dosage or XIST rather than gonadal-steroid timing
 

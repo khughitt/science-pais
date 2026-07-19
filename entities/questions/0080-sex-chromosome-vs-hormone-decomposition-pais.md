@@ -13,8 +13,10 @@ related:
 - hypothesis:0020-host-immune-baseline-reserve-gate
 - question:0007-mechanism-of-female-predominance-in-pais
 - question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- interpretation:0042-t125-sex-chromosome-vs-hormone-pasc-decomposition
+- proposition:0044-female-pasc-bias-x-chromosome-dosage-rival
 created: '2026-07-10'
-updated: '2026-07-10'
+updated: '2026-07-19'
 ---
 
 # Can sex-biased PAIS susceptibility be decomposed into X-chromosome dosage versus gonadal-steroid components in human cohort designs?
@@ -35,6 +37,7 @@ Chaulagain et al. (2026) organize sex differences in immunity around two orthogo
 - **Hormone axis evidence:** Estradiol levels positively correlate with COVID-19 vaccine immune responses in mice. Age-related attenuation of sex differences in vaccine responses corresponds to reproductive senescence (lower estradiol) in women. Menopause hormone therapy reverses age-associated inflammatory monocyte expansion in women (De Maeyer et al. 2025, cited in Chaulagain2026 ref 41). Testosterone treatment of transgender men reduces TLR7-driven IFN responses and class-switched B cells.
 - **Conflicting / confounding:** XX sex (chromosome) and estrogen levels are highly correlated across most of the lifespan — both vary together with menopause, making observational decomposition extremely difficult without genetic or pharmacological instruments. Turner syndrome (X0) and Klinefelter syndrome (XXY) provide natural variation in chromosome dosage independent of typical hormone trajectories, but PAIS outcomes in these populations are rarely studied.
 - **Formal mediation analysis gap:** No PAIS cohort study has formally decomposed total sex effect → chromosome-mediated pathway versus hormone-mediated pathway using measured hormone levels, genetic sex (XX/XY), and PAIS outcomes simultaneously.
+- **Decomposition finding logged (t125, `interpretation:0042`, 2026-07-19):** A re-read of `paper:Chaulagain2026` for this decomposition concludes the review **juxtaposes but does not isolate** the two axes, and for PASC *specifically* tilts its weight-of-evidence toward the X-chromosome-dosage axis (XIST-in-PASC, TLR7 biallelic, male Y-gene loss) while reporting "limited evidence supporting a role for gonadal steroids in PASC outcomes so far." This is **not** a decomposition: the axes remain observationally entangled (XX co-varies with female hormone trajectory), so q0080 stays open with the design bar now explicit — genetic natural experiments (Turner/Klinefelter, gender-diverse hormone-therapy cohorts), sex-hormone-instrumented MR, or hormone-varying/karyotype-fixed longitudinal designs. The named MR route (`dataset:ruth-2020-shbg-testosterone-gwas` → `dataset:covid19-hgi-longcovid-gwas`) is a **candidate gated behind a fresh D-005 scope decision**, not an authorized pilot.
 
 ## Thoughts
 
