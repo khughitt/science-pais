@@ -818,7 +818,7 @@ pipeline = [
 [package.metadata]
 
 [package.metadata.requires-dev]
-dev = [{ name = "science", git = "https://github.com/khughitt/science.git?subdirectory=science" }]
+dev = [{ name = "science", git = "https://github.com/khughitt/science.git?subdirectory=science&rev=708dd40c1aae6d9515a4acd159c045b4e7a13627" }]
 pipeline = [
     { name = "conda-lock", specifier = "==4.0.1" },
     { name = "snakemake", specifier = "==9.23.1" },
@@ -2139,8 +2139,8 @@ wheels = [
 
 [[package]]
 name = "science"
-version = "0.4.1"
-source = { git = "https://github.com/khughitt/science.git?subdirectory=science#180f24e182a1b500a249309f7406ada1288b7a73" }
+version = "0.5.0"
+source = { git = "https://github.com/khughitt/science.git?subdirectory=science&rev=708dd40c1aae6d9515a4acd159c045b4e7a13627#708dd40c1aae6d9515a4acd159c045b4e7a13627" }
 dependencies = [
     { name = "click" },
     { name = "ga4gh-vrs" },
@@ -2162,7 +2162,7 @@ dependencies = [
 [[package]]
 name = "science-model"
 version = "0.1.0"
-source = { git = "https://github.com/khughitt/science.git?subdirectory=science%2Fmodel#180f24e182a1b500a249309f7406ada1288b7a73" }
+source = { git = "https://github.com/khughitt/science.git?subdirectory=science%2Fmodel&rev=708dd40c1aae6d9515a4acd159c045b4e7a13627#708dd40c1aae6d9515a4acd159c045b4e7a13627" }
 dependencies = [
     { name = "jsonschema" },
     { name = "pydantic" },
