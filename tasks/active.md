@@ -217,15 +217,6 @@ Operational vehicle hunt for pre-registration:0003. Per the t050 audit (interpre
 
 Operational vehicle hunt for pre-registration:0005 (the A1-vs-M3 adjudicator for h0006). No published study reproduces the Appelman-type provoked pre/post/recovery OXPHOS/SDH muscle-biopsy time-course under a protocol harmonized across long COVID and ME/CFS. Deliverable: identify a cohort/biobank able to run serial post-exertional muscle biopsies in matched LC + ME/CFS arms (or confirm none exists and specify the minimal prospective study). Promotion of P2-P4 also needs an independent (non-Scheibenbogen-group) replication of elevated intracellular muscle Na+ or provoked mitochondrial escalation.
 
-## [t125] Decompose female PASC bias into hormone-axis (h0005) vs X-chromosome-dosage/XIST (Chaulagain2026)
-- priority: P1
-- status: proposed
-- aspects: []
-- related: [hypothesis:0005-reproductive-stage-immune-homeostatic-margin, question:0080-sex-chromosome-vs-hormone-decomposition-pais]
-- created: 2026-07-10
-
-
-
 ## [t126] Scope-boundary adjudication for vaccine-adverse-event papers (Nitz2025): write ruling in specs/scope-boundaries.md (infection-vs-vaccine, acute-vs-persistent)
 - priority: P1
 - status: proposed
