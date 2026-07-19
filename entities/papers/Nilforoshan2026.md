@@ -25,8 +25,12 @@ related:
 - hypothesis:0004-acute-severity-threshold
 - question:0039-negative-control-outcome-designs-to-bound-healthcare-utilization
 - question:0042-is-the-cross-trigger-1020-chronic-fraction-an-artifact-of-shared-case
+- question:0085-subgroup-residual-long-covid-beyond-one-year-under
+- interpretation:0043-t127-nilforoshan-recover-design-sensitivity-reconciliation
+- paper:Thaweethai2023
+- paper:Cai2024
 created: '2026-07-10'
-updated: '2026-07-10'
+updated: '2026-07-19'
 ---
 # Revised estimates of the types and durations of long Covid symptoms based on claims records from 245 million US patients
 
@@ -144,6 +148,6 @@ No model or tool released. Data analysis was performed on the proprietary Komodo
 - **Stratified analysis by acute severity and vaccination status.** The most important gap: do the 360–720 day null results hold for hospitalized, unvaccinated, or immunocompromised subgroups? If a small subgroup (e.g., ~5%) retains attributable effects, it is invisible in the population mean but clinically significant. Relates to hypothesis:0004.
 - **Apply test-based design to non-COVID PAIS triggers.** The test-based design relies on PCR testing infrastructure unique to COVID-19 during the pandemic era. How should ascertainment-controlled designs be constructed for EBV, Lyme disease, dengue, Q fever, or post-influenza fatigue, where systematic PCR testing of matched healthcare visitors was not performed? This is now the primary methodological extension question (see new question reserved from this paper).
 - **Update question:0039.** This paper provides the most concrete empirical answer yet to the negative-control-outcome design question; the question's Current Evidence section should now cite Nilforoshan2026.
-- **Reconcile with clinical cohort studies.** How do these estimates compare to RECOVER, Thaweethai2023, and other prospective clinical cohorts that used different ascertainment methods and found higher long-COVID fractions? A head-to-head design-sensitivity analysis across datasets is needed.
+- **Reconcile with clinical cohort studies.** How do these estimates compare to RECOVER, Thaweethai2023, and other prospective clinical cohorts that used different ascertainment methods and found higher long-COVID fractions? A head-to-head design-sensitivity analysis across datasets is needed. **DONE (`interpretation:0043` / t127, 2026-07-19):** the "order-of-magnitude smaller" gap vs RECOVER (`paper:Thaweethai2023`, 10% PASC+ at 6 mo) is **largely a non-comparable-estimand + measurement-channel + threshold artifact, not a factual contradiction** — this design counts *attributable ICD outcomes* (near-blind to RECOVER's PRO fatigue/PEM/cognitive cluster; RR ≥ 1.1 floor), while RECOVER measures a self-reported syndrome prevalence. On persistence the two are **compatible** (this design's population-mean null is structurally blind to RECOVER's ~5% subjective tail); the severity-enriched VA 3-year cohort (`paper:Cai2024`) rounds out a severity-threshold-consistent triple. The residual-subgroup question (`question:0085`) stays open — none of the three can adjudicate it.
 - **Interpretation of 120–360 day persisting outcomes.** The five persisting outcomes (myopathy, hair loss, pulmonary embolism, acute PE, respiratory failure) represent a biologically plausible residual. Follow-up papers examining mechanistic evidence for these specific outcomes (e.g., myopathy as a signature of skeletal muscle injury from hypothesis:0006) would be valuable.
 - **Relation to hypothesis:0008 promotion criterion #2.** The paper is not a same-cohort objective re-measurement of a self-report-established difference, so it does not meet criterion #2 for h0008 promotion. But it demonstrates the complementary "whole-design" ascertainment correction, which has different scope and validity.
