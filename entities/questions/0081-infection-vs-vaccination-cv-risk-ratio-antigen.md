@@ -12,7 +12,7 @@ related:
 - hypothesis:0001-shared-dysregulated-attractor
 - hypothesis:0004-acute-severity-threshold
 - question:0012-prevention-vaccination-antiviral-reduces-pais
-- spec:scope-boundaries
+- spec:0001-scope-boundaries-for-health-post-acute-infection
 created: '2026-07-10'
 updated: '2026-07-19'
 ---
