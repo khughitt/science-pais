@@ -22,8 +22,9 @@ related:
 - theme:0001-deflationary-nulls-and-biomarker-vs-driver
 - topic:measurement-ascertainment-artifacts-in-pais
 - topic:pais-case-definition-heterogeneity
+- interpretation:0043-t127-nilforoshan-recover-design-sensitivity-reconciliation
 created: '2026-07-04'
-updated: '2026-07-18'
+updated: '2026-07-19'
 added_by: explore-ideas:claude-opus-4-8:cand-contrarian-chronic-fraction-artifact
 lens_views:
 - lens: contrarian
@@ -82,6 +83,8 @@ attractor. It is the epidemiological-pillar instance of `hypothesis:0008`.
   (`cite:Ballouz2023`), the adjusted **excess** risk of any symptom at 6 months over uninfected controls
   was only **17.0%** (95% CI 11.5–22.4), against a raw prevalence far higher — i.e. subtracting a
   control group removes most of the crude burden.
+
+- **A second design family independently reinforces the narrow thesis (`interpretation:0043` / t127).** Nilforoshan2026's test-based claims design (PCR+ vs PCR− + negative-control outcomes, n = 244.7M) drops the negative-control false-positive rate from 53.1% → 4.1% purely by ascertainment control, and RECOVER's own prevalence falls 23% → 10% under its less-biased Omicron/≤30-day subset. Both show apparent burden is **substantially ascertainment-driven** — complementing the Woodrow/Matta/Ballouz evidence via a different data type. **Scope caveat:** this does **not** convert the ~10–20% convergence into "artifact." Nilforoshan measures *attributable ICD-outcome counts* (near-blind to the subjective fatigue/PEM/cognitive cluster, RR ≥ 1.1 floor), a **non-comparable estimand and channel** from RECOVER's PRO syndrome prevalence, so it cannot directly deflate the 10% figure — the same "different estimands cannot be combined" discipline this question already applies to Dubbo vs Ballouz.
 
 **Conflicting evidence (the convergence is not purely a definitional artifact):**
 

@@ -14,6 +14,7 @@ related:
 - hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
 - interpretation:0015-t055-measurement-channel-audit-of-pais-group-differences
 - interpretation:0014-sfn-prevalence-metric-harmonization-reanalysis
+- interpretation:0043-t127-nilforoshan-recover-design-sensitivity-reconciliation
 - proposition:0014-pais-small-fiber-structural-lesion-ienfd
 - proposition:0001-reproductive-stage-transition-shifts-the-failed-recovery-threshold
 - question:0014-which-pais-case-definition-is-most-biologically-coherent
@@ -24,7 +25,7 @@ related:
 source_refs:
 - paper:Novak2026
 created: '2026-06-24'
-updated: '2026-06-25'
+updated: '2026-07-19'
 ---
 # Proposition: Cross-study heterogeneity in PAIS prevalence and effect estimates is substantially explained by ascertainment and scoring choices rather than biology
 

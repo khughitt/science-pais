@@ -21,10 +21,13 @@ source_refs:
 related:
   - paper:Pfaff2022
   - paper:ZhangRECOVEREHR2026
+  - paper:Nilforoshan2026
   - hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
   - hypothesis:0005-reproductive-stage-immune-homeostatic-margin
+  - interpretation:0043-t127-nilforoshan-recover-design-sensitivity-reconciliation
+  - question:0085-subgroup-residual-long-covid-beyond-one-year-under
 created: "2026-07-01"
-updated: "2026-07-01"
+updated: "2026-07-19"
 ---
 
 # Development of a Definition of Postacute Sequelae of SARS-CoV-2 Infection
@@ -148,3 +151,4 @@ The PASC score calculator is described in Supplement 1 of the paper. As of 2023,
 - ZhangRECOVEREHR2026 (`paper:ZhangRECOVEREHR2026`) — RECOVER pediatric EHR-coded PASC; illustrates U09.9-based approach.
 - For BC-5 lock: the choice of case definition for the N3C autoimmune × sex study must use an EHR-computable vehicle (U09.9 or Pfaff 2022 [@Pfaff2022] phenotype), since the RECOVER PRO index is inapplicable to N3C without linked survey data.
 - Future questions: Does the RECOVER cohort have linked biomarker/autoimmune data that could enable sex-stratified mechanistic sub-analyses? Does the 10% Omicron prevalence estimate hold in sex-stratified subgroups?
+- **Cross-design reconciliation with test-based claims estimates (`interpretation:0043` / t127, 2026-07-19):** this cohort's PRO syndrome prevalence (10% Omicron subset; 23% full sample; 3.7% uninfected floor) and Nilforoshan2026's near-null *attributable-ICD-outcome* counts (`paper:Nilforoshan2026`) are **non-comparable estimands measured through different channels** (self-reported fatigue/PEM/cognitive syndrome vs billing-coded hard events at RR ≥ 1.1) — the apparent order-of-magnitude gap is largely a design artifact, not a contradiction. On persistence the two are compatible; the residual subjective tail is `question:0085`.

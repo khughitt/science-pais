@@ -12,8 +12,11 @@ related:
 - hypothesis:0004-acute-severity-threshold
 - hypothesis:0010-the-pais-attractor-is-a-slow-heterogeneous-recovery-gradient-not-a
 - hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
+- interpretation:0043-t127-nilforoshan-recover-design-sensitivity-reconciliation
+- paper:Thaweethai2023
+- paper:Cai2024
 created: '2026-07-10'
-updated: '2026-07-10'
+updated: '2026-07-19'
 ---
 
 # Which subgroups retain attributable long COVID effects beyond one year under ascertainment-corrected study designs?
@@ -35,6 +38,7 @@ Nilforoshan2026 finds zero attributable long COVID outcomes at 360–720 days (d
 - Cai2024 (Xie, Topol, Al-Aly, Nature Medicine): three-year outcomes from VA cohort (predominantly male, older, comorbid) showing persistent multi-system effects at 3 years under conventional design. Not ascertainment-controlled; population is severity-enriched relative to Nilforoshan2026.
 - RECOVER adult cohort (Thaweethai2023): clinical cohort with diverse enrollment and prospective symptom capture; finds persistent symptom clusters at 6–12 months. Not ascertainment-controlled in the same way, but prospectively enrolled with broad symptom capture.
 - Hypothesis:0010 (from RECOVER trajectory data): 5% of participants in persistently high symptom stratum at 15 months; 36% near-minimal by 15 months; heterogeneous recovery trajectories at the individual level.
+- **Cross-design reconciliation (`interpretation:0043` / t127, 2026-07-19):** placing Nilforoshan2026, RECOVER (`paper:Thaweethai2023`), and the severity-enriched VA 3-year cohort (`paper:Cai2024`) side by side **does not adjudicate** the residual tail — the three differ simultaneously in estimand, measurement channel, ascertainment control, and severity mix. Nilforoshan's population-mean null at 360–720 days is **structurally blind** to a small subjective-symptom subgroup (ICD-invisible + RR ≥ 1.1 floor + ~10–20% conservative bias); RECOVER's ~5% persistently-high tail is PRO-defined and channel-mismatched to claims; Cai2024's severity-concentrated persistence (hospitalized: 29% elevated year-3 death risk) is **not** ascertainment-controlled. The population-mean-recovers / severity-enriched-persists / PRO-tail-survives triple is **compatible under a severity-threshold reading** (`hypothesis:0004`), not contradictory. The discriminating design is unchanged and unmet: the test-based logic run **within acute-severity strata**.
 
 ## Thoughts
 
