@@ -21,7 +21,7 @@ related:
 - question:0007-mechanism-of-female-predominance-in-pais
 - question:0013-reproductive-stage-failed-immune-recovery-after-infection
 created: "2026-07-10"
-updated: "2026-07-10"
+updated: "2026-07-19"
 ---
 
 # Sex differences in immune responses to viruses, bacteria and vaccines
@@ -96,6 +96,7 @@ Narrative review of preclinical (mouse genetic and pharmacological models) and h
 **Viruses:**
 
 - **PASC/Long COVID:** Females, particularly in the 40–55 age range, are more likely than males to experience PASC. Female individuals have increased symptom prevalence, particularly neurocognitive symptoms; some evidence that PASC results in greater persistence of symptoms up to 3 years in females (depression, fatigue, myalgia, neuropsychiatric complications, difficulty sleeping). Pulmonary sequelae and exercise capacity up to 1 year after SARS-CoV-2 or MERS infections are more often reported in females. Male PASC: more long-term cardiovascular complications (even after mild COVID). Transcriptomic analyses show increased XIST expression in several innate and adaptive immune cell subsets in females with PASC; male PASC: TGFB signaling disrupted, decreased Y-chromosome genes (DDX3Y, UTY, KDMSD, PRKY, USP9Y). Limited evidence for a gonadal-steroid-specific role in PASC outcomes so far.
+  - *[Precision note, t125 review, 2026-07-19]* — Against the primary study this transcriptomic result comes from (Hamlin et al. 2025, Stanford IRIS cohort, n=45 longitudinal; PMC12148066): the XIST elevation is an **acute-phase** signal — higher **during acute infection in females who *subsequently* developed LC**, "still present but less prominent" at 3 and 12 months — not a steady-state PASC-immune-cell upregulation. The male Y-linked result is **reduced *expression*** (DDX3Y down-regulated across most subsets at 12 months in males with LC; UTY/PRKY/USP9Y differed too), **not genomic "loss."** The primary study does **not** connect the Y-linked expression finding to the (separately reported) male cardiovascular phenotype; those are two distinct statements and should not be read as one causal chain.
 - **West Nile Virus:** Males: more severe acute disease with neuroinvasion; females: more self-reported post-acute symptoms despite comparable plasma viral loads and IFNα induction.
 - **Dengue:** Males: more acute disease; females more at risk of post-Dengue fatigue, arthralgia, and post-Chikungunya inflammatory disease. Females 40–55: greater risk of developing fatigue after Dengue infection.
 
