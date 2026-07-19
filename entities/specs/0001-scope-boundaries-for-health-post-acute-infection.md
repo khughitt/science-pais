@@ -1,13 +1,15 @@
 ---
-id: "spec:scope-boundaries"
-type: "spec"
-title: "Scope boundaries for health-post-acute-infection"
-status: "active"
+id: spec:0001-scope-boundaries-for-health-post-acute-infection
+title: Scope boundaries for health-post-acute-infection
+status: active
 source_refs:
-  - cite:Nitz2025
-  - cite:Bellavite2026
+- cite:Nitz2025
+- cite:Bellavite2026
 created: "2026-06-10"
 updated: "2026-07-19"
+kind: spec
+aliases:
+- spec:scope-boundaries
 ---
 
 # Scope Boundaries
