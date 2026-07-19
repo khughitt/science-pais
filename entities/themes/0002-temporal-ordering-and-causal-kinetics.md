@@ -75,8 +75,9 @@ entry and exit.
   `question:0053-gut-microbiome-normalization-kinetics-leading-vs-lagging`,
   `question:0054-ebv-reactivation-autoantibody-emergence-temporal-ordering`.
 - **Dynamical-systems fingerprints & windows — grounded (2026-07-18, t100):**
-  `question:0036` (critical-slowing-down pre-chronification EWS — **an imported, untested method: NO
-  application of CSD/EWS/dynamical-network-biomarkers to PAIS chronification exists**; both premises
+  `question:0036` (critical-slowing-down pre-chronification EWS — **an imported, untested method: a targeted
+  search on 2026-07-18 found NO application of CSD/EWS/dynamical-network-biomarkers to PAIS chronification**;
+  both premises
   unestablished — that the transition is a bifurcation at all, and that CSD is specific enough given
   documented false positives [Jager2019, Wilkat2019] and violated timescale-separation [Dablander2022]);
   `question:0037` (latent re-entry fragility on reinfection — **plausible but effectively untested**:

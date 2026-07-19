@@ -132,8 +132,11 @@ PAIS-prevention window closing as a function of any one mechanism.
   and **mutually consistent with the data** — the current evidence cannot discriminate among them.
 - **The discriminating design:** cross-pathogen, **day-of-onset-resolved** kinetics of a PASC-prevention
   endpoint, paired with mechanism readouts (viral load, tissue-reservoir markers, GC/autoantibody
-  maturation) — so the *shape* of the closing window can be matched to a *mechanism's* clock. Metformin's
-  host-directed benefit (non-antiviral) already hints the window is not purely viral-replication-gated.
+  maturation) — so the *shape* of the closing window can be matched to a *mechanism's* clock. Note that
+  metformin does **not** cleanly separate a host-directed from a viral-replication clock: the COVID-OUT
+  companion virologic analysis found metformin **reduced SARS-CoV-2 viral load**, and the authors interpret
+  the larger effect of earlier initiation as **consistent with an antiviral mechanism** — so metformin's
+  timing signal does not establish a window independent of viral replication.
 - **Major remaining uncertainty:** whether there is **one** window (a single dominant closure clock) or
   **several overlapping** windows (viral early; immunological later), and whether the metformin timing
   signal survives replication on a **research** PASC case definition rather than a provider-diagnosed label.
