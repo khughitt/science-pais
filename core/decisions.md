@@ -143,3 +143,18 @@ Frailty is the best biology of the three t110 boundary strata but the largest as
 
 **Revisit if:**
 - The packet clears all five gates (→ raise D-008b for reportable projection); or it fails on power/transfer/negative-control (→ shelve the frailty line too, at which point **no t110 boundary-strata line survives** and the boundary-conditions program closes on public data); or a PAIS deposit with native frailty labels appears (→ learn-there/score-here projection is no longer required).
+
+## D-009: Vaccine-adverse-event papers are adjudicated by a trigger × persistence test; acute vaccine AEs (Nitz2025) are comparator-only, never a PAIS case
+
+- **Date:** 2026-07-19
+- **Status:** active
+- **Extends:** D-003 (does not supersede) — adds the temporal (acute-vs-persistent) axis and the acute-vaccine cell D-003 never covered. Recorded operationally in `specs/scope-boundaries.md`.
+- **Decision:** Admissibility of vaccine-adverse-event papers is decided on **two independent axes**, and **primary scope requires passing both**: (1) **trigger** — infection required (the D-003 rule; vaccination fails it); (2) **persistence** — >~12 weeks required (acute self-resolving events fail it). The two are not interchangeable: **persistence alone can never promote a vaccine-triggered phenotype to primary scope**, because the trigger axis still fails, so vaccine papers are capped at **boundary-monitor / read-across** regardless of persistence.
+  - **Acute vaccine adverse events (`paper:Nitz2025` — myocarditis/pericarditis, VITT/anti-PF4, CVST) fail both axes** (onset ≤90 d, median ≤14 d, resolution within weeks; whole-literature follow-up ≤185 d) and are **not a syndrome**. They are **not a PAIS case, not boundary-monitor-as-a-PAIS-analog, and not independent cross-trigger support for `hypothesis:0001`** (same bar D-003 sets for PACVS/GWS). They are admitted **only as mechanistic / epidemiological comparators**: the infection-vs-vaccination CV risk asymmetry (~5–6× myocarditis, RR ~15–18.5 vs ~2–3.2) as a same-antigen antigen-burden anchor (`question:0081`, `proposition:0021`), and the acute-vaccine reference point bounding the same-antigen/different-route discriminator D-003 monitors.
+  - **Persistent post-vaccination syndrome (PACVS; `paper:Bellavite2026`) fails only the trigger axis** and stays **boundary-monitor / read-across** per D-003.
+
+**Why:**
+D-003 fixed the trigger rule and placed PACVS/GWS as boundary-monitor, but never addressed *acute* vaccine adverse events, which are not a persistent syndrome at all. `paper:Nitz2025` (and `paper:Bellavite2026`) both carry scope notes asking for a single adjudication in `specs/scope-boundaries.md`. Separating the temporal axis from the trigger axis makes the ruling exhaustive (a clean 2×2), keeps the antigen-burden comparator value usable without smuggling vaccine data in as PAIS cases, and preserves D-003's bar on counting non-infectious triggers as `hypothesis:0001` support.
+
+**Revisit if:**
+- A **controlled longitudinal** study establishes a **persistent** (>12 wk) post-vaccination CV phenotype — it then moves into the PACVS cell (boundary-monitor at most, never primary scope, trigger axis still fails); or a **controlled PACVS-vs-PASC biomarker comparison** appears (the D-003 trigger to reconsider the PACVS cell itself).

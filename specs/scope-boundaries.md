@@ -3,9 +3,11 @@ id: "spec:scope-boundaries"
 type: "spec"
 title: "Scope boundaries for health-post-acute-infection"
 status: "active"
-source_refs: []
+source_refs:
+  - cite:Nitz2025
+  - cite:Bellavite2026
 created: "2026-06-10"
-updated: "2026-06-21"
+updated: "2026-07-19"
 ---
 
 # Scope Boundaries
@@ -32,6 +34,26 @@ Some adjacent fatigue/dysautonomia syndromes share candidate mechanisms with PAI
 
 - **Inclusion criterion (headline rule):** a syndrome is *in primary scope* only if its trigger is an **acute infection**. This excludes the cases below by one consistent rule and matches the project name. *Mechanism-overlap alone is explicitly rejected as an admission criterion* — it is too permissive (it would admit essentially any oxidative/mitochondrial/dysautonomic condition) and would collapse the project boundary. **PEM/post-exertional-symptom presence** is the secondary discriminator used *within* this read-across set (see below).
 
-- **Post-COVID-vaccination syndrome (PACVS):** **boundary-monitor / read-across only.** Non-infectious trigger (vaccination), and the PACVS-specific evidence base is currently the weakest in the corpus (one uncontrolled n≈17 ELISA case series reused across author-overlapping, COI-disclosed/heterodox reviews — Halma2026, Bellavite2026, Lesgards2025). The shared-spike-effector hypothesis (same antigen, infection vs. vaccine) is a *legitimate same-antigen/different-route discriminator* but is **untested by controlled comparison** and must be represented as hypothesis-to-test, not established parallel. **Revisit for admission only if** a controlled PACVS-vs-PASC biomarker comparison appears.
+- **Post-COVID-vaccination syndrome (PACVS):** **boundary-monitor / read-across only.** Non-infectious trigger (vaccination), and the PACVS-specific evidence base is currently the weakest in the corpus (one uncontrolled n≈17 ELISA case series reused across author-overlapping, COI-disclosed/heterodox reviews — Halma2026, Bellavite2026, Lesgards2025). The shared-spike-effector hypothesis (same antigen, infection vs. vaccine) is a *legitimate same-antigen/different-route discriminator* but is **untested by controlled comparison** and must be represented as hypothesis-to-test, not established parallel. **Revisit for admission only if** a controlled PACVS-vs-PASC biomarker comparison appears. See the *trigger × persistence test* below (`D-009`) for how acute vaccine adverse-event papers (e.g. `paper:Nitz2025`) sit relative to persistent PACVS.
 
 - **Non-infectious fatigue syndromes — Gulf War Syndrome (GWS) and fibromyalgia (FM):** **boundary-monitor / read-across only**, and the *preferred* non-infectious stress-test for `hypothesis:0001`. Davis2025 (mainstream-tier review) shows GWS/FM share the metabolic/mitochondrial/oxidative lesion **and** the PEM metabolic signature with ME/CFS despite non-infectious triggers (organophosphate/toxic-chemical for GWS; idiopathic/multifactorial for FM). Because GWS is a non-infectious trigger that reportedly reaches the same downstream signature, it is the single best external test of the attractor's trigger-agnostic claim. Carry GWS/FM findings as read-across, flag unresolved metabolite-direction conflicts (e.g. sphingomyelin/tryptophan sign flips across conditions), and do **not** treat them as PAIS cases.
+
+## Vaccine-adverse-event papers: the trigger × persistence test (`D-009`)
+
+Vaccine-adverse-event papers (e.g. `paper:Nitz2025`, cardiovascular sequelae of COVID-19 vaccines; `paper:Bellavite2026`, PACVS/RAS-autoantibodies) recur in the corpus because they share the SARS-CoV-2 spike antigen with post-infection PAIS. Admissibility is decided by **two independent axes**, and **primary scope requires passing both**:
+
+1. **Trigger axis** (the `D-003` headline rule): in primary scope only if the trigger is an **acute infection**. *Vaccination fails this axis.*
+2. **Persistence axis** (the PAIS definitional threshold): a syndrome must **persist beyond ~12 weeks**. Acute, self-resolving events fail this axis.
+
+This yields a 2×2 that places every vaccine paper, and makes explicit that the two axes are not interchangeable — persistence alone can never promote a vaccine-triggered phenotype to primary scope, because the trigger axis still fails.
+
+| | **Acute** (resolves ≤ weeks) | **Persistent** (>12 weeks) |
+|---|---|---|
+| **Infection trigger** | acute-infection biology — out of scope except where it sets up sequelae | **PAIS — primary scope** |
+| **Vaccine trigger** | **acute vaccine AEs (`Nitz2025`) — comparator-only** | **PACVS (`Bellavite2026`) — boundary-monitor** (per `D-003`) |
+
+- **Acute vaccine adverse events (the `Nitz2025` cell) — comparator-only, the furthest cell from PAIS.** Vaccine-induced myocarditis/pericarditis, VITT/anti-PF4 thrombosis, and CVST are **acute and self-resolving** (onset ≤90 days, median ≤14 days; resolution within weeks; the entire literature's follow-up is ≤185 days). They fail **both** axes and are **not a syndrome** at all. They are therefore **not a PAIS case, not boundary-monitor-as-a-PAIS-analog, and not independent cross-trigger support for `hypothesis:0001`** (same bar `D-003` sets for PACVS/GWS). They are admitted **only as mechanistic / epidemiological comparators**, for two specific uses:
+  - the **infection-vs-vaccination CV risk asymmetry** (~5–6× higher myocarditis from infection than vaccination, RR ~15–18.5 vs ~2–3.2) as a same-antigen/different-route **antigen-burden anchor** — see `question:0081` and `proposition:0021`; represent it as an association across heterogeneous observational studies, not a within-study causal contrast; and
+  - the **acute-vaccine reference point** that bounds the same-antigen/different-route discriminator `D-003` monitors under PACVS.
+- **The persistence dimension is unmeasured in this literature.** `Nitz2025`'s ≤185-day follow-up means the acute-vaccine corpus **cannot itself speak to whether any subset persists** — that open gap is `question:0073`, not evidence of resolution or of a chronic syndrome.
+- **Revisit-for-admission (mirrors the `D-003` PACVS clause):** if a **controlled longitudinal** study establishes that a post-vaccination CV phenotype **persists** beyond 12 weeks, it moves from the acute-vaccine cell into the **PACVS (persistent-vaccine) cell** and is adjudicated there — i.e. it rises to **boundary-monitor / read-across at most, never primary scope**, because the trigger axis still fails. A controlled **PACVS-vs-PASC biomarker comparison** remains the trigger for reconsidering the PACVS cell itself (per `D-003`).

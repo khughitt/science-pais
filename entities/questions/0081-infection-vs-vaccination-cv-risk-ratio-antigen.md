@@ -12,8 +12,9 @@ related:
 - hypothesis:0001-shared-dysregulated-attractor
 - hypothesis:0004-acute-severity-threshold
 - question:0012-prevention-vaccination-antiviral-reduces-pais
+- spec:scope-boundaries
 created: '2026-07-10'
-updated: '2026-07-10'
+updated: '2026-07-19'
 ---
 
 # Does the ~5-6x higher myocarditis rate following infection vs. vaccination provide a quantitative anchor for antigen-burden dependency of PAIS incidence?
@@ -49,6 +50,7 @@ Nitz2025 reports that the risk ratio for myocarditis following COVID-19 infectio
 - Related propositions: `proposition:0021-acute-antigen-burden-determines-pais-incidence`.
 - Required data or analyses: Within-cohort correlation of SARS-CoV-2 viral load (nasopharyngeal or plasma) with myocarditis incidence; post-vaccination myocarditis incidence stratified by serum spike-protein levels post-injection; comparison of third-dose (booster) myocarditis rates vs. primary-series rates (same antigen, different cumulative exposure).
 - Priority level: Low-to-medium — a useful conceptual anchor for the antigen-burden frame but not a project-blocking question; resolution requires data not yet available.
+- **Scope note (`D-009` / t126, 2026-07-19):** this RR asymmetry is the specific comparator quantity for which `paper:Nitz2025` is admitted under the `specs/scope-boundaries.md` *trigger × persistence test*. The admission is **comparator-only**: use the asymmetry as a same-antigen/different-route antigen-burden anchor, represented as an association across heterogeneous observational studies (not a within-study causal contrast, per the complicating factors above), and never as an independent PAIS case or `hypothesis:0001` support.
 
 ## Related
 
