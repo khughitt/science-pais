@@ -305,8 +305,9 @@ tryptase p=0.020, zonulin p=0.024, and ileal **spike** protein p=0.014) and has 
 peer-reviewed paper** — Augustin et al. 2026, *Mucosal Immunology* 19(3):100328, doi:10.1016/j.mucimm.2026.03.002,
 PMID 41794369 (`cite:Augustin2026` / `paper:Augustin2026`). The full paper is a prospective, observational,
 **cross-sectional** case-control study (N=43; PCS+ n=20 vs PCS− n=23; 15–22 months post-infection) that
-reports a distinct PCS+ immune profile: increased mast-cell activity (MCAS ascertained by updated EHA
-criteria — ≥15 ileal mast cells plus elevated systemic tryptase), elevated zonulin (gut-barrier
+reports a distinct PCS+ immune profile: increased mast-cell activity (the paper applies a ≥15-ileal-mast-cell
++ elevated-tryptase threshold — note these are *systemic-mastocytosis* major/minor criteria per Valent et al.
+2021 [`cite:Valent2021`], **not** MCAS criteria; what Augustin claimed is [UNVERIFIED from fulltext]), elevated zonulin (gut-barrier
 dysfunction) and MMP-9, plasmacytoid-DC expansion / NK-subset shifts, and elevated SARS-CoV-2
 **nucleocapsid** protein in the terminal ileum (note: the full paper's antigen readout is nucleocapsid,
 not the abstract's spike). **Maturity caveat (still load-bearing).** Peer review raises the evidence tier,

@@ -41,6 +41,31 @@ kind), linked to `patch-definition:compound-boundary-conditions-interaction-dag`
 
 ---
 
+## Erratum (2026-07-19 — external review of the t141 fix pass)
+
+Three claims below were **overstated or imprecise**; they are corrected here, and the corrected
+versions live in `patch-definition:compound-boundary-conditions-interaction-dag`:
+
+- **T1 — not "unfalsifiable".** This critique wrote `chronological-age → all four modifiers` and
+  concluded the DAG imposes "no refutable constraint on any admissible dataset." Both are wrong as
+  drawn: **age does NOT point to `mast-cell-activation-hyperreactivity`** (only to the other three
+  modifiers), and MCAS is drawn with **U as its sole parent**, so age and comorbidity reach MCAS only
+  through unconditioned colliders — leaving **two surviving, testable marginal independencies: age ⟂ MCAS
+  and comorbidity ⟂ MCAS**. The graph is therefore **near-saturated and weakly / fragilely falsifiable**,
+  not unfalsifiable (and those two tests are fragile artifacts of MCAS's U-only parentage — a plausible
+  `age → MCAS` edge would erase them).
+- **T2 — estimand named precisely.** "g-formula / natural-effects" is not a generic fix: **natural
+  direct/indirect effects are generally NON-identified under exposure-induced mediator–outcome
+  confounding** (the Robins–Richardson non-identification result). The valid targets are a **controlled direct effect**
+  (g-computation) or **interventional (in)direct effects** (Vansteelandt & VanderWeele); the target must
+  be named with its own positivity/consistency assumptions.
+- **T3 — "observationally indistinguishable", not formal "Markov-equivalent".** No rival-DAG /
+  latent-projection equivalence was computed; the defensible claim is observational indistinguishability
+  at the incidence scale under the current measured-variable set.
+
+The core findings are unchanged: T2's collider contradiction is real and load-bearing, and the artifact
+remains an unidentified design sketch under D-004.
+
 ## Structural Validation
 
 `science inquiry validate` (v0.4.1) — 7 pass, 2 skip:
