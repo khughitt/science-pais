@@ -319,3 +319,11 @@ Two strata survived the t110 sweep uncovered, for DIFFERENT reasons, and the dis
 - created: 2026-07-19
 
 The Augustin gut-immune-axis/MCAS long-COVID work is now a full peer-reviewed paper: Mucosal Immunology 2026, doi:10.1016/j.mucimm.2026.03.002, PMID 41794369 (prospective observational cross-sectional case-control, N=43 [20 PCS+/23 PCS-], 15-22 mo post-infection). The project's Augustin2025 bib entry + topic:population-boundary-conditions 'conference abstract only' maturity note are now STALE. Add/replace the bib entry (verified tuple, structured pmid field), update the topic maturity line, and keep the t111 construct-validity point: it is cross-sectional POST-infection, so it grounds no pre-infection MCAS effect-modifier arrow. Surfaced by the t111 review pass.
+
+## [t141] Apply t111 critique fixes to the compound-boundary DAG
+- priority: P3
+- status: proposed
+- aspects: []
+- created: 2026-07-19
+
+From interpretation:0041 (/science:critique-approach). Highest: (T2) remove or g-formula-guard the mediation sub-test — conditioning on immune-homeostatic-reserve / acute-infection-severity opens a collider of both Pair-1 modifiers, contradicting the compound-selection-collider caveat. Also: (T3) rescope archetype-distinguishability to phenotype-vector only (Markov-equivalent at incidence scale); (T1) add explicit unfalsifiable-on-admissible-data limit; (M1) draw or forbid inter-modifier immunosuppression->frailty edge; (M2) reconcile structured treatment field vs descriptive-estimand prose; (M3) add two-axis edge_status/identification labels. Deferred behind D-004 (no admissible doubly-exposed dataset).
