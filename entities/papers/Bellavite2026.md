@@ -22,7 +22,7 @@ related:
 - topic:thromboinflammation-and-endothelial-dysfunction
 - question:0009-functional-autoantibodies-drive-dysautonomia
 - hypothesis:0001-shared-dysregulated-attractor
-- spec:scope-boundaries
+- spec:0001-scope-boundaries-for-health-post-acute-infection
 created: '2026-06-20'
 updated: '2026-07-19'
 ---

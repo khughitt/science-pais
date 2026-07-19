@@ -12,7 +12,7 @@ related:
 - hypothesis:0001-shared-dysregulated-attractor
 - question:0012-prevention-vaccination-antiviral-reduces-pais
 - paper:Bellavite2026
-- spec:scope-boundaries
+- spec:0001-scope-boundaries-for-health-post-acute-infection
 created: '2026-07-10'
 updated: '2026-07-19'
 ---
