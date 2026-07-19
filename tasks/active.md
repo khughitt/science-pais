@@ -217,15 +217,6 @@ Operational vehicle hunt for pre-registration:0003. Per the t050 audit (interpre
 
 Operational vehicle hunt for pre-registration:0005 (the A1-vs-M3 adjudicator for h0006). No published study reproduces the Appelman-type provoked pre/post/recovery OXPHOS/SDH muscle-biopsy time-course under a protocol harmonized across long COVID and ME/CFS. Deliverable: identify a cohort/biobank able to run serial post-exertional muscle biopsies in matched LC + ME/CFS arms (or confirm none exists and specify the minimal prospective study). Promotion of P2-P4 also needs an independent (non-Scheibenbogen-group) replication of elevated intracellular muscle Na+ or provoked mitochondrial escalation.
 
-## [t128] Propose marker panel (cGAMP/p-TBK1/ISGs + antigen/viral load) to split h0019 sterile-innate from h0002 antigen-driven on persistent IP-10
-- priority: P2
-- status: proposed
-- aspects: []
-- related: [hypothesis:0019-cgas-sting-nlrp3-sterile-innate-sensing-driver, question:0076-ip10-cxcl10-omicron-persistence-antigen-vs-sterile]
-- created: 2026-07-10
-
-
-
 ## [t129] Assess post-RSV/GAS/streptococcal PAIS incidence after 2021-2023 immunity-debt waves (ARF/PANDAS in pandemic-born cohorts)
 - priority: P3
 - status: proposed
