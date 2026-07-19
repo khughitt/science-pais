@@ -161,10 +161,17 @@ A subset of PCS+ met the ≥15-mast-cell tissue threshold [UNVERIFIED] — which
 **systemic-mastocytosis histologic criterion, not an MCAS criterion** (see Methods /
 `cite:Valent2021`).
 
-**Serum tryptase:** Elevated in PCS+ vs PCS−, indicating systemic mast cell
-degranulation activity persisting 15–22 months post-infection [UNVERIFIED —
-exact values and p-value; comparison to clinical MCAS threshold of
->20 ng/mL or >11.4 + 2×baseline not reported in abstract].
+**Serum tryptase:** Reported elevated in PCS+ vs PCS− [UNVERIFIED from fulltext —
+the 2026 paper's agent-accessible abstract does **not** report tryptase; this
+direction is carried from the precursor conference abstract (`paper:Augustin2025`,
+serum tryptase p=0.020) via the task brief, not grounded in the 2026 fulltext].
+A basal / group-level tryptase elevation reflects mast-cell **burden** and does
+not by itself establish mast-cell **degranulation** (degranulation is inferred
+from an event-related *transient* rise, which this cross-sectional design cannot
+capture). For calibration, per `cite:Valent2021`: basal tryptase >20 ng/mL is a
+*minor systemic-mastocytosis* criterion (not an MCAS threshold), and the MCAS
+biochemical criterion is an event-related rise to ≥ (1.2 × baseline) + 2 ng/mL —
+neither is reported by Augustin.
 
 **Serum zonulin:** Elevated in PCS+ vs PCS−, indicating compromised intestinal
 barrier function [UNVERIFIED — exact values and p-value; zonulin assay platform

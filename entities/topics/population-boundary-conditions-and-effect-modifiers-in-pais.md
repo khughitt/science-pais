@@ -315,8 +315,10 @@ but the design is **cross-sectional and entirely post-infection with no pre-infe
 **consequence-side** evidence of mast-cell activation *after* infection and **cannot ground a pre-infection
 MCAS effect-modifier arrow** (it does not establish that pre-existing MCAS/atopy predisposes to PCS; see
 the construct-validity caveat in `concept:mast-cell-activation-hyperreactivity` and the t111 DAG critique).
-It remains the first long-COVID cohort with a tryptase readout coupling the MCAS strand to the
-antigen-persistence frame (h0002). The **mediator-confirmed, MCAS-diagnosed, pre-infection-baselined**
+To this project's knowledge it is among the earliest long-COVID cohorts with a tissue-level readout
+coupling the MCAS strand to the antigen-persistence frame (h0002) — but its own precursor conference
+abstract (`paper:Augustin2025`) already carried the tryptase signal, so **"first" is not claimed**;
+and the tryptase result itself is [UNVERIFIED from the 2026 fulltext] (see `paper:Augustin2026`). The **mediator-confirmed, MCAS-diagnosed, pre-infection-baselined**
 long-COVID cohort — the one q0034 actually needs — remains absent.
 
 ---
