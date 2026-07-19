@@ -16,6 +16,7 @@ related:
 - hypothesis:0020-host-immune-baseline-reserve-gate
 - hypothesis:0004-acute-severity-threshold
 - topic:population-boundary-conditions-and-effect-modifiers-in-pais
+- interpretation:0041-t111-compound-boundary-dag-adversarial-critique
 - task:t111
 source_refs:
 - cite:Vinson2024
@@ -430,5 +431,22 @@ The **majority are structural/hypothesized**, not observed. Promoting any edge t
   post-infection); it is **consequence-side** and cannot ground a pre-infection MCAS arrow. The
   project's `Augustin2025` "conference abstract only" note is stale — spin-off task to reconcile the
   Augustin paper entity + topic maturity line.
-- Next: `/science:critique-approach` for a further adversarial pass; the DAG stays a design artifact
-  (unidentified sketch) until a construct-valid, doubly-exposed dataset is admissible (t097).
+- **Adversarial critique done (2026-07-19, `/science:critique-approach` →
+  `interpretation:0041-t111-compound-boundary-dag-adversarial-critique`).** Reviewed-status: *critiqued*
+  (the structured `inquiry.status` is deliberately kept at `sketch` because the unresolved latent
+  `unmeasured-shared-confounders` is only admissible under `sketch`; promoting the field would fail
+  `unknown_resolution`). Findings the sketch does **not** already make: **(T1)** with U + age + the
+  in-degree-13 outcome, the DAG imposes *no refutable constraint on any admissible (mediator-unmeasured)
+  dataset* — it is **unfalsifiable**, a stronger limit than "non-identifiable". **(T2, correctness bug)**
+  the prescribed mediation sub-test conditions on `immune-homeostatic-reserve`, which is a **common
+  descendant of both Pair-1 modifiers** — the exact collider `compound-selection-collider` forbids; the
+  "severity-controlled contrast" (`acute-infection-severity`, also in-degree-4) has the same defect. Two
+  of the sketch's own caveats contradict. **(T3)** the two archetypes are **Markov-equivalent at the
+  incidence scale** once the conjectural convergence nodes are unmeasured; the distinguishing prediction
+  survives only as a phenotype-component vector on a doubly-exposed cohort D-004 blocks. Plus: **(M1)** no
+  inter-modifier edge (immunosuppression→frailty would make frailty a mediator, breaking the symmetric
+  frame); **(M2)** the structured `treatment: biological-frailty` field contradicts the descriptive-estimand
+  prose and will mislead a tool consumer once the exporter bug is fixed; **(M3)** edges carry no two-axis
+  `edge_status`/`identification` labels, so "majority hypothesized" stays prose-only. T2 is the item to fix
+  before any sub-analysis is cited. The DAG stays a design artifact (unidentified sketch) until a
+  construct-valid, doubly-exposed dataset is admissible (t097).
