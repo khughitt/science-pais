@@ -82,9 +82,12 @@ bifurcation at all; that CSD would be specific enough to detect it) are currentl
   actionable — it would define *whom* to treat in the time-limited acute/early window
   (`question:0046`) and turn `hypothesis:0001`'s bistability prediction into a testable, prospective one.
 - **It is a discriminating test between the project's two whole-syndrome dynamical models.** CSD before a
-  transition is a hallmark of a **bifurcation** (`hypothesis:0001`); its *absence* while decline is
-  continuous is more consistent with a **slow gradient** (`hypothesis:0010`). So this question is not just
-  a biomarker hunt — it is the temporal instrument that could adjudicate the attractor-vs-gradient debate.
+  transition is a hallmark of a **CSD-producing bifurcation observable in the sampled variables** (a
+  *restricted* class — see the silent-transition caveat below — not every bifurcation; `hypothesis:0001`);
+  its *absence* while decline is continuous is *more consistent with* a **slow gradient** (`hypothesis:0010`)
+  but does not rule a bifurcation out. So this question is not just a biomarker hunt — it is a temporal
+  instrument that could *inform* the attractor-vs-gradient debate, though (per the caveats below) not settle
+  it alone.
 - **Risk if unanswered / mis-answered:** importing EWS naively would be a methodological trap. A positive
   EWS is **not** proof of an imminent tipping point (`cite:Jager2019` documents systematic false
   positives; `cite:Wilkat2019` found no CSD before epileptic seizures, a presumed clinical bifurcation),
@@ -126,10 +129,11 @@ bifurcation at all; that CSD would be specific enough to detect it) are currentl
   chronification — but slow convalescent recovery plausibly violates the same timescale-separation
   assumption, so the caution transfers.
 
-**Definitive absence (the key finding of this grounding pass).** A targeted search across
-PubMed / Europe PMC / Crossref combining CSD / early-warning-signals / dynamical-network-biomarkers with
-long COVID, ME/CFS, PTLDS, post-infectious fatigue, PASC, and chronification returned **no study** applying
-these methods prospectively to early-convalescent series to anticipate a chronic post-infectious state. The
+**No application found (the key finding of this grounding pass).** A targeted search conducted 2026-07-18
+across PubMed / Europe PMC / Crossref combining CSD / early-warning-signals / dynamical-network-biomarkers
+with long COVID, ME/CFS, PTLDS, post-infectious fatigue, PASC, and chronification returned **no study**
+applying these methods prospectively to early-convalescent series to anticipate a chronic post-infectious
+state (a bounded negative search result, not a claim of exhaustive proof that none exists). The
 nearest neighbors are distinct estimands: long-COVID **wearable** studies use conventional anomaly/
 change-detection (persistent elevated HR, reduced HRV), **not** CSD/EWS/DNB bifurcation theory, and are not
 framed as anticipating a tipping point; COVID **epidemic-wave** EWS address transmission, not the patient.
@@ -138,8 +142,9 @@ The method is imported and, for this question, **untested**.
 ## Thoughts
 
 - **Best current interpretation:** the idea is *methodologically coherent and genuinely discriminating in
-  principle* — if convalescent-to-chronic is a bifurcation, CSD should precede it, and that would separate
-  `hypothesis:0001` from `hypothesis:0010`. But **neither premise is established for PAIS**: (i) that the
+  principle* — if convalescent-to-chronic is a bifurcation *of a CSD-producing class and the transition
+  variable is among those sampled*, CSD should precede it, and that would help separate `hypothesis:0001`
+  from `hypothesis:0010`. But **neither premise is established for PAIS**: (i) that the
   transition is a bifurcation rather than graded deterioration is untested, and (ii) CSD's documented
   specificity failures plus the timescale-separation requirement mean a positive EWS could **not by itself**
   distinguish a genuine bifurcation from graded decline. This is a *proposed design*, not a claimed signal.

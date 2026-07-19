@@ -55,7 +55,8 @@ predominance mechanism question (`question:0007`).
 **Scope discipline:** circadian/chronobiology in general is `health-cycles` territory; this question is
 in-scope **only** because periodicity is used as a **PAIS mechanistic discriminator**. And the honest status
 is that the evidence tier is **low**: a **prospective app-based association** of perimenstrual worsening is
-now reported (with the largest study's *primary* total-symptom comparison actually null; see below), but the
+now reported (though `cite:Maybin2025`'s prospective-diary *primary* total-symptom comparison was actually
+null; see below), but the
 finer "which fingerprint ⇒ which mechanism" discrimination — and any use of it to *subtype* patients — is
 **unrealized and, as framed, novel**.
 
@@ -135,8 +136,9 @@ discrimination — so the discriminator hypothesis is, as framed, **novel**.
 
 - **Best current interpretation:** perimenstrual symptom worsening in LC and ME/CFS is now a **prospective
   app-based association** (`cite:Maybin2025`, `cite:Goodship2025`) — real enough to take seriously, but with
-  the largest study's *primary* total-symptom comparison null and only selected symptom models positive, in
-  small self-selected app cohorts with self-report phasing. There is solid general grounding for *why* a
+  `cite:Maybin2025`'s prospective-diary *primary* total-symptom comparison null and only selected symptom
+  models positive, in self-selected app cohorts (one small, N=54) with self-report phasing. There is solid
+  general grounding for *why* a
   cyclic immune/mast-cell/HPA fingerprint could exist (`cite:Notbohm2023`, `cite:Lavery2019`,
   `cite:Nater2008`). **But** the specific claim — that the *shape* of the fingerprint discriminates
   underlying mechanisms *within a person* — is **unrealized and untested**, and current measurements
@@ -170,8 +172,9 @@ discrimination — so the discriminator hypothesis is, as framed, **novel**.
 ## Related
 
 - Topic notes: `theme:0002-temporal-ordering-and-causal-kinetics` (periodic-perturbation member).
-- Article notes: `cite:Maybin2025`, `cite:Goodship2025` (prospective within-person diaries — the real
-  signal); `cite:Sakurada2024`, `cite:Boneva2011` (descriptive / comorbidity, not periodicity);
+- Article notes: `cite:Maybin2025`, `cite:Goodship2025` (prospective within-person diaries — a low-tier
+  prospective *association*, with Maybin's primary total-symptom comparison null; not a validated signal);
+  `cite:Sakurada2024`, `cite:Boneva2011` (descriptive / comorbidity, not periodicity);
   `cite:Edelman2022` (axis-perturbable context); `cite:Notbohm2023`, `cite:Lavery2019`, `cite:Nater2008`
   (general mechanistic grounding for why a fingerprint would exist).
 - Methods/Datasets: hormone-confirmed cyclic symptom + mechanism-marker co-tracking — the missing design.
