@@ -61,11 +61,15 @@ transplant (HSCT) — is a productive *source analogy* for a candidate PAIS auto
 infection damages the **tolerance-generating machinery itself** (thymic output, regulatory-T-cell [Treg]
 infrastructure), rather than merely generating antigen-specific cross-reactive autoantibodies. The analogy
 sharpens `hypothesis:0009` and `question:0005` by proposing a mechanism **structurally different from
-molecular mimicry**: PAIS autoimmunity as a *tolerance-reconstitution problem*. Its discriminating prediction
-is that autoimmune severity in the relevant subset should track **thymic-output / Treg markers (sjTRECs,
-recent-thymic-emigrant / naive-T proportion, functional Treg suppressive capacity)** rather than autoantibody
-titer alone, and should respond to **tolerance-reconstitution therapies** validated in cGvHD (low-dose IL-2,
-Treg expansion, extracorporeal photopheresis).
+molecular mimicry**: PAIS autoimmunity as a *tolerance-reconstitution problem*. Its motivating prediction is
+that in the relevant subset, **thymic-output / Treg markers (sjTRECs, recent-thymic-emigrant / naive-T
+proportion, functional Treg suppressive capacity)** carry prognostic/causal weight alongside — and, on this
+model, temporally upstream of — autoantibody breadth. Crucially, the tolerance and mimicry models are **not
+mutually exclusive** (tolerance failure can itself permit mimicry-derived clones), so the discriminating
+question is one of **temporal precedence / mediation**, not an either/or marker contest (see Thoughts). It
+also points at **tolerance-reconstitution therapies explored in cGvHD** (low-dose IL-2 — phase-1
+proof-of-concept; Treg expansion and extracorporeal photopheresis — used clinically but at varying evidence
+levels) as candidate imports.
 
 **Scope label (D-003):** cGvHD is a **non-infectious, transplant-domain source analogy**. It is admitted here
 only as a **methodological read-across / candidate-import**, never counted as PAIS evidence and never as
@@ -81,9 +85,11 @@ endotype**.
   fraction, Treg frequency + suppressive function), not just the autoantibody panels that the mimicry model
   (`question:0009`, `hypothesis:0009`) prioritizes. These are different, partly non-overlapping assays —
   choosing wrong wastes scarce longitudinal-cohort sampling.
-- **Therapy-class decision.** A tolerance-reconstitution reading opens a **clinically validated,
-  untested-in-PAIS import list** — low-dose IL-2 (Treg-selective; `cite:Koreth2011`), Treg adoptive transfer,
-  ECP — distinct from the antigen-directed / immunomodulatory candidates a mimicry model suggests.
+- **Therapy-class decision.** A tolerance-reconstitution reading opens a **candidate, untested-in-PAIS import
+  list** — low-dose IL-2 (Treg-selective; `cite:Koreth2011` is a **phase-1, n=29 proof-of-concept** in
+  glucocorticoid-refractory cGvHD, not a definitive validation), plus Treg adoptive transfer and ECP (used in
+  cGvHD but not separately cited or graded here) — distinct from the antigen-directed / immunomodulatory
+  candidates a mimicry model suggests.
 - **Risk if over-read.** Treating the analogy as *established mechanism* would (a) license transplant-domain
   immunotherapies with real infection/malignancy risk on the basis of a **structural resemblance, not
   demonstrated shared pathophysiology**, and (b) double-count a non-infectious transplant syndrome as
@@ -104,17 +110,19 @@ endotype**.
   extensive cGvHD** (`cite:Matsuoka2010`, JCI; prospective, n=45; population HSCT; durable). This is the
   source-domain instantiation of the exact prediction the analogy exports.
 - **Therapy-import proof-of-concept:** low-dose IL-2 **preferentially expands Tregs in vivo and produces
-  objective clinical responses** in glucocorticoid-refractory cGvHD (`cite:Koreth2011`, NEJM phase-1, n=29).
-  This is the concrete candidate import — clinically validated *in the source domain only*.
+  objective clinical responses** in glucocorticoid-refractory cGvHD (`cite:Koreth2011`, NEJM **phase-1,
+  n=29**). This is the concrete candidate import — a **source-domain clinical proof-of-concept**, not a
+  definitively validated therapy even in cGvHD.
 
 **PAIS-side evidence — does SARS-CoV-2 damage tolerance *infrastructure*? (estimand-bound; ACUTE ≠ DURABLE):**
 
 - **Thymic-output signal exists but is ACUTE-only.** `cite:Rosichini2023` (J Allergy Clin Immunol) shows the
   **thymus is an infection target and peripheral sjTREC/βTREC (thymic-neogenesis markers) are reduced and
   inversely correlate with disease severity** — but measured **cross-sectionally in hospitalized *acute*
-  COVID-19 (n=34) vs controls**, with no convalescent follow-up. This is best read as **acute
-  stress-thymic-involution / transient lymphopenia**, not proven durable tolerance-infrastructure
-  destruction.
+  COVID-19 (n=34) vs controls**, with no convalescent follow-up. Because there is no later timepoint, this is
+  best read as **acute-only thymic-output disruption of unknown durability** (acute stress-thymic-involution
+  is the parsimonious reading) — it is neither shown to be durable tolerance-infrastructure destruction *nor*
+  shown to resolve; "transient" would overclaim recovery that was never measured.
 - **Acute naive/CD8 depletion** is well documented but again ACUTE and hospitalized (`cite:Mathew2020`,
   *Science*, deep immune profiling, n=125 acute; preferential CD8 loss) — supports "acute lymphopenia," *not*
   durable damage.
@@ -127,10 +135,10 @@ endotype**.
   the most balanced read: **Tregs largely reconstitute during recovery, while a long-COVID subset shows
   sustained alteration up to ~1 year** — and it names the field's decisive weakness: **missing pre-infection
   / acute baselines**.
-- **Honest negative — the specific claim is UNTESTED in PAIS.** No located peer-reviewed primary study
-  measures **durable thymic output (TREC / recent-thymic-emigrant) specifically in long COVID months out**,
-  and none tests whether **autoimmune severity tracks thymic-output/Treg markers rather than autoantibody
-  titer**. The tolerance-infrastructure-*collapse* framing (durable, thymus/Treg-structural) is therefore
+- **Honest negative — the specific claim is UNTESTED in PAIS.** On a targeted search (2026-07-18), no located
+  peer-reviewed primary study measures **durable thymic output (TREC / recent-thymic-emigrant) specifically
+  in long COVID months out**, and none tests the **temporal ordering / mediation among thymic-output, Treg,
+  and autoantibody markers against a severity endpoint** (a bounded negative search, not a proof of absence). The tolerance-infrastructure-*collapse* framing (durable, thymus/Treg-structural) is therefore
   **not demonstrated in PAIS** — the durable data show *activation/exhaustion/Treg perturbation*, which is
   compatible with, but does not establish, infrastructure damage.
 
@@ -139,25 +147,34 @@ endotype**.
 - `hypothesis:0009` (durable immune-set-point shift → latent→overt autoimmune conversion) and `question:0009`
   (functional GPCR autoantibodies drive dysautonomia) carry the **antigen-specific / autoantibody-centric**
   model. `cite:Rojas2022` (83% latent autoimmunity at 7 mo) and `cite:Sharma2023` (elevated new-onset
-  autoimmune hazards) anchor a broad post-infectious *autoantibody* phenomenon — a titer-centric signal that
-  the tolerance-infrastructure model predicts should be *secondary to* (downstream of) thymic/Treg-
-  reconstitution failure.
+  autoimmune hazards) anchor a broad post-infectious *autoantibody* phenomenon. The tolerance-infrastructure
+  model *would* read this titer-centric signal as **downstream of** thymic/Treg-reconstitution failure — but
+  the reverse (Treg/T-cell changes downstream of persistent antigen or inflammation) is equally possible, and
+  the two are **not mutually exclusive** (tolerance failure can permit mimicry-derived clones). Which is
+  cause and which is consequence cannot be read off co-occurring markers; it needs a temporal design (see
+  Thoughts).
 
 ## Thoughts
 
 - **Best current interpretation:** The source-domain biology is **solid and directly on-point** — cGvHD *is*
   a failed-tolerance-reconstitution disease with thymic + Treg mechanisms, and `cite:Matsuoka2010` gives a
   clean "impaired thymic Treg output → loss of tolerance → clinical autoimmunity" template. On the PAIS side,
-  the **ingredients are present but the specific claim is unproven**: acute thymic/TREC loss (transient), plus
-  real-but-modest durable Treg/T-cell perturbation in a severity-weighted subset, with **no durable
-  thymic-output measurement and no severity-vs-marker test**. So the analogy is **legitimate and generative
-  but currently at the hypothesis-generating tier**, not demonstrated.
-- **Is it productive / discriminating vs mimicry?** Yes — this is the analogy's main value. It yields a
-  **crisp, feasible discriminator**: does autoimmune/PAIS severity in the candidate endotype track **sjTREC /
-  naive-T / functional-Treg** (tolerance-infrastructure model) or **autoantibody breadth/titer** (mimicry
-  model, `hypothesis:0009`)? The two models make **opposite predictions about which markers move with
-  severity and about therapy response** (Treg-reconstitution vs antigen/effector-directed). That is a
-  genuine, testable fork, not a relabeling.
+  the **ingredients are present but the specific claim is unproven**: acute thymic/TREC loss (durability
+  untested — no convalescent timepoint), plus real-but-modest durable Treg/T-cell perturbation in a
+  severity-weighted subset, with **no durable thymic-output measurement and no temporal-ordering test**. So
+  the analogy is **legitimate and generative but currently at the hypothesis-generating tier**, not
+  demonstrated.
+- **Is it productive vs mimicry — and how?** Its value is real but it is **not a clean either/or fork**. The
+  tolerance and mimicry models are not mutually exclusive and are causally entangled: autoantibodies may be
+  *downstream* of Treg/thymic disruption, *or* Treg/T-cell changes may be downstream of persistent antigen and
+  inflammation, and tolerance failure can permit mimicry-derived clones. A cross-sectional marker-vs-severity
+  association therefore **cannot identify which mechanism is causal** — high sjTREC/Treg *and* high
+  autoantibody breadth can both track severity without telling you the arrow. The productive move the analogy
+  licenses is a **longitudinal temporal-precedence / mediation design against a defined severity endpoint**:
+  does a thymic-output/Treg deficit *precede and statistically mediate* the rise in autoantibody breadth and
+  clinical severity (tolerance-infrastructure ordering), or does antigen/autoantibody activity precede the
+  Treg change (mimicry/activation ordering)? That temporal test — not a static marker contest, and not a claim
+  of "opposite therapy predictions" — is the analogy's genuine contribution.
 - **PEM / scope caveats:** Any provoked-exertion or interventional testing in PEM-positive phenotypes must
   respect `D-002` (pacing default, PEM-crash-risk consent). The endotype is likely a **minority PAIS subset**,
   not all PAIS — heterogeneity (severity, sex, timing, prior immunity) must be stratified; the female
@@ -179,12 +196,14 @@ endotype**.
   paired thymic-output (sjTREC / RTE / naive-T fraction), Treg frequency + suppressive-function assays, AND
   autoantibody breadth/titer**, ideally with pre-infection or early-acute baselines and severity/PEM
   stratification. No admissible vehicle is currently identified; this is a genuine data gap.
-- **Required analyses:** test whether **PAIS/autoimmune severity is better explained by thymic-output/Treg
-  markers than by autoantibody titer** (competing-predictor / mediation design), with sex + ascertainment
-  adjustment (`hypothesis:0008`); *not* an EHR estimand (no gated-data line, per D-004).
-- **Priority level:** **P3** — conceptually valuable and discriminating, but gated on a specialized
-  longitudinal multi-assay cohort that is not currently accessible; source-domain import remains a
-  read-across, not an actionable PAIS intervention.
+- **Required analyses:** a **longitudinal temporal-precedence / mediation** test — does a thymic-output/Treg
+  deficit *precede and mediate* the rise in autoantibody breadth and clinical severity, or vice versa? — with
+  a defined severity endpoint and sex + ascertainment adjustment (`hypothesis:0008`); explicitly **not** a
+  static "which marker tracks severity" contest (the two mechanisms co-occur), and **not** an EHR estimand
+  (no gated-data line, per D-004).
+- **Priority level:** **P3** — conceptually valuable, but gated on a specialized longitudinal multi-assay
+  cohort (with baselines and repeated timepoints) that is not currently accessible; source-domain import
+  remains a read-across, not an actionable PAIS intervention.
 
 ## Related
 

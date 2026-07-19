@@ -51,32 +51,37 @@ subpopulation of viable-but-dormant, metabolically quiescent cells that survive 
 resuscitate (`cite:Balaban2004`, `cite:Lewis2010`, `cite:Balaban2019`) — is a useful *model* for a **third
 persistence class** in PAIS tissue reservoirs, beyond the two already on the table: (a) dead antigen/fragment
 deposits (`hypothesis:0002`) and (b) continuous low-level replication. The candidate third class is
-*viable-but-dormant virions/infected cells that stochastically reactivate* (phenotypic, not genetic,
-heterogeneity). The value of the question is entirely in whether the analogy **generates discriminating,
-feasible predictions** — episodic reseeding as an explanation for non-monotonic symptom fluctuation,
-antiviral failure against metabolically inactive targets, biphasic killing kinetics under clearance, and
-bimodal within-reservoir single-cell transcript distributions *absent* genetic diversity — not in any claim
-that PAIS is mechanistically persister-driven.
+*latently or dormantly infected cells (or replication-competent genomes held in a non-replicating state)
+that stochastically reactivate* — a hypothesized phenotypic/non-genetic heterogeneity, not a claim about
+free virions. The value of the question is entirely in whether the analogy **generates candidate screening
+signatures** — episodic reseeding as a candidate explanation for non-monotonic symptom fluctuation, reduced
+antiviral efficacy against a non-replicating infected-cell fraction, biphasic killing kinetics under
+clearance, and bimodal within-reservoir single-cell transcript distributions *absent* genetic diversity —
+none of which is, on its own, a clean discriminator (see Thoughts), and none of which is any claim that
+PAIS is mechanistically persister-driven.
 
 ## Why It Matters
 
-- **Therapeutic-design decision it affects.** If a PAIS reservoir behaves like a bet-hedging persister
-  population, then single-course antivirals/antimicrobials that only kill metabolically active targets are
-  predicted to fail *by construction* — the dormant fraction is not engaged — which would reframe
-  `question:0002` (does clearing antigen rescue symptoms) around **timing, repeated/pulsed dosing, and
-  resuscitation-then-kill ("wake-and-kill") strategies** rather than single-shot clearance. This
+- **Therapeutic-design decision it affects.** If a PAIS reservoir contained a dormant, non-replicating
+  infected-cell fraction, then single-course antivirals that act only on actively replicating virus would be
+  expected to leave that fraction **unengaged** (an analogy-suggested prediction, not a foregone conclusion),
+  which would reframe `question:0002` (does clearing antigen rescue symptoms) around **timing, repeated/pulsed
+  dosing, and resuscitation-then-kill ("wake-and-kill") strategies** rather than single-shot clearance. This
   distinguishes it from the dead-fragment model, where the therapeutic problem is *removal of inert
-  material*, not killing dormant replicators.
+  material*, not reaching a dormant replication-competent reservoir.
 - **Interpretive decision it affects.** It offers a concrete generative model for the temporal signature of
   relapsing–remitting PAIS (ties to `theme:0002-temporal-ordering-and-causal-kinetics`): stochastic
   resuscitation predicts *non-monotonic, episodic* reseeding rather than the monotonic decay expected from a
   fixed inert deposit.
 - **Risk if left unanswered / over-read.** The dominant risk here is **over-reading**: a vivid,
   well-established bacterial mechanism can be smuggled in as if it were evidence about human viral reservoirs.
-  Per project decision **D-003**, bacterial persister biology is a *non-infectious-of-PAIS, cross-domain
-  source analogy*; it must never be counted as PAIS evidence, and never as independent cross-trigger support
-  for `hypothesis:0001`. The risk if under-explored is smaller: we may miss a cheap, discriminating
-  single-cell prediction that could be read off existing reservoir data.
+  The restriction is an **estimand/domain mismatch**: persister biology is *infectious*-disease biology, but
+  it is an **in-vitro bacterial** phenomenon, so it is an *indirect, cross-domain analogy* — never PAIS
+  *outcome* evidence, and never independent cross-trigger support for `hypothesis:0001`. (This is a
+  domain-mismatch bound, **not** a `D-003` case: D-003 governs non-infectious *syndromes* held as
+  read-across; the genuine D-003 non-infectious read-across in this batch is `question:0044`'s cGvHD, not
+  this one.) The risk if under-explored is smaller: we may miss a screening signal that could be read off
+  existing reservoir data.
 
 ## Current Evidence
 
@@ -99,16 +104,20 @@ that PAIS is mechanistically persister-driven.
   *viral* phenotypic (non-genetic) dormancy with stochastic reactivation is a real, characterized phenomenon
   — but in a canonically latent retrovirus, not in a PAIS-triggering acute virus. It is a read-across, not
   PAIS evidence.
-- **Herpesvirus (EBV) latency-reactivation — real, but a *different* mechanism.** EBV latency/reactivation is
-  genuine and PAIS-relevant (EBV reactivation is implicated in ME/CFS and long COVID;
-  `topic:antigen-pathogen-persistence`, `cite:Hanson2023`), but it is a **genetically encoded
-  transcriptional latency program** (defined latency states plus lytic-switch triggers), *not* the stochastic
-  phenotypic-persister bet-hedging this question is about. Conflating "EBV can reactivate" with "PAIS
-  reservoirs bet-hedge like persisters" would be a category error.
+- **Herpesvirus (EBV) latency-reactivation — real, but a *different* kind of dormancy.** EBV
+  latency/reactivation is genuine and PAIS-relevant (EBV reactivation is implicated in ME/CFS and long COVID;
+  `topic:antigen-pathogen-persistence`, `cite:Hanson2023`), but it is a set of **epigenetically-regulated
+  transcriptional latency programs** — defined *but heterogeneous* latency states (latency 0/I/II/III), with
+  a stochastic/regulated lytic switch — *not* the persister-style noise-driven bet-hedging this question is
+  about. The clean "genetic-vs-phenotypic" dichotomy does **not** really hold here: EBV latency is neither a
+  fixed genetic difference nor a persister-type phenotypic switch but an epigenetic program, so it is a third
+  category. Conflating "EBV can reactivate" with "PAIS reservoirs bet-hedge like persisters" would be a
+  category error.
 - **The honest negative — the persister/bet-hedging framing is essentially UNTESTED in PAIS.** A targeted
-  search finds **no study** demonstrating a viable-but-dormant, stochastically-resuscitating SARS-CoV-2 (or
-  enterovirus) subpopulation in human PAIS tissue with the persister signature (biphasic killing;
-  genotype-uniform, phenotype-bimodal single-cell reservoirs). SARS-CoV-2 is not a classically latent virus;
+  search (conducted 2026-07-18) found **no study** demonstrating a viable-but-dormant,
+  stochastically-resuscitating SARS-CoV-2 (or enterovirus) subpopulation in human PAIS tissue with the
+  persister signature (biphasic killing; genotype-uniform, phenotype-bimodal single-cell reservoirs) — a
+  bounded negative search result, not a proof of exhaustive absence. SARS-CoV-2 is not a classically latent virus;
   current reservoir evidence supports **antigen/RNA persistence and possible replication-competent reservoir**
   (`cite:Peluso2024` plasma antigen; `cite:Proal2025` tissue reservoir review), i.e. classes (a) and (b),
   with the dormancy/bet-hedging class neither demonstrated nor specifically tested. The one place the
@@ -123,14 +132,19 @@ that PAIS is mechanistically persister-driven.
   real for latent viruses (HIV, herpesviruses); but the specific claim — that PAIS tissue reservoirs of
   acute-trigger pathogens use persister-style bet-hedging — is a **plausible but unproven analogy**, currently
   at the level of a prediction generator, not a supported mechanism.
-- **Is the analogy productive/discriminating?** Modestly yes. Two of its predictions are genuinely
-  *discriminating* against the dead-fragment model (`hypothesis:0002`) and the continuous-replication model,
-  and are cheap to evaluate: (i) **genotype-uniform but phenotype-bimodal** single-cell transcript
-  distributions within a reservoir (dead fragments produce *no* transcription; continuous replication
-  predicts a *unimodal active* population; only bet-hedging predicts a stable dormant+active bimodality
-  without genetic diversity); (ii) **biphasic (bi-exponential) killing kinetics** under a clearance
-  intervention (a persister-like tail), versus mono-exponential decay. These are the honest payoff of the
-  lens.
+- **Is the analogy productive?** Modestly — but its outputs are **screening signals, not standalone
+  discriminators, and not necessarily cheap.** Two are worth naming: (i) **genotype-uniform but
+  phenotype-bimodal** single-cell transcript distributions within a reservoir; (ii) **biphasic
+  (bi-exponential) killing kinetics** under a clearance intervention, versus mono-exponential decay. Each is
+  *consistent with* bet-hedging but has mundane alternative causes: bimodality can reflect **mixed cell
+  types, anatomical compartments, infection stages, microenvironment, or technical dropout**; biphasic decay
+  can reflect **pharmacokinetics, tissue penetration, or a distribution of infected-cell lifetimes**. The
+  bacterial persister consensus (`cite:Balaban2019`) itself states biphasic killing *alone* is insufficient
+  to establish persistence. A credible confirmatory package would therefore need: **reversible resuscitation**
+  of the dormant fraction; **unchanged genotype and drug susceptibility on rechallenge** (phenotypic, not
+  genetic/resistant); **repeatable state-switching**; **concentration/PK controls** on the kill curve; and
+  **exclusion of compartment/cell-type mixtures** as the source of any bimodality. So the honest payoff of
+  the lens is a *hypothesis-scoped test battery*, not two cheap read-outs.
 - **Major remaining uncertainty.** Whether any acute-trigger PAIS pathogen can enter a true reversible
   dormant-viable state at all (as opposed to defective/archived genomes or inert antigen), and whether
   tissue-reservoir material is even *sufficient in quantity* to support single-cell bimodality analyses. The
@@ -145,19 +159,23 @@ that PAIS is mechanistically persister-driven.
   persistence class* to its dead-fragment vs replication frame); `question:0002-antigen-clearance-rescues-symptoms`
   (bet-hedging predicts *why* single-course clearance could fail — a wake-and-kill / repeated-dosing
   reframing of the decisive test). **Explicitly NOT** feeding `hypothesis:0001-shared-dysregulated-attractor`:
-  per D-003 this cross-domain bacterial source analogy is not cross-trigger support.
+  by the estimand/domain mismatch (in-vitro bacterial biology ≠ human viral reservoir) this indirect analogy
+  is not cross-trigger support — a domain-mismatch bound, not a `D-003` case.
 - **Required datasets:** within-reservoir **single-cell/spatial transcriptomics of PAIS tissue** with matched
   genotype (to separate phenotypic from genetic heterogeneity); serial tissue/plasma antigen time-courses
   under a clearance intervention (for kill-curve shape). List dataset IDs in frontmatter `datasets:` when
   identified.
-- **Required analyses:** (1) test for **bimodal (not unimodal) viral-transcript / activity distributions
-  within genetically clonal reservoir cells**; (2) fit **biphasic vs mono-exponential time-kill** models to
-  any antigen/RNA clearance series; (3) map episodic reseeding predictions onto **non-monotonic
-  symptom-fluctuation** time series (`theme:0002`). All three are analogy-imported diagnostics, to be
-  pre-registered as discriminating tests vs `hypothesis:0002` and immune-loop alternatives.
-- **Priority level:** **P3** — a productive prediction-generating analogy with cheap, discriminating
-  read-outs, but resting on an unproven premise (reversible viral dormancy in acute-trigger PAIS reservoirs)
-  and downstream of the higher-priority antigen-persistence questions.
+- **Required analyses:** the screening signals — (1) **bimodal (not unimodal) viral-transcript / activity
+  distributions within genetically clonal reservoir cells**; (2) **biphasic vs mono-exponential time-kill**
+  fits to any antigen/RNA clearance series; (3) mapping episodic reseeding onto **non-monotonic
+  symptom-fluctuation** time series (`theme:0002`) — plus the confirmatory controls that turn a screen into a
+  test: reversible resuscitation, unchanged genotype/susceptibility on rechallenge, repeatable state-switching,
+  concentration/PK controls, and exclusion of compartment/cell-type mixtures. To be pre-registered against
+  `hypothesis:0002` and immune-loop alternatives; none of the screens is a standalone discriminator.
+- **Priority level:** **P3** — a productive prediction-generating analogy with candidate screening read-outs
+  (not standalone discriminators; they need the confirmatory battery above), resting on an unproven premise
+  (reversible viral dormancy in acute-trigger PAIS reservoirs) and downstream of the higher-priority
+  antigen-persistence questions.
 
 ## Related
 
