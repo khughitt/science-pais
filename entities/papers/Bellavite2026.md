@@ -130,7 +130,7 @@ Not applicable. No computational model, software tool, or public dataset is rele
 
 ## Follow-up
 
-**Scope adjudication needed:** The project should explicitly decide whether PACVS papers belong in this repository (as boundary/comparator cases), in a separate vaccination-adverse-effects project, or are shared via the commons mechanism. This paper is a clear example of the boundary question. Recommend: update `specs/scope-boundaries.md` with a PACVS adjudication note.
+**Scope adjudication — RESOLVED (2026-07-19, `D-009`, t126):** `specs/scope-boundaries.md` now carries the *trigger × persistence test*. PACVS occupies the **persistent-vaccine** cell — it fails only the trigger axis (non-infectious) and so is **boundary-monitor / read-across** per `D-003`, never primary scope and never a PAIS case. This paper stays in the repository as a boundary/comparator case (contrast the acute-event cell, `paper:Nitz2025`).
 
 **Evidence gap to fill:** The key claim — that anti-ACE2 and anti-MAS1 ELISA positivity associates with specific PACVS symptoms — requires independent replication in a larger, controlled cohort with functional autoantibody validation. Prioritize watching for such studies (e.g., from the Schulze-Forster/Scheibenbogen group, who developed the CellTrend ELISA platform).
 
