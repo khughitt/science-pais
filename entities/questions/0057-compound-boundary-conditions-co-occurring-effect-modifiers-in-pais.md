@@ -71,21 +71,26 @@ leave implicit.
 - **Major uncertainty:** no existing PAIS cohort is powered or designed to test compound modifier
   interactions; this is a design aspiration rather than a near-term empirical question.
 
-- **Structural formalization (t111, 2026-07-18; `patch-definition:compound-boundary-conditions-interaction-dag`).**
-  A causal-sketch DAG under `hypothesis:0020` recasts the "superadditive **vs** distinct routes" framing as a
-  **false binary**. The two focal pairs are *two different structures*: **frailty × immunosuppression** is the
-  **shared-bottleneck** archetype (both deplete one `immune-homeostatic-reserve` node), and **pregnancy × MCAS**
-  is the **distinct / opposite-signed-route** archetype (convergence on a Th2/mast-cell axis with pregnancy's
-  Treg/tolerance arm dampening the Th1/neuro route while the thrombovascular route is preserved — Bruno2024).
-  Three load-bearing consequences: (1) **the DAG cannot fix the interaction sign** — even the shared bottleneck
-  can be super-additive (threshold) *or* a ceiling/sub-additive (reserve already floored); sign is a
-  scale-and-dose-response property, not a structural one. (2) **"Superadditive" must name a scale** — mechanistic
-  interaction = departure from **additivity**, so the estimand needs RERI/AP/synergy-index reported alongside the
-  multiplicative product term. (3) **Interaction confounding is stricter and selection is the dominant threat** —
-  {age, baseline-comorbidity} block the modifier–modifier back-door, U keeps it non-identifiable, and any
-  clinic/convenience cohort conditions on the compound-selection collider (both modifiers → ascertainment),
-  manufacturing spurious interaction. Pregnancy × MCAS additionally may redirect *phenotype* not incidence, so the
-  outcome must be phenotype-resolved. Cohort deliverable and the D-004 gated-data block are recorded in the DAG.
+- **Structural formalization (t111, 2026-07-18, corrected 2026-07-19; `patch-definition:compound-boundary-conditions-interaction-dag`).**
+  An **unidentified causal sketch** under `hypothesis:0020` (not an identified or evidence-bound DAG). Its
+  surviving substantive point is structural: it recasts the "superadditive **vs** distinct routes" framing as a
+  **false binary**. The two focal pairs are *two candidate (hypothesized) structures*: **frailty × immunosuppression**
+  as a **shared-bottleneck** conjecture and **pregnancy × MCAS** as a **distinct/opposite-signed-route** conjecture
+  — neither demonstrated (Vinson2024/Hammel2023 are single-population *associations* that never measure reserve;
+  Bruno2024 is a *coded-diagnosis* dissociation, not mechanism; Wolff2023 is atopy not MCAS, and Augustin is
+  post-infection so grounds no pre-infection arrow). Load-bearing consequences that DO survive: (1) **structure
+  alone cannot fix the interaction sign** — a shared bottleneck can be super-additive (threshold) *or* a
+  ceiling/sub-additive (reserve floored); sign is scale-and-dose-response, not structural. (2) **"Superadditive"
+  must name a scale** — prefer standardized cumulative-incidence risks / risk differences at a fixed horizon, with
+  RERI only for justified binary contrasts (AP/synergy-index are unstable under opposite-signed effects), and the
+  additivity→sufficient-cause reading needs extra confounding+monotonicity assumptions. (3) **Interaction
+  confounding is stricter and selection is the dominant threat** — {age, comorbidity} block only the *drawn*
+  back-doors (a real set adds indication, drug class/duration, utilization, vaccination, era, detection, acute
+  treatment…); U keeps it non-identifiable; and any clinic/convenience cohort (plus the documented-infection /
+  survival / participation conditioning every PAIS study makes) manufactures spurious interaction. Also: the
+  estimand is **descriptive stratum heterogeneity**, not a `do()` on non-manipulable host states; phenotype must
+  be resolved; cohort requirements + D-004 block are in the DAG. The formal toolchain did **not** verify any of
+  this (the pgmpy exporter emits an empty model) — the identification claims are hand-derived.
 
 ## Connections to Project
 

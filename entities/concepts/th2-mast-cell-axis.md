@@ -4,8 +4,10 @@ kind: "concept"
 title: "Th2 / mast-cell effector axis"
 status: "active"
 created: "2026-07-18"
-updated: "2026-07-18"
+updated: "2026-07-19"
 ontology_terms: []
+# source_refs intentionally empty: conjectural phenotype-route mediator; the convergence of pregnancy
+# and MCAS on this node is hypothesized (h0020 P5), not measured in any PAIS cohort.
 source_refs: []
 related:
 - patch-definition:compound-boundary-conditions-interaction-dag
