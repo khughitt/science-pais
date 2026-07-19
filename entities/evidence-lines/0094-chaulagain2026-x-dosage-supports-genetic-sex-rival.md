@@ -16,14 +16,14 @@ related:
 source_refs:
 - paper:Chaulagain2026
 created: '2026-07-10'
-updated: '2026-07-10'
+updated: '2026-07-19'
 evidence_type: literature_evidence
 ---
 # Evidence Line: Chaulagain2026 X-chromosome-dosage account supports the genetic-sex rival to hormone timing
 
 ## What this line shows
 
-`paper:Chaulagain2026` (Nature Immunology review) supports the genetic-sex rival of `proposition:0044` and simultaneously criticizes the hormone-axis model: it states that "there is limited evidence supporting a role for gonadal steroids in PASC outcomes so far," and attributes the female PASC signal largely to X-chromosome-dosage effects (XIST upregulation in female PASC immune cells; biallelic TLR7 expression), with the male cardiovascular phenotype linked to Y-gene loss (DDX3Y/UTY) [@Chaulagain2026]. As `model_criticism`, it raises the X-dosage account to parity with — and flags an evidence gap in — the hormone-timing account that `proposition:0002` assumes.
+`paper:Chaulagain2026` (Nature Immunology review) supports the genetic-sex rival of `proposition:0044` and simultaneously criticizes the hormone-axis model: it states that "there is limited evidence supporting a role for gonadal steroids in PASC outcomes so far" [@Chaulagain2026]. This is an **evidence gap on the hormone side**, not positive evidence that X-dosage carries the female excess; the chromosome-linked observations it cites are heterogeneous. Per the primary study it draws on (Hamlin et al. 2025, IRIS cohort, n=45 longitudinal; PMC12148066): XIST was elevated **during acute infection in females who *subsequently* developed LC** (less prominent at 3/12 months) — an acute-phase predictor, not steady-state PASC-immune-cell upregulation; and males with LC showed **reduced *expression*** of Y-linked genes (DDX3Y down at 12 months; UTY/PRKY/USP9Y) — **not genomic "loss,"** and **not linked in the primary source** to the separately-reported male cardiovascular phenotype. Biallelic TLR7 is general sex-immunology, not demonstrated in the PASC cohort. As `model_criticism`, this line makes the X-dosage account a **salient weak rival** to — and flags an evidence gap in — the hormone-timing account that `proposition:0002` assumes; it does **not** raise it to parity (the review offers no ranking rubric).
 
 ## Why it is independent
 
