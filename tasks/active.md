@@ -217,15 +217,6 @@ Operational vehicle hunt for pre-registration:0003. Per the t050 audit (interpre
 
 Operational vehicle hunt for pre-registration:0005 (the A1-vs-M3 adjudicator for h0006). No published study reproduces the Appelman-type provoked pre/post/recovery OXPHOS/SDH muscle-biopsy time-course under a protocol harmonized across long COVID and ME/CFS. Deliverable: identify a cohort/biobank able to run serial post-exertional muscle biopsies in matched LC + ME/CFS arms (or confirm none exists and specify the minimal prospective study). Promotion of P2-P4 also needs an independent (non-Scheibenbogen-group) replication of elevated intracellular muscle Na+ or provoked mitochondrial escalation.
 
-## [t124] Intake Al-Aly 2025 830K-veteran post-COVID infection-vulnerability study (cited by Tsergas2025, absent from project)
-- priority: P1
-- status: proposed
-- aspects: []
-- related: [hypothesis:0003-immune-exhaustion-feedback]
-- created: 2026-07-10
-
-
-
 ## [t125] Decompose female PASC bias into hormone-axis (h0005) vs X-chromosome-dosage/XIST (Chaulagain2026)
 - priority: P1
 - status: proposed
