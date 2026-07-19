@@ -196,9 +196,12 @@ N/A — news feature; no datasets or models released.
 
 **Primary papers to read next (cited here but not yet in project):**
 
-- **Cai, Xu, Xie, Al-Aly (Lancet Infect Dis 2025)** — The 830,000-veteran cohort study is the
-  strongest population-level signal for elevated infection rates post-COVID; should be read and
-  formally added to the project.
+- **Cai, Xu, Xie, Al-Aly (Lancet Infect Dis 2025)** — The ~836,913-veteran cohort study is the
+  strongest population-level signal for elevated infection rates post-COVID. **Now intaken as
+  `paper:Cai2025`** (t124): positive-COVID vs test-negative RR 1·17 outpatient / 1·41 hospital-admission
+  for infection, plus a hospitalized COVID-vs-influenza sub-cohort (sepsis RR 1·35, antimicrobial RR
+  1·23) — held as a consequence-side signal consistent with, not proof of, the `hypothesis:0003`
+  exhaustion loop.
 - **Pedroso et al. (J Leukoc Biol 2024)** — Direct T-cell exhaustion/senescence data even after
   mild COVID; the most direct primary support for the exhaustion arm of `hypothesis:0003`.
 - **Gregory et al. (JAMA 2025)** — Invasive group A strep timing analysis; most powerful
