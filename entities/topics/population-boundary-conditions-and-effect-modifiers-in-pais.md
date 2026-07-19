@@ -32,6 +32,7 @@ source_refs:
   - cite:Hickie2006
   - cite:Wolff2023
   - cite:Augustin2025
+  - cite:Augustin2026
   - cite:Weinstock2021
 origins:
   - type: user
@@ -294,17 +295,28 @@ MCAS specifically. Pre-existing diagnosed MCAS is rare and poorly ascertained in
 elevated IgE or atopy diagnosis prospectively predicts PAIS incidence, rather than just symptom
 *profile*, is not established.
 
-**First mediator-level signal (t109, 2026-07-07; low maturity).** The MCAS-long-COVID literature has been
-predominantly symptom-survey and hypothesis (the Weinstock/Afrin thesis: MCA symptom burden in long COVID
-matches diagnosed MCAS by pattern, but with *no* mediator measurement). One recent study begins to supply
-actual mediator data: Augustin et al. (2025, Open Forum Infectious Diseases, conference abstract) reported
-that post-COVID-syndrome patients (PCS+, n=21) vs PCS− (n=11) had elevated ileal activated mast cells
-(CD117+CD25+, p<0.0001), higher **serum tryptase** (p=0.020) and zonulin (p=0.024), and higher **ileal
-SARS-CoV-2 spike protein** (p=0.014) despite undetectable *serum* spike — tying mast-cell activation to
-gut antigen persistence and barrier dysfunction. **Maturity caveat:** conference abstract, n=21, not yet a
-full peer-reviewed paper; treat as hypothesis-supporting, not confirmatory. It is nonetheless the first
-long-COVID cohort with a tryptase readout and the first to couple the MCAS strand to the antigen-persistence
-frame (h0002). The mediator-confirmed, MCAS-diagnosed long-COVID cohort remains near-absent.
+**First mediator-level signal (t109, 2026-07-07; matured to peer review, t140, 2026-07-19).** The
+MCAS-long-COVID literature has been predominantly symptom-survey and hypothesis (the Weinstock/Afrin
+thesis: MCA symptom burden in long COVID matches diagnosed MCAS by pattern, but with *no* mediator
+measurement). The Cologne/Vienna gut-immune-axis line began to supply actual mediator data as a
+conference abstract (Augustin et al. 2025, Open Forum Infectious Diseases; `cite:Augustin2025` /
+`paper:Augustin2025`; PCS+ n=21 vs PCS− n=11: elevated ileal CD117+CD25+ mast cells p<0.0001, serum
+tryptase p=0.020, zonulin p=0.024, and ileal **spike** protein p=0.014) and has **now matured to a full
+peer-reviewed paper** — Augustin et al. 2026, *Mucosal Immunology* 19(3):100328, doi:10.1016/j.mucimm.2026.03.002,
+PMID 41794369 (`cite:Augustin2026` / `paper:Augustin2026`). The full paper is a prospective, observational,
+**cross-sectional** case-control study (N=43; PCS+ n=20 vs PCS− n=23; 15–22 months post-infection) that
+reports a distinct PCS+ immune profile: increased mast-cell activity (MCAS ascertained by updated EHA
+criteria — ≥15 ileal mast cells plus elevated systemic tryptase), elevated zonulin (gut-barrier
+dysfunction) and MMP-9, plasmacytoid-DC expansion / NK-subset shifts, and elevated SARS-CoV-2
+**nucleocapsid** protein in the terminal ileum (note: the full paper's antigen readout is nucleocapsid,
+not the abstract's spike). **Maturity caveat (still load-bearing).** Peer review raises the evidence tier,
+but the design is **cross-sectional and entirely post-infection with no pre-infection baseline**: it is
+**consequence-side** evidence of mast-cell activation *after* infection and **cannot ground a pre-infection
+MCAS effect-modifier arrow** (it does not establish that pre-existing MCAS/atopy predisposes to PCS; see
+the construct-validity caveat in `concept:mast-cell-activation-hyperreactivity` and the t111 DAG critique).
+It remains the first long-COVID cohort with a tryptase readout coupling the MCAS strand to the
+antigen-persistence frame (h0002). The **mediator-confirmed, MCAS-diagnosed, pre-infection-baselined**
+long-COVID cohort — the one q0034 actually needs — remains absent.
 
 ---
 
@@ -554,8 +566,10 @@ inclusion in a dataset plan.
   Vinson2024, and a Hammel2023 sample-size/instrument error). New mechanism papers were added for the
   immunosuppressed stratum: Peluso2022a (HIV/exhaustion-baseline) and Chavatza2025 (rituximab/antigen-
   persistence). **Residual gaps confirmed empty:** no LMIC-based PAIS *mechanism* cohort; no long-COVID
-  mechanism data for anti-TNF / anti-IL-6R / JAK-inhibitor agents; mediator-confirmed MCAS long-COVID
-  cohorts near-absent (one n=21 conference abstract). Follow-ups spun out: seed Augustin2025/Weinstock2021
+    mechanism data for anti-TNF / anti-IL-6R / JAK-inhibitor agents; mediator-confirmed MCAS long-COVID
+  cohorts near-absent — now one peer-reviewed cross-sectional paper (Augustin2026, N=43) but still no
+  pre-infection baseline, so the pre-infection-baselined MCAS cohort q0034 needs remains absent.
+  Follow-ups spun out: seed Augustin2025/Augustin2026/Weinstock2021
   (MCAS) and the Chaudhary2024 multi-ancestry GWAS (pending peer-reviewed version); full-text-verify the
   Hammel2023 covariate list to resolve the [UNVERIFIED] acute-severity-adjustment that h0004 leans on.
 - **Find-datasets pass (sync-gated, separate task t097):** identify open/downloadable cohorts for each
