@@ -81,7 +81,7 @@ Source: "crossref metadata + PubMed abstract; full text not agent-accessible (pa
 ## Key Contribution
 
 This peer-reviewed, case-control study (N=43: 20 PCS+, 23 PCS−; 15–22 months
-post-SARS-CoV-2) provides the first full-paper characterization of concurrent
+post-SARS-CoV-2) provides, to this project's knowledge, an early full-paper characterization of concurrent
 gut-immune dysregulation — elevated ileal mast cell activity, elevated tryptase,
 compromised intestinal barrier (zonulin), elevated MMP-9, pDC expansion, NK
 subset alterations, and elevated central memory T-cells — alongside detection of
@@ -105,10 +105,19 @@ blood (PB) and terminal ileum (TI) biopsies obtained from all participants.
 **PCS case definition:** [UNVERIFIED — not available in abstract; likely WHO
 12-week definition or similar; full inclusion/exclusion criteria require fulltext].
 
-**MCAS ascertainment criterion:** Updated European Hematology Association (EHA)
-criteria, operationalized as ≥15 mast cells per high-power field in ileal tissue
-PLUS elevated systemic tryptase [UNVERIFIED — criterion stated in task brief;
-independently confirm from fulltext methods].
+**Mast-cell burden threshold (NOT an MCAS diagnosis).** The task brief described a
+threshold of ≥15 mast cells in ileal tissue PLUS elevated systemic tryptase, loosely
+attributed to "updated EHA criteria" [UNVERIFIED — from task brief, not confirmed from
+fulltext]. **CORRECTION (external review, t141-followup):** ≥15 mast cells *in aggregates*
+and basal serum tryptase >20 ng/mL are, respectively, the **major and minor criteria for
+systemic mastocytosis (SM)** in the Valent et al. 2021 consensus (`cite:Valent2021`,
+HemaSphere 5(11):e646) — they are **NOT** MCAS criteria. MCAS is defined instead by
+recurrent multi-system mast-cell-mediator-release symptoms, an **event-related transient
+tryptase rise** (≥20% + 2 ng/mL above baseline), and response to MC-targeted therapy. So
+whatever threshold Augustin applied, this tissue readout is a **mast-cell-burden /
+possible-clonal-mastocytosis** signal, not a diagnosis of MCAS — do not record it as "MCAS
+ascertainment." Exactly what Augustin operationalized and how the paper labels it is
+[UNVERIFIED from fulltext].
 
 **Comparison with precursor abstract (paper:Augustin2025):** The IDWeek 2024
 abstract reported n=21 PCS+ and n=11 PCS− (~2 yr follow-up); this full paper
@@ -148,8 +157,9 @@ abstract provides direction only.
 
 **Mast cell activity:** PCS+ had elevated mast cell activity in ileal tissue
 compared to PCS− [UNVERIFIED — exact cell counts, p-value, and activation markers].
-Based on the EHA threshold of ≥15 mast cells per HPF, a subset of PCS+ met criteria
-for tissue MCAS [UNVERIFIED].
+A subset of PCS+ met the ≥15-mast-cell tissue threshold [UNVERIFIED] — which is a
+**systemic-mastocytosis histologic criterion, not an MCAS criterion** (see Methods /
+`cite:Valent2021`).
 
 **Serum tryptase:** Elevated in PCS+ vs PCS−, indicating systemic mast cell
 degranulation activity persisting 15–22 months post-infection [UNVERIFIED —
@@ -203,18 +213,20 @@ non-surface antigens. The gut compartment finding — undetectable in peripheral
 hypothesis:0002's core prediction that residual antigen may be sequestered in
 mucosal/tissue compartments while absent from serum.
 
-This is controlled epidemiological evidence (case-control, matched convalescents)
-at the tissue level, representing a stronger evidence tier than prior case series
-or single-patient reports. However, it remains cross-sectional and cannot establish
+This is controlled case-control evidence at the tissue level (a convalescent
+comparison; whether controls were demographically **matched** is [UNVERIFIED from
+fulltext]), a stronger evidence tier than prior case series or single-patient reports. However, it remains cross-sectional and cannot establish
 whether antigen persistence is a *cause* of PCS or a *consequence* of immunological
 failure to clear residual antigen in people who are already symptomatic.
 
 ### Link to question:0034 (atopy/MCAS as mechanistically distinct PAIS subgroup)
 
 The mast cell activity and tryptase elevation data provide **consequence-side
-biomarker evidence** for mast cell involvement in PCS. The EHA criterion applied
-(≥15 mast cells per HPF + elevated tryptase [UNVERIFIED]) provides the
-first full-paper operationalization of ileal MCAS in a controlled PCS cohort.
+biomarker evidence** for mast cell involvement in PCS. The tissue mast-cell threshold
+applied (≥15 mast cells + elevated tryptase [UNVERIFIED]) is a **systemic-mastocytosis**
+histologic/lab criterion, **not** an MCAS criterion (`cite:Valent2021`); to this project's
+knowledge it is an early full-paper operationalization of ileal **mast-cell burden** in a
+controlled PCS cohort [novelty UNVERIFIED]. It does not establish MCAS.
 However, this evidence **cannot** establish that pre-existing MCAS or atopy
 constitutes an upstream risk factor or effect modifier for PCS development, because:
 1. No pre-infection MCAS/atopy baseline is available (cross-sectional design).
@@ -262,7 +274,7 @@ not captured in the precursor abstract.
 
 | Paper Concept | Project Concept | Notes |
 |---|---|---|
-| Elevated ileal mast cells (CD117+ or similar) in PCS+ | Mast cell activation as a post-infectious PAIS mediator | First controlled, peer-reviewed ileal MC count in LC; EHA criterion applied [UNVERIFIED] |
+| Elevated ileal mast cells (CD117+ or similar) in PCS+ | Mast cell activation as a post-infectious PAIS mediator | Early controlled, peer-reviewed ileal MC count in LC [novelty UNVERIFIED]; the ≥15-MC threshold is a systemic-mastocytosis (not MCAS) criterion (`cite:Valent2021`) |
 | Serum tryptase elevated in PCS+ | Systemic mast cell activation biomarker in PCS | Consequence-side evidence; no pre-infection baseline; group-level elevation |
 | Serum zonulin elevated in PCS+ | Intestinal barrier dysfunction in PAIS | Assay platform contested; supports gut-barrier strand of h0002 |
 | Elevated MMP-9 in PCS+ | Localized gut inflammation / extracellular matrix remodeling | Compartment [UNVERIFIED]; adds inflammatory mediator evidence |
@@ -341,8 +353,9 @@ IHC protocols and flow cytometry panel details require fulltext for replication.
 
 ## Follow-up
 
-- **Obtain full text** to verify: (a) the MCAS criterion threshold (≥15 mast cells
-  per HPF + elevated tryptase); (b) specific p-values and effect sizes for mast cell,
+- **Obtain full text** to verify: (a) what mast-cell threshold Augustin actually used
+  and how the paper labels it (the ≥15-MC + tryptase thresholds are *systemic-mastocytosis*,
+  not MCAS, criteria — `cite:Valent2021`); (b) specific p-values and effect sizes for mast cell,
   tryptase, zonulin, MMP-9, pDC, and NK comparisons; (c) PCS case definition;
   (d) acute severity and vaccination status adjustment; (e) nucleocapsid vs spike
   antibody panel clarification; (f) zonulin assay platform.
