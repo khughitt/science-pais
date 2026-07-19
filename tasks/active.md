@@ -311,11 +311,3 @@ t110 found the LMIC/ancestral stratum has exactly one ancestry-stratified vehicl
 - created: 2026-07-17
 
 Two strata survived the t110 sweep uncovered, for DIFFERENT reasons, and the distinction is decision-relevant. (1) question:0040 pregnancy reads capability-mismatch: every public pregnancy deposit found is placenta/decidua/cord-blood collected AT DELIVERY (GSE181238, GSE246536, GSE318446, GSE185557 and ~8 more). Not one has a post-acute maternal timepoint, so none stratifies pregnancy as an effect modifier of PAIS trajectory. The cohorts that COULD answer it (RECOVER-Pregnancy, PRIORITY, COPS, MOACC-19, the Spanish ~92-week obstetric cohort) were all built inside DUAs/enclaves. This is a STRUCTURAL access gap, not a search failure -- more searching will not fix it. (2) question:0057 (compound/co-occurring boundary conditions) reads no-candidate: it needs datasets stratifying TWO boundary variables jointly, and no single-stratum deposit qualifies, so it cannot inherit coverage from the others. Consider whether q0040/q0057 should be reframed toward what open data CAN support, or explicitly parked as access-blocked.
-
-## [t141] Apply t111 critique fixes to the compound-boundary DAG
-- priority: P3
-- status: proposed
-- aspects: []
-- created: 2026-07-19
-
-From interpretation:0041 (/science:critique-approach). Highest: (T2) remove or g-formula-guard the mediation sub-test — conditioning on immune-homeostatic-reserve / acute-infection-severity opens a collider of both Pair-1 modifiers, contradicting the compound-selection-collider caveat. Also: (T3) rescope archetype-distinguishability to phenotype-vector only (Markov-equivalent at incidence scale); (T1) add explicit unfalsifiable-on-admissible-data limit; (M1) draw or forbid inter-modifier immunosuppression->frailty edge; (M2) reconcile structured treatment field vs descriptive-estimand prose; (M3) add two-axis edge_status/identification labels. Deferred behind D-004 (no admissible doubly-exposed dataset).
