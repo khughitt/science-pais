@@ -311,3 +311,11 @@ t110 found the LMIC/ancestral stratum has exactly one ancestry-stratified vehicl
 - created: 2026-07-17
 
 Two strata survived the t110 sweep uncovered, for DIFFERENT reasons, and the distinction is decision-relevant. (1) question:0040 pregnancy reads capability-mismatch: every public pregnancy deposit found is placenta/decidua/cord-blood collected AT DELIVERY (GSE181238, GSE246536, GSE318446, GSE185557 and ~8 more). Not one has a post-acute maternal timepoint, so none stratifies pregnancy as an effect modifier of PAIS trajectory. The cohorts that COULD answer it (RECOVER-Pregnancy, PRIORITY, COPS, MOACC-19, the Spanish ~92-week obstetric cohort) were all built inside DUAs/enclaves. This is a STRUCTURAL access gap, not a search failure -- more searching will not fix it. (2) question:0057 (compound/co-occurring boundary conditions) reads no-candidate: it needs datasets stratifying TWO boundary variables jointly, and no single-stratum deposit qualifies, so it cannot inherit coverage from the others. Consider whether q0040/q0057 should be reframed toward what open data CAN support, or explicitly parked as access-blocked.
+
+## [t140] Reconcile Augustin MCAS paper entity + topic maturity (full 2026 paper published)
+- priority: P3
+- status: proposed
+- aspects: []
+- created: 2026-07-19
+
+The Augustin gut-immune-axis/MCAS long-COVID work is now a full peer-reviewed paper: Mucosal Immunology 2026, doi:10.1016/j.mucimm.2026.03.002, PMID 41794369 (prospective observational cross-sectional case-control, N=43 [20 PCS+/23 PCS-], 15-22 mo post-infection). The project's Augustin2025 bib entry + topic:population-boundary-conditions 'conference abstract only' maturity note are now STALE. Add/replace the bib entry (verified tuple, structured pmid field), update the topic maturity line, and keep the t111 construct-validity point: it is cross-sectional POST-infection, so it grounds no pre-infection MCAS effect-modifier arrow. Surfaced by the t111 review pass.
