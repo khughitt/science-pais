@@ -165,15 +165,6 @@ The patch (Status & next steps) names this as the next step for the contested ca
 
 The patch parks HPA/cortisol as 'high-plausibility / thin-PAIS-evidence', which may undersell it - hypocortisolism in ME/CFS is a decades-old replicated finding and HPA is a master immune regulator + rhythm-sensitive (ties to the circadian bridge task). Run a focused /science:search-literature pass to calibrate the actual evidence weight and decide whether HPA promotes from prose candidate to an edged upstream forcing node in the landscape, or stays deferred. related: patch:immune-state-shift-causal-landscape, hypothesis:0001.
 
-## [t101] explore-followup batch 7: persistence, dormancy & tolerance-collapse analogies (q0043,q0044)
-- priority: P3
-- status: proposed
-- aspects: []
-- group: explore-followups
-- created: 2026-07-04
-
-Cross-domain analogies sharpening existing persistence/autoimmunity topics. Entities: q0043 (bacterial persister-cell bet-hedging as model for stochastic viral dormancy in tissue reservoirs), q0044 (chronic GvHD as analogy for post-viral tolerance-infrastructure collapse). Follow-up: research-papers bridging persister-cell biology and cGvHD tolerance literature into topic:antigen-pathogen-persistence and topic:post-infectious-dysautonomia-and-autoimmunity.
-
 ## [t111] DAG for compound/co-occurring boundary conditions (q0057 interaction structure)
 - priority: P3
 - status: proposed
