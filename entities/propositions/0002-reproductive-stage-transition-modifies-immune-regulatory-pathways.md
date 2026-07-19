@@ -20,12 +20,14 @@ related:
   - "hypothesis:0005-reproductive-stage-immune-homeostatic-margin"
   - "question:0013-reproductive-stage-failed-immune-recovery-after-infection"
   - "proposition:0001-reproductive-stage-transition-shifts-the-failed-recovery-threshold"
+  - "proposition:0044-female-pasc-bias-x-chromosome-dosage-rival"
+  - "interpretation:0042-t125-sex-chromosome-vs-hormone-pasc-decomposition"
   - "immunity:topic:sex-hormone-life-stage-immune-homeostasis"
 source_refs:
   - "paper:Averyanova2022"
   - "paper:Shahbaz2025"
 created: "2026-06-21"
-updated: "2026-06-21"
+updated: "2026-07-19"
 ---
 
 # Proposition: Reproductive-stage transition modifies immune-regulatory pathways relevant to post-infectious recovery

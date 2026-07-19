@@ -26,6 +26,9 @@ related:
 - paper:Boneva2015
 - interpretation:0020-t045-neuhouser2024-whi-hrt-gap-triage
 - interpretation:0026-t043-boneva2015-early-menopause-directionality
+- interpretation:0042-t125-sex-chromosome-vs-hormone-pasc-decomposition
+- proposition:0044-female-pasc-bias-x-chromosome-dosage-rival
+- question:0080-sex-chromosome-vs-hormone-decomposition-pais
 - topic:long-covid-immune-dysregulation
 - immunity:topic:endocrine-immune-recovery-thresholds
 - immunity:topic:sex-hormone-life-stage-immune-homeostasis
@@ -37,7 +40,7 @@ required_capabilities:
 - analysis_role: mr_exposure
   trait: sex-hormone-biomarker
 created: "2026-06-19"
-updated: "2026-07-10"
+updated: "2026-07-19"
 datasets:
 - dataset:ruth-2020-shbg-testosterone-gwas
 - dataset:covid19-hgi-longcovid-gwas
@@ -64,7 +67,7 @@ This may lower or raise the effective threshold for entering the shared dysregul
 ### Core — enter the belief conjunction
 
 - `proposition:0001-reproductive-stage-transition-shifts-the-failed-recovery-threshold` — **forward (P→) effect**: reproductive-stage transition shifts the effective host-reserve / failed-recovery threshold, so PAIS risk is reproductive-stage-dependent at a given insult.
-- `proposition:0002-reproductive-stage-transition-modifies-immune-regulatory-pathways` — **mechanism** beneath P→: the transition modifies immune-regulatory pathways (antiviral resolution, Treg/Tfh/Th17, B-cell/type-I-IFN tone, endothelial, thromboinflammatory). **Caveat: this core leg is single-line fragile** — its support is two weak lines, dropping either flips it to fragile, so the conjunction's weakest link is a *core* member, not just the background ones. Independent corroboration here is the priority — but the t036 feasibility search (`report:0004`) found **no off-the-shelf vehicle** for it (R1 hormone-panel depth and R5 pre-infection baseline are anti-correlated across candidate cohorts); the live paths are `task:t038` (IMPACC, mediator-compatible only) and `task:t040` (RECOVER ancillary study, primary positive test, post-seed-stage).
+- `proposition:0002-reproductive-stage-transition-modifies-immune-regulatory-pathways` — **mechanism** beneath P→: the transition modifies immune-regulatory pathways (antiviral resolution, Treg/Tfh/Th17, B-cell/type-I-IFN tone, endothelial, thromboinflammatory). **Caveat: this core leg is single-line fragile** — its support is two weak lines, dropping either flips it to fragile, so the conjunction's weakest link is a *core* member, not just the background ones. Independent corroboration here is the priority — but the t036 feasibility search (`report:0004`) found **no off-the-shelf vehicle** for it (R1 hormone-panel depth and R5 pre-infection baseline are anti-correlated across candidate cohorts); the live paths are `task:t038` (IMPACC, mediator-compatible only) and `task:t040` (RECOVER ancillary study, primary positive test, post-seed-stage). **t125 update (`interpretation:0042`, 2026-07-19):** a re-read of `paper:Chaulagain2026` found the direct-PASC gonadal-steroid evidence "limited" and tilted the PASC-specific weight toward the *sex-chromosome-dosage* axis, raising the rival `proposition:0044` to parity — this **confirms** (does not rescue or refute) the fragility of this leg, and makes the hormone-vs-chromosome decomposition (`question:0080`) the standing blocker for attributing the female PASC excess to hormones above and beyond sex/chromosome dosage.
 
 ### Rival — contrasted against; excluded from the conjunction
 
