@@ -8,12 +8,14 @@ ontology_terms: []
 datasets: []
 source_refs:
 - cite:Tsergas2025
+- cite:Cai2025
 related:
 - hypothesis:0003-immune-exhaustion-feedback
 - hypothesis:0001-shared-dysregulated-attractor
 - question:0017-deflationary-alternatives-vs-shared-pathophysiology
+- paper:Cai2025
 created: '2026-07-10'
-updated: '2026-07-10'
+updated: '2026-07-19'
 ---
 
 # Does SARS-CoV-2 cause subclinical population-level immune dysregulation beyond the long-COVID subset?
@@ -48,9 +50,13 @@ in recovered, non-long-COVID individuals?
 
 **Supporting (from `paper:Tsergas2025` secondary reporting; all [UNVERIFIED] pending primary reads):**
 
-- Cai, Xu, Xie, Al-Aly (Lancet Infect Dis 2025): [UNVERIFIED] 830,000 US veterans — even
-  non-hospitalised COVID-19 testers had higher bacterial, viral, and fungal infection rates in the
-  following year vs COVID-negative controls. This is the most direct large-scale population signal.
+- `paper:Cai2025` (Cai, Xu, Xie, Al-Aly, Lancet Infect Dis 2025; intaken t124): among ~836,913 US
+  veterans **not hospitalised during acute COVID**, a positive test was associated with higher 12-month
+  rates of bacterial, fungal, and viral infection *diagnoses* vs test-negative controls (outpatient
+  RR 1·17, respiratory 1·46, hospital-admission-for-infection 1·41; all abstract-confirmed, PMID
+  40185115). This is the most direct large-scale population signal — but it measures **clinical infection
+  outcomes (diagnoses / test-positivity), not a subclinical immune parameter**, so it bears on the
+  *consequence* side of this question, not directly on the immune-mechanism claim it asks about.
 - Pedroso et al. (J Leukoc Biol 2024): [UNVERIFIED] T-cell exhaustion and senescence observed even
   after mild COVID-19 infection; not confined to hospitalised or long-COVID patients.
 - Iwasaki lab (Yale, clinical report summarised in feature): clinically significant T-cell
@@ -66,8 +72,13 @@ in recovered, non-long-COVID individuals?
   claim, holding that only a "very small proportion" of COVID cases lead to immune dysfunction.
 - The studies cited above are mostly observational, with limited matched controls and potential
   confounding by healthcare-seeking behaviour after a COVID diagnosis.
-- Population-level effect sizes are not yet established; the feature aggregates directional signals
-  but does not quantify population attributable risk.
+- Population-level **relative rates of clinical infection** are now established for the COVID-positive
+  vs test-negative contrast (`paper:Cai2025`), but the *immune-mechanism* attribution — whether these
+  reflect genuine subclinical immune dysregulation vs residual confounding / differential ascertainment
+  — remains unresolved, and population **attributable risk** is still not quantified. The subclinical
+  *immune-measurement* limb of this question (T-cell exhaustion, epigenetic reprogramming in
+  non-long-COVID recovered individuals) is not addressed by Cai2025 and still awaits primary intake
+  (e.g. Pedroso2024 [UNVERIFIED], Henrich/Iwasaki clinical reports).
 
 ## Thoughts
 
