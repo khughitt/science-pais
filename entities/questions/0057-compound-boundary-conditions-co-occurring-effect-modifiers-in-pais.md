@@ -24,8 +24,10 @@ related:
   - question:0034-pre-existing-atopic-and-mast-cell-activation-disorders-as-a
   - question:0040-pregnancy-state-immune-milieu-as-a-modifier-of-pais-risk-and-trajectory
   - hypothesis:0004-acute-severity-threshold
+  - hypothesis:0020-host-immune-baseline-reserve-gate
+  - patch-definition:compound-boundary-conditions-interaction-dag
 created: "2026-07-07"
-updated: "2026-07-07"
+updated: "2026-07-18"
 added_by: "llm:claude-opus-4-8:research-topic"
 ---
 # Compound boundary conditions — do co-occurring effect modifiers compound PAIS risk superadditively or via distinct mechanism routes?
@@ -68,6 +70,22 @@ leave implicit.
   pregnancy suppression of some mast-cell triggers) or amplifying depending on the specific allergen/trigger.
 - **Major uncertainty:** no existing PAIS cohort is powered or designed to test compound modifier
   interactions; this is a design aspiration rather than a near-term empirical question.
+
+- **Structural formalization (t111, 2026-07-18; `patch-definition:compound-boundary-conditions-interaction-dag`).**
+  A causal-sketch DAG under `hypothesis:0020` recasts the "superadditive **vs** distinct routes" framing as a
+  **false binary**. The two focal pairs are *two different structures*: **frailty × immunosuppression** is the
+  **shared-bottleneck** archetype (both deplete one `immune-homeostatic-reserve` node), and **pregnancy × MCAS**
+  is the **distinct / opposite-signed-route** archetype (convergence on a Th2/mast-cell axis with pregnancy's
+  Treg/tolerance arm dampening the Th1/neuro route while the thrombovascular route is preserved — Bruno2024).
+  Three load-bearing consequences: (1) **the DAG cannot fix the interaction sign** — even the shared bottleneck
+  can be super-additive (threshold) *or* a ceiling/sub-additive (reserve already floored); sign is a
+  scale-and-dose-response property, not a structural one. (2) **"Superadditive" must name a scale** — mechanistic
+  interaction = departure from **additivity**, so the estimand needs RERI/AP/synergy-index reported alongside the
+  multiplicative product term. (3) **Interaction confounding is stricter and selection is the dominant threat** —
+  {age, baseline-comorbidity} block the modifier–modifier back-door, U keeps it non-identifiable, and any
+  clinic/convenience cohort conditions on the compound-selection collider (both modifiers → ascertainment),
+  manufacturing spurious interaction. Pregnancy × MCAS additionally may redirect *phenotype* not incidence, so the
+  outcome must be phenotype-resolved. Cohort deliverable and the D-004 gated-data block are recorded in the DAG.
 
 ## Connections to Project
 
