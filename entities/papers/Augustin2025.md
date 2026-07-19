@@ -25,6 +25,7 @@ related:
 - question:0034-pre-existing-atopic-and-mast-cell-activation-disorders-as-a
 - topic:population-boundary-conditions-and-effect-modifiers-in-pais
 - paper:Wolff2023
+- paper:Augustin2026
 created: "2026-07-18"
 updated: "2026-07-18"
 Source: europepmc (XML abstract, CC BY 4.0); PMCID PMC11779031
@@ -48,11 +49,16 @@ Source: europepmc (XML abstract, CC BY 4.0); PMCID PMC11779031
 - **Source:** europepmc (XML abstract, CC BY 4.0)
 -->
 
-> **EVIDENCE-MATURITY NOTICE.** This is a conference abstract presented at IDWeek
-> 2024 and published in the OFID supplement (n=21 PCS+, n=11 PCS−). The study has
-> not undergone full peer review as a standalone paper. All findings are
-> **preliminary and hypothesis-generating only**. Do not treat any result as
-> established or replicated. Cross-sectional design precludes causal inference.
+> **EVIDENCE-MATURITY NOTICE (updated 2026-07-19, t140).** This entity documents the
+> **conference abstract** (IDWeek 2024, OFID supplement; n=21 PCS+, n=11 PCS−). The
+> Cologne/Vienna gut-immune-axis line has since been published as a **full peer-reviewed
+> paper** — Augustin et al. 2026, *Mucosal Immunology* 19(3):100328 (`paper:Augustin2026`,
+> PMID 41794369; prospective cross-sectional case-control, N=43 [20 PCS+/23 PCS−],
+> 15–22 mo). Prefer `paper:Augustin2026` as the primary citable source; this abstract is
+> retained as the **precursor**. The abstract's own findings remain preliminary and
+> hypothesis-generating, and the design (abstract and full paper alike) is cross-sectional
+> and entirely post-infection — it precludes causal inference and grounds no pre-infection
+> effect-modifier arrow.
 
 ## Key Contribution
 
@@ -66,12 +72,13 @@ to combine a serum tryptase readout with ileal SARS-CoV-2 spike detection**, lin
 the mast-cell activation (MCAS) strand to the gut antigen-persistence frame.
 
 **Evidence-maturity caveat (critical).** These are conference-abstract-level, n=21
-findings. No pre-print or full paper has been identified at time of writing [UNVERIFIED
-— a full peer-reviewed version may exist or be in preparation]. The observed statistical
-associations (p-values from small N) should be interpreted with caution: small-sample
-p-values are sensitive to distributional assumptions and multiple comparisons not
-reported in an abstract. The co-elevation pattern is hypothesis-supporting, not
-confirmatory.
+findings. The full peer-reviewed version has since been published as `paper:Augustin2026`
+(*Mucosal Immunology* 2026, N=43; note the full paper's terminal-ileum antigen readout is
+**nucleocapsid**, whereas this abstract reported **spike** — do not conflate the two). The
+abstract's observed statistical associations (p-values from small N) should still be
+interpreted with caution: small-sample p-values are sensitive to distributional assumptions
+and multiple comparisons not reported in an abstract. The co-elevation pattern is
+hypothesis-supporting, not confirmatory.
 
 ## Methods
 
@@ -247,10 +254,11 @@ protocols are not described at abstract level.
 
 ## Follow-up
 
-- **Seek full peer-reviewed publication.** The group (Klinik Favoriten / University
-  Hospital Cologne, led by Augustin and Zoufaly) may publish a full paper expanding
-  on this abstract. Monitor for a full-text peer-reviewed version before treating any
-  of these findings as established.
+- **Full peer-reviewed publication — RESOLVED (t140, 2026-07-19).** The group
+  (Klinik Favoriten / University Hospital Cologne) published the full paper as
+  `paper:Augustin2026` (*Mucosal Immunology* 19(3):100328, doi:10.1016/j.mucimm.2026.03.002,
+  PMID 41794369), expanding this abstract to N=43 with fuller immune phenotyping. Cite the
+  full paper for established findings; this abstract now serves as the precursor record.
 - **Pre-infection MCAS/atopy status.** A follow-up study (or full paper) should
   report whether participants had prior MCAS, atopy, or elevated baseline tryptase —
   the critical covariate for question:0034.

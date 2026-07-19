@@ -13,6 +13,7 @@ datasets:
 source_refs:
 - cite:Weinstock2021
 - cite:Augustin2025
+- cite:Augustin2026
 origins:
 - type: assistant
   ref: explore-ideas-population
@@ -24,6 +25,7 @@ related:
 - hypothesis:0020-host-immune-baseline-reserve-gate
 - paper:Weinstock2021
 - paper:Augustin2025
+- paper:Augustin2026
 required_capabilities:
   - stratification: atopy
 created: '2026-07-04'

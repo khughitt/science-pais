@@ -135,12 +135,12 @@ No computational model or software tool released. The MCMRS questionnaire is pro
 **What this paper leaves open (for question:0034 and subsequent work):**
 
 - Does pre-infection MCAS diagnosis prospectively predict long-COVID incidence (not just symptom similarity retrospectively)? No prospective data exist.
-- Do LC patients with an MCAS-like profile have elevated mast cell mediators (tryptase, histamine, prostaglandin D2) on formal testing? Augustin et al. (2025, conference abstract, n=21) provides the first partial answer: elevated serum tryptase (p=0.020) in PCS+ vs PCS−, with concurrent ileal mast cell activation and gut antigen persistence — treat as hypothesis-supporting, not confirmatory.
+- Do LC patients with an MCAS-like profile have elevated mast cell mediators (tryptase, histamine, prostaglandin D2) on formal testing? Augustin et al. (2025, conference abstract, n=21) provided the first partial answer (elevated serum tryptase p=0.020 in PCS+ vs PCS−, with concurrent ileal mast cell activation and gut antigen persistence), now matured to a full peer-reviewed paper (`paper:Augustin2026`, *Mucosal Immunology* 2026, N=43) — still cross-sectional and post-infection, so treat as hypothesis-supporting, not confirmatory, and not evidence of *pre-existing* MCAS.
 - Is the MCA symptom pattern in LC driven by pre-existing MCAS (upstream amplifier model, per q0034) or by post-COVID-onset secondary MCA (downstream consequence, consistent with h0002 antigen-persistence frame)?
 - Does MC-directed therapy improve LC outcomes in a controlled setting? The authors cite anecdotal clinical improvement; no RCT data existed at the time of publication.
 
 **Papers to read:**
 - Afrin et al. 2020 (J Investig Allergol Clin Immunol) — the prior hypothesis paper this study was testing.
-- Augustin et al. 2025 (Open Forum Infectious Diseases, conference abstract) — first mediator-level signal in a long-COVID cohort.
+- Augustin et al. 2025 (Open Forum Infectious Diseases, conference abstract) — first mediator-level signal in a long-COVID cohort; now published in full as Augustin et al. 2026 (`paper:Augustin2026`, *Mucosal Immunology* 19(3):100328, N=43).
 - Wolff et al. 2023 (Clinical & Experimental Allergy) — systematic review showing pre-existing allergic disease (atopy) as a risk factor for long-COVID symptoms; the population-level complement to this individual-mechanism paper.
 - Theoharides and Conti 2020 — one of the early mast-cell-COVID hypothesis papers cited here.
