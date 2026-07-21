@@ -1,5 +1,5 @@
 ---
-id: paper:Park2025
+id: paper:Park2025ImmunityDebt
 kind: paper
 title: 'Shifts in Influenza and Respiratory Syncytial Virus Infection Patterns in
   Korea After the COVID-19 Pandemic Resulting From Immunity Debt: Retrospective Observational
@@ -21,7 +21,7 @@ ontology_terms:
 - population immunity
 dataset_usage: []
 source_refs:
-- cite:Park2025
+- cite:Park2025ImmunityDebt
 related:
 - hypothesis:0004-acute-severity-threshold
 - hypothesis:0020-host-immune-baseline-reserve-gate
@@ -36,7 +36,7 @@ updated: '2026-07-10'
 - **Journal:** JMIR Public Health and Surveillance, vol. 11, e68058
 - **DOI:** 10.2196/68058
 - **PMCID:** PMC12309781
-- **BibTeX key:** Park2025
+- **BibTeX key:** Park2025ImmunityDebt
 - **Source:** PDF (full text read directly)
 
 ## Key Contribution

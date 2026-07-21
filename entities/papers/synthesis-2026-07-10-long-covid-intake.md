@@ -27,7 +27,7 @@ source_refs:
 - cite:Kahlert2023
 - cite:Hou2025
 - cite:Munro2025
-- cite:Park2025
+- cite:Park2025ImmunityDebt
 - cite:Furgier2026
 - cite:Tsergas2025
 - cite:Mak2025

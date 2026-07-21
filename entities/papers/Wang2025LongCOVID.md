@@ -1,5 +1,5 @@
 ---
-id: paper:Wang2025
+id: paper:Wang2025LongCOVID
 kind: paper
 title: 'Identifying subtypes of Long COVID: a systematic review'
 status: active
@@ -15,7 +15,7 @@ ontology_terms:
 - neurological symptoms
 dataset_usage: []
 source_refs:
-- cite:Wang2025
+- cite:Wang2025LongCOVID
 related:
 - topic:pais-case-definition-heterogeneity
 - topic:biomarkers-and-objective-endpoints
@@ -34,7 +34,7 @@ updated: '2026-06-20'
 - **Year:** 2025 (published online 18 December 2025)
 - **Journal:** eClinicalMedicine, vol. 91, article 103705
 - **DOI:** 10.1016/j.eclinm.2025.103705
-- **BibTeX key:** Wang2025
+- **BibTeX key:** Wang2025LongCOVID
 - **Source:** Full-text PDF (papers/pdfs/2025_Wang_identifying-subtypes-long-covid-systematic-review.pdf), read 2026-06-20.
 
 ## Key Contribution

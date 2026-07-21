@@ -1,5 +1,5 @@
 ---
-id: paper:Huang2025
+id: paper:Huang2025Cardio
 kind: paper
 title: 'Prevalence of cardiovascular symptoms in post-acute COVID-19 syndrome: a meta-analysis'
 status: active
@@ -14,7 +14,7 @@ ontology_terms:
 - meta-analysis
 dataset_usage: []
 source_refs:
-- cite:Huang2025
+- cite:Huang2025Cardio
 related: []
 created: '2026-06-11'
 updated: '2026-06-11'
@@ -26,7 +26,7 @@ updated: '2026-06-11'
 - **Year:** 2025
 - **Journal:** BMC Medicine, 23:70
 - **DOI/URL:** https://doi.org/10.1186/s12916-025-03908-3
-- **BibTeX key:** Huang2025
+- **BibTeX key:** Huang2025Cardio
 - **Source:** PDF
 -->
 

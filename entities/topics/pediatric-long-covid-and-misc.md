@@ -21,7 +21,7 @@ related:
   - search:0008-pediatric-long-covid-misc
 source_refs:
   - cite:Furgier2026
-  - cite:Park2025
+  - cite:Park2025ImmunityDebt
   - cite:Munro2025
   - cite:Gross2024
   - cite:Gross2025

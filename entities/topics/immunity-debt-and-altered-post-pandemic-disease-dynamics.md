@@ -20,7 +20,7 @@ related:
   - question:0017-deflationary-alternatives-vs-shared-pathophysiology
 source_refs:
   - cite:Munro2025
-  - cite:Park2025
+  - cite:Park2025ImmunityDebt
   - cite:Furgier2026
   - cite:Tsergas2025
 created: '2026-07-10'
@@ -37,10 +37,10 @@ Read this topic as a comparator/boundary frame, not as direct PAIS evidence. Its
 ## Key Concepts
 
 **Immunity debt vs. immune disruption.**
-The central unresolved fork. The immunity-debt account (`cite:Munro2025`, `cite:Park2025`, `cite:Furgier2026`) explains post-NPI resurgences of endemic pathogens as *population-level susceptibility accumulation* — cohorts that missed their usual exposure windows during NPIs re-enter a naive, and the resulting waves are epidemiological overshoots requiring no individual immune damage. The immune-disruption account (framed by `cite:Tsergas2025`) argues debt is insufficient and that SARS-CoV-2 leaves durable individual immune "scars." These make different predictions and are not adjudicated by this batch.
+The central unresolved fork. The immunity-debt account (`cite:Munro2025`, `cite:Park2025ImmunityDebt`, `cite:Furgier2026`) explains post-NPI resurgences of endemic pathogens as *population-level susceptibility accumulation* — cohorts that missed their usual exposure windows during NPIs re-enter a naive, and the resulting waves are epidemiological overshoots requiring no individual immune damage. The immune-disruption account (framed by `cite:Tsergas2025`) argues debt is insufficient and that SARS-CoV-2 leaves durable individual immune "scars." These make different predictions and are not adjudicated by this batch.
 
 **Redistribution, not net increase.**
-`cite:Park2025` shows the post-NPI resurgence is not an overall burden increase but a *redistribution of severe disease* toward age cohorts that missed exposure windows (school-age children for influenza; toddlers for RSV) — a birth-cohort susceptibility gradient.
+`cite:Park2025ImmunityDebt` shows the post-NPI resurgence is not an overall burden increase but a *redistribution of severe disease* toward age cohorts that missed exposure windows (school-age children for influenza; toddlers for RSV) — a birth-cohort susceptibility gradient.
 
 **Volumetric vs. per-case severity.**
 `cite:Furgier2026` (French mastoiditis ITS) finds the post-NPI excess is *volumetric* (+71.7% cases, +628% S. pyogenes surge, concentrated in under-5s) while complication and surgery rates *per case* stay stable — i.e., more first infections in naive cohorts, not intrinsically worse disease per infection.
@@ -52,7 +52,7 @@ Because these are exposure-landscape papers, their value to the project is as bo
 
 `cite:Munro2025` (SIRS compartmental model + multi-country surveillance) reproduces the whole endemic-pathogen cycle — annual waves, pandemic-era absence, one large post-NPI overshoot, damped return — from seasonal forcing alone, and explicitly separates *population immunity debt* from *individual immune dysfunction*. Its code is a concrete modeling asset for the vicious-cycle/attractor formalization work and an analogy for the damped-return dynamics of `hypothesis:0010`.
 
-`cite:Park2025` (7 seasons of Korean national surveillance) refines the shape: the resurgence concentrates severe disease in the cohorts that missed exposure, an imprinting-adjacent redistribution conceptually near `hypothesis:0009`.
+`cite:Park2025ImmunityDebt` (7 seasons of Korean national surveillance) refines the shape: the resurgence concentrates severe disease in the cohorts that missed exposure, an imprinting-adjacent redistribution conceptually near `hypothesis:0009`.
 
 `cite:Furgier2026` (9-year French interrupted-time-series, 7,390 mastoiditis cases) is the sharpest instance and literally instantiates a baseline-reserve gate across birth cohorts (`hypothesis:0020`): the under-5 concentration is an age/exposure-history gradient, not a per-case severity shift. It hedges that it cannot separate the immunity gap from emergence of a tropism-shifted M1UK-like S. pyogenes clone.
 
@@ -71,7 +71,7 @@ The honest posture: the batch supplies **no direct measurement of post-RSV / pos
 ## Key References
 
 - `cite:Munro2025`: SIRS compartmental model + multi-country surveillance reproducing the full post-NPI resurgence cycle from seasonal forcing alone; explicitly separates population immunity debt from individual immune dysfunction; SIRS code is a reusable modeling asset.
-- `cite:Park2025`: 7 seasons of Korean national surveillance showing the resurgence is a *redistribution* of severe disease toward exposure-naive age cohorts (school-age influenza; toddler RSV), not a net burden increase.
+- `cite:Park2025ImmunityDebt`: 7 seasons of Korean national surveillance showing the resurgence is a *redistribution* of severe disease toward exposure-naive age cohorts (school-age influenza; toddler RSV), not a net burden increase.
 - `cite:Furgier2026`: 9-year French mastoiditis interrupted-time-series (7,390 cases) — sharpest instance; +71.7% post-NPI, +628% S. pyogenes, concentrated in under-5s, with stable per-case complication/surgery rates (volumetric not per-case severity shift).
 - `cite:Tsergas2025`: BMJ news feature (all quantitative claims UNVERIFIED) framing the immunity-debt-vs-immune-disruption debate; strongest counter-datum is invasive GAS peaking after precautions lifted and in infants too young to have accrued debt.
 

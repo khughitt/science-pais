@@ -7,7 +7,7 @@ status: active
 ontology_terms: []
 datasets: []
 source_refs:
-- cite:Park2025
+- cite:Park2025ImmunityDebt
 related:
 - hypothesis:0004-acute-severity-threshold
 - hypothesis:0020-host-immune-baseline-reserve-gate
@@ -54,5 +54,5 @@ COVID-19 NPIs (mask mandates, school closures, social distancing) suppressed cir
 ## Related
 
 - Topic notes: `topic:population-boundary-conditions-and-effect-modifiers-in-pais`
-- Article notes: `paper:Park2025` (primary source); post-pandemic RSV/influenza papers (Rao JAMA Pediatrics 2023, Winthrop JAMA Netw Open 2024) for cross-context comparison
+- Article notes: `paper:Park2025ImmunityDebt` (primary source); post-pandemic RSV/influenza papers (Rao JAMA Pediatrics 2023, Winthrop JAMA Netw Open 2024) for cross-context comparison
 - Methods/Datasets: KDCA KINRESS (Korea); MMWR RSV surveillance (US); any national post-acute symptom follow-up register linked to acute infection records
