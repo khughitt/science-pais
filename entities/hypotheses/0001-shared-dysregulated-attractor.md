@@ -42,7 +42,8 @@ related:
 - hypothesis:0009-post-infectious-immune-set-point-shift-drives-long-term-autoimmune
 - question:0042-is-the-cross-trigger-1020-chronic-fraction-an-artifact-of-shared-case
 required_capabilities:
-- modality: transcriptomics
+- data_product: data-product:gene-expression
+  qualifiers: {}
 created: "2026-06-11"
 updated: "2026-07-10"
 ---

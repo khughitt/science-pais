@@ -5,13 +5,13 @@ kind: dataset
 title: 23andMe multi-ancestry long-COVID GWAS (Latinx + African-American arms) — proprietary
 status: candidate
 provided_capabilities:
-  - modality: genetics
-    assay: gwas-sumstats
-    trigger: sars-cov-2
+- data_product: data-product:gwas-summary-statistics
+  qualifiers:
     cohort_design: summary-stats
     stratification: ancestry
-created: '2026-07-17'
-updated: '2026-07-17'
+    trigger: sars-cov-2
+created: "2026-07-17"
+updated: "2026-07-17"
 origin: external
 dataset_class: pointer
 source_class: observational
@@ -26,14 +26,7 @@ access:
   exception:
     mode: scope-reduced
     decision_date: '2026-07-17'
-    rationale: 'Gated behind a 23andMe proprietary Data Transfer Agreement; summary
-      statistics are NOT deposited in GWAS Catalog. Below the D-004 third-party-reproducibility
-      bar: a third party cannot re-obtain the data, so no result built on it is independently
-      checkable. Held as the highest-value gated asset for question:0032 -- reportedly
-      the only well-powered non-European long-COVID GWAS (EUR ~42,899 cases; Latinx
-      ~8,631/20,351; African-American ~2,234/5,596). CASE COUNTS UNVERIFIED: taken
-      from search-result text, the medRxiv full text 403''d on fetch; confirm before
-      any use. Requires an explicit authorization decision, not silent inclusion.'
+    rationale: 'Gated behind a 23andMe proprietary Data Transfer Agreement; summary statistics are NOT deposited in GWAS Catalog. Below the D-004 third-party-reproducibility bar: a third party cannot re-obtain the data, so no result built on it is independently checkable. Held as the highest-value gated asset for question:0032 -- reportedly the only well-powered non-European long-COVID GWAS (EUR ~42,899 cases; Latinx ~8,631/20,351; African-American ~2,234/5,596). CASE COUNTS UNVERIFIED: taken from search-result text, the medRxiv full text 403''d on fetch; confirm before any use. Requires an explicit authorization decision, not silent inclusion.'
     followup_task: task:t110
 accessions: []
 ontology_terms:

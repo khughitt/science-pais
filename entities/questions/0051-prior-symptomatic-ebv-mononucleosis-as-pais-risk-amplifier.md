@@ -20,20 +20,13 @@ origins:
 related:
 - hypothesis:0015-ebv-reactivation-consequence-not-cause-of-pais
 - question:0054-ebv-reactivation-autoantibody-emergence-temporal-ordering
-required_capabilities:
-  - stratification: im-history
-created: '2026-07-06'
-updated: '2026-07-06'
+required_capabilities: []
+created: "2026-07-06"
+updated: "2026-07-06"
 added_by: explore-ideas:claude-opus-4-8:cand-population-prior-ebv-mononucleosis
 lens_views:
 - lens: population
-  rationale: EBV reactivation is a proposed PAIS mechanism, but the field measures
-    reactivation at assessment rather than asking whether the primary EBV encounter
-    history predisposes. People who had symptomatic mononucleosis may carry a different
-    EBV-immune set-point (higher latent reservoir, altered memory CD8 economy, immunological
-    scarring) facilitating more vigorous reactivation on a later trigger. This prospective
-    symptomatic-vs-asymptomatic-EBV-history comparison is distinct from cross-sectional
-    serology and has not been performed.
+  rationale: EBV reactivation is a proposed PAIS mechanism, but the field measures reactivation at assessment rather than asking whether the primary EBV encounter history predisposes. People who had symptomatic mononucleosis may carry a different EBV-immune set-point (higher latent reservoir, altered memory CD8 economy, immunological scarring) facilitating more vigorous reactivation on a later trigger. This prospective symptomatic-vs-asymptomatic-EBV-history comparison is distinct from cross-sectional serology and has not been performed.
   origin_ref: explore-ideas-population
 ---
 

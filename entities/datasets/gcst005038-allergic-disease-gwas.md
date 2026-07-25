@@ -2,17 +2,16 @@
 schema_profile: science-entity-base/1.0+dataset/1.0
 id: dataset:gcst005038-allergic-disease-gwas
 kind: dataset
-title: GCST005038 — Shared genetic origin of asthma, hay fever and eczema (Ferreira
-  2017) GWAS summary statistics
+title: GCST005038 — Shared genetic origin of asthma, hay fever and eczema (Ferreira 2017) GWAS summary statistics
 status: candidate
 provided_capabilities:
-  - modality: genetics
-    assay: gwas-sumstats
-    trigger: not-applicable
+- data_product: data-product:gwas-summary-statistics
+  qualifiers:
     cohort_design: summary-stats
     stratification: atopy
-created: '2026-07-17'
-updated: '2026-07-17'
+    trigger: not-applicable
+created: "2026-07-17"
+updated: "2026-07-17"
 origin: external
 dataset_class: deposit
 source_class: observational

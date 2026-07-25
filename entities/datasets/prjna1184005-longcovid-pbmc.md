@@ -4,8 +4,8 @@ id: dataset:prjna1184005-longcovid-pbmc
 kind: dataset
 title: PRJNA1184005 — Long COVID PBMC (pilot, n=7/7)
 status: candidate
-created: '2026-07-07'
-updated: '2026-07-10'
+created: "2026-07-07"
+updated: "2026-07-10"
 consumed_by:
 - plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
@@ -22,19 +22,12 @@ access:
     obtainability: public
     execution: local
     extractability: none
-    notes: SRA raw reads only (14 RNA-seq runs, NovaSeq 6000, ~94 Gbases) — no processed
-      per-sample expression matrix deposited; matrix requires pinned quantification
-      (G4)
+    notes: SRA raw reads only (14 RNA-seq runs, NovaSeq 6000, ~94 Gbases) — no processed per-sample expression matrix deposited; matrix requires pinned quantification (G4)
   verification_method: ''
   exception:
     mode: expanded-to-acquire
     decision_date: '2026-07-10'
-    rationale: 'Evaluated by plan:0010 (t117 feasibility screen) and DEFERRED (G4):
-      SRA raw-reads only, 14 samples, no processed per-sample matrix; a usable matrix
-      requires the pinned raw-read quantification path. Public reads exist but the
-      analysis-ready artifact must be acquired via quantification before use. Not
-      part of the delivered t117 fail-closed matrix; revive only if the harmonized
-      cross-PAIS rank line reopens.'
+    rationale: 'Evaluated by plan:0010 (t117 feasibility screen) and DEFERRED (G4): SRA raw-reads only, 14 samples, no processed per-sample matrix; a usable matrix requires the pinned raw-read quantification path. Public reads exist but the analysis-ready artifact must be acquired via quantification before use. Not part of the delivered t117 fail-closed matrix; revive only if the harmonized cross-PAIS rank line reopens.'
 accessions:
 - PRJNA1184005
 ontology_terms:
@@ -43,10 +36,10 @@ ontology_terms:
 - pbmc
 - rna-seq
 provided_capabilities:
-- modality: transcriptomics
-  assay: bulk-rna
-  trigger: sars-cov-2
-  cohort_design: case-control
+- data_product: data-product:gene-expression-bulk-rna
+  qualifiers:
+    cohort_design: case-control
+    trigger: sars-cov-2
 related:
 - task:t117
 - question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design

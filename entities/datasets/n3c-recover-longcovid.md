@@ -3,8 +3,8 @@ id: dataset:n3c-recover-longcovid
 kind: dataset
 title: N3C — National COVID Cohort Collaborative (+ RECOVER-EHR)
 status: candidate
-created: '2026-06-21'
-updated: '2026-07-10'
+created: "2026-06-21"
+updated: "2026-07-10"
 origin: external
 source_class: observational
 tier: evaluate-next
@@ -18,21 +18,12 @@ access:
     obtainability: approved-project
     execution: trusted-environment
     extractability: aggregate-reviewed
-    notes: Describes the De-identified/Limited (enclave) route — the real-signal tier
-      this mixed umbrella now represents (the open synthetic tier is broken out as
-      dataset:n3c-recover-longcovid-synthetic). Access is DUA + institutional + approved-project
-      onboarding; compute is enclave-only (Palantir Foundry); only export-reviewed
-      aggregates leave. Below the third-party-reproducible bar (D-004). Refines D-004's
-      informal 'insider-only' label to the precise lattice class trust-based-output
-      (reviewed aggregates DO leave — not extract:none, not custodian-run).
+    notes: Describes the De-identified/Limited (enclave) route — the real-signal tier this mixed umbrella now represents (the open synthetic tier is broken out as dataset:n3c-recover-longcovid-synthetic). Access is DUA + institutional + approved-project onboarding; compute is enclave-only (Palantir Foundry); only export-reviewed aggregates leave. Below the third-party-reproducible bar (D-004). Refines D-004's informal 'insider-only' label to the precise lattice class trust-based-output (reviewed aggregates DO leave — not extract:none, not custodian-run).
   verification_method: ''
   exception:
     mode: scope-reduced
     decision_date: '2026-07-10'
-    rationale: Gated N3C/RECOVER enclave (DUA + institutional + approved-project onboarding;
-      Palantir Foundry enclave compute; only export-reviewed aggregates leave). Below
-      the third-party-reproducible bar per decision D-004; held as boundary-monitor/read-across,
-      never executed. Access cannot be independently verified by design.
+    rationale: Gated N3C/RECOVER enclave (DUA + institutional + approved-project onboarding; Palantir Foundry enclave compute; only export-reviewed aggregates leave). Below the third-party-reproducible bar per decision D-004; held as boundary-monitor/read-across, never executed. Access cannot be independently verified by design.
 accessions: []
 ontology_terms:
 - long-covid
@@ -40,13 +31,7 @@ ontology_terms:
 - ehr
 - computable-phenotype
 - sex-differences
-provided_capabilities:
-- modality: clinical-ehr
-  assay: ehr-coded
-  trigger: sars-cov-2
-  cohort_design: prospective-longitudinal
-  case_definition: who-lc
-  stratification: sex
+provided_capabilities: []
 related:
 - task:t013
 - task:t079

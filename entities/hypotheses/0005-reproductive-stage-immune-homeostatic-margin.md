@@ -37,8 +37,9 @@ related:
 - cycles:topic:reproductive-aging-and-menopause
 - question:0047-menstrual-cycle-and-ultradian-symptom-periodicity-as-a-mechanistic
 required_capabilities:
-- analysis_role: mr_exposure
-  trait: sex-hormone-biomarker
+- data_product: data-product:gwas-summary-statistics
+  qualifiers:
+    trait: sex-hormone-biomarker
 created: "2026-06-19"
 updated: "2026-07-19"
 datasets:

@@ -1,7 +1,7 @@
 ---
 id: dataset:gse14577-pi-cfs-pbmc-microarray
 kind: dataset
-title: "GSE14577 — PI-CFS PBMC microarray"
+title: GSE14577 — PI-CFS PBMC microarray
 status: candidate
 created: "2026-06-26"
 updated: "2026-06-26"
@@ -18,29 +18,35 @@ access:
   availability: available
   verified: true
   verification_method: retrieved
-  last_reviewed: "2026-06-26"
-  verified_by: "agent (t065)"
-  source_url: "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE14577"
+  last_reviewed: '2026-06-26'
+  verified_by: agent (t065)
+  source_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE14577
   reproducibility:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "Open GEO series (GSE14577) — depositor intensity tables download without credentials and rerun locally. Third-party-reproducible."
-accessions: [GSE14577]
-ontology_terms: [post-infectious-cfs, me-cfs, pbmc, microarray, transcriptomics]
+    notes: Open GEO series (GSE14577) — depositor intensity tables download without credentials and rerun locally. Third-party-reproducible.
+accessions:
+- GSE14577
+ontology_terms:
+- post-infectious-cfs
+- me-cfs
+- pbmc
+- microarray
+- transcriptomics
 provided_capabilities:
-  - modality: transcriptomics
-    assay: microarray
-    trigger: mixed
+- data_product: data-product:gene-expression-microarray
+  qualifiers:
     cohort_design: case-control
+    trigger: mixed
 source_refs:
-  - cite:Gow2009
+- cite:Gow2009
 related:
-  - task:t035
-  - task:t065
-  - question:0001-shared-molecular-signature-across-triggers
-  - paper:Gow2009
-  - hypothesis:0001-shared-dysregulated-attractor
+- task:t035
+- task:t065
+- question:0001-shared-molecular-signature-across-triggers
+- paper:Gow2009
+- hypothesis:0001-shared-dysregulated-attractor
 ---
 
 # GSE14577 — PI-CFS PBMC microarray

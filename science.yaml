@@ -278,4 +278,4 @@ health:
     - hypothesis/0020-host-immune-baseline-reserve-gate
     - belief_state flips
     reason: Reviewed 2026-07-15 health triage; the bundle's well_supported state hinges on the same single Azhir2026 mediation line as proposition:0043, and is intentionally held fragile because its rank-ordering prediction (P3) across host strata is untested and no independent pre-infection reserve axis has been measured.
-entity_schema_version: 2
+entity_schema_version: 3

@@ -4,8 +4,8 @@ id: dataset:scilifelab-28832492-longcovid-pbmc
 kind: dataset
 title: SciLifeLab 28832492 — Long COVID PBMC (28 mo)
 status: candidate
-created: '2026-07-07'
-updated: '2026-07-07'
+created: "2026-07-07"
+updated: "2026-07-07"
 consumed_by:
 - plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
@@ -18,14 +18,14 @@ access:
   availability: available
   verified: true
   verification_method: landing-confirmed
-  last_reviewed: "2026-07-08"
-  verified_by: "agent (t117 WP1)"
+  last_reviewed: '2026-07-08'
+  verified_by: agent (t117 WP1)
   source_url: https://doi.org/10.17044/scilifelab.28832492
   reproducibility:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "FigShare deposit contains salmon.merged.gene_counts.tsv (22 MB, per-sample nf-core/rnaseq gene counts, all 110 samples) + SamplesPC.txt (sample info) + README/MANIFEST; publicly downloadable, staging to disk deferred to workflow execution"
+    notes: FigShare deposit contains salmon.merged.gene_counts.tsv (22 MB, per-sample nf-core/rnaseq gene counts, all 110 samples) + SamplesPC.txt (sample info) + README/MANIFEST; publicly downloadable, staging to disk deferred to workflow execution
 accessions: []
 ontology_terms:
 - long-covid
@@ -33,10 +33,10 @@ ontology_terms:
 - pbmc
 - rna-seq
 provided_capabilities:
-  - modality: transcriptomics
-    assay: bulk-rna
-    trigger: sars-cov-2
+- data_product: data-product:gene-expression-bulk-rna
+  qualifiers:
     cohort_design: case-control
+    trigger: sars-cov-2
 related:
 - task:t117
 - question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design

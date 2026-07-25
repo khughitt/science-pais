@@ -1,7 +1,7 @@
 ---
 id: dataset:mcam-mecfs
 kind: dataset
-title: "MCAM — Multi-Site Clinical Assessment of ME/CFS (CDC)"
+title: MCAM — Multi-Site Clinical Assessment of ME/CFS (CDC)
 status: candidate
 created: "2026-06-21"
 updated: "2026-06-21"
@@ -13,27 +13,27 @@ access:
   level: registration
   availability: available
   verified: false
-  source_url: "https://searchmecfs.org/Home/Studies"
+  source_url: https://searchmecfs.org/Home/Studies
   reproducibility:
     obtainability: approved-researcher
     execution: local
     extractability: analysis-dataset
-    notes: "Clinical data + biospecimen metadata obtainable via a searchMECFS / MapMECFS data-access application (broadly available to qualified researchers), downloaded for local rerun -> credentialed-reproducible. Application/governance overhead and deliberate sub-study sex/age selection are caveats, not access-route blockers."
+    notes: Clinical data + biospecimen metadata obtainable via a searchMECFS / MapMECFS data-access application (broadly available to qualified researchers), downloaded for local rerun -> credentialed-reproducible. Application/governance overhead and deliberate sub-study sex/age selection are caveats, not access-route blockers.
 accessions: []
-ontology_terms: [me-cfs, post-infectious-fatigue, clinical-cohort, biospecimens, sex-differences]
-provided_capabilities:
-  - modality: epidemiology
-    trigger: mixed
-    cohort_design: cross-sectional
-    outcome: fatigue
-    stratification: sex
+ontology_terms:
+- me-cfs
+- post-infectious-fatigue
+- clinical-cohort
+- biospecimens
+- sex-differences
+provided_capabilities: []
 related:
-  - task:t013
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - topic:shared-failure-mode-across-pais
-  - question:0014-which-pais-case-definition-is-most-biologically-coherent
+- task:t013
+- question:0007-mechanism-of-female-predominance-in-pais
+- topic:shared-failure-mode-across-pais
+- question:0014-which-pais-case-definition-is-most-biologically-coherent
 source_refs:
-  - cite:Unger2017
+- cite:Unger2017
 ---
 
 # MCAM — Multi-Site Clinical Assessment of ME/CFS (CDC)

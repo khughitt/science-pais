@@ -12,20 +12,13 @@ origins:
   ref: explore-ideas-population
 related:
 - hypothesis:0020-host-immune-baseline-reserve-gate
-required_capabilities:
-  - stratification: pregnancy
-created: '2026-07-04'
-updated: '2026-07-16'
+required_capabilities: []
+created: "2026-07-04"
+updated: "2026-07-16"
 added_by: explore-ideas:claude-opus-4-8:cand-population-pregnancy-peripartum-pais
 lens_views:
 - lens: population
-  rationale: 'hypothesis:0005 posits reproductive-stage transitions alter immune homeostatic
-    margin, but the project''s reproductive-stage work is menopause-centered. Pregnancy
-    is a distinct, sharply characterized reproductive-stage perturbation (elevated
-    Tregs, Th2 polarization, complement shifts) followed by rapid postpartum rebound
-    — a natural experiment isolating which PAIS mechanisms are Th1/autoimmune- vs
-    Th2/mast-cell-dependent. Sharpens hypothesis:0005 into an under-studied reproductive
-    state.
+  rationale: 'hypothesis:0005 posits reproductive-stage transitions alter immune homeostatic margin, but the project''s reproductive-stage work is menopause-centered. Pregnancy is a distinct, sharply characterized reproductive-stage perturbation (elevated Tregs, Th2 polarization, complement shifts) followed by rapid postpartum rebound — a natural experiment isolating which PAIS mechanisms are Th1/autoimmune- vs Th2/mast-cell-dependent. Sharpens hypothesis:0005 into an under-studied reproductive state.
 
     '
   origin_ref: explore-ideas-population

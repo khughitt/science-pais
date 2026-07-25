@@ -4,8 +4,8 @@ id: dataset:prjna1001790-post-chikv-wholeblood
 kind: dataset
 title: PRJNA1001790 — Post-chikungunya whole-blood transcriptome
 status: candidate
-created: '2026-07-07'
-updated: '2026-07-10'
+created: "2026-07-07"
+updated: "2026-07-10"
 consumed_by:
 - plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
@@ -18,18 +18,12 @@ access:
   availability: available
   verified: false
   source_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1001790
-  notes: 'Raw FASTQ only (SRA: 98 BioSamples / 196 experiments = total-RNA + small-RNA
-    library per sample); no processed per-sample expression matrix deposited. Raw
-    reads only — needs pinned quantification (G4) before staging.'
+  notes: 'Raw FASTQ only (SRA: 98 BioSamples / 196 experiments = total-RNA + small-RNA library per sample); no processed per-sample expression matrix deposited. Raw reads only — needs pinned quantification (G4) before staging.'
   verification_method: ''
   exception:
     mode: scope-reduced
     decision_date: '2026-07-10'
-    rationale: 'Evaluated by plan:0010 (t117) and DEMOTED: sequenced post-acute timepoint
-      is day-21 (~3 wk, below the >=4-wk post-acute floor), no day-90 transcriptome,
-      chronic-vs-recovered contrast, raw-FASTQ-only. Removes chikungunya as a strict-primary
-      trigger; retained only as a candidate for an adjacent chronification-predictor
-      triangulation. Not in the delivered t117 matrix.'
+    rationale: 'Evaluated by plan:0010 (t117) and DEMOTED: sequenced post-acute timepoint is day-21 (~3 wk, below the >=4-wk post-acute floor), no day-90 transcriptome, chronic-vs-recovered contrast, raw-FASTQ-only. Removes chikungunya as a strict-primary trigger; retained only as a candidate for an adjacent chronification-predictor triangulation. Not in the delivered t117 matrix.'
 accessions:
 - PRJNA1001790
 ontology_terms:
@@ -38,10 +32,10 @@ ontology_terms:
 - whole-blood
 - rna-seq
 provided_capabilities:
-- modality: transcriptomics
-  assay: bulk-rna
-  trigger: chikungunya
-  cohort_design: case-control
+- data_product: data-product:gene-expression-bulk-rna
+  qualifiers:
+    cohort_design: case-control
+    trigger: chikungunya
 related:
 - task:t117
 - question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design

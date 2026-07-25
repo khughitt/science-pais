@@ -1,7 +1,7 @@
 ---
 id: dataset:opensafely-longcovid
 kind: dataset
-title: "OpenSAFELY — English primary-care EHR (COVID / long COVID)"
+title: OpenSAFELY — English primary-care EHR (COVID / long COVID)
 status: candidate
 origin: external
 dataset_class: pointer
@@ -14,37 +14,41 @@ access:
   availability: available
   verified: true
   verification_method: landing-confirmed
-  last_reviewed: "2026-07-01"
-  source_url: "https://www.opensafely.org/"
+  last_reviewed: '2026-07-01'
+  source_url: https://www.opensafely.org/
   reproducibility:
     obtainability: approved-project
     execution: federated-code-to-data
     extractability: aggregate-reviewed
-    notes: "Federated code-to-data: an approved project submits analysis code that runs against TPP/EMIS backends; row-level data are never obtained and only disclosure-controlled (SDC) aggregates return. Below the third-party-reproducible bar (D-004). This refines D-004's informal 'insider-only' label to the precise lattice class trust-based-output — reviewed aggregates DO leave, so it is not extract:none. Open code model does not rescue reproducibility because the DATA class is gated."
+    notes: 'Federated code-to-data: an approved project submits analysis code that runs against TPP/EMIS backends; row-level data are never obtained and only disclosure-controlled (SDC) aggregates return. Below the third-party-reproducible bar (D-004). This refines D-004''s informal ''insider-only'' label to the precise lattice class trust-based-output — reviewed aggregates DO leave, so it is not extract:none. Open code model does not rescue reproducibility because the DATA class is gated.'
 accessions: []
-ontology_terms: [long-covid, sars-cov-2, ehr, primary-care, population-based, computable-phenotype, sex-differences, autoimmune, ascertainment-bias]
-provided_capabilities:
-  - modality: clinical-ehr
-    assay: ehr-coded
-    trigger: sars-cov-2
-    cohort_design: prospective-longitudinal
-    stratification: sex
+ontology_terms:
+- long-covid
+- sars-cov-2
+- ehr
+- primary-care
+- population-based
+- computable-phenotype
+- sex-differences
+- autoimmune
+- ascertainment-bias
+provided_capabilities: []
 related:
-  - task:t079
-  - plan:0005-autoimmune-diathesis-sex-modifier-pais-analysis-plan
-  - hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - dataset:n3c-recover-longcovid
-  - interpretation:0031-t079-n3c-vs-opensafely-vehicle-decision
-  - interpretation:0032-t079-bc3-autoimmune-stratum-granularity
-  - interpretation:0033-t079-bc5-pasc-case-definition-lock
-  - interpretation:0034-t079-bc6-acute-severity-dateability
-  - interpretation:0035-t079-bc7-individual-utilisation
+- task:t079
+- plan:0005-autoimmune-diathesis-sex-modifier-pais-analysis-plan
+- hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
+- question:0007-mechanism-of-female-predominance-in-pais
+- dataset:n3c-recover-longcovid
+- interpretation:0031-t079-n3c-vs-opensafely-vehicle-decision
+- interpretation:0032-t079-bc3-autoimmune-stratum-granularity
+- interpretation:0033-t079-bc5-pasc-case-definition-lock
+- interpretation:0034-t079-bc6-acute-severity-dateability
+- interpretation:0035-t079-bc7-individual-utilisation
 source_refs:
-  - cite:Williamson2020
-  - cite:Andrews2022
-  - cite:WalkerLongCOVID2021
-  - cite:Henderson2024
+- cite:Williamson2020
+- cite:Andrews2022
+- cite:WalkerLongCOVID2021
+- cite:Henderson2024
 created: "2026-07-01"
 updated: "2026-07-01"
 ---

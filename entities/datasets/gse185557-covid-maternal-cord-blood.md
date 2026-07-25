@@ -2,16 +2,15 @@
 schema_profile: science-entity-base/1.0+dataset/1.0
 id: dataset:gse185557-covid-maternal-cord-blood
 kind: dataset
-title: GSE185557 — Maternal-fetal immune responses in pregnant women infected with
-  SARS-CoV-2 (maternal + cord blood RNA-seq)
+title: GSE185557 — Maternal-fetal immune responses in pregnant women infected with SARS-CoV-2 (maternal + cord blood RNA-seq)
 status: candidate
 provided_capabilities:
-  - modality: transcriptomics
-    assay: bulk-rna
-    trigger: sars-cov-2
+- data_product: data-product:gene-expression-bulk-rna
+  qualifiers:
     cohort_design: cross-sectional
-created: '2026-07-17'
-updated: '2026-07-17'
+    trigger: sars-cov-2
+created: "2026-07-17"
+updated: "2026-07-17"
 origin: external
 dataset_class: deposit
 source_class: observational

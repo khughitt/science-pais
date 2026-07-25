@@ -4,8 +4,8 @@ id: dataset:gse251872-pime-cfs-pbmc
 kind: dataset
 title: GSE251872 — PI-ME/CFS PBMC transcriptome (NIH intramural)
 status: candidate
-created: '2026-07-07'
-updated: '2026-07-07'
+created: "2026-07-07"
+updated: "2026-07-07"
 consumed_by:
 - plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
@@ -18,14 +18,14 @@ access:
   availability: available
   verified: true
   verification_method: landing-confirmed
-  last_reviewed: "2026-07-08"
-  verified_by: "agent (t117 WP1)"
+  last_reviewed: '2026-07-08'
+  verified_by: agent (t117 WP1)
   source_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE251872
   reproducibility:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "Per-sample count data in GSE251872_RAW.tar (per-sample TXT files, 4.8 MB) plus TXT series matrix; staging to disk deferred to workflow execution."
+    notes: Per-sample count data in GSE251872_RAW.tar (per-sample TXT files, 4.8 MB) plus TXT series matrix; staging to disk deferred to workflow execution.
 accessions:
 - GSE251872
 ontology_terms:
@@ -34,10 +34,10 @@ ontology_terms:
 - pbmc
 - rna-seq
 provided_capabilities:
-  - modality: transcriptomics
-    assay: bulk-rna
-    trigger: post-infectious-mecfs
+- data_product: data-product:gene-expression-bulk-rna
+  qualifiers:
     cohort_design: case-control
+    trigger: post-infectious-mecfs
 related:
 - task:t117
 - question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design

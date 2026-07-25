@@ -1,7 +1,7 @@
 ---
 id: dataset:msigdb-2024-1-hs-source-gmt-collections
 kind: dataset
-title: "MSigDB 2024.1.Hs source GMT collections"
+title: MSigDB 2024.1.Hs source GMT collections
 status: candidate
 created: "2026-06-26"
 updated: "2026-06-26"
@@ -16,25 +16,30 @@ access:
   availability: available
   verified: true
   verification_method: landing-confirmed
-  last_reviewed: "2026-06-26"
-  verified_by: "agent (t065)"
-  source_url: "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/"
+  last_reviewed: '2026-06-26'
+  verified_by: agent (t065)
+  source_url: https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/
   reproducibility:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "Public Broad MSigDB release — GMT collections download without credentials and rerun locally. Reference dataset. Third-party-reproducible."
-accessions: [MSigDB:2024.1.Hs]
-ontology_terms: [msigdb, gene-sets, hallmark, reactome, go-biological-process, homo-sapiens]
-provided_capabilities:
-  - modality: gene-sets
-    trigger: not-applicable
+    notes: Public Broad MSigDB release — GMT collections download without credentials and rerun locally. Reference dataset. Third-party-reproducible.
+accessions:
+- MSigDB:2024.1.Hs
+ontology_terms:
+- msigdb
+- gene-sets
+- hallmark
+- reactome
+- go-biological-process
+- homo-sapiens
+provided_capabilities: []
 related:
-  - task:t035
-  - task:t065
-  - pre-registration:0002-cross-trigger-pathway-overlap
-  - plan:0003-cross-trigger-pathway-overlap-pipeline
-  - question:0001-shared-molecular-signature-across-triggers
+- task:t035
+- task:t065
+- pre-registration:0002-cross-trigger-pathway-overlap
+- plan:0003-cross-trigger-pathway-overlap-pipeline
+- question:0001-shared-molecular-signature-across-triggers
 ---
 
 # MSigDB 2024.1.Hs source GMT collections

@@ -4,8 +4,8 @@ id: dataset:gse270045-longcovid-mecfs-wholeblood
 kind: dataset
 title: GSE270045 — post-COVID ME/CFS whole-blood transcriptome
 status: candidate
-created: '2026-07-07'
-updated: '2026-07-07'
+created: "2026-07-07"
+updated: "2026-07-07"
 consumed_by:
 - plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
@@ -18,14 +18,14 @@ access:
   availability: available
   verified: true
   verification_method: landing-confirmed
-  last_reviewed: "2026-07-08"
-  verified_by: "agent (t117 WP1)"
+  last_reviewed: '2026-07-08'
+  verified_by: agent (t117 WP1)
   source_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE270045
   reproducibility:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "Per-sample count matrix downloadable: GSE270045_LC_counts.tsv.gz (2.4 Mb, TSV, 36 samples). Staging to disk deferred to workflow execution."
+    notes: 'Per-sample count matrix downloadable: GSE270045_LC_counts.tsv.gz (2.4 Mb, TSV, 36 samples). Staging to disk deferred to workflow execution.'
 accessions:
 - GSE270045
 ontology_terms:
@@ -35,10 +35,10 @@ ontology_terms:
 - whole-blood
 - rna-seq
 provided_capabilities:
-  - modality: transcriptomics
-    assay: bulk-rna
-    trigger: sars-cov-2
+- data_product: data-product:gene-expression-bulk-rna
+  qualifiers:
     cohort_design: case-control
+    trigger: sars-cov-2
 related:
 - task:t117
 - question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design

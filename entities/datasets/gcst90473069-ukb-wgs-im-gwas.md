@@ -2,17 +2,16 @@
 schema_profile: science-entity-base/1.0+dataset/1.0
 id: dataset:gcst90473069-ukb-wgs-im-gwas
 kind: dataset
-title: GCST90473069 — Infectious mononucleosis (ICD10 B27) GWAS summary statistics,
-  UK Biobank WGS
+title: GCST90473069 — Infectious mononucleosis (ICD10 B27) GWAS summary statistics, UK Biobank WGS
 status: candidate
 provided_capabilities:
-  - modality: genetics
-    assay: gwas-sumstats
-    trigger: ebv
+- data_product: data-product:gwas-summary-statistics
+  qualifiers:
     cohort_design: summary-stats
     stratification: im-history
-created: '2026-07-17'
-updated: '2026-07-17'
+    trigger: ebv
+created: "2026-07-17"
+updated: "2026-07-17"
 origin: external
 dataset_class: deposit
 source_class: observational

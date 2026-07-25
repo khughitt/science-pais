@@ -2,16 +2,15 @@
 schema_profile: science-entity-base/1.0+dataset/1.0
 id: dataset:gse303888-immunocompromised-gi-covid-reservoir
 kind: dataset
-title: GSE303888 — SARS-CoV-2 GI-epithelium inflammation in immunocompromised cancer
-  patients (GeoMx spatial)
+title: GSE303888 — SARS-CoV-2 GI-epithelium inflammation in immunocompromised cancer patients (GeoMx spatial)
 status: candidate
 provided_capabilities:
-  - modality: transcriptomics
-    assay: spatial-rna
-    trigger: sars-cov-2
+- data_product: data-product:gene-expression-spatial
+  qualifiers:
     cohort_design: prospective-longitudinal
-created: '2026-07-17'
-updated: '2026-07-17'
+    trigger: sars-cov-2
+created: "2026-07-17"
+updated: "2026-07-17"
 origin: external
 dataset_class: deposit
 source_class: observational

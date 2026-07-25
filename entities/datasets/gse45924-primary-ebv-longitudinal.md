@@ -2,16 +2,15 @@
 schema_profile: science-entity-base/1.0+dataset/1.0
 id: dataset:gse45924-primary-ebv-longitudinal
 kind: dataset
-title: GSE45924 — Peripheral blood gene expression during primary EBV infection (seronegative
-  / acute IM / latent)
+title: GSE45924 — Peripheral blood gene expression during primary EBV infection (seronegative / acute IM / latent)
 status: candidate
 provided_capabilities:
-  - modality: transcriptomics
-    assay: microarray
-    trigger: ebv
+- data_product: data-product:gene-expression-microarray
+  qualifiers:
     cohort_design: prospective-longitudinal
-created: '2026-07-17'
-updated: '2026-07-17'
+    trigger: ebv
+created: "2026-07-17"
+updated: "2026-07-17"
 origin: external
 dataset_class: deposit
 source_class: observational

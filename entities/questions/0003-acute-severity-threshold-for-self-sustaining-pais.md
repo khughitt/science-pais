@@ -1,9 +1,7 @@
 ---
 id: question:0003-acute-severity-threshold-for-self-sustaining-pais
 kind: question
-title: Is there a quantifiable acute-phase severity threshold above which homeostatic
-  recovery becomes self-sustaining failure rather than self-resolving, and is it shared
-  across pathogens?
+title: Is there a quantifiable acute-phase severity threshold above which homeostatic recovery becomes self-sustaining failure rather than self-resolving, and is it shared across pathogens?
 status: active
 ontology_terms:
 - disease severity
@@ -18,11 +16,9 @@ source_refs:
 - cite:Xie2024
 related:
 - topic:shared-failure-mode-across-pais
-required_capabilities:
-  - cohort_design: prospective-longitudinal
-    stratification: severity
-created: '2026-06-11'
-updated: '2026-06-11'
+required_capabilities: []
+created: "2026-06-11"
+updated: "2026-06-11"
 ---
 
 # Is there a quantifiable acute-phase severity threshold above which homeostatic recovery becomes self-sustaining failure rather than self-resolving, and is it shared across pathogens?

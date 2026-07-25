@@ -2,16 +2,15 @@
 schema_profile: science-entity-base/1.0+dataset/1.0
 id: dataset:gse252331-post-septic-myeloid-citeseq
 kind: dataset
-title: GSE252331 — Post-septic peripheral myeloid compartment, rapid-recovery vs chronic
-  critical illness (CITE-seq)
+title: GSE252331 — Post-septic peripheral myeloid compartment, rapid-recovery vs chronic critical illness (CITE-seq)
 status: candidate
 provided_capabilities:
-  - modality: transcriptomics
-    assay: cite-seq
-    trigger: sepsis
+- data_product: data-product:gene-expression-single-cell
+  qualifiers:
     cohort_design: prospective-longitudinal
-created: '2026-07-17'
-updated: '2026-07-17'
+    trigger: sepsis
+created: "2026-07-17"
+updated: "2026-07-17"
 origin: external
 dataset_class: deposit
 source_class: observational

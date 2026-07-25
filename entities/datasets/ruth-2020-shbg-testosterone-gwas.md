@@ -2,11 +2,10 @@
 schema_profile: science-entity-base/1.0+dataset/1.0
 id: dataset:ruth-2020-shbg-testosterone-gwas
 kind: dataset
-title: Ruth 2020 SHBG and testosterone GWAS summary statistics (sex-specific, European
-  ancestry)
+title: Ruth 2020 SHBG and testosterone GWAS summary statistics (sex-specific, European ancestry)
 status: candidate
-created: '2026-07-03'
-updated: '2026-07-03'
+created: "2026-07-03"
+updated: "2026-07-03"
 origin: external
 dataset_class: reference
 source_class: observational
@@ -24,7 +23,7 @@ access:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "Public GWAS summary statistics: downloadable harmonised flat files on the GWAS Catalog FTP for male-only, female-only, and sex-combined strata (fullPvalueSet=true), re-poolable/re-analyzable locally at the summary grain — third-party-reproducible. Not individual-level genotypes (a scientific-strength limit, not an access one)."
+    notes: 'Public GWAS summary statistics: downloadable harmonised flat files on the GWAS Catalog FTP for male-only, female-only, and sex-combined strata (fullPvalueSet=true), re-poolable/re-analyzable locally at the summary grain — third-party-reproducible. Not individual-level genotypes (a scientific-strength limit, not an access one).'
 accessions:
 - GWAS_Catalog:GCST90012109
 - GWAS_Catalog:GCST90012107
@@ -47,13 +46,11 @@ ontology_terms:
 - homo-sapiens
 - mr-exposure
 provided_capabilities:
-- modality: genetics
-  assay: gwas-sumstats
-  cohort_design: summary-stats
-  analysis_role: mr_exposure
-  trait: sex-hormone-biomarker
-  outcome: sex-hormone-level
-  stratification: sex
+- data_product: data-product:gwas-summary-statistics
+  qualifiers:
+    cohort_design: summary-stats
+    stratification: sex
+    trait: sex-hormone-biomarker
 consumed_by:
 - plan:0008-wave1-mr-autoimmune-hormone-longcovid-design
 - plan:0009-wave1-mr-hormone-pilot

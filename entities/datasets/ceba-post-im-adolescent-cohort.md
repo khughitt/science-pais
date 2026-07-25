@@ -2,17 +2,16 @@
 schema_profile: science-entity-base/1.0+dataset/1.0
 id: dataset:ceba-post-im-adolescent-cohort
 kind: dataset
-title: CEBA — Chronic fatigue following acute EBV infection in adolescents (NCT02335437),
-  author-request only
+title: CEBA — Chronic fatigue following acute EBV infection in adolescents (NCT02335437), author-request only
 status: candidate
 provided_capabilities:
-  - modality: immunophenotype
-    assay: olink
-    trigger: ebv
+- data_product: data-product:proteomics-affinity
+  qualifiers:
     cohort_design: prospective-longitudinal
     stratification: im-history
-created: '2026-07-17'
-updated: '2026-07-17'
+    trigger: ebv
+created: "2026-07-17"
+updated: "2026-07-17"
 origin: external
 dataset_class: pointer
 source_class: observational
@@ -27,19 +26,7 @@ access:
   exception:
     mode: scope-reduced
     decision_date: '2026-07-17'
-    rationale: 'No repository deposit exists. Data-availability statement is author-request
-      (''available by the authors, without undue reservation'') under Norwegian REK/consent
-      terms; not third-party retrievable, so below the D-004 bar. Held as the best-matched
-      IM->fatigue vehicle for question:0051: 200 IM adolescents + 70 controls, prospective
-      to 6-month chronic-fatigue outcome, with PBMC stimulation panels, plasma cytokines,
-      hair cortisol. Author-request availability is DEAD/MISSING data, not a lighter
-      gate: no defined procedure, no enforcement, no appeal, and unfalsifiable (it
-      cannot be shown to be closed). It fails third-party reproducibility on the same
-      ground as an enclave -- arguably harder, since an enclave at least publishes a
-      followable procedure with a decidable outcome. Must NOT be ranked above
-      credential-gated/enclave sources on tractability, must not satisfy coverage for
-      question:0051, and must not justify deferring the search for a deposited
-      alternative. Scientific value is real; availability is not.'
+    rationale: 'No repository deposit exists. Data-availability statement is author-request (''available by the authors, without undue reservation'') under Norwegian REK/consent terms; not third-party retrievable, so below the D-004 bar. Held as the best-matched IM->fatigue vehicle for question:0051: 200 IM adolescents + 70 controls, prospective to 6-month chronic-fatigue outcome, with PBMC stimulation panels, plasma cytokines, hair cortisol. Author-request availability is DEAD/MISSING data, not a lighter gate: no defined procedure, no enforcement, no appeal, and unfalsifiable (it cannot be shown to be closed). It fails third-party reproducibility on the same ground as an enclave -- arguably harder, since an enclave at least publishes a followable procedure with a decidable outcome. Must NOT be ranked above credential-gated/enclave sources on tractability, must not satisfy coverage for question:0051, and must not justify deferring the search for a deposited alternative. Scientific value is real; availability is not.'
     followup_task: task:t110
 accessions: []
 ontology_terms:

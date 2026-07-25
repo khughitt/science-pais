@@ -31,8 +31,9 @@ related:
 - pre-registration:0003-cross-syndrome-paired-biopsy-primary-dysautonomia-controls
 - interpretation:0010-t006-functional-gpcr-autoantibody-ingestion
 required_capabilities:
-- analysis_role: mr_exposure
-  trait: autoimmune-disease
+- data_product: data-product:gwas-summary-statistics
+  qualifiers:
+    trait: autoimmune-disease
 created: "2026-06-24"
 updated: "2026-07-03"
 datasets:

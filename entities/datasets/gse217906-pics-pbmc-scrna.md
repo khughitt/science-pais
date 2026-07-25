@@ -2,16 +2,15 @@
 schema_profile: science-entity-base/1.0+dataset/1.0
 id: dataset:gse217906-pics-pbmc-scrna
 kind: dataset
-title: GSE217906 — Immune-cell signatures of persistent inflammation-immunosuppression
-  and catabolism syndrome (PICS)
+title: GSE217906 — Immune-cell signatures of persistent inflammation-immunosuppression and catabolism syndrome (PICS)
 status: candidate
 provided_capabilities:
-  - modality: transcriptomics
-    assay: scrna
-    trigger: sepsis
+- data_product: data-product:gene-expression-single-cell
+  qualifiers:
     cohort_design: case-control
-created: '2026-07-17'
-updated: '2026-07-17'
+    trigger: sepsis
+created: "2026-07-17"
+updated: "2026-07-17"
 origin: external
 dataset_class: deposit
 source_class: observational

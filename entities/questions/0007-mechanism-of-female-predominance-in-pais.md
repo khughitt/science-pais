@@ -1,9 +1,7 @@
 ---
 id: question:0007-mechanism-of-female-predominance-in-pais
 kind: question
-title: What mechanism underlies the consistent female predominance of post-infectious
-  fatigue across PAIS, and does it genuinely track somatic fatigue more than
-  post-infectious depression?
+title: What mechanism underlies the consistent female predominance of post-infectious fatigue across PAIS, and does it genuinely track somatic fatigue more than post-infectious depression?
 status: active
 ontology_terms:
 - sex differences
@@ -50,10 +48,9 @@ related:
 - immunity:topic:sex-as-a-modifier-of-immune-homeostasis
 - cycles:topic:menstrual-cycle-menopause-immune-modulation
 - cycles:topic:reproductive-aging-and-menopause
-required_capabilities:
-  - stratification: sex
-created: '2026-06-11'
-updated: '2026-07-18'
+required_capabilities: []
+created: "2026-06-11"
+updated: "2026-07-18"
 ---
 
 # What mechanism underlies the consistent female predominance of post-infectious fatigue across PAIS, and does it genuinely track somatic fatigue more than post-infectious depression?

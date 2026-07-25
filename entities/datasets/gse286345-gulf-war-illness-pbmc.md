@@ -4,8 +4,8 @@ id: dataset:gse286345-gulf-war-illness-pbmc
 kind: dataset
 title: GSE286345 — Gulf War Illness PBMC RNA-seq (non-infectious specificity, WP4b queued/pending)
 status: candidate
-created: '2026-07-09'
-updated: '2026-07-09'
+created: "2026-07-09"
+updated: "2026-07-09"
 consumed_by:
 - plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
@@ -18,14 +18,14 @@ access:
   availability: available
   verified: true
   verification_method: landing-confirmed
-  last_reviewed: "2026-07-09"
-  verified_by: "agent (t117 WP4b sweep)"
+  last_reviewed: '2026-07-09'
+  verified_by: agent (t117 WP4b sweep)
   source_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE286345
   reproducibility:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "Per-sample normalized-count CSV (GSE286345_norm_counts_STAR_GWI_FM.csv.gz) + raw reads SRA PRJNA1208952. Staging DEFERRED and admissible_PENDING: the supplementary file is named ..._GWI_FM — RESOLVE whether it co-carries fibromyalgia samples (and disentangle) before building, else the GWI arm is contaminated."
+    notes: 'Per-sample normalized-count CSV (GSE286345_norm_counts_STAR_GWI_FM.csv.gz) + raw reads SRA PRJNA1208952. Staging DEFERRED and admissible_PENDING: the supplementary file is named ..._GWI_FM — RESOLVE whether it co-carries fibromyalgia samples (and disentangle) before building, else the GWI arm is contaminated.'
 accessions:
 - GSE286345
 - PRJNA1208952
@@ -36,10 +36,10 @@ ontology_terms:
 - rna-seq
 - specificity-control
 provided_capabilities:
-  - modality: transcriptomics
-    assay: bulk-rna
-    trigger: non-infectious-gulf-war-illness
+- data_product: data-product:gene-expression-bulk-rna
+  qualifiers:
     cohort_design: case-control
+    trigger: non-infectious-gulf-war-illness
 related:
 - task:t117
 - question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design

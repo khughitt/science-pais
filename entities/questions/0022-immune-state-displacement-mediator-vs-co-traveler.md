@@ -1,8 +1,7 @@
 ---
 id: question:0022-immune-state-displacement-mediator-vs-co-traveler
 kind: question
-title: Does persistent immune-state displacement mediate PAIS symptoms, or is it mainly
-  a marker / co-traveler of another failed-recovery process?
+title: Does persistent immune-state displacement mediate PAIS symptoms, or is it mainly a marker / co-traveler of another failed-recovery process?
 status: active
 ontology_terms:
 - mediation
@@ -20,10 +19,11 @@ related:
 - patch-definition:immune-state-shift-causal-landscape
 - pre-registration:0004-jak1-inhibitor-driver-vs-marker
 required_capabilities:
-- analysis_role: mr_outcome
-  trait: long-covid
-created: '2026-06-30'
-updated: '2026-07-03'
+- data_product: data-product:gwas-summary-statistics
+  qualifiers:
+    trait: long-covid
+created: "2026-06-30"
+updated: "2026-07-03"
 ---
 
 # Does persistent immune-state displacement mediate PAIS symptoms, or is it mainly a marker / co-traveler of another failed-recovery process?

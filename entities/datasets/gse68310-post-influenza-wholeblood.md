@@ -4,8 +4,8 @@ id: dataset:gse68310-post-influenza-wholeblood
 kind: dataset
 title: GSE68310 — Post-influenza whole-blood (FLU09 convalescent)
 status: candidate
-created: '2026-07-07'
-updated: '2026-07-07'
+created: "2026-07-07"
+updated: "2026-07-07"
 consumed_by:
 - plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
@@ -18,14 +18,14 @@ access:
   availability: available
   verified: true
   verification_method: landing-confirmed
-  last_reviewed: "2026-07-08"
-  verified_by: "agent (t117 WP1)"
+  last_reviewed: '2026-07-08'
+  verified_by: agent (t117 WP1)
   source_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE68310
   reproducibility:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "GEO Series Matrix (TXT) + GSE68310_non-normalized.txt.gz (241.5 MB) + GSE68310_SubjectPhenotypes1.txt.gz; staging to disk deferred to workflow execution."
+    notes: GEO Series Matrix (TXT) + GSE68310_non-normalized.txt.gz (241.5 MB) + GSE68310_SubjectPhenotypes1.txt.gz; staging to disk deferred to workflow execution.
 accessions:
 - GSE68310
 ontology_terms:
@@ -34,10 +34,10 @@ ontology_terms:
 - whole-blood
 - microarray
 provided_capabilities:
-  - modality: transcriptomics
-    assay: microarray
-    trigger: influenza
+- data_product: data-product:gene-expression-microarray
+  qualifiers:
     cohort_design: case-control
+    trigger: influenza
 related:
 - task:t117
 - question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design

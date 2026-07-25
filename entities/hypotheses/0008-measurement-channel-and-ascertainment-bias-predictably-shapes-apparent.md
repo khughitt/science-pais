@@ -32,8 +32,7 @@ related:
 - task:t058
 - question:0041-is-female-predominance-in-pais-substantially-an-ascertainment-and
 - question:0042-is-the-cross-trigger-1020-chronic-fraction-an-artifact-of-shared-case
-required_capabilities:
-- modality: clinical-ehr
+required_capabilities: []
 created: "2026-06-24"
 updated: "2026-07-10"
 ---

@@ -4,8 +4,8 @@ id: dataset:gse182503-iei-pbmc
 kind: dataset
 title: GSE182503 — Idiopathic environmental intolerance PBMC transcriptome (non-infectious specificity, WP4b queued)
 status: candidate
-created: '2026-07-09'
-updated: '2026-07-09'
+created: "2026-07-09"
+updated: "2026-07-09"
 consumed_by:
 - plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
@@ -18,14 +18,14 @@ access:
   availability: available
   verified: true
   verification_method: landing-confirmed
-  last_reviewed: "2026-07-09"
-  verified_by: "agent (t117 WP4b sweep)"
+  last_reviewed: '2026-07-09'
+  verified_by: agent (t117 WP4b sweep)
   source_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE182503
   reproducibility:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "GEO series matrix + raw TAR public (subseries of SuperSeries GSE182798); Agilent 8x60K one-colour microarray. Staging/parse DEFERRED (queued replication) — needs an Agilent probe->gene chain; EXCLUDE the co-deposited adult-onset-asthma arm, keep the 17 IEI vs 21 healthy contrast."
+    notes: GEO series matrix + raw TAR public (subseries of SuperSeries GSE182798); Agilent 8x60K one-colour microarray. Staging/parse DEFERRED (queued replication) — needs an Agilent probe->gene chain; EXCLUDE the co-deposited adult-onset-asthma arm, keep the 17 IEI vs 21 healthy contrast.
 accessions:
 - GSE182503
 ontology_terms:
@@ -35,10 +35,10 @@ ontology_terms:
 - microarray
 - specificity-control
 provided_capabilities:
-  - modality: transcriptomics
-    assay: microarray
-    trigger: non-infectious-environmental-intolerance
+- data_product: data-product:gene-expression-microarray
+  qualifiers:
     cohort_design: case-control
+    trigger: non-infectious-environmental-intolerance
 related:
 - task:t117
 - question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design

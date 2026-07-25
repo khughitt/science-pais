@@ -1,8 +1,7 @@
 ---
 id: question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design
 kind: question
-title: Prospective cross-pathogen co-enrollment design with harmonized multi-omic
-  protocols to distinguish shared from trigger-specific PAIS mechanisms
+title: Prospective cross-pathogen co-enrollment design with harmonized multi-omic protocols to distinguish shared from trigger-specific PAIS mechanisms
 status: active
 ontology_terms: []
 datasets: []
@@ -17,21 +16,15 @@ related:
 - question:0017-deflationary-alternatives-vs-shared-pathophysiology
 - hypothesis:0001-shared-dysregulated-attractor
 required_capabilities:
-  - modality: transcriptomics
-    assay: bulk-rna
+- data_product: data-product:gene-expression-bulk-rna
+  qualifiers:
     cohort_design: case-control
-created: '2026-07-06'
-updated: '2026-07-07'
+created: "2026-07-06"
+updated: "2026-07-07"
 added_by: explore-ideas:claude-opus-4-8:cand-methodology-cross-pathogen-harmonized-design
 lens_views:
 - lens: methodology
-  rationale: Whether PAIS syndromes share pathophysiology or merely phenotype is methodologically
-    unanswerable with existing designs, because every syndrome-specific cohort uses
-    different biomarker panels, time windows, and inclusion criteria. A co-enrollment
-    harmonized design is the only approach that puts comparable molecular data on
-    the same analytical footing across triggers. This is a study-design (not analysis)
-    proposal serving the project's central question:0001; the MELLOW protocol shows
-    harmonized cross-condition omics dense-sampling is technically feasible.
+  rationale: Whether PAIS syndromes share pathophysiology or merely phenotype is methodologically unanswerable with existing designs, because every syndrome-specific cohort uses different biomarker panels, time windows, and inclusion criteria. A co-enrollment harmonized design is the only approach that puts comparable molecular data on the same analytical footing across triggers. This is a study-design (not analysis) proposal serving the project's central question:0001; the MELLOW protocol shows harmonized cross-condition omics dense-sampling is technically feasible.
   origin_ref: explore-ideas-methodology
 ---
 # Prospective cross-pathogen co-enrollment design with harmonized multi-omic protocols to distinguish shared from trigger-specific PAIS mechanisms

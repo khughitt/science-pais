@@ -4,8 +4,8 @@ id: dataset:gse267625-longcovid-wholeblood
 kind: dataset
 title: GSE267625 — Long COVID whole-blood longitudinal (P4O2)
 status: candidate
-created: '2026-07-07'
-updated: '2026-07-07'
+created: "2026-07-07"
+updated: "2026-07-07"
 consumed_by:
 - plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
@@ -18,14 +18,14 @@ access:
   availability: available
   verified: true
   verification_method: landing-confirmed
-  last_reviewed: "2026-07-08"
-  verified_by: "agent (t117 WP1)"
+  last_reviewed: '2026-07-08'
+  verified_by: agent (t117 WP1)
   source_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE267625
   reproducibility:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "Per-sample matrix downloadable: GSE267625_P4O2_COVID_blood_transcriptome.csv.gz (4.8 Mb, CSV, 111 samples). Staging to disk deferred to workflow execution. CAVEAT — cohort is COVID-survivors-only (no external control arm); usable contrast must be defined within-cohort (long-COVID status / lung-function stratum) in WP2, not case-vs-healthy-control."
+    notes: 'Per-sample matrix downloadable: GSE267625_P4O2_COVID_blood_transcriptome.csv.gz (4.8 Mb, CSV, 111 samples). Staging to disk deferred to workflow execution. CAVEAT — cohort is COVID-survivors-only (no external control arm); usable contrast must be defined within-cohort (long-COVID status / lung-function stratum) in WP2, not case-vs-healthy-control.'
 accessions:
 - GSE267625
 ontology_terms:
@@ -34,10 +34,10 @@ ontology_terms:
 - whole-blood
 - rna-seq
 provided_capabilities:
-  - modality: transcriptomics
-    assay: bulk-rna
-    trigger: sars-cov-2
+- data_product: data-product:gene-expression-bulk-rna
+  qualifiers:
     cohort_design: case-control
+    trigger: sars-cov-2
 related:
 - task:t117
 - question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design

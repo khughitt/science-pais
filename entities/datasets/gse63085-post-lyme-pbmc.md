@@ -4,8 +4,8 @@ id: dataset:gse63085-post-lyme-pbmc
 kind: dataset
 title: GSE63085 — Post-treatment Lyme PBMC transcriptome
 status: candidate
-created: '2026-07-07'
-updated: '2026-07-07'
+created: "2026-07-07"
+updated: "2026-07-07"
 consumed_by:
 - plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
@@ -18,14 +18,14 @@ access:
   availability: available
   verified: true
   verification_method: landing-confirmed
-  last_reviewed: "2026-07-08"
-  verified_by: "agent (t117 WP1)"
+  last_reviewed: '2026-07-08'
+  verified_by: agent (t117 WP1)
   source_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE63085
   reproducibility:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "GEO Series Matrix (TXT) + GSE63085_RAW.tar (75.6 MB, per-sample TXT files); staging to disk deferred to workflow execution."
+    notes: GEO Series Matrix (TXT) + GSE63085_RAW.tar (75.6 MB, per-sample TXT files); staging to disk deferred to workflow execution.
 accessions:
 - GSE63085
 ontology_terms:
@@ -35,10 +35,10 @@ ontology_terms:
 - pbmc
 - rna-seq
 provided_capabilities:
-  - modality: transcriptomics
-    assay: bulk-rna
-    trigger: lyme-disease
+- data_product: data-product:gene-expression-bulk-rna
+  qualifiers:
     cohort_design: case-control
+    trigger: lyme-disease
 related:
 - task:t117
 - question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design
