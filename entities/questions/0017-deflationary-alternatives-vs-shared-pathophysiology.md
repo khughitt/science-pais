@@ -1,8 +1,7 @@
 ---
 id: question:0017-deflationary-alternatives-vs-shared-pathophysiology
 kind: question
-title: Are deflationary alternatives better supported than a shared post-infectious
-  pathophysiology?
+title: Are deflationary alternatives better supported than a shared post-infectious pathophysiology?
 status: active
 ontology_terms: []
 datasets: []
@@ -17,9 +16,10 @@ related:
 - interpretation:0001-cross-trigger-pathway-overlap-reanalysis-t035-null-nonarbitrating
 - search:0005-pre-infection-baseline-longitudinal-cohorts
 required_capabilities:
-  - modality: transcriptomics
-created: '2026-06-20'
-updated: '2026-06-21'
+- data_product: data-product:gene-expression
+  qualifiers: {}
+created: "2026-06-20"
+updated: "2026-06-21"
 ---
 # Are deflationary alternatives better supported than a shared post-infectious pathophysiology?
 

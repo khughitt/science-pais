@@ -1,7 +1,7 @@
 ---
 id: dataset:dubbo-infection-outcomes-study
 kind: dataset
-title: "Dubbo Infection Outcomes Study (DIOS)"
+title: Dubbo Infection Outcomes Study (DIOS)
 status: candidate
 created: "2026-06-21"
 updated: "2026-06-21"
@@ -13,25 +13,26 @@ access:
   level: controlled
   availability: available
   verified: false
-  source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC1569956/"
+  source_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC1569956/
   reproducibility:
     obtainability: named-collaboration
     execution: custodian-run
     extractability: none
-    notes: "No public microdata; individual-level DIOS data held by the original investigators (UNSW Lloyd/Hickie) and reproducible only by direct collaboration; no standardized third-party export. Published tables are investigator-produced aggregates. Insider-only."
+    notes: No public microdata; individual-level DIOS data held by the original investigators (UNSW Lloyd/Hickie) and reproducible only by direct collaboration; no standardized third-party export. Published tables are investigator-produced aggregates. Insider-only.
 accessions: []
-ontology_terms: [post-infective-fatigue, ebv, q-fever, ross-river-virus, sex-differences]
-provided_capabilities:
-  - modality: epidemiology
-    trigger: mixed
-    cohort_design: prospective-longitudinal
-    outcome: fatigue
+ontology_terms:
+- post-infective-fatigue
+- ebv
+- q-fever
+- ross-river-virus
+- sex-differences
+provided_capabilities: []
 related:
-  - task:t013
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - topic:shared-failure-mode-across-pais
-  - question:0003-acute-severity-threshold-for-self-sustaining-pais
-  - question:0017-deflationary-alternatives-vs-shared-pathophysiology
+- task:t013
+- question:0007-mechanism-of-female-predominance-in-pais
+- topic:shared-failure-mode-across-pais
+- question:0003-acute-severity-threshold-for-self-sustaining-pais
+- question:0017-deflationary-alternatives-vs-shared-pathophysiology
 ---
 
 # Dubbo Infection Outcomes Study (DIOS)

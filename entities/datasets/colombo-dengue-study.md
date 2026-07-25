@@ -1,7 +1,7 @@
 ---
 id: dataset:colombo-dengue-study
 kind: dataset
-title: "Colombo Dengue Study — post-dengue persistent fatigue (Sigera 2021)"
+title: Colombo Dengue Study — post-dengue persistent fatigue (Sigera 2021)
 status: candidate
 created: "2026-06-21"
 updated: "2026-06-21"
@@ -13,27 +13,26 @@ access:
   level: controlled
   availability: available
   verified: false
-  source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9115379/"
+  source_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC9115379/
   reproducibility:
     obtainability: named-collaboration
     execution: custodian-run
     extractability: none
-    notes: "No deposited/public microdata; the individual-level cohort is held by the original investigators and reproducible only by direct collaboration. Only investigator-published aggregate effect sizes are third-party-available (not third-party-extractable by an independent reproducer). Insider-only."
+    notes: No deposited/public microdata; the individual-level cohort is held by the original investigators and reproducible only by direct collaboration. Only investigator-published aggregate effect sizes are third-party-available (not third-party-extractable by an independent reproducer). Insider-only.
 accessions: []
-ontology_terms: [post-dengue-fatigue, dengue, prospective-cohort, sex-differences]
-provided_capabilities:
-  - modality: epidemiology
-    trigger: dengue
-    cohort_design: prospective-longitudinal
-    outcome: fatigue
-    stratification: sex
+ontology_terms:
+- post-dengue-fatigue
+- dengue
+- prospective-cohort
+- sex-differences
+provided_capabilities: []
 related:
-  - task:t013
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - question:0003-acute-severity-threshold-for-self-sustaining-pais
-  - question:0017-deflationary-alternatives-vs-shared-pathophysiology
+- task:t013
+- question:0007-mechanism-of-female-predominance-in-pais
+- question:0003-acute-severity-threshold-for-self-sustaining-pais
+- question:0017-deflationary-alternatives-vs-shared-pathophysiology
 source_refs:
-  - cite:Sigera2021
+- cite:Sigera2021
 ---
 
 # Colombo Dengue Study — post-dengue persistent fatigue

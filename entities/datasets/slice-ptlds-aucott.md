@@ -1,7 +1,7 @@
 ---
 id: dataset:slice-ptlds-aucott
 kind: dataset
-title: "Johns Hopkins SLICE — Lyme / post-treatment Lyme disease syndrome"
+title: Johns Hopkins SLICE — Lyme / post-treatment Lyme disease syndrome
 status: candidate
 created: "2026-06-21"
 updated: "2026-06-21"
@@ -13,25 +13,26 @@ access:
   level: controlled
   availability: available
   verified: false
-  source_url: "https://www.frontiersin.org/articles/10.3389/fmed.2017.00224/full"
+  source_url: https://www.frontiersin.org/articles/10.3389/fmed.2017.00224/full
   reproducibility:
     obtainability: named-collaboration
     execution: custodian-run
     extractability: none
-    notes: "Individual-level SLICE clinical cohort private (contact Johns Hopkins Lyme Disease Research Center); reproducible only by direct collaboration, no standardized third-party export -> insider-only. Some omics substudies MAY be deposited in GEO/dbGaP (UNVERIFIED); if confirmed, register those as separate third-party-reproducible slices."
+    notes: Individual-level SLICE clinical cohort private (contact Johns Hopkins Lyme Disease Research Center); reproducible only by direct collaboration, no standardized third-party export -> insider-only. Some omics substudies MAY be deposited in GEO/dbGaP (UNVERIFIED); if confirmed, register those as separate third-party-reproducible slices.
 accessions: []
-ontology_terms: [ptlds, lyme-disease, borrelia-burgdorferi, prospective-cohort, sex-differences]
-provided_capabilities:
-  - modality: epidemiology
-    trigger: lyme-disease
-    cohort_design: prospective-longitudinal
-    outcome: fatigue
+ontology_terms:
+- ptlds
+- lyme-disease
+- borrelia-burgdorferi
+- prospective-cohort
+- sex-differences
+provided_capabilities: []
 related:
-  - task:t013
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - topic:shared-failure-mode-across-pais
-  - question:0003-acute-severity-threshold-for-self-sustaining-pais
-  - question:0017-deflationary-alternatives-vs-shared-pathophysiology
+- task:t013
+- question:0007-mechanism-of-female-predominance-in-pais
+- topic:shared-failure-mode-across-pais
+- question:0003-acute-severity-threshold-for-self-sustaining-pais
+- question:0017-deflationary-alternatives-vs-shared-pathophysiology
 ---
 
 # Johns Hopkins SLICE — Lyme / PTLDS

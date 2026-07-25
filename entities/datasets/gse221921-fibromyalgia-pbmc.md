@@ -4,8 +4,8 @@ id: dataset:gse221921-fibromyalgia-pbmc
 kind: dataset
 title: GSE221921 — Fibromyalgia PBMC transcriptome (non-infectious specificity, WP4b)
 status: candidate
-created: '2026-07-09'
-updated: '2026-07-09'
+created: "2026-07-09"
+updated: "2026-07-09"
 consumed_by:
 - plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
@@ -18,14 +18,14 @@ access:
   availability: available
   verified: true
   verification_method: retrieved
-  last_reviewed: "2026-07-09"
-  verified_by: "agent (t117 WP4b)"
+  last_reviewed: '2026-07-09'
+  verified_by: agent (t117 WP4b)
   source_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE221921
   reproducibility:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "Per-sample expression staged from GSE221921_RAW.tar (189 members, one per sample; sha256 79ff6dc…), group from the series-matrix disease-state characteristic. Pinned+checksummed acquisition + uniform parse both RUN 2026-07-09 (config acquisition.GSE221921 + parse.GSE221921). SRA raw reads (PRJNA916731) + processed xlsx are alternative sources not staged."
+    notes: Per-sample expression staged from GSE221921_RAW.tar (189 members, one per sample; sha256 79ff6dc…), group from the series-matrix disease-state characteristic. Pinned+checksummed acquisition + uniform parse both RUN 2026-07-09 (config acquisition.GSE221921 + parse.GSE221921). SRA raw reads (PRJNA916731) + processed xlsx are alternative sources not staged.
 accessions:
 - GSE221921
 - PRJNA916731
@@ -36,10 +36,10 @@ ontology_terms:
 - rna-seq
 - specificity-control
 provided_capabilities:
-  - modality: transcriptomics
-    assay: bulk-rna
-    trigger: non-infectious-fibromyalgia
+- data_product: data-product:gene-expression-bulk-rna
+  qualifiers:
     cohort_design: case-control
+    trigger: non-infectious-fibromyalgia
 related:
 - task:t117
 - question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design

@@ -2,11 +2,10 @@
 schema_profile: science-entity-base/1.0+dataset/1.0
 id: dataset:covid19-hgi-longcovid-gwas
 kind: dataset
-title: COVID-19 Host Genetics Initiative — long-COVID GWAS summary statistics (2025
-  release)
+title: COVID-19 Host Genetics Initiative — long-COVID GWAS summary statistics (2025 release)
 status: candidate
-created: '2026-07-03'
-updated: '2026-07-03'
+created: "2026-07-03"
+updated: "2026-07-03"
 origin: external
 dataset_class: reference
 source_class: observational
@@ -24,7 +23,7 @@ access:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "Public GWAS summary statistics: downloadable harmonised flat files on the GWAS Catalog FTP (fullPvalueSet=true), re-poolable/re-analyzable locally at the summary grain — third-party-reproducible. Not individual-level genotypes (a scientific-strength limit, not an access one)."
+    notes: 'Public GWAS summary statistics: downloadable harmonised flat files on the GWAS Catalog FTP (fullPvalueSet=true), re-poolable/re-analyzable locally at the summary grain — third-party-reproducible. Not individual-level genotypes (a scientific-strength limit, not an access one).'
 accessions:
 - GWAS_Catalog:GCST90454543
 - GWAS_Catalog:GCST90454540
@@ -40,12 +39,11 @@ ontology_terms:
 - homo-sapiens
 - mr-outcome
 provided_capabilities:
-- modality: genetics
-  assay: gwas-sumstats
-  cohort_design: summary-stats
-  trigger: sars-cov-2
-  analysis_role: mr_outcome
-  trait: long-covid
+- data_product: data-product:gwas-summary-statistics
+  qualifiers:
+    cohort_design: summary-stats
+    trait: long-covid
+    trigger: sars-cov-2
 consumed_by:
 - plan:0007-wave1-mr-autoimmune-longcovid-pilot
 - plan:0008-wave1-mr-autoimmune-hormone-longcovid-design

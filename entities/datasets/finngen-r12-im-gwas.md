@@ -5,13 +5,13 @@ kind: dataset
 title: FinnGen R12 AB1_EBV — infectious mononucleosis GWAS summary statistics
 status: candidate
 provided_capabilities:
-  - modality: genetics
-    assay: gwas-sumstats
-    trigger: ebv
+- data_product: data-product:gwas-summary-statistics
+  qualifiers:
     cohort_design: summary-stats
     stratification: im-history
-created: '2026-07-17'
-updated: '2026-07-17'
+    trigger: ebv
+created: "2026-07-17"
+updated: "2026-07-17"
 origin: external
 dataset_class: deposit
 source_class: observational

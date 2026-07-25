@@ -2,17 +2,16 @@
 schema_profile: science-entity-base/1.0+dataset/1.0
 id: dataset:gse272645-chronic-urticaria-post-mrna-vaccine
 kind: dataset
-title: GSE272645 — Chronic urticaria after COVID-19 mRNA vaccine, real-life cohort
-  (blood RNA-seq)
+title: GSE272645 — Chronic urticaria after COVID-19 mRNA vaccine, real-life cohort (blood RNA-seq)
 status: candidate
 provided_capabilities:
-  - modality: transcriptomics
-    assay: bulk-rna
-    trigger: non-infectious-vaccine-challenge
+- data_product: data-product:gene-expression-bulk-rna
+  qualifiers:
     cohort_design: case-control
     stratification: mast-cell-activation
-created: '2026-07-17'
-updated: '2026-07-17'
+    trigger: non-infectious-vaccine-challenge
+created: "2026-07-17"
+updated: "2026-07-17"
 origin: external
 dataset_class: deposit
 source_class: observational

@@ -2,16 +2,15 @@
 schema_profile: science-entity-base/1.0+dataset/1.0
 id: dataset:gse240694-omicron-ba2-6mo-china
 kind: dataset
-title: GSE240694 — Omicron BA.2 breakthrough infection, 6-month prospective scRNA-seq
-  (China)
+title: GSE240694 — Omicron BA.2 breakthrough infection, 6-month prospective scRNA-seq (China)
 status: candidate
 provided_capabilities:
-  - modality: transcriptomics
-    assay: scrna
-    trigger: sars-cov-2
+- data_product: data-product:gene-expression-single-cell
+  qualifiers:
     cohort_design: prospective-longitudinal
-created: '2026-07-17'
-updated: '2026-07-17'
+    trigger: sars-cov-2
+created: "2026-07-17"
+updated: "2026-07-17"
 origin: external
 dataset_class: deposit
 source_class: observational

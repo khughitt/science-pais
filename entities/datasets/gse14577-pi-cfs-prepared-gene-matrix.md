@@ -1,7 +1,7 @@
 ---
 id: dataset:gse14577-pi-cfs-prepared-gene-matrix
 kind: dataset
-title: "GSE14577 prepared PI-CFS gene-expression clean base"
+title: GSE14577 prepared PI-CFS gene-expression clean base
 status: active
 created: "2026-06-26"
 updated: "2026-06-26"
@@ -11,7 +11,7 @@ source_class: observational
 tier: use-now
 license: unknown
 update_cadence: static
-datapackage: "data/processed/GSE14577/datapackage.json"
+datapackage: data/processed/GSE14577/datapackage.json
 n_rows: 18371
 n_cols: 15
 value_dtype: float64
@@ -20,26 +20,32 @@ row_kind: gene
 col_kind: patient
 derivation:
   kind: workflow
-  workflow_recipe: "workflow:t035-cross-trigger-pathway-overlap"
-  recipe_lockfile: "code/workflows/config.yaml"
+  workflow_recipe: workflow:t035-cross-trigger-pathway-overlap
+  recipe_lockfile: code/workflows/config.yaml
   inputs:
-    - dataset:gse14577-pi-cfs-pbmc-microarray
+  - dataset:gse14577-pi-cfs-pbmc-microarray
 parent_dataset: dataset:gse14577-pi-cfs-pbmc-microarray
-ontology_terms: [post-infectious-cfs, me-cfs, pbmc, microarray, transcriptomics, clean-base]
+ontology_terms:
+- post-infectious-cfs
+- me-cfs
+- pbmc
+- microarray
+- transcriptomics
+- clean-base
 provided_capabilities:
-  - modality: transcriptomics
-    assay: microarray
-    trigger: mixed
+- data_product: data-product:gene-expression-microarray
+  qualifiers:
     cohort_design: case-control
+    trigger: mixed
 source_refs:
-  - cite:Gow2009
+- cite:Gow2009
 related:
-  - task:t035
-  - task:t065
-  - pre-registration:0002-cross-trigger-pathway-overlap
-  - plan:0003-cross-trigger-pathway-overlap-pipeline
-  - question:0001-shared-molecular-signature-across-triggers
-  - paper:Gow2009
+- task:t035
+- task:t065
+- pre-registration:0002-cross-trigger-pathway-overlap
+- plan:0003-cross-trigger-pathway-overlap-pipeline
+- question:0001-shared-molecular-signature-across-triggers
+- paper:Gow2009
 ---
 
 # GSE14577 prepared PI-CFS gene-expression clean base

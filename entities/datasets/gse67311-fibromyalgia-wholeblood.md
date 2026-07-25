@@ -4,8 +4,8 @@ id: dataset:gse67311-fibromyalgia-wholeblood
 kind: dataset
 title: GSE67311 — Fibromyalgia whole-blood transcriptome (non-infectious specificity, WP4b — BUILT)
 status: candidate
-created: '2026-07-09'
-updated: '2026-07-09'
+created: "2026-07-09"
+updated: "2026-07-09"
 consumed_by:
 - plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
@@ -18,14 +18,14 @@ access:
   availability: available
   verified: true
   verification_method: retrieved
-  last_reviewed: "2026-07-09"
-  verified_by: "agent (t117 WP4b build)"
+  last_reviewed: '2026-07-09'
+  verified_by: agent (t117 WP4b build)
   source_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE67311
   reproducibility:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "BUILT 2026-07-09: series matrix staged (sha256 959735bd…, 15.7 MB) and parsed through the prebuilt microarray chain (parse_series_matrix --exclude-title-regex '_2$' drops 14 technical replicates -> harmonize_microarray.R hugene11sttranscriptcluster.db=8.8.0 / GPL11532 -> collapse_probes.R median). 60 FM / 68 HC, 19,584 genes, expression-scale PASS, DE-eligible (~ group). The 2nd non-infectious column; activates the reverse projection."
+    notes: 'BUILT 2026-07-09: series matrix staged (sha256 959735bd…, 15.7 MB) and parsed through the prebuilt microarray chain (parse_series_matrix --exclude-title-regex ''_2$'' drops 14 technical replicates -> harmonize_microarray.R hugene11sttranscriptcluster.db=8.8.0 / GPL11532 -> collapse_probes.R median). 60 FM / 68 HC, 19,584 genes, expression-scale PASS, DE-eligible (~ group). The 2nd non-infectious column; activates the reverse projection.'
 accessions:
 - GSE67311
 ontology_terms:
@@ -35,10 +35,10 @@ ontology_terms:
 - microarray
 - specificity-control
 provided_capabilities:
-  - modality: transcriptomics
-    assay: microarray
-    trigger: non-infectious-fibromyalgia
+- data_product: data-product:gene-expression-microarray
+  qualifiers:
     cohort_design: case-control
+    trigger: non-infectious-fibromyalgia
 related:
 - task:t117
 - question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design

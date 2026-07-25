@@ -4,8 +4,8 @@ id: dataset:gse128078-mecfs-wholeblood
 kind: dataset
 title: GSE128078 — ME/CFS whole-blood transcriptome (PEM)
 status: candidate
-created: '2026-07-07'
-updated: '2026-07-07'
+created: "2026-07-07"
+updated: "2026-07-07"
 consumed_by:
 - plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
@@ -18,14 +18,14 @@ access:
   availability: available
   verified: true
   verification_method: landing-confirmed
-  last_reviewed: "2026-07-08"
-  verified_by: "agent (t117 WP1)"
+  last_reviewed: '2026-07-08'
+  verified_by: agent (t117 WP1)
   source_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE128078
   reproducibility:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "Per-sample processed expression matrix public as supplementary GSE128078_FES_isoforms_FPKM.txt.gz (isoform-level FPKM, 11.0 Mb); series matrix (TXT) carries sample metadata; raw reads via SRA SRP187984 for gene-level recount. Staging to disk deferred to workflow execution."
+    notes: Per-sample processed expression matrix public as supplementary GSE128078_FES_isoforms_FPKM.txt.gz (isoform-level FPKM, 11.0 Mb); series matrix (TXT) carries sample metadata; raw reads via SRA SRP187984 for gene-level recount. Staging to disk deferred to workflow execution.
 accessions:
 - GSE128078
 ontology_terms:
@@ -33,10 +33,10 @@ ontology_terms:
 - whole-blood
 - rna-seq
 provided_capabilities:
-  - modality: transcriptomics
-    assay: bulk-rna
-    trigger: mixed
+- data_product: data-product:gene-expression-bulk-rna
+  qualifiers:
     cohort_design: case-control
+    trigger: mixed
 related:
 - task:t117
 - question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design

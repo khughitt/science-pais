@@ -1,7 +1,7 @@
 ---
 id: dataset:gse130353-qfs-cfs-monocytes
 kind: dataset
-title: "GSE130353 — QFS / CFS circulating-monocyte transcriptome"
+title: GSE130353 — QFS / CFS circulating-monocyte transcriptome
 status: candidate
 created: "2026-06-21"
 updated: "2026-06-26"
@@ -17,28 +17,34 @@ access:
   availability: available
   verified: true
   verification_method: retrieved
-  last_reviewed: "2026-06-26"
-  verified_by: "agent (t065)"
-  source_url: "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE130353"
+  last_reviewed: '2026-06-26'
+  verified_by: agent (t065)
+  source_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE130353
   reproducibility:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "Open GEO series (GSE130353) — raw/processed matrices download without credentials and rerun locally (already retrieved to gitignored data/raw/). Third-party-reproducible."
-accessions: [GSE130353]
-ontology_terms: [post-q-fever-fatigue, q-fever, me-cfs, rna-seq, monocytes]
+    notes: Open GEO series (GSE130353) — raw/processed matrices download without credentials and rerun locally (already retrieved to gitignored data/raw/). Third-party-reproducible.
+accessions:
+- GSE130353
+ontology_terms:
+- post-q-fever-fatigue
+- q-fever
+- me-cfs
+- rna-seq
+- monocytes
 provided_capabilities:
-  - modality: transcriptomics
-    assay: bulk-rna
-    trigger: q-fever
+- data_product: data-product:gene-expression-bulk-rna
+  qualifiers:
     cohort_design: case-control
+    trigger: q-fever
 related:
-  - task:t013
-  - task:t035
-  - question:0001-shared-molecular-signature-across-triggers
-  - paper:Raijmakers2019
-  - hypothesis:0001-shared-dysregulated-attractor
-  - question:0017-deflationary-alternatives-vs-shared-pathophysiology
+- task:t013
+- task:t035
+- question:0001-shared-molecular-signature-across-triggers
+- paper:Raijmakers2019
+- hypothesis:0001-shared-dysregulated-attractor
+- question:0017-deflationary-alternatives-vs-shared-pathophysiology
 ---
 
 # GSE130353 — QFS / CFS circulating-monocyte transcriptome

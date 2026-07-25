@@ -26,9 +26,9 @@ related:
 - task:t059
 - question:0043-bacterial-persister-cell-bet-hedging-as-a-model-for-stochastic-viral
 required_capabilities:
-- modality: proteomics
-  assay: tissue-antigen-detection
-  sample_type: tissue
+- data_product: data-product:proteomics-tissue-antigen
+  qualifiers:
+    sample_type: tissue
 created: "2026-06-11"
 updated: "2026-07-10"
 ---

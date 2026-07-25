@@ -1,7 +1,7 @@
 ---
 id: dataset:gse130353-qfs-cfs-prepared-gene-matrix
 kind: dataset
-title: "GSE130353 prepared QFS/CFS monocyte gene-expression clean base"
+title: GSE130353 prepared QFS/CFS monocyte gene-expression clean base
 status: active
 created: "2026-06-26"
 updated: "2026-06-26"
@@ -11,40 +11,48 @@ source_class: observational
 tier: use-now
 license: unknown
 update_cadence: static
-datapackage: "data/processed/GSE130353/datapackage.json"
+datapackage: data/processed/GSE130353/datapackage.json
 n_rows: 23546
 n_cols: 40
 value_dtype: float64
 feature_axis: rows
 row_kind: gene
 col_kind: sample
-species: ["Homo sapiens"]
+species:
+- Homo sapiens
 assay: bulk-rnaseq
-library_prep: "MMSEQ log_mu expression estimates from monocyte RNA-seq"
-reference_genome: "Ensembl release 68 identifiers mapped to current Ensembl universe"
-preprocessing_version: "t035 config 2026-06-26"
+library_prep: MMSEQ log_mu expression estimates from monocyte RNA-seq
+reference_genome: Ensembl release 68 identifiers mapped to current Ensembl universe
+preprocessing_version: t035 config 2026-06-26
 derivation:
   kind: workflow
-  workflow_recipe: "workflow:t035-cross-trigger-pathway-overlap"
-  recipe_lockfile: "code/workflows/config.yaml"
+  workflow_recipe: workflow:t035-cross-trigger-pathway-overlap
+  recipe_lockfile: code/workflows/config.yaml
   inputs:
-    - dataset:gse130353-qfs-cfs-monocytes
+  - dataset:gse130353-qfs-cfs-monocytes
 parent_dataset: dataset:gse130353-qfs-cfs-monocytes
-ontology_terms: [post-q-fever-fatigue, q-fever, me-cfs, monocytes, rna-seq, transcriptomics, clean-base]
+ontology_terms:
+- post-q-fever-fatigue
+- q-fever
+- me-cfs
+- monocytes
+- rna-seq
+- transcriptomics
+- clean-base
 provided_capabilities:
-  - modality: transcriptomics
-    assay: bulk-rna
-    trigger: q-fever
+- data_product: data-product:gene-expression-bulk-rna
+  qualifiers:
     cohort_design: case-control
+    trigger: q-fever
 source_refs:
-  - cite:Raijmakers2019
+- cite:Raijmakers2019
 related:
-  - task:t035
-  - task:t065
-  - pre-registration:0002-cross-trigger-pathway-overlap
-  - plan:0003-cross-trigger-pathway-overlap-pipeline
-  - question:0001-shared-molecular-signature-across-triggers
-  - paper:Raijmakers2019
+- task:t035
+- task:t065
+- pre-registration:0002-cross-trigger-pathway-overlap
+- plan:0003-cross-trigger-pathway-overlap-pipeline
+- question:0001-shared-molecular-signature-across-triggers
+- paper:Raijmakers2019
 ---
 
 # GSE130353 prepared QFS/CFS monocyte gene-expression clean base

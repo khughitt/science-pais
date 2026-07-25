@@ -1,7 +1,7 @@
 ---
 id: dataset:msigdb-2024-1-hs-hallmark-reactome-rank-universe
 kind: dataset
-title: "MSigDB 2024.1.Hs Hallmark+Reactome rank-estimation universe (t117)"
+title: MSigDB 2024.1.Hs Hallmark+Reactome rank-estimation universe (t117)
 status: active
 created: "2026-07-08"
 updated: "2026-07-08"
@@ -13,29 +13,36 @@ source_class: reference
 tier: use-now
 license: custom
 update_cadence: static
-datapackage: "data/processed/genesets/pais_universe.datapackage.json"
+datapackage: data/processed/genesets/pais_universe.datapackage.json
 n_sets: 1153
-set_size_summary: {min: 15, median: 42, max: 478}
+set_size_summary:
+  min: 15
+  median: 42
+  max: 478
 identifier_space:
   tier: gene
   namespace: ensembl
   resolution_status: declared_unresolved
 derivation:
   kind: workflow
-  workflow_recipe: "workflow:t117-crosspais-rank"
-  recipe_lockfile: "code/workflows/t117-crosspais-rank/config.yaml"
+  workflow_recipe: workflow:t117-crosspais-rank
+  recipe_lockfile: code/workflows/t117-crosspais-rank/config.yaml
   inputs:
-    - dataset:msigdb-2024-1-hs-mapped-pais-gene-set-universe
-parent_dataset: dataset:msigdb-2024-1-hs-mapped-pais-gene-set-universe
-ontology_terms: [msigdb, gene-sets, hallmark, reactome, homo-sapiens, effective-rank]
-provided_capabilities:
-  - modality: gene-sets
-    trigger: not-applicable
-related:
-  - task:t117
-  - plan:0010-crosspais-pathway-response-rank-estimation
   - dataset:msigdb-2024-1-hs-mapped-pais-gene-set-universe
-  - interpretation:0037-t116-power-bias-floor-shared-axis-sim
+parent_dataset: dataset:msigdb-2024-1-hs-mapped-pais-gene-set-universe
+ontology_terms:
+- msigdb
+- gene-sets
+- hallmark
+- reactome
+- homo-sapiens
+- effective-rank
+provided_capabilities: []
+related:
+- task:t117
+- plan:0010-crosspais-pathway-response-rank-estimation
+- dataset:msigdb-2024-1-hs-mapped-pais-gene-set-universe
+- interpretation:0037-t116-power-bias-floor-shared-axis-sim
 ---
 
 # MSigDB 2024.1.Hs Hallmark+Reactome rank-estimation universe (t117)

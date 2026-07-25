@@ -4,8 +4,8 @@ id: dataset:gse251849-longcovid-pbmc-cognitive
 kind: dataset
 title: GSE251849 — Long COVID PBMC (cognitive phenotype)
 status: candidate
-created: '2026-07-07'
-updated: '2026-07-07'
+created: "2026-07-07"
+updated: "2026-07-07"
 consumed_by:
 - plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
@@ -18,14 +18,14 @@ access:
   availability: available
   verified: true
   verification_method: landing-confirmed
-  last_reviewed: "2026-07-08"
-  verified_by: "agent (t117 WP1)"
+  last_reviewed: '2026-07-08'
+  verified_by: agent (t117 WP1)
   source_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE251849
   reproducibility:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "GEO processed per-sample counts file GSE251849_Counts.txt.gz (+ series matrix) publicly downloadable; staging to disk deferred to workflow execution"
+    notes: GEO processed per-sample counts file GSE251849_Counts.txt.gz (+ series matrix) publicly downloadable; staging to disk deferred to workflow execution
 accessions:
 - GSE251849
 ontology_terms:
@@ -34,10 +34,10 @@ ontology_terms:
 - pbmc
 - rna-seq
 provided_capabilities:
-  - modality: transcriptomics
-    assay: bulk-rna
-    trigger: sars-cov-2
+- data_product: data-product:gene-expression-bulk-rna
+  qualifiers:
     cohort_design: case-control
+    trigger: sars-cov-2
 related:
 - task:t117
 - question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design

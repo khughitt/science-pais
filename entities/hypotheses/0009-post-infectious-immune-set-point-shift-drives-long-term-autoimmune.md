@@ -13,8 +13,9 @@ related:
 - hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
 - question:0044-chronic-gvhd-as-analogy-for-post-viral-tolerance-infrastructure-collapse
 required_capabilities:
-- analysis_role: mr_exposure
-  trait: autoimmune-disease
+- data_product: data-product:gwas-summary-statistics
+  qualifiers:
+    trait: autoimmune-disease
 created: "2026-07-01"
 updated: "2026-07-10"
 datasets:

@@ -1,7 +1,7 @@
 ---
 id: dataset:impacc-immunophenotyping-covid
 kind: dataset
-title: "IMPACC — Immunophenotyping Assessment in a COVID-19 Cohort"
+title: IMPACC — Immunophenotyping Assessment in a COVID-19 Cohort
 status: candidate
 created: "2026-06-21"
 updated: "2026-06-21"
@@ -13,33 +13,40 @@ access:
   level: controlled
   availability: available
   verified: false
-  source_url: "https://www.immport.org/shared/study/SDY1760"
+  source_url: https://www.immport.org/shared/study/SDY1760
   reproducibility:
     obtainability: registration
     execution: local
     extractability: analysis-dataset
-    notes: "Processed multi-omics obtainable via ImmPort SDY1760 (free researcher registration + click-through DUA then download); controlled genomic layer via dbGaP phs002686 DAR. A qualified third party can re-obtain individual-level processed data and rerun locally -> credentialed-reproducible."
-accessions: [SDY1760, phs002686]
-ontology_terms: [long-covid, sars-cov-2, multiomics, sex-differences, patient-reported-outcomes]
+    notes: Processed multi-omics obtainable via ImmPort SDY1760 (free researcher registration + click-through DUA then download); controlled genomic layer via dbGaP phs002686 DAR. A qualified third party can re-obtain individual-level processed data and rerun locally -> credentialed-reproducible.
+accessions:
+- SDY1760
+- phs002686
+ontology_terms:
+- long-covid
+- sars-cov-2
+- multiomics
+- sex-differences
+- patient-reported-outcomes
 provided_capabilities:
-  - modality: immunophenotype
-    assay: olink
-    trigger: sars-cov-2
+- data_product: data-product:proteomics-affinity
+  qualifiers:
     cohort_design: prospective-longitudinal
     stratification: immunosuppression
-  - modality: transcriptomics
-    assay: bulk-rna
+    trigger: sars-cov-2
+- data_product: data-product:gene-expression-bulk-rna
+  qualifiers:
     trigger: sars-cov-2
 related:
-  - task:t013
-  - task:t061
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - question:0015-does-pem-requirement-improve-cross-study-comparability
-  - paper:Ozonoff2024
-  - paper:Gabernet2025
-  - question:0003-acute-severity-threshold-for-self-sustaining-pais
-  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
-  - interpretation:0027-t061-severity-adjusted-pem-vehicle-triage
+- task:t013
+- task:t061
+- question:0007-mechanism-of-female-predominance-in-pais
+- question:0015-does-pem-requirement-improve-cross-study-comparability
+- paper:Ozonoff2024
+- paper:Gabernet2025
+- question:0003-acute-severity-threshold-for-self-sustaining-pais
+- question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- interpretation:0027-t061-severity-adjusted-pem-vehicle-triage
 ---
 
 # IMPACC — Immunophenotyping Assessment in a COVID-19 Cohort

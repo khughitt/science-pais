@@ -1,7 +1,7 @@
 ---
 id: dataset:recover-adult
 kind: dataset
-title: "RECOVER-Adult (Researching COVID to Enhance Recovery)"
+title: RECOVER-Adult (Researching COVID to Enhance Recovery)
 status: candidate
 created: "2026-06-21"
 updated: "2026-06-26"
@@ -14,31 +14,34 @@ access:
   level: controlled
   availability: available
   verified: true
-  source_url: "https://recovercovid.org/data"
+  source_url: https://recovercovid.org/data
   reproducibility:
     obtainability: approved-researcher
     execution: local
     extractability: full-dataset
-    notes: "Released via dbGaP / NHLBI BioData Catalyst (phs003463.v6.p5): a qualified researcher submits a standard Data Access Request, is approved, and downloads the individual-level release to their own environment to rerun — credentialed-reproducible. approved-researcher (standard DAR is broadly available to qualified third parties), NOT approved-project. The molecular-module gap noted in the body is a plan-feasibility issue, not an access-reproducibility one."
-accessions: [phs003463.v6.p5]
-ontology_terms: [long-covid, sars-cov-2, prospective-cohort, biospecimens, sex-differences, pem, ehr, wearables]
-provided_capabilities:
-  - modality: clinical-ehr
-    assay: ehr-coded
-    trigger: sars-cov-2
-    cohort_design: prospective-longitudinal
-    case_definition: who-lc
-    stratification: sex
+    notes: 'Released via dbGaP / NHLBI BioData Catalyst (phs003463.v6.p5): a qualified researcher submits a standard Data Access Request, is approved, and downloads the individual-level release to their own environment to rerun — credentialed-reproducible. approved-researcher (standard DAR is broadly available to qualified third parties), NOT approved-project. The molecular-module gap noted in the body is a plan-feasibility issue, not an access-reproducibility one.'
+accessions:
+- phs003463.v6.p5
+ontology_terms:
+- long-covid
+- sars-cov-2
+- prospective-cohort
+- biospecimens
+- sex-differences
+- pem
+- ehr
+- wearables
+provided_capabilities: []
 related:
-  - task:t013
-  - task:t040
-  - task:t061
-  - task:t070
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - question:0015-does-pem-requirement-improve-cross-study-comparability
-  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
-  - interpretation:0027-t061-severity-adjusted-pem-vehicle-triage
-  - interpretation:0030-t070-recover-adult-q0015-controlled-access-gate
+- task:t013
+- task:t040
+- task:t061
+- task:t070
+- question:0007-mechanism-of-female-predominance-in-pais
+- question:0015-does-pem-requirement-improve-cross-study-comparability
+- question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- interpretation:0027-t061-severity-adjusted-pem-vehicle-triage
+- interpretation:0030-t070-recover-adult-q0015-controlled-access-gate
 ---
 
 # RECOVER-Adult

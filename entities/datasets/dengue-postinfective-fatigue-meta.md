@@ -1,7 +1,7 @@
 ---
 id: dataset:dengue-postinfective-fatigue-meta
 kind: dataset
-title: "Post-dengue fatigue — pooled sex-stratified meta-analysis evidence"
+title: Post-dengue fatigue — pooled sex-stratified meta-analysis evidence
 status: candidate
 created: "2026-06-21"
 updated: "2026-06-21"
@@ -13,25 +13,25 @@ access:
   level: public
   availability: available
   verified: false
-  source_url: "https://www.thelancet.com/journals/eclinm/article/PIIS2589-5370(24)00620-5/fulltext"
+  source_url: https://www.thelancet.com/journals/eclinm/article/PIIS2589-5370(24)00620-5/fulltext
   reproducibility:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "Published pooled meta-analytic effect sizes (reference dataset): fully extractable now from public forest plots and re-poolable — third-party-reproducible at the aggregate grain. Not individual-level microdata (a scientific-strength limit, not an access one)."
+    notes: 'Published pooled meta-analytic effect sizes (reference dataset): fully extractable now from public forest plots and re-poolable — third-party-reproducible at the aggregate grain. Not individual-level microdata (a scientific-strength limit, not an access one).'
 accessions: []
-ontology_terms: [post-dengue-fatigue, dengue, meta-analysis, sex-differences]
-provided_capabilities:
-  - cohort_design: meta-analysis
-    trigger: dengue
-    outcome: fatigue
-    stratification: sex
+ontology_terms:
+- post-dengue-fatigue
+- dengue
+- meta-analysis
+- sex-differences
+provided_capabilities: []
 related:
-  - task:t013
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - paper:Hertanti2025
-  - paper:Conde2026
-  - question:0017-deflationary-alternatives-vs-shared-pathophysiology
+- task:t013
+- question:0007-mechanism-of-female-predominance-in-pais
+- paper:Hertanti2025
+- paper:Conde2026
+- question:0017-deflationary-alternatives-vs-shared-pathophysiology
 ---
 
 # Post-dengue fatigue — pooled sex-stratified meta-analysis evidence

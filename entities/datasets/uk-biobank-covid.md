@@ -1,7 +1,7 @@
 ---
 id: dataset:uk-biobank-covid
 kind: dataset
-title: "UK Biobank — COVID-19 / long COVID"
+title: UK Biobank — COVID-19 / long COVID
 status: candidate
 created: "2026-06-21"
 updated: "2026-06-21"
@@ -13,31 +13,26 @@ access:
   level: commercial
   availability: available
   verified: false
-  source_url: "https://www.ukbiobank.ac.uk/"
+  source_url: https://www.ukbiobank.ac.uk/
   reproducibility:
     obtainability: approved-researcher
     execution: hosted-workspace
     extractability: analysis-dataset
-    notes: "Any bona-fide researcher with an approved application + access fee obtains individual-level records (download or the RAP/DNAnexus hosted workspace) and reruns under their own control — a normal qualified third party CAN re-obtain, so credentialed-reproducible. Fee + healthy-volunteer/older-age skew are barriers/validity caveats, not access-route blockers. obtainability=approved-researcher (broadly available to qualified researchers), NOT approved-project."
+    notes: Any bona-fide researcher with an approved application + access fee obtains individual-level records (download or the RAP/DNAnexus hosted workspace) and reruns under their own control — a normal qualified third party CAN re-obtain, so credentialed-reproducible. Fee + healthy-volunteer/older-age skew are barriers/validity caveats, not access-route blockers. obtainability=approved-researcher (broadly available to qualified researchers), NOT approved-project.
 accessions: []
-ontology_terms: [long-covid, sars-cov-2, prospective-cohort, mental-health-linkage, sex-differences]
-provided_capabilities:
-  - modality: clinical-ehr
-    assay: ehr-coded
-    trigger: sars-cov-2
-    cohort_design: prospective-longitudinal
-    stratification: sex
-  - modality: clinical-ehr
-    trigger: sars-cov-2
-    cohort_design: prospective-longitudinal
-    outcome: sex-hormone-level
-    stratification: sex
+ontology_terms:
+- long-covid
+- sars-cov-2
+- prospective-cohort
+- mental-health-linkage
+- sex-differences
+provided_capabilities: []
 related:
-  - task:t013
-  - question:0007-mechanism-of-female-predominance-in-pais
-  - paper:AlcaldeHerraiz2025
-  - question:0003-acute-severity-threshold-for-self-sustaining-pais
-  - question:0013-reproductive-stage-failed-immune-recovery-after-infection
+- task:t013
+- question:0007-mechanism-of-female-predominance-in-pais
+- paper:AlcaldeHerraiz2025
+- question:0003-acute-severity-threshold-for-self-sustaining-pais
+- question:0013-reproductive-stage-failed-immune-recovery-after-infection
 ---
 
 # UK Biobank — COVID-19 / long COVID

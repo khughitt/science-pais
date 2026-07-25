@@ -1,8 +1,7 @@
 ---
 id: question:0015-does-pem-requirement-improve-cross-study-comparability
 kind: question
-title: Does requiring post-exertional malaise (PEM) in PAIS case definitions improve
-  cross-study comparability of molecular and mechanistic findings?
+title: Does requiring post-exertional malaise (PEM) in PAIS case definitions improve cross-study comparability of molecular and mechanistic findings?
 status: active
 ontology_terms:
 - post-exertional malaise
@@ -44,10 +43,9 @@ related:
 - hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
 - task:t061
 - task:t070
-required_capabilities:
-  - outcome: pem
-created: '2026-06-19'
-updated: '2026-06-26'
+required_capabilities: []
+created: "2026-06-19"
+updated: "2026-06-26"
 ---
 # Does requiring post-exertional malaise (PEM) in PAIS case definitions improve cross-study comparability of molecular and mechanistic findings?
 

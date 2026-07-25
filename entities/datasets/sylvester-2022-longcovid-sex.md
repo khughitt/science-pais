@@ -1,7 +1,7 @@
 ---
 id: dataset:sylvester-2022-longcovid-sex
 kind: dataset
-title: "Sylvester 2022 — sex differences in long COVID (domain-stratified ORs)"
+title: Sylvester 2022 — sex differences in long COVID (domain-stratified ORs)
 status: candidate
 created: "2026-06-21"
 updated: "2026-06-21"
@@ -13,21 +13,23 @@ access:
   level: public
   availability: available
   verified: false
-  source_url: "https://pubmed.ncbi.nlm.nih.gov/35726132/"
+  source_url: https://pubmed.ncbi.nlm.nih.gov/35726132/
   reproducibility:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "Published meta-analysis (reference dataset): the artifact IS the domain-stratified sex ORs, fully extractable now from the public paper and trivially re-poolable — third-party-reproducible at the meta-analytic (aggregate) grain. No individual-participant data; the aggregate grain is a scientific-strength limit, not an access-reproducibility one."
+    notes: 'Published meta-analysis (reference dataset): the artifact IS the domain-stratified sex ORs, fully extractable now from the public paper and trivially re-poolable — third-party-reproducible at the meta-analytic (aggregate) grain. No individual-participant data; the aggregate grain is a scientific-strength limit, not an access-reproducibility one.'
 accessions: []
-ontology_terms: [long-covid, sars-cov-2, meta-analysis, sex-differences, neuropsychiatric]
-provided_capabilities:
-  - cohort_design: meta-analysis
-    trigger: sars-cov-2
-    stratification: sex
+ontology_terms:
+- long-covid
+- sars-cov-2
+- meta-analysis
+- sex-differences
+- neuropsychiatric
+provided_capabilities: []
 related:
-  - task:t013
-  - question:0007-mechanism-of-female-predominance-in-pais
+- task:t013
+- question:0007-mechanism-of-female-predominance-in-pais
 ---
 
 # Sylvester 2022 — sex differences in long COVID

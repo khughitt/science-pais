@@ -1,8 +1,7 @@
 ---
 id: question:0034-pre-existing-atopic-and-mast-cell-activation-disorders-as-a
 kind: question
-title: Pre-existing atopic and mast-cell activation disorders as a mechanistically
-  distinct PAIS subgroup
+title: Pre-existing atopic and mast-cell activation disorders as a mechanistically distinct PAIS subgroup
 status: active
 ontology_terms: []
 datasets:
@@ -26,20 +25,13 @@ related:
 - paper:Weinstock2021
 - paper:Augustin2025
 - paper:Augustin2026
-required_capabilities:
-  - stratification: atopy
-created: '2026-07-04'
-updated: '2026-07-16'
+required_capabilities: []
+created: "2026-07-04"
+updated: "2026-07-16"
 added_by: explore-ideas:claude-opus-4-8:cand-population-atopic-mcas-pais-subgroup
 lens_views:
 - lens: population
-  rationale: 'The project treats mast-cell activation as a post-infectious consequence
-    (Salvucci2023). The pre-existing atopy/MCAS subpopulation inverts this: mast cells
-    are already primed and IgE elevated before infection, potentially amplifying and
-    sustaining a cascade that is transient in others. The question goes beyond "is
-    atopy a risk factor" to "is it a mechanistic subtype needing separate targeting."
-    Anchored by Wolff2023 (already a project paper) as an independent convergent literature
-    origin.
+  rationale: 'The project treats mast-cell activation as a post-infectious consequence (Salvucci2023). The pre-existing atopy/MCAS subpopulation inverts this: mast cells are already primed and IgE elevated before infection, potentially amplifying and sustaining a cascade that is transient in others. The question goes beyond "is atopy a risk factor" to "is it a mechanistic subtype needing separate targeting." Anchored by Wolff2023 (already a project paper) as an independent convergent literature origin.
 
     '
   origin_ref: explore-ideas-population

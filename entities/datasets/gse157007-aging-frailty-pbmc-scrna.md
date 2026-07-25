@@ -2,17 +2,16 @@
 schema_profile: science-entity-base/1.0+dataset/1.0
 id: dataset:gse157007-aging-frailty-pbmc-scrna
 kind: dataset
-title: GSE157007 — Single-cell immune landscape of aging and frailty (PBMC scRNA-seq
-  + TCR)
+title: GSE157007 — Single-cell immune landscape of aging and frailty (PBMC scRNA-seq + TCR)
 status: candidate
 provided_capabilities:
-  - modality: transcriptomics
-    assay: scrna
-    trigger: not-applicable
+- data_product: data-product:gene-expression-single-cell
+  qualifiers:
     cohort_design: case-control
     stratification: frailty
-created: '2026-07-17'
-updated: '2026-07-17'
+    trigger: not-applicable
+created: "2026-07-17"
+updated: "2026-07-17"
 origin: external
 dataset_class: deposit
 source_class: observational

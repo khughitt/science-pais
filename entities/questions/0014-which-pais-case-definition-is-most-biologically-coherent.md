@@ -1,8 +1,7 @@
 ---
 id: question:0014-which-pais-case-definition-is-most-biologically-coherent
 kind: question
-title: Which long COVID and ME/CFS case definitions select the most biologically coherent
-  patient population for mechanistic research?
+title: Which long COVID and ME/CFS case definitions select the most biologically coherent patient population for mechanistic research?
 status: active
 ontology_terms:
 - case definition
@@ -32,14 +31,9 @@ related:
 - question:0015-does-pem-requirement-improve-cross-study-comparability
 - hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
 - interpretation:0021-t026-pc-cos-adoption-policy
-required_capabilities:
-  - case_definition: who-lc
-  - case_definition: cdc-lc
-  - case_definition: fukuda
-  - case_definition: ccc
-  - case_definition: icc
-created: '2026-06-19'
-updated: '2026-06-24'
+required_capabilities: []
+created: "2026-06-19"
+updated: "2026-06-24"
 ---
 # Which long COVID and ME/CFS case definitions select the most biologically coherent patient population for mechanistic research?
 

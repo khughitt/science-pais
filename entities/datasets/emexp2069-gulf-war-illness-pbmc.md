@@ -4,8 +4,8 @@ id: dataset:emexp2069-gulf-war-illness-pbmc
 kind: dataset
 title: E-MEXP-2069 — Gulf War Illness PBMC transcriptome (non-infectious specificity, WP4b — BUILT)
 status: candidate
-created: '2026-07-09'
-updated: '2026-07-10'
+created: "2026-07-09"
+updated: "2026-07-10"
 consumed_by:
 - plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
@@ -18,14 +18,14 @@ access:
   availability: available
   verified: true
   verification_method: retrieved
-  last_reviewed: "2026-07-10"
-  verified_by: "agent (t117 WP4b build)"
+  last_reviewed: '2026-07-10'
+  verified_by: agent (t117 WP4b build)
   source_url: https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MEXP-2069
   reproducibility:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "BUILT 2026-07-10: the 20 BASELINE (before-exercise) CEL files — 9 GWI (GWS-*A) + 11 controls (Con-*A) — staged individually (per-file locked sha256, 271 MB total) + the SDRF, then RMA-normalized and fed the pinned hgu133plus2.db (GPL570) harmonize + median collapse chain -> 20,338 Ensembl genes. RMA computed in PURE R (limma normexp bg + limma quantile + stats::medpolish) because affy/preprocessCore threaded C fails with pthread_create()=22 (EINVAL) on this host's new glibc/kernel. The 3rd non-infectious column; lifts the reverse projection to full rank (r_eff=2)."
+    notes: 'BUILT 2026-07-10: the 20 BASELINE (before-exercise) CEL files — 9 GWI (GWS-*A) + 11 controls (Con-*A) — staged individually (per-file locked sha256, 271 MB total) + the SDRF, then RMA-normalized and fed the pinned hgu133plus2.db (GPL570) harmonize + median collapse chain -> 20,338 Ensembl genes. RMA computed in PURE R (limma normexp bg + limma quantile + stats::medpolish) because affy/preprocessCore threaded C fails with pthread_create()=22 (EINVAL) on this host''s new glibc/kernel. The 3rd non-infectious column; lifts the reverse projection to full rank (r_eff=2).'
 accessions:
 - E-MEXP-2069
 ontology_terms:
@@ -35,10 +35,10 @@ ontology_terms:
 - microarray
 - specificity-control
 provided_capabilities:
-  - modality: transcriptomics
-    assay: microarray
-    trigger: non-infectious-gulf-war-illness
+- data_product: data-product:gene-expression-microarray
+  qualifiers:
     cohort_design: case-control
+    trigger: non-infectious-gulf-war-illness
 related:
 - task:t117
 - question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design

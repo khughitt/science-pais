@@ -16,19 +16,13 @@ origins:
   ref: explore-ideas-population
 related:
 - hypothesis:0020-host-immune-baseline-reserve-gate
-required_capabilities:
-  - stratification: immunosuppression
-created: '2026-07-04'
-updated: '2026-07-16'
+required_capabilities: []
+created: "2026-07-04"
+updated: "2026-07-16"
 added_by: explore-ideas:claude-opus-4-8:cand-population-immunosuppressed-host-pais
 lens_views:
 - lens: population
-  rationale: 'PAIS mechanisms assume an immune system able to mount, sustain, then
-    fail to resolve inflammation. Immunosuppressed hosts are a natural experiment
-    dissociating candidate mechanisms: if antigen persistence/activation drive PAIS,
-    partial suppression might reduce incidence; if exhaustion/dysregulation drive
-    it, baseline dysfunction might amplify risk. The biologic-DMARD population is
-    essentially unstudied for post-infectious sequelae.
+  rationale: 'PAIS mechanisms assume an immune system able to mount, sustain, then fail to resolve inflammation. Immunosuppressed hosts are a natural experiment dissociating candidate mechanisms: if antigen persistence/activation drive PAIS, partial suppression might reduce incidence; if exhaustion/dysregulation drive it, baseline dysfunction might amplify risk. The biologic-DMARD population is essentially unstudied for post-infectious sequelae.
 
     '
   origin_ref: explore-ideas-population

@@ -1,8 +1,7 @@
 ---
 id: question:0001-shared-molecular-signature-across-triggers
 kind: question
-title: Is there a molecular signature that is both shared across PAIS triggers (SARS-CoV-2,
-  Borrelia, EBV, dengue) and specific to failed recovery versus full recovery?
+title: Is there a molecular signature that is both shared across PAIS triggers (SARS-CoV-2, Borrelia, EBV, dengue) and specific to failed recovery versus full recovery?
 status: active
 ontology_terms:
 - biomarker
@@ -30,9 +29,10 @@ related:
 - discussion:0002-cross-pathogen-pais-signature-convergence
 - hypothesis:0001-shared-dysregulated-attractor
 required_capabilities:
-  - modality: transcriptomics
-created: '2026-06-11'
-updated: '2026-06-20'
+- data_product: data-product:gene-expression
+  qualifiers: {}
+created: "2026-06-11"
+updated: "2026-06-20"
 ---
 
 # Is there a molecular signature that is both shared across PAIS triggers (SARS-CoV-2, Borrelia, EBV, dengue) and specific to failed recovery versus full recovery?

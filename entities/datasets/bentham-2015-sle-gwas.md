@@ -2,11 +2,10 @@
 schema_profile: science-entity-base/1.0+dataset/1.0
 id: dataset:bentham-2015-sle-gwas
 kind: dataset
-title: Bentham 2015 systemic lupus erythematosus GWAS summary statistics (European
-  ancestry)
+title: Bentham 2015 systemic lupus erythematosus GWAS summary statistics (European ancestry)
 status: candidate
-created: '2026-07-03'
-updated: '2026-07-03'
+created: "2026-07-03"
+updated: "2026-07-03"
 origin: external
 dataset_class: reference
 source_class: observational
@@ -24,7 +23,7 @@ access:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "Public GWAS summary statistics: downloadable harmonised flat files on the GWAS Catalog FTP (GCST003156, fullPvalueSet=true), re-poolable/re-analyzable locally at the summary grain — third-party-reproducible. Not individual-level genotypes (a scientific-strength limit, not an access one)."
+    notes: 'Public GWAS summary statistics: downloadable harmonised flat files on the GWAS Catalog FTP (GCST003156, fullPvalueSet=true), re-poolable/re-analyzable locally at the summary grain — third-party-reproducible. Not individual-level genotypes (a scientific-strength limit, not an access one).'
 accessions:
 - GWAS_Catalog:GCST003156
 - PMID:26502338
@@ -37,11 +36,10 @@ ontology_terms:
 - homo-sapiens
 - mr-exposure
 provided_capabilities:
-- modality: genetics
-  assay: gwas-sumstats
-  cohort_design: summary-stats
-  analysis_role: mr_exposure
-  trait: autoimmune-disease
+- data_product: data-product:gwas-summary-statistics
+  qualifiers:
+    cohort_design: summary-stats
+    trait: autoimmune-disease
 consumed_by:
 - plan:0007-wave1-mr-autoimmune-longcovid-pilot
 - plan:0008-wave1-mr-autoimmune-hormone-longcovid-design

@@ -4,8 +4,8 @@ id: dataset:gse16059-mecfs-twins-pbl
 kind: dataset
 title: GSE16059 — ME/CFS discordant-twin blood-leukocyte microarray
 status: candidate
-created: '2026-07-07'
-updated: '2026-07-07'
+created: "2026-07-07"
+updated: "2026-07-07"
 consumed_by:
 - plan:0010-crosspais-pathway-response-rank-estimation
 origin: external
@@ -18,14 +18,14 @@ access:
   availability: available
   verified: true
   verification_method: landing-confirmed
-  last_reviewed: "2026-07-08"
-  verified_by: "agent (t117 WP1)"
+  last_reviewed: '2026-07-08'
+  verified_by: agent (t117 WP1)
   source_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE16059
   reproducibility:
     obtainability: public
     execution: local
     extractability: full-dataset
-    notes: "Series matrix (TXT, per-sample) public; raw CEL files as GSE16059_RAW.tar (393.9 MB, Affymetrix CEL) for re-normalization. 88 samples = 44 discordant MZ twin pairs. Staging to disk deferred to workflow execution."
+    notes: Series matrix (TXT, per-sample) public; raw CEL files as GSE16059_RAW.tar (393.9 MB, Affymetrix CEL) for re-normalization. 88 samples = 44 discordant MZ twin pairs. Staging to disk deferred to workflow execution.
 accessions:
 - GSE16059
 ontology_terms:
@@ -33,10 +33,10 @@ ontology_terms:
 - pbl
 - microarray
 provided_capabilities:
-  - modality: transcriptomics
-    assay: microarray
-    trigger: mixed
+- data_product: data-product:gene-expression-microarray
+  qualifiers:
     cohort_design: case-control
+    trigger: mixed
 related:
 - task:t117
 - question:0050-cross-pathogen-co-enrollment-harmonized-multiomics-design
