@@ -25,7 +25,13 @@ related:
 - paper:Weinstock2021
 - paper:Augustin2025
 - paper:Augustin2026
-required_capabilities: []
+required_capabilities:
+- data_product: data-product:gwas-summary-statistics
+  qualifiers:
+    stratification: atopy
+- data_product: data-product:gene-expression
+  qualifiers:
+    stratification: mast-cell-activation
 created: "2026-07-04"
 updated: "2026-07-16"
 added_by: explore-ideas:claude-opus-4-8:cand-population-atopic-mcas-pais-subgroup

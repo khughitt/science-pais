@@ -34,6 +34,7 @@ ontology_terms:
 - go-biological-process
 - homo-sapiens
 provided_capabilities: []
+capability_scope: reference-substrate
 related:
 - task:t035
 - task:t065

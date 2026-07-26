@@ -33,6 +33,7 @@ ontology_terms:
 - autoimmune
 - ascertainment-bias
 provided_capabilities: []
+capability_scope: epidemiological
 related:
 - task:t079
 - plan:0005-autoimmune-diathesis-sex-modifier-pais-analysis-plan

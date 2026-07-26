@@ -27,6 +27,7 @@ ontology_terms:
 - mental-health-linkage
 - sex-differences
 provided_capabilities: []
+capability_scope: clinical-outcome
 related:
 - task:t013
 - question:0007-mechanism-of-female-predominance-in-pais

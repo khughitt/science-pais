@@ -32,6 +32,7 @@ related:
 - task:t048
 - task:t010
 required_capabilities: []
+capability_scope: epidemiological
 created: "2026-06-11"
 updated: "2026-07-07"
 ---

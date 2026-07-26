@@ -43,7 +43,9 @@ related:
 - hypothesis:0008-measurement-channel-and-ascertainment-bias-predictably-shapes-apparent
 - task:t061
 - task:t070
-required_capabilities: []
+required_capabilities:
+- data_product: data-product:gene-expression
+  qualifiers: {}
 created: "2026-06-19"
 updated: "2026-06-26"
 ---

@@ -33,6 +33,7 @@ related:
 - question:0041-is-female-predominance-in-pais-substantially-an-ascertainment-and
 - question:0042-is-the-cross-trigger-1020-chronic-fraction-an-artifact-of-shared-case
 required_capabilities: []
+capability_scope: epidemiological
 created: "2026-06-24"
 updated: "2026-07-10"
 ---

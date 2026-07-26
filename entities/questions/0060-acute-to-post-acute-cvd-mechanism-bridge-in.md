@@ -59,7 +59,7 @@ mediates the transition and over what timescale.
 
 - The best current interpretation is that most acute influenza→CVD risk resolves with infection
   clearance; the longer-term CVD burden is under-studied for influenza compared to COVID-19.
-- If the vascular antigen-persistence mechanism (influenza RNA in arterial walls; Haidari 2010)
+- If the vascular antigen-persistence mechanism (influenza RNA in arterial walls; Haidari 2010 [@Haidari2010])
   is real and durable, it could sustain low-grade plaque-destabilising inflammation post-acutely —
   this is the most plausible bridge candidate.
 - The major uncertainty is the persistence half-life of influenza material in vascular tissue

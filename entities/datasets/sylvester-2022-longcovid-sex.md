@@ -27,6 +27,7 @@ ontology_terms:
 - sex-differences
 - neuropsychiatric
 provided_capabilities: []
+capability_scope: epidemiological
 related:
 - task:t013
 - question:0007-mechanism-of-female-predominance-in-pais

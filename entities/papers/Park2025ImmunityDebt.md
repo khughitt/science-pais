@@ -129,7 +129,7 @@ No model, tool, or dataset is released for reuse. Underlying data is publicly av
 
 **Papers to read next:**
 - Chen L et al. 2025 (cited as ref 6): ecological analysis and cohort study quantifying influenza immunity debt magnitude across countries as a function of NPI stringency — directly tests the NPI-intensity → immunity-debt-magnitude association.
-- Munro & House 2024 (cited as ref 7): theoretical "cycles of susceptibility" framework for immunity debt dynamics post-pandemic.
+- Munro & House 2025 [@Munro2025] (cited as ref 7; Park2025 cites its 2024 advance-access): theoretical "cycles of susceptibility" framework for immunity debt dynamics post-pandemic.
 - Rao et al. (JAMA Pediatrics 2023, ref 9): US RSV cohort showing increased 2–5-year-old burden post-pandemic — direct comparator to the Korean RSV finding here.
 - Suss & Simões (JAMA Network Open 2024, ref 17): US hospital-based RSV disease burden 2015–2022 across under-5s — longer time series for cross-context comparison.
 

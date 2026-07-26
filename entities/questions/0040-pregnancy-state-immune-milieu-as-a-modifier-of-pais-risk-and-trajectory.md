@@ -12,7 +12,9 @@ origins:
   ref: explore-ideas-population
 related:
 - hypothesis:0020-host-immune-baseline-reserve-gate
-required_capabilities: []
+required_capabilities:
+- data_product: data-product:gene-expression
+  qualifiers: {}
 created: "2026-07-04"
 updated: "2026-07-16"
 added_by: explore-ideas:claude-opus-4-8:cand-population-pregnancy-peripartum-pais

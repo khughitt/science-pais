@@ -2,7 +2,7 @@
 id: "plan:0003-cross-trigger-pathway-overlap-pipeline"
 kind: "plan"
 title: "Pipeline design: cross-trigger pathway-overlap Snakemake workflow (t035)"
-status: "active"
+status: "complete"
 created: "2026-06-20"
 updated: "2026-06-20"
 related:

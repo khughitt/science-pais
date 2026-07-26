@@ -27,7 +27,7 @@ updated: '2026-07-10'
 > **Mode: data-gated. SCOPE — design + interpretation rule committed now; execution deferred.** The vehicle
 > (CD14+ monocyte ATAC-seq on banked PAIS-cohort PBMC) does not yet exist in the corpus — no specimens are in
 > hand and no assay has run. This pre-registration commits the *estimand, contrast, and belief-update rule*
-> now and defers execution until specimens are obtained and the readout clears the Admissibility Gate
+> now and defers execution until specimens are obtained and the readout clears the Vehicle-Admissibility Gate
 > (G1–G6 below). Until then the standing verdict is **`[?]` inconclusive-for-coverage** — it produces **no
 > `bears_on` belief update** on any commitment target. Load-bearing parameters that require an
 > access decision — final assay platform (bulk vs single-cell), per-arm N, and power — are **deliberately
@@ -142,7 +142,7 @@ disease sustains the imprint" without the longitudinal (3→12 mo) design the RE
   longitudinal imprint trajectory (3→12 mo) as a predictor vs a correlate; and the **LIINC marrow HSPC**
   source-localization check.
 
-## Admissibility Gate (G1–G6)
+## Vehicle-Admissibility Gate (G1–G6)
 
 The readout activates the belief-update rule only if it satisfies:
 

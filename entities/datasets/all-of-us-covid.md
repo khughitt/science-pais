@@ -27,6 +27,7 @@ ontology_terms:
 - diverse-cohort
 - sex-differences
 provided_capabilities: []
+capability_scope: clinical-outcome
 related:
 - task:t013
 - task:t039

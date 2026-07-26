@@ -53,4 +53,4 @@ This project was split out from `health-immunity` so that immunity can own **gen
 - Research question: `entities/research-question.md`
 - Active tasks: `tasks/active.md`
 - Decisions log: `core/decisions.md`
-- Scope boundaries: `specs/scope-boundaries.md`
+- Scope boundaries: `entities/specs/0001-scope-boundaries-for-health-post-acute-infection.md`

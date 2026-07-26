@@ -32,6 +32,7 @@ ontology_terms:
 - ehr
 - wearables
 provided_capabilities: []
+capability_scope: clinical-outcome
 related:
 - task:t013
 - task:t040

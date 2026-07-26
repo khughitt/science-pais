@@ -19,7 +19,7 @@ updated: '2026-07-10'
 
 ## Summary
 
-Vacharathit 2025 (cite:Vacharathit2025) reports that mRNA-inclusive vaccine regimens are associated with significantly lower Long COVID scores at 3–4 months after mild Omicron breakthrough (coefficient = −0.86, p = 0.013), independent of age and sex, while non-mRNA platforms show only a trend (p = 0.09). This is a small-cohort observational finding (n=30, 19 distinct vaccine permutations), but it raises the question: what immunological mechanism underlies this apparent protective effect, and is it specific to mRNA vaccines' innate adjuvant properties, their superior spike immunogenicity, or their differential priming of effector/memory populations that modulate post-infection cytokine resolution?
+Vacharathit 2025 [@Vacharathit2025] reports that mRNA-inclusive vaccine regimens are associated with significantly lower Long COVID scores at 3–4 months after mild Omicron breakthrough (coefficient = −0.86, p = 0.013), independent of age and sex, while non-mRNA platforms show only a trend (p = 0.09). This is a small-cohort observational finding (n=30, 19 distinct vaccine permutations), but it raises the question: what immunological mechanism underlies this apparent protective effect, and is it specific to mRNA vaccines' innate adjuvant properties, their superior spike immunogenicity, or their differential priming of effector/memory populations that modulate post-infection cytokine resolution?
 
 ## Why It Matters
 
@@ -33,7 +33,7 @@ Vacharathit 2025 (cite:Vacharathit2025) reports that mRNA-inclusive vaccine regi
 - **Supporting mRNA-specific innate effect:** Bergamaschi 2021 shows BNT162b2 mRNA vaccination triggers a rapid (24–48 h) systemic IL-15–IFN-γ–IP-10/CXCL10 innate signature that co-regulates adaptive immunity and is predictive of effective antibody responses. This is not observed with the same magnitude in inactivated-virus platforms (Sinovac/CoronaVac), which elicit lower neutralizing antibody responses per dose.
 - **Confounding by vaccination history in Thai context:** The Thai cohort's Omicron breakthrough wave was preceded by Delta-era Sinovac (CoronaVac) priming in many participants; those who later received mRNA boosters may have had multiple exposures plus hybrid immune priming that is difficult to deconvolve from platform effects.
 - **Supporting humoral argument:** mRNA platforms elicit broader and more durable spike-specific B- and T-cell responses vs. inactivated vaccines; faster antigen clearance after breakthrough infection (via robust CD8+ recall) might reduce the duration of antigen-driven IP-10 stimulation.
-- **Conflicting:** The Vacharathit 2025 sample is small (n=30); p = 0.013 at T2 but not clearly replicated at T3; the 19 different vaccine permutations make clean platform comparisons impossible without randomization. Non-mRNA protection trend (p = 0.09) could converge with mRNA protection in a larger sample.
+- **Conflicting:** The Vacharathit 2025 [@Vacharathit2025] sample is small (n=30); p = 0.013 at T2 but not clearly replicated at T3; the 19 different vaccine permutations make clean platform comparisons impossible without randomization. Non-mRNA protection trend (p = 0.09) could converge with mRNA protection in a larger sample.
 
 ## Thoughts
 

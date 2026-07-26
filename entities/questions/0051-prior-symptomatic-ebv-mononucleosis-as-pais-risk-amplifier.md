@@ -20,7 +20,13 @@ origins:
 related:
 - hypothesis:0015-ebv-reactivation-consequence-not-cause-of-pais
 - question:0054-ebv-reactivation-autoantibody-emergence-temporal-ordering
-required_capabilities: []
+required_capabilities:
+- data_product: data-product:gwas-summary-statistics
+  qualifiers:
+    stratification: im-history
+- data_product: data-product:proteomics-affinity
+  qualifiers:
+    stratification: im-history
 created: "2026-07-06"
 updated: "2026-07-06"
 added_by: explore-ideas:claude-opus-4-8:cand-population-prior-ebv-mononucleosis

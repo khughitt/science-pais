@@ -32,6 +32,7 @@ ontology_terms:
 - computable-phenotype
 - sex-differences
 provided_capabilities: []
+capability_scope: epidemiological
 related:
 - task:t013
 - task:t079

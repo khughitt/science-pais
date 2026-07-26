@@ -59,9 +59,25 @@ aspects:
 - hypothesis-testing
 - computational-analysis
 prose_lint:
+  # Write-once ledger classes whose numbers are internal bookkeeping (entity
+  # counts, manifest sizes, sweep tallies), not sourced claims — there is no
+  # external provenance to anchor them to. Same rationale, and the same file
+  # classes, as graph.revision_manifest_excludes above. Deliberately
+  # `doc/meta/explorations/*`, NOT `doc/meta/*`: that directory also holds
+  # durable reference artifacts that SHOULD be linted.
+  exclude_paths:
+  - doc/curations/*.md
+  - doc/meta/explorations/*.md
   bare_author_year_deny:
+  # Surname collisions with a bib entry's co-author, where the mentioned work
+  # itself is NOT in the bibliography (secondary citations inside a paper
+  # summary). Verified 2026-07-26: Borchers 2013 (RSV severity) collides with
+  # Wang2023b's co-author C.H. Borchers; Wang 2024 (Ontario cohort, cited by
+  # Tsergas2025) has no Wang-2024 bib entry; Afrin/Weinstock/Molderings 2020
+  # collides with Weinstock2021's author list.
   - Aucott 2016
   - Ballering 2022
+  - Borchers 2013
   - Carruthers 2003
   - Chen 2022
   - Choutka 2022
@@ -105,6 +121,8 @@ prose_lint:
   - Ursini 2023
   - Vernon 2002
   - Vreeman 2025
+  - Wang 2024
+  - Weinstock & Molderings 2020
   - Wirth & Scheibenbogen 2020
   - Wirth & Scheibenbogen 2021
   short_form_ids_deny:

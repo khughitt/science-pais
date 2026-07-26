@@ -16,7 +16,11 @@ source_refs:
 - cite:Xie2024
 related:
 - topic:shared-failure-mode-across-pais
-required_capabilities: []
+required_capabilities:
+- data_product: data-product:gene-expression
+  qualifiers: {}
+- data_product: data-product:proteomics-affinity
+  qualifiers: {}
 created: "2026-06-11"
 updated: "2026-06-11"
 ---
