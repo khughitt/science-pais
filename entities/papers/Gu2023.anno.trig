@@ -1,0 +1,60 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix oa:   <http://www.w3.org/ns/oa#> .
+@prefix dc:   <http://purl.org/dc/terms/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sci:  <http://example.org/science/vocab/> .
+@prefix anno: <#> .
+
+anno:annotations {
+  anno:a-a6757e a oa:Annotation ;
+    oa:hasTarget       [
+      oa:hasSource <Gu2023.md> ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact   "[SPECULATION]\n\n## Relevance\n\n**`question:0026` (IL-6/STAT3 HSPC imprinting) — supportive synthesis context.** The paper's primary contribution to `question:0026` is providing an explicit synthesis argument that connects IL-6/STAT3 → HSPC epigenomic imprinting → hyperreactive monocyte progeny to the long COVID inflammatory burden." ;
+        oa:prefix  "ts; explicitly presented as a question for future research. " ;
+        oa:suffix  " However, all empirical support cited here derives from Cheo"
+      ]
+    ] ;
+    oa:hasBody         [
+      a oa:TextualBody ;
+      dc:format        "text/plain" ;
+      rdf:value        "author conjecture / brainstorming (lifted from [SPECULATION])"
+    ] ;
+    oa:motivatedBy     oa:classifying ;
+    sci:annotationType "speculation" ;
+    sci:source         "marker-scanner:phase-2" ;
+    sci:status         "open" ;
+    sci:contentHash    "sha256:bf919ad7947b7b2a6275c25ab83a263920669cdd72c9ddf4429933c7ac790163" ;
+    sci:liftedFrom     "[SPECULATION]" ;
+    sci:matchText      "[SPECULATION]" ;
+    dc:creator         "science-annotate-cli" ;
+    dc:created         "2026-07-26T14:39:04.996442+00:00"^^xsd:dateTime .
+
+
+  anno:a-f1c933 a oa:Annotation ;
+    oa:hasTarget       [
+      oa:hasSource <Gu2023.md> ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact   "This claim should be treated as [SPECULATION] per project convention." ;
+        oa:prefix  "ates IL-1β-driven trained immunity in the COVID-19 context. " ;
+        oa:suffix  "\n\n**NLRP3 inflammasome triggered by spike S1 protein.** The "
+      ]
+    ] ;
+    oa:hasBody         [
+      a oa:TextualBody ;
+      dc:format        "text/plain" ;
+      rdf:value        "author conjecture / brainstorming (lifted from [SPECULATION])"
+    ] ;
+    oa:motivatedBy     oa:classifying ;
+    sci:annotationType "speculation" ;
+    sci:source         "marker-scanner:phase-2" ;
+    sci:status         "open" ;
+    sci:contentHash    "sha256:96ecd0bdfedc173863335e656a651166760a06932e1a6e87c35c5696dfcda95e" ;
+    sci:liftedFrom     "[SPECULATION]" ;
+    sci:matchText      "[SPECULATION]" ;
+    dc:creator         "science-annotate-cli" ;
+    dc:created         "2026-07-26T14:39:04.996442+00:00"^^xsd:dateTime .
+}

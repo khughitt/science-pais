@@ -1,0 +1,86 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix oa:   <http://www.w3.org/ns/oa#> .
+@prefix dc:   <http://purl.org/dc/terms/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sci:  <http://example.org/science/vocab/> .
+@prefix anno: <#> .
+
+anno:annotations {
+  anno:a-034417 a oa:Annotation ;
+    oa:hasTarget       [
+      oa:hasSource <Srivatsan2025.md> ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact   "- **No sex × ARD interaction analysis**: The core confound for t078 (both ARD and PASC are female-predominant) is not addressed by any primary study reviewed, nor, based on the abstract, explicitly flagged as a gap in the review [INACCESSIBLE]." ;
+        oa:prefix  "udies with different designs, definitions, and populations.\n" ;
+        oa:suffix  "\n- **Healthcare utilization confound not addressed**: EHR-ba"
+      ]
+    ] ;
+    oa:hasBody         [
+      a oa:TextualBody ;
+      dc:format        "text/plain" ;
+      rdf:value        "paywalled / image-only / private source (lifted from [INACCESSIBLE])"
+    ] ;
+    oa:motivatedBy     oa:classifying ;
+    sci:annotationType "inaccessible" ;
+    sci:source         "marker-scanner:phase-2" ;
+    sci:status         "open" ;
+    sci:contentHash    "sha256:934f48a753635642de94f8dd68e0d6932cb56b2ca7a06325fe1c7631929d120d" ;
+    sci:liftedFrom     "[INACCESSIBLE]" ;
+    sci:matchText      "[INACCESSIBLE]" ;
+    dc:creator         "science-annotate-cli" ;
+    dc:created         "2026-07-26T14:39:04.996442+00:00"^^xsd:dateTime .
+
+
+  anno:a-7efa29 a oa:Annotation ;
+    oa:hasTarget       [
+      oa:hasSource <Srivatsan2025.md> ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact   "- **Paywalled**: Full methods, full results tables, and full discussion are inaccessible; all items beyond the abstract and reference list are derived by triangulation [INACCESSIBLE]." ;
+        oa:prefix  "ing bias toward that group's cohort findings [SPECULATION].\n" ;
+        oa:suffix  "\n\n## Model / Tool Availability\n\nNot applicable — review pape"
+      ]
+    ] ;
+    oa:hasBody         [
+      a oa:TextualBody ;
+      dc:format        "text/plain" ;
+      rdf:value        "paywalled / image-only / private source (lifted from [INACCESSIBLE])"
+    ] ;
+    oa:motivatedBy     oa:classifying ;
+    sci:annotationType "inaccessible" ;
+    sci:source         "marker-scanner:phase-2" ;
+    sci:status         "open" ;
+    sci:contentHash    "sha256:b44665c8dc639a1c49e0899447b4454a426e7c9d06ffb7e5c79a9c488e5f13ac" ;
+    sci:liftedFrom     "[INACCESSIBLE]" ;
+    sci:matchText      "[INACCESSIBLE]" ;
+    dc:creator         "science-annotate-cli" ;
+    dc:created         "2026-07-26T14:39:04.996442+00:00"^^xsd:dateTime .
+
+
+  anno:a-cbc5cb a oa:Annotation ;
+    oa:hasTarget       [
+      oa:hasSource <Srivatsan2025.md> ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact   "Patel (Mass General Brigham) is co-author on multiple primary papers synthesized (Ann Rheum Dis 2022; J Rheumatol 2024), which may introduce narrative framing bias toward that group's cohort findings [SPECULATION]." ;
+        oa:prefix  "utoimmune lead author affiliation**: Senior author Naomi J. " ;
+        oa:suffix  "\n- **Paywalled**: Full methods, full results tables, and ful"
+      ]
+    ] ;
+    oa:hasBody         [
+      a oa:TextualBody ;
+      dc:format        "text/plain" ;
+      rdf:value        "author conjecture / brainstorming (lifted from [SPECULATION])"
+    ] ;
+    oa:motivatedBy     oa:classifying ;
+    sci:annotationType "speculation" ;
+    sci:source         "marker-scanner:phase-2" ;
+    sci:status         "open" ;
+    sci:contentHash    "sha256:1b6f307fd595562b1718ab20062560a734c118e16a7ea48e7859f4083924ad5e" ;
+    sci:liftedFrom     "[SPECULATION]" ;
+    sci:matchText      "[SPECULATION]" ;
+    dc:creator         "science-annotate-cli" ;
+    dc:created         "2026-07-26T14:39:04.996442+00:00"^^xsd:dateTime .
+}

@@ -1,0 +1,35 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix oa:   <http://www.w3.org/ns/oa#> .
+@prefix dc:   <http://purl.org/dc/terms/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sci:  <http://example.org/science/vocab/> .
+@prefix anno: <#> .
+
+anno:annotations {
+  anno:a-35149d a oa:Annotation ;
+    oa:hasTarget       [
+      oa:hasSource <Skaarup2023.md> ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact   "The intersection is inferred [SPECULATION]." ;
+        oa:prefix  "LRP3; the paper does not discuss these\n  pathways directly. " ;
+        oa:suffix  "\n\n- **hypothesis:0020 (host immune baseline reserve gate):**"
+      ]
+    ] ;
+    oa:hasBody         [
+      a oa:TextualBody ;
+      dc:format        "text/plain" ;
+      rdf:value        "author conjecture / brainstorming (lifted from [SPECULATION])"
+    ] ;
+    oa:motivatedBy     oa:classifying ;
+    sci:annotationType "speculation" ;
+    sci:source         "marker-scanner:phase-2" ;
+    sci:status         "open" ;
+    sci:contentHash    "sha256:91dbfb2c49602f83f9ae33f54acc474ed091a3fa06667e2438a3125881b13492" ;
+    sci:liftedFrom     "[SPECULATION]" ;
+    sci:matchText      "[SPECULATION]" ;
+    dc:creator         "science-annotate-cli" ;
+    dc:created         "2026-07-26T14:39:04.996442+00:00"^^xsd:dateTime .
+
+}

@@ -1,0 +1,138 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix oa:   <http://www.w3.org/ns/oa#> .
+@prefix dc:   <http://purl.org/dc/terms/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sci:  <http://example.org/science/vocab/> .
+@prefix anno: <#> .
+
+anno:annotations {
+  anno:a-0303aa a oa:Annotation ;
+    oa:hasTarget       [
+      oa:hasSource <Cai2025.md> ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact   "**Infection sub-type breakdown and individual pathogen rates** are [INACCESSIBLE] (full text paywalled)." ;
+        oa:prefix  "specimens [INACCESSIBLE for specific rates and pathogens].\n\n" ;
+        oa:suffix  " Sensitivity analyses, subgroup analyses by vaccination stat"
+      ]
+    ] ;
+    oa:hasBody         [
+      a oa:TextualBody ;
+      dc:format        "text/plain" ;
+      rdf:value        "paywalled / image-only / private source (lifted from [INACCESSIBLE])"
+    ] ;
+    oa:motivatedBy     oa:classifying ;
+    sci:annotationType "inaccessible" ;
+    sci:source         "marker-scanner:phase-2" ;
+    sci:status         "open" ;
+    sci:contentHash    "sha256:7a4c7fb58333e20365ddf0745fbd6138a3c2769b6c487d3bd6d5b35d8f7ea5c8" ;
+    sci:liftedFrom     "[INACCESSIBLE]" ;
+    sci:matchText      "[INACCESSIBLE]" ;
+    dc:creator         "science-annotate-cli" ;
+    dc:created         "2026-07-26T14:39:04.996442+00:00"^^xsd:dateTime .
+
+
+  anno:a-62c43f a oa:Annotation ;
+    oa:hasTarget       [
+      oa:hasSource <Cai2025.md> ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact   "Full methods, per-pathogen rates, and subgroup/sensitivity analyses remain [INACCESSIBLE] (paywalled)." ;
+        oa:prefix  "onfirmed directly from the PubMed abstract (PMID 40185115). " ;
+        oa:suffix  "\n-->\n\n## Key Contribution\n\nA large retrospective VA cohort s"
+      ]
+    ] ;
+    oa:hasBody         [
+      a oa:TextualBody ;
+      dc:format        "text/plain" ;
+      rdf:value        "paywalled / image-only / private source (lifted from [INACCESSIBLE])"
+    ] ;
+    oa:motivatedBy     oa:classifying ;
+    sci:annotationType "inaccessible" ;
+    sci:source         "marker-scanner:phase-2" ;
+    sci:status         "open" ;
+    sci:contentHash    "sha256:4b2166961c1613ca90529c85da2bc36f76fc07f2e4846c3c5194db38822e2759" ;
+    sci:liftedFrom     "[INACCESSIBLE]" ;
+    sci:matchText      "[INACCESSIBLE]" ;
+    dc:creator         "science-annotate-cli" ;
+    dc:created         "2026-07-26T14:39:04.996442+00:00"^^xsd:dateTime .
+
+
+  anno:a-a86dad a oa:Annotation ;
+    oa:hasTarget       [
+      oa:hasSource <Cai2025.md> ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact   "Analysis code details are [INACCESSIBLE]." ;
+        oa:prefix  "tion Resource Center (VIReC@va.gov) via data use agreement. " ;
+        oa:suffix  "\n\n## Follow-up\n\n**Primary papers to cross-reference (leads —"
+      ]
+    ] ;
+    oa:hasBody         [
+      a oa:TextualBody ;
+      dc:format        "text/plain" ;
+      rdf:value        "paywalled / image-only / private source (lifted from [INACCESSIBLE])"
+    ] ;
+    oa:motivatedBy     oa:classifying ;
+    sci:annotationType "inaccessible" ;
+    sci:source         "marker-scanner:phase-2" ;
+    sci:status         "open" ;
+    sci:contentHash    "sha256:df83fe2d05bf0e4f2db0606624b26d31ef91f232e9298c8b18639b917ef99f1b" ;
+    sci:liftedFrom     "[INACCESSIBLE]" ;
+    sci:matchText      "[INACCESSIBLE]" ;
+    dc:creator         "science-annotate-cli" ;
+    dc:created         "2026-07-26T14:39:04.996442+00:00"^^xsd:dateTime .
+
+
+  anno:a-d89504 a oa:Annotation ;
+    oa:hasTarget       [
+      oa:hasSource <Cai2025.md> ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact   "The specific covariate list, weight/balance diagnostics, and sensitivity analyses remain [INACCESSIBLE] (full text paywalled)." ;
+        oa:prefix  "ics across cohorts (stated in the abstract, PMID 40185115). " ;
+        oa:suffix  "\n\n**Statistical model:** **Log-binomial regression** models "
+      ]
+    ] ;
+    oa:hasBody         [
+      a oa:TextualBody ;
+      dc:format        "text/plain" ;
+      rdf:value        "paywalled / image-only / private source (lifted from [INACCESSIBLE])"
+    ] ;
+    oa:motivatedBy     oa:classifying ;
+    sci:annotationType "inaccessible" ;
+    sci:source         "marker-scanner:phase-2" ;
+    sci:status         "open" ;
+    sci:contentHash    "sha256:5b3a84f8455b4b7e48759474aff8f6eca2366da881e655877f638458190a98e3" ;
+    sci:liftedFrom     "[INACCESSIBLE]" ;
+    sci:matchText      "[INACCESSIBLE]" ;
+    dc:creator         "science-annotate-cli" ;
+    dc:created         "2026-07-26T14:39:04.996442+00:00"^^xsd:dateTime .
+
+
+  anno:a-e51d19 a oa:Annotation ;
+    oa:hasTarget       [
+      oa:hasSource <Cai2025.md> ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact   "**Full methods and sensitivity analyses are [INACCESSIBLE]:** Propensity score specification, covariate balance, negative outcome controls, and sensitivity analyses are not available from the abstract alone." ;
+        oa:prefix  " rather than intrinsic SARS-CoV-2 immune dysregulation.\n\n9. " ;
+        oa:suffix  "\n\n## Model / Tool Availability\n\nNo computational model, soft"
+      ]
+    ] ;
+    oa:hasBody         [
+      a oa:TextualBody ;
+      dc:format        "text/plain" ;
+      rdf:value        "paywalled / image-only / private source (lifted from [INACCESSIBLE])"
+    ] ;
+    oa:motivatedBy     oa:classifying ;
+    sci:annotationType "inaccessible" ;
+    sci:source         "marker-scanner:phase-2" ;
+    sci:status         "open" ;
+    sci:contentHash    "sha256:70e0c7ab8f7fe657e42c7b28c7a9efc49759e1cc61913e3bcff79df57d20b605" ;
+    sci:liftedFrom     "[INACCESSIBLE]" ;
+    sci:matchText      "[INACCESSIBLE]" ;
+    dc:creator         "science-annotate-cli" ;
+    dc:created         "2026-07-26T14:39:04.996442+00:00"^^xsd:dateTime .
+}

@@ -63,7 +63,7 @@ Additional primary inputs include Patel NJ et al. 2022 (Ann Rheum Dis) on vaccin
 
 ## T078 Focus — Six Targeted Questions
 
-These answers draw on the abstract, the reference list, and the four primary papers confirmed to be synthesized by this review. Items marked [INACCESSIBLE] could not be verified from the paywalled full text.
+These answers draw on the abstract, the reference list, and the four primary papers confirmed to be synthesized by this review. Items marked `[INACCESSIBLE]` could not be verified from the paywalled full text.
 
 **1. EXPOSURE**: Yes. The review explicitly treats pre-existing autoimmune rheumatic disease — diagnosed before the index SARS-CoV-2 infection — as the exposure. Disease strata covered (drawn from primary papers synthesized): rheumatoid arthritis (RA), systemic lupus erythematosus (SLE), myositis, Sjögren's syndrome, spondyloarthritis (including ankylosing spondylitis, psoriatic arthritis), vasculitis, polymyalgia rheumatica, and connective tissue disease. The umbrella term used across primary papers is "systemic autoimmune rheumatic disease" (SARD) or "inflammatory rheumatic disease" (IRD). Disease-specific PASC rate estimates are sparse: DiIorio 2022 reports "no statistical association of SARD type with prolonged symptom duration"; the Mass General Brigham EHR cohort (Patel NJ et al., J Rheumatol 2024) identifies SLE and vasculitis as risk factors within the SARD cohort (no external reference group).
 
