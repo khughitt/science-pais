@@ -226,19 +226,6 @@ Operational vehicle hunt for pre-registration:0005 (the A1-vs-M3 adjudicator for
 
 
 
-## [t130] Promote the four cross-trigger stub papers to summarized entities (Broderick2012, Ramundo2025, Sanford2026, Watton2026)
-- priority: P3
-- status: proposed
-- aspects: []
-- related: [hypothesis:0001-shared-dysregulated-attractor]
-- created: 2026-07-17
-
-From curation sweep 2026-07-16 (PD-3 / FI-1). Four papers sit at status:stub but are already load-bearing: search:0002 and discussion:0002 cite them to grade the NON-COVID trigger legs of the cross-trigger convergence claim (search:0002 rates post-Ebola 'Thin-but-present | Sanford2026'; post-chikungunya 'Moderate ... but arthralgia-dominant'). Those gradings feed hypothesis:0001 (highest attention weight in project, open_question_debt=35) and D-003 infection-trigger scope discipline, yet rest on entities with no summary body. Trigger legs: Broderick2012 = post-mononucleosis cytokine imbalance; Ramundo2025 = post-chikungunya transcriptomics; Sanford2026 = post-Ebola metabolomics (PREPRINT - hold at that evidence level per project convention on preprints); Watton2026 = ME/CFS unified mechanistic model (synthesis review, not primary evidence). Use /science:research-papers (paper-researcher subagent) per paper. Side effect: clears the 4 paper.status-vocabulary warnings, but see the PD-4 task first - the vocabulary decision may change what status these land on. Sibling to t106/t114/t115 seeding tasks.
-
-### Notes
-
-- 2026-07-26: t131 RULED (see its closure note) — the paper-vocabulary question is settled and does NOT change where these four land: promote each to a real summary at status: active. 'stub' stays a legal project convention for seeded-but-unread papers, suppressed by a value-scoped health.accepted_validation entry in science.yaml, so these 4 warnings are already off the validate surface; clearing them for real is now purely a function of doing the reading, not of a status edit. Sanford2026 still holds at preprint evidence level; Watton2026 is a synthesis review, not primary evidence.
-
 ## [t132] Decide the source_refs convention for reanalysis/audit interpretations
 - priority: P3
 - status: proposed
@@ -262,3 +249,19 @@ t110 found the LMIC/ancestral stratum has exactly one ancestry-stratified vehicl
 - created: 2026-07-17
 
 Two strata survived the t110 sweep uncovered, for DIFFERENT reasons, and the distinction is decision-relevant. (1) question:0040 pregnancy reads capability-mismatch: every public pregnancy deposit found is placenta/decidua/cord-blood collected AT DELIVERY (GSE181238, GSE246536, GSE318446, GSE185557 and ~8 more). Not one has a post-acute maternal timepoint, so none stratifies pregnancy as an effect modifier of PAIS trajectory. The cohorts that COULD answer it (RECOVER-Pregnancy, PRIORITY, COPS, MOACC-19, the Spanish ~92-week obstetric cohort) were all built inside DUAs/enclaves. This is a STRUCTURAL access gap, not a search failure -- more searching will not fix it. (2) question:0057 (compound/co-occurring boundary conditions) reads no-candidate: it needs datasets stratifying TWO boundary variables jointly, and no single-stratum deposit qualifies, so it cannot inherit coverage from the others. Consider whether q0040/q0057 should be reframed toward what open data CAN support, or explicitly parked as access-blocked.
+
+## [t145] Correct the two overstated non-COVID trigger cells in search:0002 / discussion:0002 and add a comparator-provenance column
+- priority: P2
+- status: proposed
+- aspects: []
+- created: 2026-07-26
+
+From t130 (2026-07-26). Reading the four stub papers in full showed two matrix cells overstate their evidence. (1) Post-Ebola: search:0002 line 106/148 records a 'metabolomic signature (Sanford2026)' graded Thin-but-present, but the PES-vs-uninfected-household-contact contrast was NULL - the 34-metabolite signal is survivor-internal (PES n=37 vs asymptomatic EVD survivors n=20). (2) Post-EBV cytokine: the cell reads 'supported - post-EBV cytokine networks (Broderick2012)', but the cytokine comparison is n=9 vs n=12 with the 5-cytokine classifier trained AND evaluated on the same 21 samples, no external validation, and standing tension with the Dubbo negative (Vollmer-Conna 2007) - note Galbraith2011 is already recorded as a head-to-head NEGATIVE spanning EBV. Structural fix: the matrix grades cells by whether a signature EXISTS but has no column for what it was contrasted AGAINST. question:0001 asks for a signature simultaneously shared across triggers AND specific to failed-recovery-vs-full-recovery; a survivor-internal contrast addresses only the second conjunct. Add an explicit 'contrasted against' column so this is visible without re-reading. See paper:synthesis-2026-07-26-non-covid-trigger-legs Findings 1-2.
+
+## [t146] Scope ruling: are arthralgia-phenotype post-infectious data in-scope for the fatigue-PAIS attractor?
+- priority: P2
+- status: proposed
+- aspects: []
+- created: 2026-07-26
+
+Long-standing open item, now actionable: it is search:0002 follow-up #5 AND discussion:0002 follow-up #3, both asking the scope-boundaries spec to decide whether post-chikungunya arthritis-phenotype data (Ramundo2025, Chang2024) are in-scope for the fatigue-PAIS attractor. t130 read Ramundo2025 in full and it now has a concrete recommendation to rule on. Recommendation from the reading: pCHIKV-CIJD passes D-003 cleanly (acute infection trigger + >90-day persistence, ultrasound-confirmed synovitis) so it IS in primary scope, but should NOT be counted as positive evidence for the fatigue-attractor arm of hypothesis:0001. Rationale: the upstream mechanism (early antiviral immune impairment - LIFR, ZBTB16, neutrophil degranulation, MHC class I - sampled BEFORE the Day-90 outcome) is genuine read-across to the viral-persistence axis, while the downstream failure mode (MMP8/LTF/M13 collagen-degradation, synovitis) is joint biology, not fatigue biology. Counting it as convergence support risks trivializing hypothesis:0001 by widening the phenotype until convergence becomes unfalsifiable. This is a D-00x-class scope decision and needs the user's ruling, not an agent's. Note the same phenotype-drift issue applies to Sanford2026 (post-Ebola PES is MSK/GI + cardiopulmonary, also not fatigue), so the ruling should cover the general case, not just chikungunya. question:0092 was reserved to carry the scientific form of the question. See paper:synthesis-2026-07-26-non-covid-trigger-legs Finding 2.
