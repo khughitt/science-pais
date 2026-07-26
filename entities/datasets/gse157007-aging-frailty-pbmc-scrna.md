@@ -26,6 +26,8 @@ access:
   last_reviewed: '2026-07-17'
   verified_by: agent (verify-access)
 accessions: []
+source_refs:
+- https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157007
 ontology_terms:
 - frailty
 - immunosenescence
@@ -60,7 +62,7 @@ preference for signatures re-computed from primary data over published tables.
 
 ## Access / caveats
 
-**Public.** GEO landing page confirmed 2026-07-17; 706.4 Mb TAR (CSV/MTX/TSV) plus SRA.
+**Public.** GEO landing page confirmed 2026-07-17; 706.4 Mb archive (TAR of CSV/MTX/TSV) plus SRA.
 
 **Caveats.**
 - **No infection arm.** Frailty baseline only — it cannot test the boundary-condition claim by

@@ -26,6 +26,8 @@ access:
     rationale: 'Evaluated by plan:0010 (t117) and DEMOTED: sequenced post-acute timepoint is day-21 (~3 wk, below the >=4-wk post-acute floor), no day-90 transcriptome, chronic-vs-recovered contrast, raw-FASTQ-only. Removes chikungunya as a strict-primary trigger; retained only as a candidate for an adjacent chronification-predictor triangulation. Not in the delivered t117 matrix.'
 accessions:
 - PRJNA1001790
+source_refs:
+- https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1001790
 ontology_terms:
 - post-chikungunya
 - chikungunya

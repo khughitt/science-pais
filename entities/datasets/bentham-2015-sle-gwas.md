@@ -28,6 +28,8 @@ accessions:
 - GWAS_Catalog:GCST003156
 - PMID:26502338
 - DOI:10.1038/ng.3434
+source_refs:
+- https://www.ebi.ac.uk/gwas/studies/GCST003156
 ontology_terms:
 - systemic-lupus-erythematosus
 - autoimmune-disease

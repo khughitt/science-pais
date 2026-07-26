@@ -61,7 +61,7 @@ frailty-as-boundary-condition claim requires.
 
 ## Access / caveats
 
-**Public.** GEO landing page confirmed 2026-07-17; htseq counts (3.5 Mb) downloadable.
+**Public.** GEO landing page confirmed 2026-07-17; htseq counts (3.5 Mb file) downloadable.
 
 **Caveats.**
 - **Raw FASTQ deliberately withheld** by the authors on privacy grounds — processed counts only,

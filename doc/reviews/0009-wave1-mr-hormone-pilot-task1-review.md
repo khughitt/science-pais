@@ -73,7 +73,7 @@ Before Task 4, close F1/F2/F3 in code and regenerate the staging manifest so MRl
 ## Resolution (2026-07-04)
 
 All four findings closed in code and the staging manifests regenerated
-deterministically from the local, checksummed payloads (no 4.1 GB re-download —
+deterministically from the local, checksummed payloads (no 4.1 GB download again —
 the byte-stable checksums recorded at staging are preserved; only the
 fix-touched fields were recomputed from the local `meta.yaml` / `eur_w_ld_chr`
 folder using the workflow's own functions).

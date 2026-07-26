@@ -48,7 +48,7 @@ tightenings — none blocking for an exploratory, ancestry-flagged, non-primary 
 ### Dim 2 — Assumption audit (WARN): EUR LD reference vs multi-ancestry outcome
 MRlap runs cross-trait LDSC internally with the **EUR** `eur_w_ld_chr` reference.
 The exposures (Ruth, European UKB) match it; the **outcome** `GCST90454541` is a
-**European-dominant but ~10–15% non-European** meta. LDSC assumes the LD reference
+**European-dominant but ~10–15% non-European** meta (dataset:covid19-hgi-longcovid-gwas). LDSC assumes the LD reference
 matches the GWAS sample, so the **outcome** h², single-trait intercept, and the
 **cross-trait intercept** (`int_crosstrait`) — the very quantity driving the
 overlap correction — are **ancestry-approximate**. This is a distinct, mechanistic
@@ -73,7 +73,7 @@ number rather than propagated into it.
 
 ### Dim 6 — Validation (minor): canonicalization step has no resource capture
 `run_mrlap` carries `benchmark:`, but `canonicalize_exposure`/`canonicalize_outcome`
-(streaming ~4.4 GB of gz) do not. Memory is O(1) by streaming so RSS is not the
+(streaming ~4.4 GB of gz from the task:t089 staged payloads) do not. Memory is O(1) by streaming so RSS is not the
 risk, but wall-clock on real data is worth a line. **Recommend:** add `benchmark:`
 to the two canonicalize rules (cheap; matches the plan's own real-data-resource
 posture).

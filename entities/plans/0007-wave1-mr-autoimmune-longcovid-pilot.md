@@ -62,13 +62,13 @@ population-controls** stratum (FTP metadata: "Broad case definition" /
 general-population liability contrast comparable to Bentham's population
 case-control design and avoid the collider/selection bias of conditioning on
 prior infection. **This corrects the handoff §1 stratum label**, which named
-GCST90454543 as broad/population: 543 is in fact broad-cases vs **strict**
+GCST90454543 as broad/population: GCST90454543 is in fact broad-cases vs **strict**
 controls ("had SARS-CoV-2 but did not develop Long COVID"), a *different,
 within-infected estimand* — it is demoted to a design-phase sensitivity, not the
 pilot primary.
 
 **Ancestry caveat (load-bearing for the GO gate).** The GCST90454541 harmonised
-file is a **European-dominant multi-ancestry meta-analysis** (European
+file (dataset:covid19-hgi-longcovid-gwas) is a **European-dominant multi-ancestry meta-analysis** (European
 n≈1,090,649 of ≈1,100,645 total, ~99%); the GWAS Catalog does **not** serve a
 separate European-only file for this accession. A cleanly ancestry-matched
 outcome therefore cannot be assembled from this file alone, so the pilot's MR

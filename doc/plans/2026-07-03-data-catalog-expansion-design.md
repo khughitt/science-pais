@@ -147,7 +147,8 @@ User decisions locked at design time: **balanced phased program** (all three aim
 in waves; the ordering below is the recommendation the user delegated) and
 **lightweight connect-first machinery** (no custom ledger/validator code — the
 22-question corpus is hand-triageable; the myeloma YAML-ledger + Python validator
-was justified by 185 Q/H targets and does not pay for itself at 1/12th the size).
+was justified by a Q/H target corpus an order of magnitude larger and does not
+pay for itself at 1/12th the size).
 
 ### Gate-0 — Reach & capability audit + baseline coverage (before Wave 1)
 

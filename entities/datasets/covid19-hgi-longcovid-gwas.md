@@ -31,6 +31,8 @@ accessions:
 - GWAS_Catalog:GCST90454542
 - PMID:40399555
 - DOI:10.1038/s41588-025-02100-w
+source_refs:
+- https://www.ebi.ac.uk/gwas/studies/GCST90454541
 ontology_terms:
 - long-covid
 - post-acute-covid-19

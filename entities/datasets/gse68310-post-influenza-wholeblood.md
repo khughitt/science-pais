@@ -28,6 +28,8 @@ access:
     notes: GEO Series Matrix (TXT) + GSE68310_non-normalized.txt.gz (241.5 MB) + GSE68310_SubjectPhenotypes1.txt.gz; staging to disk deferred to workflow execution.
 accessions:
 - GSE68310
+source_refs:
+- https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE68310
 ontology_terms:
 - post-influenza
 - influenza
@@ -64,4 +66,4 @@ Post-influenza / acute-respiratory-viral-infection whole-blood **MICROARRAY** (G
 
 ## Access / caveats
 
-Public accession (`GSE68310`); per-sample expression matrix confirmed downloadable (WP1, 2026-07-08): Series Matrix (TXT) + `GSE68310_non-normalized.txt.gz` (241.5 MB) + `GSE68310_SubjectPhenotypes1.txt.gz`. Microarray assay confirmed (GPL10558).
+Public accession (`GSE68310`); per-sample expression matrix confirmed downloadable (WP1, 2026-07-08): Series Matrix (TXT) + `GSE68310_non-normalized.txt.gz` (241.5 MB file) + `GSE68310_SubjectPhenotypes1.txt.gz`. Microarray assay confirmed (GPL10558).

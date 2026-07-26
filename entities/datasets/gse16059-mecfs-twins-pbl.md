@@ -28,6 +28,8 @@ access:
     notes: Series matrix (TXT, per-sample) public; raw CEL files as GSE16059_RAW.tar (393.9 MB, Affymetrix CEL) for re-normalization. 88 samples = 44 discordant MZ twin pairs. Staging to disk deferred to workflow execution.
 accessions:
 - GSE16059
+source_refs:
+- https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE16059
 ontology_terms:
 - me-cfs
 - pbl
@@ -60,4 +62,4 @@ Peripheral-blood-leukocyte (PBL) microarray of monozygotic twins **discordant fo
 
 ## Access / caveats
 
-Verified public (record-checked 2026-07-08, t117 WP1). Per-sample series matrix (TXT) downloadable; raw `GSE16059_RAW.tar` (393.9 MB, Affymetrix CEL) available for re-normalization. Paired discordant-twin design (44 pairs) — WP2 must model within-pair pairing rather than treating the 88 samples as independent.
+Verified public (record-checked 2026-07-08, t117 WP1). Per-sample series matrix (TXT) downloadable; raw `GSE16059_RAW.tar` (393.9 MB archive, Affymetrix CEL) available for re-normalization. Paired discordant-twin design (44 pairs) — WP2 must model within-pair pairing rather than treating the 88 samples as independent.

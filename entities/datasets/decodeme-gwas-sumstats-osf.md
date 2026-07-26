@@ -26,6 +26,8 @@ access:
   last_reviewed: '2026-07-17'
   verified_by: agent (verify-access)
 accessions: []
+source_refs:
+- https://osf.io/rgqs3/files/osfstorage
 ontology_terms:
 - mecfs
 - infectious-onset
@@ -50,8 +52,8 @@ identity_context:
 DecodeME GWAS summary statistics hosted openly on OSF (node `rgqs3`, public). The
 `DecodeME Summary Statistics` folder holds REGENIE outputs including the headline scan
 (`gwas_1.regenie.gz`, `gwas_2.regenie.gz`), sex-stratified files, and — most relevant here —
-**`gwas_1_infectious_onset.regenie.gz` (318 MB)** and **`gwas_1_non_infectious_onset.regenie.gz`
-(316 MB)**. DecodeME is the largest ME/CFS genetic study to date (~15,579 cases / 259,909 controls
+**`gwas_1_infectious_onset.regenie.gz` (318 MB file)** and **`gwas_1_non_infectious_onset.regenie.gz`
+(316 MB file)**. DecodeME is the largest ME/CFS genetic study to date (~15,579 cases / 259,909 controls
 in the main GWAS).
 
 ## Why it fits

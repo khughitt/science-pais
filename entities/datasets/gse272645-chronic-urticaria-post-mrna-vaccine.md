@@ -26,6 +26,8 @@ access:
   last_reviewed: '2026-07-17'
   verified_by: agent (verify-access)
 accessions: []
+source_refs:
+- https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE272645
 ontology_terms:
 - mast-cell-activation
 - chronic-urticaria

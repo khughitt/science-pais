@@ -28,6 +28,8 @@ access:
     notes: 'Per-sample count matrix downloadable: GSE270045_LC_counts.tsv.gz (2.4 Mb, TSV, 36 samples). Staging to disk deferred to workflow execution.'
 accessions:
 - GSE270045
+source_refs:
+- https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE270045
 ontology_terms:
 - long-covid
 - post-covid-mecfs
@@ -64,4 +66,4 @@ Post-COVID ME/CFS whole-blood bulk RNA-seq: **19 Long COVID patients with ME/CFS
 
 ## Access / caveats
 
-Verified: per-sample count matrix `GSE270045_LC_counts.tsv.gz` (2.4 Mb, 36 samples) is publicly downloadable → `verified: true`. Clean case-vs-control design (19 LC-ME/CFS vs 17 healthy). Strongest of the four WP1 candidates.
+Verified: per-sample count matrix `GSE270045_LC_counts.tsv.gz` (2.4 Mb file, 36 samples) is publicly downloadable → `verified: true`. Clean case-vs-control design (19 LC-ME/CFS vs 17 healthy). Strongest of the four WP1 candidates.

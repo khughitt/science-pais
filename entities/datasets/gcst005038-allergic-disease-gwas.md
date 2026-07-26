@@ -48,7 +48,7 @@ identity_context:
 ## What it is
 
 GWAS Catalog study GCST005038 — "Allergic disease (asthma, hay fever or eczema)",
-**180,129 European-ancestry cases / 180,709 controls** (PMID 29083406). Full summary statistics
+**180,129 European-ancestry cases / 180,709 controls** (PMID 29083406, [@Ferreira2017]). Full summary statistics
 released (`fullPvalueSet: true`).
 
 ## Why it fits
@@ -100,7 +100,7 @@ outcome) or `dataset:decodeme-gwas-sumstats-osf`.
   nonetheless the **only surviving MR candidate** after IM was shelved (see
   `dataset:finngen-r12-im-gwas`).
 
-**Feasibility result (t137, 2026-07-18): NO-GO.** The D-007 feasibility packet ran on public
+**Feasibility result (task:t137, 2026-07-18): NO-GO.** The D-007 feasibility packet ran on public
 sumstats and shelved the line. The instrument is **strong** — 63 independent instruments after MHC
 exclusion, mean F = 62 — but its **liability-scale R² is only ~2–2.5%** (logit-latent 1.96%;
 Lee-2011 normal-liability 2.14–2.53% across K∈{0.20,0.30,0.40}; the naïve Σ2p(1−p)β²=6.56% overstates

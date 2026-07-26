@@ -27,6 +27,8 @@ access:
     extractability: full-dataset
     notes: FigShare deposit contains salmon.merged.gene_counts.tsv (22 MB, per-sample nf-core/rnaseq gene counts, all 110 samples) + SamplesPC.txt (sample info) + README/MANIFEST; publicly downloadable, staging to disk deferred to workflow execution
 accessions: []
+source_refs:
+- https://doi.org/10.17044/scilifelab.28832492
 ontology_terms:
 - long-covid
 - sars-cov-2

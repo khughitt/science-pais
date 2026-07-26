@@ -28,6 +28,8 @@ access:
     notes: 'BUILT 2026-07-10: the 20 BASELINE (before-exercise) CEL files — 9 GWI (GWS-*A) + 11 controls (Con-*A) — staged individually (per-file locked sha256, 271 MB total) + the SDRF, then RMA-normalized and fed the pinned hgu133plus2.db (GPL570) harmonize + median collapse chain -> 20,338 Ensembl genes. RMA computed in PURE R (limma normexp bg + limma quantile + stats::medpolish) because affy/preprocessCore threaded C fails with pthread_create()=22 (EINVAL) on this host''s new glibc/kernel. The 3rd non-infectious column; lifts the reverse projection to full rank (r_eff=2).'
 accessions:
 - E-MEXP-2069
+source_refs:
+- https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MEXP-2069
 ontology_terms:
 - gulf-war-illness
 - non-infectious

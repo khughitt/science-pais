@@ -25,6 +25,8 @@ access:
   last_reviewed: '2026-07-17'
   verified_by: agent (verify-access)
 accessions: []
+source_refs:
+- https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE45924
 ontology_terms:
 - infectious-mononucleosis
 - ebv
@@ -61,7 +63,7 @@ from primary EBV infection. `question:0051` should engage this directly rather t
 
 ## Access / caveats
 
-**Public.** GEO landing page confirmed 2026-07-17; `GSE45924_RAW.tar` (30.1 Mb).
+**Public.** GEO landing page confirmed 2026-07-17; `GSE45924_RAW.tar` (30.1 Mb archive).
 
 **Caveats.**
 - Stratifies **EBV state** (seronegative / acute / latent), **not IM-history-as-exposure with a PAIS

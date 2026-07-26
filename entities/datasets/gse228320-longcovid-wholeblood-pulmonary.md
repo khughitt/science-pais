@@ -28,6 +28,8 @@ access:
     notes: 'Two per-sample matrices downloadable: GSE228320_Raw_counts.txt.gz (1.7 Mb, raw counts) and GSE228320_Counts_Normalized_postCOVID.txt.gz (6.0 Mb, normalized), 50 samples. Staging to disk deferred to workflow execution.'
 accessions:
 - GSE228320
+source_refs:
+- https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE228320
 ontology_terms:
 - long-covid
 - sars-cov-2

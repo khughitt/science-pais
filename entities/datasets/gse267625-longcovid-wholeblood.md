@@ -28,6 +28,8 @@ access:
     notes: 'Per-sample matrix downloadable: GSE267625_P4O2_COVID_blood_transcriptome.csv.gz (4.8 Mb, CSV, 111 samples). Staging to disk deferred to workflow execution. CAVEAT — cohort is COVID-survivors-only (no external control arm); usable contrast must be defined within-cohort (long-COVID status / lung-function stratum) in WP2, not case-vs-healthy-control.'
 accessions:
 - GSE267625
+source_refs:
+- https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE267625
 ontology_terms:
 - long-covid
 - sars-cov-2
@@ -63,4 +65,4 @@ Whole-blood bulk RNA-seq from the **P4O2 post-hospitalised COVID cohort**: **95 
 
 ## Access / caveats
 
-Verified: per-sample matrix `GSE267625_P4O2_COVID_blood_transcriptome.csv.gz` (4.8 Mb, 111 samples) is publicly downloadable → `verified: true`. **Caveat carried forward:** COVID-survivors-only cohort + longitudinal within-subject structure means the case-vs-control contrast is not clean and must be constructed in WP2.
+Verified: per-sample matrix `GSE267625_P4O2_COVID_blood_transcriptome.csv.gz` (4.8 Mb file, 111 samples) is publicly downloadable → `verified: true`. **Caveat carried forward:** COVID-survivors-only cohort + longitudinal within-subject structure means the case-vs-control contrast is not clean and must be constructed in WP2.

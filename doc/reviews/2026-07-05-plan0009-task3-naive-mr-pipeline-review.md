@@ -58,7 +58,7 @@ when `n_harmonised / n_instruments_input < 0.5`), mirroring Task 2's
 ### Dimension 2 — Assumption audit (PASS, note)
 
 The naive arm's core known-violated assumption — two-sample MR with **structural
-sample overlap** (Ruth 100% UKB × HGI pooling UKB) biases the estimate toward the
+sample overlap** (Ruth 100% UKB × HGI pooling UKB; see plan:0009-wave1-mr-hormone-pilot) biases the estimate toward the
 confounded observational association — is now machine-labelled
 (`sample_overlap_uncorrected` / `naive_comparator_only`). The plan does not state
 the **expected direction/magnitude** of the naive↔MRlap delta, but that is
@@ -72,7 +72,7 @@ Verified against real artifacts: the instrument TSV header is
 and the Task-2 sidecar exposes `eligible_for_mr` (bool) + `eligibility_reasons`
 (list) — exactly the guard's contract. **Note (non-blocking):** MR-Egger is
 statistically unstable at very low instrument counts; irrelevant for the six real
-strata (159–353 instruments), but if the graceful path ever admits a 3–5 instrument
+strata (159–353 instruments, per the task:t089 Task-2 sidecars), but if the graceful path ever admits a 3–5 instrument
 stratum, Egger output would be near-degenerate. The plan already frames wide/weak
 estimates as informative, so this is acceptable as-is.
 

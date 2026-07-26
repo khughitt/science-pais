@@ -28,6 +28,8 @@ access:
     notes: GEO Series Matrix (TXT) + GSE63085_RAW.tar (75.6 MB, per-sample TXT files); staging to disk deferred to workflow execution.
 accessions:
 - GSE63085
+source_refs:
+- https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE63085
 ontology_terms:
 - post-lyme
 - ptlds
@@ -62,4 +64,4 @@ Acute-through-post-treatment Lyme disease PBMC **bulk RNA-seq** (GPL11154, Illum
 
 ## Access / caveats
 
-Public accession (`GSE63085`); per-sample expression matrix confirmed downloadable (WP1, 2026-07-08): GEO Series Matrix (TXT) + `GSE63085_RAW.tar` (75.6 MB, per-sample TXT files). Bulk RNA-seq assay confirmed (GPL11154).
+Public accession (`GSE63085`); per-sample expression matrix confirmed downloadable (WP1, 2026-07-08): GEO Series Matrix (TXT) + `GSE63085_RAW.tar` (75.6 MB archive of per-sample TXT files). Bulk RNA-seq assay confirmed (GPL11154).

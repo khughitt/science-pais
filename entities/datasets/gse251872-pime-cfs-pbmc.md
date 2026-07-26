@@ -28,6 +28,8 @@ access:
     notes: Per-sample count data in GSE251872_RAW.tar (per-sample TXT files, 4.8 MB) plus TXT series matrix; staging to disk deferred to workflow execution.
 accessions:
 - GSE251872
+source_refs:
+- https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE251872
 ontology_terms:
 - post-infectious-mecfs
 - me-cfs
@@ -57,7 +59,7 @@ Confirmed design: **27 baseline PBMC samples — 12 PI-ME/CFS vs 15 healthy volu
 
 **Correction:** the prior "≈17 vs 21" specifics were the overall NIH study enrollment (17 PI-ME/CFS, 21 HV), *not* this GEO deposit. The public PBMC RNA-Seq sub-series contains only 27 samples (12 cases / 15 controls).
 
-Per-sample matrix is downloadable: `GSE251872_RAW.tar` (per-sample TXT count files, 4.8 MB) plus the TXT series matrix.
+Per-sample matrix is downloadable: `GSE251872_RAW.tar` (4.8 MB archive of per-sample TXT count files) plus the TXT series matrix.
 
 ## Corpus role (t117)
 

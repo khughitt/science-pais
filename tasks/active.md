@@ -271,22 +271,6 @@ t110 found the LMIC/ancestral stratum has exactly one ancestry-stratified vehicl
 
 Two strata survived the t110 sweep uncovered, for DIFFERENT reasons, and the distinction is decision-relevant. (1) question:0040 pregnancy reads capability-mismatch: every public pregnancy deposit found is placenta/decidua/cord-blood collected AT DELIVERY (GSE181238, GSE246536, GSE318446, GSE185557 and ~8 more). Not one has a post-acute maternal timepoint, so none stratifies pregnancy as an effect modifier of PAIS trajectory. The cohorts that COULD answer it (RECOVER-Pregnancy, PRIORITY, COPS, MOACC-19, the Spanish ~92-week obstetric cohort) were all built inside DUAs/enclaves. This is a STRUCTURAL access gap, not a search failure -- more searching will not fix it. (2) question:0057 (compound/co-occurring boundary conditions) reads no-candidate: it needs datasets stratifying TWO boundary variables jointly, and no single-stratum deposit qualifies, so it cannot inherit coverage from the others. Consider whether q0040/q0057 should be reframed toward what open data CAN support, or explicitly parked as access-blocked.
 
-## [t142] Backfill numeric-anchor provenance for the 119 remaining prose-lint hits (gen-3 lint debt)
-- priority: P3
-- status: proposed
-- aspects: []
-- created: 2026-07-26
-
-New in the science 0.5.x bump: `prose lint --check numeric-anchor` flags body-prose numeric claims with no resolvable provenance. Baseline after the 2026-07-26 health triage is 119 (was 128; the 9 transient-ledger hits were retired via prose_lint.exclude_paths for doc/curations/*.md + doc/meta/explorations/*.md, mirroring graph.revision_manifest_excludes).
-
-Distribution: entities/datasets 83, entities/synthesis 17, doc/reviews 9, doc/plans 6, entities/plans 4.
-
-MECHANICS (verified against science_tool/numeric_provenance.py, 0.5.2): a claim clears if EITHER (a) the entity declares resolvable frontmatter provenance in source_refs / task_links / input -- this anchors the WHOLE document at once -- or (b) its own paragraph carries a resolvable [@key], cite:key, task:tNNN, or a provenance-bearing typed ref (dataset:, paper:, interpretation:, plan:, pre-registration:, report:, synthesis:). A bare URL in source_refs always resolves. Headers, list items, table rows and fenced code are already skipped. A <!-- stipulated --> section/block marker (or frontmatter stipulated: true) exempts design parameters.
-
-DO NOT blanket-add landing-page URLs to dataset source_refs. It clears the whole file, including project-COMPUTED numbers that the landing page does not source -- e.g. dataset:gcst005038-allergic-disease-gwas carries 13 hits of which the power figures (liability R^2 2.14-2.53%, power 0.57-0.64, min detectable OR 1.25) come from the t137 feasibility packet, not the GWAS Catalog. Those want task:t137 in the paragraph; only the cohort counts want the deposit. Split per paragraph before reaching for the entity-level clear.
-
-entities/synthesis (17) are the most likely REAL citation gaps -- treat those as citation discipline, not lint appeasement. Sibling to task:t132 (source_refs convention for reanalysis/audit interpretations), which decides the same provenance-field question for interpretations.
-
 ## [t143] Decide the resolution convention for the 66 standing [UNVERIFIED]/[INACCESSIBLE]/[SPECULATION] markers
 - priority: P3
 - status: proposed

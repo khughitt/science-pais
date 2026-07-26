@@ -26,6 +26,8 @@ access:
   last_reviewed: '2026-07-17'
   verified_by: agent (verify-access)
 accessions: []
+source_refs:
+- https://risteys.finngen.fi/endpoints/AB1_EBV
 ontology_terms:
 - infectious-mononucleosis
 - ebv

@@ -25,6 +25,9 @@ access:
   last_reviewed: '2026-07-17'
   verified_by: agent (verify-access)
 accessions: []
+source_refs:
+- https://pheweb.jp/pheno/SevereCOVID19_LT65
+- cite:Lammi2025
 ontology_terms:
 - sars-cov-2
 - acute-severity

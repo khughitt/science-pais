@@ -26,6 +26,8 @@ access:
   last_reviewed: '2026-07-17'
   verified_by: agent (verify-access)
 accessions: []
+source_refs:
+- https://www.ebi.ac.uk/gwas/studies/GCST90473069
 ontology_terms:
 - infectious-mononucleosis
 - ebv
@@ -58,7 +60,7 @@ can be replicated cross-cohort rather than resting on a single bottlenecked popu
 ## Access / caveats
 
 **Public summary statistics.** GWAS Catalog REST confirmed 2026-07-17;
-`fullPvalueSet: true`, files on the EBI FTP (~3.2 G).
+`fullPvalueSet: true`, files on the EBI FTP (~3.2 GB download).
 
 **D-004 note — this clears the bar.** The study is UK-Biobank-*derived*, but D-004 bars
 **individual records**, not open summary statistics. Nothing gated is required to re-obtain and

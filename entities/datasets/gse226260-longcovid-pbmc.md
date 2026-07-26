@@ -28,6 +28,8 @@ access:
     notes: GEO series matrix + supplementary per-sample CSVs (raw counts and log-normalized counts) publicly downloadable via FTP/HTTP; staging to disk deferred to workflow execution
 accessions:
 - GSE226260
+source_refs:
+- https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE226260
 ontology_terms:
 - long-covid
 - sars-cov-2

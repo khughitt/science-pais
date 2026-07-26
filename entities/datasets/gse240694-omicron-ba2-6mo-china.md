@@ -59,7 +59,7 @@ thromboinflammation and metabolic/mitochondrial mechanism families directly.
 ## Access / caveats
 
 **Processed layer public; raw layer gated.** GEO landing page confirmed 2026-07-17:
-processed TAR (634.7 Mb) downloadable. **Raw reads are not in GEO** — they sit in China's Genome
+processed TAR (634.7 Mb archive) downloadable. **Raw reads are not in GEO** — they sit in China's Genome
 Sequence Archive under **HRA004484**, a request-gated human-restricted tier. The processed layer
 clears the D-004 bar; the raw layer does not.
 

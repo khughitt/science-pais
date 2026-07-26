@@ -61,7 +61,7 @@ OMOP autoimmune-stratum granularity, confirmed in its own `BC-3` note).
 | question:0021-male-vascular-reversal-covid-specific-vs-baseline-carryover | genuine-discovery | Same gap family as question:0019/0020 — needs a sex-stratified COVID-vs-uninfected (or test-negative) comparison of post-acute vascular hard endpoints, ideally an ambulatory cohort over the 31-180-day window. | 1/2 |
 | question:0022-immune-state-displacement-mediator-vs-co-traveler | genuine-discovery | Needs an immunomodulation trial with demonstrated target engagement and symptom+pathway co-readout, or a longitudinal multi-axis cohort permitting formal mediation with parallel vascular/metabolic/neural lesions measured alongside immune state. No trial-outcome or multi-axis-mediation substrate exists in the corpus; listed under the design doc's Wave-1 causal-identification bucket, but no current wave concretely supplies trial/RCT data — flagged as a residual gap in the wave plan itself, not just the catalog. | 1 |
 
-**Summary:** 22/22 no-candidate targets classified. 1 reconcilable (`hypothesis:0005`, both candidate
+**Summary:** every no-candidate target in the table above is classified. 1 reconcilable (`hypothesis:0005`, both candidate
 datasets already annotated — needs only a `related:` edge, no vocabulary/capability authoring). 21
 genuine-discovery. Two (`hypothesis:0009`, `question:0005`) were deliberately kept genuine-discovery
 despite superficially-adjacent gated-EHR capability because wiring them would re-open the D-004

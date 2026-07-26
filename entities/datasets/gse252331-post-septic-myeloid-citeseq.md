@@ -59,7 +59,7 @@ acute infection".
 
 ## Access / caveats
 
-**Public.** GEO landing page confirmed 2026-07-17; 516.9 Mb TAR plus SRA Run Selector.
+**Public.** GEO landing page confirmed 2026-07-17; 516.9 Mb archive (TAR) plus SRA Run Selector.
 
 **Caveats.**
 - **Frailty is not measured** — it stratifies *trajectory*, not frailty, so it makes no

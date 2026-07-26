@@ -57,7 +57,7 @@ alone.
 
 ## Access / caveats
 
-**Public.** GEO landing page confirmed 2026-07-17; count matrix CSV (1.1 Mb) downloadable.
+**Public.** GEO landing page confirmed 2026-07-17; count matrix CSV (1.1 Mb file) downloadable.
 
 **Caveats — this is a mechanism prior, not a trajectory vehicle.**
 - Explicitly **cross-sectional at delivery**: there is **no post-acute or convalescent maternal

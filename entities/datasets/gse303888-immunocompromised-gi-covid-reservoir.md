@@ -60,7 +60,7 @@ that most PAIS cohorts lack one.
 ## Access / caveats
 
 **Public.** GEO landing page confirmed 2026-07-17; four CSV supplementary files
-(CD45/PanCK filtered segment + normalized matrices, 222 KB–1.6 MB) downloadable, no login.
+(CD45/PanCK filtered segment + normalized matrices, 222 KB file smallest, 1.6 MB file largest) downloadable, no login.
 
 **Caveats.**
 - **n=3, case series, no controls.** Hypothesis-generating only.

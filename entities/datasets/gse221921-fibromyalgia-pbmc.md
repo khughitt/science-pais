@@ -56,11 +56,11 @@ the public GEO record + staged bytes on 2026-07-09 (t117 WP4b discovery sweep + 
 
 Fibromyalgia (FM) **PBMC bulk RNA-seq** — the D-003-designated **non-infectious** stress-test for
 `hypothesis:0001` (the shared dysregulated attractor). Series "Identification of unique genomic
-signatures in patients with fibromyalgia and chronic pain" (Sci Rep 2024, s41598-024-53874-8;
+signatures in patients with fibromyalgia and chronic pain" (Sci Rep 2024, [@Mohapatra2024], doi:10.1038/s41598-024-53874-8;
 BioProject PRJNA916731). Confirmed design: **96 fibromyalgia vs 93 matched healthy controls**,
 whole-blood-derived PBMC, Illumina NovaSeq 6000 (GPL24676), single platform.
 
-Per-sample matrix confirmed downloadable and staged: `GSE221921_RAW.tar` carries 189 per-sample
+Per-sample matrix confirmed downloadable and staged (task:t117): `GSE221921_RAW.tar` carries 189 per-sample
 member files (`GSM…_Sample_NNN.txt.gz`), each a `gene`(symbol) × one-sample column. GEO documents
 the value scale as **"Log of normalized transcripts per million"** (StringTie TPM → TMM-normalized →
 logged) — a continuous already-log scale (t117 `expression_scale: log2_intensity`, limma-direct; a

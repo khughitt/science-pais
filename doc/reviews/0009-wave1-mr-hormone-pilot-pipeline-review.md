@@ -177,7 +177,7 @@ case+control total N from the source metadata, not effective N.
 ### R2 — Pin `MR_reverse` along with the other MRlap pruning parameters (WARN, small)
 
 The revision now pins `MR_threshold`, `MR_pruning_dist`, and `MR_pruning_LD` in
-`config.yaml` (`entities/plans/0009...` lines 90-97 and 146-155). That closes the
+`config.yaml` (`entities/plans/0009...` lines L90-L97 and L146-L155). That closes the
 main instrument-set caveat. One MRlap instrument-selection parameter is still missing:
 `MR_reverse` (default `1e-3`), which excludes instruments more strongly associated
 with the outcome than the exposure. It affects the final MRlap instrument set just as

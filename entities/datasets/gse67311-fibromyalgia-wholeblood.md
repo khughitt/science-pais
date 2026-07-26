@@ -55,7 +55,7 @@ staged + parsed 2026-07-09). The column that activates the reverse projection.
 
 The reference **fibromyalgia whole-blood** bulk gene-expression set: "Peripheral Blood Gene Expression in
 Fibromyalgia Patients…" — deposited as **70 FM vs 70 healthy controls**, PAXgene whole blood, Affymetrix
-Human Gene 1.1 ST array (GPL11532). Non-infectious (idiopathic) trigger. **As built:** the series matrix
+Human Gene 1.1 ST array (GPL11532). Non-infectious (idiopathic) trigger. **As built (task:t117):** the series matrix
 carries RMA-normalized log2 (embedded), group from the `diagnosis` characteristic; after dropping 14 `_2`
 technical-replicate samples the analysed set is **60 FM / 68 HC** (128 samples, 19,584 genes).
 
