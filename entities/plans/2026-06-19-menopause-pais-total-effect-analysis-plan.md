@@ -15,7 +15,8 @@ related:
   - task:t020
   - task:t027
   - paper:AlcaldeHerraiz2025
-status: ready-with-caveats
+status: active
+readiness: ready-with-caveats
 skills_loaded:
   - id: statistics-bias-vs-variance-decomposition
     reason: confounding (latent U) is the dominant error term and cannot be shrunk by sample size — must be separated from sampling variance explicitly

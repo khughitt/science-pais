@@ -2,7 +2,8 @@
 id: "plan:0005-autoimmune-diathesis-sex-modifier-pais-analysis-plan"
 kind: "plan"
 title: "Analysis plan: pre-existing autoimmune diathesis as a sex-conditioned effect modifier of long-COVID/PASC risk (t078)"
-status: not-ready
+status: archived
+readiness: not-ready
 created: "2026-06-30"
 updated: "2026-07-01"
 plan_kind: "analysis-plan"
@@ -49,13 +50,14 @@ skills_loaded:
 > gating (insider-only). No vehicle can produce this as **third-party-reproducible** knowledge, so
 > the line is **shelved, not executed**. The **design is banked** — the two-estimand contrast, DAGs,
 > adjustment sets, negative-control/bracketing design, and the `hypothesis:0008` synthesis remain
-> valid and reusable. `status: not-ready` is retained (the plan never became viable); do **not** read
-> the sections below as a live plan.
+> valid and reusable. `readiness: not-ready` is retained verbatim (the plan never became viable) and
+> the lifecycle is `status: archived` (t131, 2026-07-26 — the readiness verdict moved off the `status`
+> axis without being weakened); do **not** read the sections below as a live plan.
 
 This is a **design-stage** analysis plan. It **locks the target contrast** — two
 explicitly-distinct estimands plus an optional mediation decomposition — and the
 adjustment strategy, negative controls, and sensitivity-arbitration rules. It is
-deliberately held at **`status: not-ready`**: no dataset is in hand, and execution
+deliberately held at **`readiness: not-ready`**: no dataset is in hand, and execution
 and pre-registration are gated on the dataset checks in *Blocking Checks Before
 Pre-Registration*.
 

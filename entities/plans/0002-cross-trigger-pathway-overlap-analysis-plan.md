@@ -13,7 +13,8 @@ related:
   - paper:Gow2009
   - paper:Raijmakers2019
   - task:t035
-status: ready-with-caveats
+status: complete
+readiness: ready-with-caveats
 skills_loaded:
   - id: data-expression
     reason: ingesting/QA two public transcriptomic deposits before a cross-platform comparison
