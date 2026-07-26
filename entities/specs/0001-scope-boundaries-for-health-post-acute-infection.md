@@ -59,3 +59,50 @@ This yields a routing 2×2 (below); the two axes are **not** interchangeable —
   - the **acute-vaccine reference point** that bounds the same-antigen/different-route discriminator `D-003` monitors under PACVS.
 - **The persistence dimension is unmeasured in this literature.** `Nitz2025`'s ≤183-day follow-up means the acute-vaccine corpus **cannot itself speak to whether any subset persists** — that open gap is `question:0073`, not evidence of resolution or of a chronic syndrome. (Persistent abnormal cardiac-MRI findings around five months are recognised in post-vaccination myocarditis outside this corpus, reinforcing that "acute onset" ≠ "resolved.")
 - **Revisit-for-admission (mirrors the `D-003` PACVS clause):** if a **controlled longitudinal** study establishes that a post-vaccination CV phenotype **persists** into the post-acute window, it moves from the acute-event cell into the **PACVS (persistent-vaccine) cell** and is adjudicated there — i.e. it rises to **boundary-monitor / read-across at most, never primary scope**, because the trigger axis still fails. A controlled **PACVS-vs-PASC biomarker comparison** remains the trigger for reconsidering the PACVS cell itself (per `D-003`).
+
+## Scope vs evidential admissibility: the phenotype × comparator × measurement test (`D-010`)
+
+`D-003` and `D-009` decide **what is in scope**. They do not decide **what an in-scope paper is
+evidence for**. Conflating the two let "in scope" quietly function as "counts as convergence
+support" — the drift `task:t130` surfaced when four cross-trigger papers were finally read.
+
+> **Primary scope follows infection × persistence. Evidential admissibility for convergence
+> additionally follows phenotype × comparator × measurement. Phenotype-unmeasured is not
+> phenotype-absent, and upstream mechanism read-across cannot be promoted to evidence of a shared
+> downstream attractor.**
+
+The two tests are independent; passing the first says nothing about the second.
+
+1. **Phenotype** — which phenotype was actually ascertained. A study measuring joint or
+   cardiopulmonary sequelae supplies no fatigue/PEM evidence, whatever its trigger.
+2. **Comparator** — what the signal was contrasted *against*. **Recovered same-trigger controls
+   are the correct comparator** for `question:0001`'s failed-recovery-versus-full-recovery
+   conjunct — they hold trigger, timepoint, and cohort constant, and must never be scored as a
+   deficiency. The real defect is a signature that **does not survive a healthy-control contrast
+   it actually ran** (`paper:Sanford2026`).
+3. **Measurement** — **phenotype-unmeasured is not phenotype-absent.** A cohort that never
+   administered a fatigue or PEM instrument is **indeterminate** on that phenotype, not negative —
+   the same unmeasured-vs-failed distinction `D-009` draws for persistence.
+
+**Hypothesis routing (do not collapse these).** `hypothesis:0001` is a broad,
+**heterogeneously realized** immune-state-displacement claim that explicitly does *not* require
+every PAIS subtype to share one analyte, gene module, or cytokine hub.
+`hypothesis:0012` is the explicitly **fatigue/cognitive common-path** claim. A phenotype mismatch
+is therefore evidence about **`h0012`**, and must **not** be reported as weakening `h0001`.
+
+**Dispositions fixed by `D-010`:**
+
+| Paper | Primary scope | Admissible as | Not admissible as |
+|---|---|---|---|
+| `paper:Ramundo2025` (post-chikungunya CIJD) | **In** | Upstream immune-clearance / viral-persistence read-across | Fatigue/PEM convergence evidence; `h0012` support |
+| `paper:Sanford2026` (post-Ebola PES) | **In** | Post-Ebola molecular presence, survivor-internal only | Fatigue/PEM convergence evidence; `h0012` support |
+
+For the broad `hypothesis:0001`, both are **contextual but non-discriminating** until a shared
+state is actually measured across an arthralgia-dominant and a fatigue-dominant trigger on one
+platform. Fatigue is **unmeasured** in both cohorts, so neither licenses any claim that these
+patients lack it.
+
+**Revisit if:** a post-chikungunya or post-Ebola cohort administers a validated fatigue/PEM
+instrument (those cells then become *measured* and are adjudicated on phenotype rather than held
+indeterminate); or a study measures a shared state directly across an arthralgia-dominant and a
+fatigue-dominant trigger on one platform.

@@ -158,3 +158,32 @@ D-003 fixed the trigger rule and placed PACVS/GWS as boundary-monitor, but never
 
 **Revisit if:**
 - A **controlled longitudinal** study establishes a **persistent** post-vaccination CV phenotype — it then moves into the PACVS cell (boundary-monitor at most, never primary scope, trigger axis still fails); or a **controlled PACVS-vs-PASC biomarker comparison** appears (the D-003 trigger to reconsider the PACVS cell itself).
+
+## D-010: Primary scope and evidential admissibility are separate tests; upstream read-across is not downstream-attractor evidence
+
+- **Date:** 2026-07-26
+- **Status:** active
+- **Extends:** D-003 and D-009 (does not supersede). D-003/D-009 govern *what is in scope*; D-010 governs *what an in-scope paper is allowed to be evidence for*. Recorded operationally in `entities/specs/0001-scope-boundaries-for-health-post-acute-infection.md`.
+- **Decision:**
+
+  > **Primary scope follows infection × persistence. Evidential admissibility for convergence additionally follows phenotype × comparator × measurement. Phenotype-unmeasured is not phenotype-absent, and upstream mechanism read-across cannot be promoted to evidence of a shared downstream attractor.**
+
+  The two tests are independent, and passing the first says nothing about the second. A paper can be a fully in-scope PAIS case and still be inadmissible as convergence evidence.
+
+  - **Phenotype** — which phenotype was actually ascertained. A study measuring joint or cardiopulmonary sequelae supplies no fatigue/PEM evidence, whatever its trigger.
+  - **Comparator** — what the signal was contrasted *against*. Recovered same-trigger controls are the **correct** comparator for `question:0001`'s failed-recovery-versus-full-recovery conjunct and must not be treated as a deficiency. A signature that does not survive its own healthy-control contrast is a different and more serious problem.
+  - **Measurement** — **phenotype-unmeasured is not phenotype-absent.** A cohort that never administered a fatigue or PEM instrument is *indeterminate* on that phenotype, not negative (the same unmeasured-vs-failed distinction D-009 draws for persistence).
+
+  **Hypothesis routing.** `hypothesis:0001` is a broad, **heterogeneously realized** immune-state-displacement claim that explicitly does not require every subtype to share one analyte. `hypothesis:0012` is the explicitly **fatigue/cognitive common-path** claim. Do not collapse them: a phenotype mismatch bears on `h0012`, not on `h0001`, and must not be reported as weakening `h0001`.
+
+  **Dispositions fixed by this decision:**
+  - `paper:Ramundo2025` (post-chikungunya CIJD) and `paper:Sanford2026` (post-Ebola PES) **remain primary-scope PAIS** — both pass infection × persistence.
+  - `paper:Ramundo2025` provides **upstream immune-clearance / viral-persistence read-across** (pre-outcome LIFR, ZBTB16, neutrophil degranulation, MHC class I).
+  - **Neither provides fatigue/PEM convergence evidence, and neither supports `hypothesis:0012`.**
+  - For the broad `hypothesis:0001`, both are **contextual but non-discriminating** until a shared state is actually measured.
+
+**Why:**
+`task:t130` promoted four cross-trigger stub papers and exposed that "in scope" had been doing double duty as "counts as convergence support". Two in-scope papers ascertain non-fatigue phenotypes (`Ramundo2025`: ultrasound-confirmed synovitis; `Sanford2026`: musculoskeletal/GI + cardiopulmonary), and Ramundo's genuinely valuable contribution is an *upstream* predictor of chronification, not a shared *downstream* state. Without this decision, upstream read-across drifts into the convergence ledger and the phenotype widens until convergence becomes unfalsifiable — the failure mode `question:0092` was reserved to track. Separating the two tests keeps both papers usable for what they actually show while closing that drift.
+
+**Revisit if:**
+- A post-chikungunya or post-Ebola cohort administers a validated fatigue/PEM instrument — those cells then become *measured* and can be adjudicated on phenotype rather than held indeterminate; or a study measures a shared state directly across an arthralgia-dominant and a fatigue-dominant trigger on one platform, which would make these legs discriminating for `hypothesis:0001` rather than merely contextual.
