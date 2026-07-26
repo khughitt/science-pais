@@ -736,7 +736,7 @@ uv run --frozen science tasks add "Wave-1: run open GWAS/MR analysis for sex×au
   --priority P3 \
   --blocked-by task:t088 \
   --related task:t088 \
-  --description "Execute the MR handoff in doc/plans/2026-07-03-gwas-mr-ingestion-handoff.md. BLOCKED on t088 (open-analysis scope decision) — this is analysis EXECUTION, gated by specs/scope-boundaries.md. Cataloging/handoff already done (Wave-1 pilot)."
+  --description "Execute the MR handoff in doc/plans/2026-07-03-gwas-mr-ingestion-handoff.md. BLOCKED on t088 (open-analysis scope decision) — this is analysis EXECUTION, gated by entities/specs/0001-scope-boundaries-for-health-post-acute-infection.md. Cataloging/handoff already done (Wave-1 pilot)."
 ```
 Expected: a new task id printed, shown as blocked-by t088. Record the id in the
 handoff doc. If `--related task:t088` is rejected as a ref-form mismatch, drop it and

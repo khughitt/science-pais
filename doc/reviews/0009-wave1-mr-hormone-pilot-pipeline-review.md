@@ -42,7 +42,7 @@ panel had to be hardened away from in `plan:0007`.
 | Identifiability | PASS | Mechanics reachable end-to-end; scientific estimand deliberately non-primary (ancestry flag), and the plan says so |
 | Reproducibility | WARN | Seeds + conda-lock + MRlap-pinned-by-commit specified; but GenomicSEM (MRlap's LDSC engine, GitHub-only) not pinned, and the `ldsc.yaml` python env is likely the wrong dependency (see Dim 8) |
 | Validation criteria | PASS | Task 4 explicitly mandates the genome-wide munge+MRlap real-data run with peak-memory + wall-clock recorded — exactly the Dim-6 scale/resource requirement |
-| Scope check | PASS | Within D-005 (Ruth vehicle) + D-006 (LDSC/HapMap3 infra; same HGI outcome vehicle; no FinnGen); within `specs/scope-boundaries.md` |
+| Scope check | PASS | Within D-005 (Ruth vehicle) + D-006 (LDSC/HapMap3 infra; same HGI outcome vehicle; no FinnGen); within `entities/specs/0001-scope-boundaries-for-health-post-acute-infection.md` |
 | Integration boundaries | WARN | MRlap runs LDSC+munge internally and takes raw sumstats + `ld`/`hm3` paths → the separate munge stage is redundant; MRlap prunes instruments internally by distance → naive-arm and MRlap-arm are **not** on the same instrument set |
 | Manifest completeness | PASS | Task 5 requires `datapackage.json` + entity cross-refs + provenance DAG, `qa_report.{json,md}`, `run_metadata.json` (seeds/versions/pinned-MRlap-commit/SHA-256), env locks |
 

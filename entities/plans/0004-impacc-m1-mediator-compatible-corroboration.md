@@ -126,7 +126,7 @@ underdetermined, then map onto the proposition graph **at the correct evidence l
 ## Out of scope (deferred, post-seed-stage)
 
 - Any **fresh re-analysis** of released IMPACC multi-omic data (ImmPort SDY1760 / dbGaP phs002686) — a
-  computational analysis, deferred per `specs/scope-boundaries.md`.
+  computational analysis, deferred per `entities/specs/0001-scope-boundaries-for-health-post-acute-infection.md`.
 - Any dataset-entity provisioning or staging for IMPACC.
 - The reverse-causation-breaking and primary positive tests — those are `task:t039` (All of Us coverage
   query) and `task:t040` (RECOVER ancillary), **not** t038.

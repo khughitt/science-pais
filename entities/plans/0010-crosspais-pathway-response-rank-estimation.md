@@ -204,7 +204,7 @@ the primary matrix (different noise/coverage structure):
   the **specificity layer**: the post-acute subspace should *not* be recovered by an acute-only decoy at
   the same rank.
 - **Non-infectious read-across (GWS/FM)** — the project's designated infection-specificity stress-test
-  (review Finding D; `specs/scope-boundaries.md` D-003 names Gulf War Syndrome / fibromyalgia as "the single
+  (review Finding D; `entities/specs/0001-scope-boundaries-for-health-post-acute-infection.md` D-003 names Gulf War Syndrome / fibromyalgia as "the single
   best external test of the attractor's trigger-agnostic claim", with PACVS as a further read-across). Built
   as a **separate non-infectious specificity matrix**, held to the **same admissibility gates** as the primary
   corpus (blood-bulk WB/PBMC, public, downloadable, sample-level case-vs-control) and computed through the

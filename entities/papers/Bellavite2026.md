@@ -36,7 +36,7 @@ updated: '2026-07-19'
 - **BibTeX key:** Bellavite2026
 - **Source:** Full-text PDF (papers/pdfs/2026_Bellavite_autoimmune-features-post-covid-vaccination-syndrome-ras.pdf), read 2026-06-20.
 
-> **Scope note:** This paper addresses post-acute COVID-19 *vaccination* syndrome (PACVS/PACVS), not post-acute infection syndrome (PAIS) arising from natural SARS-CoV-2 infection. It is read here as a mechanistic comparator because it proposes the same anti-ACE2 / anti-MAS1 / GPCR-autoantibody pathway invoked in long COVID PAIS, and because the review explicitly discusses the partial overlap between the two syndromes. **Adjudicated (2026-07-19, `D-009`):** under the *trigger × persistence test* in `specs/scope-boundaries.md`, PACVS occupies the **persistent-vaccine** cell — it fails only the trigger axis (non-infectious) and so stays **boundary-monitor / read-across** per `D-003`, never primary scope and never a PAIS case. Contrast the acute-vaccine cell (`paper:Nitz2025`), which fails both axes and is comparator-only.
+> **Scope note:** This paper addresses post-acute COVID-19 *vaccination* syndrome (PACVS/PACVS), not post-acute infection syndrome (PAIS) arising from natural SARS-CoV-2 infection. It is read here as a mechanistic comparator because it proposes the same anti-ACE2 / anti-MAS1 / GPCR-autoantibody pathway invoked in long COVID PAIS, and because the review explicitly discusses the partial overlap between the two syndromes. **Adjudicated (2026-07-19, `D-009`):** under the *trigger × persistence test* in `entities/specs/0001-scope-boundaries-for-health-post-acute-infection.md`, PACVS occupies the **persistent-vaccine** cell — it fails only the trigger axis (non-infectious) and so stays **boundary-monitor / read-across** per `D-003`, never primary scope and never a PAIS case. Contrast the acute-vaccine cell (`paper:Nitz2025`), which fails both axes and is comparator-only.
 
 ## Key Contribution
 
@@ -130,7 +130,7 @@ Not applicable. No computational model, software tool, or public dataset is rele
 
 ## Follow-up
 
-**Scope adjudication — RESOLVED (2026-07-19, `D-009`, t126):** `specs/scope-boundaries.md` now carries the *trigger × persistence test*. PACVS occupies the **persistent-vaccine** cell — it fails only the trigger axis (non-infectious) and so is **boundary-monitor / read-across** per `D-003`, never primary scope and never a PAIS case. This paper stays in the repository as a boundary/comparator case (contrast the acute-event cell, `paper:Nitz2025`).
+**Scope adjudication — RESOLVED (2026-07-19, `D-009`, t126):** `entities/specs/0001-scope-boundaries-for-health-post-acute-infection.md` now carries the *trigger × persistence test*. PACVS occupies the **persistent-vaccine** cell — it fails only the trigger axis (non-infectious) and so is **boundary-monitor / read-across** per `D-003`, never primary scope and never a PAIS case. This paper stays in the repository as a boundary/comparator case (contrast the acute-event cell, `paper:Nitz2025`).
 
 **Evidence gap to fill:** The key claim — that anti-ACE2 and anti-MAS1 ELISA positivity associates with specific PACVS symptoms — requires independent replication in a larger, controlled cohort with functional autoantibody validation. Prioritize watching for such studies (e.g., from the Schulze-Forster/Scheibenbogen group, who developed the CellTrend ELISA platform).
 

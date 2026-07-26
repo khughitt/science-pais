@@ -306,13 +306,13 @@ origin is reconstructable.
 - **Front-half only.** This effort ends at the `/science:plan-pipeline` handoff;
   running Mendelian randomization, ingesting cohorts, or any analysis is downstream.
   Wave descriptions list *handoff targets*, not staging or analysis work. The
-  governing boundary is **`specs/scope-boundaries.md`** ("primary computational
+  governing boundary is **`entities/specs/0001-scope-boundaries-for-health-post-acute-infection.md`** ("primary computational
   pipelines deferred until past seed stage") — **not t082** (F3): t082 is
   specifically the *plan:0006 / N3C* code gate and is now `deferred` and effectively
   moot under D-004, so it does not cleanly govern a new open-data program. Before any
   Wave-1 MR or analysis code is written, resolve the **new scope decision** — *"open
   third-party-reproducible computational analyses after data-catalog expansion"*
-  (filed as **t088**), referencing `specs/scope-boundaries.md`; that gate, not t082,
+  (filed as **t088**), referencing `entities/specs/0001-scope-boundaries-for-health-post-acute-infection.md`; that gate, not t082,
   governs MR code, cohort ingestion, and any runnable pipeline. t088 blocks
   **execution only** — Gate-0 and dataset cataloging/discovery proceed without it.
   - *Note:* a fully-open, low-friction MR vehicle is a strong *candidate argument*

@@ -39,7 +39,7 @@ tightenings — none blocking for an exploratory, ancestry-flagged, non-primary 
 | Identifiability | PASS | raw sumstats + LDSC ref → canonicalize → MRlap → aggregate → `mrlap_results.json`, fully connected; estimand deliberately non-primary (KD1) and the plan says so. |
 | Reproducibility | PASS | Strong — MRlap+GenomicSEM `GithubSHA1` + TwoSampleMR/ieugwasr versions pinned & asserted; MR pruning/threshold params pinned; no Python `ldsc`. **Minor:** MRlap determinism (no seed) asserted only implicitly. |
 | Validation criteria | **WARN** | Genome-wide MRlap scale/resource run is captured (`benchmark:` max_rss+wall-clock) — good. **Gaps:** (a) no LDSC-plausibility floor (a degenerate h²≈0 / \|rg\|>1 fit yields a "finite but garbage" correction that passes the non-finite hard-stop); (b) the ~4.4 GB canonicalization step has no `benchmark:`. |
-| Scope check | PASS | N/A-inherited; within D-005/D-006 and `specs/scope-boundaries.md` (Ruth vehicle, same HGI outcome, no FinnGen). |
+| Scope check | PASS | N/A-inherited; within D-005/D-006 and `entities/specs/0001-scope-boundaries-for-health-post-acute-infection.md` (Ruth vehicle, same HGI outcome, no FinnGen). |
 | Integration boundaries | PASS | **Verified:** MRlap input schema matches the adapter (`a1`=alt/effect, `a2`=ref, `rsid`/`N`/`beta`/`se`/`chr`/`pos`, case-insensitive; **total N, observed scale**). **Minor:** the naive-manifest join path (extract IVW from Task-3 `methods[]`) is underspecified. |
 | Manifest completeness | WARN | `mrlap_results.json` carries params + `entities` + `resource` but is **not** a `datapackage.json` — deliberately deferred to Task 5, consistent with Task 3. |
 

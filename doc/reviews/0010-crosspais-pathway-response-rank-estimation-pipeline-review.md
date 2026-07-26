@@ -114,7 +114,7 @@ stratum.
 
 ### Finding D — the project's designated non-infectious stress-test (GWS/FM) is omitted (Dim 7, MEDIUM)
 
-`specs/scope-boundaries.md` (D-003) names **Gulf War Syndrome / fibromyalgia as "the single best external test
+`entities/specs/0001-scope-boundaries-for-health-post-acute-infection.md` (D-003) names **Gulf War Syndrome / fibromyalgia as "the single best external test
 of the attractor's trigger-agnostic claim"** and PACVS as read-across. The plan's specificity layer uses
 *acute-infection* decoys but omits this designated *non-infectious* read-across — yet it is exactly the lever
 for `interpretation:0037`'s Q-D identifiability ceiling (infection-specific attractor vs generic-sickness

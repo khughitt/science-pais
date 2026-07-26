@@ -272,6 +272,6 @@ breadth — it should be carried as a structural limitation, not read as evidenc
    true vacuum; post-SARS = single metabolic datapoint (Wu2017); QFS = partly closed
    (single-group Nijmegen cluster + Raijmakers2025 meta-analysis). Residual: read
    Raijmakers2025 in full to extract its shared-vs-trigger-specific immune analytes.
-3. Decide in `specs/scope-boundaries.md` whether post-chikungunya *arthritis*-phenotype data
+3. Decide in `entities/specs/0001-scope-boundaries-for-health-post-acute-infection.md` whether post-chikungunya *arthritis*-phenotype data
    (Ramundo2025, Chang2024) are in-scope for the fatigue-PAIS attractor.
 4. Fold the provenance distinction into q0001 and h0001 (done in this pass for q0001).

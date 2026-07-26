@@ -42,7 +42,7 @@ doc drift were found and fixed before WP6.
 | Identifiability | PASS | raw → ranked → NES chain fully connected; 63-job DAG resolves |
 | Reproducibility | PASS (after fix) | seed/RNGkind pinned, envs hash-built; full-precision intermediates now byte-deterministic |
 | Validation criteria | PASS | two-severity QA gates; bimodality build-fatal; hash asserts; size filter |
-| Scope check | PASS | within `specs/scope-boundaries.md` (public, bounded, 2-cohort) |
+| Scope check | PASS | within `entities/specs/0001-scope-boundaries-for-health-post-acute-infection.md` (public, bounded, 2-cohort) |
 | Integration boundaries | WARN → PASS | io_contract schema verified; `t`-precision boundary bug fixed (see High) |
 | Manifest completeness | deferred to WP8 (finding 5) | datapackage emitted at terminal target |
 

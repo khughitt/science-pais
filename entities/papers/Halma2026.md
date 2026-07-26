@@ -23,6 +23,7 @@ related:
 - topic:shared-failure-mode-across-pais
 - question:0009-functional-autoantibodies-drive-dysautonomia
 - hypothesis:0001-shared-dysregulated-attractor
+- spec:0001-scope-boundaries-for-health-post-acute-infection
 created: '2026-06-20'
 updated: '2026-06-20'
 ---
@@ -131,7 +132,7 @@ No computational models, datasets, or analytical tools are released. This is a p
 
 ## Follow-up
 
-**Scope adjudication needed:** The `specs/scope-boundaries.md` file should be consulted to determine whether PACVS is formally in-scope for this project. If it is treated as a mechanistic comparator only, future papers on PACVS should be flagged accordingly. Recommend adding a brief entry to scope-boundaries.md clarifying the PACVS boundary decision.
+**Scope adjudication — RESOLVED (2026-07-19, `D-009`, t126):** `entities/specs/0001-scope-boundaries-for-health-post-acute-infection.md` now carries the *trigger × persistence test*, so this note's request is discharged. PACVS occupies the **persistent-vaccine** cell — it fails only the trigger axis (non-infectious) and so is **boundary-monitor / read-across** per `D-003`, never primary scope and never a PAIS case. This chapter stays in the repository as a boundary/comparator case; the same ruling covers `paper:Bellavite2026` (persistent-vaccine cell) and `paper:Nitz2025` (acute-event cell, comparator-only).
 
 **Papers to read for mechanistic follow-up:**
 - Mantovani M et al. (ref [107], Biomedicines 2024;12:2852) — the primary PACVS GPCR autoantibody case-series this chapter heavily relies on; should be read directly to assess study quality.

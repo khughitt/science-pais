@@ -276,22 +276,3 @@ These are NOT bugs -- the project uses them deliberately to hold a claim at its 
 Concentrations: entities/papers/Cai2025 (multiple [INACCESSIBLE], paywalled full text), entities/papers/Tsergas2025 (8 x [UNVERIFIED]), entities/questions/0064 (3), entities/datasets/23andme-multiancestry-longcovid-gwas (medRxiv 403'd -- already noted as a blocker inside task:t133), entities/interpretations/0036.
 
 Decide once: (a) resolve the ones that are genuinely resolvable (paywall now cleared, dataset since verified) and leave the rest; (b) split the vocabulary so a PERMANENT evidence-level marker is lexically distinct from a pending-verification one; or (c) accept the residual via science.yaml health.accepted_validation with a documented reason, as already done for the belief.fragile-single-line rulings. Do NOT resolve a marker by asserting the unverified claim -- the marker is the honest state until the source is actually read.
-
-## [t144] Repoint the ~17 remaining stale 'specs/scope-boundaries.md' references to the v3 entities/specs/0001 path
-- priority: P3
-- status: proposed
-- aspects: []
-- created: 2026-07-26
-
-Surfaced during the 2026-07-26 q0062 review (reviewer point 6). The layout-v3 migration moved the scope-boundaries file to entities/specs/0001-scope-boundaries-for-health-post-acute-infection.md, but the old `specs/scope-boundaries.md` path (that directory no longer exists) is still cited in ~20 places.
-
-ALREADY FIXED in that review, because they are live navigation that was simply broken: doc/decisions/D-003.md (the Decision line), AGENTS.md Pointers, core/overview.md Pointers.
-
-REMAINING, deliberately left for a single deliberate sweep rather than folded into a review fix:
-- core/decisions.md (D-003 compact summary — the authoritative Status line lives here, so it should match D-003.md)
-- entities/papers/Nitz2025.md x2, entities/papers/Bellavite2026.md x2, entities/papers/Halma2026.md (D-009 trigger x persistence adjudication prose)
-- entities/plans/0004, entities/plans/0010, entities/reports/0004, entities/searches/0002, entities/discussions/0002
-- doc/reviews/0003, doc/reviews/0009, doc/reviews/0010, doc/reviews/2026-07-05-plan0009-task4-mrlap-pipeline-review.md
-- doc/plans/2026-07-03-data-catalog-wave1-plan.md, doc/plans/2026-07-03-gwas-mr-ingestion-handoff.md
-
-JUDGEMENT NEEDED, do not blind sed: the doc/reviews/* and doc/plans/* hits are dated historical records where the path WAS correct at the time of writing. Decide per class whether to repoint (treat the reference as a live pointer) or leave as-authored (treat the document as an immutable record) -- and apply that rule consistently. The entity-tree hits (papers/plans/reports/searches/discussions) are live prose and should almost certainly be repointed. Not caught by `science refs check`, which does not validate bare markdown paths.

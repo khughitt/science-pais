@@ -207,7 +207,7 @@ evidence until it is — this list is the acceptance gate, not a post-hoc checkl
 
 **Running MR, ingesting the sumstats files above, and any pipeline code is gated by
 `task:t088`** (open third-party-reproducible computational analysis scope
-decision, referencing `specs/scope-boundaries.md`). This document is catalog/handoff
+decision, referencing `entities/specs/0001-scope-boundaries-for-health-post-acute-infection.md`). This document is catalog/handoff
 work only — the dataset entities exist, are `related:`-linked, and carry
 `provided_capabilities`; no sumstats file has been downloaded, no MR estimator has
 been run, and no code has been written. Gate-0 and dataset cataloging/discovery are

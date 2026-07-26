@@ -162,4 +162,4 @@ test for `hypothesis:0001` does not yet exist.
 4. **Read Patterson2024 critically** -- a head-to-head that *separates* LC from chronic Lyme is
    the strongest accessible disputing datapoint; assess ML-overfitting/cohort confounds.
 5. **Reconcile post-chikungunya arthritis phenotype** with the fatigue-PAIS frame in
-   `specs/scope-boundaries.md` -- decide whether arbovirus chronic-arthritis data are in-scope.
+   `entities/specs/0001-scope-boundaries-for-health-post-acute-infection.md` -- decide whether arbovirus chronic-arthritis data are in-scope.

@@ -37,7 +37,7 @@ floor-censored at 175 pmol/L, FSH/AMH are absent, and immune/endothelial markers
 infection.
 
 This report is the **dataset-feasibility search** t036 calls for (literature/scoping grade, in scope
-pre-seed-stage; the analysis itself remains post-seed-stage per `specs/scope-boundaries.md`). It scores
+pre-seed-stage; the analysis itself remains post-seed-stage per `entities/specs/0001-scope-boundaries-for-health-post-acute-infection.md`). It scores
 each candidate cohort against the M1 positive-test requirements and recommends a sequencing. It does
 **not** provision data, stand up dataset entities, or gate `task:t028`.
 
