@@ -296,9 +296,4 @@ health:
     - hypothesis/0020-host-immune-baseline-reserve-gate
     - belief_state flips
     reason: Reviewed 2026-07-15 health triage; the bundle's well_supported state hinges on the same single Azhir2026 mediation line as proposition:0043, and is intentionally held fragile because its rank-ordering prediction (P3) across host strata is untested and no independent pre-infection reserve axis has been measured.
-  - rule: paper.status-vocabulary
-    severity: warning
-    message_contains:
-    - "status 'stub'"
-    reason: "Ruled in task:t131 (2026-07-26). `stub` marks a paper entity that has been SEEDED (citekey, identifiers, and the claim it is cited for) but not yet read and summarized -- a pre-read lifecycle state the built-in paper vocabulary (active, retired) does not offer, and one the check's own docstring concedes the uncertified vocabularies are missing. The alternatives both lose information: `active` would assert these four cross-trigger papers are summarized when search:0002 and discussion:0002 grade NON-COVID trigger legs of hypothesis:0001 on entities with no summary body, and `retired` is simply false. Suppression is scoped to the literal value `stub`, so any OTHER out-of-vocabulary paper status still fires. Filed upstream as fb-2026-07-26-010; self-resolves when task:t130 promotes Broderick2012 / Ramundo2025 / Sanford2026 / Watton2026 to summarized entities at status active."
 entity_schema_version: 3
