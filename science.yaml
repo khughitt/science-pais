@@ -3,34 +3,27 @@ id: post-acute-infection
 role: process
 created: '2026-06-10'
 last_modified: '2026-06-10'
-summary: "Process project for post-acute infection syndromes (PAIS) in the ~/d/health/\
-  \ family. It studies long COVID, ME/CFS, post-treatment Lyme disease syndrome, post-dengue\
-  \ and post-Q-fever fatigue, post-SARS syndrome, and related conditions as failed\
-  \ recovery of immune and physiological homeostasis after acute infection. It treats\
-  \ these syndromes as a shared failure mode \u2014 persistent immune activation,\
-  \ antigen/pathogen persistence, autoimmunity, dysautonomia, and metabolic dysfunction\
-  \ \u2014 and connects them to the immune-homeostasis frame in health-immunity and\
-  \ the multiscale-homeostasis frame in health-meta."
+summary: "Process project for post-acute infection syndromes (PAIS) in the ~/d/health/ family. It studies long COVID, ME/CFS, post-treatment Lyme disease syndrome, post-dengue and post-Q-fever fatigue, post-SARS syndrome, and related conditions as failed recovery of immune and physiological homeostasis after acute infection. It treats these syndromes as a shared failure mode — persistent immune activation, antigen/pathogen persistence, autoimmunity, dysautonomia, and metabolic dysfunction — and connects them to the immune-homeostasis frame in health-immunity and the multiscale-homeostasis frame in health-meta."
 status: active
 profile: research
 layout_version: 3
 tags:
-- health
-- post-acute-infection-syndrome
-- long-covid
-- me-cfs
-- post-viral
-- post-infectious-fatigue
-- immune-dysregulation
-- antigen-persistence
-- dysautonomia
+  - health
+  - post-acute-infection-syndrome
+  - long-covid
+  - me-cfs
+  - post-viral
+  - post-infectious-fatigue
+  - immune-dysregulation
+  - antigen-persistence
+  - dysautonomia
 data_sources: []
 reproducibility_policy:
   bar: third-party-reproducible
   unknown: halt
   below_bar: halt
 ontologies:
-- biology
+  - biology
 knowledge_profiles:
   local: local
 graph:
@@ -41,14 +34,14 @@ graph:
   # they record, so the natural workflow guaranteed a dirty graph every time.
   # See fb-2026-07-17-001 and doc/curations/curation-sweep-2026-07-16.md.
   revision_manifest_excludes:
-  - doc/curations/*.md
-  - doc/meta/*-next-steps.md
+    - doc/curations/*.md
+    - doc/meta/*-next-steps.md
 refs:
   doi_pmid_exempt_dirs:
-  - doc/papers
-  - doc/searches
-  - entities/papers
-  - entities/searches
+    - doc/papers
+    - doc/searches
+    - entities/papers
+    - entities/searches
 labnote:
   views:
     research_question:
@@ -56,8 +49,8 @@ labnote:
     patch_definition:
       label: Patch Definitions
 aspects:
-- hypothesis-testing
-- computational-analysis
+  - hypothesis-testing
+  - computational-analysis
 prose_lint:
   # Write-once ledger classes whose numbers are internal bookkeeping (entity
   # counts, manifest sizes, sweep tallies), not sourced claims — there is no
@@ -66,8 +59,8 @@ prose_lint:
   # `doc/meta/explorations/*`, NOT `doc/meta/*`: that directory also holds
   # durable reference artifacts that SHOULD be linted.
   exclude_paths:
-  - doc/curations/*.md
-  - doc/meta/explorations/*.md
+    - doc/curations/*.md
+    - doc/meta/explorations/*.md
   bare_author_year_deny:
   # Surname collisions with a bib entry's co-author, where the mentioned work
   # itself is NOT in the bibliography (secondary citations inside a paper
@@ -75,225 +68,205 @@ prose_lint:
   # Wang2023b's co-author C.H. Borchers; Wang 2024 (Ontario cohort, cited by
   # Tsergas2025) has no Wang-2024 bib entry; Afrin/Weinstock/Molderings 2020
   # collides with Weinstock2021's author list.
-  - Aucott 2016
-  - Ballering 2022
-  - Borchers 2013
-  - Carruthers 2003
-  - Chen 2022
-  - Choutka 2022
-  - Davis 2025
-  - Eldokla 2022
-  - Fang 2006
-  - Finsterer 2022
-  - Fluge 2015
-  - Fluge & Mella 2011
-  - Galbraith 2011
-  - Hanson 2023
-  - Hertanti 2025
-  - Hickie 2006
-  - Hwang 2023
-  - Keijmel 2016
-  - Keller 2014
-  - Klein & Flanagan 2020
-  - Komaroff 2023
-  - Komaroff & Lipkin 2023
-  - Komaroff and Lipkin 2023
-  - Limongelli 2026
-  - Mantovani 2024
-  - Medicine 2011
-  - Medicine 2012
-  - Medicine 2015
-  - Medicine 2020
-  - Medicine 2022
-  - Medicine 2024
-  - Medicine 2025
-  - Naviaux 2012
-  - Naviaux 2014
-  - Naviaux 2016
-  - Neal & Hanson 2021
-  - Nicolai 2023
-  - Peluso and Deeks 2024
-  - Raijmakers 2018
-  - Scheibenbogen 2018
-  - Scheibenbogen & Paul 2021
-  - Sylvester 2022
-  - Thaweethai 2023
-  - Ursini 2023
-  - Vernon 2002
-  - Vreeman 2025
-  - Wang 2024
-  - Weinstock & Molderings 2020
-  - Wirth & Scheibenbogen 2020
-  - Wirth & Scheibenbogen 2021
+    - Aucott 2016
+    - Ballering 2022
+    - Borchers 2013
+    - Carruthers 2003
+    - Chen 2022
+    - Choutka 2022
+    - Davis 2025
+    - Eldokla 2022
+    - Fang 2006
+    - Finsterer 2022
+    - Fluge 2015
+    - Fluge & Mella 2011
+    - Galbraith 2011
+    - Hanson 2023
+    - Hertanti 2025
+    - Hickie 2006
+    - Hwang 2023
+    - Keijmel 2016
+    - Keller 2014
+    - Klein & Flanagan 2020
+    - Komaroff 2023
+    - Komaroff & Lipkin 2023
+    - Komaroff and Lipkin 2023
+    - Limongelli 2026
+    - Mantovani 2024
+    - Medicine 2011
+    - Medicine 2012
+    - Medicine 2015
+    - Medicine 2020
+    - Medicine 2022
+    - Medicine 2024
+    - Medicine 2025
+    - Naviaux 2012
+    - Naviaux 2014
+    - Naviaux 2016
+    - Neal & Hanson 2021
+    - Nicolai 2023
+    - Peluso and Deeks 2024
+    - Raijmakers 2018
+    - Scheibenbogen 2018
+    - Scheibenbogen & Paul 2021
+    - Sylvester 2022
+    - Thaweethai 2023
+    - Ursini 2023
+    - Vernon 2002
+    - Vreeman 2025
+    - Wang 2024
+    - Weinstock & Molderings 2020
+    - Wirth & Scheibenbogen 2020
+    - Wirth & Scheibenbogen 2021
   short_form_ids_deny:
-  - D2
-  - H1
-  - H2
-  - H3
-  - I49
-  - Q1
-  - Q2
-  - Q3
-  - Q4
-  - Q5
-  - Q6
-  - Q7
-  - Q8
-  - Q10
-  - T0
-  - T1
-  - T2
-  - T3
-  - T4
-  - T5
-  - T6
-  - T7
-  - T8
-  - T9
-  - T10
-  - d18
-  - q1
-  - q2
-  - q3
-  - q4
-  - q5
-  - q6
-  - q7
-  - q8
-  - q9
-  - q10
-  - q11
-  - q12
-  - q13
+    - D2
+    - H1
+    - H2
+    - H3
+    - I49
+    - Q1
+    - Q2
+    - Q3
+    - Q4
+    - Q5
+    - Q6
+    - Q7
+    - Q8
+    - Q10
+    - T0
+    - T1
+    - T2
+    - T3
+    - T4
+    - T5
+    - T6
+    - T7
+    - T8
+    - T9
+    - T10
+    - d18
+    - q1
+    - q2
+    - q3
+    - q4
+    - q5
+    - q6
+    - q7
+    - q8
+    - q9
+    - q10
+    - q11
+    - q12
+    - q13
 peers:
-- id: immunity
-  path: ~/d/health/processes/immunity
-- id: cycles
-  path: ~/d/health/processes/cycles
-- id: health-meta
-  path: ~/d/health/meta
-- id: pan-disease
-  path: ~/d/health/comparisons/pan-disease
+  - id: immunity
+    path: ~/d/health/processes/immunity
+  - id: cycles
+    path: ~/d/health/processes/cycles
+  - id: health-meta
+    path: ~/d/health/meta
+  - id: pan-disease
+    path: ~/d/health/comparisons/pan-disease
 health:
   accepted_validation:
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - proposition/0002-reproductive-stage-transition-modifies-immune-regulatory-pathways
-    - belief_state flips
-    reason: Reviewed in task:t076; this core mechanism leg intentionally remains single-line fragile because available support is weak/proxy and the required hormone-measured mediation vehicle is still missing.
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - proposition/0003-infection-pais-perturbs-the-reproductive-axis-and-menopausal-timing
-    - belief_state flips
-    reason: Reviewed in task:t076; the reverse-direction HPG-axis proposition is intentionally thin because cross-sectional hormone lines do not distinguish PAIS effect from pre-infection vulnerability.
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - proposition/0004-female-reproductive-stage-excess-requires-confounder-decomposition
-    - belief_state flips
-    reason: Reviewed in task:t076; this is a structural identification-discipline claim supported by a small set of design/collider arguments, not a claim to strengthen by relabeling evidence.
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - proposition/0005-menopause-pais-symptom-overlap-is-a-measurement-process
-    - belief_state flips
-    reason: Reviewed in task:t076; symptom-overlap support is intentionally measurement-process evidence, with Aras2025 restricted to menopause-side background rather than PAIS causation.
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - proposition/0006-hormone-therapy-effects-on-pais-are-context-dependent
-    - belief_state flips
-    reason: Reviewed in task:t076; HRT/COCP evidence remains indirect acute-outcome proxy evidence and no admissible direct HRT-to-PAIS causal estimate exists.
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - proposition/0014-pais-small-fiber-structural-lesion-ienfd
-    - belief_state flips
-    reason: Reviewed in task:t076; the SFN structural-lesion claim is deliberately bounded to a protocol-sensitive substantial subset and remains contested by the Walitt2024 PI-ME/CFS null.
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - proposition/0015-pais-sfn-non-length-dependent-pattern
-    - belief_state flips
-    reason: Reviewed in task:t076; the non-length-dependent SFN pattern is intentionally treated as protocol-dependent and formally contested until paired-site, per-subject, post-infectious measurement exists.
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - proposition/0016-pais-sfn-autoimmune-causation
-    - belief_state flips
-    reason: Reviewed in task:t076; immune mediation is trigger-specific in current evidence, with LC passive-transfer support and ME/CFS autoantibody-null dispute preserved rather than averaged away.
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - proposition/0017-pais-sfn-cross-trigger-convergence
-    - belief_state flips
-    reason: Reviewed in task:t076; cross-trigger SFN convergence is intentionally caveated as convergence of findings across heterogeneous protocols, not a standardized infection-specific substrate.
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - proposition/0018-pais-sfn-anti-gpcr-autoantibody-pathogenicity
-    - belief_state flips
-    reason: Reviewed in task:t076; the anti-GPCR pathogenicity route is explicitly the weakest h0007 leg because functional evidence has not yet been linked to the small-fiber lesion.
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - proposition/0021-acute-antigen-burden-determines-pais-incidence
-    - belief_state flips
-    reason: Reviewed in task:t076; metformin prevention trials support an acute-phase determinant but remain weak and indirect for antigen-burden specificity.
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - proposition/0022-degradation-resistant-fragments-persist-and-are-bioactive
-    - belief_state flips
-    reason: Reviewed in task:t076; fragment persistence and bioactivity are real but thin, with bioactivity demonstrated only for Borrelia in a mouse model and symptom causation unshown.
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - proposition/0025-lc-persistent-inflammatory-activation-dissociated-ifn
-    - belief_state flips
-    reason: Reviewed in task:t076; the dissociated IFN/inflammatory state is descriptive and inferred across two modest observational pre-Omicron designs rather than one robust within-cohort demonstration.
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - proposition/0032-pem-bioenergetic-deficit-localizes-to-skeletal-muscle
-    - belief_state flips
-    reason: Reviewed in task:t076; muscle localization is supported but deliberately contested by central/resting-null evidence and endpoint non-interchangeability.
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - proposition/0033-microvascular-hypoperfusion-drives-pem-muscle-bioenergetic-failure
-    - belief_state flips
-    reason: Reviewed in task:t076; the ischemic ordering claim remains weak and contested because peripheral extraction findings do not yet time-order hypoperfusion before muscle injury.
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - hypothesis/0006-skeletal-muscle-ischemic-mitochondrial-pem
-    - belief_state flips
-    reason: Reviewed in task:t076; the h0006 bundle honestly remains asymmetric, with localization support but weak/contested ischemic, ionic, and self-perpetuation legs.
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - proposition/0042-care-seeking-shared-confounder-test-negative-designs
-    - belief_state flips
-    reason: Reviewed 2026-07-15 health triage; this structural confounding claim rests decisively on the Nilforoshan2026 negative-control-exposure demonstration, with Sudre2024 corroborating direction through a different (self-report) channel at different residual magnitude rather than as an independent same-strength line. It is to be strengthened only by a genuinely independent negative-control replication, not by relabeling.
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - proposition/0043-host-reserve-dominates-acute-severity-gate
-    - belief_state flips
-    reason: Reviewed 2026-07-15 health triage; the reserve-dominance magnitude rests on the single strong Azhir2026 EHR causal-mediation result, while Russell2023 supplies mechanistic vocabulary rather than an independent effect estimate. Intentionally fragile until a second cohort with a pre-infection biological-reserve measure exists; the proxy-conditional magnitude must not be relabeled as stronger.
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - proposition/0045-scov-imprinting-attractor-entry-gate
-    - belief_state flips
-    reason: Reviewed 2026-07-15 health triage; the imprinting-gate instance rests on the single Mak2025 cross-sectional serology, with Crotty2026 analogical (vaccine-memory durability) rather than a PAIS measurement. Arrow direction is unproven and the identifying pre-infection-serology test is untested (question:0071), so single-line fragility is the honest state until that test runs.
-  - rule: belief.fragile-single-line
-    severity: warning
-    message_contains:
-    - hypothesis/0020-host-immune-baseline-reserve-gate
-    - belief_state flips
-    reason: Reviewed 2026-07-15 health triage; the bundle's well_supported state hinges on the same single Azhir2026 mediation line as proposition:0043, and is intentionally held fragile because its rank-ordering prediction (P3) across host strata is untested and no independent pre-infection reserve axis has been measured.
+    - finding_id: f11f31b4e259990eec9d83aa9d82e96545275f609197c332ee1199adebe99bc8
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed in task:t076; this core mechanism leg intentionally remains single-line fragile because available support is weak/proxy and the required hormone-measured mediation vehicle is still missing.
+    - finding_id: a1d95c714f57cb13db887f6af472ad226a525cfa54e3f2bce6eaba4f370af11a
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed in task:t076; the reverse-direction HPG-axis proposition is intentionally thin because cross-sectional hormone lines do not distinguish PAIS effect from pre-infection vulnerability.
+    - finding_id: b1322aa19ce3cd0ed5f1296d56ea3a7c53b732ecfe0f9c9961270b9d3d06ee97
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed in task:t076; this is a structural identification-discipline claim supported by a small set of design/collider arguments, not a claim to strengthen by relabeling evidence.
+    - finding_id: eff3323351b688163cebb7a72e3cdf1fe9ae842da26a25d81aae470f98cd38b7
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed in task:t076; symptom-overlap support is intentionally measurement-process evidence, with Aras2025 restricted to menopause-side background rather than PAIS causation.
+    - finding_id: 5779e5e2e8c693525fada4a8a93b923fd7d406f4ef725a6f22b63f41cebc3c8d
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed in task:t076; HRT/COCP evidence remains indirect acute-outcome proxy evidence and no admissible direct HRT-to-PAIS causal estimate exists.
+    - finding_id: 15e2b68ceab74e8a22a74b6d85166eade4a0e4aac97804bf656f6a70a43eaea2
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed in task:t076; the SFN structural-lesion claim is deliberately bounded to a protocol-sensitive substantial subset and remains contested by the Walitt2024 PI-ME/CFS null.
+    - finding_id: fb9ad3a6a23101fc32ee6de7a1ca43a652c5c9d7e8e2e7dfff2b52c50f3ddae1
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed in task:t076; the non-length-dependent SFN pattern is intentionally treated as protocol-dependent and formally contested until paired-site, per-subject, post-infectious measurement exists.
+    - finding_id: fc77d5f4d713779fcd13e90b1f7ee2e9e9cbf6033842ac32fa50494d4a403663
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed in task:t076; immune mediation is trigger-specific in current evidence, with LC passive-transfer support and ME/CFS autoantibody-null dispute preserved rather than averaged away.
+    - finding_id: dbecd95c3a05f987452f6e55b861c93b80b8f3ae0ef3e54011eebcecbf559110
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed in task:t076; cross-trigger SFN convergence is intentionally caveated as convergence of findings across heterogeneous protocols, not a standardized infection-specific substrate.
+    - finding_id: 1528fad08f6b3686d2a9e2bc4469c948b8f2de698661642f6be2802dda25ef02
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed in task:t076; the anti-GPCR pathogenicity route is explicitly the weakest h0007 leg because functional evidence has not yet been linked to the small-fiber lesion.
+    - finding_id: 84262c3b8a21c3573e8e094621f8344ce75570df19a6c74ece531a8f4a701bc2
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed in task:t076; metformin prevention trials support an acute-phase determinant but remain weak and indirect for antigen-burden specificity.
+    - finding_id: 1976787b6b709a47f8fbc1af932192b3cc5bc4431adf13960f97b31d93505a41
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed in task:t076; fragment persistence and bioactivity are real but thin, with bioactivity demonstrated only for Borrelia in a mouse model and symptom causation unshown.
+    - finding_id: dbf1ebfdd8ab4f0e5afe46bb856839dc7ca114e115917b54a15facf91f0ce39d
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed in task:t076; the dissociated IFN/inflammatory state is descriptive and inferred across two modest observational pre-Omicron designs rather than one robust within-cohort demonstration.
+    - finding_id: 3825bab1bcb95cfc86c012264e234e78a0ec5582a736aee308788869338fac85
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed in task:t076; muscle localization is supported but deliberately contested by central/resting-null evidence and endpoint non-interchangeability.
+    - finding_id: ae9d8ad277268d0e232bae5581d0dd041d8b29ffea56fc8ebf8a63bb2a4ed7ab
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed in task:t076; the ischemic ordering claim remains weak and contested because peripheral extraction findings do not yet time-order hypoperfusion before muscle injury.
+    - finding_id: d24c3ba5e77ce93245273b741569e561c5bf505465c3a6a0c745186655cddff2
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed in task:t076; the h0006 bundle honestly remains asymmetric, with localization support but weak/contested ischemic, ionic, and self-perpetuation legs.
+    - finding_id: 12797f603d36965d5211eb4e1c52026e68bdea1b527ff57e677ea4224b56f5b2
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed 2026-07-15 health triage; this structural confounding claim rests decisively on the Nilforoshan2026 negative-control-exposure demonstration, with Sudre2024 corroborating direction through a different (self-report) channel at different residual magnitude rather than as an independent same-strength line. It is to be strengthened only by a genuinely independent negative-control replication, not by relabeling.
+    - finding_id: 3cd2330b12a93cfbe8d8436367ecb10ad91ecdb712c694b45ec14a679e666704
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed 2026-07-15 health triage; the reserve-dominance magnitude rests on the single strong Azhir2026 EHR causal-mediation result, while Russell2023 supplies mechanistic vocabulary rather than an independent effect estimate. Intentionally fragile until a second cohort with a pre-infection biological-reserve measure exists; the proxy-conditional magnitude must not be relabeled as stronger.
+    - finding_id: 4c17b638d9e79cfb69dbd3e5dd9dec5def8f28a9f88c7f654b71388d72860ab8
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed 2026-07-15 health triage; the imprinting-gate instance rests on the single Mak2025 cross-sectional serology, with Crotty2026 analogical (vaccine-memory durability) rather than a PAIS measurement. Arrow direction is unproven and the identifying pre-infection-serology test is untested (question:0071), so single-line fragility is the honest state until that test runs.
+    - finding_id: b1998a48d587daa95eda24f571956f0a98003225a21b0bf3107a3f4546fef6c1
+      fingerprint_version: 1
+      severity_scope:
+        - warn
+      reason: Reviewed 2026-07-15 health triage; the bundle's well_supported state hinges on the same single Azhir2026 mediation line as proposition:0043, and is intentionally held fragile because its rank-ordering prediction (P3) across host strata is untested and no independent pre-infection reserve axis has been measured.
 entity_schema_version: 3
