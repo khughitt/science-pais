@@ -10,6 +10,14 @@ Process-focused research project for **post-acute infection syndromes (PAIS)** i
 
 ## Validation
 
+Run Science structural validation once before handoff when Science-managed data,
+configuration, references, workflows, or generated artifacts changed. Use the
+narrowest project-specific check that covers the change while iterating. Also
+run full project validation for shared schema or configuration changes,
+cross-cutting changes, releases, unexpected broader effects, or an explicit
+request. Do not repeat a passing validation after a fast-forward integration
+when the exact commit and its base are unchanged.
+
 ```bash
 uv run --frozen science validate --verbose
 ```
